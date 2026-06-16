@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-agile-task-notes",
+    "version": "1.0.0",
+    "title": "Agile Task Notes",
+    "description": "Agile Task Notes Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "2.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Milestones",
+          "target": "里程碑"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Board",
+          "target": "看板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "User",
+          "target": "用户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Basic Auth",
+          "target": "基本认证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Personal Access Token",
+          "target": "个人访问令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Sprints",
+          "target": "冲刺"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Kanban",
+          "target": "看板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "TFS server name (ex: dev.azure.com/OrgName)",
+          "target": "TFS 服务器名称（例如：dev.azure.com/OrgName）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "AzureDevops Project ID or project name",
+          "target": "AzureDevops 项目 ID 或项目名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "AzureDevops Team ID or team name",
+          "target": "AzureDevops 团队 ID 或团队名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A comma-separated list of usernames you want the tasks of. Simply put your username if you only need your own.",
+          "target": "以逗号分隔的用户名列表，您希望获取其任务。如果您只需要自己的任务，只需输入您的用户名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Your AzureDevops PAT with full access",
+          "target": "您的具有完全访问权限的 AzureDevops PAT"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Line-separated list of column key names from your team sprint board to be used in Kanban board",
+          "target": "以换行符分隔的列键名列表，来自您的团队冲刺板，用于看板。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Your GitLab instance hostname (e.g. gitlab.com or gitlab.yourcompany.com)",
+          "target": "您的 GitLab 实例主机名（例如 gitlab.com 或 gitlab.yourcompany.com）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A GitLab Personal Access Token with read_api scope",
+          "target": "一个具有 read_api 范围的 GitLab 个人访问令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A comma-separated list of GitLab usernames you want tasks for. Put your username if you only need your own.",
+          "target": "以逗号分隔的 GitLab 用户名列表，您希望获取其任务。如果您只需要自己的任务，请输入您的用户名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Milestones: groups issues by active milestone (sprints). Board: shows all project issues. User: fetches all assigned issues across all projects into date-based folders (Year/Quarter/Month).",
+          "target": "里程碑：按活动里程碑（冲刺）对问题进行分组。看板：显示所有项目问题。用户：将所有项目中分配的任务获取到基于日期的文件夹（年/季/月）中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The numeric project ID or URL-encoded path (e.g. 12345 or mygroup%2Fmyproject). Found on the project homepage.",
+          "target": "数字项目 ID 或 URL 编码路径（例如 12345 或 mygroup%2Fmyproject）。可在项目主页找到。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The ID of your GitLab issue board (optional). If set, column names are fetched automatically from the board. Found in the board URL.",
+          "target": "您的 GitLab 问题看板 ID（可选）。如果设置，列名将自动从看板获取。可在看板 URL 中找到。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Only pull issues that are not closed",
+          "target": "仅拉取未关闭的问题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Uses the milestone's title for the folder name instead of its numeric ID",
+          "target": "使用里程碑的标题作为文件夹名称，而不是其数字 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of column names for the Kanban board. Must include \"Open\" and \"Closed\". Middle columns should match your GitLab labels. (Only used when Board ID is not set.)",
+          "target": "以逗号分隔的看板列名列表。必须包含“Open”和“Closed”。中间列应与您的 GitLab 标签匹配。（仅在未设置看板 ID 时使用。）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The base URL of your Jira server or {ip:port}",
+          "target": "您的 Jira 服务器的基础 URL 或 {ip:port}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the mode of authorization to be used",
+          "target": "设置要使用的授权模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The API token generated with your account",
+          "target": "使用您的帐户生成的 API 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The ID of your Scrum board (the number in the URL when viewing scrum board in browser) ",
+          "target": "您的 Scrum 看板 ID（在浏览器中查看 Scrum 看板时 URL 中的数字）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the mode corresponding to how you use Jira",
+          "target": "设置与您使用 Jira 的方式相对应的模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Uses the Sprint's human assigned name",
+          "target": "使用冲刺的人工分配名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable to prevent creation of issues from the backlog",
+          "target": "启用以防止从待办事项创建问题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The type of TFS you use.",
+          "target": "您使用的 TFS 类型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pulls tasks of entire team and shows usernames in generated Kanban board. (ignores username list)",
+          "target": "拉取整个团队的任务并在生成的看板中显示用户名。（忽略用户名列表）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The relative path to the parent folder in which to create/update Kanban boards",
+          "target": "用于创建/更新看板的父文件夹的相对路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the inital content for each new task note. Available variables: {{TASK_ID}}, {{TASK_TITLE}}, {{TASK_TYPE}}, {{TASK_STATE}}, {{TASK_ASSIGNEDTO}}, {{TASK_LINK}}, {{TASK_DESCRIPTION}} Azure/GitLab: {{TASK_DUEDATE}} {{TASK_TAGS}} Azure only: {{TASK_CRITERIA}} {{TASK_TESTS}}",
+          "target": "设置每个新任务笔记的初始内容。可用变量：{{TASK_ID}}, {{TASK_TITLE}}, {{TASK_TYPE}}, {{TASK_STATE}}, {{TASK_ASSIGNEDTO}}, {{TASK_LINK}}, {{TASK_DESCRIPTION}} Azure/GitLab: {{TASK_DUEDATE}} {{TASK_TAGS}} 仅限 Azure: {{TASK_CRITERIA}} {{TASK_TESTS}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the format of the file name for each task note. Available variables: {{TASK_ID}}, {{TASK_NAME}}, {{TASK_TYPE}}, {{TASK_STATE}}, {{TASK_ASSIGNEDTO}}",
+          "target": "设置每个任务笔记的文件名格式。可用变量：{{TASK_ID}}, {{TASK_NAME}}, {{TASK_TYPE}}, {{TASK_STATE}}, {{TASK_ASSIGNEDTO}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Interval (in minutes) to periodically update the kanban board and notes. Set to 0 for only manual updating. You'll need to restart Obsidian for this to take effect. Note: when an update occurs it will close the kanban board if it is open thus a number over 10 mins is recommended.",
+          "target": "定期更新看板和笔记的时间间隔（以分钟为单位）。设置为 0 表示仅手动更新。您需要重启 Obsidian 才能使此设置生效。注意：更新发生时，如果看板是打开的，它将被关闭，因此建议设置超过 10 分钟的数字。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Should a Kanban board be generated for the current sprint (requires the Kanban board plugin in addition to this one)",
+          "target": "是否应为当前冲刺生成看板（除了此插件外，还需要看板插件）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Instance",
+          "target": "实例"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Collection",
+          "target": "集合"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Project",
+          "target": "项目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Team",
+          "target": "团队"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Usernames",
+          "target": "用户名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Personal Access Token",
+          "target": "个人访问令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Column Names",
+          "target": "列名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Instance URL",
+          "target": "实例 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Mode",
+          "target": "模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Project ID",
+          "target": "项目 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Board ID",
+          "target": "看板 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude Closed Issues",
+          "target": "排除已关闭的问题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Milestone Name (rather than ID)",
+          "target": "使用里程碑名称（而非 ID）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email",
+          "target": "电子邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Authorization mode",
+          "target": "授权模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API Token",
+          "target": "API 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Sprint Name (rather than id)",
+          "target": "使用冲刺名称（而非 ID）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude Backlog",
+          "target": "排除待办事项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backend TFS",
+          "target": "后端 TFS"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Team Leader Mode",
+          "target": "团队负责人模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Target Folder (Optional)",
+          "target": "目标文件夹（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inital Task Content",
+          "target": "初始任务内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note Name",
+          "target": "笔记名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Update interval",
+          "target": "更新间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Create Kanban board?",
+          "target": "创建看板？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter instance base url",
+          "target": "输入实例基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter Collection Name",
+          "target": "输入集合名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter project name",
+          "target": "输入项目名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter team name",
+          "target": "输入团队名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter usernames",
+          "target": "输入用户名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your PAT",
+          "target": "输入您的 PAT"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter comma-separated list",
+          "target": "输入以逗号分隔的列表"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter project ID or path",
+          "target": "输入项目 ID 或路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter Board ID",
+          "target": "输入看板 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Open,In Progress,Review,Closed",
+          "target": "打开,进行中,审核,已关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter Jira base URL",
+          "target": "输入 Jira 基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter API token",
+          "target": "输入 API 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter target folder",
+          "target": "输入目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Initial content in raw markdown format",
+          "target": "原始 Markdown 格式的初始内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "{{TASK_TYPE}} - {{TASK_ID}}",
+          "target": "{{TASK_TYPE}} - {{TASK_ID}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter number in minutes",
+          "target": "输入分钟数"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error occured, see console logs for details. (ctrl+shift+i) to open",
+          "target": "发生错误，详情请查看控制台日志。按 (ctrl+shift+i) 打开"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Updated current tasks successfully!",
+          "target": "当前任务更新成功！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Update TFS Tasks",
+          "target": "更新 TFS 任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Vault Settings",
+          "target": "保险库设置"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

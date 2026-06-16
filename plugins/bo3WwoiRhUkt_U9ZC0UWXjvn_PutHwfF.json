@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ai-audio-transcription-summary",
+    "version": "1.0.0",
+    "title": "AI Audio Transcription and Summary",
+    "description": "AI Audio Transcription and Summary Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI Whisper",
+          "target": "OpenAI Whisper"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Default Microphone",
+          "target": "默认麦克风"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Anthropic",
+          "target": "Anthropic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "Are you sure you want to cancel? This will delete the current recording.",
+          "target": "您确定要取消吗？这将删除当前录音。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Post-processing failed:",
+          "target": "后处理失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Title generation failed:",
+          "target": "标题生成失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Save & Continue",
+          "target": "保存并继续"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "API key for Whisper transcription (OpenAI, Groq, or Azure)",
+          "target": "用于 Whisper 转录的 API 密钥（OpenAI、Groq 或 Azure）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "API key for GPT post-processing models",
+          "target": "用于 GPT 后处理模型的 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "API key for Claude post-processing models",
+          "target": "用于 Claude 后处理模型的 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify the endpoint that will be used to make requests to (e.g. OpenAI or Groq compatibility)",
+          "target": "指定用于发起请求的端点（例如 OpenAI 或 Groq 兼容性）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the transcription model (or choose Custom to enter your own)",
+          "target": "选择转录模型（或选择“自定义”以输入您自己的模型）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter custom Whisper-compatible model ID",
+          "target": "输入自定义的 Whisper 兼容模型 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional: Add words with their correct spellings to help with transcription.",
+          "target": "可选：添加单词及其正确拼写，以帮助转录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Output format: json, text, srt, verbose_json, or vtt",
+          "target": "输出格式：json、text、srt、verbose_json 或 vtt"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the audio input device to use for recording",
+          "target": "选择用于录音的音频输入设备"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Save the audio recording to the vault",
+          "target": "将音频录音保存到保险库中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder in the vault where audio files are saved",
+          "target": "保险库中保存音频文件的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create a new note file for each transcription (if disabled, inserts directly at current cursor position)",
+          "target": "为每次转录创建新的笔记文件（如果禁用，则直接插入到当前光标位置）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder in the vault where note files are saved",
+          "target": "保险库中保存笔记文件的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically insert a link to the generated meeting note in your active file at the cursor position.",
+          "target": "在活动文件的光标位置自动插入指向生成的会议笔记的链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the LLM provider to clean up your note (Anthropic and OpenAI use API keys set above)",
+          "target": "选择用于清理笔记的 LLM 提供商（Anthropic 和 OpenAI 使用上面设置的 API 密钥）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the model for post-processing",
+          "target": "选择用于后处理的模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter custom model ID",
+          "target": "输入自定义模型 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Instructions for the LLM on how to clean up the transcription",
+          "target": "指导 LLM 如何清理转录内容的指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use the LLM to generate a descriptive filename/title for notes",
+          "target": "使用 LLM 为笔记生成描述性文件名/标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Instructions for the LLM on how to generate the title",
+          "target": "指导 LLM 如何生成标题的指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Append the raw Whisper transcription below the post-processed text",
+          "target": "将原始 Whisper 转录内容附加在后处理文本下方"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Increase the plugin's verbosity for troubleshooting",
+          "target": "增加插件的详细程度以进行故障排除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Required for audio transcription via OpenAI Whisper.",
+          "target": "通过 OpenAI Whisper 进行音频转录所必需。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Whisper API Key",
+          "target": "Whisper API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API Key",
+          "target": "OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Anthropic API Key",
+          "target": "Anthropic API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Transcription Provider",
+          "target": "转录提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API URL",
+          "target": "API URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Model ID",
+          "target": "自定义模型 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Language",
+          "target": "语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Prompt",
+          "target": "提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Response format",
+          "target": "响应格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Microphone",
+          "target": "麦克风"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save audio file",
+          "target": "保存音频文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Audio save path",
+          "target": "音频保存路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Create note file",
+          "target": "创建笔记文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note save path",
+          "target": "笔记保存路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-Insert Link",
+          "target": "自动插入链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable post-processing",
+          "target": "启用后处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing model",
+          "target": "后处理模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Post-processing Model ID",
+          "target": "自定义后处理模型 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing prompt",
+          "target": "后处理提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-generate title",
+          "target": "自动生成标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Title generation prompt",
+          "target": "标题生成提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Keep original transcription",
+          "target": "保留原始转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter Whisper API key",
+          "target": "输入 Whisper API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter OpenAI API key",
+          "target": "输入 OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter Anthropic API key",
+          "target": "输入 Anthropic API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g., whisper-1",
+          "target": "例如，whisper-1"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: ZyntriQix, Digi",
+          "target": "示例：ZyntriQix, Digi"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: folder/audio",
+          "target": "示例：folder/audio"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: folder/note",
+          "target": "示例：folder/note"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "![[{{audioFile}}]]\n{{transcription}}",
+          "target": "![[{{audioFile}}]]\\n{{transcription}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter prompt...",
+          "target": "输入提示词..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Generate a short title...",
+          "target": "生成简短标题..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "AI Transcription & Summary - Missing Keys",
+          "target": "AI 转录与摘要 - 缺少密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "AI Audio Recorder",
+          "target": "AI 音频录制器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to generate title, using fallback",
+          "target": "标题生成失败，使用备用方案"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audio recording started...",
+          "target": "音频录制已开始..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Processing cancelled due to missing API keys.",
+          "target": "由于缺少 API 密钥，处理已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Finalizing recording...",
+          "target": "正在完成录制..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcription failed, but your audio file was saved and linked in a new note.",
+          "target": "转录失败，但您的音频文件已保存并链接到新笔记中。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Warning: Post-processing failed. Using raw transcription.",
+          "target": "警告：后处理失败。使用原始转录。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcription pasted at cursor.",
+          "target": "转录已粘贴到光标处。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error: No active Markdown editor found to paste transcription.",
+          "target": "错误：未找到活动的 Markdown 编辑器来粘贴转录内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Recording discarded.",
+          "target": "录制已丢弃。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open AI Recorder Controls",
+          "target": "打开 AI 录制器控制面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start Audio Recording",
+          "target": "开始音频录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stop and Process Audio",
+          "target": "停止并处理音频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "API Keys",
+          "target": "API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Transcription",
+          "target": "转录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recording",
+          "target": "录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Output",
+          "target": "输出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced",
+          "target": "高级"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "To transcribe and process your audio, please enter the missing API keys below. They will be saved to your plugin settings.",
+          "target": "要转录和处理您的音频，请在下方输入缺失的 API 密钥。它们将保存到您的插件设置中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🎙️ Start Recording",
+          "target": "🎙️ 开始录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "▶️ Resume",
+          "target": "▶️ 恢复"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⏸️ Pause",
+          "target": "⏸️ 暂停"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "✅ Stop & Transcribe",
+          "target": "✅ 停止并转录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "❌ Cancel",
+          "target": "❌ 取消"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
