@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "various-complements",
+    "version": "2.0.0",
+    "title": "Various Complements",
+    "description": "This plugin enables you to complete words like the auto-completion of IDE",
+    "language": "zh-cn",
+    "supportedVersions": "10.0.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\n          `\\u26A0 Fail to load ${path} -- Various Complements Plugin -- \n ${e}`,\n          0\n        )",
+          "target": "Notice(\n          `\\u26A0 无法加载 ${path} -- Various Complements Plugin -- \n ${e}`,\n          0\n        )"
+        },
+        {
+          "source": "Notice(`Can't open ${item.createdPath}`)",
+          "target": "Notice(`无法打开 ${item.createdPath}`)"
+        },
+        {
+          "source": "Notice(\"\\u26A0Unexpected error\")",
+          "target": "Notice(\"⚠️ 意外错误\")"
+        },
+        {
+          "source": "Notice(`Can't open ${dictionaryPath}`)",
+          "target": "Notice(`无法打开 ${dictionaryPath}`)"
+        },
+        {
+          "source": "Notice(\"Copy settings of Various Complements\")",
+          "target": "Notice(\"复制各种补足项的设置\")"
+        },
+        {
+          "source": "Notice(`\\u26A0 ${word.value} already exists`, 0)",
+          "target": "Notice(`警告：${word.value} 已存在`, 0)"
+        },
+        {
+          "source": "Notice(`Added ${word.value}`)",
+          "target": "Notice(`已添加 ${word.value}`)"
+        },
+        {
+          "source": "name: \"Reload custom dictionaries\"",
+          "target": "name: \"重新加载自定义词典\""
+        },
+        {
+          "source": "name: \"Reload current vault\"",
+          "target": "name: \"重新加载当前库\""
+        },
+        {
+          "source": "name: \"Toggle Match strategy\"",
+          "target": "name: \"切换匹配策略\""
+        },
+        {
+          "source": "name: \"Toggle Complement automatically\"",
+          "target": "name: \"自动切换补集\""
+        },
+        {
+          "source": "name: \"Show suggestions\"",
+          "target": "name: \"显示建议\""
+        },
+        {
+          "source": "name: \"Hide suggestions\"",
+          "target": "name: \"隐藏建议\""
+        },
+        {
+          "source": "name: \"Fallback linkify\"",
+          "target": "name: \"备用链接化\""
+        },
+        {
+          "source": "name: \"Add a word to a custom dictionary\"",
+          "target": "name: \"将一个单词添加到自定义词典中\""
+        },
+        {
+          "source": "name: \"Predictable complement\"",
+          "target": "name: \"可预测的补充\""
+        },
+        {
+          "source": "name: \"Copy plugin settings\"",
+          "target": "name: \"复制插件设置\""
+        },
+        {
+          "source": "description: `Appeared in -> ${path}`",
+          "target": "description: `出现在 -> ${path}`"
+        },
+        {
+          "source": "text: \"Various Complements - Settings\"",
+          "target": "text: \"Various Complements - 设置\""
+        },
+        {
+          "source": "text: \"Main\"",
+          "target": "text: \"主要设置\""
+        },
+        {
+          "source": "text: \"The path to `cedict_ts.u8`. You can download it from \"",
+          "target": "text: \" `cedict_ts.u8`的存放路径. 你可以从这里下载它： \""
+        },
+        {
+          "source": "text: \" the site \"",
+          "target": "text: \"网站\""
+        },
+        {
+          "source": "text: `\\u26A0 cedict_ts.u8 doesn't exist in ${this.plugin.settings.cedictPath}.`",
+          "target": "text: `⚠️cedict_ts.u8 不存在于 ${this.plugin.settings.cedictPath} 中。`"
+        },
+        {
+          "source": "text: \"\\u26A0 `partial` is more than 10 times slower than `prefix`\"",
+          "target": "text: \"⚠️ `partial` 比 `prefix` 慢 10 倍以上\""
+        },
+        {
+          "source": "text: \"Appearance\"",
+          "target": "text: \"外观\""
+        },
+        {
+          "source": "text: \"Key customization\"",
+          "target": "text: \"键位自定义\""
+        },
+        {
+          "source": "text: \"keycode.info\"",
+          "target": "text: \"按键代码信息\""
+        },
+        {
+          "source": "text: \"'Ctrl a' means pressing the Ctrl key and the A key.\"",
+          "target": "text: \"'Ctrl a' 表示按下 Ctrl 键和 A 键。\""
+        },
+        {
+          "source": "text: \"'Enter|Tab' means pressing the Enter key or the Tab key.\"",
+          "target": "text: \"“Enter|Tab” 意味着按下 Enter 键或 Tab 键。\""
+        },
+        {
+          "source": "text: \"Use 'Mod' instead of 'Ctrl' on Windows or 'Cmd' on macOS.\"",
+          "target": "text: \"在 Windows 上使用“Mod”代替“Ctrl”，在 macOS 上使用“Mod”代替“Cmd”。\""
+        },
+        {
+          "source": "text: \"Current file complement\"",
+          "target": "text: \"当前文件补全\""
+        },
+        {
+          "source": "text: \"Current vault complement\"",
+          "target": "text: \"当前库补全\""
+        },
+        {
+          "source": "text: \"Custom dictionary complement\"",
+          "target": "text: \"自定义词典补全\""
+        },
+        {
+          "source": "text: \"Internal link complement\"",
+          "target": "text: \"内部链接补全\""
+        },
+        {
+          "source": "text: \"Front matter complement\"",
+          "target": "text: \"Front matter补充\""
+        },
+        {
+          "source": "text: \"Intelligent suggestion prioritization\"",
+          "target": "text: \"智能建议优先级排序\""
+        },
+        {
+          "source": "text: \"Mobile\"",
+          "target": "text: \"移动设备\""
+        },
+        {
+          "source": "text: \"Debug\"",
+          "target": "text: \"调试\""
+        },
+        {
+          "source": ".setText(\"indexing...\")",
+          "target": ".setText(\"索引中...\")"
+        },
+        {
+          "source": ".setName(\"Strategy\")",
+          "target": ".setName(\"策略\")"
+        },
+        {
+          "source": ".setName(\"CC-CEDICT path\")",
+          "target": ".setName(\"CC-CEDICT 路径\")"
+        },
+        {
+          "source": ".setName(\"Match strategy\")",
+          "target": ".setName(\"匹配策略\")"
+        },
+        {
+          "source": ".setName(\"Fuzzy match\")",
+          "target": ".setName(\"模糊匹配\")"
+        },
+        {
+          "source": ".setName(\"Min fuzzy match score\")",
+          "target": ".setName(\"最小模糊匹配得分\")"
+        },
+        {
+          "source": ".setName(\"Treat accent diacritics as alphabetic characters.\")",
+          "target": ".setName(\"将带变音符号的字母视为字母字符。\")"
+        },
+        {
+          "source": ".setName(\"Treat an underscore as a part of a word.\")",
+          "target": ".setName(\"将下划线视为单词的一部分。\")"
+        },
+        {
+          "source": ".setName(\"Matching without emoji\")",
+          "target": ".setName(\"不带表情符号的匹配\")"
+        },
+        {
+          "source": ".setName(\"Max number of suggestions\")",
+          "target": ".setName(\"最大建议数量\")"
+        },
+        {
+          "source": ".setName(\"Max number of words as a phrase\")",
+          "target": ".setName(\"作为短语的最大词数\")"
+        },
+        {
+          "source": ".setName(\"Min number of characters for trigger\")",
+          "target": ".setName(\"触发所需的最小字符数\")"
+        },
+        {
+          "source": ".setName(\"Min number of words for trigger\")",
+          "target": ".setName(\"触发所需的最小单词数\")"
+        },
+        {
+          "source": ".setName(\"Complement automatically\")",
+          "target": ".setName(\"自动补全\")"
+        },
+        {
+          "source": ".setName(\"Delay milli-seconds for trigger\")",
+          "target": ".setName(\"触发延迟毫秒数\")"
+        },
+        {
+          "source": ".setName(\"Disable suggestions during IME on\")",
+          "target": ".setName(\"在输入法编辑模式下禁用建议\")"
+        },
+        {
+          "source": ".setName(\"Disable suggestions in the Math block\")",
+          "target": ".setName(\"在数学块中禁用建议\")"
+        },
+        {
+          "source": ".setName(\"Insert space after completion\")",
+          "target": ".setName(\"在完成输入后插入空格\")"
+        },
+        {
+          "source": ".setName(\"First characters to disable suggestions\")",
+          "target": ".setName(\"首个字符以禁用建议\")"
+        },
+        {
+          "source": ".setName(\"Line patterns to suppress trigger\")",
+          "target": ".setName(\"行模式抑制自动补全的触发\")"
+        },
+        {
+          "source": ".setName(\"Phrase patterns to suppress trigger\")",
+          "target": ".setName(\"短语模式抑制自动补全的触发\")"
+        },
+        {
+          "source": ".setName(\"No auto-focus until the cycle\")",
+          "target": ".setName(\"不在周期内自动聚焦\")"
+        },
+        {
+          "source": ".setName(\"Show Match strategy\")",
+          "target": ".setName(\"显示匹配策略\")"
+        },
+        {
+          "source": ".setName(\"Show Complement automatically\")",
+          "target": ".setName(\"自动显示补全\")"
+        },
+        {
+          "source": ".setName(\"Show Indexing status\")",
+          "target": ".setName(\"显示索引状态\")"
+        },
+        {
+          "source": ".setName(\"Description on a suggestion\")",
+          "target": ".setName(\"建议的描述\")"
+        },
+        {
+          "source": ".setName(\"Hotkeys\")",
+          "target": ".setName(\"热键\")"
+        },
+        {
+          "source": ".setName(\"Enable Current file complement\")",
+          "target": ".setName(\"启用当前文件补全\")"
+        },
+        {
+          "source": ".setName(\"Min number of characters for indexing\")",
+          "target": ".setName(\"索引所需的最小字符数\")"
+        },
+        {
+          "source": ".setName(\"Only complement English on current file complement\")",
+          "target": ".setName(\"只补全当前文件中的英文\")"
+        },
+        {
+          "source": ".setName(\"Exclude word patterns for indexing\")",
+          "target": ".setName(\"排除用于索引的词模式\")"
+        },
+        {
+          "source": ".setName(\"Enable Current vault complement\")",
+          "target": ".setName(\"启用当前库补全\")"
+        },
+        {
+          "source": ".setName(\"Include prefix path patterns\")",
+          "target": ".setName(\"包含前缀路径模式\")"
+        },
+        {
+          "source": ".setName(\"Exclude prefix path patterns\")",
+          "target": ".setName(\"排除前缀路径模式\")"
+        },
+        {
+          "source": ".setName(\"Include only files under current directory\")",
+          "target": ".setName(\"仅包含当前目录下的文件\")"
+        },
+        {
+          "source": ".setName(\"Enable Custom dictionary complement\")",
+          "target": ".setName(\"启用自定义词典补充\")"
+        },
+        {
+          "source": ".setName(\"Custom dictionary paths\")",
+          "target": ".setName(\"自定义词典路径\")"
+        },
+        {
+          "source": ".setName(\"Column delimiter\")",
+          "target": ".setName(\"列分隔符\")"
+        },
+        {
+          "source": ".setName(\"Word regex pattern\")",
+          "target": ".setName(\"单词正则表达式模式\")"
+        },
+        {
+          "source": ".setName(\"Delimiter to hide a suggestion\")",
+          "target": ".setName(\"分隔符以隐藏建议\")"
+        },
+        {
+          "source": ".setName(\n        \"Delimiter to divide suggestions for display from ones for insertion\"\n      )",
+          "target": ".setName(\n        \"分隔符，用于区分显示建议和插入建议\"\n      )"
+        },
+        {
+          "source": ".setName(\"Caret location symbol after complement\")",
+          "target": ".setName(\"补全后的光标位置符号\")"
+        },
+        {
+          "source": ".setName(\"Displayed text suffix\")",
+          "target": ".setName(\"显示文本后缀\")"
+        },
+        {
+          "source": ".setName(\"Enable Internal link complement\")",
+          "target": ".setName(\"启用内部链接补全\")"
+        },
+        {
+          "source": ".setName(\"Suggest with an alias\")",
+          "target": ".setName(\"建议使用别名\")"
+        },
+        {
+          "source": ".setName(\"Update internal links on save\")",
+          "target": ".setName(\"保存时更新内部链接\")"
+        },
+        {
+          "source": ".setName(\n        \"Insert an alias that is transformed from the displayed internal link\"\n      )",
+          "target": ".setName(\n        \"插入一个从显示的内部链接转换而来的别名\"\n      )"
+        },
+        {
+          "source": ".setName(\"Before: regular expression pattern with captures\")",
+          "target": ".setName(\"之前：包含捕获组的正则表达式模式\")"
+        },
+        {
+          "source": ".setName(\"After\")",
+          "target": ".setName(\"在...之后\")"
+        },
+        {
+          "source": ".setName(\"Front matter key for exclusion\")",
+          "target": ".setName(\"用于排除的前置事项键\")"
+        },
+        {
+          "source": ".setName(\"Enable Front matter complement\")",
+          "target": ".setName(\"启用Front matter补全\")"
+        },
+        {
+          "source": ".setName(\"Match strategy in the front matter\")",
+          "target": ".setName(\"在Front matter中的匹配策略\")"
+        },
+        {
+          "source": ".setName(\"Insert comma after completion\")",
+          "target": ".setName(\"完成插入逗号\")"
+        },
+        {
+          "source": ".setName(\"Enable Intelligent Suggestion Prioritization\")",
+          "target": ".setName(\"启用智能建议优先级\")"
+        },
+        {
+          "source": ".setName(\"history file path\")",
+          "target": ".setName(\"历史文件路径\")"
+        },
+        {
+          "source": ".setName(\"Max days to keep history\")",
+          "target": ".setName(\"保留历史的最大天数\")"
+        },
+        {
+          "source": ".setName(\"Max number of history to keep\")",
+          "target": ".setName(\"要保留的历史记录最大数量\")"
+        },
+        {
+          "source": ".setName(\"Disable on mobile\")",
+          "target": ".setName(\"在移动设备上禁用\")"
+        },
+        {
+          "source": ".setName(\"Show log about performance in a console\")",
+          "target": ".setName(\"在控制台显示性能日志\")"
+        },
+        {
+          "source": ".setDesc(\n      \"It only shows suggestions whose fuzzy matched score is more than the specific value.\"\n    )",
+          "target": ".setDesc(\n      \"它仅显示模糊匹配得分超过特定值的建议。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Ex: If enabled, 'aaa' matches with '\\xE1\\xE4\\u0101'\")",
+          "target": ".setDesc(\"如果启用，则‘aaa’匹配‘\\xE1\\xE4\\u0101’\")"
+        },
+        {
+          "source": ".setDesc(\n        \"If this setting is enabled, aaa_bbb will be tokenized as a single token aaa_bbb, rather than being split into aaa and bbb.\"\n      )",
+          "target": ".setDesc(\n        \"如果启用此设置，aaa_bbb 将作为一个单独的标记 aaa_bbb 进行分词，而不是拆分成 aaa 和 bbb。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"Ex: If enabled, 'aaa' matches with '\\u{1F600}aaa'\")",
+          "target": ".setDesc(\"如果启用，则「aaa」将与「😀aaa」匹配\")"
+        },
+        {
+          "source": ".setDesc(`[\\u26A0Warning] It makes slower more than N times (N is set value)`)",
+          "target": ".setDesc(`[\\u26A0警告] 它会使速度降低 N 倍（N 为设定值）`)"
+        },
+        {
+          "source": ".setDesc(\n      \"Setting the value to 0 does not mean the suggestion will be triggered without any inputted character. Instead, a designated value will be used depending on the Strategy you choose.\"\n    )",
+          "target": ".setDesc(\n      \"将值设置为 0 并不意味着在没有任何输入字符的情况下触发建议。相反，根据您选择的策略，将使用一个指定的值。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"It doesn't support the inline Math block.\")",
+          "target": ".setDesc(\"不支持内联数学块。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Regular expression line patterns (partial match) until the cursor, that suppresses the activation of autocomplete. Multiple patterns can be defined with line breaks.\"\n    )",
+          "target": ".setDesc(\n      \"正则匹配行（部分匹配）实现在光标位置暂时关闭自动补全功能。每行定义一个规则。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Regular expression patterns (exact match) that suppress the activation of autocomplete. Multiple patterns can be defined with line breaks.\"\n    )",
+          "target": ".setDesc(\n      \"正则匹配短语（精确匹配）实现在光标位置暂时关闭自动补全功能。每行定义一个规则。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"No focus on the suggestions until the cycle key is pressed.\")",
+          "target": ".setDesc(\"在按下循环键之前不关注任何建议。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Show Match strategy at the status bar. Changing this option requires a restart to take effect.\"\n    )",
+          "target": ".setDesc(\n      \"在状态栏显示匹配策略。更改此选项需要重启才能生效。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Show complement automatically at the status bar. Changing this option requires a restart to take effect.\"\n    )",
+          "target": ".setDesc(\n      \"在状态栏自动显示补集。更改此选项需要重启才能生效。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Show indexing status at the status bar. Changing this option requires a restart to take effect.\"\n    )",
+          "target": ".setDesc(\n      \"在状态栏显示索引状态。更改此选项需要重启后才能生效。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"It is handy if you use Vim mode because you can switch to Normal mode by one ESC, whether it shows suggestions or not.\"\n    )",
+          "target": ".setDesc(\n      \"如果你使用 Vim 模式，这会非常方便，因为你可以通过一次 ESC 键切换到正常模式，无论是否显示建议。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"It uses a default value of Strategy if set 0.\")",
+          "target": ".setDesc(\"如果设置为 0，则使用默认值 Strategy。\")"
+        },
+        {
+          "source": ".setDesc(\n        \"Regexp patterns for words to be excluded from the suggestions, separated by line breaks.\"\n      )",
+          "target": ".setDesc(\n        \"用于排除建议词的正则表达式模式，使用换行符分隔。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"Prefix match path patterns to include files.\")",
+          "target": ".setDesc(\"前缀匹配路径模式以包含文件。\")"
+        },
+        {
+          "source": ".setDesc(\"Prefix match path patterns to exclude files.\")",
+          "target": ".setDesc(\"前缀匹配路径模式以排除文件。\")"
+        },
+        {
+          "source": ".setDesc(\n        \"Specify either a relative path from Vault root or URL for each line.\"\n      )",
+          "target": ".setDesc(\n        \"请为每一行指定一个相对于库根目录的路径或URL。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"Only load words that match the regular expression pattern.\")",
+          "target": ".setDesc(\"仅加载匹配正则表达式模式的单词。\")"
+        },
+        {
+          "source": ".setDesc(\n        \"If set ';;;', 'abcd;;;efg' is shown as 'abcd' on suggestions, but completes to 'abcdefg'.\"\n      )",
+          "target": ".setDesc(\n        \"如果设置为 `';;;'`，则在建议中会显示为 `'abcd'`，但实际完成时会变为 `'abcdefg'`。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"If set ' >>> ', 'displayed >>> inserted' is shown as 'displayed' on suggestions, but completes to 'inserted'.\"\n      )",
+          "target": ".setDesc(\n        \"如果设置为“>>>”，则在建议中显示为“显示”，但实际插入的是“插入”。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"If set '<CARET>' and there is '<li><CARET></li>' in custom dictionary, it complements '<li></li>' and move a caret where between '<li>' and `</li>`.\"\n      )",
+          "target": ".setDesc(\n        \"如果设置为 `<CARET>`，且自定义词典中包含 `<li><CARET></li>`，则会补全为 `<li></li>` 并将光标移动到 `<li>` 和 `</li>` 之间。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"It shows as a suffix of displayed text if there is a difference between displayed and inserted\"\n      )",
+          "target": ".setDesc(\n        \"如果显示的文本与插入的文本不同，它会作为后缀显示。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Exclude internal links from the suggestions if whose front matters have the key whose name is same as this setting, and the value is 'true'\"\n      )",
+          "target": ".setDesc(\n        \"如果内部链接的目标条目在Front matter中包含一个与本设置同名的键，并且该键的值为 'true'，则不将其包含在建议中。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"If set 0, it will never remove\")",
+          "target": ".setDesc(\"如果设置为 0，则从不移除\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Private/\")",
+          "target": ".setPlaceholder(\"私有/\")"
+        },
+        {
+          "source": ".setPlaceholder(\"dictionary.md\")",
+          "target": ".setPlaceholder(\"字典.md\")"
+        },
+        {
+          "source": ".setTitle(\"Add to custom dictionary\")",
+          "target": ".setTitle(\"添加到自定义词典\")"
+        }
+      ]
+    }
+  }
+}

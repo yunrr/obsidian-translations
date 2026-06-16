@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-local-rest-api",
+    "version": "2.0.0",
+    "title": "Local REST API with MCP",
+    "description": "Get, change or otherwise interact with your notes in Obsidian via a REST API.",
+    "language": "zh-cn",
+    "supportedVersions": "2.5.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setDesc(\"This configures the port on which your REST API will listen for HTTPS connections.  It is recommended that you leave this port with its default setting as tools integrating with this API may expect the default port to be in use.  Under no circumstances is it recommended that you expose this service directly to the internet.\"",
+          "target": ".setDesc(\"这将配置 REST API 将在其上侦听 HTTPS 连接的端口。建议您保留此端口的默认设置，因为与此 API 集成的工具可能会期望使用默认端口。在任何情况下，都不建议您将此服务直接暴露在互联网上。\""
+        },
+        {
+          "source": ".setDesc(\"Enables a non-encrypted (HTTP) server on the port designated below.  By default this plugin requires a secure HTTPS connection, but in safe environments you may turn on the non-encrypted server to simplify interacting with the API. Interactions with the API will still require the API Key shown above.  Under no circumstances is it recommended that you expose this service to the internet, especially if you turn on this feature!\"",
+          "target": ".setDesc(\"在下面指定的端口上启用非加密(HTTP)服务器。默认情况下，此插件需要安全的 HTTPS 连接，但在安全环境中，您可以打开非加密服务器，以简化与 API 的交互。与 API 的交互仍然需要上面显示的 API 密钥。在任何情况下，都不建议您将此服务暴露在互联网上，尤其是当您打开此功能时！\""
+        },
+        {
+          "source": ".setDesc(`Advanced settings are dangerous and may make your environment less secure.`",
+          "target": ".setDesc(`高级设置很危险，可能会降低环境的安全性。`"
+        },
+        {
+          "source": "setName(\"Encrypted (HTTPS) Server Port\"",
+          "target": "setName(\"加密(HTTPS)服务器端口\""
+        },
+        {
+          "source": "setName(\"Enable Non-encrypted (HTTP) Server\"",
+          "target": "setName(\"启用非加密(HTTP)服务器\""
+        },
+        {
+          "source": "setName(\"Non-encrypted (HTTP) Server Port\"",
+          "target": "setName(\"非加密(HTTP)服务器端口\""
+        },
+        {
+          "source": "setName(\"Reset Cryptography\"",
+          "target": "setName(\"重置加密\""
+        },
+        {
+          "source": "setName(\"Restore Default Settings\"",
+          "target": "setName(\"恢复默认设置\""
+        },
+        {
+          "source": "setName(\"Show advanced settings\"",
+          "target": "setName(\"显示高级设置\""
+        },
+        {
+          "source": "setName(\"API Key\"",
+          "target": "setName(\"API 密钥\""
+        },
+        {
+          "source": "setName(\"Certificate\"",
+          "target": "setName(\"证明书\""
+        },
+        {
+          "source": "setName(\"Public Key\"",
+          "target": "setName(\"公钥\""
+        },
+        {
+          "source": "setName(\"Private Key\"",
+          "target": "setName(\"私钥\""
+        },
+        {
+          "source": "setName(\"Authorization Header\"",
+          "target": "setName(\"授权标头\""
+        },
+        {
+          "source": "setName(\"Binding Host\"",
+          "target": "setName(\"绑定主机\""
+        },
+        {
+          "source": "text: \"Your API Key\"",
+          "target": "text: \"您的 API 密钥\""
+        },
+        {
+          "source": "text: \"This must be passed in all requests via an authorization header.\"",
+          "target": "text: \"这必须通过授权标头在所有请求中传递。\""
+        },
+        {
+          "source": "text: \"Example header: \"",
+          "target": "text: \"标题示例:\""
+        },
+        {
+          "source": "text: \"See more information and examples in our interactive OpenAPI documentation.\"",
+          "target": "text: \"请参阅我们的交互式 OpenAPI 文档中的更多信息和示例。\""
+        },
+        {
+          "source": "text: \"By default this plugin uses a self-signed certificate for HTTPS; you may want to \"",
+          "target": "text: \"默认情况下，此插件使用 HTTPS 的自签名证书；你可能想\""
+        },
+        {
+          "source": "text: \"download this certificate\"",
+          "target": "text: \"下载此证书\""
+        },
+        {
+          "source": "text: \" to use it for validating your connection's security by adding it as a trusted certificate authority in the browser or tool you are using for interacting with this API.\"",
+          "target": "text: \"通过在用于与此 API 交互的浏览器或工具中将其添加为受信任的证书颁发机构，将其用于验证连接的安全性。\""
+        },
+        {
+          "source": "text: \"Advanced Settings\"",
+          "target": "text: \"高级设置\""
+        },
+        {
+          "source": "`Pressing this button will cause your certificate,",
+          "target": "`按下此按钮将导致您的证书,"
+        },
+        {
+          "source": "private and public keys, and API key to be regenerated\\.`",
+          "target": "私钥和公钥，以及要重新生成的API密钥\\.`"
+        },
+        {
+          "source": "private and public keys, and API key to be regenerated.`",
+          "target": "私钥和公钥以及要重新生成的API密钥。`"
+        },
+        {
+          "source": ".setButtonText(\"Reset Crypo\"",
+          "target": ".setButtonText(\"重设密匙\""
+        },
+        {
+          "source": ".setButtonText(\"Restore Defaults\"",
+          "target": ".setButtonText(\"恢复默认值\""
+        },
+        {
+          "source": "The settings below are potentially dangerous and",
+          "target": "以下设置具有潜在危险"
+        },
+        {
+          "source": "are intended for use only by people who know what",
+          "target": "只供知道什么的人使用"
+        },
+        {
+          "source": "they are doing. Do not change any of these settings if",
+          "target": "他们正在做。如果"
+        },
+        {
+          "source": "you do not understand what that setting is used for",
+          "target": "你不明白那个设置是用来做什么的"
+        },
+        {
+          "source": "and what security impacts changing that setting will have.",
+          "target": "以及更改该设置将产生什么安全影响。"
+        },
+        {
+          "source": "Use of this software is licensed to you under the",
+          "target": "本软件的使用许可给您"
+        },
+        {
+          "source": "MIT license, and it is important that you understand that",
+          "target": "麻省理工学院执照，重要的是你要明白"
+        },
+        {
+          "source": "this license provides you with no warranty.",
+          "target": "此许可证不为您提供任何担保。"
+        },
+        {
+          "source": "For the complete license text please see",
+          "target": "有关完整的许可文本，请参阅"
+        },
+        {
+          "source": "Pressing this button will reset this plugin's",
+          "target": "按下此按钮将重置此插件的"
+        },
+        {
+          "source": "settings to defaults.",
+          "target": "设置为默认值。"
+        },
+        {
+          "source": "text: \"How to Access\"",
+          "target": "text: \"如何访问\""
+        },
+        {
+          "source": "text: \"Local REST API\"",
+          "target": "text: \"本地 REST API\""
+        },
+        {
+          "source": "text: \"For example, the following request will return all notes in the root directory of your vault:\"",
+          "target": "text: \"例如，以下请求将返回vault根目录中的所有笔记：\""
+        },
+        {
+          "source": "text: \"Settings\"",
+          "target": "text: \"设置\""
+        },
+        {
+          "source": "You can access Obsidian Local REST API via the following URLs:",
+          "target": "您可以通过以下URL访问Obsidian本地REST API："
+        },
+        {
+          "source": "Your API Key must be passed in requests via an authorization header",
+          "target": "您的API密钥必须通过授权头传入请求"
+        },
+        {
+          "source": "<a href=\"javascript:navigator.clipboard.writeText('${this.plugin.settings.apiKey}')\">(copy)</a>:",
+          "target": "<a href=\"javascript:navigator.clipboard.writeText('${this.plugin.settings.apiKey}')\">(复制)</a>:"
+        },
+        {
+          "source": "Comprehensive documentation of what API endpoints are available can",
+          "target": "API 端点可用的全面文档可以"
+        },
+        {
+          "source": "be found in",
+          "target": "参阅"
+        },
+        {
+          "source": "<a href=\"https://coddingtonbear.github.io/obsidian-local-rest-api/\">the online docs</a>.",
+          "target": "<a href=\"https://coddingtonbear.github.io/obsidian-local-rest-api/\">在线文档</a>."
+        },
+        {
+          "source": ".setName(\"Reset All Cryptography\")",
+          "target": ".setName(\"重置所有 Cryptography\")"
+        },
+        {
+          "source": "private key, public key, and API key to be regenerated.",
+          "target": "要重新生成的私钥、公钥和API密钥。"
+        },
+        {
+          "source": "This settings panel will be closed when you press this.`)",
+          "target": "按下此按钮时，此设置面板将关闭。`)"
+        },
+        {
+          "source": ".setButtonText(\"Reset All Crypto\")",
+          "target": ".setButtonText(\"重置所有 Crypto\")"
+        },
+        {
+          "source": ".setName(\"Re-generate Certificates\")",
+          "target": ".setName(\"重新生成证书\")"
+        },
+        {
+          "source": "private key,  and public key to be re-generated, but your API key will remain unchanged.",
+          "target": "私钥和公钥，但您的 API 密钥将保持不变。"
+        },
+        {
+          "source": ".setButtonText(\"Re-generate Certificates\")",
+          "target": ".setButtonText(\"重新生成证书\")"
+        },
+        {
+          "source": ".setName(\"Enable Encrypted (HTTPs) Server\")",
+          "target": ".setName(\"启用加密（HTTP）服务器\")"
+        },
+        {
+          "source": "This controls whether the HTTPs server is enabled.  You almost certainly want to leave this switch in its default state ('on'),",
+          "target": "这控制是否启用HTTPs服务器。您几乎肯定希望将此开关保持在默认状态（'开'）,"
+        },
+        {
+          "source": "but may find it useful to turn this switch off for",
+          "target": "但可能会发现关闭此开关对"
+        },
+        {
+          "source": "troubleshooting.",
+          "target": "故障排除。"
+        },
+        {
+          "source": "Requires that <a href=\"https://127.0.0.1:${this.plugin.settings.port}/${CERT_NAME}\">this certificate</a> be",
+          "target": "要求 <a href=\"https://127.0.0.1:${this.plugin.settings.port}/${CERT_NAME}\">这个证书</a> be"
+        },
+        {
+          "source": "configured as a trusted certificate authority for",
+          "target": "配置为受信任的证书颁发机构"
+        },
+        {
+          "source": "your browser.  See <a href=\"https://github.com/coddingtonbear/obsidian-web/wiki/How-do-I-get-my-browser-trust-my-Obsidian-Local-REST-API-certificate%3F\">wiki</a> for more information.",
+          "target": "您的浏览器。请参阅 <a href=\"https://github.com/coddingtonbear/obsidian-web/wiki/How-do-I-get-my-browser-trust-my-Obsidian-Local-REST-API-certificate%3F\">wiki</a> 详情."
+        },
+        {
+          "source": "Non-encrypted (HTTP) API URL",
+          "target": "未加密（HTTP）API URL"
+        },
+        {
+          "source": "Encrypted (HTTPS) API URL<br /><br />",
+          "target": "加密（HTTPS）API URL<br /><br />"
+        },
+        {
+          "source": ">(copy)</a><br />",
+          "target": ">(复制)</a><br />"
+        }
+      ]
+    }
+  }
+}

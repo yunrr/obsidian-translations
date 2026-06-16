@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-paste-image-rename",
+    "version": "2.0.0",
+    "title": "Paste image rename",
+    "description": "Rename pasted images and all the other attchments added to the vault",
+    "language": "zh-cn",
+    "supportedVersions": "1.6.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Error: No active file found.\")",
+          "target": "Notice(\"错误：未找到活动文件。\")"
+        },
+        {
+          "source": "Notice(`Failed to rename ${newName}: ${err}`)",
+          "target": "Notice(`重命名 ${newName} 失败: ${err}`)"
+        },
+        {
+          "source": "Notice(`Failed to rename ${newName}: no active editor`)",
+          "target": "Notice(`重命名 ${newName} 失败: 没有活动编辑器`) "
+        },
+        {
+          "source": "Notice(`Renamed ${originName} to ${newName}`)",
+          "target": "Notice(`已将 ${originName} 重命名为 ${newName}`)"
+        },
+        {
+          "source": "Notice(\"Failed to batch rename images: the generated name is not meaningful\")",
+          "target": "Notice(\"批量重命名图像失败：生成的名称没有意义\")"
+        },
+        {
+          "source": ".log(\"DEBUG is enabled\")",
+          "target": ".log(\"调试已启用\")"
+        },
+        {
+          "source": ".log(`Plugin loading: ${pkg.name} ${pkg.version} BUILD_ENV=${\"production\"}`)",
+          "target": ".log(`插件加载中: ${pkg.name} ${pkg.version} BUILD_ENV=${\"production\"}`)"
+        },
+        {
+          "source": "name: \"obsidian-paste-image-rename\"",
+          "target": "name: \"obsidian-paste-image-rename\""
+        },
+        {
+          "source": "name: \"Batch rename embeded files (in the current file)\"",
+          "target": "name: \"批量重命名嵌入文件（在当前文件中）\""
+        },
+        {
+          "source": "name: \"Batch rename all images instantly (in the current file)\"",
+          "target": "name: \"立即批量重命名所有图像（在当前文件中）\""
+        },
+        {
+          "source": "text: \"Original path\"",
+          "target": "text: \"原始路径\""
+        },
+        {
+          "source": "text: \"Renamed Name\"",
+          "target": "text: \"重命名后的名称\""
+        },
+        {
+          "source": "text: \"Origin path\"",
+          "target": "text: \"源路径\""
+        },
+        {
+          "source": "text: \"New path\"",
+          "target": "text: \"新路径\""
+        },
+        {
+          "source": ".setText(\"Batch rename embeded files\")",
+          "target": ".setText(\"批量重命名嵌入文件\")"
+        },
+        {
+          "source": ".setText(\"Rename image\")",
+          "target": ".setText(\"重命名图像\")"
+        },
+        {
+          "source": ".setButtonText(\"Rename all\")",
+          "target": ".setButtonText(\"重命名所有\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Yes\")",
+          "target": ".setButtonText(\"是\")"
+        },
+        {
+          "source": ".setButtonText(\"No\")",
+          "target": ".setButtonText(\"否\")"
+        },
+        {
+          "source": ".setButtonText(\"Rename\")",
+          "target": ".setButtonText(\"重命名\")"
+        },
+        {
+          "source": ".setName(\"Name pattern\")",
+          "target": ".setName(\"名称模式\")"
+        },
+        {
+          "source": ".setName(\"Extension pattern\")",
+          "target": ".setName(\"扩展名模式\")"
+        },
+        {
+          "source": ".setName(\"Name replace\")",
+          "target": ".setName(\"名称替换\")"
+        },
+        {
+          "source": ".setName(\"New name\")",
+          "target": ".setName(\"新名称\")"
+        },
+        {
+          "source": ".setName(\"Image name pattern\")",
+          "target": ".setName(\"图像名称模式\")"
+        },
+        {
+          "source": ".setName(\"Duplicate number at start (or end)\")",
+          "target": ".setName(\"重复数字在开头（或结尾）\")"
+        },
+        {
+          "source": ".setName(\"Duplicate number delimiter\")",
+          "target": ".setName(\"重复数字分隔符\")"
+        },
+        {
+          "source": ".setName(\"Always add duplicate number\")",
+          "target": ".setName(\"始终添加重复数字\")"
+        },
+        {
+          "source": ".setName(\"Auto rename\")",
+          "target": ".setName(\"自动重命名\")"
+        },
+        {
+          "source": ".setName(\"Handle all attachments\")",
+          "target": ".setName(\"处理所有附件\")"
+        },
+        {
+          "source": ".setName(\"Exclude extension pattern\")",
+          "target": ".setName(\"排除扩展名模式\")"
+        },
+        {
+          "source": ".setName(\"Disable rename notice\")",
+          "target": ".setName(\"禁用重命名通知\")"
+        },
+        {
+          "source": ".setDesc(\"Please input the name pattern to match files (regex)\")",
+          "target": ".setDesc(\"请输入用于匹配文件的名称模式（正则表达式）\")"
+        },
+        {
+          "source": ".setDesc(\"Please input the extension pattern to match files (regex)\")",
+          "target": ".setDesc(\"请输入用于匹配文件的扩展名模式（正则表达式）\")"
+        },
+        {
+          "source": ".setDesc(\"Please input the string to replace the matched name (use $1, $2 for regex groups)\")",
+          "target": ".setDesc(\"请输入用于替换匹配名称的字符串（使用 $1, $2 作为正则表达式组）\")"
+        },
+        {
+          "source": ".setDesc(\"Please input the new name for the image (without extension)\")",
+          "target": ".setDesc(\"请输入图像的新名称（不带扩展名）\")"
+        },
+        {
+          "source": ".setDesc(`If enabled, duplicate number will be added at the start as prefix for the image name, otherwise it will be added at the end as suffix for the image name.`)",
+          "target": ".setDesc(`如果启用，重复数字将作为前缀添加到图像名称的开头，否则将作为后缀添加到图像名称的结尾。`)"
+        },
+        {
+          "source": ".setDesc(`The delimiter to generate the number prefix/suffix for duplicated names. For example, if the value is \"-\", the suffix will be like \"-1\", \"-2\", \"-3\", and the prefix will be like \"1-\", \"2-\", \"3-\". Only characters that are valid in file names are allowed.`)",
+          "target": ".setDesc(`生成重复名称的数字前缀/后缀的分隔符。例如，如果值为\"-\"，后缀将类似于\"-1\"、\"-2\"、\"-3\"，前缀将类似于\"1-\"、\"2-\"、\"3-\"。仅允许文件名中有效的字符。`)"
+        },
+        {
+          "source": ".setDesc(`If enabled, duplicate number will always be added to the image name. Otherwise, it will only be added when the name is duplicated.`)",
+          "target": ".setDesc(`如果启用，重复数字将始终添加到图像名称。否则，只有在名称重复时才会添加。`)"
+        },
+        {
+          "source": ".setDesc(`By default, the rename modal will always be shown to confirm before renaming, if this option is set, the image will be auto renamed after pasting.`)",
+          "target": ".setDesc(`默认情况下，重命名模态将始终显示以确认重命名，如果设置了此选项，图像将在粘贴后自动重命名。`)"
+        },
+        {
+          "source": ".setDesc(`By default, the plugin only handles images that starts with \"Pasted image \" in name,\n\t\t\twhich is the prefix Obsidian uses to create images from pasted content.\n\t\t\tIf this option is set, the plugin will handle all attachments that are created in the vault.`)",
+          "target": ".setDesc(`默认情况下，插件仅处理名称以\"Pasted image \"开头的图像，\n\t\t\t这是Obsidian用于从粘贴内容创建图像的前缀。\n\t\t\t如果设置了此选项，插件将处理在库中创建的所有附件。`)"
+        },
+        {
+          "source": ".setDesc(`This option is only useful when \"Handle all attachments\" is enabled.\n\t\t\tWrite a Regex pattern to exclude certain extensions from being handled. Only the first line will be used.`)",
+          "target": ".setDesc(`此选项仅在启用\"处理所有附件\"时有用。\n\t\t\t写一个正则表达式模式以排除某些扩展名的处理。仅使用第一行。`)"
+        },
+        {
+          "source": ".setDesc(`Turn off this option if you don't want to see the notice when renaming images.\n\t\t\tNote that Obsidian may display a notice when a link has changed, this option cannot disable that.`)",
+          "target": ".setDesc(`如果您不想在重命名图像时看到通知，请关闭此选项。\n\t\t\t请注意，当链接发生更改时，Obsidian可能会显示通知，此选项无法禁用。`)"
+        },
+        {
+          "source": ".innerText = 'Error: \"Name pattern\" could not be empty'",
+          "target": ".innerText = '错误：\"名称模式\"不能为空'"
+        },
+        {
+          "source": ".innerText = 'Error: \"New name\" could not be empty'",
+          "target": ".innerText = '错误：\"新名称\"不能为空'"
+        },
+        {
+          "source": "Confirm rename all",
+          "target": "确认重命名所有"
+        },
+        {
+          "source": "`Are you sure? This will rename all the ${this.state.renameTasks.length} images matched the pattern.`",
+          "target": "`您确定吗？这将重命名所有匹配模式的 ${this.state.renameTasks.length} 张图像。`"
+        },
+        {
+          "source": "The pattern indicates how the new name should be generated.",
+          "target": "该模式指示新名称应如何生成。"
+        },
+        {
+          "source": "Available variables:",
+          "target": "可用变量："
+        },
+        {
+          "source": "name of the active file, without \".md\" extension.",
+          "target": "活动文件的名称，不带 \".md\" 扩展名。"
+        },
+        {
+          "source": "this variable is read from the markdown file's frontmatter, from the same key \"imageNameKey\".",
+          "target": "此变量从markdown文件的前言部分读取，来自同一键 \"imageNameKey\"。"
+        },
+        {
+          "source": "use \"$FORMAT\" to format the current date, \"$FORMAT\" must be a Moment.js format string, e.g. {{DATE:YYYY-MM-DD}}.",
+          "target": "使用 \"$FORMAT\" 格式化当前日期， \"$FORMAT\" 必须是Moment.js格式字符串，例如 {{DATE:YYYY-MM-DD}}。"
+        },
+        {
+          "source": "Here are some examples from pattern to image names (repeat in sequence), variables: fileName = \"My note\", imageNameKey = \"foo\":",
+          "target": "以下是从模式到图像名称的示例（按顺序重复），变量：fileName = \"My note\"，imageNameKey = \"foo\"："
+        },
+        {
+          "source": "My note, My note-1, My note-2",
+          "target": "My note, My note-1, My note-2"
+        },
+        {
+          "source": "foo, foo-1, foo-2",
+          "target": "foo, foo-1, foo-2"
+        },
+        {
+          "source": "foo-20220408, foo-20220408-1, foo-20220408-2",
+          "target": "foo-20220408, foo-20220408-1, foo-20220408-2"
+        },
+        {
+          "source": "debugLog(\"renameAll\"",
+          "target": "debugLog(\"renameAll\""
+        },
+        {
+          "source": "debugLog(\"new renameTasks\"",
+          "target": "debugLog(\"new renameTasks\""
+        },
+        {
+          "source": "debugLog(\"pasted image created\"",
+          "target": "debugLog(\"粘贴图像已创建\""
+        },
+        {
+          "source": "debugLog(\"handleAllAttachments for file\"",
+          "target": "debugLog(\"处理文件的所有附件\""
+        },
+        {
+          "source": "debugLog(\"excluded file by ext\"",
+          "target": "debugLog(\"根据扩展名排除的文件\""
+        },
+        {
+          "source": "debugLog(\"generated newName:\"",
+          "target": "debugLog(\"生成的新名称:\""
+        },
+        {
+          "source": "debugLog(\"deduplicated newName:\"",
+          "target": "debugLog(\"去重的新名称:\""
+        },
+        {
+          "source": "debugLog(\"replace text\"",
+          "target": "debugLog(\"替换文本\""
+        },
+        {
+          "source": "debugLog(\"current line -> replaced line\"",
+          "target": "debugLog(\"当前行 -> 替换后的行\""
+        },
+        {
+          "source": "debugLog(\"confirmedName:\"",
+          "target": "debugLog(\"确认的名称:\""
+        },
+        {
+          "source": "debugLog(\"modals count\"",
+          "target": "debugLog(\"模态计数\""
+        },
+        {
+          "source": "debugLog(\"frontmatter\"",
+          "target": "debugLog(\"前言\""
+        },
+        {
+          "source": "debugLog(\"sibling files\"",
+          "target": "debugLog(\"同级文件\""
+        },
+        {
+          "source": "debugLog(\"dupNameRegex\"",
+          "target": "debugLog(\"dupNameRegex\""
+        },
+        {
+          "source": "debugLog(\"active file\"",
+          "target": "debugLog(\"活动文件\""
+        },
+        {
+          "source": "debugLog(\"doRename\"",
+          "target": "debugLog(\"执行重命名\""
+        }
+      ]
+    }
+  }
+}

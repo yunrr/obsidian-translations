@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "settings-search",
+    "version": "2.0.0",
+    "title": "Settings Search",
+    "description": "Globally search settings in Obsidian.md",
+    "language": "zh-cn",
+    "supportedVersions": "1.3.10",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setText(\"No results found :(\")",
+          "target": ".setText(\"未找到结果 :(\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Search settings...\")",
+          "target": ".setPlaceholder(\"搜索设置……\")"
+        },
+        {
+          "source": ".setTooltip(`Open ${resource.text} Settings`)",
+          "target": ".setTooltip(`打开${resource.text}设置`)"
+        },
+        {
+          "source": ".createEl(\"h3\", {\n        text: \"Settings Search Results\"\n      })",
+          "target": ".createEl(\"h3\", {\n        text: \"搜索结果\"\n      })"
+        }
+      ]
+    }
+  }
+}

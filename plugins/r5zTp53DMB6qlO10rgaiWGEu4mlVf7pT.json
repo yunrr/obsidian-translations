@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "lineage",
+    "version": "2.0.0",
+    "title": "Lineage",
+    "description": "Edit Markdown in a keyboard-centric Miller columns interface. Inspired by Gingko Writer.",
+    "language": "zh-cn",
+    "supportedVersions": "0.6.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(lang.error_apply_snapshot_while_editing)",
+          "target": "Notice(lang.error_apply_snapshot_while_editing)"
+        },
+        {
+          "source": "Notice(message)",
+          "target": "Notice(message)"
+        },
+        {
+          "source": "Notice(lang.error_generic)",
+          "target": "Notice(lang.error_generic)"
+        },
+        {
+          "source": "Notice(\"Link copied to clipboard\")",
+          "target": "Notice(\"链接已复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Could not copy link to clipboard\")",
+          "target": "Notice(\"无法将链接复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"This column is empty\")",
+          "target": "Notice(\"此列为空\")"
+        },
+        {
+          "source": "Notice(\"Hold space to change card position\")",
+          "target": "Notice(\"留出空间以更改卡片位置\")"
+        },
+        {
+          "source": "Notice(\n      `Imported ${gingkoFiles.length} Gingko file${gingkoFiles.length === 1 ? \"\" : \"s\"}`\n    )",
+          "target": "Notice(\n      `Imported ${gingkoFiles.length} Gingko file${gingkoFiles.length === 1 ? \"\" : \"s\"}`\n    )"
+        },
+        {
+          "source": ".log(`[DEBUG]: `, ...message)",
+          "target": ".log(`[DEBUG]: `, ...message)"
+        },
+        {
+          "source": ".log(`[INFO]: `, ...message)",
+          "target": ".log(`[INFO]: `, ...message)"
+        },
+        {
+          "source": ".error(`[${location}] action: `, action)",
+          "target": ".error(`[${location}] action: `, action)"
+        },
+        {
+          "source": ".error(`[${location}]`, error)",
+          "target": ".error(`[${location}]`, error)"
+        },
+        {
+          "source": ".error(error)",
+          "target": ".error(error)"
+        },
+        {
+          "source": ".error(`[ERROR]: `, ...message)",
+          "target": ".error(`[ERROR]: `, ...message)"
+        },
+        {
+          "source": "name: \"arrow-left\"",
+          "target": "name: \"箭头向左\""
+        },
+        {
+          "source": "name: \"arrow-right\"",
+          "target": "name: \"箭头向右\""
+        },
+        {
+          "source": "name: \"chevron-down\"",
+          "target": "name: \"向下箭头\""
+        },
+        {
+          "source": "name: \"chevron-right\"",
+          "target": "name: \"右箭头\""
+        },
+        {
+          "source": "name: \"chevron-up\"",
+          "target": "name: \"向上箭头\""
+        },
+        {
+          "source": "name: \"clipboard-paste\"",
+          "target": "name: \"直接从剪贴板粘贴\""
+        },
+        {
+          "source": "name: \"file-minus\"",
+          "target": "name: \"删除文件\""
+        },
+        {
+          "source": "name: \"file-output\"",
+          "target": "name: \"文件输出\""
+        },
+        {
+          "source": "name: \"file-pen\"",
+          "target": "name: \"档案笔\""
+        },
+        {
+          "source": "name: \"file-plus\"",
+          "target": "name: \"文件增强\""
+        },
+        {
+          "source": "name: \"file-symlink\"",
+          "target": "name: \"文件符号链接\""
+        },
+        {
+          "source": "name: \"file-up\"",
+          "target": "name: \"文件上传\""
+        },
+        {
+          "source": "name: \"heading-1\"",
+          "target": "name: \"标题-1\""
+        },
+        {
+          "source": "name: \"history\"",
+          "target": "name: \"历史\""
+        },
+        {
+          "source": "name: \"keyboard\"",
+          "target": "name: \"键盘\""
+        },
+        {
+          "source": "name: \"maximize\"",
+          "target": "name: \"最大化\""
+        },
+        {
+          "source": "name: \"merge\"",
+          "target": "name: \"合并\""
+        },
+        {
+          "source": "name: \"minus\"",
+          "target": "name: \"减\""
+        },
+        {
+          "source": "name: \"more-vertical\"",
+          "target": "name: \"更多选项\""
+        },
+        {
+          "source": "name: \"pen\"",
+          "target": "name: \"笔\""
+        },
+        {
+          "source": "name: \"pencil\"",
+          "target": "name: \"铅笔\""
+        },
+        {
+          "source": "name: \"plus\"",
+          "target": "name: \"加\""
+        },
+        {
+          "source": "name: \"redo-2\"",
+          "target": "name: \"重做-2\""
+        },
+        {
+          "source": "name: \"rotate-ccw\"",
+          "target": "name: \"旋转-ccw\""
+        },
+        {
+          "source": "name: \"save\"",
+          "target": "name: \"保存\""
+        },
+        {
+          "source": "name: \"scissors\"",
+          "target": "name: \"剪刀\""
+        },
+        {
+          "source": "name: \"search\"",
+          "target": "name: \"搜索\""
+        },
+        {
+          "source": "name: \"settings\"",
+          "target": "name: \"设置\""
+        },
+        {
+          "source": "name: \"split\"",
+          "target": "name: \"分离\""
+        },
+        {
+          "source": "name: \"text\"",
+          "target": "name: \"文本\""
+        },
+        {
+          "source": "name: \"trash\"",
+          "target": "name: \"垃圾\""
+        },
+        {
+          "source": "name: \"undo-2\"",
+          "target": "name: \"撤销-2\""
+        },
+        {
+          "source": "name: \"x\"",
+          "target": "name: \"x\""
+        },
+        {
+          "source": "name: \"lineage-cards\"",
+          "target": "name: \"lineage-卡片\""
+        },
+        {
+          "source": "name: \"lineage-split\"",
+          "target": "name: \"lineage-拆分\""
+        },
+        {
+          "source": "name: \"go_right\"",
+          "target": "name: \"向右\""
+        },
+        {
+          "source": "name: \"go_down\"",
+          "target": "name: \"向下\""
+        },
+        {
+          "source": "name: \"go_left\"",
+          "target": "name: \"向左\""
+        },
+        {
+          "source": "name: \"go_up\"",
+          "target": "name: \"向上\""
+        },
+        {
+          "source": "name: \"go_to_beginning_of_group\"",
+          "target": "name: \"转到小组开头\""
+        },
+        {
+          "source": "name: \"go_to_end_of_group\"",
+          "target": "name: \"转到小组结尾\""
+        },
+        {
+          "source": "name: \"go_to_beginning_of_column\"",
+          "target": "name: \"转到列首\""
+        },
+        {
+          "source": "name: \"go_to_end_of_column\"",
+          "target": "name: \"转到列尾\""
+        },
+        {
+          "source": "name: \"navigate_back\"",
+          "target": "name: \"返回上一页\""
+        },
+        {
+          "source": "name: \"navigate_forward\"",
+          "target": "name: \"向前导航\""
+        },
+        {
+          "source": "name: \"navigate_to_next_node\"",
+          "target": "name: \"导航到下一个节点\""
+        },
+        {
+          "source": "name: \"navigate_to_previous_node\"",
+          "target": "name: \"导航到上一个节点\""
+        },
+        {
+          "source": "name: \"enable_edit_mode\"",
+          "target": "name: \"启用编辑模式\""
+        },
+        {
+          "source": "name: \"enable_edit_mode_and_place_cursor_at_start\"",
+          "target": "name: \"启用编辑模式将光标放在起始位置\""
+        },
+        {
+          "source": "name: \"save_changes_and_exit_card\"",
+          "target": "name: \"保存更改和退出卡片\""
+        },
+        {
+          "source": "name: \"disable_edit_mode\"",
+          "target": "name: \"禁用编辑模式\""
+        },
+        {
+          "source": "name: \"add_above\"",
+          "target": "name: \"添加到上面\""
+        },
+        {
+          "source": "name: \"add_below\"",
+          "target": "name: \"添加到下面\""
+        },
+        {
+          "source": "name: \"add_child\"",
+          "target": "name: \"添加子项\""
+        },
+        {
+          "source": "name: \"add_above_and_split\"",
+          "target": "name: \"在上面添加并拆分\""
+        },
+        {
+          "source": "name: \"add_below_and_split\"",
+          "target": "name: \"在下面添加并拆分\""
+        },
+        {
+          "source": "name: \"add_child_and_split\"",
+          "target": "name: \"添加子项并拆分\""
+        },
+        {
+          "source": "name: \"move_node_up\"",
+          "target": "name: \"向上移动节点\""
+        },
+        {
+          "source": "name: \"move_node_down\"",
+          "target": "name: \"向下移动节点\""
+        },
+        {
+          "source": "name: \"move_node_right\"",
+          "target": "name: \"向右移动节点\""
+        },
+        {
+          "source": "name: \"move_node_left\"",
+          "target": "name: \"向左移动节点\""
+        },
+        {
+          "source": "name: \"merge_with_node_above\"",
+          "target": "name: \"与上面的节点合并\""
+        },
+        {
+          "source": "name: \"merge_with_node_below\"",
+          "target": "name: \"与下面的节点合并\""
+        },
+        {
+          "source": "name: \"undo_change\"",
+          "target": "name: \"撤销改变\""
+        },
+        {
+          "source": "name: \"redo_change\"",
+          "target": "name: \"恢复改变\""
+        },
+        {
+          "source": "name: \"copy_node\"",
+          "target": "name: \"复制节点\""
+        },
+        {
+          "source": "name: \"cut_node\"",
+          "target": "name: \"剪切节点\""
+        },
+        {
+          "source": "name: \"paste_node\"",
+          "target": "name: \"粘贴节点\""
+        },
+        {
+          "source": "name: \"extend_select_up\"",
+          "target": "name: \"向上扩展选择\""
+        },
+        {
+          "source": "name: \"extend_select_down\"",
+          "target": "name: \"向下扩展选择\""
+        },
+        {
+          "source": "name: \"extend_select_to_end_of_column\"",
+          "target": "name: \"扩展至列尾\""
+        },
+        {
+          "source": "name: \"extend_select_to_start_of_column\"",
+          "target": "name: \"扩展至列首\""
+        },
+        {
+          "source": "name: \"extend_select_to_end_of_group\"",
+          "target": "name: \"扩展至群组结尾\""
+        },
+        {
+          "source": "name: \"extend_select_to_start_of_group\"",
+          "target": "name: \"扩展至群组开头\""
+        },
+        {
+          "source": "name: \"scroll_right\"",
+          "target": "name: \"向右滚动\""
+        },
+        {
+          "source": "name: \"scroll_left\"",
+          "target": "name: \"向左滚动\""
+        },
+        {
+          "source": "name: \"scroll_up\"",
+          "target": "name: \"向上滚动\""
+        },
+        {
+          "source": "name: \"scroll_down\"",
+          "target": "name: \"向下滚动\""
+        },
+        {
+          "source": "name: \"align_branch\"",
+          "target": "name: \"对齐分支\""
+        },
+        {
+          "source": "name: \"delete_card\"",
+          "target": "name: \"删除卡片\""
+        },
+        {
+          "source": "name: \"toggle_search_input\"",
+          "target": "name: \"切换搜索输入\""
+        },
+        {
+          "source": ".setName(\"Font size\")",
+          "target": ".setName(\"字体大小\")"
+        },
+        {
+          "source": ".setName(\"Background color\")",
+          "target": ".setName(\"背景颜色\")"
+        },
+        {
+          "source": ".setName(\"Active branch color\")",
+          "target": ".setName(\"活动分支颜色\")"
+        },
+        {
+          "source": ".setName(\"Card width\")",
+          "target": ".setName(\"卡片宽度\")"
+        },
+        {
+          "source": ".setName(\"Scrolling behavior\")",
+          "target": ".setName(\"滚动行为\")"
+        },
+        {
+          "source": ".setName(\"Limit card height\")",
+          "target": ".setName(\"限制卡片高度\")"
+        },
+        {
+          "source": ".setName(\"Default format\")",
+          "target": ".setName(\"默认格式\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset\")",
+          "target": ".setTooltip(\"重置\")"
+        },
+        {
+          "source": ".setTitle(\"Choose how to split this card\")",
+          "target": ".setTitle(\"选择如何拆分卡片\")"
+        },
+        {
+          "source": ".setTitle(\"Split card\")",
+          "target": ".setTitle(\"拆分卡片\")"
+        },
+        {
+          "source": ".setTitle(\"Merge with the card above\")",
+          "target": ".setTitle(\"与上面的卡片合并\")"
+        },
+        {
+          "source": ".setTitle(\"Merge with the card below\")",
+          "target": ".setTitle(\"与下面的卡片合并\")"
+        },
+        {
+          "source": ".setTitle(\"Copy link to block\")",
+          "target": ".setTitle(\"复制链接以屏蔽\")"
+        },
+        {
+          "source": ".setTitle(\"Copy\")",
+          "target": ".setTitle(\"复制\")"
+        },
+        {
+          "source": ".setTitle(\"Cut\")",
+          "target": ".setTitle(\"剪切\")"
+        },
+        {
+          "source": ".setTitle(\"Paste\")",
+          "target": ".setTitle(\"粘贴\")"
+        },
+        {
+          "source": ".setTitle(\"Extract branch\")",
+          "target": ".setTitle(\"提取分支\")"
+        },
+        {
+          "source": ".setTitle(\"Export column\")",
+          "target": ".setTitle(\"导出列\")"
+        },
+        {
+          "source": ".setTitle(\"Lineage - Document backup\")",
+          "target": ".setTitle(\"Lineage - 文档备份\")"
+        }
+      ]
+    }
+  }
+}
