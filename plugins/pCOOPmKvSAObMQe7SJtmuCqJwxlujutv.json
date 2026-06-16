@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "gpg-encrypt",
+    "version": "1.0.1",
+    "title": "GPG Encrypt",
+    "description": "GPG Encrypt Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n...\n-----END PGP PUBLIC KEY BLOCK-----",
+          "target": "-----BEGIN PGP PUBLIC KEY BLOCK-----\\n...\\n-----END PGP PUBLIC KEY BLOCK-----"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "-----BEGIN PGP PRIVATE KEY BLOCK-----\n...\n-----END PGP PRIVATE KEY BLOCK-----",
+          "target": "-----BEGIN PGP PRIVATE KEY BLOCK-----\\n...\\n-----END PGP PRIVATE KEY BLOCK-----"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "openpgpjs",
+          "target": "openpgpjs"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "cli",
+          "target": "命令行界面"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "CLI commands",
+          "target": "CLI 命令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Select a key to sign",
+          "target": "选择一个密钥进行签名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[OpenPGP.js debug]",
+          "target": "[OpenPGP.js 调试]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error reading public key:",
+          "target": "读取公钥时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[OpenPGP.js debug]",
+          "target": "[OpenPGP.js 调试]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Unlock",
+          "target": "解锁"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy Plain Text",
+          "target": "复制纯文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Restore plain text to document",
+          "target": "将纯文本恢复到文档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy encrypted text",
+          "target": "复制加密文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select which GPG library you want to use (Tip: If you want the app to work on mobile devices, use openpgpjs)",
+          "target": "选择您要使用的 GPG 库（提示：如果您希望应用在移动设备上运行，请使用 openpgpjs）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Path to GPG executable",
+          "target": "GPG 可执行文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Always trust any used GPG key",
+          "target": "始终信任任何使用的 GPG 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sign the encrypted text with GPG",
+          "target": "使用 GPG 对加密文本进行签名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add custom commands to be executed before or after the gpg command calls",
+          "target": "添加在 gpg 命令调用之前或之后执行的自定义命令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "List of GPG public keys (Mark the keys that by default will be used for encryption).",
+          "target": "GPG 公钥列表（标记默认用于加密的密钥）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "GPG key to sign the encrypted text",
+          "target": "用于签名加密文本的 GPG 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the commands to be executed before running the gpg commands (Note: If you need to nest more than one command use &&, DO NOT include closing characters && as these will be added automatically)",
+          "target": "输入在运行 gpg 命令之前要执行的命令（注意：如果需要嵌套多个命令，请使用 &&，不要包含结尾字符 &&，因为它们会自动添加）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the commands to be executed after running the gpg commands (Note: If you need to nest more than one command use &&, DO NOT include closing characters && as these will be added automatically)",
+          "target": "输入在运行 gpg 命令之后要执行的命令（注意：如果需要嵌套多个命令，请使用 &&，不要包含结尾字符 &&，因为它们会自动添加）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Print whole command in the Obsidian Developer Console to debug (cmd+option+i Mac - ctrl+shift+i Windows)",
+          "target": "在 Obsidian 开发者控制台中打印完整命令以进行调试（Mac: cmd+option+i - Windows: ctrl+shift+i）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paste your ASCII-armored GPG public key here. Used for encryption.",
+          "target": "在此处粘贴您的 ASCII 装甲 GPG 公钥。用于加密。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paste your ASCII-armored GPG private key here. Used for decryption. Stored locally in plugin data.",
+          "target": "在此处粘贴您的 ASCII 装甲 GPG 私钥。用于解密。存储在本地插件数据中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Save passphrase to disk for auto-decrypt. Leave blank to be prompted each time (recommended).",
+          "target": "将密码短语保存到磁盘以实现自动解密。留空则每次提示（推荐）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How long to remember the passphrase in memory after entering it. Set to 0 to prompt every time.",
+          "target": "输入密码短语后，在内存中记住多长时间。设置为 0 则每次提示。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sign the encrypted text with your private key",
+          "target": "使用您的私钥对加密文本进行签名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "GPG Library",
+          "target": "GPG 库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "GPG executable",
+          "target": "GPG 可执行文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Public keys",
+          "target": "公钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Always trust any key",
+          "target": "始终信任任何密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sign encrypted text",
+          "target": "签名加密文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Aditional commands",
+          "target": "附加命令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "GPG key to sign",
+          "target": "用于签名的 GPG 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Additional Commands (Before)",
+          "target": "附加命令（之前）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Additional Commands (After)",
+          "target": "附加命令（之后）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Print command in Obsidian Developer Console",
+          "target": "在 Obsidian 开发者控制台中打印命令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Public Key (Armored)",
+          "target": "公钥（装甲）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Private Key (Armored)",
+          "target": "私钥（装甲）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Private Key Passphrase (optional)",
+          "target": "私钥密码短语（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Passphrase cache duration (minutes)",
+          "target": "密码短语缓存时长（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sign when encrypting",
+          "target": "加密时签名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Passphrase",
+          "target": "密码短语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "gpg",
+          "target": "gpg"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "command",
+          "target": "命令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "leave blank to prompt",
+          "target": "留空则提示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter passphrase...",
+          "target": "输入密码短语..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Warning: Only advance users",
+          "target": "警告：仅限高级用户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Plain text preview of the decrypted message:",
+          "target": "解密消息的纯文本预览："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Preview encrypted text:",
+          "target": "加密文本预览："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Select some text to encrypt",
+          "target": "❌ 请选择要加密的文本"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Open a file to encrypt",
+          "target": "❌ 请打开一个文件进行加密"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Plain text was copied!",
+          "target": "纯文本已复制！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cannot restore plain text in reading mode. Please switch to Live Preview mode to restore the text.",
+          "target": "无法在阅读模式下恢复纯文本。请切换到实时预览模式以恢复文本。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error restoring plain text: activeEditor or editor are not available",
+          "target": "恢复纯文本时出错：activeEditor 或 editor 不可用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Plain text restored successfully!",
+          "target": "纯文本恢复成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "The encrypted text was not found in the current document",
+          "target": "在当前文档中未找到加密文本"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Encrypted text was copied!",
+          "target": "加密文本已复制！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "twofish",
+          "target": "twofish"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Encrypt inline",
+          "target": "内联加密"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Encrypt document",
+          "target": "加密文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🔑 Enter Passphrase",
+          "target": "🔑 输入密码短语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter your GPG private key passphrase to decrypt.",
+          "target": "输入您的 GPG 私钥密码短语以进行解密。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "❌ No public key configured. Go to plugin settings and paste your GPG public key.",
+          "target": "❌ 未配置公钥。请转到插件设置并粘贴您的 GPG 公钥。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select which Public GPG key(s) you want to be able to decrypt the text:",
+          "target": "选择您希望用于解密文本的 GPG 公钥："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Decrypted text",
+          "target": "解密文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Decrypt Preview",
+          "target": "解密预览"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
