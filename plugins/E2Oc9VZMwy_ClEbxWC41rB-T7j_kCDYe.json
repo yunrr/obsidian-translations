@@ -1,0 +1,1307 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "media-extended",
+    "version": "2.0.0",
+    "title": "Media Extended",
+    "description": "Media(Video/Audio) Playback Enhancement for Obsidian.md",
+    "language": "zh-cn",
+    "supportedVersions": "3.2.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Failed to insert timestamp, see console for details\")",
+          "target": "Notice(\"插入时间戳失败,请参阅控制台了解详细信息\")"
+        },
+        {
+          "source": "Notice(\"Failed to get media info from the saved file: \"+n.path)",
+          "target": "Notice(\"无法从保存的文件中获取媒体信息:\"+n.path)"
+        },
+        {
+          "source": "Notice(\"One of the note with timestamp is closed, the timestamp will not be updated\")",
+          "target": "Notice(\"带有时间戳的注释之一已关闭,时间戳将不会更新\")"
+        },
+        {
+          "source": "Notice(\"Failed to open note for timestamp update: \"+l.path)",
+          "target": "Notice(\"无法打开备注以更新时间戳:\"+l.path)"
+        },
+        {
+          "source": "Notice(\"You've taken a timestamp for the recording, probably in canvas node, keep editor in foreground and in live preview mode. Otherwise, the dummy timestamp cannot be updated when recording is saved.\")",
+          "target": "Notice(\"您已经为录制设置了时间戳,可能是在画布节点中,将编辑器保持在前台和实时预览模式。否则,保存录制时无法更新虚拟时间戳。\")"
+        },
+        {
+          "source": "Notice(\"Failed to go back, see console for details\")",
+          "target": "Notice(\"返回失败,详见控制台\")"
+        },
+        {
+          "source": "Notice(\"Failed to go forward, see console for details\")",
+          "target": "Notice(\"前进失败,请查看控制台了解详细信息\")"
+        },
+        {
+          "source": "Notice(\"Failed to refresh, see console for details\")",
+          "target": "Notice(\"刷新失败,详见控制台\")"
+        },
+        {
+          "source": "Notice(\"Cache cleared\")",
+          "target": "Notice(\"缓存已清除\")"
+        },
+        {
+          "source": "Notice(\"Failed to clear cache, see console for details\")",
+          "target": "Notice(\"清除缓存失败,请参阅控制台了解详细信息\")"
+        },
+        {
+          "source": "Notice(\"Invalid playback rate\")",
+          "target": "Notice(\"播放速率无效\")"
+        },
+        {
+          "source": "Notice(createFragment(l=>{l.appendText(`Failed to load webpage: ${s}`)",
+          "target": "Notice(createFragment(l=>{l.appendText(`未能加载网页: ${s}`)"
+        },
+        {
+          "source": "Notice(\"URL copied to clipboard.\")",
+          "target": "Notice(\"URL已复制到剪贴板。\")"
+        },
+        {
+          "source": "Notice(createFragment(n=>{n.appendText(\"You're using a webpage media player.\")",
+          "target": "Notice(createFragment(n=>{n.appendText(\"您正在使用网页媒体播放器。\")"
+        },
+        {
+          "source": "Notice(\"Cannot take screenshot due to CORS restriction, you may try open media as webpage to bypass this\")",
+          "target": "Notice(\"由于CORS限制,无法截图,您可以尝试将媒体作为网页打开以绕过此限制\")"
+        },
+        {
+          "source": "Notice(\"Cannot take screenshot: \"+(i instanceof Error?i.message:String(i)",
+          "target": "Notice(\"无法截图:\"+(i instanceof Error?i.message:String(i)"
+        },
+        {
+          "source": "Notice(`Failed to create folder ${t}: ${a instanceof Error?a.message:a}`)",
+          "target": "Notice(`未能创建文件夹 ${t}: ${a instanceof Error?a.message:a}`)"
+        },
+        {
+          "source": "Notice(`Folder path occupied, check your preferences: ${o.path}`)",
+          "target": "Notice(`文件夹路径已占用,请检查您的首选项: ${o.path}`)"
+        },
+        {
+          "source": "Notice(\"Player not initialized\")",
+          "target": "Notice(\"播放器未初始化\")"
+        },
+        {
+          "source": "Notice(\"Screenshot is not supported for this media\")",
+          "target": "Notice(\"此媒体不支持截图\")"
+        },
+        {
+          "source": "Notice(\"No media is opened\")",
+          "target": "Notice(\"未打开任何媒体\")"
+        },
+        {
+          "source": "Notice(\"Unknown mime type: \"+g.type)",
+          "target": "Notice(\"未知的mime类型:\"+g.type)"
+        },
+        {
+          "source": "Notice(`Failed to save screenshot to ${_}: ${D instanceof Error?D.message:D}`)",
+          "target": "Notice(`未能将屏幕截图保存到 ${_}: ${D instanceof Error?D.message:D}`)"
+        },
+        {
+          "source": "Notice(`Failed to create screenshot in ${_}: ${D instanceof Error?D.message:D}`)",
+          "target": "Notice(`在${_}中创建屏幕截图失败: ${D instanceof Error?D.message:D}`)"
+        },
+        {
+          "source": "Notice(`Screenshot file occupied by a folder: ${_.path}`)",
+          "target": "Notice(`屏幕截图文件被文件夹占用:${_.path}`)"
+        },
+        {
+          "source": "Notice(`Screenshot ${R?\"created in\":\"save to\"} ${_.path}`)",
+          "target": "Notice(`屏幕截图${R?\"创建于\":\"保存到\"}${_.path}`)"
+        },
+        {
+          "source": "Notice(\"Failed to insert screenshot, see console for details\")",
+          "target": "Notice(\"插入截图失败,详见控制台\")"
+        },
+        {
+          "source": "Notice(\"Failed to copy screenshot, see console for details\")",
+          "target": "Notice(\"复制截图失败,详见控制台\")"
+        },
+        {
+          "source": "Notice(\"Screenshot copied to clipboard\")",
+          "target": "Notice(\"屏幕截图已复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Playback not started yet\")",
+          "target": "Notice(\"播放尚未开始\")"
+        },
+        {
+          "source": "Notice(createFragment(r=>{r.appendText(`You are taking ${t} from media player. By default, they will only be saved in the media note. `)",
+          "target": "Notice(createFragment(r=>{r.appendText(`您正在从媒体播放器中提取${t}。默认情况下,它们将仅保存在媒体注释中。`)"
+        },
+        {
+          "source": "Notice(createFragment(n=>{switch(n.appendText(`Failed to load media for ${e}: `)",
+          "target": "Notice(createFragment(n=>{switch(n.appendText(`未能加载${e}的媒体:`)"
+        },
+        {
+          "source": "Notice(`Timestamp taken in \"${i.file.basename}\"`)",
+          "target": "Notice(`在\"${i.file.basename}\"中获取的时间戳`)"
+        },
+        {
+          "source": "Notice(`Taking screenshot in \"${i.file.basename}\"`)",
+          "target": "Notice(`在\"${i.file.basename}\"中截取屏幕截图`)"
+        },
+        {
+          "source": "Notice(\"No active note can be edited\")",
+          "target": "Notice(\"无法编辑任何活动笔记\")"
+        },
+        {
+          "source": "Notice(`Failed to open file in file explorer: ${i.message}`)",
+          "target": "Notice(`在文件资源管理器中打开文件失败: ${i.message}`)"
+        },
+        {
+          "source": "Notice(`Failed to open file in system player: ${i.message}`)",
+          "target": "Notice(`在系统播放器中打开文件失败: ${i.message}`)"
+        },
+        {
+          "source": "Notice(\"For in-vault media, use internal link instead\")",
+          "target": "Notice(\"对于vault中的介质,请改用内部链接\")"
+        },
+        {
+          "source": "Notice(`Failed to convert file path to URL: ${s}`)",
+          "target": "Notice(`无法将文件路径转换为URL:${s}`)"
+        },
+        {
+          "source": "Notice(createFragment(o=>{o.createDiv({text:\"File URI is not supported in this environment. \"})",
+          "target": "Notice(createFragment(o=>{o.createDiv({text:\"此环境中不支持文件URI。\"})"
+        },
+        {
+          "source": "Notice(\"Remote track not yet supported\")",
+          "target": "Notice(\"尚未支持远程跟踪\")"
+        },
+        {
+          "source": "Notice(\"Cannot save transcript from this media\")",
+          "target": "Notice(\"无法保存此媒体的成绩单\")"
+        },
+        {
+          "source": "Notice(`Failed to save transcript: track ${t} not found`)",
+          "target": "Notice(`保存成绩单失败:找不到跟踪${t}`)"
+        },
+        {
+          "source": "Notice(`Transcript saved to ${h.path}`)",
+          "target": "Notice(`成绩单已保存到${h.path}`)"
+        },
+        {
+          "source": "Notice(`Failed to save transcript: field \\`${y.plural}\\` in note ${d.path} is not an array of strings, you may need to fix it manually.`)",
+          "target": "Notice(`保存成绩单失败:注释${d.path}中的字段\\`${y.plural}\\`不是字符串数组,您可能需要手动修复它。`)"
+        },
+        {
+          "source": "Notice(`Failed to save transcript: field \\`${y.singular}\\` in note ${d.path} is not a string, you may need to fix it manually.`)",
+          "target": "Notice(`保存成绩单失败:注释${d.path}中的字段\\`${y.singular}\\`不是字符串,您可能需要手动修复它。`)"
+        },
+        {
+          "source": "Notice(`Failed to save transcript: ${l.message}`)",
+          "target": "Notice(`保存成绩单失败:${l.message}`)"
+        },
+        {
+          "source": "Notice(\"Failed to save transcript, for details see console.\")",
+          "target": "Notice(\"保存成绩单失败,有关详细信息,请参阅控制台。\")"
+        },
+        {
+          "source": "Notice(\"URL copied to clipboard\")",
+          "target": "Notice(\"URL已复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"URL with timestamp copied\")",
+          "target": "Notice(\"复制了带有时间戳的URL\")"
+        },
+        {
+          "source": "Notice(`Invalid language code detected in preferences: ${i}, reverting to ${o}.`)",
+          "target": "Notice(`在首选项中检测到无效的语言代码: ${i},将恢复为 ${o}.`)"
+        },
+        {
+          "source": "Notice(`Cannot open dropped file${i.length>1?\"s\":\"\"}, not supported media file type`)",
+          "target": "Notice(`无法打开已删除的文件${i.length>1?\"s\":\"\"}, 不支持的媒体文件类型`)"
+        },
+        {
+          "source": "Notice(`For protocol ${o.action}, the file must be in ${o.path}`)",
+          "target": "Notice(`对于协议${o.action},文件必须位于${o.path}中`)"
+        },
+        {
+          "source": "Notice(\"Failed to convert file path to URL: \"+o)",
+          "target": "Notice(\"无法将文件路径转换为URL:\"+o)"
+        },
+        {
+          "source": "Notice(\"Failed to resolve file: \"+o)",
+          "target": "Notice(\"解析文件失败:\"+o)"
+        },
+        {
+          "source": "Notice(\"File path is only supported in desktop app\")",
+          "target": "Notice(\"文件路径仅在桌面应用程序中受支持\")"
+        },
+        {
+          "source": "Notice(\"Not a file: \"+i.readableHref)",
+          "target": "Notice(\"不是文件:\"+i.readableHref)"
+        },
+        {
+          "source": "Notice(\"File not found: \"+l)",
+          "target": "Notice(\"找不到文件:\"+l)"
+        },
+        {
+          "source": "Notice(\"Permission denied: \"+l)",
+          "target": "Notice(\"权限被拒绝:\"+l)"
+        },
+        {
+          "source": "Notice(\"Invalid URL: \"+r.url)",
+          "target": "Notice(\"无效URL:\"+r.url)"
+        },
+        {
+          "source": "Notice(\"Invalid URL: \"+i+\"?\"+a.toString()",
+          "target": "Notice(\"无效 URL: \"+i+\"?\"+a.toString()"
+        },
+        {
+          "source": "Notice(\"Invail URL: \"+r.href)",
+          "target": "Notice(\"不可用URL:\"+r.href)"
+        },
+        {
+          "source": "Notice(createFragment(o=>{o.appendText(`Opening ${i.type} from browser: `)",
+          "target": "Notice(createFragment(o=>{o.appendText(`从浏览器打开${i.type}:`)"
+        },
+        {
+          "source": "Notice(`Copied at ${o} to clipboard`)",
+          "target": "Notice(`以${o}复制到剪贴板`)"
+        },
+        {
+          "source": "Notice(`Failed to load subtitle ${n.path}: ${o instanceof Error?o.message:\"See console for details\"}`)",
+          "target": "Notice(`未能加载字幕 ${n.path}: ${o instanceof Error?o.message:\"有关详细信息,请参阅控制台\"}`)"
+        },
+        {
+          "source": "Notice(\"Protocol not yet supported\")",
+          "target": "Notice(\"协议尚未得到支持\")"
+        },
+        {
+          "source": ".log(\"No partition, skip modifying session\")",
+          "target": ".log(\"无分区,跳过修改会话\")"
+        },
+        {
+          "source": ".log(\"ignore webview timeout notice\")",
+          "target": ".log(\"忽略webview超时通知\")"
+        },
+        {
+          "source": "alog({title:\"Pick a folder\",message:\"Pick a folder to resolve media files from\",buttonLabel:\"Pick\",properties:[\"openDirectory\"]})",
+          "target": "alog({title:\"选择文件夹\",message:\"选择一个文件夹来解析媒体文件\",buttonLabel:\"选择\",properties:[\"openDirectory\"]})"
+        },
+        {
+          "source": "alog({title:\"Pick a media file\",message:\"Pick a media file to open\",buttonLabel:\"Pick\",properties:[\"openFile\"],filters:[{extensions:Go(\"video\")",
+          "target": "alog({title:\"选择媒体文件\",message:\"选择要打开的媒体文件\",buttonLabel:\"选择\",properties:[\"openFile\"],filters:[{extensions:Go(\"video\")"
+        },
+        {
+          "source": ".error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\")",
+          "target": ".error(\"forceFrameRate取0到125之间的正整数,不支持强制帧速率高于125 fps\")"
+        },
+        {
+          "source": ".error(\"Missing startTime and endTime\",t,e)",
+          "target": ".error(\"缺少开始时间和结束时间\",t,e)"
+        },
+        {
+          "source": ".error(\"Failed to insert timestamp\",a)",
+          "target": ".error(\"插入时间戳失败\",a)"
+        },
+        {
+          "source": ".error(\"failed to insert timestamp\",c)",
+          "target": ".error(\"未能插入时间戳\",c)"
+        },
+        {
+          "source": ".error(\"unexpected folder\")",
+          "target": ".error(\"意外文件夹\")"
+        },
+        {
+          "source": ".error(\"Failed to convert file url to path\",n,this.href)",
+          "target": ".error(\"无法将文件url转换为路径\",n,this.href)"
+        },
+        {
+          "source": ".error(`${e} timeout after ${i}ms`)",
+          "target": ".error(`${e}超时后${i}ms`)"
+        },
+        {
+          "source": ".error(\"port messaging error\",o)",
+          "target": ".error(\"端口消息传递错误\",o)"
+        },
+        {
+          "source": ".error(\"Failed to resolve file path\",r,n.href)",
+          "target": ".error(\"解析文件路径失败\",r,n.href)"
+        },
+        {
+          "source": ".error(\"Invalid track URL\",r,n.href)",
+          "target": ".error(\"轨道URL无效\",r,n.href)"
+        },
+        {
+          "source": ".error(\"Failed to insert screenshot\",D)",
+          "target": ".error(\"插入截图失败\",D)"
+        },
+        {
+          "source": ".error(\"Failed to copy screenshot\",o)",
+          "target": ".error(\"复制截图失败\",o)"
+        },
+        {
+          "source": ".error(\"Failed to insert timestamp\",c)",
+          "target": ".error(\"插入时间戳失败\",c)"
+        },
+        {
+          "source": ".error(\"useMemoizedFn expected parameter is a function, got \".concat(typeof t)",
+          "target": ".error(\"useMemizedFn预期参数是一个函数,得到\".concat(typeof t)"
+        },
+        {
+          "source": ".error(\"Failed to load media\",e,t)",
+          "target": ".error(\"加载媒体失败\",e,t)"
+        },
+        {
+          "source": ".error(\"recov err play\",c)",
+          "target": ".error(\"录制错误播放\",c)"
+        },
+        {
+          "source": ".error(\"recov err paused\",c)",
+          "target": ".error(\"记录错误已暂停\",c)"
+        },
+        {
+          "source": ".error(\"Failed to open file in file explorer\",i)",
+          "target": ".error(\"在文件资源管理器中打开文件失败\",i)"
+        },
+        {
+          "source": ".error(\"Failed to open file in system player\",i)",
+          "target": ".error(\"在系统播放器中打开文件失败\",i)"
+        },
+        {
+          "source": ".error(\"Failed to save transcript\",l)",
+          "target": ".error(\"保存成绩单失败\",l)"
+        },
+        {
+          "source": ".error(\"Failed to get text tracks\",o,n.href)",
+          "target": ".error(\"获取字幕失败\",o,n.href)"
+        },
+        {
+          "source": ".error(\"MarkdownView.editMode is not available, cannot patch editor click\")",
+          "target": ".error(\"MarkdownView.editMode不可用,无法点击补丁编辑器\")"
+        },
+        {
+          "source": ".error(\"onExternalLinkClick error in editor, fallback to default\",l)",
+          "target": ".error(\"onExternalLinkClick编辑器中出现错误,回退到默认值\",l)"
+        },
+        {
+          "source": ".error(\"onInternalLinkClick error in openLinktext, fallback to default\",c)",
+          "target": ".error(\"openLinktext中的onInternalLinkClick错误,回退到默认值\",c)"
+        },
+        {
+          "source": ".error(\"onExternalLinkClick error in preview, fallback to default\",c)",
+          "target": ".error(\"onExternalLinkClick预览时出错,回退到默认值\",c)"
+        },
+        {
+          "source": ".error(`Failed to convert path ${t} to URL: `,e)",
+          "target": ".error(`未能将路径 ${t} 转换为URL:`,e)"
+        },
+        {
+          "source": ".error(\"Failed to load subtitle\",n,o)",
+          "target": ".error(\"加载字幕失败\",n,o)"
+        },
+        {
+          "source": ".error(`Failed to resolve local media for ${e}`,r)",
+          "target": ".error(`无法解析${e}的本地媒体`,r)"
+        },
+        {
+          "source": ".error(`Failed to resolve local tracks for ${e}`,o)",
+          "target": ".error(`未能解析${e}的本地跟踪`,o)"
+        },
+        {
+          "source": ".error(\"Failed to load preload\",n)",
+          "target": ".error(\"加载预加载失败\",n)"
+        },
+        {
+          "source": "name:\"Take timestamp on current recording\"",
+          "target": "name:\"在当前录音上记录时间戳\""
+        },
+        {
+          "source": "name:\"Login website\"",
+          "target": "name:\"登录网站\""
+        },
+        {
+          "source": "name:\"playback-speed\"",
+          "target": "name:\"播放速度\""
+        },
+        {
+          "source": "name:\"hide\"",
+          "target": "name:\"隐藏\""
+        },
+        {
+          "source": "name:\"Copy screenshot\"",
+          "target": "name:\"复制截图\""
+        },
+        {
+          "source": "name:\"Take timestamp\"",
+          "target": "name:\"记录时间戳\""
+        },
+        {
+          "source": "name:\"Save screenshot\"",
+          "target": "name:\"保存截图\""
+        },
+        {
+          "source": "name:\"Take timestamp in media note\"",
+          "target": "name:\"在媒体笔记中记录时间戳\""
+        },
+        {
+          "source": "name:\"Save screenshot in media note\"",
+          "target": "name:\"在媒体笔记中保存截图\""
+        },
+        {
+          "source": "name:\"attention\"",
+          "target": "name:\"注意\""
+        },
+        {
+          "source": "name:\"autolink\"",
+          "target": "name:\"自动链接\""
+        },
+        {
+          "source": "name:\"blockQuote\"",
+          "target": "name:\"块引用\""
+        },
+        {
+          "source": "name:\"characterEscape\"",
+          "target": "name:\"字符转义\""
+        },
+        {
+          "source": "name:\"list\"",
+          "target": "name:\"列表\""
+        },
+        {
+          "source": "name:\"setextUnderline\"",
+          "target": "name:\"Setext 下划线\""
+        },
+        {
+          "source": "name:\"Export current playlist to m3u8 file\"",
+          "target": "name:\"导出现有播放列表至 m3u8 文件\""
+        },
+        {
+          "source": "name:\"CURRENT_QUALITY\"",
+          "target": "name:\"当前质量\""
+        },
+        {
+          "source": "name:\"Video\"",
+          "target": "name:\"视频\""
+        },
+        {
+          "source": "name:\"Audio\"",
+          "target": "name:\"音频\""
+        },
+        {
+          "source": "name:\"Open media\"",
+          "target": "name:\"打开媒体\""
+        },
+        {
+          "source": "text:\"Submit\"",
+          "target": "text:\"提交\""
+        },
+        {
+          "source": "text:\"Click to copy \"",
+          "target": "text:\"单击以复制\""
+        },
+        {
+          "source": ".setText(\"Login\")",
+          "target": ".setText(\"登录\")"
+        },
+        {
+          "source": ".setText(\"You can login to sites, change preferences and more, just as you would in a browser.\")",
+          "target": ".setText(\"您可以登录网站,更改偏好设置等,就像在浏览器中一样。\")"
+        },
+        {
+          "source": ".setText(\"To open a website, you can:\")",
+          "target": ".setText(\"要打开一个网站,您可以:\")"
+        },
+        {
+          "source": ".setText(\"Enter the site address in the address bar\")",
+          "target": ".setText(\"在地址栏中输入网站地址\")"
+        },
+        {
+          "source": ".setText(\"Select from a list of \")",
+          "target": ".setText(\"从列表中选择 \")"
+        },
+        {
+          "source": ".setText(\"Playback Speed\")",
+          "target": ".setText(\"播放速度\")"
+        },
+        {
+          "source": ".setText(\"Open local file\")",
+          "target": ".setText(\"打开本地文件\")"
+        },
+        {
+          "source": ".setText(\"Pick from folders defined in custom protocol\")",
+          "target": ".setText(\"从自定义协议定义的文件夹中选择\")"
+        },
+        {
+          "source": ".setButtonText(\"Open broswer\")",
+          "target": ".setButtonText(\"打开浏览器\")"
+        },
+        {
+          "source": ".setName(\"Protocols\")",
+          "target": ".setName(\"协议\")"
+        },
+        {
+          "source": ".setName(\"This device\")",
+          "target": ".setName(\"此设备\")"
+        },
+        {
+          "source": ".setName(\"Link open\")",
+          "target": ".setName(\"链接打开\")"
+        },
+        {
+          "source": ".setName(\"Default link click\")",
+          "target": ".setName(\"默认链接点击\")"
+        },
+        {
+          "source": ".setName(\"Altnernative behavior\")",
+          "target": ".setName(\"替代行为\")"
+        },
+        {
+          "source": ".setName(\"Playback\")",
+          "target": ".setName(\"播放\")"
+        },
+        {
+          "source": ".setName(\"Default volume\")",
+          "target": ".setName(\"默认音量\")"
+        },
+        {
+          "source": ".setName(\"Load strategy\")",
+          "target": ".setName(\"加载策略\")"
+        },
+        {
+          "source": ".setName(\"Enable subtitle by default\")",
+          "target": ".setName(\"默认启用字幕\")"
+        },
+        {
+          "source": ".setName(\"Default locale\")",
+          "target": ".setName(\"默认地区\")"
+        },
+        {
+          "source": ".setName(\"Speed step\")",
+          "target": ".setName(\"速度步长\")"
+        },
+        {
+          "source": ".setName(\"Default location for downloaded subtitle\")",
+          "target": ".setName(\"下载字幕的默认位置\")"
+        },
+        {
+          "source": ".setName(\"Subtitle folder path\")",
+          "target": ".setName(\"字幕文件夹路径\")"
+        },
+        {
+          "source": ".setName(\"Timestamp\")",
+          "target": ".setName(\"时间戳\")"
+        },
+        {
+          "source": ".setName(\"Timestamp template\")",
+          "target": ".setName(\"时间戳模板\")"
+        },
+        {
+          "source": ".setName(\"Timestamp offset\")",
+          "target": ".setName(\"时间戳偏移\")"
+        },
+        {
+          "source": ".setName(\"Screenshot\")",
+          "target": ".setName(\"截图\")"
+        },
+        {
+          "source": ".setName(\"Screenshot linktext template\")",
+          "target": ".setName(\"截图链接文本模板\")"
+        },
+        {
+          "source": ".setName(\"Screenshot template\")",
+          "target": ".setName(\"截图模板\")"
+        },
+        {
+          "source": ".setName(\"Screenshot format\")",
+          "target": ".setName(\"截图格式\")"
+        },
+        {
+          "source": ".setName(\"Default location for new screenshots\")",
+          "target": ".setName(\"新截图的默认位置\")"
+        },
+        {
+          "source": ".setName(\"Attachment folder path\")",
+          "target": ".setName(\"附件文件夹路径\")"
+        },
+        {
+          "source": ".setName(\"Screenshot quality\")",
+          "target": ".setName(\"截图质量\")"
+        },
+        {
+          "source": ".setName(\"Note taking\")",
+          "target": ".setName(\"记笔记\")"
+        },
+        {
+          "source": ".setName(\"Insert location\")",
+          "target": ".setName(\"插入位置\")"
+        },
+        {
+          "source": ".setName(\"Webpage\")",
+          "target": ".setName(\"网页\")"
+        },
+        {
+          "source": ".setName(\"Login\")",
+          "target": ".setName(\"登录\")"
+        },
+        {
+          "source": ".setName(\"Bilibili\")",
+          "target": ".setName(\"哔哩哔哩\")"
+        },
+        {
+          "source": ".setName(\"Default quality\")",
+          "target": ".setName(\"默认质量\")"
+        },
+        {
+          "source": ".setDesc(\"Create custom protocols that resolve link per device\")",
+          "target": ".setDesc(\"创建针对每个设备解析链接的自定义协议\")"
+        },
+        {
+          "source": ".setDesc(\"Configure how links to media are opened\")",
+          "target": ".setDesc(\"配置如何打开媒体链接\")"
+        },
+        {
+          "source": ".setDesc(\"Configure link open behavior\"+u?` when ${u}`:\"\")",
+          "target": ".setDesc(\"配置链接打开行为\"+u?` 在 ${u} 时`:\"\")"
+        },
+        {
+          "source": ".setDesc(\"The default volume for media files\")",
+          "target": ".setDesc(\"媒体文件的默认音量\")"
+        },
+        {
+          "source": ".setDesc(\"Toggle subtitle on by default when available\")",
+          "target": ".setDesc(\"在可用时默认开启字幕\")"
+        },
+        {
+          "source": ".setDesc(\"The default locale for subtitles\")",
+          "target": ".setDesc(\"字幕的默认语言\")"
+        },
+        {
+          "source": ".setDesc(\"Configure the step for command to slightly increasing or decreasing playback speed\")",
+          "target": ".setDesc(\"配置命令以略微增加或减少播放速度的步长\")"
+        },
+        {
+          "source": ".setDesc(\"Where subtitles from website are placed.\")",
+          "target": ".setDesc(\"网站字幕放置的位置。\")"
+        },
+        {
+          "source": ".setDesc(\"Place newly created subtitle files in this folder.\")",
+          "target": ".setDesc(\"将新创建的字幕文件放置在此文件夹中。\")"
+        },
+        {
+          "source": ".setDesc(\"Offset in seconds to add to the timestamp\")",
+          "target": ".setDesc(\"添加到时间戳的秒数偏移\")"
+        },
+        {
+          "source": ".setDesc(\"Where newly added attachments are placed.\")",
+          "target": ".setDesc(\"新添加附件的放置位置。\")"
+        },
+        {
+          "source": ".setDesc(\"Place newly created screenshot files in this folder.\")",
+          "target": ".setDesc(\"将新创建的截图文件放置在此文件夹中。\")"
+        },
+        {
+          "source": ".setDesc(\"Quality of the screenshot\")",
+          "target": ".setDesc(\"截图的质量\")"
+        },
+        {
+          "source": ".setDesc(\"Configure where timestamps and screenshots are inserted\")",
+          "target": ".setDesc(\"配置时间戳和截图的插入位置\")"
+        },
+        {
+          "source": ".setDesc(\"If website requires login to access content or request login during playback, you can open a browser page here to login.\")",
+          "target": ".setDesc(\"如果网站要求登录才能访问内容或在播放过程中请求登录,您可以在这里打开一个浏览器页面进行登录。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Protocol name\")",
+          "target": ".setPlaceholder(\"协议名称\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: folder 1/folder\")",
+          "target": ".setPlaceholder(\"示例: folder 1/folder\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter file path, URL or media id, or drop a media file here\")",
+          "target": ".setPlaceholder(\"输入文件路径、URL 或媒体 ID,或将媒体文件拖到这里\")"
+        },
+        {
+          "source": ".setTooltip(\"Back\")",
+          "target": ".setTooltip(\"后退\")"
+        },
+        {
+          "source": ".setTooltip(\"Forward\")",
+          "target": ".setTooltip(\"前进\")"
+        },
+        {
+          "source": ".setTooltip(\"Refresh\")",
+          "target": ".setTooltip(\"刷新\")"
+        },
+        {
+          "source": ".setTooltip(\"More options\")",
+          "target": ".setTooltip(\"更多选项\")"
+        },
+        {
+          "source": ".setTooltip(\"Add new protocol\")",
+          "target": ".setTooltip(\"添加新协议\")"
+        },
+        {
+          "source": ".setTooltip(`Remove ${u.getValue()||\"empty\"} protocol`)",
+          "target": ".setTooltip(`移除 ${u.getValue()||\"空\"} 协议`)"
+        },
+        {
+          "source": ".setTooltip(\"Reset to default\")",
+          "target": ".setTooltip(\"重置为默认值\")"
+        },
+        {
+          "source": ".appendText(\"Speed \")",
+          "target": ".appendText(\"速度 \")"
+        },
+        {
+          "source": ".appendText(\"Custom\")",
+          "target": ".appendText(\"自定义\")"
+        },
+        {
+          "source": ".appendText(`Failed to load webpage: ${s}`)",
+          "target": ".appendText(`加载网页失败: ${s}`)"
+        },
+        {
+          "source": ".appendText(\"You're using a webpage media player.\")",
+          "target": ".appendText(\"您正在使用网页媒体播放器。\")"
+        },
+        {
+          "source": ".appendText('- the \"Login\" command')",
+          "target": ".appendText('- \"登录\"命令')"
+        },
+        {
+          "source": ".appendText(\"- the entry in settings tab\")",
+          "target": ".appendText(\"- 设置选项卡中的条目\")"
+        },
+        {
+          "source": ".appendText(\"Click to dismiss this notice.\")",
+          "target": ".appendText(\"点击以关闭此通知。\")"
+        },
+        {
+          "source": ".appendText(`You are taking ${t} from media player. By default, they will only be saved in the media note. `)",
+          "target": ".appendText(`您正在从媒体播放器获取 ${t}。默认情况下,它们只会保存在媒体笔记中。 `)"
+        },
+        {
+          "source": ".appendText(`Failed to load media for ${e}: `)",
+          "target": ".appendText(`加载媒体 ${e} 失败: `)"
+        },
+        {
+          "source": ".appendText(\"The media playback was aborted\")",
+          "target": ".appendText(\"媒体播放已中止\")"
+        },
+        {
+          "source": ".appendText(\"A network error caused the media playback to fail\")",
+          "target": ".appendText(\"网络错误导致媒体播放失败\")"
+        },
+        {
+          "source": ".appendText(\"The media playback was aborted due to a corruption problem or because the media encoding is not supported\")",
+          "target": ".appendText(\"由于损坏问题或媒体编码不受支持,媒体播放已中止\")"
+        },
+        {
+          "source": ".appendText(\"The media is not supported to open as regular video or audio, try open as webpage\")",
+          "target": ".appendText(\"该媒体不支持作为常规视频或音频打开,尝试作为网页打开\")"
+        },
+        {
+          "source": ".appendText(\"Configure when media embeds are loaded in the note\")",
+          "target": ".appendText(\"配置何时在笔记中加载媒体嵌入\")"
+        },
+        {
+          "source": ".appendText(\"Useful if you want lazy load media embeds in a note when there are many of them\")",
+          "target": ".appendText(\"当笔记中有许多媒体嵌入时,如果您希望懒加载它们,则很有用\")"
+        },
+        {
+          "source": ".appendText(\"The template used to insert timestamps.\")",
+          "target": ".appendText(\"用于插入时间戳的模板。\")"
+        },
+        {
+          "source": ".appendText(\"Supported placeholders: {{TIMESTAMP}}\")",
+          "target": ".appendText(\"支持的占位符: {{TIMESTAMP}}\")"
+        },
+        {
+          "source": ".appendText(\"The template used to create screenshot linktext.\")",
+          "target": ".appendText(\"用于创建截图链接文本的模板。\")"
+        },
+        {
+          "source": ".appendText(\"Supported placeholders: {{DURATION}}, {{TITLE}}\")",
+          "target": ".appendText(\"支持的占位符: {{DURATION}}, {{TITLE}}\")"
+        },
+        {
+          "source": ".appendText(\"Remove `|50` suffix to embed image in full size\")",
+          "target": ".appendText(\"移除 `|50` 后缀以全尺寸嵌入图像\")"
+        },
+        {
+          "source": ".appendText(\"The template used to insert screenshot.\")",
+          "target": ".appendText(\"用于插入截图的模板。\")"
+        },
+        {
+          "source": ".appendText(\"Supported placeholders: \")",
+          "target": ".appendText(\"支持的占位符: \")"
+        },
+        {
+          "source": ".appendText(\"{{TIMESTAMP}} - timestamp link\")",
+          "target": ".appendText(\"{{TIMESTAMP}} - 时间戳链接\")"
+        },
+        {
+          "source": ".appendText(\"{{SCREENSHOT}} - link to screenshot\")",
+          "target": ".appendText(\"{{SCREENSHOT}} - 截图链接\")"
+        },
+        {
+          "source": ".appendText(\"add `!` prefix to insert as image embed\")",
+          "target": ".appendText(\"添加 `!` 前缀以作为图像嵌入\")"
+        },
+        {
+          "source": ".appendText(\"The format to use when taking screenshots\")",
+          "target": ".appendText(\"截屏时使用的格式\")"
+        },
+        {
+          "source": ".appendText(\"Note that the webp format falls back to jpeg in iOS or iPadOS\")",
+          "target": ".appendText(\"请注意,在 iOS 或 iPadOS 中,webp 格式会回退到 jpeg\")"
+        },
+        {
+          "source": ".appendText(\"The default quality for bilibili videos, will fallback to closest quality if not available\")",
+          "target": ".appendText(\"bilibili 视频的默认质量,如果不可用则会回退到最接近的质量\")"
+        },
+        {
+          "source": ".appendText(\"Only new videos will use this quality\")",
+          "target": ".appendText(\"只有新的视频会使用此质量\")"
+        },
+        {
+          "source": ".appendText(`Opening ${i.type} from browser: `)",
+          "target": ".appendText(`从浏览器打开 ${i.type}: `)"
+        },
+        {
+          "source": ".setTitle(\"Clear cache\")",
+          "target": ".setTitle(\"清除缓存\")"
+        },
+        {
+          "source": ".setTitle(\"Open linked media\")",
+          "target": ".setTitle(\"打开链接媒体\")"
+        },
+        {
+          "source": ".setTitle(\"Open in default player\")",
+          "target": ".setTitle(\"在默认播放器中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Always open this url as\")",
+          "target": ".setTitle(\"始终以这种方式打开此网址\")"
+        },
+        {
+          "source": ".setTitle(`Always open ${c} as`)",
+          "target": ".setTitle(`始终以这种方式打开 ${c}`)"
+        },
+        {
+          "source": ".setTitle(\"Export to m3u8...\")",
+          "target": ".setTitle(\"导出为 m3u8...\")"
+        },
+        {
+          "source": ".setTitle(\"Exit Picture in Picture\")",
+          "target": ".setTitle(\"退出画中画\")"
+        },
+        {
+          "source": ".setTitle(\"Picture in Picture\")",
+          "target": ".setTitle(\"画中画\")"
+        },
+        {
+          "source": ".setTitle(\"Open transcript\")",
+          "target": ".setTitle(\"打开字幕\")"
+        },
+        {
+          "source": ".setTitle(\"Transform\")",
+          "target": ".setTitle(\"转换\")"
+        },
+        {
+          "source": ".setTitle(\"Reset\")",
+          "target": ".setTitle(\"重置\")"
+        },
+        {
+          "source": ".setTitle(\"Flip horizontally\")",
+          "target": ".setTitle(\"水平翻转\")"
+        },
+        {
+          "source": ".setTitle(\"Flip vertically\")",
+          "target": ".setTitle(\"垂直翻转\")"
+        },
+        {
+          "source": ".setTitle(\"Rotate 180\\xB0\")",
+          "target": ".setTitle(\"旋转 180\\xB0\")"
+        },
+        {
+          "source": ".setTitle(\"Copy URL\")",
+          "target": ".setTitle(\"复制 URL\")"
+        },
+        {
+          "source": ".setTitle(\"Copy URL with timestamp\")",
+          "target": ".setTitle(\"复制带有时间戳的 URL\")"
+        },
+        {
+          "source": ".setTitle(\"Open in default browser\")",
+          "target": ".setTitle(\"在默认浏览器中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Refresh\")",
+          "target": ".setTitle(\"刷新\")"
+        },
+        {
+          "source": ".setTitle(\"Open to the right\")",
+          "target": ".setTitle(\"向右侧打开\")"
+        },
+        {
+          "source": ".setTitle(\"Open in new tab\")",
+          "target": ".setTitle(\"在新标签页中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Open in new window\")",
+          "target": ".setTitle(\"在新窗口中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Open media note\")",
+          "target": ".setTitle(\"打开媒体笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Copy Screenshot\")",
+          "target": ".setTitle(\"复制截图\")"
+        },
+        {
+          "source": ".setTitle(\"Link mapping\")",
+          "target": ".setTitle(\"链接映射\")"
+        },
+        {
+          "source": ".setTitle(\"Folder mapping\")",
+          "target": ".setTitle(\"文件夹映射\")"
+        },
+        {
+          "source": ".setTitle(\"Find...\")",
+          "target": ".setTitle(\"查找...\")"
+        },
+        {
+          "source": ".createEl(\"p\",{text:`To take ${t} or control playback from abritrary note, use command when focused on the note`})",
+          "target": ".createEl(\"p\",{text:`要从任意笔记中获取 ${t} 或控制播放,请在聚焦于笔记时使用命令`})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"PS: you can assign a hotkey to each command in the settings\"})",
+          "target": ".createEl(\"p\",{text:\"附注:您可以在设置中为每个命令分配快捷键\"})"
+        },
+        {
+          "source": ".addOption(\"eager\",\"On note open\")",
+          "target": ".addOption(\"eager\",\"在笔记打开时\")"
+        },
+        {
+          "source": ".addOption(\"play\",\"When interacted with\")",
+          "target": ".addOption(\"play\",\"当与之交互时\")"
+        },
+        {
+          "source": ".addOption(\"before\",\"Latest content on top\")",
+          "target": ".addOption(\"before\",\"最新内容在顶部\")"
+        },
+        {
+          "source": ".addOption(\"after\",\"Latest content at end\")",
+          "target": ".addOption(\"after\",\"最新内容在底部\")"
+        },
+        {
+          "source": "default:\"In attachment folder\",specific:\"In the folder specified below\"",
+          "target": "default:\"在附件文件夹中\",specific:\"在下面指定的文件夹中\""
+        },
+        {
+          "source": "default:\"Default obsidian behavior\"",
+          "target": "default:\"默认 Obsidian 行为\""
+        },
+        {
+          "source": "replace:\"In current pane\"",
+          "target": "replace:\"在当前窗格\""
+        },
+        {
+          "source": "split:\"New pane on the right\",\"split-horizontal\":\"New pane on the bottom\"",
+          "target": "split:\"右侧的新窗格\",\"split-horizontal\":\"底部的新窗格\""
+        },
+        {
+          "source": "tab:\"New tab\"",
+          "target": "tab:\"新标签\""
+        },
+        {
+          "source": "window:\"New window\"",
+          "target": "window:\"新窗口\""
+        },
+        {
+          "source": "r,\"Follow obsidian locale\"",
+          "target": "r,\"跟随 Obsidian 本地化\""
+        },
+        {
+          "source": "Take timestamp in media note",
+          "target": "在媒体笔记中记录时间戳"
+        },
+        {
+          "source": "Take screenshot in media",
+          "target": "在媒体中截屏"
+        },
+        {
+          "source": "label:\"Play/pause\"",
+          "target": "label:\"播放/暂停\""
+        },
+        {
+          "source": "label:\"Play\"",
+          "target": "label:\"播放\""
+        },
+        {
+          "source": "label:\"Pause\"",
+          "target": "label:\"暂停\""
+        },
+        {
+          "source": "label:`Forward ${e}s`",
+          "target": "label:`快进 ${e} 秒`"
+        },
+        {
+          "source": "label:`Rewind ${e}s`",
+          "target": "label:`倒退 ${e} 秒`"
+        },
+        {
+          "source": "label:\"Mute/unmute\"",
+          "target": "label:\"静音/取消静音\""
+        },
+        {
+          "source": "label:\"Enter/exit fullscreen\"",
+          "target": "label:\"进入/退出全屏\""
+        },
+        {
+          "source": "label:`Fast forward at ${a}x by holding hotkey`",
+          "target": "label:`按住快捷键以 ${a} 倍速快进`"
+        },
+        {
+          "source": "label:`Set playback speed to ${a}x`",
+          "target": "label:`设置播放速度为 ${a} 倍速`"
+        },
+        {
+          "source": "label:\"Reset playback speed\"",
+          "target": "label:\"重置播放速度\""
+        },
+        {
+          "source": "label:\"Increase playback speed\"",
+          "target": "label:\"增加播放速度\""
+        },
+        {
+          "source": "o(\"Speed reset to 1x\")",
+          "target": "o(\"速度重置为 1 倍速\")"
+        },
+        {
+          "source": "o(\"Cannot increase speed further\")",
+          "target": "o(\"无法进一步提高速度\")"
+        },
+        {
+          "source": "label:\"Decrease playback speed\"",
+          "target": "label:\"降低播放速度\""
+        },
+        {
+          "source": "label:\"Set playback speed to custom value\"",
+          "target": "label:\"设置播放速度为自定义值\""
+        },
+        {
+          "source": "label:\"Increase playback speed slightly\"",
+          "target": "label:\"轻微增加播放速度\""
+        },
+        {
+          "source": "label:\"Decrease playback speed slightly\"",
+          "target": "label:\"轻微降低播放速度\""
+        },
+        {
+          "source": "o(\"Cannot decrease speed further\")",
+          "target": "o(\"无法进一步降低速度\")"
+        },
+        {
+          "source": "r(`Speed set to ${a}x`)",
+          "target": "r(`速度设置为 ${a} 倍速`)"
+        },
+        {
+          "source": "r(`Speed increased to ${l}x`)",
+          "target": "r(`速度增加到 ${l} 倍速`)"
+        },
+        {
+          "source": "r(`Speed decreased to ${l}x`)",
+          "target": "r(`速度降低到 ${l} 倍速`)"
+        },
+        {
+          "source": "r(`Speed set to ${s}x`)",
+          "target": "r(`速度设置为 ${s} 倍速`)"
+        },
+        {
+          "source": "r(`Speed increased to ${c}x`)",
+          "target": "r(`速度增加到 ${c} 倍速`)"
+        },
+        {
+          "source": "r(`Speed decreased to ${c}x`)",
+          "target": "r(`速度降低到 ${c} 倍速`)"
+        },
+        {
+          "source": "\"Objects are not valid as a React child (found: \"",
+          "target": "\"对象作为React子对象无效(找到:\""
+        },
+        {
+          "source": "\"object with keys",
+          "target": "\"对象的键为"
+        },
+        {
+          "source": "If you meant to render a collection of children, use an array instead.\"",
+          "target": "如果你打算渲染一组子项,请改用数组.\""
+        },
+        {
+          "source": "\"If you are requested to login, you can open a browser to login from:\"",
+          "target": "\"如果要求您登录,您可以打开浏览器从以下位置登录:\""
+        },
+        {
+          "source": "\"Don't show again\"",
+          "target": "\"不再显示\""
+        },
+        {
+          "source": "\"File URI is not supported in this environment. \"",
+          "target": "\"此环境中不支持文件URI。\""
+        },
+        {
+          "source": "\"Show website native controls\"",
+          "target": "\"显示网站本机控件\""
+        },
+        {
+          "source": "\"Hide website controls\"",
+          "target": "\"隐藏网站控件\""
+        },
+        {
+          "source": "\"Exit fullscreen\"",
+          "target": "\"退出全屏\""
+        },
+        {
+          "source": "\"Enter fullscreen\"",
+          "target": "\"进入全屏\""
+        },
+        {
+          "source": "\"Edit in editor\"",
+          "target": "\"在编辑器中编辑\""
+        },
+        {
+          "source": "\"Capture screenshot\"",
+          "target": "\"截图\""
+        },
+        {
+          "source": "\"Select Caption\"",
+          "target": "\"选择标题\""
+        },
+        {
+          "source": "\"Select Playlist\"",
+          "target": "\"选择播放列表\""
+        },
+        {
+          "source": "\"More options\"",
+          "target": "\"更多选项\""
+        },
+        {
+          "source": "\"Current Time\"",
+          "target": "\"当前时间\""
+        },
+        {
+          "source": "\"Copy markdown\"",
+          "target": "\"复制标记\""
+        },
+        {
+          "source": "\"aria-label\":\"Volume\"",
+          "target": "\"aria-label\":\"音量\""
+        },
+        {
+          "source": "\"aria-label\":t?\"Play\":\"Pause\"",
+          "target": "\"aria-label\":t?\"播放\":\"暂停\""
+        },
+        {
+          "source": "\"aria-label\":e?\"Unmute\":\"Mute\"",
+          "target": "\"aria-label\":e?\"取消静音\":\"静音\""
+        },
+        {
+          "source": "\"Show in system explorer\"",
+          "target": "\"在系统资源管理器中显示\""
+        },
+        {
+          "source": "\"Reveal in Finder\"",
+          "target": "\"在Finder中显示\""
+        },
+        {
+          "source": "\"Unmute\":\"Mute\"",
+          "target": "\"取消静音\":\"静音\""
+        },
+        {
+          "source": "\"Enable in-player fullscreen\"",
+          "target": "\"启用播放器全屏\""
+        },
+        {
+          "source": "\"Disable in-player fullscreen\"",
+          "target": "\"禁用播放器全屏\""
+        },
+        {
+          "source": "\"supported websites...\"",
+          "target": "\"支持的网站...\""
+        },
+        {
+          "source": "Notice(\"Unable to show video content due to a potentially unsupported codec by Obsidian. For verification, please disable this plugin, add the video to the vault, and check if video playback resumes normally.\")",
+          "target": "Notice(\"由于Obsidian可能不支持的编解码器,无法显示视频内容。为了验证,请禁用此插件,将视频添加到库,并检查视频播放是否正常恢复。\")"
+        },
+        {
+          "source": "Notice(`Network path is not supported in obsidian, you need to map it to a local path: ${i.filePath??i.readableHref}`)",
+          "target": "Notice(`Obsidian不支持网络路径,您需要将其映射到本地路径: ${i.filePath??i.readableHref}`)"
+        },
+        {
+          "source": "\"Open media\"",
+          "target": "\"打开媒体\""
+        },
+        {
+          "source": "label:\"regular audio\"",
+          "target": "label:\"常规音频\""
+        },
+        {
+          "source": "label:\"regular video\"",
+          "target": "label:\"常规视频\""
+        },
+        {
+          "source": "label:\"webpage\"",
+          "target": "label:\"网页\""
+        },
+        {
+          "source": "`Open as ${r}`",
+          "target": "`以${r}打开`"
+        },
+        {
+          "source": "\"Seems like YouTube is showing a consent popup that block playback. To continue playback, you should handle it in dedicated login browser. \"",
+          "target": "\"YouTube似乎显示了一个阻止播放的同意弹出窗口。要继续播放，您应该在专用的登录浏览器中处理它。\""
+        },
+        {
+          "source": "`Open ${e} in login browser?`",
+          "target": "`在登录浏览器中打开${e}?`"
+        },
+        {
+          "source": "`Webpage not fully loaded within ${r}s. You can still try to play.`",
+          "target": "`网页未完全加载${r}s.你仍然可以尝试。`"
+        },
+        {
+          "source": "n=\"OK\"",
+          "target": "n=\"好的\""
+        },
+        {
+          "source": "purpose:\"to navigate\"",
+          "target": "purpose:\"导航\""
+        },
+        {
+          "source": "purpose:\"to open url\"",
+          "target": "purpose:\"打开 URL\""
+        },
+        {
+          "source": "purpose:\"to open in new tab\"",
+          "target": "purpose:\"在新标签页中打开\""
+        },
+        {
+          "source": "purpose:\"to open to the right\"",
+          "target": "purpose:\"向右打开\""
+        },
+        {
+          "source": "purpose:\"to dismiss\"",
+          "target": "purpose:\"关闭/取消\""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-custom-frames",
+    "version": "2.0.0",
+    "title": "Custom Frames",
+    "description": "A plugin that turns web apps into panes using iframes with custom styling. Also comes with presets for Google Keep, Todoist and more.",
+    "language": "zh-cn",
+    "supportedVersions": "2.4.7",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setButtonText(\"Show Settings\")",
+          "target": ".setButtonText(\"显示设置\")"
+        },
+        {
+          "source": ".setButtonText(\"Remove Frame\")",
+          "target": ".setButtonText(\"移除框架\")"
+        },
+        {
+          "source": ".setButtonText(\"Add Frame\")",
+          "target": ".setButtonText(\"添加框架\")"
+        },
+        {
+          "source": ".setName(\"Frame Padding\")",
+          "target": ".setName(\"框架填充\")"
+        },
+        {
+          "source": ".setName(\"Display Name\")",
+          "target": ".setName(\"显示名称\")"
+        },
+        {
+          "source": ".setName(\"Icon\")",
+          "target": ".setName(\"图标\")"
+        },
+        {
+          "source": ".setName(\"URL\")",
+          "target": ".setName(\"URL\")"
+        },
+        {
+          "source": ".setName(\"Disable on Mobile\")",
+          "target": ".setName(\"在移动设备上禁用\")"
+        },
+        {
+          "source": ".setName(\"Add Ribbon Icon\")",
+          "target": ".setName(\"添加带状图标的按钮\")"
+        },
+        {
+          "source": ".setName(\"Open in Center\")",
+          "target": ".setName(\"在中心打开\")"
+        },
+        {
+          "source": ".setName(\"Force iframe\")",
+          "target": ".setName(\"强制使用iframe\")"
+        },
+        {
+          "source": ".setName(\"Page Zoom\")",
+          "target": ".setName(\"页面缩放\")"
+        },
+        {
+          "source": ".setName(\"Additional CSS\")",
+          "target": ".setName(\"附加CSS\")"
+        },
+        {
+          "source": ".setName(\"Additional JavaScript\")",
+          "target": ".setName(\"附加JavaScript\")"
+        },
+        {
+          "source": ".setDesc(\"The padding that should be left around the inside of custom frame panes, in pixels.\")",
+          "target": ".setDesc(\"自定义框架窗格内部周围应留出的填充，以像素为单位。\")"
+        },
+        {
+          "source": ".setDesc(\"The display name that this frame should have.\")",
+          "target": ".setDesc(\"此框架应有的显示名称。\")"
+        },
+        {
+          "source": ".setDesc(\"The URL that should be opened in this frame.\")",
+          "target": ".setDesc(\"应在该框架中打开的URL。\")"
+        },
+        {
+          "source": ".setDesc(\"Custom Frames is a lot more restricted on mobile devices and doesn't allow for the same types of content to be displayed. If a frame doesn't work as expected on mobile, it can be disabled.\")",
+          "target": ".setDesc(\"在移动设备上，自定义框架受到更多限制，并不允许显示相同类型的内容。如果一个框架在移动设备上无法按预期工作，可以将其禁用。\")"
+        },
+        {
+          "source": ".setDesc(\"Whether a button to open this frame should be added to the ribbon.\")",
+          "target": ".setDesc(\"是否应将用于打开此框架的按钮添加到带状栏。\")"
+        },
+        {
+          "source": ".setDesc(\"Whether this frame should be opened in the unpinned center editor rather than one of the panes on the side. This is useful for sites that don't work well in a narrow view, or sites that don't require a note to be open when viewed.\")",
+          "target": ".setDesc(\"此框架是否应在未固定的中心编辑器中打开而不是侧边的窗格之一。这对于那些在窄视图下表现不佳或查看时不需要打开笔记的网站很有用。\")"
+        },
+        {
+          "source": ".setDesc(\"The zoom that this frame's page should be displayed with, as a percentage.\")",
+          "target": ".setDesc(\"此框架页面应显示的缩放比例，以百分比表示。\")"
+        },
+        {
+          "source": ".createEl(\"h2\", { text: \"Custom Frames Settings\" })",
+          "target": ".createEl(\"h2\", { text: \"自定义框架设置\" })"
+        },
+        {
+          "source": ".createEl(\"p\", {\n      text: \"Please note that Obsidian has to be restarted or reloaded for most of these settings to take effect.\",\n      cls: \"mod-warning\"\n    })",
+          "target": ".createEl(\"p\", {\n      text: \"请注意，对于这些设置中的大多数，需要重新启动或重新加载Obsidian才能生效\",\n      cls: \"mod-warning\"\n    })"
+        },
+        {
+          "source": ".createEl(\"a\", { text: \"Lucide icons\", href: \"https://lucide.dev/\" })",
+          "target": ".createEl(\"a\", { text: \"Lucide 图标\", href: \"https://lucide.dev/\" })"
+        },
+        {
+          "source": ".createEl(\"em\", { text: \"Only enable this setting if the frame is causing issues or frequent crashes. This setting causes all Desktop-only settings to be ignored.\" })",
+          "target": ".createEl(\"em\", { text: \"只有当框架导致问题或频繁崩溃时才启用此设置。此设置会导致所有仅限桌面的设置被忽略。\"})"
+        },
+        {
+          "source": ".createEl(\"em\", { text: \"Note that this is only applied on Desktop.\" })",
+          "target": ".createEl(\"em\", { text: \"请注意，这仅适用于桌面环境。\"})"
+        },
+        {
+          "source": ".createEl(\"p\", { text: `Create a new frame, either from a preset shipped with the plugin, or a custom one that you can edit yourself. Each frame's pane can be opened using the \"Custom Frames: Open\" command.` })",
+          "target": ".createEl(\"p\", { text: `创建一个新的框架，可以从插件自带的预设中创建，或者创建一个您可以自己编辑的自定义框架。每个框架的窗格都可以通过“Custom Frames: Open”命令打开。`})"
+        },
+        {
+          "source": ".createEl(\"a\", {\n      text: \"this discussion\",\n      href: \"https://github.com/Ellpeck/ObsidianCustomFrames/issues/54#issuecomment-1210879685\",\n      cls: \"mod-warning\"\n    })",
+          "target": ".createEl(\"a\", {\n      text: \"这次讨论\",\n      href: \"https://github.com/Ellpeck/ObsidianCustomFrames/issues/54#issuecomment-1210879685\",\n      cls: \"mod-warning\"\n    })"
+        },
+        {
+          "source": ".createEl(\"p\", { text: \"If you like this plugin and want to support its development, you can do so through my website by clicking this fancy image!\" })",
+          "target": ".createEl(\"p\", { text: \"如果您喜欢这个插件并希望支持其开发，您可以通过点击这个漂亮的图片在我的网站上进行。\"})"
+        },
+        {
+          "source": "name: \"Return to original page\"",
+          "target": "name: \"返回原页面\""
+        },
+        {
+          "source": "name: \"Open dev tools\"",
+          "target": "name: \"打开开发者工具\""
+        },
+        {
+          "source": "name: \"Copy link\"",
+          "target": "name: \"复制链接\""
+        },
+        {
+          "source": "name: \"Open in browser\"",
+          "target": "name: \"在浏览器中打开\""
+        },
+        {
+          "source": "name: \"Refresh\"",
+          "target": "name: \"刷新\""
+        },
+        {
+          "source": "name: \"Go back\"",
+          "target": "name: \"后退\""
+        },
+        {
+          "source": "name: \"Go forward\"",
+          "target": "name: \"前进\""
+        },
+        {
+          "source": "name: `Open ${frame.displayName}`",
+          "target": "name: `打开 ${frame.displayName}`"
+        },
+        {
+          "source": ".addOption(\"new\", \"Custom\")",
+          "target": ".addOption(\"new\", \"自定义\")"
+        },
+        {
+          "source": "text: \"Please be advised that, when adding a site as a custom frame, you potentially expose personal information you enter to other plugins you have installed. For more information, see \"",
+          "target": "text: \"请注意，当您将一个网站添加为自定义框架时，您可能将输入的个人信息暴露给已安装的其他插件。更多信息，请参见 \""
+        },
+        {
+          "source": "New Frame",
+          "target": "新建框架"
+        },
+        {
+          "source": "Show Settings",
+          "target": "显示设置"
+        },
+        {
+          "source": "Hide Settings",
+          "target": "隐藏设置"
+        },
+        {
+          "source": "The icon that this frame's pane should have. The names of any ",
+          "target": "此框架窗格应具有的图标。可以使用任何 "
+        },
+        {
+          "source": "can be used.",
+          "target": "的名字。"
+        },
+        {
+          "source": "A snippet of additional CSS that should be applied to this frame.",
+          "target": "一段应应用于此框架的附加CSS代码。"
+        },
+        {
+          "source": "Whether this frame should use iframes on desktop as opposed to Electron webviews.",
+          "target": "此框架在桌面上是否应使用iframe而非Electron网页视图。"
+        },
+        {
+          "source": "A snippet of additional JavaScript that should be applied to this frame.",
+          "target": "一段应应用于此框架的附加JavaScript代码。"
+        }
+      ]
+    }
+  }
+}

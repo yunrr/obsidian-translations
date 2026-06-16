@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-task-archiver",
+    "version": "2.0.0",
+    "title": "Archiver",
+    "description": "Move completed tasks to an archive with a date tree",
+    "language": "zh-cn",
+    "supportedVersions": "0.26.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Failed to read the daily note template\")",
+          "target": "Notice(\"无法读取每日笔记模板\")"
+        },
+        {
+          "source": "Notice(\"Unable to create new file.\")",
+          "target": "Notice(\"无法创建新文件\")"
+        },
+        {
+          "source": "Notice(`${placeholder} copied to clipboard`)",
+          "target": "Notice(`${placeholder} 已复制到剪贴板`)"
+        },
+        {
+          "source": "Notice(cb)",
+          "target": "Notice(cb)"
+        },
+        {
+          "source": "Notice(message)",
+          "target": "Notice(message)"
+        },
+        {
+          "source": "Notice(e)",
+          "target": "Notice(e)"
+        },
+        {
+          "source": "Notice(()",
+          "target": "Notice(()"
+        },
+        {
+          "source": ".log(_.identity(object)",
+          "target": ".log(_.identity(object)"
+        },
+        {
+          "source": ".log(objects)",
+          "target": ".log(objects)"
+        },
+        {
+          "source": ".log(objects[0] === objects[1])",
+          "target": ".log(objects[0] === objects[1])"
+        },
+        {
+          "source": ".log(arrays)",
+          "target": ".log(arrays)"
+        },
+        {
+          "source": ".log(arrays[0] === arrays[1])",
+          "target": ".log(arrays[0] === arrays[1])"
+        },
+        {
+          "source": ".log(shallow[0] === objects[0])",
+          "target": ".log(shallow[0] === objects[0])"
+        },
+        {
+          "source": ".error(`Failed to read the daily note template '${templatePath}'`, err)",
+          "target": ".error(`无法读取每日笔记模板 '${templatePath}'`, err)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${normalizedPath}'`, err)",
+          "target": ".error(`无法创建文件: '${normalizedPath}'`, err)"
+        },
+        {
+          "source": "name: \"Here's what the result looks like:\"",
+          "target": "name: \"结果示例如下:\""
+        },
+        {
+          "source": "name: \"Heading text\"",
+          "target": "name: \"标题文本\""
+        },
+        {
+          "source": "name: \"List item text\"",
+          "target": "name: \"列表项文本\""
+        },
+        {
+          "source": "name: \"A task has one of statuses\"",
+          "target": "name: \"任务有以下状态之一\""
+        },
+        {
+          "source": "name: \"And the file path matches one of patterns\"",
+          "target": "name: \"且文件路径匹配以下模式之一\""
+        },
+        {
+          "source": "name: \"And the task text matches one of patterns\"",
+          "target": "name: \"且任务文本匹配以下模式之一\""
+        },
+        {
+          "source": "name: \"Then\"",
+          "target": "name: \"则\""
+        },
+        {
+          "source": "name: \"File path\"",
+          "target": "name: \"文件路径\""
+        },
+        {
+          "source": "name: \"Date format\"",
+          "target": "name: \"日期格式\""
+        },
+        {
+          "source": "name: \"Use additional task filter\"",
+          "target": "name: \"使用额外任务过滤器\""
+        },
+        {
+          "source": "name: \"Additional task filter\"",
+          "target": "name: \"额外任务过滤器\""
+        },
+        {
+          "source": "name: \"Try out your task filter\"",
+          "target": "name: \"测试您的任务过滤器\""
+        },
+        {
+          "source": "name: \"Order archived tasks\"",
+          "target": "name: \"归档任务排序\""
+        },
+        {
+          "source": "name: \"Sort top-level tasks alphabetically before archiving\"",
+          "target": "name: \"归档前按字母顺序排序顶层任务\""
+        },
+        {
+          "source": "name: \"Add newlines around the archive heading\"",
+          "target": "name: \"在归档标题前后添加空行\""
+        },
+        {
+          "source": "name: \"Archive all checked tasks\"",
+          "target": "name: \"归档所有已完成任务\""
+        },
+        {
+          "source": "name: \"Archive a task only if its subtasks are done\"",
+          "target": "name: \"仅当子任务完成时才归档任务\""
+        },
+        {
+          "source": "name: \"Replace some text before archiving\"",
+          "target": "name: \"归档前替换部分文本\""
+        },
+        {
+          "source": "name: \"Regular expression\"",
+          "target": "name: \"正则表达式\""
+        },
+        {
+          "source": "name: \"Replacement\"",
+          "target": "name: \"替换内容\""
+        },
+        {
+          "source": "name: \"Try out your replacement\"",
+          "target": "name: \"测试您的替换规则\""
+        },
+        {
+          "source": "name: \"Archive to a separate file\"",
+          "target": "name: \"归档到单独文件\""
+        },
+        {
+          "source": "name: \"What kind of file to use?\"",
+          "target": "name: \"使用何种文件类型?\""
+        },
+        {
+          "source": "name: \"File name\"",
+          "target": "name: \"文件名\""
+        },
+        {
+          "source": "name: \"obsidian-tasks completed date format\"",
+          "target": "name: \"obsidian-tasks完成日期格式\""
+        },
+        {
+          "source": "name: \"Archive under headings\"",
+          "target": "name: \"在标题下归档\""
+        },
+        {
+          "source": "name: \"First heading depth\"",
+          "target": "name: \"首个标题层级\""
+        },
+        {
+          "source": "name: \"Archive under list items\"",
+          "target": "name: \"在列表项下归档\""
+        },
+        {
+          "source": "name: \"Append some metadata to task before archiving\"",
+          "target": "name: \"归档前为任务添加元数据\""
+        },
+        {
+          "source": "name: \"Metadata to append\"",
+          "target": "name: \"要添加的元数据\""
+        },
+        {
+          "source": "name: \"Archive tasks in this file\"",
+          "target": "name: \"归档此文件中的任务\""
+        },
+        {
+          "source": "name: \"Archive tasks including nested tasks in this file\"",
+          "target": "name: \"归档此文件中的任务(包括嵌套任务)\""
+        },
+        {
+          "source": "name: \"Delete tasks in this file\"",
+          "target": "name: \"删除此文件中的任务\""
+        },
+        {
+          "source": "name: \"Archive heading under cursor\"",
+          "target": "name: \"归档光标处的标题\""
+        },
+        {
+          "source": "name: \"Sort tasks in list under cursor\"",
+          "target": "name: \"排序光标处列表中的任务\""
+        },
+        {
+          "source": "name: \"Toggle task done and archive it\"",
+          "target": "name: \"切换任务完成状态并归档\""
+        },
+        {
+          "source": "description: \"Add a pattern per line. No patterns means all files will match\"",
+          "target": "description: \"每行添加一个模式。无模式表示匹配所有文件\""
+        },
+        {
+          "source": "description: \"Add a pattern per line. No patterns means all tasks will match\"",
+          "target": "description: \"每行添加一个模式。无模式表示匹配所有任务\""
+        },
+        {
+          "source": "description: \"Only archive tasks matching this pattern, typically '#task' but can be anything.\"",
+          "target": "description: \"仅归档匹配此模式的任务，通常是'#task'但可以是任何内容\""
+        },
+        {
+          "source": "description: \"Archive tasks with symbols other than 'x' (like '[>]', '[-]', etc.)\"",
+          "target": "description: \"归档带有非'x'符号的任务(如'[>]'、'[-]'等)\""
+        },
+        {
+          "source": "description: \"You can use it to remove tags from your archived tasks. Note that this replacement is applied to all the list items in the completed task\"",
+          "target": "description: \"可用于从归档任务中移除标签。注意此替换会应用于已完成任务中的所有列表项\""
+        },
+        {
+          "source": "description: \"If checked, the archiver will search for a file based on the pattern and will try to create it if needed\"",
+          "target": "description: \"勾选后，归档器将根据模式查找文件并在需要时尝试创建\""
+        },
+        {
+          "source": "description: \"If you pick \\\"Daily note\\\", your daily note template is going to be used when creating it\"",
+          "target": "description: \"如果选择\\\"每日笔记\\\"，创建时将使用您的每日笔记模板\""
+        },
+        {
+          "source": "description: \"When disabled, no headings will get created\"",
+          "target": "description: \"禁用后将不会创建标题\""
+        },
+        {
+          "source": "description: \"Define rules for handling tasks that match certain conditions\"",
+          "target": "description: \"定义处理符合特定条件任务的规则\""
+        },
+        {
+          "source": "text: \"Archived\"",
+          "target": "text: \"已归档\""
+        },
+        {
+          "source": "text: \"[x] task\"",
+          "target": "text: \"[x] 任务\""
+        },
+        {
+          "source": "text: \"\"\n            }]),\n            buttonText: \"",
+          "target": "text: \"\"\n            }]),\n            buttonText: \""
+        },
+        {
+          "source": "text: `[[${placeholders.DATE}]]`",
+          "target": "text: `[[${placeholders.DATE}]]`"
+        }
+      ]
+    }
+  }
+}

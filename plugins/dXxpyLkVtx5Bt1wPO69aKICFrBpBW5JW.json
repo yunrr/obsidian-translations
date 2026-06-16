@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "featured-image",
+    "version": "2.0.0",
+    "title": "Featured Image",
+    "description": "Automatically sets a featured image property in your notes based on the first image, YouTube link, or Auto Card Link image found in your document. This allows you to create rich note galleries using Folder Notes and Dataview.",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(newFeature ? `Dry run: Would change featured image to: ${newFeature}` : `Dry run: Would remove featured image`)",
+          "target": "Notice(newFeature ? `模拟运行: 会将特色图片更改为: ${newFeature}` : `模拟运行: 会移除特色图片`)"
+        },
+        {
+          "source": "Notice(newFeature ? `Featured image set to ${newFeature}` : \"Featured image removed\")",
+          "target": "Notice(newFeature ? `特色图片设置为 ${newFeature}` : \"特色图片已移除\")"
+        },
+        {
+          "source": "Notice(\"No file is currently active\")",
+          "target": "Notice(\"当前没有活跃的文件\")"
+        },
+        {
+          "source": "Notice(`Starting ${this.settings.dryRun ? \"dry run of \" : \"\"}${operationName}...`)",
+          "target": "Notice(`开始 ${this.settings.dryRun ? \"模拟运行 \" : \"\"}${operationName}...`)"
+        },
+        {
+          "source": "Notice(`Starting ${this.settings.dryRun ? \"dry run of \" : \"\"}removal of featured images from all files...`)",
+          "target": "Notice(`开始 ${this.settings.dryRun ? \"dry run of \" : \"\"}从所有文件中移除特色图片...`)"
+        },
+        {
+          "source": "Notice(`Finished ${this.settings.dryRun ? \"dry run of \" : \"\"}removing featured images from ${removedCount} files.`)",
+          "target": "Notice(`完成 ${this.settings.dryRun ? \"dry run of \" : \"\"}从 ${removedCount} 个文件中移除特色图片。`)"
+        },
+        {
+          "source": "name: \"Set featured images in all files\"",
+          "target": "name: \"在所有文件中设置特色图片\""
+        },
+        {
+          "source": "name: \"Set featured images in current folder\"",
+          "target": "name: \"在当前文件夹中设置特色图片\""
+        },
+        {
+          "source": "name: \"Remove featured images in all files\"",
+          "target": "name: \"从所有文件中移除特色图片\""
+        },
+        {
+          "source": "text: \"Note: The original modification dates of all files will be preserved.\"",
+          "target": "text: \"注意：所有文件的原始修改日期将被保留。\""
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Proceed\")",
+          "target": ".setButtonText(\"继续\")"
+        },
+        {
+          "source": ".setName(\"Show notifications\")",
+          "target": ".setName(\"显示通知\")"
+        },
+        {
+          "source": ".setName(\"Excluded folders\")",
+          "target": ".setName(\"排除的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Frontmatter\")",
+          "target": ".setName(\"前置事项\")"
+        },
+        {
+          "source": ".setName(\"Frontmatter property\")",
+          "target": ".setName(\"前置事项属性\")"
+        },
+        {
+          "source": ".setName(\"Only update if frontmatter property exists\")",
+          "target": ".setName(\"仅在前置事项属性存在时更新\")"
+        },
+        {
+          "source": ".setName(\"Use media links\")",
+          "target": ".setName(\"使用媒体链接\")"
+        },
+        {
+          "source": ".setName(\"Require exclamation mark for YouTube thumbnails\")",
+          "target": ".setName(\"要求 YouTube 缩略图前缀感叹号\")"
+        },
+        {
+          "source": ".setName(\"Download WebP\")",
+          "target": ".setName(\"下载 WebP 格式\")"
+        },
+        {
+          "source": ".setName(\"Local media\")",
+          "target": ".setName(\"本地媒体\")"
+        },
+        {
+          "source": ".setName(\"Thumbnail download folder\")",
+          "target": ".setName(\"缩略图下载文件夹\")"
+        },
+        {
+          "source": ".setName(\"Local image extensions\")",
+          "target": ".setName(\"本地图片扩展名\")"
+        },
+        {
+          "source": ".setName(\"Developer\")",
+          "target": ".setName(\"开发者\")"
+        },
+        {
+          "source": ".setName(\"Debug mode\")",
+          "target": ".setName(\"调试模式\")"
+        },
+        {
+          "source": ".setName(\"Dry run\")",
+          "target": ".setName(\"模拟运行\")"
+        },
+        {
+          "source": ".setDesc(\"Show notifications when the featured image is set, updated or removed.\")",
+          "target": ".setDesc(\"在设置、更新或移除特色图片时显示通知。\")"
+        },
+        {
+          "source": ".setDesc(\"Comma separated list of folders to exclude from the featured image plugin.\")",
+          "target": ".setDesc(\"以逗号分隔的要从特色图片插件中排除的文件夹列表。\")"
+        },
+        {
+          "source": ".setDesc(\"The name of the frontmatter property to update with the featured image\")",
+          "target": ".setDesc(\"要更新为特色图片的前置事项属性名称\")"
+        },
+        {
+          "source": ".setDesc(\"Enable this to only update the frontmatter property if it already exists.\")",
+          "target": ".setDesc(\"启用此选项仅在前置事项属性已存在时进行更新。\")"
+        },
+        {
+          "source": ".setDesc(\"Use Obsidian media links (e.g. ![[image.png]]) instead of plain text (e.g. image.png) for the featured image property.\")",
+          "target": ".setDesc(\"使用 Obsidian 媒体链接(例如 ![[image.png]])而不是纯文本(例如 image.png)作为特色图片属性。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, only YouTube links prefixed with an exclamation mark will be considered for thumbnail download.\")",
+          "target": ".setDesc(\"如果启用,只有前缀为感叹号的 YouTube 链接才会被考虑用于缩略图下载。\")"
+        },
+        {
+          "source": ".setDesc(\"Download WebP versions of images from YouTube if available, otherwise download JPG.\")",
+          "target": ".setDesc(\"如果可用,下载来自 YouTube 的 WebP 版本图片,否则下载 JPG。\")"
+        },
+        {
+          "source": ".setDesc(\"YouTube thumbnails and external Auto Card Link images will be downloaded to this folder.\")",
+          "target": ".setDesc(\"YouTube 缩略图和外部 Auto Card Link 图片将下载到此文件夹中。\")"
+        },
+        {
+          "source": ".setDesc(\"Comma-separated list of image file extensions to search for in documents.\")",
+          "target": ".setDesc(\"以逗号分隔的要在文档中搜索的图片文件扩展名列表。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable debug mode to log detailed information to the console.\")",
+          "target": ".setDesc(\"启用调试模式以记录详细的控制台信息。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable dry run to prevent any changes from being made to your files.\")",
+          "target": ".setDesc(\"启用模拟运行以防止对文件进行任何更改。\")"
+        },
+        {
+          "source": "Log(\"Plugin loaded, debug mode:\", this.settings.debugMode, \"dry run:\", this.settings.dryRun)",
+          "target": "Log(\"插件加载完成,调试模式:\", this.settings.debugMode, \"模拟运行:\", this.settings.dryRun)"
+        },
+        {
+          "source": "Log(`FEATURE UPDATED\n- File: ${file.path}\n- Current feature: ${currentFeature}\n- New feature: ${newFeature}`)",
+          "target": "Log(`功能已更新\n- 文件: ${file.path}\n- 当前功能: ${currentFeature}\n- 新功能: ${newFeature}`)"
+        },
+        {
+          "source": "Log(\"Auto Card Link image found:\", match.groups.autoCardImage)",
+          "target": "Log(\"找到 Auto Card Link 图片:\", match.groups.autoCardImage)"
+        },
+        {
+          "source": "Log(\"Invalid Auto Card Link URL:\", imagePath)",
+          "target": "Log(\"无效的 Auto Card Link URL:\", imagePath)"
+        },
+        {
+          "source": "Log(\"Failed to generate hashed filename for:\", imagePath)",
+          "target": "Log(\"生成哈希文件名失败:\", imagePath)"
+        },
+        {
+          "source": "Log(\"Dry run: Skipping Auto Card Link image download, using mock path\")",
+          "target": "Log(\"模拟运行: 跳过 Auto Card Link 图片下载,使用模拟路径\")"
+        },
+        {
+          "source": "Log(\"Auto Card Link image already exists, skipping download\")",
+          "target": "Log(\"Auto Card Link 图片已存在,跳过下载\")"
+        },
+        {
+          "source": "Log(\"Unknown Content-Type for image:\", contentType)",
+          "target": "Log(\"未知的图片 Content-Type:\", contentType)"
+        },
+        {
+          "source": "Log(\"Failed to download Auto Card Link image, error:\", error)",
+          "target": "Log(\"下载 Auto Card Link 图片失败,错误:\", error)"
+        },
+        {
+          "source": "Log(\"Dry run: Skipping frontmatter update\")",
+          "target": "Log(\"模拟运行: 跳过前置事项更新\")"
+        },
+        {
+          "source": "Log(\"Dry run: Skipping thumbnail download, using mock path\")",
+          "target": "Log(\"模拟运行: 跳过缩略图下载,使用模拟路径\")"
+        },
+        {
+          "source": "Log(\"Failed to download WebP thumbnail\")",
+          "target": "Log(\"下载 WebP 缩略图失败\")"
+        },
+        {
+          "source": "Log(\"Failed to download maxresdefault.jpg\")",
+          "target": "Log(\"下载 maxresdefault.jpg 失败\")"
+        },
+        {
+          "source": "Log(\"Failed to download hqdefault.jpg:\")",
+          "target": "Log(\"下载 hqdefault.jpg 失败:\")"
+        },
+        {
+          "source": "Log(`Thumbnail for video ${videoId} could not be downloaded`)",
+          "target": "Log(`视频 ${videoId} 的缩略图无法下载`)"
+        },
+        {
+          "source": "Log(\"Invalid YouTube URL:\", url)",
+          "target": "Log(\"无效的 YouTube URL:\", url)"
+        },
+        {
+          "source": "Log(`Error processing file ${file.path}:`, error)",
+          "target": "Log(`处理文件 ${file.path} 时出错:`, error)"
+        },
+        {
+          "source": "Log(\"FEATURE REMOVED\\n- File: \", file.path)",
+          "target": "Log(\"功能已被移除\\n- 文件: \", file.path)"
+        },
+        {
+          "source": "\"Update all featured images\"",
+          "target": "\"更新所有特色图片\""
+        },
+        {
+          "source": "\"This will scan all markdown files in your vault and update or add featured images based on the first image, YouTube link, or Auto Card Link image found in each file. Proceed?\"",
+          "target": "\"这将扫描您仓库中的所有 Markdown 文件,并根据每个文件中找到的第一个图片、YouTube 链接或 Auto Card Link 图片来更新或添加特色图片。继续吗？\""
+        },
+        {
+          "source": "\"bulk update of featured images\"",
+          "target": "\"批量更新特色图片\""
+        },
+        {
+          "source": "\"updating featured images\"",
+          "target": "\"正在更新特色图片\""
+        },
+        {
+          "source": "\"Update folder featured images\"",
+          "target": "\"更新文件夹中的特色图片\""
+        },
+        {
+          "source": "`This will scan all markdown files in \"${currentFolder}\" and its subfolders, and update or add featured images based on the first image, YouTube link, or Auto Card Link image found in each file. Proceed?`",
+          "target": "`这将扫描 \"${currentFolder}\" 及其子文件夹中的所有 Markdown 文件,并根据每个文件中找到的第一个图片、YouTube 链接或 Auto Card Link 图片来更新或添加特色图片。继续吗？`"
+        },
+        {
+          "source": "\"bulk update of featured images in folder\"",
+          "target": "\"批量更新文件夹中的特色图片\""
+        },
+        {
+          "source": "\"Remove all featured images\"",
+          "target": "\"移除所有特色图片\""
+        },
+        {
+          "source": "`This will remove the \"${this.settings.frontmatterProperty}\" property from the frontmatter of all markdown files in your vault. Proceed?`",
+          "target": "`这将从您仓库中所有 Markdown 文件的前置事项中移除 \"${this.settings.frontmatterProperty}\" 属性。继续吗？`"
+        },
+        {
+          "source": "`Processed ${i + 1} of ${totalFiles} files. Updated ${updatedCount} featured images${errorCount > 0 ? `. Errors: ${errorCount}` : \"\"}`",
+          "target": "`已处理 ${i + 1} 个文件,共 ${totalFiles} 个。更新了 ${updatedCount} 个特色图片${errorCount > 0 ? `. 错误: ${errorCount}` : \"\"}`"
+        },
+        {
+          "source": "`Finished ${this.settings.dryRun ? \"dry run of \" : \"\"}${progressText}. Updated: ${updatedCount} files${errorCount > 0 ? `. Errors: ${errorCount}` : \"\"}`",
+          "target": "`完成 ${this.settings.dryRun ? \"模拟运行 \" : \"\"}${progressText}。更新了 ${updatedCount} 个文件${errorCount > 0 ? `. 错误: ${errorCount}` : \"\"}`"
+        }
+      ]
+    }
+  }
+}
