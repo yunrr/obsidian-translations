@@ -1,0 +1,443 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-admonition",
+    "version": "2.0.0",
+    "title": "Admonition",
+    "description": "Enhanced callouts for Obsidian.md",
+    "language": "zh-cn",
+    "supportedVersions": "10.3.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setText(\"No match found\")",
+          "target": ".setText(\"未找到匹配项\")"
+        },
+        {
+          "source": ".setText(\"Export Admonitions\")",
+          "target": ".setText(\"导出提示信息\")"
+        },
+        {
+          "source": ".setText(`${this.editing?\"Edit\":\"Add\"} Admonition`)",
+          "target": ".setText(`${this.editing?\"编辑\":\"添加\"} 警告`)"
+        },
+        {
+          "source": ".setButtonText(\"Insert\")",
+          "target": ".setButtonText(\"插入\")"
+        },
+        {
+          "source": ".setButtonText(\"Export Selected\")",
+          "target": ".setButtonText(\"导出选中项\")"
+        },
+        {
+          "source": ".setButtonText(\"Select All\")",
+          "target": ".setButtonText(\"全选\")"
+        },
+        {
+          "source": ".setButtonText(\"Deselect All\")",
+          "target": ".setButtonText(\"取消选择所有\")"
+        },
+        {
+          "source": ".setButtonText(\"Download All\")",
+          "target": ".setButtonText(\"下载全部\")"
+        },
+        {
+          "source": ".setButtonText(\"Select & Download\")",
+          "target": ".setButtonText(\"选择并下载\")"
+        },
+        {
+          "source": ".setButtonText(\"Choose Files\")",
+          "target": ".setButtonText(\"选择文件\")"
+        },
+        {
+          "source": ".setButtonText(\"Convert\")",
+          "target": ".setButtonText(\"转换\")"
+        },
+        {
+          "source": ".setName(\"Admonition Type\")",
+          "target": ".setName(\"提示类型\")"
+        },
+        {
+          "source": ".setName(\"Admonition Title\")",
+          "target": ".setName(\"提示标题\")"
+        },
+        {
+          "source": ".setName(\"Make Collapsible\")",
+          "target": ".setName(\"设为可折叠\")"
+        },
+        {
+          "source": ".setName(\"Export Custom Types as CSS\")",
+          "target": ".setName(\"导出自定义类型为 CSS\")"
+        },
+        {
+          "source": ".setName(\"Export Custom Types as JSON\")",
+          "target": ".setName(\"导出自定义类型为 JSON\")"
+        },
+        {
+          "source": ".setName(\"Use CSS Snippet for Custom Callouts\")",
+          "target": ".setName(\"使用 CSS 代码片段自定义提示框\")"
+        },
+        {
+          "source": ".setName(\"Import Admonition(s)\")",
+          "target": ".setName(\"导入提示（复数）\")"
+        },
+        {
+          "source": ".setName(\"Admonitions & Callouts\")",
+          "target": ".setName(\"提示与提醒\")"
+        },
+        {
+          "source": ".setName(\"Add Drop Shadow\")",
+          "target": ".setName(\"添加阴影效果\")"
+        },
+        {
+          "source": ".setName(\"Set Admonition Colors\")",
+          "target": ".setName(\"设置警告颜色\")"
+        },
+        {
+          "source": ".setName(\"Hide Empty Admonitions\")",
+          "target": ".setName(\"隐藏空提示信息\")"
+        },
+        {
+          "source": ".setName(\"Icon Packs\")",
+          "target": ".setName(\"图标包\")"
+        },
+        {
+          "source": ".setName(\"Use Font Awesome Icons\")",
+          "target": ".setName(\"使用 Font Awesome 图标\")"
+        },
+        {
+          "source": ".setName(\"Load Additional Icons\")",
+          "target": ".setName(\"加载额外图标\")"
+        },
+        {
+          "source": ".setName(\"Additional Syntaxes\")",
+          "target": ".setName(\"附加语法\")"
+        },
+        {
+          "source": ".setName(\"Advanced Settings\")",
+          "target": ".setName(\"高级设置\")"
+        },
+        {
+          "source": ".setDesc(\"Leave blank to render without a title.\")",
+          "target": ".setDesc(\"留空以在无标题的情况下渲染。\")"
+        },
+        {
+          "source": ".setDesc(\"Export a CSS snippet for custom callout types.\")",
+          "target": ".setDesc(\"导出一个 CSS 代码片段以自定义提示类型。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose custom types to export as a JSON file that you can then share with other users.\")",
+          "target": ".setDesc(\"选择自定义类型导出为JSON文件，然后可以与其他用户共享。\")"
+        },
+        {
+          "source": ".setDesc(\"Instead of managing it internally, Admonitions will maintain a CSS snippet to enable your custom types for callouts.\")",
+          "target": ".setDesc(\"Admonitions 将维护一个 CSS 代码片段，以便启用您的自定义类型呼叫提示。\")"
+        },
+        {
+          "source": ".setDesc(\"Add a new Admonition type. All custom Admonitions will also be usable as callouts.\")",
+          "target": ".setDesc(\"添加一个新的提示类型。所有自定义提示也将可用作注目。\")"
+        },
+        {
+          "source": ".setDesc(\"Import admonitions from a JSON definition.\")",
+          "target": ".setDesc(\"从 JSON 定义导入提示信息。\")"
+        },
+        {
+          "source": ".setDesc(\"A drop shadow will be added to admonitions.\")",
+          "target": ".setDesc(\"将在提示信息框添加阴影。\")"
+        },
+        {
+          "source": ".setDesc(\"Collapsible admonitions & callouts will be either opened or closed.\")",
+          "target": ".setDesc(\"可折叠的警告和提示将被打开或关闭。\")"
+        },
+        {
+          "source": ".setDesc(\"Add a 'copy content' button to admonitions & callouts.\")",
+          "target": ".setDesc(\"为提示和侧边栏添加一个“复制内容”按钮。\")"
+        },
+        {
+          "source": ".setDesc(\"Disable this setting to turn off admonition coloring by default. Can be overridden in the admonition definition.\")",
+          "target": ".setDesc(\"禁用此设置可默认关闭警告框着色。可以在警告框定义中覆盖此设置。\")"
+        },
+        {
+          "source": ".setDesc(\"Any admonition that does not have content inside it will be hidden.\")",
+          "target": ".setDesc(\"任何没有内容的提示都将被隐藏。\")"
+        },
+        {
+          "source": ".setDesc(\"Font Awesome Free icons will be available in the item picker. Existing Admonitions defined using Font Awesome icons will continue to work.\")",
+          "target": ".setDesc(\"Font Awesome 免费图标将在项目选择器中可用。已使用 Font Awesome 图标定义的警告框将继续生效。\")"
+        },
+        {
+          "source": ".setDesc(\"Load an additional icon pack. This requires an internet connection.\")",
+          "target": ".setDesc(\"加载额外的图标包。这需要互联网连接。\")"
+        },
+        {
+          "source": ".setDesc(\"Icon to display next to the title.\")",
+          "target": ".setDesc(\"图标，显示在标题旁边。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Admonition Type\")",
+          "target": ".setPlaceholder(\"提示类型\")"
+        },
+        {
+          "source": ".setTooltip(\"Cancel\")",
+          "target": ".setTooltip(\"取消\")"
+        },
+        {
+          "source": ".setTooltip(`${this.plugin.data.injectColor?\"Disable\":\"Enable\"} Admonition Color`)",
+          "target": ".setTooltip(`${this.plugin.data.injectColor?\"禁用\":\"启用\"} 警告颜色`)"
+        },
+        {
+          "source": ".setTooltip(\"Load\")",
+          "target": ".setTooltip(\"加载\")"
+        },
+        {
+          "source": ".setTooltip(\"Redownload\")",
+          "target": ".setTooltip(\"重新下载\")"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"Obsidian 0.14 has introduced Callout boxes to its core functionality using the same syntax as the Microsoft Document callouts.\",cls:\"setting-item\"})",
+          "target": ".createEl(\"p\",{text:\"Obsidian 0.14 已在其核心功能中引入了callout，使用的是与 Microsoft Document callout相同的语法。\",cls:\"setting-item\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"This has rendered the Microsoft Document syntax for Admonitions obsolete, but Admonitions can still be used to create and manage your custom callout types.\",cls:\"setting-item\"})",
+          "target": ".createEl(\"p\",{text:\"这使得 Microsoft Document 语法中的警告信息变得过时，但仍然可以使用Admonitions来创建和管理您的自定义callout。\",cls:\"setting-item\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"Your existing code block Admonitions will always work!\",cls:\"setting-item\"})",
+          "target": ".createEl(\"p\",{text:\"您现有的代码块Admonitions将始终有效！\",cls:\"setting-item\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"With large vaults, this could take awhile!\"})",
+          "target": ".createEl(\"p\",{text:\"处理大型库时，这可能需要一些时间！\"})"
+        },
+        {
+          "source": ".setName(\"Convert MSDoc Admonitions to Callouts\")",
+          "target": ".setName(\"将 MSDoc Admonitions转换为Callouts\")"
+        },
+        {
+          "source": ".setName(\"Convert Codeblock Admonitions to Callouts\")",
+          "target": ".setName(\"将代码块Admonitions转换为Callouts\")"
+        },
+        {
+          "source": "Notice(\"An admonition must have a title if it is collapsible.\")",
+          "target": "Notice(\"如果admonition可折叠的，那么它必须有一个标题。\")"
+        },
+        {
+          "source": "Notice(\"No admonition type by that name exists.\")",
+          "target": "Notice(\"不存在同名admonition类型。\")"
+        },
+        {
+          "source": "Notice(createFragment(s=>{s.createSpan({text:`There was an issue importing the ${r.type} admonition:`})",
+          "target": "Notice(createFragment(s=>{s.createSpan({text:`导入${r.type}admonition时出现问题：`})"
+        },
+        {
+          "source": "Notice(`There was an error while importing the admonition${l.length==1?\"\":\"s\"}.`)",
+          "target": "Notice(`导入 admonition ${l.length==1?\"\":\"s\"}时出错。`)"
+        },
+        {
+          "source": "Notice(\"At least one admonition must be chosen to export.\")",
+          "target": "Notice(\"必须至少选择一条admonition进行导出。\")"
+        },
+        {
+          "source": "Notice(\"There was an error parsing the image.\")",
+          "target": "Notice(\"分析图像时出错。\")"
+        },
+        {
+          "source": "Notice(\"Fix errors before saving.\")",
+          "target": "Notice(\"保存前修复错误。\")"
+        },
+        {
+          "source": "Notice(`${B[c]} successfully downloaded.`)",
+          "target": "Notice(`${B[c]}已成功下载。`)"
+        },
+        {
+          "source": "Notice(\"Could not download icon pack\")",
+          "target": "Notice(\"无法下载图标包\")"
+        },
+        {
+          "source": "Notice(\"Callout content copied to clipboard.\")",
+          "target": "Notice(\"标注内容已复制到剪贴板。\")"
+        },
+        {
+          "source": "Notice(\"Admonition content copied to clipboard.\")",
+          "target": "Notice(\"Admonition内容已复制到剪贴板。\")"
+        },
+        {
+          "source": "Notice(\"There was an issue inserting the admonition.\")",
+          "target": "Notice(\"插入admonition时出现问题。\")"
+        },
+        {
+          "source": "Notice(createFragment(a=>{a.createSpan({text:\"Admonitions: Obsidian now has native support for callouts! Check out the \"})",
+          "target": "Notice(createFragment(a=>{a.createSpan({text:\"警告：Obsidian 现在对callout有原生支持！看看\"})"
+        },
+        {
+          "source": ".log(\"Obsidian Admonition loaded\")",
+          "target": ".log(\"Obsidian Admonition已加载\")"
+        },
+        {
+          "source": ".log(\"Obsidian Admonition unloaded\")",
+          "target": ".log(\"Obsidian Admonition已卸载\")"
+        },
+        {
+          "source": "name:\"Collapse Admonitions in Note\"",
+          "target": "name:\"在笔记中的折叠Admonitions\""
+        },
+        {
+          "source": "name:\"Open Admonitions in Note\"",
+          "target": "name:\"在笔记中的打开Admonitions\""
+        },
+        {
+          "source": "name:\"Insert Admonition\"",
+          "target": "name:\"插入Admonition\""
+        },
+        {
+          "source": "name:\"Insert Callout\"",
+          "target": "name:\"插入Callout\""
+        },
+        {
+          "source": "name:`Insert ${c.type} Callout`",
+          "target": "name:`插入 ${c.type} Callout`"
+        },
+        {
+          "source": "name:`Insert ${c.type}`",
+          "target": "name:`插入 ${c.type}`"
+        },
+        {
+          "source": "name:`Insert ${c.type} With Title`",
+          "target": "name:`插入带有标题的${c.type}`"
+        },
+        {
+          "source": "text:\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla.\"",
+          "target": "text:\"唇亡齿寒，互为依存。无事不可成，天下无不可成之事。\""
+        },
+        {
+          "source": "text:`There was an issue importing the ${r.type} admonition:`",
+          "target": "text:`导入${r.type}admonition时出现问题：`"
+        },
+        {
+          "source": "text:\"Import one or more admonition definitions as a JSON array. An admonition definition should look as follows at minimum:\"",
+          "target": "text:\"将一个或多个admonition定义导入为JSON数组。admonition定义至少应如下：\""
+        },
+        {
+          "source": "text:\"See the plugin ReadMe for more information.\"",
+          "target": "text:\"有关更多信息，请参阅插件自述。\""
+        },
+        {
+          "source": "text:\"All admonitions & callouts will be collapsible by default. Use \"",
+          "target": "text:\"所有的 admonitions 和 callouts 将默认可折叠. 使用 \""
+        },
+        {
+          "source": "text:\"Obsidian 0.14 has introduced Callout boxes to its core functionality using the same syntax as the Microsoft Document callouts.\"",
+          "target": "text:\"Obsidian 0.14使用与Microsoft文档标注相同的语法将标注框引入其核心功能。\""
+        },
+        {
+          "source": "text:\"This has rendered the Microsoft Document syntax for Admonitions obsolete, but Admonitions can still be used to create and manage your custom callout types.\"",
+          "target": "text:\"这使得用于Admonitions的Microsoft Document语法过时，但Admonitions仍然可以用于创建和管理自定义标注类型。\""
+        },
+        {
+          "source": "text:\"Your existing code block Admonitions will always work!\"",
+          "target": "text:\"您现有的代码块Admonitions将始终有效！\""
+        },
+        {
+          "source": "text:\"This \"",
+          "target": "text:\"这 \""
+        },
+        {
+          "source": "text:\"will\"",
+          "target": "text:\"将\""
+        },
+        {
+          "source": "text:\" modify notes. Use at your own risk and please make backups.\"",
+          "target": "text:\"修改笔记。使用风险自负，请进行备份。\""
+        },
+        {
+          "source": "text:\"With large vaults, this could take awhile!\"",
+          "target": "text:\"对于大型库，这可能需要一段时间！\""
+        },
+        {
+          "source": "text:\"Converting MS-doc admonitions...\"",
+          "target": "text:\"正在转换MS文档admonitions...\""
+        },
+        {
+          "source": "text:\"Converting Codeblock admonitions...\"",
+          "target": "text:\"正在转换代码块admonitions...\""
+        },
+        {
+          "source": "text:\"This is used to create the admonition (e.g.,  \"",
+          "target": "text:\"这用于创建admonition(例如...\""
+        },
+        {
+          "source": "text:\"note\"",
+          "target": "text:\"便签\""
+        },
+        {
+          "source": "text:\" or \"",
+          "target": "text:\" 或 \""
+        },
+        {
+          "source": "text:\"abstract\"",
+          "target": "text:\"摘要\""
+        },
+        {
+          "source": "text:\"title\"",
+          "target": "text:\"标题\""
+        },
+        {
+          "source": "text:\"A copy button will be added to the admonition & callout.\"",
+          "target": "text:\"为admonition和callout添加一个复制按钮.\""
+        },
+        {
+          "source": "text:`There was an error rendering the admonition:\n\n`",
+          "target": "text:`渲染admonition时发生错误:\n\n`"
+        },
+        {
+          "source": "text:\"Admonitions: Obsidian now has native support for callouts! Check out the \"",
+          "target": "text:\"Admonitions:Obsidian现在对callout有原生支持！看看\""
+        },
+        {
+          "source": "text:\"Admonitions ReadMe\"",
+          "target": "text:\"Admonitions自述\""
+        },
+        {
+          "source": "text:\" for what that means for Admonitions going forward.\"",
+          "target": "text:\"这对未来的Admonitions意味着什么。\""
+        },
+        {
+          "source": ".setTooltip(`${this.injectColor?\"Disable\":\"Enable\"} Admonition Color`)",
+          "target": ".setTooltip(`${this.injectColor?\"Disable\":\"Enable\"} Admonition颜色`)"
+        },
+        {
+          "source": "\"Set the admonition color. Disable to set manually using CSS.\"",
+          "target": "\"设置admonition颜色。禁用使用CSS手动设置。\""
+        },
+        {
+          "source": "\"Admonition color is disabled and must be manually set using CSS.\"",
+          "target": "\"Admonition颜色已禁用，必须使用CSS手动设置。\""
+        },
+        {
+          "source": "\"Try to sync internal links to the metadata cache to display in graph view. This setting could have unintended consequences. Use at your own risk.\"",
+          "target": "\"尝试将内部链接同步到元数据缓存，以便在图形视图中显示。这种设置可能会产生意想不到的后果。使用风险自负。\""
+        },
+        {
+          "source": "\"Use Obsidian's markdown syntax highlighter in admonition code blocks. This setting is experimental and could cause errors.\"",
+          "target": "\"在admonition代码块中使用黑曜石的markdown语法高亮显示。此设置是实验性的，可能会导致错误。\""
+        },
+        {
+          "source": "\"Open\"",
+          "target": "\"展开\""
+        },
+        {
+          "source": "\"Closed\"",
+          "target": "\"折叠\""
+        },
+        {
+          "source": "\"None\"",
+          "target": "\"无\""
+        }
+      ]
+    }
+  }
+}

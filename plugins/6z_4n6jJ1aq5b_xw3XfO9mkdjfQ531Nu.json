@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "smart-composer",
+    "version": "2.0.0",
+    "title": "Smart Composer",
+    "description": "AI 聊天结合笔记上下文，智能写作辅助，一键编辑您的知识库。",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Please enter a content for your template\")",
+          "target": "Notice(\"请输入模板内容\")"
+        },
+        {
+          "source": "Notice(\"Please enter a name for your template\")",
+          "target": "Notice(\"请输入模板名称\")"
+        },
+        {
+          "source": "Notice(\"A template with this name already exists\")",
+          "target": "Notice(\"已存在同名模板\")"
+        },
+        {
+          "source": "Notice(\"Failed to create template\")",
+          "target": "Notice(\"创建模板失败\")"
+        },
+        {
+          "source": "Notice(\"Failed to save chat history\")",
+          "target": "Notice(\"保存聊天记录失败\")"
+        },
+        {
+          "source": "name:\"Open chat\"",
+          "target": "name:\"打开聊天\""
+        },
+        {
+          "source": "name:\"Rebuild entire vault index\"",
+          "target": "name:\"重建整个知识库索引\""
+        },
+        {
+          "source": "text:\"No files match the exclusion patterns\"",
+          "target": "text:\"没有文件匹配排除模式\""
+        },
+        {
+          "source": "text:\"No inclusion patterns specified - all files will be included (except those matching exclusion patterns)\"",
+          "target": "text:\"未指定包含模式 - 所有文件都将被包含（除了匹配排除模式的文件）\""
+        },
+        {
+          "source": "text:\"No files match the inclusion patterns\"",
+          "target": "text:\"没有文件匹配包含模式\""
+        },
+        {
+          "source": "Notice(\"Failed to load conversation\")",
+          "target": "Notice(\"加载会话失败\")"
+        },
+        {
+          "source": "Notice(\"Rebuilding vault index...\",0)",
+          "target": "Notice(\"正在重建知识库索引……\",0)"
+        },
+        {
+          "source": "Notice(\"Updating vault index...\",0)",
+          "target": "Notice(\"正在更新知识库索引……\",0)"
+        },
+        {
+          "source": "name:\"Add selection to chat\"",
+          "target": "name:\"添加选中内容到聊天\""
+        },
+        {
+          "source": "name:\"Update index for modified files\"",
+          "target": "name:\"为已修改文件更新索引\""
+        },
+        {
+          "source": "text:\"reference\"",
+          "target": "text:\"引用\""
+        },
+        {
+          "source": "Notice(`Template created: ${a}`)",
+          "target": "Notice(`模板已创建：${a}`)"
+        },
+        {
+          "source": "Notice(\"Failed to add MCP server.\")",
+          "target": "Notice(\"添加 MCP 服务器失败。\")"
+        },
+        {
+          "source": "Notice(\"Settings have been reset to defaults\")",
+          "target": "Notice(\"设置已重置为默认值\")"
+        },
+        {
+          "source": "Notice(\"Model with this ID already exists. Try a different ID.\")",
+          "target": "Notice(\"该 ID 的模型已存在，请尝试其他 ID。\")"
+        },
+        {
+          "source": "Notice(\"Provider with this ID does not exist\")",
+          "target": "Notice(\"不存在该 ID 的服务商\")"
+        },
+        {
+          "source": "Notice(`Provider with ID ${G} not found`)",
+          "target": "Notice(`未找到 ID 为 ${G} 的服务商`)"
+        },
+        {
+          "source": "Notice('Reasoning effort must be one of \"low\", \"medium\", \"high\"')",
+          "target": "Notice('推理强度必须为“低”、“中”或“高”之一')"
+        },
+        {
+          "source": "Notice(\"Please enter a valid number\")",
+          "target": "Notice(\"请输入有效数字\")"
+        },
+        {
+          "source": "Notice(\"Budget tokens must be at least 1024\")",
+          "target": "Notice(\"预算 Token 至少为 1024\")"
+        },
+        {
+          "source": "Notice('Search context size must be one of \"low\", \"medium\", \"high\"')",
+          "target": "Notice('搜索上下文大小必须为“低”、“中”或“高”之一')"
+        },
+        {
+          "source": "Notice(\"Cannot remove model that is currently selected as Chat Model or Apply Model\")",
+          "target": "Notice(\"无法移除当前被选为聊天模型或应用模型的模型\")"
+        },
+        {
+          "source": "Notice(\"Cannot disable model that is currently selected as Chat Model or Apply Model\")",
+          "target": "Notice(\"无法禁用当前被选为聊天模型或应用模型的模型\")"
+        },
+        {
+          "source": "Notice(\"Cannot remove model that is currently selected as Embedding Model\")",
+          "target": "Notice(\"无法移除当前被选为嵌入模型的模型\")"
+        },
+        {
+          "source": "Notice(\"No provider found with this ID\")",
+          "target": "Notice(\"未找到该 ID 的服务商\")"
+        },
+        {
+          "source": "Notice(\"Provider with this ID already exists. Try a different ID.\")",
+          "target": "Notice(\"该 ID 的服务商已存在，请尝试其他 ID。\")"
+        },
+        {
+          "source": "Notice(\"Failed to rebuild index\")",
+          "target": "Notice(\"重建索引失败\")"
+        },
+        {
+          "source": "Notice(\"Failed to remove index\")",
+          "target": "Notice(\"移除索引失败\")"
+        },
+        {
+          "source": "Notice(\"Failed to migrate to JSON storage. Please check the console for details.\")",
+          "target": "Notice(\"迁移到 JSON 存储失败。请查看控制台了解详细信息。\")"
+        },
+        {
+          "source": "name:\"Custom (OpenAI Compatible)\"",
+          "target": "name:\"自定义（兼容 OpenAI）\""
+        },
+        {
+          "source": "name:\"Chat model\"",
+          "target": "name:\"聊天模型\""
+        },
+        {
+          "source": "name:\"Apply model\"",
+          "target": "name:\"应用模型\""
+        },
+        {
+          "source": "name:\"System prompt\"",
+          "target": "name:\"系统提示词\""
+        },
+        {
+          "source": "name:\"Include current file\"",
+          "target": "name:\"包含当前文件\""
+        },
+        {
+          "source": "name:\"Enable tools\"",
+          "target": "name:\"启用工具\""
+        },
+        {
+          "source": "name:\"Max auto tool requests\"",
+          "target": "name:\"工具最大自动请求数\""
+        },
+        {
+          "source": "name:\"Reset settings\"",
+          "target": "name:\"重置设置\""
+        },
+        {
+          "source": "name:\"Provider ID\"",
+          "target": "name:\"服务商 ID\""
+        },
+        {
+          "source": "name:\"Model Name\"",
+          "target": "name:\"模型名称\""
+        },
+        {
+          "source": "name:\"Prompt Level\"",
+          "target": "name:\"提示词等级\""
+        },
+        {
+          "source": "name:\"Reasoning Effort\"",
+          "target": "name:\"推理强度\""
+        },
+        {
+          "source": "name:\"Budget Tokens\"",
+          "target": "name:\"预算 Token 数\""
+        },
+        {
+          "source": "name:\"Search Context Size\"",
+          "target": "name:\"搜索上下文大小\""
+        },
+        {
+          "source": "name:\"Provider Type\"",
+          "target": "name:\"服务商类型\""
+        },
+        {
+          "source": "name:\"API Key\"",
+          "target": "name:\"API 密钥\""
+        },
+        {
+          "source": "name:\"Base URL\"",
+          "target": "name:\"基础 URL\""
+        },
+        {
+          "source": "name:\"Embedding model\"",
+          "target": "name:\"嵌入模型\""
+        },
+        {
+          "source": "name:\"Include patterns\"",
+          "target": "name:\"包含模式\""
+        },
+        {
+          "source": "name:\"Exclude patterns\"",
+          "target": "name:\"排除模式\""
+        },
+        {
+          "source": "name:\"Chunk size\"",
+          "target": "name:\"分块大小\""
+        },
+        {
+          "source": "name:\"Threshold tokens\"",
+          "target": "name:\"阈值 Token 数\""
+        },
+        {
+          "source": "name:\"Minimum similarity\"",
+          "target": "name:\"最小相似度\""
+        },
+        {
+          "source": "name:\"Limit\"",
+          "target": "name:\"限制\""
+        },
+        {
+          "source": "name:\"Manage Embedding Database\"",
+          "target": "name:\"管理嵌入数据库\""
+        },
+        {
+          "source": "name:\"Support Smart Composer\"",
+          "target": "name:\"支持 Smart Composer\""
+        },
+        {
+          "source": "description:\"Terminal closed\"",
+          "target": "description:\"终端已关闭\""
+        },
+        {
+          "source": "description:\"User interruption with CTRL-C\"",
+          "target": "description:\"用户使用 CTRL-C 中断\""
+        },
+        {
+          "source": "description:\"User interruption with CTRL-\\\\\"",
+          "target": "description:\"用户使用 CTRL-\\\\ 中断\""
+        },
+        {
+          "source": "description:\"Invalid machine instruction\"",
+          "target": "description:\"无效的机器指令\""
+        },
+        {
+          "source": "description:\"Debugger breakpoint\"",
+          "target": "description:\"调试器断点\""
+        },
+        {
+          "source": "description:\"Aborted\"",
+          "target": "description:\"已中止\""
+        },
+        {
+          "source": "description:\"Bus error due to misaligned, non-existing address or paging error\"",
+          "target": "description:\"总线错误：地址未对齐、地址不存在或分页错误\""
+        },
+        {
+          "source": "description:\"Command should be emulated but is not implemented\"",
+          "target": "description:\"该命令应被模拟但未实现\""
+        },
+        {
+          "source": "description:\"Floating point arithmetic error\"",
+          "target": "description:\"浮点运算错误\""
+        },
+        {
+          "source": "description:\"Forced termination\"",
+          "target": "description:\"强制终止\""
+        },
+        {
+          "source": "description:\"Application-specific signal\"",
+          "target": "description:\"应用特定信号\""
+        },
+        {
+          "source": "description:\"Segmentation fault\"",
+          "target": "description:\"段错误\""
+        },
+        {
+          "source": "description:\"Broken pipe or socket\"",
+          "target": "description:\"管道或套接字损坏\""
+        },
+        {
+          "source": "description:\"Timeout or timer\"",
+          "target": "description:\"超时或计时器\""
+        },
+        {
+          "source": "description:\"Termination\"",
+          "target": "description:\"终止\""
+        },
+        {
+          "source": "description:\"Stack is empty or overflowed\"",
+          "target": "description:\"堆栈为空或溢出\""
+        },
+        {
+          "source": "description:\"Child process terminated, paused or unpaused\"",
+          "target": "description:\"子进程已终止、暂停或恢复\""
+        },
+        {
+          "source": "description:\"Unpaused\"",
+          "target": "description:\"已恢复\""
+        },
+        {
+          "source": "description:\"Paused\"",
+          "target": "description:\"已暂停\""
+        },
+        {
+          "source": "description:'Paused using CTRL-Z or \"suspend\"'",
+          "target": "description:'使用 CTRL-Z 或“挂起”已暂停\"'"
+        },
+        {
+          "source": "description:\"Background process cannot read terminal input\"",
+          "target": "description:\"后台进程无法读取终端输入\""
+        },
+        {
+          "source": "description:\"User interruption with CTRL-BREAK\"",
+          "target": "description:\"用户使用 CTRL-BREAK 中断\""
+        },
+        {
+          "source": "description:\"Background process cannot write to terminal output\"",
+          "target": "description:\"后台进程无法写入终端输出\""
+        },
+        {
+          "source": "description:\"Socket received out-of-band data\"",
+          "target": "description:\"套接字收到带外数据\""
+        },
+        {
+          "source": "description:\"Process timed out\"",
+          "target": "description:\"进程超时\""
+        },
+        {
+          "source": "description:\"File too big\"",
+          "target": "description:\"文件过大\""
+        },
+        {
+          "source": "description:\"Terminal window size changed\"",
+          "target": "description:\"终端窗口大小已更改\""
+        },
+        {
+          "source": "description:\"I/O is available\"",
+          "target": "description:\"I/O 可用\""
+        },
+        {
+          "source": "description:\"Watched event\"",
+          "target": "description:\"监视事件\""
+        },
+        {
+          "source": "description:\"Request for process information\"",
+          "target": "description:\"请求进程信息\""
+        },
+        {
+          "source": "description:\"Device running out of power\"",
+          "target": "description:\"设备电量不足\""
+        },
+        {
+          "source": "description:\"Invalid system call\"",
+          "target": "description:\"无效的系统调用\""
+        },
+        {
+          "source": "description:\"Application-specific signal (realtime)\"",
+          "target": "description:\"应用特定信号（实时）\""
+        },
+        {
+          "source": "description:\"Enable this if you encounter CORS errors related to Stainless headers (x-stainless-os, etc.)\"",
+          "target": "description:\"如遇到与 Stainless 头（x-stainless-os 等）相关的 CORS 错误，请启用此项\""
+        },
+        {
+          "source": "text:\"Save\"",
+          "target": "text:\"保存\""
+        },
+        {
+          "source": "text:\"Cancel\"",
+          "target": "text:\"取消\""
+        },
+        {
+          "source": "text:\"Add MCP Server\"",
+          "target": "text:\"添加 MCP 服务器\""
+        },
+        {
+          "source": "text:\"Smart Composer requires a newer version of the Obsidian installer. Please note that this is different from Obsidian's in-app updates. You must download the latest version of Obsidian manually to continue using Smart Composer.\"",
+          "target": "text:\"Smart Composer 需要更高版本的 Obsidian 安装程序。请注意，这与 Obsidian 应用内更新不同。您必须手动下载最新版 Obsidian 才能继续使用 Smart Composer。\""
+        },
+        {
+          "source": "text:\"Open Download Page\"",
+          "target": "text:\"打开下载页面\""
+        },
+        {
+          "source": "text:\"Reset\"",
+          "target": "text:\"重置\""
+        },
+        {
+          "source": "text:\"Add\"",
+          "target": "text:\"添加\""
+        },
+        {
+          "source": "text:\"Test patterns\"",
+          "target": "text:\"测试模式\""
+        },
+        {
+          "source": "text:\"Manage\"",
+          "target": "text:\"管理\""
+        },
+        {
+          "source": "text:\"Buy Me a Coffee\"",
+          "target": "text:\"请我喝咖啡\""
+        },
+        {
+          "source": ".setText(\"Add MCP Server\")",
+          "target": ".setText(\"添加 MCP 服务器\")"
+        },
+        {
+          "source": ".setText(\"Edit MCP Server\")",
+          "target": ".setText(\"编辑 MCP 服务器\")"
+        },
+        {
+          "source": ".setText(\"Add Custom Chat Model\")",
+          "target": ".setText(\"添加自定义聊天模型\")"
+        },
+        {
+          "source": ".setText(`Edit Chat Model: ${this.model.id}`)",
+          "target": ".setText(`编辑聊天模型: ${this.model.id}`)"
+        },
+        {
+          "source": ".setText(\"No settings available for this model\")",
+          "target": ".setText(\"该模型无可用设置\")"
+        },
+        {
+          "source": ".setText(\"Add Custom Embedding Model\")",
+          "target": ".setText(\"添加自定义嵌入模型\")"
+        },
+        {
+          "source": ".setText(\"Add Custom Provider\")",
+          "target": ".setText(\"添加自定义服务商\")"
+        },
+        {
+          "source": ".setText(`Edit Provider: ${this.provider.id}`)",
+          "target": ".setText(`编辑服务商: ${this.provider.id}`)"
+        },
+        {
+          "source": ".setText(\"Manage Embedding Database\")",
+          "target": ".setText(\"管理嵌入数据库\")"
+        },
+        {
+          "source": ".setText(`Excluded Files (${this.files.length})`)",
+          "target": ".setText(`已排除文件 (${this.files.length})`)"
+        },
+        {
+          "source": ".setText(`Included Files (${this.files.length})`)",
+          "target": ".setText(`已包含文件 (${this.files.length})`)"
+        },
+        {
+          "source": ".setButtonText(\"Close\")",
+          "target": ".setButtonText(\"关闭\")"
+        },
+        {
+          "source": ".setButtonText(\"Report Bug\")",
+          "target": ".setButtonText(\"报告 Bug\")"
+        },
+        {
+          "source": ".setButtonText(\"Open Settings\")",
+          "target": ".setButtonText(\"打开设置\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setTitle(\"Smart Composer Requires Obsidian Update\")",
+          "target": ".setTitle(\"Smart Composer 需要更新 Obsidian\")"
+        },
+        {
+          "source": "text:\"How to obtain API keys\"",
+          "target": "text:\"如何获取API密钥\""
+        },
+        {
+          "source": ".setDesc(\"Enter your API keys for the services you want to use\")",
+          "target": ".setDesc(\"输入您要使用的服务的API密钥\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the model you want to use for chat\")",
+          "target": ".setDesc(\"选择您要用于聊天的模型\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the model you want to use for apply\")",
+          "target": ".setDesc(\"选择您要用于应用的模型\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the model you want to use for embeddings\")",
+          "target": ".setDesc(\"选择您要用于嵌入的模型\")"
+        },
+        {
+          "source": ".setDesc(\"This prompt will be added to the beginning of every chat.\")",
+          "target": ".setDesc(\"此提示将添加到每次聊天的开头。\")"
+        },
+        {
+          "source": ".setDesc(\"The API endpoint for your Ollama service (e.g., http://127.0.0.1:11434)\")",
+          "target": ".setDesc(\"您的Ollama服务的API端点（例如：http://127.0.0.1:11434）\")"
+        },
+        {
+          "source": ".setDesc(\"Select a model from your Ollama instance\")",
+          "target": ".setDesc(\"从您的Ollama实例中选择一个模型\")"
+        },
+        {
+          "source": ".setDesc(\"The API endpoint for your OpenAI-compatible service (e.g., https://api.example.com/v1)\")",
+          "target": ".setDesc(\"您的OpenAI兼容服务的API端点（例如：https://api.example.com/v1）\")"
+        },
+        {
+          "source": ".setDesc(\"Your authentication key for the OpenAI-compatible service\")",
+          "target": ".setDesc(\"您的OpenAI兼容服务的认证密钥\")"
+        },
+        {
+          "source": ".setDesc(\"The specific model to use with your service (e.g., llama-3.1-70b, mixtral-8x7b)\")",
+          "target": ".setDesc(\"与您的服务一起使用的特定模型（例如：llama-3.1-70b, mixtral-8x7b）\")"
+        },
+        {
+          "source": ".setDesc('Files matching ANY of these patterns will be excluded from indexing. One pattern per line. Uses glob patterns (e.g., \"private/*\", \"*.tmp\"). Leave empty to exclude nothing. After changing this, use the command \"Rebuild entire vault index\" to apply changes.')",
+          "target": ".setDesc('匹配这些模式中任意一个的文件将被排除在索引之外。每行一个模式。使用glob模式（例如：\"private/*\", \"*.tmp\"）。留空则不排除任何文件。更改后，请使用\"重建整个知识库索引\"命令来应用更改。')"
+        },
+        {
+          "source": ".setDesc('Set the chunk size for text splitting. After changing this, please re-index the vault using the \"Rebuild entire vault index\" command.')",
+          "target": ".setDesc('设置文本分块的大小。更改后，请使用\"重建整个知识库索引\"命令重新索引知识库。')"
+        },
+        {
+          "source": ".setDesc(\"Maximum number of tokens before switching to RAG. If the total tokens from mentioned files exceed this, RAG will be used instead of including all file contents.\")",
+          "target": ".setDesc(\"切换到RAG之前的最大token数。如果提及文件的总token数超过此值，将使用RAG而不是包含所有文件内容。\")"
+        },
+        {
+          "source": ".setDesc(\"Minimum similarity score for RAG results. Higher values return more relevant but potentially fewer results.\")",
+          "target": ".setDesc(\"RAG结果的最小相似度分数。值越高返回的结果越相关，但可能数量越少。\")"
+        },
+        {
+          "source": ".setDesc(\"Maximum number of RAG results to include in the prompt. Higher values provide more context but increase token usage.\")",
+          "target": ".setDesc(\"要包含在提示中的RAG结果的最大数量。值越高提供的上下文越多，但会增加token使用量。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your API key\")",
+          "target": ".setPlaceholder(\"输入您的API密钥\")"
+        }
+      ]
+    }
+  }
+}

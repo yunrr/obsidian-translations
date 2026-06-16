@@ -1,0 +1,891 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-daily-note-outline",
+    "version": "2.0.0",
+    "title": "Daily Note Outline",
+    "description": "Add a custom view which shows outline of multiple daily notes with headings, links, tags and list items",
+    "language": "zh-cn",
+    "supportedVersions": "1.5.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "setDesc(\"number of days to search per page (default = 28)\"",
+          "target": "setDesc(\"每页搜索的天数(默认值=28)\""
+        },
+        {
+          "source": "setDesc(\"in backward search, include n days of future daily notes (default = 5)\"",
+          "target": "setDesc(\"在向后搜索中，包括 n 天的未来每日笔记(默认值=5)\""
+        },
+        {
+          "source": "setDesc(\"You can set one base date to use for jumping back(YYYY-MM-DD)\"",
+          "target": "setDesc(\"您可以设置一个用于跳回的基准日期(YYYY-MM-DD)\""
+        },
+        {
+          "source": "setDesc(\"If enabled, daily notes created on base date are displayed in the view at startup or when Home icon is clicked.\"",
+          "target": "setDesc(\"如果启用，则在启动时或单击主页图标时，在基准日期创建的每日笔记会显示在视图中。\""
+        },
+        {
+          "source": "setDesc(\"if disabled, only top item of the list is displayed\"",
+          "target": "setDesc(\"如果禁用，则仅显示列表的顶部项目\""
+        },
+        {
+          "source": "setDesc(\"shows all list items marked with List Callouts plugin\"",
+          "target": "setDesc(\"显示所有用列表标注插件标记的列表项\""
+        },
+        {
+          "source": "setDesc(\"shows all list items start with time(- HH:mm )\"",
+          "target": "setDesc(\"显示所有以时间开头的列表项(- HH:mm)\""
+        },
+        {
+          "source": "setDesc(\"enable collapse all function at startup\"",
+          "target": "setDesc(\"启用启动时折叠所有功能\""
+        },
+        {
+          "source": "setDesc(\"choose type of file information to display with the file name for daily notes\"",
+          "target": "setDesc(\"选择要与日常笔记的文件名一起显示的文件信息类型\""
+        },
+        {
+          "source": "setDesc(\"choose type of file information to display for periodic notes other than daily notes\"",
+          "target": "setDesc(\"选择要为除日常笔记之外的定期笔记显示的文件信息类型\""
+        },
+        {
+          "source": "setDesc(\"Specify default position where this plugin's view appears\"",
+          "target": "setDesc(\"指定此插件视图显示的默认位置\""
+        },
+        {
+          "source": "setDesc(\"enable calendar sets feature. You have to activate and configure the beta version of the Periodic Notes Plugin first.\"",
+          "target": "setDesc(\"启用日历集功能。您必须首先激活并配置定期笔记插件的测试版。\""
+        },
+        {
+          "source": "setDesc(\"enable weekly/monthly/quarterly/yearly notes. You have to activate and configure the Periodic Notes Plugin first.\"",
+          "target": "setDesc(\"启用周/月/季/年笔记。您必须首先激活并配置 Periodic Notes 插件。\""
+        },
+        {
+          "source": "setDesc(\"number of weeks to search per page (default = 12)\"",
+          "target": "setDesc(\"每页搜索的周数(默认值=12)\""
+        },
+        {
+          "source": "setDesc(\"number of months to search per page (default = 12)\"",
+          "target": "setDesc(\"每页要搜索的月数(默认值=12)\""
+        },
+        {
+          "source": "setDesc(\"number of quarters to search per page (default = 8)\"",
+          "target": "setDesc(\"每页要搜索的季度数(默认值=8)\""
+        },
+        {
+          "source": "setDesc(\"number of years to search per page (default = 12)\"",
+          "target": "setDesc(\"每页搜索的年数(默认值=12)\""
+        },
+        {
+          "source": "setDesc(\"display date range next to weekly notes' name\"",
+          "target": "setDesc(\"在周笔记名称旁边显示日期范围\""
+        },
+        {
+          "source": "setDesc(\"Show a few subsequent words next to the outline element name\"",
+          "target": "setDesc(\"在大纲元素名称旁边显示几个后续单词\""
+        },
+        {
+          "source": "setDesc(\"Show subsequent sentences as a tooltip when hover\"",
+          "target": "setDesc(\"悬停时将后续句子显示为工具提示\""
+        },
+        {
+          "source": "setDesc(\"specify the direction to display tooltip preview\"",
+          "target": "setDesc(\"指定显示工具提示预览的方向\""
+        },
+        {
+          "source": "setDesc(\"default & min = 600\"",
+          "target": "setDesc(\"默认值 & 最小值 = 600\""
+        },
+        {
+          "source": "setDesc(\"default = 800 min = 600\"",
+          "target": "setDesc(\"默认值=800  最小值 = 600\""
+        },
+        {
+          "source": "setDesc(\"Headings which include listed words will not be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"包含列出单词的标题将不会显示。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"Links which include listed words will not be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"包含列出单词的链接将不会显示。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"tags which include listed words will not be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"将不显示包括列出的单词的标签。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"List items which include listed words will not be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"包含列出单词的列表项将不会显示。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"Only elements specified in 'Element type for include' which include listed words will be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"只有在'包含的元素类型'中指定的包含列出单词的元素才会显示。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"Specify whether to include the beginning parts of each daily note with no element to include \"",
+          "target": "setDesc(\"指定是否在不包含任何元素的情况下包含每个每日笔记的开头部分\""
+        },
+        {
+          "source": "setDesc(\"Excluding elements specified below ends at the selected type of elements. If you specified 'Element type for include' above, this value is ignored and excludeing elements ends at that type of elements.\"",
+          "target": "setDesc(\"排除以下指定的图元将终止于选定类型的图元。如果您在上面指定了'Element type for include'，则会忽略此值，并且排除元素结束于该类型的元素。\""
+        },
+        {
+          "source": "setDesc(\"Headings which include listed words and elements which belong to them will not be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"包括列出的单词和属于它们的元素的标题将不会显示。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"Links which include listed words and elements which belong to them will not be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"包含列出的单词和属于它们的元素的链接将不会显示。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"tags which include listed words and elements which belong to them will not be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"将不显示包括列出的单词和属于它们的元素的标签。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"List items which include listed words and elements which belong to them will not be displayed. Separate with a new line.\"",
+          "target": "setDesc(\"将不显示包括列出的单词和属于它们的元素的列表项。另起一行分隔。\""
+        },
+        {
+          "source": "setDesc(\"If enabled, long element names are displayed wrapped on multiple lines\"",
+          "target": "setDesc(\"如果启用，则长元素名称显示为换行在多行上\""
+        },
+        {
+          "source": "setDesc(\"Whether other elements should be indented to preceding headings\"",
+          "target": "setDesc(\"其他元素是否应缩进到前面的标题\""
+        },
+        {
+          "source": "setDesc(\"No change: use the current CSS theme setting values. Accent: highlight file names. Custom: Specify any color code. Please update the view when you toggled Obsidian's base theme(light/dark). (default = no change)\"",
+          "target": "setDesc(\"无更改:使用当前 CSS 主题设置值。强调文字:突出显示文件名。自定义:指定任何颜色代码。当您切换黑石的基本主题(亮/暗)时，请更新视图。(默认值=无更改)\""
+        },
+        {
+          "source": "setDesc(\"Specify background color (ex. #FFFFFF or rgb(255,255,255))\"",
+          "target": "setDesc(\"指定背景颜色(例如#FFFFFF 或 rgb(255255255))\""
+        },
+        {
+          "source": "setDesc(\"Specify background color on hover (ex. #FFFFFF or rgb(255,255,255))\"",
+          "target": "setDesc(\"悬停时指定背景颜色(例如 #FFFFFF 或 rgb(255255255))\""
+        },
+        {
+          "source": "setDesc(\"enter Lucide Icon name\"",
+          "target": "setDesc(\"输入 Lucide 图标名称\""
+        },
+        {
+          "source": "setDesc(\"add [ ] or [x]\"",
+          "target": "setDesc(\"添加 [ ] 或[x]\""
+        },
+        {
+          "source": "setDesc(\"Turn on if non-md files are displayed in the view\"",
+          "target": "setDesc(\"如果非 md 文件显示在视图中，请启用\""
+        },
+        {
+          "source": "setDesc(\"Turn on if you do not want to see files that do not exactly match the format\"",
+          "target": "setDesc(\"如果不希望看到与格式不完全匹配的文件，请启用\""
+        },
+        {
+          "source": "setDesc(\"To detect backlinks to daily notes, at startup, the plugin searches for links to dates and creates the corresponding daily note if one has not been created.\"",
+          "target": "setDesc(\"为了检测每日笔记的反向链接，在启动时，插件会搜索日期链接，并在尚未创建的情况下创建相应的每日笔记。\""
+        },
+        {
+          "source": "setDesc(\"Wait for the specified time at startup. If daily notes fail to load at startup, increasing this may resolve the issue. (default = 300)\"",
+          "target": "setDesc(\"在启动时等待指定的时间。如果日常笔记在启动时无法加载，增加这一数量可能会解决问题。(默认值=300)\""
+        },
+        {
+          "source": "setDesc(\"display debug information in the console\"",
+          "target": "setDesc(\"在控制台中显示调试信息\""
+        },
+        {
+          "source": "text: \"Daily/periodic note loading error(try clicking on the Home icon)\"",
+          "target": "text: \"每日/定期加载笔记错误(尝试单击主页图标)\""
+        },
+        {
+          "source": "text: \"Neither Daily Note plugin nor Periodic Notes community plugin is enabled\"",
+          "target": "text: \"Daily Notes 插件和 Periodic Notes 社区插件均未启用\""
+        },
+        {
+          "source": "text: \"Periodic Notes\"",
+          "target": "text: \"定期笔记\""
+        },
+        {
+          "source": "text: \"Periodic Notes community plugin is not enabled\"",
+          "target": "text: \"社区插件 Periodic Notes 未启用\""
+        },
+        {
+          "source": "text: \"Search duration for periodic notes\"",
+          "target": "text: \"定期笔记的搜索持续时间\""
+        },
+        {
+          "source": "text: \"Headings\"",
+          "target": "text: \"标题\""
+        },
+        {
+          "source": "text: \"Heading level to display\"",
+          "target": "text: \"要显示的标题级别\""
+        },
+        {
+          "source": "text: \"To display this section, activate 'Show headings' in Basics section.\"",
+          "target": "text: \"若要显示此部分，请激活'基础'部分中的'显示标题'。\""
+        },
+        {
+          "source": "text: \"Preview\"",
+          "target": "text: \"预览\""
+        },
+        {
+          "source": "text: \"Popout window\"",
+          "target": "text: \"弹出窗口\""
+        },
+        {
+          "source": "text: \"Popout window size\"",
+          "target": "text: \"弹出窗口大小\""
+        },
+        {
+          "source": "text: \"Simple filter\"",
+          "target": "text: \"简单过滤器\""
+        },
+        {
+          "source": "text: \"Include\"",
+          "target": "text: \"包括\""
+        },
+        {
+          "source": "text: \"If you specify one outline element type and words to include, only elements which belong to the included elements are displayed.\"",
+          "target": "text: \"如果指定一个大纲元素类型和要包含的单词，则只显示属于所包含元素的元素。\""
+        },
+        {
+          "source": "text: \"**NOTE**: If Include filter is set incorrectly, a number of outlines may not be displayed. In such a case, try setting 'Element type for include' to 'no Include filter'.\"",
+          "target": "text: \"**注**:如果 Include 过滤器设置不正确，则可能无法显示多个大纲。在这种情况下，请尝试将'Element type for include'设置为'no include filter'。\""
+        },
+        {
+          "source": "text: \"Exclude\"",
+          "target": "text: \"排除\""
+        },
+        {
+          "source": "text: \"Specified outline elements and elements belonging to that element will not be displayed.\"",
+          "target": "text: \"指定的轮廓元素和属于该元素的元素将不会显示。\""
+        },
+        {
+          "source": "text: \"Appearance\"",
+          "target": "text: \"外观\""
+        },
+        {
+          "source": "text: \"Links\"",
+          "target": "text: \"链接\""
+        },
+        {
+          "source": "text: \"Tags\"",
+          "target": "text: \"标签\""
+        },
+        {
+          "source": "text: \"List items\"",
+          "target": "text: \"列出项目\""
+        },
+        {
+          "source": "text: \"Time lists\"",
+          "target": "text: \"时间列表\""
+        },
+        {
+          "source": "text: \"Tasks\"",
+          "target": "text: \"任务\""
+        },
+        {
+          "source": "text: \"Completed tasks\"",
+          "target": "text: \"已完成的任务\""
+        },
+        {
+          "source": "text: \"Backlinks\"",
+          "target": "text: \"回链\""
+        },
+        {
+          "source": "text: \"Others\"",
+          "target": "text: \"其他\""
+        },
+        {
+          "source": "text: \"Debug\"",
+          "target": "text: \"调试\""
+        },
+        {
+          "source": "setName(\"Extract by word or phrase:\"",
+          "target": "setName(\"按单词或短语提取:\""
+        },
+        {
+          "source": "setName(\"Enter date to jump(YYYY-MM-DD):\"",
+          "target": "setName(\"输入要跳转的日期(YYYY-MM-DD):\""
+        },
+        {
+          "source": "setName(\"Search duration\"",
+          "target": "setName(\"搜索持续时间（Fendi 汉化于2024-09-21）\""
+        },
+        {
+          "source": "setName(\"Include future daily notes\"",
+          "target": "setName(\"包括未来的每日笔记\""
+        },
+        {
+          "source": "setName(\"Base date\"",
+          "target": "setName(\"基准日期\""
+        },
+        {
+          "source": "setName(\"Set Base date as Home\"",
+          "target": "setName(\"将基准日期设置为起始日期\""
+        },
+        {
+          "source": "setName(\"Show headings\"",
+          "target": "setName(\"显示标题\""
+        },
+        {
+          "source": "setName(\"Show links\"",
+          "target": "setName(\"显示链接\""
+        },
+        {
+          "source": "setName(\"Show tags\"",
+          "target": "setName(\"显示标签\""
+        },
+        {
+          "source": "setName(\"Show list items\"",
+          "target": "setName(\"显示列表\""
+        },
+        {
+          "source": "setName(\"Show all root list items\"",
+          "target": "setName(\"显示所有子列表\""
+        },
+        {
+          "source": "setName(\"Show all list callouts\"",
+          "target": "setName(\"显示所有列表标注\""
+        },
+        {
+          "source": "setName(\"Show all time lists\"",
+          "target": "setName(\"显示所有时间列表\""
+        },
+        {
+          "source": "setName(\"Show tasks\"",
+          "target": "setName(\"显示任务\""
+        },
+        {
+          "source": "setName(\"Hide completed tasks\"",
+          "target": "setName(\"隐藏已完成的任务\""
+        },
+        {
+          "source": "setName(\"Show links in properties\"",
+          "target": "setName(\"在属性中显示链接\""
+        },
+        {
+          "source": "setName(\"Show backlink files\"",
+          "target": "setName(\"显示反向链接文件\""
+        },
+        {
+          "source": "setName(\"Collapse all at startup\"",
+          "target": "setName(\"启动时全部折叠\""
+        },
+        {
+          "source": "setName(\"Display file information for daily notes\"",
+          "target": "setName(\"显示日常笔记的文件信息\""
+        },
+        {
+          "source": "setName(\"Display file information for periodic notes\"",
+          "target": "setName(\"显示定期票据的文件信息\""
+        },
+        {
+          "source": "setName(\"Position of the plugin view\"",
+          "target": "setName(\"插件视图的位置\""
+        },
+        {
+          "source": "setName(\"calendar sets\"",
+          "target": "setName(\"日历集\""
+        },
+        {
+          "source": "setName(\"periodic notes\"",
+          "target": "setName(\"定期笔记\""
+        },
+        {
+          "source": "setName(\"weekly notes\"",
+          "target": "setName(\"周笔记\""
+        },
+        {
+          "source": "setName(\"monthly notes\"",
+          "target": "setName(\"月笔记\""
+        },
+        {
+          "source": "setName(\"quarterly notes\"",
+          "target": "setName(\"季笔记\""
+        },
+        {
+          "source": "setName(\"yearly notes\"",
+          "target": "setName(\"年笔记\""
+        },
+        {
+          "source": "setName(\"attach date range to weekly notes\"",
+          "target": "setName(\"将日期范围附加到周笔记\""
+        },
+        {
+          "source": "setName(`Level${index + 1}`",
+          "target": "setName(`级别${index + 1}`"
+        },
+        {
+          "source": "setName(\"Inline preview\"",
+          "target": "setName(\"内联预览\""
+        },
+        {
+          "source": "setName(\"Tooltip preview\"",
+          "target": "setName(\"工具提示预览\""
+        },
+        {
+          "source": "setName(\"Tooltip preview direction\"",
+          "target": "setName(\"工具提示预览方向\""
+        },
+        {
+          "source": "setName(\"Width\"",
+          "target": "setName(\"宽度\""
+        },
+        {
+          "source": "setName(\"Height\"",
+          "target": "setName(\"高度\""
+        },
+        {
+          "source": "setName(\"Set popout window always on top\"",
+          "target": "setName(\"设置弹出窗口始终位于顶部\""
+        },
+        {
+          "source": "setName(\"Headings to ignore\"",
+          "target": "setName(\"要忽略的标题\""
+        },
+        {
+          "source": "setName(\"Links to ignore\"",
+          "target": "setName(\"要忽略的链接\""
+        },
+        {
+          "source": "setName(\"Tags to ignore\"",
+          "target": "setName(\"要忽略的标签\""
+        },
+        {
+          "source": "setName(\"List items to ignore\"",
+          "target": "setName(\"列出要忽略的项目\""
+        },
+        {
+          "source": "setName(\"Element type for include\"",
+          "target": "setName(\"包含的元素类型\""
+        },
+        {
+          "source": "setName(\"Words to include\"",
+          "target": "setName(\"要包含的单词\""
+        },
+        {
+          "source": "setName(\"Include the beginning part\"",
+          "target": "setName(\"包括开始部分\""
+        },
+        {
+          "source": "setName(\"Exclusion ends at\"",
+          "target": "setName(\"排除结束于\""
+        },
+        {
+          "source": "setName(\"Headings to exclude\"",
+          "target": "setName(\"要排除的标题\""
+        },
+        {
+          "source": "setName(\"Links to exclude\"",
+          "target": "setName(\"要排除的链接\""
+        },
+        {
+          "source": "setName(\"Tags to exclude\"",
+          "target": "setName(\"要排除的标签\""
+        },
+        {
+          "source": "setName(\"List items to exclude\"",
+          "target": "setName(\"列出要排除的项目\""
+        },
+        {
+          "source": "setName(\"Wrap outline element text\"",
+          "target": "setName(\"多行大纲元素文本\""
+        },
+        {
+          "source": "setName(\"Indentation of outline elements (other than  headings)\"",
+          "target": "setName(\"大纲元素的缩进(标题除外)\""
+        },
+        {
+          "source": "setName(\"Note title background color\"",
+          "target": "setName(\"注释标题背景颜色\""
+        },
+        {
+          "source": "setName(\"Custom note title background color (light)\"",
+          "target": "setName(\"自定义注释标题背景色(浅色)\""
+        },
+        {
+          "source": "setName(\"Custom note title background color (light, on hover)\"",
+          "target": "setName(\"自定义笔记标题背景色(浅色，悬停时)\""
+        },
+        {
+          "source": "setName(\"Custom note title background color (dark)\"",
+          "target": "setName(\"自定义笔记标题背景色(深色)\""
+        },
+        {
+          "source": "setName(\"Custom note title background color (dark, on hover)\"",
+          "target": "setName(\"自定义笔记标题背景色(深色，悬停时)\""
+        },
+        {
+          "source": "setName(\"Icon\"",
+          "target": "setName(\"图标\""
+        },
+        {
+          "source": "setName(\"Custom icon\"",
+          "target": "setName(\"自定义图标\""
+        },
+        {
+          "source": "setName(\"Prefix\"",
+          "target": "setName(\"前缀\""
+        },
+        {
+          "source": "setName(\"Repeat heading prefix\"",
+          "target": "setName(\"重复标题前缀\""
+        },
+        {
+          "source": "setName(\"Add indent\"",
+          "target": "setName(\"添加缩进\""
+        },
+        {
+          "source": "setName(\"Add checkbox text to prefix\"",
+          "target": "setName(\"将复选框文本添加到前缀\""
+        },
+        {
+          "source": "setName(\"Show only .md files\"",
+          "target": "setName(\"仅显示 .md 文件\""
+        },
+        {
+          "source": "setName(\"Show only exactly matched files\"",
+          "target": "setName(\"仅显示完全匹配的文件\""
+        },
+        {
+          "source": "setName(\"Create daily notes corresponding to unresolved links at startup\"",
+          "target": "setName(\"在启动时创建对应于未解析链接的每日笔记\""
+        },
+        {
+          "source": "setName(\"Startup delay time(ms)\"",
+          "target": "setName(\"启动延迟时间 (ms) \""
+        },
+        {
+          "source": "setName(\"show debug information\"",
+          "target": "setName(\"显示调试信息\""
+        },
+        {
+          "source": "name: \"Open Outline\"",
+          "target": "name: \"打开大纲\""
+        },
+        {
+          "source": "name: \"Create daily notes for unresolved links\"",
+          "target": "name: \"为未解析的链接创建每日笔记\""
+        },
+        {
+          "source": "addOption(\"right\", \"right side pane\"",
+          "target": "addOption(\"right\", \"右侧窗格\""
+        },
+        {
+          "source": "addOption(\"left\", \"left side pane\"",
+          "target": "addOption(\"left\", \"左侧窗格\""
+        },
+        {
+          "source": "addOption(\"tab\", \"new tab in main pane\"",
+          "target": "addOption(\"tab\", \"主窗格中的新选项卡\""
+        },
+        {
+          "source": "addOption(\"split\", \"splitted pane\"",
+          "target": "addOption(\"split\", \"分割窗格\""
+        },
+        {
+          "source": "addOption(\"popout\", \"popout window\"",
+          "target": "addOption(\"popout\", \"弹出窗口\""
+        },
+        {
+          "source": "addOption(\"none\", \"none\"",
+          "target": "addOption(\"none\", \"无\""
+        },
+        {
+          "source": "addOption(\"lines\", \"lines of the note\"",
+          "target": "addOption(\"lines\", \"笔记的行\""
+        },
+        {
+          "source": "addOption(\"days\", \"days from base date\"",
+          "target": "addOption(\"days\", \"自基准日期起的天数\""
+        },
+        {
+          "source": "addOption(\"dow\", \"day of the week\"",
+          "target": "addOption(\"dow\", \"星期几\""
+        },
+        {
+          "source": "addOption(\"dowshort\", \"day of the week(short)\"",
+          "target": "addOption(\"dowshort\", \"星期几（短）\""
+        },
+        {
+          "source": "addOption(\"weeknumber\", \"week number\"",
+          "target": "addOption(\"weeknumber\", \"周数\""
+        },
+        {
+          "source": "addOption(\"tag\", \"first tag\"",
+          "target": "addOption(\"tag\", \"第一个标签\""
+        },
+        {
+          "source": "addOption(\"0\", \"none\"",
+          "target": "addOption(\"0\", \"无\""
+        },
+        {
+          "source": "addOption(\"1\", \"follow preceding heading\"",
+          "target": "addOption(\"1\", \"跟随前面的标题\""
+        },
+        {
+          "source": "addOption(\"2\", \"preceding heading + 1\"",
+          "target": "addOption(\"2\", \"前一标题 + 1\""
+        },
+        {
+          "source": "addOption(\"left\", \"left\"",
+          "target": "addOption(\"left\", \"左侧\""
+        },
+        {
+          "source": "addOption(\"right\", \"right\"",
+          "target": "addOption(\"right\", \"右侧\""
+        },
+        {
+          "source": "addOption(\"bottom\", \"bottom\"",
+          "target": "addOption(\"bottom\", \"底部\""
+        },
+        {
+          "source": "addOption(\"top\", \"top\"",
+          "target": "addOption(\"top\", \"顶部\""
+        },
+        {
+          "source": "addOption(\"none\", \"no Include filter\"",
+          "target": "addOption(\"none\", \"无筛选器\""
+        },
+        {
+          "source": "addOption(\"heading\", \"heading\"",
+          "target": "addOption(\"heading\", \"标题\""
+        },
+        {
+          "source": "addOption(\"link\", \"link\"",
+          "target": "addOption(\"link\", \"链接\""
+        },
+        {
+          "source": "addOption(\"tag\", \"tag\"",
+          "target": "addOption(\"tag\", \"标签\""
+        },
+        {
+          "source": "addOption(\"listItems\", \"listItems\"",
+          "target": "addOption(\"listItems\", \"列表项\""
+        },
+        {
+          "source": "addOption(\"none\", \"no change\"",
+          "target": "addOption(\"none\", \"无变化\""
+        },
+        {
+          "source": "addOption(\"accent\", \"accent\"",
+          "target": "addOption(\"accent\", \"着重\""
+        },
+        {
+          "source": "addOption(\"custom\", \"custom\"",
+          "target": "addOption(\"custom\", \"自定义\""
+        },
+        {
+          "source": "addOption(\"hash\", \"hash\"",
+          "target": "addOption(\"hash\", \"# \""
+        },
+        {
+          "source": "addOption(\"chevron-right\", \"chevron-right\"",
+          "target": "addOption(\"chevron-right\", \"> 右侧\""
+        },
+        {
+          "source": "addOption(\"level\", \"as many times as its level\"",
+          "target": "addOption(\"level\", \"按照其级别尽可能多\""
+        },
+        {
+          "source": "addOption(\"levelminus1\", \"level - 1\"",
+          "target": "addOption(\"levelminus1\", \"级别 - 1\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"open settings\"",
+          "target": "navActionButton.ariaLabel = \"打开设置\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"home\"",
+          "target": "navActionButton.ariaLabel = \"主页\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"extract\"",
+          "target": "navActionButton.ariaLabel = \"提取\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"unextract\"",
+          "target": "navActionButton.ariaLabel = \"取消提取\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"expand\"",
+          "target": "navActionButton.ariaLabel = \"扩展\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"collapse all\"",
+          "target": "navActionButton.ariaLabel = \"折叠所有\""
+        },
+        {
+          "source": "setButtonText(\"Extract\"",
+          "target": "setButtonText(\"提取\""
+        },
+        {
+          "source": "setButtonText(\"Cancel\"",
+          "target": "setButtonText(\"取消\""
+        },
+        {
+          "source": "setButtonText(\"Jump\"",
+          "target": "setButtonText(\"跳转\""
+        },
+        {
+          "source": ".setTitle(\"Open in new tab\"",
+          "target": ".setTitle(\"在新标签页打开\""
+        },
+        {
+          "source": ".setTitle(\"Open to the right\"",
+          "target": ".setTitle(\"在右侧打开\""
+        },
+        {
+          "source": ".setTitle(\"Open in new window\"",
+          "target": ".setTitle(\"在新窗口中打开\""
+        },
+        {
+          "source": ".error(\"Daily Note Outline: Could not create \"",
+          "target": ".error(\"每日笔记大纲：无法创建 \""
+        },
+        {
+          "source": ".error(\"Daily Note Outline: Could not create\"",
+          "target": ".error(\"每日笔记大纲：无法创建\""
+        },
+        {
+          "source": ".setMessage(`Daily Note Outline: created ${createdDN} daily notes for unresolved links`)",
+          "target": ".setMessage(`每日笔记大纲: 创建 ${createdDN} 未解析链接的每日笔记`)"
+        },
+        {
+          "source": ".Notice(\"Daily Note Outline: created all daily notes for unresolved links\"",
+          "target": ".Notice(\"每日笔记大纲: 为未解析的链接创建了所有每日笔记\""
+        },
+        {
+          "source": "return \"Daily Note Outline\"",
+          "target": "return \"每日笔记大纲\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"previous notes\"",
+          "target": "navActionButton.ariaLabel = \"上一个笔记\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"next notes\"",
+          "target": "navActionButton.ariaLabel = \"下一个笔记\""
+        },
+        {
+          "source": "let labelForToday = \"create/open \"",
+          "target": "let labelForToday = \"创建/打开 \""
+        },
+        {
+          "source": "let labelForNext = \"create/open \"",
+          "target": "let labelForNext = \"创建/打开 \""
+        },
+        {
+          "source": "labelForToday = labelForToday + \"today's \";",
+          "target": "labelForToday = labelForToday + \"今天的 \";"
+        },
+        {
+          "source": "labelForNext = labelForNext + \"tomorrow's \"",
+          "target": "labelForNext = labelForNext + \"明天的 \""
+        },
+        {
+          "source": "labelForToday = labelForToday + \"present \"",
+          "target": "labelForToday = labelForToday + \"上一个 \""
+        },
+        {
+          "source": "labelForNext = labelForNext + \"next \"",
+          "target": "labelForNext = labelForNext + \"下一个 \""
+        },
+        {
+          "source": "labelForToday = labelForToday + GRANULARITY_TO_PERIODICITY[granularity] + \" note\"",
+          "target": "labelForToday = labelForToday + GRANULARITY_TO_PERIODICITY[granularity] + \" 笔记\""
+        },
+        {
+          "source": "labelForNext = labelForNext + GRANULARITY_TO_PERIODICITY[granularity] + \" note\"",
+          "target": "labelForNext = labelForNext + GRANULARITY_TO_PERIODICITY[granularity] + \" 笔记\""
+        },
+        {
+          "source": "console.info(\"No custom daily note settings found!\"",
+          "target": "console.info(\"找不到自定义的每日笔记设置！\""
+        },
+        {
+          "source": "day: \"daily\",",
+          "target": "day: \"每日\","
+        },
+        {
+          "source": "week: \"weekly\"",
+          "target": "week: \"每周\""
+        },
+        {
+          "source": "month: \"monthly\"",
+          "target": "month: \"每月\""
+        },
+        {
+          "source": "quarter: \"quarterly\"",
+          "target": "quarter: \"每季\""
+        },
+        {
+          "source": "year: \"yearly\"",
+          "target": "year: \"每年\""
+        },
+        {
+          "source": "none: \"none\"",
+          "target": "none: \"无\""
+        },
+        {
+          "source": "lines: \"num of lines\"",
+          "target": "lines: \"总行数\""
+        },
+        {
+          "source": "days: \"distance\"",
+          "target": "days: \"距今天数\""
+        },
+        {
+          "source": "tag: \"first tag\"",
+          "target": "tag: \"首标签\""
+        },
+        {
+          "source": "dow: \"day of week\"",
+          "target": "dow: \"星期几\""
+        },
+        {
+          "source": "dowshort: \"day of week(short)\"",
+          "target": "dowshort: \"周几\""
+        },
+        {
+          "source": "weeknumber: \"week number\"",
+          "target": "weeknumber: \"第几周\""
+        },
+        {
+          "source": "item.setTitle(\"refresh view\"",
+          "target": "item.setTitle(\"刷新视图\""
+        },
+        {
+          "source": ".setTitle(`show backlink files`",
+          "target": ".setTitle(`显示反向链接文件`"
+        },
+        {
+          "source": ".setTitle(\"show tooltip preview\"",
+          "target": ".setTitle(\"显示工具提示预览\""
+        },
+        {
+          "source": "item.setTitle(\"extract tasks\")",
+          "target": "item.setTitle(\"提取任务\")"
+        },
+        {
+          "source": "item.setTitle(\"extract list callouts\")",
+          "target": "item.setTitle(\"提取列表标注\")"
+        },
+        {
+          "source": "item.setTitle(\"extract time lists\")",
+          "target": "item.setTitle(\"提取时间列表\")"
+        },
+        {
+          "source": "item.setTitle(\"Extract\"",
+          "target": "item.setTitle(\"提取\""
+        }
+      ]
+    }
+  }
+}

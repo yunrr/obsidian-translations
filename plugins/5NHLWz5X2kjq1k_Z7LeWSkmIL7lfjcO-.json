@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "calendar",
+    "version": "2.0.0",
+    "title": "Calendar",
+    "description": "Calendar view of your daily notes",
+    "language": "zh-cn",
+    "supportedVersions": "1.5.10",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Failed to read the daily note template\")",
+          "target": "Notice(\"读取日记模板失败\")"
+        },
+        {
+          "source": "Notice(\"Unable to create new file.\")",
+          "target": "Notice(\"无法创建新文件。\")"
+        },
+        {
+          "source": "alog({ cta, onAccept, text, title, })",
+          "target": "alog({ cta, onAccept, text, title, })"
+        },
+        {
+          "source": "name: \"Open view\"",
+          "target": "name: \"打开视图\""
+        },
+        {
+          "source": "name: \"Open Weekly Note\"",
+          "target": "name: \"打开每周笔记\""
+        },
+        {
+          "source": "name: \"Reveal active note\"",
+          "target": "name: \"显示活动笔记\""
+        },
+        {
+          "source": "text: \"⚠️ Daily Notes plugin not enabled\"",
+          "target": "text: \"⚠️ 未启用日记插件\""
+        },
+        {
+          "source": "text: \"The calendar is best used in conjunction with either the Daily Notes plugin or the Periodic Notes plugin (available in the Community Plugins catalog).\"",
+          "target": "text: \"日历插件最好与日记插件或 Periodic Notes 插件（可在第三方插件中找到）结合使用。\""
+        },
+        {
+          "source": "text: \"General Settings\"",
+          "target": "text: \"常规设置\""
+        },
+        {
+          "source": "text: \"Weekly Note Settings\"",
+          "target": "text: \"每周笔记设置\""
+        },
+        {
+          "source": "text: \"Note: Weekly Note settings are moving. You are encouraged to install the 'Periodic Notes' plugin to keep the functionality in the future.\"",
+          "target": "text: \"注意：“每周笔记 ”设置正在移动。我们建议您安装 “Periodic Notes ”插件，以便将来保留该功能。\""
+        },
+        {
+          "source": "text: \"Advanced Settings\"",
+          "target": "text: \"高级设置\""
+        },
+        {
+          "source": "text: \"Never mind\"",
+          "target": "text: \"取消\""
+        },
+        {
+          "source": ".setName(\"Words per dot\")",
+          "target": ".setName(\"每个点表示的字数（即统计日记的字数）\")"
+        },
+        {
+          "source": ".setName(\"Start week on:\")",
+          "target": ".setName(\"从周几开始：\")"
+        },
+        {
+          "source": ".setName(\"Confirm before creating new note\")",
+          "target": ".setName(\"在创建新笔记前确认\")"
+        },
+        {
+          "source": ".setName(\"Show week number\")",
+          "target": ".setName(\"显示周数\")"
+        },
+        {
+          "source": ".setName(\"Weekly note format\")",
+          "target": ".setName(\"周笔记格式\")"
+        },
+        {
+          "source": ".setName(\"Weekly note template\")",
+          "target": ".setName(\"周笔记模板\")"
+        },
+        {
+          "source": ".setName(\"Weekly note folder\")",
+          "target": ".setName(\"每周笔记文件夹\")"
+        },
+        {
+          "source": ".setName(\"Override locale:\")",
+          "target": ".setName(\"覆盖地区设置：\")"
+        },
+        {
+          "source": ".setDesc(\"How many words should be represented by a single dot?\")",
+          "target": ".setDesc(\"一个点表示多少个字？\")"
+        },
+        {
+          "source": ".setDesc(\"Choose what day of the week to start. Select 'Locale default' to use the default specified by moment.js\")",
+          "target": ".setDesc(\"选择每周的起始日。选择“本地默认”以使用 moment.js 指定的默认值。\")"
+        },
+        {
+          "source": ".setDesc(\"Show a confirmation modal before creating a new note\")",
+          "target": ".setDesc(\"在创建新笔记前显示确认对话框\")"
+        },
+        {
+          "source": ".setDesc(\"Enable this to add a column with the week number\")",
+          "target": ".setDesc(\"启用此选项以添加一周编号列\")"
+        },
+        {
+          "source": ".setDesc(\"For more syntax help, refer to format reference\")",
+          "target": ".setDesc(\"如需更多语法帮助，请参阅格式参考。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the file you want to use as the template for your weekly notes\")",
+          "target": ".setDesc(\"选择要作为每周笔记模板的文件\")"
+        },
+        {
+          "source": ".setDesc(\"New weekly notes will be placed here\")",
+          "target": ".setDesc(\"新的周笔记将放在这里\")"
+        },
+        {
+          "source": ".setDesc(\"Set this if you want to use a locale different from the default\")",
+          "target": ".setDesc(\"如果你想使用默认语言以外的语言，请设置此选项\")"
+        },
+        {
+          "source": ".setTitle(\"Delete\")",
+          "target": ".setTitle(\"删除\")"
+        },
+        {
+          "source": ".log(\"[Calendar] Failed to find daily notes folder\", err)",
+          "target": ".log(\"[Calendar] 找不到每日笔记文件夹\", err)"
+        },
+        {
+          "source": ".log(\"[Calendar] Failed to find weekly notes folder\", err)",
+          "target": ".log(\"[Calendar] 找不到每周笔记文件夹\", err)"
+        },
+        {
+          "source": "alog({\n            cta: \"Create\",\n            onAccept: createFile,\n            text: `File ${filename} does not exist. Would you like to create it?`,\n            title: \"New Daily Note\",\n        })",
+          "target": "alog({\n            cta: \"创建\",\n            onAccept: createFile,\n            text: `文件 ${filename} 不存在。您想创建它吗？`,\n            title: \"新的日记\",\n        })"
+        },
+        {
+          "source": "alog({\n            cta: \"Create\",\n            onAccept: createFile,\n            text: `File ${filename} does not exist. Would you like to create it?`,\n            title: \"New Weekly Note\",\n        })",
+          "target": "alog({\n            cta: \"创建\",\n            onAccept: createFile,\n            text: `文件 ${filename} 不存在。您想创建它吗？`,\n            title: \"新的周记\",\n        })"
+        },
+        {
+          "source": ".error(`Failed to read the daily note template '${templatePath}'`, err)",
+          "target": ".error(`无法读取日记模板 '${templatePath}'`, err)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${normalizedPath}'`, err)",
+          "target": ".error(`创建文件失败：'${normalizedPath}'`, err)"
+        },
+        {
+          "source": "text: `File ${filename} does not exist. Would you like to create it?`",
+          "target": "text: `文件 ${filename} 不存在。您想创建它吗？`"
+        }
+      ]
+    }
+  }
+}

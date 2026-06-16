@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "flow",
+    "version": "2.0.0",
+    "title": "Flow",
+    "description": "Implements key processes in David Allen's Getting Things Done (GTD) methodology (Closed source)",
+    "language": "zh-cn",
+    "supportedVersions": "0.6.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Inbox file folder not found. Please check your\n                       settings.`)",
+          "target": "Notice(`未找到收件箱文件夹。请检查您的设置。`)"
+        },
+        {
+          "source": "Notice(\"Inbox folder not found. Please check your settings.\")",
+          "target": "Notice(\"未找到收件箱文件夹。请检查您的设置。\")"
+        },
+        {
+          "source": "Notice(result.error)",
+          "target": "Notice(result.error)"
+        },
+        {
+          "source": "Notice(\"Line has been sent back to the inbox successfully.\")",
+          "target": "Notice(\"行已成功发送回收件箱。\")"
+        },
+        {
+          "source": "Notice(\"Only tasks can be planned.\")",
+          "target": "Notice(\"只有任务可以被计划。\")"
+        },
+        {
+          "source": "_log(message)",
+          "target": "_log(message)"
+        },
+        {
+          "source": ".log(`[dotenv@${version}][INFO] ${message}`)",
+          "target": ".log(`[dotenv@${version}][INFO] ${message}`)"
+        },
+        {
+          "source": ".log(`[dotenv@${version}][WARN] ${message}`)",
+          "target": ".log(`[dotenv@${version}][WARN] ${message}`)"
+        },
+        {
+          "source": ".log(`[dotenv@${version}][DEBUG] ${message}`)",
+          "target": ".log(`[dotenv@${version}][DEBUG] ${message}`)"
+        },
+        {
+          "source": "_log(\"Loading env from encrypted .env.vault\")",
+          "target": "_log(\"Loading env from encrypted .env.vault\")"
+        },
+        {
+          "source": ".log(\"Checking branch\")",
+          "target": ".log(\"Checking branch\")"
+        },
+        {
+          "source": ".log(\"plugin:\", plugin2)",
+          "target": ".log(\"plugin:\", plugin2)"
+        },
+        {
+          "source": ".log(\"input.value\", input.value)",
+          "target": ".log(\"input.value\", input.value)"
+        },
+        {
+          "source": ".log(\"processedLine:\", processedLine)",
+          "target": ".log(\"processedLine:\", processedLine)"
+        },
+        {
+          "source": ".log(\"currentLines[0]:\", currentLines[0])",
+          "target": ".log(\"currentLines[0]:\", currentLines[0])"
+        },
+        {
+          "source": ".error(\"Container not found\")",
+          "target": ".error(\"未找到容器\")"
+        },
+        {
+          "source": ".error(\"Error rendering task list:\", error)",
+          "target": ".error(\"渲染任务列表时出错：\", error)"
+        },
+        {
+          "source": ".error(\"Parent not found\")",
+          "target": ".error(\"未找到父级\")"
+        },
+        {
+          "source": ".error(\"Task item not found\")",
+          "target": ".error(\"未找到任务项\")"
+        },
+        {
+          "source": ".error(\"Parent filepath not found\")",
+          "target": ".error(\"未找到父级文件路径\")"
+        },
+        {
+          "source": ".error(\"Task not found\")",
+          "target": ".error(\"未找到任务\")"
+        },
+        {
+          "source": ".error(\"Could not find or create a leaf for the planning view\")",
+          "target": ".error(\"无法为计划视图找到或创建一个叶子节点\")"
+        },
+        {
+          "source": ".error(\"ProcessingView not found\")",
+          "target": ".error(\"未找到 ProcessingView 视图\")"
+        },
+        {
+          "source": ".error(\n      \"We can't get the templater function. Is it installed correctly?\"\n    )",
+          "target": ".error(\n      \"我们无法获取 Templater 函数。它是否已正确安装？\"\n    )"
+        },
+        {
+          "source": ".error(\n          \"Not creating new project template, file already exists.\"\n        )",
+          "target": ".error(\n          \"不创建新项目模板，文件已存在。\"\n        )"
+        },
+        {
+          "source": ".error(\n          \"Not creating new person template, file already exists.\"\n        )",
+          "target": ".error(\n          \"不创建新人物模板，文件已存在。\"\n        )"
+        },
+        {
+          "source": ".error(\n            \"Mismatch in the processed line and the current first line\"\n          )",
+          "target": ".error(\n            \"处理的行与当前首行不匹配\"\n          )"
+        },
+        {
+          "source": ".error(\n          \"Could not find or create a leaf for the setup view\"\n        )",
+          "target": ".error(\n          \"无法为设置视图找到或创建一个叶子节点\"\n        )"
+        },
+        {
+          "source": "name: \"dotenv\"",
+          "target": "name: \"dotenv\""
+        },
+        {
+          "source": "name: \"README.md\"",
+          "target": "name: \"README.md\""
+        },
+        {
+          "source": "name: \"Start processing\"",
+          "target": "name: \"开始处理\""
+        },
+        {
+          "source": "name: \"Open planning view\"",
+          "target": "name: \"打开计划视图\""
+        },
+        {
+          "source": "name: \"Create new project\"",
+          "target": "name: \"创建新项目\""
+        },
+        {
+          "source": "name: \"Add to inbox\"",
+          "target": "name: \"添加到收件箱\""
+        },
+        {
+          "source": "name: \"Add focus area\"",
+          "target": "name: \"添加专注区域\""
+        },
+        {
+          "source": "name: `View ${sphere} sphere`",
+          "target": "name: `View ${sphere} sphere`"
+        },
+        {
+          "source": "description: \"Loads environment variables from .env file\"",
+          "target": "description: \"Loads environment variables from .env file\""
+        },
+        {
+          "source": "link: \"obsidian://open?vault=\"",
+          "target": "link: \"obsidian://open?vault=\""
+        },
+        {
+          "source": "text: \"No actions planned yet\"",
+          "target": "text: \"尚未计划任何行动\""
+        },
+        {
+          "source": "text: \"Enter planning mode and open your spheres to plan your next actions\"",
+          "target": "text: \"进入计划模式并打开您的领域，规划您的下一步行动。\""
+        },
+        {
+          "source": "text: \"Create a new project\"",
+          "target": "text: \"创建一个新项目\""
+        },
+        {
+          "source": "text: \"Capture something into your inbox\"",
+          "target": "text: \"将某些内容记录到您的收件箱中\""
+        },
+        {
+          "source": "text: \"Add a new focus area\"",
+          "target": "text: \"添加一个新的专注领域\""
+        },
+        {
+          "source": "text: \"Recent...\"",
+          "target": "text: \"最近...\""
+        },
+        {
+          "source": "text: \"Select one or more spheres\"",
+          "target": "text: \"选择一个或多个领域\""
+        },
+        {
+          "source": "text: \"Create a new person\"",
+          "target": "text: \"创建一个新人物\""
+        },
+        {
+          "source": ".setText(\n              \"Priority must be a number between 1 and 10\"\n            )",
+          "target": ".setText(\n              \"优先级必须是 1 到 10 之间的数字。\"\n            )"
+        },
+        {
+          "source": ".setText(\"Please enter a project name\")",
+          "target": ".setText(\"请输入项目名称。\")"
+        },
+        {
+          "source": ".setText(\"Please select at least one sphere\")",
+          "target": ".setText(\"请选择至少一个领域。\")"
+        },
+        {
+          "source": ".setText(\n            \"Priority must be a number between 1 and 10\"\n          )",
+          "target": ".setText(\n            \"优先级必须是 1 到 10 之间的数字。\"\n          )"
+        },
+        {
+          "source": ".setText(\"Project already exists\")",
+          "target": ".setText(\"项目已存在\")"
+        },
+        {
+          "source": ".setText(\n          \"Please add something you want to capture\"\n        )",
+          "target": ".setText(\n          \"请添加您想要记录的内容。\"\n        )"
+        },
+        {
+          "source": ".setText(\"Please enter a focus area name\")",
+          "target": ".setText(\"请输入专注领域名称\")"
+        },
+        {
+          "source": ".setText(\"Please enter a person name\")",
+          "target": ".setText(\"请输入人物名称\")"
+        },
+        {
+          "source": ".setText(\"Person already exists\")",
+          "target": ".setText(\"人物已存在\")"
+        },
+        {
+          "source": ".setButtonText(\"Create\")",
+          "target": ".setButtonText(\"创建\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Capture\")",
+          "target": ".setButtonText(\"捕获\")"
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setButtonText(\"Done\")",
+          "target": ".setButtonText(\"完成\")"
+        },
+        {
+          "source": ".setName(\"Project name\")",
+          "target": ".setName(\"项目名称\")"
+        },
+        {
+          "source": ".setName(\"Description\")",
+          "target": ".setName(\"描述\")"
+        },
+        {
+          "source": ".setName(\"Spheres\")",
+          "target": ".setName(\"领域\")"
+        },
+        {
+          "source": ".setName(\"Priority\")",
+          "target": ".setName(\"优先级\")"
+        },
+        {
+          "source": ".setName(\"Line at a time\")",
+          "target": ".setName(\"逐行处理\")"
+        },
+        {
+          "source": ".setName(\"Note at a time\")",
+          "target": ".setName(\"逐条笔记处理\")"
+        },
+        {
+          "source": ".setName(\"Next actions\")",
+          "target": ".setName(\"下一步行动\")"
+        },
+        {
+          "source": ".setName(\"New project template\")",
+          "target": ".setName(\"新项目模板\")"
+        },
+        {
+          "source": ".setName(\"Projects folder\")",
+          "target": ".setName(\"项目文件夹\")"
+        },
+        {
+          "source": ".setName(\"New person template\")",
+          "target": ".setName(\"新人物模板\")"
+        },
+        {
+          "source": ".setName(\"People folder\")",
+          "target": ".setName(\"人物文件夹\")"
+        },
+        {
+          "source": ".setName(\"Someday/Maybe\")",
+          "target": ".setName(\"将来/可能\")"
+        },
+        {
+          "source": ".setName(\"Append to task\")",
+          "target": ".setName(\"附加到任务\")"
+        },
+        {
+          "source": ".setName(\"Replace new tab\")",
+          "target": ".setName(\"替换新标签页\")"
+        },
+        {
+          "source": ".setName(\"Maintain a fresh todo list\")",
+          "target": ".setName(\"维护一个最新的待办事项列表\")"
+        },
+        {
+          "source": ".setName(\"Export planned tasks\")",
+          "target": ".setName(\"导出计划任务\")"
+        },
+        {
+          "source": ".setName(\"Dependencies not met\")",
+          "target": ".setName(\"依赖未满足\")"
+        },
+        {
+          "source": ".setName(\"Inbox folders\")",
+          "target": ".setName(\"收件箱文件夹\")"
+        },
+        {
+          "source": ".setName(\"Your notes\")",
+          "target": ".setName(\"您的笔记\")"
+        },
+        {
+          "source": ".setName(\"Advanced\")",
+          "target": ".setName(\"高级设置\")"
+        },
+        {
+          "source": ".setName(\"Person name\")",
+          "target": ".setName(\"人物名称\")"
+        },
+        {
+          "source": ".setDesc(\n        \"Flow processes all lines in every note in this folder. We allow multiple inbox notes to help prevent syncing issues when the inbox can be populated from many different sources\"\n      )",
+          "target": ".setDesc(\n        \"Flow 会处理此文件夹中每条笔记的所有行。我们允许多个收件箱笔记，以帮助防止在收件箱可能从多种不同来源填充时出现同步问题。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Flow processes entire notes one by one in this folder\"\n      )",
+          "target": ".setDesc(\n        \"Flow 会逐条处理此文件夹中的整条笔记。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        `This is where Flow will store next actions that aren't\n                    assigned to a project`\n      )",
+          "target": ".setDesc(\n        `这是 Flow 存储未分配到项目的下一步行动的地方。`\n      )"
+        },
+        {
+          "source": ".setDesc(\"Flow will create new projects using this template\")",
+          "target": ".setDesc(\"Flow 将使用此模板创建新项目。\")"
+        },
+        {
+          "source": ".setDesc(\"This is where your project notes are stored\")",
+          "target": ".setDesc(\"这是存储您的项目笔记的地方。\")"
+        },
+        {
+          "source": ".setDesc(\n        \"Flow will create new person notes using this template\"\n      )",
+          "target": ".setDesc(\n        \"Flow 将使用此模板创建新的人物笔记。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"This is where your people notes are stored\")",
+          "target": ".setDesc(\"这是存储您的人物笔记的地方。\")"
+        },
+        {
+          "source": ".setDesc(\n        \"Flow will add your someday/maybe drops using this template\"\n      )",
+          "target": ".setDesc(\n        \"Flow 将使用此模板添加您的“将来/可能”事项。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Flow will append this to all tasks it creates. This is useful if you use the Tasks plugin and have a global task filter set\"\n      )",
+          "target": ".setDesc(\n        \"Flow 将会将此内容附加到它创建的所有任务中。如果您使用 Tasks 插件并设置了全局任务过滤器，这将非常有用。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"A comma-separated list of spheres\")",
+          "target": ".setDesc(\"一个以逗号分隔的领域列表\")"
+        },
+        {
+          "source": ".setDesc(\n        \"Flow can replace your new tab with Flow-specific information\"\n      )",
+          "target": ".setDesc(\n        \"Flow 可以用 Flow 特定的信息替换您的新标签页。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Flow can export your planned tasks to a single note. This can be used to sync with other apps (e.g. for displaying your planned actions in a desktop widget\"\n      )",
+          "target": ".setDesc(\n        \"Flow 可以将您计划的任务导出到一个单独的笔记中。这可以用于与其他应用程序同步（例如，在桌面小部件中显示您的计划行动）。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Flow requires the following plugins to be installed: Tasks, Dataview, and Templater.\"\n      )",
+          "target": ".setDesc(\n        \"Flow 需要安装以下插件：Tasks、Dataview 和 Templater。\"\n      )"
+        },
+        {
+          "source": ".setPlaceholder(\"1-10\")",
+          "target": ".setPlaceholder(\"1-10\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: Inbox\")",
+          "target": ".setPlaceholder(\"Example: Inbox\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: Next Actions.md\")",
+          "target": ".setPlaceholder(\"Example: Next Actions.md\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: templates/Project.md\")",
+          "target": ".setPlaceholder(\"Example: templates/Project.md\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: Projects\")",
+          "target": ".setPlaceholder(\"Example: Projects\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: templates/Person.md\")",
+          "target": ".setPlaceholder(\"Example: templates/Person.md\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: People\")",
+          "target": ".setPlaceholder(\"Example: People\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: Someday.md\")",
+          "target": ".setPlaceholder(\"Example: Someday.md\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter text to append to tasks\")",
+          "target": ".setPlaceholder(\"Enter text to append to tasks\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter spheres\")",
+          "target": ".setPlaceholder(\"Enter spheres\")"
+        },
+        {
+          "source": ".setTitle(\"Flow\")",
+          "target": ".setTitle(\"Flow\")"
+        },
+        {
+          "source": ".setTitle(\"Send this line back to the inbox\")",
+          "target": ".setTitle(\"Send this line back to the inbox\")"
+        },
+        {
+          "source": ".setTitle(\"Toggle task for planning\")",
+          "target": ".setTitle(\"Toggle task for planning\")"
+        },
+        {
+          "source": ".setTitle(\"Start processing\")",
+          "target": ".setTitle(\"Start processing\")"
+        },
+        {
+          "source": ".setTitle(\"Start planning\")",
+          "target": ".setTitle(\"Start planning\")"
+        },
+        {
+          "source": ".innerText = \"\\u274C\"",
+          "target": ".innerText = \"\\u274C\""
+        }
+      ]
+    }
+  }
+}
