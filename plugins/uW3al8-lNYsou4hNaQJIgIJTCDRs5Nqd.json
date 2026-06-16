@@ -1,0 +1,943 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ogstack",
+    "version": "1.0.1",
+    "title": "ogstack",
+    "description": "ogstack Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Your answer… (Enter to send, Shift+Enter for newline)",
+          "target": "您的答案…（Enter发送，Shift+Enter换行）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Type your answer… (Enter to send)",
+          "target": "输入您的答案…（Enter发送）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Ask, /skill, or @[[note]]…",
+          "target": "提问，/skill，或 @[[笔记]]…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Ask ogstack or type /command…",
+          "target": "询问ogstack或输入 /command…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "✕ Could not build context.",
+          "target": "✕ 无法构建上下文。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Scoring context relevance…",
+          "target": "正在评估上下文相关性…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Copied!",
+          "target": "已复制！"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Testing…",
+          "target": "测试中…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "✓ Connection OK — provider responded.",
+          "target": "✓ 连接正常——提供者已响应。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "⚠ Connected but no tokens streamed back. Check the model name.",
+          "target": "⚠ 已连接但未收到令牌流。请检查模型名称。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "esc",
+          "target": "esc"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No custom skills installed.",
+          "target": "未安装自定义技能。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Back to chats",
+          "target": "返回聊天"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Start a new conversation for the active note",
+          "target": "为活动笔记开始新对话"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Summarize older messages to save tokens",
+          "target": "总结旧消息以节省令牌"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Append the whole conversation as a markdown transcript to the bound note",
+          "target": "将整个对话作为Markdown记录附加到绑定的笔记中"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Continue this chat in the right sidebar",
+          "target": "在右侧边栏继续此聊天"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Hide",
+          "target": "隐藏"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Send (Enter)",
+          "target": "发送 (Enter)"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Stop",
+          "target": "停止"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "New chat for active note",
+          "target": "为活动笔记新建聊天"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Delete chat",
+          "target": "删除聊天"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Pick one or more SKILL.md files from disk",
+          "target": "从磁盘选择一个或多个SKILL.md文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "inherit",
+          "target": "继承"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Inherit from main provider",
+          "target": "继承自主提供者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "inline",
+          "target": "内联"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Inline (at cursor)",
+          "target": "内联（在光标处）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "New note",
+          "target": "新笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test",
+          "target": "测试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which AI service runs your skills.",
+          "target": "运行您技能的AI服务。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Model name rejected — allowed characters: letters, digits, ._:-/",
+          "target": "模型名称被拒绝 — 允许的字符：字母、数字、._:-/"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "URL of your local Ollama server. Streams tokens as the model generates.",
+          "target": "本地 Ollama 服务器的 URL。在模型生成时流式传输 token。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Host must start with http:// or https://",
+          "target": "主机地址必须以 http:// 或 https:// 开头"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Send a short ping through the configured provider to verify credentials and reachability.",
+          "target": "通过配置的提供商发送一个简短的 ping，以验证凭据和可达性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Leave blank to use the system PATH (recommended). Override only if the CLI is installed in a non-standard location. Spaces and shell metacharacters are not allowed.",
+          "target": "可选。留空以使用系统 PATH（推荐）。仅当 CLI 安装在非标准位置时才覆盖。不允许空格和 shell 元字符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Path rejected — contains spaces or shell metacharacters. Move the binary somewhere safe, or use PATH.",
+          "target": "路径被拒绝 — 包含空格或 shell 元字符。请将二进制文件移动到安全位置，或使用 PATH。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How many tokens of linked notes to include. Your active note is always included in full.",
+          "target": "要包含多少个链接笔记的 token。您的活动笔记始终完整包含。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Before the main model runs, a fast small model scores each candidate note's relevance — keeping stale or off-topic notes out of context. Recommended on.",
+          "target": "在主模型运行之前，一个快速的小模型会对每个候选笔记的相关性进行评分 — 将过时或无关的笔记排除在上下文之外。建议开启。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The model used for relevance scoring. gemini-2.0-flash-lite is recommended (low cost, 8s timeout).",
+          "target": "用于相关性评分的模型。推荐 gemini-2.0-flash-lite（低成本，8 秒超时）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which provider runs the scout. Use \"Inherit\" to reuse your main provider's credentials, or pick a separate one (e.g. cheap Gemini key) when the main provider is a CLI.",
+          "target": "哪个提供商运行侦察器。使用“继承”以复用主提供商的凭据，或当主提供商是 CLI 时选择一个单独的提供商（例如便宜的 Gemini 密钥）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "API key for the scout provider (only when scout uses a different provider than main).",
+          "target": "侦察器提供商的 API 密钥（仅当侦察器使用与主提供商不同的提供商时）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional CLI binary path for scout. Leave blank to use PATH.",
+          "target": "可选的侦察器 CLI 二进制文件路径。留空以使用 PATH。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Ollama URL for scout, if scout uses Ollama.",
+          "target": "侦察器的 Ollama URL，如果侦察器使用 Ollama。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Notes older than this many days are down-scored when assembling context.",
+          "target": "在组装上下文时，超过此天数的笔记会被降低评分。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where skill output lands. Individual skills can override this via their SKILL.md output: field. Inline streams into the current note at cursor. New note creates a separate file in the same folder.",
+          "target": "技能输出的去处。各个技能可以通过其 SKILL.md 的 output: 字段覆盖此设置。内联会将输出流式插入当前笔记的光标处。新建笔记会在同一文件夹中创建一个单独的文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When ON, agent skills (mode: agent) can call write_note and append_note to create or overwrite notes. When OFF (default), those tools return an error and the agent reports back without writing. Recommended OFF — a prompt-injected agent should not silently modify your vault.",
+          "target": "开启时，代理技能（mode: agent）可以调用 write_note 和 append_note 来创建或覆盖笔记。关闭时（默认），这些工具会返回错误，代理会报告而不进行写入。建议关闭 — 被提示注入的代理不应静默修改您的知识库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI provider",
+          "target": "AI 提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama host",
+          "target": "Ollama 主机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "CLI binary path",
+          "target": "CLI 二进制文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Context",
+          "target": "上下文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Token budget",
+          "target": "Token 预算"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Context Scout",
+          "target": "上下文侦察器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scout model",
+          "target": "侦察器模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scout provider",
+          "target": "侦察器提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scout API key",
+          "target": "侦察器 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scout CLI path",
+          "target": "侦察器 CLI 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scout Ollama host",
+          "target": "侦察器 Ollama 主机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Context decay",
+          "target": "上下文衰减"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output",
+          "target": "输出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default output mode",
+          "target": "默认输出模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Agent safety",
+          "target": "代理安全"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allow agent file writes",
+          "target": "允许代理文件写入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Paste your API key here",
+          "target": "在此处粘贴您的 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "auto-detect from PATH",
+          "target": "从 PATH 自动检测"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Paste scout API key",
+          "target": "粘贴侦察器 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "ogstack: could not read a chat file during scan",
+          "target": "ogstack：扫描期间无法读取聊天文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "gstack: open a note first",
+          "target": "gstack：请先打开一个笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "gstack: large vault — context capped at 200 notes",
+          "target": "gstack：知识库较大 — 上下文上限为 200 个笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "ogstack: nothing to save — this chat is empty",
+          "target": "ogstack：没有可保存的内容 — 此聊天为空"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "ogstack: no editor open — content copied to clipboard",
+          "target": "ogstack：没有打开的编辑器 — 内容已复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "gstack: output interrupted — note was closed",
+          "target": "gstack：输出中断 — 笔记已关闭"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "gstack: could not open output note editor",
+          "target": "gstack：无法打开输出笔记编辑器"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "ogstack: open a note first",
+          "target": "ogstack：请先打开一个笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "ogstack: add your API key in Settings → ogstack",
+          "target": "ogstack：请在设置 → ogstack 中添加您的 API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-msg gstack-bar2-msg-assistant gstack-bar2-msg-streaming",
+          "target": "gstack-bar2-msg gstack-bar2-msg-assistant gstack-bar2-msg-streaming"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-msg-error gstack-bar2-agent-limit",
+          "target": "gstack-bar2-msg-error gstack-bar2-agent-limit"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-msg gstack-bar2-msg-user",
+          "target": "gstack-bar2-msg gstack-bar2-msg-user"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-msg gstack-bar2-msg-assistant",
+          "target": "gstack-bar2-msg gstack-bar2-msg-assistant"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-ask-option gstack-bar2-ask-option-other",
+          "target": "gstack-bar2-ask-option gstack-bar2-ask-option-other"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-ask-input gstack-bar2-ask-other-input",
+          "target": "gstack-bar2-ask-input gstack-bar2-ask-other-input"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-toolbar-btn gstack-bar2-toolbar-back",
+          "target": "gstack-bar2-toolbar-btn gstack-bar2-toolbar-back"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-toolbar-btn gstack-bar2-toolbar-close",
+          "target": "gstack-bar2-toolbar-btn gstack-bar2-toolbar-close"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-popup-name gstack-bar2-popup-note",
+          "target": "gstack-bar2-popup-name gstack-bar2-popup-note"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-bar2-toolbar-btn mod-cta",
+          "target": "gstack-bar2-toolbar-btn mod-cta"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-import-btn mod-cta",
+          "target": "gstack-import-btn mod-cta"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "gstack-manage-skills-btn mod-warning",
+          "target": "gstack-manage-skills-btn mod-warning"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "dot",
+          "target": "dot"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Read the full contents of a note from the vault. Returns the markdown text.",
+          "target": "从知识库中读取笔记的完整内容。返回 Markdown 文本。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Path to the note relative to vault root, including .md extension.",
+          "target": "相对于知识库根目录的笔记路径，包括 .md 扩展名。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Create a new note or overwrite an existing one with the given content. Use carefully — overwrites without warning.",
+          "target": "创建新笔记或用给定内容覆盖现有笔记。请谨慎使用 — 覆盖时不会发出警告。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The full markdown content of the note.",
+          "target": "笔记的完整 Markdown 内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Append content to the end of an existing note. Creates the note if it doesn't exist.",
+          "target": "将内容追加到现有笔记的末尾。如果笔记不存在，则创建它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Markdown content to append.",
+          "target": "要追加的 Markdown 内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "List markdown notes in a folder (or vault root). Returns relative paths, one per line.",
+          "target": "列出文件夹（或知识库根目录）中的 Markdown 笔记。返回相对路径，每行一个。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Folder path relative to vault root. Omit or pass empty string for the entire vault.",
+          "target": "相对于知识库根目录的文件夹路径。省略或传递空字符串表示整个知识库。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Search note contents for a case-insensitive substring. Returns up to 20 matches as 'path: snippet' lines.",
+          "target": "在笔记内容中搜索不区分大小写的子字符串。最多返回 20 个匹配项，格式为“路径：片段”。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Substring to search for.",
+          "target": "要搜索的子字符串。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Return the path and contents of the note the user currently has open. Empty if no note is active.",
+          "target": "返回用户当前打开的笔记的路径和内容。如果没有活动笔记，则为空。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Getting started",
+          "target": "入门指南"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Built-in skills",
+          "target": "内置技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Chat sidebar",
+          "target": "聊天侧边栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Custom skills",
+          "target": "自定义技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sessions",
+          "target": "会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "chat",
+          "target": "聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "campaign",
+          "target": "活动"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "outline",
+          "target": "大纲"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "plan",
+          "target": "计划"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "research",
+          "target": "研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "review",
+          "target": "审阅"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show AI bar",
+          "target": "显示 AI 栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Import skill from GitHub",
+          "target": "从 GitHub 导入技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Manage installed skills",
+          "target": "管理已安装的技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⚠ Agent stopped at the tool-round limit.",
+          "target": "⚠ 代理在工具轮次限制处停止。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " (stopped)",
+          "target": " （已停止）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Insert at cursor",
+          "target": "在光标处插入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Append",
+          "target": "追加"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Other",
+          "target": "其他"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Send answers",
+          "target": "发送答案"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "ogstack",
+          "target": "ogstack"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "+ New chat",
+          "target": "+ 新建聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Compact ↑",
+          "target": "紧凑 ↑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save to note",
+          "target": "保存到笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open in sidebar",
+          "target": "在侧边栏中打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Compact",
+          "target": "紧凑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Dismiss",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⚠ Security notice: API keys are stored in plaintext at .obsidian/plugins/ogstack/data.json inside your vault. Obsidian Sync excludes plugin data by default, but third-party sync (Git, Dropbox, iCloud, etc.) will carry the key — exclude this file if you share the vault.",
+          "target": "⚠ 安全提示：API 密钥以明文形式存储在您保险库内的 .obsidian/plugins/ogstack/data.json 文件中。Obsidian Sync 默认排除插件数据，但第三方同步工具（Git、Dropbox、iCloud 等）会携带该密钥——如果您共享保险库，请排除此文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No conversations yet.",
+          "target": "暂无对话。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open a note with linked notes, then click + to start a chat about it.",
+          "target": "打开一个包含链接笔记的笔记，然后点击 + 开始关于它的聊天。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Welcome to ogstack",
+          "target": "欢迎使用 ogstack"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Vault-aware AI skills for Obsidian. Your linked notes become the context automatically.",
+          "target": "为 Obsidian 打造的保险库感知 AI 技能。您的链接笔记会自动成为上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Get started",
+          "target": "开始使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import skills",
+          "target": "导入技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Paste a GitHub repo URL to scan and pick skills, a single-file URL (…/blob/…) to import one skill directly, or use the local picker to upload SKILL.md files from disk.",
+          "target": "粘贴 GitHub 仓库 URL 以扫描并选择技能，粘贴单个文件 URL（…/blob…）以直接导入一个技能，或使用本地选择器从磁盘上传 SKILL.md 文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import",
+          "target": "导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import local files…",
+          "target": "导入本地文件…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skipped files:",
+          "target": "已跳过的文件："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Installed skills",
+          "target": "已安装的技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " agent",
+          "target": " 代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open",
+          "target": "打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
