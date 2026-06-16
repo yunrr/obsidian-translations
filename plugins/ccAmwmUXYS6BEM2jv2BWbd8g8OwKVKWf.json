@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "send-email-into-vault",
+    "version": "1.0.1",
+    "title": "Send Email into Vault",
+    "description": "Send Email into Vault Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "3.0.7",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Currently, only emails received from your registered email address will be processed.",
+          "target": "目前，仅处理来自您注册邮箱地址的邮件。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Tags are supported; both in the subject line and the note body. Tags in the email subject are added to the frontmatter, tags within the email body are not.",
+          "target": "支持标签；主题行和笔记正文中均可使用。邮件主题中的标签会添加到 frontmatter，邮件正文中的标签则不会。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Click here",
+          "target": "点击此处"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "This plugin works in tandem with the third party service Email2Obsidian.com. ",
+          "target": "此插件与第三方服务 Email2Obsidian.com 协同工作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Testing…",
+          "target": "测试中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paste your Email2Obsidian.com API key. Keep this secret.",
+          "target": "粘贴您的 Email2Obsidian.com API 密钥。请妥善保管此密钥。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable background fetching at your chosen interval. When enabled, a sync runs immediately once.",
+          "target": "启用后台自动获取功能，并按您选择的间隔时间运行。启用后，将立即执行一次同步。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, execute fetching of new notes when Obsidian launches.",
+          "target": "如果启用，Obsidian 启动时将自动获取新笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How frequently would you like to check for new notes? (Only if Background Sync is enabled.)",
+          "target": "您希望多久检查一次新笔记？（仅在启用后台同步时生效。）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Warnings are stored in Obsidian’s developer console. Open it via View -> Toggle Developer Tools (Cmd+Opt+I / Ctrl+Shift+I) and check the Console tab.",
+          "target": "警告信息存储在 Obsidian 的开发者控制台中。请通过 视图 -> 切换开发者工具 (Cmd+Opt+I / Ctrl+Shift+I) 打开，并查看控制台选项卡。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Log detailed timings for email fetch, pagination, and attachments to the console.",
+          "target": "将邮件获取、分页和附件的详细计时日志记录到控制台。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Set up",
+          "target": "设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Notes destination folder",
+          "target": "笔记目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Fetch Notes Automatically",
+          "target": "自动获取笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Background fetch",
+          "target": "后台获取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Fetch notes on open",
+          "target": "启动时获取笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Fetch interval",
+          "target": "获取间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Last fetched",
+          "target": "上次获取时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tips",
+          "target": "提示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug",
+          "target": "调试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug logging",
+          "target": "调试日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: 12345678-1234-1234-1234-123456789abc",
+          "target": "示例：12345678-1234-1234-1234-123456789abc"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "(blank for root)",
+          "target": "（留空表示根目录）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Test connection to Email2Obsidian",
+          "target": "测试与 Email2Obsidian 的连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Email2Obsidian] Sync finished with errors:",
+          "target": "[Email2Obsidian] 同步完成但存在错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Email2Obsidian] Attachment issues:",
+          "target": "[Email2Obsidian] 附件问题："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Email2Obsidian] Sync failed",
+          "target": "[Email2Obsidian] 同步失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Email2Obsidian] Failed to normalize path",
+          "target": "[Email2Obsidian] 路径规范化失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "A sync is already in progress.",
+          "target": "同步已在进行中。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Enter your API key to test the connection.",
+          "target": "请输入您的 API 密钥以测试连接。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Connected to Email2Obsidian.",
+          "target": "已连接到 Email2Obsidian。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "10m",
+          "source": "Every 10 minutes",
+          "target": "每 10 分钟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "12h",
+          "source": "Every 12 hours",
+          "target": "每 12 小时"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "15m",
+          "source": "Every 15 minutes",
+          "target": "每 15 分钟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1h",
+          "source": "Every hour",
+          "target": "每小时"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "30m",
+          "source": "Every 30 minutes",
+          "target": "每 30 分钟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "3h",
+          "source": "Every 3 hours",
+          "target": "每 3 小时"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "5m",
+          "source": "Every 5 minutes",
+          "target": "每 5 分钟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "6h",
+          "source": "Every 6 hours",
+          "target": "每 6 小时"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "daily",
+          "source": "Daily",
+          "target": "每天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Inline data URI is malformed",
+          "target": "内联数据 URI 格式错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Inline data URI is not base64",
+          "target": "内联数据 URI 不是 base64 编码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fetch new notes",
+          "target": "获取新笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fetch all notes",
+          "target": "获取所有笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Get started for free.",
+          "target": "免费开始使用。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
