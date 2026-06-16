@@ -1,0 +1,1681 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "imdone-obsidian-plugin",
+    "version": "1.0.1",
+    "title": "Open cards in imdone",
+    "description": "Open cards in imdone Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Editor not found",
+          "target": "未找到编辑器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error opening file or setting cursor:",
+          "target": "打开文件或设置光标时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error fetching tags:",
+          "target": "获取标签时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Error reading line",
+          "target": "读取行时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loading Imdone Companion Plugin",
+          "target": "正在加载Imdone伴侣插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Unloading Imdone Companion Plugin",
+          "target": "正在卸载Imdone伴侣插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "sync call",
+          "target": "同步调用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Invalid action or path:",
+          "target": "无效的操作或路径："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active markdown file.",
+          "target": "没有活动的Markdown文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "header",
+          "source": ":is(h1, h2, h3, h4, h5, h6)",
+          "target": ":is(h1, h2, h3, h4, h5, h6)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cc",
+          "target": "Cc"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cf",
+          "target": "Cf"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cn",
+          "target": "Cn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Co",
+          "target": "Co"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cs",
+          "target": "Cs"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LC",
+          "target": "LC"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ll",
+          "target": "Ll"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lm",
+          "target": "Lm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lo",
+          "target": "Lo"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lt",
+          "target": "Lt"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lu",
+          "target": "Lu"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mc",
+          "target": "Mc"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Me",
+          "target": "Me"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mn",
+          "target": "Mn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nd",
+          "target": "Nd"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nl",
+          "target": "Nl"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "No",
+          "target": "No"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pc",
+          "target": "Pc"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pd",
+          "target": "Pd"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pe",
+          "target": "Pe"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pf",
+          "target": "Pf"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pi",
+          "target": "Pi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Po",
+          "target": "Po"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ps",
+          "target": "Ps"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sc",
+          "target": "Sc"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sk",
+          "target": "Sk"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sm",
+          "target": "Sm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "So",
+          "target": "So"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Zl",
+          "target": "Zl"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Zp",
+          "target": "Zp"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Zs",
+          "target": "Zs"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Alphabetic",
+          "target": "字母"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Any",
+          "target": "任意"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lowercase",
+          "target": "小写"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Uppercase",
+          "target": "大写"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Assigned",
+          "target": "已分配"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Adlam",
+          "target": "阿德拉姆文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ahom",
+          "target": "阿洪姆文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Arabic",
+          "target": "阿拉伯文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Armenian",
+          "target": "亚美尼亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Avestan",
+          "target": "阿维斯陀文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Balinese",
+          "target": "巴厘文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bamum",
+          "target": "巴姆穆文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Batak",
+          "target": "巴塔克文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bengali",
+          "target": "孟加拉文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bhaiksuki",
+          "target": "拜克舒提文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bopomofo",
+          "target": "注音符号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Brahmi",
+          "target": "婆罗米文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Braille",
+          "target": "布莱叶盲文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Buginese",
+          "target": "布吉文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Buhid",
+          "target": "布希德文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Carian",
+          "target": "卡里亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chakma",
+          "target": "查克马文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cham",
+          "target": "占文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cherokee",
+          "target": "切罗基文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chorasmian",
+          "target": "花剌子模文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Common",
+          "target": "通用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Coptic",
+          "target": "科普特文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cuneiform",
+          "target": "楔形文字"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cypriot",
+          "target": "塞浦路斯文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cyrillic",
+          "target": "西里尔文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Deseret",
+          "target": "德瑟雷特文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Devanagari",
+          "target": "天城文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dogra",
+          "target": "多格拉文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Duployan",
+          "target": "杜普洛伊速记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Elbasan",
+          "target": "埃尔巴桑文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Elymaic",
+          "target": "以利买文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ethiopic",
+          "target": "埃塞俄比亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Georgian",
+          "target": "格鲁吉亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Glagolitic",
+          "target": "格拉哥里文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gothic",
+          "target": "哥特文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Grantha",
+          "target": "格兰塔文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Greek",
+          "target": "希腊文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gujarati",
+          "target": "古吉拉特文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gurmukhi",
+          "target": "古尔穆基文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Han",
+          "target": "汉字"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hangul",
+          "target": "谚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hanunoo",
+          "target": "哈努诺文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hatran",
+          "target": "哈特拉文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hebrew",
+          "target": "希伯来文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hiragana",
+          "target": "平假名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Inherited",
+          "target": "继承"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Javanese",
+          "target": "爪哇文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kaithi",
+          "target": "凯提文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kannada",
+          "target": "卡纳达文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Katakana",
+          "target": "片假名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kharoshthi",
+          "target": "佉卢文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Khmer",
+          "target": "高棉文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Khojki",
+          "target": "霍奇基文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Khudawadi",
+          "target": "库达瓦迪文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lao",
+          "target": "老挝文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Latin",
+          "target": "拉丁文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lepcha",
+          "target": "雷布查文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Limbu",
+          "target": "林布文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lisu",
+          "target": "傈僳文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lycian",
+          "target": "吕西亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lydian",
+          "target": "吕底亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mahajani",
+          "target": "摩诃迦罗文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Makasar",
+          "target": "望加锡文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Malayalam",
+          "target": "马拉雅拉姆文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mandaic",
+          "target": "曼达文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Manichaean",
+          "target": "摩尼文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Marchen",
+          "target": "玛钦文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Medefaidrin",
+          "target": "梅代法伊德林文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Miao",
+          "target": "苗文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Modi",
+          "target": "莫迪文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mongolian",
+          "target": "蒙古文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mro",
+          "target": "苗文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Multani",
+          "target": "穆尔塔尼文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Myanmar",
+          "target": "缅甸文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nabataean",
+          "target": "纳巴泰文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nandinagari",
+          "target": "南迪纳格里文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Newa",
+          "target": "尼瓦尔文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nko",
+          "target": "西非书面文字"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nushu",
+          "target": "女书"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ogham",
+          "target": "欧甘文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Oriya",
+          "target": "奥里亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Osage",
+          "target": "奥塞奇文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Osmanya",
+          "target": "奥斯曼亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Palmyrene",
+          "target": "帕尔米拉文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Phoenician",
+          "target": "腓尼基文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rejang",
+          "target": "勒姜文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Runic",
+          "target": "卢恩文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Samaritan",
+          "target": "撒玛利亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Saurashtra",
+          "target": "索拉什特拉文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sharada",
+          "target": "夏拉达文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Shavian",
+          "target": "萧伯纳字母"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Siddham",
+          "target": "悉昙文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SignWriting",
+          "target": "手语书写系统"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sinhala",
+          "target": "僧伽罗文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sogdian",
+          "target": "粟特文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Soyombo",
+          "target": "索永布文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sundanese",
+          "target": "巽他文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Syriac",
+          "target": "叙利亚文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tagalog",
+          "target": "他加禄文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tagbanwa",
+          "target": "塔格班瓦文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Takri",
+          "target": "塔克里文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tamil",
+          "target": "泰米尔文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tangsa",
+          "target": "唐萨文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tangut",
+          "target": "西夏文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Telugu",
+          "target": "泰卢固文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Thaana",
+          "target": "塔纳文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Thai",
+          "target": "泰文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tibetan",
+          "target": "藏文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tifinagh",
+          "target": "提非纳文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tirhuta",
+          "target": "蒂尔胡塔文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Toto",
+          "target": "托托文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ugaritic",
+          "target": "乌加里特文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vai",
+          "target": "瓦伊文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vithkuqi",
+          "target": "维特库奇文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Wancho",
+          "target": "万乔文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Yezidi",
+          "target": "雅兹迪文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Yi",
+          "target": "彝文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "boot",
+          "target": "启动"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "coffeescript",
+          "target": "coffeescript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ruby",
+          "target": "ruby"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "python",
+          "target": "python"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "julia",
+          "target": "julia"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tex",
+          "target": "tex"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "swift",
+          "target": "swift"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "javascript",
+          "target": "javascript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "jsx",
+          "target": "jsx"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "java",
+          "target": "java"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "properties",
+          "target": "属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sbt",
+          "target": "sbt"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "groovy",
+          "target": "groovy"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "scss",
+          "target": "scss"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "css",
+          "target": "css"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "cpp",
+          "target": "cpp"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "php",
+          "target": "php"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "idris",
+          "target": "idris"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "haskell",
+          "target": "haskell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "elm",
+          "target": "elm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "erlang",
+          "target": "erlang"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "less",
+          "target": "less"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "objectivec",
+          "target": "objectivec"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "scala",
+          "target": "scala"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "cs",
+          "target": "cs"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "actionscript",
+          "target": "actionscript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "applescript",
+          "target": "applescript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "bash",
+          "target": "bash"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "clojure",
+          "target": "clojure"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "clojurescript",
+          "target": "clojurescript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "cmake",
+          "target": "cmake"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "delphi",
+          "target": "delphi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dos",
+          "target": "dos"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gams",
+          "target": "gams"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "go",
+          "target": "go"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ini",
+          "target": "ini"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "lisp",
+          "target": "lisp"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "mel",
+          "target": "mel"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "perl",
+          "target": "perl"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "rust",
+          "target": "rust"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sql",
+          "target": "sql"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "pks",
+          "target": "pks"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "pkb",
+          "target": "pkb"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "vala",
+          "target": "vala"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "vbscript",
+          "target": "vbscript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "vhdl",
+          "target": "vhdl"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "basic",
+          "target": "basic"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "powershell",
+          "target": "powershell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "lua",
+          "target": "lua"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "haxe",
+          "target": "haxe"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "jade",
+          "target": "jade"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "stylus",
+          "target": "stylus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "typescript",
+          "target": "typescript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "html",
+          "target": "html"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "haml",
+          "target": "haml"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "yaml",
+          "target": "yaml"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "apex class",
+          "target": "apex 类"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "apex trigger",
+          "target": "apex 触发器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "visualforce page",
+          "target": "visualforce 页面"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "visualforce component",
+          "target": "visualforce 组件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "lightning component",
+          "target": "lightning 组件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "velocity",
+          "target": "velocity"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "vue component",
+          "target": "vue 组件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "yarn lock",
+          "target": "yarn 锁定文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "reasonml",
+          "target": "reasonml"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "kotlin",
+          "target": "kotlin"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dart",
+          "target": "dart"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "wrapper",
+          "target": "包装器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clojure",
+          "target": "Clojure"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CoffeeScript",
+          "target": "CoffeeScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CSharp",
+          "target": "CSharp"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CSS",
+          "target": "CSS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Go",
+          "target": "Go"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Handlebars",
+          "target": "Handlebars"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Haskell",
+          "target": "Haskell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jade",
+          "target": "Jade"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jake",
+          "target": "Jake"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Java",
+          "target": "Java"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "JavaScript",
+          "target": "JavaScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "JSP",
+          "target": "JSP"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kotlin",
+          "target": "Kotlin"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LaTeX",
+          "target": "LaTeX"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LiveScript",
+          "target": "LiveScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lua",
+          "target": "Lua"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Make",
+          "target": "Make"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Markdown",
+          "target": "Markdown"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mustache",
+          "target": "Mustache"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Perl",
+          "target": "Perl"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PHP",
+          "target": "PHP"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Puppet",
+          "target": "Puppet"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Python",
+          "target": "Python"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ruby",
+          "target": "Ruby"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sass",
+          "target": "Sass"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Scala",
+          "target": "Scala"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Shell",
+          "target": "Shell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SQL",
+          "target": "SQL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Swift",
+          "target": "Swift"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TypeScript",
+          "target": "TypeScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "text",
+          "target": "文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "scope",
+          "target": "作用域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "actuate",
+          "target": "actuate"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "arcrole",
+          "target": "arcrole"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "href",
+          "target": "href"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "role",
+          "target": "role"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "show",
+          "target": "show"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "title",
+          "target": "title"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "type",
+          "target": "type"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "lang",
+          "target": "lang"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "space",
+          "target": "space"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "xmlns",
+          "target": "xmlns"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "xlink",
+          "target": "xlink"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Imdone Card",
+          "target": "打开 Imdone 卡片"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Refresh TODO Sections",
+          "target": "刷新 TODO 部分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "input:is(:not([type!='']), [type=text])",
+          "target": "input:is(:not([type!='']), [type=text])"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
