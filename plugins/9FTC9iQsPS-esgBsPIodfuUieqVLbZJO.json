@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ordermanager",
+    "version": "1.0.0",
+    "title": "Order Manager",
+    "description": "Order Manager Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.10",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Nuevo valor...",
+          "target": "新值..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Actualizar tasas",
+          "target": "更新汇率"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Generar factura",
+          "target": "生成发票"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Registrar pago",
+          "target": "登记付款"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "— Raíz del vault —",
+          "target": "— 知识库根目录 —"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "— Fiat —",
+          "target": "— 法币 —"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "— Crypto —",
+          "target": "— 加密货币 —"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "➕ Nuevo producto...",
+          "target": "➕ 新产品..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "No",
+          "target": "否"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Quincenal",
+          "target": "每半月"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Mensual",
+          "target": "每月"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Anual",
+          "target": "每年"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "¿Eliminar este producto?",
+          "target": "删除此产品？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "¿Eliminar esta transacción?",
+          "target": "删除此交易？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "¿Eliminar este cliente?",
+          "target": "删除此客户？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "¿Eliminar este proveedor?",
+          "target": "删除此供应商？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "¿Eliminar esta deuda?",
+          "target": "删除此债务？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "OrderManager: error al actualizar deuda vinculada",
+          "target": "OrderManager: 更新关联债务时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "OrderManager: error al registrar pago de deuda",
+          "target": "OrderManager: 登记债务付款时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[OrderManager] BCV:",
+          "target": "[OrderManager] BCV:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[OrderManager] USDT via DolarAPI paralelo:",
+          "target": "[OrderManager] 通过平行DolarAPI的USDT:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "computed rate:",
+          "target": "计算汇率:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[OrderManager] Binance USDTVES:",
+          "target": "[OrderManager] Binance USDTVES:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "USDT rate:",
+          "target": "USDT汇率:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[OrderManager] Fiat API OK, codes found:",
+          "target": "[OrderManager] 法币API正常，找到的代码:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[OrderManager] Fetching rates for:",
+          "target": "[OrderManager] 正在获取以下汇率:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[OrderManager] Final rates:",
+          "target": "[OrderManager] 最终汇率:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Detectar",
+          "target": "检测"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Carpeta donde se almacenan los datos del plugin",
+          "target": "存储插件数据的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Todos los balances se convierten a esta moneda",
+          "target": "所有余额均转换为此货币"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "0 = producción propia",
+          "target": "0 = 自产"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "0 = sin alerta",
+          "target": "0 = 无警报"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Carpeta base",
+          "target": "基础文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Moneda de referencia",
+          "target": "参考货币"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Margen (%)",
+          "target": "利润率 (%)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Porciones",
+          "target": "份数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Nombre",
+          "target": "名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Descripción",
+          "target": "描述"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Precio de costo",
+          "target": "成本价"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Precio de venta",
+          "target": "售价"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Stock",
+          "target": "库存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Alerta stock",
+          "target": "库存警报"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Moneda",
+          "target": "货币"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Categoría",
+          "target": "类别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Proveedor",
+          "target": "供应商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Recurrente",
+          "target": "周期性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Válido hasta",
+          "target": "有效期至"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "RUC / CI",
+          "target": "RUC / CI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email",
+          "target": "电子邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Teléfono",
+          "target": "电话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Dirección",
+          "target": "地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Monto a abonar",
+          "target": "待付金额"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "OrderManager",
+          "target": "OrderManager"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Buscar carpetas OrderManager existentes en el vault",
+          "target": "在知识库中搜索现有的OrderManager文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[OrderManager] DolarAPI: no data or invalid format",
+          "target": "[OrderManager] DolarAPI: 无数据或格式无效"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[OrderManager] Binance error:",
+          "target": "[OrderManager] 币安错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[OrderManager] Fiat API: no data",
+          "target": "[OrderManager] 法币API：无数据"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Agregá monedas primero (ej: Dólar BCV, USDT)",
+          "target": "请先添加货币（例如：BCV美元、USDT）"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No se pudieron obtener tasas. Verificá tu conexión.",
+          "target": "无法获取汇率。请检查您的网络连接。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error al consultar tasas.",
+          "target": "查询汇率时出错。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Ya existe un libro con ese nombre.",
+          "target": "已存在同名账簿。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "El nombre del producto es obligatorio.",
+          "target": "产品名称为必填项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Completá producto, cantidad y precio.",
+          "target": "请填写产品、数量和价格。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Completá los datos de la transacción antes de generar el ticket.",
+          "target": "请在生成票据前填写交易数据。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "El nombre es obligatorio.",
+          "target": "名称为必填项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error al registrar el pago. Revisá la consola (Ctrl+Shift+I).",
+          "target": "注册付款时出错。请检查控制台（Ctrl+Shift+I）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Descripción",
+          "target": "描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Description",
+          "target": "描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Descrição",
+          "target": "描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Dólar BCV",
+          "target": "BCV美元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Bolívar (VES)",
+          "target": "玻利瓦尔（VES）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Euro BCV",
+          "target": "BCV欧元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Peso Colombiano",
+          "target": "哥伦比亚比索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Real Brasileño",
+          "target": "巴西雷亚尔"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Peso Argentino",
+          "target": "阿根廷比索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Sol Peruano",
+          "target": "秘鲁索尔"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Peso Chileno",
+          "target": "智利比索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Boliviano",
+          "target": "玻利维亚诺"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Peso Mexicano",
+          "target": "墨西哥比索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Guaraní",
+          "target": "瓜拉尼"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Peso Uruguayo",
+          "target": "乌拉圭比索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Libra Esterlina",
+          "target": "英镑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Yen Japonés",
+          "target": "日元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Yuan Chino",
+          "target": "人民币"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Franco Suizo",
+          "target": "瑞士法郎"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Dólar Australiano",
+          "target": "澳元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Dólar Canadiense",
+          "target": "加元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Rupia India",
+          "target": "印度卢比"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Won Surcoreano",
+          "target": "韩元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Bitcoin",
+          "target": "比特币"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Ethereum",
+          "target": "以太坊"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nombre",
+          "target": "名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Name",
+          "target": "名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nome",
+          "target": "名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir dashboard",
+          "target": "打开仪表盘"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir transacciones",
+          "target": "打开交易记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nueva transacción",
+          "target": "新建交易"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir clientes",
+          "target": "打开客户列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nuevo cliente",
+          "target": "新建客户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir proveedores",
+          "target": "打开供应商列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nuevo proveedor",
+          "target": "新建供应商"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir inventario",
+          "target": "打开库存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nuevo producto",
+          "target": "新建产品"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir deudas",
+          "target": "打开债务列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Buscar en todo OrderManager",
+          "target": "在OrderManager中全局搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Buscar o escribir moneda...",
+          "target": "搜索或输入货币..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Buscar proveedor...",
+          "target": "搜索供应商..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Buscar producto...",
+          "target": "搜索产品..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Buscar deuda...",
+          "target": "搜索债务..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Resumen",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Summary",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Resumo",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "OrderManager",
+          "target": "OrderManager"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tasas de cambio",
+          "target": "汇率"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mis monedas:",
+          "target": "我的货币："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Limpiar todas",
+          "target": "全部清除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Escribí un código (ej: ARS)",
+          "target": "输入代码（例如：ARS）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Actualizar tasas",
+          "target": "更新汇率"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Duplicar libro",
+          "target": "复制账簿"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Categorías de proveedores",
+          "target": "供应商类别"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Agregar",
+          "target": "添加"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Insumos",
+          "target": "原材料"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "+ Agregar insumo",
+          "target": "+ 添加原材料"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancelar",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Guardar",
+          "target": "保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📐 Estructura de costo",
+          "target": "📐 成本结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Eliminar",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "➕ Nuevo producto...",
+          "target": "➕ 新建产品..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Ver PDF",
+          "target": "查看PDF"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cambiar",
+          "target": "更改"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sin adjuntar",
+          "target": "未附加"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Adjuntar",
+          "target": "附加"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🎫",
+          "target": "🎫"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📄",
+          "target": "📄"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Todas las categorías",
+          "target": "所有类别"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Quiénes me deben",
+          "target": "谁欠我钱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "A quiénes les debo",
+          "target": "我欠谁钱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Registrar pago",
+          "target": "登记付款"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Registrar",
+          "target": "登记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Moneda:",
+          "target": "货币："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Este año",
+          "target": "今年"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Este trimestre",
+          "target": "本季度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Año pasado",
+          "target": "去年"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " Ingresos",
+          "target": " 收入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " Egresos",
+          "target": " 支出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📎",
+          "target": "📎"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bienvenido a OrderManager",
+          "target": "欢迎使用OrderManager"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Andá a Settings → OrderManager → Libros y creá el tuyo (ej: 'Personal').",
+          "target": "前往 设置 → OrderManager → 账簿 并创建您的账簿（例如：'个人'）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "En Tasas de cambio, agregá Dólar BCV y USDT, y clickeá Actualizar tasas.",
+          "target": "在汇率页面，添加BCV美元和USDT，然后点击更新汇率。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Usá el Dashboard para ver tus finanzas y crear transacciones.",
+          "target": "使用仪表盘查看您的财务状况并创建交易。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Ctrl+P → 'OrderManager' para ver todos los comandos.",
+          "target": "Ctrl+P → 'OrderManager' 查看所有命令。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Entendido",
+          "target": "明白了"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "OrderManager — Ticket",
+          "target": "OrderManager — 票据"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
