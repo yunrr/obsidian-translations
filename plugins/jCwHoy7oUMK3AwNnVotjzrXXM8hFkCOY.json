@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ai-note-tagger",
+    "version": "1.0.1",
+    "title": "AI Note Tagger",
+    "description": "AI Note Tagger Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "custom",
+          "target": "自定义"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "openrouter",
+          "target": "openrouter"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "google",
+          "target": "google"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "mistral",
+          "target": "mistral"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "openai",
+          "target": "openai"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "anthropic",
+          "target": "anthropic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "concise",
+          "target": "简洁"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "academic",
+          "target": "学术"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "descriptive",
+          "target": "描述性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "standard",
+          "target": "标准"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error tagging note:",
+          "target": "标记笔记时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error during bulk tagging:",
+          "target": "批量标记时出错："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "اختر مزود الذكاء الاصطناعي لإنشاء العلامات.",
+          "target": "选择用于生成标签的 AI 提供商。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "أدخل عنوان URL لنقطة نهاية API المتوافقة مع OpenAI.",
+          "target": "输入您的自定义 OpenAI 兼容 API 端点的 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "مفتاح API الخاص بـ {provider}. مطلوب لاستخدام خدمة الذكاء الاصطناعي.",
+          "target": "您的 {provider} API 密钥。使用 AI 服务所必需。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "اختر نموذج الذكاء الاصطناعي المستخدم لإنشاء العلامات.",
+          "target": "选择用于生成标签的 AI 模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "حدد الحد الأقصى لعدد العلامات لإنشائها لكل ملاحظة.",
+          "target": "设置每个笔记要生成的最大标签数量。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "اختر نمط مطالبة محدد مسبقًا أو قم بإنشاء مطالبة مخصصة خاصة بك.",
+          "target": "选择预定义的提示风格或创建您自己的自定义提示。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "قم بتخصيص المطالبة المرسلة إلى الذكاء الاصطناعي. استخدم {maxTags} و {content} كعناصر نائبة.",
+          "target": "自定义发送给 AI 的提示。使用 {maxTags} 和 {content} 作为占位符。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "هذا هو قالب المطالبة الذي سيتم استخدامه (للقراءة فقط). قم بالتبديل إلى مخصص إذا كنت ترغب في تعديله.",
+          "target": "这是将要使用的提示模板（只读）。如果您想编辑它，请切换到自定义。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "اختر لغة واجهة البرنامج المساعد.",
+          "target": "选择插件界面的语言。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Wählen Sie, welchen KI-Anbieter Sie für die Generierung von Tags verwenden möchten.",
+          "target": "选择用于生成标签的 AI 提供商。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Geben Sie die URL für Ihren benutzerdefinierten OpenAI-kompatiblen API-Endpunkt ein.",
+          "target": "输入您的自定义 OpenAI 兼容 API 端点的 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Ihr {provider} API-Schlüssel. Erforderlich, um den KI-Dienst zu nutzen.",
+          "target": "您的 {provider} API 密钥。使用 AI 服务所必需。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Wählen Sie, welches KI-Modell für die Tag-Generierung verwendet werden soll.",
+          "target": "选择用于生成标签的 AI 模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Legen Sie die maximale Anzahl an Tags fest, die pro Notiz generiert werden sollen.",
+          "target": "设置每个笔记要生成的最大标签数量。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Wählen Sie einen vordefinierten Prompt-Stil oder erstellen Sie Ihren eigenen benutzerdefinierten Prompt.",
+          "target": "选择预定义的提示风格或创建您自己的自定义提示。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Passen Sie den an die KI gesendeten Prompt an. Verwenden Sie {maxTags} und {content} als Platzhalter.",
+          "target": "自定义发送给 AI 的提示。使用 {maxTags} 和 {content} 作为占位符。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Dies ist die Prompt-Vorlage, die verwendet wird (schreibgeschützt). Wechseln Sie zu Benutzerdefiniert, wenn Sie sie bearbeiten möchten.",
+          "target": "这是将要使用的提示模板（只读）。如果您想编辑它，请切换到自定义。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Wählen Sie die Sprache für die Plugin-Oberfläche.",
+          "target": "选择插件界面的语言。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Select which AI provider to use for generating tags.",
+          "target": "选择用于生成标签的 AI 提供商。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Enter the URL for your custom OpenAI-compatible API endpoint.",
+          "target": "输入您的自定义 OpenAI 兼容 API 端点的 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Your {provider} API key. Required to use the AI service.",
+          "target": "您的 {provider} API 密钥。使用 AI 服务所必需。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Choose which AI model to use for tag generation.",
+          "target": "选择用于生成标签的 AI 模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Set the maximum number of tags to generate per note.",
+          "target": "设置每个笔记要生成的最大标签数量。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Choose a predefined prompt style or create your own custom prompt.",
+          "target": "选择预定义的提示风格或创建您自己的自定义提示。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Customize the prompt sent to the AI. Use {maxTags} and {content} as placeholders.",
+          "target": "自定义发送给 AI 的提示。使用 {maxTags} 和 {content} 作为占位符。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "This is the prompt template that will be used (read-only). Switch to Custom if you want to edit it.",
+          "target": "这是将要使用的提示模板（只读）。如果您想编辑它，请切换到自定义。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Choose the language for the plugin interface.",
+          "target": "选择插件界面的语言。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Seleccione qué proveedor de IA usar para generar etiquetas.",
+          "target": "选择用于生成标签的 AI 提供商。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Ingrese la URL para su endpoint API compatible con OpenAI.",
+          "target": "输入您的自定义 OpenAI 兼容 API 端点的 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Su clave API de {provider}. Necesaria para usar el servicio de IA.",
+          "target": "您的 {provider} API 密钥。使用 AI 服务所必需。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Elija qué modelo de IA usar para generar etiquetas.",
+          "target": "选择用于生成标签的 AI 模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Establezca el número máximo de etiquetas a generar por nota.",
+          "target": "设置每个笔记要生成的最大标签数量。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Elija un estilo de prompt predefinido o cree su propio prompt personalizado.",
+          "target": "选择预定义的提示风格或创建您自己的自定义提示。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Personalice el prompt enviado a la IA. Use {maxTags} y {content} como marcadores de posición.",
+          "target": "自定义发送给 AI 的提示。使用 {maxTags} 和 {content} 作为占位符。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Esta es la plantilla de prompt que se utilizará (solo lectura). Cambie a Personalizado si desea editarla.",
+          "target": "这是将要使用的提示模板（只读）。如果您想编辑它，请切换到自定义。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Elija el idioma para la interfaz del plugin.",
+          "target": "选择插件界面的语言。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Custom API endpoint not configured. Please add your endpoint URL in the plugin settings.",
+          "target": "未配置自定义 API 端点。请在插件设置中添加您的端点 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "API key not configured. Please add your API key in the plugin settings.",
+          "target": "未配置 API 密钥。请在插件设置中添加您的 API 密钥。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Claude 3.5 Sonnet",
+          "target": "Claude 3.5 Sonnet"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Claude 3 Opus",
+          "target": "Claude 3 Opus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Claude 3 Sonnet",
+          "target": "Claude 3 Sonnet"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Claude 3 Haiku",
+          "target": "Claude 3 Haiku"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT-4 Turbo",
+          "target": "GPT-4 Turbo"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT-3.5 Turbo",
+          "target": "GPT-3.5 Turbo"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mistral Large",
+          "target": "Mistral Large"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mistral Medium",
+          "target": "Mistral Medium"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mistral Small",
+          "target": "Mistral Small"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Mistral 7B",
+          "target": "Open Mistral 7B"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gemini 1.5 Pro",
+          "target": "Gemini 1.5 Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gemini 1.5 Flash",
+          "target": "Gemini 1.5 Flash"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gemini 1.0 Pro",
+          "target": "Gemini 1.0 Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gemini Pro 1.5",
+          "target": "Gemini Pro 1.5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Llama 3.1 70B",
+          "target": "Llama 3.1 70B"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Custom Model",
+          "target": "自定义模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "أدخل مفتاح API الخاص بك",
+          "target": "输入您的 API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Geben Sie Ihren API-Schlüssel ein",
+          "target": "输入您的 API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Enter your API key",
+          "target": "输入您的 API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Ingrese su clave API",
+          "target": "输入您的 API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "إعدادات AI Tagger",
+          "target": "AI Tagger 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "مزود الذكاء الاصطناعي",
+          "target": "AI 提供商"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "نقطة نهاية API مخصصة",
+          "target": "自定义 API 端点"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "مفتاح API",
+          "target": "API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "نموذج الذكاء الاصطناعي",
+          "target": "AI 模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "الحد الأقصى لعدد العلامات",
+          "target": "最大标签数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "نمط المطالبة",
+          "target": "提示风格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "قالب مطالبة مخصص",
+          "target": "自定义提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "قالب المطالبة الحالي",
+          "target": "当前提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "اللغة",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "AI Tagger Einstellungen",
+          "target": "AI Tagger 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Benutzerdefinierter API-Endpunkt",
+          "target": "自定义 API 端点"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "API-Schlüssel",
+          "target": "API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Maximale Anzahl an Tags",
+          "target": "最大标签数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Benutzerdefinierte Prompt-Vorlage",
+          "target": "自定义提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Aktuelle Prompt-Vorlage",
+          "target": "当前提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Sprache",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "AI Tagger Settings",
+          "target": "AI 标签设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "AI Provider",
+          "target": "AI 提供商"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Custom API Endpoint",
+          "target": "自定义 API 端点"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "API Key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "AI Model",
+          "target": "AI 模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Maximum number of tags",
+          "target": "最大标签数量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Prompt Style",
+          "target": "提示风格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Custom prompt template",
+          "target": "自定义提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Current prompt template",
+          "target": "当前提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Language",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Configuración de AI Tagger",
+          "target": "AI Tagger 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Proveedor de IA",
+          "target": "AI 提供商"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Endpoint API Personalizado",
+          "target": "自定义 API 端点"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Clave API",
+          "target": "API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Modelo de IA",
+          "target": "AI 模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Número máximo de etiquetas",
+          "target": "最大标签数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Estilo de prompt",
+          "target": "提示风格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Plantilla de prompt personalizada",
+          "target": "自定义提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Plantilla de prompt actual",
+          "target": "当前提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Idioma",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "وضع علامات تلقائية باستخدام الذكاء الاصطناعي",
+          "target": "AI 自动标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Auto-Tagging mit KI",
+          "target": "AI 自动标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Auto-tag with AI",
+          "target": "AI 自动标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Auto-etiquetar con IA",
+          "target": "AI 自动标签"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

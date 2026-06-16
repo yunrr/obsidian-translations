@@ -1,0 +1,697 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ai-image-ocr",
+    "version": "1.0.1",
+    "title": "AI Image OCR",
+    "description": "AI Image OCR Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.9.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "e.g., Extract any handwritten notes or text from the image.",
+          "target": "例如，从图像中提取任何手写笔记或文本。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "### Extracted on {{YYYY-MM-DD HH:mm:ss}}\n---",
+          "target": "### 提取于 {{YYYY-MM-DD HH:mm:ss}}\\n---"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "---\n### Extracted on {{YYYY-MM-DD HH:mm:ss}}\n",
+          "target": "---\\n### 提取于 {{YYYY-MM-DD HH:mm:ss}}\\n"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "e.g., Extract all visible text from each image.",
+          "target": "例如，从每张图像中提取所有可见文本。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "## Extracted on {{YYYY-MM-DD HH:mm:ss}}\n---",
+          "target": "## 提取于 {{YYYY-MM-DD HH:mm:ss}}\\n---"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "### Extracted from {{image.name}}\n![{{image.name}}]({{image.path}})\n",
+          "target": "### 提取自 {{image.name}}\\n![{{image.name}}]({{image.path}})\\n"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "---\n",
+          "target": "---\\n"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "End of Batch Extraction\n",
+          "target": "批量提取结束\\n"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "custom",
+          "target": "自定义"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Custom OpenAI-compatible",
+          "target": "自定义 OpenAI 兼容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "lmstudio",
+          "target": "lmstudio"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "LMStudio (local)",
+          "target": "LMStudio (本地)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "ollama",
+          "target": "ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Ollama (local)",
+          "target": "Ollama (本地)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Google Gemini 2.5 Pro",
+          "target": "Google Gemini 2.5 Pro"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Google Gemini 2.5 Flash-Lite Preview 06-17",
+          "target": "Google Gemini 2.5 Flash-Lite 预览版 06-17"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "gemini",
+          "target": "gemini"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Google Gemini 2.5 Flash",
+          "target": "Google Gemini 2.5 Flash"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI GPT-4.1 Nano",
+          "target": "OpenAI GPT-4.1 Nano"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI GPT-4.1 Mini",
+          "target": "OpenAI GPT-4.1 Mini"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI GPT-4.1",
+          "target": "OpenAI GPT-4.1"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI GPT-4o Mini",
+          "target": "OpenAI GPT-4o Mini"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "openai",
+          "target": "openai"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI GPT-4o",
+          "target": "OpenAI GPT-4o"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "e.g. ",
+          "target": "例如 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " or ",
+          "target": " 或 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Relative to vault root. (e.g., 'OCR Notes')",
+          "target": "相对于保险库根目录。（例如，“OCR 笔记”）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Supports {{placeholders}}.",
+          "target": "支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Applied per image.",
+          "target": "按每张图像应用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "hr",
+          "target": "hr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose which OCR provider to use.",
+          "target": "选择要使用的 OCR 提供程序。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A fast and highly accurate model. API requires payment.",
+          "target": "一个快速且高度准确的模型。API 需要付费。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A model with good speed and accuracy. Free tier available.",
+          "target": "一个速度与准确性兼备的模型。提供免费层级。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A lightweight, experimental model. Free tier available. Generous rate-limits.",
+          "target": "一个轻量级的实验性模型。提供免费层级。速率限制宽松。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A slower but extremely powerful model. Requires paid tier API.",
+          "target": "一个较慢但极其强大的模型。需要付费层级 API。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A lower cost and lower latency model, slightly lower quality. API requires payment.",
+          "target": "一个成本更低、延迟更低的模型，质量略有下降。API 需要付费。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A powerful GPT-4-tier model. API requires payment.",
+          "target": "一个强大的 GPT-4 级模型。API 需要付费。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Smaller GPT-4.1 variant for faster responses, lower cost. API requires payment.",
+          "target": "更小的 GPT-4.1 变体，响应更快，成本更低。API 需要付费。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Minimal GPT-4.1 variant for lowest cost and latency. API requires payment.",
+          "target": "最小的 GPT-4.1 变体，成本和延迟最低。API 需要付费。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A locally-hosted Ollama server. Ollama models must be installed separately.",
+          "target": "一个本地托管的 Ollama 服务器。Ollama 模型需要单独安装。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A locally-hosted LMStudio server. LMStudio models must be installed separately.",
+          "target": "一个本地托管的 LMStudio 服务器。LMStudio 模型需要单独安装。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Any OpenAI-compatible API provider. Must use OpenAI API structure.",
+          "target": "任何 OpenAI 兼容的 API 提供程序。必须使用 OpenAI API 结构。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Your OpenAI API key",
+          "target": "您的 OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Your Google Gemini API key",
+          "target": "您的 Google Gemini API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the Ollama server address.",
+          "target": "输入 Ollama 服务器地址。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the ID of the vision model to use.",
+          "target": "输入要使用的视觉模型的 ID。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Friendly display name for this model (e.g. 'Llama 3.2 Vision').",
+          "target": "可选。此模型的友好显示名称（例如“Llama 3.2 Vision”）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the LMStudio server address.",
+          "target": "输入 LMStudio 服务器地址。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Friendly display name for this model (e.g. 'Gemma 3').",
+          "target": "可选。此模型的友好显示名称（例如“Gemma 3”）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional friendly name for your custom OpenAI-compatible provider.",
+          "target": "可选。您的自定义 OpenAI 兼容提供程序的友好名称。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The full URL to the OpenAI-compatible /chat/completions endpoint.",
+          "target": "OpenAI 兼容的 /chat/completions 端点的完整 URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the model ID to use.",
+          "target": "输入要使用的模型 ID。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Leave empty for no key.",
+          "target": "可选。留空表示不使用密钥。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Friendly display name for this model (e.g. 'My Custom Model').",
+          "target": "可选。此模型的友好显示名称（例如“我的自定义模型”）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional prompt to send to the model. Leave blank to use the default.",
+          "target": "可选。发送给模型的提示。留空则使用默认值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional markdown placed above the extracted text.\nSupports {{placeholders}}.",
+          "target": "可选。放置在提取文本上方的 Markdown。\\n支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional markdown placed below the extracted text.\nSupports {{placeholders}}.",
+          "target": "可选。放置在提取文本下方的 Markdown。\\n支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, extracted text will be saved to a new note.",
+          "target": "如果启用，提取的文本将保存到新笔记中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Supports {{placeholders}}.",
+          "target": "支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, appends to an existing note instead of creating a new one.",
+          "target": "如果启用，将追加到现有笔记，而不是创建新笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional prompt to send to the model for batch extraction. Leave blank to use the default.",
+          "target": "可选。用于批量提取的模型提示。留空则使用默认值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional markdown placed above the extraction batch.\nSupports {{placeholders}}.",
+          "target": "可选。放置在提取批次上方的 Markdown。\\n支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional markdown placed above the extracted text for each image.\nSupports {{placeholders}}.",
+          "target": "可选。放置在每张图像提取文本上方的 Markdown。\\n支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional markdown placed below the extracted text for each image.\nSupports {{placeholders}}.",
+          "target": "可选。放置在每张图像提取文本下方的 Markdown。\\n支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional markdown placed below the extraction batch.\nSupports {{placeholders}}.",
+          "target": "可选。放置在提取批次下方的 Markdown。\\n支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, batch extracted text will be saved to a new note.",
+          "target": "如果启用，批量提取的文本将保存到新笔记中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Applied per image. Supports {{placeholders}}.",
+          "target": "按每张图像应用。支持 {{占位符}}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, appends to an existing note instead of creating a new one for batch output.",
+          "target": "如果启用，将追加到现有笔记，而不是为批量输出创建新笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable debug mode to log additional information to the console.",
+          "target": "启用调试模式以将额外信息记录到控制台。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API key",
+          "target": "OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Gemini API key",
+          "target": "Gemini API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Server URL",
+          "target": "服务器 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model name",
+          "target": "模型名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model friendly name",
+          "target": "模型友好名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom provider friendly name",
+          "target": "自定义提供商友好名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API endpoint",
+          "target": "API 端点"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Single image extraction",
+          "target": "单张图片提取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom prompt",
+          "target": "自定义提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Header template",
+          "target": "页眉模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Footer template",
+          "target": "页脚模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output to new note",
+          "target": "输出到新笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note folder path",
+          "target": "笔记文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note name template",
+          "target": "笔记名称模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append if file exists",
+          "target": "如果文件存在则追加"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Batch image extraction",
+          "target": "批量图片提取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom batched images prompt",
+          "target": "自定义批量图片提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Batch header template",
+          "target": "批量页眉模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image header template",
+          "target": "图片页眉模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image footer template",
+          "target": "图片页脚模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Batch footer template",
+          "target": "批量页脚模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Batch note folder path",
+          "target": "批量笔记文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Batch note name template",
+          "target": "批量笔记名称模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Batch append if file exists",
+          "target": "批量追加如果文件存在"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Llama 3.2 Vision",
+          "target": "Llama 3.2 Vision"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Gemma 3",
+          "target": "Gemma 3"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Custom provider",
+          "target": "自定义提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "My Custom Model",
+          "target": "我的自定义模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "OCR Notes",
+          "target": "OCR 笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Extracted OCR {{YYYY-MM-DD}}",
+          "target": "提取的 OCR {{YYYY-MM-DD}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Batch OCR {{YYYY-MM-DD}}",
+          "target": "批量 OCR {{YYYY-MM-DD}}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract text from image",
+          "target": "从图片中提取文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract text from embedded image",
+          "target": "从嵌入图片中提取文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract text from image folder",
+          "target": "从图片文件夹中提取文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You are an AI assistant that analyzes images.",
+          "target": "你是一个分析图片的 AI 助手。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "llava",
+          "target": "llava"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⚠️ Please specify a vision model ID for Ollama (e.g. llama3.2-vision).",
+          "target": "⚠️ 请为 Ollama 指定一个视觉模型 ID（例如 llama3.2-vision）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⚠️ Please specify a vision model ID for LMStudio\n(e.g. google/gemma-3-4b, qwen/qwen2.5-vl-7b).",
+          "target": "⚠️ 请为 LMStudio 指定一个视觉模型 ID\\n（例如 google/gemma-3-4b, qwen/qwen2.5-vl-7b）。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
