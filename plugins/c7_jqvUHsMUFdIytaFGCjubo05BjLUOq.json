@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "claude-code-skills",
+    "version": "1.0.1",
+    "title": "Claude Code Skills",
+    "description": "Claude Code Skills Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.5",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "文本区域"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "按钮"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "hr",
+          "target": "分隔线"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "预格式化文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Full path to the claude CLI binary. Run 'which claude' in a terminal to find it. Auto-detected on first load if left empty.",
+          "target": "claude CLI 二进制文件的完整路径。在终端中运行 'which claude' 来查找它。如果留空，首次加载时会自动检测。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Directory passed as cwd to the claude subprocess. Must contain a CLAUDE.md file for project context to load. Skills use this path to resolve !`cmd` expansions.",
+          "target": "作为 cwd 传递给 claude 子进程的目录。必须包含 CLAUDE.md 文件才能加载项目上下文。技能使用此路径来解析 !`cmd` 扩展。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum milliseconds to wait for a response before killing the subprocess.",
+          "target": "等待响应的最大毫秒数，超时后将终止子进程。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hard API spend cap per skill invocation. The subprocess is killed if this is exceeded. Set to 0 to disable.",
+          "target": "每次技能调用的硬性 API 支出上限。如果超出此限制，子进程将被终止。设置为 0 可禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder inside your vault where 'Create note' saves results. Created automatically if it does not exist. Leave empty to save to the vault root.",
+          "target": "存储库中用于保存 '创建笔记' 结果的文件夹。如果不存在会自动创建。留空则保存到存储库根目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Claude binary path",
+          "target": "Claude 二进制文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Working directory",
+          "target": "工作目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Timeout (ms)",
+          "target": "超时时间（毫秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max budget per query",
+          "target": "每次查询最大预算"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output folder",
+          "target": "输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Skills",
+          "target": "技能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. /usr/local/bin/claude",
+          "target": "例如 /usr/local/bin/claude"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. /home/user/Documents/ClaudeCode",
+          "target": "例如 /home/user/Documents/ClaudeCode"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Outputs",
+          "target": "输出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "No active session",
+          "target": "无活动会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Claude",
+          "target": "Claude"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "You",
+          "target": "你"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied to clipboard",
+          "target": "已复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copy failed — check clipboard permissions",
+          "target": "复制失败 — 请检查剪贴板权限"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Claude binary not found. Set the path in plugin settings.",
+          "target": "未找到 Claude 二进制文件。请在插件设置中设置路径。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No skills found in ~/.claude/skills/",
+          "target": "在 ~/.claude/skills/ 中未找到技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open panel",
+          "target": "打开面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Ask a follow-up... (Enter to send, Shift+Enter for newline)",
+          "target": "输入后续问题...（Enter 发送，Shift+Enter 换行）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy last",
+          "target": "复制上一条"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create note",
+          "target": "创建笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close session",
+          "target": "关闭会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No skills found in ~/.claude/skills/. Add skill folders there and reload the plugin.",
+          "target": "在 ~/.claude/skills/ 中未找到技能。请在此处添加技能文件夹并重新加载插件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Toggle which skills appear in the editor context menu. All skills are enabled by default.",
+          "target": "切换哪些技能出现在编辑器上下文菜单中。默认情况下所有技能均已启用。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
