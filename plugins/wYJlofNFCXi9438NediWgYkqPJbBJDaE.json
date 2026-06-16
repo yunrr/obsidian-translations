@@ -1,0 +1,3967 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "the-deleometer",
+    "version": "1.0.0",
+    "title": "The Deleometer",
+    "description": "The Deleometer Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Local Ollama",
+          "target": "本地 Ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Install Ollama first if this computer does not have it. ",
+          "target": "如果此计算机未安装 Ollama，请先安装。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " then return here and use Find installed models or Download model into Ollama.",
+          "target": "然后返回此处，使用“查找已安装模型”或“将模型下载到 Ollama”。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not parse message into JSON:",
+          "target": "无法将消息解析为 JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "From chunk:",
+          "target": "来自数据块："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not clean up deleted Deleometer goal artifacts",
+          "target": "无法清理已删除的 Deleometer 目标工件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear key",
+          "target": "清除密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Find installed models",
+          "target": "查找已安装模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Download",
+          "target": "下载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Consolidate",
+          "target": "合并"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Enable all",
+          "target": "全部启用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Enable group",
+          "target": "启用组"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Disable group",
+          "target": "禁用组"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Model used for OpenAI analysis, chat, goals, songs, and prompts.",
+          "target": "用于 OpenAI 分析、聊天、目标、歌曲和提示的模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose from models currently detected in the local Ollama library.",
+          "target": "从本地 Ollama 库中当前检测到的模型中选择。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose a recommended model or type any Ollama model name. This downloads the model to this computer through the local Ollama server, then selects it for The Deleometer.",
+          "target": "选择推荐模型或输入任何 Ollama 模型名称。这会通过本地 Ollama 服务器将模型下载到此计算机，然后将其选用于 The Deleometer。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Off by default. If disabled, perspective chat receives excerpts plus the selected analysis, not the entire journal entry.",
+          "target": "默认关闭。如果禁用，视角聊天将接收摘录和所选分析，而非整个日记条目。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "After philosophy re-accumulation, generate a positive song sketch with lyrics and a locally rendered audio file.",
+          "target": "在哲学重新累积后，生成带有歌词和本地渲染音频文件的积极歌曲草图。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder for journal entries",
+          "target": "日记条目文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder for goals",
+          "target": "目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder for generated milestone notes. These notes can be reviewed and consolidated separately from goals.",
+          "target": "生成的里程碑笔记文件夹。这些笔记可以独立于目标进行审阅和合并。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder for generated inspirational song audio files.",
+          "target": "生成的励志歌曲音频文件文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-relative folder watched by your calendar plugin local calendar source, such as deleometer/calendar. Do not use an absolute macOS path or the top-level deleometer folder.",
+          "target": "您的日历插件本地日历源监视的保险库相对文件夹，例如 deleometer/calendar。请勿使用绝对 macOS 路径或顶级 deleometer 文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create or update calendar event notes whenever a goal is created or saved from analysis.",
+          "target": "每当从分析创建或保存目标时，创建或更新日历事件笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sets the zone of proximal development for analysis explanations, so key terms are taught at the right level.",
+          "target": "设置分析解释的最近发展区，以便在适当级别教授关键术语。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sets the language for generated analyses, syntheses, goals, chat replies, and journaling prompts.",
+          "target": "设置生成的分析、综合、目标、聊天回复和日记提示的语言。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose whether dictionary-informed lenses should interpret through a living lexicon or lean into dictionary-like phrasing more directly.",
+          "target": "选择词典信息的视角是应通过活词典进行解释，还是更直接地采用类似词典的措辞。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Turn on every available analysis type.",
+          "target": "开启所有可用的分析类型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Safety and interpretation",
+          "target": "安全与解释"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Security and privacy",
+          "target": "安全与隐私"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI provider",
+          "target": "AI 提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Estimated AI cost",
+          "target": "预估 AI 成本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI model",
+          "target": "OpenAI 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Install Ollama",
+          "target": "安装 Ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Local Ollama endpoint",
+          "target": "本地 Ollama 端点"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Installed Ollama model",
+          "target": "已安装的 Ollama 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Manual Ollama model name",
+          "target": "手动 Ollama 模型名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download model into Ollama",
+          "target": "将模型下载到 Ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Local model updates",
+          "target": "本地模型更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Redact common sensitive details before AI calls",
+          "target": "在 AI 调用前编辑常见敏感细节"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Share personality profile with AI",
+          "target": "与 AI 共享个性档案"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Send full journal entry into perspective chat",
+          "target": "将完整日记条目发送到视角聊天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Generate inspirational song",
+          "target": "生成励志歌曲"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Journal folder",
+          "target": "日记文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Goals folder",
+          "target": "目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Milestones folder",
+          "target": "里程碑文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Songs folder",
+          "target": "歌曲文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Calendar integration",
+          "target": "日历集成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Calendar folder",
+          "target": "日历文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-sync goals to calendar",
+          "target": "自动同步目标到日历"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Analysis reader level",
+          "target": "分析读者级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Analysis output language",
+          "target": "分析输出语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Dictionary mode",
+          "target": "词典模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Analysis perspectives",
+          "target": "分析视角"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable all perspectives",
+          "target": "启用所有视角"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Paste your API key",
+          "target": "粘贴您的 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Any Ollama model name",
+          "target": "任何 Ollama 模型名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Generating a new prompt...",
+          "target": "正在生成新提示..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Could not generate a prompt right now.",
+          "target": "当前无法生成提示。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Generate prompt",
+          "target": "生成提示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Draft goals from analysis",
+          "target": "从分析中起草目标"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invalid or unsafe chat link context",
+          "target": "无效或不安全的聊天链接上下文"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not open chat from note link",
+          "target": "无法从笔记链接打开聊天"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invalid or unsafe goal draft context",
+          "target": "无效或不安全的目标草稿上下文"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not open goal drafts from note link",
+          "target": "无法从笔记链接打开目标草稿"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Ollama is running, but no local models are installed. Download one in Ollama, then refresh local models again.",
+          "target": "Ollama 正在运行，但未安装本地模型。请在 Ollama 中下载一个模型，然后再次刷新本地模型。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Your local Ollama model library has changed. Review the selected model in The Deleometer settings.",
+          "target": "您的本地 Ollama 模型库已更改。请在 The Deleometer 设置中检查所选模型。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a note with AI analysis first",
+          "target": "请先打开一个包含 AI 分析的笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open the note in Markdown editing view first",
+          "target": "请先在 Markdown 编辑视图中打开笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No AI analysis headings found in this note",
+          "target": "在此笔记中未找到 AI 分析标题"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Backfilled AI chat links for this note",
+          "target": "已为此笔记回填 AI 聊天链接"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not backfill analysis chat links",
+          "target": "无法回填分析聊天链接"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No suggested goals found in this analysis note",
+          "target": "在此分析笔记中未找到建议的目标"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No similar milestone groups found",
+          "target": "未找到相似的里程碑分组"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No similar goal groups found",
+          "target": "未找到相似的目标分组"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Analytics report exported!",
+          "target": "分析报告已导出！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Report already exists for today",
+          "target": "今日报告已存在"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied to clipboard",
+          "target": "已复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not copy to clipboard",
+          "target": "无法复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No messages to save",
+          "target": "没有可保存的消息"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "This chat is not linked to a journal analysis note. Use export if you want a separate note.",
+          "target": "此聊天未链接到日记分析笔记。如果您需要单独的笔记，请使用导出功能。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "This chat is missing its source analysis link. Re-open it from the analysis note and try again.",
+          "target": "此聊天缺少其源分析链接。请从分析笔记中重新打开它，然后重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No new chat messages to save beyond the existing analysis",
+          "target": "除了现有分析外，没有新的聊天消息需要保存"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not find the source analysis section in the note. Re-open the chat from the note link and try again.",
+          "target": "无法在笔记中找到源分析部分。请从笔记链接重新打开聊天，然后重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Chat saved back to the source analysis section",
+          "target": "聊天已保存回源分析部分"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error saving chat",
+          "target": "保存聊天时出错"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No messages to export",
+          "target": "没有可导出的消息"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Chat exported to note",
+          "target": "聊天已导出到笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not export chat",
+          "target": "无法导出聊天"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Started a new chat",
+          "target": "已开始新聊天"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please write some content",
+          "target": "请写一些内容"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Journal entry saved!",
+          "target": "日记条目已保存！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Analysis added to the note",
+          "target": "分析已添加到笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not save journal entry",
+          "target": "无法保存日记条目"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please fill in title and description",
+          "target": "请填写标题和描述"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Goal created!",
+          "target": "目标已创建！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not create goal",
+          "target": "无法创建目标"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No valid goal drafts to save",
+          "target": "没有可保存的有效目标草稿"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not save goal drafts",
+          "target": "无法保存目标草稿"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No valid goal consolidations to save",
+          "target": "没有可保存的有效目标合并项"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not consolidate goals",
+          "target": "无法合并目标"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No valid milestone consolidations to save",
+          "target": "没有可保存的有效里程碑合并项"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not consolidate milestones",
+          "target": "无法合并里程碑"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Analysis appended to note!",
+          "target": "分析已追加到笔记！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Goal drafts can only be generated from a saved analysis note.",
+          "target": "目标草稿只能从已保存的分析笔记中生成。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No goal drafts could be generated from this analysis.",
+          "target": "无法从此分析生成目标草稿。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Draft goals generated from this analysis.",
+          "target": "已从此分析生成草稿目标。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Use a folder inside this vault, such as deleometer/calendar, not an absolute file path.",
+          "target": "请使用此保险库内的文件夹，例如 deleometer/calendar，而不是绝对文件路径。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Calendar events now go in deleometer/calendar so they do not sit beside goals and milestones.",
+          "target": "日历事件现在存放在 deleometer/calendar 中，这样它们就不会与目标和里程碑并列。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "btn-secondary btn-small",
+          "target": "btn-secondary btn-small"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "goal-segment completed",
+          "target": "goal-segment completed"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "goal-segment active",
+          "target": "goal-segment active"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "goal-segment other",
+          "target": "goal-segment other"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "chat-subtitle context-active",
+          "target": "chat-subtitle context-active"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "btn-secondary btn-small chat-copy-btn",
+          "target": "btn-secondary btn-small chat-copy-btn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "chat-message assistant loading",
+          "target": "chat-message assistant loading"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "btn-secondary analysis-append-button",
+          "target": "btn-secondary analysis-append-button"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "You prepare faithful analysis briefs for long journal entries. Return valid JSON only.",
+          "target": "您为长篇日记条目准备忠实的分析摘要。仅返回有效的 JSON。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "You are an interdisciplinary reading guide. Return valid JSON only.",
+          "target": "您是一位跨学科阅读指南。仅返回有效的 JSON。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "You are a careful songwriter and reflective guide. Return valid JSON only.",
+          "target": "您是一位细心的词曲作者和反思性指南。仅返回有效的 JSON。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "I'd love to explore this further with you. What aspects of this analysis resonate with you? Or is there something specific you'd like to discuss more deeply?",
+          "target": "我很乐意与您进一步探讨。这次分析的哪些方面引起了您的共鸣？或者有什么具体的事情您想更深入地讨论吗？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "First principles, being, ethics, mind, theology, and metaphysical orientation",
+          "target": "第一原理、存在、伦理、心灵、神学和形而上学取向"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ancient religions, mythic patterns, sacred texts, ritual worlds, divinities, covenant, revelation, and comparative spiritual meaning",
+          "target": "古代宗教、神话模式、神圣文本、仪式世界、神祇、盟约、启示和比较灵性意义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Maps, places, social structures, institutions, fieldwork, evidence, positionality, and methods for studying lived worlds",
+          "target": "地图、地点、社会结构、制度、田野调查、证据、立场性和研究生活世界的方法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Language, signs, story, mediation, public presentation, framing, nonfiction practice, and interaction order",
+          "target": "语言、符号、故事、中介、公共呈现、框架、非虚构实践和互动秩序"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Parenting, intergenerational care, kinship practice, family pedagogy, social expectation, guidance, and cultural formation",
+          "target": "养育、代际关怀、亲属实践、家庭教育、社会期望、指导和文化塑造"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Power, discourse, difference, ideology, critique, and the recombination of inherited forms",
+          "target": "权力、话语、差异、意识形态、批判和继承形式的重组"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Gendered life, sexualities, lesbian and gay studies, trans studies, and queer norm critique",
+          "target": "性别化的生活、性取向、女同性恋与男同性恋研究、跨性别研究和酷儿规范批判"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mindfulness, suffering, and liberation",
+          "target": "正念、苦难与解脱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ritual, relation, cultivation, family obligation, humane conduct, study, governance, virtue, and ethical self-formation through patterned life",
+          "target": "仪式、关系、修养、家庭义务、人道行为、学习、治理、美德和通过模式化生活进行的伦理自我塑造"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Forms, dialectic, eros, education, justice, and ascent toward truth",
+          "target": "形式、辩证法、爱欲、教育、正义和向真理的攀升"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Virtue, acceptance, and inner peace",
+          "target": "美德、接纳与内心平静"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Wisdom, covenant, prophecy, parable, care, justice, and spiritual discernment",
+          "target": "智慧、盟约、预言、寓言、关怀、正义和灵性辨别"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Reality, causality, substance, possibility, identity, and ultimate commitments",
+          "target": "现实、因果性、实体、可能性、同一性和终极承诺"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Modes of being, entities, relations, becoming, and existential structure",
+          "target": "存在模式、实体、关系、生成和存在结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Obligation, virtue, care, harm, responsibility, and practical judgment",
+          "target": "义务、美德、关怀、伤害、责任和实践判断"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Right action, the good life, virtue, duty, consequence, character, judgment, value conflict, and how one ought to live with others",
+          "target": "正确行动、美好生活、美德、义务、后果、品格、判断、价值冲突以及一个人应如何与他人共处"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Induction, observation, experiment, idols of the mind, practical inquiry, disciplined method, and knowledge built through organized investigation",
+          "target": "归纳、观察、实验、心灵偶像、实践探究、规范方法和通过有组织的调查建立的知识"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Doubt, certainty, mind-body distinction, thinking substance, inwardness, rational selfhood, and the cogito as a ground of knowledge",
+          "target": "怀疑、确定性、身心二元论、思维实体、内在性、理性自我和作为知识基础的我思"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Immanence, affect, necessity, freedom, substance, and ethical life",
+          "target": "内在性、情感、必然性、自由、实体和伦理生活"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Monads, pre-established harmony, sufficient reason, possible worlds, perception, appetite, relation, and rational order",
+          "target": "单子、前定和谐、充足理由、可能世界、知觉、欲望、关系和理性秩序"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Impressions, perceptions, habit, continuity, skepticism, identity as fiction, and the self as a bundle of experiences",
+          "target": "印象、知觉、习惯、连续性、怀疑论、作为虚构的同一性和作为经验束的自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "General will, inequality, freedom, education, civic life, corruption, dependence, moral sentiment, and the making of political community",
+          "target": "公意、不平等、自由、教育、公民生活、腐败、依赖、道德情感和政治共同体的构建"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Aisthesis, sensation, taste, beauty, art, the sensible, judgment, translation, and the contested history of what aesthetics is taken to mean",
+          "target": "感性、感觉、品味、美、艺术、可感物、判断、翻译以及美学被赋予意义的争议历史"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Moral facts, natural properties, human flourishing, reasons, science, normativity, value, and ethical life without supernatural grounding",
+          "target": "道德事实、自然属性、人类繁荣、理由、科学、规范性、价值和无超自然基础的伦理生活"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Moral truth, realism, anti-realism, reasons, value language, objectivity, motivation, and what it means for an ethical claim to count as true or justified",
+          "target": "道德真理、实在论、反实在论、理由、价值语言、客观性、动机以及伦理主张被视为真实或正当意味着什么"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Apperception, categories, autonomy, moral law, conditions of experience, and the self that organizes knowledge",
+          "target": "统觉、范畴、自主性、道德律、经验条件和组织知识的自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Recognition, self-consciousness, lordship and bondage, dialectic, social freedom, history, and becoming a subject through others",
+          "target": "承认、自我意识、主奴辩证法、辩证法、社会自由、历史和通过他人成为主体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Nature as living productivity, freedom, development, polarity, organism, spirit in nature, and the restless dynamism of becoming",
+          "target": "作为生命生产力的自然、自由、发展、极性、有机体、自然中的精神和生成的不安动力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Anxiety, despair, subjectivity, inwardness, choice, faith, repetition, the leap, and becoming a self before God and others",
+          "target": "焦虑、绝望、主体性、内在性、选择、信仰、重复、飞跃以及在上帝和他人面前成为自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Will, suffering, desire, representation, compassion, pessimism, ascetic interruption, and the restless structure of experience",
+          "target": "意志、苦难、欲望、表象、同情、悲观主义、禁欲中断和经验的不安结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Nature, self-reliance, perception, moral imagination, correspondence, wildness, spiritual ecology, and learning from the more-than-human world",
+          "target": "自然、自力更生、知觉、道德想象、对应、野性、灵性生态和向超越人类的世界学习"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Will to power, values, and self-overcoming",
+          "target": "权力意志、价值和自我超越"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Practical consequences, experience, pluralism, stream of consciousness, habit, truth as what works in life, and ideas tested in lived practice",
+          "target": "实践后果、经验、多元主义、意识流、习惯、作为在生活中行得通的真理和在生活实践中检验的观念"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Inference, validity, contradiction, entailment, formal structure, argument patterns, and what follows from what",
+          "target": "推理、有效性、矛盾、蕴含、形式结构、论证模式和什么从什么推出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Knowledge, belief, evidence, justification, error, testimony, certainty, ignorance, and the conditions under which a claim counts as known",
+          "target": "知识、信念、证据、正当性、错误、证言、确定性、无知和一个主张被视为已知的条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Intentionality, epoché, reduction, evidence, lived experience, constitution, time-consciousness, and the structures of appearing",
+          "target": "意向性、悬置、还原、明证性、生活经验、构成、时间意识和显现的结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Lived experience and consciousness",
+          "target": "生活经验与意识"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Interpretation and understanding",
+          "target": "解释与理解"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Authenticity, freedom, and meaning",
+          "target": "本真性、自由与意义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Freedom, bad faith, nothingness, the look, responsibility, choice, and the self as project rather than essence",
+          "target": "自由、自欺、虚无、凝视、责任、选择和作为计划而非本质的自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Embodiment, perception, habit, flesh, motor intentionality, intersubjectivity, and the lived body as subject",
+          "target": "具身性、感知、习惯、肉身、运动意向性、主体间性以及作为主体的活生生的身体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Actual occasions, process, relation, creativity, prehension, concrescence, novelty, and reality as event rather than static substance",
+          "target": "实际存在物、过程、关系、创造性、摄入、合生、新颖性以及作为事件而非静态实体的现实"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Life force, organismic animation, irreducibility of living processes, growth, self-organization, formative powers, and the question of whether life exceeds mechanism",
+          "target": "生命力、有机体的能动性、生命过程的不可还原性、生长、自组织、形成力以及生命是否超越机械论的问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Meaning, reference, naming, use, speech acts, interpretation, translation, rule-following, and how language shapes thought and worldhood",
+          "target": "意义、指称、命名、使用、言语行为、解释、翻译、遵循规则以及语言如何塑造思想和世界性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Speech acts, performatives, ordinary language, felicity conditions, doing things with words, uptake, force, and how utterances act within shared situations",
+          "target": "言语行为、施为句、日常语言、适切条件、以言行事、领会、力量以及话语如何在共享情境中行动"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Reasons, obligation, normativity, action-guidance, moral language, thought experiments, clarity, and the analysis of what makes a judgment morally defensible",
+          "target": "理由、义务、规范性、行动指导、道德语言、思想实验、清晰性以及对使判断在道德上可辩护的因素的分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Second-order desires, wholeheartedness, identification, free will, care, ambivalence, and what a person wants to want",
+          "target": "二阶欲望、全心全意、认同、自由意志、关怀、矛盾心理以及一个人想要想要什么"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Bodily continuity, character, practical concern, thought experiments, fear, survival, and identity as lived from the first person",
+          "target": "身体连续性、性格、实际关切、思想实验、恐惧、生存以及从第一人称视角体验的同一性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Psychological continuity, connectedness, survival, reductionism, relation R, and why identity may matter less than we think",
+          "target": "心理连续性、关联性、生存、还原论、关系R以及为何同一性可能不如我们想象的那么重要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Communicative action, discourse ethics, public reason, validity claims, lifeworld, recognition, and subjectivity formed through dialogue",
+          "target": "交往行为、话语伦理、公共理性、有效性主张、生活世界、承认以及通过对话形成的主体性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Reason-giving, reciprocity, validity claims, fair dialogue, mutual justification, accountability, and testing norms through inclusive communication",
+          "target": "给出理由、互惠性、有效性主张、公平对话、相互证成、问责以及通过包容性沟通检验规范"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Action, natality, public space, appearance, plurality, judgment, worldliness, responsibility, and how political life begins when people speak and act together",
+          "target": "行动、诞生性、公共空间、显现、多元性、判断、世界性、责任以及政治生活如何在人们共同言说和行动时开始"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Capabilities, freedom, justice, public reasoning, wellbeing, development, deprivation, agency, and what people are substantively able to do and be",
+          "target": "能力、自由、正义、公共推理、福祉、发展、剥夺、能动性以及人们实质上能够做什么和成为什么"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Moral horizons, strong evaluation, authenticity, recognition, modern identity, and the goods that orient selfhood",
+          "target": "道德视域、强评价、本真性、承认、现代同一性以及引导自我存在的善"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Virtue, tradition, practices, narrative unity, intelligibility, moral agency, and a life understood as an unfolding story",
+          "target": "美德、传统、实践、叙事统一性、可理解性、道德能动性以及被理解为一个展开故事的生活"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Education, welfare reform, parliamentary action, women’s civic leadership, social justice, practical institution-building, and public responsibility anchored in lived community needs",
+          "target": "教育、福利改革、议会行动、女性公民领导力、社会正义、实践性制度建设以及植根于生活社区需求的公共责任"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Being singular plural, exposure, community, finitude, co-existence, touch, spacing, and the self as always with others",
+          "target": "多元共在、暴露、共同体、有限性、共存、触碰、间距以及始终与他人共在的自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Performativity, norms, recognizability, gendered subject formation, repetition, vulnerability, and livable life",
+          "target": "述行性、规范、可辨识性、性别化主体形成、重复、脆弱性以及可活的生命"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Autonomy, vulnerability, self-trust, social recognition, agency, relational support, and how conditions enable or block self-direction",
+          "target": "自主性、脆弱性、自我信任、社会承认、能动性、关系性支持以及条件如何促进或阻碍自我导向"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Practical identity, agency, normativity, action, self-legislation, integrity, and making oneself through commitments",
+          "target": "实践同一性、能动性、规范性、行动、自我立法、完整性以及通过承诺塑造自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Embodied identity, race, gender, social location, visibility, experience, and how selves are politically interpreted",
+          "target": "具身同一性、种族、性别、社会位置、可见性、经验以及自我如何被政治性地解读"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Social scripts, individuality, honor, recognition, cosmopolitanism, collective identity, and ethical self-fashioning",
+          "target": "社会脚本、个体性、荣誉、承认、世界主义、集体同一性以及伦理性的自我塑造"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Narratable self, uniqueness, voice, exposure, relationality, birth, and the who that appears through others",
+          "target": "可叙述的自我、独特性、声音、暴露、关系性、诞生以及通过他人显现的'谁'"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Explanation, theory choice, evidence, experiment, models, realism, falsifiability, underdetermination, and the making of scientific knowledge",
+          "target": "解释、理论选择、证据、实验、模型、实在论、可证伪性、欠定性以及科学知识的建构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Appearance, sensibility, dissensus, spectacle, form, collective feeling, public worlds, and how politics is shaped through what can be seen, felt, and said",
+          "target": "显现、感性、歧见、景观、形式、集体感受、公共世界以及政治如何通过可见、可感和可言说之物被塑造"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The distribution of the sensible, dissensus, equality, politics, aesthetics, voice, partition, and who gets to appear and be heard",
+          "target": "感性的分配、歧见、平等、政治、美学、声音、划分以及谁得以显现并被听见"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Relations, surfaces, thresholds, folds, nearness, boundaries, and spatial transformations of meaning",
+          "target": "关系、表面、阈限、褶皱、邻近、边界以及意义的空间转化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ritual, sacrifice, omen, sacred order, taboo, ancestor, cosmology, and ancient religious imagination",
+          "target": "仪式、献祭、预兆、神圣秩序、禁忌、祖先、宇宙论以及古代宗教想象"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Covenant, law, prophecy, lament, wisdom, exile, justice, creation, and faithful argument with God",
+          "target": "盟约、律法、预言、哀歌、智慧、流亡、正义、创造以及与上帝的忠实论辩"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Olympian powers, mythic archetypes, fate, hubris, patronage, conflict, desire, and heroic consequence",
+          "target": "奥林匹斯神力、神话原型、命运、傲慢、庇护、冲突、欲望以及英雄的后果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sacred groves, seasonal rites, sovereignty, kinship, land spirits, oral myth, threshold worlds, and ritual relation to place and ancestry",
+          "target": "神圣树林、季节性仪式、主权、亲属关系、土地精灵、口头神话、阈限世界以及与地方和祖先的仪式性关联"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Gospel, parable, grace, discipleship, incarnation, forgiveness, community, resurrection, and ethical transformation",
+          "target": "福音、寓言、恩典、门徒训练、道成肉身、宽恕、共同体、复活以及伦理转变"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Spell, intention, threshold, craft, power, ritual practice, protection, taboo, domestic magic, and contested knowledge outside official authority",
+          "target": "咒语、意图、阈限、技艺、力量、仪式实践、保护、禁忌、家庭魔法以及官方权威之外的争议性知识"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Maps, scale, projection, legend, boundary-making, orientation, territory, omission, routes, and how mapping turns experience into spatial knowledge",
+          "target": "地图、比例尺、投影、图例、边界划定、定向、领土、省略、路线以及制图如何将经验转化为空间知识"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Place, space, landscape, region, mobility, environment, human geography, physical geography, uneven development, and relations between people and land",
+          "target": "地方、空间、景观、区域、流动性、环境、人文地理、自然地理、不均衡发展以及人与土地的关系"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Culture, kinship, ritual, exchange, symbolism, fieldwork, everyday practice, comparison, social meaning, and how worlds are made through lived relation",
+          "target": "文化、亲属关系、仪式、交换、象征主义、田野工作、日常实践、比较、社会意义以及世界如何通过生活关系被建构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Social structure, institutions, norms, class, status, roles, groups, interaction, social change, power, and the patterning of everyday life",
+          "target": "社会结构、制度、规范、阶级、地位、角色、群体、互动、社会变迁、权力以及日常生活的模式化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Norm violation, labeling, stigma, moral panic, social control, subculture, anomie, criminalization, and how societies define and manage deviance",
+          "target": "规范违反、标签化、污名化、道德恐慌、社会控制、亚文化、失范、犯罪化以及社会如何定义和管理越轨行为"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Speech, text, framing, repetition, genre, institutional language, positioning, rhetoric, and how discourse shapes what can be thought and said",
+          "target": "言语、文本、框架、重复、体裁、制度语言、定位、修辞以及话语如何塑造可思可言之物"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Authority, legitimacy, liberty, power, conflict, order, justice, obligation, and the ideas that shape collective life",
+          "target": "权威、合法性、自由、权力、冲突、秩序、正义、义务以及塑造集体生活的观念"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Representation, participation, equality, deliberation, institutions, dissent, citizenship, accountability, and collective decision-making",
+          "target": "代表、参与、平等、审议、制度、异议、公民身份、问责以及集体决策"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "International order, sovereignty, realism, liberalism, imperialism, interdependence, geopolitics, security, and global power relations",
+          "target": "国际秩序、主权、现实主义、自由主义、帝国主义、相互依赖、地缘政治、安全以及全球权力关系"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Welfare, care, public provision, inequality, redistribution, institutions, safety nets, governance, and policy impacts on everyday life",
+          "target": "福利、关怀、公共供给、不平等、再分配、制度、安全网、治理以及政策对日常生活的影响"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Public health across sectors, prevention, equity, housing, transport, food, community wellbeing, interdepartmental policy, and healthy environments",
+          "target": "跨部门的公共卫生、预防、公平、住房、交通、食物、社区福祉、跨部门政策以及健康环境"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Research questions, interviews, observation, surveys, sampling, ethics, coding, reflexivity, validity, positionality, and evidence-building in social inquiry",
+          "target": "研究问题、访谈、观察、调查、抽样、伦理、编码、反身性、效度、立场性以及社会探究中的证据建构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Habitus, field, capital, distinction, practice, social reproduction, symbolic violence, taste, classed dispositions, and the struggle over legitimacy in social space",
+          "target": "惯习、场域、资本、区隔、实践、社会再生产、符号暴力、品味、阶级化性情以及社会空间中围绕合法性的斗争"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Words, grammar, naming, register, metaphor, speech acts, code-switching, silence, and how language organizes experience",
+          "target": "词语、语法、命名、语域、隐喻、言语行为、语码转换、沉默以及语言如何组织经验"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Signs, symbols, signifier and signified, codes, icons, indexes, myths, and how meaning is made and circulated",
+          "target": "符号、象征、能指与所指、代码、图标、索引、神话以及意义如何被创造和传播"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Claims, warrants, evidence, assumptions, validity, rhetoric, counterargument, inference, and how arguments are built and tested",
+          "target": "主张、保证、证据、假设、有效性、修辞、反驳、推理以及论证如何被构建和检验"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Life stories and meaning-making",
+          "target": "生命故事与意义建构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The singular texture of a text: idiosyncratic voice, private idiom, recurring phrases, and self-made meanings",
+          "target": "文本的独特质感：特立独行的声音、私人的语言体系、反复出现的短语以及自创的意义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Interpretive frames, salience, boundaries, alignment, and meaning organization",
+          "target": "解释框架、显著性、边界、对齐与意义组织"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Interaction order, presentation of self, keyed events, footing, and everyday frames",
+          "target": "互动秩序、自我呈现、键控事件、立足点与日常框架"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Platforms, mediation, publics, representation, attention, circulation, and media power",
+          "target": "平台、中介、公众、再现、注意力、流通与媒体权力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Image, rhythm, metaphor, sound, line, voice, form, compression, resonance, and how language becomes patterned intensity",
+          "target": "意象、节奏、隐喻、声音、诗行、声音、形式、压缩、共鸣，以及语言如何成为模式化的强度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Medium, form, spectatorship, representation, aesthetic judgment, interpretation, image politics, craft, and the work of art in culture",
+          "target": "媒介、形式、观众、再现、审美判断、解释、图像政治、技艺，以及艺术作品在文化中的作用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Against over-interpretation, style, sensuous surface, camp, image culture, illness metaphors, and the ethics of looking and reading",
+          "target": "反对过度阐释、风格、感官表面、坎普、图像文化、疾病隐喻，以及观看与阅读的伦理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Unconscious conflict, repression, dream-work, sexuality, and symptom formation",
+          "target": "无意识冲突、压抑、梦的工作、性欲与症状形成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Archetypes, shadow, and individuation",
+          "target": "原型、阴影与个体化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Analysis through desire, the Other, and symbolic order",
+          "target": "通过欲望、他者与象征秩序进行分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Clinical patterns and mental health",
+          "target": "临床模式与心理健康"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Institutional power, diagnosis critique, coercion, survival, social context, madness, resistance, deinstitutionalization, and questioning psychiatric authority",
+          "target": "制度权力、诊断批判、强制、生存、社会语境、疯狂、抵抗、去机构化，以及对精神科权威的质疑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Primary care, symptoms, differential diagnosis, triage, prevention, continuity of care, practical uncertainty, and health judgment in everyday medicine",
+          "target": "初级保健、症状、鉴别诊断、分诊、预防、连续性护理、实践不确定性，以及日常医学中的健康判断"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Attachment styles and relational patterns",
+          "target": "依恋风格与关系模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Awareness, wholeness, and present experience",
+          "target": "觉知、完整性与当下体验"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Spiritual dimensions and peak experiences",
+          "target": "灵性维度与高峰体验"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Personality preferences across introversion/extraversion, sensing/intuition, thinking/feeling, and judging/perceiving",
+          "target": "人格偏好，涵盖内向/外向、感觉/直觉、思考/情感以及判断/感知"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Thoughts, behaviors, and patterns",
+          "target": "思维、行为与模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Strengths, flourishing, and well-being",
+          "target": "优势、蓬勃发展与幸福感"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Waldorf pedagogy, imagination, rhythm, developmental stages, artistic learning, practical activity, holistic education, and teaching the child as body, soul, and spirit",
+          "target": "华德福教育法、想象力、节奏、发展阶段、艺术学习、实践活动、全人教育，以及将儿童作为身体、灵魂与精神的整体进行教导"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Zone of proximal development, scaffolding, language, social learning, cultural tools, mediation, collaboration, and guided development",
+          "target": "最近发展区、脚手架、语言、社会学习、文化工具、中介、协作与引导式发展"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Foundational learning, play, scaffolding, safety, routine, literacy, numeracy, care, explanation, and teaching for early developmental stages",
+          "target": "基础学习、游戏、脚手架、安全、常规、识字、算术、照料、解释，以及针对早期发展阶段的教学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Adolescence, identity formation, discipline, motivation, curriculum, peer culture, assessment, transition, and guided independence",
+          "target": "青春期、身份认同形成、纪律、动机、课程、同伴文化、评估、过渡与引导式独立"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Interdependence, family obligation, amae, discipline, social harmony, education, respect, and relational guidance in Japanese and wider Asian contexts",
+          "target": "相互依存、家庭义务、甘え、纪律、社会和谐、教育、尊重，以及日本及更广泛亚洲背景下的关系引导"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ubuntu, extended kinship, respect, communal responsibility, oral teaching, discipline, survival, and intergenerational guidance in Zimbabwean and wider African contexts",
+          "target": "乌班图精神、扩展亲属关系、尊重、社群责任、口述教学、纪律、生存，以及津巴布韦及更广泛非洲背景下的代际引导"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Attachment, autonomy, authoritative guidance, boundaries, praise, discipline, rights, developmental milestones, and individual self-formation",
+          "target": "依恋、自主性、权威式引导、边界、赞扬、纪律、权利、发展里程碑与个体自我形成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Class, labor, alienation, material conditions, ideology, commodity form, exploitation, social reproduction, historical materialism, and revolutionary change",
+          "target": "阶级、劳动、异化、物质条件、意识形态、商品形式、剥削、社会再生产、历史唯物主义与革命性变革"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Difference, discourse, instability, subject formation, signifying chains, power, critique of fixed meaning, and the undoing of essential categories",
+          "target": "差异、话语、不稳定性、主体形成、能指链、权力、对固定意义的批判，以及本质范畴的解构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Excess, expenditure, transgression, sovereignty, taboo, sacrifice, eroticism, base materialism, and the limits of utility",
+          "target": "过剩、耗费、僭越、主权、禁忌、献祭、色情、基础唯物主义，以及效用的限度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ideology, interpellation, apparatuses, reproduction, structure, overdetermination, social formation, and how subjects are produced by institutions",
+          "target": "意识形态、询唤、装置、再生产、结构、多元决定、社会形态，以及主体如何被制度生产出来"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Individuation, preindividual fields, technics, relation, and collective becoming",
+          "target": "个体化、前个体场域、技术、关系与集体生成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Power, discourse, discipline, subject formation, and historical conditions of truth",
+          "target": "权力、话语、规训、主体形成与真理的历史条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Rhizomatic thinking, lines of flight, and becoming",
+          "target": "块茎式思维、逃逸线与生成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ideology, fantasy, contradiction, enjoyment, subjectivity, and the Real",
+          "target": "意识形态、幻想、矛盾、享乐、主体性与实在界"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Beyond human-centered thinking",
+          "target": "超越人类中心主义思维"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Gender, power, and social context",
+          "target": "性别、权力与社会语境"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Women’s lives, institutions, labour, history, representation, oppression, resistance, and interdisciplinary study grounded in gendered experience",
+          "target": "女性生活、制度、劳动、历史、再现、压迫、抵抗，以及基于性别化经验的跨学科研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Patriarchy, sex-class, violence, reproductive politics, structural domination, consciousness-raising, and transformative critique of male power",
+          "target": "父权制、性阶级、暴力、生育政治、结构性支配、意识觉醒，以及对男性权力的变革性批判"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Lesbian and gay histories, cultures, communities, marginalization, resilience, and affirmation",
+          "target": "同性恋历史、文化、社群、边缘化、韧性与肯定"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sexual cultures, practices, identities, norms, pleasure, stigma, and social regulation",
+          "target": "性文化、实践、身份认同、规范、快感、污名与社会规制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Norms, identity, fluidity, and the politics of desire",
+          "target": "规范、身份认同、流动性与欲望政治"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Collective identification, recognition, coalition, difference, strategic naming, inclusion, exclusion, representation, and the politics of belonging",
+          "target": "集体认同、承认、联盟、差异、策略性命名、包容、排斥、再现与归属政治"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Racial formation, structural racism, intersectionality, law, culture, and lived experience",
+          "target": "种族形成、结构性种族主义、交叉性、法律、文化与生活经验"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Empire, resistance, liberation struggle, political education, national self-determination, solidarity, and strategies for refusing colonial domination",
+          "target": "帝国、抵抗、解放斗争、政治教育、民族自决、团结，以及拒绝殖民统治的策略"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Empire afterlives, representation, hybridity, colonial discourse, subjection, worlding, translation, and the uneven cultural effects of colonial history",
+          "target": "帝国余生、再现、混杂性、殖民话语、臣服、世界化、翻译，以及殖民历史不均衡的文化影响"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Coloniality, land, knowledge, sovereignty, extraction, repair, and pluriversal futures",
+          "target": "殖民性、土地、知识、主权、攫取、修复与多元未来"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Fugitive planning, study, black social life, institution refusal, debt, logistics, collectivity, and survival through insurgent relation",
+          "target": "逃亡规划、学习、黑人社会生活、制度拒绝、债务、物流、集体性，以及通过反抗性关系实现生存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Psychiatric power, mad knowledge, distress, survival, and alternatives to pathologization",
+          "target": "精神科权力、疯狂知识、痛苦、生存，以及病理化之外的替代方案"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Technoscience, laboratories, infrastructures, social construction, expertise, controversy, publics, material practice, and how science and technology are made in society",
+          "target": "技术科学、实验室、基础设施、社会建构、专业知识、争议、公众、物质实践，以及科学技术如何在社会中被制造出来"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Cosmopolitics, ecology of practices, slowing down reasoning, speculative pragmatics, obligation, situated knowledge, and composing with heterogeneous worlds",
+          "target": "宇宙政治、实践生态、减缓推理、思辨实用主义、义务、情境化知识，以及与异质世界共同创作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Food justice, supply chains, agriculture, labor, ecology, access, and power",
+          "target": "食物正义、供应链、农业、劳动、生态、获取与权力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Land, seed, peasant knowledge, local control, agroecology, self-determination, food justice, and the politics of who governs nourishment",
+          "target": "土地、种子、农民知识、地方控制、农业生态学、自决、食物正义，以及谁来治理营养的政治学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Culture, ecology, ethics, story, extinction, more-than-human worlds, environmental justice, and how human meaning is entangled with damaged environments",
+          "target": "文化、生态、伦理、故事、灭绝、超越人类的世界、环境正义，以及人类意义如何与受损环境交织"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Site, contour, planting, circulation, ecology, aesthetics, maintenance, public use, atmosphere, and designing relations between bodies and land",
+          "target": "场地、等高线、种植、流线、生态、美学、维护、公共使用、氛围，以及设计身体与土地之间的关系"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Reciprocity, commons, mutual aid, solidarity, gifting, sharing economies, survival networks, redistribution, and practical forms of collective support",
+          "target": "互惠、公地、互助、团结、馈赠、共享经济、生存网络、再分配，以及集体支持的实践形式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Forces, loads, constraints, materials, mechanisms, tolerances, failure modes, energy transfer, friction, maintenance, and practical design",
+          "target": "力、载荷、约束、材料、机制、公差、失效模式、能量传递、摩擦、维护与实用设计"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Data collection, cleaning, patterning, modeling, prediction, bias, metrics, visualization, uncertainty, and what gets counted as signal",
+          "target": "数据收集、清洗、模式化、建模、预测、偏差、度量、可视化、不确定性，以及什么被计为信号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Research quality, reproducibility, incentives, publication bias, methods review, evidence standards, scientific institutions, and the study of how science works",
+          "target": "研究质量、可重复性、激励、发表偏倚、方法审查、证据标准、科学机构，以及科学如何运作的研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Common law, statute, precedent, jurisdiction, rights, obligations, evidence, administrative language, settler legality, and institutional reasoning in Australia",
+          "target": "普通法、成文法、判例、管辖权、权利、义务、证据、行政语言、定居者合法性，以及澳大利亚的制度推理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Space, form, dwelling, structure, circulation, atmosphere, programme, materiality, design intention, and how built environments shape life",
+          "target": "空间、形式、居住、结构、流线、氛围、功能、物质性、设计意图，以及建筑环境如何塑造生活"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Strengths, weaknesses, opportunities, threats, and strategic positioning",
+          "target": "优势、劣势、机会、威胁与战略定位"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Escalation, negotiation, mediation, interests, positions, repair, communication breakdown, power asymmetry, and practical strategies for working through conflict",
+          "target": "升级、谈判、调解、利益、立场、修复、沟通中断、权力不对称，以及解决冲突的实用策略"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Roles, coordination, trust, task division, collective process, facilitation, conflict, cohesion, and how groups succeed or fail together",
+          "target": "角色、协调、信任、任务分工、集体过程、引导、冲突、凝聚力，以及群体如何共同成功或失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Likelihood, impact, uncertainty, exposure, prevention, mitigation, and contingency",
+          "target": "可能性、影响、不确定性、暴露、预防、缓解与应急措施"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Structures, culture, governance, roles, incentives, coordination, and institutional change",
+          "target": "结构、文化、治理、角色、激励、协调与制度变革"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Louisa Bufardeci's tactical method, situated procedure, constraints, mapping, and action",
+          "target": "路易莎·布法德西的策略方法、情境化程序、约束、映射与行动"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Grade 5 primary student",
+          "target": "小学五年级学生"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Year 5 secondary student",
+          "target": "中学五年级学生"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Second-year tertiary student",
+          "target": "大学二年级学生"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Postgraduate",
+          "target": "研究生"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Postdoc",
+          "target": "博士后"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Professor",
+          "target": "教授"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "English",
+          "target": "英语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "French",
+          "target": "法语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "German",
+          "target": "德语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Engage the dictionary",
+          "target": "使用词典"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Copy the dictionary style",
+          "target": "复制词典样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Physiological",
+          "target": "生理需求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Safety",
+          "target": "安全需求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Belonging",
+          "target": "归属需求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "E / I",
+          "target": "E / I"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "N / S",
+          "target": "N / S"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "F / T",
+          "target": "F / T"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "P / J",
+          "target": "P / J"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create new journal entry",
+          "target": "创建新日记条目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create new goal",
+          "target": "创建新目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Take personality assessment",
+          "target": "进行人格评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Backfill analysis chat links for current note",
+          "target": "为当前笔记回填分析聊天链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync goals to calendar",
+          "target": "同步目标到日历"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync milestones to folder",
+          "target": "同步里程碑到文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Consolidate similar goals",
+          "target": "合并相似目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Consolidate similar milestones",
+          "target": "合并相似里程碑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Repair goal note frontmatter",
+          "target": "修复目标笔记前置信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Share your thoughts...",
+          "target": "分享你的想法..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Entry title...",
+          "target": "条目标题..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Write your thoughts...",
+          "target": "写下你的想法..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Anxious, hopeful, confused...",
+          "target": "焦虑、充满希望、困惑..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "What do you want to achieve?",
+          "target": "你想实现什么？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Describe your goal in detail...",
+          "target": "详细描述你的目标..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Add a milestone...",
+          "target": "添加一个里程碑..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Deleometer dashboard",
+          "target": "Deleometer 仪表板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Your reflective assessments",
+          "target": "你的反思性评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "These are reflective summaries. The big five section uses the five-factor model. The myers-briggs and maslow tools are stored separately rather than being inferred from the big five scores.",
+          "target": "这些是反思性总结。大五人格部分使用五因素模型。迈尔斯-布里格斯和马斯洛工具是单独存储的，而不是从大五人格得分推断出来的。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Big five / five-factor model",
+          "target": "大五人格 / 五因素模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Typology profile",
+          "target": "类型学概况"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Maslow needs profile",
+          "target": "马斯洛需求概况"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mood trends",
+          "target": "情绪趋势"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This chart shows the last 7 journal entries with mood scores. Each bar is one entry, not an average.",
+          "target": "此图表显示了最近7篇日记条目的情绪分数。每个条形代表一个条目，而非平均值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scale guide: 1-2 very low, 3-4 low, 5-6 middle range, 7-8 high, 9-10 very high. 5 is the midpoint, not a perfect score.",
+          "target": "量表指南：1-2分非常低，3-4分低，5-6分中等范围，7-8分高，9-10分非常高。5分是中点，不是完美分数。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add mood scores to your journal entries to see trends.",
+          "target": "在日记条目中添加情绪分数以查看趋势。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Goal progress",
+          "target": "目标进展"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Consolidate similar goals",
+          "target": "合并相似目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sync milestones to folder",
+          "target": "同步里程碑到文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Consolidate similar milestones",
+          "target": "合并相似里程碑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Goals",
+          "target": "目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "View all goals",
+          "target": "查看所有目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recent journal entries",
+          "target": "最近日记条目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No journal entries yet. Click the 📝 icon to create one!",
+          "target": "尚无日记条目。点击📝图标创建一个！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export charts to note",
+          "target": "导出图表到笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Nothing to show yet.",
+          "target": "暂无内容可显示。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save chat",
+          "target": "保存聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export chat",
+          "target": "导出聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New chat",
+          "target": "新建聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Perspective: ",
+          "target": "视角："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reader level: ",
+          "target": "读者级别："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Send",
+          "target": "发送"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New journal entry",
+          "target": "新建日记条目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Title",
+          "target": "标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Entry type",
+          "target": "条目类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "AI writing prompt",
+          "target": "AI写作提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Generate prompt",
+          "target": "生成提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use prompt",
+          "target": "使用提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Generate a reflective writing prompt based on your current goals, milestones, and recent patterns.",
+          "target": "根据你当前的目标、里程碑和近期模式，生成一个反思性写作提示。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "What's on your mind?",
+          "target": "你在想什么？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mood score",
+          "target": "情绪分数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "😢",
+          "target": "😢"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "😊",
+          "target": "😊"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Emotional tags (comma separated)",
+          "target": "情感标签（用逗号分隔）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save only",
+          "target": "仅保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save and analyze",
+          "target": "保存并分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New goal",
+          "target": "新建目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Goal title",
+          "target": "目标标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Description",
+          "target": "描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Category",
+          "target": "类别"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Target date",
+          "target": "目标日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Milestones",
+          "target": "里程碑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create goal",
+          "target": "创建目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Draft goals from analysis",
+          "target": "从分析中草拟目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete proposed goal",
+          "target": "删除拟定目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Milestones (one per line)",
+          "target": "里程碑（每行一个）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save draft goals",
+          "target": "保存草稿目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Review the suggested groups below. Saving will keep one consolidated goal note and mark the others as merged redirects.",
+          "target": "请审阅下方建议的分组。保存后将保留一个合并的目标说明，并将其他目标标记为已合并的重定向。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Merged title",
+          "target": "合并后的标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Merged description",
+          "target": "合并后的描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Merged milestones (one per line)",
+          "target": "合并后的里程碑（每行一个）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Merge suggested goals",
+          "target": "合并建议的目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Review the suggested groups below. Saving will keep one consolidated milestone note and mark the others as merged redirects.",
+          "target": "请审阅下方建议的分组。保存后将保留一个合并的里程碑说明，并将其他里程碑标记为已合并的重定向。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Related goal titles (one per line)",
+          "target": "相关目标标题（每行一个）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Merge suggested milestones",
+          "target": "合并建议的里程碑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reflective assessments",
+          "target": "反思性评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose a reflective assessment. The big five uses the five-factor model. The typology and maslow profiles are stored separately rather than being inferred from one another.",
+          "target": "请选择一项反思性评估。大五人格模型使用五因素模型。类型学和马斯洛需求剖面图是单独存储的，而非相互推导。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Trait-based personality model using openness, conscientiousness, extraversion, agreeableness, and neuroticism.",
+          "target": "基于特质的人格模型，评估开放性、尽责性、外向性、宜人性和神经质。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Take big five assessment",
+          "target": "进行大五人格评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Typology-oriented reflective profile across introversion-extraversion, sensing-intuition, thinking-feeling, and judging-perceiving. This short version draws on the myers-briggs tradition but is not an official mbti instrument.",
+          "target": "面向类型的反思性剖面图，涵盖内向-外向、感觉-直觉、思考-情感、判断-感知维度。此简短版本借鉴了迈尔斯-布里格斯传统，但并非官方的MBTI工具。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Take typology assessment",
+          "target": "进行类型学评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Take needs assessment",
+          "target": "进行需求评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Big five assessment",
+          "target": "大五人格评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Theory: five-factor model. This short reflective questionnaire estimates five broad personality traits. It is not a clinical or official psychometric instrument.",
+          "target": "理论：五因素模型。此简短的反思性问卷评估五种广泛的人格特质。它并非临床或官方的心理测量工具。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Your big five profile",
+          "target": "您的大五人格剖面图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Summary",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Dominant traits",
+          "target": "主导特质"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Growth areas",
+          "target": "成长领域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Back to assessments",
+          "target": "返回评估列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Typology assessment",
+          "target": "类型学评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Theory: jung-influenced typology. This short reflective version draws on the myers-briggs tradition for orientation and is not an official mbti instrument.",
+          "target": "理论：荣格影响的类型学。此简短的反思性版本借鉴了迈尔斯-布里格斯传统以确定方向，并非官方的MBTI工具。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Move the slider toward the side that feels more true for you right now. Leave it near the middle when both sides fit.",
+          "target": "将滑块移向您此刻感觉更真实的一侧。如果两侧都符合，请将其保留在中间附近。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Your typology profile",
+          "target": "您的类型学剖面图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Strengths",
+          "target": "优势"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Needs assessment",
+          "target": "需求评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Theory: maslow hierarchy of needs. This short reflective questionnaire looks at which layers of need feel more supported or more strained right now. It is not a diagnostic tool.",
+          "target": "理论：马斯洛需求层次理论。此简短的反思性问卷考察哪些需求层次在当前感觉得到更多支持或面临更多压力。它并非诊断工具。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Your needs profile",
+          "target": "您的需求剖面图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Currently strongest supported needs",
+          "target": "当前最受支持的需求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Multi-perspective analysis",
+          "target": "多视角分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Chat with this perspective",
+          "target": "与此视角对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Further readings",
+          "target": "延伸阅读"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Group syntheses",
+          "target": "小组综合"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Chat with this synthesis",
+          "target": "与此综合对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Philosophy re-accumulation",
+          "target": "哲学再积累"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Inspirational song",
+          "target": "励志歌曲"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Analysis notes",
+          "target": "分析笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Append analysis to note",
+          "target": "将分析附加到笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configure journal analysis, goals, and calendar sync.",
+          "target": "配置日记分析、目标和日历同步。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Download Ollama",
+          "target": "下载Ollama"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Philosophy as First Discipline",
+          "target": "作为第一学科的哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Religious, Mythic, and Pagan Interpretations",
+          "target": "宗教、神话与异教诠释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Social, Spatial, and Research Methods",
+          "target": "社会、空间与研究方法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Narrative, Media, and Frame Studies",
+          "target": "叙事、媒体与框架研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Psychology, Psychiatry, Psychoanalysis, and Clinical Approaches",
+          "target": "心理学、精神病学、精神分析与临床方法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Family, Care, and Guidance Theories",
+          "target": "家庭、关怀与指导理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Archeo-Genealogical and Deconstructive Thought",
+          "target": "考古谱系学与解构思想"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Gender, Sexuality, and Queer Studies",
+          "target": "性别、性与酷儿研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Race, Coloniality, and Embodiment Studies",
+          "target": "种族、殖民性与具身研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Strategy, Method, and Organisation",
+          "target": "战略、方法与组织"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Australian Indigenous Philosophy Accumulated",
+          "target": "澳大利亚原住民哲学积累"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Buddhist Psychology",
+          "target": "佛教心理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Confucianism",
+          "target": "儒学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Platonic Philosophy",
+          "target": "柏拉图哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Aristotle's Argonic Teachings",
+          "target": "亚里士多德的阿戈尼克学说"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Cynics' Philosophy",
+          "target": "犬儒学派哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Stoic Philosophy",
+          "target": "斯多葛哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Bible Teachings",
+          "target": "圣经教义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Metaphysical Analysis",
+          "target": "形而上学分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ontological Analysis",
+          "target": "本体论分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ethical Analysis",
+          "target": "伦理学分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Moral Philosophy",
+          "target": "道德哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Philosophy of Mind",
+          "target": "心灵哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Francis Bacon's Experimental Method",
+          "target": "弗朗西斯·培根的实验方法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "René Descartes' Cogito and Subject",
+          "target": "勒内·笛卡尔的我思与主体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Spinoza's Theologic-Ethico Philosophy",
+          "target": "斯宾诺莎的神学-伦理哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Gottfried Wilhelm Leibniz's Monadology",
+          "target": "戈特弗里德·威廉·莱布尼茨的单子论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "John Locke's Personal Identity",
+          "target": "约翰·洛克的个人同一性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "David Hume's Bundle Theory of Self",
+          "target": "大卫·休谟的自我束理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jean-Jacques Rousseau's Political Thought",
+          "target": "让-雅克·卢梭的政治思想"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Aesthetics",
+          "target": "美学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Moral Naturalism",
+          "target": "道德自然主义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Metaethics",
+          "target": "元伦理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Immanuel Kant's Transcendental Subject",
+          "target": "伊曼努尔·康德的先验主体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "G.W.F. Hegel's Recognition and Subjectivity",
+          "target": "格奥尔格·威廉·弗里德里希·黑格尔的承认与主体性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "F. W. J. Schelling's Nature Philosophy",
+          "target": "弗里德里希·威廉·约瑟夫·谢林的自然哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Søren Kierkegaard's Existential Faith",
+          "target": "索伦·克尔凯郭尔的存在主义信仰"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Arthur Schopenhauer's Will and Representation",
+          "target": "亚瑟·叔本华的意志与表象"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ralph Waldo Emerson's Environmental Thought",
+          "target": "拉尔夫·沃尔多·爱默生的环境思想"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Nietzschean Philosophy",
+          "target": "尼采哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Henri Bergson's Duration and Creativity",
+          "target": "亨利·柏格森的绵延与创造力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "William James' Pragmatism",
+          "target": "威廉·詹姆斯的实用主义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "R. G. Collingwood's Historical Imagination",
+          "target": "R·G·柯林伍德的历史想象"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Logics Analysis",
+          "target": "逻辑分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Set Theory",
+          "target": "集合论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Edmund Husserl's Phenomenology",
+          "target": "埃德蒙德·胡塞尔的现象学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Phenomenology",
+          "target": "现象学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Martin Heidegger's Dasein Analysis",
+          "target": "马丁·海德格尔的此在分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Emmanuel Levinas' Ethics of the Other",
+          "target": "伊曼纽尔·列维纳斯的他者伦理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Hermeneutics",
+          "target": "诠释学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Existential Analysis",
+          "target": "存在分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jean-Paul Sartre's Subjectivity",
+          "target": "让-保罗·萨特的主体性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Simone de Beauvoir's Situated Subject",
+          "target": "西蒙娜·德·波伏瓦的处境主体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Maurice Merleau-Ponty's Embodied Subject",
+          "target": "莫里斯·梅洛-庞蒂的具身主体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Enactivism",
+          "target": "行动主义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Continental Moral Philosophy",
+          "target": "大陆道德哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Alfred North Whitehead's Process Philosophy",
+          "target": "阿尔弗雷德·诺思·怀特海的过程哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Process Philosophical Analysis",
+          "target": "过程哲学分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Vitalism",
+          "target": "活力论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Organicism",
+          "target": "有机论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Philosophy of Language",
+          "target": "语言哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ludwig Wittgenstein's Language Games",
+          "target": "路德维希·维特根斯坦的语言游戏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "J. L. Austin's Speech Act Philosophy",
+          "target": "J·L·奥斯汀的言语行为哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Analytic Moral Philosophy",
+          "target": "分析道德哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "P. F. Strawson's Personhood",
+          "target": "P·F·斯特劳森的人格理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Harry Frankfurt's Volitional Self",
+          "target": "哈里·法兰克福的意志自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Bernard Williams' Personal Identity",
+          "target": "伯纳德·威廉斯的个人同一性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Paul Ricoeur's Narrative Identity",
+          "target": "保罗·利科的叙事同一性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Derek Parfit's Reductionist Identity",
+          "target": "德里克·帕菲特的还原论同一性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jürgen Habermas' Communicative Subject",
+          "target": "尤尔根·哈贝马斯的交往主体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Discourse Ethics",
+          "target": "话语伦理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Hannah Arendt's Action and Plurality",
+          "target": "汉娜·阿伦特的行动与多元性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Amartya Sen's Capability Approach",
+          "target": "阿马蒂亚·森的能力方法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Charles Taylor's Sources of the Self",
+          "target": "查尔斯·泰勒的自我根源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Alasdair MacIntyre's Narrative Self",
+          "target": "阿拉斯代尔·麦金泰尔的叙事自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Edith Cowan's Civic Reform",
+          "target": "伊迪丝·科恩的公民改革"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Diane \"Ding\" Dyason's Practical Ethics",
+          "target": "黛安·“丁”·戴森的实践伦理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jean-Luc Nancy's Being-With",
+          "target": "让-吕克·南希的共在"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Judith Butler's Performativity and Subjectivation",
+          "target": "朱迪斯·巴特勒的操演性与主体化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Catriona Mackenzie's Relational Autonomy",
+          "target": "卡特里奥娜·麦肯齐的关系自主性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Christine Korsgaard's Self-Constitution",
+          "target": "克里斯汀·科斯嘉德的自我构成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Marya Schechtman's Narrative Self",
+          "target": "玛丽亚·谢赫特曼的叙事自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Linda Martín Alcoff's Visible Identities",
+          "target": "琳达·马丁·阿尔科夫的可见身份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Kwame Anthony Appiah's Identity Ethics",
+          "target": "夸梅·安东尼·阿皮亚的身份伦理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Adriana Cavarero's Relational Uniqueness",
+          "target": "阿德里安娜·卡瓦雷罗的关系独特性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Dan Zahavi's Minimal Self",
+          "target": "丹·扎哈维的最小自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Shaun Gallagher's Embodied Self",
+          "target": "肖恩·加拉格尔的具身自我"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Shaun Gallagher's Pattern Theory of Self",
+          "target": "肖恩·加拉格尔的自我模式理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Rosi Braidotti's Nomadic Subjectivity",
+          "target": "罗西·布拉伊多蒂的游牧主体性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Naturalism",
+          "target": "自然主义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Philosophy of Science",
+          "target": "科学哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Philosophy of Physics",
+          "target": "物理学哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "French Philosophy of Science and Relation",
+          "target": "法国科学与关系哲学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Michel Serres' Relations and Parasites",
+          "target": "米歇尔·塞尔的关系与寄生者"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Continental Political Aesthetics",
+          "target": "大陆政治美学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jacques Rancière's Politics and Aesthetics",
+          "target": "雅克·朗西埃的政治与美学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Topological Analysis",
+          "target": "拓扑分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ancient Religious Interpretation",
+          "target": "古代宗教阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ancient Egyptian Interpretation",
+          "target": "古埃及阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "First Testament / Hebrew Interpretation",
+          "target": "第一约/希伯来阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Greek Gods Interpretation",
+          "target": "希腊诸神阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Roman Gods Interpretation",
+          "target": "罗马诸神阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Druidic Interpretation",
+          "target": "德鲁伊阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Celtic Religion Interpretation",
+          "target": "凯尔特宗教阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Second Testament / Christian Interpretation",
+          "target": "第二约/基督教阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Muslim Interpretation",
+          "target": "伊斯兰阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Pagan Interpretation",
+          "target": "异教阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Herbalism",
+          "target": "草药学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Witchcraft",
+          "target": "巫术"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Cartographic Analysis",
+          "target": "制图分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Geography",
+          "target": "地理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Anthropology",
+          "target": "人类学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Archaeology",
+          "target": "考古学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Sociology",
+          "target": "社会学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Social Theories of Deviance",
+          "target": "越轨行为社会理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Discourse Analysis",
+          "target": "话语分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Political Thought",
+          "target": "政治思想"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Theories of World Politics",
+          "target": "世界政治理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Critique of Human Rights",
+          "target": "人权批判"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Social Policy",
+          "target": "社会政策"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Health in All Policies for Healthy Communities",
+          "target": "健康融入所有政策，共建健康社区"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Public Policy Analytics",
+          "target": "公共政策分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Social Research Methods",
+          "target": "社会研究方法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Pierre Bourdieu's Field, Habitus, and Capital",
+          "target": "皮埃尔·布迪厄的场域、惯习与资本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Linguistic Analysis",
+          "target": "语言分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Structuralism",
+          "target": "结构主义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Argumentation Construction and Analysis",
+          "target": "论证构建与分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Textual Analysis",
+          "target": "文本分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Narrative Psychology",
+          "target": "叙事心理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Creative Non-Fiction",
+          "target": "创意非虚构写作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Music Songwriting Analysis",
+          "target": "音乐歌曲创作分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Idiotextual Analysis",
+          "target": "个人文本分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Intertextuality",
+          "target": "互文性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Frame Analysis",
+          "target": "框架分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Erving Goffman's Frame Analysis",
+          "target": "欧文·戈夫曼的框架分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Media Studies",
+          "target": "媒体研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jean Baudrillard's Simulacra and Hyperreality",
+          "target": "让·鲍德里亚的拟像与超真实"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Poetics",
+          "target": "诗学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Art Theory",
+          "target": "艺术理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Susan Sontag on Interpretation",
+          "target": "苏珊·桑塔格论阐释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Freudian Psychoanalysis",
+          "target": "弗洛伊德精神分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jungian Analysis",
+          "target": "荣格分析心理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Lacanian Psychoanalysis",
+          "target": "拉康精神分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Psychiatric Assessment",
+          "target": "精神科评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Psychology",
+          "target": "心理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "General Practice Medical Diagnosis",
+          "target": "全科医疗诊断"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Attachment Theory",
+          "target": "依恋理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Gestalt Therapy",
+          "target": "格式塔疗法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Transpersonal Psychology",
+          "target": "超个人心理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Maslow's Hierarchy of Needs",
+          "target": "马斯洛需求层次理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Myers-Briggs analysis",
+          "target": "迈尔斯-布里格斯性格分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Cognitive Behavioral",
+          "target": "认知行为疗法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Positive Psychology",
+          "target": "积极心理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Emotional Intelligence",
+          "target": "情商"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Montessori Method",
+          "target": "蒙台梭利教学法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Steiner Education",
+          "target": "斯坦纳教育"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jean Piaget's Developmental Theory",
+          "target": "让·皮亚杰的发展理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Lev Vygotsky's Sociocultural Theory",
+          "target": "列夫·维果茨基的社会文化理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Freirean Pedagogy",
+          "target": "弗莱雷教育学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Teaching in Primary School",
+          "target": "小学教学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Teaching in Secondary School",
+          "target": "中学教学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Teaching in Tertiary Education",
+          "target": "高等教育教学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Trades Pedagogy",
+          "target": "行业教学法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Asian / Japanese Parental Guidance Practices",
+          "target": "亚洲/日本家长指导实践"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "African / Zimbabwean Parental Guidance Practices",
+          "target": "非洲/津巴布韦家长指导实践"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Western Parental Guidance Theories",
+          "target": "西方家长指导理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Advice from Grandma",
+          "target": "奶奶的建议"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Marx and Engels Historical Materialism",
+          "target": "马克思与恩格斯的历史唯物主义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Georges Bataillean Analysis",
+          "target": "乔治·巴塔耶分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Critical Theory",
+          "target": "批判理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Frankfurt School Critical Theory",
+          "target": "法兰克福学派批判理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Max Horkheimer's Critical Theory",
+          "target": "马克斯·霍克海默的批判理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Theodor W. Adorno's Negative Dialectics",
+          "target": "西奥多·W·阿多诺的否定辩证法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Louis Althusser's Ideology and Apparatuses",
+          "target": "路易·阿尔都塞的意识形态与国家机器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Simondonian Analysis",
+          "target": "西蒙东分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Foucaultian Analysis",
+          "target": "福柯分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Foucauldian Discourse Analysis",
+          "target": "福柯式话语分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Derridian Analysis",
+          "target": "德里达分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Deleuzian Schizoanalysis",
+          "target": "德勒兹精神分裂分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Žižekian Analysis",
+          "target": "齐泽克分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Gayatri Chakravorty Spivak's Subaltern Analysis",
+          "target": "佳亚特里·斯皮瓦克的属下研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Posthumanism",
+          "target": "后人类主义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Women's Studies",
+          "target": "女性研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Standpoint Theory",
+          "target": "立场理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Lesbian & Gay Studies",
+          "target": "女同性恋与男同性恋研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Sexualities Studies",
+          "target": "性研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Gender Studies",
+          "target": "性别研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Queer Theory",
+          "target": "酷儿理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "bell hooks' Love and Pedagogy",
+          "target": "贝尔·胡克斯的爱与教育学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Trans Studies",
+          "target": "跨性别研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Identity Politics",
+          "target": "身份政治"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Donna Haraway's Situated Knowledges",
+          "target": "唐娜·哈拉维的情境化知识"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Critical Race Studies",
+          "target": "批判性种族研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Frantz Fanonian Analysis",
+          "target": "弗朗茨·法农分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Anti-Colonial Studies",
+          "target": "反殖民研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Postcolonial Studies",
+          "target": "后殖民研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Decolonial Studies",
+          "target": "去殖民研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Pluriversal Politics",
+          "target": "多元宇宙政治"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Edouard Glissant's Poetics of Relation",
+          "target": "爱德华·格里桑的《关系诗学》"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Moten and Harney Undercommons",
+          "target": "莫滕与哈尼的《底层共同体》"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Crip Studies",
+          "target": "残障研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Fat Studies",
+          "target": "肥胖研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Mad Studies",
+          "target": "疯狂研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ecology",
+          "target": "生态学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Traditional Ecological Knowledges",
+          "target": "传统生态知识"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "James Lovelock's Gaia Theory",
+          "target": "詹姆斯·洛夫洛克的盖亚理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Quantum Theory Analysis",
+          "target": "量子理论分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Chaos Theory",
+          "target": "混沌理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Gregory Bateson's Ecology of Mind",
+          "target": "格雷戈里·贝特森的心灵生态学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Science and Technology Studies",
+          "target": "科学技术研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Latourian Analysis",
+          "target": "拉图尔分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Karen Barad's Agential Realism",
+          "target": "凯伦·巴拉德的能动实在论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Isabelle Stengers' Cosmopolitics",
+          "target": "伊莎贝尔·斯唐热的宇宙政治学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "New Materialisms",
+          "target": "新唯物主义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Resilience",
+          "target": "韧性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Food Sovereignty",
+          "target": "粮食主权"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Biomimicry",
+          "target": "仿生学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Environmental Humanities",
+          "target": "环境人文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ecopoiesis",
+          "target": "生态发生"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Rewilding",
+          "target": "再野化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Regenerative Design",
+          "target": "再生设计"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Permaculture",
+          "target": "永续农业"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Theory of Landscape Design",
+          "target": "景观设计理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Reciprocity, Mutual Aid, and Sharing Economies",
+          "target": "互惠、互助与共享经济"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Mechanical Engineering Analysis",
+          "target": "机械工程分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Electronics",
+          "target": "电子学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Computer Science",
+          "target": "计算机科学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Data Science",
+          "target": "数据科学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Metascience",
+          "target": "元科学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Interdisciplinary Studies",
+          "target": "跨学科研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Australian Legal Discourse",
+          "target": "澳大利亚法律话语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Architectural Theories",
+          "target": "建筑理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "SWOT Analysis",
+          "target": "SWOT分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Grounded Theory",
+          "target": "扎根理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Autoethnography",
+          "target": "民族志自传"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Group Work Theories",
+          "target": "小组工作理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Feasibility Analysis",
+          "target": "可行性分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Risk Analysis",
+          "target": "风险分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Transitional Theory",
+          "target": "过渡理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Socio-Technical Transitions and the Multi-Level Perspective",
+          "target": "社会技术转型与多层次视角"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Organisational Theories",
+          "target": "组织理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Organisational Transformation",
+          "target": "组织转型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "André Baier's TINS_D Analysis",
+          "target": "安德烈·拜尔的TINS_D分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Tacktical Methodological Analysis",
+          "target": "战术方法论分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Study Frameworks",
+          "target": "研究框架"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Imagining Transformative Futures",
+          "target": "想象变革性未来"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "warning",
+          "source": "Inspirational song used a local fallback because the AI returned no song payload.",
+          "target": "励志歌曲使用了本地回退，因为AI未返回歌曲数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "warning",
+          "source": "Inspirational song used a local fallback because the AI song payload was incomplete.",
+          "target": "励志歌曲使用了本地回退，因为AI歌曲数据不完整。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
