@@ -1,0 +1,751 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "researcher",
+    "version": "1.0.1",
+    "title": "Lumen - AI Brain",
+    "description": "Lumen - AI Brain Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.7.7",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "never",
+          "target": "never"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Never",
+          "target": "Never"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "always",
+          "target": "always"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Always",
+          "target": "Always"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Automatic",
+          "target": "Automatic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "hr",
+          "target": "hr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "AI OS plugin loaded.",
+          "target": "AI OS 插件已加载。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "AI OS plugin unloaded.",
+          "target": "AI OS 插件已卸载。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open setup guide",
+          "target": "打开设置指南"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Check",
+          "target": "检查"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Pick note…",
+          "target": "选择笔记…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Use active note",
+          "target": "使用活动笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Start research",
+          "target": "开始研究"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "First time? The plugin requires a local Python backend. Open the guide for step-by-step installation instructions.",
+          "target": "首次使用？该插件需要一个本地 Python 后端。请打开指南查看分步安装说明。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Copy this into the [vault] path setting in config.toml when running ai-os setup.",
+          "target": "运行 ai-os setup 时，将此内容复制到 config.toml 中的 [vault] 路径设置中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "URL of the local backend. Defaults to localhost:8765.",
+          "target": "本地后端的 URL。默认为 localhost:8765。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Test the connection to your local backend.",
+          "target": "测试与本地后端的连接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The LLM provider to use for research synthesis.",
+          "target": "用于研究综合的 LLM 提供商。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The base URL of the API endpoint.",
+          "target": "API 端点的基础 URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Model used for planning and writing research reports. Leave blank to use the backend default.",
+          "target": "用于规划和撰写研究报告的模型。留空则使用后端默认值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Smaller/faster model used for the query-complexity check. Leave blank to use the synthesis model.",
+          "target": "用于查询复杂性检查的较小/较快模型。留空则使用综合模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically show related notes in the side panel as you navigate.",
+          "target": "在您浏览时自动在侧面板中显示相关笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How long to wait after switching notes before searching for related content.",
+          "target": "切换笔记后等待多久再搜索相关内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of related passages to show per note.",
+          "target": "每个笔记显示的最大相关段落数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where finished research reports are written as new notes.",
+          "target": "完成的研究报告作为新笔记写入的位置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How many passages the AI considers per question. Higher values improve coverage but take longer.",
+          "target": "AI 每个问题考虑的段落数量。更高的值可提高覆盖范围，但耗时更长。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How many times to automatically fix citation issues before accepting the answer. Higher values improve accuracy but take longer.",
+          "target": "在接受答案之前自动修复引用问题的次数。更高的值可提高准确性，但耗时更长。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatic (recommended) lets the AI decide whether to break complex questions into focused sub-questions for more thorough answers. Always forces this. Never disables it for faster single-pass answers.",
+          "target": "自动（推荐）让 AI 决定是否将复杂问题分解为聚焦的子问题以获得更全面的答案。始终强制执行此操作。禁用它以获得更快的单次答案。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Append a detailed source log to each report showing which passages were retrieved and cited. Useful for verifying the AI's reasoning.",
+          "target": "在每份报告后附加详细的来源日志，显示检索和引用了哪些段落。对于验证 AI 的推理很有用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "What would you like to research across your vault?",
+          "target": "您想在您的知识库中研究什么？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Load the content of an existing note into the question above. Frontmatter and ingestion block-ids are stripped.",
+          "target": "将现有笔记的内容加载到上面的问题中。Frontmatter 和 ingestion block-ids 会被剥离。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of focused sub-questions to research. Lower values are faster.",
+          "target": "要研究的最大聚焦子问题数量。较低的值速度更快。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Search your personal knowledge base.",
+          "target": "搜索您的个人知识库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Fetch articles and research from the internet.",
+          "target": "从互联网获取文章和研究。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Store a summary of this run in long-term memory to inform future research.",
+          "target": "将本次运行的摘要存储在长期记忆中，以供未来研究参考。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Setup guide",
+          "target": "设置指南"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Your vault path",
+          "target": "您的知识库路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backend URL",
+          "target": "后端 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Check connection",
+          "target": "检查连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Base URL",
+          "target": "基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Synthesis model",
+          "target": "合成模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Judge model",
+          "target": "评判模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enabled",
+          "target": "已启用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Response delay (ms)",
+          "target": "响应延迟（毫秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Results count",
+          "target": "结果数量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output folder",
+          "target": "输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Search depth",
+          "target": "搜索深度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-correction passes",
+          "target": "自动校正次数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Query expansion",
+          "target": "查询扩展"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show source details in reports",
+          "target": "在报告中显示来源详情"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Question",
+          "target": "问题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use a note as spec",
+          "target": "使用笔记作为规范"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sources",
+          "target": "来源"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Vault notes",
+          "target": "保险库笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Web search",
+          "target": "网络搜索"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save to memory",
+          "target": "保存到记忆"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "sk-…",
+          "target": "sk-…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. What have I noted about deterministic citation pipelines?",
+          "target": "例如：我记录了哪些关于确定性引用管道的内容？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Pick a note to use as the research spec…",
+          "target": "选择一个笔记作为研究规范…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Copied!",
+          "target": "已复制！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Research this note",
+          "target": "研究此笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a Markdown note first.",
+          "target": "请先打开一个 Markdown 笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Enter a research question first.",
+          "target": "请先输入研究问题。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Researcher: Backend not running — open Settings → Researcher to set up.",
+          "target": "研究器：后端未运行 — 请打开设置 → 研究器进行设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-item-description ai-os-provider-note",
+          "target": "setting-item-description ai-os-provider-note"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ai-os-surfacing__placeholder ai-os-surfacing__placeholder--error",
+          "target": "ai-os-surfacing__placeholder ai-os-surfacing__placeholder--error"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ai-os-rs__new-research-btn mod-cta",
+          "target": "ai-os-rs__new-research-btn mod-cta"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Error",
+          "target": "错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Ollama (local)",
+          "target": "Ollama（本地）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Anthropic",
+          "target": "Anthropic"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "OpenRouter",
+          "target": "OpenRouter"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Custom (OpenAI-compatible)",
+          "target": "自定义（兼容 OpenAI）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open related notes",
+          "target": "打开相关笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Refresh related notes",
+          "target": "刷新相关笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open research status",
+          "target": "打开研究状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Research a question",
+          "target": "研究一个问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Research selected text",
+          "target": "研究选中的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Research using active note",
+          "target": "使用活动笔记进行研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check connection",
+          "target": "检查连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open setup guide",
+          "target": "打开设置指南"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "AI OS — Backend Setup",
+          "target": "AI 操作系统 — 后端设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "AI OS requires a local Python backend. All inference runs on your machine — nothing in your vault is sent to the cloud.",
+          "target": "AI 操作系统需要一个本地 Python 后端。所有推理都在您的机器上运行 — 您保险库中的任何内容都不会发送到云端。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Quick Start",
+          "target": "快速开始"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Already have Ollama installed? Three steps and you're done.",
+          "target": "已经安装了 Ollama？三个步骤即可完成。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Step by step",
+          "target": "分步指南"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Download and install Ollama from:",
+          "target": "从以下地址下载并安装 Ollama："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Then pull the required models:",
+          "target": "然后拉取所需的模型："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "The 14b model (~9 GB) is used for synthesis. You can substitute a smaller model and update config.toml accordingly.",
+          "target": "14b 模型（约 9 GB）用于合成。您可以替换为更小的模型并相应地更新 config.toml。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Clone the repository and install with uv:",
+          "target": "克隆仓库并使用 uv 安装："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Run the setup wizard (your vault path is pre-filled below):",
+          "target": "运行设置向导（您的保险库路径已预填在下方）："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Or run without --yes for an interactive wizard where you can customise model choices.",
+          "target": "或者不带 --yes 运行，进入交互式向导，您可以在其中自定义模型选择。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This indexes your notes. May take a few minutes on a large vault.",
+          "target": "这将索引您的笔记。在大型保险库上可能需要几分钟时间。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "On macOS, you can add this to Login Items so it starts automatically.",
+          "target": "在 macOS 上，您可以将其添加到登录项，以便自动启动。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Once the backend is running, go to Settings → AI OS and click Check connection.",
+          "target": "后端运行后，前往设置 → AI 操作系统并点击检查连接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Researcher",
+          "target": "研究器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Connection",
+          "target": "连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "LLM Provider",
+          "target": "LLM 提供商"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose which LLM provider handles research and synthesis. Embeddings always run locally via the backend's configured model.",
+          "target": "选择哪个 LLM 提供商处理研究和合成。嵌入始终通过后端配置的模型在本地运行。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Related notes",
+          "target": "相关笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Research",
+          "target": "研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Relevance threshold",
+          "target": "相关性阈值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Finding related notes…",
+          "target": "正在查找相关笔记…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No related content found.",
+          "target": "未找到相关内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Spec note: ",
+          "target": "规范笔记："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Start a research query to see live progress here.",
+          "target": "开始一个研究查询以在此处查看实时进度。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New research…",
+          "target": "新研究…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Question",
+          "target": "问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Research complete — report written to vault",
+          "target": "研究完成 — 报告已写入保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open setup guide",
+          "target": "打开设置指南"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
