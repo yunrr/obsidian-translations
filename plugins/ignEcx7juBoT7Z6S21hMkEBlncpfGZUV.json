@@ -1,0 +1,2659 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "jira-sync",
+    "version": "1.0.1",
+    "title": "Jira Issue Manager",
+    "description": "Jira Issue Manager Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.6.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "(value, api_version) => {\n  // Transform Obsidian value to Jira\n  return value;\n}",
+          "target": "(value, api_version) => {\\n  // 将 Obsidian 值转换为 Jira 格式\\n  return value;\\n}"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "(issue, api_version, data_source) => {\n  // Extract value from Jira issue\n  return issue.fields.fieldName;\n}",
+          "target": "(issue, api_version, data_source) => {\\n  // 从 Jira Issue 中提取值\\n  return issue.fields.fieldName;\\n}"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "(issue) => null",
+          "target": "(issue) => null"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "session",
+          "target": "session"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "basic",
+          "target": "basic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "bearer",
+          "target": "bearer"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "no",
+          "target": "no"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "days",
+          "target": "days"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "weeks",
+          "target": "weeks"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "months",
+          "target": "months"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "custom",
+          "target": "custom"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "all-periods-display jira-copyable timekeep-fade-in",
+          "target": "all-periods-display jira-copyable timekeep-fade-in"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "timekeep-group-card collapsed",
+          "target": "timekeep-group-card collapsed"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "small",
+          "target": "small"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "table",
+          "target": "table"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tr",
+          "target": "tr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "thead",
+          "target": "thead"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "th",
+          "target": "th"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tbody",
+          "target": "tbody"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "td",
+          "target": "td"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "img",
+          "target": "img"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error converting Jira markup to Markdown",
+          "target": "将 Jira 标记转换为 Markdown 时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to parse function:",
+          "target": "解析函数失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to extract expression from function:",
+          "target": "从函数中提取表达式失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error converting function to expression string:",
+          "target": "将函数转换为表达式字符串时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to parse jira_worklog_batch:",
+          "target": "解析 jira_worklog_batch 失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error processing frontmatter work logs:",
+          "target": "处理前置元数据中的工作日志时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Work log update failures:",
+          "target": "工作日志更新失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error converting date:",
+          "target": "日期转换错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Batch fetch errors:",
+          "target": "批量获取错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Batch fetch error:",
+          "target": "批量获取错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error refreshing timekeep data:",
+          "target": "刷新计时数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error sending work log to Jira:",
+          "target": "向 Jira 发送工作日志时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Element previously highlighted. To highlight again, first unset `dataset.highlighted`.",
+          "target": "元素之前已高亮。要再次高亮，请先取消设置 `dataset.highlighted`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "One of your code blocks includes unescaped HTML. This is a potentially serious security risk.",
+          "target": "您的一个代码块包含未转义的 HTML。这是一个潜在的严重安全风险。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "The element with unescaped HTML:",
+          "target": "包含未转义 HTML 的元素："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Since Acorn 8.0.0, options.ecmaVersion is required.\nDefaulting to 2020, but this will stop working in the future.",
+          "target": "自 Acorn 8.0.0 起，options.ecmaVersion 是必需的。\\n默认为 2020，但这在未来将停止工作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "No work log data to process",
+          "target": "没有要处理的工作日志数据"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please configure Jira URL in plugin settings",
+          "target": "请在插件设置中配置 Jira URL"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please configure Jira username and password or PAT API token in plugin settings",
+          "target": "请在插件设置中配置 Jira 用户名和密码或 PAT API 令牌"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Testing connection to Jira...",
+          "target": "正在测试到 Jira 的连接..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to extract expression from function",
+          "target": "从函数中提取表达式失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to parse jira_worklog_batch",
+          "target": "解析 jira_worklog_batch 失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No work log data to process",
+          "target": "没有要处理的工作日志数据"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to process work log data from frontmatter",
+          "target": "处理来自前置元数据的工作日志数据失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "jql-preview-status-indicator status-undefined",
+          "target": "jql-preview-status-indicator status-undefined"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "jql-preview-status-badge status-default",
+          "target": "jql-preview-status-badge status-default"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Set the Jira issue summary",
+          "target": "设置 Jira 问题摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Enter new task name (e.g., \"My great issue\")",
+          "target": "输入新任务名称（例如，“我的好问题”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Write your comment here, or select text in the editor before running this command to pre-fill it",
+          "target": "在此处输入您的评论，或在运行此命令前在编辑器中选择文本以预填充"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Search issues by JQL query",
+          "target": "通过 JQL 查询搜索问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Enter a JQL (Jira Query Language) query to search for issues",
+          "target": "输入 JQL（Jira 查询语言）查询以搜索问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Maximum number of issues to fetch (default 50)",
+          "target": "要获取的最大问题数（默认 50）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Search issue by key",
+          "target": "按关键字搜索问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Enter the Jira issue key (e.g., PROJECT-123)",
+          "target": "输入 Jira 问题关键字（例如，PROJECT-123）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Format: weeks days hours, minutes",
+          "target": "格式：周 天 小时，分钟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Format: DD/MMM/YY HH:MM",
+          "target": "格式：DD/MMM/YY HH:MM"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Optional",
+          "target": "可选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Your Jira instance URL",
+          "target": "您的 Jira 实例 URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "The version of the Jira API to use",
+          "target": "要使用的 Jira API 版本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Choose how to authenticate with Jira",
+          "target": "选择如何向 Jira 进行身份验证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Personal Access Token",
+          "target": "个人访问令牌"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Your Jira username (or email)",
+          "target": "您的 Jira 用户名（或电子邮件）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Your Jira email",
+          "target": "您的 Jira 电子邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Your Jira password",
+          "target": "您的 Jira 密码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Check your connection to Jira",
+          "target": "检查您到 Jira 的连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "A friendly name for this connection",
+          "target": "此连接的友好名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Enter a Jira issue key to view its raw data from API",
+          "target": "输入 Jira 问题关键字以查看其来自 API 的原始数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Main Jira fields",
+          "target": "主要 Jira 字段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Extra Jira fields",
+          "target": "额外 Jira 字段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Template for created issue filenames. Use {summary} for issue summary and {key} for issue key\n",
+          "target": "创建的问题文件名的模板。使用 {summary} 表示问题摘要，使用 {key} 表示问题关键字\\n"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Check fields before saving based on the standard API response (validation does not account for custom fields)",
+          "target": "在保存前根据标准 API 响应检查字段（验证不考虑自定义字段）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Field mapping uses JavaScript lambda functions.",
+          "target": "字段映射使用 JavaScript lambda 函数。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Folder where Jira issues will be stored and searched for",
+          "target": "存储和搜索 Jira 问题的文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Select a template file for creating Jira tasks",
+          "target": "选择用于创建 Jira 任务的模板文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Test your field mapping against the current issue data from Raw issue viewer. Enter a fromJira expression to see the result.",
+          "target": "针对来自原始问题查看器的当前问题数据测试您的字段映射。输入一个 fromJira 表达式以查看结果。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Задать название задачи Jira",
+          "target": "设置 Jira 任务标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Введите название задачи (например, \"Моя замечательная задача\")",
+          "target": "输入任务名称（例如，“我的好任务”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Поиск задач по JQL запросу",
+          "target": "通过 JQL 查询搜索任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Введите JQL (Jira Query Language) запрос для поиска задач",
+          "target": "输入 JQL（Jira 查询语言）查询以搜索任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Максимальное количество задач для получения (по умолчанию 50)",
+          "target": "要获取的最大任务数（默认 50）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Поиск задачи по номеру",
+          "target": "按编号搜索任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Введите номер задачи Jira (например, PROJECT-123)",
+          "target": "输入 Jira 任务编号（例如，PROJECT-123）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Формат: недели дни часы, минуты",
+          "target": "格式：周 天 小时，分钟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Формат: DD/MMM/YY HH:MM",
+          "target": "格式：DD/MMM/YY HH:MM"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Необязательно",
+          "target": "可选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "URL вашей инстанции Jira",
+          "target": "您的 Jira 实例 URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Версия API, которая будет использоваться плагином.",
+          "target": "插件将使用的 API 版本。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Выберите способ подключения к Jira",
+          "target": "选择连接到 Jira 的方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Персональный токен доступа",
+          "target": "个人访问令牌"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Ваше имя пользователя Jira (или email)",
+          "target": "您的 Jira 用户名（或电子邮件）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Ваш email в Jira",
+          "target": "您在 Jira 中的电子邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Ваш пароль от Jira",
+          "target": "您的 Jira 密码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Проверить подключение к Jira",
+          "target": "检查到 Jira 的连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Понятное имя для этого подключения",
+          "target": "此连接的友好名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Введите номер задачи Jira, чтобы просмотреть необработанные данные, полученные из API",
+          "target": "输入 Jira 任务编号，以查看从 API 获取的原始数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Главные поля Jira",
+          "target": "主要 Jira 字段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Дополнительные поля Jira",
+          "target": "额外 Jira 字段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Проверять поля перед сохранением базируясь на стандартном ответе API (при проверке не учитываются пользовательские поля)",
+          "target": "在保存前根据标准 API 响应检查字段（验证不考虑自定义字段）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Сопоставление полей использует JavaScript lambda функции.",
+          "target": "字段映射使用 JavaScript lambda 函数。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Папка, в которой будут создаваться и искаться задачи Jira",
+          "target": "存储和搜索 Jira 任务的文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Выберите файл шаблона для создания задач Jira",
+          "target": "选择用于创建 Jira 任务的模板文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Проверьте сопоставления полей на текущих данных задачи из пункта 'Просмотр необработанных данных задачи'. Введите выражение 'Из Jira', чтобы увидеть результат.",
+          "target": "针对来自“原始问题查看器”的当前问题数据测试您的字段映射。输入一个“来自 Jira”表达式以查看结果。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Manage and send work logs to Jira (supports Timekeep and Super Simple Time Tracker formats)",
+          "target": "管理和发送工作日志到 Jira（支持 Timekeep 和 Super Simple Time Tracker 格式）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "When enabled, the name/path of the Timekeep block will be added as a comment to the Jira issue",
+          "target": "启用后，Timekeep 块的名称/路径将作为评论添加到 Jira 问题中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Number of recent weeks to display",
+          "target": "显示最近几周的数量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Select the time range for grouping entries",
+          "target": "选择用于分组条目的时间范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Number of recent time periods to display",
+          "target": "显示最近时间段的数量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Start date for custom range",
+          "target": "自定义范围的开始日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "End date for custom range",
+          "target": "自定义范围的结束日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Управление и отправка журнала работы в Jira (поддерживает формат Timekeep и Super Simple Time Tracker)",
+          "target": "管理和发送工作日志到 Jira（支持 Timekeep 和 Super Simple Time Tracker 格式）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "При включении название/путь Timekeep-блока будет записано в Jira как комментарий к журналу работы",
+          "target": "启用后，Timekeep 块的名称/路径将作为评论添加到 Jira 问题中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Количество последних недель для показа",
+          "target": "显示最近几周的数量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Выберите период для группировки записей",
+          "target": "选择用于分组条目的时间范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Количество последних периодов для показа",
+          "target": "显示最近时间段的数量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Дата начала для произвольного периода",
+          "target": "自定义范围的开始日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Дата окончания для произвольного периода",
+          "target": "自定义范围的结束日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Comment cannot be empty",
+          "target": "评论不能为空"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Template is not chosen",
+          "target": "未选择模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Шаблон не выбран",
+          "target": "未选择模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Error adding comment",
+          "target": "添加评论时出错"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Error creating issue",
+          "target": "创建问题时出错"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Error updating issue",
+          "target": "更新问题时出错"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Ошибка при создании задачи",
+          "target": "创建问题时出错"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Ошибка при обновлении задачи",
+          "target": "更新问题时出错"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Ошибка при обновлении статуса задачи",
+          "target": "更新问题状态时出错"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "shebang",
+          "target": "shebang"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "interpol",
+          "target": "interpol"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "symbol",
+          "target": "symbol"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Plain text",
+          "target": "纯文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Augmented Backus-Naur Form",
+          "target": "扩展巴科斯-诺尔范式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Apache Access Log",
+          "target": "Apache 访问日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ActionScript",
+          "target": "ActionScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ada",
+          "target": "Ada"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AngelScript",
+          "target": "AngelScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Apache config",
+          "target": "Apache 配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AppleScript",
+          "target": "AppleScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ArcGIS Arcade",
+          "target": "ArcGIS Arcade"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ARM Assembly",
+          "target": "ARM 汇编"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HTML, XML",
+          "target": "HTML, XML"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "style",
+          "target": "样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "script",
+          "target": "脚本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AsciiDoc",
+          "target": "AsciiDoc"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AspectJ",
+          "target": "AspectJ"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AutoHotkey",
+          "target": "AutoHotkey"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AutoIt",
+          "target": "AutoIt"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AVR Assembly",
+          "target": "AVR 汇编"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Awk",
+          "target": "Awk"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bash",
+          "target": "Bash"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Backus–Naur Form",
+          "target": "巴科斯-诺尔范式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Brainfuck",
+          "target": "Brainfuck"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cap’n Proto",
+          "target": "Cap'n Proto"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ceylon",
+          "target": "Ceylon"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clean",
+          "target": "Clean"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clojure",
+          "target": "Clojure"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clojure REPL",
+          "target": "Clojure REPL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CMake",
+          "target": "CMake"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CoffeeScript",
+          "target": "CoffeeScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Coq",
+          "target": "Coq"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Caché Object Script",
+          "target": "Caché Object Script"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "crmsh",
+          "target": "crmsh"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Crystal",
+          "target": "Crystal"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CSP",
+          "target": "CSP"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CSS",
+          "target": "CSS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Markdown",
+          "target": "Markdown"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dart",
+          "target": "Dart"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Delphi",
+          "target": "Delphi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Diff",
+          "target": "Diff"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Django",
+          "target": "Django"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "DNS Zone",
+          "target": "DNS 区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dockerfile",
+          "target": "Dockerfile"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Batch file (DOS)",
+          "target": "批处理文件 (DOS)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Device Tree",
+          "target": "设备树"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dust",
+          "target": "Dust"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extended Backus-Naur Form",
+          "target": "扩展巴科斯-诺尔范式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Elixir",
+          "target": "Elixir"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Elm",
+          "target": "Elm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ruby",
+          "target": "Ruby"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ERB",
+          "target": "ERB"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Erlang REPL",
+          "target": "Erlang REPL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Erlang",
+          "target": "Erlang"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Excel formulae",
+          "target": "Excel 公式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "FIX",
+          "target": "FIX"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Flix",
+          "target": "Flix"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fortran",
+          "target": "Fortran"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "G-code (ISO 6983)",
+          "target": "G-code (ISO 6983)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gherkin",
+          "target": "Gherkin"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GML",
+          "target": "GML"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Go",
+          "target": "Go"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Golo",
+          "target": "Golo"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gradle",
+          "target": "Gradle"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GraphQL",
+          "target": "GraphQL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Groovy",
+          "target": "Groovy"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Handlebars",
+          "target": "Handlebars"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Haskell",
+          "target": "Haskell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Haxe",
+          "target": "Haxe"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HSP",
+          "target": "HSP"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hy",
+          "target": "Hy"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Inform 7",
+          "target": "Inform 7"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TOML, also INI",
+          "target": "TOML, 也称为 INI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Java",
+          "target": "Java"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "JavaScript",
+          "target": "JavaScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "JBoss CLI",
+          "target": "JBoss CLI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Julia REPL",
+          "target": "Julia REPL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kotlin",
+          "target": "Kotlin"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lasso",
+          "target": "Lasso"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LaTeX",
+          "target": "LaTeX"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Leaf",
+          "target": "Leaf"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Less",
+          "target": "Less"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "quote",
+          "target": "quote"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lisp",
+          "target": "Lisp"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LiveCode",
+          "target": "LiveCode"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LiveScript",
+          "target": "LiveScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LLVM IR",
+          "target": "LLVM IR"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LSL (Linden Scripting Language)",
+          "target": "LSL (Linden Scripting Language)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lua",
+          "target": "Lua"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Makefile",
+          "target": "Makefile"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mathematica",
+          "target": "Mathematica"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Matlab",
+          "target": "Matlab"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Maxima",
+          "target": "Maxima"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MEL",
+          "target": "MEL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mercury",
+          "target": "Mercury"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MIPS Assembly",
+          "target": "MIPS Assembly"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mizar",
+          "target": "Mizar"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Perl",
+          "target": "Perl"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mojolicious",
+          "target": "Mojolicious"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Monkey",
+          "target": "Monkey"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MoonScript",
+          "target": "MoonScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nested Text",
+          "target": "Nested Text"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nginx config",
+          "target": "Nginx config"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nim",
+          "target": "Nim"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nix",
+          "target": "Nix"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Node REPL",
+          "target": "Node REPL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCaml",
+          "target": "OCaml"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OpenSCAD",
+          "target": "OpenSCAD"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Oxygene",
+          "target": "Oxygene"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Packet Filter config",
+          "target": "Packet Filter config"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PostgreSQL",
+          "target": "PostgreSQL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PHP template",
+          "target": "PHP template"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pony",
+          "target": "Pony"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PowerShell",
+          "target": "PowerShell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Processing",
+          "target": "Processing"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Python profiler",
+          "target": "Python profiler"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prolog",
+          "target": "Prolog"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Protocol Buffers",
+          "target": "Protocol Buffers"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Puppet",
+          "target": "Puppet"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PureBASIC",
+          "target": "PureBASIC"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Python",
+          "target": "Python"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "QML",
+          "target": "QML"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ReasonML",
+          "target": "ReasonML"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "RenderMan RIB",
+          "target": "RenderMan RIB"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Roboconf",
+          "target": "Roboconf"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MikroTik RouterOS script",
+          "target": "MikroTik RouterOS 脚本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "RenderMan RSL",
+          "target": "RenderMan RSL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Oracle Rules Language",
+          "target": "Oracle 规则语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rust",
+          "target": "Rust"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SAS",
+          "target": "SAS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Scala",
+          "target": "Scala"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Scheme",
+          "target": "Scheme"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Scilab",
+          "target": "Scilab"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Shell Session",
+          "target": "Shell 会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Smali",
+          "target": "Smali"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Smalltalk",
+          "target": "Smalltalk"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SML (Standard ML)",
+          "target": "SML (标准 ML)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SQF",
+          "target": "SQF"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SQL",
+          "target": "SQL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stan",
+          "target": "Stan"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stata",
+          "target": "Stata"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "STEP Part 21",
+          "target": "STEP Part 21"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stylus",
+          "target": "Stylus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SubUnit",
+          "target": "SubUnit"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Swift",
+          "target": "Swift"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tagger Script",
+          "target": "Tagger 脚本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Test Anything Protocol",
+          "target": "测试任何协议"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tcl",
+          "target": "Tcl"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Thrift",
+          "target": "Thrift"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TP",
+          "target": "TP"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Twig",
+          "target": "Twig"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TypeScript",
+          "target": "TypeScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vala",
+          "target": "Vala"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Visual Basic .NET",
+          "target": "Visual Basic .NET"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "VBScript",
+          "target": "VBScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "VBScript in HTML",
+          "target": "HTML 中的 VBScript"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Verilog",
+          "target": "Verilog"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vim Script",
+          "target": "Vim 脚本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "WebAssembly",
+          "target": "WebAssembly"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Wren",
+          "target": "Wren"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Intel x86 Assembly",
+          "target": "Intel x86 汇编"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "XL",
+          "target": "XL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "XQuery",
+          "target": "XQuery"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Zephir",
+          "target": "Zephir"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add comment to Jira",
+          "target": "向 Jira 添加评论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Update work log in Jira manually",
+          "target": "手动更新 Jira 工作日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Update work log in Jira by batch",
+          "target": "批量更新 Jira 工作日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Batch Fetch Issues by JQL",
+          "target": "通过 JQL 批量获取问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create issue in Jira",
+          "target": "在 Jira 中创建问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Update issue in Jira",
+          "target": "在 Jira 中更新问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Update issue status in Jira",
+          "target": "在 Jira 中更新问题状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Summary",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add Jira comment",
+          "target": "添加 Jira 评论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Comment",
+          "target": "评论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "JQL Query",
+          "target": "JQL 查询"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Maximum Results",
+          "target": "最大结果数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Issue key",
+          "target": "问题键"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add work log",
+          "target": "添加工作日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Time spent",
+          "target": "花费时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start datetime",
+          "target": "开始日期时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Work description",
+          "target": "工作描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "View raw issue data",
+          "target": "查看原始问题数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Issue fields ('fields')",
+          "target": "问题字段 ('fields')"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Expand fields ('expand')",
+          "target": "展开字段 ('expand')"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Filename template",
+          "target": "文件名模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable field validation",
+          "target": "启用字段验证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "⚠️ Note: ",
+          "target": "⚠️ 注意："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Example field mapping",
+          "target": "示例字段映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Issues folder",
+          "target": "问题文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Template path",
+          "target": "模板路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Send Comments",
+          "target": "发送评论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Maximum Weeks to Show",
+          "target": "显示的最大周数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Time Range",
+          "target": "时间范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Maximum Items to Show",
+          "target": "显示的最大项目数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "From Date",
+          "target": "开始日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "To Date",
+          "target": "结束日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Test field mapping",
+          "target": "测试字段映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Вести журнал работы в Jira вручную (Update work log in Jira manually)",
+          "target": "在Jira中手动更新工作日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Вести журнал работы в Jira массово (Update work log in Jira by batch)",
+          "target": "在Jira中批量更新工作日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Массовое получение задач по JQL (Batch Fetch Issues by JQL)",
+          "target": "通过JQL批量获取问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Создать задачу в Jira (Create issue in Jira)",
+          "target": "在Jira中创建问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Обновить задачу в Jira (Update issue in Jira)",
+          "target": "在Jira中更新问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Обновить статус задачи в Jira (Update issue status in Jira)",
+          "target": "在Jira中更新问题状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Название задачи",
+          "target": "问题标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "JQL Запрос",
+          "target": "JQL查询"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Максимум результатов",
+          "target": "最大结果数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Номер задачи",
+          "target": "问题编号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Вести журнал работы",
+          "target": "更新工作日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Затраченное время",
+          "target": "花费时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Дата и время начала",
+          "target": "开始日期和时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Описание работы",
+          "target": "工作描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Просмотр необработанных данных задачи",
+          "target": "查看原始问题数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Поля задачи ('fields')",
+          "target": "问题字段 ('fields')"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Расширенные поля ('expand')",
+          "target": "展开字段 ('expand')"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Шаблон названия файла",
+          "target": "文件名模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Включить проверку полей",
+          "target": "启用字段验证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "⚠️ Примечание: ",
+          "target": "⚠️ 注意："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Примеры сопоставления полей",
+          "target": "字段映射示例"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Папка для задач",
+          "target": "问题文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Путь к шаблону",
+          "target": "模板路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Отправлять комментарии",
+          "target": "发送评论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Максимум недель для отображения",
+          "target": "显示的最大周数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Период времени",
+          "target": "时间范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Максимум элементов для отображения",
+          "target": "显示的最大项目数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Дата начала",
+          "target": "开始日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Дата окончания",
+          "target": "结束日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Тестирование сопоставлений полей",
+          "target": "测试字段映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "summary",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "reporter",
+          "target": "报告人"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "project",
+          "target": "项目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "description",
+          "target": "描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Connection 1",
+          "target": "连接 1"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Enter issue summary...",
+          "target": "输入问题摘要..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Write your comment here. Tip: select text in the editor before running this command to pre-fill.",
+          "target": "在此处撰写评论。提示：运行此命令前在编辑器中选择文本以预填充。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "project = \"PROJECT\" AND status = \"To Do\" ORDER BY created DESC",
+          "target": "project = \\\"PROJECT\\\" AND status = \\\"To Do\\\" ORDER BY created DESC"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search for a project...",
+          "target": "搜索项目..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Issue key",
+          "target": "问题键"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search for an issue status transition...",
+          "target": "搜索问题状态转换..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search for an issue type...",
+          "target": "搜索问题类型..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "3w 4d 12h 30m",
+          "target": "3周 4天 12小时 30分钟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "03/feb/25 15:22",
+          "target": "03/二月/25 15:22"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Enter work description...",
+          "target": "输入工作描述..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "{summary} ({key})",
+          "target": "{summary} ({key})"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Jira Issues",
+          "target": "Jira问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search templates...",
+          "target": "搜索模板..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Введите название задачи...",
+          "target": "输入问题标题..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Поиск проекта...",
+          "target": "搜索项目..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Номер задачи",
+          "target": "问题编号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Поиск смены статуса задачи...",
+          "target": "搜索问题状态转换..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Поиск типа задачи...",
+          "target": "搜索问题类型..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "03/фев/25 15:22",
+          "target": "03/二月/25 15:22"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Введите описание работы...",
+          "target": "输入工作描述..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Поиск шаблонов...",
+          "target": "搜索模板..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "ГГГГ-ММ-ДД",
+          "target": "YYYY-MM-DD"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "success",
+          "source": "Issue {issueKey} created successfully",
+          "target": "问题 {issueKey} 创建成功"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "success",
+          "source": "Issue {issueKey} updated successfully",
+          "target": "问题 {issueKey} 更新成功"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "success",
+          "source": "Задача {issueKey} успешно создана",
+          "target": "问题 {issueKey} 创建成功"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "success",
+          "source": "Задача {issueKey} успешно обновлена",
+          "target": "问题 {issueKey} 更新成功"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "success",
+          "source": "Статус задачи {issueKey} успешно обновлён",
+          "target": "问题 {issueKey} 的状态更新成功"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🔍",
+          "target": "🔍"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📝",
+          "target": "📝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⚠️",
+          "target": "⚠️"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Key",
+          "target": "键"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Summary",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Created",
+          "target": "创建时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Updated",
+          "target": "更新时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Status",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Unknown",
+          "target": "未知"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "setup draw",
+          "target": "设置绘图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Connection settings",
+          "target": "连接设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jira URL",
+          "target": "Jira URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jira API version",
+          "target": "Jira API 版本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Authentication method",
+          "target": "认证方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jira PAT",
+          "target": "Jira PAT"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jira username",
+          "target": "Jira 用户名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jira email",
+          "target": "Jira 邮箱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Jira password",
+          "target": "Jira 密码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ping Jira",
+          "target": "测试 Jira 连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Connection name",
+          "target": "连接名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Fetch issue settings",
+          "target": "获取问题设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Field mappings",
+          "target": "字段映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "General settings",
+          "target": "通用设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Kanban board",
+          "target": "看板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Timekeep work log statistics",
+          "target": "Timekeep 工作日志统计"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Test field mapping",
+          "target": "测试字段映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Настройки подключения",
+          "target": "连接设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "URL Jira",
+          "target": "Jira URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Версия API Jira",
+          "target": "Jira API 版本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Метод аутентификации",
+          "target": "认证方法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Имя пользователя Jira",
+          "target": "Jira 用户名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Email Jira",
+          "target": "Jira 邮箱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Пароль Jira",
+          "target": "Jira 密码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Название подключения",
+          "target": "连接名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Настройка получаемых полей",
+          "target": "获取字段设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Сопоставление полей",
+          "target": "字段映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Общие настройки",
+          "target": "通用设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Канбан доска",
+          "target": "看板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Статистика ведения журнала работы через Timekeep",
+          "target": "Timekeep 工作日志统计"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Тестирование сопоставлений полей",
+          "target": "测试字段映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "text"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "warning",
+          "source": "No template plugins are currently enabled (Core Templates or Community Templater).",
+          "target": "当前没有启用任何模板插件（Core Templates 或 Community Templater）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "warning",
+          "source": "В данный момент не активированы плагины шаблонов (Core Templates или Community Templater).",
+          "target": "当前没有启用任何模板插件（Core Templates 或 Community Templater）。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
