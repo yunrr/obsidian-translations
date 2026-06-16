@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "image-dither",
+    "version": "1.0.1",
+    "title": "Image Dither",
+    "description": "Image Dither Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.5",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Auto (max compression)",
+          "target": "自动（最大压缩）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "You've saved ",
+          "target": "您已使用 Image Dither 节省了"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " so far using Image Dither.",
+          "target": "。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "option",
+          "target": "option"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "img",
+          "target": "img"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "select",
+          "target": "select"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Controls default dithered filename. Tokens: {original}, {algo}, {resize}, {timestamp}",
+          "target": "控制默认的抖动文件名。令牌：{original}、{algo}、{resize}、{timestamp}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Turn image paste/drop interception on or off.",
+          "target": "开启或关闭图像粘贴/拖放拦截。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Preset to apply when opening the dither modal. Auto tries all presets and picks max compression.",
+          "target": "打开抖动模态框时应用的预设。自动会尝试所有预设并选择最大压缩。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If set, resize defaults to the closest percentage for each image. Remove to default to original image width",
+          "target": "如果设置，调整大小将默认为每张图像最接近的百分比。移除则默认为原始图像宽度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Dithered filename template",
+          "target": "抖动文件名模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enabled",
+          "target": "已启用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default preset",
+          "target": "默认预设"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default output width (approximate px)",
+          "target": "默认输出宽度（近似像素）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom presets",
+          "target": "自定义预设"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Optional",
+          "target": "可选"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Dither image before saving",
+          "target": "保存前抖动图像"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Use dithered (processing...)",
+          "target": "使用抖动（处理中...）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Save as preset",
+          "target": "另存为预设"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image Dither enabled",
+          "target": "Image Dither 已启用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image Dither disabled",
+          "target": "Image Dither 已禁用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file to insert image into.",
+          "target": "没有活动文件可插入图像。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No image data to save.",
+          "target": "没有要保存的图像数据。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to save dithered image.",
+          "target": "保存抖动图像失败。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "dither-row dither-row-preset",
+          "target": "dither-row dither-row-preset"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "organic grain",
+          "target": "有机颗粒"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "error diffusion",
+          "target": "误差扩散"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "bold black/white",
+          "target": "高对比度黑白"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "no dithering",
+          "target": "无抖动"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "custom",
+          "target": "自定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "enable",
+          "target": "enable"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "disable",
+          "target": "disable"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Blue Noise",
+          "target": "蓝噪声"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Natural Dither",
+          "target": "自然抖动"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "High Contrast",
+          "target": "高对比度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Grayscale",
+          "target": "灰度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Ordered (Bayer)",
+          "target": "有序（拜耳）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Threshold",
+          "target": "阈值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable",
+          "target": "启用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Disable",
+          "target": "禁用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Filename",
+          "target": "文件名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "e.g. Dark portrait",
+          "target": "例如：暗色肖像"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "── Custom ──",
+          "target": "── 自定义 ──"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Original",
+          "target": "原始"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Dithered",
+          "target": "抖动后"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Algorithm",
+          "target": "算法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Threshold",
+          "target": "阈值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sharpness",
+          "target": "锐度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Brightness",
+          "target": "亮度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Contrast",
+          "target": "对比度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Resize (%)",
+          "target": "调整大小 (%)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Preset",
+          "target": "预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Auto (max compression)",
+          "target": "自动 (最大压缩)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Invert colors",
+          "target": "反转颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save current as preset",
+          "target": "将当前设置保存为预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use original",
+          "target": "使用原始图像"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use dithered",
+          "target": "使用抖动图像"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save",
+          "target": "保存"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
