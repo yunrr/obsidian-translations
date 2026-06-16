@@ -1,0 +1,1441 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-importer",
+    "version": "1.0.1",
+    "title": "Importer",
+    "description": "Importer Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.8.12",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "alt",
+          "source": "Exported image",
+          "target": "导出的图片"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "tags",
+          "target": "标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Create a copy",
+          "target": "创建副本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Import only updated",
+          "target": "仅导入更新内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "skip",
+          "target": "跳过"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Skip import",
+          "target": "跳过导入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "static",
+          "target": "静态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Static values",
+          "target": "静态值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "hybrid",
+          "target": "混合"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Obsidian syntax",
+          "target": "Obsidian 语法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "no",
+          "target": "否"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Filename only",
+          "target": "仅文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "yes",
+          "target": "是"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Keep titles",
+          "target": "保留标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "automatic",
+          "target": "自动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Automatic",
+          "target": "自动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "[!important] ",
+          "target": "[!重要] "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "To get an API token create an integration in Notion and give it access to pages in your workspace. ",
+          "target": "要获取 API 令牌，请在 Notion 中创建一个集成，并授予其访问您工作区中页面的权限。 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "By default Notion formulas are converted to Obsidian syntax. If any Notion syntax is not supported the static values will be saved instead. Alternatively you can import all formulas as static values.",
+          "target": "默认情况下，Notion 公式会被转换为 Obsidian 语法。如果任何 Notion 语法不被支持，则会保存静态值。或者，您也可以将所有公式作为静态值导入。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Download external attachments (external URLs) to local files. Notion-hosted files are always downloaded. ",
+          "target": "将外部附件（外部 URL）下载到本地文件。Notion 托管的文件始终会被下载。 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Attachments will be saved according to your vault's attachment folder settings.",
+          "target": "附件将根据您库的附件文件夹设置进行保存。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Property name for page cover image in YAML frontmatter. ",
+          "target": "YAML 前置信息中页面封面图片的属性名称。 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Leave as \"cover\" if you don't have conflicts with existing properties.",
+          "target": "如果与现有属性没有冲突，请保留为 \\\"cover\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "tree-item-icon collapse-icon",
+          "target": "tree-item-icon collapse-icon"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "tree-item-inner file-tree-item",
+          "target": "tree-item-inner file-tree-item"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "importer-stat mod-imported",
+          "target": "importer-stat mod-imported"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "importer-stat mod-attachments",
+          "target": "importer-stat mod-attachments"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "importer-stat mod-remaining",
+          "target": "importer-stat mod-remaining"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "importer-stat mod-skipped",
+          "target": "importer-stat mod-skipped"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "importer-stat mod-failed",
+          "target": "importer-stat mod-failed"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "img",
+          "target": "img"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "summary",
+          "target": "summary"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "details",
+          "target": "details"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "invalid doc source",
+          "target": "无效的文档源"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "unexpected end of input",
+          "target": "输入意外结束"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unclosed comment",
+          "target": "未关闭的注释"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to create Base file:",
+          "target": "创建基础文件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot write file ",
+          "target": "无法写入文件 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to download and format attachment:",
+          "target": "下载并格式化附件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to download file attachment:",
+          "target": "下载文件附件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "syncedBlocksMap is required for synced blocks",
+          "target": "同步块需要 syncedBlocksMap"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Notion Importer] Error in loadPageTree:",
+          "target": "[Notion 导入器] loadPageTree 出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Request failed:",
+          "target": "请求失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Notion Importer] Failed to load pages:",
+          "target": "[Notion 导入器] 加载页面失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Notion Importer] Container not found!",
+          "target": "[Notion 导入器] 未找到容器！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Notion API import error:",
+          "target": "Notion API 导入错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to download cover image:",
+          "target": "下载封面图片失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[CREATE FILE] Error:",
+          "target": "[创建文件] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Stack trace:",
+          "target": "堆栈跟踪："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "An error occurred while we were trying to sign you in. Error details: ",
+          "target": "尝试为您登录时发生错误。错误详情： "
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "An error occurred while fetching your OneNote data: ",
+          "target": "获取您的 OneNote 数据时发生错误： "
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to convert InkML to SVG in page:",
+          "target": "在页面中将 InkML 转换为 SVG 失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot import data with an empty title",
+          "target": "无法导入标题为空的数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error saving Markdown to file:",
+          "target": "保存 Markdown 到文件时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "request start",
+          "target": "请求开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "retrying request",
+          "target": "正在重试请求"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "request success",
+          "target": "请求成功"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "request fail",
+          "target": "请求失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "failed response body",
+          "target": "失败的响应正文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "unknown parameters were ignored",
+          "target": "未知参数已被忽略"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Skipping path: ",
+          "target": "跳过路径： "
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "About to update links...",
+          "target": "即将更新链接..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Link update complete.",
+          "target": "链接更新完成。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[ATTACHMENT] Filename unchanged, original file doesn't exist",
+          "target": "[附件] 文件名未更改，原始文件不存在"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "An error has occurred while fetching an resource:",
+          "target": "获取资源时发生错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Daily note plugin is not enabled. Roam import defaulting to \"YYYY-MM-DD\" format.",
+          "target": "每日笔记插件未启用。Roam 导入默认使用 \\\"YYYY-MM-DD\\\" 格式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Skipping",
+          "target": "正在跳过"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Import skipped",
+          "target": "导入已跳过"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Import failed",
+          "target": "导入失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Current progress:",
+          "target": "当前进度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Choose folders",
+          "target": "选择文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Select all",
+          "target": "全选"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Load",
+          "target": "加载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sign in",
+          "target": "登录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Switch user",
+          "target": "切换用户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Reading folders...",
+          "target": "正在读取文件夹..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose a folder in the vault to put the imported files. Leave empty to output to vault root.",
+          "target": "选择库中的一个文件夹来存放导入的文件。留空则输出到库根目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Format for the creation date prefix in filenames. Use YYYY, MM, DD for year, month, day. Leave blank for no prefix.",
+          "target": "文件名中创建日期前缀的格式。使用 YYYY、MM、DD 分别代表年、月、日。留空则不添加前缀。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Import notes in the \"Recently Deleted\" folder. Unlike in Apple Notes, they will not be automatically removed after a set amount of time.",
+          "target": "导入 \\\"最近删除\\\" 文件夹中的笔记。与 Apple Notes 不同，它们不会在设定时间后自动移除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Don't include the first line in the text, since Apple Notes uses it as the title. It will still be used as the note name.",
+          "target": "不包含文本中的第一行，因为 Apple Notes 将其用作标题。它仍将用作笔记名称。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When Apple Notes has detected handwriting in drawings, include it as text before the drawing.",
+          "target": "当 Apple Notes 在绘图中检测到手写内容时，将其作为文本包含在绘图之前。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How to handle notes that already exist in the vault.",
+          "target": "如何处理库中已存在的笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Capture state-of-mind, contact, and similar tokens in YAML when available.",
+          "target": "在可用时，将情绪状态、联系人及类似标记捕获到 YAML 中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How to handle entries that already exist in the vault.",
+          "target": "如何处理库中已存在的条目。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, tags will be split on slashes (/) during import.",
+          "target": "启用后，导入期间标签将在斜杠 (/) 处拆分。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Links will be automatically updated. Enable this if the note identifier is used outside of linking between notes.",
+          "target": "链接将自动更新。如果笔记标识符在笔记间链接之外使用，请启用此选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Template for the note title. Use {{field_name}} to insert values.",
+          "target": "笔记标题的模板。使用 {{field_name}} 插入值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Template for note location/path. Use {{field_name}} to organize notes.",
+          "target": "笔记位置/路径的模板。使用 {{field_name}} 组织笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Template for the note content. Use {{field_name}} to insert values.",
+          "target": "笔记内容的模板。使用 {{field_name}} 插入值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, the first row of the CSV file will be treated as column headers.",
+          "target": "如果启用，CSV 文件的第一行将被视为列标题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set 0 to disable.",
+          "target": "设置为 0 表示禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If imported, files archived in Google Keep will be tagged as archived.",
+          "target": "如果导入，Google Keep 中归档的文件将被标记为已归档。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If imported, files deleted in Google Keep will be tagged as deleted. Deleted notes will only exist in your Google export if deleted recently.",
+          "target": "如果导入，Google Keep 中删除的文件将被标记为已删除。已删除的笔记仅在最近删除时才会存在于您的 Google 导出数据中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Places the parent database pages in the same folder as the nested content.",
+          "target": "将父数据库页面放置在与嵌套内容相同的文件夹中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Separate Notion blocks with only one line break (default is 2).",
+          "target": "仅使用一个换行符分隔 Notion 块（默认为两个）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Click \"Load\" to see data you can import. If a page or database is missing, check that your Notion integration has access to it.",
+          "target": "点击“加载”以查看可导入的数据。如果页面或数据库缺失，请检查您的 Notion 集成是否对其有访问权限。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Adds a notion-id property to pages so that future imports can skip pages that have already been imported.",
+          "target": "为页面添加一个 notion-id 属性，以便未来的导入可以跳过已导入的页面。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Separate Notion blocks with only one line break instead of two. Some blocks (lists, toggles, tables) will still use double line breaks when required for proper Markdown syntax.",
+          "target": "仅使用一个换行符而不是两个来分隔 Notion 块。某些块（列表、切换块、表格）在需要正确的 Markdown 语法时仍会使用双换行符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Property name in page frontmatter to link pages to their database .base file (default: \"base\")",
+          "target": "页面 frontmatter 中用于将页面链接到其数据库 .base 文件的属性名称（默认值：“base”）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Imports incompatible attachments which cannot be embedded in Obsidian, such as .exe files.",
+          "target": "导入无法嵌入 Obsidian 的不兼容附件，例如 .exe 文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, notes imported previously by this plugin will be skipped.",
+          "target": "如果启用，将跳过此插件先前导入的笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "You need to sign in to import your OneNote data.",
+          "target": "您需要登录才能导入您的 OneNote 数据。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If checked, you will be automatically logged in for subsequent imports.",
+          "target": "如果勾选，后续导入时将自动登录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, all attachments uploaded to Roam will be downloaded to your attachments folder.",
+          "target": "如果启用，所有上传到 Roam 的附件都将下载到您的附件文件夹中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, notes will have the create-time and edit-time from Roam added as properties.",
+          "target": "如果启用，笔记将添加来自 Roam 的创建时间和编辑时间作为属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, notes will have the full title added as a property (regardless of illegal file name characters).",
+          "target": "如果启用，笔记将添加完整标题作为属性（无论文件名中是否包含非法字符）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, lists in notes with \"TODO\" in the title will be converted to task lists with checkboxes. Strikethrough items will be marked as completed.",
+          "target": "启用后，标题中包含“TODO”的笔记中的列表将被转换为带有复选框的任务列表。带删除线的项目将被标记为已完成。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose whether to keep the note title in the Markdown content. \"Automatic\" keeps titles only when special characters are lost in filename conversion.",
+          "target": "选择是否在 Markdown 内容中保留笔记标题。“自动”模式仅在文件名转换中丢失特殊字符时才保留标题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Files to import",
+          "target": "要导入的文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output folder",
+          "target": "输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File prefix format",
+          "target": "文件前缀格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Import recently deleted notes",
+          "target": "导入最近删除的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Omit first line",
+          "target": "省略第一行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include handwriting text",
+          "target": "包含手写文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Handle duplicate files",
+          "target": "处理重复文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Journal metadata",
+          "target": "日志元数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add metadata as frontmatter",
+          "target": "将元数据添加为 frontmatter"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Flatten nested tags",
+          "target": "扁平化嵌套标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Store note identifiers in front matter",
+          "target": "在 front matter 中存储笔记标识符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note title",
+          "target": "笔记标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note location",
+          "target": "笔记位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note content",
+          "target": "笔记内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "CSV has header row",
+          "target": "CSV 包含标题行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Attachment size limit (MB)",
+          "target": "附件大小限制 (MB)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Minimum image size (px)",
+          "target": "最小图片尺寸 (px)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Import archived notes",
+          "target": "导入已归档的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Import deleted notes",
+          "target": "导入已删除的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save parent pages in subfolders",
+          "target": "在子文件夹中保存父页面"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Single line breaks",
+          "target": "单换行符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Notion API token",
+          "target": "Notion API 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Select pages to import",
+          "target": "选择要导入的页面"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Incremental import",
+          "target": "增量导入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert formulas",
+          "target": "转换公式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download external attachments",
+          "target": "下载外部附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cover property name",
+          "target": "封面属性名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Database property name",
+          "target": "数据库属性名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Import incompatible attachments",
+          "target": "导入不兼容的附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Skip previously imported",
+          "target": "跳过先前导入的"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sign in with your Microsoft account",
+          "target": "使用您的 Microsoft 帐户登录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remember me",
+          "target": "记住我"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Import settings",
+          "target": "导入设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download all attachments",
+          "target": "下载所有附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add YAML created/update date",
+          "target": "添加 YAML 创建/更新日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add YAML title",
+          "target": "添加 YAML 标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert TODO lists to checkboxes",
+          "target": "将 TODO 列表转换为复选框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Keep title in Markdown",
+          "target": "在 Markdown 中保留标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File format",
+          "target": "文件格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "cover",
+          "target": "封面"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "base",
+          "target": "基础"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Property name",
+          "target": "属性名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Property value",
+          "target": "属性值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Example",
+          "target": "示例"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Click \"Load\" to load your Notion pages and databases.",
+          "target": "点击“加载”以加载您的 Notion 页面和数据库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Import data into Obsidian",
+          "target": "将数据导入 Obsidian"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Resource data is missing or empty, skipping resource:",
+          "target": "资源数据缺失或为空，跳过资源："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "   Reason: Contains unsupported functions (e.g., substring, slice, split, format, etc.)",
+          "target": "   原因：包含不支持的函数（例如 substring、slice、split、format 等）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "⚠️ Rollup function \"earliest_date\" requires a target property.",
+          "target": "⚠️ 汇总函数 \\\"earliest_date\\\" 需要一个目标属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "⚠️ Rollup function \"latest_date\" requires a target property.",
+          "target": "⚠️ 汇总函数 \\\"latest_date\\\" 需要一个目标属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "⚠️ Rollup function \"date_range\" requires a target property.",
+          "target": "⚠️ 汇总函数 \\\"date_range\\\" 需要一个目标属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "   This rollup property will be skipped.",
+          "target": "   此汇总属性将被跳过。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "   Please report this to the plugin developer if this is a valid Notion rollup function.",
+          "target": "   如果这是有效的 Notion 汇总函数，请向插件开发者报告此问题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Notion Importer] block_id parent should be filtered before calling extractParentId",
+          "target": "[Notion Importer] block_id 父级应在调用 extractParentId 之前被过滤"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to convert MathML to LaTeX:",
+          "target": "将 MathML 转换为 LaTeX 失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Error detecting default Tomboy path:",
+          "target": "检测默认 Tomboy 路径时出错："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Data import failed. Ensure you have selected the correct Apple Notes data folder.",
+          "target": "数据导入失败。请确保您选择了正确的 Apple Notes 数据文件夹。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a location to export to.",
+          "target": "请选择一个导出位置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please pick at least one file to import.",
+          "target": "请至少选择一个文件进行导入。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please provide a note title template.",
+          "target": "请提供一个笔记标题模板。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please pick at least one CSV file to import.",
+          "target": "请至少选择一个 CSV 文件进行导入。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "CSV files must be imported one at a time.",
+          "target": "CSV 文件必须一次导入一个。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No data found in CSV file(s).",
+          "target": "在 CSV 文件中未找到数据。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Configuration is missing.",
+          "target": "配置缺失。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a location to import your files to.",
+          "target": "请选择一个导入文件的位置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Notion Markdown export detected. Please export Notion data to HTML instead.",
+          "target": "检测到 Notion Markdown 导出。请改为将 Notion 数据导出为 HTML。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter your Notion API token first.",
+          "target": "请先输入您的 Notion API 令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please list importable pages first.",
+          "target": "请先列出可导入的页面。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter your Notion API token.",
+          "target": "请输入您的 Notion API 令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select at least one page or database to import.",
+          "target": "请至少选择一个页面或数据库进行导入。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please sign in to your Microsoft Account.",
+          "target": "请登录您的 Microsoft 帐户。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Unexpected auth event. Please restart the auth process.",
+          "target": "意外的身份验证事件。请重新启动身份验证过程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Delete property",
+          "target": "删除属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "A simple and easy to use client for the Notion API",
+          "target": "一个简单易用的 Notion API 客户端"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Select the \"group.com.apple.notes\" folder to allow Obsidian to read Apple Notes data.",
+          "target": "请选择“group.com.apple.notes”文件夹以允许 Obsidian 读取 Apple Notes 数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "mi",
+          "target": "mi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Table",
+          "target": "表格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Table View",
+          "target": "表格视图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Apple Notes",
+          "target": "Apple Notes"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Apple Journal",
+          "target": "Apple Journal"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bear",
+          "target": "Bear"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CSV",
+          "target": "CSV"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Evernote",
+          "target": "Evernote"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Google Keep",
+          "target": "Google Keep"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HTML files",
+          "target": "HTML 文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Microsoft OneNote",
+          "target": "Microsoft OneNote"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Notion (API)",
+          "target": "Notion (API)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Notion",
+          "target": "Notion"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Roam Research",
+          "target": "Roam Research"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Textbundle files",
+          "target": "Textbundle 文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open importer",
+          "target": "打开导入器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Due to platform limitations, Apple Notes cannot be exported from this device. Open your vault on a Mac to export from Apple Notes.",
+          "target": "由于平台限制，无法从此设备导出 Apple 备忘录。请在 Mac 上打开您的保险库以从 Apple 备忘录导出。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Properties",
+          "target": "属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Continue",
+          "target": "继续"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Get API token.",
+          "target": "获取 API 令牌。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No pages or databases found. Make sure your integration has access to the pages you want to import.",
+          "target": "未找到页面或数据库。请确保您的集成有权访问您想要导入的页面。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Loading notebooks...",
+          "target": "正在加载笔记本..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Click here to show error details",
+          "target": "点击此处显示错误详情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "An error occurred while trying to sign you in.",
+          "target": "尝试登录时发生错误。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose data to import",
+          "target": "选择要导入的数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Microsoft OneNote has limited how fast notes can be imported. Please try again in 1 hour to continue importing.",
+          "target": "Microsoft OneNote 限制了笔记的导入速度。请在 1 小时后重试以继续导入。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Due to platform limitations, only textpack and zip files can be imported from this device. Open your vault on a Mac to import textbundle files.",
+          "target": "由于平台限制，此设备只能导入 textpack 和 zip 文件。请在 Mac 上打开您的保险库以导入 textbundle 文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "imported",
+          "target": "已导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "attachments",
+          "target": "附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "remaining",
+          "target": "剩余"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "skipped",
+          "target": "已跳过"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "failed",
+          "target": "失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skipped: ",
+          "target": "已跳过："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Failed: ",
+          "target": "失败："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "The format to be imported.",
+          "target": "要导入的格式。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import",
+          "target": "导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Stop",
+          "target": "停止"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import more",
+          "target": "导入更多"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Done",
+          "target": "完成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Pick files to import",
+          "target": "选择要导入的文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Pick folders to import",
+          "target": "选择要导入的文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "checkbox",
+          "target": "复选框"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
