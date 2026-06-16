@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-jira-issue",
+    "version": "1.0.0",
+    "title": "Jira Issue",
+    "description": "Jira Issue Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.58.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Need help? Explore the ",
+          "target": "需要帮助？探索"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "If you enjoy JiraIssue, consider giving me your feedback on the ",
+          "target": "如果您喜欢 JiraIssue，请考虑在"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": ", and maybe ",
+          "target": "上给我反馈，也许还可以"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " ☕.",
+          "target": " ☕。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "API token of your Jira Cloud account (",
+          "target": "您 Jira Cloud 账户的 API 令牌（"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "ji-tags has-addons",
+          "target": "ji-tags has-addons"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s %d: %s",
+          "target": "%s %d: %s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Image mimeType not found:",
+          "target": "未找到图像 MIME 类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error while retrieving custom fields list of account:",
+          "target": "检索账户自定义字段列表时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "JiraIssue:Fetch:",
+          "target": "JiraIssue:Fetch:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "JiraIssue:FetchImage:",
+          "target": "JiraIssue:FetchImage:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "%s - %s",
+          "target": "%s - %s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "replaceRange",
+          "source": "```jira-issue\n\n```",
+          "target": "```jira-issue\\n\\n```"
+        },
+        {
+          "type": "CallExpression",
+          "name": "replaceRange",
+          "source": "```jira-count\n\n```",
+          "target": "```jira-count\\n\\n```"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add account",
+          "target": "添加账户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Back",
+          "target": "返回"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test Connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset columns",
+          "target": "重置列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add Column",
+          "target": "添加列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset to default columns",
+          "target": "重置为默认列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Insert",
+          "target": "插入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Name of this account.",
+          "target": "此账户的名称。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hostname of your company Jira server.",
+          "target": "您公司 Jira 服务器的主机名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select how the plugin should authenticate in your Jira server.",
+          "target": "选择插件应如何在您的 Jira 服务器中进行身份验证。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Username to access your Jira Server account using HTTP basic authentication.",
+          "target": "使用 HTTP 基本身份验证访问您的 Jira 服务器账户的用户名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Password to access your Jira Server account using HTTP basic authentication.",
+          "target": "使用 HTTP 基本身份验证访问您的 Jira 服务器账户的密码。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Email of your Jira Cloud account.",
+          "target": "您 Jira Cloud 账户的电子邮件地址。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Token to access your Jira account using OAuth3 Bearer token authentication.",
+          "target": "使用 OAuth3 Bearer 令牌身份验证访问您的 Jira 账户的令牌。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Accounts search priority.",
+          "target": "账户搜索优先级。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Color of the tags border. Use colors in hexadecimal notation (Example: #000000).",
+          "target": "标签边框的颜色。使用十六进制表示法指定颜色（例如：#000000）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "In Aug 2025, Atlassian replaced the search api with a new one. Activate this option if you use Jira Cloud or you get the error 410 when searching issues.",
+          "target": "2025年8月，Atlassian 用新的 API 替换了搜索 API。如果您使用 Jira Cloud 或在搜索问题时遇到 410 错误，请激活此选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of search results to retrieve when using jira-search without specifying a limit.",
+          "target": "使用 jira-search 且未指定限制时，要检索的最大搜索结果数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display color band near by inline issue to simplify the account identification.",
+          "target": "在内联问题附近显示色带，以简化账户识别。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Make the result count in jira-search a link to the jira project with the jql from the search.",
+          "target": "使 jira-search 中的结果计数成为指向包含搜索 JQL 的 Jira 项目的链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Time before the cached issue status expires. A low value will refresh the data very often but do a lot of requests to the server.",
+          "target": "缓存的问题状态过期前的时间。较低的值会非常频繁地刷新数据，但会对服务器产生大量请求。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Log in the console (CTRL+Shift+I) all the API requests and responses performed by the plugin.",
+          "target": "在控制台（CTRL+Shift+I）中记录插件执行的所有 API 请求和响应。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Log in the console (CTRL+Shift+I) all the images fetch requests and responses performed by the plugin.",
+          "target": "在控制台（CTRL+Shift+I）中记录插件执行的所有图像获取请求和响应。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Alias",
+          "target": "别名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Host",
+          "target": "主机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Authentication type",
+          "target": "身份验证类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Username",
+          "target": "用户名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Password",
+          "target": "密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email",
+          "target": "电子邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API Token",
+          "target": "API 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bearer token",
+          "target": "Bearer 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Priority",
+          "target": "优先级"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Color band",
+          "target": "色带"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use 2025 search api",
+          "target": "使用 2025 搜索 API"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default search results limit",
+          "target": "默认搜索结果限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Issue url to tags",
+          "target": "问题 URL 转标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inline issue prefix",
+          "target": "内联问题前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show color band",
+          "target": "显示色带"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Jira link",
+          "target": "显示 Jira 链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cache time",
+          "target": "缓存时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log data request and responses",
+          "target": "记录数据请求和响应"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log images requests and responses",
+          "target": "记录图像请求和响应"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Search rendering type",
+          "target": "搜索渲染类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Jira query",
+          "target": "Jira 查询"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Search results limit",
+          "target": "搜索结果限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: Company name",
+          "target": "示例：公司名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: #000000",
+          "target": "示例：#000000"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: 15m, 24h, 5s",
+          "target": "示例：15m, 24h, 5s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Modify",
+          "target": "修改"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "New random color",
+          "target": "新随机颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Move up",
+          "target": "上移"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Move down",
+          "target": "下移"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "JiraIssue:Fetch:",
+          "target": "JiraIssue:Fetch:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "JiraIssue:FetchImage:",
+          "target": "JiraIssue:FetchImage:"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "JiraIssue: Connection established!",
+          "target": "JiraIssue: 连接已建立！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "JiraIssue: Logged as Guest",
+          "target": "JiraIssue: 以访客身份登录"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "JiraIssue: Connection failed!",
+          "target": "JiraIssue: 连接失败！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "JiraIssue: Cache cleaned",
+          "target": "JiraIssue: 缓存已清理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "jira-issue-suggestion is-compact",
+          "target": "jira-issue-suggestion is-compact"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "jira-issue-suggestion is-custom-field",
+          "target": "jira-issue-suggestion is-custom-field"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ji-tags has-addons",
+          "target": "ji-tags has-addons"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ji-tag is-delete is-danger",
+          "target": "ji-tag is-delete is-danger"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ji-tag is-danger",
+          "target": "ji-tag is-danger"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ji-tag is-danger is-light",
+          "target": "ji-tag is-danger is-light"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ji-inline-issue jira-issue-container",
+          "target": "ji-inline-issue jira-issue-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "internal-link icon-link",
+          "target": "internal-link icon-link"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "jira-issue-suggestion is-function",
+          "target": "jira-issue-suggestion is-function"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Anno Domini",
+          "target": "公元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Before Christ",
+          "target": "公元前"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SyntaxTree",
+          "target": "语法树"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clear cache",
+          "target": "清除缓存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Search wizard",
+          "target": "搜索向导"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Jira Issue",
+          "target": "Jira 问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Jira Issue documentation",
+          "target": "Jira 问题文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Support development",
+          "target": "支持开发"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "github repository",
+          "target": "GitHub 仓库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "buying me a coffee",
+          "target": "请我喝杯咖啡"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Accounts",
+          "target": "账户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Modify account",
+          "target": "修改账户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Official Documentation",
+          "target": "官方文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Rendering",
+          "target": "渲染"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search columns",
+          "target": "搜索列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Show/Hide columns",
+          "target": "显示/隐藏列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cache",
+          "target": "缓存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Troubleshooting",
+          "target": "故障排除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Loading ...",
+          "target": "加载中 ..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search error",
+          "target": "搜索错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "JiraIssue",
+          "target": "JiraIssue"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No valid issues found",
+          "target": "未找到有效问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🕑",
+          "target": "🕑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🏷️",
+          "target": "🏷️"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": ", ",
+          "target": ", "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📝",
+          "target": "📝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search wizard",
+          "target": "搜索向导"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Columns",
+          "target": "列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Create new note",
+          "target": "创建新笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Open pull-request",
+          "target": "打开拉取请求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Merged pull-request",
+          "target": "已合并的拉取请求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Declined pull-request",
+          "target": "已拒绝的拉取请求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "No data available",
+          "target": "无可用数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Refresh",
+          "target": "刷新"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
