@@ -1,0 +1,667 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-task-marker",
+    "version": "1.0.0",
+    "title": "Task Marker",
+    "description": "Task Marker Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.6.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<b>esc</b> to dismiss",
+          "target": "<b>esc</b> 以关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "None",
+          "target": "无"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append text always according to row 2",
+          "target": "始终根据第 2 行追加文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append text always according to row 1",
+          "target": "始终根据第 1 行追加文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append text according to the row with string",
+          "target": "根据包含字符串的行追加文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append text according to individual rows",
+          "target": "根据各行单独追加文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append text to any line (text 3)",
+          "target": "追加文本到任意行（文本 3）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append text to any line (text 2)",
+          "target": "追加文本到任意行（文本 2）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append text to any line (text 1)",
+          "target": "追加文本到任意行（文本 1）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "taskmarker-selector markdown-preview-view",
+          "target": "taskmarker-selector markdown-preview-view"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to get cursor position",
+          "target": "获取光标位置失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to mark task in source",
+          "target": "在源文件中标记任务失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid cursor position or offset",
+          "target": "无效的光标位置或偏移量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Task Marker: unknown mark (%s), leaving unchanged: %s",
+          "target": "任务标记器：未知标记 (%s)，保持不变：%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Task Marker: task already marked, leaving unchanged: %s",
+          "target": "任务标记器：任务已标记，保持不变：%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Task Marker: set to append nothing!",
+          "target": "任务标记器：设置为不追加任何内容！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Task Marker: nothing to append!",
+          "target": "任务标记器：没有内容可追加！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Task Marker: not a task, and set to append nothing!",
+          "target": "任务标记器：不是任务，且设置为不追加任何内容！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Task Marker: not a task, and nothing to append!",
+          "target": "任务标记器：不是任务，且没有内容可追加！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "loading Task Marker (TM)",
+          "target": "加载任务标记器 (TM)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "unloading Task Marker (TM)",
+          "target": "卸载任务标记器 (TM)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default disabled. If enabled, commands can operate on any line text, i.e., none-list and none-task line texts.",
+          "target": "默认禁用。如果启用，命令可以对任何行文本进行操作，即非列表和非任务行文本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For this to take effect, it requires \"Support operating on any line text\" be enabled.",
+          "target": "要使此设置生效，需要启用“支持对任何行文本进行操作”。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Only use 'x' (lower case) to indicate completed tasks (hide X (upper case)).",
+          "target": "仅使用 'x'（小写）表示已完成的任务（隐藏 X（大写））。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use '-' to indicate canceled tasks. Canceled tasks are processed in the same way as completed tasks.",
+          "target": "使用 '-' 表示已取消的任务。已取消的任务与已完成的任务处理方式相同。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify a set of characters that indicate any task statuses, e.g. 'x- Rip>'.",
+          "target": "指定一组表示任何任务状态的字符，例如 'x- Rip>'。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default disabled. If enabled, a command would be added to cycle reversely among the statuses as specified above.",
+          "target": "默认禁用。如果启用，将添加一个命令，用于在上述指定的状态中反向循环。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify an additional list of characters that indicate any task statuses.",
+          "target": "指定一个额外的字符列表，用于表示任何任务状态。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default false. If set true, automatically append text to tasks according to the current task status.",
+          "target": "默认为 false。如果设置为 true，将根据当前任务状态自动向任务追加文本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Note that this requires \"Append text to a task automatically\" be enabled. Default \"None\".",
+          "target": "请注意，这需要启用“自动向任务追加文本”。默认为“无”。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Support operating on any line text",
+          "target": "支持操作任意行文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append text to created task",
+          "target": "向创建的任务追加文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Only support x for completed tasks",
+          "target": "仅支持用 x 表示已完成的任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Support canceled tasks",
+          "target": "支持已取消的任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append text to completed task",
+          "target": "向已完成的任务追加文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Additional task statuses (row 1)",
+          "target": "额外任务状态（第 1 行）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append text to marked task (row 1)",
+          "target": "向标记的任务追加文本（第 1 行）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Additional task statuses (row 2)",
+          "target": "额外任务状态（第 2 行）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append text to marked task (row 2)",
+          "target": "向标记的任务追加文本（第 2 行）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cycled task (main)",
+          "target": "循环任务（主）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Support cycling task reversely (main)",
+          "target": "支持反向循环任务（主）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cycled task (list 1)",
+          "target": "循环任务（列表 1）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cycled task (list 2)",
+          "target": "循环任务（列表 2）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cycled task (list 3)",
+          "target": "循环任务（列表 3）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append text to any line (text 1)",
+          "target": "向任意行追加文本（文本 1）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append text to any line (text 2)",
+          "target": "向任意行追加文本（文本 2）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append text to any line (text 3)",
+          "target": "向任意行追加文本（文本 3）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append text to a task automatically",
+          "target": "自动向任务追加文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Set for a marked task the default text to append automatically",
+          "target": "为标记的任务设置默认自动追加的文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Set for a non-task line the default text to append automatically",
+          "target": "为非任务行设置默认自动追加的文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "[📝 ]YYYY-MM-DD",
+          "target": "[📝 ]YYYY-MM-DD"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "[✅ ]YYYY-MM-DD",
+          "target": "[✅ ]YYYY-MM-DD"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": ">!?",
+          "target": ">!?"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "[❎ ]YYYY-MM-DD",
+          "target": "[❎ ]YYYY-MM-DD"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Rip",
+          "target": "Rip"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "x- Rip",
+          "target": "x- Rip"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Create task",
+          "target": "(TM) 创建任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Create newline",
+          "target": "(TM) 创建新行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Complete task",
+          "target": "(TM) 完成任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Cancel task",
+          "target": "(TM) 取消任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Mark task",
+          "target": "(TM) 标记任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Cycle task (main)",
+          "target": "(TM) 循环任务（主）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Cycle task (list 1)",
+          "target": "(TM) 循环任务（列表 1）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Cycle task (list 2)",
+          "target": "(TM) 循环任务（列表 2）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Cycle task (list 3)",
+          "target": "(TM) 循环任务（列表 3）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Cycle task reversely (main)",
+          "target": "(TM) 反向循环任务（主）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Reset task",
+          "target": "(TM) 重置任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Append text 1",
+          "target": "(TM) 追加文本 1"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Append text 2",
+          "target": "(TM) 追加文本 2"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Append text 3",
+          "target": "(TM) 追加文本 3"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Append text automatically",
+          "target": "(TM) 自动追加文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Complete all tasks",
+          "target": "(TM) 完成所有任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "(TM) Reset all tasks",
+          "target": "(TM) 重置所有任务"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Task Marker: task already marked!",
+          "target": "任务标记器：任务已被标记！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Task Marker: set to append nothing!",
+          "target": "任务标记器：设置为不追加任何内容！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Task Marker: nothing to append!",
+          "target": "任务标记器：没有内容可追加！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Task Marker: not a task, and set to append nothing!",
+          "target": "任务标记器：不是任务，且设置为不追加任何内容！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Task Marker: not a task, and nothing to append!",
+          "target": "任务标记器：不是任务，且没有内容可追加！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create task",
+          "target": "创建任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create newline",
+          "target": "创建新行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Complete task",
+          "target": "完成任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cancel task",
+          "target": "取消任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mark task",
+          "target": "标记任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reset task",
+          "target": "重置任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Complete all tasks",
+          "target": "完成所有任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reset all completed tasks",
+          "target": "重置所有已完成任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cycle task (main)",
+          "target": "循环任务（主）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cycle task (list 1)",
+          "target": "循环任务（列表 1）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cycle task (list 2)",
+          "target": "循环任务（列表 2）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cycle task (list 3)",
+          "target": "循环任务（列表 3）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cycle task reversely (main)",
+          "target": "反向循环任务（主）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Append text 1",
+          "target": "追加文本 1"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Append text 2",
+          "target": "追加文本 2"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Append text 3",
+          "target": "追加文本 3"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Append text automatically",
+          "target": "自动追加文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Task Marker",
+          "target": "任务标记器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Please try reopening the vault or restarting Obsidian if the following setting changes do not take effect.",
+          "target": "如果以下设置更改未生效，请尝试重新打开库或重启 Obsidian。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "General",
+          "target": "通用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create tasks",
+          "target": "创建任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "moment.js documentation.",
+          "target": "moment.js 文档。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Complete tasks",
+          "target": "完成任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mark tasks",
+          "target": "标记任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Note that if a mark contains both in row 1 and row 2, then the mark would work as specified in row 1.",
+          "target": "请注意，如果一个标记同时存在于第 1 行和第 2 行，那么该标记将按照第 1 行的指定方式工作。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cycle tasks",
+          "target": "循环任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Append text",
+          "target": "追加文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Append text automatically",
+          "target": "自动追加文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "The settings below correspond to the command \"Append text automatically\".",
+          "target": "以下设置对应于命令“自动追加文本”。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "See \"Setting.md\" for details.",
+          "target": "详情请参阅“Setting.md”。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
