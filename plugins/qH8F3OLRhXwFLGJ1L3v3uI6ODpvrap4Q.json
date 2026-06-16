@@ -1,0 +1,1099 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "evc-local-sync",
+    "version": "1.0.0",
+    "title": "EVC Local Sync to AI Agent",
+    "description": "EVC Local Sync to AI Agent Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Execute sync",
+          "target": "执行同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Obsidian -> AI project",
+          "target": "Obsidian -> AI 项目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "AI project -> Obsidian",
+          "target": "AI 项目 -> Obsidian"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Obsidian wins",
+          "target": "Obsidian 优先"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "AI project wins",
+          "target": "AI 项目优先"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Always ask",
+          "target": "每次询问"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Newer file wins",
+          "target": "较新文件优先"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Scheduled interval",
+          "target": "定时间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "On Obsidian startup",
+          "target": "Obsidian 启动时"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "On file change",
+          "target": "文件更改时"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Manual only",
+          "target": "仅手动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Last 7 days",
+          "target": "过去 7 天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Today",
+          "target": "今天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Errors only",
+          "target": "仅错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "All logs",
+          "target": "所有日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "EVC Sync: Failed to load sync state:",
+          "target": "EVC 同步：加载同步状态失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "EVC Sync: Failed to save sync state:",
+          "target": "EVC 同步：保存同步状态失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "EVC Sync Logger: Failed to save log",
+          "target": "EVC 同步日志记录器：保存日志失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "EVC Sync Logger: Failed to save after clear",
+          "target": "EVC 同步日志记录器：清除后保存失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "EVC Sync Logger: Failed to save logs",
+          "target": "EVC 同步日志记录器：保存日志失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "EVC Watcher: Callback error:",
+          "target": "EVC 监视器：回调错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "EVC Sync: Sync failed",
+          "target": "EVC 同步：同步失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "EVC Sync: Dry run failed",
+          "target": "EVC 同步：试运行失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add mapping",
+          "target": "添加映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sync all",
+          "target": "全部同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Dry run",
+          "target": "试运行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "View logs",
+          "target": "查看日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Export",
+          "target": "导出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Import",
+          "target": "导入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A friendly name for this mapping (e.g., 'my project')",
+          "target": "此映射的友好名称（例如，“我的项目”）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Full path to the AI project folder (e.g., ~/DevProjects/my-project)",
+          "target": "AI 项目文件夹的完整路径（例如，~/DevProjects/my-project）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Path within your Obsidian vault",
+          "target": "Obsidian 库中的路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Whether this mapping is active for synchronization",
+          "target": "此映射是否对同步处于活动状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sync in both directions (AI <-> Obsidian)",
+          "target": "双向同步文件（AI <-> Obsidian）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Direction to sync files (when not bidirectional)",
+          "target": "同步文件的方向（非双向时）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How synchronization is triggered",
+          "target": "同步的触发方式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically sync all enabled mappings when Obsidian starts",
+          "target": "Obsidian 启动时自动同步所有已启用的映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Delay before syncing after file changes (for on-change mode). Recommended: 2000-5000ms.",
+          "target": "文件更改后同步前的延迟（用于文件更改模式）。建议值：2000-5000 毫秒。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How often to sync when using scheduled mode. Minimum: 1 minute.",
+          "target": "使用定时模式时的同步频率。最低：1 分钟。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How to handle files modified in both locations",
+          "target": "如何处理在两个位置都修改过的文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create backup files before overwriting during sync",
+          "target": "在同步覆盖前创建备份文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show notifications when files are auto-synced (on-change mode)",
+          "target": "文件自动同步时显示通知（文件更改模式）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Follow symbolic links when scanning directories",
+          "target": "扫描目录时遵循符号链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When a file is deleted in one location, delete it in the other location too",
+          "target": "当文件在一个位置被删除时，也在另一个位置删除它"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show confirmation before deleting files during sync",
+          "target": "在同步期间删除文件前显示确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How long to keep sync logs",
+          "target": "保留同步日志的时长"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "File types to sync (comma-separated, e.g., .md, .canvas)",
+          "target": "要同步的文件类型（逗号分隔，例如 .md, .canvas）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folders/files to exclude from sync (comma-separated, e.g., node_modules, .git)",
+          "target": "要从同步中排除的文件夹/文件（逗号分隔，例如 node_modules, .git）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create a new sync mapping between an AI project and Obsidian folder",
+          "target": "在 AI 项目和 Obsidian 文件夹之间创建新的同步映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Synchronize all enabled project mappings now",
+          "target": "立即同步所有已启用的项目映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Preview what would be synced without making changes",
+          "target": "预览将同步的内容，而不进行更改"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "View recent sync log entries",
+          "target": "查看最近的同步日志条目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Export settings and mappings to a JSON file",
+          "target": "将设置和映射导出到 JSON 文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Import settings and mappings from a JSON file",
+          "target": "从 JSON 文件导入设置和映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Mapping name",
+          "target": "映射名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI project path",
+          "target": "AI 项目路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Obsidian folder",
+          "target": "Obsidian 文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Docs subdirectory",
+          "target": "文档子目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable sync",
+          "target": "启用同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bidirectional sync",
+          "target": "双向同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync direction",
+          "target": "同步方向"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Conflict resolution",
+          "target": "冲突解决"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File types",
+          "target": "文件类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude patterns",
+          "target": "排除模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync",
+          "target": "同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync mode",
+          "target": "同步模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync on startup",
+          "target": "启动时同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debounce (ms)",
+          "target": "防抖（毫秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scheduled interval (minutes)",
+          "target": "定时间隔（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Create backups",
+          "target": "创建备份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show auto-sync notifications",
+          "target": "显示自动同步通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Follow symlinks",
+          "target": "遵循符号链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync deletions",
+          "target": "同步删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Confirm deletions",
+          "target": "确认删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log retention (days)",
+          "target": "日志保留（天）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File extensions",
+          "target": "文件扩展名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Project mappings",
+          "target": "项目映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add project mapping",
+          "target": "添加项目映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync all projects",
+          "target": "同步所有项目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Dry run",
+          "target": "试运行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "View logs",
+          "target": "查看日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Configuration",
+          "target": "配置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Export configuration",
+          "target": "导出配置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Import configuration",
+          "target": "导入配置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Select a folder...",
+          "target": "选择文件夹..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "My project",
+          "target": "我的项目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Docs",
+          "target": "文档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Folders to exclude",
+          "target": "要排除的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Search by file name...",
+          "target": "按文件名搜索..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Sync all projects",
+          "target": "同步所有项目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Sync current project",
+          "target": "同步当前项目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Dry run (preview)",
+          "target": "试运行（预览）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "View logs",
+          "target": "查看日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Settings",
+          "target": "设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Browse folders",
+          "target": "浏览文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "EVC Sync: sync-state.json has newer version, resetting",
+          "target": "EVC 同步：sync-state.json 版本较新，正在重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "EVC Sync Logger: Failed to load logs, starting fresh",
+          "target": "EVC 同步日志记录器：加载日志失败，重新开始"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Configuration exported successfully",
+          "target": "配置导出成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Sync logs cleared",
+          "target": "同步日志已清除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No logs to export",
+          "target": "没有可导出的日志"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No enabled mappings found",
+          "target": "未找到启用的映射"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file",
+          "target": "没有活动文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No mapping found for current file",
+          "target": "未找到当前文件的映射"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Analyzing changes...",
+          "target": "正在分析更改..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-error-container evc-hidden",
+          "target": "evc-error-container evc-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-btn evc-btn-cta mod-cta",
+          "target": "evc-btn evc-btn-cta mod-cta"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-btn evc-btn-edit",
+          "target": "evc-btn evc-btn-edit"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-btn evc-btn-delete",
+          "target": "evc-btn evc-btn-delete"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-badge evc-dry-run-badge-copy",
+          "target": "evc-dry-run-badge evc-dry-run-badge-copy"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-badge evc-dry-run-badge-update",
+          "target": "evc-dry-run-badge evc-dry-run-badge-update"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-badge evc-dry-run-badge-delete",
+          "target": "evc-dry-run-badge evc-dry-run-badge-delete"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-badge evc-dry-run-badge-skip",
+          "target": "evc-dry-run-badge evc-dry-run-badge-skip"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-badge evc-dry-run-badge-error",
+          "target": "evc-dry-run-badge evc-dry-run-badge-error"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-group-title evc-dry-run-group-title-error",
+          "target": "evc-dry-run-group-title evc-dry-run-group-title-error"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-group evc-dry-run-group-delete",
+          "target": "evc-dry-run-group evc-dry-run-group-delete"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-group-title evc-dry-run-group-title-delete",
+          "target": "evc-dry-run-group-title evc-dry-run-group-title-delete"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-icon evc-dry-run-icon-delete",
+          "target": "evc-dry-run-icon evc-dry-run-icon-delete"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-group evc-dry-run-group-skipped",
+          "target": "evc-dry-run-group evc-dry-run-group-skipped"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-group-title evc-dry-run-group-title-skip evc-collapsible-header",
+          "target": "evc-dry-run-group-title evc-dry-run-group-title-skip evc-collapsible-header"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-collapsible-content evc-collapsible-collapsed",
+          "target": "evc-collapsible-content evc-collapsible-collapsed"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-dry-run-icon evc-dry-run-icon-skip",
+          "target": "evc-dry-run-icon evc-dry-run-icon-skip"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-conflict-version evc-conflict-version-ai",
+          "target": "evc-conflict-version evc-conflict-version-ai"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-conflict-version evc-conflict-version-obs",
+          "target": "evc-conflict-version evc-conflict-version-obs"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-conflict-detail-value evc-conflict-detail-path evc-cursor-help",
+          "target": "evc-conflict-detail-value evc-conflict-detail-path evc-cursor-help"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-btn evc-btn-ai",
+          "target": "evc-btn evc-btn-ai"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "evc-btn evc-btn-obs",
+          "target": "evc-btn evc-btn-obs"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync all projects",
+          "target": "同步所有项目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync current project",
+          "target": "同步当前项目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dry run (preview changes)",
+          "target": "试运行（预览更改）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open settings",
+          "target": "打开设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "View sync logs",
+          "target": "查看同步日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configure synchronization between an AI project folder and an Obsidian folder.",
+          "target": "配置 AI 项目文件夹与 Obsidian 文件夹之间的同步。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced settings",
+          "target": "高级设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Confirm",
+          "target": "确认"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Local sync to AI agent",
+          "target": "本地同步至 AI 代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bidirectional sync between Obsidian and AI development projects",
+          "target": "Obsidian 与 AI 开发项目之间的双向同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bug report",
+          "target": "错误报告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Feature request",
+          "target": "功能请求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Conflict case",
+          "target": "冲突案例"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "GitHub",
+          "target": "GitHub"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No project mappings configured. Click 'add mapping' to create one.",
+          "target": "未配置项目映射。点击“添加映射”来创建一个。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enabled",
+          "target": "已启用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Name",
+          "target": "名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "AI path",
+          "target": "AI 路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Obsidian path",
+          "target": "Obsidian 路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Direction",
+          "target": "方向"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " ⚙",
+          "target": " ⚙"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Edit",
+          "target": "编辑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sync preview",
+          "target": "同步预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All files are in sync!",
+          "target": "所有文件均已同步！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No changes would be made.",
+          "target": "不会进行任何更改。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Errors:",
+          "target": "错误："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Execute sync",
+          "target": "执行同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sync logs",
+          "target": "同步日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Filter:",
+          "target": "筛选："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search:",
+          "target": "搜索："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Try adjusting your filter or search",
+          "target": "请尝试调整筛选或搜索条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Time",
+          "target": "时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File",
+          "target": "文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Action",
+          "target": "操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Status",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Error",
+          "target": "错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Clear logs",
+          "target": "清除日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export CSV",
+          "target": "导出 CSV"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File conflict",
+          "target": "文件冲突"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This file has been modified in both locations. Choose which version to keep:",
+          "target": "此文件在两个位置均已修改。请选择保留哪个版本："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File: ",
+          "target": "文件："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "AI project version",
+          "target": "AI 项目版本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Obsidian version",
+          "target": "Obsidian 版本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Modified:",
+          "target": "修改时间："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Size:",
+          "target": "大小："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Path:",
+          "target": "路径："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use AI version",
+          "target": "使用 AI 版本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use Obsidian version",
+          "target": "使用 Obsidian 版本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skip",
+          "target": "跳过"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
