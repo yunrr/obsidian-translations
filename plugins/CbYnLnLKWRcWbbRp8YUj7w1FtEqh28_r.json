@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "meeting-notes",
+    "version": "1.0.0",
+    "title": "Meeting Notes",
+    "description": "Meeting Notes Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Today's date",
+          "target": "今日日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Source file creation date",
+          "target": "源文件创建日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Refresh models",
+          "target": "刷新模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Stored in this vault's plugin data. Used for transcription, summary, and refreshing available models.",
+          "target": "存储在此保险库的插件数据中。用于转录、摘要和刷新可用模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used by Generate meeting notes when summary is enabled, Transcribe and summary, and Summary.",
+          "target": "在启用摘要时用于生成会议笔记、转录和摘要以及摘要功能。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used by Generate meeting notes when diarization is off, and by all non-diarized right-click actions.",
+          "target": "在关闭说话人分离时用于生成会议笔记，以及所有非分离的右键操作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default for Generate meeting notes and Summary. Explicit diarized right-click actions always diarize. If a recording is larger than 25 MB and must be split into chunks, speaker labels may reset across chunks.",
+          "target": "生成会议笔记和摘要的默认设置。显式的分离右键操作始终进行分离。如果录音大于 25 MB 且必须分割成块，说话人标签可能会在各块之间重置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When an M4A recording is larger than the upload limit, split and upload compressed M4A chunks instead of WAV chunks. This only works if FFmpeg is installed and available to Obsidian as ffmpeg, /opt/homebrew/bin/ffmpeg, or /usr/local/bin/ffmpeg.",
+          "target": "当 M4A 录音大于上传限制时，分割并上传压缩的 M4A 块，而不是 WAV 块。这仅在 FFmpeg 已安装且 Obsidian 可用（作为 ffmpeg、/opt/homebrew/bin/ffmpeg 或 /usr/local/bin/ffmpeg）时有效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When diarization is enabled and the recording is split into chunks, ask the selected summary model to infer consistent speaker labels across chunks, then rewrite the transcript before summary generation. This adds summary-model token usage.",
+          "target": "当启用说话人分离且录音被分割成块时，要求所选的摘要模型推断跨块的一致说话人标签，然后在生成摘要前重写转录文本。这会增加摘要模型的 token 使用量。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum upload size per local audio chunk, in MB. Default is 24 MB to stay below OpenAI's 25 MB file upload limit.",
+          "target": "每个本地音频块的最大上传大小，单位为 MB。默认为 24 MB，以保持在 OpenAI 的 25 MB 文件上传限制以下。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Seconds of audio to repeat at the start of each chunk after the first. Default is 0. Overlap can preserve boundary context but may duplicate transcript text.",
+          "target": "在第一个块之后的每个块开头重复的音频秒数。默认为 0。重叠可以保留边界上下文，但可能会重复转录文本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When off, Generate meeting notes only transcribes.",
+          "target": "关闭时，生成会议笔记仅进行转录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Advanced long-context models such as gpt-5.5 usually do not need this. Enable only when summary requests are too large or fail.",
+          "target": "先进的长上下文模型（如 gpt-5.5）通常不需要此选项。仅在摘要请求过大或失败时启用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When on, the new note is saved in the same folder as the audio or Markdown source file and the output folder below is ignored.",
+          "target": "开启时，新笔记将保存在与音频或 Markdown 源文件相同的文件夹中，并忽略下方的输出文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Only affects Summarize note on Markdown files. When on, rewrite the current note and keep the original content at the end under Original note.",
+          "target": "仅影响对 Markdown 文件的总结笔记操作。开启时，重写当前笔记，并将原始内容保留在末尾的“原始笔记”部分下。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Created if it does not exist. Ignored when Save note beside source file is on.",
+          "target": "如果不存在则创建。当“将笔记保存在源文件旁”开启时忽略。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Controls whether {{date}} and {{time}} use the source file creation date or the current date.",
+          "target": "控制 {{date}} 和 {{time}} 使用源文件创建日期还是当前日期。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Seconds between note rewrites while a long prepare, transcription, or summary request is running. Set to 0 to disable heartbeat updates.",
+          "target": "在长时间准备、转录或摘要请求运行期间，笔记重写之间的秒数。设置为 0 可禁用心跳更新。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Uses the Generate meeting notes defaults, summary output settings, and note creation settings above.",
+          "target": "使用生成会议笔记的默认设置、摘要输出设置和上述笔记创建设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Creates a transcript note only. Does not diarize and does not summarize.",
+          "target": "仅创建转录笔记。不进行说话人分离，也不进行摘要。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Creates a transcript note only and forces speaker diarization.",
+          "target": "仅创建转录笔记，并强制进行说话人分离。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Creates a transcript and summary note. Does not diarize.",
+          "target": "创建转录和摘要笔记。不进行说话人分离。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Creates a transcript and summary note and forces speaker diarization.",
+          "target": "创建转录和摘要笔记，并强制进行说话人分离。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Creates a summary-only note. It transcribes internally and uses the Generate meeting notes diarization default.",
+          "target": "创建仅摘要笔记。它内部进行转录，并使用生成会议笔记的说话人分离默认设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Appears on Markdown files. Uses the current summary model, summary output settings, and note creation settings.",
+          "target": "出现在 Markdown 文件上。使用当前的摘要模型、摘要输出设置和笔记创建设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API key",
+          "target": "OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Summary model",
+          "target": "摘要模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Transcription model",
+          "target": "转录模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Diarize speakers",
+          "target": "分离说话人"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use FFmpeg M4A chunks",
+          "target": "使用 FFmpeg M4A 分块"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Re-infer speakers",
+          "target": "重新推断说话人"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Audio chunk size",
+          "target": "音频分块大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Chunk overlap",
+          "target": "分块重叠"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Generate meeting notes includes summary",
+          "target": "生成会议记录包含摘要"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Split transcript before summary",
+          "target": "摘要前分割转录文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save note beside source file",
+          "target": "在源文件旁保存笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Edit Markdown source note",
+          "target": "编辑 Markdown 源笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output folder",
+          "target": "输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date format",
+          "target": "日期格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date source",
+          "target": "日期来源"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Delete recording after successful note",
+          "target": "笔记成功后删除录音"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Progress update interval",
+          "target": "进度更新间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Generate meeting notes",
+          "target": "显示生成会议记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Transcribe",
+          "target": "显示转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Transcribe (diarize)",
+          "target": "显示转录（区分说话人）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Transcribe and summary",
+          "target": "显示转录与摘要"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Transcribe and summary (diarize)",
+          "target": "显示转录与摘要（区分说话人）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Summary",
+          "target": "显示摘要"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Summarize note",
+          "target": "显示总结笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Transcription prompt",
+          "target": "转录提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Summary prompt",
+          "target": "摘要提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Meeting Notes",
+          "target": "会议记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Names, acronyms, terminology, or language preferences",
+          "target": "姓名、缩写、术语或语言偏好"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Leave blank to use the selected section toggles.",
+          "target": "留空以使用所选章节切换。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Summarize note",
+          "target": "总结笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Meeting Notes: add your OpenAI API key in settings first.",
+          "target": "会议记录：请先在设置中添加您的 OpenAI API 密钥。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Meeting Notes: transcription started.",
+          "target": "会议记录：转录已开始。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Meeting Notes: speaker re-inference failed; continuing with original speaker labels.",
+          "target": "会议记录：说话人重新推断失败；继续使用原始说话人标签。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Meeting Notes: note completed.",
+          "target": "会议记录：笔记已完成。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Meeting Notes: summary started.",
+          "target": "会议记录：摘要已开始。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Meeting Notes: summary completed.",
+          "target": "会议记录：摘要已完成。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Created note",
+          "target": "已创建笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Read source recording",
+          "target": "读取源录音"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Prepare audio",
+          "target": "准备音频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Transcribe audio",
+          "target": "转录音频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Re-infer speakers",
+          "target": "重新推断说话人"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Summarize transcript",
+          "target": "总结转录文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Delete source recording",
+          "target": "删除源录音"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Read source note",
+          "target": "读取源笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Transcript",
+          "target": "转录文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Generate meeting notes defaults",
+          "target": "生成会议记录默认设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Summary output",
+          "target": "摘要输出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Note creation",
+          "target": "笔记创建"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Right-click menu",
+          "target": "右键菜单"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Prompts",
+          "target": "提示词"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Default generated prompt:",
+          "target": "默认生成的提示词："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Current generated prompt:",
+          "target": "当前生成的提示词："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Generate meeting notes",
+          "target": "生成会议记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Transcribe",
+          "target": "转录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Transcribe (diarize)",
+          "target": "转录（区分说话人）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Transcribe and summary",
+          "target": "转录与摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Transcribe and summary (diarize)",
+          "target": "转录与摘要（区分说话人）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Summary",
+          "target": "摘要"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
