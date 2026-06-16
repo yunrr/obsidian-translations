@@ -1,0 +1,3559 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "pdf-plus",
+    "version": "2.0.0",
+    "title": "PDF++",
+    "description": "The most Obsidian-native PDF annotation tool ever.",
+    "language": "zh-cn",
+    "supportedVersions": "0.40.11",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Something went wrong.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 发生了一些错误。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: The external PDF location is not specified.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 未指定PDF文件的外部位置。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: The folder to save the dummy files is not specified.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 未指定用于保存虚拟文件的文件夹。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: The dummy file path is not specified.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 未指定虚拟文件路径。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Failed to create dummy files for the following URLs: ${e.join(\", \")",
+          "target": "Notice(`${this.plugin.manifest.name}: 未能为以下URL创建虚拟文件： ${e.join(\", \")"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Dummy files created successfully.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 虚拟文件已成功创建。`)"
+        },
+        {
+          "source": "Notice(`${r.manifest.name}: Failed to process the outline item.`)",
+          "target": "Notice(`${r.manifest.name}: 处理大纲项目失败。`)"
+        },
+        {
+          "source": "Notice(m,8e3)",
+          "target": "Notice(m,8e3)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: ${this.bib.initialized?\"No bibliography found\":\"Still loading the bibliography information. Please try again later.\"}`)",
+          "target": "Notice(`${this.plugin.manifest.name}: ${this.bib.initialized?\"未找到参考文献\":\"仍在加载参考文献信息。请稍后再试。\"}`)"
+        },
+        {
+          "source": "Notice(\"This color name is already used.\")",
+          "target": "Notice(\"此颜色名称已被使用。\")"
+        },
+        {
+          "source": "Notice(s.name.duplicateMessage)",
+          "target": "Notice(s.name.duplicateMessage)"
+        },
+        {
+          "source": "Notice(s.delete.deleteLastMessage)",
+          "target": "Notice(s.delete.deleteLastMessage)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Cannot enable writing highlights into PDF files because the \"Annotation author\" option is empty.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 由于\"注释作者\"选项为空，因此无法将高亮写入PDF文件。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to insert the page.`)",
+          "target": "Notice(`${n.manifest.name}: 插入页面失败。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to delete the page.`)",
+          "target": "Notice(`${n.manifest.name}: 删除页面失败。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to extract the page.`)",
+          "target": "Notice(`${n.manifest.name}: 提取页面失败。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to divide the document.`)",
+          "target": "Notice(`${n.manifest.name}: 拆分文档失败。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to add the subitem.`)",
+          "target": "Notice(`${n.manifest.name}: 添加子项失败。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to load the PDF document.`)",
+          "target": "Notice(`${n.manifest.name}: 加载PDF文档失败。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to process the outline item.`)",
+          "target": "Notice(`${n.manifest.name}: 处理大纲项目失败。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to fetch page numbers from the outline item.`)",
+          "target": "Notice(`${n.manifest.name}: 无法从大纲项目中获取页码。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: The page numbers are invalid: the beginning of this section is page ${b}, whereas the next section starts at page ${w}.`)",
+          "target": "Notice(`${n.manifest.name}: 页码无效：此部分的开始页码为 ${b}, 而下一部分从第 ${w} 页开始。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to extract section from PDF.`)",
+          "target": "Notice(`${n.manifest.name}: 无法从PDF中提取部分。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to add the item.`)",
+          "target": "Notice(`${n.manifest.name}: 无法添加项目。`)"
+        },
+        {
+          "source": "Notice(`${r.manifest.name}: Failed to find bibliographic information.`)",
+          "target": "Notice(`${r.manifest.name}: 未找到参考文献信息。`)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: Failed to move the outline item.`)",
+          "target": "Notice(`${n.manifest.name}: 无法移动大纲项目。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Importing local PDFs outside the vault is supported only on the desktop app.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 仅支持在桌面应用程序中导入保险库之外的本地PDF文件。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Successfully imported the PDF file into the vault.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 已成功将PDF文件导入保险库。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Import failed. Response status: ${r.status}`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 导入失败。响应状态: ${r.status}`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name} (Vim mode)",
+          "target": "Notice(`${this.plugin.manifest.name} (Vim 模式)"
+        },
+        {
+          "source": "Notice(e)",
+          "target": "Notice(e)"
+        },
+        {
+          "source": "Notice(`${n.manifest.name}: An error occurred while mounting the color palette to the toolbar.`)",
+          "target": "Notice(`${n.manifest.name}: 在将调色板挂载到工具栏时发生错误。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Display text format is invalid. Error: ${l.message}`,3e3)",
+          "target": "Notice(`${this.plugin.manifest.name}: 显示文本格式无效。错误: ${l.message}`,3e3)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Command \"${this.settings.commandToExecuteWhenTargetNotIdentified}\" was not found. Please update the \"Command to execute when pasting a link for the first time with auto-focus or auto-paste\" setting.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 命令 \"${this.settings.commandToExecuteWhenTargetNotIdentified}\" 未找到。请更新 \"在首次自动聚焦或自动粘贴链接时要执行的命令\" 设置。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Could not find the auto-paste target markdown file within ${this.settings.autoPasteTargetDialogTimeoutSec} seconds.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 在 ${this.settings.autoPasteTargetDialogTimeoutSec} 秒内未找到自动粘贴目标 Markdown 文件。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: An error occurred while attemping to add an annotation.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 尝试添加注释时发生错误。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Link copied to clipboard`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 链接已复制到剪贴板`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Failed to extract page.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 无法提取页面。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Failed to divide PDF.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: PDF分割失败。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Outline copied to clipboard.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 大纲已复制到剪贴板。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Highlighted text copied to clipboard.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 高亮显示的文本已复制到剪贴板。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Debug info copied to clipboard.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 调试信息已复制到剪贴板。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Debug info loaded from clipboard.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 已从剪贴板加载调试信息。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Debug info not found in clipboard.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 剪贴板中未找到调试信息。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: File already exists: ${e}`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 文件已存在: ${e}`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: Updated ${a.links} links in ${a.files} files.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 在 ${a.links} 个文件中更新了 ${a.files} 个链接。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: The PDF file is encrypted. Please consider enabling \"Enable editing encrypted PDF files\" in the plugin settings.`)",
+          "target": "Notice(`${this.plugin.manifest.name}: PDF文件已加密。请在插件设置中启用 \"允许编辑加密的PDF文件\"。`)"
+        },
+        {
+          "source": "Notice(`${this.plugin.manifest.name}: File already exists: ${t}`)",
+          "target": "Notice(`${this.plugin.manifest.name}: 文件已存在: ${t}`)"
+        },
+        {
+          "source": ".log(\"match\",s[0])",
+          "target": ".log(\"match\",s[0])"
+        },
+        {
+          "source": ".log(\"text node\",a)",
+          "target": ".log(\"text node\",a)"
+        },
+        {
+          "source": ".log(\"comment node\",a)",
+          "target": ".log(\"comment node\",a)"
+        },
+        {
+          "source": ".log(\"closed\",i.tagName,\"when opening\",s[2])",
+          "target": ".log(\"closed\",i.tagName,\"when opening\",s[2])"
+        },
+        {
+          "source": ".log(\"add\",s[2],\"tag to the stack\")",
+          "target": ".log(\"add\",s[2],\"tag to the stack\")"
+        },
+        {
+          "source": ".log(\"add text node as child of\",s[2])",
+          "target": ".log(\"add text node as child of\",s[2])"
+        },
+        {
+          "source": ".log(\"met the end of\",s[2])",
+          "target": ".log(\"met the end of\",s[2])"
+        },
+        {
+          "source": ".log(\"closing\",i.tagName,\"due to meeting\",s[2])",
+          "target": ".log(\"closing\",i.tagName,\"due to meeting\",s[2])"
+        },
+        {
+          "source": ".log(\"Final text node\",n.substring(o)",
+          "target": ".log(\"Final text node\",n.substring(o)"
+        },
+        {
+          "source": ".log(h.tagName,\"is probably supposed to close\",u.tagName)",
+          "target": ".log(h.tagName,\"is probably supposed to close\",u.tagName)"
+        },
+        {
+          "source": ".log(\"no close tag found for\",h.tagName,\". Removing\")",
+          "target": ".log(\"no close tag found for\",h.tagName,\". Removing\")"
+        },
+        {
+          "source": ".log(\"FLATE:\",c)",
+          "target": ".log(\"FLATE:\",c)"
+        },
+        {
+          "source": ".log(l+c)",
+          "target": ".log(l+c)"
+        },
+        {
+          "source": ".error(l)",
+          "target": ".error(l)"
+        },
+        {
+          "source": ".error(c)",
+          "target": ".error(c)"
+        },
+        {
+          "source": ".error(m)",
+          "target": ".error(m)"
+        },
+        {
+          "source": ".error(r)",
+          "target": ".error(r)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(w)",
+          "target": ".error(w)"
+        },
+        {
+          "source": ".error(f)",
+          "target": ".error(f)"
+        },
+        {
+          "source": "name: \"${t}\"",
+          "target": "name: \"${t}\""
+        },
+        {
+          "source": "name:\"PDF files\"",
+          "target": "name:\"PDF 文件\""
+        },
+        {
+          "source": "name:\"all\"",
+          "target": "name:\"全部\""
+        },
+        {
+          "source": "name:\"Title & page\"",
+          "target": "name:\"标题与页码\""
+        },
+        {
+          "source": "name:\"Page\"",
+          "target": "name:\"页码\""
+        },
+        {
+          "source": "name:\"Text\"",
+          "target": "name:\"文本\""
+        },
+        {
+          "source": "name:\"Emoji\"",
+          "target": "name:\"表情\""
+        },
+        {
+          "source": "name:\"None\"",
+          "target": "name:\"无\""
+        },
+        {
+          "source": "name:\"Quote\"",
+          "target": "name:\"引用\""
+        },
+        {
+          "source": "name:\"Link\"",
+          "target": "name:\"链接\""
+        },
+        {
+          "source": "name:\"Embed\"",
+          "target": "name:\"嵌入\""
+        },
+        {
+          "source": "name:\"Callout\"",
+          "target": "name:\"提示\""
+        },
+        {
+          "source": "name:\"Quote in callout\"",
+          "target": "name:\"提示中的引用\""
+        },
+        {
+          "source": "name:\"\",template:\"",
+          "target": "name:\"\",模板:\""
+        },
+        {
+          "source": "name:\"FitR\"",
+          "target": "name:\"适应矩形\""
+        },
+        {
+          "source": "name:\"FitBH\"",
+          "target": "name:\"适应底部高度\""
+        },
+        {
+          "source": "name:\"XYZ\"",
+          "target": "name:\"XYZ\""
+        },
+        {
+          "source": "name:\"Start rectangular selection\"",
+          "target": "name:\"开始矩形选择\""
+        },
+        {
+          "source": "name:\"Show context menu at selection\"",
+          "target": "name:\"在选区显示上下文菜单\""
+        },
+        {
+          "source": "name:\"Extract & copy annotations in this PDF\"",
+          "target": "name:\"提取并复制此PDF中的注释\""
+        },
+        {
+          "source": "name:\"Copy link to current page view\"",
+          "target": "name:\"复制当前页面视图的链接\""
+        },
+        {
+          "source": "name:\"Show outline\"",
+          "target": "name:\"显示大纲\""
+        },
+        {
+          "source": "name:\"Show thumbnail\"",
+          "target": "name:\"显示缩略图\""
+        },
+        {
+          "source": "name:\"Close PDF sidebar\"",
+          "target": "name:\"关闭PDF侧边栏\""
+        },
+        {
+          "source": "name:\"Fit width\"",
+          "target": "name:\"适应宽度\""
+        },
+        {
+          "source": "name:\"Fit height\"",
+          "target": "name:\"适应高度\""
+        },
+        {
+          "source": "name:\"Zoom in\"",
+          "target": "name:\"放大\""
+        },
+        {
+          "source": "name:\"Zoom out\"",
+          "target": "name:\"缩小\""
+        },
+        {
+          "source": "name:\"Adapt to theme\"",
+          "target": "name:\"适应主题\""
+        },
+        {
+          "source": "name:\"Don't adapt to theme\"",
+          "target": "name:\"不适应主题\""
+        },
+        {
+          "source": "name:'Toggle \"adapt to theme\"'",
+          "target": "name:'切换 \"适应主题\"'"
+        },
+        {
+          "source": "name:\"Go to page\"",
+          "target": "name:\"跳转到页\""
+        },
+        {
+          "source": "name:\"Show copy format menu\"",
+          "target": "name:\"显示复制格式菜单\""
+        },
+        {
+          "source": "name:\"Show display text format menu\"",
+          "target": "name:\"显示显示文本格式菜单\""
+        },
+        {
+          "source": "name:\"Enable PDF edit\"",
+          "target": "name:\"启用PDF编辑\""
+        },
+        {
+          "source": "name:\"Disable PDF edit\"",
+          "target": "name:\"禁用PDF编辑\""
+        },
+        {
+          "source": "name:\"Toggle auto-focus\"",
+          "target": "name:\"切换自动聚焦\""
+        },
+        {
+          "source": "name:\"Toggle auto-paste\"",
+          "target": "name:\"切换自动粘贴\""
+        },
+        {
+          "source": "name:\"Toggle auto-copy\"",
+          "target": "name:\"切换自动复制\""
+        },
+        {
+          "source": "name:\"Add new page at the end\"",
+          "target": "name:\"在末尾添加新页\""
+        },
+        {
+          "source": "name:\"Insert page before this page\"",
+          "target": "name:\"在此页之前插入页\""
+        },
+        {
+          "source": "name:\"Insert page after this page\"",
+          "target": "name:\"在此页之后插入页\""
+        },
+        {
+          "source": "name:\"Delete this page\"",
+          "target": "name:\"删除此页\""
+        },
+        {
+          "source": "name:\"Extract this page to a new file\"",
+          "target": "name:\"将此页提取到新文件\""
+        },
+        {
+          "source": "name:\"Divide this PDF into two files at this page\"",
+          "target": "name:\"在此页将此PDF分为两个文件\""
+        },
+        {
+          "source": "name:\"Edit page labels\"",
+          "target": "name:\"编辑页标签\""
+        },
+        {
+          "source": "name:\"Copy PDF outline as markdown list\"",
+          "target": "name:\"复制PDF大纲为Markdown列表\""
+        },
+        {
+          "source": "name:\"Copy PDF outline as markdown headings\"",
+          "target": "name:\"复制PDF大纲为Markdown标题\""
+        },
+        {
+          "source": "name:\"Add to outline (bookmark)\"",
+          "target": "name:\"添加到大纲（书签）\""
+        },
+        {
+          "source": "name:\"Create new note for auto-focus or auto-paste\"",
+          "target": "name:\"为自动聚焦或自动粘贴创建新笔记\""
+        },
+        {
+          "source": "name:\"Copy debug info\"",
+          "target": "name:\"复制调试信息\""
+        },
+        {
+          "source": "name:\"Load debug info\"",
+          "target": "name:\"加载调试信息\""
+        },
+        {
+          "source": "name:\"Create new PDF\"",
+          "target": "name:\"创建新PDF\""
+        },
+        {
+          "source": "name:\"Import this PDF into vault\"",
+          "target": "name:\"将此PDF导入到库\""
+        },
+        {
+          "source": "name:\"Open this PDF in the original location\"",
+          "target": "name:\"在原始位置打开此PDF\""
+        },
+        {
+          "source": "name:\"Create dummy file for external PDF\"",
+          "target": "name:\"为外部PDF创建虚拟文件\""
+        },
+        {
+          "source": "name:\"Custom\"",
+          "target": "name:\"自定义\""
+        },
+        {
+          "source": "description:\":0 - Go to the first page (same as :1)\"",
+          "target": "description:\":0 - Go to the first page (same as :1)\""
+        },
+        {
+          "source": "description:\":$ - Go to the last page.\"",
+          "target": "description:\":$ - Go to the last page.\""
+        },
+        {
+          "source": "description:\":go[to[page]] <page> - Go to the specified page. If the PDF has page labels, the argument is treated as a page label. Otherwise, it is treated as a page number.\"",
+          "target": "description:\":go[to[page]] <page> - 跳转到指定页。如果PDF有页标签,则参数被视为页标签。否则,它被视为页码.\""
+        },
+        {
+          "source": "description:\":zoom <number> - Set the zoom level to <number> percent.\"",
+          "target": "description:\":zoom <number> - 设置缩放级别为 <number> 百分比.\""
+        },
+        {
+          "source": "description:\":outline or :toc - Show the outline view.\"",
+          "target": "description:\":outline or :toc - 显示大纲视图.\""
+        },
+        {
+          "source": "description:\":thumb[nail] - Show the thumbnails view.\"",
+          "target": "description:\":thumb[nail] - 显示缩略图视图.\""
+        },
+        {
+          "source": "description:\":unm[ap] <key> - Unmap <key> in all modes.\"",
+          "target": "description:\":unm[ap] <key> - 在所有模式下取消映射 <key>.\""
+        },
+        {
+          "source": "description:\":nun[map] <key> - Unmap <key> in normal mode.\"",
+          "target": "description:\":nun[map] <key> - 在普通模式下取消映射 <key>.\""
+        },
+        {
+          "source": "description:\":vu[nmap] <key> - Unmap <key> in visual mode.\"",
+          "target": "description:\":vu[nmap] <key> - 在视觉模式下取消映射 <key>.\""
+        },
+        {
+          "source": "description:\":ou[nmap] <key> - Unmap <key> in outline mode.\"",
+          "target": "description:\":ou[nmap] <key> - 在大纲模式下取消映射 <key>.\""
+        },
+        {
+          "source": "description:`:js[command] <code>: Execute the given javascript <code> in a context where \"this\" points to a \"${Vo.name}\" object.`",
+          "target": "description:`:js[command] <code>: 在一个 \"this\" 指向 \"${Vo.name}\" 对象的上下文中执行给定的javascript <code>.`"
+        },
+        {
+          "source": "description:`:jsfile <path> - Execute the javascript code in the file at <path> (relative to the vault root; can be just the filename if it's unique). It can be any plain text file with arbitrary file extension. The code will be evaluated in a context where \"this\" points to a \"${Vo.name}\" object.`",
+          "target": "description:`:jsfile <path> - 执行位于 <path> 的文件中的javascript代码（相对于库根目录；如果是唯一的,可以仅提供文件名）。它可以是任何具有任意文件扩展名的纯文本文件。代码将在一个 \"this\" 指向 \"${Vo.name}\" 对象的上下文中进行评估.`"
+        },
+        {
+          "source": "description:\":obcommand <command-id> - Execute the Obsidian command with the specified ID. Inspired by esm's awesome Vimrc Support plugin.\"",
+          "target": "description:\":obcommand <command-id> - 执行指定ID的Obsidian命令。受esm的优秀Vimrc支持插件启发.\""
+        },
+        {
+          "source": "description:`\n            :hint [<target1> <target2> ...] - Enter hint mode and show hint marks for the specified targets in the current page. Inspired by [Tridactyl](https://github.com/tridactyl/tridactyl)'s hint mode.\n            \n            If no target is specified, the default targets (configured in PDF++ settings) will be used.\n            The accepted targets are: \n            \n            - \\`",
+          "target": "description:`\n            :hint [<target1> <target2> ...] - Enter hint mode and show hint marks for the specified targets in the current page. Inspired by [Tridactyl](https://github.com/tridactyl/tridactyl)'s hint mode.\n            \n            If no target is specified, the default targets (configured in PDF++ settings) will be used.\n            The accepted targets are: \n            \n            - \\`"
+        },
+        {
+          "source": "selection:\"Copy link to selection\"",
+          "target": "selection:\"复制到所选内容的链接\""
+        },
+        {
+          "source": "selection:`${a.beginIndex},${a.beginOffset},${a.endIndex},${a.endOffset}`",
+          "target": "selection:`${a.beginIndex},${a.beginOffset},${a.endIndex},${a.endOffset}`"
+        },
+        {
+          "source": "annotation:\"Copy link to annotation\"",
+          "target": "annotation:\"复制注释链接\""
+        },
+        {
+          "source": "link:\"Copy PDF link / Search on Google Scholar / Paste copied PDF link to selection / Copy URL\"",
+          "target": "link:\"复制PDF链接 / 在Google学术上搜索 / 将复制的PDF链接粘贴到所选内容 / 复制URL\""
+        },
+        {
+          "source": "text:\"Are you sure you want to delete this annotation?\"",
+          "target": "text:\"您确定要删除此注释吗？\""
+        },
+        {
+          "source": "text:\"There are one or more links pointing to this annotation.\"",
+          "target": "text:\"有一个或多个链接指向此注释。\""
+        },
+        {
+          "source": "text:\"Are you sure you want to delete this page?\"",
+          "target": "text:\"您确定要删除此页面吗？\""
+        },
+        {
+          "source": "text:\"There are one or more links pointing to this page.\"",
+          "target": "text:\"有一个或多个链接指向此页面。\""
+        },
+        {
+          "source": "text:\"Loading...\"",
+          "target": "text:\"加载中...\""
+        },
+        {
+          "source": "text:\"Create\"",
+          "target": "text:\"创建\""
+        },
+        {
+          "source": "text:\"Cancel\"",
+          "target": "text:\"取消\""
+        },
+        {
+          "source": "text:\"here\"",
+          "target": "text:\"here\""
+        },
+        {
+          "source": "text:\"No bibliography found\"",
+          "target": "text:\"未找到参考文献\""
+        },
+        {
+          "source": "text:\"Copy selected text / Copy annotated text\"",
+          "target": "text:\"复制选中的文本 / 复制注释的文本\""
+        },
+        {
+          "source": "text:\"Text to Speech\"",
+          "target": "text:\"文字转语音\""
+        },
+        {
+          "source": "text:\"See \"",
+          "target": "text:\"See \""
+        },
+        {
+          "source": "text:\" for the details about these variables.\"",
+          "target": "text:\"有关这些变量的详细信息\""
+        },
+        {
+          "source": "text: \",\"",
+          "target": "text: \",\""
+        },
+        {
+          "source": "text:\"%\"",
+          "target": "text:\"%\""
+        },
+        {
+          "source": "search:\"Copy link to search\"",
+          "target": "search:\"复制搜索链接\""
+        },
+        {
+          "source": "speech:\"Read aloud selected text\"",
+          "target": "speech:\"朗读选中的文本\""
+        },
+        {
+          "source": "page:\"Copy link to page\"",
+          "target": "page:\"复制页面链接\""
+        },
+        {
+          "source": "settings:\"Customize menu...\"",
+          "target": "settings:\"自定义菜单...\""
+        },
+        {
+          "source": "settings:\",i),console.debug(\"",
+          "target": "settings:\",i),console.debug(\""
+        },
+        {
+          "source": ".setText(`${this.plugin.manifest.name}: edit annotation contents`)",
+          "target": ".setText(`${this.plugin.manifest.name}: 编辑注释内容`)"
+        },
+        {
+          "source": ".setText(`${this.plugin.manifest.name}: delete annotation`)",
+          "target": ".setText(`${this.plugin.manifest.name}: 删除注释`)"
+        },
+        {
+          "source": ".setText(`${this.plugin.manifest.name}: delete page`)",
+          "target": ".setText(`${this.plugin.manifest.name}: 删除页面`)"
+        },
+        {
+          "source": ".setText(`${this.plugin.manifest.name}: Page composer`)",
+          "target": ".setText(`${this.plugin.manifest.name}: 页面合成器`)"
+        },
+        {
+          "source": ".setText(`${this.plugin.manifest.name}: Create new PDF`)",
+          "target": ".setText(`${this.plugin.manifest.name}: 创建新PDF`)"
+        },
+        {
+          "source": ".setText(`${this.plugin.manifest.name}: ${this.modalTitle}`)",
+          "target": ".setText(`${this.plugin.manifest.name}: ${this.modalTitle}`)"
+        },
+        {
+          "source": ".setText(`${this.plugin.manifest.name}: edit page labels`)",
+          "target": ".setText(`${this.plugin.manifest.name}: 编辑页面标签`)"
+        },
+        {
+          "source": ".setText(`${this.plugin.manifest.name}: Create dummy file for external PDF`)",
+          "target": ".setText(`${this.plugin.manifest.name}: 为外部PDF创建虚拟文件`)"
+        },
+        {
+          "source": ".setText(\"\")},i))}setTooltipToActionItem(e,i){let r=e.querySelector(\":scope > .\"+Qi.CLS+\"-item-inner\")",
+          "target": ".setText(\"\")},i))}setTooltipToActionItem(e,i){let r=e.querySelector(\":scope > .\"+Qi.CLS+\"-item-inner\")"
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Delete\")",
+          "target": ".setButtonText(\"删除\")"
+        },
+        {
+          "source": ".setButtonText(\"Proceed\")",
+          "target": ".setButtonText(\"继续\")"
+        },
+        {
+          "source": ".setButtonText(\"Create\")",
+          "target": ".setButtonText(\"创建\")"
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setButtonText(\"Browse\")",
+          "target": ".setButtonText(\"浏览\")"
+        },
+        {
+          "source": ".setButtonText(\"Get installer from https://obsidian.md\")",
+          "target": ".setButtonText(\"从 https://obsidian.md 获取安装程序\")"
+        },
+        {
+          "source": ".setButtonText('What is \"installer version\"?')",
+          "target": ".setButtonText('什么是“安装程序版本”？')"
+        },
+        {
+          "source": ".setButtonText(\"Google Scholar\")",
+          "target": ".setButtonText(\"Google 学术\")"
+        },
+        {
+          "source": ".setButtonText(\"GitHub Sponsors\")",
+          "target": ".setButtonText(\"GitHub 赞助者\")"
+        },
+        {
+          "source": ".setButtonText(\"Buy Me a Coffee\")",
+          "target": ".setButtonText(\"请我喝咖啡\")"
+        },
+        {
+          "source": ".setButtonText(\"Ko-fi\")",
+          "target": ".setButtonText(\"Ko-fi\")"
+        },
+        {
+          "source": ".setButtonText(\"Open hotkeys settings\")",
+          "target": ".setButtonText(\"打开快捷键设置\")"
+        },
+        {
+          "source": ".setButtonText(\"Open page preview settings\")",
+          "target": ".setButtonText(\"打开页面预览设置\")"
+        },
+        {
+          "source": ".setButtonText(\"Open style settings\")",
+          "target": ".setButtonText(\"打开样式设置\")"
+        },
+        {
+          "source": ".setName(\"Color\")",
+          "target": ".setName(\"颜色\")"
+        },
+        {
+          "source": ".setName(\"Opacity\")",
+          "target": ".setName(\"透明度\")"
+        },
+        {
+          "source": ".setName(\"Draw border\")",
+          "target": ".setName(\"绘制边框\")"
+        },
+        {
+          "source": ".setName(\"Annotation author\")",
+          "target": ".setName(\"注释作者\")"
+        },
+        {
+          "source": ".setName(\"Contents\")",
+          "target": ".setName(\"内容\")"
+        },
+        {
+          "source": ".setName(\"Update the page labels?\")",
+          "target": ".setName(\"更新页面标签？\")"
+        },
+        {
+          "source": ".setName(\"Remove pages from original file?\")",
+          "target": ".setName(\"从原始文件中移除页面？\")"
+        },
+        {
+          "source": ".setName(\"Page size\")",
+          "target": ".setName(\"页面大小\")"
+        },
+        {
+          "source": ".setName(\"Orientation\")",
+          "target": ".setName(\"方向\")"
+        },
+        {
+          "source": ".setName(\"Title\")",
+          "target": ".setName(\"标题\")"
+        },
+        {
+          "source": ".setName(\"Numbering Style\")",
+          "target": ".setName(\"编号样式\")"
+        },
+        {
+          "source": ".setName(\"Start counting from\")",
+          "target": ".setName(\"从...开始计数\")"
+        },
+        {
+          "source": ".setName(\"Prefix\")",
+          "target": ".setName(\"前缀\")"
+        },
+        {
+          "source": ".setName(\"From\")",
+          "target": ".setName(\"从\")"
+        },
+        {
+          "source": ".setName(\"To\")",
+          "target": ".setName(\"到\")"
+        },
+        {
+          "source": ".setName(\"Source location\")",
+          "target": ".setName(\"源位置\")"
+        },
+        {
+          "source": ".setName(\"Folder to save the dummy files\")",
+          "target": ".setName(\"保存虚拟文件的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Absolute path to the PDF\")",
+          "target": ".setName(\"PDF的绝对路径\")"
+        },
+        {
+          "source": ".setName(\"Dummy file path\")",
+          "target": ".setName(\"虚拟文件路径\")"
+        },
+        {
+          "source": ".setName(\"URL of the PDF\")",
+          "target": ".setName(\"PDF的URL\")"
+        },
+        {
+          "source": ".setName(`Require ${Nn} key while hovering`)",
+          "target": ".setName(`悬停时要求按下${Nn}键`)"
+        },
+        {
+          "source": ".setName(\"Enable PDF editing\")",
+          "target": ".setName(\"启用PDF编辑\")"
+        },
+        {
+          "source": ".setName(\"Enable editing encrypted PDF files\")",
+          "target": ".setName(\"启用加密PDF文件的编辑\")"
+        },
+        {
+          "source": ".setName(\"Highlight backlinks in PDF viewer\")",
+          "target": ".setName(\"在PDF查看器中高亮显示反向链接\")"
+        },
+        {
+          "source": ".setName(\"Highlight backlinks in PDF embeds\")",
+          "target": ".setName(\"在嵌入的PDF中高亮显示反向链接\")"
+        },
+        {
+          "source": ".setName(\"Highlight backlinks in Canvas\")",
+          "target": ".setName(\"在画布中高亮显示反向链接\")"
+        },
+        {
+          "source": ".setName(\"Highlight backlinks in hover popover previews\")",
+          "target": ".setName(\"在悬停弹出预览中高亮显示反向链接\")"
+        },
+        {
+          "source": ".setName(\"Highlight style\")",
+          "target": ".setName(\"高亮样式\")"
+        },
+        {
+          "source": ".setName(\"Action when hovering over highlighted text\")",
+          "target": ".setName(\"悬停在高亮文本上时的操作\")"
+        },
+        {
+          "source": ".setName(\"Double click highlighted text to open the corresponding backlink\")",
+          "target": ".setName(\"双击高亮文本以打开相应的反向链接\")"
+        },
+        {
+          "source": ".setName(\"How to open the markdown file when no markdown file is opened\")",
+          "target": ".setName(\"当没有打开Markdown文件时如何打开Markdown文件\")"
+        },
+        {
+          "source": ".setName(\"Always use sidebar to open markdown files from highlighted text\")",
+          "target": ".setName(\"始终使用侧边栏从高亮文本打开Markdown文件\")"
+        },
+        {
+          "source": ".setName(\"Don't open multiple panes in sidebar\")",
+          "target": ".setName(\"不在侧边栏中打开多个窗格\")"
+        },
+        {
+          "source": ".setName(\"Ignore existing markdown tabs in...\")",
+          "target": ".setName(\"忽略...中现有的Markdown标签页\")"
+        },
+        {
+          "source": ".setName(\"Don't move focus to markdown view after opening a backlink\")",
+          "target": ".setName(\"打开反向链接后不要将焦点移动到Markdown视图\")"
+        },
+        {
+          "source": ".setName(\"Highlight colors\")",
+          "target": ".setName(\"高亮颜色\")"
+        },
+        {
+          "source": ".setName(\"Default highlight color\")",
+          "target": ".setName(\"默认高亮颜色\")"
+        },
+        {
+          "source": ".setName(\"Show bounding rectangles for backlinked annotations\")",
+          "target": ".setName(\"显示反向链接注释的边界矩形\")"
+        },
+        {
+          "source": ".setName(\"Show icon for text selection with backlinks\")",
+          "target": ".setName(\"显示带有反向链接的文本选择图标\")"
+        },
+        {
+          "source": ".setName(\"Show icon for annotation with backlinks\")",
+          "target": ".setName(\"显示带有反向链接的注释图标\")"
+        },
+        {
+          "source": ".setName(\"Show icon for offset backlinks\")",
+          "target": ".setName(\"显示偏移反向链接图标\")"
+        },
+        {
+          "source": ".setName(\"Show icon for rectangular selection backlinks\")",
+          "target": ".setName(\"显示矩形选择反向链接图标\")"
+        },
+        {
+          "source": ".setName(\"Icon size\")",
+          "target": ".setName(\"图标大小\")"
+        },
+        {
+          "source": ".setName(\"Rendering resolution\")",
+          "target": ".setName(\"渲染分辨率\")"
+        },
+        {
+          "source": ".setName(\"Paste as image\")",
+          "target": ".setName(\"粘贴为图像\")"
+        },
+        {
+          "source": ".setName(\"How to embed the image\")",
+          "target": ".setName(\"如何嵌入图像\")"
+        },
+        {
+          "source": ".setName(\"Image file format\")",
+          "target": ".setName(\"图像文件格式\")"
+        },
+        {
+          "source": ".setName(\"Include the selected color's name when copying a link to a rectangular selection\")",
+          "target": ".setName(\"复制矩形选择链接时包含所选颜色的名称\")"
+        },
+        {
+          "source": ".setName(\"Zoom to fit rectangular selection when opening link\")",
+          "target": ".setName(\"打开链接时缩放以适应矩形选择\")"
+        },
+        {
+          "source": ".setName(\"Use PDF++ callouts\")",
+          "target": ".setName(\"使用PDF++标注\")"
+        },
+        {
+          "source": ".setName(\"Callout type name\")",
+          "target": ".setName(\"标注类型名称\")"
+        },
+        {
+          "source": ".setName(\"Callout icon\")",
+          "target": ".setName(\"标注图标\")"
+        },
+        {
+          "source": ".setName(\"Hoverable dropdown menus\")",
+          "target": ".setName(\"可悬停下拉菜单\")"
+        },
+        {
+          "source": ".setName(\"Show zoom level box\")",
+          "target": ".setName(\"显示缩放级别框\")"
+        },
+        {
+          "source": ".setName(\"Show color palette in the toolbar\")",
+          "target": ".setName(\"在工具栏中显示颜色调色板\")"
+        },
+        {
+          "source": ".setName('Show \"without specifying color\" button in the color palette')",
+          "target": ".setName('在颜色调色板中显示“不指定颜色”按钮')"
+        },
+        {
+          "source": ".setName(\"Show color palette in PDF embeds as well\")",
+          "target": ".setName(\"也在嵌入的PDF中显示颜色调色板\")"
+        },
+        {
+          "source": ".setName(\"Default color selected in color palette\")",
+          "target": ".setName(\"颜色调色板中默认选定的颜色\")"
+        },
+        {
+          "source": ".setName(\"Share a single color among all color palettes\")",
+          "target": ".setName(\"在所有颜色调色板中共享一种颜色\")"
+        },
+        {
+          "source": ".setName(\"Share the color with newly opened color palettes as well\")",
+          "target": ".setName(\"也与新打开的颜色调色板共享颜色\")"
+        },
+        {
+          "source": ".setName(\"Quiet tooltips in color palette\")",
+          "target": ".setName(\"颜色调色板中的安静提示\")"
+        },
+        {
+          "source": ".setName(\"Default zoom level\")",
+          "target": ".setName(\"默认缩放级别\")"
+        },
+        {
+          "source": ".setName(\"Custom zoom level (%)\")",
+          "target": ".setName(\"自定义缩放级别 (%)\")"
+        },
+        {
+          "source": ".setName(\"Default scroll mode\")",
+          "target": ".setName(\"默认滚动模式\")"
+        },
+        {
+          "source": ".setName(\"Default spread mode\")",
+          "target": ".setName(\"默认跨页模式\")"
+        },
+        {
+          "source": ".setName(\"Replace the built-in context menu with PDF++'s custom menu\")",
+          "target": ".setName(\"用PDF++的自定义菜单替换内置上下文菜单\")"
+        },
+        {
+          "source": ".setName(\"Display text format\")",
+          "target": ".setName(\"显示文本格式\")"
+        },
+        {
+          "source": ".setName(\"Show context menu on tablet devices as well\")",
+          "target": ".setName(\"也在平板设备上显示上下文菜单\")"
+        },
+        {
+          "source": ".setName(\"Show the context menu right after selecting text when...\")",
+          "target": ".setName(\"在...选择文本后立即显示上下文菜单\")"
+        },
+        {
+          "source": ".setName(\"Update color palette from context menu\")",
+          "target": ".setName(\"从上下文菜单更新颜色调色板\")"
+        },
+        {
+          "source": ".setName('Action triggered by selecting \"Copy\" option on mobile devices')",
+          "target": ".setName('在移动设备上选择“复制”选项时触发的操作')"
+        },
+        {
+          "source": ".setName(\"Set up hotkeys for copying links\")",
+          "target": ".setName(\"设置用于复制链接的热键\")"
+        },
+        {
+          "source": ".setName(\"Further workflow enhancements\")",
+          "target": ".setName(\"进一步的工作流程增强\")"
+        },
+        {
+          "source": ".setName(`Show outline: when the active file is not PDF, run the core Outline plugin's \"Show outline\" command`)",
+          "target": ".setName(`显示大纲:当活动文件不是PDF时,运行核心大纲插件的“显示大纲”命令`)"
+        },
+        {
+          "source": ".setName(\"Show outline / show thumbnail: close the sidebar if it is already open\")",
+          "target": ".setName(\"显示大纲/显示缩略图:如果侧边栏已打开则关闭它\")"
+        },
+        {
+          "source": ".setName('Zoom in / zoom out: when the active file is not PDF, run the built-in \"Zoom in\" / \"Zoom out\" command')",
+          "target": ".setName('放大/缩小:当活动文件不是PDF时,运行内置的“放大”/“缩小”命令')"
+        },
+        {
+          "source": ".setName(`Zoom in / zoom out: when the active file is not PDF, run Font Size Adjuster's \"Increment font size\" / \"Decrement font size\" command`)",
+          "target": ".setName(`放大/缩小:当活动文件不是PDF时,运行字体大小调整器的“增加字体大小”/“减少字体大小”命令`)"
+        },
+        {
+          "source": ".setName(\"Property to associate a markdown file to a PDF file\")",
+          "target": ".setName(\"将Markdown文件关联到PDF文件的属性\")"
+        },
+        {
+          "source": ".setName(\"Default display text format\")",
+          "target": ".setName(\"默认显示文本格式\")"
+        },
+        {
+          "source": ".setName(\"Share a single display text format among all PDF viewers\")",
+          "target": ".setName(\"在所有PDF查看器中共享一个显示文本格式\")"
+        },
+        {
+          "source": ".setName(\"Share the display text format with newly opened PDF viewers as well\")",
+          "target": ".setName(\"也将显示文本格式与新打开的PDF查看器共享\")"
+        },
+        {
+          "source": ".setName(\"Custom copy formats\")",
+          "target": ".setName(\"自定义复制格式\")"
+        },
+        {
+          "source": ".setName(\"Default action when clicking on color palette\")",
+          "target": ".setName(\"点击颜色调色板时的默认操作\")"
+        },
+        {
+          "source": ".setName(\"Share a single action among all PDF viewers\")",
+          "target": ".setName(\"在所有PDF查看器中共享一个操作\")"
+        },
+        {
+          "source": ".setName(\"Share the action with newly opened PDF viewers as well\")",
+          "target": ".setName(\"也将操作与新打开的PDF查看器共享\")"
+        },
+        {
+          "source": ".setName(\"Use another template when no text is selected\")",
+          "target": ".setName(\"当没有选择文本时使用另一个模板\")"
+        },
+        {
+          "source": ".setName(\"Link copy template used when no text is selected\")",
+          "target": ".setName(\"当没有选择文本时使用的链接复制模板\")"
+        },
+        {
+          "source": ".setName(\"Enable\")",
+          "target": ".setName(\"启用\")"
+        },
+        {
+          "source": ".setName(\"Show an icon to toggle auto-copy in the left ribbon menu\")",
+          "target": ".setName(\"在左侧带状菜单中显示切换自动复制的图标\")"
+        },
+        {
+          "source": ".setName(\"Icon name\")",
+          "target": ".setName(\"图标名称\")"
+        },
+        {
+          "source": ".setName(\"Show an icon to toggle auto-focus in the left ribbon menu\")",
+          "target": ".setName(\"在左侧带状菜单中显示切换自动聚焦的图标\")"
+        },
+        {
+          "source": ".setName(\"Target markdown file to focus on\")",
+          "target": ".setName(\"要聚焦的目标Markdown文件\")"
+        },
+        {
+          "source": ".setName(\"Show an icon to toggle auto-paste in the left ribbon menu\")",
+          "target": ".setName(\"在左侧带状菜单中显示切换自动粘贴的图标\")"
+        },
+        {
+          "source": ".setName(\"Target markdown file to paste links to\")",
+          "target": ".setName(\"要粘贴链接的目标Markdown文件\")"
+        },
+        {
+          "source": ".setName(\"Focus editor after auto-pasting\")",
+          "target": ".setName(\"自动粘贴后聚焦编辑器\")"
+        },
+        {
+          "source": ".setName(\"Clear text selection after auto-pasting\")",
+          "target": ".setName(\"自动粘贴后清除文本选择\")"
+        },
+        {
+          "source": ".setName(\"Respect current cursor position\")",
+          "target": ".setName(\"尊重当前光标位置\")"
+        },
+        {
+          "source": ".setName(\"Open target markdown file if not opened\")",
+          "target": ".setName(\"如果未打开,则打开目标Markdown文件\")"
+        },
+        {
+          "source": ".setName(\"How to open target markdown file when not opened\")",
+          "target": ".setName(\"当未打开时如何打开目标Markdown文件\")"
+        },
+        {
+          "source": ".setName(\"Close Hover Editor when it loses focus\")",
+          "target": ".setName(\"当失去焦点时关闭悬停编辑器\")"
+        },
+        {
+          "source": ".setName(\"Auto-hide sidebar when it loses focus after auto-pasting\")",
+          "target": ".setName(\"自动粘贴后,当失去焦点时自动隐藏侧边栏\")"
+        },
+        {
+          "source": ".setName(\"Always open in editing view\")",
+          "target": ".setName(\"始终在编辑视图中打开\")"
+        },
+        {
+          "source": ".setName(\"Execute command when target file cannot be determined\")",
+          "target": ".setName(\"当无法确定目标文件时执行命令\")"
+        },
+        {
+          "source": ".setName(\"Command to execute\")",
+          "target": ".setName(\"要执行的命令\")"
+        },
+        {
+          "source": ".setName(\"[Auto-paste] Maximum time to wait for the command to open the target file (sec)\")",
+          "target": ".setName(\"[自动粘贴]等待命令打开目标文件的最大时间（秒）\")"
+        },
+        {
+          "source": ".setName(\"New note title format\")",
+          "target": ".setName(\"新笔记标题格式\")"
+        },
+        {
+          "source": ".setName(\"Template file path\")",
+          "target": ".setName(\"模板文件路径\")"
+        },
+        {
+          "source": ".setName(\"Drag & drop annotation popup to insert a link to the annotation\")",
+          "target": ".setName(\"拖放注释弹出窗口以插入指向该注释的链接\")"
+        },
+        {
+          "source": ".setName(\"If an annotation has a comment, show the annotation popup on hover\")",
+          "target": ".setName(\"如果注释有评论,在悬停时显示注释弹出窗口\")"
+        },
+        {
+          "source": ".setName(\"Render markdown in annotation popups when the annotation has text contents\")",
+          "target": ".setName(\"当注释具有文本内容时,在注释弹出窗口中呈现Markdown\")"
+        },
+        {
+          "source": ".setName(\"Highlight opacity\")",
+          "target": ".setName(\"高亮透明度\")"
+        },
+        {
+          "source": ".setName(\"Write highlight to file by default\")",
+          "target": ".setName(\"默认将高亮写入文件\")"
+        },
+        {
+          "source": ".setName(\"Share the same toggle state among all PDF viewers\")",
+          "target": ".setName(\"在所有PDF查看器中共享相同的切换状态\")"
+        },
+        {
+          "source": ".setName(\"Share the state with newly opened PDF viewers as well\")",
+          "target": ".setName(\"也将状态与新打开的PDF查看器共享\")"
+        },
+        {
+          "source": ".setName(\"Enable editing annotation contents\")",
+          "target": ".setName(\"启用编辑注释内容\")"
+        },
+        {
+          "source": ".setName(\"Enable annotation deletion\")",
+          "target": ".setName(\"启用删除注释\")"
+        },
+        {
+          "source": ".setName(\"Always warn when deleting an annotation\")",
+          "target": ".setName(\"删除注释时总是警告\")"
+        },
+        {
+          "source": ".setName(\"Warn when deleting an annotation with backlinks\")",
+          "target": ".setName(\"删除带有反向链接的注释时警告\")"
+        },
+        {
+          "source": ".setName(`Show a popover preview of PDF internal links by hover(+${Nn})`)",
+          "target": ".setName(`通过悬停显示PDF内部链接的弹出预览(+${Nn})`)"
+        },
+        {
+          "source": ".setName(\"Enable history navigation for PDF internal links\")",
+          "target": ".setName(\"为PDF内部链接启用历史导航\")"
+        },
+        {
+          "source": ".setName(\"Copy PDF link as Obsidian link\")",
+          "target": ".setName(\"将PDF链接复制为Obsidian链接\")"
+        },
+        {
+          "source": ".setName('\"Copy link to current page view\" command')",
+          "target": ".setName('\"复制链接到当前页面视图\"命令')"
+        },
+        {
+          "source": ".setName(\"Paste copied link to a text selection in a PDF file\")",
+          "target": ".setName(\"将复制的链接粘贴到PDF文件中的文本选择\")"
+        },
+        {
+          "source": ".setName(\"Draw borders around internal links\")",
+          "target": ".setName(\"在内部链接周围绘制边框\")"
+        },
+        {
+          "source": ".setName(\"Border color of internal links\")",
+          "target": ".setName(\"内部链接的边框颜色\")"
+        },
+        {
+          "source": ".setName(`Hover(+${Nn}) on a citation link to show...`)",
+          "target": ".setName(`悬停在引用链接上以显示... (+${Nn})`)"
+        },
+        {
+          "source": ".setName(\"AnyStyle path\")",
+          "target": ".setName(\"AnyStyle路径\")"
+        },
+        {
+          "source": ".setName(\"Enable bibliography extraction in PDF embeds\")",
+          "target": ".setName(\"在嵌入的PDF中启用参考文献提取\")"
+        },
+        {
+          "source": ".setName(\"Enable bibliography extraction in Canvas\")",
+          "target": ".setName(\"在画布中启用参考文献提取\")"
+        },
+        {
+          "source": ".setName(\"Enable bibliography extraction in hover popover previews\")",
+          "target": ".setName(\"在悬停弹出预览中启用参考文献提取\")"
+        },
+        {
+          "source": ".setName(`Show a popover preview of external links by hover(+${Nn})`)",
+          "target": ".setName(`通过悬停显示外部链接的弹出预览(+${Nn})`)"
+        },
+        {
+          "source": ".setName(\"Click on PDF content to hide sidebar\")",
+          "target": ".setName(\"单击PDF内容以隐藏侧边栏\")"
+        },
+        {
+          "source": ".setName(\"Default sidebar view\")",
+          "target": ".setName(\"默认侧边栏视图\")"
+        },
+        {
+          "source": ".setName(`Show popover preview by hover(+${Nn})`)",
+          "target": ".setName(`通过悬停显示弹出预览(+${Nn})`)"
+        },
+        {
+          "source": ".setName(\"Record to history when clicking an outline item\")",
+          "target": ".setName(\"点击大纲项时记录到历史记录\")"
+        },
+        {
+          "source": ".setName(\"Replace the built-in context menu in the outline with a custom one\")",
+          "target": ".setName(\"用自定义菜单替换大纲中的内置上下文菜单\")"
+        },
+        {
+          "source": ".setName(\"Drag & drop outline item to insert link to section\")",
+          "target": ".setName(\"拖放大纲项以插入指向部分的链接\")"
+        },
+        {
+          "source": ".setName(\"Copy format\")",
+          "target": ".setName(\"复制格式\")"
+        },
+        {
+          "source": ".setName(\"List: display text format\")",
+          "target": ".setName(\"列表:显示文本格式\")"
+        },
+        {
+          "source": ".setName(\"List: copy format\")",
+          "target": ".setName(\"列表:复制格式\")"
+        },
+        {
+          "source": ".setName(\"Headings: display text format\")",
+          "target": ".setName(\"标题:显示文本格式\")"
+        },
+        {
+          "source": ".setName(\"Headings: copy format\")",
+          "target": ".setName(\"标题:复制格式\")"
+        },
+        {
+          "source": ".setName(\"Headings: minimum level\")",
+          "target": ".setName(\"标题:最低级别\")"
+        },
+        {
+          "source": ".setName(\"Record to history when clicking a thumbnail\")",
+          "target": ".setName(\"点击缩略图时记录到历史记录\")"
+        },
+        {
+          "source": ".setName(\"Replace the built-in context menu in thumbnails with a custom one\")",
+          "target": ".setName(\"用自定义菜单替换缩略图中的内置上下文菜单\")"
+        },
+        {
+          "source": ".setName(\"Drag & drop PDF thumbnail to insert link to page\")",
+          "target": ".setName(\"拖放PDF缩略图以插入指向页面的链接\")"
+        },
+        {
+          "source": ".setName(\"Always warn when deleting a page\")",
+          "target": ".setName(\"删除页面时总是警告\")"
+        },
+        {
+          "source": ".setName(\"Warn when deleting a page with backlinks\")",
+          "target": ".setName(\"删除带有反向链接的页面时警告\")"
+        },
+        {
+          "source": ".setName(\"Remove the extracted pages from the original PDF by default\")",
+          "target": ".setName(\"默认情况下从原始PDF中移除提取的页面\")"
+        },
+        {
+          "source": ".setName(\"Ask whether to remove the extracted pages from the original PDF before extracting\")",
+          "target": ".setName(\"在提取前询问是否从原始PDF中移除提取的页面\")"
+        },
+        {
+          "source": ".setName(\"Open extracted PDF file\")",
+          "target": ".setName(\"打开提取的PDF文件\")"
+        },
+        {
+          "source": ".setName(\"How to open\")",
+          "target": ".setName(\"如何打开\")"
+        },
+        {
+          "source": ".setName(\"Insert: default page label processing\")",
+          "target": ".setName(\"插入:默认页面标签处理\")"
+        },
+        {
+          "source": ".setName(\"Insert: ask whether to update\")",
+          "target": ".setName(\"插入:询问是否更新\")"
+        },
+        {
+          "source": ".setName(\"Delete: default page label processing\")",
+          "target": ".setName(\"删除:默认页面标签处理\")"
+        },
+        {
+          "source": ".setName(\"Delete: ask whether to update\")",
+          "target": ".setName(\"删除:询问是否更新\")"
+        },
+        {
+          "source": ".setName(\"Extract: default page label processing\")",
+          "target": ".setName(\"提取:默认页面标签处理\")"
+        },
+        {
+          "source": ".setName(\"Extract: ask whether to update\")",
+          "target": ".setName(\"提取:询问是否更新\")"
+        },
+        {
+          "source": ".setName(\"Always record to history when opening PDF links\")",
+          "target": ".setName(\"打开PDF链接时总是记录到历史记录\")"
+        },
+        {
+          "source": ".setName(\"Don't open a single PDF file in multiple tabs\")",
+          "target": ".setName(\"不在多个标签中打开单个PDF文件\")"
+        },
+        {
+          "source": ".setName(\"Don't move focus to PDF viewer after opening a PDF link\")",
+          "target": ".setName(\"打开PDF链接后不将焦点移到PDF查看器\")"
+        },
+        {
+          "source": ".setName(\"When opening a link to an already opened PDF file, highlight the tab\")",
+          "target": ".setName(\"当打开链接到已打开的PDF文件时,突出显示标签\")"
+        },
+        {
+          "source": ".setName(\"Highlight opacity of an existing tab\")",
+          "target": ".setName(\"现有标签的高亮透明度\")"
+        },
+        {
+          "source": ".setName(\"Highlight duration of an existing tab (sec)\")",
+          "target": ".setName(\"现有标签的高亮持续时间(秒)\")"
+        },
+        {
+          "source": ".setName(\"Preserve the current zoom level when opening a link to an already opened PDF file\")",
+          "target": ".setName(\"打开链接到已打开的PDF文件时保持当前缩放级别\")"
+        },
+        {
+          "source": ".setName(\"Preserve the current horizontal scroll position\")",
+          "target": ".setName(\"保持当前水平滚动位置\")"
+        },
+        {
+          "source": ".setName(\"How to open PDF links when there is no open PDF file\")",
+          "target": ".setName(\"当没有打开的PDF文件时如何打开PDF链接\")"
+        },
+        {
+          "source": ".setName(\"Open PDF links next to an existing PDF tab\")",
+          "target": ".setName(\"在现有的PDF标签旁边打开PDF链接\")"
+        },
+        {
+          "source": ".setName(\"Open PDF link instead of showing popover preview when target PDF is already opened\")",
+          "target": ".setName(\"当目标PDF已打开时,打开PDF链接而不是显示弹出预览\")"
+        },
+        {
+          "source": ".setName(\"Open PDF links with an external app\")",
+          "target": ".setName(\"使用外部应用程序打开PDF链接\")"
+        },
+        {
+          "source": ".setName(\"Clear highlights after a certain amount of time\")",
+          "target": ".setName(\"一段时间后清除高亮\")"
+        },
+        {
+          "source": ".setName(\"Highlight duration (sec)\")",
+          "target": ".setName(\"高亮持续时间(秒)\")"
+        },
+        {
+          "source": ".setName('Ignore \"height\" parameter in popover preview')",
+          "target": ".setName('忽略弹出预览中的\"高度\"参数')"
+        },
+        {
+          "source": ".setName(\"Double click PDF embeds to open links\")",
+          "target": ".setName(\"双击PDF嵌入以打开链接\")"
+        },
+        {
+          "source": ".setName(\"Trim selection/annotation embeds\")",
+          "target": ".setName(\"裁剪选择/注释嵌入\")"
+        },
+        {
+          "source": ".setName(\"Selection/annotation embeds margin (px)\")",
+          "target": ".setName(\"选择/注释嵌入边距 (px)\")"
+        },
+        {
+          "source": ".setName(\"Hide sidebar in PDF embeds embeds or PDF popover previews by default\")",
+          "target": ".setName(\"默认隐藏PDF嵌入或PDF弹出预览中的侧边栏\")"
+        },
+        {
+          "source": ".setName(`Don't display PDF embeds or PDF popover previews in \"two page\" layout`)",
+          "target": ".setName(`在\"两页\"布局中不显示PDF嵌入或PDF弹出预览`)"
+        },
+        {
+          "source": ".setName(\"Don't highlight text in a text selection embeds\")",
+          "target": ".setName(\"不在文本选择嵌入中高亮文本\")"
+        },
+        {
+          "source": ".setName(\"Don't highlight annotations in an annotation embeds\")",
+          "target": ".setName(\"不在注释嵌入中高亮注释\")"
+        },
+        {
+          "source": ".setName(\"Don't clear highlights in a text selection embeds\")",
+          "target": ".setName(\"不在文本选择嵌入中清除高亮\")"
+        },
+        {
+          "source": ".setName(\"Don't clear highlights in an annotation embeds\")",
+          "target": ".setName(\"不在注释嵌入中清除高亮\")"
+        },
+        {
+          "source": ".setName(\"Make PDF embeds with a page specified unscrollable\")",
+          "target": ".setName(\"使指定了页面的PDF嵌入不可滚动\")"
+        },
+        {
+          "source": ".setName(\"Filter backlinks by page by default\")",
+          "target": ".setName(\"默认按页面过滤反向链接\")"
+        },
+        {
+          "source": ".setName(\"Show backlinks to the entire page\")",
+          "target": ".setName(\"显示指向整个页面的反向链接\")"
+        },
+        {
+          "source": ".setName(\"Hover sync (PDF viewer \\u2192 Backlinks pane)\")",
+          "target": ".setName(\"悬停同步 (PDF查看器 \\u2192 反向链接面板)\")"
+        },
+        {
+          "source": ".setName(\"Hover sync (Backlinks pane \\u2192 PDF viewer)\")",
+          "target": ".setName(\"悬停同步 (反向链接面板 \\u2192 PDF查看器)\")"
+        },
+        {
+          "source": ".setName(\"Highlight color for hover sync (Backlinks pane \\u2192 PDF viewer)\")",
+          "target": ".setName(\"悬停同步 (反向链接面板 \\u2192 PDF查看器) 的高亮颜色\")"
+        },
+        {
+          "source": ".setName(\"Case sensitive search\")",
+          "target": ".setName(\"区分大小写的搜索\")"
+        },
+        {
+          "source": ".setName(\"Highlight all search results\")",
+          "target": ".setName(\"高亮所有搜索结果\")"
+        },
+        {
+          "source": ".setName(\"Match diacritics\")",
+          "target": ".setName(\"匹配变音符号\")"
+        },
+        {
+          "source": ".setName(\"Match whole word\")",
+          "target": ".setName(\"匹配整个单词\")"
+        },
+        {
+          "source": ".setName(\"Open PDF links in Obsidian as well\")",
+          "target": ".setName(\"也在Obsidian中打开PDF链接\")"
+        },
+        {
+          "source": ".setName(\"Sync the external app with Obsidian\")",
+          "target": ".setName(\"将外部应用程序与Obsidian同步\")"
+        },
+        {
+          "source": ".setName(\"Focus Obsidian after opening a PDF file with an external app\")",
+          "target": ".setName(\"使用外部应用程序打开PDF文件后聚焦于Obsidian\")"
+        },
+        {
+          "source": ".setName(\"Sync page number\")",
+          "target": ".setName(\"同步页码\")"
+        },
+        {
+          "source": ".setName(\"Minimum update interval of the View Sync file (sec)\")",
+          "target": ".setName(\"视图同步文件的最小更新间隔 (秒)\")"
+        },
+        {
+          "source": ".setName(\"Vimrc file path (optional)\")",
+          "target": ".setName(\"Vimrc文件路径 (可选)\")"
+        },
+        {
+          "source": ".setName(\"Enter visual mode on text selection\")",
+          "target": ".setName(\"选择文本时进入可视模式\")"
+        },
+        {
+          "source": ".setName(\"Enter outline mode when opening PDF outline view\")",
+          "target": ".setName(\"打开PDF大纲视图时进入大纲模式\")"
+        },
+        {
+          "source": ".setName(\"Smooth motion in outline mode\")",
+          "target": ".setName(\"大纲模式下的平滑运动\")"
+        },
+        {
+          "source": ".setName(\"Characters to use in hint mode\")",
+          "target": ".setName(\"提示模式下使用的字符\")"
+        },
+        {
+          "source": ".setName('Default arguments for the \":hint\" Ex command')",
+          "target": ".setName('\":hint\" Ex命令的默认参数')"
+        },
+        {
+          "source": ".setName(\"Enable Vim keys in PDF context menus\")",
+          "target": ".setName(\"在PDF上下文菜单中启用Vim键\")"
+        },
+        {
+          "source": ".setName(\"Scroll size (px) of the jkhl keys\")",
+          "target": ".setName(\"jkhl键的滚动大小 (px)\")"
+        },
+        {
+          "source": ".setName(\"Increase scroll size when zoomed in\")",
+          "target": ".setName(\"放大时增加滚动大小\")"
+        },
+        {
+          "source": ".setName(\"Speed of continuous scroll (px per ms)\")",
+          "target": ".setName(\"连续滚动的速度 (px每毫秒)\")"
+        },
+        {
+          "source": ".setName(\"Smooth scroll\")",
+          "target": ".setName(\"平滑滚动\")"
+        },
+        {
+          "source": ".setName(\"hlsearch\")",
+          "target": ".setName(\"hlsearch\")"
+        },
+        {
+          "source": ".setName(\"incsearch\")",
+          "target": ".setName(\"incsearch\")"
+        },
+        {
+          "source": ".setName(\"Show status in PDF toolbar\")",
+          "target": ".setName(\"在PDF工具栏中显示状态\")"
+        },
+        {
+          "source": ".setName(\"Default location for new PDFs\")",
+          "target": ".setName(\"新PDF的默认位置\")"
+        },
+        {
+          "source": ".setName(\"Folder to create new PDFs in\")",
+          "target": ".setName(\"创建新PDF的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Hide reply annotations\")",
+          "target": ".setName(\"隐藏回复注释\")"
+        },
+        {
+          "source": ".setName(\"Remove half-width whitespace between two Chinese/Japanese characters when copying text\")",
+          "target": ".setName(\"复制文本时移除两个中文/日文字符之间的半角空格\")"
+        },
+        {
+          "source": ".setName(\"Override the default copy behavior in the PDF viewer\")",
+          "target": ".setName(\"覆盖PDF查看器中的默认复制行为\")"
+        },
+        {
+          "source": ".setName('\"PATH\" environment variable')",
+          "target": ".setName('\"PATH\"环境变量')"
+        },
+        {
+          "source": ".setDesc(\"You can choose a color from the color picker or select one from your custom named colors.\")",
+          "target": ".setDesc(\"您可以从颜色选择器中选择颜色,也可以从您的自定义命名颜色中选择.\")"
+        },
+        {
+          "source": ".setDesc(`Press ${this.app.hotkeyManager.printHotkeyForCommand(\"markdown:toggle-preview\")} to toggle preview.`)",
+          "target": ".setDesc(`按${this.app.hotkeyManager.printHotkeyForCommand(\"markdown:toggle-preview\")}切换预览.`)"
+        },
+        {
+          "source": ".setDesc('Tip: There is an option called \"Render markdown in annotation popups when the annotation has text contents\".')",
+          "target": ".setDesc('提示: 有一个选项叫做\"当注释包含文本内容时,在注释弹出窗口中渲染Markdown\".')"
+        },
+        {
+          "source": ".setDesc(\"This PDF document does not have any page labels.\")",
+          "target": ".setDesc(\"此PDF文档没有任何页面标签.\")"
+        },
+        {
+          "source": ".setDesc(\"The index of the first page in this range.\")",
+          "target": ".setDesc(\"此范围中第一页的索引.\")"
+        },
+        {
+          "source": ".setDesc(\"The index of the last page in this range.\")",
+          "target": ".setDesc(\"此范围中最后一页的索引.\")"
+        },
+        {
+          "source": ".setDesc(\"Where the external PDF is located.\")",
+          "target": ".setDesc(\"外部PDF的位置.\")"
+        },
+        {
+          "source": ".setDesc('Type the path in the input box or click the \"Browse\" button to select the file.')",
+          "target": ".setDesc('在输入框中键入路径,或点击\"浏览\"按钮选择文件.')"
+        },
+        {
+          "source": ".setDesc('Must end with \".pdf\".')",
+          "target": ".setDesc('必须以\".pdf\"结尾.')"
+        },
+        {
+          "source": ".setDesc('Must start with \"https://\" or \"http://\".')",
+          "target": ".setDesc('必须以\"https://\"或\"http://\"开头.')"
+        },
+        {
+          "source": ".setDesc(`If you find PDF++ helpful, please consider supporting the development to help me keep this plugin alive.\n\nIf you prefer PayPal, please make donations via Ko-fi. Thank you!`)",
+          "target": ".setDesc(`如果您觉得PDF++有用,请考虑支持开发,帮助我维持这个插件的运行。\n\n如果您更喜欢PayPal,可以通过Ko-fi捐款。谢谢！`)"
+        },
+        {
+          "source": ".setDesc(`Currently ${r?\"required\":\"not required\"}. You can toggle this on and off in the core Page Preview plugin settings > ${i}.`)",
+          "target": ".setDesc(`目前${r?\"需要\":\"不需要\"}。您可以在核心页面预览插件设置 > ${i} 中开启或关闭此功能。`)"
+        },
+        {
+          "source": ".setDesc(\"It must contain at least one character in order to make annotations referenceable & editable within Obsidian.\")",
+          "target": ".setDesc(\"它必须至少包含一个字符,以便在Obsidian中引用和编辑注释。\")"
+        },
+        {
+          "source": ".setDesc('Annotate PDF files with highlights just by linking to text selection. You can easily copy links to selections using color palette in the toolbar. See the \"Color palette\" section for the details.')",
+          "target": ".setDesc('通过链接到文本选择来标注PDF文件。您可以使用工具栏中的颜色调色板轻松复制选择的链接。详细信息请参阅“颜色调色板”部分。')"
+        },
+        {
+          "source": ".setDesc(\"In the PDF viewer, any referenced text will be highlighted for easy identification.\")",
+          "target": ".setDesc(\"在PDF查看器中,任何引用的文本都会被高亮显示,便于识别。\")"
+        },
+        {
+          "source": ".setDesc(\"How backlinks to a text selection should be visualized.\")",
+          "target": ".setDesc(\"如何可视化指向文本选择的反向链接。\")"
+        },
+        {
+          "source": ".setDesc(`Easily open backlinks or display a popover preview of it by pressing ${Tn(\"Mod\").toLowerCase()} (by default) while hovering over a highlighted text in PDF viewer.`)",
+          "target": ".setDesc(`在PDF查看器中悬浮在高亮文本上时,按住${Tn(\"Mod\").toLowerCase()}（默认）即可轻松打开反向链接或显示其弹出预览。`)"
+        },
+        {
+          "source": ".setDesc(\"Customize how backlinks are opened when \"+(this.plugin.settings.hoverHighlightAction===\"open\"?`${Tn(\"Mod\")",
+          "target": ".setDesc(\"自定义当 \"+(this.plugin.settings.hoverHighlightAction===\"open\"?`${Tn(\"Mod\")"
+        },
+        {
+          "source": ".setDesc(`If turned on, the ${this.plugin.settings.paneTypeForFirstMDLeaf===\"left-sidebar\"?\"left\":\"right\"} sidebar will be used whether there is existing markdown tabs or not.`)",
+          "target": ".setDesc(`如果开启,无论是否存在markdown标签页,都将使用${this.plugin.settings.paneTypeForFirstMDLeaf===\"left-sidebar\"?\"左侧\":\"右侧\"}侧边栏。`)"
+        },
+        {
+          "source": ".setDesc(\"Turn this on if you want to open markdown files in a single pane in the sidebar.\")",
+          "target": ".setDesc(\"如果希望在侧边栏的单个窗格中打开markdown文件,请开启此选项。\")"
+        },
+        {
+          "source": ".setDesc(\"If some notes are opened in the ignored splits, PDF++ will still open the backlink in the way specified in the previous setting. For example, you might want to ignore the left sidebar if you are pinning a certain note (e.g. daily note) in it.\")",
+          "target": ".setDesc(\"如果某些笔记在被忽略的分割中打开,PDF++仍将按照前面设置的方式打开反向链接。例如,如果您在其中固定了某个笔记（如每日笔记）,可能希望忽略左侧边栏。\")"
+        },
+        {
+          "source": ".setDesc(\"This option will be ignored when you open a link in a tab in the same split as the current tab.\")",
+          "target": ".setDesc(\"当您在与当前标签相同的分割中打开链接时,此选项将被忽略。\")"
+        },
+        {
+          "source": ".setDesc(\"If no color is specified in link text, this color will be used.\")",
+          "target": ".setDesc(\"如果链接文本中未指定颜色,则将使用此颜色。\")"
+        },
+        {
+          "source": ".setDesc(\"Bounding rectangles will be shown for annotations with backlinks.\")",
+          "target": ".setDesc(\"具有反向链接的注释将显示边界矩形。\")"
+        },
+        {
+          "source": ".setDesc(\"Show icons for text selections, annotations, offsets and rectangular selections with backlinks.\")",
+          "target": ".setDesc(\"为带有反向链接的文本选择、注释、偏移量和矩形选择显示图标。\")"
+        },
+        {
+          "source": ".setDesc(\"The higher the value, the better the rendering quality, but the longer time it takes to render. The default value is 100.\")",
+          "target": ".setDesc(\"值越高,渲染质量越好,但渲染所需时间越长。默认值为100。\")"
+        },
+        {
+          "source": ".setDesc(\"By default, rectangular selection embeds are re-rendered every time you open the markdown file, which can slow down the loading time. Turn on this option to replace them with static images and improve the performance.\")",
+          "target": ".setDesc(\"默认情况下,每次打开markdown文件时都会重新渲染矩形选择嵌入,这可能会减慢加载速度。开启此选项以静态图像替换它们,从而提高性能。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the name of the color selected in the color palette will be included in the link text. As a result, the rectangular selection will be highlighted with the specified color in the PDF viewer.\")",
+          "target": ".setDesc(\"启用后,所选颜色名称将包含在链接文本中。因此,在PDF查看器中,矩形选择将以指定的颜色高亮显示。\")"
+        },
+        {
+          "source": ".setDesc(\"(Not supported on smartphones) When enabled, the dropdown menus (\\u2304) in the PDF toolbar will be opened by hovering over the icon, and you don't need to click it.\")",
+          "target": ".setDesc(\"(不支持智能手机) 启用后,PDF工具栏中的下拉菜单 (\\u2304) 将通过悬浮在图标上来打开,而无需点击。\")"
+        },
+        {
+          "source": ".setDesc(\"A input box will be added to the PDF toolbar, which indicated the current zoom level and allows you to set the zoom level by typing a number.\")",
+          "target": ".setDesc(\"PDF工具栏中将添加一个输入框,指示当前缩放级别,并允许您通过输入数字来设置缩放级别。\")"
+        },
+        {
+          "source": ".setDesc('Clicking a color while selecting a range of text will copy a link to the selection with \"&color=...\" appended.')",
+          "target": ".setDesc('在选择一段文本时点击一种颜色,将会复制一个链接,该链接附加有\"&color=...\"。')"
+        },
+        {
+          "source": ".setDesc(\"A color palette will be added to the toolbar of the PDF viewer.\")",
+          "target": ".setDesc(\"PDF查看器的工具栏中将添加一个颜色调色板。\")"
+        },
+        {
+          "source": ".setDesc(\"This color will be selected in the color palette in a newly opened PDF viewer.\")",
+          "target": ".setDesc(\"在新打开的PDF查看器中,此颜色将在颜色调色板中被选中。\")"
+        },
+        {
+          "source": ".setDesc(\"If disabled, you can specify a different color for each color palette.\")",
+          "target": ".setDesc(\"如果禁用,可以为每个颜色调色板指定不同的颜色。\")"
+        },
+        {
+          "source": ".setDesc(`When disabled${Ci.quietColorPaletteTooltip?\"\":\" (default)\"}, the tooltip will show the color name as well as the selected copy format and display text format. If enabled, only the color name will be shown.`)",
+          "target": ".setDesc(`禁用时${Ci.quietColorPaletteTooltip?\"\":\" (默认)\"},提示将显示颜色名称以及选定的复制格式和显示文本格式。如果启用,则仅显示颜色名称。`)"
+        },
+        {
+          "source": ".setDesc(\"(Desktop & tablet only) Customize the behavior of the context menu that pops up when you right-click in the PDF viewer. For mobile users, see also the next section.\")",
+          "target": ".setDesc(\"(仅限桌面和平板电脑) 自定义在PDF查看器中右键单击时弹出的上下文菜单的行为。对于移动用户,请参阅下一节。\")"
+        },
+        {
+          "source": ".setDesc('You can customize the display text format in the setting \"Copied text foramt > Display text format\" below.')",
+          "target": ".setDesc('您可以在下面的“复制文本格式>显示文本格式”设置中自定义显示文本格式。')"
+        },
+        {
+          "source": ".setDesc('By default, Obsidian does not show the context menu after text selection on mobile devices, including tablets (iPad, etc.). If you want to show the context menu on tablets, turn this option on. Even if this option is turned off, you copy select the OS-native \"Copy\" option to run the \"'+this.plugin.lib.commands.stripCommandNamePrefix(this.plugin.lib.commands.getCommand(\"copy-link-to-selection\").name)+'\" command.')",
+          "target": ".setDesc('默认情况下，Obsidian在移动设备（包括平板电脑，如iPad等）上选择文本后不会显示上下文菜单。如果您想在平板电脑上显示上下文菜单，请打开此选项。即使此选项关闭，您也可以选择操作系统原生的“复制”选项来运行“'+this.plugin.lib.commands.stripCommandNamePrefix(this.plugin.lib.commands.getCommand(\"copy-link-to-selection\").name)+'\" 命令。')"
+        },
+        {
+          "source": ".setDesc(\"Customize which menu items to show.\")",
+          "target": ".setDesc(\"自定义要显示的菜单项。\")"
+        },
+        {
+          "source": ".setDesc(\"Available only on macOS.\")",
+          "target": ".setDesc(\"仅适用于macOS。\")"
+        },
+        {
+          "source": ".setDesc('\"Search on Google Scholar\": Available when right-clicking citation links in PDFs.')",
+          "target": ".setDesc('\"Google 学术搜索\": 在PDF中右键点击引用链接时可用。')"
+        },
+        {
+          "source": ".setDesc(\"Available when right-clicking with no text selected.\")",
+          "target": ".setDesc(\"在没有选择任何文本的情况下右键点击时可用。\")"
+        },
+        {
+          "source": ".setDesc(\"In the context menu, the items (color, copy format and display text format) set in the color palette are selected by default. If this option is enabled, clicking a menu item will also update the color palette state and hence the default-selected items in the context menu as well.\")",
+          "target": ".setDesc(\"在上下文菜单中,默认选中颜色调色板中设置的项目（颜色、复制格式和显示文本格式）。如果启用此选项,点击菜单项还将更新颜色调色板的状态,从而也更新上下文菜单中的默认选中项。\")"
+        },
+        {
+          "source": ".setDesc(\"By turning this on, you can use the same hotkey to show the outline of a markdown file and a PDF file without key conflict.\")",
+          "target": ".setDesc(\"通过开启此选项,您可以使用相同的热键显示markdown文件和PDF文件的大纲,而不会发生键冲突。\")"
+        },
+        {
+          "source": ".setDesc(\"Enabling this will allow you to use the same hotkey to close the sidebar if it is already open.\")",
+          "target": ".setDesc(\"启用此选项后,如果侧边栏已打开,您可以使用相同的热键关闭它。\")"
+        },
+        {
+          "source": ".setDesc(\"By turning this on, you can use the same hotkey to zoom in/out a PDF viewer or any other type of view without key conflict.\")",
+          "target": ".setDesc(\"通过开启此选项,您可以使用相同的热键放大/缩小PDF查看器或其他类型的视图,而不会发生键冲突。\")"
+        },
+        {
+          "source": ".setDesc(\"The template format that will be used when copying a link to a selection or an annotation in PDF viewer. \")",
+          "target": ".setDesc(\"在PDF查看器中复制选择或注释的链接时使用的模板格式。\")"
+        },
+        {
+          "source": ".setDesc(\"If disabled, you can specify a different display text format for each PDF viewer from the dropdown menu in the PDF toolbar.\")",
+          "target": ".setDesc(\"如果禁用,可以从PDF工具栏的下拉菜单中为每个PDF查看器指定不同的显示文本格式。\")"
+        },
+        {
+          "source": ".setDesc(\"If disabled, you can specify a different action for each PDF viewer from the dropdown menu in the PDF toolbar.\")",
+          "target": ".setDesc(\"如果禁用,可以从PDF工具栏的下拉菜单中为每个PDF查看器指定不同的操作。\")"
+        },
+        {
+          "source": ".setDesc(\"For example, you can use this to copy a link to the page when there is no selection.\")",
+          "target": ".setDesc(\"例如,您可以使用此选项在没有选择任何文本时复制页面链接。\")"
+        },
+        {
+          "source": ".setDesc(\"Speed up the process of copying & pasting PDF links to your notes with some automation. Note that you can't activate both of auto-focus and auto-paste at the same time.\")",
+          "target": ".setDesc(\"通过一些自动化加快将PDF链接复制粘贴到笔记的过程。注意,不能同时激活自动聚焦和自动粘贴。\")"
+        },
+        {
+          "source": ".setDesc(`If enabled, the \"Copy link to selection or annotation\" command will be triggered automatically every time you select a range of text in a PDF viewer, meaning you don't even have to press a hotkey to copy a link.`)",
+          "target": ".setDesc(`如果启用,每次在PDF查看器中选择一段文本时,“复制链接到选择或注释”命令将自动触发,这意味着您甚至不必按下热键来复制链接。`)"
+        },
+        {
+          "source": ".setDesc(\"You can also toggle auto-focus via an icon in the left ribbon menu if the next setting is enabled.\")",
+          "target": ".setDesc(\"如果启用了下一个设置,您还可以通过左侧边栏菜单中的图标切换自动聚焦。\")"
+        },
+        {
+          "source": ".setDesc(\"You can also toggle this mode via a command. Reload the plugin after changing this setting to take effect.\")",
+          "target": ".setDesc(\"您也可以通过命令切换此模式。更改此设置后重新加载插件以生效。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, a markdown file will be focused automatically after copying a link to PDF text selection or annotation.\")",
+          "target": ".setDesc(\"如果启用,在复制PDF文本选择或注释的链接后,markdown文件将自动获得焦点。\")"
+        },
+        {
+          "source": ".setDesc(\"Recommended if you prefer something less agressive than auto-paste. You can also toggle auto-focus via an icon in the left ribbon menu if the next setting is enabled.\")",
+          "target": ".setDesc(\"如果您不喜欢自动粘贴这种较为激进的方式，那么推荐使用此功能。如果启用了下一个设置，您还可以通过左侧功能区菜单中的一个图标来切换自动对焦。\")"
+        },
+        {
+          "source": ".setDesc(\"You can also toggle auto-focus via a command. Reload the plugin after changing this setting to take effect.\")",
+          "target": ".setDesc(\"您也可以通过命令切换自动聚焦。更改此设置后重新加载插件以生效。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the copied link to PDF text selection or annotation will be automatically pasted into a markdown file right after copying.\")",
+          "target": ".setDesc(\"如果启用,复制的PDF文本选择或注释的链接将在复制后立即自动粘贴到markdown文件中。\")"
+        },
+        {
+          "source": ".setDesc(\"You can also toggle auto-paste via an icon in the left ribbon menu if the next setting is enabled.\")",
+          "target": ".setDesc(\"如果启用了下一个设置,您还可以通过左侧边栏菜单中的图标切换自动粘贴。\")"
+        },
+        {
+          "source": ".setDesc(\"You can also toggle auto-paste via a command. Reload the plugin after changing this setting to take effect.\")",
+          "target": ".setDesc(\"您也可以通过命令切换自动粘贴。更改此设置后重新加载插件以生效。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, auto-paste will focus on the editor after pasting.\")",
+          "target": ".setDesc(\"如果启用,自动粘贴后将聚焦于编辑器。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the text selection in the PDF viewer will be automatically cleared after performing auto-pasting.\")",
+          "target": ".setDesc(\"如果启用,执行自动粘贴后PDF查看器中的文本选择将自动清除。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, triggering auto-pasting will paste the copied text at the current cursor position if the target note is already opened. If disabled, the text will be always appended to the end of the note.\")",
+          "target": ".setDesc(\"启用时,触发自动粘贴将在目标笔记已打开的情况下将复制的文本粘贴到当前光标位置。如果禁用,文本将始终追加到笔记末尾。\")"
+        },
+        {
+          "source": ".setDesc(\"General settings that apply to both auto-focus and auto-paste.\")",
+          "target": ".setDesc(\"适用于自动聚焦和自动粘贴的一般设置。\")"
+        },
+        {
+          "source": ".setDesc(\"This option will not affect the behavior of Hover Editor outside of PDF++.\")",
+          "target": ".setDesc(\"此选项不会影响PDF++之外的Hover Editor行为。\")"
+        },
+        {
+          "source": ".setDesc(\"After auto-pasting into a markdown file opened in the left or right sidebar, the sidebar will be automatically collapsed once it loses focus.\")",
+          "target": ".setDesc(\"在左或右侧边栏中打开的markdown文件中自动粘贴后,一旦失去焦点,侧边栏将自动折叠。\")"
+        },
+        {
+          "source": ".setDesc('This option can be useful especially when you set the previous option to \"Hover Editor\".')",
+          "target": ".setDesc('当您将前一个选项设置为“Hover Editor”时,此选项尤其有用。')"
+        },
+        {
+          "source": ".setDesc(\"When PDF++ cannot determine which markdown file to focus on or paste to, it will execute the command specified in the next option to let you pick a target file.\")",
+          "target": ".setDesc(\"当PDF++无法确定要聚焦或粘贴到哪个markdown文件时,它将执行下一个选项中指定的命令,让您选择目标文件。\")"
+        },
+        {
+          "source": ".setDesc(\"The link will be auto-pasted into the first markdown file that you open within this time frame after the command is executed. If you don't open any markdown file during this time, the auto-paste will not occur. This option is not related to auto-focus.\")",
+          "target": ".setDesc(\"在执行命令后,链接将在您在此时间段内打开的第一个markdown文件中自动粘贴。如果您在此期间没有打开任何markdown文件,自动粘贴将不会发生。此选项与自动聚焦无关。\")"
+        },
+        {
+          "source": ".setDesc('Creates a new note and opens it in a new pane specified in the \"How to open target markdown file when not opened\" option.')",
+          "target": ".setDesc('创建一个新笔记并根据“未打开目标markdown文件时如何打开”选项中指定的方式在一个新窗格中打开它。')"
+        },
+        {
+          "source": ".setDesc(\"Note that turning on this option disables text selection in the annotation popup (e.g. modified date, author, etc).\")",
+          "target": ".setDesc(\"请注意,启用此选项将禁用注释弹出窗口中的文本选择（例如修改日期、作者等）。\")"
+        },
+        {
+          "source": ".setDesc(\"This is the same behavior as the PDF viewers of some web browsers (e.g. Chrome/Firefox). You may have to reopen the PDF file after changing this option.\")",
+          "target": ".setDesc(\"这与某些网络浏览器（如Chrome/Firefox）中的PDF查看器行为相同。更改此选项后,您可能需要重新打开PDF文件。\")"
+        },
+        {
+          "source": ".setDesc(\"You can turn this on and off with the toggle button in the PDF viewer toolbar.\")",
+          "target": ".setDesc(\"您可以通过PDF查看器工具栏中的切换按钮来开启或关闭此功能。\")"
+        },
+        {
+          "source": ".setDesc(\"If disabled, you can specify whether to write highlights to files for each PDF viewer.\")",
+          "target": ".setDesc(\"如果禁用,您可以为每个PDF查看器指定是否将高亮写入文件。\")"
+        },
+        {
+          "source": ".setDesc('If enabled, you can edit the text contents of annotations embedded in PDF files by clicking the \"Edit\" button in the annotation popup.')",
+          "target": ".setDesc('如果启用,您可以通过点击注释弹出窗口中的“编辑”按钮来编辑嵌入PDF文件中的注释文本内容。')"
+        },
+        {
+          "source": ".setDesc('If enabled, you can delete annotations embedded in PDF files by clicking the \"Delete\" button in the annotation popup.')",
+          "target": ".setDesc('如果启用,您可以通过点击注释弹出窗口中的“删除”按钮来删除嵌入PDF文件中的注释。')"
+        },
+        {
+          "source": ".setDesc(\"Make it easier to work with internal links embedded in PDF files.\")",
+          "target": ".setDesc(\"使处理嵌入PDF文件中的内部链接更加容易。\")"
+        },
+        {
+          "source": ".setDesc(`You may want to turn this off to avoid conflicts with hover+${Nn}.`)",
+          "target": ".setDesc(`您可能希望关闭此选项以避免与hover+${Nn}产生冲突。`)"
+        },
+        {
+          "source": ".setDesc('When enabled, clicking the \"navigate back\" (left arrow) button will take you back to the page you were originally viewing before clicking on an internal link in the PDF file.')",
+          "target": ".setDesc('当启用时,点击“返回”（左箭头）按钮将带您回到点击PDF文件中的内部链接之前所查看的页面。')"
+        },
+        {
+          "source": ".setDesc('(Requires custom context menu enabled) In the PDF viewer, right-click a PDF-embedded link and then click \"Copy PDF link as Obsidian link\". It will copy the PDF link as an Obsidian link that you can paste into markdown files. Clicking the pasted link will take you to the same destination as the original PDF link.')",
+          "target": ".setDesc('(需要启用自定义上下文菜单) 在PDF查看器中，右键单击嵌入PDF的链接，然后单击\"将PDF链接复制为Obsidian链接\"。它会将PDF链接复制为Obsidian链接，您可以将其粘贴到Markdown文件中。单击粘贴的链接将带您到达与原始PDF链接相同的目标位置。')"
+        },
+        {
+          "source": ".setDesc(\"Running this command while viewing a PDF file will copy a link, clicking which will open the PDF file at the current scroll position and zoom level.\")",
+          "target": ".setDesc(\"在查看PDF文件时运行此命令将复制一个链接,点击该链接将按当前滚动位置和缩放级别打开PDF文件。\")"
+        },
+        {
+          "source": ".setDesc('(Requires custom context menu & PDF editing enabled) After copying a link by the above actions, you can \"paste\" it to a selection in PDF to create a PDF internal link. To do this, right-click the selection and click \"Paste copied link to selection\".')",
+          "target": ".setDesc('(需要自定义上下文菜单和PDF编辑启用) 复制链接后,您可以将其“粘贴”到PDF中的选定区域以创建PDF内部链接。为此,请右击选定区域并点击“将复制的链接粘贴到选定区域”。')"
+        },
+        {
+          "source": ".setDesc('Specify whether PDF internal links that you create by \"Paste copied link to selection\" should be surrounded by borders.')",
+          "target": ".setDesc('指定您通过“将复制的链接粘贴到选定区域”创建的PDF内部链接是否应带有边框。')"
+        },
+        {
+          "source": ".setDesc('Specify the border color of PDF internal links that you create by \"Paste copied link to selection\".')",
+          "target": ".setDesc('指定您通过“将复制的链接粘贴到选定区域”创建的PDF内部链接的边框颜色。')"
+        },
+        {
+          "source": ".setDesc(\"Make it easier to work with external links embedded in PDF files.\")",
+          "target": ".setDesc(\"使处理嵌入PDF文件中的外部链接更加容易。\")"
+        },
+        {
+          "source": ".setDesc(\"General settings for the PDF sidebar. The options specific to the outline and thumbnails are located in the corresponding sections below.\")",
+          "target": ".setDesc(\"PDF侧边栏的一般设置。关于大纲和缩略图的具体选项位于下面相应的部分。\")"
+        },
+        {
+          "source": ".setDesc(\"Requires reopening the tabs after changing this option.\")",
+          "target": ".setDesc(\"更改此选项后需要重新打开标签页。\")"
+        },
+        {
+          "source": ".setDesc(\"Reopen PDFs after changing this option.\")",
+          "target": ".setDesc(\"更改此选项后重新打开PDF文件。\")"
+        },
+        {
+          "source": ".setDesc('Power up the outline view of the built-in PDF viewer: add, rename, or delete items via the right-click menu and the \"Add to outline\" command, drag & drop items to insert a section link, and more.')",
+          "target": ".setDesc('增强内置PDF查看器的大纲视图:通过右键菜单和“添加到大纲”命令添加、重命名或删除项目,拖放项目以插入章节链接等。')"
+        },
+        {
+          "source": ".setDesc(\"Reopen the tabs or reload the app after changing this option.\")",
+          "target": ".setDesc(\"更改此选项后重新打开标签页或重新加载应用程序。\")"
+        },
+        {
+          "source": ".setDesc(\"This enables you to insert a section link with a custom format by right-clicking an item in the outline. Moreover, you will be able to add, rename, or delete outline items if PDF modification is enabled.\")",
+          "target": ".setDesc(\"这允许您通过右击大纲中的项目以自定义格式插入章节链接。此外,如果启用了PDF修改,您还可以添加、重命名或删除大纲项目。\")"
+        },
+        {
+          "source": ".setDesc(\"Grab an item in the outline and drop it to a markdown file to insert a section link. Changing this option requires reopening the tabs or reloading the app.\")",
+          "target": ".setDesc(\"抓取大纲中的项目并将其拖放到markdown文件中以插入章节链接。更改此选项需要重新打开标签页或重新加载应用程序。\")"
+        },
+        {
+          "source": ".setDesc('You can copy PDF outline as a markdown list or headings using the commands \"Copy outline as markdown list\" and \"Copy outline as markdown headings\".')",
+          "target": ".setDesc('您可以使用“将大纲复制为markdown列表”和“将大纲复制为markdown标题”的命令将PDF大纲复制为markdown列表或标题。')"
+        },
+        {
+          "source": ".setDesc(\"You don't need to include leading hyphens in the template.\")",
+          "target": ".setDesc(\"您无需在模板中包含前置连字符。\")"
+        },
+        {
+          "source": ".setDesc(\"You don't need to include leading hashes in the template.\")",
+          "target": ".setDesc(\"您无需在模板中包含前置井号。\")"
+        },
+        {
+          "source": ".setDesc(\"The copied headings will start at this level.\")",
+          "target": ".setDesc(\"复制的标题将从这一级开始。\")"
+        },
+        {
+          "source": ".setDesc(`You may want to turn this off to avoid conflicts with hover+${Nn}`)",
+          "target": ".setDesc(`您可能希望关闭此选项以避免与hover+${Nn}产生冲突。`)"
+        },
+        {
+          "source": ".setDesc(\"This enables you to copy a page link with a custom display text format specified in the PDF toolbar by right-clicking a thumbnail. Moreover, you will be able to insert, delete, extract pages if PDF modification is enabled.\")",
+          "target": ".setDesc(\"这允许您通过右击缩略图并在PDF工具栏中指定自定义显示文本格式来复制页面链接。此外,如果启用了PDF修改,您还可以插入、删除、提取页面。\")"
+        },
+        {
+          "source": ".setDesc('If enabled, the newly created PDF file will be opened after running the commands \"Extract this page to a new file\" or \"Divide this PDF into two files at this page\".')",
+          "target": ".setDesc('如果启用,执行“将此页提取到新文件”或“在此页处分割此PDF为两个文件”的命令后,新创建的PDF文件将被打开。')"
+        },
+        {
+          "source": ".setDesc('Applies to the commands \"Insert page before/after this page\".')",
+          "target": ".setDesc('适用于\"在此页前/后插入页面\"的命令。')"
+        },
+        {
+          "source": ".setDesc('Applies to the command \"Delete this page\".')",
+          "target": ".setDesc('适用于\"删除此页\"的命令。')"
+        },
+        {
+          "source": ".setDesc('Applies to the commands \"Extract this page to a new file\" and \"Divide this PDF into two files at this page\".')",
+          "target": ".setDesc('适用于“将此页提取到新文件”和“在此页处分割此PDF为两个文件”的命令。')"
+        },
+        {
+          "source": ".setDesc(\"By default, the history is recorded only when you open a link to a different PDF file. If enabled, the history will be recorded even when you open a link to the same PDF file as the current one, and you will be able to go back and forth the history by clicking the left/right arrow buttons even within a single PDF file.\")",
+          "target": ".setDesc(\"默认情况下，只有当您打开指向不同PDF文件的链接时，才会记录历史记录。如果启用此功能，即使您打开指向与当前PDF文件相同的PDF文件的链接，也会记录历史记录，并且您可以通过单击左/右箭头按钮在单个PDF文件内来回浏览历史记录。\")"
+        },
+        {
+          "source": ".setDesc(\"This option will be ignored when you open a PDF link in a tab in the same split as the PDF viewer.\")",
+          "target": ".setDesc(\"当您在与PDF查看器相同的分割区的标签页中打开PDF链接时,此选项将被忽略。\")"
+        },
+        {
+          "source": ".setDesc(\"When you open a link to a PDF file that's already opened, Obsidian's default behavior causes the zoom level to be reset to fit the width of the PDF file to the viewer. If enabled, the current zoom level will be preserved. This option will be ignored in PDF embeds.\")",
+          "target": ".setDesc(\"当您打开已打开的PDF文件的链接时,默认情况下,Obsidian会将缩放级别重置为适合PDF文件宽度至查看器。如果启用,当前的缩放级别将被保留。此选项在PDF嵌入中将被忽略。\")"
+        },
+        {
+          "source": ".setDesc(\"This option will be ignored in PDF embeds.\")",
+          "target": ".setDesc(\"此选项在PDF嵌入中将被忽略。\")"
+        },
+        {
+          "source": ".setDesc(`Press ${Tn(\"Mod\").toLowerCase()} while hovering a PDF link to actually open it if the target PDF is already opened in another tab.`)",
+          "target": ".setDesc(`当目标PDF已在另一个标签页中打开时,悬停在PDF链接上并按下${Tn(\"Mod\").toLowerCase()}来实际打开它。`)"
+        },
+        {
+          "source": ".setDesc('Obsidian lets you specify the height of a PDF embed by appending \"&height=...\" to a link, and this also applies to popover previews. Enable this option if you want to ignore the height parameter in popover previews.')",
+          "target": ".setDesc('Obsidian允许您通过在链接后附加\"&height=...\"来指定PDF嵌入的高度,这也适用于弹出预览。如果您想忽略弹出预览中的高度参数,请启用此选项。')"
+        },
+        {
+          "source": ".setDesc(\"Double-clicking a PDF embed will open the embedded file.\")",
+          "target": ".setDesc(\"双击PDF嵌入将打开嵌入的文件。\")"
+        },
+        {
+          "source": ".setDesc('Regardless of the \"two page\" layout setting in existing PDF viewer, PDF embeds and PDF popover previews will be always displayed in \"single page\" layout. You can still turn it on for each embed by clicking the \"two page\" button in the toolbar, if shown.')",
+          "target": ".setDesc('无论现有的PDF查看器中的“两页”布局设置如何,PDF嵌入和PDF弹出预览始终将以“单页”布局显示。如果显示了工具栏中的“两页”按钮,您仍然可以为每个嵌入开启此功能。')"
+        },
+        {
+          "source": ".setDesc('You can toggle this on and off with the \"Show only backlinks in the current page\" button at the top right of the backlinks pane.')",
+          "target": ".setDesc('您可以使用反链面板右上角的“仅显示当前页的反链”按钮来开启或关闭此功能。')"
+        },
+        {
+          "source": ".setDesc(\"If turned off, only backlinks to specific text selections, annotations or locations will be shown when filtering the backlinks page by page.\")",
+          "target": ".setDesc(\"如果关闭,过滤反链页面时,仅显示指向特定文本选择、注释或位置的反链。\")"
+        },
+        {
+          "source": ".setDesc(\"Hovering your mouse over highlighted text or annotation will also highlight the corresponding item in the backlink pane.\")",
+          "target": ".setDesc(\"将鼠标悬停在高亮文本或注释上也会在反链面板中高亮对应的项。\")"
+        },
+        {
+          "source": ".setDesc(\"In the backlinks pane, hover your mouse over an backlink item to highlight the corresponding text or annotation in the PDF viewer. This option requires reopening or switching tabs to take effect.\")",
+          "target": ".setDesc(\"在反链面板中,将鼠标悬停在一个反链项上以在PDF查看器中高亮对应的文本或注释。此选项需要重新打开或切换标签页才能生效。\")"
+        },
+        {
+          "source": ".setDesc('To add a new color, click the \"+\" button in the \"highlight colors\" setting above.')",
+          "target": ".setDesc('要添加新颜色,请点击上面“高亮颜色”设置中的“+”按钮。')"
+        },
+        {
+          "source": ".setDesc(\"Open PDF links with the OS-defined default application for PDF files.\")",
+          "target": ".setDesc(\"使用操作系统定义的默认应用程序打开PDF链接。\")"
+        },
+        {
+          "source": ".setDesc(\"Open the same PDF file both in the default app and Obsidian at the same time.\")",
+          "target": ".setDesc(\"同时在默认应用程序和Obsidian中打开相同的PDF文件。\")"
+        },
+        {
+          "source": ".setDesc(\"When you focus on a PDF file in Obsidian, the external app will also focus on the same file.\")",
+          "target": ".setDesc(\"当您在Obsidian中聚焦于一个PDF文件时,外部应用程序也将聚焦于同一个文件。\")"
+        },
+        {
+          "source": ".setDesc(\"Otherwise, the focus will be moved to the external app.\")",
+          "target": ".setDesc(\"否则,焦点将移动到外部应用程序。\")"
+        },
+        {
+          "source": ".setDesc(\"Reopen the PDF viewers after changing this option.\")",
+          "target": ".setDesc(\"更改此选项后重新打开PDF查看器。\")"
+        },
+        {
+          "source": ".setDesc(`They are used preferentially from left to right, so you might want to put the easier-to-reach keys first. This is the same as Tridactyl's \"hintchars\" option.`)",
+          "target": ".setDesc(`它们从左到右优先使用,因此您可能希望将更容易触及的键放在前面。这与Tridactyl的\"hintchars\"选项相同。`)"
+        },
+        {
+          "source": ".setDesc('Space-separated list of \"link\"/\"annot\"/\"backlink\" or \"all\". Run \":help :hint\" for the details.')",
+          "target": ".setDesc('由空格分隔的\"link\"/\"annot\"/\"backlink\"或\"all\"列表。运行\":help :hint\"以获取详细信息。')"
+        },
+        {
+          "source": ".setDesc(\"If enabled, you can use j/k/h/l keys, instead of the arrow keys, to navigate through context menu items in the PDF viewer.\")",
+          "target": ".setDesc(\"如果启用,您可以使用j/k/h/l键,而不是箭头键,在PDF查看器的上下文菜单项之间导航。\")"
+        },
+        {
+          "source": ".setDesc(\"The size of scroll when one of the jkhl keys is pressed once.\")",
+          "target": ".setDesc(\"当按下jkhl键之一时的滚动量。\")"
+        },
+        {
+          "source": ".setDesc(\"The speed of scroll when pressing and holding down the jkhl keys.\")",
+          "target": ".setDesc(\"按下并持续按住jkhl键时的滚动速度。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, all matches will be highlighted.\")",
+          "target": ".setDesc(\"如果启用,所有匹配项都将被高亮。\")"
+        },
+        {
+          "source": ".setDesc(\"Incremental search: while typing the search query, update the search results after every keystroke. If disabled, the results will be shown only after pressing Enter.\")",
+          "target": ".setDesc(\"增量搜索:在输入搜索查询时,每敲一次键盘就更新搜索结果。如果禁用,则只有在按下Enter键后才显示结果。\")"
+        },
+        {
+          "source": ".setDesc('For example, when you copy a link to a text selection in a PDF file, the status \"Link copied\" will be displayed in the PDF toolbar.')",
+          "target": ".setDesc('例如,当您复制PDF文件中文本选择的链接时,“链接已复制”状态将显示在PDF工具栏中。')"
+        },
+        {
+          "source": ".setDesc('The \"Create new PDF\" command will create a new PDF file in the location specified here.')",
+          "target": ".setDesc('“创建新PDF”命令将在此处指定的位置创建一个新的PDF文件。')"
+        },
+        {
+          "source": ".setDesc(\"Newly created PDFs will appear under this folder.\")",
+          "target": ".setDesc(\"新创建的PDF文件将出现在此文件夹下。\")"
+        },
+        {
+          "source": ".setDesc(\"Such whitespace can be introduced as a result of poor post-processing of OCR (optical character recognition). Enable this option to remove it when copying links to text selections.\")",
+          "target": ".setDesc(\"这种空白可能是由于OCR（光学字符识别）处理不当造成的。启用此选项可以在复制文本选择的链接时去除这些空白。\")"
+        },
+        {
+          "source": ".setDesc('Provide the \"PATH\" environment variable for PDF++ to run shell commands without the full paths specified. In MacOS and Linux, you can run \"echo $PATH\" in Terminal and then copy & paste the result here. Currently, it will be used only when you run \":!<command>\" in Vim mode.')",
+          "target": ".setDesc('为PDF++提供“PATH”环境变量,以便在不指定完整路径的情况下运行shell命令。在MacOS和Linux中,您可以在终端中运行\"echo $PATH\",然后将结果复制粘贴到这里。目前,它仅在Vim模式下运行\":<command>\"时使用。')"
+        },
+        {
+          "source": ".setDesc(\"You can find more options in Style Settings > PDF++.\")",
+          "target": ".setDesc(\"您可以在样式设置 > PDF++ 中找到更多选项。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Type an outline item title\")",
+          "target": ".setPlaceholder(\"输入大纲项目标题\")"
+        },
+        {
+          "source": ".setPlaceholder(\"1\")",
+          "target": ".setPlaceholder(\"1\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g. Folder/File.pdf\")",
+          "target": ".setPlaceholder(\"例如:Folder/File.pdf\")"
+        },
+        {
+          "source": ".setPlaceholder(\"\"+Ci[e]).then(r=>r.inputEl.type=\"number\")",
+          "target": ".setPlaceholder(\"\"+Ci[e]).then(r=>r.inputEl.type=\"number\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Color name (case-insensitive)\")",
+          "target": ".setPlaceholder(\"颜色名称（不区分大小写）\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Command not found\")",
+          "target": ".setPlaceholder(\"命令未找到\")"
+        },
+        {
+          "source": ".setPlaceholder(\"anystyle\")",
+          "target": ".setPlaceholder(\"anystyle\")"
+        },
+        {
+          "source": ".setTooltip(\"Divide this labeling range\")",
+          "target": ".setTooltip(\"划分此标签范围\")"
+        },
+        {
+          "source": ".setTooltip(\"Label the pages in this range continuing from the previous range\")",
+          "target": ".setTooltip(\"从此范围的前一页开始标记此范围内的页面\")"
+        },
+        {
+          "source": ".setTooltip(`Hover${this.plugin.requireModKeyForLinkHover()?\"+\"+Tn(\"Mod\").toLowerCase():\"\"} to preview`)",
+          "target": ".setTooltip(`将鼠标悬停于此处${this.plugin.requireModKeyForLinkHover()?\"+\"+Tn(\"Mod\").toLowerCase():\"\"}以预览`)"
+        },
+        {
+          "source": ".setTooltip(\"Add another file\")",
+          "target": ".setTooltip(\"添加另一个文件\")"
+        },
+        {
+          "source": ".setTooltip(\"Remove this file\")",
+          "target": ".setTooltip(\"移除此文件\")"
+        },
+        {
+          "source": ".setTooltip(\"Customize...\")",
+          "target": ".setTooltip(\"自定义...\")"
+        },
+        {
+          "source": ".setTooltip(\"Return to previous color\")",
+          "target": ".setTooltip(\"返回到前一个颜色\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete\")",
+          "target": ".setTooltip(\"删除\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset\")",
+          "target": ".setTooltip(\"重置\")"
+        },
+        {
+          "source": ".setTooltip(\"Add a new color\")",
+          "target": ".setTooltip(\"添加新颜色\")"
+        },
+        {
+          "source": ".setTooltip(\"Add a new display text format\")",
+          "target": ".setTooltip(\"添加新的显示文本格式\")"
+        },
+        {
+          "source": ".setTooltip(\"Add a new copy command\")",
+          "target": ".setTooltip(\"添加新的复制命令\")"
+        },
+        {
+          "source": ".appendText(\"Page\")",
+          "target": ".appendText(\"页\")"
+        },
+        {
+          "source": ".appendText(`Your Obsidian installer is outdated and likely to be incompatible with the latest ${t}. Please download the latest installer from Obsidian's website and re-install the Obsidian app.`)",
+          "target": ".appendText(`您的Obsidian安装程序已过时,可能与最新的${t}不兼容。请从Obsidian官网下载最新安装程序并重新安装Obsidian应用。`)"
+        },
+        {
+          "source": ".appendText(\" Click \")",
+          "target": ".appendText(\" 点击 \")"
+        },
+        {
+          "source": ".appendText(\" to update the path.\")",
+          "target": ".appendText(\" 以更新路径。\")"
+        },
+        {
+          "source": ".appendText(` (${o})`)",
+          "target": ".appendText(` (${o})`)"
+        },
+        {
+          "source": ".appendText(\"When enabled, the PDF viewer will zoom to fit the rectangular selection when you open a link to it. Otherwise, the viewer will keep the current zoom level. \")",
+          "target": ".appendText(\"启用时,当您打开指向它的链接时,PDF查看器将放大以适应矩形选择区域。否则,查看器将保持当前的缩放级别。 \")"
+        },
+        {
+          "source": ".appendText(\"Note: check out the \")",
+          "target": ".appendText(\"注意:查阅 \")"
+        },
+        {
+          "source": ".appendText(\" option as well.\")",
+          "target": ".appendText(\" 选项。\")"
+        },
+        {
+          "source": ".appendText(\"If \")",
+          "target": ".appendText(\"如果 \")"
+        },
+        {
+          "source": ".appendText(\" is enabled, it will be prioritized and the context menu will not be shown.\")",
+          "target": ".appendText(\" 已启用,它将被优先处理,并且不会显示上下文菜单。\")"
+        },
+        {
+          "source": ".appendText(\"Requires \")",
+          "target": ".appendText(\"需要 \")"
+        },
+        {
+          "source": ".appendText(\" to be enabled.\")",
+          "target": ".appendText(\" 被启用。\")"
+        },
+        {
+          "source": ".appendText(\"Requires the \")",
+          "target": ".appendText(\"需要 \")"
+        },
+        {
+          "source": ".appendText(\" plugin to be enabled.\")",
+          "target": ".appendText(\" 插件需要启用。\")"
+        },
+        {
+          "source": ".appendText(\"See the \")",
+          "target": ".appendText(\"参见 \")"
+        },
+        {
+          "source": ".appendText(\" section below.\")",
+          "target": ".appendText(\" 部分如下。\")"
+        },
+        {
+          "source": ".appendText(\" Reload the plugin after changing this setting to take effect.\")",
+          "target": ".appendText(\" 更改此设置后重新加载插件以生效。\")"
+        },
+        {
+          "source": ".appendText(\"Reopen the tabs or reload the app after changing this option.\")",
+          "target": ".appendText(\"更改此选项后,请重新打开标签或重新加载应用程序。\")"
+        },
+        {
+          "source": ".appendText(\" section for the details.\")",
+          "target": ".appendText(\" 部分了解详情。\")"
+        },
+        {
+          "source": ".appendText('If enabled, whenever you copy text from the PDF viewer (using Ctrl/Cmd+C or via context menu), the text will go through the same pre-processing as the \"'+this.plugin.lib.commands.stripCommandNamePrefix(this.plugin.lib.commands.getCommand(\"copy-link-to-selection\").name)+'\" command before written to the clipboard. The pre-processing includes transforming multi-line text into a single line by removing line breaks (if a word is split across lines, it will be concatenated), which is useful because it prevents the copied text from being split into multiple lines unnaturally. If the previous option is enabled, the whitespace removal will also be applied.')",
+          "target": ".appendText('If enabled, whenever you copy text from the PDF viewer (using Ctrl/Cmd+C or via context menu), the text will go through the same pre-processing as the \"'+this.plugin.lib.commands.stripCommandNamePrefix(this.plugin.lib.commands.getCommand(\"copy-link-to-selection\").name)+'\" command before written to the clipboard. The pre-processing includes transforming multi-line text into a single line by removing line breaks (if a word is split across lines, it will be concatenated), which is useful because it prevents the copied text from being split into multiple lines unnaturally. If the previous option is enabled, the whitespace removal will also be applied.')"
+        },
+        {
+          "source": ".appendText(' Also note that on mobile devices, the action performed by \"Copy\" depends on the ')",
+          "target": ".appendText(' 还需注意,在移动设备上,\"复制\"执行的操作取决于 ')"
+        },
+        {
+          "source": ".appendText(\" option.\")",
+          "target": ".appendText(\" 选项.\")"
+        },
+        {
+          "source": ".appendText(\":\")",
+          "target": ".appendText(\":\")"
+        },
+        {
+          "source": ".appendText(\" to change the timeout duration.\")",
+          "target": ".appendText(\" 以更改超时持续时间。\")"
+        },
+        {
+          "source": ".setTitle(`${t}: Outdated Obsidian installer`)",
+          "target": ".setTitle(`${t}: 过时的Obsidian安装程序`)"
+        },
+        {
+          "source": ".setTitle(\"Copy link to this setting\")",
+          "target": ".setTitle(\"复制此设置的链接\")"
+        },
+        {
+          "source": ".setTitle(\"Copy link to this heading\")",
+          "target": ".setTitle(\"复制此标题的链接\")"
+        },
+        {
+          "source": ".setTitle(\"Insert page before this page\")",
+          "target": ".setTitle(\"在此页前插入页\")"
+        },
+        {
+          "source": ".setTitle(\"Insert page after this page\")",
+          "target": ".setTitle(\"在此页后插入页\")"
+        },
+        {
+          "source": ".setTitle(\"Delete page\")",
+          "target": ".setTitle(\"删除页\")"
+        },
+        {
+          "source": ".setTitle(\"Extract page to new file\")",
+          "target": ".setTitle(\"提取页到新文件\")"
+        },
+        {
+          "source": ".setTitle(\"Divide document at this page\")",
+          "target": ".setTitle(\"在此页分割文档\")"
+        },
+        {
+          "source": ".setTitle(\"Customize...\")",
+          "target": ".setTitle(\"自定义...\")"
+        },
+        {
+          "source": ".setTitle(\"Add subitem\")",
+          "target": ".setTitle(\"添加子项\")"
+        },
+        {
+          "source": ".setTitle(\"Rename...\")",
+          "target": ".setTitle(\"重命名...\")"
+        },
+        {
+          "source": ".setTitle(\"Move item to...\")",
+          "target": ".setTitle(\"移动项到...\")"
+        },
+        {
+          "source": ".setTitle(\"Delete\")",
+          "target": ".setTitle(\"删除\")"
+        },
+        {
+          "source": ".setTitle(\"Extract to new file\")",
+          "target": ".setTitle(\"提取到新文件\")"
+        },
+        {
+          "source": ".setTitle(\"Add top-level item\")",
+          "target": ".setTitle(\"添加顶级项\")"
+        },
+        {
+          "source": ".setTitle(`Look up \"${u.length<=25?u:u.slice(0,24).trim()+\"\\u2026\"}\"`)",
+          "target": ".setTitle(`查找 \"${u.length<=25?u:u.slice(0,24).trim()+\"\\u2026\"}\"`)"
+        },
+        {
+          "source": ".setTitle(\"Edit annotation\")",
+          "target": ".setTitle(\"编辑注释\")"
+        },
+        {
+          "source": ".setTitle(\"Delete annotation\")",
+          "target": ".setTitle(\"删除注释\")"
+        },
+        {
+          "source": ".setTitle(\"Copy PDF link\")",
+          "target": ".setTitle(\"复制PDF链接\")"
+        },
+        {
+          "source": ".setTitle(\"Search on Google Scholar\")",
+          "target": ".setTitle(\"在Google学术中搜索\")"
+        },
+        {
+          "source": ".setTitle(\"Copy URL\")",
+          "target": ".setTitle(\"复制URL\")"
+        },
+        {
+          "source": ".setTitle(\"Paste copied PDF link to selection\")",
+          "target": ".setTitle(\"将复制的PDF链接粘贴到选区\")"
+        },
+        {
+          "source": ".setTitle(\"Paste copied link to selection\")",
+          "target": ".setTitle(\"将复制的链接粘贴到选区\")"
+        },
+        {
+          "source": ".setTitle(\"Copy selected text\")",
+          "target": ".setTitle(\"复制选中的文本\")"
+        },
+        {
+          "source": ".setTitle(\"Copy annotated text\")",
+          "target": ".setTitle(\"复制带有注释的文本\")"
+        },
+        {
+          "source": ".setTitle(\"Copy link to search\")",
+          "target": ".setTitle(\"复制搜索链接\")"
+        },
+        {
+          "source": ".setTitle(\"Read aloud selected text\")",
+          "target": ".setTitle(\"朗读选中的文本\")"
+        },
+        {
+          "source": ".setTitle(\"Copy link to page\")",
+          "target": ".setTitle(\"复制页面链接\")"
+        },
+        {
+          "source": ".setTitle(\"Customize menu...\")",
+          "target": ".setTitle(\"自定义菜单...\")"
+        },
+        {
+          "source": ".setTitle(\"Unset color\")",
+          "target": ".setTitle(\"取消设置颜色\")"
+        },
+        {
+          "source": ".setTitle(`Change color to \"${d}\"`)",
+          "target": ".setTitle(`将颜色更改为 \"${d}\"`)"
+        },
+        {
+          "source": ".setTitle(\"Copy as image\")",
+          "target": ".setTitle(\"作为图片复制\")"
+        },
+        {
+          "source": ".setTitle(\"Enable PDF editing...\")",
+          "target": ".setTitle(\"启用PDF编辑...\")"
+        },
+        {
+          "source": ".setTitle(\"Fit width\")",
+          "target": ".setTitle(\"适应宽度\")"
+        },
+        {
+          "source": ".setTitle(\"Fit height\")",
+          "target": ".setTitle(\"适应高度\")"
+        },
+        {
+          "source": ".setTitle(\"Fit page\")",
+          "target": ".setTitle(\"适应页面\")"
+        },
+        {
+          "source": ".setTitle(\"Vertical scroll\")",
+          "target": ".setTitle(\"垂直滚动\")"
+        },
+        {
+          "source": ".setTitle(\"Hotizontal scroll\")",
+          "target": ".setTitle(\"水平滚动\")"
+        },
+        {
+          "source": ".setTitle(\"Wrapped scroll\")",
+          "target": ".setTitle(\"包裹滚动\")"
+        },
+        {
+          "source": ".setTitle(\"Single page\")",
+          "target": ".setTitle(\"单页\")"
+        },
+        {
+          "source": ".setTitle(\"Two pages (odd)\")",
+          "target": ".setTitle(\"两页（奇数）\")"
+        },
+        {
+          "source": ".setTitle(\"Two pages (even)\")",
+          "target": ".setTitle(\"两页（偶数）\")"
+        },
+        {
+          "source": ".setTitle(\"Adapt to theme\")",
+          "target": ".setTitle(\"适应主题\")"
+        },
+        {
+          "source": ".setTitle(\"Customize defaults...\")",
+          "target": ".setTitle(\"自定义默认值...\")"
+        },
+        {
+          "source": ".addHeading(\"Support development\",\"funding\",\"lucide-heart\",({iconEl:i})=>e(i)).setDesc(`If you find PDF++ helpful, please consider supporting the development to help me keep this plugin alive.\n\nIf you prefer PayPal, please make donations via Ko-fi. Thank you!`).then(i=>{let r=i.infoEl,o=i.settingEl.firstElementChild;if(!o)return;let s=i.settingEl.createDiv();s.appendChild(o),s.appendChild(r),i.settingEl.prepend(s),i.settingEl.id=\"pdf-plus-funding\",s.id=\"pdf-plus-funding-icon-info-container\",o.id=\"pdf-plus-funding-icon\",e(o)}).addButton(i=>{i.setButtonText(\"GitHub Sponsors\")",
+          "target": ".addHeading(\"Support development\",\"funding\",\"lucide-heart\",({iconEl:i})=>e(i)).setDesc(`If you find PDF++ helpful, please consider supporting the development to help me keep this plugin alive.\n\nIf you prefer PayPal, please make donations via Ko-fi. Thank you!`).then(i=>{let r=i.infoEl,o=i.settingEl.firstElementChild;if(!o)return;let s=i.settingEl.createDiv();s.appendChild(o),s.appendChild(r),i.settingEl.prepend(s),i.settingEl.id=\"pdf-plus-funding\",s.id=\"pdf-plus-funding-icon-info-container\",o.id=\"pdf-plus-funding-icon\",e(o)}).addButton(i=>{i.setButtonText(\"GitHub Sponsors\")"
+        },
+        {
+          "source": ".addHeading(\"Editing PDF files\",\"edit\",\"lucide-save\")",
+          "target": ".addHeading(\"编辑PDF文件\",\"edit\",\"lucide-save\")"
+        },
+        {
+          "source": ".addHeading(\"Backlink highlighting\",\"backlink-highlight\",\"lucide-highlighter\")",
+          "target": ".addHeading(\"反向链接高亮显示\",\"backlink-highlight\",\"lucide-highlighter\")"
+        },
+        {
+          "source": ".addHeading(\"How backlinks are opened\",\"open-backlink\")",
+          "target": ".addHeading(\"反向链接的打开方式\",\"open-backlink\")"
+        },
+        {
+          "source": ".addHeading(\"Colors\",\"color\")",
+          "target": ".addHeading(\"颜色\",\"color\")"
+        },
+        {
+          "source": ".addHeading(\"Backlink indicator bounding rectangles\",\"backlink-bounding-rect\")",
+          "target": ".addHeading(\"反向链接的边界矩形\",\"backlink-bounding-rect\")"
+        },
+        {
+          "source": ".addHeading(\"Backlink indicator icons\",\"backlink-icon\")",
+          "target": ".addHeading(\"反向链接指示图标\",\"backlink-icon\")"
+        },
+        {
+          "source": ".addHeading(\"Rectangular selection embeds\",\"rect\",\"lucide-box-select\")",
+          "target": ".addHeading(\"矩形选择嵌入\",\"rect\",\"lucide-box-select\")"
+        },
+        {
+          "source": ".addHeading(\"PDF++ callouts\",\"callout\",\"lucide-quote\")",
+          "target": ".addHeading(\"PDF++ 标注\",\"callout\",\"lucide-quote\")"
+        },
+        {
+          "source": ".addHeading(\"PDF toolbar\",\"toolbar\",\"lucide-palette\")",
+          "target": ".addHeading(\"PDF 工具栏\",\"toolbar\",\"lucide-palette\")"
+        },
+        {
+          "source": ".addHeading(\"Color palette\",\"palette\")",
+          "target": ".addHeading(\"调色板\",\"palette\")"
+        },
+        {
+          "source": ".addHeading(\"Viewer options\",\"viewer-option\",\"lucide-monitor\")",
+          "target": ".addHeading(\"查看器选项\",\"viewer-option\",\"lucide-monitor\")"
+        },
+        {
+          "source": ".addHeading(\"Context menu in PDF viewer\",\"context-menu\",\"lucide-mouse-pointer-click\")",
+          "target": ".addHeading(\"PDF 查看器中的上下文菜单\",\"context-menu\",\"lucide-mouse-pointer-click\")"
+        },
+        {
+          "source": ".addHeading(\"Menu items\",\"context-menu-items\")",
+          "target": ".addHeading(\"菜单项\",\"context-menu-items\")"
+        },
+        {
+          "source": ".addHeading(\"Copying on mobile\",\"mobile-copy\",\"lucide-smartphone\")",
+          "target": ".addHeading(\"在移动设备上复制\",\"mobile-copy\",\"lucide-smartphone\")"
+        },
+        {
+          "source": ".addHeading(\"Copying links via hotkeys\",\"copy-hotkeys\",\"lucide-keyboard\")",
+          "target": ".addHeading(\"通过快捷键复制链接\",\"copy-hotkeys\",\"lucide-keyboard\")"
+        },
+        {
+          "source": ".addHeading(\"Other shortcut commands\",\"other-hotkeys\",\"lucide-layers-2\")",
+          "target": ".addHeading(\"其他快捷命令\",\"other-hotkeys\",\"lucide-layers-2\")"
+        },
+        {
+          "source": ".addHeading(\"Copy templates\",\"template\",\"lucide-copy\")",
+          "target": ".addHeading(\"复制模板\",\"template\",\"lucide-copy\")"
+        },
+        {
+          "source": ".addHeading(\"Auto-copy / auto-focus / auto-paste\",\"auto\",\"lucide-zap\")",
+          "target": ".addHeading(\"自动复制/自动聚焦/自动粘贴\",\"auto\",\"lucide-zap\")"
+        },
+        {
+          "source": ".addHeading(\"Auto-copy\",\"auto-copy\")",
+          "target": ".addHeading(\"自动复制\",\"auto-copy\")"
+        },
+        {
+          "source": ".addHeading(\"Auto-focus\",\"auto-focus\")",
+          "target": ".addHeading(\"自动聚焦\",\"auto-focus\")"
+        },
+        {
+          "source": ".addHeading(\"Auto-paste\",\"auto-paste\")",
+          "target": ".addHeading(\"自动粘贴\",\"auto-paste\")"
+        },
+        {
+          "source": ".addHeading(\"General\",\"auto-general\")",
+          "target": ".addHeading(\"通用\",\"auto-general\")"
+        },
+        {
+          "source": ".addHeading(\"Citations in PDF (experimental)\",\"citation\",\"lucide-graduation-cap\")",
+          "target": ".addHeading(\"PDF中的引用（实验性功能）\",\"citation\",\"lucide-graduation-cap\")"
+        },
+        {
+          "source": ".addHeading(\"External links in PDF\",\"pdf-external-link\",\"external-link\")",
+          "target": ".addHeading(\"PDF中的外部链接\",\"pdf-external-link\",\"external-link\")"
+        },
+        {
+          "source": ".addHeading(\"PDF sidebar\",\"sidebar\",\"sidebar-left\")",
+          "target": ".addHeading(\"PDF 侧边栏\",\"sidebar\",\"sidebar-left\")"
+        },
+        {
+          "source": ".addHeading(\"PDF outline (table of contents)\",\"outline\",\"lucide-list\")",
+          "target": ".addHeading(\"PDF大纲（目录）\",\"outline\",\"lucide-list\")"
+        },
+        {
+          "source": ".addHeading(\"Copy outline as markdown\",\"outline-copy\")",
+          "target": ".addHeading(\"将大纲复制为Markdown格式\",\"outline-copy\")"
+        },
+        {
+          "source": ".addHeading(\"PDF thumbnails\",\"thumbnail\",\"lucide-gallery-thumbnails\")",
+          "target": ".addHeading(\"PDF 缩略图\",\"thumbnail\",\"lucide-gallery-thumbnails\")"
+        },
+        {
+          "source": ".addHeading(\"PDF page composer (experimental)\",\"composer\",\"lucide-blocks\")",
+          "target": ".addHeading(\"PDF页面合成器（实验性功能）\",\"composer\",\"lucide-blocks\")"
+        },
+        {
+          "source": ".addHeading(\"Page labels\",\"page-label\")",
+          "target": ".addHeading(\"页面标签\",\"page-label\")"
+        },
+        {
+          "source": ".addHeading(\"Opening links to PDF files\",\"open-link\",\"lucide-book-open\")",
+          "target": ".addHeading(\"打开PDF文件的链接\",\"open-link\",\"lucide-book-open\")"
+        },
+        {
+          "source": ".addHeading(\"Embedding PDF files\",\"embed\",\"picture-in-picture-2\")",
+          "target": ".addHeading(\"嵌入PDF文件\",\"embed\",\"picture-in-picture-2\")"
+        },
+        {
+          "source": ".addHeading(\"Backlinks pane for PDF files\",\"backlink-view\",\"links-coming-in\")",
+          "target": ".addHeading(\"PDF文件的反向链接窗格\",\"backlink-view\",\"links-coming-in\")"
+        },
+        {
+          "source": ".addHeading(\"Search from links\",\"search-link\",\"lucide-search\")",
+          "target": ".addHeading(\"从链接中搜索\",\"search-link\",\"lucide-search\")"
+        },
+        {
+          "source": ".addHeading(\"Search options\",\"search-option\")",
+          "target": ".addHeading(\"搜索选项\",\"search-option\")"
+        },
+        {
+          "source": ".addHeading(\"Integration with external apps (desktop-only)\",\"external-app\",\"lucide-share\")",
+          "target": ".addHeading(\"与外部应用程序集成（仅限桌面版）\",\"external-app\",\"lucide-share\")"
+        },
+        {
+          "source": ".addHeading(\"View Sync\",\"view-sync\",\"lucide-eye\")",
+          "target": ".addHeading(\"视图同步\",\"view-sync\",\"lucide-eye\")"
+        },
+        {
+          "source": ".addHeading(\"Vim keybindings\",\"vim\",\"vim\")",
+          "target": ".addHeading(\"Vim 键绑定\",\"vim\",\"vim\")"
+        },
+        {
+          "source": ".addHeading(\"Visual mode\",\"vim-visual\")",
+          "target": ".addHeading(\"视觉模式\",\"vim-visual\")"
+        },
+        {
+          "source": ".addHeading(\"Outline mode\",\"vim-outline\")",
+          "target": ".addHeading(\"大纲模式\",\"vim-outline\")"
+        },
+        {
+          "source": ".addHeading(\"Command-line mode (experimental)\",\"vim-command-line\")",
+          "target": ".addHeading(\"命令行模式（实验性）\",\"vim-command-line\")"
+        },
+        {
+          "source": ".addHeading(\"Hint mode (experimental)\",\"vim-hint\")",
+          "target": ".addHeading(\"提示模式（实验性）\",\"vim-hint\")"
+        },
+        {
+          "source": ".addHeading(\"Context menu\",\"vim-context-menu\")",
+          "target": ".addHeading(\"上下文菜单\",\"vim-context-menu\")"
+        },
+        {
+          "source": ".addHeading(\"Scrolling\",\"vim-scroll\")",
+          "target": ".addHeading(\"滚动\",\"vim-scroll\")"
+        },
+        {
+          "source": ".addHeading(\"Search\",\"vim-search\")",
+          "target": ".addHeading(\"搜索\",\"vim-search\")"
+        },
+        {
+          "source": ".addHeading(\"Misc\",\"misc\",\"lucide-more-horizontal\")",
+          "target": ".addHeading(\"杂项\",\"misc\",\"lucide-more-horizontal\")"
+        },
+        {
+          "source": ".addHeading(\"Style settings\",\"style-settings\",\"lucide-settings-2\")",
+          "target": ".addHeading(\"样式设置\",\"style-settings\",\"lucide-settings-2\")"
+        },
+        {
+          "source": ".addDesc(\"Try turning off the following options if you experience performance issues.\")",
+          "target": ".addDesc(\"如果遇到性能问题，请尝试关闭以下选项。\")"
+        },
+        {
+          "source": ".addDesc(\"Customize nested menus.\")",
+          "target": ".addDesc(\"自定义嵌套菜单。\")"
+        },
+        {
+          "source": ".renderMarkdown(\"Create [callouts](https://help.obsidian.md/Editing+and+formatting/Callouts) with the same color as the highlight color without any CSS snippet scripting.\",d.descEl)}),this.addToggleSetting(\"useCallout\")",
+          "target": ".renderMarkdown(\"无需任何CSS代码片段脚本，即可使用与高亮颜色相同的颜色创建[标注](https://help.obsidian.md/Editing+and+formatting/Callouts)。\",d.descEl)}),this.addToggleSetting(\"useCallout\")"
+        },
+        {
+          "source": ".renderMarkdown(\"Use [modifier keys](https://help.obsidian.md/User+interface/Tabs#Open+a+link) to open PDF internal links in various ways\",d.nameEl)}).then(d=>{this.plugin.requireModKeyForLinkHover(Zi.HOVER_LINK_SOURCE_ID)&&d.setDesc(`You may want to turn this off to avoid conflicts with hover+${Nn}.`),d.descEl.appendText(\"Reopen the tabs or reload the app after changing this option.\")",
+          "target": ".renderMarkdown(\"使用[修饰键](https://help.obsidian.md/User+interface/Tabs#Open+a+link) 以不同方式打开PDF中的内部链接\",d.nameEl)}).then(d=>{this.plugin.requireModKeyForLinkHover(Zi.HOVER_LINK_SOURCE_ID)&&d.setDesc(`You may want to turn this off to avoid conflicts with hover+${Nn}.`),d.descEl.appendText(\"Reopen the tabs or reload the app after changing this option.\")"
+        },
+        {
+          "source": ".renderMarkdown(\"Click PDF outline with [modifier keys](https://help.obsidian.md/User+interface/Tabs#Open+a+link) to open target section in various ways\",d.nameEl)}).then(d=>{this.plugin.requireModKeyForLinkHover(Yi.HOVER_LINK_SOURCE_ID)&&d.setDesc(`You may want to turn this off to avoid conflicts with hover+${Nn}.`),d.descEl.appendText(\"Reopen the tabs or reload the app after changing this option.\")",
+          "target": ".renderMarkdown(\"Click PDF outline with [modifier keys](https://help.obsidian.md/User+interface/Tabs#Open+a+link) to open target section in various ways\",d.nameEl)}).then(d=>{this.plugin.requireModKeyForLinkHover(Yi.HOVER_LINK_SOURCE_ID)&&d.setDesc(`You may want to turn this off to avoid conflicts with hover+${Nn}.`),d.descEl.appendText(\"Reopen the tabs or reload the app after changing this option.\")"
+        },
+        {
+          "source": ".renderMarkdown(\"Click PDF thumbnails with [modifier keys](https://help.obsidian.md/User+interface/Tabs#Open+a+link) to open target page in various ways\",d.nameEl)}).then(d=>{this.plugin.requireModKeyForLinkHover(Ji.HOVER_LINK_SOURCE_ID)&&d.setDesc(`You may want to turn this off to avoid conflicts with hover+${Nn}`),d.descEl.appendText(\"Reopen the tabs or reload the app after changing this option.\")",
+          "target": ".renderMarkdown(\"Click PDF thumbnails with [modifier keys](https://help.obsidian.md/User+interface/Tabs#Open+a+link) to open target page in various ways\",d.nameEl)}).then(d=>{this.plugin.requireModKeyForLinkHover(Ji.HOVER_LINK_SOURCE_ID)&&d.setDesc(`You may want to turn this off to avoid conflicts with hover+${Nn}`),d.descEl.appendText(\"Reopen the tabs or reload the app after changing this option.\")"
+        },
+        {
+          "source": ".renderMarkdown(\"Improve the built-in [backlinks pane](https://help.obsidian.md/Plugins/Backlinks) for better PDF experience.\",d.descEl)),this.addToggleSetting(\"filterBacklinksByPageDefault\")",
+          "target": ".renderMarkdown(\"Improve the built-in [backlinks pane](https://help.obsidian.md/Plugins/Backlinks) for better PDF experience.\",d.descEl)),this.addToggleSetting(\"filterBacklinksByPageDefault\")"
+        },
+        {
+          "source": ".setDesc('You can customize the display text format in the setting \"Copied text format > Display text format\" below.')",
+          "target": ".setDesc('您可以在下面的设置\"复制文本格式 > 显示文本格式\"中自定义显示文本格式。')"
+        },
+        {
+          "source": ".setDesc(\"Recommended if you prefer something less aggressive than auto-paste. You can also toggle auto-focus via an icon in the left ribbon menu if the next setting is enabled.\")",
+          "target": ".setDesc(\"如果您偏好比自动粘贴更温和的方式,推荐此选项。如果启用了下一个设置,您还可以通过左侧边栏菜单中的图标切换自动聚焦。\")"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"Are you sure you want to delete this annotation?\"})",
+          "target": ".createEl(\"p\",{text:\"确定要删除这个注释吗？\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"Are you sure you want to delete this page?\"})",
+          "target": ".createEl(\"p\",{text:\"确定要删除这一页吗？\"})"
+        },
+        {
+          "source": ".createEl(\"a\",{text:\"Learn more\",href:\"https://github.com/RyotaUshio/obsidian-pdf-plus/wiki/Page-labels\"})",
+          "target": ".createEl(\"a\",{text:\"了解更多\",href:\"https://github.com/RyotaUshio/obsidian-pdf-plus/wiki/Page-labels\"})"
+        },
+        {
+          "source": ".createEl(\"a\",{text:\"Learn more\",href:\"https://ryotaushio.github.io/obsidian-pdf-plus/external-pdf-files\"})",
+          "target": ".createEl(\"a\",{text:\"了解更多\",href:\"https://ryotaushio.github.io/obsidian-pdf-plus/external-pdf-files\"})"
+        },
+        {
+          "source": ".createEl(\"a\",{text:\"Text to Speech\",href:\"obsidian://show-plugin?id=obsidian-tts\"})",
+          "target": ".createEl(\"a\",{text:\"文字转语音\",href:\"obsidian://show-plugin?id=obsidian-tts\"})"
+        },
+        {
+          "source": ".setTitle(\"Horizontal scroll\")",
+          "target": ".setTitle(\"水平滚动\")"
+        },
+        {
+          "source": ".textContent=\"Help me keep PDF++ alive!\"",
+          "target": ".textContent=\"请帮我让PDF++继续活下去！\""
+        },
+        {
+          "source": "description:\":0 - Go to the first page (same as :1)\",func:()=>n.pdfViewer&&(n.pdfViewer.currentPageNumber=1)},{id:\"$\",description:\":$ - Go to the last page.\"",
+          "target": "description:\":0 - 跳转到第一页（与 :1 相同）\",func:()=>n.pdfViewer&&(n.pdfViewer.currentPageNumber=1)},{id:\"$\",description:\":$ - 跳转到最后一页.\""
+        },
+        {
+          "source": "t=\"Can't embed page with missing Contents\"",
+          "target": "t=\"无法嵌入缺少内容的页面\""
+        },
+        {
+          "source": "t=\"Found mismatched contexts while embedding pages. All pages in the array passed to `PDFDocument.embedPages()` must be from the same document.\"",
+          "target": "t=\"在嵌入页面时发现不匹配的上下文。传递给 `PDFDocument.embedPages()` 的数组中的所有页面必须来自同一文档.\""
+        },
+        {
+          "source": "t=\"Attempted to set invalid field value\"",
+          "target": "t=\"尝试设置无效字段值\""
+        },
+        {
+          "source": "t=\"Attempted to select multiple values for single-select field\"",
+          "target": "t=\"尝试为单选字段选择多个值\""
+        },
+        {
+          "source": "t=\"Input document to `PDFDocument.load` is encrypted. You can use `PDFDocument.load(..., { ignoreEncryption: true })` if you wish to load the document anyways.\"",
+          "target": "t=\"输入到 `PDFDocument.load` 的文档已加密。如果您希望无论如何加载文档,可以使用 `PDFDocument.load(..., { ignoreEncryption: true })`.\""
+        },
+        {
+          "source": "t=\"Input to `PDFDocument.embedFont` was a custom font, but no `fontkit` instance was found. You must register a `fontkit` instance with `PDFDocument.registerFontkit(...)` before embedding custom fonts.\"",
+          "target": "t=\"输入到 `PDFDocument.embedFont` 的是一个自定义字体,但未找到 `fontkit` 实例。在嵌入自定义字体之前,您必须使用 `PDFDocument.registerFontkit(...)` 注册一个 `fontkit` 实例.\""
+        },
+        {
+          "source": "t=\"A `page` passed to `PDFDocument.addPage` or `PDFDocument.insertPage` was from a different (foreign) PDF document. If you want to copy pages from one PDFDocument to another, you must use `PDFDocument.copyPages(...)` to copy the pages before adding or inserting them.\"",
+          "target": "t=\"传递给 `PDFDocument.addPage` 或 `PDFDocument.insertPage` 的 `page` 来自不同的（外部）PDF文档。如果您想从一个PDF文档复制页面到另一个,您必须使用 `PDFDocument.copyPages(...)` 复制页面,然后再添加或插入它们.\""
+        },
+        {
+          "source": "t=\"PDFDocument has no pages so `PDFDocument.removePage` cannot be called\"",
+          "target": "t=\"PDFDocument 没有页面,因此不能调用 `PDFDocument.removePage`\""
+        },
+        {
+          "source": "t=\"Help me keep PDF++ alive!\"",
+          "target": "t=\"帮助我保持 PDF++ 生存！\""
+        },
+        {
+          "source": "'Look up \"(selection)\"'",
+          "target": "'查找 \"(所选内容)\"'"
+        },
+        {
+          "source": "\"write-file\":`Add ${this.plugin.settings.selectionBacklinkVisualizeStyle} to file`",
+          "target": "\"write-file\":`将 ${this.plugin.settings.selectionBacklinkVisualizeStyle} 添加到文件`"
+        },
+        {
+          "source": "\"modify-annotation\":\"Edit/delete annotation\"",
+          "target": "\"modify-annotation\":\"编辑/删除注释\""
+        },
+        {
+          "source": ".renderMarkdown([\"You can use any icon from [Lucide](https://lucide.dev/icons).\"+(i?\" Leave blank to remove icons.\":\"\")],a.descEl)",
+          "target": ".renderMarkdown([\"您可以使用来自 [Lucide](https://lucide.dev/icons) 的任何图标。\"+(i?\" 留空以移除图标。\":\"\")],a.descEl)"
+        },
+        {
+          "source": ".renderMarkdown([\"You can embed a specified rectangular area from a PDF page into your note. [Learn more](https://ryotaushio.github.io/obsidian-pdf-plus/embedding-rectangular-selections.html)\"],d.descEl)",
+          "target": ".renderMarkdown([\"您可以将PDF页面中指定的矩形区域嵌入到您的笔记中。[了解更多](https://ryotaushio.github.io/obsidian-pdf-plus/embedding-rectangular-selections.html)\"],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown([\"You can also disable this option and choose to use your own custom [CSS snippets](https://help.obsidian.md/Extending+Obsidian/CSS+snippets). See our [README](https://github.com/RyotaUshio/obsidian-pdf-plus?tab=readme-ov-file#css-customization) for the details.\"],d.descEl)",
+          "target": ".renderMarkdown([\"您还可以禁用此选项，并选择使用您自己的自定义 [CSS片段](https://help.obsidian.md/Extending+Obsidian/CSS+snippets)。有关详情，请参阅我们的 [README](https://github.com/RyotaUshio/obsidian-pdf-plus?tab=readme-ov-file#css-customization)。\"],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown([\"This format will be also used when copying a link to a selection or an annotation from the context menu.\"],d.descEl)",
+          "target": ".renderMarkdown([\"当从上下文菜单复制选择或注释的链接时，也会使用此格式。\"],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown([\"You can leave this blank if you don't want to use a template.\",\"You can use `file`, `folder`, `app`, and other global variables such as `moment`.\"],d.descEl)",
+          "target": ".renderMarkdown([\"如果您不想使用模板，可以留空。\",\"您可以使用 `file`、`folder`、`app` 以及其他全局变量，如 `moment`。\"],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown([\"Requires [Surfing](obsidian://show-plugin?id=surfing) ver. 0.9.9 or higher enabled.\"],d.descEl)",
+          "target": ".renderMarkdown([\"需要启用 [Surfing](obsidian://show-plugin?id=surfing) 插件版本0.9.9或更高。\"],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown([\"You can trigger full-text search by opening a link to a PDF file with a search query appended, e.g. `[[file.pdf#search=keyword]]`.\"],d.descEl)",
+          "target": ".renderMarkdown([\"您可以通过打开带有搜索查询附加的PDF文件链接来触发全文搜索，例如 `[[file.pdf#search=keyword]]`。\"],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown([\"Integrate more seamlessly with the [View Sync](https://github.com/RyotaUshio/obsidian-view-sync) plugin.\"],d.descEl)",
+          "target": ".renderMarkdown([\"与 [View Sync](https://github.com/RyotaUshio/obsidian-view-sync) 插件更无缝地集成。\"],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown(['Add, insert, delete or extract PDF pages via commands and **automatically update all the related links in the entire vault**. The \"Editing PDF files directly\" option has to be enabled to use these features.'],d.descEl)",
+          "target": ".renderMarkdown(['通过命令添加、插入、删除或提取PDF页面，并**自动更新整个仓库中所有相关的链接**。要使用这些功能，必须启用“直接编辑PDF文件”选项。'],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown(['If this option is left blank or the active file is not a PDF, \"Untitled \\\\*\" will be used (if the language is set to English). You can use the following variables: `file`, `folder`, `app`, and other global variables such as `moment`.'],d.descEl)",
+          "target": ".renderMarkdown(['如果此选项留空或活动文件不是PDF，“Untitled \\\\*”将被使用（如果语言设置为英语）。您可以使用以下变量：`file`、`folder`、`app`，以及其他全局变量，如`moment`。'],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown(['PDF++ will not modify PDF files themselves unless you turn on this option. <span style=\"color: var(--text-warning);\">The author assumes no responsibility for any data corruption. Please make sure you have a backup of your files.</span>'],d.descEl)",
+          "target": ".renderMarkdown(['除非开启此选项，否则PDF++不会修改PDF文件本身。<span style=\"color: var(--text-warning);\">作者不对任何数据损坏负责。请确保您有文件的备份。</span>'],d.descEl)"
+        },
+        {
+          "source": ".renderMarkdown(['You can optionally highlight the selection with **a specified color** by appending \"&color=`<COLOR NAME>`\" to a link text, where `<COLOR NAME>` is one of the colors that you register below. e.g `[[file.pdf#page=1&selection=4,0,5,20&color=red]].` ',\"Color names are case-insensitive. \",\"\",'You can ues the color palette in PDF toolbars to easily copy links with \"&color=...\" appended automatically. See the \"Color palette\" section for the details.',\"\",'You can also opt not to use this plugin-dependent notation and apply a single color (the \"default highlight color\" setting) to all highlights.',\"\",\"These colors are also available as CSS variables, e.g. `--pdf-plus-yellow-rgb`. You can use them for various CSS customizations. See [README](https://github.com/RyotaUshio/obsidian-pdf-plus?tab=readme-ov-file#css-customization) for the details.\"],d.descEl))",
+          "target": ".renderMarkdown(['您可以选择性地使用以下方式高亮显示所选内容： **指定颜色** 通过添加 \"&color=`<COLOR NAME>`\" 到链接文本, 其中`<COLOR NAME>` 是您在下面注册的颜色之一。例如 `[[file.pdf#page=1&selection=4,0,5,20&color=red]] 。` ',\"颜色名称不区分大小写。\",\"\",'您可以使用PDF工具栏中的调色板来轻松复制带有自动附加的 \"&color=...\" 的链接。有关详细信息，请参阅 \"调色板\" 部分。',\"\",'您还可以选择不使用此插件依赖的标记，而是将所有高亮显示应用为单一颜色 (即 \"默认高亮颜色\" 设置)。',\"\",\"这些颜色也可以作为CSS变量使用, 例如 `--pdf-plus-yellow-rgb`。 您可以使用它们进行各种CSS自定义设置。参见 [README](https://github.com/RyotaUshio/obsidian-pdf-plus?tab=readme-ov-file#css-customization) 的详细信息。\"],d.descEl))"
+        },
+        {
+          "source": ".renderMarkdown([`For example, if this is set to \"${h}\", use the following syntax to insert a callout with color \"${u}\":`,\"\",\"```markdown\",`> [!${h}|${u}] Title`,\"> Content\",\"```\",\"\",'You can also use explicit RGB color values like \"255, 208, 0\" instead of color names.',\"I recommend setting this as a custom color palette action in the setting below, like so:\",\"\",\"```markdown\",\"> [!{{calloutType}}|{{color}}] {{linkWithDisplay}}\",\"> {{text}}\",\"```\"],d.descEl)})",
+          "target": ".renderMarkdown([`例如，如果此设置被设定为 \"${h}\" ，则使用以下语法来插入一个颜色为 \"${u}\" 的标注:`,\"\",\"```markdown\",`> [!${h}|${u}] Title`,\"> Content\",\"```\",\"\",'您也可以使用明确的RGB颜色值 例如 \"255, 208, 0\" 来代替颜色名称。',\"我建议您将此设置为下面设置中的自定义调色板操作，如下所示：\",\"\",\"```markdown\",\"> [!{{calloutType}}|{{color}}] {{linkWithDisplay}}\",\"> {{text}}\",\"```\"],d.descEl)})"
+        },
+        {
+          "source": ".renderMarkdown([\"PDF++ offers two commands for quickly copying links via hotkeys.\",\"\",\"1. **Copy link to selection or annotation:**\",\"   Copies a link to the text selection or focused annotation in the PDF viewer, which is formatted according to the options specified in the PDF toolbar.\",'   <br>If the \"Add highlights to file directly\" toggle switch in the PDF toolbar is on, it first adds a highlight annotation directly to the PDF file, and then copies the link to the created annotation.',\"2. **Copy link to current page view:** Copies a link, clicking which will open the PDF file at the current scroll position and zoom level.\",\"\",'After running this command, you can add the copied link to the PDF file itself: select a range of text, right-click, and then click \"Paste copied link to selection\".'],d.descEl)})",
+          "target": ".renderMarkdown([\"PDF++ 提供了两个通过快捷键快速复制链接的命令。\",\"\",\"1. **复制选中内容或注释的链接:**\",\"   在 PDF 查看器中，复制文本选择或聚焦注释的链接，该链接将根据 PDF 工具栏中指定的选项进行格式化。\",'   <br>如果 PDF 工具栏中的“直接向文件添加高亮”切换开关已打开，它将首先直接向 PDF 文件添加一个高亮注释，然后复制所创建注释的链接。',\"2. **复制当前页面视图的链接:** 复制一个链接，点击该链接将在当前滚动位置和缩放级别下打开 PDF 文件。\",\"\",'运行此命令后，您可以将复制的链接添加到 PDF 文件本身：选择一段文本，右键单击，然后点击“将复制的链接粘贴到选中内容”。'],d.descEl)})"
+        },
+        {
+          "source": ".renderMarkdown([\"PDF++ also offers the following commands for reducing mouse clicks on the PDF toolbar by assigning hotkeys to them.\",\"\",\"- **Show outline** / **show thumbnail**\",\"- **Close PDF siderbar**\",\"- **Zoom in** / **zoom out**\",\"- **Fit width** / **fit height**\",\"- **Go to page**: This command brings the cursor to the page number input field in the PDF toolbar. Enter a page number and press Enter to jump to the page.\",\"- **Show copy format menu** / **show display text format menu**: By running thes commands via hotkeys and then using the arrow keys, you can quickly select a format from the menu without using the mouse.\",\"- **Enable PDF edit** / **disable PDF edit**\",\"- And more...\"],d.descEl)})",
+          "target": ".renderMarkdown([\"PDF++ 还提供了以下命令，通过为这些命令分配快捷键来减少在 PDF 工具栏上的鼠标点击次数。\",\"\",\"- **显示大纲** / **显示缩略图**\",\"- **关闭 PDF 侧边栏**\",\"- **放大** / **缩小**\",\"- **适应宽度** / **适应高度**\",\"- **转到页面**: 此命令将光标带到 PDF 工具栏中的页码输入框。输入页码并按 Enter 键可跳转到该页。\",\"- **显示复制格式菜单** / **显示显示文本格式菜单**: 通过快捷键运行这些命令，然后使用箭头键，您可以快速从菜单中选择一种格式，而无需使用鼠标。\",\"- **启用 PDF 编辑** / **禁用 PDF 编辑**\",\"- 还有更多...\"],d.descEl)})"
+        },
+        {
+          "source": "> - You can easily navigate through the settings by clicking the icons in the header above.",
+          "target": "> - 您可以通过点击上方标题中的图标轻松导航设置。"
+        },
+        {
+          "source": "> - Some settings below require reopening tabs or reloading the plugin to take effect.",
+          "target": "> - 下面的一些设置需要重新打开标签页或重新加载插件才能生效。"
+        },
+        {
+          "source": "> - [Visit the docs](https://ryotaushio.github.io/obsidian-pdf-plus/)",
+          "target": "> - [访问文档](https://ryotaushio.github.io/obsidian-pdf-plus/)"
+        },
+        {
+          "source": "Help me keep PDF++ alive!",
+          "target": "帮助我让PDF++继续存在！"
+        },
+        {
+          "source": "By allowing PDF++ to modify PDF files directly, you can:",
+          "target": "允许PDF++直接修改PDF文件，您可以："
+        },
+        {
+          "source": "- Add, edit and delete highlights and links in PDF files.",
+          "target": "- 添加、编辑和删除PDF文件中的高亮和链接。"
+        },
+        {
+          "source": "- Add, insert, delete or extract PDF pages and auto-update links.",
+          "target": "- 添加、插入、删除或提取PDF页面并自动更新链接。"
+        },
+        {
+          "source": "- Add, rename, move and delete outline items.",
+          "target": "- 添加、重命名、移动和删除大纲项目。"
+        },
+        {
+          "source": "- Edit [page labels](https://ryotaushio.github.io/obsidian-pdf-plus/page-labels.html).",
+          "target": "- 编辑[页面标签](https://ryotaushio.github.io/obsidian-pdf-plus/page-labels.html)。"
+        },
+        {
+          "source": "`${this.manifest.name}: Toggle auto-paste`",
+          "target": "`${this.manifest.name}: 切换自动粘贴`"
+        },
+        {
+          "source": "`${this.manifest.name}: Toggle auto-focus`",
+          "target": "`${this.manifest.name}: 切换自动对焦`"
+        },
+        {
+          "source": "`${e.manifest.name}: Toggle auto-copy`",
+          "target": "`${e.manifest.name}: 切换自动复制`"
+        },
+        {
+          "source": "[Learn more]",
+          "target": "[了解更多]"
+        },
+        {
+          "source": "leftSplit:\"Left sidebar\",rightSplit:\"Right sidebar\",floatingSplit:\"Popout windows\"",
+          "target": "leftSplit:\"左侧边栏\",rightSplit:\"右侧边栏\",floatingSplit:\"弹出窗口\""
+        },
+        {
+          "source": "{open:\"Open backlink\",preview:\"Popover preview of backlink\"}",
+          "target": "{open:\"打开反向链接\",preview:\"反向链接的弹出预览\"}"
+        },
+        {
+          "source": "{\"\":\"Current tab\",tab:\"New tab\",right:\"Split right\",left:\"Split left\",down:\"Split down\",up:\"Split up\",window:\"New window\",\"right-sidebar\":\"Right sidebar\",\"left-sidebar\":\"Left sidebar\"}",
+          "target": "{\"\":\"当前标签页\",tab:\"新标签页\",right:\"向右拆分\",left:\"向左拆分\",down:\"向下拆分\",up:\"向上拆分\",window:\"新窗口\",\"right-sidebar\":\"右侧边栏\",\"left-sidebar\":\"左侧边栏\"}"
+        },
+        {
+          "source": "{\"last-paste\":\"Last pasted .md\",\"last-active\":\"Last active .md\",\"last-active-and-open\":\"Last active & open .md\",\"last-paste-then-last-active\":\"Last pasted .md if any, otherwise last active .md\",\"last-paste-then-last-active-and-open\":\"Last pasted .md if any, otherwise last active & open .md\",\"last-active-and-open-then-last-paste\":\"Last active & open .md if any, otherwise last pasted .md\"}",
+          "target": "{\"last-paste\":\"上次粘贴的.md文件。\",\"last-active\":\"上次活动的.md文件。\",\"last-active-and-open\":\"上次活动并打开的.md文件。\",\"last-paste-then-last-active\":\"如果有的话，上次粘贴的.md文件，否则是上次活动的.md文件。\",\"last-paste-then-last-active-and-open\":\"如果有的话，上次粘贴的.md文件，否则是上次活动并打开的.md文件。\",\"last-active-and-open-then-last-paste\":\"如果有的话，上次活动并打开的.md文件，否则是上次粘贴的.md文件。\"}"
+        },
+        {
+          "source": "{root:\"Vault folder\",current:\"Same folder as current file\",folder:\"In the folder specified below\"}",
+          "target": "{root:\"Vault 文件夹。\",current:\"与当前文件相同的文件夹。\",folder:\"在下面指定的文件夹中。\"}"
+        },
+        {
+          "source": "{highlight:\"Highlight\",underline:\"Underline\"}",
+          "target": "{highlight:\"高亮\",underline:\"下划线\"}"
+        },
+        {
+          "source": "{color:\"Colors\",\"copy-format\":\"Copy format\",display:\"Display text format\"}",
+          "target": "{color:\"颜色\",\"copy-format\":\"复制格式\",display:\"显示文本格式\"}"
+        },
+        {
+          "source": "'If both of this option and the above option are enabled, this option will be prioritized. The built-in \"Zoom in\" / \"Zoom out\" command will be executed if Font Size Adjuster is not installed or disabled.'",
+          "target": "'如果此选项和上面的选项都启用，将优先使用此选项。如果未安装或禁用了“字体大小调整器”，则将执行内置的“放大”/“缩小”命令。'"
+        },
+        {
+          "source": "\"Top-level menu\"",
+          "target": "\"顶级菜单\""
+        },
+        {
+          "source": "\"Submenu\"",
+          "target": "\"二级菜单\""
+        },
+        {
+          "source": "\"Subsubmenu\"",
+          "target": "\"三级菜单\""
+        },
+        {
+          "source": "\"Copy link to selection\"",
+          "target": "\"复制选中内容的链接\""
+        },
+        {
+          "source": "\"Copy link to annotation\"",
+          "target": "\"复制注释的链接\""
+        },
+        {
+          "source": "\"PDF++: backlink highlights\"",
+          "target": "\"PDF++: 反向链接高亮\""
+        },
+        {
+          "source": "\"PDF++: internal links in PDF (except for citations)\"",
+          "target": "\"PDF++: PDF 中的内部链接（引用除外）\""
+        },
+        {
+          "source": "\"PDF++: citation links in PDF\"",
+          "target": "\"PDF++: PDF 中的引用链接\""
+        },
+        {
+          "source": "\"PDF++: external links in PDF\"",
+          "target": "\"PDF++: PDF 中的外部链接\""
+        },
+        {
+          "source": "\"PDF++: outlines (bookmarks)\"",
+          "target": "\"PDF++: 大纲（书签）\""
+        },
+        {
+          "source": "\"PDF++: thumbnails\"",
+          "target": "\"PDF++: 缩略图\""
+        },
+        {
+          "source": "\"Don't specify\"",
+          "target": "\"不要具体指定\""
+        },
+        {
+          "source": "\"Obsidian default\"",
+          "target": "\"Obsidian 默认设置\""
+        },
+        {
+          "source": "{\"page-width\":\"Fit width\",\"page-height\":\"Fit height\",\"page-fit\":\"Fit page\",custom:\"Custom...\"}",
+          "target": "{\"page-width\":\"适应宽度\",\"page-height\":\"适应高度\",\"page-fit\":\"适应页面\",custom:\"自定义...\"}"
+        },
+        {
+          "source": "{[0]:\"Vertical\",[1]:\"Horizontal\",[2]:\"Wrapped\"}",
+          "target": "{[0]:\"垂直\",[1]:\"水平\",[2]:\"换行\"}"
+        },
+        {
+          "source": "{[0]:\"Single page\",[1]:\"Two page (odd)\",[2]:\"Two page (even)\"}",
+          "target": "{[0]:\"单页\",[1]:\"双页（奇数页）\",[2]:\"双页（偶数页）\"}"
+        },
+        {
+          "source": "{text:\"Copy text\",obsidian:\"Obsidian default (copy as quote)\",\"pdf-plus\":\"Run PDF++'s copy command\"}",
+          "target": "{text:\"复制文本\",obsidian:\"Obsidian 默认（复制为引用）\",\"pdf-plus\":\"运行PDF++的复制命令\"}"
+        },
+        {
+          "source": "\"Each `{{...}}` will be evaluated as a JavaScript expression given the variables listed below.\"",
+          "target": "\"每个 `{{...}}` 都将被视为一个 JavaScript 表达式，并根据下面列出的变量进行评估。\""
+        },
+        {
+          "source": "\"Available variables are:\"",
+          "target": "\"可用的变量有:\""
+        },
+        {
+          "source": "\"- `file` or `pdf`: The PDF file ([`TFile`](https://docs.obsidian.md/Reference/TypeScript+API/TFile)). Use `file.basename` for the file name without extension, `file.name` for the file name with extension, `file.path` for the full path relative to the vault root, etc.\"",
+          "target": "\"- `file` or `pdf`: PDF 文件 ([`TFile`](https://docs.obsidian.md/Reference/TypeScript+API/TFile))。 使用 `file.basename` 来获取不带扩展名的文件名，使用`file.name` 来获取带扩展名的文件名，使用 `file.path` 来获取相对于vault根目录的完整路径等。\""
+        },
+        {
+          "source": "\"- `page`: The page number (`Number`). The first page is always page 1.\"",
+          "target": "\"- `page`: 页码 (`Number`)。第一页始终是第1页。\""
+        },
+        {
+          "source": "\"- `pageLabel`: The page number displayed in the counter in the toolbar (`String`). This can be different from `page`.\"",
+          "target": "\"- `pageLabel`: 在工具栏计数器中显示的页码 (`String`)。这可能与  `page` 不同。\""
+        },
+        {
+          "source": "`    - **Tip**: You can modify page labels with PDF++'s \"Edit page labels\" command.`",
+          "target": "`    - **Tip**: 您可以使用 PDF++ 的 \"编辑页面标签\" 命令来修改页面标签。`"
+        },
+        {
+          "source": "\"- `pageCount`: The total number of pages (`Number`).\"",
+          "target": "\"- `pageCount`: 总页数 (`Number`).\""
+        },
+        {
+          "source": "\"- `text` or `selection`: The selected text (`String`). In the case of links to annotations written directly in the PDF file, this is the text covered by the annotation.\"",
+          "target": "\"- `text` 或 `selection`: 选中的文本 (`String`)。如果是直接写在PDF文件中的注释链接，这是注释覆盖的文本。\""
+        },
+        {
+          "source": "'- `comment`: In the case of links to annotations written directly in the PDF file, this is the comment associated with the annotation (`String`). Otherwise, it is an empty string `\"\"`.'",
+          "target": "'- `comment`: 如果是直接写在PDF文件中的注释链接，这是与注释相关联的评论 (`String`)。否则，它是一个空字符串 `\"\"`。'"
+        },
+        {
+          "source": "\"- `folder`: The folder containing the PDF file ([`TFolder`](https://docs.obsidian.md/Reference/TypeScript+API/TFolder)). This is an alias for `file.parent`.\"",
+          "target": "\"- `folder`: 包含PDF文件的文件夹 ([`TFolder`](https://docs.obsidian.md/Reference/TypeScript+API/TFolder))。这是 `file.parent` 的别名。\""
+        },
+        {
+          "source": "\"- `obsidian`: The Obsidian API. See the [official developer documentation](https://docs.obsidian.md/Home) and the type definition file [`obsidian.d.ts`](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts) for the details.\"",
+          "target": "\"- `obsidian`: Obsidian API. 请参阅 [official developer documentation](https://docs.obsidian.md/Home) 和类型定义文件 [`obsidian.d.ts`](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts) 了解详细信息。\""
+        },
+        {
+          "source": "\"- `dv`: Available if the [Dataview](obsidian://show-plugin?id=dataview) plugin is enabled. See Dataview's [official documentation](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/) for the details. You can use it almost the same as the `dv` variable available in `dataviewjs` code blocks, but there are some differences. For example, `dv.current()` is not available.\"",
+          "target": "\"- `dv`: 如果启用了 [Dataview](obsidian://show-plugin?id=dataview) 插件，则可用。请参阅Dataview的 [official documentation](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/) 了解详细信息。您可以几乎像在 `dataviewjs` 代码块中可用的 `dv` 变量一样使用它，但有一些差异。例如，`dv.current()` 不可用。\""
+        },
+        {
+          "source": "\"- `quickAddApi`: Available if the [QuickAdd](obsidian://show-plugin?id=quickadd) plugin is enabled. See QuickAdd's [official documentation](https://quickadd.obsidian.guide/docs/QuickAddAPI) for the details.\"",
+          "target": "\"- `quickAddApi`: 如果启用了 [QuickAdd](obsidian://show-plugin?id=quickadd) 插件，则可用。请参阅QuickAdd的 [official documentation](https://quickadd.obsidian.guide/docs/QuickAddAPI) 了解详细信息。\""
+        },
+        {
+          "source": "\"- `app`: The global Obsidian app object ([`App`](https://docs.obsidian.md/Reference/TypeScript+API/App)).\"",
+          "target": "\"- `app`: 全局Obsidian应用对象 ([`App`](https://docs.obsidian.md/Reference/TypeScript+API/App)).\""
+        },
+        {
+          "source": "\"- and other global variables such as:\"",
+          "target": "\"- 以及其他全局变量，例如：:\""
+        },
+        {
+          "source": "'  - [`moment`](https://momentjs.com/docs/#/displaying/): For exampe, use `moment().format(\"YYYY-MM-DD\")` to get the current date in the \"YYYY-MM-DD\" format.'",
+          "target": "'  - [`moment`](https://momentjs.com/docs/#/displaying/): 例如，使用 `moment().format(\"YYYY-MM-DD\")` 来获取当前日期，格式为 \"YYYY-MM-DD\" 。'"
+        },
+        {
+          "source": "`Additionally, you have access to the following variables when the PDF file has a corresponding markdown file specified via the \"${this.plugin.settings.proxyMDProperty}\" property(see the \"Property to associate a markdown file to a PDF file\" setting below): `",
+          "target": "`此外，当PDF文件通过 \"${this.plugin.settings.proxyMDProperty}\" 属性指定了相应的Markdown文件时 (参见下面的\"属性将Markdown文件关联到PDF文件\"设置)，您可以访问以下变量: `"
+        },
+        {
+          "source": "\"- `md`: The markdown file associated with the PDF file ([`TFile`](https://docs.obsidian.md/Reference/TypeScript+API/TFile)). If there is no such file, this is `null`.\"",
+          "target": "\"- `md`: 与PDF文件关联的Markdown文件 ([`TFile`](https://docs.obsidian.md/Reference/TypeScript+API/TFile))。如果没有这样的文件，这将是 `null`.\""
+        },
+        {
+          "source": "\"- `properties`: The properties of `md` as an `Object` mapping each property name to the corresponding value. If `md` is `null` or the `md` has no properties, this is an empty object `{}`.\"",
+          "target": "\"- `properties`: `md` 的属性作为一个 `Object` ，将每个属性名称映射到相应的值。如果 `md` 是 `null` 或者 `md` 没有属性，这将是一个空对象 `{}`.\""
+        },
+        {
+          "source": "\"Furthermore, the following variables are available when the PDF tab is linked to another tab:\"",
+          "target": "\"此外，当PDF标签链接到另一个标签时，以下变量可用:\""
+        },
+        {
+          "source": "\"- `linkedFile`: The file opened in the linked tab ([`TFile`](https://docs.obsidian.md/Reference/TypeScript+API/TFile)). If there is no such file, this is `null`.\"",
+          "target": "\"- `linkedFile`: 在链接标签中打开的文件 ([`TFile`](https://docs.obsidian.md/Reference/TypeScript+API/TFile))。如果没有这样的文件，这将是  `null`。\""
+        },
+        {
+          "source": "\"- `linkedFileProperties`: The properties of `linkedFile` as an `Object` mapping each property name to the corresponding value. If there is no `linkedFile` or the `linkedFile` has no properties, this is an empty object `{}`.\"",
+          "target": "\"- `linkedFileProperties`: `linkedFile` 的属性作为一个 `Object` ，将每个属性名称映射到相应的值。如果没有 `linkedFile` 或者 `linkedFile` 没有属性，这将是一个空对象 `{}`。\""
+        },
+        {
+          "source": "\"Create a markdown file with this property to associate it with a PDF file. The PDF file is specified by a link, e.g. `[[file.pdf]]`.\"",
+          "target": "\"创建一个带有此属性的Markdown文件，以将其与PDF文件关联。PDF文件通过链接指定，例如：`[[file.pdf]]`.\""
+        },
+        {
+          "source": "\"It can be used to store properties/metadata that can be used when copying links.\"",
+          "target": "\"它可以用来存储复制链接时可以使用的属性/元数据。\""
+        },
+        {
+          "source": "\"If you have the [Dataview](obsidian://show-plugin?id=dataview) plugin installed, you can use Dataview's inline field syntax such as `\"+this.plugin.settings.proxyMDProperty+\":: [[file.pdf]]`.\"",
+          "target": "\"如果您安装了 [Dataview](obsidian://show-plugin?id=dataview) 插件，您可以使用Dataview的内联字段语法，例如： `\"+this.plugin.settings.proxyMDProperty+\":: [[file.pdf]]`.\""
+        },
+        {
+          "source": "\"Remarks:\"",
+          "target": "\"备注:\""
+        },
+        {
+          "source": "\"- Make sure the associated markdown file can be uniquely identified. For example, if you have two markdown files `file1.md` and `file2.md` and both of their `\"+this.plugin.settings.proxyMDProperty+\"` properties point to the same PDF file, PDF++ cannot determine which markdown file is associated with `file.pdf`.\"",
+          "target": "\"- 确保关联的 markdown 文件可以被唯一识别。例如，如果您有两个Markdown文件 `file1.md` 和 `file2.md` 并且它们俩的 `\"+this.plugin.settings.proxyMDProperty+\"` 属性指向同一个PDF文件时，PDF++无法确定哪个Markdown文件与 `file.pdf` 关联。\""
+        },
+        {
+          "source": "\"- If you are in Source Mode and using front matter instead of Dataview inline fields, be sure to enclose the link in double quotes.\"",
+          "target": "\"- 如果您处于源代码模式并使用前置事项（front matter）而不是Dataview内联字段，请确保将链接用双引号括起来。\""
+        },
+        {
+          "source": "\"Customize the format to use when you copy a link by clicking a color palette item or running the commands while selecting a range of text in PDF viewer.\"",
+          "target": "\"自定义复制链接时的格式，可以通过点击调色板项或在PDF查看器中选择文本范围时运行命令来实现。\""
+        },
+        {
+          "source": "\"In addition to the variables listed above, here you can use\"",
+          "target": "\"除了上面列出的变量，这里您可以使用\""
+        },
+        {
+          "source": "\"- `link`: The link without display text, e.g. `[[file.pdf#page=1&selection=0,1,2,3&color=red]]`,\"",
+          "target": "\"- `link`: 不带显示文本的链接，例如： `[[file.pdf#page=1&selection=0,1,2,3&color=red]]`,\""
+        },
+        {
+          "source": "\"- `linkWithDisplay`: The link with display text, e.g. `[[file.pdf#page=1&selection=0,1,2,3&color=red|file, page 1]]`,\"",
+          "target": "\"- `linkWithDisplay`: 带有显示文本的链接，例如： `[[file.pdf#page=1&selection=0,1,2,3&color=red|file, page 1]]`,\""
+        },
+        {
+          "source": "'- `linktext`: The text content of the link without brackets and the display text, e.g. `file.pdf#page=1&selection=0,1,2,3&color=red`<br>(if the \"Use \\\\[\\\\[Wikilinks\\\\]\\\\]\" setting is turned off, `linktext` will be properly encoded for use in markdown links),'",
+          "target": "'- `linktext`: 不带括号的链接文本内容和显示文本，例如： `file.pdf#page=1&selection=0,1,2,3&color=red`<br>(if the \"Use \\\\[\\\\[Wikilinks\\\\]\\\\]\" 如果设置被关闭， `linktext` 将被正确编码以用于Markdown链接。),'"
+        },
+        {
+          "source": "\"- `display`: The display text formatted according to the above setting, e.g. `file, page 1`,\"",
+          "target": "\"- `display`: 根据上述设置格式化的显示文本，例如：`file, page 1`,\""
+        },
+        {
+          "source": "\"- `linkToPage`: The link to the page without display text, e.g. `[[file.pdf#page=1]]`,\"",
+          "target": "\"- `linkToPage`: 不带显示文本的页面链接，例如： `[[file.pdf#page=1]]`,\""
+        },
+        {
+          "source": "\"- `linkToPageWithDisplay`: The link to the page with display text, e.g. `[[file.pdf#page=1|file, page 1]]`,\"",
+          "target": "\"- `linkToPageWithDisplay`: 带有显示文本的页面链接，例如： `[[file.pdf#page=1|file, page 1]]`,\""
+        },
+        {
+          "source": "`- \\`calloutType\\`: The callout type you specify in the \"Callout type name\" setting above, in this case, \"${this.plugin.settings.calloutType}\", and`",
+          "target": "`- \\`calloutType\\`: 您在 \"Callout type name\" 设置中指定的类型，在这种情况下， \"${this.plugin.settings.calloutType}\", 以及`"
+        },
+        {
+          "source": "\"- `color` (or `colorName`): In the case of text selections, this is the name of the selected color in lowercase, e.g. `red`. If no color is specified, it will be an empty string. For text markup annotations (e.g. highlights and underlines), this is the RGB value of the color, e.g. `255,208,0`.\"",
+          "target": "\"- `color` (or `colorName`): 在文本选择的情况下，这是选中颜色的名称，小写，例如 `red`. 如果没有指定颜色，它将是一个空字符串。对于文本标记注释 (例如高亮和下划线)，这是颜色的RGB值，例如：`255,208,0`.\""
+        },
+        {
+          "source": "\"Here's some examples of useful commands:\"",
+          "target": "\"以下是一些有用的命令示例：\""
+        },
+        {
+          "source": "\"- [Omnisearch](obsidian://show-plugin?id=omnisearch): Vault search\"",
+          "target": "\"- [Omnisearch](obsidian://show-plugin?id=omnisearch): Vault 搜索\""
+        },
+        {
+          "source": "\"- [Hover Editor](obsidian://show-plugin?id=obsidian-hover-editor): Open new Hover Editor\"",
+          "target": "\"- [Hover Editor](obsidian://show-plugin?id=obsidian-hover-editor): 打开新的悬停编辑器\""
+        },
+        {
+          "source": "\"Enjoy supercharged experiences of working with citations in PDF files, just like in [Google Scholar's PDF viewer](https://scholar.googleblog.com/2024/03/supercharge-your-pdf-reading-follow.html).\"",
+          "target": "\"享受在PDF文件中处理引用的超级增强体验，就像在 [Google Scholar's PDF viewer](https://scholar.googleblog.com/2024/03/supercharge-your-pdf-reading-follow.html).\""
+        },
+        {
+          "source": "\"The current implementation is based on some pretty primitive hand-crafted rules, and there is a lot of room for improvement. Code contribution is much appreciated!\"",
+          "target": "\"当前实现基于一些相当原始的手工规则，有很大的改进空间。非常欢迎代码贡献！\""
+        },
+        {
+          "source": "`- **${$p[\"pdf-plus-bib-popover\"]}**:  Recommended. It works without any additional stuff, but you can further boost the visibility by installing [AnyStyle](https://github.com/inukshuk/anystyle) (desktop only).`",
+          "target": "`- **${$p[\"pdf-plus-bib-popover\"]}**:  推荐。它无需任何额外的东西即可工作，但您可以通过安装来进一步提高可见性 [AnyStyle](https://github.com/inukshuk/anystyle) (仅限桌面端).`"
+        },
+        {
+          "source": "`- **${$p[\"google-scholar-popover\"]}**:  Requires [Surfing](obsidian://show-plugin?id=surfing) ver. 0.9.9 or higher enabled. Be careful not to exceed the rate limit of Google Scholar.`",
+          "target": "`- **${$p[\"google-scholar-popover\"]}**:  需要启用  [Surfing](obsidian://show-plugin?id=surfing)版本 0.9.9 或更高。注意不要超过 Google Scholar 的速率限制。`"
+        },
+        {
+          "source": "\"The path to the [AnyStyle](https://github.com/inukshuk/anystyle) executable. ",
+          "target": "\"[AnyStyle](https://github.com/inukshuk/anystyle) 可执行文件的路径。 "
+        },
+        {
+          "source": "\"PDF++ extracts the bibliography text from the PDF file for each citation link and uses AnyStyle to convert the extracted text into a structured metadata.\"",
+          "target": "\"PDF++从PDF文件中提取每个引用链接的参考文献文本，并使用AnyStyle将提取的文本转换为结构化元数据。\""
+        },
+        {
+          "source": "\"It works just fine without AnyStyle, but you can further boost the visibility by installing it and providing its path here.\"",
+          "target": "\"它在没有AnyStyle的情况下也能正常工作，但您可以通过安装它并在这里提供它的路径来进一步提高可见性。\""
+        },
+        {
+          "source": "\"Note: This setting is saved in the [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) instead of `data.json` in the plugin folder.\"",
+          "target": "\"注意：此设置保存在 [本地存储](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 中，而不是插件文件夹中的 `data.json` 。\""
+        },
+        {
+          "source": "\"Grab a thumbnail image and drop it to a markdown file to insert a page link. Changing this option requires reopening the tabs or reloading the app.\"",
+          "target": "\"抓取一个缩略图并将其拖放到Markdown文件中以插入页面链接。更改此选项需要重新打开标签页或重新加载应用程序。\""
+        },
+        {
+          "source": "\"Note: When disabled, drag-and-drop will cause the thumbnail image to be paste as a data url, which is seemingly Obsidian's bug.\"",
+          "target": "\"注意：当禁用时，拖放操作将导致缩略图作为数据URL粘贴，这似乎是Obsidian的bug。\""
+        },
+        {
+          "source": "\"Each page in a PDF document can be assigned a ***page label***, which can be different from the page indices.\"",
+          "target": "\"PDF文档中的每个页面都可以被分配一个 ***页面标签***，这可以与页面索引不同。\""
+        },
+        {
+          "source": "'For example, a book might have a preface numbered as \"i\", \"ii\", \"iii\", ... and the main content numbered as \"1\", \"2\", \"3\", ...'",
+          "target": "'例如，一本书可能将前言编号为 \"i\", \"ii\", \"iii\", 而主要内容编号为 \"1\", \"2\", \"3\", ...'"
+        },
+        {
+          "source": "'You can also modify page labels directly using the command \"Edit page labels\".'",
+          "target": "'您也可以直接使用 \"编辑页面标签\" 命令来修改页面标签。'"
+        },
+        {
+          "source": "'When opening a link to a PDF file without pressing any [modifier keys](https://help.obsidian.md/User+interface/Use+tabs+in+Obsidian#Open+a+link), a new tab will not be opened if the same file has already been already opened in another tab. Useful for annotating PDFs using a side-by-side view (\"Split right\"), displaying a PDF in one side and a markdown file in another.'",
+          "target": "'当打开一个PDF文件的链接而不按下任何 [修饰键](https://help.obsidian.md/User+interface/Use+tabs+in+Obsidian#Open+a+link)时，如果同一个文件已经在另一个标签页中打开，则不会打开新的标签页。这对于使用并排视图 (\"Split right\")注释PDF很有用，可以在一边显示PDF，在另一边显示Markdown文件。'"
+        },
+        {
+          "source": "'<span style=\"color: var(--text-warning);\">(Deprecated in favor of the <a href=\"https://ryotaushio.github.io/obsidian-pdf-plus/embedding-rectangular-selections.html\" class=\"external-link\" target=\"_blank\" rel=\"noopener\">rectangular selection embed feature</a> introduced in PDF++ 0.36.0)</span>'",
+          "target": "'<span style=\"color: var(--text-warning);\">(不推荐使用，建议使用 <a href=\"https://ryotaushio.github.io/obsidian-pdf-plus/embedding-rectangular-selections.html\" class=\"external-link\" target=\"_blank\" rel=\"noopener\">矩形选择嵌入功能</a>引入于 PDF++ 0.36.0)</span>'"
+        },
+        {
+          "source": "\"When embedding a selection or an annotation from a PDF file, only the target selection/annotation and its surroundings are displayed rather than the entire page.\"",
+          "target": "\"当嵌入PDF文件中的选择或注释时，只显示目标选择/注释及其周围内容，而不是整个页面。\""
+        },
+        {
+          "source": "\"Improve the built-in [backlinks pane](https://help.obsidian.md/Plugins/Backlinks) for better PDF experience.\"",
+          "target": "\"改进内置的 [反向链接面板](https://help.obsidian.md/Plugins/Backlinks) ，以获得更好的PDF体验。\""
+        },
+        {
+          "source": "\"The behavior of the search links can be customized globally by the following settings. \"",
+          "target": "\"搜索链接的行为可以通过以下设置进行全局定制。 \""
+        },
+        {
+          "source": "\"Alternatively, you can specify the behavior for each link by including the following query parameters in the link text: \"",
+          "target": "\"或者，您可以通过在链接文本中包含以下查询参数来为每个链接指定行为：\""
+        },
+        {
+          "source": "'The default keybindings are as follows. You can customize them be creating a \"vimrc\" file and providing its path in the setting below.'",
+          "target": "'默认的键盘快捷键如下。您可以通过创建一个 \"vimrc\" 文件并在下面的设置中提供其路径来自定义它们。'"
+        },
+        {
+          "source": "\"Use [modifier keys](https://help.obsidian.md/User+interface/Tabs#Open+a+link) to open PDF internal links in various ways\"",
+          "target": "\"使用 [修饰键](https://help.obsidian.md/User+interface/Tabs#Open+a+link) 以各种方式打开PDF内部链接。\""
+        },
+        {
+          "source": "'The \"Hover Editor\" option is available if the [Hover Editor](obsidian://show-plugin?id=obsidian-hover-editor) plugin is enabled.'",
+          "target": "'如果启用了 [Hover Editor](obsidian://show-plugin?id=obsidian-hover-editor) 插件，则“悬停编辑器”选项可用。'"
+        },
+        {
+          "source": "\"You can also include [Templater](obsidian://show-plugin?id=templater-obsidian) syntaxes in the template.\"",
+          "target": "\"您还可以在模板中包含 [Templater](obsidian://show-plugin?id=templater-obsidian) 语法。\""
+        },
+        {
+          "source": "'In that case, make sure the \"Trigger templater on new file creation\" option is enabled in the Templater settings.'",
+          "target": "'在那种情况下，请确保在Templater设置中启用了\"在新文件创建时触发Templater\"选项。'"
+        },
+        {
+          "source": "\"Example:\"",
+          "target": "\"示例:\""
+        },
+        {
+          "source": "\"Click PDF outline with [modifier keys](https://help.obsidian.md/User+interface/Tabs#Open+a+link) to open target section in various ways\"",
+          "target": "\"点击PDF大纲，并使用 [修饰键](https://help.obsidian.md/User+interface/Tabs#Open+a+link) 以各种方式打开目标部分\""
+        },
+        {
+          "source": "\"Click PDF thumbnails with [modifier keys](https://help.obsidian.md/User+interface/Tabs#Open+a+link) to open target page in various ways\"",
+          "target": "\" 点击PDF缩略图，并使用 [修饰键](https://help.obsidian.md/User+interface/Tabs#Open+a+link) 以各种方式打开目标页面\""
+        },
+        {
+          "source": "PDF++ allows you to choose whether page labels should be kept unchanged or updated when inserting/removing/extracting pages. ",
+          "target": "PDF++允许您选择在插入/删除/提取页面时，页面标签是保持不变还是更新。"
+        },
+        {
+          "source": "\"This option will be ignored when you press [modifier keys](https://help.obsidian.md/User+interface/Use+tabs+in+Obsidian#Open+a+link) to explicitly specify how to open the link.\"",
+          "target": "\"当您按下 [修饰键](https://help.obsidian.md/User+interface/Use+tabs+in+Obsidian#Open+a+link) 明确指定如何打开链接时，此选项将被忽略。\""
+        },
+        {
+          "source": "\"If there is a PDF file opened in a tab, clicking a PDF link will first create a new tab next to it and then open the target PDF file in the created tab. This is especially useful when you are spliting the workspace vertically or horizontally and want PDF files to be always opened in one side. This option will be ignored when you press [modifier keys](https://help.obsidian.md/User+interface/Use+tabs+in+Obsidian#Open+a+link) to explicitly specify how to open the link.\"",
+          "target": "\"如果在标签页中打开了PDF文件，点击PDF链接会首先在其旁边创建一个新标签页，然后在创建的标签页中打开目标PDF文件。当您垂直或水平分割工作区，并希望PDF文件始终在一侧打开时，这特别有用。当您按下 [修饰键](https://help.obsidian.md/User+interface/Use+tabs+in+Obsidian#Open+a+link) 明确指定如何打开链接时，此选项将被忽略。\""
+        },
+        {
+          "source": "\"Tracked at [this GitHub issue](https://github.com/RyotaUshio/obsidian-pdf-plus/issues/119).\"",
+          "target": "\"在 [这个GitHub问题](https://github.com/RyotaUshio/obsidian-pdf-plus/issues/119)中跟踪。\""
+        },
+        {
+          "source": "\"Hide annotations that are replies to other annotations in the PDF viewer.\"",
+          "target": "\"在PDF查看器中隐藏对其他注释的回复注释。\""
+        },
+        {
+          "source": "\"This is a temporary fix for the issue that PDF.js (the library Obsidian's PDF viewer is based on) does not fulfill the PDF specification in that it renders reply annotations as if a standalone annotation.\"",
+          "target": "\"这是针对PDF.js（Obsidian PDF查看器所基于的库）未完全符合PDF规范的问题的临时修复，它将回复注释渲染得像一个独立的注释。\""
+        },
+        {
+          "source": "'If enabled, whenever you copy text from the PDF viewer (using Ctrl/Cmd+C or via context menu), the text will go through the same pre-processing as the \"'+this.plugin.lib.commands.stripCommandNamePrefix(this.plugin.lib.commands.getCommand(\"copy-link-to-selection\").name)+'\" command before written to the clipboard. The pre-processing includes transforming multi-line text into a single line by removing line breaks (if a word is split across lines, it will be concatenated), which is useful because it prevents the copied text from being split into multiple lines unnaturally. If the previous option is enabled, the whitespace removal will also be applied.'",
+          "target": "'如果启用，每当您从PDF查看器复制文本（使用Ctrl/Cmd+C或通过上下文菜单），文本将经过与\"'+this.plugin.lib.commands.stripCommandNamePrefix(this.plugin.lib.commands.getCommand(\"copy-link-to-selection\").name)+'\"命令相同的预处理过程，然后才会写入剪贴板。预处理包括通过删除换行符将多行文本转换为单行（如果一个单词跨行分割，它将被连接起来），这很有用，因为它可以防止复制的文本被不自然地分割成多行。如果前一个选项被启用，也将应用去除空白字符的处理。'"
+        },
+        {
+          "source": "{[1]:\"Thumbnails\",[2]:\"Outline\"}",
+          "target": "{[1]:\"缩略图\",[2]:\"大纲\"}"
+        },
+        {
+          "source": "{none:\"Same as other internal links\",\"pdf-plus-bib-popover\":\"PDF++'s custom bibliography popover\",\"google-scholar-popover\":\"Google Scholar popover\"}",
+          "target": "{none:\"与其它内部链接相同\",\"pdf-plus-bib-popover\":\"PDF++的自定义参考文献弹出窗口\",\"google-scholar-popover\":\"Google Scholar弹出窗口\"}"
+        },
+        {
+          "source": "{keep:\"Keep labels unchanged\",update:\"Update\"}",
+          "target": "{keep:\"保持标签不变\",update:\"更新\"}"
+        },
+        {
+          "source": "{true:\"Yes\",false:\"No\",default:\"Follow default setting\"}",
+          "target": "{true:\"是\",false:\"否\",default:\"遵循默认设置\"}"
+        },
+        {
+          "source": ".setDesc(`Easily open backlinks or display a popover preview of it by pressing ${In(\"Mod\").toLowerCase()} (by default) while hovering over a highlighted text in PDF viewer.`)",
+          "target": ".setDesc(`在PDF查看器中悬停在高亮文本上时，通过按 ${In(\"Mod\").toLowerCase()} （默认）轻松打开反向链接或显示其弹出预览。`)"
+        },
+        {
+          "source": ".setDesc(\"Customize how backlinks are opened when \"+(this.plugin.settings.hoverHighlightAction===\"open\"?`${In(\"Mod\").toLowerCase()}+hovering over or `:\"\")+\"double-clicking highlighted text.\")",
+          "target": ".setDesc(\"自定义当 \"+(this.plugin.settings.hoverHighlightAction===\"open\"?`${In(\"Mod\").toLowerCase()}+hovering over or `:\"\")+\"双击高亮文本时反向链接的打开方式。\")"
+        },
+        {
+          "source": ".setDesc(`When disabled${Ti.quietColorPaletteTooltip?\"\":\" (default)\"}, the tooltip will show the color name as well as the selected copy format and display text format. If enabled, only the color name will be shown.`))",
+          "target": ".setDesc(`当禁用${Ti.quietColorPaletteTooltip?\"\":\" (default)\"}，提示将显示颜色名称以及选定的复制格式和显示文本格式。如果启用，将只显示颜色名称。`))"
+        },
+        {
+          "source": ".setDesc(`You may want to turn this off to avoid conflicts with hover+${Bn}.`)",
+          "target": ".setDesc(`您可能需要关闭此选项，以避免与悬停+${Bn}发生冲突。`)"
+        },
+        {
+          "source": ".setDesc(\"Reopen tabs or reload the app after changing this option.\")",
+          "target": ".setDesc(\"更改此选项后请重新打开标签页或重新加载应用程序。\")"
+        },
+        {
+          "source": ".setName(`Show a popover preview of PDF internal links by hover(+${Bn})`)",
+          "target": ".setName(`通过悬停(+${Bn})显示PDF内部链接的弹出预览。`)"
+        },
+        {
+          "source": ".setName(`Require ${Bn} key while hovering`)",
+          "target": ".setName(`悬停时需要按 ${Bn} 键。`)"
+        },
+        {
+          "source": ".setName(`Hover(+${Bn}) on a citation link to show...`)",
+          "target": ".setName(`悬停 (+${Bn}) 在引用链接上显示...`)"
+        },
+        {
+          "source": ".setName(`Show a popover preview of external links by hover(+${Bn})`)",
+          "target": ".setName(`通过悬停(+${Bn})显示外部链接的弹出预览。`)"
+        },
+        {
+          "source": ".setName(`Show popover preview by hover(+${Bn})`)",
+          "target": ".setName(`通过悬停(+${Bn})显示弹出预览。`)"
+        },
+        {
+          "source": ".setDesc(\"After changing this option, you need to reopen tabs or reload the app.\")",
+          "target": ".setDesc(\"更改此选项后，您需要重新打开标签页或重新加载应用程序。\")"
+        },
+        {
+          "source": ".setDesc(`You may want to turn this off to avoid conflicts with hover+${Bn}`)",
+          "target": ".setDesc(`您可能希望关闭此选项以避免与悬停+${Bn}发生冲突。`)"
+        },
+        {
+          "source": "\"(Requires the [Font Size Adjuster](obsidian://show-plugin?id=font-size) plugin enabled) \"",
+          "target": "\"(需要启用 [Font Size Adjuster](obsidian://show-plugin?id=font-size) 插件) \""
+        },
+        {
+          "source": "`- **${eg[\"pdf-plus-bib-popover\"]}**:  Recommended. It works without any additional stuff, but you can further boost the visibility by installing [AnyStyle](https://github.com/inukshuk/anystyle) (desktop only).`",
+          "target": "`- **${eg[\"pdf-plus-bib-popover\"]}**: 推荐使用。它不需要任何额外的东西就可以工作，但你可以通过安装 [AnyStyle](https://github.com/inukshuk/anystyle) 仅限桌面）来进一步提高可见性。`"
+        },
+        {
+          "source": "`- **${eg[\"google-scholar-popover\"]}**:  Requires [Surfing](obsidian://show-plugin?id=surfing) ver. 0.9.9 or higher enabled. Be careful not to exceed the rate limit of Google Scholar.`",
+          "target": "`- **${eg[\"google-scholar-popover\"]}**:  需要启用 [Surfing](obsidian://show-plugin?id=surfing) 插件，版本0.9.9或更高。请注意不要超过Google Scholar的访问频率限制。`"
+        },
+        {
+          "source": ".appendText(\"Reopen tabs or reload the app after changing this option.\")",
+          "target": ".appendText(\"更改此选项后，请重新打开标签页或重新加载应用程序。\")"
+        },
+        {
+          "source": "`- **${s}**: See below for the details.`",
+          "target": "`- **${s}**: 详情见下文。`"
+        },
+        {
+          "source": "\"- `j`/`k`/`h`/`l`: Scroll down/up/left/right\"",
+          "target": "\"- `j`/`k`/`h`/`l`: 滚动下/上/左/右\""
+        },
+        {
+          "source": "\"- `J`: Go to next page\"",
+          "target": "\"- `J`: 跳转到下一页\""
+        },
+        {
+          "source": "\"- `K`: Go to previous page\"",
+          "target": "\"- `K`: 跳转到前一页\""
+        },
+        {
+          "source": "\"- `gg`: Go to first page\"",
+          "target": "\"- `gg`: 跳转到第一页\""
+        },
+        {
+          "source": "\"- `G`: Go to last page\"",
+          "target": "\"- `G`: 跳转到上一页\""
+        },
+        {
+          "source": "\"- `0`/`^`/`H`: Go to top of current page\"",
+          "target": "\"- `0`/`^`/`H`: 返回当前页面顶部\""
+        },
+        {
+          "source": "\"- `<C-f>`/`<C-b>`: Scroll down/up as much as the viewer height (`C`=`Ctrl`)\"",
+          "target": "\"- `<C-f>`/`<C-b>`: 向下/向上滚动相当于查看器高度的距离 (`C`=`Ctrl`)\""
+        },
+        {
+          "source": "\"- `<C-d>`/`<C-u>`: Scroll down/up half as much as the viewer height\"",
+          "target": "\"- `<C-d>`/`<C-u>`: 向下/向上滚动相当于查看器高度一半的距离\""
+        },
+        {
+          "source": "\"- `/`/`?`: Search forward/backward\"",
+          "target": "\"- `/`/`?`: 向前/向后搜索\""
+        },
+        {
+          "source": "\"- `n`/`N`: Go to next/previous match\"",
+          "target": "\"- `n`/`N`: 跳转到下一个/上一个匹配项\""
+        },
+        {
+          "source": "\"- `gn`/`gN`: Select search result\"",
+          "target": "\"- `gn`/`gN`: 选择搜索结果\""
+        },
+        {
+          "source": "\"- `+`/`zi`: Zoom in\"",
+          "target": "\"- `+`/`zi`: 放大\""
+        },
+        {
+          "source": "\"- `-`/`zo`: Zoom out\"",
+          "target": "\"- `-`/`zo`: 缩小\""
+        },
+        {
+          "source": "\"- `=`/`z0`: Reset zoom\"",
+          "target": "\"- `=`/`z0`: 重置缩放\""
+        },
+        {
+          "source": "\"- `r`: Rotate pages clockwise\"",
+          "target": "\"- `r`: 顺时针旋转页面\""
+        },
+        {
+          "source": "\"- `R`: Rotate pages counterclockwise\"",
+          "target": "\"- `R`: 逆时针旋转页面\""
+        },
+        {
+          "source": "\"- `y`: Yank (copy) selected text\"",
+          "target": "\"- `y`: 复制选中的文本\""
+        },
+        {
+          "source": "`- \\`c\\`: Run the \"${this.plugin.lib.commands.stripCommandNamePrefix(this.plugin.lib.commands.getCommand(\"copy-link-to-selection\").name)}\" command`",
+          "target": "`- \\`c\\`: 运行 \"${this.plugin.lib.commands.stripCommandNamePrefix(this.plugin.lib.commands.getCommand(\"copy-link-to-selection\").name)}\" 命令`"
+        },
+        {
+          "source": "\"- `C`: Show context menu at text selection\"",
+          "target": "\"- `C`: 在文本选择处显示上下文菜单\""
+        },
+        {
+          "source": "\"- `o`: Swap the start and end of the selection\"",
+          "target": "\"- `o`: 交换选择的起始和结束位置\""
+        },
+        {
+          "source": "\"- `:`: Enter command-line mode (experimental)\"",
+          "target": "\"- `:`: 进入命令行模式（实验性功能）\""
+        },
+        {
+          "source": "\"- `<Tab>`: Toggle outline (table of contents)\"",
+          "target": "\"- `<Tab>`: 切换大纲（目录）\""
+        },
+        {
+          "source": "\"- `<S-Tab>`: Toggle thumbnails (`S`=`Shift`)\"",
+          "target": "\"- `<S-Tab>`: 切换缩略图 (`S`=`Shift`)\""
+        },
+        {
+          "source": "\"- `f`: Enter hint mode by running `:hint` (experimental)\"",
+          "target": "\"- `f`: 通过运行 `:hint` 进入提示模式（实验性功能）\""
+        },
+        {
+          "source": "\"- `<Esc>`: Go back to normal mode, abort search, etc\"",
+          "target": "\"- `<Esc>`: 返回普通模式，中止搜索等\""
+        },
+        {
+          "source": "\"Many of the commands above can be combined with counts. For example:\"",
+          "target": "\"上面的许多命令可以与计数组合使用。例如：\""
+        },
+        {
+          "source": "\"- `2j` scrolls down the page twice as much as `j`.\"",
+          "target": "\"- `2j` 向下滚动页面两次，每次滚动量与 `j` 命令相同。\""
+        },
+        {
+          "source": "\"- `2J` advances two pages.\"",
+          "target": "\"- `2J` 前进两页。\""
+        },
+        {
+          "source": "\"- `10G` takes you to page 10.\"",
+          "target": "\"- `10G` 带你跳转到第10页。\""
+        },
+        {
+          "source": "\"- `150=` sets the zoom level to 150%.\"",
+          "target": "\"- `150=` 将缩放级别设置为150%。\""
+        },
+        {
+          "source": "`Add ${this.plugin.settings.selectionBacklinkVisualizeStyle} to file`",
+          "target": "`添加 ${this.plugin.settings.selectionBacklinkVisualizeStyle} 到文件`"
+        },
+        {
+          "source": "\"Leave blank not to use a template\"",
+          "target": "\"留空则不使用模板\""
+        },
+        {
+          "source": "\"Leave blank not to specify\"",
+          "target": "\"留空则不指定\""
+        },
+        {
+          "source": ": Go to bottom of current page\"",
+          "target": ": 跳转到当前页面底部\""
+        }
+      ]
+    }
+  }
+}

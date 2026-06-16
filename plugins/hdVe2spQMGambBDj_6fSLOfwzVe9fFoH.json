@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "journaling",
+    "version": "2.0.0",
+    "title": "Journaling",
+    "description": "View daily notes in a journal-like format, similar to Logseq. It enhances note organization and facilitates better reflection by consolidating daily notes into a continuous journaling view.",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(\"unloading plugin\")",
+          "target": ".log(\"卸载插件\")"
+        },
+        {
+          "source": ".error(`Failed to update journaling file: ${u.path}`,i)",
+          "target": ".error(`更新日志文件失败：${u.path}`,i)"
+        },
+        {
+          "source": ".error(`Failed to create journaling file: ${e}`,n)",
+          "target": ".error(`创建日志文件失败：${e}`,n)"
+        },
+        {
+          "source": "text:\"format reference\"",
+          "target": "text:\"格式参考\""
+        },
+        {
+          "source": "text:'Ensure file names within folders adhere to the \"Date Format.\"'",
+          "target": "text:'确保文件夹中的文件名符合“日期格式”'"
+        },
+        {
+          "source": ".setName(\"Date Format\")",
+          "target": ".setName(\"日期格式\")"
+        },
+        {
+          "source": ".setName(\"Journal File Name\")",
+          "target": ".setName(\"日志文件名\")"
+        },
+        {
+          "source": ".setName(\"Include Paths\")",
+          "target": ".setName(\"包括路径\")"
+        },
+        {
+          "source": ".setName(\"Filter By\")",
+          "target": ".setName(\"筛选条件\")"
+        },
+        {
+          "source": ".setName(\"Update Interval\")",
+          "target": ".setName(\"更新间隔\")"
+        },
+        {
+          "source": ".setDesc(\"For more syntax, refer to \")",
+          "target": ".setDesc(\"有关更多语法，请参阅\")"
+        },
+        {
+          "source": ".setDesc(\"Specifies the filename for the journaling view file. This file will be used to list and organize your journal entries.\")",
+          "target": ".setDesc(\"指定日志视图文件的文件名。此文件将用于列出和组织您的日记条目。\")"
+        },
+        {
+          "source": ".setDesc(\"The daily notes located in these paths will be accessible via the journaling view.\")",
+          "target": ".setDesc(\"位于这些路径中的每日笔记将可通过日志视图访问。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how the plugin displays journal entries based on their dates.\")",
+          "target": ".setDesc(\"选择插件如何根据日期显示日记条目。\")"
+        },
+        {
+          "source": ".setDesc(\"Set the interval at which the plugin scans the directories for changes. The interval is specified in seconds.\")",
+          "target": ".setDesc(\"设置插件扫描目录以查找更改的间隔。间隔以秒为单位指定。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"File name, e.g.: Journaling.md\")",
+          "target": ".setPlaceholder(\"文件名，例如：Journalising.md\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Folder paths separated by commas, e.g.: path1/path2, path3, path4\")",
+          "target": ".setPlaceholder(\"用逗号分隔的文件夹路径，例如：path1/path2,path3,path4\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Interval in seconds, e.g.: 10\")",
+          "target": ".setPlaceholder(\"间隔(秒),例如:10\")"
+        },
+        {
+          "source": ".addOption(\"new\",\"New -> Old\")",
+          "target": ".addOption(\"new\",\"新->旧\")"
+        },
+        {
+          "source": ".addOption(\"old\",\"Old -> New\")",
+          "target": ".addOption(\"old\",\"旧->新\")"
+        }
+      ]
+    }
+  }
+}

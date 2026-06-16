@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-kanban",
+    "version": "2.0.0",
+    "title": "Kanban",
+    "description": "Create markdown-backed Kanban boards in Obsidian.",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.51",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Failed to read the daily note template\")",
+          "target": "Notice(\"无法读取日记模板.\")"
+        },
+        {
+          "source": "Notice(\"Unable to create new file.\")",
+          "target": "Notice(\"无法构建新文件.\")"
+        },
+        {
+          "source": ".log(\"Ignoring invalid or overlapping range: \"+(\"\"+JSON.stringify(l)",
+          "target": ".log(\"忽略无效或重叠的范围: \"+(\"\"+JSON.stringify(l)"
+        },
+        {
+          "source": ".log(\"Ignoring invalid range: \"+JSON.stringify(l)",
+          "target": ".log(\"忽略无效范围: \"+JSON.stringify(l)"
+        },
+        {
+          "source": ".log(\"End range automatically set to the max value of \"+g)",
+          "target": ".log(\"结束范围自动设置为最大值 \"+g)"
+        },
+        {
+          "source": ".log(\"Invalid range: \"+JSON.stringify(l)",
+          "target": ".log(\"无效范围: \"+JSON.stringify(l)"
+        },
+        {
+          "source": ".log(\"Skipping whitespace only range: \"+JSON.stringify(l)",
+          "target": ".log(\"跳过空白值: \"+JSON.stringify(l)"
+        },
+        {
+          "source": ".log('Searching with expression \"'+l+'\"')",
+          "target": ".log('使用表达式搜索 \"'+l+'\"')"
+        },
+        {
+          "source": ".log('Searching with expression \"'+O+'\"')",
+          "target": ".log('使用表达式搜索 \"'+O+'\"')"
+        },
+        {
+          "source": ".log(\"Starting to mark with the following ranges: \"+JSON.stringify(h)",
+          "target": ".log(\"开始标记以下范围: \"+JSON.stringify(h)"
+        },
+        {
+          "source": "_log(`---------\nSearch pattern: \"`.concat(v,'\"')",
+          "target": "_log(`---------\n搜索模式: \"`.concat(v,'\"')"
+        },
+        {
+          "source": "_log('Full text: \"'.concat(O,'\", score: ')",
+          "target": "_log('全文: \"'.concat(O,'\", score: ')"
+        },
+        {
+          "source": "_log(`\nPattern: \"`.concat(N.pattern,'\"')",
+          "target": "_log(`\n模式: \"`.concat(N.pattern,'\"')"
+        },
+        {
+          "source": "_log('Token: \"'.concat(Mt,'\", score: ')",
+          "target": "_log('令牌: \"'.concat(Mt,'\", score: ')"
+        },
+        {
+          "source": "_log(\"Token score average:\",pe)",
+          "target": "_log(\"平均令牌分数:\",pe)"
+        },
+        {
+          "source": "_log(\"Score average:\",Jt)",
+          "target": "_log(\"平均分:\",Jt)"
+        },
+        {
+          "source": "_log(`\nCheck Matches: `.concat(en)",
+          "target": "_log(`\n匹配检查: `.concat(en)"
+        },
+        {
+          "source": "_log(`\n\nComputing score:\n`)",
+          "target": "_log(`\n\n计算分数:\n`)"
+        },
+        {
+          "source": ".error(`Failed to read the daily note template '${n}'`,i)",
+          "target": ".error(`读取日记模板失败。 '${n}'`,i)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${c}'`,d)",
+          "target": ".error(`创建文件失败: '${c}'`,d)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${u}'`,l)",
+          "target": ".error(`创建文件失败: '${u}'`,l)"
+        },
+        {
+          "source": ".error(\"Error: kanban locale not found\",hb)",
+          "target": ".error(\"错误：未找到看板相关配置。\",hb)"
+        },
+        {
+          "source": ".error(\"Error creating kanban board:\",a)",
+          "target": ".error(\"创建看板时出错：\",a)"
+        },
+        {
+          "source": "name:\"Anno Domini\"",
+          "target": "name:\"公元\""
+        },
+        {
+          "source": "name:\"Before Christ\"",
+          "target": "name:\"公元前\""
+        },
+        {
+          "source": "name:\"sheets-in-box\"",
+          "target": "name:\"容器中表格\""
+        },
+        {
+          "source": "name:\"lucide-more-vertical\"",
+          "target": "name:\"更多选项\""
+        },
+        {
+          "source": "name:\"lucide-plus-circle\"",
+          "target": "name:\"亮色加号圆圈\""
+        },
+        {
+          "source": "name:\"chevron-down\"",
+          "target": "name:\"下箭头\""
+        },
+        {
+          "source": "name:\"lucide-trash-2\"",
+          "target": "name:\"垃圾桶-2\""
+        },
+        {
+          "source": "name:\"lucide-grip-horizontal\"",
+          "target": "name:\"水平抓取图标\""
+        },
+        {
+          "source": "name:\"lucide-square-kanban\"",
+          "target": "name:\"方形看板\""
+        },
+        {
+          "source": "name:\"lucide-chevron-up\"",
+          "target": "name:\"Lucide样式的上箭头\""
+        },
+        {
+          "source": "name:\"lucide-chevron-down\"",
+          "target": "name:\"Lucide样式的下箭头\""
+        },
+        {
+          "source": "name:\"lucide-chevrons-up-down\"",
+          "target": "name:\"上下箭头\""
+        },
+        {
+          "source": "name:\"attention\"",
+          "target": "name:\"注意\""
+        },
+        {
+          "source": "name:\"autolink\"",
+          "target": "name:\"自动链接\""
+        },
+        {
+          "source": "name:\"blockQuote\"",
+          "target": "name:\"块引用\""
+        },
+        {
+          "source": "name:\"characterEscape\"",
+          "target": "name:\"字符转义\""
+        },
+        {
+          "source": "name:\"characterReference\"",
+          "target": "name:\"人物参考\""
+        },
+        {
+          "source": "name:\"codeFenced\"",
+          "target": "name:\"代码块\""
+        },
+        {
+          "source": "name:\"codeIndented\"",
+          "target": "name:\"代码缩进\""
+        },
+        {
+          "source": "name:\"codeText\"",
+          "target": "name:\"代码文本\""
+        },
+        {
+          "source": "name:\"definition\"",
+          "target": "name:\"定义\""
+        },
+        {
+          "source": "name:\"hardBreakEscape\"",
+          "target": "name:\"强制回退\""
+        },
+        {
+          "source": "name:\"headingAtx\"",
+          "target": "name:\"Atx标题\""
+        },
+        {
+          "source": "name:\"htmlFlow\"",
+          "target": "name:\"HTML流\""
+        },
+        {
+          "source": "name:\"htmlText\"",
+          "target": "name:\"HTML文本\""
+        },
+        {
+          "source": "name:\"labelEnd\"",
+          "target": "name:\"标签结束\""
+        },
+        {
+          "source": "name:\"labelStartImage\"",
+          "target": "name:\"标签图片\""
+        },
+        {
+          "source": "name:\"labelStartLink\"",
+          "target": "name:\"标签链接\""
+        },
+        {
+          "source": "name:\"lineEnding\"",
+          "target": "name:\"行结束符\""
+        },
+        {
+          "source": "name:\"thematicBreak\"",
+          "target": "name:\"主题分隔符\""
+        },
+        {
+          "source": "name:\"list\"",
+          "target": "name:\"列表\""
+        },
+        {
+          "source": "name:\"setextUnderline\"",
+          "target": "name:\"设置文本下划线\""
+        },
+        {
+          "source": "link:\"autolink\"",
+          "target": "link:\"自动链接\""
+        },
+        {
+          "source": "link:\"link\"",
+          "target": "link:\"链接\""
+        },
+        {
+          "source": "search:\"search\"",
+          "target": "search:\"搜索\""
+        },
+        {
+          "source": "\"Expand lists to full width in list view\"",
+          "target": "\"在列表视图中将列表扩展为全宽\""
+        },
+        {
+          "source": "\"Move tags to card footer\"",
+          "target": "\"将标签移动至卡片页脚\""
+        },
+        {
+          "source": "\"When toggled, tags will be displayed in the card's footer instead of the card's body.\"",
+          "target": "\"启用后，标签将显示在卡片页脚而非卡片正文中。\""
+        },
+        {
+          "source": "\"Tag click action\"",
+          "target": "\"标签点击行为\""
+        },
+        {
+          "source": "\"This setting controls whether clicking the tags displayed below the card title opens the Obsidian search or the Kanban board search.\"",
+          "target": "\"此设置控制点击卡片标题下方的标签时，是打开 Obsidian 搜索还是看板搜索。\""
+        },
+        {
+          "source": "\"Tag sort order\"",
+          "target": "\"标签排序顺序\""
+        },
+        {
+          "source": "\"Set an explicit sort order for the specified tags.\"",
+          "target": "\"为指定标签设置明确的排序顺序。\""
+        },
+        {
+          "source": "\"Set colors for tags displayed in cards.\"",
+          "target": "\"为卡片中显示的标签设置颜色。\""
+        },
+        {
+          "source": "\"Move dates to card footer\"",
+          "target": "\"将日期移动至卡片页脚\""
+        },
+        {
+          "source": "\"When toggled, dates will be displayed in the card's footer instead of the card's body.\"",
+          "target": "\"启用后，日期将显示在卡片页脚而非卡片正文中。\""
+        },
+        {
+          "source": "\"When toggled, cards will display the distance between today and the card's date. eg. 'In 3 days', 'A month ago'. Relative dates will not be shown for dates from the Tasks and Dataview plugins.\"",
+          "target": "\"启用后，卡片将显示当前日期与卡片日期的间隔（如：3天后、1个月前）。来自 Tasks 和 Dataview 插件的日期不会显示相对日期。\""
+        },
+        {
+          "source": "\"Display date colors\"",
+          "target": "\"显示日期颜色\""
+        },
+        {
+          "source": "\"Set colors for dates displayed in cards based on the rules below.\"",
+          "target": "\"根据下方规则为卡片中显示的日期设置颜色。\""
+        },
+        {
+          "source": "\"Add archive date/time after card title\"",
+          "target": "\"在卡片标题后添加归档日期/时间\""
+        },
+        {
+          "source": "\"When toggled, the archived date/time will be added after the card title, e.g.- [ ] My card title 2021-05-14 10:00am. By default, it is inserted before the title.\"",
+          "target": "\"启用后，归档日期/时间将添加至卡片标题后（如：[ ] 我的卡片标题 2021-05-14 上午10:00），默认插入在标题前。\""
+        },
+        {
+          "source": "\"Inline Metadata\"",
+          "target": "\"内联元数据\""
+        },
+        {
+          "source": "\"Inline metadata position\"",
+          "target": "\"内联元数据位置\""
+        },
+        {
+          "source": "\"Controls where the inline metadata (from the Dataview plugin) will be displayed.\"",
+          "target": "\"控制内联元数据（来自 Dataview 插件）的显示位置。\""
+        },
+        {
+          "source": "\"Move task data to card footer\"",
+          "target": "\"将任务数据移动至卡片页脚\""
+        },
+        {
+          "source": "\"When toggled, task data (from the Tasks plugin) will be displayed in the card's footer instead of the card's body.\"",
+          "target": "\"启用后，任务数据（来自 Tasks 插件）将显示在卡片页脚而非卡片正文中。\""
+        },
+        {
+          "source": "\"Board view\"",
+          "target": "\"看板视图\""
+        },
+        {
+          "source": "\"Search Obsidian Vault\"",
+          "target": "\"搜索 Obsidian 知识库\""
+        },
+        {
+          "source": "\"Search Kanban Board\"",
+          "target": "\"搜索看板\""
+        },
+        {
+          "source": "\"Card body\"",
+          "target": "\"卡片正文\""
+        },
+        {
+          "source": "\"Card footer\"",
+          "target": "\"卡片页脚\""
+        },
+        {
+          "source": "\"Merge with linked page metadata\"",
+          "target": "\"合并链接页面的元数据\""
+        },
+        {
+          "source": "\"View as board\"",
+          "target": "\"看板视图\""
+        },
+        {
+          "source": "\"View as list\"",
+          "target": "\"列表视图\""
+        },
+        {
+          "source": "\"View as table\"",
+          "target": "\"表格视图\""
+        }
+      ]
+    }
+  }
+}
