@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "note_uid_generator",
+    "version": "1.0.0",
+    "title": "Note UID Generator",
+    "description": "Note UID Generator Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.3.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Snowflake",
+          "target": "雪花"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "NanoID",
+          "target": "NanoID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Specific Folder(s)",
+          "target": "特定文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Entire Vault",
+          "target": "整个保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[UIDGenerator] Error triggering bulk uid generation:",
+          "target": "[UIDGenerator] 触发批量 UID 生成时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[UIDGenerator] Error during bulk uid clearing process:",
+          "target": "[UIDGenerator] 批量清除 UID 过程中出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[UIDGenerator] Error copying UID:",
+          "target": "[UIDGenerator] 复制 UID 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[UIDGenerator] Error copying title + UID:",
+          "target": "[UIDGenerator] 复制标题 + UID 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Confirm deletion",
+          "target": "确认删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add Group",
+          "target": "添加分组"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Manage folders",
+          "target": "管理文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Manage exclusions",
+          "target": "管理排除项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Generate missing uids",
+          "target": "生成缺失的 UID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear uids now",
+          "target": "立即清除 UID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The name of the key for the uid in frontmatter (e.g., \"uid\", \"id\"). No spaces.",
+          "target": "前置数据中 UID 键的名称（例如 \\\"uid\\\"、\\\"id\\\"）。不能有空格。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose between UUID (standard v4), NanoID (customizable), ULID (sortable, 26 chars), or Snowflake (64-bit, time-sortable, distributed).",
+          "target": "在 UUID（标准 v4）、NanoID（可定制）、ULID（可排序，26 字符）或雪花（64 位，时间可排序，分布式）之间选择。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Length of the generated ID (excluding separators). Min 4, max 128.",
+          "target": "生成的 ID 长度（不包括分隔符）。最小 4，最大 128。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Characters used for ID generation. Must have at least 2 unique characters.",
+          "target": "用于 ID 生成的字符。必须至少有 2 个唯一字符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Single character to inject (e.g., \"-\").",
+          "target": "要注入的单个字符（例如 \\\"-\\\"）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Index to inject the character. Negative numbers count from the end.",
+          "target": "注入字符的索引。负数从末尾开始计数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Adds a new group for injecting a character at a specific position.",
+          "target": "添加一个新分组，用于在特定位置注入字符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Generate uids only for notes in these folders (and subfolders).",
+          "target": "仅为这些文件夹（及子文件夹）中的笔记生成 UID。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folders excluded from automatic uid generation. Click button to manage.",
+          "target": "排除在自动生成 UID 之外的文件夹。点击按钮进行管理。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Format string used when copying title and uid, and the uid exists.",
+          "target": "复制标题和 UID 且 UID 存在时使用的格式字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Format string used when copying, but the note has no uid.",
+          "target": "复制时使用，但笔记没有 UID 时的格式字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "UID metadata key",
+          "target": "UID 元数据键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "UID generator type",
+          "target": "UID 生成器类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Generator algorithm",
+          "target": "生成算法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "NanoID length",
+          "target": "NanoID 长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "NanoID alphabet",
+          "target": "NanoID 字母表"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inject character",
+          "target": "注入字符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Injection position",
+          "target": "注入位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add new separator group",
+          "target": "添加新分隔符分组"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Snowflake settings",
+          "target": "雪花设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Machine Node ID",
+          "target": "机器节点 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Node ID",
+          "target": "自定义节点 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Automatic uid generation",
+          "target": "自动生成 UID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable automatic uid generation",
+          "target": "启用自动生成 UID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Generation scope",
+          "target": "生成范围"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Target folders for auto-generation",
+          "target": "自动生成的目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excluded folders",
+          "target": "排除的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Copy format",
+          "target": "复制格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Format (uid exists)",
+          "target": "格式（UID 存在）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Format (uid missing)",
+          "target": "格式（UID 缺失）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Manual uid clearing",
+          "target": "手动清除 UID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Folder to clear uids from",
+          "target": "要清除 UID 的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clear uids in folder",
+          "target": "清除文件夹中的 UID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Default: uid",
+          "target": "默认：uid"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: folder/subfolder",
+          "target": "示例：folder/subfolder"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Add",
+          "target": "添加"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Scan and add missing uids respecting scope/exclusions",
+          "target": "扫描并添加缺失的 UID，遵循范围/排除规则"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to start bulk generation. See console.",
+          "target": "启动批量生成失败。请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please specify a folder path in the 'Folder to clear uids from' setting above first.",
+          "target": "请先在上方的“要清除 UID 的文件夹”设置中指定一个文件夹路径。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "An unexpected error occurred during uid clearing. Check console.",
+          "target": "清除 UID 期间发生意外错误。请检查控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Automatic uid generation was disabled. You can re-enable it in settings if desired.",
+          "target": "自动生成 UID 已禁用。如果需要，您可以在设置中重新启用它。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active markdown file selected.",
+          "target": "未选择活动的 Markdown 文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file.",
+          "target": "没有活动文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error copying uid to clipboard.",
+          "target": "复制 UID 到剪贴板时出错。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active/specified file found.",
+          "target": "未找到活动/指定文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error copying to clipboard.",
+          "target": "复制到剪贴板时出错。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to copy to clipboard. See console.",
+          "target": "复制到剪贴板失败。请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No Markdown files found in selection.",
+          "target": "在选择中未找到 Markdown 文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file explorer found.",
+          "target": "未找到活动的文件资源管理器。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No files selected in the file explorer.",
+          "target": "文件资源管理器中未选择任何文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No *Markdown* files selected.",
+          "target": "未选择 *Markdown* 文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No markdown files found in the vault.",
+          "target": "在保险库中未找到 Markdown 文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search folders...",
+          "target": "搜索文件夹..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Confirm uid deletion",
+          "target": "确认删除 UID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This action cannot be undone.",
+          "target": "此操作无法撤销。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Manage excluded folders",
+          "target": "管理排除的文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No matching folders found.",
+          "target": "未找到匹配的文件夹。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Manage target folders",
+          "target": "管理目标文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "NanoID Separator Groups",
+          "target": "NanoID 分隔符组"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Define characters to inject into the NanoID at specific positions. Position is calculated from the raw Base ID.",
+          "target": "定义在特定位置注入 NanoID 的字符。位置从原始基础 ID 计算。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No target folders specified. Auto-generation is effectively disabled for folder scope.",
+          "target": "未指定目标文件夹。文件夹范围的自动生成已有效禁用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No folders excluded.",
+          "target": "未排除任何文件夹。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Define the format for copied text using placeholders: {title}, {uid}, {uidKey}.",
+          "target": "使用占位符定义复制文本的格式：{title}、{uid}、{uidKey}。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

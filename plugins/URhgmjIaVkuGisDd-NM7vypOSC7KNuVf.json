@@ -1,0 +1,1231 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "note-status",
+    "version": "1.0.0",
+    "title": "Note Status",
+    "description": "Note Status Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "3.1.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "alert",
+          "source": "Plugin settings exported successfully.",
+          "target": "插件设置已成功导出。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "alert",
+          "source": "Plugin settings imported successfully.",
+          "target": "插件设置已成功导入。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "alert",
+          "source": "Non-Markdown status data exported to vault.",
+          "target": "非 Markdown 状态数据已导出到保险库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "alert",
+          "source": "Non-Markdown status data imported from vault.",
+          "target": "非 Markdown 状态数据已从保险库导入。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported",
+          "target": "forceFrameRate 接受 0 到 125 之间的正整数，不支持强制设置高于 125 fps 的帧率"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to sync settings to external file:",
+          "target": "同步设置到外部文件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to load settings from external file:",
+          "target": "从外部文件加载设置失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to load non-markdown statuses:",
+          "target": "加载非 Markdown 状态失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to fetch Lucide icon list",
+          "target": "获取 Lucide 图标列表失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "getRightLeaf return null, unable to setup the view",
+          "target": "getRightLeaf 返回 null，无法设置视图"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "leaf not found, unable to activate the view",
+          "target": "未找到叶子节点，无法激活视图"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "open status modal failed because there is no markdown file in the provided leaf",
+          "target": "打开状态模态框失败，因为提供的叶子节点中没有 Markdown 文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "getRightLeaf return null, unable to setup the dashboard",
+          "target": "getRightLeaf 返回 null，无法设置仪表板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "leaf not found, unable to activate the dashboard",
+          "target": "未找到叶子节点，无法激活仪表板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Change note status",
+          "target": "更改笔记状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Change note state",
+          "target": "更改笔记状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Apply note status (no statuses available)",
+          "target": "应用笔记状态（无可用状态）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Apply note status to folder",
+          "target": "将笔记状态应用到文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Apply note status to folder and subfolders",
+          "target": "将笔记状态应用到文件夹及子文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Cannot open Lucide icon modal without Obsidian app",
+          "target": "没有 Obsidian 应用程序，无法打开 Lucide 图标模态框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not find target container for editor toolbar button",
+          "target": "找不到编辑器工具栏按钮的目标容器"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Select at least one file to change its status.",
+          "target": "请至少选择一个文件以更改其状态。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "This folder does not contain any files.",
+          "target": "此文件夹不包含任何文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No statuses available",
+          "target": "无可用状态"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Status cleared",
+          "target": "状态已清除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "All notes have status assigned!",
+          "target": "所有笔记都已分配状态！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Move status up",
+          "target": "上移状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Move status down",
+          "target": "下移状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Add status to note",
+          "target": "将状态添加到笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "A colorful set of workflow statuses with descriptive icons",
+          "target": "一套色彩丰富、带有描述性图标的工作流状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Workflow for novelists and creative writers",
+          "target": "适用于小说家和创意写作者的工作流"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "A simplified set of essential workflow statuses to get you started.",
+          "target": "一套简化的基础工作流状态，助您入门。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "A simplified set of essential workflow statuses",
+          "target": "一套简化的基础工作流状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Status workflow for a digital garden setup.",
+          "target": "适用于数字花园设置的状态工作流。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Fleeting ideas; raw, unprocessed thoughts",
+          "target": "转瞬即逝的想法；原始、未经处理的思绪"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Early development; ideas that have begun to take shape",
+          "target": "早期开发；已开始成形的想法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Structured notes; clear, standalone ideas in my own words",
+          "target": "结构化笔记；清晰、独立的想法，用自己的话表述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mature knowledge; deep, developed, and connected ideas",
+          "target": "成熟知识；深入、发展完善且相互关联的想法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Big picture; collections of ideas working together",
+          "target": "全局视角；协同工作的想法集合"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Archived; old or unused notes",
+          "target": "已归档；旧笔记或未使用的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Inspiration; unprocessed or lightly processed sources",
+          "target": "灵感；未经处理或轻度处理的来源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Usable resources; processed sources that I have engaged with and learned from",
+          "target": "可用资源；已处理、我已参与并从中学习的来源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Workflow for managing first iteration of note-taking, starting second iteration, reviewing, and completing",
+          "target": "用于管理笔记记录第一轮迭代、开始第二轮迭代、审阅和完成的工作流"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Note creation and initial addition of content",
+          "target": "笔记创建和初始内容添加"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Adding additional information to note",
+          "target": "向笔记添加额外信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Reviewing note and adding anything that might be missed",
+          "target": "审阅笔记并添加可能遗漏的内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Note is complete",
+          "target": "笔记已完成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Note status",
+          "target": "笔记状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Automatically apply this status to newly created notes.",
+          "target": "自动将此状态应用于新创建的笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Allow notes to have multiple statuses at the same time",
+          "target": "允许笔记同时拥有多个状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choose how the status frontmatter value is stored when multiple statuses are disabled. String format improves compatibility with plugins like TaskNotes.",
+          "target": "当禁用多状态时，选择状态前置元数据值的存储方式。字符串格式提高了与 TaskNotes 等插件的兼容性。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Show a folder context menu option that also processes notes inside nested folders.",
+          "target": "显示一个文件夹上下文菜单选项，该选项也会处理嵌套文件夹内的笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "YAML frontmatter tag name for status (default: obsidian-note-status)",
+          "target": "状态的 YAML 前置元数据标签名称（默认：obsidian-note-status）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "When enabled, statuses mapped to custom frontmatter keys are also written to the default status tag.",
+          "target": "启用后，映射到自定义前置元数据键的状态也会写入默认状态标签。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Disable dashboard and grouped view for vaults with more notes than this limit to improve performance. Set to 0 to disable this feature.",
+          "target": "对于笔记数量超过此限制的保险库，禁用仪表板和分组视图以提高性能。设置为 0 可禁用此功能。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Create a new status",
+          "target": "创建新状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Your manually defined statuses",
+          "target": "您手动定义的状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Standalone custom statuses.",
+          "target": "独立的自定义状态。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Custom colors for all statuses.",
+          "target": "所有状态的自定义颜色。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Icons, frames, status bar, and toolbar styles.",
+          "target": "图标、框架、状态栏和工具栏样式。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Multi-status, strict mode, and overview popups.",
+          "target": "多状态、严格模式和概览弹窗。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Frontmatter keys, mappings, and tag prefix.",
+          "target": "前置元数据键、映射和标签前缀。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Quick commands, experiments, and vault limits.",
+          "target": "快速命令、实验和保险库限制。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Automatically save and load selected plugin settings from a file in your vault.",
+          "target": "自动从保险库中的文件保存和加载选定的插件设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Path to the JSON file where settings will be stored (relative to vault root).",
+          "target": "设置将存储的 JSON 文件路径（相对于保险库根目录）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Store non-Markdown status data in a vault file instead of the internal plugin folder.",
+          "target": "将非 Markdown 状态数据存储在保险库文件中，而不是内部插件文件夹。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Path to the JSON file where non-Markdown statuses will be stored.",
+          "target": "非 Markdown 状态将存储的 JSON 文件路径。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Display a status icon in the status bar with the current note status.",
+          "target": "在状态栏中显示一个状态图标，显示当前笔记状态。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Automatically hide the status icon whenever the current note does not have a status.",
+          "target": "当当前笔记没有状态时，自动隐藏状态图标。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Show a popup listing statuses when hovering or interacting with the status icon.",
+          "target": "当悬停或与状态图标交互时，显示一个列出状态的弹出窗口。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Match the file explorer visuals: accent stripe, solid fill, or dot marker.",
+          "target": "匹配文件资源管理器的视觉效果：强调色条、实心填充或点标记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pick what text should be shown in the status bar when a note does not have a status.",
+          "target": "选择当笔记没有状态时，状态栏中应显示什么文本。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Display the unknown status icon in the status bar next to the custom text.",
+          "target": "在状态栏中自定义文本旁边显示未知状态图标。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Display the custom text in the status bar whenever no status is set.",
+          "target": "当未设置状态时，在状态栏中显示自定义文本。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Add a button to the editor toolbar to change the note status.",
+          "target": "在编辑器工具栏中添加一个按钮来更改笔记状态。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choose where the status button should appear in the editor toolbar.",
+          "target": "选择状态按钮在编辑器工具栏中的显示位置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Control which editors should display the toolbar button.",
+          "target": "控制哪些编辑器应显示工具栏按钮。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Display a status icon for each file inside the file explorer.",
+          "target": "在文件资源管理器中为每个文件显示一个状态图标。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choose where the icon should be rendered next to the file name.",
+          "target": "选择图标应渲染在文件名旁边的哪个位置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Do not render a status icon in the explorer when a note status cannot be determined.",
+          "target": "当笔记状态无法确定时，不要在资源管理器中渲染状态图标。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Apply the active status color to the filename text inside the file explorer.",
+          "target": "将活动状态颜色应用于文件资源管理器内的文件名文本。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Append a compact colored dot next to the filename as an extra status indicator.",
+          "target": "在文件名旁边附加一个紧凑的彩色点作为额外的状态指示器。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Adds a colored underline below the filename without changing the text color.",
+          "target": "在文件名下方添加一条彩色下划线，而不改变文本颜色。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choose whether to display a frame around the status icon inside the file explorer.",
+          "target": "选择是否在文件资源管理器内的状态图标周围显示边框。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Emoji or Lucide icon name displayed whenever a note does not have a status.",
+          "target": "当笔记没有状态时显示的表情符号或 Lucide 图标名称。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Hex color used for unknown statuses (e.g., #8b949e).",
+          "target": "用于未知状态的十六进制颜色（例如，#8b949e）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Unlock beta views that are still under development.",
+          "target": "解锁仍在开发中的测试版视图。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Show the ribbon shortcut to open the status dashboard view.",
+          "target": "显示打开状态仪表板视图的快速访问栏快捷方式。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Show the ribbon shortcut to open the grouped status view.",
+          "target": "显示打开分组状态视图的快速访问栏快捷方式。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Enable predefined workflows or define your own statuses.",
+          "target": "启用预定义的工作流程或定义您自己的状态。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choose statuses with command palette shortcuts.",
+          "target": "使用命令面板快捷方式选择状态。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Icon, popup, badge style/content, and no-status behavior.",
+          "target": "图标、弹出窗口、徽章样式/内容以及无状态行为。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Fallback icon and color when a note lacks status.",
+          "target": "当笔记缺少状态时的备用图标和颜色。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Multi-status mode, tag key, mappings, and vault safeguards.",
+          "target": "多状态模式、标签键、映射和保险库保护措施。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Opt into dashboard and grouped view previews.",
+          "target": "选择加入仪表板和分组视图预览。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Custom Statuses",
+          "target": "自定义状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Status Colors",
+          "target": "状态颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "UI & Appearance",
+          "target": "用户界面与外观"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Workflow Rules",
+          "target": "工作流程规则"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Storage & Tagging",
+          "target": "存储与标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Features & Limits",
+          "target": "功能与限制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Quick Actions",
+          "target": "快速操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Status Bar",
+          "target": "状态栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Editor Toolbar",
+          "target": "编辑器工具栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "File Explorer",
+          "target": "文件资源管理器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Unknown / No-Status Appearance",
+          "target": "未知/无状态外观"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Behavior & Storage",
+          "target": "行为与存储"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Synchronization",
+          "target": "同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Experimental Features",
+          "target": "实验性功能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "All",
+          "target": "全部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Custom",
+          "target": "自定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Colorful workflow",
+          "target": "多彩工作流"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Creative Writing",
+          "target": "创意写作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Minimal workflow",
+          "target": "极简工作流"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Digital Garden Workflow",
+          "target": "数字花园工作流"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "First Pass",
+          "target": "初稿"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Second Pass",
+          "target": "二稿"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Review",
+          "target": "审阅"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Complete",
+          "target": "完成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Description",
+          "target": "描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Language (Optional)",
+          "target": "语言（可选）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Author GitHub Username (Optional)",
+          "target": "作者 GitHub 用户名（可选）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Statuses",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Default status for new notes",
+          "target": "新笔记的默认状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable multiple statuses",
+          "target": "启用多状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Single status format",
+          "target": "单状态格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Apply status recursively to subfolders",
+          "target": "递归地将状态应用于子文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Status tag prefix",
+          "target": "状态标签前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Strict status validation",
+          "target": "严格状态验证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Frontmatter mappings",
+          "target": "Frontmatter 映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Write mapped tags to default status tag",
+          "target": "将映射的标签写入默认状态标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vault size limit",
+          "target": "保险库大小限制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Use only custom statuses",
+          "target": "仅使用自定义状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Custom statuses",
+          "target": "自定义状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add status",
+          "target": "添加状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable settings synchronization",
+          "target": "启用设置同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Settings sync file path",
+          "target": "设置同步文件路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync non-Markdown statuses",
+          "target": "同步非 Markdown 状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Data sync file path",
+          "target": "数据同步文件路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show status icon in status bar",
+          "target": "在状态栏中显示状态图标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hide icon when note has no status",
+          "target": "当笔记没有状态时隐藏图标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show status overview popup",
+          "target": "显示状态概览弹出窗口"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Status bar badge style",
+          "target": "状态栏徽章样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Status bar badge content",
+          "target": "状态栏徽章内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Custom text when note has no status",
+          "target": "当笔记没有状态时的自定义文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show icon when note has no status",
+          "target": "当笔记没有状态时显示图标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show text when note has no status",
+          "target": "当笔记没有状态时显示文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show editor toolbar button",
+          "target": "显示编辑器工具栏按钮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Editor toolbar button position",
+          "target": "编辑器工具栏按钮位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show toolbar button for",
+          "target": "为以下情况显示工具栏按钮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show status icons in file explorer",
+          "target": "在文件资源管理器中显示状态图标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Status icon position in file explorer",
+          "target": "文件资源管理器中的状态图标位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hide icon when file status is unknown",
+          "target": "当文件状态未知时隐藏图标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Color filename text using status color",
+          "target": "使用状态颜色为文件名文本着色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Color the file explorer block based on status",
+          "target": "根据状态为文件资源管理器块着色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show colored left border",
+          "target": "显示彩色左边框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show colored status dot",
+          "target": "显示彩色状态点"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Underline filename with status color",
+          "target": "用状态颜色为文件名添加下划线"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Status icon frame",
+          "target": "状态图标边框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Status icon color",
+          "target": "状态图标颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Icon for unknown status",
+          "target": "未知状态的图标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Color for unknown status",
+          "target": "未知状态的颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable experimental features",
+          "target": "启用实验性功能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable status dashboard",
+          "target": "启用状态仪表板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable grouped status view",
+          "target": "启用分组状态视图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Current statuses",
+          "target": "当前状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Change current note status",
+          "target": "更改当前笔记状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cycle through statuses",
+          "target": "循环切换状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clear status",
+          "target": "清除状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy current note status",
+          "target": "复制当前笔记状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Paste status to current note",
+          "target": "将状态粘贴到当前笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Toggle multiple statuses mode",
+          "target": "切换多状态模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Search notes by current status",
+          "target": "按当前状态搜索笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open status pane",
+          "target": "打开状态面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search icons…",
+          "target": "搜索图标…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Emoji or icon name",
+          "target": "表情符号或图标名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "e.g. In Progress",
+          "target": "例如：进行中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Optional description",
+          "target": "可选描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "e.g. Project Workflow",
+          "target": "例如：项目工作流"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "e.g. project-workflow",
+          "target": "例如：project-workflow"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "e.g. English",
+          "target": "例如：英语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "e.g. janedoe",
+          "target": "例如：janedoe"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "status, project-status",
+          "target": "status, project-status"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "No status",
+          "target": "无状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Filter by note name...",
+          "target": "按笔记名称筛选..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Submit to Marketplace",
+          "target": "提交到市场"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Move status up",
+          "target": "上移状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Move status down",
+          "target": "下移状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Custom Statuses",
+          "target": "自定义状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Open grouped status view",
+          "target": "打开分组状态视图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Find notes without status",
+          "target": "查找无状态笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Change status of current note",
+          "target": "更改当前笔记状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Cycle through available statuses",
+          "target": "循环切换可用状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Clear status from current note",
+          "target": "清除当前笔记状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Copy status to clipboard",
+          "target": "复制状态到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Paste status from clipboard",
+          "target": "从剪贴板粘贴状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Search for notes with same status",
+          "target": "搜索具有相同状态的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Toggle multiple statuses mode",
+          "target": "切换多状态模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Refresh dashboard data",
+          "target": "刷新仪表板数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Refresh Dashboard",
+          "target": "刷新仪表板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Open status dashboard",
+          "target": "打开状态仪表板"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
