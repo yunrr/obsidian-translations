@@ -1,0 +1,3073 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "agent-fleet",
+    "version": "1.0.1",
+    "title": "Agent Fleet",
+    "description": "Agent Fleet Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.13.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Message the agent… (Ctrl+Enter to send)",
+          "target": "给代理发消息... (Ctrl+Enter 发送)"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Select an agent to start chatting…",
+          "target": "选择一个代理开始聊天..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Paths are relative to scope_root. Defaults work for almost everyone. Override only if your vault layout demands it — these cannot be changed after creation.",
+          "target": "路径相对于 scope_root。默认设置适用于大多数人。仅在您的库布局有特殊需求时才覆盖——创建后无法更改。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Stop task",
+          "target": "停止任务"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Hide this item from the dashboard until the next lint pass (does not modify log.md).",
+          "target": "在下次 lint 通过前，从仪表板隐藏此项（不修改 log.md）。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Attach active document",
+          "target": "附加活动文档"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Stop generation",
+          "target": "停止生成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "none",
+          "target": "无"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "None",
+          "target": "无"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Failures only",
+          "target": "仅失败项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "all",
+          "target": "全部"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "All",
+          "target": "全部"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "telegram",
+          "target": "telegram"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Telegram",
+          "target": "Telegram"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "slack",
+          "target": "slack"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Slack",
+          "target": "Slack"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Run Activity (14d)",
+          "target": " 运行活动 (14天)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Success Rate",
+          "target": " 成功率"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Active Agents",
+          "target": " 活跃代理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Recent Activity",
+          "target": " 近期活动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Fleet Status",
+          "target": " 机队状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " New Agent",
+          "target": " 新建代理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Quick Run",
+          "target": " 快速运行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Run",
+          "target": " 运行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Edit",
+          "target": " 编辑"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Chat",
+          "target": " 聊天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Run Now",
+          "target": " 立即运行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Disable",
+          "target": " 禁用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Enable",
+          "target": " 启用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Delete",
+          "target": " 删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Heartbeat",
+          "target": " 心跳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Skills",
+          "target": " 技能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " MCP Servers",
+          "target": " MCP 服务器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Permissions",
+          "target": " 权限"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Recent Runs",
+          "target": " 近期运行记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Edit Agent",
+          "target": " 编辑代理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Reflect now",
+          "target": " 立即反思"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Open in Editor",
+          "target": " 在编辑器中打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " New Task",
+          "target": " 新建任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Add task",
+          "target": " 添加任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Paused",
+          "target": " 已暂停"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Retry",
+          "target": " 重试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " New Skill",
+          "target": " 新建技能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " New Channel",
+          "target": " 新建频道"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Open log",
+          "target": "打开日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Create Channel",
+          "target": " 创建频道"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Save Changes",
+          "target": " 保存更改"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " History",
+          "target": " 历史记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Approve",
+          "target": " 批准"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Reject",
+          "target": " 拒绝"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Details",
+          "target": " 详情"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Instructions",
+          "target": " 指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Open Run Note",
+          "target": " 打开运行备注"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Re-run Task",
+          "target": " 重新运行任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Create Agent",
+          "target": " 创建代理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Create Skill",
+          "target": " 创建技能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Create Task",
+          "target": " 创建任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "No MCP servers registered yet. ",
+          "target": "尚未注册任何 MCP 服务器。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Add Server",
+          "target": " 添加服务器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Authenticating…",
+          "target": " 正在认证…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Authenticate",
+          "target": " 认证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Probe tools",
+          "target": " 探测工具"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Remove Server",
+          "target": " 移除服务器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " New Chat",
+          "target": " 新建聊天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "select",
+          "target": "select"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "option",
+          "target": "option"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "optgroup",
+          "target": "optgroup"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "table",
+          "target": "table"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tr",
+          "target": "tr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "thead",
+          "target": "thead"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "th",
+          "target": "th"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tbody",
+          "target": "tbody"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "td",
+          "target": "td"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "details",
+          "target": "details"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "summary",
+          "target": "summary"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Agent Fleet: Slack WebSocket open failed",
+          "target": "代理机队：Slack WebSocket 连接失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Agent Fleet: /agents response failed",
+          "target": "代理机队：/agents 响应失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Agent Fleet: agent switch handler threw",
+          "target": "代理机队：代理切换处理器抛出异常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Agent Fleet: Slack inbound handler threw",
+          "target": "代理机队：Slack 入站处理器抛出异常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Agent Fleet: Telegram inbound handler threw",
+          "target": "代理机队：Telegram 入站处理器抛出异常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Agent Fleet: Telegram agent switch handler threw",
+          "target": "代理机队：Telegram 代理切换处理器抛出异常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Agent Fleet: channel manager failed to start",
+          "target": "代理机队：频道管理器启动失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Agent Fleet: MCP import failed",
+          "target": "代理机队：MCP 导入失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Verify",
+          "target": "验证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add credential",
+          "target": "添加凭据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "+ Add",
+          "target": "+ 添加"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used by agents with adapter “codex”. Install via `npm i -g @openai/codex` and authenticate with `codex login` in a terminal first.",
+          "target": "供使用“codex”适配器的代理使用。请先通过 `npm i -g @openai/codex` 安装，并在终端中运行 `codex login` 进行认证。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Fallback for agents that don’t set their own. Aliases (opus/sonnet/haiku) work on any backend; use Custom for pinned IDs or Bedrock/Vertex/Foundry.",
+          "target": "未设置自身默认模型的代理将使用此回退设置。别名（opus/sonnet/haiku）适用于任何后端；对于固定 ID 或 Bedrock/Vertex/Foundry，请使用“自定义”。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Days to keep run logs before auto-prune.",
+          "target": "运行日志在自动清理前保留的天数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How long a chat session waits for any output from the Claude CLI before killing the subprocess and surfacing a timeout error. Raise this if your agents run long tools (e.g. large web fetches, builds) and you're seeing spurious 'no response' errors.",
+          "target": "聊天会话在终止子进程并显示超时错误前，等待 Claude CLI 任何输出的时长。如果您的代理运行耗时较长的工具（例如大型网页抓取、构建）并出现虚假的“无响应”错误，请调高此值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Checks that the configured binary is reachable.",
+          "target": "检查配置的二进制文件是否可达。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Checks that the configured Codex binary is reachable.",
+          "target": "检查配置的 Codex 二进制文件是否可达。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hard cap on live claude subprocesses across all channels. Oldest idle session is hibernated when exceeded.",
+          "target": "所有频道中活跃 Claude 子进程的硬性上限。超出时，最旧的空闲会话将被休眠。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Channel sessions with no activity for this long get their subprocess hibernated. State is preserved and the next message resumes transparently.",
+          "target": "频道会话若在此时间内无活动，其子进程将被休眠。状态会被保留，下一条消息将透明地恢复会话。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum messages allowed per external conversation within the rolling window.",
+          "target": "滚动窗口内每个外部对话允许的最大消息数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used by `credential_ref` in _fleet/channels/*.md files.",
+          "target": "供 _fleet/channels/*.md 文件中的 `credential_ref` 使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Generated in your Slack app's Basic Information → App-Level Tokens.",
+          "target": "在您的 Slack 应用的“基本信息”→“应用级令牌”中生成。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "From @BotFather on Telegram.",
+          "target": "来自 Telegram 的 @BotFather。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create a new scoped wiki agent. All fields optional.",
+          "target": "创建一个新的作用域 Wiki 代理。所有字段均为可选。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Vault-relative path. Empty = whole vault.",
+          "target": "可选。相对于保险库的路径。留空表示整个保险库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Agent name suffix. Default: derived from scope folder name, or 'wiki-keeper' for whole-vault.",
+          "target": "可选。代理名称后缀。默认值：从作用域文件夹名称派生，或对于整个保险库使用 'wiki-keeper'。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Comma- or newline-separated vault-relative paths. Read-only — claims are extracted but files are never moved. Leave empty for inbox-only mode (you drop files into _sources/inbox/ and they get archived after processing).",
+          "target": "可选。以逗号或换行符分隔的、相对于保险库的路径。只读——声明会被提取，但文件永远不会被移动。留空则仅用于收件箱模式（您将文件放入 _sources/inbox/，处理后它们会被归档）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Glob patterns to skip. Leave empty to process everything under watched + inbox.",
+          "target": "可选。要跳过的 Glob 模式。留空则处理监视文件夹和收件箱下的所有内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Watched mode only — files whose last modification date is before this are skipped. Defaults to today so an established vault doesn't flood the keeper on first run. Clear the field to process everything.",
+          "target": "仅限监视模式——最后修改日期早于此日期的文件将被跳过。默认为今天，这样已建立的保险库在首次运行时不会淹没守护进程。清除此字段以处理所有文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Slack/Telegram channel for ingest + lint summaries. Leave as (none) to disable.",
+          "target": "可选。用于接收和整理摘要的 Slack/Telegram 频道。保留为（无）以禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hard cap on token spend per run. Unprocessed files resume next cycle.",
+          "target": "每次运行的令牌花费硬性上限。未处理的文件将在下一个周期恢复。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If on, wiki-query files long answers under _topics/syntheses/. Off = answers live only in chat.",
+          "target": "如果开启，wiki-query 会将长答案归档到 _topics/syntheses/。关闭则答案仅存在于聊天中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If on, external-channel (Slack/Telegram) replies rewrite [[wikilinks]] as obsidian:// URLs.",
+          "target": "如果开启，外部频道（Slack/Telegram）的回复会将 [[wikilinks]] 重写为 obsidian:// URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma- or newline-separated vault-relative paths.",
+          "target": "以逗号或换行符分隔的、相对于保险库的路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Glob patterns to skip.",
+          "target": "要跳过的 Glob 模式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Watched mode skips files older than this date. Clear to process everything.",
+          "target": "监视模式会跳过早于此日期的文件。清除此字段以处理所有文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Separate budget for the synthesis-refresh phase that regenerates topic-page summaries.",
+          "target": "用于重新生成主题页面摘要的合成刷新阶段的单独预算。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Topic-page count above which index.md splits into per-type sub-MOCs.",
+          "target": "主题页面数量超过此阈值时，index.md 会拆分为按类型划分的子 MOC。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Lint flags topic-page summaries older than this and chains wiki-refresh.",
+          "target": "Lint 会标记早于此日期的主题页面摘要，并链接 wiki-refresh。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Levenshtein-ratio above which lint proposes merging two same-type pages (0.0–1.0).",
+          "target": "Lint 建议合并两个相同类型页面的 Levenshtein 比率阈值（0.0–1.0）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Compounding: wiki-query files long answers under _topics/syntheses/ and bullets each cited topic page. Default ON.",
+          "target": "复合模式：wiki-query 会将长答案归档到 _topics/syntheses/，并为每个引用的主题页面创建项目符号。默认开启。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Rewrite [[wikilinks]] as obsidian:// URLs when replying via Slack/Telegram.",
+          "target": "通过 Slack/Telegram 回复时，将 [[wikilinks]] 重写为 obsidian:// URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Also delete associated tasks",
+          "target": "同时删除关联的任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Fleet folder",
+          "target": "Fleet 文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Claude CLI path",
+          "target": "Claude CLI 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Codex CLI path",
+          "target": "Codex CLI 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default model",
+          "target": "默认模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AWS region",
+          "target": "AWS 区域"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max concurrent runs",
+          "target": "最大并发运行数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Run log retention",
+          "target": "运行日志保留"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Catch up missed tasks",
+          "target": "补上错过的任务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Notification level",
+          "target": "通知级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Status bar",
+          "target": "状态栏"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Chat watchdog timeout (minutes)",
+          "target": "聊天看门狗超时（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verify Claude CLI",
+          "target": "验证 Claude CLI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verify Codex CLI",
+          "target": "验证 Codex CLI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Channels",
+          "target": "频道"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max concurrent channel sessions",
+          "target": "最大并发频道会话数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Idle timeout (minutes)",
+          "target": "空闲超时（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rate limit per conversation",
+          "target": "每个对话的速率限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rate limit window (minutes)",
+          "target": "速率限制窗口（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Channel credentials",
+          "target": "频道凭据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reference name",
+          "target": "引用名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Type",
+          "target": "类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bot token (xoxb-...)",
+          "target": "Bot 令牌 (xoxb-...)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "App-level token (xapp-...)",
+          "target": "应用级令牌 (xapp-...)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bot token",
+          "target": "Bot 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Wiki Keepers",
+          "target": "Wiki 守护进程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add Wiki Keeper",
+          "target": "添加 Wiki 守护进程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scope folder",
+          "target": "作用域文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Slug",
+          "target": "Slug"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Watched folders",
+          "target": "监视文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude patterns",
+          "target": "排除模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Watch files modified since",
+          "target": "监视自修改以来的文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Heartbeat channel",
+          "target": "心跳频道"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max tokens per ingest",
+          "target": "每次接收的最大令牌数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File substantive answers",
+          "target": "归档实质性答案"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Obsidian URL scheme for citations",
+          "target": "用于引用的 Obsidian URL 方案"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max tokens per refresh",
+          "target": "每次刷新的最大令牌数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Index split threshold",
+          "target": "索引拆分阈值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Summary stale (days)",
+          "target": "摘要过期（天）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Dedup similarity threshold",
+          "target": "去重相似度阈值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "(empty = whole vault)",
+          "target": "（留空表示整个保险库）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "(empty = inbox-only)",
+          "target": "（留空表示仅收件箱模式）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "(empty = no excludes)",
+          "target": "（留空表示不排除任何内容）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Creating…",
+          "target": "创建中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Create",
+          "target": "创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Saving…",
+          "target": "保存中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": " Reflecting…",
+          "target": " 正在同步…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "No lint report yet. Run wiki-lint manually or wait for the weekly task to fire.",
+          "target": "尚无 Lint 报告。手动运行 wiki-lint 或等待每周任务触发。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Credential",
+          "target": "凭据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Default agent",
+          "target": "默认代理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Allowed agents",
+          "target": "允许的代理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Per-user sessions",
+          "target": "每用户会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Allowed users",
+          "target": "允许的用户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Body (markdown)",
+          "target": "正文（Markdown）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Transport config (JSON)",
+          "target": "传输配置（JSON）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Notify",
+          "target": "通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Post to channel",
+          "target": "发布到频道"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Instruction",
+          "target": "指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Agent-specific skills",
+          "target": "代理特定技能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Catch up if missed",
+          "target": "错过时补上"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": " Probing…",
+          "target": " 正在探测…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Transport",
+          "target": "传输"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Environment variables",
+          "target": "环境变量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Custom headers",
+          "target": "自定义头信息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Authentication",
+          "target": "认证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Bearer token",
+          "target": "Bearer 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Thread",
+          "target": "线程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: malformed YAML frontmatter, treating as empty",
+          "target": "Agent Fleet：YAML 前置数据格式错误，视为空。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: couldn't install MCP projection; run proceeds without fleet MCP.",
+          "target": "Agent Fleet：无法安装 MCP 投影；运行将在没有 Fleet MCP 的情况下继续。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: SecretStorage unavailable (Obsidian < 1.11.4). Secrets will use plaintext fallback.",
+          "target": "Agent Fleet：SecretStorage 不可用（Obsidian < 1.11.4）。密钥将使用明文回退。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: injectMessage stdin write failed",
+          "target": "Agent Fleet：injectMessage stdin 写入失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: failed to save inbound image",
+          "target": "Agent Fleet：保存入站图像失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: agent switch confirmation failed",
+          "target": "Agent Fleet：代理切换确认失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: Slack envelope ACK failed",
+          "target": "Agent Fleet：Slack 信封 ACK 失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: Telegram sendChatAction failed",
+          "target": "Agent Fleet：Telegram sendChatAction 失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Agent Fleet: Telegram image download failed",
+          "target": "Agent Fleet：Telegram 图像下载失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Fill in the reference name and bot token.",
+          "target": "请填写引用名称和机器人令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Slack requires both bot token and app-level token.",
+          "target": "Slack 需要同时提供机器人令牌和应用级令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Channel name is required.",
+          "target": "频道名称为必填项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Select a credential.",
+          "target": "请选择一个凭证。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transport config must be a JSON object.",
+          "target": "传输配置必须是一个 JSON 对象。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Agent name is required.",
+          "target": "代理名称为必填项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Skill name is required.",
+          "target": "技能名称为必填项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Task title is required.",
+          "target": "任务标题为必填项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Pick a date/time for the one-time run.",
+          "target": "请选择一次性运行的日期/时间。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No URL found for this server — can't authenticate.",
+          "target": "未找到此服务器的 URL — 无法进行身份验证。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Server name is required.",
+          "target": "服务器名称为必填项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Command is required for stdio servers.",
+          "target": "stdio 服务器需要命令。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "URL is required for HTTP/SSE servers.",
+          "target": "HTTP/SSE 服务器需要 URL。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Enter a bearer token, or choose a different auth method.",
+          "target": "请输入承载令牌，或选择其他身份验证方法。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active document to attach",
+          "target": "没有活动文档可供附加。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Agent Fleet: channel manager failed to start — check console.",
+          "target": "代理舰队：频道管理器启动失败 — 请检查控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Agent Fleet loaded.",
+          "target": "代理舰队已加载。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No agents configured.",
+          "target": "未配置任何代理。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Agent Fleet paused.",
+          "target": "代理舰队已暂停。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Agent Fleet resumed.",
+          "target": "代理舰队已恢复。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Toggle conversations panel",
+          "target": "切换对话面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Delete conversation",
+          "target": "删除对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Copy message",
+          "target": "复制消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "body",
+          "source": "This removes its message history. The agent and its other conversations are untouched.",
+          "target": "这将移除其消息历史记录。代理及其其他对话不受影响。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-form-select af-mp-select",
+          "target": "af-form-select af-mp-select"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-form-input af-mp-custom-input",
+          "target": "af-form-input af-mp-custom-input"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-wk-row-btn af-wk-row-btn-danger",
+          "target": "af-wk-row-btn af-wk-row-btn-danger"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-pill yellow",
+          "target": "af-pill yellow"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-dot pulse",
+          "target": "af-dot pulse"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-pill blue",
+          "target": "af-pill blue"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-pill green",
+          "target": "af-pill green"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-badge af-badge-warn",
+          "target": "af-badge af-badge-warn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-section-card af-chart-section",
+          "target": "af-section-card af-chart-section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-chart-body af-chart-body-center",
+          "target": "af-chart-body af-chart-body-center"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-btn-sm primary",
+          "target": "af-btn-sm primary"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-btn-sm danger",
+          "target": "af-btn-sm danger"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-mcp-overview-tools af-muted",
+          "target": "af-mcp-overview-tools af-muted"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-detail-value af-mono",
+          "target": "af-detail-value af-mono"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-kanban-card af-kanban-card-running",
+          "target": "af-kanban-card af-kanban-card-running"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-kanban-progress-bar af-kanban-progress-bar-real",
+          "target": "af-kanban-progress-bar af-kanban-progress-bar-real"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-btn-sm af-btn-xs",
+          "target": "af-btn-sm af-btn-xs"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-agent-card-avatar idle",
+          "target": "af-agent-card-avatar idle"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-form-row af-form-row-toggle",
+          "target": "af-form-row af-form-row-toggle"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-agent-card-toggle on",
+          "target": "af-agent-card-toggle on"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-btn-sm primary af-create-submit",
+          "target": "af-btn-sm primary af-create-submit"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-output-block af-compact-md",
+          "target": "af-output-block af-compact-md"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-output-block af-compact-md af-run-transcript-body",
+          "target": "af-output-block af-compact-md af-run-transcript-body"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-form-row af-schedule-time-row",
+          "target": "af-form-row af-schedule-time-row"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-form-select af-form-select-sm",
+          "target": "af-form-select af-form-select-sm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-form-row af-schedule-day-row",
+          "target": "af-form-row af-schedule-day-row"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-form-row af-schedule-dom-row",
+          "target": "af-form-row af-schedule-dom-row"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-form-input af-form-input-sm",
+          "target": "af-form-input af-form-input-sm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-mcp-agent-tool-count af-muted",
+          "target": "af-mcp-agent-tool-count af-muted"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-agent-card-desc af-mcp-meta",
+          "target": "af-agent-card-desc af-mcp-meta"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-mcp-tool-chip af-mcp-tool-chip-more",
+          "target": "af-mcp-tool-chip af-mcp-tool-chip-more"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon af-chat-convo-collapse-btn",
+          "target": "clickable-icon af-chat-convo-collapse-btn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-btn-sm af-chat-view-new-btn",
+          "target": "af-btn-sm af-chat-view-new-btn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-chat-pill af-chat-pill-inline",
+          "target": "af-chat-pill af-chat-pill-inline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-chat-pills-row af-thread-pills-row",
+          "target": "af-chat-pills-row af-thread-pills-row"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-chat-input-row af-thread-composer",
+          "target": "af-chat-input-row af-thread-composer"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "af-chat-input af-thread-input",
+          "target": "af-chat-input af-thread-input"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "confirmText",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "---\n{}\n---\n\n# Agent-Specific Skills\n\nNo additional agent-specific skills. This agent relies on the shared \\`agent-fleet-system\\` skill.\n",
+          "target": "---\\n{}\\n---\\n\\n# 代理特定技能\\n\\n无额外的代理特定技能。此代理依赖于共享的 \\\\`agent-fleet-system\\\\` 技能。\\n"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "---\nmodel: opus\nadapter: claude-code\ntimeout: 300\nmax_retries: 1\ncwd: \"\"\npermission_mode: bypassPermissions\napproval_required: []\nallowed_tools: []\nblocked_tools: []\nmemory: true\nmemory_max_entries: 100\nauto_compact_threshold: 85\n---\n\n\n",
+          "target": "---\\nmodel: opus\\nadapter: claude-code\\ntimeout: 300\\nmax_retries: 1\\ncwd: \\\"\\\"\\npermission_mode: bypassPermissions\\napproval_required: []\\nallowed_tools: []\\nblocked_tools: []\\nmemory: true\\nmemory_max_entries: 100\\nauto_compact_threshold: 85\\n---\\n\\n\\n"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "{\n  \"allow\": [],\n  \"deny\": [\n    \"Bash(git push *)\",\n    \"Bash(rm -rf *)\",\n    \"Bash(sudo *)\",\n    \"Bash(chmod *)\"\n  ]\n}\n",
+          "target": "{\\n  \\\"allow\\\": [],\\n  \\\"deny\\\": [\\n    \\\"Bash(git push *)\\\",\\n    \\\"Bash(rm -rf *)\\\",\\n    \\\"Bash(sudo *)\\\",\\n    \\\"Bash(chmod *)\\\"\\n  ]\\n}\\n"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "List available agents",
+          "target": "列出可用代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "empty Bash() matches every command — use the read-only sandbox instead",
+          "target": "空的 Bash() 匹配所有命令 — 请改用只读沙箱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "a wildcard in the middle of a command can't be expressed as a prefix rule",
+          "target": "命令中间的通配符无法表示为前缀规则"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "embedded wildcards aren't supported (execpolicy matches argv prefixes only)",
+          "target": "不支持嵌入式通配符（execpolicy 仅匹配 argv 前缀）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "a bare wildcard matches every command — use the read-only sandbox instead",
+          "target": "裸通配符匹配所有命令 — 请改用只读沙箱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "opus — latest Opus",
+          "target": "opus — 最新 Opus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "sonnet — latest Sonnet",
+          "target": "sonnet — 最新 Sonnet"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "haiku — latest Haiku",
+          "target": "haiku — 最新 Haiku"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "opusplan — plan-mode Opus",
+          "target": "opusplan — 计划模式 Opus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "gpt-5.5 — frontier",
+          "target": "gpt-5.5 — 前沿"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "gpt-5.4-mini — fast",
+          "target": "gpt-5.4-mini — 快速"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude Code",
+          "target": "Claude Code"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Codex",
+          "target": "Codex"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Dashboard",
+          "target": "仪表盘"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Agents",
+          "target": "代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Tasks Board",
+          "target": "任务看板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Run History",
+          "target": "运行历史"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Approvals",
+          "target": "审批"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Skills",
+          "target": "技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "MCP Servers",
+          "target": "MCP 服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Channels",
+          "target": "频道"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Overview",
+          "target": "概览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Config",
+          "target": "配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Runs",
+          "target": "运行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Memory",
+          "target": "记忆"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "None",
+          "target": "无"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Coding Agent",
+          "target": "编码代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Monitor",
+          "target": "监控"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Briefing",
+          "target": "简报"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Code Reviewer",
+          "target": "代码审查员"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "CLI Tool Wrapper",
+          "target": "CLI 工具包装器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "API Integration",
+          "target": "API 集成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Code Review",
+          "target": "代码审查"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Data Analysis",
+          "target": "数据分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Proposal not found.",
+          "target": "未找到提案。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Couldn't apply — target skill not found; proposal left pending.",
+          "target": "无法应用 — 目标技能未找到；提案保持待处理状态。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Agent not found, disabled, or memory off.",
+          "target": "代理未找到、已禁用或记忆功能关闭。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "A reflection is already in progress.",
+          "target": "反思已在进行中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Reflection complete — working memory consolidated.",
+          "target": "反思完成 — 工作记忆已整合。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Reflection produced no memory block; working memory left unchanged.",
+          "target": "反思未产生记忆块；工作记忆保持不变。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Preferences",
+          "target": "偏好设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open dashboard",
+          "target": "打开仪表盘"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open agents panel",
+          "target": "打开代理面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open agent chat",
+          "target": "打开代理聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "New chat tab",
+          "target": "新建聊天标签页"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "New agent",
+          "target": "新建代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "New skill",
+          "target": "新建技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "New task",
+          "target": "新建任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run agent now",
+          "target": "立即运行代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pause all",
+          "target": "全部暂停"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Resume all",
+          "target": "全部恢复"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "View status",
+          "target": "查看状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "page",
+          "source": "dashboard",
+          "target": "仪表盘"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "page",
+          "source": "agents",
+          "target": "代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "page",
+          "source": "kanban",
+          "target": "看板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "page",
+          "source": "runs",
+          "target": "运行记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "page",
+          "source": "approvals",
+          "target": "审批"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "page",
+          "source": "skills",
+          "target": "技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "page",
+          "source": "mcp",
+          "target": "MCP"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "page",
+          "source": "channels",
+          "target": "频道"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search icons...",
+          "target": "搜索图标..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search agents, tasks, runs...",
+          "target": "搜索代理、任务、运行记录..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "U0AQW6P37N1\nU0BXYZ12345",
+          "target": "U0AQW6P37N1\\nU0BXYZ12345"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "You are being contacted via Slack. Keep replies concise...",
+          "target": "您正通过Slack被联系。请保持回复简洁..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Notes, runbook snippets, escalation contacts…",
+          "target": "笔记、运行手册片段、升级联系人…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "{\n  \"socket_mode\": true\n}",
+          "target": "{\\n  \\\"socket_mode\\\": true\\n}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "🛡️",
+          "target": "🛡️"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "You are a deployment monitoring agent...",
+          "target": "您是一个部署监控代理..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Leave empty for vault root",
+          "target": "留空表示保险库根目录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Check status, scan for issues, report findings...",
+          "target": "检查状态、扫描问题、报告发现..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Custom skills/instructions for this agent...",
+          "target": "此代理的自定义技能/指令..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Background info, repo structure, conventions...",
+          "target": "背景信息、仓库结构、约定..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Bash(curl *)\nBash(python3 *)\nRead\nEdit\nWrite",
+          "target": "Bash(curl *)\\nBash(python3 *)\\nRead\\nEdit\\nWrite"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Bash(git push *)\nBash(rm -rf *)\nBash(sudo *)",
+          "target": "Bash(git push *)\\nBash(rm -rf *)\\nBash(sudo *)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Skill instructions — what does this skill do and how should agents use it?",
+          "target": "技能说明 — 此技能做什么以及代理应如何使用它？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "## Commands\n\n### list\nUsage: tool list [--filter <query>]\n...",
+          "target": "## 命令\\n\\n### list\\n用法: tool list [--filter <query>]\\n..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "API docs, filter syntax, conventions...",
+          "target": "API文档、过滤语法、约定..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "## Example: List all tasks\n\nUser: Show me my tasks for today\n\nAgent: ...",
+          "target": "## 示例：列出所有任务\\n\\n用户：显示我今天的任务\\n\\n代理：..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "System prompt...",
+          "target": "系统提示..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Describe what the agent should do...",
+          "target": "描述代理应做什么..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Skill instructions...",
+          "target": "技能说明..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "## Commands\n\n### list\n...",
+          "target": "## 命令\\n\\n### list\\n..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "## Example: List all tasks\n...",
+          "target": "## 示例：列出所有任务\\n..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "API_KEY=sk-...\nDEBUG=true",
+          "target": "API_KEY=sk-...\\nDEBUG=true"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "X-Custom-Header: value",
+          "target": "X-Custom-Header: value"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "sk-…",
+          "target": "sk-…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Message the agent… (Ctrl+Enter to send)",
+          "target": "给代理发消息… (Ctrl+Enter 发送)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Message in thread… (Ctrl+Enter to send)",
+          "target": "在话题中发消息… (Ctrl+Enter 发送)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This action will:",
+          "target": "此操作将："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Move the agent definition to trash",
+          "target": "将代理定义移至回收站"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Move the agent's memory file to trash",
+          "target": "将代理的记忆文件移至回收站"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Files are moved to your system trash and can be recovered.",
+          "target": "文件将移至系统回收站，可以恢复。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete Agent",
+          "target": "删除代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Custom…",
+          "target": "自定义…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Credential storage: ",
+          "target": "凭证存储："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add a channel credential",
+          "target": "添加频道凭证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No channel credentials configured yet.",
+          "target": "尚未配置频道凭证。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Remove",
+          "target": "移除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Per-scope wiki agents. Each runs its own inbox + watched folders + topics + heartbeat. All fields on the Add form are optional — click Create with everything blank to get a whole-vault keeper with defaults.",
+          "target": "按作用域划分的Wiki守护者。每个都运行自己的收件箱、监视文件夹、主题和心跳。添加表单上的所有字段都是可选的 — 点击“创建”时所有字段留空，即可获得一个使用默认设置的整个保险库守护者。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No Wiki Keepers yet. Click Add to create one.",
+          "target": "尚无Wiki守护者。点击“添加”创建一个。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Edit",
+          "target": "编辑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add Wiki Keeper",
+          "target": "添加Wiki守护者"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All fields are optional. ",
+          "target": "所有字段都是可选的。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Click Create with everything blank and you'll get a whole-vault keeper with sensible defaults (inbox at _sources/inbox, topics at topics/, nightly ingest at 3am, Sunday lint).",
+          "target": "点击“创建”时所有字段留空，您将获得一个使用合理默认设置的整个保险库守护者（收件箱位于 _sources/inbox，主题位于 topics/，每晚凌晨3点进行数据摄取，周日进行检查）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scope",
+          "target": "作用域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sources",
+          "target": "来源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced",
+          "target": "高级"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Paths (expert)",
+          "target": "路径（专家）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create",
+          "target": "创建"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scope: ",
+          "target": "作用域："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scope and paths are fixed after creation — changing them would orphan existing topic pages. To move a Wiki Keeper, delete this one and create a new one at the new scope.",
+          "target": "作用域和路径在创建后是固定的 — 更改它们会使现有主题页面孤立。要移动Wiki守护者，请删除此守护者并在新作用域创建一个新的。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No agents available. Add existing, enabled agents to `allowed_agents` in the channel file.",
+          "target": "没有可用的代理。在频道文件的 `allowed_agents` 中添加现有的、已启用的代理。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "*Select an agent to chat with:*",
+          "target": "*选择要聊天的代理：*"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select an agent",
+          "target": "选择代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "AGENT FLEET",
+          "target": "代理舰队"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No agents configured",
+          "target": "未配置代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "QUICK ACTIONS",
+          "target": "快速操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Agent Fleet",
+          "target": "代理舰队"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Approve",
+          "target": "批准"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reject",
+          "target": "拒绝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Agents",
+          "target": "代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enable",
+          "target": "启用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "disabled",
+          "target": "已禁用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "needs auth",
+          "target": "需要认证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "SYSTEM PROMPT",
+          "target": "系统提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "HEARTBEAT INSTRUCTION",
+          "target": "心跳指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tasks Board",
+          "target": "任务看板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No items",
+          "target": "无项目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Run History",
+          "target": "运行历史"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skills Library",
+          "target": "技能库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Channels",
+          "target": "频道"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Wiki Keepers",
+          "target": "Wiki守护者"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Summary",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All clear. Nothing requires manual review from this lint pass.",
+          "target": "全部清除。本次代码检查无需人工审核。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Dismiss",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create New Channel",
+          "target": "创建新频道"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Connect an external chat transport to an agent",
+          "target": "将外部聊天传输连接到代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Channel Details",
+          "target": "频道详情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Type",
+          "target": "类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "slack",
+          "target": "Slack"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "telegram",
+          "target": "Telegram"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "(no credentials configured)",
+          "target": "（未配置凭据）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enabled",
+          "target": "已启用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Agent Routing",
+          "target": "代理路由"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Access Control",
+          "target": "访问控制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Channel Context",
+          "target": "频道上下文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Name",
+          "target": "名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Approvals",
+          "target": "审批"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Run Details",
+          "target": "运行详情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Status",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Show full transcript",
+          "target": "显示完整记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "TOOLS USED",
+          "target": "使用的工具"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Frequency",
+          "target": "频率"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Time",
+          "target": "时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Day",
+          "target": "日"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Day of month",
+          "target": "每月第几天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create New Agent",
+          "target": "创建新代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configure a new agent for your fleet",
+          "target": "为您的代理集群配置一个新代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Identity",
+          "target": "身份标识"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Avatar",
+          "target": "头像"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "System Prompt",
+          "target": "系统提示词"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Template",
+          "target": "模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Runtime Config",
+          "target": "运行时配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Adapter",
+          "target": "适配器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Working Dir",
+          "target": "工作目录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Timeout (sec)",
+          "target": "超时（秒）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Permission Mode",
+          "target": "权限模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Effort Level",
+          "target": "努力程度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Controls reasoning depth — low is fast, max is most thorough",
+          "target": "控制推理深度——低为快速，高为最彻底"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Auto-compact at",
+          "target": "自动压缩于"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "0 disables auto-compact",
+          "target": "0 表示禁用自动压缩"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Wiki access",
+          "target": "Wiki 访问权限"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Heartbeat",
+          "target": "心跳"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skills",
+          "target": "技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Shared Skills",
+          "target": "共享技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "MCP Servers",
+          "target": "MCP 服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Context",
+          "target": "上下文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Permissions",
+          "target": "权限"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Allowed Commands",
+          "target": "允许的命令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Blocked Commands",
+          "target": "阻止的命令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "On Codex agents these become execpolicy command rules — only Bash(cmd args *) prefixes are enforced; tool-name rules (Read/Write) and mid-pattern wildcards are ignored, and file/network access is governed by Permission Mode (the sandbox).",
+          "target": "在 Codex 代理上，这些会成为执行策略命令规则——仅强制执行 Bash(cmd args *) 前缀；工具名称规则（读/写）和中间模式通配符会被忽略，文件/网络访问由权限模式（沙盒）控制。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Memory enabled",
+          "target": "记忆已启用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create New Skill",
+          "target": "创建新技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Define a reusable skill for your agents",
+          "target": "为您的代理定义一个可复用的技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Core Instructions",
+          "target": "核心指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tools",
+          "target": "工具"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "References",
+          "target": "参考资料"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Examples",
+          "target": "示例"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Modify agent configuration",
+          "target": "修改代理配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Memory token budget",
+          "target": "记忆令牌预算"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Nightly reflection",
+          "target": "夜间反思"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Propose skills from memory",
+          "target": "从记忆中提议技能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create New Task",
+          "target": "创建新任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configure a new task for your fleet",
+          "target": "为您的代理集群配置一个新任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Task Details",
+          "target": "任务详情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Agent",
+          "target": "代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Priority",
+          "target": "优先级"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Instructions",
+          "target": "指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Schedule",
+          "target": "计划"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enable schedule",
+          "target": "启用计划"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mode",
+          "target": "模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Run at",
+          "target": "运行于"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Execution",
+          "target": "执行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Effort",
+          "target": "努力程度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Modify task configuration",
+          "target": "修改任务配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Title",
+          "target": "标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Modify skill definition",
+          "target": "修改技能定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Servers from the MCP Servers tab. Checked servers are available to this agent on any adapter (Claude or Codex). Leave all unchecked to grant every enabled server.",
+          "target": "来自 MCP 服务器选项卡的服务器。勾选的服务器可通过任何适配器（Claude 或 Codex）供此代理使用。全部不勾选则授予所有已启用的服务器。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add one in the MCP Servers tab.",
+          "target": "在 MCP 服务器选项卡中添加一个。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "imported",
+          "target": "已导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " Needs auth",
+          "target": " 需要认证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " Disabled",
+          "target": " 已禁用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "SERVER INFO",
+          "target": "服务器信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "required",
+          "target": "必需"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Click \"Probe tools\" to discover the tools this server exposes.",
+          "target": "点击“探测工具”以发现此服务器公开的工具。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add MCP Server",
+          "target": "添加 MCP 服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Register a new MCP server for agents to use",
+          "target": "注册一个新的 MCP 服务器供代理使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Server Details",
+          "target": "服务器详情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "stdio",
+          "target": "标准输入输出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "http",
+          "target": "HTTP"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "sse",
+          "target": "SSE"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Process Configuration",
+          "target": "进程配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Remote Server Configuration",
+          "target": "远程服务器配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "None",
+          "target": "无"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bearer token",
+          "target": "Bearer 令牌"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "OAuth",
+          "target": "OAuth"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No agents available",
+          "target": "没有可用的代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select agent…",
+          "target": "选择代理…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create an agent to start chatting",
+          "target": "创建一个代理以开始聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select an agent to start",
+          "target": "选择一个代理以开始"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose an agent from the dropdown above",
+          "target": "从上方的下拉菜单中选择一个代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Conversations",
+          "target": "对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New chat",
+          "target": "新建聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Toggle conversations panel",
+          "target": "切换对话面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Delete conversation",
+          "target": "删除对话"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
