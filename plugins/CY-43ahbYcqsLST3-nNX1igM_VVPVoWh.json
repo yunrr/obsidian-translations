@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "local-backup",
+    "version": "2.0.0",
+    "title": "Local Backup",
+    "description": "Automatically creates a local backup of the vault.",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.8",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\n            \"Backup lifecycle must be a non-negative number.\"\n          )",
+          "target": "Notice(\n            \"备份生命周期必须是一个非负的数字.\"\n          )"
+        },
+        {
+          "source": "Notice(\n            \"Backups per day must be a non-negative number.\"\n          )",
+          "target": "Notice(\n            \"每日备份次数必须是一个非负的数字.\"\n          )"
+        },
+        {
+          "source": "Notice(\n            \"Backup intervals must be a positive number.\"\n          )",
+          "target": "Notice(\n            \"备份间隔必须是一个正数.\"\n          )"
+        },
+        {
+          "source": "Notice(\n            \"Retry times must be a positive number.\"\n          )",
+          "target": "Notice(\n            \"重试次数必须是一个正数.\"\n          )"
+        },
+        {
+          "source": "Notice(\n            \"One way backup lifecycle must be a non-negative number.\"\n          )",
+          "target": "Notice(\n            单向备份的生命周期必须是一个非负的数字.\"\n          )"
+        },
+        {
+          "source": "Notice(\n            \"One way backups per day must be a non-negative number.\"\n          )",
+          "target": "Notice(\n            \"单向每日备份次数必须是一个非负的数字.\"\n          )"
+        },
+        {
+          "source": "Notice(\"Settings restored to default.\")",
+          "target": "Notice(\"设置已恢复为默认值.\")"
+        },
+        {
+          "source": "Notice(`Please reconfigure \\`Local Backup\\` after upgrading to ${this.manifest.version}!`, 1e4)",
+          "target": "Notice(`请重新配置 \\`本地备份\\` 在升级到 ${this.manifest.version}!`, 1e4)"
+        },
+        {
+          "source": "Notice(\"Running local backup...\")",
+          "target": "Notice(\"正在运行本地备份...\")"
+        },
+        {
+          "source": "Notice(`Failed to create vault backup after ${maxRetries} attempts: ${error}`)",
+          "target": "Notice(`创建保管库备份失败了 ${maxRetries} attempts: ${error}`)"
+        },
+        {
+          "source": "Notice(`Vault backup created: ${backupFilePath}`)",
+          "target": "Notice(`保管库备份已创建: ${backupFilePath}`)"
+        },
+        {
+          "source": "Notice(\n      `Auto backup interval started: Running every ${intervalMinutes} minutes.`\n    )",
+          "target": "Notice(\n      `自动备份间隔已启动: Running every ${intervalMinutes} minutes.`\n    )"
+        },
+        {
+          "source": "Notice(\"Auto backup interval stopped.\")",
+          "target": "Notice(\"自动备份间隔已停止.\")"
+        },
+        {
+          "source": "glog(\"gfs4\")",
+          "target": "glog(\"gfs4\")"
+        },
+        {
+          "source": ".log(\"Run deleteBackupsByLifeCycle\")",
+          "target": ".log(\"Run deleteBackupsByLifeCycle\")"
+        },
+        {
+          "source": ".log(`Backup removed by deleteBackupsByLifeCycle: ${filePath}`)",
+          "target": ".log(`Backup removed by deleteBackupsByLifeCycle: ${filePath}`)"
+        },
+        {
+          "source": ".log(\"Run deletePerDayBackups\")",
+          "target": ".log(\"Run deletePerDayBackups\")"
+        },
+        {
+          "source": ".log(`Backup removed by deletePerDayBackups: ${filePath}`)",
+          "target": ".log(`Backup removed by deletePerDayBackups: ${filePath}`)"
+        },
+        {
+          "source": ".log(`command: ${command}`)",
+          "target": ".log(`command: ${command}`)"
+        },
+        {
+          "source": ".log(\"File created by 7-Zip successfully.\")",
+          "target": ".log(\"File created by 7-Zip successfully.\")"
+        },
+        {
+          "source": ".log(\"File created by WinRAR successfully.\")",
+          "target": ".log(\"File created by WinRAR successfully.\")"
+        },
+        {
+          "source": ".log(\"File created by Bandizip successfully.\")",
+          "target": ".log(\"File created by Bandizip successfully.\")"
+        },
+        {
+          "source": ".log(`Retrying archive attempt ${retryCount + 1}...`)",
+          "target": ".log(`Retrying archive attempt ${retryCount + 1}...`)"
+        },
+        {
+          "source": ".log(`Vault backup created: ${backupFilePath}`)",
+          "target": ".log(`Vault backup created: ${backupFilePath}`)"
+        },
+        {
+          "source": ".log(\"Local Backup unloaded\")",
+          "target": ".log(\"Local Backup unloaded\")"
+        },
+        {
+          "source": ".error(m)",
+          "target": ".error(m)"
+        },
+        {
+          "source": ".error(err)",
+          "target": ".error(err)"
+        },
+        {
+          "source": ".error(`Failed to remove backup file: ${filePath}`, err2)",
+          "target": ".error(`Failed to remove backup file: ${filePath}`, err2)"
+        },
+        {
+          "source": ".error(\"Failed to create file by 7-Zip:\", error)",
+          "target": ".error(\"Failed to create file by 7-Zip:\", error)"
+        },
+        {
+          "source": ".error(\"Failed to create file by WinRAR:\", error)",
+          "target": ".error(\"Failed to create file by WinRAR:\", error)"
+        },
+        {
+          "source": ".error(\"Failed to create file by Bandizip:\", error)",
+          "target": ".error(\"Failed to create file by Bandizip:\", error)"
+        },
+        {
+          "source": ".error(`Error during archive attempt ${retryCount + 1}: ${error}`)",
+          "target": ".error(`Error during archive attempt ${retryCount + 1}: ${error}`)"
+        },
+        {
+          "source": ".error(`Failed to create vault backup after ${maxRetries} attempts.`)",
+          "target": ".error(`Failed to create vault backup after ${maxRetries} attempts.`)"
+        },
+        {
+          "source": "name: \"Run local backup\"",
+          "target": "name: \"运行本地备份\""
+        },
+        {
+          "source": "name: \"Run specific backup\"",
+          "target": "name: \"运行特定备份\""
+        },
+        {
+          "source": "text: \"General Settings\"",
+          "target": "text: \"常规设置\""
+        },
+        {
+          "source": "text: \"One Way Backup Settings\"",
+          "target": "text: \"单向备份设置\""
+        },
+        {
+          "source": "text: \"File Archiver Settings (Optional)\"",
+          "target": "text: \"文件归档设置 (Optional)\""
+        },
+        {
+          "source": ".setButtonText(\"Restore defaults\")",
+          "target": ".setButtonText(\"恢复默认设置\")"
+        },
+        {
+          "source": ".setButtonText(\"Okey\")",
+          "target": ".setButtonText(\"Okey\")"
+        },
+        {
+          "source": ".setButtonText(\"Submit\")",
+          "target": ".setButtonText(\"Submit\")"
+        },
+        {
+          "source": ".setName(\"Backup once on startup\")",
+          "target": ".setName(\"启动时执行一次备份\")"
+        },
+        {
+          "source": ".setName(\"Backup history length (days)\")",
+          "target": ".setName(\"备份历史长度 (days)\")"
+        },
+        {
+          "source": ".setName(\"Backups per day\")",
+          "target": ".setName(\"每日备份次数\")"
+        },
+        {
+          "source": ".setName(\"Windows output path (optional)\")",
+          "target": ".setName(\"Windows 输出路径 (optional)\")"
+        },
+        {
+          "source": ".setName(\"Linux/MacOS output path (optional)\")",
+          "target": ".setName(\"Linux/MacOS 输出路径 (optional)\")"
+        },
+        {
+          "source": ".setName(\"File name\")",
+          "target": ".setName(\"文件名\")"
+        },
+        {
+          "source": ".setName(\"Interval backups\")",
+          "target": ".setName(\"间隔备份\")"
+        },
+        {
+          "source": ".setName(\"Backup frequency (minutes)\")",
+          "target": ".setName(\"备份频率 (minutes)\")"
+        },
+        {
+          "source": ".setName(\"Retry times\")",
+          "target": ".setName(\"重试次数\")"
+        },
+        {
+          "source": ".setName(\"Retry interval (ms)\")",
+          "target": ".setName(\"重试间隔 (ms)\")"
+        },
+        {
+          "source": ".setName(\"Show ribbon icon\")",
+          "target": ".setName(\"显示功能区图标\")"
+        },
+        {
+          "source": ".setName(\"Show console logs\")",
+          "target": ".setName(\"显示控制台日志\")"
+        },
+        {
+          "source": ".setName(\"Show notifications\")",
+          "target": ".setName(\"显示通知\")"
+        },
+        {
+          "source": ".setName(\"Enable one way backups\")",
+          "target": ".setName(\"启用单向备份\")"
+        },
+        {
+          "source": ".setName(\"One way Windows output path\")",
+          "target": ".setName(\"单向 Windows 输出路径\")"
+        },
+        {
+          "source": ".setName(\"One way Linux/MacOS output path\")",
+          "target": ".setName(\"单向 Linux/MacOS 输出路径\")"
+        },
+        {
+          "source": ".setName(\"One way backup history length (days)\")",
+          "target": ".setName(\"单向备份历史记录长度 (days)\")"
+        },
+        {
+          "source": ".setName(\"One way backups per day\")",
+          "target": ".setName(\"每天单向备份次数\")"
+        },
+        {
+          "source": ".setName(\"Backup by Calling external file archiver\")",
+          "target": ".setName(\"通过调用外部文件归档进行备份\")"
+        },
+        {
+          "source": ".setName(\"Select file archiver\")",
+          "target": ".setName(\"选择文件归档\")"
+        },
+        {
+          "source": ".setName(\"Select archive file type\")",
+          "target": ".setName(\"选择存档文件类型\")"
+        },
+        {
+          "source": ".setName(\"File archiver path (Win)\")",
+          "target": ".setName(\"文件归档路径 (Win)\")"
+        },
+        {
+          "source": ".setName(\"File archiver path (Unix)\")",
+          "target": ".setName(\"文件归档路径 (Unix)\")"
+        },
+        {
+          "source": ".setDesc(\"Run local backup once on Obsidian starts.\")",
+          "target": ".setDesc(\"Run local backup once on Obsidian starts.\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Specify the number of days backups should be retained. (0 -- Infinity)\"\n    )",
+          "target": ".setDesc(\n      \"Specify the number of days backups should be retained. (0 -- Infinity)\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Specify the number of backups per day to keep. (0 -- Infinity)\"\n    )",
+          "target": ".setDesc(\n      \"Specify the number of backups per day to keep. (0 -- Infinity)\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Setup a Windows backup storage path. eg. D:\\\\documents\\\\Obsidian\")",
+          "target": ".setDesc(\"Setup a Windows backup storage path. eg. D:\\\\documents\\\\Obsidian\")"
+        },
+        {
+          "source": ".setDesc(\"Setup a Unix backup storage path. eg. /home/user/Documents/Obsidian\")",
+          "target": ".setDesc(\"Setup a Unix backup storage path. eg. /home/user/Documents/Obsidian\")"
+        },
+        {
+          "source": ".setDesc(\"Enable to create backups at regular intervals\")",
+          "target": ".setDesc(\"Enable to create backups at regular intervals\")"
+        },
+        {
+          "source": ".setDesc(\"Set the frequency of backups in minutes.\")",
+          "target": ".setDesc(\"Set the frequency of backups in minutes.\")"
+        },
+        {
+          "source": ".setDesc(\"Set the retry times after backup failed.\")",
+          "target": ".setDesc(\"Set the retry times after backup failed.\")"
+        },
+        {
+          "source": ".setDesc(\"Set the retry interval (millisecond).\")",
+          "target": ".setDesc(\"Set the retry interval (millisecond).\")"
+        },
+        {
+          "source": ".setDesc(\"Enable/Disable console log statements\")",
+          "target": ".setDesc(\"Enable/Disable console log statements\")"
+        },
+        {
+          "source": ".setDesc(\"Enable/Disable normal notifications, keep exceptions only\")",
+          "target": ".setDesc(\"Enable/Disable normal notifications, keep exceptions only\")"
+        },
+        {
+          "source": ".setDesc(\"Enable one-way backups to another folder\")",
+          "target": ".setDesc(\"Enable one-way backups to another folder\")"
+        },
+        {
+          "source": ".setDesc(\"Setup a Windows one-way backup storage path. eg. D:\\\\documents\\\\OneWayBackup\")",
+          "target": ".setDesc(\"Setup a Windows one-way backup storage path. eg. D:\\\\documents\\\\OneWayBackup\")"
+        },
+        {
+          "source": ".setDesc(\"Setup a Unix one-way backup storage path. eg. /home/user/Documents/OneWayBackup\")",
+          "target": ".setDesc(\"Setup a Unix one-way backup storage path. eg. /home/user/Documents/OneWayBackup\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Specify the number of days one-way backups should be retained. (0 -- Infinity)\"\n    )",
+          "target": ".setDesc(\n      \"Specify the number of days one-way backups should be retained. (0 -- Infinity)\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Specify the number of one-way backups per day to keep. (0 -- Infinity)\"\n    )",
+          "target": ".setDesc(\n      \"Specify the number of one-way backups per day to keep. (0 -- Infinity)\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"If toggled, backups will be created by calling external file archiver.\")",
+          "target": ".setDesc(\"If toggled, backups will be created by calling external file archiver.\")"
+        },
+        {
+          "source": ".setDesc(\"The selected archiver must be installed. eg. 7-Zip for Windows, 7-Zip/p7zip for Unix\")",
+          "target": ".setDesc(\"The selected archiver must be installed. eg. 7-Zip for Windows, 7-Zip/p7zip for Unix\")"
+        },
+        {
+          "source": ".setDesc(\"Full path of Archiver. eg. D:\\\\software\\\\7-Zip\\\\7z.exe for Windows. Using bz.exe (Bandizip) for Windows is recommended.\")",
+          "target": ".setDesc(\"Full path of Archiver. eg. D:\\\\software\\\\7-Zip\\\\7z.exe for Windows. Using bz.exe (Bandizip) for Windows is recommended.\")"
+        },
+        {
+          "source": ".setDesc(\"Full path of Archiver. eg. /usr/bin/7z or 7z for Unix.\")",
+          "target": ".setDesc(\"Full path of Archiver. eg. /usr/bin/7z or 7z for Unix.\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Type text here\")",
+          "target": ".setPlaceholder(\"Type text here\")"
+        },
+        {
+          "source": ".setTooltip(\"Restore defaults\")",
+          "target": ".setTooltip(\"Restore defaults\")"
+        }
+      ]
+    }
+  }
+}

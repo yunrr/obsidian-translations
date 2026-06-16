@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "block-link-plus",
+    "version": "2.0.0",
+    "title": "Block Link Plus",
+    "description": "Enhances right-click menu and global command with direct links to blocks and titles, adds support for multi-line blockquotes, and offers extensive customization options for block IDs.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\n          `Selection cannot contain headings`,\n          1500\n        )",
+          "target": "Notice(\n          `选择范围不能包含标题`,\n          1500\n        )"
+        },
+        {
+          "source": "Notice(\"Obsidian URI copied to clipboard\")",
+          "target": "Notice(\"已将 Obsidian URI 复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Block embed link copied to clipboard\")",
+          "target": "Notice(\"块嵌入链接已复制到剪贴板。\")"
+        },
+        {
+          "source": "Notice(\"Block link copied to clipboard\")",
+          "target": "Notice(\"块链接已复制到剪贴板\")"
+        },
+        {
+          "source": ".log(`loading ${this.appName}`)",
+          "target": ".log(`加载 ${this.appName}`)"
+        },
+        {
+          "source": "name: \"Copy Block Link\"",
+          "target": "name: \"复制区块链接\""
+        },
+        {
+          "source": "name: \"Copy Block as Embed\"",
+          "target": "name: \"复制区块为嵌入\""
+        },
+        {
+          "source": "name: \"Copy Block as Obsidian URI\"",
+          "target": "name: \"复制区块为Obsidian URI\""
+        },
+        {
+          "source": "text: \"Block link Plus\"",
+          "target": "text: \"区块链接加强版\""
+        },
+        {
+          "source": ".setName(\"Multi-line block behavior\")",
+          "target": ".setName(\"多行块行为\")"
+        },
+        {
+          "source": ".setName(\"Enable block link in right click menu\")",
+          "target": ".setName(\"在右键菜单中启用块链接\")"
+        },
+        {
+          "source": ".setName(\"Show notification when block link is copied\")",
+          "target": ".setName(\"当复制块链接时显示通知\")"
+        },
+        {
+          "source": ".setName(\"Alias style\")",
+          "target": ".setName(\"别名样式\")"
+        },
+        {
+          "source": ".setName(\"Alias length\")",
+          "target": ".setName(\"别名长度\")"
+        },
+        {
+          "source": ".setName(\"Experimental: Heading block ID style\")",
+          "target": ".setName(\"实验性：标题块ID样式\")"
+        },
+        {
+          "source": ".setName(\"Enable embed link in right click menu\")",
+          "target": ".setName(\"在右键菜单中启用嵌入链接\")"
+        },
+        {
+          "source": ".setName(\"Show notification when embed link is copied\")",
+          "target": ".setName(\"复制嵌入链接时显示通知\")"
+        },
+        {
+          "source": ".setName(\"Enable Obsidian URI link in right click menu\")",
+          "target": ".setName(\"在右键菜单中启用Obsidian URI链接\")"
+        },
+        {
+          "source": ".setName(\"Show notification when URI link is copied\")",
+          "target": ".setName(\"当复制URI链接时显示通知\")"
+        },
+        {
+          "source": ".setName(\"Max block id Length\")",
+          "target": ".setName(\"最大块ID长度\")"
+        },
+        {
+          "source": ".setName(\"Custom id prefix\")",
+          "target": ".setName(\"自定义ID前缀\")"
+        },
+        {
+          "source": ".setName(\"Block id prefix\")",
+          "target": ".setName(\"区块ID前缀\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Define how multi-line selections generate block ids. 'Default' treats them as a single line.\"\n    )",
+          "target": ".setDesc(\n      \"定义多行选择如何生成块ID。'默认'将其视为单行。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Link: [[file#block_id]]\")",
+          "target": ".setDesc(\"Link: [[file#block_id]]\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Choose how to generate aliases for block links.For heading blocks, alias will always be the heading text unless 'No alias' is selected.\"\n    )",
+          "target": ".setDesc(\n      \"选择如何为块链接生成别名。对于标题块，别名始终是标题文本，除非选择了“无别名”。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Set the length of the alias (1-100). Only used when alias style is 'First X chars'.\")",
+          "target": ".setDesc(\"设置别名的长度（1-100）。仅在别名样式为“前X个字符”时使用。\")"
+        },
+        {
+          "source": ".setDesc(\"Place block ID in new line when selecting a single heading line only\")",
+          "target": ".setDesc(\"仅在选择单个标题行时将块ID放置在新行中\")"
+        },
+        {
+          "source": ".setDesc(\"Link: ![[file#block_id]]\")",
+          "target": ".setDesc(\"Link: ![[file#block_id]]\")"
+        },
+        {
+          "source": ".setDesc(\"Link: obsidian://open?vault=${vault}&file=${filePath}${encodedBlockId} \")",
+          "target": ".setDesc(\"Link: obsidian://open?vault=${vault}&file=${filePath}${encodedBlockId} \")"
+        },
+        {
+          "source": ".setDesc(\"Custom block_id\")",
+          "target": ".setDesc(\"自定义块ID\")"
+        },
+        {
+          "source": ".setDesc(\"Set the maximum number of characters for a block id.\")",
+          "target": ".setDesc(\"设置区块ID的最大字符数。\")"
+        },
+        {
+          "source": ".setDesc(\"Block id will be: prefix-random_str\")",
+          "target": ".setDesc(\"块ID将是：前缀-随机字符串\")"
+        },
+        {
+          "source": ".addHeading(\"Block link\")",
+          "target": ".addHeading(\"区块链接\")"
+        },
+        {
+          "source": ".addHeading(\"Embed link\")",
+          "target": ".addHeading(\"嵌入链接\")"
+        },
+        {
+          "source": ".addHeading(\"Obsidian URI link\")",
+          "target": ".addHeading(\"Obsidian URI link\")"
+        },
+        {
+          "source": ".addHeading(\"Block Id\")",
+          "target": ".addHeading(\"区块ID\")"
+        }
+      ]
+    }
+  }
+}
