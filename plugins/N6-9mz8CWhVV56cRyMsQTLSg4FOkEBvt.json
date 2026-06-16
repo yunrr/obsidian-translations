@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "taggr-sync",
+    "version": "1.0.1",
+    "title": "Taggr Sync",
+    "description": "Taggr Sync Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "both",
+          "target": "双向"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Bidirectional",
+          "target": "双向"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "push",
+          "target": "推送"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Push only (write)",
+          "target": "仅推送（写入）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "pull",
+          "target": "拉取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Pull only (read)",
+          "target": "仅拉取（读取）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "(all realms)",
+          "target": "（所有领域）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "(no realm)",
+          "target": "（无领域）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "This browser lacks typed array (Uint8Array) support which is required by `buffer` v5.x. Use `buffer` v4.x if you require old browser support.",
+          "target": "此浏览器缺少类型化数组（Uint8Array）支持，这是 `buffer` v5.x 所必需的。如果您需要旧版浏览器支持，请使用 `buffer` v4.x。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Caught exception while attempting to sync time",
+          "target": "尝试同步时间时捕获到异常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Timestamp is below",
+          "target": "时间戳低于"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Taggr Sync: Journal fetch failed:",
+          "target": "Taggr 同步：日志获取失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to initialize Taggr client:",
+          "target": "初始化 Taggr 客户端失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Generate",
+          "target": "生成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test",
+          "target": "测试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Your username on taggr (for pulling your journal).",
+          "target": "您在 taggr 上的用户名（用于拉取您的日志）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Your Taggr seed phrase — the same one you use to log in on taggr.link. The key is derived locally (never sent anywhere). Leave empty for read-only (pull only).",
+          "target": "您的 Taggr 助记词——与您在 taggr.link 登录时使用的相同。密钥在本地派生（从不发送到任何地方）。留空表示只读（仅拉取）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Alternative: raw Ed25519 private key (hex). Use this OR seed phrase, not both. Seed phrase takes priority.",
+          "target": "备选方案：原始 Ed25519 私钥（十六进制）。使用此选项或助记词，但不能同时使用。助记词优先。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder in vault where taggr posts are synced.",
+          "target": "保险库中用于同步 taggr 帖子的文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pull (read from taggr), push (write to taggr), or both.",
+          "target": "拉取（从 taggr 读取）、推送（写入到 taggr）或两者兼有。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Also pull your comments (replies to other posts), not just top-level posts. Each comment will have a taggr_parent_link in its frontmatter pointing to the original post on taggr.",
+          "target": "同时拉取您的评论（对其他帖子的回复），而不仅仅是顶级帖子。每条评论的 frontmatter 中都会有一个 taggr_parent_link，指向 taggr 上的原始帖子。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "0 = manual sync only. Recommended: 5-15 minutes.",
+          "target": "0 = 仅手动同步。推荐：5-15 分钟。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Only pull posts from this realm. Empty = all realms.",
+          "target": "仅从此领域拉取帖子。留空 = 所有领域。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Taggr canister ID. Don't change unless you know what you're doing.",
+          "target": "Taggr 容器 ID。除非您知道自己在做什么，否则不要更改。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Internet computer host URL.",
+          "target": "互联网计算机主机 URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Generate a new ed25519 keypair. Copy the principal and add it as a controller on taggr.",
+          "target": "生成新的 ed25519 密钥对。复制主体并将其添加为 taggr 上的控制器。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Verify the connection to taggr canister.",
+          "target": "验证与 taggr 容器的连接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Connection",
+          "target": "连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Taggr handle",
+          "target": "Taggr 用户名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Seed phrase",
+          "target": "助记词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Identity key (hex)",
+          "target": "身份密钥（十六进制）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync",
+          "target": "同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync folder",
+          "target": "同步文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync direction",
+          "target": "同步方向"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pull comments",
+          "target": "拉取评论"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-sync interval (minutes)",
+          "target": "自动同步间隔（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Realm filter",
+          "target": "领域过滤器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default realm for new posts",
+          "target": "新帖子的默认领域"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Advanced",
+          "target": "高级"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Canister ID",
+          "target": "容器 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ic host",
+          "target": "Ic 主机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Generate identity",
+          "target": "生成身份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter seed phrase...",
+          "target": "输入助记词..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Taggr",
+          "target": "Taggr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "v3 api not supported. Fall back to v2",
+          "target": "不支持 v3 api。回退到 v2。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Query response verification failed. Retrying with fresh subnet keys.",
+          "target": "查询响应验证失败。正在使用新的子网密钥重试。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "No certificate found in response",
+          "target": "响应中未找到证书"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Seed is all zeros. This is not a secure seed. Please provide a seed with sufficient entropy if this is a production environment.",
+          "target": "种子全为零。这不是一个安全的种子。如果这是生产环境，请提供具有足够熵的种子。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Taggr sync: set your taggr handle in settings first.",
+          "target": "Taggr 同步：请先在设置中设置您的 taggr 用户名。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Taggr sync: pulling posts...",
+          "target": "Taggr 同步：正在拉取帖子..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Taggr sync: no posts found.",
+          "target": "Taggr 同步：未找到帖子。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Taggr sync: set your seed phrase or identity key in settings to push posts.",
+          "target": "Taggr 同步：请在设置中设置您的助记词或身份密钥以推送帖子。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Taggr sync: sync folder not found.",
+          "target": "Taggr 同步：未找到同步文件夹。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Taggr sync: failed to connect. Check settings.",
+          "target": "Taggr 同步：连接失败。请检查设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "pull",
+          "target": "pull"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "push",
+          "target": "push"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "sync",
+          "target": "sync"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "cbor",
+          "target": "cbor"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Internet Identity Service",
+          "target": "互联网身份服务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Internet Identity",
+          "target": "互联网身份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pull posts from taggr",
+          "target": "从 taggr 拉取帖子"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Push changes to taggr",
+          "target": "将更改推送到 taggr"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync with taggr (pull + push)",
+          "target": "与 taggr 同步（拉取 + 推送）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create new taggr post",
+          "target": "创建新的 taggr 帖子"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
