@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "nl-fast-image-cleaner",
+    "version": "2.0.0",
+    "title": "nl-fast-image-cleaner",
+    "description": "This plugin allows you to quickly remove image attachment and referenced link from your documents in both LIVE , READ mode by right-click menu",
+    "language": "zh-cn",
+    "supportedVersions": "0.8.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(` cannot get the image file`)",
+          "target": "Notice(` 无法获取图像文件`)"
+        },
+        {
+          "source": "Notice(\"Attachment folder has been deleted!\", 3e3)",
+          "target": "Notice(\"附件文件夹已删除\", 3e3)"
+        },
+        {
+          "source": "Notice(\"All attachments and its parent folder have been deleted!\", 3e3)",
+          "target": "Notice(\"所有的附件及子文件已被删除\", 3e3)"
+        },
+        {
+          "source": "Notice(\"Error, could not clear the file!\")",
+          "target": "Notice(\"错误，无法删除文本\")"
+        },
+        {
+          "source": "text: \" Detection of multiple attachment reference links - logs \"",
+          "target": "text: \" 检测到多个附件参考链接 - 日志 \""
+        },
+        {
+          "source": "text: \"close\"",
+          "target": "text: \"关闭\""
+        },
+        {
+          "source": "text: \"remove link\"",
+          "target": "text: \"删除链接\""
+        },
+        {
+          "source": "text: \"Detected that the image you are attempting to delete is being referenced multiple times within the current document. \\n As a result. We kindly ask that you manually remove the link.\"",
+          "target": "text: \"检测到您尝试删除的图像在当前文档中被多次引用。 \\因此，我们请求您手动删除链接\""
+        },
+        {
+          "source": "text: \"Delete the file and its all attachments - logs \"",
+          "target": "text: \"删除附件及所有附件 - 日志 \""
+        },
+        {
+          "source": "text: \"Cancel\"",
+          "target": "text: \"取消\""
+        },
+        {
+          "source": "text: \"Confirm\"",
+          "target": "text: \"确认\""
+        },
+        {
+          "source": ".setName(\"Deleted Attachment Destination\")",
+          "target": ".setName(\"已删除附件的目的地\")"
+        },
+        {
+          "source": ".setDesc(\"Select where you want Attachments to be moved once they are deleted\")",
+          "target": ".setDesc(\"删除附件后选择您希望移动的位置\")"
+        },
+        {
+          "source": ".setTitle(\"clear file and referenced link\")",
+          "target": ".setTitle(\"清除附件及引用连接\")"
+        },
+        {
+          "source": ".setTitle(\"Delete the file and its all attachments\")",
+          "target": ".setTitle(\"删除文件及所有附件\")"
+        },
+        {
+          "source": "Notice(\"Image moved to Obsidian Trash !\", SUCCESS_NOTICE_TIMEOUT)",
+          "target": "Notice(\"将图像移至Obsidian回收站 ！\", SUCCESS_NOTICE_TIMEOUT)"
+        },
+        {
+          "source": "Notice(\"Image moved to System Trash !\", SUCCESS_NOTICE_TIMEOUT)",
+          "target": "Notice(\"将图像移至系统回收站 ！\", SUCCESS_NOTICE_TIMEOUT)"
+        },
+        {
+          "source": "Notice(\"Image deleted Permanently !\", SUCCESS_NOTICE_TIMEOUT)",
+          "target": "Notice(\"将图像永久删除 ！\",SUCCESS_NOTICE_TIMEOUT)"
+        },
+        {
+          "source": "Notice(\"Faild to delelte the image !\", SUCCESS_NOTICE_TIMEOUT)",
+          "target": "Notice(\"将图像移至Obsidian回收站 ！\", SUCCESS_NOTICE_TIMEOUT)"
+        },
+        {
+          "source": "Notice(\"Failed to delete the file/folder !\", SUCCESS_NOTICE_TIMEOUT)",
+          "target": "Notice(\"图像删除失败 ！\", SUCCESS_NOTICE_TIMEOUT)"
+        },
+        {
+          "source": ".log(\"Fast file Cleaner plugin loaded...\")",
+          "target": ".log(\"快速附件清理器已加载...\")"
+        },
+        {
+          "source": ".log(\"Fast file Cleaner plugin unloaded...\")",
+          "target": ".log(\"快速附件清理器卸载...\")"
+        },
+        {
+          "source": "text: \"Fast Attachment Cleaner Settings\"",
+          "target": "text: \"快速附件清理器设置\""
+        },
+        {
+          "source": "  __accessCheck(obj, member, \"read from private field\");",
+          "target": "__accessCheck(obj, member, \"从私有字段读取\");\n"
+        },
+        {
+          "source": "TypeError(\"Cannot add the same private member more than once\");",
+          "target": "TypeError(\"不能多次添加相同的私有成员\");\n"
+        },
+        {
+          "source": "  __accessCheck(obj, member, \"write to private field\");",
+          "target": "__accessCheck(obj, member, \"写入私有字段\");"
+        },
+        {
+          "source": ".addOption(\"permanent\", \"Delete Permanently\");",
+          "target": ".addOption(\"permanent\", \"永久删除\");\n"
+        },
+        {
+          "source": ".addOption(\".trash\", \"Move to Obsidian Trash\");",
+          "target": ".addOption(\".trash\", \"移动到 Obsidian 废纸篓\");\n"
+        },
+        {
+          "source": ".addOption(\"system-trash\", \"Move to System Trash\");",
+          "target": ".addOption(\"system-trash\", \"移动到系统废纸篓\");\n"
+        },
+        {
+          "source": "    const curMdLog = \"The md document that currently references the attachment: \\n\" + CurFirstMd + \"\\n\\n\";",
+          "target": "const curMdLog = \"当前引用该附件的 md 文档： \\n\" + CurFirstMd + \"\\n\\n\";\n"
+        },
+        {
+          "source": "    const otherMdsLog = \"List of all documents that reference this attachment: \\n\" + otherMds;",
+          "target": "const otherMdsLog = \"所有引用该附件的文档列表： \\n\" + otherMds;\n"
+        },
+        {
+          "source": ".setAttribute(\"aria-label\", \"close the window\");",
+          "target": ".setAttribute(\"aria-label\", \"关闭当前窗口\");"
+        },
+        {
+          "source": ".setAttribute(\"aria-label\", \"Continue to remove the reference link to the current attachment in the current document\");",
+          "target": ".setAttribute(\"aria-label\", \"继续移除当前文档中当前附件的引用链接\");\n"
+        },
+        {
+          "source": "    const referencedMessage = `There are(is) currently  [${getRefencedLinkCount()}]  non-multi-referenced link(s) pointing to this note.`;",
+          "target": "    const referencedMessage = `当前有 [${getRefencedLinkCount()}] 个非多重引用链接指向此笔记。`;"
+        },
+        {
+          "source": ".setAttribute(\"aria-label\", \"Cancel the operation\");",
+          "target": ".setAttribute(\"aria-label\", \"取消操作\");"
+        },
+        {
+          "source": ".setAttribute(\"aria-label\", \"Continue to delete current file and its all non-multi-referenced attachments\");",
+          "target": ".setAttribute(\"aria-label\", \"继续删除当前文件及其所有非多重引用附件\");"
+        },
+        {
+          "source": "Are you sure you want to delete",
+          "target": "确认要删除"
+        },
+        {
+          "source": "It will be moved to your",
+          "target": "该文件将被移动到"
+        }
+      ]
+    }
+  }
+}

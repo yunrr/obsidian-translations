@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "quick-tagger",
+    "version": "2.0.0",
+    "title": "Quick Tagger",
+    "description": "Add and remove tags quickly. Tag search results, bulk tag, and add dedicated buttons/commands for your favorites!",
+    "language": "zh-cn",
+    "supportedVersions": "2.2.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setText(`Processing ${tag}: ${i + 1}/${files.length}`)",
+          "target": ".setText(`Processing ${tag}: ${i + 1}/${files.length}`)"
+        },
+        {
+          "source": ".setText(\"Starred tags get special treatment. Click or hover over these buttons for more details \\u{1F449}\")",
+          "target": ".setText(\"星号标签得到特殊处理。单击或将鼠标悬停在这些按钮上以获取更多详细信息 \\u{1F449}\")"
+        },
+        {
+          "source": ".setButtonText(\"Yes\")",
+          "target": ".setButtonText(\"是\")"
+        },
+        {
+          "source": ".setButtonText(\"No\")",
+          "target": ".setButtonText(\"否\")"
+        },
+        {
+          "source": ".setName(\"Use all tags\")",
+          "target": ".setName(\"使用所有标签\")"
+        },
+        {
+          "source": ".setName(\"Preferred tag case\")",
+          "target": ".setName(\"首选标签大小写\")"
+        },
+        {
+          "source": ".setDesc(\"If disabled, only Starred Tags will be shown in the tag selection dialog.\")",
+          "target": ".setDesc(\"如果禁用，只有星号标签将显示在标签选择对话框中\")"
+        },
+        {
+          "source": ".setDesc('Helper to replace spaces in input with a preffered tag style. \"None\" will just remove invalid characters.')",
+          "target": ".setDesc('使用首选标记样式替换输入中的空格。“None”只会删除无效字符')"
+        },
+        {
+          "source": ".setPlaceholder(\"Select a tag\")",
+          "target": ".setPlaceholder(\"选择一个标签\")"
+        },
+        {
+          "source": ".setTooltip(\"Add a starred tag\")",
+          "target": ".setTooltip(\"添加星号标签\")"
+        },
+        {
+          "source": ".setTooltip(\"Show first in tag selection dialog\")",
+          "target": ".setTooltip(\"首先在标签选择对话框中显示\")"
+        },
+        {
+          "source": ".setTooltip(\"Add command for this tag\")",
+          "target": ".setTooltip(\"为这个标签添加命令\")"
+        },
+        {
+          "source": ".setTooltip(\"Add button to status bar\")",
+          "target": ".setTooltip(\"添加按钮到状态栏\")"
+        },
+        {
+          "source": ".setTooltip(\"Add context menu entry\")",
+          "target": ".setTooltip(\"添加上下文菜单项\")"
+        },
+        {
+          "source": ".setTooltip(\"Move Starred tag up\")",
+          "target": ".setTooltip(\"向上移动星号标签\")"
+        },
+        {
+          "source": ".setTooltip(\"Move Starred tag down\")",
+          "target": ".setTooltip(\"向下移动星号标签\")"
+        },
+        {
+          "source": ".setTooltip(\"Remove this tag\")",
+          "target": ".setTooltip(\"删除这个标签\")"
+        },
+        {
+          "source": ".createEl(\"h1\", { text: \"Starred tags\" })",
+          "target": ".createEl(\"h1\", { text: \"给这个标签加上星号\" })"
+        },
+        {
+          "source": ".addRibbonIcon(\"tag\", \"Add tag to current note\"",
+          "target": ".addRibbonIcon(\"tag\", \"在当前笔记中添加标签\""
+        },
+        {
+          "source": ".addRibbonIcon(\"x-square\", \"Remove tag from current note\"",
+          "target": ".addRibbonIcon(\"x-square\", \"从当前笔记中删除标签\""
+        },
+        {
+          "source": "name: `Toggle #${tag}`",
+          "target": "name: `切换 #${tag}`"
+        },
+        {
+          "source": "name: `Toggle recently used tag (${tag})`",
+          "target": "name: `切换最近使用的标签 ( ${tag} )`"
+        },
+        {
+          "source": "name: \"Add tag\"",
+          "target": "name: \"添加标签\""
+        },
+        {
+          "source": "name: \"Remove tag\"",
+          "target": "name: \"移除标签\""
+        },
+        {
+          "source": "name: `Toggle recently used tag (none)`",
+          "target": "name: `切换最近使用的标签（无）`"
+        },
+        {
+          "source": ".setTitle(\"Remove Tag from \" + files.length + \" files...\")",
+          "target": ".setTitle(\"从文件 \" + files.length + \" 中移除标签...\")"
+        },
+        {
+          "source": ".setTitle(\"Remove Tag(s)...\")",
+          "target": ".setTitle(\"移除标签...\")"
+        },
+        {
+          "source": ".setTitle(\"Tag \" + files.length + \" files with...\")",
+          "target": ".setTitle(\"标签 \" + files.length + \" 文件与...\")"
+        },
+        {
+          "source": ".setTitle(\"Add Tag to \" + files.length + \" notes...\")",
+          "target": ".setTitle(\"添加标签到笔记 \" + files.length + \" ...\")"
+        },
+        {
+          "source": ".setTitle(\"Remove Tags from \" + files.length + \" notes...\")",
+          "target": ".setTitle(\"从笔记 \" + files.length + \" 中移除标签...\")"
+        },
+        {
+          "source": "\"REMOVE ALL\"",
+          "target": "\"移除所有\""
+        },
+        {
+          "source": ".log(\"removing all tags.....\"",
+          "target": ".log(\"删除所有标签。。。。。\""
+        },
+        {
+          "source": ".log(\"ADDING TAGS\"",
+          "target": ".log(\"添加标签\""
+        },
+        {
+          "source": ".log(\"REMOVING TAGS\"",
+          "target": ".log(\"删除标签\""
+        },
+        {
+          "source": ".log(`fixing up broken parts of ${f.basename}'s yaml...`",
+          "target": ".log(`修复 ${f.basename}' 的 yaml 的损坏部分。。。`"
+        },
+        {
+          "source": "msg = \"This will delete all tags on the active note(s), are you sure?\"",
+          "target": "msg = \"这将删除活动笔记上的所有标签，您确定吗?\""
+        },
+        {
+          "source": "msg = \"You are about to \"",
+          "target": "msg = \"你即将\""
+        },
+        {
+          "source": "msg = \"The first toggle on a starred tag moves it to the top of the list when selecting a tag for your notes.\"",
+          "target": "msg = \"为笔记选择标记时，星号标记上的第一个切换会将其移动到列表顶部。\""
+        },
+        {
+          "source": "msg = \"The second toggle on a starred tag adds a command for it so you can create a hotkey, etc.\"",
+          "target": "msg = \"星号标记上的第二个切换为其添加了一个命令，以便您可以创建热键等。\""
+        },
+        {
+          "source": "msg = \"The third toggle on a starred tag adds a button for it to the status bar.\"",
+          "target": "msg = \"星号标记上的第三个切换将其按钮添加到状态栏中。\""
+        },
+        {
+          "source": "msg = \"The fourth toggle on a starred tag adds it to the context menu.\"",
+          "target": "msg = \"星号标记上的第四个切换将其添加到上下文菜单中。\""
+        },
+        {
+          "source": "msg = \"The up arrow button moves the starred tag up on the starred tag list. This affects the order it's displayed in the tag selection dialog.\"",
+          "target": "msg = \"向上箭头按钮将星号标记在星号标记列表中向上移动。这会影响它在标记选择对话框中的显示顺序。\""
+        },
+        {
+          "source": "msg = \"The down arrow button moves the starred tag down on the starred tag list. This affects the order it's displayed in the tag selection dialog.\"",
+          "target": "msg = \"向下箭头按钮将星号标记在星号标记列表中向下移动。这会影响它在标记选择对话框中的显示顺序。\""
+        },
+        {
+          "source": "msg = \"The trash can button removes the starred tag from the starred list.\"",
+          "target": "msg = \"垃圾桶按钮从星号列表中删除星号标签。\""
+        },
+        {
+          "source": ".Notice(\"Error: Could not find tags!\"",
+          "target": ".Notice(\"错误:找不到标签！\""
+        },
+        {
+          "source": ".Notice(\"No file open!\"",
+          "target": ".Notice(\"没有打开文件！\""
+        },
+        {
+          "source": ".Notice(\"Processing \"",
+          "target": ".Notice(\"处理\""
+        },
+        {
+          "source": ".Notice(\"All tags removed from \"",
+          "target": ".Notice(\"已删除所有标签\""
+        },
+        {
+          "source": ".Notice(\"No file tags to change!\"",
+          "target": ".Notice(\"没有要更改的文件标签！\""
+        },
+        {
+          "source": ".Notice(\"ERROR: No recent tag, please assign a tag with Quick Tagger before using this command\"",
+          "target": ".Notice(\"错误:  没有最近的标记，请在使用此命令之前使用 Quick Tagger 分配一个标签\""
+        },
+        {
+          "source": "tofrom = mode == \"add\" ? \" added to \" : \" removed from \";",
+          "target": "tofrom = mode == \"add\" ? \" 被添加到 \" : \" 被移除从 \";"
+        }
+      ]
+    }
+  }
+}

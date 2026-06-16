@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "consistent-attachments-and-links",
+    "version": "2.0.0",
+    "title": "Consistent Attachments and Links",
+    "description": "This plugin ensures the consistency of attachments and links",
+    "language": "zh-cn",
+    "supportedVersions": "3.21.9",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"An unhandled error occurred. Please check the console for more information.\")",
+          "target": "Notice(\"发生未处理的错误。请检查控制台以获取更多信息。\")"
+        },
+        {
+          "source": "Notice(`Attachment ${file.path} is still used by other notes. It will not be deleted.`)",
+          "target": "Notice(`附件${file.path}仍然被其他笔记使用。它不会被删除。`)"
+        },
+        {
+          "source": "Notice(\"No files found that need to be moved\")",
+          "target": "Notice(\"未找到需要被移动的文件\")"
+        },
+        {
+          "source": "Notice(`Moved ${movedAttachmentsCount.toString()",
+          "target": "Notice(`移动了 ${movedAttachmentsCount.toString()"
+        },
+        {
+          "source": "Notice(\"Note path is ignored\")",
+          "target": "Notice(\"笔记路径被忽略\")"
+        },
+        {
+          "source": "Notice(`Moved ${result.movedAttachments.length.toString()",
+          "target": "Notice(`移动了 ${result.movedAttachments.length.toString()"
+        },
+        {
+          "source": "Notice(\"No embeds found that need to be converted\")",
+          "target": "Notice(\"未找到需要转换的嵌入内容\")"
+        },
+        {
+          "source": "Notice(`Converted ${changedEmbedCount.toString()",
+          "target": "Notice(`转换了 ${changedEmbedCount.toString()"
+        },
+        {
+          "source": "Notice(\"No links found that need to be converted\")",
+          "target": "Notice(\"没有找到需要转换的链接\")"
+        },
+        {
+          "source": "Notice(`Converted ${changedLinksCount.toString()",
+          "target": "Notice(`转换了 ${changedLinksCount.toString()"
+        },
+        {
+          "source": "Notice(\"Reorganization of the vault completed\")",
+          "target": "Notice(\"完成笔记库重组\")"
+        },
+        {
+          "source": "Notice(\"No wiki embeds found that need to be replaced\")",
+          "target": "Notice(\"没有发现需要替换的维基嵌入内容\")"
+        },
+        {
+          "source": "Notice(`Replaced ${changedLinksCount.toString()",
+          "target": "Notice(`替换了 ${changedLinksCount.toString()"
+        },
+        {
+          "source": "Notice(\"No wiki links found that need to be replaced\")",
+          "target": "Notice(\"找不到需要替换的 wiki 链接\")"
+        },
+        {
+          "source": ".log(this.consoleLogPrefix + \"delete empty folder: \\n   \" + dirName)",
+          "target": ".log(this.consoleLogPrefix + \"删除空文件夹: \\n   \" + dirName)"
+        },
+        {
+          "source": ".log(this.consoleLogPrefix + \"move file [from, to]: \\n   \" + path + \"\\n   \" + newLinkPath)",
+          "target": ".log(this.consoleLogPrefix + \"移动文件 [from, to]: \\n   \" + path + \"\\n   \" + newLinkPath)"
+        },
+        {
+          "source": ".log(this.consoleLogPrefix + \"delete file: \\n   \" + path)",
+          "target": ".log(this.consoleLogPrefix + \"删除文件: \\n   \" + path)"
+        },
+        {
+          "source": ".log(this.consoleLogPrefix + \"copy file with new name [from, to]: \\n   \" + path + \"\\n   \" + newFileCopyName)",
+          "target": ".log(this.consoleLogPrefix + \"复制文件并重命名 [from, to]: \\n   \" + path + \"\\n   \" + newFileCopyName)"
+        },
+        {
+          "source": ".log(this.consoleLogPrefix + \"copy file [from, to]: \\n   \" + path + \"\\n   \" + newLinkPath)",
+          "target": ".log(this.consoleLogPrefix + \"复制文件 [from, to]: \\n   \" + path + \"\\n   \" + newLinkPath)"
+        },
+        {
+          "source": ".setName(\"Move Attachments with Note\")",
+          "target": ".setName(\"跟随笔记移动附件\")"
+        },
+        {
+          "source": ".setName(\"Delete Unused Attachments with Note\")",
+          "target": ".setName(\"根据笔记删除未使用的附件\")"
+        },
+        {
+          "source": ".setName(\"Update Links\")",
+          "target": ".setName(\"更新链接\")"
+        },
+        {
+          "source": ".setName(\"Delete Empty Folders\")",
+          "target": ".setName(\"删除空文件夹\")"
+        },
+        {
+          "source": ".setName(\"Delete Duplicate Attachments on Note Move\")",
+          "target": ".setName(\"删除移动笔记时的重复附件\")"
+        },
+        {
+          "source": ".setName(\"Update Backlink Text on Note Rename\")",
+          "target": ".setName(\"在笔记重命名时更新反向链接\")"
+        },
+        {
+          "source": ".setName(\"Ignore Folders\")",
+          "target": ".setName(\"忽略文件夹\")"
+        },
+        {
+          "source": ".setName(\"Ignore Files\")",
+          "target": ".setName(\"忽略文件\")"
+        },
+        {
+          "source": ".setName(\"Consistency Report Filename\")",
+          "target": ".setName(\"一致性报告文件名\")"
+        },
+        {
+          "source": ".setName(\"Auto Collect Attachments\")",
+          "target": ".setName(\"自动收集附件\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically move attachments when a note is relocated. This includes attachments located in the same folder or any of its subfolders.\")",
+          "target": ".setDesc(\"当笔记移动时自动移动附件。这包括位于同一文件夹或其子文件夹中的附件。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically remove attachments that are no longer referenced in other notes when the note is deleted.\")",
+          "target": ".setDesc(\"删除笔记时，自动删除无其他笔记引用的附件。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically update links to attachments and other notes when moving notes or attachments.\")",
+          "target": ".setDesc(\"移动笔记或附件时，自动更新附件和其他笔记的附件链接。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically remove empty folders after moving notes with attachments.\")",
+          "target": ".setDesc(\"移动带附件的笔记后，自动删除空文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically delete attachments when moving a note if a file with the same name exists in the destination folder. If disabled, the file will be renamed and moved.\")",
+          "target": ".setDesc(\"如果目标文件夹中存在同名文件，则在移动备忘时自动删除附件。如果禁用，文件将重命名并移动。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify a list of folders to ignore. Enter each folder on a new line.\")",
+          "target": ".setDesc(\"指定要忽略的文件夹列表。在新行中输入每个文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify a list of files to ignore. Enter each file on a new line.\")",
+          "target": ".setDesc(\"指定要忽略的文件列表。在新行中输入每个文件。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the name of the file for the consistency report.\")",
+          "target": ".setDesc(\"指定一致性报告的文件名。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically collect attachments when the note is edited.\")",
+          "target": ".setDesc(\"编辑笔记时自动收集附件。\")"
+        },
+        {
+          "source": ".appendText(\"Starting from \")",
+          "target": ".appendText(\"开始，从 \")"
+        },
+        {
+          "source": ".appendText(\", the plugin \")",
+          "target": ".appendText(\"，插件 \")"
+        },
+        {
+          "source": ".appendText(\" has setting \")",
+          "target": ".appendText(\"设置了 \")"
+        },
+        {
+          "source": ".appendText(\" removed. This is a BREAKING CHANGE.\")",
+          "target": ".appendText(\"已删除。这是一个 重大 的改动。\")"
+        },
+        {
+          "source": ".setDesc(\"When a note is renamed, its linked references are automatically updated. If this option is enabled, the text of backlinks to this note will also be modified.\")",
+          "target": ".setDesc(\"笔记重命名时，其链接引用会自动更新。如果启用此选项，该笔记的反向链接文本也会被修改。\")"
+        },
+        {
+          "source": "name:\"Collect All Attachments\"",
+          "target": "name: \"收集所有附件\""
+        },
+        {
+          "source": "name:\"Collect Attachments in Current Note\"",
+          "target": "name: \"收集当前笔记中的附件\""
+        },
+        {
+          "source": "name:\"Delete Empty Folders\"",
+          "target": "name: \"删除空文件夹\""
+        },
+        {
+          "source": "name:\"Convert All Link Paths to Relative\"",
+          "target": "name: \"将所有链接路径转换为相对路径\""
+        },
+        {
+          "source": "name:\"Convert All Link Paths to Relative in Current Note\"",
+          "target": "name: \"将当前笔记中所有链接路径转换为相对路径\""
+        },
+        {
+          "source": "name:\"Convert All Embed Paths to Relative\"",
+          "target": "name: \"将所有嵌入路径转换为相对路径\""
+        },
+        {
+          "source": "name:\"Convert All Embed Paths to Relative in Current Note\"",
+          "target": "name: \"将当前笔记中的所有嵌入路径转换为相对路径\""
+        },
+        {
+          "source": "name:\"Replace All Wiki Links with Markdown Links\"",
+          "target": "name: \"用 Markdown 链接替换所有 Wiki 链接\""
+        },
+        {
+          "source": "name:\"Replace All Wiki Links with Markdown Links in Current Note\"",
+          "target": "name: \"将当前笔记中的所有 Wiki 链接替换为 Markdown 链接\""
+        },
+        {
+          "source": "name:\"Replace All Wiki Embeds with Markdown Embeds\"",
+          "target": "name: \"将所有 Wiki 嵌入替换为 Markdown 嵌入\""
+        },
+        {
+          "source": "name:\"Replace All Wiki Embeds with Markdown Embeds in Current Note\"",
+          "target": "name: \"在当前笔记中用 Markdown 嵌入替换所有 Wiki 嵌入\""
+        },
+        {
+          "source": "name:\"Reorganize Vault\"",
+          "target": "name: \"重新组织笔记库\""
+        },
+        {
+          "source": "name:\"Check Vault consistency\"",
+          "target": "name: \"检查笔记库的一致性\""
+        },
+        {
+          "source": "text:\"Read more\"",
+          "target": "text: \"阅读更多\""
+        },
+        {
+          "source": "Move Attachments with Note",
+          "target": "随着笔记移动附件"
+        },
+        {
+          "source": "Delete Unused Attachments with Note",
+          "target": "删除未引用的附件"
+        },
+        {
+          "source": "Delete Duplicate Attachments on Note Move",
+          "target": "删除笔记移动时的重复附件"
+        },
+        {
+          "source": "Auto Collect Attachments",
+          "target": "自动收集附件"
+        },
+        {
+          "source": "Include paths",
+          "target": "包含路径"
+        },
+        {
+          "source": "Exclude paths",
+          "target": "排除路径"
+        },
+        {
+          "source": "Include notes from the following paths",
+          "target": "包含以下路径的笔记"
+        },
+        {
+          "source": "Insert each path on a new line",
+          "target": "每行只写一个路径"
+        },
+        {
+          "source": "You can use path string or ",
+          "target": "你可以使用路径字符串，或使用"
+        },
+        {
+          "source": "/regular expression/",
+          "target": "/正则表达式/"
+        },
+        {
+          "source": "If the setting is empty, all notes are included",
+          "target": "如果设置为空，则包含所有笔记"
+        },
+        {
+          "source": "Exclude notes from the following paths",
+          "target": "排除以下路径的笔记"
+        },
+        {
+          "source": "If the setting is empty, no notes are excluded",
+          "target": "如果设置为空，则不会排除任何笔记"
+        },
+        {
+          "source": "Using 'Consistent Attachments and Links' plugin without proper configuration might lead to inconvenient attachment rearrangements or even data loss in your vault.",
+          "target": "如果“Consistent Attachments and Links”插件没有正确配置，可能会导致你的保险库中的附件被错误的移动，甚至造成数据丢失。"
+        },
+        {
+          "source": "Collect Attachments in Current Folder",
+          "target": "收集当前文件夹中的附件"
+        }
+      ]
+    }
+  }
+}

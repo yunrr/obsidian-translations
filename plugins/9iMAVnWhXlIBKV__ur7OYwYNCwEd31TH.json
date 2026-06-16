@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "augmented-canvas",
+    "version": "2.0.0",
+    "title": "Augmented Canvas",
+    "description": "Obsidian Canvas with AI features.",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.20",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Please set your OpenAI API key in the plugin settings\")",
+          "target": "Notice(\"请在插件设置中设置您的 OpenAI API 密钥\")"
+        },
+        {
+          "source": "Notice(`Truncating node text from ${nodeText.length} to ${truncateTextTo} characters`)",
+          "target": "Notice(`正在将节点文本从 ${nodeText.length} 个字符截断至 ${truncateTextTo} 个字符`)"
+        },
+        {
+          "source": "Notice(`Sending ${messages.length} notes with ${tokenCount} tokens to GPT`)",
+          "target": "Notice(`正在发送 ${messages.length} 条笔记，共 ${tokenCount} 个令牌至 GPT`)"
+        },
+        {
+          "source": "Notice(`Error calling GPT: ${error.message || error}`)",
+          "target": "Notice(`调用 GPT 出错: ${error.message || error}`)"
+        },
+        {
+          "source": "Notice(\"Prompt missing\")",
+          "target": "Notice(\"缺少提示词\")"
+        },
+        {
+          "source": "Notice(\"Name missing\")",
+          "target": "Notice(\"缺少名称\")"
+        },
+        {
+          "source": "Notice(\"Values missing\")",
+          "target": "Notice(\"缺少值\")"
+        },
+        {
+          "source": "Notice(\"This system prompt name already exists\")",
+          "target": "Notice(\"此系统提示词名称已存在\")"
+        },
+        {
+          "source": "Notice(\"System prompt updated\")",
+          "target": "Notice(\"系统提示词已更新\")"
+        },
+        {
+          "source": "Notice(\"System prompt deleted\")",
+          "target": "Notice(\"系统提示词已删除\")"
+        },
+        {
+          "source": "Notice(\"Flashcard file being created...\")",
+          "target": "Notice(\"正在创建抽认卡文件...\")"
+        },
+        {
+          "source": "Notice(`Flashcard file \"${gptResponse.filename}\" created successfully`)",
+          "target": "Notice(`抽认卡文件 \"${gptResponse.filename}\" 创建成功`)"
+        },
+        {
+          "source": "Notice(\"Generating relevant questions...\")",
+          "target": "Notice(\"正在生成相关问题...\")"
+        },
+        {
+          "source": "Notice(\"Generating relevant questions done successfully.\")",
+          "target": "Notice(\"相关问题生成成功。\")"
+        },
+        {
+          "source": "Notice(`Generating image using ${settings2.imageModel}...`)",
+          "target": "Notice(`正在使用 ${settings2.imageModel} 生成图像...`)"
+        },
+        {
+          "source": "Notice(`Generating image \"${imageFileName}\" done successfully.`)",
+          "target": "Notice(`图像 \"${imageFileName}\" 生成成功。`)"
+        },
+        {
+          "source": "Notice(`Selected ${systemPrompt.act}`)",
+          "target": "Notice(`已选择 ${systemPrompt.act}`)"
+        },
+        {
+          "source": "Notice(`Selected system prompt ${systemPrompt.act}`)",
+          "target": "Notice(`已选择系统提示词 ${systemPrompt.act}`)"
+        },
+        {
+          "source": ".log({ canvasJson })",
+          "target": ".log({ 画布Json })"
+        },
+        {
+          "source": ".log({ attachments })",
+          "target": ".log({ 附件 })"
+        },
+        {
+          "source": ".log(`OpenAI:DEBUG:${action}`, ...args)",
+          "target": ".log(`OpenAI:调试:${action}`, ...args)"
+        },
+        {
+          "source": ".log(...params)",
+          "target": ".log(...参数)"
+        },
+        {
+          "source": ".log({ actualFiles })",
+          "target": ".log({ 实际文件 })"
+        },
+        {
+          "source": ".log(\"Image saved successfully.\")",
+          "target": ".log(\"图像保存成功。\")"
+        },
+        {
+          "source": ".log(\"\"Hello World\"\")",
+          "target": ".log(\"\"Hello World\"\")"
+        },
+        {
+          "source": ".error(`Could not parse message into JSON:`, sse.data)",
+          "target": ".error(`无法将消息解析为 JSON:`, sse.data)"
+        },
+        {
+          "source": ".error(`From chunk:`, sse.raw)",
+          "target": ".error(`来自块:`, sse.raw)"
+        },
+        {
+          "source": ".error(err)",
+          "target": ".error(错误)"
+        },
+        {
+          "source": ".error(\"Error saving the image:\", error)",
+          "target": ".error(\"保存图像时出错:\", 错误)"
+        },
+        {
+          "source": "name: \"gpt-4o\"",
+          "target": "name: \"gpt-4o\""
+        },
+        {
+          "source": "name: \"gpt-4o-mini\"",
+          "target": "name: \"gpt-4o-mini\""
+        },
+        {
+          "source": "name: \"gpt-4-1106-preview\"",
+          "target": "name: \"gpt-4-1106-preview\""
+        },
+        {
+          "source": "name: \"dall-e-2\"",
+          "target": "name: \"dall-e-2\""
+        },
+        {
+          "source": "name: \"dall-e-3\"",
+          "target": "name: \"dall-e-3\""
+        },
+        {
+          "source": "name: \"Run a system prompt on a folder\"",
+          "target": "name: \"在文件夹上运行系统提示词\""
+        },
+        {
+          "source": "name: \"Insert system prompt\"",
+          "target": "name: \"插入系统提示词\""
+        },
+        {
+          "source": "name: \"Insert relevant questions\"",
+          "target": "name: \"插入相关问题\""
+        },
+        {
+          "source": "text: `\\`",
+          "target": "text: `\\`"
+        },
+        {
+          "source": "text: \"Ask AI\"",
+          "target": "text: \"询问 AI\""
+        },
+        {
+          "source": "text: `![[${imageFolder}/${imageFileName}.png]]`",
+          "target": "text: `![[${imageFolder}/${imageFileName}.png]]`"
+        },
+        {
+          "source": ".setText(`\\`\\`\\`Calling AI (${settings2.apiModel})...\\`\\`\\``)",
+          "target": ".setText(`\\`\\`\\`正在调用 AI (${settings2.apiModel})...\\`\\`\\``)"
+        },
+        {
+          "source": ".setName(\"Model\")",
+          "target": ".setName(\"模型\")"
+        },
+        {
+          "source": ".setName(\"Image Model\")",
+          "target": ".setName(\"图像模型\")"
+        },
+        {
+          "source": ".setName(\"API key\")",
+          "target": ".setName(\"API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Youtube API key\")",
+          "target": ".setName(\"Youtube API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Default system prompt\")",
+          "target": ".setName(\"默认系统提示词\")"
+        },
+        {
+          "source": ".setName(\"Flashcards system prompt\")",
+          "target": ".setName(\"抽认卡系统提示词\")"
+        },
+        {
+          "source": ".setName(\"Relevant questions system prompt\")",
+          "target": ".setName(\"相关问题系统提示词\")"
+        },
+        {
+          "source": ".setName(\"Insert relevant questions files count\")",
+          "target": ".setName(\"插入相关问题文件数量\")"
+        },
+        {
+          "source": ".setName(\"Max input tokens\")",
+          "target": ".setName(\"最大输入令牌数\")"
+        },
+        {
+          "source": ".setName(\"Max response tokens\")",
+          "target": ".setName(\"最大响应令牌数\")"
+        },
+        {
+          "source": ".setName(\"Max depth\")",
+          "target": ".setName(\"最大深度\")"
+        },
+        {
+          "source": ".setName(\"Temperature\")",
+          "target": ".setName(\"温度\")"
+        },
+        {
+          "source": ".setName(\"Debug output\")",
+          "target": ".setName(\"调试输出\")"
+        },
+        {
+          "source": ".setName(\"Add system prompts\")",
+          "target": ".setName(\"添加系统提示词\")"
+        },
+        {
+          "source": ".setDesc(\"Select the GPT model to use.\")",
+          "target": ".setDesc(\"选择要使用的 GPT 模型。\")"
+        },
+        {
+          "source": ".setDesc(\"Select the GPT model to generate images.\")",
+          "target": ".setDesc(\"选择用于生成图像的 GPT 模型。\")"
+        },
+        {
+          "source": ".setDesc(\"The API key to use when making requests - Get from OpenAI\")",
+          "target": ".setDesc(\"发起请求时使用的 API 密钥 - 从 OpenAI 获取\")"
+        },
+        {
+          "source": ".setDesc(\"The Youtube API key used to fetch captions\")",
+          "target": ".setDesc(\"用于获取字幕的 Youtube API 密钥\")"
+        },
+        {
+          "source": ".setDesc(`The system prompt sent with each request to the API. \n(Note: you can override this by beginning a note stream with a note starting 'SYSTEM PROMPT'. The remaining content of that note will be used as system prompt.)`)",
+          "target": ".setDesc(`发送至 API 的每个请求都会附带的系统提示词。\n(注意: 您可以通过以'SYSTEM PROMPT'开头的笔记来覆盖此设置。该笔记的其余内容将用作系统提示词。)`)"
+        },
+        {
+          "source": ".setDesc(`The system prompt used to generate the flashcards file.`)",
+          "target": ".setDesc(`用于生成抽认卡文件的系统提示词。`)"
+        },
+        {
+          "source": ".setDesc(`The system prompt used to generate relevant questions for the command \"Insert relevant questions\".`)",
+          "target": ".setDesc(`用于为\"插入相关问题\"命令生成相关问题的系统提示词。`)"
+        },
+        {
+          "source": ".setDesc('The number of files that are taken into account by the \"Insert relevant questions\" command.')",
+          "target": ".setDesc('\"插入相关问题\"命令所考虑的文件数量。')"
+        },
+        {
+          "source": ".setDesc(\"The maximum number of tokens to send (within model limit). 0 means as many as possible\")",
+          "target": ".setDesc(\"要发送的最大令牌数(在模型限制内)。0 表示尽可能多\")"
+        },
+        {
+          "source": ".setDesc(\"The maximum number of tokens to return from the API. 0 means no limit. (A token is about 4 characters).\")",
+          "target": ".setDesc(\"从 API 返回的最大令牌数。0 表示无限制。(一个令牌约等于 4 个字符)。\")"
+        },
+        {
+          "source": ".setDesc(\"The maximum depth of ancestor notes to include. 0 means no limit.\")",
+          "target": ".setDesc(\"要包含的祖先笔记的最大深度。0 表示无限制。\")"
+        },
+        {
+          "source": ".setDesc(\"Sampling temperature (0-2). 0 means no randomness.\")",
+          "target": ".setDesc(\"采样温度(0-2)。0 表示无随机性。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable debug output in the console\")",
+          "target": ".setDesc(\"在控制台中启用调试输出\")"
+        },
+        {
+          "source": ".setDesc(`Create new highlight colors by providing a color name and using the color picker to set the hex code value. Don't forget to save the color before exiting the color picker. Drag and drop the highlight color to change the order for your highlighter component.`)",
+          "target": ".setDesc(`通过提供颜色名称并使用颜色选择器设置十六进制代码值来创建新的高亮颜色。退出颜色选择器前别忘了保存颜色。拖拽高亮颜色以更改高亮组件的顺序。`)"
+        },
+        {
+          "source": ".setPlaceholder(\"API Key\")",
+          "target": ".setPlaceholder(\"API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Name\")",
+          "target": ".setPlaceholder(\"名称\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Prompt\")",
+          "target": ".setPlaceholder(\"提示词\")"
+        },
+        {
+          "source": ".setTooltip(\"Add\")",
+          "target": ".setTooltip(\"添加\")"
+        },
+        {
+          "source": ".setTooltip(\"Save\")",
+          "target": ".setTooltip(\"保存\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete\")",
+          "target": ".setTooltip(\"删除\")"
+        },
+        {
+          "source": ".setTitle(\"No questions\")",
+          "target": ".setTitle(\"无问题\")"
+        },
+        {
+          "source": ".setTitle(\"loading...\")",
+          "target": ".setTitle(\"加载中...\")"
+        },
+        {
+          "source": ".setTitle(\"Create flashcards\")",
+          "target": ".setTitle(\"创建抽认卡\")"
+        },
+        {
+          "source": ".setTitle(\"Generate image\")",
+          "target": ".setTitle(\"生成图像\")"
+        }
+      ]
+    }
+  }
+}

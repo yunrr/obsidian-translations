@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "auto-note-mover",
+    "version": "2.0.0",
+    "title": "Auto Note Mover",
+    "description": "Auto Note Mover will automatically move the active notes to their respective folders according to the rules.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`[Auto Note Mover]\n\"Error: The destination folder\n\"${settingFolder}\"\ndoes not exist.`)",
+          "target": "注意(`[自动移动文件]\n\"错误: 目标文件夹\n\"${settingFolder}\"\n不存在.`)"
+        },
+        {
+          "source": "Notice(`[Auto Note Mover]\nError: A file with the same name\n\"${fileFullName}\"\nexists at the destination folder.`)",
+          "target": "注意(`[自动移动文件]\n错误: 有相同名字的文件\n\"${fileFullName}\"\n存在于目标文件夹中.`)"
+        },
+        {
+          "source": "Notice(`[Auto Note Mover]\nMoved the note \"${fileFullName}\"\nto the \"${settingFolder}\".`)",
+          "target": "注意(`[自动移动文件\n移动文件 \"${fileFullName}\"\n到 \"${settingFolder}\".`)"
+        },
+        {
+          "source": "Notice(`You can set either the tag or the title.`)",
+          "target": "注意(`你可以设置 tag 或标题.`)"
+        },
+        {
+          "source": "Notice(\"This tag is already used.\")",
+          "target": "注意(\"这个 tag 已经被使用.\")"
+        },
+        {
+          "source": "Notice(\"This pattern is already used.\")",
+          "target": "注意(\"这个模式已经被使用过了.\")"
+        },
+        {
+          "source": "Notice(\"Auto Note Mover is disabled in the frontmatter.\")",
+          "target": "注意(\"在前页中禁用自动移动文件.\")"
+        },
+        {
+          "source": "Notice(\"[Auto Note Mover]\\nTrigger is Manual.\")",
+          "target": "注意(\"[自动移动文件]\\手动触发.\")"
+        },
+        {
+          "source": "Notice(\"[Auto Note Mover]\\nTrigger is Automatic.\")",
+          "target": "注意(\"[自动移动文件]\\自动触发.\")"
+        },
+        {
+          "source": ".log(`[Auto Note Mover] Moved the note \"${fileFullName}\" to the \"${settingFolder}\".`)",
+          "target": ".日志(`[自动移动文件] 移动文件 \"${fileFullName}\" 到 \"${settingFolder}\".`)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" element must be an HTMLElement (not an SVGElement)",
+          "target": ".错误(['Popper: \"arrow\" 元素必须是一个HTML元素 (不是SVG元素)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" modifier\\'s `element` must be a child of the popper', \"element.\"].join(\" \")",
+          "target": ".错误(['Popper: \"arrow\" modifier\\'s `element` must be a child of the popper', \"element.\"].join(\" \")"
+        },
+        {
+          "source": ".error([\"Popper: The `allowedAutoPlacements` option did not allow any\", \"placements. Ensure the `placement` option matches the variation\", \"of the allowed placements.\", 'For example, \"auto\" cannot be used to allow \"bottom-start\".', 'Use \"auto-start\" instead.'].join(\" \")",
+          "target": ".错误([\"Popper: The `allowedAutoPlacements` option did not allow any\", \"placements. Ensure the `placement` option matches the variation\", \"of the allowed placements.\", 'For example, \"auto\" cannot be used to allow \"bottom-start\".', 'Use \"auto-start\" instead.'].join(\" \")"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, String(modifier.name)",
+          "target": ".错误(format(INVALID_MODIFIER_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"enabled\"', '\"boolean\"', '\"' + String(modifier.enabled)",
+          "target": ".错误(format(INVALID_MODIFIER_ERROR, modifier.name, '\"enabled\"', '\"boolean\"', '\"' + String(modifier.enabled)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"phase\"', \"either \" + modifierPhases.join(\", \")",
+          "target": ".错误(format(INVALID_MODIFIER_ERROR, modifier.name, '\"phase\"', \"either \" + modifierPhases.join(\", \")"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"fn\"', '\"function\"', '\"' + String(modifier.fn)",
+          "target": ".错误(format(INVALID_MODIFIER_ERROR, modifier.name, '\"fn\"', '\"function\"', '\"' + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"effect\"', '\"function\"', '\"' + String(modifier.fn)",
+          "target": ".错误(format(INVALID_MODIFIER_ERROR, modifier.name, '\"effect\"', '\"function\"', '\"' + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requires\"', '\"array\"', '\"' + String(modifier.requires)",
+          "target": ".错误(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requires\"', '\"array\"', '\"' + String(modifier.requires)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requiresIfExists\"', '\"array\"', '\"' + String(modifier.requiresIfExists)",
+          "target": ".错误(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requiresIfExists\"', '\"array\"', '\"' + String(modifier.requiresIfExists)"
+        },
+        {
+          "source": ".error('PopperJS: an invalid property has been provided to the \"' + modifier.name + '\" modifier, valid properties are ' + VALID_PROPERTIES.map(function(s)",
+          "target": ".错误('PopperJS: an invalid property has been provided to the \"' + modifier.name + '\" modifier, valid properties are ' + VALID_PROPERTIES.map(function(s)"
+        },
+        {
+          "source": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)",
+          "target": ".错误(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(['Popper: \"auto\" placements require the \"flip\" modifier be', \"present and enabled to work.\"].join(\" \")",
+          "target": ".错误(['Popper: \"auto\" placements require the \"flip\" modifier be', \"present and enabled to work.\"].join(\" \")"
+        },
+        {
+          "source": ".error(INVALID_ELEMENT_ERROR)",
+          "target": ".错误(INVALID_ELEMENT_ERROR)"
+        },
+        {
+          "source": ".error(INFINITE_LOOP_ERROR)",
+          "target": ".错误(INFINITE_LOOP_ERROR)"
+        },
+        {
+          "source": ".error(`[Auto Note Mover] The destination folder \"${settingFolder}\" does not exist.`)",
+          "target": ".错误(`[自动移动文件] 目标文件夹 \"${settingFolder}\" 不存在.`)"
+        },
+        {
+          "source": ".error(`[Auto Note Mover] Error: A file with the same name \"${fileFullName}\" exists at the destination folder.`)",
+          "target": ".错误(`[自动移动文件] Error: 有相同名字的文件 \"${fileFullName}\" 存在于目标文件夹.`)"
+        },
+        {
+          "source": "name: \"applyStyles\"",
+          "target": "name: \"应用方式\""
+        },
+        {
+          "source": "name: \"arrow\"",
+          "target": "name: \"arrow\""
+        },
+        {
+          "source": "name: \"computeStyles\"",
+          "target": "name: \"computeStyles\""
+        },
+        {
+          "source": "name: \"eventListeners\"",
+          "target": "name: \"eventListeners\""
+        },
+        {
+          "source": "name: \"flip\"",
+          "target": "name: \"flip\""
+        },
+        {
+          "source": "name: \"hide\"",
+          "target": "name: \"hide\""
+        },
+        {
+          "source": "name: \"offset\"",
+          "target": "name: \"offset\""
+        },
+        {
+          "source": "name: \"popperOffsets\"",
+          "target": "name: \"popperOffsets\""
+        },
+        {
+          "source": "name: \"preventOverflow\"",
+          "target": "name: \"preventOverflow\""
+        },
+        {
+          "source": "name: \"sameWidth\"",
+          "target": "name: \"sameWidth\""
+        },
+        {
+          "source": "name: \"Move the note\"",
+          "target": "name: \"移动文件\""
+        },
+        {
+          "source": "name: \"Toggle Auto-Manual\"",
+          "target": "name: \"触发 自动-手动\""
+        },
+        {
+          "source": "text: \"reference\"",
+          "target": "text: \"引用\""
+        },
+        {
+          "source": "text: \"Auto Note Mover\"",
+          "target": "text: \"自动移动文件\""
+        },
+        {
+          "source": "text: \"Automatic \"",
+          "target": "text: \"自动的 \""
+        },
+        {
+          "source": "text: \"Manual \"",
+          "target": "text: \"手动的\""
+        },
+        {
+          "source": "text: \"^#tag$\"",
+          "target": "text: \"^#tag$\""
+        },
+        {
+          "source": "text: \"If you want to use the suggested tags as they are, it is recommended to disable this setting.\"",
+          "target": "text: \"如果您希望原样使用建议的tag,建议禁用此设置。\""
+        },
+        {
+          "source": "text: \"You can set either the tag or the title. \"",
+          "target": "text: \"您可以设置 tag 或标题。 \""
+        },
+        {
+          "source": "text: \"first matching rule.\"",
+          "target": "text: \"第一条匹配规则。\""
+        },
+        {
+          "source": "text: \" # \"",
+          "target": "text: \" # \""
+        },
+        {
+          "source": "text: \"AutoNoteMover: disable\"",
+          "target": "text: \"自动移动文件: 禁用\""
+        },
+        {
+          "source": ".setButtonText(\"+\")",
+          "target": ".setButtonText(\"+\")"
+        },
+        {
+          "source": ".setName(\"Trigger\")",
+          "target": ".setName(\"触发\")"
+        },
+        {
+          "source": ".setName(\"Use regular expressions to check for tags\")",
+          "target": ".setName(\"使用正则表达式检查 tags\")"
+        },
+        {
+          "source": ".setName(\"Add new rule\")",
+          "target": ".setName(\"添加新规则\")"
+        },
+        {
+          "source": ".setName(\"Use regular expressions to check for excluded folder\")",
+          "target": ".setName(\"使用正则表达式检查排除的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Add Excluded Folder\")",
+          "target": ".setName(\"添加排除文件夹\")"
+        },
+        {
+          "source": ".setName(\"Status Bar Trigger Indicator\")",
+          "target": ".setName(\"状态栏触发指示\")"
+        },
+        {
+          "source": ".setDesc(\"Auto Note Mover will automatically move the active notes to their respective folders according to the rules.\")",
+          "target": ".setDesc(\"自动移动文件将根据规则自动将活动笔记移动到各自的文件夹中。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Folder\")",
+          "target": ".setPlaceholder(\"文件夹\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Tag\")",
+          "target": ".setPlaceholder(\"Tag\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Title by regex\")",
+          "target": ".setPlaceholder(\"标题按正则表达式\")"
+        },
+        {
+          "source": ".setTooltip(\"Add new rule\")",
+          "target": ".setTooltip(\"添加新规则\")"
+        },
+        {
+          "source": ".setTooltip(\"Move up\")",
+          "target": ".setTooltip(\"向上移动\")"
+        },
+        {
+          "source": ".setTooltip(\"Move down\")",
+          "target": ".setTooltip(\"向下移动\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete\")",
+          "target": ".setTooltip(\"删除\")"
+        },
+        {
+          "source": ".setTooltip(\"Add Excluded Folders\")",
+          "target": ".setTooltip(\"添加排除文件夹\")"
+        },
+        {
+          "source": ".append(\"Choose how the trigger will be activated.",
+          "target": ".append(\"选择如何触发。"
+        },
+        {
+          "source": "\"is triggered when you create, edit, or rename a note, and moves the note if it matches the rules.\"",
+          "target": "\"在创建、编辑或重命名笔记时触发，如果符合规则，则移动该笔记。\""
+        },
+        {
+          "source": "\"You can also activate the trigger with a command.\"",
+          "target": "\"您也可以用命令激活。\""
+        },
+        {
+          "source": "\"will not automatically move notes.\"",
+          "target": "\"不会自动移动文件。\""
+        },
+        {
+          "source": "\"You can trigger by command.\"",
+          "target": "\"您可以通过命令触发。\""
+        },
+        {
+          "source": "append(\"If enabled, tags will be checked with regular expressions.\"",
+          "target": "append(\"如果启用，将使用正则表达式检查标记。\""
+        },
+        {
+          "source": "\"For example, if you want to match the #tag, you would write \"",
+          "target": "\"例如，如果要匹配 #tag, 您可以这样写 \""
+        },
+        {
+          "source": "\"This setting is for a specific purpose, such as specifying nested tags in bulk.\"",
+          "target": "\"此设置用于特定目的，例如批量指定嵌套tags.\""
+        },
+        {
+          "source": "append(\"1. Set the destination folder.\", descEl.createEl(\"br\"), \"2. Set a tag or title that matches the note you want to move. \"",
+          "target": "append(\"1. 设置目标文件夹。\", descEl.createEl(\"br\"), \"2. 设置与要移动的注释匹配的tag或标题。 \""
+        },
+        {
+          "source": "\"3. The rules are checked in order from the top. The notes will be moved to the folder with the \"",
+          "target": "\"3. 规则是从上到下依次检查的。笔记将被移动到文件夹与 \""
+        },
+        {
+          "source": "\"Tag: Be sure to add a\"",
+          "target": "\"Tag: 一定要加上\""
+        },
+        {
+          "source": "\"at the beginning.\", descEl.createEl(\"br\"), \"Title: Tested by JavaScript regular expressions.\"",
+          "target": "\"一开始.\", descEl.createEl(\"br\"), \"标题: 通过JavaScript正则表达式测试.\""
+        },
+        {
+          "source": "\"1. Attached files will not be moved, but they will still appear in the note.\", descEl.createEl(\"br\"), '2. Auto Note Mover will not move notes that have \"', descEl.createEl(\"strong\"",
+          "target": "\"1.附件不会被移动，但它们仍然会出现在笔记中。\", descEl.createEl(\"br\"), '2.  \"自动移动文件将不会移动', descEl.createEl(\"strong\""
+        },
+        {
+          "source": "\" in the frontmatter.');",
+          "target": "\" 上一个');"
+        },
+        {
+          "source": ".append(\"If enabled, excluded folder will be checked with regular expressions.\");",
+          "target": ".append(\"如果启用，将使用正则表达式检查排除的文件夹。\");"
+        },
+        {
+          "source": "append(\"Notes in the excluded folder will not be moved.\", descEl.createEl(\"br\"), \"This takes precedence over the notes movement rules.\");",
+          "target": "append(\"排除文件夹中的文件将不会被移动。\", descEl.createEl(\"br\"), \"这优先于文件移动规则。\");"
+        },
+        {
+          "source": ".append(\"The status bar will display [A] if the trigger is Automatic, and [M] for Manual.\", descEl.createEl(\"br\"), \"To change the setting, you need to restart Obsidian.\", descEl.createEl(\"br\"), \"Desktop only.\");",
+          "target": ".append(\"如果触发是自动触发，状态栏会显示[A]，如果是手动触发，状态栏会显示[M]。\", descEl.createEl(\"br\"), \"要更改设置，需要重新启动Obsidian。\", descEl.createEl(\"br\"), \"桌面。\");"
+        }
+      ]
+    }
+  }
+}

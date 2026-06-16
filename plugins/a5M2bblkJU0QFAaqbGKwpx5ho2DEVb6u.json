@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "number-headings-obsidian",
+    "version": "2.0.0",
+    "title": "Number Headings",
+    "description": "Automatically number or re-number headings in an Obsidian document",
+    "language": "zh-cn",
+    "supportedVersions": "1.16.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(\"Unexpected heading format: '\" + lineText + \"'\")",
+          "target": ".log(\"Unexpected heading format: '\" + lineText + \"'\")"
+        },
+        {
+          "source": ".log(\"Unexpected heading format: '\" + headingLineString + \"'\")",
+          "target": ".log(\"Unexpected heading format: '\" + headingLineString + \"'\")"
+        },
+        {
+          "source": ".log('Number Headings Plugin: Applying headings numbering changes:', changes.length)",
+          "target": ".log('Number Headings Plugin: 应用标题编号更改:', changes.length)"
+        },
+        {
+          "source": ".log('Number Headings Plugin: Applying table of contents changes:', changes.length)",
+          "target": ".log('Number Headings Plugin: 应用目录更改:', changes.length)"
+        },
+        {
+          "source": ".log('Number Headings Plugin: Automatically numbered document')",
+          "target": ".log('Number Headings Plugin: 文档自动编号')"
+        },
+        {
+          "source": "name: 'Number all headings in document (and show options)'",
+          "target": "name: '对文档中的所有标题进行编号（并显示选项）'"
+        },
+        {
+          "source": "name: 'Number all headings in document'",
+          "target": "name: '对文档中的所有标题进行编号'"
+        },
+        {
+          "source": "name: 'Remove numbering from all headings in document'",
+          "target": "name: '删除文档中所有标题的编号'"
+        },
+        {
+          "source": "name: 'Save settings to front matter'",
+          "target": "name: '将设置保存到 front matter 中'"
+        },
+        {
+          "source": "text: \"Do you want to save these settings in the document's front matter?\"",
+          "target": "text: \"您想将这些设置保存在文档的 front matter 中吗?\""
+        },
+        {
+          "source": "text: 'Number Headings - Settings'",
+          "target": "text: '标题编号-设置'"
+        },
+        {
+          "source": "text: 'To add numbering to your document, bring up the command window (on Mac, type CMD+P), and then type \"Number Headings\" to see a list of available commands.'",
+          "target": "text: '要为你的文档添加编号，打开命令窗口（在 Mac 上，输入 CMD+P），然后输入‘Number Headings（编号标题）’以查看可用命令列表。'"
+        },
+        {
+          "source": "text: 'If the document has front matter defined with the below settings, the project-wide settings defined on this screen will be ignored. You can define front matter like this:'",
+          "target": "text: '如果文档具有使用以下设置定义的 front matter, 此屏幕上定义的项目范围设置将被忽略. 你可以这样定义 front matter :'"
+        },
+        {
+          "source": "text: `    ---\r\n    alias:\r\n    - Example Alias\r\n    tags:\r\n    - example-tag\r\n    number headings: first-level 1, start-at 2, max 6, 1.1, auto, contents ^toc\r\n    ---`",
+          "target": "text: `    ---\r\n    alias:\r\n    - Example Alias\r\n    tags:\r\n    - example-tag\r\n    number headings: first-level 1, start-at 2, max 6, 1.1, auto, contents ^toc\r\n    ---`"
+        },
+        {
+          "source": "text: `\r\n      The 'number headings' front matter key is used to store numbering settings specific to the file. There are four possible options\r\n      in the value to the right of the colon, separated by commas.\r\n    `",
+          "target": "text: `\n       'number headings' 前置内容键用于存储特定于文件的编号设置。冒号右侧的值中有四个可能的选项，用逗号分隔.\n    `"
+        },
+        {
+          "source": "text: 'Automatic numbering'",
+          "target": "text: '自动编号'"
+        },
+        {
+          "source": "text: ': If \\'",
+          "target": "text: ': If \\'"
+        },
+        {
+          "source": "text: 'First level to number'",
+          "target": "text: '从…… 开始为第一个标题编号'"
+        },
+        {
+          "source": "text: 'Start numbering first heading at'",
+          "target": "text: '从以下位置开始编号第一个标题'"
+        },
+        {
+          "source": "text: 'Maximum level to number'",
+          "target": "text: '要编号的最大级别'"
+        },
+        {
+          "source": "text: 'Table of contents anchor'",
+          "target": "text: '目录锚点'"
+        },
+        {
+          "source": "text: 'Skip headings anchor'",
+          "target": "text: '跳过标题锚点'"
+        },
+        {
+          "source": "text: 'Numbering style'",
+          "target": "text: '编号样式'"
+        },
+        {
+          "source": "text: `      \r\n      For example, '1.1' means both top level and other headings will be numbered starting from '1'.\r\n    `",
+          "target": "text: `      \n      例如,'1.1'表示顶层和其他标题都将从'1'开始编号.\n    `"
+        },
+        {
+          "source": "text: `      \r\n      For example, 'A.1' means top level headings will be numbered starting from 'A'.\r\n    `",
+          "target": "text: `      \n      例如, 'A.1' 表示顶层标题将从 'A' 开始编号.\n    `"
+        },
+        {
+          "source": "text: `      \r\n      For example, '_.A.1' means top level headings will NOT be numbered, but the next levels will be numbered with letters and numbers.\r\n    `",
+          "target": "text: `      \n      例如, '_.A.1' 表示顶层标题将不编号，但下一级别将用字母和数字编号.\n    `"
+        },
+        {
+          "source": "text: `      \r\n      For example, '1.1:' means headings will look like '## 2.4: Example Heading'\r\n    `",
+          "target": "text: `      \n      例如, '1.1:' 表示标题将看起来像 '## 2.4: 示例标题'\n    `"
+        },
+        {
+          "source": "text: `      \r\n      For example, 'A.1-' means headings will look like '## B.5- Example Heading'\r\n    `",
+          "target": "text: `      \n      例如, 'A.1-' 表示标题将看起来像 '## B.5- 示例标题'\n    `"
+        },
+        {
+          "source": "text: `      \r\n      For example, 'I.A —' means headings will look like '## IV.A — Example Heading' (with Roman numerals)\r\n    `",
+          "target": "text: `      \n      例如, 'I.A —' 表示标题将看起来像 '## IV.A — 示例标题' (使用罗马数字)\n    `"
+        },
+        {
+          "source": "text: 'Numbering off'",
+          "target": "text: '编号关闭'"
+        },
+        {
+          "source": ".setText('Number Headings - Successfully Completed')",
+          "target": ".setText('标题编号-已成功完成')"
+        },
+        {
+          "source": ".setText('No')",
+          "target": ".setText('不')"
+        },
+        {
+          "source": ".setText('Yes, save settings in document')",
+          "target": ".setText('是，将设置保存在文档中')"
+        },
+        {
+          "source": ".setText('Yes, save settings in document, and automatically number')",
+          "target": ".setText('是，将设置保存在文档中，并自动编号')"
+        },
+        {
+          "source": ".setName('Skip top heading level')",
+          "target": ".setName('跳过顶级标题级别')"
+        },
+        {
+          "source": ".setName('First heading level')",
+          "target": ".setName('第一标题级别')"
+        },
+        {
+          "source": ".setName('Start numbering at')",
+          "target": ".setName('从…… 开始编号')"
+        },
+        {
+          "source": ".setName('Maximum heading level')",
+          "target": ".setName('最大标题级别')"
+        },
+        {
+          "source": ".setName('Style for level 1 headings')",
+          "target": ".setName('一级标题的样式')"
+        },
+        {
+          "source": ".setName('Style for lower level headings (below level 1)')",
+          "target": ".setName('较低级别标题样式（低于级别1）')"
+        },
+        {
+          "source": ".setName('Automatic numbering')",
+          "target": ".setName('自动编号')"
+        },
+        {
+          "source": ".setName('Separator style')",
+          "target": ".setName('分隔符样式')"
+        },
+        {
+          "source": ".setName('Table of Contents Anchor')",
+          "target": ".setName('目录锚点')"
+        },
+        {
+          "source": ".setName('Skip Headings Anchor')",
+          "target": ".setName('跳过标题锚点')"
+        },
+        {
+          "source": ".setDesc('If selected, numbering will not be applied to the top heading level.')",
+          "target": ".setDesc('如果选中，编号将不会应用于顶级标题级别。')"
+        },
+        {
+          "source": ".setDesc('First heading level to number.')",
+          "target": ".setDesc('要编号的第一个标题级别。')"
+        },
+        {
+          "source": ".setDesc('Start numbering the first heading level from this value.')",
+          "target": ".setDesc('从这个值开始对第一个标题级别进行编号。')"
+        },
+        {
+          "source": ".setDesc('Maximum heading level to number.')",
+          "target": ".setDesc('要编号的最大标题级别。')"
+        },
+        {
+          "source": ".setDesc('Defines the numbering style for level one headings. Valid values are 1 (for numbers) or A (for capital letters) or I (for Roman numerals).')",
+          "target": ".setDesc('定义一级以下标题的编号样式。有效值为 1（表示数字）、A（表示大写字母）或 I（表示罗马数字）。')"
+        },
+        {
+          "source": ".setDesc('Defines the numbering style for headings below level one. Valid values are 1 (for numbers) or A (for capital letters) or I (for Roman numerals).')",
+          "target": ".setDesc('定义一级以下标题的编号样式。有效值为1（表示数字）或A（表示大写字母）或I（表示罗马数字）。')"
+        },
+        {
+          "source": ".setDesc('Turns on automatic numbering of documents.')",
+          "target": ".setDesc('开启文档的自动编号')"
+        },
+        {
+          "source": ".setDesc('Defines the separator style between the heading number and the heading text. Valid values are : (colon) or . (dot) or - (dash) or — (emdash) or ) (a right parenthesis). You can also leave it blank for no separator, or have a space before the separator.')",
+          "target": ".setDesc('定义标题编号和标题文本之间的分隔符样式。有效值为：冒号（:）、点（.）、破折号（-）、长破折号（—）或右括号（)）。你也可以留空表示没有分隔符，或者在分隔符前有一个空格。')"
+        },
+        {
+          "source": ".setDesc('Anchor which labels the header where a table of contents should be inserted. The anchor should be added at the end of a header. For example, ^toc.')",
+          "target": ".setDesc('用于标记应插入目录的标题的锚点。该锚点应添加在标题的末尾。例如，^toc.')"
+        },
+        {
+          "source": ".setDesc('Anchor which labels the headers that should not be numbered. The anchor should be added at the end of a header. For example, ^skipped.')",
+          "target": ".setDesc('用于标记不应编号的标题的锚点。该锚点应添加在标题的末尾。例如，^skipped.')"
+        },
+        {
+          "source": ".setTooltip('Skip top heading level')",
+          "target": ".setTooltip('跳过顶级级别标题')"
+        },
+        {
+          "source": ".setTooltip('Turn on automatic numbering')",
+          "target": ".setTooltip('启用自动编号')"
+        }
+      ]
+    }
+  }
+}
