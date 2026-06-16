@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-reminder-plugin",
+    "version": "2.0.0",
+    "title": "Reminder",
+    "description": "Reminder plugin for Obsidian. This plugin adds feature to manage TODOs with reminder.",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.15",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".desc(\"Time when a reminder with no time part will show\"",
+          "target": ".desc(\"当没有设置具体时间时的提醒时间\""
+        },
+        {
+          "source": ".desc(\"Use system notification for reminder notifications\"",
+          "target": ".desc(\"使用系统通知进行提醒通知\""
+        },
+        {
+          "source": ".desc(\"Line-separated list of remind me later items\"",
+          "target": ".desc(\"行分隔的提醒我以后的项目列表\""
+        },
+        {
+          "source": ".desc(\"Strictly parse the date and time\"",
+          "target": ".desc(\"严格解析日期和时间\""
+        },
+        {
+          "source": ".desc(\"When toggled, Dates link to daily notes.\"",
+          "target": ".desc(\"切换时，日期链接到每日笔记。\""
+        },
+        {
+          "source": ".desc(\"Trigger text to show calendar popup\"",
+          "target": ".desc(\"触发文本以显示日历弹出窗口\""
+        },
+        {
+          "source": ".desc(\"Reminder format for generated reminder by calendar popup\"",
+          "target": ".desc(\"通过日历弹出窗口生成提醒的提醒格式\""
+        },
+        {
+          "source": ".desc(\"Use custom emoji ⏰ instead of \\u{1F4C5} and distinguish between reminder date/time and Tasks Plugin's due date.\"",
+          "target": ".desc(\"使用自定义表情符号 ⏰ 而不是 \\u{1F4C5} ，并区分提醒日期/时间和任务插件'的截止日期。\""
+        },
+        {
+          "source": ".desc(\"If checked, tags(#xxx) are removed from the reminder list view and notification.\"",
+          "target": ".desc(\"如果选中，标签(#xxx)将从提醒列表视图和通知中删除。\""
+        },
+        {
+          "source": ".desc(\"The minimum amount of time (in seconds) after a key is typed that it will be identified as notifiable.\"",
+          "target": ".desc(\"键入密钥后将其标识为可通知的最短时间(以秒为单位)。\""
+        },
+        {
+          "source": ".desc(\"Interval(in seconds) to periodically check whether or not you should be notified of reminders.  You will need to restart Obsidian for this setting to take effect.\"",
+          "target": ".desc(\"间隔(以秒为单位)定期检查是否应通知您提醒。您需要重新启动黑曜石才能使此设置生效。\""
+        },
+        {
+          "source": ".newGroup(\"Notification Settings\"",
+          "target": ".newGroup(\"通知设置\""
+        },
+        {
+          "source": ".newGroup(\"Editor\"",
+          "target": ".newGroup(\"编辑\""
+        },
+        {
+          "source": ".newGroup(\"Reminder Format - Reminder Plugin\"",
+          "target": ".newGroup(\"提醒格式 - Reminder 插件\""
+        },
+        {
+          "source": ".newGroup(\"Reminder Format - Tasks Plugin\"",
+          "target": ".newGroup(\"提醒格式 - Tasks 插件\""
+        },
+        {
+          "source": ".newGroup(\"Reminder Format - Kanban Plugin\"",
+          "target": ".newGroup(\"提醒格式 - Kanban 插件\""
+        },
+        {
+          "source": ".newGroup(\"Advanced\"",
+          "target": ".newGroup(\"高级\""
+        },
+        {
+          "source": ".name(\"Reminder Time\"",
+          "target": ".name(\"提醒时间\""
+        },
+        {
+          "source": ".name(\"Use system notification\"",
+          "target": ".name(\"使用系统通知\""
+        },
+        {
+          "source": ".name(\"Remind me later\"",
+          "target": ".name(\"稍后提醒我\""
+        },
+        {
+          "source": ".name(\"Date format\"",
+          "target": ".name(\"日期格式\""
+        },
+        {
+          "source": ".name(\"Strict Date format\"",
+          "target": ".name(\"严格的日期格式\""
+        },
+        {
+          "source": ".name(\"Date and time format\"",
+          "target": ".name(\"日期和时间格式\""
+        },
+        {
+          "source": ".name(\"Link dates to daily notes\"",
+          "target": ".name(\"将日期链接到每日笔记\""
+        },
+        {
+          "source": ".name(\"Calendar popup trigger\"",
+          "target": ".name(\"日历弹出触发器\""
+        },
+        {
+          "source": ".name(\"Primary reminder format\"",
+          "target": ".name(\"主要提醒格式\""
+        },
+        {
+          "source": ".name(\"Distinguish between reminder date and due date\"",
+          "target": ".name(\"区分提醒日期和到期日期\""
+        },
+        {
+          "source": ".name(\"Remove tags from reminder title\"",
+          "target": ".name(\"从提示标题中删除 Tag\""
+        },
+        {
+          "source": ".name(\"Edit Detection Time\"",
+          "target": ".name(\"编辑检测时间\""
+        },
+        {
+          "source": ".name(\"Reminder check interval\"",
+          "target": ".name(\"提醒检查间隔\""
+        },
+        {
+          "source": ".name(`Enable ${format.description}`",
+          "target": ".name(`启用 ${format.description}`"
+        },
+        {
+          "source": ".setInfo(`Popup is ${value.length === 0 ? \"disabled\" : \"enabled\"}`",
+          "target": ".setInfo(`弹出菜单是 ${value.length === 0 ? \"disabled\" : \"enabled\"}`"
+        },
+        {
+          "source": "Reminder plugin format",
+          "target": "Reminder 插件格式"
+        },
+        {
+          "source": "Tasks plugin format",
+          "target": "Tasks 插件格式"
+        },
+        {
+          "source": "Kanban plugin format",
+          "target": "Kanban 插件格式"
+        },
+        {
+          "source": ".setInfo(`Example: ${(_a = format.format.appendReminder(\"- [ ] Task 1\", DateTime.now())) == null ? void 0 : _a.insertedLine}`",
+          "target": ".setInfo(`示例: ${(_a = format.format.appendReminder(\"- [ ] Task 1\", DateTime.now())) == null ? void 0 : _a.insertedLine}`"
+        },
+        {
+          "source": ".desc(`Enable ${format.description}`",
+          "target": ".desc(`启用 ${format.description}`"
+        },
+        {
+          "source": "title: \"Obsidian Reminder\"",
+          "target": "title: \"Obsidian 提醒器\""
+        },
+        {
+          "source": ".desc(\"moment style date format",
+          "target": ".desc(\"时刻样式日期格式"
+        },
+        {
+          "source": ".desc(\"moment() style date time format",
+          "target": ".desc(\"时刻() 样式日期时间格式"
+        },
+        {
+          "source": ".desc(\"Use custom emoji \\u23F0 instead of \\u{1F4C5} and distinguish between reminder date/time and Tasks Plugin's due date.\")",
+          "target": ".desc(\"使用自定义表情符号 \\u23F0 而不是 \\u{1F4C5} 并区分提醒日期/时间和任务插件的到期日期。\")"
+        }
+      ]
+    }
+  }
+}

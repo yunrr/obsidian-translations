@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-carry-forward",
+    "version": "2.0.0",
+    "title": "Carry-Forward",
+    "description": "An Obsidian Notes plugin for generating and copying block IDs and for copying lines with links to the copied line.",
+    "language": "zh-cn",
+    "supportedVersions": "1.4.5",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Error: 'From' setting is invalid:\n\n${regexValidation.string}\n\nPlease update the Carry-Forward settings and try again.`, 1e3 * 30)",
+          "target": "Notice(`错误：'来源匹配'设置无效：\n\n${regexValidation.string}\n\n请更新前向引用设置后重试。`, 1e3 * 30)"
+        },
+        {
+          "source": "Notice(\"Copied\")",
+          "target": "Notice(\"已复制\")"
+        },
+        {
+          "source": ".log(\"loading carry-forward-line plugin\")",
+          "target": ".log(\"正在加载前向引用插件\")"
+        },
+        {
+          "source": ".log(\"unloading carry-forward-line plugin\")",
+          "target": ".log(\"正在卸载前向引用插件\")"
+        },
+        {
+          "source": "name: \"Copy selection with each line linked to its copied source (default link text)\"",
+          "target": "name: \"复制选中内容（每行添加源链接｜默认文本）\""
+        },
+        {
+          "source": "name: \"Copy selection with first line linked to its copied source (default link text)\"",
+          "target": "name: \"复制选中内容（首行添加源链接｜默认文本）\""
+        },
+        {
+          "source": "name: \"Copy link to line (default link text)\"",
+          "target": "name: \"复制行链接（默认文本）\""
+        },
+        {
+          "source": "name: \"Copy embed link to line (default link text)\"",
+          "target": "name: \"复制行嵌入链接（默认文本）\""
+        },
+        {
+          "source": "name: \"Copy selection with each line linked to its copied source (link text from selection)\"",
+          "target": "name: \"复制选中内容（每行添加源链接｜使用选中文本）\""
+        },
+        {
+          "source": "name: \"Copy selection with first line linked to its copied source (link text from selection)\"",
+          "target": "name: \"复制选中内容（首行添加源链接｜使用选中文本）\""
+        },
+        {
+          "source": "name: \"Copy link to line (link text from selection)\"",
+          "target": "name: \"复制行链接（使用选中文本）\""
+        },
+        {
+          "source": "name: \"Copy embed link to line (link text from selection)\"",
+          "target": "name: \"复制行嵌入链接（使用选中文本）\""
+        },
+        {
+          "source": "name: \"Copy selection with each line linked to its copied source (link text from clipboard)\"",
+          "target": "name: \"复制选中内容（每行添加源链接｜使用剪贴板文本）\""
+        },
+        {
+          "source": "name: \"Copy selection with first line linked to its copied source (link text from clipboard)\"",
+          "target": "name: \"复制选中内容（首行添加源链接｜使用剪贴板文本）\""
+        },
+        {
+          "source": "name: \"Copy link to line (link text from clipboard)\"",
+          "target": "name: \"复制行链接（使用剪贴板文本）\""
+        },
+        {
+          "source": "name: \"Copy embed link to line (link text from clipboard)\"",
+          "target": "name: \"复制行嵌入链接（使用剪贴板文本）\""
+        },
+        {
+          "source": "text: \"Carry-forward\"",
+          "target": "text: \"前向引用\""
+        },
+        {
+          "source": "text: \"Copied references\"",
+          "target": "text: \"已复制引用\""
+        },
+        {
+          "source": "text: 'Settings relating to \"Copy link to line...\" and \"Copy embed link to line...\" commands.'",
+          "target": "text: '“复制行链接”与“复制行嵌入链接”相关设置'"
+        },
+        {
+          "source": "text: \"Copied lines\"",
+          "target": "text: \"已复制行\""
+        },
+        {
+          "source": "text: 'Settings relating to \"Copy selection...\" commands.'",
+          "target": "text: '“复制选中内容”相关设置'"
+        },
+        {
+          "source": ".setName(\"Default link text\")",
+          "target": ".setName(\"默认链接文本\")"
+        },
+        {
+          "source": ".setName(\"Copied references\")",
+          "target": ".setName(\"引用模板\")"
+        },
+        {
+          "source": ".setName(\"From\")",
+          "target": ".setName(\"匹配模式\")"
+        },
+        {
+          "source": ".setName(\"To\")",
+          "target": ".setName(\"替换模板\")"
+        },
+        {
+          "source": ".setName(\"Remove leading whitespace from first line\")",
+          "target": ".setName(\"删除首行缩进\")"
+        },
+        {
+          "source": ".setName(\"Notify on successful copy\")",
+          "target": ".setName(\"复制成功提示\")"
+        },
+        {
+          "source": ".setDesc('The default text that \"{{LINK}}\" in the settings below will be replaced with. Leaving this blank will display the actual text of the link.')",
+          "target": ".setDesc('下方设置中 {{LINK}} 的默认替换文本，留空则显示实际链接文本')"
+        },
+        {
+          "source": ".setDesc(\"The full text of copied references. Use {{LINK}} to place the link.\")",
+          "target": ".setDesc(\"引用模板格式，使用 {{LINK}} 插入链接\")"
+        },
+        {
+          "source": ".setDesc(\"Find the first match of a Regular Expression in each copied line\")",
+          "target": ".setDesc(\"在每行使用正则表达式进行首次匹配\")"
+        },
+        {
+          "source": ".setDesc(\"Replace the first match in each copied line with text. Use {{LINK}} to place the link.\")",
+          "target": ".setDesc(\"替换每行的首次匹配内容，使用 {{LINK}} 插入链接\")"
+        },
+        {
+          "source": ".setDesc(\"When copying a line without having selected a specific part of that line, remove any whitespace at the beginning of the copied line.\")",
+          "target": ".setDesc(\"复制整行时自动删除行首空白\")"
+        },
+        {
+          "source": ".setDesc('Display a \"Copied\" notice upon successfully copying text to the clipboard.')",
+          "target": ".setDesc('复制成功后显示提示通知')"
+        }
+      ]
+    }
+  }
+}

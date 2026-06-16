@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "table-editor-obsidian",
+    "version": "2.0.0",
+    "title": "Advanced Tables",
+    "description": "Improved table navigation, formatting, manipulation, and formulas",
+    "language": "zh-cn",
+    "supportedVersions": "0.22.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Advanced Tables: Cursor must be in a table.\")",
+          "target": "Notice(\"高级表格：光标必须位于表格中。\")"
+        },
+        {
+          "source": "Notice(\"Advanced Tables: Next row also bound to enter. Possibly producing double actions. See Advanced Tables settings.\")",
+          "target": "Notice(\"高级表格：下一行也绑定到回车键，可能会产生双重操作。请查看高级表格设置。\")"
+        },
+        {
+          "source": "Notice(\"Advanced Tables: Next cell also bound to tab. Possibly producing double actions. See Advanced Tables settings.\")",
+          "target": "Notice(\"高级表格：下一个单元格也绑定到 Tab 键，可能会产生双重操作。请查看高级表格设置。\")"
+        },
+        {
+          "source": "Notice(\"Advanced Tables: Previous cell also bound to shift+tab. Possibly producing double actions. See Advanced Tables settings.\")",
+          "target": "Notice(\"高级表格：上一个单元格也绑定到 Shift+Tab 键，可能会产生双重操作。请查看高级表格设置。\")"
+        },
+        {
+          "source": ".log(l+\" NOT RESOLVED FROM \"+r)",
+          "target": ".log(l+\" 未从中解析 \"+r)"
+        },
+        {
+          "source": ".log(\"reberia restar \"+$+\" a \"+D)",
+          "target": ".log(\"重新启动 \"+$+\" a \"+D)"
+        },
+        {
+          "source": ".log(\"loading markdown-table-editor plugin\")",
+          "target": ".log(\"正在加载 markdown-table-editor 插件\")"
+        },
+        {
+          "source": "name:\"Go to next row\"",
+          "target": "name:\"转到下一行\""
+        },
+        {
+          "source": "name:\"Go to next cell\"",
+          "target": "name:\"转到下一个单元格\""
+        },
+        {
+          "source": "name:\"Go to previous cell\"",
+          "target": "name:\"转到上一个单元格\""
+        },
+        {
+          "source": "name:\"Format table at the cursor\"",
+          "target": "name:\"格式化光标处的表格\""
+        },
+        {
+          "source": "name:\"Format all tables in this file\"",
+          "target": "name:\"格式化此文件中的所有表格\""
+        },
+        {
+          "source": "name:\"Insert column before current\"",
+          "target": "name:\"在当前列之前插入列\""
+        },
+        {
+          "source": "name:\"Insert row before current\"",
+          "target": "name:\"在当前行之前插入行\""
+        },
+        {
+          "source": "name:\"Move cursor out of table\"",
+          "target": "name:\"将光标移出表格\""
+        },
+        {
+          "source": "name:\"Left align column\"",
+          "target": "name:\"左对齐列\""
+        },
+        {
+          "source": "name:\"Center align column\"",
+          "target": "name:\"居中对齐列\""
+        },
+        {
+          "source": "name:\"Right align column\"",
+          "target": "name:\"右对齐列\""
+        },
+        {
+          "source": "name:\"Move column left\"",
+          "target": "name:\"向左移动列\""
+        },
+        {
+          "source": "name:\"Move column right\"",
+          "target": "name:\"向右移动列\""
+        },
+        {
+          "source": "name:\"Move row up\"",
+          "target": "name:\"向上移动行\""
+        },
+        {
+          "source": "name:\"Move row down\"",
+          "target": "name:\"向下移动行\""
+        },
+        {
+          "source": "name:\"Delete column\"",
+          "target": "name:\"删除列\""
+        },
+        {
+          "source": "name:\"Delete row\"",
+          "target": "name:\"删除行\""
+        },
+        {
+          "source": "name:\"Sort rows ascending\"",
+          "target": "name:\"按升序排序行\""
+        },
+        {
+          "source": "name:\"Sort rows descending\"",
+          "target": "name:\"按降序排序行\""
+        },
+        {
+          "source": "name:\"Transpose\"",
+          "target": "name:\"转置\""
+        },
+        {
+          "source": "name:\"Evaluate table formulas\"",
+          "target": "name:\"计算表格公式\""
+        },
+        {
+          "source": "name:\"Open table controls toolbar\"",
+          "target": "name:\"打开表格控制工具栏\""
+        },
+        {
+          "source": ".setText(\"Align:\")",
+          "target": ".setText(\"Align:\")"
+        },
+        {
+          "source": ".setText(\"Move:\")",
+          "target": ".setText(\"Move:\")"
+        },
+        {
+          "source": ".setText(\"Edit:\")",
+          "target": ".setText(\"Edit:\")"
+        },
+        {
+          "source": ".setText(\"Sort/F:\")",
+          "target": ".setText(\"Sort/F:\")"
+        },
+        {
+          "source": ".setText(\"Misc:\")",
+          "target": ".setText(\"Misc:\")"
+        },
+        {
+          "source": ".setName(\"Bind enter to table navigation\")",
+          "target": ".setName(\"将回车键绑定到表格导航\")"
+        },
+        {
+          "source": ".setName(\"Bind tab to table navigation\")",
+          "target": ".setName(\"将 Tab 键绑定到表格导航\")"
+        },
+        {
+          "source": ".setName(\"Pad cell width using spaces\")",
+          "target": ".setName(\"使用空格填充单元格宽度\")"
+        },
+        {
+          "source": ".setName(\"Show icon in sidebar\")",
+          "target": ".setName(\"在侧边栏中显示图标\")"
+        },
+        {
+          "source": ".setDesc('Requires restart of Obsidian. If enabled, when the cursor is in a table, enter advances to the next row. Disabling this can help avoid conflicting with tag or CJK autocompletion. If disabling, bind \"Go to ...\" in the Obsidian Hotkeys settings.')",
+          "target": ".setDesc('需要重启 Obsidian。如果启用，当光标位于表格中时，回车键将跳转到下一行。禁用此功能可以帮助避免与标签或 CJK 自动补全冲突。如果禁用，请在 Obsidian 热键设置中绑定“转到...”功能。')"
+        },
+        {
+          "source": ".setDesc('Requires restart of Obsidian. If enabled, when the cursor is in a table, tab/shift+tab navigate between cells. Disabling this can help avoid conflicting with tag or CJK autocompletion. If disabling, bind \"Go to ...\" in the Obsidian Hotkeys settings.')",
+          "target": ".setDesc('需要重启 Obsidian。如果启用，当光标位于表格中时，Tab/Shift+Tab 将在单元格之间导航。禁用此功能可以帮助避免与标签或 CJK 自动补全冲突。如果禁用，请在 Obsidian 热键设置中绑定“转到...”功能。')"
+        },
+        {
+          "source": ".setDesc(\"If enabled, table cells will have spaces added to match the width of the longest cell in the column.\")",
+          "target": ".setDesc(\"如果启用，表格单元格将添加空格以匹配该列中最长单元格的宽度。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, a button which opens the table controls toolbar will be added to the Obsidian sidebar. The toolbar can also be opened with a Hotkey. Changes only take effect on reload.\")",
+          "target": ".setDesc(\"如果启用，将在 Obsidian 侧边栏添加一个按钮，以打开表格控制工具栏。该工具栏也可以通过热键打开。更改仅在重新加载后生效。\")"
+        },
+        {
+          "source": ".appendText(\"If this plugin adds value for you and you would like to help support continued development, please use the buttons below:\")",
+          "target": ".appendText(\"如果此插件对您有帮助，并且您希望支持其持续开发，请使用以下按钮：\")"
+        }
+      ]
+    }
+  }
+}

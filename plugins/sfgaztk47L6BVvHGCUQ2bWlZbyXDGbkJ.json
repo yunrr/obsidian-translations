@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-plugin-groups",
+    "version": "2.0.0",
+    "title": "Plugin Groups",
+    "description": "Manage your Plugins through groups: Enable and disable multiple plugins through a single command, or delay the startup of plugins to speed up your Obsidian start up time.",
+    "language": "zh-cn",
+    "supportedVersions": "2.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "text: \"Filters:\"",
+          "target": "text: \"过滤:\""
+        },
+        {
+          "source": "text: \"Plugins\"",
+          "target": "text: \"插件\""
+        },
+        {
+          "source": "text: \"Groups\"",
+          "target": "text: \"分组\""
+        },
+        {
+          "source": "text: \"Existing Devices\"",
+          "target": "text: \"现有设备\""
+        },
+        {
+          "source": "text: \"General\"",
+          "target": "text: \"通用\""
+        },
+        {
+          "source": "text: \"Startup\"",
+          "target": "text: \"启动\""
+        },
+        {
+          "source": "text: \"Startup: \"",
+          "target": "text: \"启动: \""
+        },
+        {
+          "source": "text: \"Delayed by \"",
+          "target": "text: \"延迟与 \""
+        },
+        {
+          "source": "text: \"Inactive: \"",
+          "target": "text: \"非活动: \""
+        },
+        {
+          "source": "text: \"Not enabled for current Device\"",
+          "target": "text: \"当前设备未启用\""
+        },
+        {
+          "source": "text: \"Advanced Settings\"",
+          "target": "text: \"高级设置\""
+        },
+        {
+          "source": "text: \"Devices\"",
+          "target": "text: \"设备\""
+        },
+        {
+          "source": "title: \"Main\"",
+          "target": "title: \"主要的\""
+        },
+        {
+          "source": "title: \"Order\"",
+          "target": "title: \"顺序\""
+        },
+        {
+          "source": "title: \"General\"",
+          "target": "title: \"全局\""
+        },
+        {
+          "source": "title: \"Plugins\"",
+          "target": "title: \"插件\""
+        },
+        {
+          "source": "title: \"Groups\"",
+          "target": "title: \"分组\""
+        },
+        {
+          "source": "label: \"Filter Groups\"",
+          "target": "label: \"过滤组\""
+        },
+        {
+          "source": "inGroup: \"In the Groups\"",
+          "target": "inGroup: \"在组里\""
+        },
+        {
+          "source": "notInGroup: \"Not in the Group(s)\"",
+          "target": "notInGroup: \"不在组里\""
+        },
+        {
+          "source": "Active on All devices",
+          "target": "在所有设备上激活"
+        },
+        {
+          "source": "label: \"Sort\"",
+          "target": "label: \"排序\""
+        },
+        {
+          "source": "label: \"Bulk Select\"",
+          "target": "label: \"批量选择\""
+        },
+        {
+          "source": "label: \"Select all\"",
+          "target": "label: \"全选\""
+        },
+        {
+          "source": "label: \"Deselect all\"",
+          "target": "label: \"取消全选\""
+        },
+        {
+          "source": "label: \"All groups\"",
+          "target": "label: \"所有组\""
+        },
+        {
+          "source": ".setText('Editing \"' + this.groupToEdit.name + '\"'",
+          "target": ".setText('编辑 \"' + this.groupToEdit.name + '\"'"
+        },
+        {
+          "source": "byName: \"By Name\"",
+          "target": "byName: \"按名称\""
+        },
+        {
+          "source": "byNameAndSelected: \"By Name & Selected\"",
+          "target": "byNameAndSelected: \"按名称和被选\""
+        },
+        {
+          "source": "this.cnEnablePrefix = \"Plugin Groups: Enable \";",
+          "target": "this.cnEnablePrefix = \"插件组: 启用 \";"
+        },
+        {
+          "source": "this.cnDisablePrefix = \"Plugin Groups: Disable \";",
+          "target": "this.cnDisablePrefix = \"插件组: 禁用 \";"
+        },
+        {
+          "source": "text: 'Editing \"'",
+          "target": "text: '编辑\"'"
+        },
+        {
+          "source": "Notice(\"Couldn't add this group, it would create a loop of group activations:\\n Group A \\u2192 Group B \\u2192 Group A\", 4e3)",
+          "target": "Notice(\"无法添加此群组，因为这会创建一个群组激活循环：\\n 群组 A→群组 B→群组 A。\", 4e3)"
+        },
+        {
+          "source": "Notice(\"Name already in use for other device\")",
+          "target": "Notice(\"设备名称已用于其他设备。\")"
+        },
+        {
+          "source": ".error(\"Failed to create Group, please choose a different Name as there have been to many groups with the same name\")",
+          "target": ".error(\"创建群组失败，请选择不同的名称，因为已有太多同名群组。\")"
+        },
+        {
+          "source": "text: \"\\u25BC\"",
+          "target": "text: \"\\u25BC\""
+        },
+        {
+          "source": ".setButtonText(\"Delete\")",
+          "target": ".setButtonText(\"删除\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Enable\")",
+          "target": ".setButtonText(\"启用\")"
+        },
+        {
+          "source": ".setButtonText(\"Disable\")",
+          "target": ".setButtonText(\"停用\")"
+        },
+        {
+          "source": ".setButtonText(\"Set as Current\")",
+          "target": ".setButtonText(\"设置为当前（状态）\")"
+        },
+        {
+          "source": ".setName(\"Search\")",
+          "target": ".setName(\"搜索\")"
+        },
+        {
+          "source": ".setName(\"Commands\")",
+          "target": ".setName(\"命令\")"
+        },
+        {
+          "source": ".setName(\"Auto Add\")",
+          "target": ".setName(\"自动添加\")"
+        },
+        {
+          "source": ".setName(\"Devices\")",
+          "target": ".setName(\"设备\")"
+        },
+        {
+          "source": ".setName(\"Load on Startup\")",
+          "target": ".setName(\"开机加载插件\")"
+        },
+        {
+          "source": ".setName(\"Delay\")",
+          "target": ".setName(\"延时\")"
+        },
+        {
+          "source": ".setName(\"Add Group\")",
+          "target": ".setName(\"加入群组\")"
+        },
+        {
+          "source": ".setName(\"Development Logs\")",
+          "target": ".setName(\"开发日志\")"
+        },
+        {
+          "source": ".setName(\"Load Synchronously\")",
+          "target": ".setName(\"同步加载\")"
+        },
+        {
+          "source": ".setName(\"Generate Commands for Groups\")",
+          "target": ".setName(\"为组生成命令\")"
+        },
+        {
+          "source": ".setName(\"Notice upon un-/loading groups\")",
+          "target": ".setName(\"在卸载 / 加载组时的通知\")"
+        },
+        {
+          "source": ".setName(\"Statusbar Menu\")",
+          "target": ".setName(\"状态栏菜单\")"
+        },
+        {
+          "source": ".setName(\"New Device\")",
+          "target": ".setName(\"新设备\")"
+        },
+        {
+          "source": ".setDesc(\"Add Commands to enable/disable this group\")",
+          "target": ".setDesc(\"添加命令以启用 / 禁用此组\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically add new Plugins to this group\")",
+          "target": ".setDesc(\"自动将新插件添加到这个组\")"
+        },
+        {
+          "source": ".setDesc(\"Current Device\")",
+          "target": ".setDesc(\"当前设备\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Search for Plugin...\")",
+          "target": ".setPlaceholder(\"搜索插件\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Search for Groups...\")",
+          "target": ".setPlaceholder(\"搜索群组\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter group name...\")",
+          "target": ".setPlaceholder(\"输入群组名字\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Device Name\")",
+          "target": ".setPlaceholder(\"设备名字\")"
+        },
+        {
+          "source": ".setTooltip(\"Duplicate this group\")",
+          "target": ".setTooltip(\"复制这个组\")"
+        },
+        {
+          "source": ".setTooltip(\"Refresh list for changes to the plugins and assigned groups.\")",
+          "target": ".setTooltip(\"刷新列表以查看对插件和已分配组所做的更改\")"
+        },
+        {
+          "source": ".addOption(\"enable\", \"Enable\")",
+          "target": ".addOption(\"enable\", \"启用\")"
+        },
+        {
+          "source": ".addOption(\"disable\", \"Disable\")",
+          "target": ".addOption(\"disable\", \"停用\")"
+        },
+        {
+          "source": ".addOption(\"none\", \"None\")",
+          "target": ".addOption(\"none\", \"无\")"
+        },
+        {
+          "source": ".addOption(\"short\", \"Short\")",
+          "target": ".addOption(\"short\", \"短的\")"
+        },
+        {
+          "source": ".addOption(\"normal\", \"Normal\")",
+          "target": ".addOption(\"normal\", \"正常\")"
+        },
+        {
+          "source": ".addOption(\"None\", \"None\")",
+          "target": ".addOption(\"None\", \"无\")"
+        },
+        {
+          "source": ".addOption(\"Icon\", \"Icon\")",
+          "target": ".addOption(\"Icon\", \"图标\")"
+        },
+        {
+          "source": ".addOption(\"Text\", \"Text\")",
+          "target": ".addOption(\"Text\", \"文本\")"
+        }
+      ]
+    }
+  }
+}
