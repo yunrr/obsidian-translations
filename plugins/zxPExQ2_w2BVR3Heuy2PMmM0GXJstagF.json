@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "llm-tagger",
+    "version": "1.0.0",
+    "title": "LLM Tagger",
+    "description": "LLM Tagger Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Ready to tag documents",
+          "target": "准备标记文档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Select a model...",
+          "target": "选择一个模型..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Failed to load models",
+          "target": "加载模型失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error auto-tagging file:",
+          "target": "自动标记文件时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error auto-tagging file on close:",
+          "target": "关闭时自动标记文件出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to fetch Ollama models:",
+          "target": "获取Ollama模型失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to load models:",
+          "target": "加载模型失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loading LLM Tagger plugin",
+          "target": "正在加载LLM Tagger插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "LLM Tagger plugin loaded",
+          "target": "LLM Tagger插件已加载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Unloading LLM Tagger plugin",
+          "target": "正在卸载LLM Tagger插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "URL of your Ollama API server",
+          "target": "您的Ollama API服务器的URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the default Ollama model to use",
+          "target": "选择要使用的默认Ollama模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter default tags (comma-separated) that will be pre-filled when adding tags",
+          "target": "输入默认标签（逗号分隔），在添加标签时将预先填充"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically add tags to new documents",
+          "target": "自动为新文档添加标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter file/folder names or patterns to exclude from tagging (one per line). Supports * wildcard.",
+          "target": "输入要从标记中排除的文件/文件夹名称或模式（每行一个）。支持 * 通配符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama URL",
+          "target": "Ollama URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default model",
+          "target": "默认模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default tags",
+          "target": "默认标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-add tags",
+          "target": "自动添加标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude patterns",
+          "target": "排除模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "tag1, tag2, tag3",
+          "target": "标签1, 标签2, 标签3"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Configure tags",
+          "target": "配置标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Select Ollama model:",
+          "target": "选择Ollama模型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Enter tags (comma-separated):",
+          "target": "输入标签（逗号分隔）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Confirm Untag All",
+          "target": "确认取消所有标记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a model first",
+          "target": "请先选择一个模型"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter at least one tag",
+          "target": "请至少输入一个标签"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select an Ollama model first",
+          "target": "请先选择一个Ollama模型"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please open a markdown file first",
+          "target": "请先打开一个Markdown文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add tags to documents",
+          "target": "为文档添加标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Untag all documents",
+          "target": "取消所有文档的标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tag current document",
+          "target": "标记当前文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Untag current document",
+          "target": "取消当前文档的标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Untag All",
+          "target": "取消所有标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "LLM Tagger",
+          "target": "LLM Tagger"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select model",
+          "target": "选择模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter tags",
+          "target": "输入标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Progress",
+          "target": "进度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bulk Operations",
+          "target": "批量操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tag all documents",
+          "target": "标记所有文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Untag all documents",
+          "target": "取消所有文档的标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Current Document",
+          "target": "当前文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tag current document",
+          "target": "标记当前文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Untag current document",
+          "target": "取消当前文档的标记"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
