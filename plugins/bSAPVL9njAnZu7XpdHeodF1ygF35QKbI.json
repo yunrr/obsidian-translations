@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "advanced-pdf-export",
+    "version": "1.0.1",
+    "title": "Advanced PDF Export",
+    "description": "Advanced PDF Export Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "3.3.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Rendering…",
+          "target": "渲染中…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "⟳ Render PDF",
+          "target": "⟳ 渲染 PDF"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "⬇ Exporting…",
+          "target": "⬇ 导出中…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "⬇ Export PDF",
+          "target": "⬇ 导出 PDF"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Insert page break (///)",
+          "target": "插入分页符 (///)"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Render preview (Ctrl+Enter)",
+          "target": "渲染预览 (Ctrl+Enter)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "select",
+          "target": "select"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "option",
+          "target": "option"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[advanced-pdf-export] render error:",
+          "target": "[advanced-pdf-export] 渲染错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset Preset",
+          "target": "重置预设"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pick a preset to configure the overall document style. Fine-tune any setting below.",
+          "target": "选择一个预设以配置整体文档样式。可在下方微调任何设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "CSS font-family value — e.g. \"Inter, sans-serif\". The font must be installed on your system.",
+          "target": "CSS font-family 值 — 例如 \\\"Inter, sans-serif\\\"。字体必须在您的系统上安装。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Multiplier applied to all heading sizes.",
+          "target": "应用于所有标题大小的乘数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Appears on every page according to the chosen alignment.",
+          "target": "根据所选对齐方式显示在每一页上。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show the separator line above the footer.",
+          "target": "在页脚上方显示分隔线。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Number assigned to the first visible page number. Accepts any integer.",
+          "target": "分配给第一个可见页码的数字。接受任何整数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When off, page 1 has no header, footer, or page number. Numbering begins on page 2 using the start value.",
+          "target": "关闭时，第 1 页没有页眉、页脚或页码。编号从第 2 页开始，使用起始值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Strip the YAML frontmatter block (--- … ---) from the preview and exported PDF.",
+          "target": "从预览和导出的 PDF 中剥离 YAML 前置块 (--- … ---)。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Prepend the note's file name as an H1 heading at the top of the PDF. Mirrors Obsidian's built-in 'Include file name as title' export option.",
+          "target": "在 PDF 顶部将笔记的文件名作为 H1 标题添加。镜像 Obsidian 内置的“将文件名作为标题包含”导出选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preset",
+          "target": "预设"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Page size",
+          "target": "页面大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Orientation",
+          "target": "方向"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Font family",
+          "target": "字体系列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom font name",
+          "target": "自定义字体名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Font size (px)",
+          "target": "字体大小 (px)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Code font size",
+          "target": "代码字体大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Line height",
+          "target": "行高"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Paragraph spacing",
+          "target": "段落间距"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Heading scale",
+          "target": "标题缩放"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "H1 bottom border",
+          "target": "H1 底部边框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "H2 bottom border",
+          "target": "H2 底部边框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Center H1",
+          "target": "居中 H1"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Striped rows",
+          "target": "条纹行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show header",
+          "target": "显示页眉"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Header text",
+          "target": "页眉文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Header alignment",
+          "target": "页眉对齐"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show footer",
+          "target": "显示页脚"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Footer border",
+          "target": "页脚边框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Footer text",
+          "target": "页脚文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show page numbers",
+          "target": "显示页码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Page number position",
+          "target": "页码位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Page number start",
+          "target": "页码起始值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Header/footer on first page",
+          "target": "首页页眉/页脚"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Hide frontmatter",
+          "target": "隐藏前置信息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include file name as title",
+          "target": "将文件名作为标题包含"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto page break before H1",
+          "target": "H1 前自动分页"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto page break before H2",
+          "target": "H2 前自动分页"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. Inter, sans-serif",
+          "target": "例如 Inter, sans-serif"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Advanced PDF Export: Open Panel",
+          "target": "高级 PDF 导出：打开面板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Reset current preset to its default values",
+          "target": "将当前预设重置为默认值"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Nothing to export.",
+          "target": "没有可导出的内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Generating PDF…",
+          "target": "正在生成 PDF…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Advanced PDF export requires the Obsidian desktop app.",
+          "target": "高级 PDF 导出需要 Obsidian 桌面应用程序。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "__custom__",
+          "source": "Custom…",
+          "target": "自定义…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "'Courier New', monospace",
+          "source": "Courier New",
+          "target": "Courier New"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "'Helvetica Neue', Helvetica, sans-serif",
+          "source": "Helvetica",
+          "target": "Helvetica"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "'Palatino Linotype', Palatino, serif",
+          "source": "Palatino",
+          "target": "Palatino"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "'Times New Roman', Times, serif",
+          "source": "Times New Roman",
+          "target": "Times New Roman"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "'Trebuchet MS', sans-serif",
+          "source": "Trebuchet",
+          "target": "Trebuchet"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "0.3",
+          "source": "Tight (0.3em)",
+          "target": "紧凑 (0.3em)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "0.5",
+          "source": "Normal (0.5em)",
+          "target": "正常 (0.5em)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "0.65",
+          "source": "Relaxed (0.65em)",
+          "target": "宽松 (0.65em)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "0.8",
+          "source": "Small (0.8×)",
+          "target": "小 (0.8×)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "0.88",
+          "source": "0.88×",
+          "target": "0.88×"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "0.9",
+          "source": "Compact (0.9×)",
+          "target": "紧凑 (0.9×)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "0.95",
+          "source": "0.95×",
+          "target": "0.95×"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.0",
+          "source": "Wide (1em)",
+          "target": "宽 (1em)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.0",
+          "source": "Normal (1.0×)",
+          "target": "正常 (1.0×)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.05",
+          "source": "1.05×",
+          "target": "1.05×"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.1",
+          "source": "Large (1.1×)",
+          "target": "大 (1.1×)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.2",
+          "source": "XLarge (1.2×)",
+          "target": "特大 (1.2×)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.4",
+          "source": "Tight (1.4)",
+          "target": "紧凑 (1.4)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.6",
+          "source": "Compact (1.6)",
+          "target": "紧凑 (1.6)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.75",
+          "source": "Normal (1.75)",
+          "target": "正常 (1.75)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "1.85",
+          "source": "Relaxed (1.85)",
+          "target": "宽松 (1.85)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "2.0",
+          "source": "Double (2.0)",
+          "target": "双倍 (2.0)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Arial, sans-serif",
+          "source": "Arial",
+          "target": "Arial"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "center",
+          "source": "Center",
+          "target": "居中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mpdf-btn mpdf-btn-icon",
+          "target": "mpdf-btn mpdf-btn-icon"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mpdf-btn mpdf-btn-primary",
+          "target": "mpdf-btn mpdf-btn-primary"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Georgia, serif",
+          "source": "Georgia (Serif)",
+          "target": "Georgia (衬线体)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "landscape",
+          "source": "Landscape",
+          "target": "横向"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "left",
+          "source": "Left",
+          "target": "左对齐"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Default",
+          "target": "默认"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Minimal",
+          "target": "极简"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Academic",
+          "target": "学术"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Colorful",
+          "target": "多彩"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Modern",
+          "target": "现代"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Newspaper",
+          "target": "报刊"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dark",
+          "target": "深色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Panel",
+          "target": "打开面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PDF",
+          "target": "PDF"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "portrait",
+          "source": "Portrait",
+          "target": "纵向"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "prop",
+          "source": "None",
+          "target": "无"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "right",
+          "source": "Right",
+          "target": "右对齐"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Rendering…",
+          "target": "渲染中…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Zoom",
+          "target": "缩放"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Insert Page Break",
+          "target": "插入分页符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "— pages",
+          "target": "— 页"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⟳ Render PDF",
+          "target": "⟳ 渲染 PDF"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⬇ Export PDF",
+          "target": "⬇ 导出 PDF"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced PDF Export",
+          "target": "高级 PDF 导出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Style Preset",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Page",
+          "target": "页面"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Margins (mm)",
+          "target": "页边距 (mm)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Typography",
+          "target": "排版"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Colors",
+          "target": "颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Heading Style",
+          "target": "标题样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tables",
+          "target": "表格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Header & Footer",
+          "target": "页眉与页脚"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Behaviour",
+          "target": "行为"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Save PDF",
+          "target": "保存 PDF"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
