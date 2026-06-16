@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-custom-attachment-location",
+    "version": "2.0.0",
+    "title": "obsidian-custom-attachment-location",
+    "description": "Customize attachment location with variables($filename, $data, etc) like typora.",
+    "language": "zh-cn",
+    "supportedVersions": "7.0.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setName(\"JPEG Quality\")",
+          "target": ".setName(\"JPEG 质量\")"
+        },
+        {
+          "source": ".setName(\"Duplicate name separator\")",
+          "target": ".setName(\"重复名称分隔符\")"
+        },
+        {
+          "source": ".setDesc(\"Paste images from clipboard converting them to JPEG.\")",
+          "target": ".setDesc(\"从剪贴板粘贴图像并将其转换为 JPEG。\")"
+        },
+        {
+          "source": ".setDesc(\"The smaller the quality, the greater the compression ratio.\")",
+          "target": ".setDesc(\"质量越小，压缩比越大。\")"
+        },
+        {
+          "source": ".appendText(\" and all its subfolders?\")",
+          "target": ".appendText(\"及其所有子文件夹？\")"
+        },
+        {
+          "source": ".appendText(\" Collect attachments in folder\")",
+          "target": ".appendText(\"收集文件夹中的附件\")"
+        },
+        {
+          "source": ".appendText(\" Plugin to manage them.\")",
+          "target": ".appendText(\"插件来管理它们。\")"
+        },
+        {
+          "source": ".appendText(\"If enabled, attachments processed via \")",
+          "target": ".appendText(\"如果启用，通过 \")"
+        },
+        {
+          "source": ".appendText(\" commands will be renamed according to the \")",
+          "target": ".appendText(\"命令处理的附件将根据 \")"
+        },
+        {
+          "source": ".setTitle(\"Collect attachments in folder\")",
+          "target": ".setTitle(\"收集文件夹中的附件\")"
+        },
+        {
+          "source": "Notice(t)",
+          "target": "Notice(t)"
+        },
+        {
+          "source": "Notice(`${this.manifest.name}\n${t}`)",
+          "target": "Notice(`${this.manifest.name}\n${t}`)"
+        },
+        {
+          "source": "Notice(`Attachment ${o.path} is still used by other notes. It will not be deleted.`)",
+          "target": "Notice(`附件 ${o.path} 仍被其他笔记使用，不会被删除。`)"
+        },
+        {
+          "source": "Notice(\"\",0)",
+          "target": "Notice(\"\",0)"
+        },
+        {
+          "source": "Notice(`Collecting attachments for ${t.path}`)",
+          "target": "Notice(`正在为 ${t.path} 收集附件`)"
+        },
+        {
+          "source": "Notice(\"Note path is ignored\")",
+          "target": "Notice(\"笔记路径被忽略\")"
+        },
+        {
+          "source": ".error(`Module not found: ${id}. Fake process object is returned instead.`)",
+          "target": ".error(`未找到模块：${id}。返回了伪造的进程对象。`)"
+        },
+        {
+          "source": ".error(`Module not found: ${id}. Empty object is returned instead.`)",
+          "target": ".error(`未找到模块：${id}。返回了空对象。`)"
+        },
+        {
+          "source": ".error(\"SEMVER\",...e)",
+          "target": ".error(\"SEMVER\",...e)"
+        },
+        {
+          "source": ".error(`\\x1B[0m${r.message}\\x1B[0m`)",
+          "target": ".error(`\\x1B[0m${r.message}\\x1B[0m`)"
+        },
+        {
+          "source": ".error(r.message)",
+          "target": ".error(r.message)"
+        },
+        {
+          "source": ".error(`Failed to decode URL ${h}`,p)",
+          "target": ".error(`解码 URL ${h} 失败`,p)"
+        },
+        {
+          "source": ".error(`Invalid data type. Expected Object, got: ${n}`)",
+          "target": ".error(`无效的数据类型。预期为对象，实际为：${n}`)"
+        },
+        {
+          "source": "name:\"Anno Domini\"",
+          "target": "name:\"公元\""
+        },
+        {
+          "source": "name:\"Before Christ\"",
+          "target": "name:\"公元前\""
+        },
+        {
+          "source": "name:\"\"};if(t.length===0)return n;var r=t.charCodeAt(0),s=r===47,o;s?(n.root=\"",
+          "target": "name:\"\"};if(t.length===0)return n;var r=t.charCodeAt(0),s=r===47,o;s?(n.root=\""
+        },
+        {
+          "source": "name:\"attention\"",
+          "target": "name:\"注意\""
+        },
+        {
+          "source": "name:\"autolink\"",
+          "target": "name:\"自动链接\""
+        },
+        {
+          "source": "name:\"blockQuote\"",
+          "target": "name:\"块引用\""
+        },
+        {
+          "source": "name:\"characterEscape\"",
+          "target": "name:\"字符转义\""
+        },
+        {
+          "source": "name:\"characterReference\"",
+          "target": "name:\"字符引用\""
+        },
+        {
+          "source": "name:\"codeFenced\"",
+          "target": "name:\"围栏代码\""
+        },
+        {
+          "source": "name:\"codeIndented\"",
+          "target": "name:\"缩进代码\""
+        },
+        {
+          "source": "name:\"codeText\"",
+          "target": "name:\"代码文本\""
+        },
+        {
+          "source": "name:\"definition\"",
+          "target": "name:\"定义\""
+        },
+        {
+          "source": "name:\"hardBreakEscape\"",
+          "target": "name:\"硬换行转义\""
+        },
+        {
+          "source": "name:\"headingAtx\"",
+          "target": "name:\"ATX 标题\""
+        },
+        {
+          "source": "name:\"htmlFlow\"",
+          "target": "name:\"HTML 流\""
+        },
+        {
+          "source": "name:\"htmlText\"",
+          "target": "name:\"HTML 文本\""
+        },
+        {
+          "source": "name:\"labelEnd\"",
+          "target": "name:\"标签结束\""
+        },
+        {
+          "source": "name:\"labelStartImage\"",
+          "target": "name:\"图片标签开始\""
+        },
+        {
+          "source": "name:\"labelStartLink\"",
+          "target": "name:\"链接标签开始\""
+        },
+        {
+          "source": "name:\"lineEnding\"",
+          "target": "name:\"行尾\""
+        },
+        {
+          "source": "name:\"thematicBreak\"",
+          "target": "name:\"主题分隔线\""
+        },
+        {
+          "source": "name:\"list\"",
+          "target": "name:\"列表\""
+        },
+        {
+          "source": "name:\"setextUnderline\"",
+          "target": "name:\"Setext 下划线\""
+        },
+        {
+          "source": "name:\"Collect attachments in current note\"",
+          "target": "name:\"收集当前笔记中的附件\""
+        },
+        {
+          "source": "name:\"Collect attachments in current folder\"",
+          "target": "name:\"收集当前文件夹中的附件\""
+        },
+        {
+          "source": "name:\"Collect attachments in entire vault\"",
+          "target": "name:\"收集整个仓库中的附件\""
+        },
+        {
+          "source": "link:\"backlink\"",
+          "target": "link:\"反向链接\""
+        },
+        {
+          "source": "text:\"tokens\"",
+          "target": "text:\"令牌\""
+        },
+        {
+          "source": "text:\"Show Hidden Files\"",
+          "target": "text:\"显示隐藏文件\""
+        },
+        {
+          "source": "text:\"documentation\"",
+          "target": "text:\"文档\""
+        },
+        {
+          "source": ".setName(\"Location for new attachments\")",
+          "target": ".setName(\"新附件的位置\")"
+        },
+        {
+          "source": ".setName(\"Generated attachment filename\")",
+          "target": ".setName(\"生成的附件文件名\")"
+        },
+        {
+          "source": ".setName(\"Attachment rename mode\")",
+          "target": ".setName(\"附件重命名模式\")"
+        },
+        {
+          "source": ".setName(\"Should rename attachment folder\")",
+          "target": ".setName(\"是否重命名附件文件夹\")"
+        },
+        {
+          "source": ".setName(\"Should rename attachment files\")",
+          "target": ".setName(\"是否重命名附件文件\")"
+        },
+        {
+          "source": ".setName(\"Whitespace replacement\")",
+          "target": ".setName(\"空格替换\")"
+        },
+        {
+          "source": ".setName(\"Should rename attachments to lowercase\")",
+          "target": ".setName(\"是否将附件重命名为小写\")"
+        },
+        {
+          "source": ".setName(\"Should convert pasted images to JPEG\")",
+          "target": ".setName(\"是否将粘贴的图像转换为 JPEG\")"
+        },
+        {
+          "source": ".setName(\"Should rename collected attachments\")",
+          "target": ".setName(\"是否重命名已收集的附件\")"
+        },
+        {
+          "source": ".setName(\"Should keep empty attachment folders\")",
+          "target": ".setName(\"是否保留空附件文件夹\")"
+        },
+        {
+          "source": ".setName(\"Should delete orphan attachments\")",
+          "target": ".setName(\"是否删除孤立的附件\")"
+        },
+        {
+          "source": ".setName(\"Include paths\")",
+          "target": ".setName(\"包含路径\")"
+        },
+        {
+          "source": ".setName(\"Exclude paths\")",
+          "target": ".setName(\"排除路径\")"
+        },
+        {
+          "source": ".setName(\"Custom tokens\")",
+          "target": ".setName(\"自定义令牌\")"
+        },
+        {
+          "source": ".setPlaceholder(\"./assets/${filename}\")",
+          "target": ".setPlaceholder(\"./assets/${filename}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"file-${date:YYYYMMDDHHmmssSSS}\")",
+          "target": ".setPlaceholder(\"file-${date:YYYYMMDDHHmmssSSS}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"-\")",
+          "target": ".setPlaceholder(\"-\")"
+        },
+        {
+          "source": ".appendText(\" to use relative path.\")",
+          "target": ".appendText(\"开头以使用相对路径。\")"
+        },
+        {
+          "source": ".appendText(\"See available \")",
+          "target": ".appendText(\"查看可用的 \")"
+        },
+        {
+          "source": ".appendText(\".\")",
+          "target": ".appendText(\"。\")"
+        },
+        {
+          "source": ".appendText(\"Automatically replace whitespace in attachment folder and file name with the specified character.\")",
+          "target": ".appendText(\"自动将附件文件夹和文件名中的空格替换为指定字符。\")"
+        },
+        {
+          "source": ".appendText(\"Leave blank to disable replacement.\")",
+          "target": ".appendText(\"留空以禁用替换。\")"
+        },
+        {
+          "source": ".appendText(\" setting.\")",
+          "target": ".appendText(\"设置进行重命名。\")"
+        },
+        {
+          "source": ".appendText(\", \")",
+          "target": ".appendText(\"，\")"
+        },
+        {
+          "source": ".appendText(\"Include notes from the following paths\")",
+          "target": ".appendText(\"包含以下路径中的笔记\")"
+        },
+        {
+          "source": ".appendText(\"Insert each path on a new line\")",
+          "target": ".appendText(\"每行插入一个路径\")"
+        },
+        {
+          "source": ".appendText(\"You can use path string or \")",
+          "target": ".appendText(\"您可以使用路径字符串或 \")"
+        },
+        {
+          "source": ".appendText(\"If the setting is empty, all notes are included\")",
+          "target": ".appendText(\"如果设置为空，则包含所有笔记\")"
+        },
+        {
+          "source": ".appendText(\"Exclude notes from the following paths\")",
+          "target": ".appendText(\"排除以下路径中的笔记\")"
+        },
+        {
+          "source": ".appendText(\"If the setting is empty, no notes are excluded\")",
+          "target": ".appendText(\"如果设置为空，则不排除任何笔记\")"
+        },
+        {
+          "source": ".appendText(\"Custom tokens to be used in the attachment folder path and pasted file name.\")",
+          "target": ".appendText(\"自定义令牌，用于附件文件夹路径和粘贴的文件名。\")"
+        },
+        {
+          "source": ".appendText(\"See \")",
+          "target": ".appendText(\"查看 \")"
+        },
+        {
+          "source": ".appendText(\" for more information.\")",
+          "target": ".appendText(\"以获取更多信息。\")"
+        },
+        {
+          "source": ".appendText(\"In plugin version 7.0.0, the format for custom tokens has changed. Please update your custom tokens accordingly. Refer to the \")",
+          "target": ".appendText(\"在插件版本 7.0.0 中，自定义令牌的格式已更改。请相应地更新您的自定义令牌。请参阅 \")"
+        },
+        {
+          "source": "Notice(`Attachment ${file.path} is still used by other notes. It will not be deleted.`)",
+          "target": "Notice(`附件 ${file.path} 仍被其他笔记使用。它将不会被删除。`)"
+        },
+        {
+          "source": "Notice(`Collecting attachments for ${note.path}`)",
+          "target": "Notice(`正在收集 ${note.path} 的附件`)"
+        },
+        {
+          "source": "name: \"Anno Domini\"",
+          "target": "name: \"公元\""
+        },
+        {
+          "source": "name: \"Before Christ\"",
+          "target": "name: \"公元前\""
+        },
+        {
+          "source": "name: \"Collect attachments in current note\"",
+          "target": "name: \"收集当前笔记中的附件\""
+        },
+        {
+          "source": "name: \"Collect attachments in current folder\"",
+          "target": "name: \"收集当前文件夹中的附件\""
+        },
+        {
+          "source": "name: \"Collect attachments in entire vault\"",
+          "target": "name: \"收集整个保险库中的附件\""
+        },
+        {
+          "source": "link: \"backlink\"",
+          "target": "link: \"反向链接\""
+        },
+        {
+          "source": "text: \"Show Hidden Files\"",
+          "target": "text: \"显示隐藏文件\""
+        },
+        {
+          "source": ".setName(\"Location for New Attachments\")",
+          "target": ".setName(\"新附件的位置\")"
+        },
+        {
+          "source": ".setName(\"Pasted File Name\")",
+          "target": ".setName(\"粘贴的文件名\")"
+        },
+        {
+          "source": ".setName(\"Automatically rename attachment folder\")",
+          "target": ".setName(\"自动重命名附件文件夹\")"
+        },
+        {
+          "source": ".setName(\"Automatically rename attachment files\")",
+          "target": ".setName(\"自动重命名附件文件\")"
+        },
+        {
+          "source": ".setName(\"Replace whitespace with hyphen\")",
+          "target": ".setName(\"用连字符替换空格\")"
+        },
+        {
+          "source": ".setName(\"All lowercase names\")",
+          "target": ".setName(\"全部小写名称\")"
+        },
+        {
+          "source": ".setName(\"Convert pasted images to JPEG\")",
+          "target": ".setName(\"将粘贴的图像转换为 JPEG\")"
+        },
+        {
+          "source": ".setName(\"Convert images on drag&drop\")",
+          "target": ".setName(\"拖放时转换图像\")"
+        },
+        {
+          "source": ".setName(\"Rename only images\")",
+          "target": ".setName(\"仅重命名图像\")"
+        },
+        {
+          "source": ".setName(\"Rename pasted files with known names\")",
+          "target": ".setName(\"重命名具有已知名称的粘贴文件\")"
+        },
+        {
+          "source": ".setName(\"Rename attachments on drag&drop\")",
+          "target": ".setName(\"拖放时重命名附件\")"
+        },
+        {
+          "source": ".setName(\"Rename attachments on collecting\")",
+          "target": ".setName(\"收集时重命名附件\")"
+        },
+        {
+          "source": ".setName(\"Keep empty attachment folders\")",
+          "target": ".setName(\"保留空附件文件夹\")"
+        },
+        {
+          "source": ".setName(\"Delete orphan attachments\")",
+          "target": ".setName(\"删除孤立附件\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically replace whitespace in attachment folder and file name with hyphens.\")",
+          "target": ".setDesc(\"自动将附件文件夹和文件名中的空格替换为连字符。\")"
+        },
+        {
+          "source": ".appendText(\" to use relative path. Available variables: \")",
+          "target": ".appendText(\"开始使用相对路径。可用变量：\")"
+        },
+        {
+          "source": ".appendText(\"Available variables: \")",
+          "target": ".appendText(\"可用变量：\")"
+        },
+        {
+          "source": ".appendText(\"If enabled and \")",
+          "target": ".appendText(\"如果启用并且\")"
+        },
+        {
+          "source": ".appendText(\" setting is enabled, images drag&dropped into the editor will be converted to JPEG.\")",
+          "target": ".appendText(\"设置已启用，拖放到编辑器中的图像将被转换为 JPEG 格式。\")"
+        },
+        {
+          "source": ".appendText(\"If enabled, only image files will be renamed.\")",
+          "target": ".appendText(\"如果启用，仅图像文件将被重命名。\")"
+        },
+        {
+          "source": ".appendText(\"If disabled, all attachment files will be renamed.\")",
+          "target": ".appendText(\"如果禁用，所有附件文件将被重命名。\")"
+        },
+        {
+          "source": ".appendText(\"If enabled, pasted copied files with known names will be renamed.\")",
+          "target": ".appendText(\"如果启用，粘贴的复制文件如果有已知名称将被重命名。\")"
+        },
+        {
+          "source": ".appendText(\"If disabled, only clipboard image objects (e.g., screenshots) will be renamed.\")",
+          "target": ".appendText(\"如果禁用，仅剪贴板图像对象（例如，屏幕截图）将被重命名。\")"
+        },
+        {
+          "source": ".appendText(\"If enabled, attachments dragged and dropped into the editor will be renamed according to the \")",
+          "target": ".appendText(\"如果启用，拖放到编辑器中的附件将根据 \")"
+        }
+      ]
+    }
+  }
+}

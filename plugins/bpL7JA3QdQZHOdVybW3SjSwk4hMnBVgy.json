@@ -1,0 +1,1031 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-to-anki-plugin",
+    "version": "2.0.0",
+    "title": "Obsidian_to_Anki",
+    "description": "This is an Anki integration plugin! Designed for efficient bulk exporting.",
+    "language": "zh-cn",
+    "supportedVersions": "3.6.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice('Need to connect to Anki to generate fields dictionary...')",
+          "target": "Notice('需要连接到Anki以生成字段字典...\n\n')"
+        },
+        {
+          "source": "Notice(\"Fields dictionary successfully generated!\")",
+          "target": "Notice(\"字段字典生成成功！\n\n\")"
+        },
+        {
+          "source": "Notice(\"Couldn't connect to Anki! Check console for error message.\")",
+          "target": "Notice(\"无法连接到Anki！请检查控制台中的错误信息。\n\n\")"
+        },
+        {
+          "source": "Notice(\"Need to connect to Anki to update note types...\")",
+          "target": "Notice(\"需要连接到Anki以更新笔记类型...\n\n\")"
+        },
+        {
+          "source": "Notice(\"Note types updated!\")",
+          "target": "Notice(\"笔记类型更新成功！\n\n\")"
+        },
+        {
+          "source": "Notice(\"Couldn't connect to Anki! Check console for details.\")",
+          "target": "Notice(\"无法连接到Anki！请检查控制台以获取详细信息。\n\n\")"
+        },
+        {
+          "source": "Notice(\"Media Cache cleared successfully!\")",
+          "target": "Notice(\"媒体缓存清除成功。\n\n\")"
+        },
+        {
+          "source": "Notice(\"File Hash Cache cleared successfully!\")",
+          "target": "Notice(\"文件哈希缓存清除成功！\n\n\")"
+        },
+        {
+          "source": "Notice(\"Please update AnkiConnect! The way the script has added media files has changed.\")",
+          "target": "Notice(\"请更新AnkiConnect！脚本添加媒体文件的方式已发生变化。\n\n\")"
+        },
+        {
+          "source": "Notice(\"Need to connect to Anki generate default settings...\")",
+          "target": "Notice(\"需要连接到Anki以生成默认设置...\n\n\")"
+        },
+        {
+          "source": "Notice(\"Default settings successfully generated!\")",
+          "target": "Notice(\"默认设置生成成功！\n\n\")"
+        },
+        {
+          "source": "Notice('Scanning vault, check console for details...')",
+          "target": "Notice('正在扫描库，查看控制台以获取详细信息...\n\n')"
+        },
+        {
+          "source": "Notice(\"Error, couldn't connect to Anki! Check console for error message.\")",
+          "target": "Notice(\"错误，无法连接到Anki！请检查控制台中的错误信息。\")\n\n"
+        },
+        {
+          "source": "Notice(\"Successfully connected to Anki! This could take a few minutes - please don't close Anki until the plugin is finished\")",
+          "target": "Notice(\"成功连接到Anki！这可能需要几分钟时间 - 请在插件完成之前不要关闭Anki\")\n\n"
+        },
+        {
+          "source": "Notice(\"Error: incorrect path for scan directory \" + this.settings.Defaults[\"Scan Directory\"])",
+          "target": "Notice(\"错误：扫描目录路径不正确 \" + this.settings.Defaults[\"Scan Directory\"])\n\n"
+        },
+        {
+          "source": "Notice(\"All done! Saving file hashes and added media now...\")",
+          "target": "Notice(\"全部完成！正在保存文件哈希和已添加的媒体...\")\n\n"
+        },
+        {
+          "source": ".log(`WARN: ${message}`, ...args)",
+          "target": ".log(`WARN: ${message}`, ...args)"
+        },
+        {
+          "source": ".log(`Deprecated as of ${version}. ${message}`)",
+          "target": ".log(`Deprecated as of ${version}. ${message}`)"
+        },
+        {
+          "source": ".log(\"match\", match[0], match.rule && match.rule.begin)",
+          "target": ".log(\"match\", match[0], match.rule && match.rule.begin)"
+        },
+        {
+          "source": ".log(\"Element previously highlighted. To highlight again, first unset `dataset.highlighted`.\", element)",
+          "target": ".log(\"元素之前已被高亮显示。要重新高亮显示，请先取消设置dataset.highlighted。\", element)\n\n"
+        },
+        {
+          "source": "slog(hljs)",
+          "target": "slog(hljs)"
+        },
+        {
+          "source": "olog(hljs)",
+          "target": "olog(hljs)"
+        },
+        {
+          "source": "ilog(hljs)",
+          "target": "ilog(hljs)"
+        },
+        {
+          "source": "|log(?:10)",
+          "target": "|log(?:10)"
+        },
+        {
+          "source": ".log(\"Adding media file: \", mediaLink)",
+          "target": ".log(\"正在添加媒体文件：\", mediaLink)\n\n"
+        },
+        {
+          "source": ".log('loading Obsidian_to_Anki...')",
+          "target": ".log('loading Obsidian_to_Anki...')"
+        },
+        {
+          "source": ".log(\"Saving settings for Obsidian_to_Anki...\")",
+          "target": ".log(\"Saving settings for Obsidian_to_Anki...\")"
+        },
+        {
+          "source": ".log('unloading Obsidian_to_Anki...')",
+          "target": ".log('unloading Obsidian_to_Anki...')"
+        },
+        {
+          "source": ".error('maximum nesting of 10 spans reached!!!')",
+          "target": ".error('maximum nesting of 10 spans reached!!!')"
+        },
+        {
+          "source": ".error(message)",
+          "target": ".error(message)"
+        },
+        {
+          "source": " error(\"skip, excludeBegin, returnBegin not compatible with beginScope: {}\")",
+          "target": " error(\"skip, excludeBegin, returnBegin not compatible with beginScope: {}\")"
+        },
+        {
+          "source": " error(\"beginScope must be object\")",
+          "target": " error(\"beginScope must be object\")"
+        },
+        {
+          "source": " error(\"skip, excludeEnd, returnEnd not compatible with endScope: {}\")",
+          "target": " error(\"skip, excludeEnd, returnEnd not compatible with endScope: {}\")"
+        },
+        {
+          "source": " error(\"endScope must be object\")",
+          "target": " error(\"endScope must be object\")"
+        },
+        {
+          "source": " error(LANGUAGE_NOT_FOUND.replace(\"{}\", languageName)",
+          "target": " error(LANGUAGE_NOT_FOUND.replace(\"{}\", languageName)"
+        },
+        {
+          "source": " error(\"Language definition for '{}' could not be registered.\".replace(\"{}\", languageName)",
+          "target": " error(\"Language definition for '{}' could not be registered.\".replace(\"{}\", languageName)"
+        },
+        {
+          "source": " error(error$1)",
+          "target": " error(error$1)"
+        },
+        {
+          "source": ".error(...args)",
+          "target": ".error(...args)"
+        },
+        {
+          "source": ".error(\"Error: \", error)",
+          "target": ".error(\"Error: \", error)"
+        },
+        {
+          "source": "name: 'Plain text'",
+          "target": "name: 'Plain text'"
+        },
+        {
+          "source": "name: '1C:Enterprise'",
+          "target": "name: '1C:Enterprise'"
+        },
+        {
+          "source": "name: 'Augmented Backus-Naur Form'",
+          "target": "name: 'Augmented Backus-Naur Form'"
+        },
+        {
+          "source": "name: 'Apache Access Log'",
+          "target": "name: 'Apache Access Log'"
+        },
+        {
+          "source": "name: 'ActionScript'",
+          "target": "name: 'ActionScript'"
+        },
+        {
+          "source": "name: 'Ada'",
+          "target": "name: 'Ada'"
+        },
+        {
+          "source": "name: 'AngelScript'",
+          "target": "name: 'AngelScript'"
+        },
+        {
+          "source": "name: 'Apache config'",
+          "target": "name: 'Apache config'"
+        },
+        {
+          "source": "name: 'AppleScript'",
+          "target": "name: 'AppleScript'"
+        },
+        {
+          "source": "name: 'ArcGIS Arcade'",
+          "target": "name: 'ArcGIS Arcade'"
+        },
+        {
+          "source": "name: 'C++'",
+          "target": "name: 'C++'"
+        },
+        {
+          "source": "name: 'ARM Assembly'",
+          "target": "name: 'ARM Assembly'"
+        },
+        {
+          "source": "name: 'HTML, XML'",
+          "target": "name: 'HTML, XML'"
+        },
+        {
+          "source": "name: 'style'",
+          "target": "name: 'style'"
+        },
+        {
+          "source": "name: 'script'",
+          "target": "name: 'script'"
+        },
+        {
+          "source": "name: 'AsciiDoc'",
+          "target": "name: 'AsciiDoc'"
+        },
+        {
+          "source": "name: 'AspectJ'",
+          "target": "name: 'AspectJ'"
+        },
+        {
+          "source": "name: 'AutoHotkey'",
+          "target": "name: 'AutoHotkey'"
+        },
+        {
+          "source": "name: 'AutoIt'",
+          "target": "name: 'AutoIt'"
+        },
+        {
+          "source": "name: 'AVR Assembly'",
+          "target": "name: 'AVR Assembly'"
+        },
+        {
+          "source": "name: 'Awk'",
+          "target": "name: 'Awk'"
+        },
+        {
+          "source": "name: 'X++'",
+          "target": "name: 'X++'"
+        },
+        {
+          "source": "name: 'Bash'",
+          "target": "name: 'Bash'"
+        },
+        {
+          "source": "name: 'BASIC'",
+          "target": "name: 'BASIC'"
+        },
+        {
+          "source": "name: 'Backus–Naur Form'",
+          "target": "name: 'Backus–Naur Form'"
+        },
+        {
+          "source": "name: 'Brainfuck'",
+          "target": "name: 'Brainfuck'"
+        },
+        {
+          "source": "name: \"C\"",
+          "target": "name: \"C\""
+        },
+        {
+          "source": "name: 'C/AL'",
+          "target": "name: 'C/AL'"
+        },
+        {
+          "source": "name: 'Cap’n Proto'",
+          "target": "name: 'Cap’n Proto'"
+        },
+        {
+          "source": "name: 'Ceylon'",
+          "target": "name: 'Ceylon'"
+        },
+        {
+          "source": "name: 'Clean'",
+          "target": "name: 'Clean'"
+        },
+        {
+          "source": "name: 'Clojure'",
+          "target": "name: 'Clojure'"
+        },
+        {
+          "source": "name: 'Clojure REPL'",
+          "target": "name: 'Clojure REPL'"
+        },
+        {
+          "source": "name: 'CMake'",
+          "target": "name: 'CMake'"
+        },
+        {
+          "source": "name: 'CoffeeScript'",
+          "target": "name: 'CoffeeScript'"
+        },
+        {
+          "source": "name: 'Coq'",
+          "target": "name: 'Coq'"
+        },
+        {
+          "source": "name: 'Caché Object Script'",
+          "target": "name: 'Caché Object Script'"
+        },
+        {
+          "source": "name: 'crmsh'",
+          "target": "name: 'crmsh'"
+        },
+        {
+          "source": "name: 'Crystal'",
+          "target": "name: 'Crystal'"
+        },
+        {
+          "source": "name: 'C#'",
+          "target": "name: 'C#'"
+        },
+        {
+          "source": "name: 'CSP'",
+          "target": "name: 'CSP'"
+        },
+        {
+          "source": "name: 'CSS'",
+          "target": "name: 'CSS'"
+        },
+        {
+          "source": "name: 'D'",
+          "target": "name: 'D'"
+        },
+        {
+          "source": "name: 'Markdown'",
+          "target": "name: 'Markdown'"
+        },
+        {
+          "source": "name: 'Dart'",
+          "target": "name: 'Dart'"
+        },
+        {
+          "source": "name: 'Delphi'",
+          "target": "name: 'Delphi'"
+        },
+        {
+          "source": "name: 'Diff'",
+          "target": "name: 'Diff'"
+        },
+        {
+          "source": "name:\n        'truncatewords removetags linebreaksbr yesno get_digit timesince random striptags '",
+          "target": "name:\n        'truncatewords removetags linebreaksbr yesno get_digit timesince random striptags '"
+        },
+        {
+          "source": "name: 'Django'",
+          "target": "name: 'Django'"
+        },
+        {
+          "source": "name:\n                'comment endcomment load templatetag ifchanged endifchanged if endif firstof for '",
+          "target": "name:\n                'comment endcomment load templatetag ifchanged endifchanged if endif firstof for '"
+        },
+        {
+          "source": "name: 'DNS Zone'",
+          "target": "name: 'DNS Zone'"
+        },
+        {
+          "source": "name: 'Dockerfile'",
+          "target": "name: 'Dockerfile'"
+        },
+        {
+          "source": "name: 'Batch file (DOS)'",
+          "target": "name: 'Batch file (DOS)'"
+        },
+        {
+          "source": "name: 'Device Tree'",
+          "target": "name: 'Device Tree'"
+        },
+        {
+          "source": "name: 'Dust'",
+          "target": "name: 'Dust'"
+        },
+        {
+          "source": "name: 'Extended Backus-Naur Form'",
+          "target": "name: 'Extended Backus-Naur Form'"
+        },
+        {
+          "source": "name: 'Elixir'",
+          "target": "name: 'Elixir'"
+        },
+        {
+          "source": "name: 'Elm'",
+          "target": "name: 'Elm'"
+        },
+        {
+          "source": "name: 'Ruby'",
+          "target": "name: 'Ruby'"
+        },
+        {
+          "source": "name: 'ERB'",
+          "target": "name: 'ERB'"
+        },
+        {
+          "source": "name: 'Erlang REPL'",
+          "target": "name: 'Erlang REPL'"
+        },
+        {
+          "source": "name: 'Erlang'",
+          "target": "name: 'Erlang'"
+        },
+        {
+          "source": "name: 'Excel formulae'",
+          "target": "name: 'Excel formulae'"
+        },
+        {
+          "source": "name: 'FIX'",
+          "target": "name: 'FIX'"
+        },
+        {
+          "source": "name: 'Flix'",
+          "target": "name: 'Flix'"
+        },
+        {
+          "source": "name: 'Fortran'",
+          "target": "name: 'Fortran'"
+        },
+        {
+          "source": "name: 'F#'",
+          "target": "name: 'F#'"
+        },
+        {
+          "source": "name: 'GAMS'",
+          "target": "name: 'GAMS'"
+        },
+        {
+          "source": "name: 'GAUSS'",
+          "target": "name: 'GAUSS'"
+        },
+        {
+          "source": "name: 'G-code (ISO 6983)'",
+          "target": "name: 'G-code (ISO 6983)'"
+        },
+        {
+          "source": "name: 'Gherkin'",
+          "target": "name: 'Gherkin'"
+        },
+        {
+          "source": "name: 'GLSL'",
+          "target": "name: 'GLSL'"
+        },
+        {
+          "source": "name: 'GML'",
+          "target": "name: 'GML'"
+        },
+        {
+          "source": "name: 'Go'",
+          "target": "name: 'Go'"
+        },
+        {
+          "source": "name: 'Golo'",
+          "target": "name: 'Golo'"
+        },
+        {
+          "source": "name: 'Gradle'",
+          "target": "name: 'Gradle'"
+        },
+        {
+          "source": "name: \"GraphQL\"",
+          "target": "name: \"GraphQL\""
+        },
+        {
+          "source": "name: 'Groovy'",
+          "target": "name: 'Groovy'"
+        },
+        {
+          "source": "name: 'HAML'",
+          "target": "name: 'HAML'"
+        },
+        {
+          "source": "name: 'Handlebars'",
+          "target": "name: 'Handlebars'"
+        },
+        {
+          "source": "name: 'Haskell'",
+          "target": "name: 'Haskell'"
+        },
+        {
+          "source": "name: 'Haxe'",
+          "target": "name: 'Haxe'"
+        },
+        {
+          "source": "name: 'HSP'",
+          "target": "name: 'HSP'"
+        },
+        {
+          "source": "name: 'HTTP'",
+          "target": "name: 'HTTP'"
+        },
+        {
+          "source": "name: 'Hy'",
+          "target": "name: 'Hy'"
+        },
+        {
+          "source": "name: 'Inform 7'",
+          "target": "name: 'Inform 7'"
+        },
+        {
+          "source": "name: 'TOML, also INI'",
+          "target": "name: 'TOML, also INI'"
+        },
+        {
+          "source": "name: 'IRPF90'",
+          "target": "name: 'IRPF90'"
+        },
+        {
+          "source": "name: 'ISBL'",
+          "target": "name: 'ISBL'"
+        },
+        {
+          "source": "name: 'Java'",
+          "target": "name: 'Java'"
+        },
+        {
+          "source": "name: 'JavaScript'",
+          "target": "name: 'JavaScript'"
+        },
+        {
+          "source": "name: 'JBoss CLI'",
+          "target": "name: 'JBoss CLI'"
+        },
+        {
+          "source": "name: 'JSON'",
+          "target": "name: 'JSON'"
+        },
+        {
+          "source": "name: 'Julia REPL'",
+          "target": "name: 'Julia REPL'"
+        },
+        {
+          "source": "name: 'Kotlin'",
+          "target": "name: 'Kotlin'"
+        },
+        {
+          "source": "name: 'Lasso'",
+          "target": "name: 'Lasso'"
+        },
+        {
+          "source": "name: 'LaTeX'",
+          "target": "name: 'LaTeX'"
+        },
+        {
+          "source": "name: 'LDIF'",
+          "target": "name: 'LDIF'"
+        },
+        {
+          "source": "name: 'Leaf'",
+          "target": "name: 'Leaf'"
+        },
+        {
+          "source": "name: 'Less'",
+          "target": "name: 'Less'"
+        },
+        {
+          "source": "name: 'quote'",
+          "target": "name: 'quote'"
+        },
+        {
+          "source": "name: 'Lisp'",
+          "target": "name: 'Lisp'"
+        },
+        {
+          "source": "name: 'LiveCode'",
+          "target": "name: 'LiveCode'"
+        },
+        {
+          "source": "name: 'LiveScript'",
+          "target": "name: 'LiveScript'"
+        },
+        {
+          "source": "name: 'LLVM IR'",
+          "target": "name: 'LLVM IR'"
+        },
+        {
+          "source": "name: 'LSL (Linden Scripting Language)'",
+          "target": "name: 'LSL (Linden Scripting Language)'"
+        },
+        {
+          "source": "name: 'Lua'",
+          "target": "name: 'Lua'"
+        },
+        {
+          "source": "name: 'Makefile'",
+          "target": "name: 'Makefile'"
+        },
+        {
+          "source": "name: 'Mathematica'",
+          "target": "name: 'Mathematica'"
+        },
+        {
+          "source": "name: 'Matlab'",
+          "target": "name: 'Matlab'"
+        },
+        {
+          "source": "name: 'Maxima'",
+          "target": "name: 'Maxima'"
+        },
+        {
+          "source": "name: 'MEL'",
+          "target": "name: 'MEL'"
+        },
+        {
+          "source": "name: 'Mercury'",
+          "target": "name: 'Mercury'"
+        },
+        {
+          "source": "name: 'MIPS Assembly'",
+          "target": "name: 'MIPS Assembly'"
+        },
+        {
+          "source": "name: 'Mizar'",
+          "target": "name: 'Mizar'"
+        },
+        {
+          "source": "name: 'Perl'",
+          "target": "name: 'Perl'"
+        },
+        {
+          "source": "name: 'Mojolicious'",
+          "target": "name: 'Mojolicious'"
+        },
+        {
+          "source": "name: 'Monkey'",
+          "target": "name: 'Monkey'"
+        },
+        {
+          "source": "name: 'MoonScript'",
+          "target": "name: 'MoonScript'"
+        },
+        {
+          "source": "name: 'N1QL'",
+          "target": "name: 'N1QL'"
+        },
+        {
+          "source": "name: 'Nested Text'",
+          "target": "name: 'Nested Text'"
+        },
+        {
+          "source": "name: 'Nginx config'",
+          "target": "name: 'Nginx config'"
+        },
+        {
+          "source": "name: 'Nim'",
+          "target": "name: 'Nim'"
+        },
+        {
+          "source": "name: 'Nix'",
+          "target": "name: 'Nix'"
+        },
+        {
+          "source": "name: 'Node REPL'",
+          "target": "name: 'Node REPL'"
+        },
+        {
+          "source": "name: 'NSIS'",
+          "target": "name: 'NSIS'"
+        },
+        {
+          "source": "name: 'Objective-C'",
+          "target": "name: 'Objective-C'"
+        },
+        {
+          "source": "name: 'OCaml'",
+          "target": "name: 'OCaml'"
+        },
+        {
+          "source": "name: 'OpenSCAD'",
+          "target": "name: 'OpenSCAD'"
+        },
+        {
+          "source": "name: 'Oxygene'",
+          "target": "name: 'Oxygene'"
+        },
+        {
+          "source": "name: 'Parser3'",
+          "target": "name: 'Parser3'"
+        },
+        {
+          "source": "name: 'Packet Filter config'",
+          "target": "name: 'Packet Filter config'"
+        },
+        {
+          "source": "name: 'PostgreSQL'",
+          "target": "name: 'PostgreSQL'"
+        },
+        {
+          "source": "name: \"PHP template\"",
+          "target": "name: \"PHP template\""
+        },
+        {
+          "source": "name: 'Pony'",
+          "target": "name: 'Pony'"
+        },
+        {
+          "source": "name: 'PowerShell'",
+          "target": "name: 'PowerShell'"
+        },
+        {
+          "source": "name: 'Processing'",
+          "target": "name: 'Processing'"
+        },
+        {
+          "source": "name: 'Python profiler'",
+          "target": "name: 'Python profiler'"
+        },
+        {
+          "source": "name: 'Prolog'",
+          "target": "name: 'Prolog'"
+        },
+        {
+          "source": "name: '.properties'",
+          "target": "name: '.properties'"
+        },
+        {
+          "source": "name: 'Protocol Buffers'",
+          "target": "name: 'Protocol Buffers'"
+        },
+        {
+          "source": "name: 'Puppet'",
+          "target": "name: 'Puppet'"
+        },
+        {
+          "source": "name: 'PureBASIC'",
+          "target": "name: 'PureBASIC'"
+        },
+        {
+          "source": "name: 'Python'",
+          "target": "name: 'Python'"
+        },
+        {
+          "source": "name: 'Q'",
+          "target": "name: 'Q'"
+        },
+        {
+          "source": "name: 'QML'",
+          "target": "name: 'QML'"
+        },
+        {
+          "source": "name: 'R'",
+          "target": "name: 'R'"
+        },
+        {
+          "source": "name: 'ReasonML'",
+          "target": "name: 'ReasonML'"
+        },
+        {
+          "source": "name: 'RenderMan RIB'",
+          "target": "name: 'RenderMan RIB'"
+        },
+        {
+          "source": "name: 'Roboconf'",
+          "target": "name: 'Roboconf'"
+        },
+        {
+          "source": "name: 'MikroTik RouterOS script'",
+          "target": "name: 'MikroTik RouterOS script'"
+        },
+        {
+          "source": "name: 'RenderMan RSL'",
+          "target": "name: 'RenderMan RSL'"
+        },
+        {
+          "source": "name: 'Oracle Rules Language'",
+          "target": "name: 'Oracle Rules Language'"
+        },
+        {
+          "source": "name: 'Rust'",
+          "target": "name: 'Rust'"
+        },
+        {
+          "source": "name: 'SAS'",
+          "target": "name: 'SAS'"
+        },
+        {
+          "source": "name: 'Scala'",
+          "target": "name: 'Scala'"
+        },
+        {
+          "source": "name: 'Scheme'",
+          "target": "name: 'Scheme'"
+        },
+        {
+          "source": "name: 'Scilab'",
+          "target": "name: 'Scilab'"
+        },
+        {
+          "source": "name: 'SCSS'",
+          "target": "name: 'SCSS'"
+        },
+        {
+          "source": "name: 'Shell Session'",
+          "target": "name: 'Shell Session'"
+        },
+        {
+          "source": "name: 'Smali'",
+          "target": "name: 'Smali'"
+        },
+        {
+          "source": "name: 'Smalltalk'",
+          "target": "name: 'Smalltalk'"
+        },
+        {
+          "source": "name: 'SML (Standard ML)'",
+          "target": "name: 'SML (Standard ML)'"
+        },
+        {
+          "source": "name: 'SQF'",
+          "target": "name: 'SQF'"
+        },
+        {
+          "source": "name: 'SQL'",
+          "target": "name: 'SQL'"
+        },
+        {
+          "source": "name: 'Stan'",
+          "target": "name: 'Stan'"
+        },
+        {
+          "source": "name: 'Stata'",
+          "target": "name: 'Stata'"
+        },
+        {
+          "source": "name: 'STEP Part 21'",
+          "target": "name: 'STEP Part 21'"
+        },
+        {
+          "source": "name: 'Stylus'",
+          "target": "name: 'Stylus'"
+        },
+        {
+          "source": "name: 'SubUnit'",
+          "target": "name: 'SubUnit'"
+        },
+        {
+          "source": "name: 'Swift'",
+          "target": "name: 'Swift'"
+        },
+        {
+          "source": "name: 'Tagger Script'",
+          "target": "name: 'Tagger Script'"
+        },
+        {
+          "source": "name: 'YAML'",
+          "target": "name: 'YAML'"
+        },
+        {
+          "source": "name: 'Test Anything Protocol'",
+          "target": "name: 'Test Anything Protocol'"
+        },
+        {
+          "source": "name: 'Tcl'",
+          "target": "name: 'Tcl'"
+        },
+        {
+          "source": "name: 'Thrift'",
+          "target": "name: 'Thrift'"
+        },
+        {
+          "source": "name: 'TP'",
+          "target": "name: 'TP'"
+        },
+        {
+          "source": "name: 'Twig'",
+          "target": "name: 'Twig'"
+        },
+        {
+          "source": "name: 'TypeScript'",
+          "target": "name: 'TypeScript'"
+        },
+        {
+          "source": "name: 'Vala'",
+          "target": "name: 'Vala'"
+        },
+        {
+          "source": "name: 'Visual Basic .NET'",
+          "target": "name: 'Visual Basic .NET'"
+        },
+        {
+          "source": "name: 'VBScript'",
+          "target": "name: 'VBScript'"
+        },
+        {
+          "source": "name: 'VBScript in HTML'",
+          "target": "name: 'VBScript in HTML'"
+        },
+        {
+          "source": "name: 'Verilog'",
+          "target": "name: 'Verilog'"
+        },
+        {
+          "source": "name: 'VHDL'",
+          "target": "name: 'VHDL'"
+        },
+        {
+          "source": "name: 'Vim Script'",
+          "target": "name: 'Vim Script'"
+        },
+        {
+          "source": "name: 'WebAssembly'",
+          "target": "name: 'WebAssembly'"
+        },
+        {
+          "source": "name: \"Wren\"",
+          "target": "name: \"Wren\""
+        },
+        {
+          "source": "name: 'Intel x86 Assembly'",
+          "target": "name: 'Intel x86 Assembly'"
+        },
+        {
+          "source": "name: 'XL'",
+          "target": "name: 'XL'"
+        },
+        {
+          "source": "name: 'XQuery'",
+          "target": "name: 'XQuery'"
+        },
+        {
+          "source": "name: 'Zephir'",
+          "target": "name: 'Zephir'"
+        },
+        {
+          "source": "name: 'Scan Vault'",
+          "target": "name: 'Scan Vault'"
+        },
+        {
+          "source": "text: 'Note type settings'",
+          "target": "text: 'Note type settings'"
+        },
+        {
+          "source": "text: 'Syntax Settings'",
+          "target": "text: 'Syntax Settings'"
+        },
+        {
+          "source": "text: 'Defaults'",
+          "target": "text: 'Defaults'"
+        },
+        {
+          "source": "text: 'Folder settings'",
+          "target": "text: 'Folder settings'"
+        },
+        {
+          "source": "text: 'Actions'",
+          "target": "text: 'Actions'"
+        },
+        {
+          "source": "text: 'Ignored File Settings'",
+          "target": "text: 'Ignored File Settings'"
+        },
+        {
+          "source": "text: \"Glob patterns for files to ignore. You can add multiple patterns. One per line. Have a look at the \"",
+          "target": "text: \"Glob patterns for files to ignore. You can add multiple patterns. One per line. Have a look at the \""
+        },
+        {
+          "source": "text: \"README.md\"",
+          "target": "text: \"README.md\""
+        },
+        {
+          "source": "text: \" for more information, examples and further resources.\"",
+          "target": "text: \" for more information, examples and further resources.\""
+        },
+        {
+          "source": "text: 'Obsidian_to_Anki settings'",
+          "target": "text: 'Obsidian_to_Anki settings'"
+        },
+        {
+          "source": "text: 'For more information check the wiki'",
+          "target": "text: 'For more information check the wiki'"
+        },
+        {
+          "source": ".setButtonText(\"Regenerate\")",
+          "target": ".setButtonText(\"Regenerate\")"
+        },
+        {
+          "source": ".setButtonText(\"Clear\")",
+          "target": ".setButtonText(\"Clear\")"
+        },
+        {
+          "source": ".setName(\"Regenerate Note Type Table\")",
+          "target": ".setName(\"Regenerate Note Type Table\")"
+        },
+        {
+          "source": ".setName(\"Clear Media Cache\")",
+          "target": ".setName(\"Clear Media Cache\")"
+        },
+        {
+          "source": ".setName(\"Clear File Hash Cache\")",
+          "target": ".setName(\"Clear File Hash Cache\")"
+        },
+        {
+          "source": ".setName(\"Patterns to ignore\")",
+          "target": ".setName(\"Patterns to ignore\")"
+        },
+        {
+          "source": ".setDesc(\"Connect to Anki to regenerate the table with new note types, or get rid of deleted note types.\")",
+          "target": ".setDesc(\"Connect to Anki to regenerate the table with new note types, or get rid of deleted note types.\")"
+        },
+        {
+          "source": ".setDesc(`Clear the cached list of media filenames that have been added to Anki.\n\n\t\t\tThe plugin will skip over adding a media file if it's added a file with the same name before, so clear this if e.g. you've updated the media file with the same name.`)",
+          "target": ".setDesc(`Clear the cached list of media filenames that have been added to Anki.\n\n\t\t\tThe plugin will skip over adding a media file if it's added a file with the same name before, so clear this if e.g. you've updated the media file with the same name.`)"
+        },
+        {
+          "source": ".setDesc(`Clear the cached dictionary of file hashes that the plugin has scanned before.\n\n\t\t\tThe plugin will skip over a file if the file path and the hash is unaltered.`)",
+          "target": ".setDesc(`Clear the cached dictionary of file hashes that the plugin has scanned before.\n\n\t\t\tThe plugin will skip over a file if the file path and the hash is unaltered.`)"
+        },
+        {
+          "source": ".setPlaceholder(\"Examples: '**/*.excalidraw.md', 'Templates/**'\")",
+          "target": ".setPlaceholder(\"Examples: '**/*.excalidraw.md', 'Templates/**'\")"
+        }
+      ]
+    }
+  }
+}

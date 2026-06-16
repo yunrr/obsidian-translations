@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-bulk-rename-plugin",
+    "version": "2.0.0",
+    "title": "Bulk Rename",
+    "description": "Purpose of this plugin rename files based on pattern",
+    "language": "zh-cn",
+    "supportedVersions": "0.5.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"please fill Existing Symbol\")",
+          "target": "Notice(\"请填写现有符号\")"
+        },
+        {
+          "source": "Notice(\"Please check your results before rename!\")",
+          "target": "Notice(\"重命名前请检查结果!\")"
+        },
+        {
+          "source": "Notice(\"renaming has been started\")",
+          "target": "Notice(\"重命名已开始\")"
+        },
+        {
+          "source": "Notice(\"FILES NOT RENAMED!\")",
+          "target": "Notice(\"文件未重命名!\")"
+        },
+        {
+          "source": "Notice(\n          \"WARNING: YOU MUST CREATE FOLDER BEFORE MOVING INTO IT\",\n          7e3\n        )",
+          "target": "Notice(\n          \"警告：您必须在修改该文件夹之前创建文件夹\",\n          7e3\n        )"
+        },
+        {
+          "source": "Notice(\"successfully renamed all files\")",
+          "target": "Notice(\"成功重命名所有文件\")"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" element must be an HTMLElement (not an SVGElement)",
+          "target": ".error(['Popper: \"arrow\" element must be an HTMLElement (not an SVGElement)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" modifier\\'s `element` must be a child of the popper', \"element.\"].join(\" \")",
+          "target": ".error(['Popper: \"arrow\" modifier\\'s `element` must be a child of the popper', \"element.\"].join(\" \")"
+        },
+        {
+          "source": ".error([\"Popper: The `allowedAutoPlacements` option did not allow any\", \"placements. Ensure the `placement` option matches the variation\", \"of the allowed placements.\", 'For example, \"auto\" cannot be used to allow \"bottom-start\".', 'Use \"auto-start\" instead.'].join(\" \")",
+          "target": ".error([\"Popper: The `allowedAutoPlacements` option did not allow any\", \"placements. Ensure the `placement` option matches the variation\", \"of the allowed placements.\", 'For example, \"auto\" cannot be used to allow \"bottom-start\".', 'Use \"auto-start\" instead.'].join(\" \")"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, String(modifier.name)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"enabled\"', '\"boolean\"', '\"' + String(modifier.enabled)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"enabled\"', '\"boolean\"', '\"' + String(modifier.enabled)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"phase\"', \"either \" + modifierPhases.join(\", \")",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"phase\"', \"either \" + modifierPhases.join(\", \")"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"fn\"', '\"function\"', '\"' + String(modifier.fn)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"fn\"', '\"function\"', '\"' + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"effect\"', '\"function\"', '\"' + String(modifier.fn)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"effect\"', '\"function\"', '\"' + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requires\"', '\"array\"', '\"' + String(modifier.requires)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requires\"', '\"array\"', '\"' + String(modifier.requires)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requiresIfExists\"', '\"array\"', '\"' + String(modifier.requiresIfExists)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requiresIfExists\"', '\"array\"', '\"' + String(modifier.requiresIfExists)"
+        },
+        {
+          "source": ".error('PopperJS: an invalid property has been provided to the \"' + modifier.name + '\" modifier, valid properties are ' + VALID_PROPERTIES.map(function(s)",
+          "target": ".error('PopperJS: an invalid property has been provided to the \"' + modifier.name + '\" modifier, valid properties are ' + VALID_PROPERTIES.map(function(s)"
+        },
+        {
+          "source": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)",
+          "target": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(['Popper: \"auto\" placements require the \"flip\" modifier be', \"present and enabled to work.\"].join(\" \")",
+          "target": ".error(['Popper: \"auto\" placements require the \"flip\" modifier be', \"present and enabled to work.\"].join(\" \")"
+        },
+        {
+          "source": ".error(INVALID_ELEMENT_ERROR)",
+          "target": ".error(INVALID_ELEMENT_ERROR)"
+        },
+        {
+          "source": ".error(INFINITE_LOOP_ERROR)",
+          "target": ".error(INFINITE_LOOP_ERROR)"
+        },
+        {
+          "source": "name: \"Assigned\"",
+          "target": "name: \"指定\""
+        },
+        {
+          "source": "name: \"applyStyles\"",
+          "target": "name: \"应用样式\""
+        },
+        {
+          "source": "name: \"arrow\"",
+          "target": "name: \"arrow\""
+        },
+        {
+          "source": "name: \"computeStyles\"",
+          "target": "name: \"计算方式\""
+        },
+        {
+          "source": "name: \"eventListeners\"",
+          "target": "name: \"事件监听器\""
+        },
+        {
+          "source": "name: \"flip\"",
+          "target": "name: \"浏览\""
+        },
+        {
+          "source": "name: \"hide\"",
+          "target": "name: \"隐藏\""
+        },
+        {
+          "source": "name: \"offset\"",
+          "target": "name: \"偏移\""
+        },
+        {
+          "source": "name: \"popperOffsets\"",
+          "target": "name: \"防止偏移\""
+        },
+        {
+          "source": "name: \"preventOverflow\"",
+          "target": "name: \"防止移除\""
+        },
+        {
+          "source": "name: \"sameWidth\"",
+          "target": "name: \"相同宽度\""
+        },
+        {
+          "source": "text: \"reference\"",
+          "target": "text: \"引用\""
+        },
+        {
+          "source": "text: \"Support development\"",
+          "target": "text: \"支持开发\""
+        },
+        {
+          "source": "text: \"If you enjoy Bulk Rename, consider \"",
+          "target": "text: \"如果你喜欢 Rename，请考虑\""
+        },
+        {
+          "source": "text: \"buying me a coffee\"",
+          "target": "text: \"请我喝咖啡\""
+        },
+        {
+          "source": "text: \", and following me on Twitter \"",
+          "target": "text: \"，在推特上关注我\""
+        },
+        {
+          "source": "text: \"@oleglustenko\"",
+          "target": "text: \"@oleglustenko\""
+        },
+        {
+          "source": "text: \"Preview\"",
+          "target": "text: \"预告\""
+        },
+        {
+          "source": "text: `Total Files: ${this.plugin.settings.fileNames.length}`",
+          "target": "text: `Total Files: ${this.plugin.settings.fileNames.length}`"
+        },
+        {
+          "source": "text: \"Bulk Rename - Settings\"",
+          "target": "text: \"批量重命名 - 设置\""
+        },
+        {
+          "source": "text: \"Warning: \"",
+          "target": "text: \"警告：\""
+        },
+        {
+          "source": ".setText(\n        `Total Files: ${this.plugin.settings.fileNames.length}`\n      )",
+          "target": ".setText(\n        `Total Files: ${this.plugin.settings.fileNames.length}`\n      )"
+        },
+        {
+          "source": ".setButtonText(\"Folder\")",
+          "target": ".setButtonText(\"文件夹\")"
+        },
+        {
+          "source": ".setButtonText(\"Tags\")",
+          "target": ".setButtonText(\"标签\")"
+        },
+        {
+          "source": ".setButtonText(\"RegExp\")",
+          "target": ".setButtonText(\"正则表达式\")"
+        },
+        {
+          "source": ".setButtonText(\"Preview\")",
+          "target": ".setButtonText(\"预告\")"
+        },
+        {
+          "source": ".setButtonText(\"Rename\")",
+          "target": ".setButtonText(\"重命名\")"
+        },
+        {
+          "source": ".setName(\"Search by: \")",
+          "target": ".setName(\"搜索: \")"
+        },
+        {
+          "source": ".setName(\"Folder location\")",
+          "target": ".setName(\"文件夹位置\")"
+        },
+        {
+          "source": ".setName(\"Tag names \")",
+          "target": ".setName(\"标签名称\")"
+        },
+        {
+          "source": ".setName(\"RegExp Search\")",
+          "target": ".setName(\"正则表达式搜索\")"
+        },
+        {
+          "source": ".setName(\"Use RegExp For Existing & Replacement?\")",
+          "target": ".setName(\"使用正则表达式进行替换？\")"
+        },
+        {
+          "source": ".setName(\"Replace patterns\")",
+          "target": ".setName(\"替换模式\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Only RegExp will work now, however it doesn't prevent you to pass string\"\n    )",
+          "target": ".setDesc(\n      \"使用正则表达式对重命名字段进行筛选\"\n    )"
+        },
+        {
+          "source": ".setPlaceholder(\"Here you will see files under folder location\")",
+          "target": ".setPlaceholder(\"在这里，您将看到文件夹位置下的文件\")"
+        },
+        {
+          "source": ".setPlaceholder(\n      \"How filenames will looks like after replacement(click preview first)\"\n    )",
+          "target": ".setPlaceholder(\n      \"文件名替换后的样子（先点击预览）\"\n    )"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: folder1/\")",
+          "target": ".setPlaceholder(\"例如：文件夹1/\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: #tag, #tag2\")",
+          "target": ".setPlaceholder(\"例如：#标签1 #标签2\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Put your RegExp here\")",
+          "target": ".setPlaceholder(\"正则表达式内容\")"
+        },
+        {
+          "source": ".setPlaceholder(\"flags here\")",
+          "target": ".setPlaceholder(\"正则表达式标识(模式)\")"
+        },
+        {
+          "source": ".setPlaceholder(\"existing chars\")",
+          "target": ".setPlaceholder(\"现有字符\")"
+        },
+        {
+          "source": ".setPlaceholder(\"replace with\")",
+          "target": ".setPlaceholder(\"替换为\")"
+        },
+        {
+          "source": ".setTooltip(\"Use RegExp For Existing & Replacement?\")",
+          "target": ".setTooltip(\"使用正则表达式进行替换？\")"
+        },
+        {
+          "source": ".setTooltip(\"Your files won't be changed\")",
+          "target": ".setTooltip(\"文件不会被更改\")"
+        },
+        {
+          "source": ".setTooltip(\n        \"We don't have undone button yet!\\r\\n Do we need it?\"\n      )",
+          "target": ".setTooltip(\n        \"注意：操作将无法撤消\"\n      )"
+        }
+      ]
+    }
+  }
+}

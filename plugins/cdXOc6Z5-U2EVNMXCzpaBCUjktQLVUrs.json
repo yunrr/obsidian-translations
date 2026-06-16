@@ -1,0 +1,1411 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "note-toolbar",
+    "version": "2.0.0",
+    "title": "Note Toolbar",
+    "description": "Add customizable toolbars to your notes.",
+    "language": "zh-cn",
+    "supportedVersions": "1.15",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "\"button-cancel\":\"Cancel\"",
+          "target": "\"button-cancel\":\"取消\""
+        },
+        {
+          "source": "\"button-collapse-tooltip\":\"Collapse section\"",
+          "target": "\"button-collapse-tooltip\":\"折叠部分\""
+        },
+        {
+          "source": "\"button-delete-tooltip\":\"Delete\"",
+          "target": "\"button-delete-tooltip\":\"删除\""
+        },
+        {
+          "source": "\"button-drag-tooltip\":\"Drag to rearrange\"",
+          "target": "\"button-drag-tooltip\":\"拖动以重新排列\""
+        },
+        {
+          "source": "\"button-expand-tooltip\":\"Expand section\"",
+          "target": "\"button-expand-tooltip\":\"展开部分\""
+        },
+        {
+          "source": "\"button-help\":\"Help\"",
+          "target": "\"button-help\":\"帮助\""
+        },
+        {
+          "source": "\"button-help-tooltip\":\"Open the help window\"",
+          "target": "\"button-help-tooltip\":\"打开帮助窗口\""
+        },
+        {
+          "source": "\"button-learn-more\":\"Learn\\xA0more\"",
+          "target": "\"button-learn-more\":\"了解更多\""
+        },
+        {
+          "source": "\"button-user-guide\":\"User\\xA0Guide\"",
+          "target": "\"button-user-guide\":\"用户指南\""
+        },
+        {
+          "source": "\"button-whats-new\":\"What's\\xA0new?\"",
+          "target": "\"button-whats-new\":\"有什么新内容？\""
+        },
+        {
+          "source": "\"button-whats-new-tooltip\":\"Open the What's New window\"",
+          "target": "\"button-whats-new-tooltip\":\"打开有什么新内容窗口\""
+        },
+        {
+          "source": "\"error-old-settings-name\":\"\\u26A0\\uFE0F Error: Please disable and renable Note Toolbar, or restart Obsidian.\"",
+          "target": "\"error-old-settings-name\":\"\\u26A0\\uFE0F 错误：请禁用并重新启用笔记工具栏，或重启 Obsidian。\""
+        },
+        {
+          "source": "\"error-old-settings-description\":\"Old settings file loaded ({{oldVersion}}) but latest is {{currentVersion}}\"",
+          "target": "\"error-old-settings-description\":\"加载了旧设置文件（{{oldVersion}}），但最新版本为 {{currentVersion}}\""
+        },
+        {
+          "source": "\"option-platform-desktop\":\"Desktop\"",
+          "target": "\"option-platform-desktop\":\"桌面\""
+        },
+        {
+          "source": "\"option-platform-mobile\":\"Mobile\"",
+          "target": "\"option-platform-mobile\":\"移动设备\""
+        },
+        {
+          "source": "\"title-edit-toolbar\":\"Edit Toolbar: {{toolbar}}\"",
+          "target": "\"title-edit-toolbar\":\"编辑工具栏: {{toolbar}}\""
+        },
+        {
+          "source": "\"title-edit-toolbar_none\":\"Edit Toolbar\"",
+          "target": "\"title-edit-toolbar_none\":\"编辑工具栏\""
+        },
+        {
+          "source": "placeholder:\"Search for a command...\"",
+          "target": "placeholder:\"搜索命令...\""
+        },
+        {
+          "source": "\"instruction-navigate\":\"to navigate\"",
+          "target": "\"instruction-navigate\":\"用于导航\""
+        },
+        {
+          "source": "\"instruction-use\":\"to select command\"",
+          "target": "\"instruction-use\":\"选择命令\""
+        },
+        {
+          "source": "\"instruction-dismiss\":\"to dismiss\"",
+          "target": "\"instruction-dismiss\":\"关闭\""
+        },
+        {
+          "source": "title:\"Copy as callout\"",
+          "target": "title:\"复制为标注\""
+        },
+        {
+          "source": "description:\"Define what happens when toolbars are converted to callouts.\"",
+          "target": "description:\"定义工具栏转换为标注时的行为。\""
+        },
+        {
+          "source": "\"option-icons\":\"Include icons\"",
+          "target": "\"option-icons\":\"包含图标\""
+        },
+        {
+          "source": "\"option-icons-description\":\"Add icon placeholders to callouts. (Example: :LiHome:) The Iconize plugin must be installed and enabled to see icons. If disabled, tooltips will be used if labels are not set. Icons can be imported by other users.\"",
+          "target": "\"option-icons-description\":\"向标注添加图标占位符。（示例：:LiHome:）必须安装并启用 Iconize 插件才能看到图标。如果禁用，标签未设置时将使用提示文字。图标可以由其他用户导入。\""
+        },
+        {
+          "source": "\"option-vars\":\"Replace variables\"",
+          "target": "\"option-vars\":\"替换变量\""
+        },
+        {
+          "source": "\"option-vars-description\":\"Any variables used in the toolbar will be replaced with values from the note you're currently viewing. Example: {{note_title}} \\u2192 My Note\"",
+          "target": "\"option-vars-description\":\"工具栏中使用的任何变量都将被当前查看的笔记中的值替换。示例：{{note_title}} → 我的笔记\""
+        },
+        {
+          "source": "\"option-ids\":\"Use IDs in menu items\"",
+          "target": "\"option-ids\":\"在菜单项中使用 ID\""
+        },
+        {
+          "source": "\"option-ids-description\":\"This ensures menu items still work for you if the menu toolbar's renamed. If you want to share callouts, turn this off, and the toolbar's name will be used instead.\"",
+          "target": "\"option-ids-description\":\"这确保即使菜单工具栏重命名，菜单项仍然可以正常工作。如果你想共享标注，请关闭此选项，而工具栏的名称将被使用。\""
+        },
+        {
+          "source": "\"option-data\":\"Use data elements\"",
+          "target": "\"option-data\":\"使用数据元素\""
+        },
+        {
+          "source": "\"option-data-description\":\"Data elements allow toolbars opened in new windows to still work. If disabled, Note Toolbar URIs will be used instead of data elements, and also provide cleaner-looking markdown.\"",
+          "target": "\"option-data-description\":\"数据元素允许在新窗口中打开的工具栏仍然可以正常工作。如果禁用，Note Toolbar URIs 将被用来代替数据元素，并且还提供更整洁的 Markdown 代码。\""
+        },
+        {
+          "source": "name:\"Delete this toolbar\"",
+          "target": "name:\"删除此工具栏\""
+        },
+        {
+          "source": "description:\"This action cannot be undone.\"",
+          "target": "description:\"此操作无法撤销。\""
+        },
+        {
+          "source": "title:\"Delete toolbar: {{toolbar}}\"",
+          "target": "title:\"删除工具栏: {{toolbar}}\""
+        },
+        {
+          "source": "\"button-delete\":\"Delete...\"",
+          "target": "\"button-delete\":\"删除...\""
+        },
+        {
+          "source": "\"button-delete-confirm\":\"Delete\"",
+          "target": "\"button-delete-confirm\":\"删除\""
+        },
+        {
+          "source": "\"button-delete-tooltip\":\"Delete this toolbar\"",
+          "target": "\"button-delete-tooltip\":\"删除此工具栏\""
+        },
+        {
+          "source": "\"label-delete-confirm\":\"Are you sure you want to delete this toolbar?\"",
+          "target": "\"label-delete-confirm\":\"您确定要删除此工具栏吗？\""
+        },
+        {
+          "source": "name:\"Display rules\"",
+          "target": "name:\"显示规则\""
+        },
+        {
+          "source": "description:\"Define which notes to display toolbars on, using a property, mappings, or both.\"",
+          "target": "description:\"定义在哪种笔记上显示工具栏，使用属性、映射或两者结合。\""
+        },
+        {
+          "source": "\"option-property\":\"Property\"",
+          "target": "\"option-property\":\"属性\""
+        },
+        {
+          "source": "\"option-property-description\":\"If a toolbar name is found in this property, the toolbar will be displayed on the note. This takes precedence over any folder mappings. In a note, set this property to 'none' to hide the toolbar.\"",
+          "target": "\"option-property-description\":\"如果在此属性中找到工具栏名称，工具栏将在笔记中显示。这优先于任何文件夹映射。在笔记中，将此属性设置为 'none' 以隐藏工具栏。\""
+        },
+        {
+          "source": "\"option-property-placeholder\":\"Property\"",
+          "target": "\"option-property-placeholder\":\"属性\""
+        },
+        {
+          "source": "title:\"Help using Note Toolbar \\u{1F6DF}\"",
+          "target": "title:\"使用笔记工具栏的帮助 \\u{1F6DF}\""
+        },
+        {
+          "source": "description:\"Create context-aware toolbars for your notes.\"",
+          "target": "description:\"为您的笔记创建上下文感知的工具栏。\""
+        },
+        {
+          "source": "\"button-donate\":\"Donate \\u2197\"",
+          "target": "\"button-donate\":\"捐赠 \\u2197\""
+        },
+        {
+          "source": "\"button-donate-tooltip\":\"Open buymeacoffee.com\"",
+          "target": "\"button-donate-tooltip\":\"打开 buymeacoffee.com\""
+        },
+        {
+          "source": "\"button-open\":\"Open \\u2197\"",
+          "target": "\"button-open\":\"打开 \\u2197\""
+        },
+        {
+          "source": "\"button-open-github\":\"Open github.com\"",
+          "target": "\"button-open-github\":\"打开 github.com\""
+        },
+        {
+          "source": "\"button-open-google\":\"Open google.com\"",
+          "target": "\"button-open-google\":\"打开 google.com\""
+        },
+        {
+          "source": "\"button-read\":\"Read \\u2197\"",
+          "target": "\"button-read\":\"阅读 \\u2197\""
+        },
+        {
+          "source": "\"label-article-1\":\"Creating toolbar items\"",
+          "target": "\"label-article-1\":\"创建工具栏项目\""
+        },
+        {
+          "source": "\"label-article-1-description\":\"Learn about the different types of items.\"",
+          "target": "\"label-article-1-description\":\"了解不同类型的项目。\""
+        },
+        {
+          "source": "\"label-article-2\":\"Note Toolbar Callouts\"",
+          "target": "\"label-article-2\":\"笔记工具栏标注\""
+        },
+        {
+          "source": "\"label-article-2-description\":\"Learn how to create toolbars within your notes.\"",
+          "target": "\"label-article-2-description\":\"学习如何在笔记中创建工具栏。\""
+        },
+        {
+          "source": "\"label-bug\":\"Report a bug\"",
+          "target": "\"label-bug\":\"报告错误\""
+        },
+        {
+          "source": "\"label-bug-description\":\"Found a problem? Please log an issue in GitHub, or complete this Google form.\"",
+          "target": "\"label-bug-description\":\"发现问题了吗？请在 GitHub 上记录问题，或填写此 Google 表单。\""
+        },
+        {
+          "source": "\"label-donate\":\"Buy me a coffee\"",
+          "target": "\"label-donate\":\"请我喝杯咖啡\""
+        },
+        {
+          "source": "\"label-donate-description\":\"If you find this plugin useful, and wish to support me financially, consider donating. Thank you!\"",
+          "target": "\"label-donate-description\":\"如果您觉得这个插件有用，并希望在经济上支持我，请考虑捐款。谢谢！\""
+        },
+        {
+          "source": "\"label-examples\":\"See examples\"",
+          "target": "\"label-examples\":\"查看示例\""
+        },
+        {
+          "source": "\"label-examples-description\":\"Get inspired by these ready-to-go toolbar examples.\"",
+          "target": "\"label-examples-description\":\"从这些现成的工具栏示例中获得灵感。\""
+        },
+        {
+          "source": "\"label-feedback\":\"Provide feedback\"",
+          "target": "\"label-feedback\":\"提供反馈\""
+        },
+        {
+          "source": "\"label-feedback-description\":\"Use this Google form for any feedback, questions, or ideas you may have.\"",
+          "target": "\"label-feedback-description\":\"请使用此 Google 表单提供任何反馈、问题或想法。\""
+        },
+        {
+          "source": "\"label-support\":\"Get support\"",
+          "target": "\"label-support\":\"获取支持\""
+        },
+        {
+          "source": "\"label-support-description\":\"Visit the forums on GitHub to ask questions to the community.\"",
+          "target": "\"label-support-description\":\"访问 GitHub 上的论坛，向社区提问。\""
+        },
+        {
+          "source": "\"label-user-guide\":\"Read the User Guide\"",
+          "target": "\"label-user-guide\":\"阅读用户指南\""
+        },
+        {
+          "source": "\"label-user-guide-description\":\"How to make the most out of the plugin, including tips and examples.\"",
+          "target": "\"label-user-guide-description\":\"如何充分利用该插件，包括技巧和示例。\""
+        },
+        {
+          "source": "\"option-no-icon\":\"No icon\"",
+          "target": "\"option-no-icon\":\"无图标\""
+        },
+        {
+          "source": "placeholder:\"Search for an icon...\"",
+          "target": "placeholder:\"搜索图标...\""
+        },
+        {
+          "source": "\"instruction-use\":\"to use icon\"",
+          "target": "\"instruction-use\":\"使用图标\""
+        },
+        {
+          "source": "\"button-duplicate-tooltip\":\"Duplicate this item\"",
+          "target": "\"button-duplicate-tooltip\":\"复制此项目\""
+        },
+        {
+          "source": "\"button-icon-tooltip\":\"Select icon (optional)\"",
+          "target": "\"button-icon-tooltip\":\"选择图标（可选）\""
+        },
+        {
+          "source": "\"label-preview-edit\":\"Edit toolbar: {{toolbar}}\"",
+          "target": "\"label-preview-edit\":\"编辑工具栏: {{toolbar}}\""
+        },
+        {
+          "source": "\"label-preview-empty-no-items\":\"No items. Edit this toolbar to add items.\"",
+          "target": "\"label-preview-empty-no-items\":\"没有项目。编辑此工具栏以添加项目。\""
+        },
+        {
+          "source": "\"option-break\":\"break\"",
+          "target": "\"option-break\":\"换行\""
+        },
+        {
+          "source": "\"option-command\":\"Command\"",
+          "target": "\"option-command\":\"命令\""
+        },
+        {
+          "source": "\"option-command-error-does-not-exist\":\"This command does not exist.\"",
+          "target": "\"option-command-error-does-not-exist\":\"此命令不存在。\""
+        },
+        {
+          "source": "\"option-command-error-not-available-install\":\"This command is not available. Plugin must be installed and enabled.\"",
+          "target": "\"option-command-error-not-available-install\":\"此命令不可用。插件必须安装并启用。\""
+        },
+        {
+          "source": "\"option-command-error-not-available-search\":\"This command cannot be found. Try searching again.\"",
+          "target": "\"option-command-error-not-available-search\":\"找不到此命令。请再次尝试搜索。\""
+        },
+        {
+          "source": "\"option-command-error-refresh\":\"Refresh\"",
+          "target": "\"option-command-error-refresh\":\"刷新\""
+        },
+        {
+          "source": "\"option-command-placeholder\":\"Search for command\"",
+          "target": "\"option-command-placeholder\":\"搜索命令\""
+        },
+        {
+          "source": "\"option-component-icon\":\"icon\"",
+          "target": "\"option-component-icon\":\"图标\""
+        },
+        {
+          "source": "\"option-component-label\":\"label\"",
+          "target": "\"option-component-label\":\"标签\""
+        },
+        {
+          "source": "\"option-file\":\"File\"",
+          "target": "\"option-file\":\"文件\""
+        },
+        {
+          "source": "\"option-file-placeholder\":\"Search for file or folder\"",
+          "target": "\"option-file-placeholder\":\"搜索文件或文件夹\""
+        },
+        {
+          "source": "\"option-file-error-does-not-exist\":\"This file or folder does not exist.\"",
+          "target": "\"option-file-error-does-not-exist\":\"此文件或文件夹不存在。\""
+        },
+        {
+          "source": "\"option-item-group\":\"Item Group\"",
+          "target": "\"option-item-group\":\"项目组\""
+        },
+        {
+          "source": "\"option-item-group-placeholder\":\"Toolbar\"",
+          "target": "\"option-item-group-placeholder\":\"工具栏\""
+        },
+        {
+          "source": "\"option-item-group-help\":\"Select a toolbar to insert into this one.\"",
+          "target": "\"option-item-group-help\":\"选择一个工具栏插入到此工具栏中。\""
+        },
+        {
+          "source": "\"option-item-group-error-does-not-exist\":\"Toolbar does not exist\"",
+          "target": "\"option-item-group-error-does-not-exist\":\"工具栏不存在\""
+        },
+        {
+          "source": "\"option-item-group-error-invalid\":\"\\u26A0\\uFE0F Invalid item group\"",
+          "target": "\"option-item-group-error-invalid\":\"\\u26A0\\uFE0F 无效的项目组\""
+        },
+        {
+          "source": "\"option-item-menu\":\"Item Menu\"",
+          "target": "\"option-item-menu\":\"项目菜单\""
+        },
+        {
+          "source": "\"option-item-menu-placeholder\":\"Toolbar\"",
+          "target": "\"option-item-menu-placeholder\":\"工具栏\""
+        },
+        {
+          "source": "\"option-item-menu-help\":\"Select a toolbar to open as a menu.\"",
+          "target": "\"option-item-menu-help\":\"选择一个工具栏作为菜单打开。\""
+        },
+        {
+          "source": "\"option-item-menu-error-does-not-exist\":\"Toolbar does not exist\"",
+          "target": "\"option-item-menu-error-does-not-exist\":\"工具栏不存在\""
+        },
+        {
+          "source": "\"option-label-placeholder\":\"Label (optional, if icon set)\"",
+          "target": "\"option-label-placeholder\":\"标签（可选，如果设置了图标）\""
+        },
+        {
+          "source": "\"option-separator\":\"separator\"",
+          "target": "\"option-separator\":\"分隔符\""
+        },
+        {
+          "source": "\"option-tooltip-placeholder\":\"Tooltip (optional)\"",
+          "target": "\"option-tooltip-placeholder\":\"提示文字（可选）\""
+        },
+        {
+          "source": "\"option-uri\":\"URI\"",
+          "target": "\"option-uri\":\"URI\""
+        },
+        {
+          "source": "\"option-uri-placehoder\":\"Website, URI, or note title\"",
+          "target": "\"option-uri-placehoder\":\"网站、URI 或笔记标题\""
+        },
+        {
+          "source": "\"option-uri-help\":\"Tip: Use note properties in URIs.\"",
+          "target": "\"option-uri-help\":\"提示：在 URI 中使用笔记属性。\""
+        },
+        {
+          "source": "\"option-visibility-component-hidden-platform\":\"{{component}} hidden on {{platform}}\"",
+          "target": "\"option-visibility-component-hidden-platform\":\"{{component}} 在 {{platform}} 上隐藏\""
+        },
+        {
+          "source": "\"option-visibility-component-visible-platform\":\"{{component}} visible on {{platform}}\"",
+          "target": "\"option-visibility-component-visible-platform\":\"{{component}} 在 {{platform}} 上可见\""
+        },
+        {
+          "source": "\"option-visibility-hidden\":\"hidden\"",
+          "target": "\"option-visibility-hidden\":\"隐藏\""
+        },
+        {
+          "source": "\"option-visibility-hidden-platform\":\"hidden on {{platform}}\"",
+          "target": "\"option-visibility-hidden-platform\":\"在 {{platform}} 上隐藏\""
+        },
+        {
+          "source": "\"option-visibility-visible-platform\":\"visible on {{platform}}\"",
+          "target": "\"option-visibility-visible-platform\":\"在 {{platform}} 上可见\""
+        },
+        {
+          "source": "\"option-visibility-platform-desktop\":\"desktop\"",
+          "target": "\"option-visibility-platform-desktop\":\"桌面\""
+        },
+        {
+          "source": "\"option-visibility-platform-mobile\":\"mobile\"",
+          "target": "\"option-visibility-platform-mobile\":\"移动设备\""
+        },
+        {
+          "source": "placeholder:\"Search for an item...\"",
+          "target": "placeholder:\"搜索项目...\""
+        },
+        {
+          "source": "\"instruction-back\":\"to go back\"",
+          "target": "\"instruction-back\":\"返回\""
+        },
+        {
+          "source": "\"instruction-use\":\"to use item\"",
+          "target": "\"instruction-use\":\"使用项目\""
+        },
+        {
+          "source": "\"key-back\":\"\\u232B or \\u2190\"",
+          "target": "\"key-back\":\"\\u232B 或 \\u2190\""
+        },
+        {
+          "source": "\"key-navigate\":\"\\u2191\\u2193\"",
+          "target": "\"key-navigate\":\"\\u2191\\u2193\""
+        },
+        {
+          "source": "\"key-use\":\"\\u21B5\"",
+          "target": "\"key-use\":\"\\u21B5\""
+        },
+        {
+          "source": "\"key-dismiss\":\"esc\"",
+          "target": "\"key-dismiss\":\"Esc\""
+        },
+        {
+          "source": "name:\"Items\"",
+          "target": "name:\"项目\""
+        },
+        {
+          "source": "\"name-with-count\":\"Items ({{count}})\",description:\"Add items to the toolbar, in order.\"",
+          "target": "\"name-with-count\":\"项目 ({{count}})\",description:\"按顺序添加项目到工具栏。\""
+        },
+        {
+          "source": "\"label-empty-no-items\":\"No toolbar items.\"",
+          "target": "\"label-empty-no-items\":\"没有工具栏项目。\""
+        },
+        {
+          "source": "\"button-add-break-tooltip\":\"Add a line break to the toolbar\"",
+          "target": "\"button-add-break-tooltip\":\"在工具栏中添加换行符\""
+        },
+        {
+          "source": "\"button-add-separator-tooltip\":\"Add a separator to the toolbar\"",
+          "target": "\"button-add-separator-tooltip\":\"在工具栏中添加分隔符\""
+        },
+        {
+          "source": "\"button-new-item\":\"+ Add toolbar item\"",
+          "target": "\"button-new-item\":\"+ 添加工具栏项目\""
+        },
+        {
+          "source": "\"button-new-item-tooltip\":\"Add a new item to the toolbar\"",
+          "target": "\"button-new-item-tooltip\":\"向工具栏添加新项目\""
+        },
+        {
+          "source": "\"option-item-empty-label\":\"No label set\"",
+          "target": "\"option-item-empty-label\":\"未设置标签\""
+        },
+        {
+          "source": "\"option-edit-item-group-tooltip\":\"Edit item group: {{toolbar}}\"",
+          "target": "\"option-edit-item-group-tooltip\":\"编辑项目组: {{toolbar}}\""
+        },
+        {
+          "source": "\"option-edit-item-group-tooltip_none\":\"Edit item group\"",
+          "target": "\"option-edit-item-group-tooltip_none\":\"编辑项目组\""
+        },
+        {
+          "source": "\"option-edit-item-tooltip\":\"Edit toolbar item\"",
+          "target": "\"option-edit-item-tooltip\":\"编辑工具栏项目\""
+        },
+        {
+          "source": "\"option-edit-item-type-tooltip\":\"Edit {{itemType}}\"",
+          "target": "\"option-edit-item-type-tooltip\":\"编辑 {{itemType}}\""
+        },
+        {
+          "source": "name:\"Folder mappings\"",
+          "target": "name:\"文件夹映射\""
+        },
+        {
+          "source": "\"name-with-count\":\"Folder mappings ({{count}})\"",
+          "target": "\"name-with-count\":\"文件夹映射 ({{count}})\""
+        },
+        {
+          "source": "description:\"Notes in folders below will display the toolbar mapped to it. Precedence is top to bottom.\"",
+          "target": "description:\"以下文件夹中的笔记将显示映射到它的工具栏。优先级是从上到下。\""
+        },
+        {
+          "source": "\"label-empty\":\"Use the button to create a mapping.\"",
+          "target": "\"label-empty\":\"使用按钮创建映射。\""
+        },
+        {
+          "source": "\"placeholder-folder\":\"Folder\"",
+          "target": "\"placeholder-folder\":\"文件夹\""
+        },
+        {
+          "source": "\"placeholder-toolbar\":\"Toolbar\"",
+          "target": "\"placeholder-toolbar\":\"工具栏\""
+        },
+        {
+          "source": "\"button-collapse-tooltip\":\"Collapse all mappings\"",
+          "target": "\"button-collapse-tooltip\":\"折叠所有映射\""
+        },
+        {
+          "source": "\"button-expand-tooltip\":\"Expand all mappings\"",
+          "target": "\"button-expand-tooltip\":\"展开所有映射\""
+        },
+        {
+          "source": "\"button-new\":\"+ New mapping\"",
+          "target": "\"button-new\":\"+ 新建映射\""
+        },
+        {
+          "source": "\"button-new-tooltip\":\"Add a new mapping\"",
+          "target": "\"button-new-tooltip\":\"添加新映射\""
+        },
+        {
+          "source": "\"option-folder-all\":\"all folders\"",
+          "target": "\"option-folder-all\":\"所有文件夹\""
+        },
+        {
+          "source": "\"option-folder-root\":\"root folder only\"",
+          "target": "\"option-folder-root\":\"仅根文件夹\""
+        },
+        {
+          "source": "\"error-folder-already-mapped\":\"This folder already has a toolbar associated with it.\"",
+          "target": "\"error-folder-already-mapped\":\"此文件夹已关联了一个工具栏。\""
+        },
+        {
+          "source": "name:\"Name\"",
+          "target": "name:\"名称\""
+        },
+        {
+          "source": "description:\"Give this toolbar a unique name.\"",
+          "target": "description:\"为此工具栏设置一个唯一的名称。\""
+        },
+        {
+          "source": "\"error-toolbar-already-exists\":\"A toolbar already exists with this name.\"",
+          "target": "\"error-toolbar-already-exists\":\"已存在同名的工具栏。\""
+        },
+        {
+          "source": "name:\"Other\"",
+          "target": "name:\"其他\""
+        },
+        {
+          "source": "name:\"Icon\"",
+          "target": "name:\"图标\""
+        },
+        {
+          "source": "description:\"Sets the icon for the floating button and navigation bar (on phone). Requires restart.\"",
+          "target": "description:\"设置浮动按钮和导航栏（手机上）的图标。需要重启。\""
+        },
+        {
+          "source": "tooltip:\"Select icon\"",
+          "target": "tooltip:\"选择图标\""
+        },
+        {
+          "source": "name:\"Ribbon icon action \\u{1F4F1}\"",
+          "target": "name:\"Ribbon 图标动作 \\u{1F4F1}\""
+        },
+        {
+          "source": "description:\"Action to take when the ribbon icon (on phones) is used.\"",
+          "target": "description:\"当手机上的丝带图标被使用时执行的操作。\""
+        },
+        {
+          "source": "\"option-toolbar\":\"Show current toolbar\"",
+          "target": "\"option-toolbar\":\"显示当前工具栏\""
+        },
+        {
+          "source": "\"option-item-suggester\":\"Show all tools\"",
+          "target": "\"option-item-suggester\":\"显示所有工具\""
+        },
+        {
+          "source": "\"option-toolbar-suggester\":\"Show all toolbars\"",
+          "target": "\"option-toolbar-suggester\":\"显示所有工具栏\""
+        },
+        {
+          "source": "name:\"Scripting\"",
+          "target": "name:\"脚本\""
+        },
+        {
+          "source": "description:\"Adds item types for Dataview, JS Engine, and Templater, which must be installed and enabled.\"",
+          "target": "description:\"为 Dataview、JS 引擎和 Templater 添加项目类型，这些插件必须安装并启用。\""
+        },
+        {
+          "source": "name:\"Show 'Edit toolbar' link in toolbar menus \\u{1F4F1}\"",
+          "target": "name:\"在工具栏菜单中显示 '编辑工具栏' 链接 \\u{1F4F1}\""
+        },
+        {
+          "source": "description:\"Adds an item to access the toolbar's settings in toolbars that are displayed as menus at the bottom of the screen on phones.\"",
+          "target": "description:\"在手机屏幕上底部显示为菜单的工具栏中添加一个访问工具栏设置的项目。\""
+        },
+        {
+          "source": "name:\"Position\"",
+          "target": "name:\"位置\""
+        },
+        {
+          "source": "description:\"Where to position this toolbar.\"",
+          "target": "description:\"此工具栏的位置。\""
+        },
+        {
+          "source": "\"option-mobile-help\":\"Tip: Access toolbars from the navigation bar.\"",
+          "target": "\"option-mobile-help\":\"提示：从导航栏访问工具栏。\""
+        },
+        {
+          "source": "\"option-fabl\":\"Floating button: left\"",
+          "target": "\"option-fabl\":\"浮动按钮：左侧\""
+        },
+        {
+          "source": "\"option-fabr\":\"Floating button: right\"",
+          "target": "\"option-fabr\":\"浮动按钮：右侧\""
+        },
+        {
+          "source": "\"option-hidden\":\"Hidden (do not display)\"",
+          "target": "\"option-hidden\":\"隐藏（不显示）\""
+        },
+        {
+          "source": "\"option-hidden-mobile\":\"Hidden / Navigation bar\"",
+          "target": "\"option-hidden-mobile\":\"隐藏 / 导航栏\""
+        },
+        {
+          "source": "\"option-props\":\"Below Properties\"",
+          "target": "\"option-props\":\"属性下方\""
+        },
+        {
+          "source": "\"option-top\":\"Top (fixed)\"",
+          "target": "\"option-top\":\"顶部（固定）\""
+        },
+        {
+          "source": "name:\"Styles\"",
+          "target": "name:\"样式\""
+        },
+        {
+          "source": "description:\"List of styles to apply to the toolbar.\"",
+          "target": "description:\"要应用到工具栏的样式列表。\""
+        },
+        {
+          "source": "help:\"Customize even more with the Style Settings plugin.\"",
+          "target": "help:\"使用样式设置插件进行更多自定义。\""
+        },
+        {
+          "source": "\"option-placeholder\":\"Add style...\"",
+          "target": "\"option-placeholder\":\"添加样式...\""
+        },
+        {
+          "source": "\"option-autohide\":\"auto-hide*\"",
+          "target": "\"option-autohide\":\"自动隐藏*\""
+        },
+        {
+          "source": "\"option-autohide-disclaimer\":\"Auto-hide does not apply on mobile.\"",
+          "target": "\"option-autohide-disclaimer\":\"自动隐藏在移动设备上不适用。\""
+        },
+        {
+          "source": "\"option-between\":\"space between items\"",
+          "target": "\"option-between\":\"项目之间留空\""
+        },
+        {
+          "source": "\"option-border\":\"border\"",
+          "target": "\"option-border\":\"边框\""
+        },
+        {
+          "source": "\"option-button\":\"button items\"",
+          "target": "\"option-button\":\"按钮项目\""
+        },
+        {
+          "source": "\"option-center\":\"center items\"",
+          "target": "\"option-center\":\"居中项目\""
+        },
+        {
+          "source": "\"option-even\":\"space items evenly\"",
+          "target": "\"option-even\":\"均匀分布项目\""
+        },
+        {
+          "source": "\"option-left\":\"left align items\"",
+          "target": "\"option-left\":\"左对齐项目\""
+        },
+        {
+          "source": "\"option-noborder\":\"no border\"",
+          "target": "\"option-noborder\":\"无边框\""
+        },
+        {
+          "source": "\"option-notsticky\":\"not sticky\"",
+          "target": "\"option-notsticky\":\"非粘性\""
+        },
+        {
+          "source": "\"option-nowrap\":\"don't wrap items*\"",
+          "target": "\"option-nowrap\":\"不换行项目*\""
+        },
+        {
+          "source": "\"option-nowrap-disclaimer\":\"Works best if items are not evenly spaced or centered.\"",
+          "target": "\"option-nowrap-disclaimer\":\"如果项目不是均匀分布或居中，效果最佳。\""
+        },
+        {
+          "source": "\"option-nowide\":\"content width\"",
+          "target": "\"option-nowide\":\"内容宽度\""
+        },
+        {
+          "source": "\"option-right\":\"right align items\"",
+          "target": "\"option-right\":\"右对齐项目\""
+        },
+        {
+          "source": "\"option-sticky\":\"sticky*\"",
+          "target": "\"option-sticky\":\"粘性*\""
+        },
+        {
+          "source": "\"option-sticky-disclaimer\":\"Sticky does not apply in Reading mode.\"",
+          "target": "\"option-sticky-disclaimer\":\"粘性在阅读模式下不适用。\""
+        },
+        {
+          "source": "\"option-wide\":\"editor width\"",
+          "target": "\"option-wide\":\"编辑器宽度\""
+        },
+        {
+          "source": "\"option-default-name\":\"Default\"",
+          "target": "\"option-default-name\":\"默认\""
+        },
+        {
+          "source": "\"option-default-description\":\"Applies to all platforms unless overridden.\"",
+          "target": "\"option-default-description\":\"除非被覆盖，否则适用于所有平台。\""
+        },
+        {
+          "source": "\"option-default-empty\":\"No default styles set.\"",
+          "target": "\"option-default-empty\":\"未设置默认样式。\""
+        },
+        {
+          "source": "\"option-mobile-name\":\"Mobile\"",
+          "target": "\"option-mobile-name\":\"移动设备\""
+        },
+        {
+          "source": "\"option-mobile-description\":\"Override default styles.\"",
+          "target": "\"option-mobile-description\":\"覆盖默认样式。\""
+        },
+        {
+          "source": "\"option-mobile-empty\":\"No mobile styles set. Using default styles.\"",
+          "target": "\"option-mobile-empty\":\"未设置移动设备样式。使用默认样式。\""
+        },
+        {
+          "source": "\"style-tooltip-use-class\":\"Use in Callout or CSS: {{class}}\"",
+          "target": "\"style-tooltip-use-class\":\"在 Callout 或 CSS 中使用: {{class}}\""
+        },
+        {
+          "source": "\"style-remove-tooltip\":\"Remove\"",
+          "target": "\"style-remove-tooltip\":\"移除\""
+        },
+        {
+          "source": "placeholder:\"Search for a toolbar...\"",
+          "target": "placeholder:\"搜索工具栏...\""
+        },
+        {
+          "source": "\"instruction-use\":\"to open toolbar\"",
+          "target": "\"instruction-use\":\"打开工具栏\""
+        },
+        {
+          "source": "name:\"Toolbars\"",
+          "target": "name:\"工具栏\""
+        },
+        {
+          "source": "\"name-with-count\":\"Toolbars ({{count}})\"",
+          "target": "\"name-with-count\":\"工具栏 ({{count}})\""
+        },
+        {
+          "source": "description:\"Define the toolbars you want to add to your notes.\"",
+          "target": "description:\"定义您希望添加到笔记中的工具栏。\""
+        },
+        {
+          "source": "\"button-duplicate-tbar-tooltip\":\"Duplicate\"",
+          "target": "\"button-duplicate-tbar-tooltip\":\"复制\""
+        },
+        {
+          "source": "\"button-edit-tbar\":\"Edit\"",
+          "target": "\"button-edit-tbar\":\"编辑\""
+        },
+        {
+          "source": "\"button-edit-tbar-tooltip\":\"Update this toolbar\"",
+          "target": "\"button-edit-tbar-tooltip\":\"更新此工具栏\""
+        },
+        {
+          "source": "\"button-more-tooltip\":\"More options\"",
+          "target": "\"button-more-tooltip\":\"更多选项\""
+        },
+        {
+          "source": "\"button-new-tbar\":\"+ New toolbar\"",
+          "target": "\"button-new-tbar\":\"+ 新建工具栏\""
+        },
+        {
+          "source": "\"button-new-tbar-tooltip\":\"Add a new toolbar\"",
+          "target": "\"button-new-tbar-tooltip\":\"添加新工具栏\""
+        },
+        {
+          "source": "\"duplicated-tbar-suffix\":\"copy\"",
+          "target": "\"duplicated-tbar-suffix\":\"副本\""
+        },
+        {
+          "source": "\"imported-tbar-name\":\"New toolbar\"",
+          "target": "\"imported-tbar-name\":\"新建工具栏\""
+        },
+        {
+          "source": "\"label-empty-create-tbar\":\"Use the button to create a toolbar.\"",
+          "target": "\"label-empty-create-tbar\":\"使用按钮创建工具栏。\""
+        },
+        {
+          "source": "\"label-tbar-name-not-set\":\"\\u26A0\\uFE0F Toolbar name not set\"",
+          "target": "\"label-tbar-name-not-set\":\"\\u26A0\\uFE0F 工具栏名称未设置\""
+        },
+        {
+          "source": "name:\"Usage\"",
+          "target": "name:\"使用\""
+        },
+        {
+          "source": "description:\"This toolbar is used in {{mappingCount}} mapping(s) and {{itemCount}} toolbar item(s).\"",
+          "target": "description:\"此工具栏在 {{mappingCount}} 个映射和 {{itemCount}} 个工具栏项目中使用。\""
+        },
+        {
+          "source": "\"description-search\":\"Search for property usage\"",
+          "target": "\"description-search\":\"搜索属性使用情况\""
+        },
+        {
+          "source": "title:\"What's new in Note Toolbar?\"",
+          "target": "title:\"Note Toolbar 中有什么新功能？\""
+        },
+        {
+          "source": "\"button-read-tooltip\":\"Open github.com\"",
+          "target": "\"button-read-tooltip\":\"打开 github.com\""
+        },
+        {
+          "source": "\"label-release-notes\":\"Release notes\"",
+          "target": "\"label-release-notes\":\"发行说明\""
+        },
+        {
+          "source": "\"label-release-notes-description\":\"Detailed notes for the latest releases are on GitHub.\"",
+          "target": "\"label-release-notes-description\":\"最新发行的详细说明在 GitHub 上。\""
+        },
+        {
+          "source": "\"label-roadmap\":\"What's ahead for Note Toolbar?\"",
+          "target": "\"label-roadmap\":\"Note Toolbar 的未来发展是什么？\""
+        },
+        {
+          "source": "\"label-roadmap-description\":\"Check out the Roadmap to preview the features under consideration.\"",
+          "target": "\"label-roadmap-description\":\"查看路线图以预览正在考虑的功能。\""
+        },
+        {
+          "source": "\"name-focus\":\"Focus\"",
+          "target": "\"name-focus\":\"聚焦\""
+        },
+        {
+          "source": "\"name-item-suggester\":\"Open quick tools\"",
+          "target": "\"name-item-suggester\":\"打开快速工具\""
+        },
+        {
+          "source": "\"name-toolbar-suggester\":\"Open quick toolbars\"",
+          "target": "\"name-toolbar-suggester\":\"打开快速工具栏\""
+        },
+        {
+          "source": "\"name-copy-command-uri\":\"Copy URI for command\"",
+          "target": "\"name-copy-command-uri\":\"复制命令的 URI\""
+        },
+        {
+          "source": "\"name-copy-command-as-data-element\":\"Copy callout item for command\"",
+          "target": "\"name-copy-command-as-data-element\":\"复制命令的调用项\""
+        },
+        {
+          "source": "\"copy-command-notice\":\"Command copied to clipboard\"",
+          "target": "\"copy-command-notice\":\"命令已复制到剪贴板\""
+        },
+        {
+          "source": "\"name-settings\":\"Open plugin settings\"",
+          "target": "\"name-settings\":\"打开插件设置\""
+        },
+        {
+          "source": "\"name-toolbar-settings\":\"Open toolbar settings\"",
+          "target": "\"name-toolbar-settings\":\"打开工具栏设置\""
+        },
+        {
+          "source": "\"name-show-properties\":\"Show Properties\"",
+          "target": "\"name-show-properties\":\"显示属性\""
+        },
+        {
+          "source": "\"name-hide-properties\":\"Hide Properties\"",
+          "target": "\"name-hide-properties\":\"隐藏属性\""
+        },
+        {
+          "source": "\"name-fold-properties\":\"Fold Properties\"",
+          "target": "\"name-fold-properties\":\"折叠属性\""
+        },
+        {
+          "source": "\"name-toggle-properties\":\"Toggle Properties\"",
+          "target": "\"name-toggle-properties\":\"切换属性\""
+        },
+        {
+          "source": "\"item-generic\":\"Item{{number}}\"",
+          "target": "\"item-generic\":\"项目{{number}}\""
+        },
+        {
+          "source": "\"label-callout\":\"Copy as callout\"",
+          "target": "\"label-callout\":\"复制为调用\""
+        },
+        {
+          "source": "\"label-share\":\"Share...\"",
+          "target": "\"label-share\":\"分享...\""
+        },
+        {
+          "source": "\"label-share-description\":\"Share this link with another Note Toolbar user to add your toolbar to their vault.\"",
+          "target": "\"label-share-description\":\"与另一位 Note Toolbar 用户分享此链接，以将您的工具栏添加到他们的库中。\""
+        },
+        {
+          "source": "\"label-share-preview\":\"preview\"",
+          "target": "\"label-share-preview\":\"预览\""
+        },
+        {
+          "source": "\"title-share\":\"Share toolbar: {{toolbar}}\"",
+          "target": "\"title-share\":\"分享工具栏: {{toolbar}}\""
+        },
+        {
+          "source": "\"button-copy-link\":\"Copy link\"",
+          "target": "\"button-copy-link\":\"复制链接\""
+        },
+        {
+          "source": "\"button-copy-link-description\":\"Copy this link to your clipboard\"",
+          "target": "\"button-copy-link-description\":\"将此链接复制到剪贴板\""
+        },
+        {
+          "source": "\"notice-completed\":\"Toolbar copied to clipboard as callout. Open settings to adjust formatting.\"",
+          "target": "\"notice-completed\":\"工具栏已作为调用复制到剪贴板。打开设置以调整格式。\""
+        },
+        {
+          "source": "\"notice-shared\":\"Note Toolbar link copied to clipboard\"",
+          "target": "\"notice-shared\":\"Note Toolbar 链接已复制到剪贴板\""
+        },
+        {
+          "source": "\"warning-share-menu\":\"This toolbar refers to at least one other toolbar that the recipient won't receive.\"",
+          "target": "\"warning-share-menu\":\"此工具栏引用了至少一个接收者不会收到的其他工具栏。\""
+        },
+        {
+          "source": "\"warning-share-length\":\"Some web browsers may not load a URL that is longer than 2,048 characters.\"",
+          "target": "\"warning-share-length\":\"某些网页浏览器可能无法加载超过 2,048 个字符的 URL。\""
+        },
+        {
+          "source": "\"option-uri\":\"Use Obsidian URI\"",
+          "target": "\"option-uri\":\"使用 Obsidian URI\""
+        },
+        {
+          "source": "\"option-uri-description\":\"Provides an obsidian:// link instead of an https:// URL.\"",
+          "target": "\"option-uri-description\":\"提供 obsidian:// 链接而不是 https:// URL。\""
+        },
+        {
+          "source": "\"title-import\":\"Create toolbar from callout\"",
+          "target": "\"title-import\":\"从调用创建工具栏\""
+        },
+        {
+          "source": "\"title-import-confirmation\":\"Create Note Toolbar: {{toolbar}}\"",
+          "target": "\"title-import-confirmation\":\"创建 Note Toolbar: {{toolbar}}\""
+        },
+        {
+          "source": "\"title-import-into\":\"Add callout items to toolbar: {{toolbar}}\"",
+          "target": "\"title-import-into\":\"将调用项目添加到工具栏: {{toolbar}}\""
+        },
+        {
+          "source": "\"label-import-confirmation\":\"Confirm you would like to add this toolbar. Once added, this toolbar will need to be mapped to one or more notes.\"",
+          "target": "\"label-import-confirmation\":\"确认您希望添加此工具栏。添加后，此工具栏需要映射到一个或多个笔记。\""
+        },
+        {
+          "source": "\"label-import\":\"Paste a Note Toolbar Callout below and it will be added as a new toolbar.\"",
+          "target": "\"label-import\":\"在下面粘贴一个 Note Toolbar 调用，它将作为一个新的工具栏被添加。\""
+        },
+        {
+          "source": "\"label-import-into\":\"Paste a Note Toolbar Callout below and its items will be added to this toolbar.\"",
+          "target": "\"label-import-into\":\"在下面粘贴一个 Note Toolbar 调用，其项目将被添加到此工具栏中。\""
+        },
+        {
+          "source": "\"label-import-into-help\":\"The callout heading is not needed, and will be ignored if provided.\"",
+          "target": "\"label-import-into-help\":\"调用标题不是必需的，如果提供将被忽略。\""
+        },
+        {
+          "source": "\"button-add-items\":\"Add items\"",
+          "target": "\"button-add-items\":\"添加项目\""
+        },
+        {
+          "source": "\"button-create\":\"Create\"",
+          "target": "\"button-create\":\"创建\""
+        },
+        {
+          "source": "\"button-confirm\":\"Confirm\"",
+          "target": "\"button-confirm\":\"确认\""
+        },
+        {
+          "source": "\"option-create\":\"Create Note Toolbar from callout...\"",
+          "target": "\"option-create\":\"从调用创建 Note Toolbar...\""
+        },
+        {
+          "source": "\"option-help\":\"About Note Toolbar Callouts\"",
+          "target": "\"option-help\":\"关于 Note Toolbar 调用\""
+        },
+        {
+          "source": "\"button-import-tooltip\":\"Create toolbar from callout\"",
+          "target": "\"button-import-tooltip\":\"从调用创建工具栏\""
+        },
+        {
+          "source": "\"button-import-into-tooltip\":\"Add toolbar items from callout\"",
+          "target": "\"button-import-into-tooltip\":\"从调用添加工具栏项目\""
+        },
+        {
+          "source": "\"error-invalid-uri-content\":\"Note Toolbar: It looks like there's an issue with this link. Check the URI is correct, or review the user guide.\"",
+          "target": "\"error-invalid-uri-content\":\"Note Toolbar: 此链接似乎有问题。请检查 URI 是否正确，或查阅用户指南。\""
+        },
+        {
+          "source": "\"errorlog-heading\":\"Errors found during toolbar import:\"",
+          "target": "\"errorlog-heading\":\"导入工具栏时发现的错误：\""
+        },
+        {
+          "source": "\"errorlog-item\":\"Item {{number}}:\"",
+          "target": "\"errorlog-item\":\"项目 {{number}}:\""
+        },
+        {
+          "source": "\"errorlog-command-not-recognized\":\"Command not recognized: {{command}}\"",
+          "target": "\"errorlog-command-not-recognized\":\"未识别的命令：{{command}}\""
+        },
+        {
+          "source": "\"errorlog-icon-not-found\":\"Icon not found: {{icon}}\"",
+          "target": "\"errorlog-icon-not-found\":\"未找到图标：{{icon}}\""
+        },
+        {
+          "source": "\"errorlog-invalid-format\":\"Invalid format: {{line}}\"",
+          "target": "\"errorlog-invalid-format\":\"无效格式：{{line}}\""
+        },
+        {
+          "source": "\"errorlog-invalid-styles\":\"Ignored invalid style(s): {{styles}}\"",
+          "target": "\"errorlog-invalid-styles\":\"忽略无效样式：{{styles}}\""
+        },
+        {
+          "source": "\"errorlog-menu-not-found\":\"Menu not found: {{menu}}\"",
+          "target": "\"errorlog-menu-not-found\":\"未找到菜单：{{menu}}\""
+        },
+        {
+          "source": "\"placeholder-import-into\":\"> Note Toolbar Callout markdown...\"",
+          "target": "\"placeholder-import-into\":\"> Note Toolbar 调用 Markdown...\""
+        },
+        {
+          "source": "\"warning-invalid-plugins\":\"This toolbar uses plugins you do not have installed and enabled:\"",
+          "target": "\"warning-invalid-plugins\":\"此工具栏使用的插件未安装或启用：\""
+        },
+        {
+          "source": "\"warning-vars\":\"This toolbar uses variables, which you can modify to work with your vault.\"",
+          "target": "\"warning-vars\":\"此工具栏使用变量，您可以修改这些变量以适应您的库。\""
+        },
+        {
+          "source": "\"error-command-not-found\":\"Check Note Toolbar setting or URI for this command. Command not found: {{command}}\"",
+          "target": "\"error-command-not-found\":\"检查 Note Toolbar 设置或 URI 以查找此命令。未找到命令：{{command}}\""
+        },
+        {
+          "source": "\"error-folder-not-found\":\"Check Note Toolbar setting or URI for this folder. Folder not found: {{folder}}\"",
+          "target": "\"error-folder-not-found\":\"检查 Note Toolbar 设置或 URI 以查找此文件夹。未找到文件夹：{{folder}}\""
+        },
+        {
+          "source": "\"error-item-menu-not-found\":\"Check Note Toolbar setting or URI for this menu item. Toolbar not found: {{toolbar}}\"",
+          "target": "\"error-item-menu-not-found\":\"检查 Note Toolbar 设置或 URI 以查找此菜单项。未找到工具栏：{{toolbar}}\""
+        },
+        {
+          "source": "\"error-scripting-not-enabled\":\"Enable Scripting in Note Toolbar settings to use this item.\"",
+          "target": "\"error-scripting-not-enabled\":\"在 Note Toolbar 设置中启用脚本以使用此项目。\""
+        },
+        {
+          "source": "\"error-scripting-plugin-not-enabled\":\"Toggle the Scripting setting after installing and enabling plugin: {{plugin}}\"",
+          "target": "\"error-scripting-plugin-not-enabled\":\"安装并启用插件后切换脚本设置：{{plugin}}\""
+        },
+        {
+          "source": "\"error-toolbar-not-found\":\"Check Note Toolbar setting or URI for this toolbar. Toolbar not found: {{toolbar}}\"",
+          "target": "\"error-toolbar-not-found\":\"检查 Note Toolbar 设置或 URI 以查找此工具栏。未找到工具栏：{{toolbar}}\""
+        },
+        {
+          "source": "\"error-uri-params-not-supported\":\"One or more of these Note Toolbar URI parameters is not supported: {{params}}\"",
+          "target": "\"error-uri-params-not-supported\":\"这些 Note Toolbar URI 参数中的一个或多个不受支持：{{params}}\""
+        },
+        {
+          "source": "\"warning-no-matching-toolbar\":`No matching toolbar: {{toolbar}}\nClick/Tap here to create it.`",
+          "target": "\"warning-no-matching-toolbar\":`未找到匹配的工具栏：{{toolbar}}\n点击/轻触此处以创建。`"
+        },
+        {
+          "source": "\"button-floating-tooltip\":\"Open Note Toolbar\"",
+          "target": "\"button-floating-tooltip\":\"打开 Note Toolbar\""
+        },
+        {
+          "source": "\"menu-edit-toolbar\":\"Edit toolbar: {{toolbar}}...\"",
+          "target": "\"menu-edit-toolbar\":\"编辑工具栏: {{toolbar}}...\""
+        },
+        {
+          "source": "\"menu-position-props\":\"Set position: Below Properties\"",
+          "target": "\"menu-position-props\":\"设置位置: 在属性下方\""
+        },
+        {
+          "source": "\"menu-position-top\":\"Set position: Top (fixed)\"",
+          "target": "\"menu-position-top\":\"设置位置: 顶部（固定）\""
+        },
+        {
+          "source": "\"menu-toolbar-settings\":\"Note Toolbar settings...\"",
+          "target": "\"menu-toolbar-settings\":\"Note Toolbar 设置...\""
+        },
+        {
+          "source": "args:\"Arguments (optional)\"",
+          "target": "args:\"参数（可选）\""
+        },
+        {
+          "source": "\"args-description\":\"Arguments accepted by your script function, in comma-separated 'name: value' format.\"",
+          "target": "\"args-description\":\"脚本函数接受的参数，以逗号分隔的 '名称: 值' 格式表示。\""
+        },
+        {
+          "source": "outputcontainer:\"Output callout ID (optional)\"",
+          "target": "outputcontainer:\"输出调用 ID（可选）\""
+        },
+        {
+          "source": "\"outputcontainer-description\":\"Add a note-toolbar-output callout with a unique meta field to your note to put text output.\"",
+          "target": "\"outputcontainer-description\":\"在笔记中添加一个带有唯一元字段的 note-toolbar-output 调用，以放置文本输出。\""
+        },
+        {
+          "source": "\"error-general\":\"Dataview error: Check console for more details.\\n```\\n{{error}}\\n```\"",
+          "target": "\"error-general\":\"Dataview 错误：请查看控制台以获取更多详细信息。\\n```\\n{{error}}\\n```\""
+        },
+        {
+          "source": "\"dvjs-function\":\"Evaluate Dataview JS expression\"",
+          "target": "\"dvjs-function\":\"评估 Dataview JS 表达式\""
+        },
+        {
+          "source": "\"dvjs-expr\":\"Dataview JS expression\"",
+          "target": "\"dvjs-expr\":\"Dataview JS 表达式\""
+        },
+        {
+          "source": "\"dvjs-expr-description\":\"Dataview JS expression to evaluate.\"",
+          "target": "\"dvjs-expr-description\":\"要评估的 Dataview JS 表达式。\""
+        },
+        {
+          "source": "\"dvjs-expr-error-required\":\"Error: A Dataview JS expression is required\"",
+          "target": "\"dvjs-expr-error-required\":\"错误：需要一个 Dataview JS 表达式\""
+        },
+        {
+          "source": "\"exec-function\":\"Execute JavaScript\"",
+          "target": "\"exec-function\":\"执行 JavaScript\""
+        },
+        {
+          "source": "\"exec-sourcefile\":\"JavaScript file\"",
+          "target": "\"exec-sourcefile\":\"JavaScript 文件\""
+        },
+        {
+          "source": "\"exec-sourcefile-description\":\"Dataview JS file to execute.\"",
+          "target": "\"exec-sourcefile-description\":\"要执行的 Dataview JS 文件。\""
+        },
+        {
+          "source": "\"exec-error-required\":\"Error: A script file is required\"",
+          "target": "\"exec-error-required\":\"错误：需要一个脚本文件\""
+        },
+        {
+          "source": "\"eval-function\":\"Evaluate Dataview expression\"",
+          "target": "\"eval-function\":\"评估 Dataview 表达式\""
+        },
+        {
+          "source": "\"eval-expr\":\"Dataview expression\"",
+          "target": "\"eval-expr\":\"Dataview 表达式\""
+        },
+        {
+          "source": "\"eval-expr-description\":\"Dataview expression to evaluate.\"",
+          "target": "\"eval-expr-description\":\"要评估的 Dataview 表达式。\""
+        },
+        {
+          "source": "\"eval-expr-error-required\":\"Error: A Dataview expression is required\"",
+          "target": "\"eval-expr-error-required\":\"错误：需要一个 Dataview 表达式\""
+        },
+        {
+          "source": "\"query-function\":\"Execute query\"",
+          "target": "\"query-function\":\"执行查询\""
+        },
+        {
+          "source": "\"query-expr\":\"Query\"",
+          "target": "\"query-expr\":\"查询\""
+        },
+        {
+          "source": "\"query-expr-description\":\"Dataview query to evaluate.\"",
+          "target": "\"query-expr-description\":\"要评估的 Dataview 查询。\""
+        },
+        {
+          "source": "\"query-expr-error-required\":\"Error: A Dataview query is required\"",
+          "target": "\"query-expr-error-required\":\"错误：需要一个 Dataview 查询\""
+        },
+        {
+          "source": "\"exec-sourcefile-description\":\"JavaScript to execute.\"",
+          "target": "\"exec-sourcefile-description\":\"要执行的 JavaScript。\""
+        },
+        {
+          "source": "\"exec-sourcefile-error-required\":\"Error: A JavaScript file is required\"",
+          "target": "\"exec-sourcefile-error-required\":\"错误：需要一个 JavaScript 文件\""
+        },
+        {
+          "source": "\"importexec-function\":\"Import and execute JavaScript\"",
+          "target": "\"importexec-function\":\"导入并执行 JavaScript\""
+        },
+        {
+          "source": "\"importexec-sourcefile\":\"JavaScript file\"",
+          "target": "\"importexec-sourcefile\":\"JavaScript 文件\""
+        },
+        {
+          "source": "\"importexec-sourcefile-description\":\"JavaScript to import. Note that this file is only imported once. You may have to restart Obsidian in order to pick up changes.\"",
+          "target": "\"importexec-sourcefile-description\":\"要导入的 JavaScript。请注意，此文件仅导入一次。您可能需要重新启动 Obsidian 以应用更改。\""
+        },
+        {
+          "source": "\"importexec-sourcefile-error-required\":\"Error: A JavaScript file is required\"",
+          "target": "\"importexec-sourcefile-error-required\":\"错误：需要一个 JavaScript 文件\""
+        },
+        {
+          "source": "\"importexec-sourcefunction\":\"Function (optional)\"",
+          "target": "\"importexec-sourcefunction\":\"函数（可选）\""
+        },
+        {
+          "source": "\"importexec-sourcefunction-description\":\"If script has functions, function name to execute.\"",
+          "target": "\"importexec-sourcefunction-description\":\"如果脚本中有函数，指定要执行的函数名。\""
+        },
+        {
+          "source": "\"importexec-args\":\"Arguments (optional)\"",
+          "target": "\"importexec-args\":\"参数（可选）\""
+        },
+        {
+          "source": "\"importexec-args-description\":\"Arguments accepted by your script function, in comma-separated 'name: value' format.\"",
+          "target": "\"importexec-args-description\":\"脚本函数接受的参数，以逗号分隔的 '名称: 值' 格式表示。\""
+        },
+        {
+          "source": "\"append-function\":\"Insert template\"",
+          "target": "\"append-function\":\"插入模板\""
+        },
+        {
+          "source": "\"append-sourcefile\":\"Template\"",
+          "target": "\"append-sourcefile\":\"模板\""
+        },
+        {
+          "source": "\"append-sourcefile-description\":\"Template file to insert.\"",
+          "target": "\"append-sourcefile-description\":\"要插入的模板文件。\""
+        },
+        {
+          "source": "\"append-sourcefile-error-required\":\"Error: A template file is required\"",
+          "target": "\"append-sourcefile-error-required\":\"错误：需要一个模板文件\""
+        },
+        {
+          "source": "\"create-function\":\"Create new note from template\"",
+          "target": "\"create-function\":\"从模板创建新笔记\""
+        },
+        {
+          "source": "\"create-sourcefile\":\"Template\"",
+          "target": "\"create-sourcefile\":\"模板\""
+        },
+        {
+          "source": "\"create-sourcefile-description\":\"Template file to create a new file from.\"",
+          "target": "\"create-sourcefile-description\":\"用于创建新文件的模板文件。\""
+        },
+        {
+          "source": "\"create-sourcefile-error-required\":\"Error: A template file is required\"",
+          "target": "\"create-sourcefile-error-required\":\"错误：需要一个模板文件\""
+        },
+        {
+          "source": "\"create-outputfile\":\"(Optional) Output filename\"",
+          "target": "\"create-outputfile\":\"(可选) 输出文件名\""
+        },
+        {
+          "source": "\"create-outputfile-description\":\"Name of the file (without file extension) and folder(s) to create, from the provided template.\"",
+          "target": "\"create-outputfile-description\":\"从提供的模板创建的文件名（不含扩展名）和文件夹。\""
+        },
+        {
+          "source": "\"eval-function\":\"Execute Templater command\"",
+          "target": "\"eval-function\":\"执行 Templater 命令\""
+        },
+        {
+          "source": "\"eval-expr\":\"Templater command\"",
+          "target": "\"eval-expr\":\"Templater 命令\""
+        },
+        {
+          "source": "\"eval-expr-description\":\"Templater command to execute.\"",
+          "target": "\"eval-expr-description\":\"要执行的 Templater 命令。\""
+        },
+        {
+          "source": "\"eval-expr-error-required\":\"Error: A Templater expression is required\"",
+          "target": "\"eval-expr-error-required\":\"错误：需要一个 Templater 表达式\""
+        },
+        {
+          "source": "\"exec-function\":\"Execute Templater file\"",
+          "target": "\"exec-function\":\"执行 Templater 文件\""
+        },
+        {
+          "source": "\"exec-sourcefile\":\"Template file\"",
+          "target": "\"exec-sourcefile\":\"模板文件\""
+        },
+        {
+          "source": "\"exec-sourcefile-description\":\"Executes the contents of the file and returns.\"",
+          "target": "\"exec-sourcefile-description\":\"执行文件内容并返回。\""
+        },
+        {
+          "source": "\"exec-sourcefile-error-required\":\"Error: A Templater file is required\"",
+          "target": "\"exec-sourcefile-error-required\":\"错误：需要一个 Templater 文件\""
+        },
+        {
+          "source": "\"args-parsing\":\"Failed to parse arguments for script: {{filename}}\"",
+          "target": "\"args-parsing\":\"解析脚本参数失败：{{filename}}\""
+        },
+        {
+          "source": "\"args-parsing-error\":\"Failed to parse arguments for script: {{filename}}\\n```\\n{{error}}\\n```\"",
+          "target": "\"args-parsing-error\":\"解析脚本参数失败：{{filename}}\\n```\\n{{error}}\\n```\""
+        },
+        {
+          "source": "\"callout-not-found\":\"Error: Could not find note-toolbar-output callout in current note with ID: {{id}}\"",
+          "target": "\"callout-not-found\":\"错误：在当前笔记中找不到 ID 为 {{id}} 的 note-toolbar-output 调用\""
+        },
+        {
+          "source": "\"exec-failed\":\"Failed to execute script: {{filename}}\"",
+          "target": "\"exec-failed\":\"执行脚本失败：{{filename}}\""
+        },
+        {
+          "source": "\"exec-note-not-open\":\"This script must be executed from an open note.\"",
+          "target": "\"exec-note-not-open\":\"此脚本必须在打开的笔记中执行。\""
+        },
+        {
+          "source": "\"expr-failed\":\"Failed to evaluate expression: {{expression}}\"",
+          "target": "\"expr-failed\":\"评估表达式失败：{{expression}}\""
+        },
+        {
+          "source": "\"expr-note-not-open\":\"This expression must be executed from an open note.\"",
+          "target": "\"expr-note-not-open\":\"此表达式必须在打开的笔记中执行。\""
+        },
+        {
+          "source": "\"file-not-found\":\"File not found: {{filename}}\"",
+          "target": "\"file-not-found\":\"未找到文件：{{filename}}\""
+        },
+        {
+          "source": "\"function-invalid\":\"Unsupported function: {{function}}\"",
+          "target": "\"function-invalid\":\"不支持的函数：{{function}}\""
+        },
+        {
+          "source": "\"function-not-found\":\"Function not found: {{function}}\"",
+          "target": "\"function-not-found\":\"未找到函数：{{function}}\""
+        },
+        {
+          "source": "\"function-note-not-open\":\"This function must be executed from an open note.\"",
+          "target": "\"function-note-not-open\":\"此函数必须在打开的笔记中执行。\""
+        },
+        {
+          "source": "\"query-failed\":\"Failed to evaluate query: {{expression}}\"",
+          "target": "\"query-failed\":\"评估查询失败：{{expression}}\""
+        },
+        {
+          "source": "\"query-note-not-open\":\"This query must be run from an open note.\"",
+          "target": "\"query-note-not-open\":\"此查询必须在打开的笔记中运行。\""
+        },
+        {
+          "source": "\"Select a function...\"",
+          "target": "\"选择一个函数...\""
+        },
+        {
+          "source": "\"Select how you want to use Dataview.\"",
+          "target": "\"选择你想要使用 Dataview 的方式。\""
+        },
+        {
+          "source": "\"Select how you want to use this.\"",
+          "target": "\"选择你想要如何使用这个功能。\""
+        },
+        {
+          "source": "\"Select how you want to use Templater.\"",
+          "target": "\"选择你想要使用 Templater 的方式。\""
+        }
+      ]
+    }
+  }
+}

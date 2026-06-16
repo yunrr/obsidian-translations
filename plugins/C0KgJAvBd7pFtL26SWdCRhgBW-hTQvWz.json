@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "find-unlinked-files",
+    "version": "2.0.0",
+    "title": "Find orphaned files and broken links",
+    "description": "Find files that are not linked anywhere and would otherwise be lost in your vault. In other words: files with no backlinks.",
+    "language": "zh-cn",
+    "supportedVersions": "1.10.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "name: \"Find orphaned files\"",
+          "target": "name: \"查找孤立文件\""
+        },
+        {
+          "source": "name: \"Find empty files\"",
+          "target": "name: \"查找空文件\""
+        },
+        {
+          "source": "name: \"Delete empty files\"",
+          "target": "name: \"删除空文件\""
+        },
+        {
+          "source": "text: \"Cancel\"",
+          "target": "text: \"取消\""
+        },
+        {
+          "source": "text: \"Confirm\"",
+          "target": "text: \"确认\""
+        },
+        {
+          "source": "text: \"Settings for finding orphaned files\"",
+          "target": "text: \"查找孤立文件的设置\""
+        },
+        {
+          "source": "text: \"Settings for finding files without tags\"",
+          "target": "text: \"查找无标签文件的设置\""
+        },
+        {
+          "source": "text: \"Settings for finding empty files\"",
+          "target": "text: \"查找空文件的设置\""
+        },
+        {
+          "source": ".setName(\"Open output file\")",
+          "target": ".setName(\"打开输出文件\")"
+        },
+        {
+          "source": ".setName(\"Output file name\")",
+          "target": ".setName(\"输出文件名\")"
+        },
+        {
+          "source": ".setName(\"Exclude files in the given directories\")",
+          "target": ".setName(\"排除给定目录中的文件\")"
+        },
+        {
+          "source": ".setName(\"Exclude files\")",
+          "target": ".setName(\"排除文件\")"
+        },
+        {
+          "source": ".setName(\"Exclude links\")",
+          "target": ".setName(\"排除链接\")"
+        },
+        {
+          "source": ".setName(\"Exclude tags\")",
+          "target": ".setName(\"排除标签\")"
+        },
+        {
+          "source": ".setPlaceholder(\"docx,txt\")",
+          "target": ".setPlaceholder(\"docx,txt\")"
+        },
+        {
+          "source": ".setPlaceholder(\"todo,unfinished\")",
+          "target": ".setPlaceholder(\"todo,unfinished\")"
+        },
+        {
+          "source": ".setPlaceholder(\"jpg,png\")",
+          "target": ".setPlaceholder(\"jpg,png\")"
+        },
+        {
+          "source": ".setTitle(\"Find orphaned files\")",
+          "target": ".setTitle(\"查找孤立文件\")"
+        },
+        {
+          "source": "Notice(\n        \"Can't find file - Please run the `Find broken files' command before\"\n      )",
+          "target": "Notice(\n        \"无法找到文件 - 请先运行 `查找损坏的文件' 命令\"\n      )"
+        },
+        {
+          "source": "Notice(\"No broken links found\")",
+          "target": "Notice(\"未找到损坏的链接\")"
+        },
+        {
+          "source": "Notice(\n        `Found ${notLinkedFiles.length} orphaned files in ${diff}ms`\n      )",
+          "target": "Notice(\n        `在 ${diff} 毫秒内找到 ${notLinkedFiles.length} 个孤立文件`\n      )"
+        },
+        {
+          "source": "Notice(\n        \"Can't find file - Please run the `Find orphaned files' command before\"\n      )",
+          "target": "Notice(\n        \"无法找到文件 - 请先运行 `查找孤立文件' 命令\"\n      )"
+        },
+        {
+          "source": ".log(\"loading \" + this.manifest.name + \" plugin\")",
+          "target": ".log(\"正在加载 \" + this.manifest.name + \" 插件\")"
+        },
+        {
+          "source": ".log(\"unloading \" + this.manifest.name + \" plugin\")",
+          "target": ".log(\"正在卸载 \" + this.manifest.name + \" 插件\")"
+        },
+        {
+          "source": "name: \"Find broken links\"",
+          "target": "name: \"查找损坏的链接\""
+        },
+        {
+          "source": "name: \"Delete orphaned files with certain extension. See README\"",
+          "target": "name: \"删除特定扩展名的孤立文件。参见 README\""
+        },
+        {
+          "source": "name: \"Create files of broken links\"",
+          "target": "name: \"为损坏的链接创建文件\""
+        },
+        {
+          "source": "name: \"Find files without tags\"",
+          "target": "name: \"查找无标签的文件\""
+        },
+        {
+          "source": "text: \"Settings for finding broken links\"",
+          "target": "text: \"查找损坏链接的设置\""
+        },
+        {
+          "source": ".setText(\n      \"Move \" + this.filesToDelete.length + \" files to system trash?\"\n    )",
+          "target": ".setText(\n      \"是否将 \" + this.filesToDelete.length + \" 这个文件移至系统回收站？\"\n    )"
+        },
+        {
+          "source": ".setName(\"Disable working links\")",
+          "target": ".setName(\"禁用有效链接\")"
+        },
+        {
+          "source": ".setName(\"Directories\")",
+          "target": ".setName(\"目录\")"
+        },
+        {
+          "source": ".setName(\"Exclude files with the given filetypes\")",
+          "target": ".setName(\"排除指定文件类型的文件\")"
+        },
+        {
+          "source": ".setName(\"File types\")",
+          "target": ".setName(\"文件类型\")"
+        },
+        {
+          "source": ".setName(\"Filetypes to delete per command. See README.\")",
+          "target": ".setName(\"按命令删除的文件类型。参见 README。\")"
+        },
+        {
+          "source": ".setName(\"Exclude filetypes\")",
+          "target": ".setName(\"排除文件类型\")"
+        },
+        {
+          "source": ".setName(\"Exclude directories\")",
+          "target": ".setName(\"排除目录\")"
+        },
+        {
+          "source": ".setName(\"Donate\")",
+          "target": ".setName(\"捐赠\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Set name of output file (without file extension). Make sure no file exists with this name because it will be overwritten! If the name is empty, the default name is set.\"\n    )",
+          "target": ".setDesc(\n      \"设置输出文件名（不含扩展名）。请确保该名称不存在同名文件，否则将被覆盖！若留空则使用默认名称。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Indent lines to disable the link and to clean up the graph view\"\n    )",
+          "target": ".setDesc(\n      \"缩进行以禁用链接并清理图谱视图\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Enable to exclude files in the given directories. Disable to only include files in the given directories\"\n    )",
+          "target": ".setDesc(\n      \"启用则排除给定目录中的文件；禁用则仅包含这些目录中的文件\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Add each directory path in a new line\")",
+          "target": ".setDesc(\"每行添加一个目录路径\")"
+        },
+        {
+          "source": ".setDesc(\"Add each file path in a new line (with file extension!)\")",
+          "target": ".setDesc(\"每行添加一个文件路径（含扩展名！）\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Exclude files, which contain the given file as link. Add each file path in a new line (with file extension!). Set it to `*` to exclude files with links.\"\n    )",
+          "target": ".setDesc(\n      \"排除包含指定文件作为链接的文件。每行添加一个文件路径（含扩展名！）。设为 `*` 可排除所有含链接的文件。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Enable to exclude files with the given filetypes. Disable to only include files with the given filetypes\"\n    )",
+          "target": ".setDesc(\n      \"启用则排除指定文件类型的文件；禁用则仅包含这些文件类型\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Effect depends on toggle above\")",
+          "target": ".setDesc(\"效果取决于上方开关状态\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Exclude files, which contain the given tag. Add each tag separated by comma (without `#`)\"\n    )",
+          "target": ".setDesc(\n      \"排除包含指定标签的文件。用英文逗号分隔标签（不含 `#`）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Add each filetype separated by comma. Set to `*` to delete all files.\"\n    )",
+          "target": ".setDesc(\n      \"用英文逗号分隔文件类型。设为 `*` 则删除所有文件。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Exclude links in the specified file. Add each file path in a new line (with file extension!)\"\n    )",
+          "target": ".setDesc(\n      \"排除指定文件中的链接。每行添加一个文件路径（含扩展名！）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Exclude links with the specified filetype. Add each filetype separated by comma\"\n    )",
+          "target": ".setDesc(\n      \"排除指定文件类型的链接。用英文逗号分隔文件类型\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Exclude links in files, which contain the given tag. Add each tag separated by comma (without `#`)\"\n    )",
+          "target": ".setDesc(\n      \"排除包含指定标签的文件中的链接。用英文逗号分隔标签（不含 `#`）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Exclude the specific files. Add each file path in a new line (with file extension!)\"\n    )",
+          "target": ".setDesc(\n      \"排除特定文件。每行添加一个文件路径（含扩展名！）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Exclude files in the specified directories. Add each directory path in a new line\"\n    )",
+          "target": ".setDesc(\n      \"排除指定目录中的文件。每行添加一个目录路径\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"If you like this Plugin, consider donating to support continued development.\"\n    )",
+          "target": ".setDesc(\n      \"如果你喜欢此插件，欢迎捐赠以支持持续开发。\"\n    )"
+        },
+        {
+          "source": ".setPlaceholder(\"Directory/Subdirectory\")",
+          "target": ".setPlaceholder(\"目录/子目录\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Directory/file.md\")",
+          "target": ".setPlaceholder(\"目录/文件.md\")"
+        }
+      ]
+    }
+  }
+}

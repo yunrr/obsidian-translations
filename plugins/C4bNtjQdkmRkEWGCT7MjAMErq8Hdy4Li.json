@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-filename-heading-sync",
+    "version": "2.0.0",
+    "title": "Filename Heading Sync",
+    "description": "Obsidian plugin for keeping the filename with the first heading of a file in sync",
+    "language": "zh-cn",
+    "supportedVersions": "1.10.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(\n                    //   `[filename-heading-sync] templater event ${h.event} fired, cleaning up`,\n                    // )",
+          "target": ".log(\n                    //   `[文件名标题同步]模板器事件${h.event}已触发，正在清理`,\n                    // )"
+        },
+        {
+          "source": "name: 'Ignore current file'",
+          "target": "name: '忽略当前文件'"
+        },
+        {
+          "source": "name: 'Sync Filename to Heading'",
+          "target": "name: '将文件名同步到标题'"
+        },
+        {
+          "source": "name: 'Sync Heading to Filename'",
+          "target": "name: '将标题同步到文件名'"
+        },
+        {
+          "source": "text: 'Filename Heading Sync'",
+          "target": "text: '文件名标题同步'"
+        },
+        {
+          "source": "text: 'This plugin will overwrite the first heading found in a file with the filename.'",
+          "target": "text: '此插件将用文件名覆盖文件中的第一个标题。'"
+        },
+        {
+          "source": "text: 'If no header is found, will insert a new one at the first line (after frontmatter).'",
+          "target": "text: '如果没有找到标题，将在第一行（在frontmatter之后）插入一个新的标题。'"
+        },
+        {
+          "source": "text: 'Ignored Files By Regex'",
+          "target": "text: 'Regex忽略的文件'"
+        },
+        {
+          "source": "text: 'All files matching the above RegEx will get listed here'",
+          "target": "text: '所有与上述RegEx匹配的文件都将在此处列出'"
+        },
+        {
+          "source": "text: 'Manually Ignored Files'",
+          "target": "text: '手动忽略文件'"
+        },
+        {
+          "source": "text: 'You can ignore files from this plugin by using the \"ignore this file\" command'",
+          "target": "text: '您可以使用“忽略此文件”命令忽略此插件中的文件'"
+        },
+        {
+          "source": ".setButtonText('Delete')",
+          "target": ".setButtonText('删除')"
+        },
+        {
+          "source": ".setName('Custom Illegal Characters/Strings')",
+          "target": ".setName('自定义非法字符/字符串')"
+        },
+        {
+          "source": ".setName('Ignore Regex Rule')",
+          "target": ".setName('忽略正则表达式规则')"
+        },
+        {
+          "source": ".setName('Use File Open Hook')",
+          "target": ".setName('使用文件打开 Hook')"
+        },
+        {
+          "source": ".setName('Use File Save Hook')",
+          "target": ".setName('使用文件保存 Hook')"
+        },
+        {
+          "source": ".setName('New Heading Style')",
+          "target": ".setName('新标题样式')"
+        },
+        {
+          "source": ".setName('Replace Heading Style')",
+          "target": ".setName('替换标题样式')"
+        },
+        {
+          "source": ".setName('Underline String')",
+          "target": ".setName('下划线字符串')"
+        },
+        {
+          "source": ".setName('Rename Debounce Timeout')",
+          "target": ".setName('重命名防抖超时')"
+        },
+        {
+          "source": ".setDesc('Type characters/strings separated by a comma. This input is space sensitive.')",
+          "target": ".setDesc('键入用逗号分隔的字符/字符串。此输入对空间敏感。')"
+        },
+        {
+          "source": ".setDesc('Ignore rule in RegEx format. All files listed below will get ignored by this plugin.')",
+          "target": ".setDesc('忽略RegEx格式的规则。下面列出的所有文件都将被此插件忽略。')"
+        },
+        {
+          "source": ".setDesc('Whether this plugin should trigger when a file is opened, and not just on save. Disable this when you notice conflicts with other plugins that also act on file open.')",
+          "target": ".setDesc('此插件是否应在打开文件时触发，而不仅仅是在保存时触发。当您发现与其他也对文件打开起作用的插件冲突时，请禁用此选项。')"
+        },
+        {
+          "source": ".setDesc('Whether this plugin should trigger when a file is saved. Disable this when you want to trigger sync only manually.')",
+          "target": ".setDesc('此插件是否应在保存文件时触发。当您只想手动触发同步时，请禁用此功能。')"
+        },
+        {
+          "source": ".setDesc('Which Markdown heading style to use when creating new headings: Prefix (\"# Heading\") or Underline (\"Heading\\\\n===\").')",
+          "target": ".setDesc('创建新标题时使用哪种 Markdown 标题样式： 前缀（\"#标题\"）或下划线（\"Heading\\\\n===\"）。')"
+        },
+        {
+          "source": ".setDesc('Whether this plugin should replace existing heading styles when updating headings.')",
+          "target": ".setDesc('更新标题时，此插件是否应替换现有的标题样式。')"
+        },
+        {
+          "source": ".setDesc('The string to use when insert Underline-style headings; should be some number of \"=\"s.')",
+          "target": ".setDesc('插入下划线样式标题时使用的字符串；应该是一些“=”s。')"
+        },
+        {
+          "source": ".setDesc('Delay in milliseconds before renaming the file after typing stops. This prevents frequent renames while typing. Default is 1000ms (2 seconds).')",
+          "target": ".setDesc('键入停止后重命名文件之前的延迟（毫秒）。这可以防止在键入时频繁重命名。默认值为1000ms（2秒）。')"
+        },
+        {
+          "source": ".setPlaceholder('MyFolder/.*')",
+          "target": ".setPlaceholder('我的文件夹/.*')"
+        },
+        {
+          "source": "'Prefix'",
+          "target": "'前缀'"
+        },
+        {
+          "source": "'Underline'",
+          "target": "'下划线'"
+        }
+      ]
+    }
+  }
+}
