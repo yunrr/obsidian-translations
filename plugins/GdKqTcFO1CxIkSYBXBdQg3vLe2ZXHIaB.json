@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "solve",
+    "version": "2.0.0",
+    "title": "Solve",
+    "description": "Supercharge your notes with real-time calculations without AI fuss. From dates ('Now + 20 days'), percentages ('10% of 120'), units of measurement ('100cm + 2m'), arithmetic ('10 + 5') and more!",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Solve: Failed to commit, no result found on the current line.\")",
+          "target": "Notice(\"解决：提交失败，当前行未找到结果。\")"
+        },
+        {
+          "source": "Notice(\"Solve: Failed to commit, no text selected.\")",
+          "target": "Notice(\"解决：提交失败，未选择任何文本。\")"
+        },
+        {
+          "source": "name:\"Anno Domini\"",
+          "target": "name:\"公元\""
+        },
+        {
+          "source": "name:\"Before Christ\"",
+          "target": "name:\"公元前\""
+        },
+        {
+          "source": "name:\"Commit result on current line\"",
+          "target": "name:\"当前行的提交结果\""
+        },
+        {
+          "source": "name:\"Commit all visible results\"",
+          "target": "name:\"提交所有可见结果\""
+        },
+        {
+          "source": "name:\"Commit results in selection\"",
+          "target": "name:\"提交结果已选择\""
+        },
+        {
+          "source": "description:\"any character\"",
+          "target": "description:\"任何字符\""
+        },
+        {
+          "source": "description:\"end of input\"",
+          "target": "description:\"输入结束\""
+        },
+        {
+          "source": "description:\"a lowercase letter\"",
+          "target": "description:\"小写字母\""
+        },
+        {
+          "source": "description:\"an uppercase letter\"",
+          "target": "description:\"一个大写字母\""
+        },
+        {
+          "source": "description:\"a Unicode character in Lt, Lm, or Lo\"",
+          "target": "description:\"一个在Lt、Lm或Lo中的Unicode字符\""
+        },
+        {
+          "source": "description:\"a space\"",
+          "target": "description:\"一个空格\""
+        },
+        {
+          "source": ".setName(\"Introduction\")",
+          "target": ".setName(\"介绍\")"
+        },
+        {
+          "source": ".setName(\"Engine\")",
+          "target": ".setName(\"引擎\")"
+        },
+        {
+          "source": ".setName(\"Explicit mode\")",
+          "target": ".setName(\"显式模式\")"
+        },
+        {
+          "source": ".setName(\"Inline Solve\")",
+          "target": ".setName(\"行内求解\")"
+        },
+        {
+          "source": ".setName(\"Include expression when committing\")",
+          "target": ".setName(\"提交时包含表达式\")"
+        },
+        {
+          "source": ".setName(\"Include backticks when committing\")",
+          "target": ".setName(\"提交时请包含反引号。\")"
+        },
+        {
+          "source": ".setName(\"Include equals when committing\")",
+          "target": ".setName(\"提交时包含等号\")"
+        },
+        {
+          "source": ".setName(\"Variable\")",
+          "target": ".setName(\"变量\")"
+        },
+        {
+          "source": ".setName(\"Show variable result\")",
+          "target": ".setName(\"显示变量结果\")"
+        },
+        {
+          "source": ".setName(\"Provider Management\")",
+          "target": ".setName(\"提供者管理\")"
+        },
+        {
+          "source": ".setName(\"Arithmetic\")",
+          "target": ".setName(\"算术\")"
+        },
+        {
+          "source": ".setName(\"Function Arithmetic\")",
+          "target": ".setName(\"算术函数\")"
+        },
+        {
+          "source": ".setName(\"Vector Arithmetic\")",
+          "target": ".setName(\"向量运算\")"
+        },
+        {
+          "source": ".setName(\"Percentage\")",
+          "target": ".setName(\"百分比\")"
+        },
+        {
+          "source": ".setName(\"Datetime\")",
+          "target": ".setName(\"日期时间\")"
+        },
+        {
+          "source": ".setName(\"Unit of Measurement\")",
+          "target": ".setName(\"计量单位\")"
+        },
+        {
+          "source": ".setName(\"Dice\")",
+          "target": ".setName(\"骰子\")"
+        },
+        {
+          "source": ".setName(\"Binary (BigInteger)\")",
+          "target": ".setName(\"二进制（大整数）\")"
+        },
+        {
+          "source": ".setName(\"Interface\")",
+          "target": ".setName(\"界面\")"
+        },
+        {
+          "source": ".setName(\"Show result at end of line\")",
+          "target": ".setName(\"在行末显示结果\")"
+        },
+        {
+          "source": ".setName(\"Show status bar companion\")",
+          "target": ".setName(\"显示状态栏助手\")"
+        },
+        {
+          "source": ".setName(\"Animate results\")",
+          "target": ".setName(\"动画结果\")"
+        },
+        {
+          "source": ".setName(\"Animation transition\")",
+          "target": ".setName(\"动画过渡\")"
+        },
+        {
+          "source": ".setName(\"Animation duration\")",
+          "target": ".setName(\"动画持续时间\")"
+        },
+        {
+          "source": ".setName(\"Arithmetic Provider\")",
+          "target": ".setName(\"算术提供者\")"
+        },
+        {
+          "source": ".setName(\"Show = before the result\")",
+          "target": ".setName(\"在结果之前显示\")"
+        },
+        {
+          "source": ".setName(\"Datetime Provider\")",
+          "target": ".setName(\"日期时间提供者\")"
+        },
+        {
+          "source": ".setName(\"Parsing format\")",
+          "target": ".setName(\"解析格式\")"
+        },
+        {
+          "source": ".setName(\"Number Result (Shared)\")",
+          "target": ".setName(\"数字结果（共享）\")"
+        },
+        {
+          "source": ".setName(\"Decimal seperator\")",
+          "target": ".setName(\"小数分隔符\")"
+        },
+        {
+          "source": ".setName(\"Integer Result\")",
+          "target": ".setName(\"整数结果\")"
+        },
+        {
+          "source": ".setName(\"Display thousand separators\")",
+          "target": ".setName(\"显示千位分隔符\")"
+        },
+        {
+          "source": ".setName(\"Float Result\")",
+          "target": ".setName(\"浮动结果\")"
+        },
+        {
+          "source": ".setName(\"Decimal places\")",
+          "target": ".setName(\"小数位数\")"
+        },
+        {
+          "source": ".setName(\"Percentage Result\")",
+          "target": ".setName(\"百分比结果\")"
+        },
+        {
+          "source": ".setName(\"Datetime Result\")",
+          "target": ".setName(\"日期时间结果\")"
+        },
+        {
+          "source": ".setName(\"Format\")",
+          "target": ".setName(\"格式\")"
+        },
+        {
+          "source": ".setName(\"Hex Result\")",
+          "target": ".setName(\"十六进制结果\")"
+        },
+        {
+          "source": ".setName(\"Value padding\")",
+          "target": ".setName(\"值填充\")"
+        },
+        {
+          "source": ".setName(\"Padding zeros\")",
+          "target": ".setName(\"填充零\")"
+        },
+        {
+          "source": ".setName(\"Unit of Measurement Result\")",
+          "target": ".setName(\"测量单位结果\")"
+        },
+        {
+          "source": ".setName(\"Show unit name\")",
+          "target": ".setName(\"显示单位名称\")"
+        },
+        {
+          "source": ".setName(\"Style\")",
+          "target": ".setName(\"样式\")"
+        },
+        {
+          "source": ".setDesc(`Solve will only display results for sentences ending with '=' sign. Default is ${b.engine.explicitMode}`)",
+          "target": ".setDesc(`求解将只显示以'='符号结尾的句子的结果。默认值是${b.engine.explicitMode}。`)"
+        },
+        {
+          "source": ".setDesc(`Solve will include the expression in the format \\`EXPRESSION = RESULT\\` when committing e.g. '2 + 2 = 4'. Default is ${b.inlineSolve.includeExpressionOnCommit}`)",
+          "target": ".setDesc(`解决时将以格式 \\`EXPRESSION = RESULT\\` 包含表达式，例如 '2 + 2 = 4'。默认值为 ${b.inlineSolve.includeExpressionOnCommit}。`)"
+        },
+        {
+          "source": ".setDesc(`Solve will enclose the committed expression in backticks when committing. Default is ${b.inlineSolve.includeBackticksOnCommit}`)",
+          "target": ".setDesc(`解决方案将在提交时用反引号括起已提交的表达式。默认值为 ${b.inlineSolve.includeBackticksOnCommit}。`)"
+        },
+        {
+          "source": ".setDesc(`Solve will include the equals when committing. Has no effect if solve is set to include the expression. Default is ${b.inlineSolve.includeBackticksOnCommit}`)",
+          "target": ".setDesc(`解决方案将在提交时包含等号。如果设置为包含表达式，则没有效果。默认值为 ${b.inlineSolve.includeBackticksOnCommit}。`)"
+        },
+        {
+          "source": ".setDesc(`Solve will display results at the end of variables. Default is ${b.variable.renderResult}`)",
+          "target": ".setDesc(`Solve将在变量的末尾显示结果。默认值为${b.variable.renderResult}。`)"
+        },
+        {
+          "source": ".setDesc(`Enable the arithmetic provider e.g. 10 + 2. Default is ${b.arithmeticProvider.enabled}`)",
+          "target": ".setDesc(`启用算术提供者，例如：10 + 2。默认值为 ${b.arithmeticProvider.enabled}`)"
+        },
+        {
+          "source": ".setDesc(`Enable the function arithmetic provider e.g. sin(), cos(). Default is ${b.functionArithmeticProvider.enabled}`)",
+          "target": ".setDesc(`启用算术提供者功能，例如 sin()、cos()。默认值为 ${b.functionArithmeticProvider.enabled}。`)"
+        },
+        {
+          "source": ".setDesc(`Enable the vector arithmetic provider e.g. (10, 22.3), vec3(1.0, 23, 18.3). Default is ${b.vectorArithmeticProvider.enabled}`)",
+          "target": ".setDesc(`启用向量运算提供程序，例如 (10, 22.3)、vec3(1.0, 23, 18.3)。默认值为 ${b.vectorArithmeticProvider.enabled}。`)"
+        },
+        {
+          "source": ".setDesc(`Enable the percentage provider e.g. 10% of 200, increase 20 by 10%. Default is ${b.percentageArithmeticProvider.enabled}`)",
+          "target": ".setDesc(`启用百分比计算器，例如 200 的 10% 增加 20 的 10%。默认值为 ${b.percentageArithmeticProvider.enabled}`)"
+        },
+        {
+          "source": ".setDesc(`Enable the datetime provider e.g. today + 20 days, last monday. Default is ${b.datetimeProvider.enabled}`)",
+          "target": ".setDesc(`启用日期时间提供者，例如：今天 + 20 天，上周一。默认值是 ${b.datetimeProvider.enabled}`)"
+        },
+        {
+          "source": ".setDesc(`Enable the unit of measurement provider e.g. 10cm + 20, 200cm to m. Default is ${b.unitOfMeasurementProvider.enabled}`)",
+          "target": ".setDesc(`启用计量单位提供者，例如 10cm + 20，200cm 转换为 m。默认值为 ${b.unitOfMeasurementProvider.enabled}。`)"
+        },
+        {
+          "source": ".setDesc(`Enable the dice provider e.g. roll(1, 100), roll between 1 and 12. Default is ${b.diceProvider.enabled}`)",
+          "target": ".setDesc(`启用骰子提供者，例如 roll(1, 100)，在 1 到 12 之间摇骰。默认值为 ${b.diceProvider.enabled}。`)"
+        },
+        {
+          "source": ".setDesc(`Enable the binary (BigInteger) provider e.g. 0b10101 >> 4, right shift. Default is ${b.bigIntegerArithmeticProvider.enabled}`)",
+          "target": ".setDesc(`启用二进制（BigInteger）提供者，例如 0b10101 >> 4，右移。默认为 ${b.bigIntegerArithmeticProvider.enabled}。`)"
+        },
+        {
+          "source": ".setDesc(`Position results at the conclusion of lines, not text's termination. Be cautious when using this setting, as it may cause overlap between the displayed result and the text on the same line. Default is ${b.interface.renderResultEndOfLine}`)",
+          "target": ".setDesc(`在行末而非文本结束时定位结果。使用此设置时请谨慎，因为这可能导致显示结果与同一行上的文本重叠。默认值为 ${b.interface.renderResultEndOfLine}。`)"
+        },
+        {
+          "source": ".setDesc(`Show the Solve companion in the status bar. Default is ${b.interface.showStatusBarCompanion}`)",
+          "target": ".setDesc(`在状态栏中显示解决方案助手。默认值为 ${b.interface.showStatusBarCompanion}。`)"
+        },
+        {
+          "source": ".setDesc(`Enable animate results on the current active line that is being solved. Default is ${b.interface.animateResults}`)",
+          "target": ".setDesc(`在当前正在求解的活动行上启用动画结果。默认值为 ${b.interface.animateResults}。`)"
+        },
+        {
+          "source": ".setDesc(`Specify the transition class name from Animate.css to use on animated results. Default is ${b.interface.animationClass.replace(\"animate__\",\"\")}`)",
+          "target": ".setDesc(`指定要在动画结果上使用的 Animate.css 过渡类名。默认值为 ${b.interface.animationClass.replace(\"animate__\",\"\")}`)"
+        },
+        {
+          "source": ".setDesc(`Specify the animation duration (CSS format) to use for animated results. Default is ${b.interface.animationDuration}`)",
+          "target": ".setDesc(`指定用于动画结果的动画持续时间（CSS格式）。默认值为 ${b.interface.animationDuration}。`)"
+        },
+        {
+          "source": ".setDesc(`Adds the equals sign before arithmetic results to improve the natural reading of expressions. Default is ${b.arithmeticProvider.renderEqualsBeforeResult}`)",
+          "target": ".setDesc(`在算术结果前添加等号，以改善表达式的自然阅读性。默认值为 ${b.arithmeticProvider.renderEqualsBeforeResult}。`)"
+        },
+        {
+          "source": ".setDesc(\"Specify the format to be used for parsing datetime values.\")",
+          "target": ".setDesc(\"指定用于解析日期时间值的格式。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the seperator format to be used for decimals. Default is English\")",
+          "target": ".setDesc(\"指定用于小数的分隔符格式。默认为英语。\")"
+        },
+        {
+          "source": ".setDesc(`Adds thousand separators to integer results. Default is ${b.integerResult.enableSeperator}`)",
+          "target": ".setDesc(`为整数结果添加千位分隔符。默认值为 ${b.integerResult.enableSeperator}。`)"
+        },
+        {
+          "source": ".setDesc(`Adds thousand separators to float results. Default is ${b.floatResult.enableSeperator}`)",
+          "target": ".setDesc(`为浮点结果添加千位分隔符。默认值为 ${b.floatResult.enableSeperator}。`)"
+        },
+        {
+          "source": ".setDesc(`Adjust the number of decimal places, setting to reveal more digits for accuracy or fewer digits for simplicity in number displays. Default is ${b.floatResult.decimalPlaces}`)",
+          "target": ".setDesc(`调整小数位数，设置以显示更多数字以提高准确性，或显示更少数字以便于理解。默认值为 ${b.floatResult.decimalPlaces}。`)"
+        },
+        {
+          "source": ".setDesc(`Adds thousand separators to percentage results. Default is ${b.percentageResult.enableSeperator}`)",
+          "target": ".setDesc(`为百分比结果添加千位分隔符。默认值为 ${b.percentageResult.enableSeperator}。`)"
+        },
+        {
+          "source": ".setDesc(`Adjust the number of decimal places, setting to reveal more digits for accuracy or fewer digits for simplicity in number displays. Default is ${b.percentageResult.decimalPlaces}`)",
+          "target": ".setDesc(`调整小数位数，设置以显示更多数字以提高精确度，或显示更少数字以简化数字展示。默认值为 ${b.percentageResult.decimalPlaces}。`)"
+        },
+        {
+          "source": ".setDesc(`The format to use when displaying a date in the result. Default is ${b.datetimeResult.format}`)",
+          "target": ".setDesc(`结果中显示日期时使用的格式。默认是 ${b.datetimeResult.format}`)"
+        },
+        {
+          "source": ".setDesc(`Enable or disable padding the start of hex values with zeros for consistency. Default is ${b.hexResult.enablePadding}`)",
+          "target": ".setDesc(`启用或禁用为十六进制值的开头添加零以保持一致性。默认值为 ${b.hexResult.enablePadding}`)"
+        },
+        {
+          "source": ".setDesc(`Specify the number of leading zeros to pad hex values with for a uniform appearance. Default is ${b.hexResult.paddingZeros}`)",
+          "target": ".setDesc(`指定填充十六进制值的前导零数量，以实现统一的外观。默认值为 ${b.hexResult.paddingZeros}。`)"
+        },
+        {
+          "source": ".setDesc(`Adjust the number of decimal places, setting to reveal more digits for accuracy or fewer digits for simplicity in number displays. Default is ${b.unitOfMeasurementResult.decimalPlaces}`)",
+          "target": ".setDesc(`调整小数位数，设置以显示更多数字以提高精确度或显示更少数字以简化数字显示。默认值为 ${b.unitOfMeasurementResult.decimalPlaces}。`)"
+        },
+        {
+          "source": ".setDesc(`Show the unit name in the result instead of the unit abbreviation. Default is ${b.unitOfMeasurementResult.unitNames}`)",
+          "target": ".setDesc(`在结果中显示单位名称，而不是单位缩写。默认值为${b.unitOfMeasurementResult.unitNames}。`)"
+        },
+        {
+          "source": ".setDesc(\"The font family and font size settings are inherited from the Obsidian text font. For more advanced styling options, consider using the Style Settings plugin by @mgmeyers.\")",
+          "target": ".setDesc(\"字体系列和字体大小设置继承自 Obsidian 文本字体。有关更高级的样式选项，请考虑使用 @mgmeyers 的样式设置插件。\")"
+        },
+        {
+          "source": ".setDesc(\"Solve is an unobtrusive Obsidian plugin that quietly processes equations and patterns in real time, inspired by NoteMaster's Smart Mode. With solid engineering at its core, Solve enhances note-taking without relying on ChatGPT. For instance, effortlessly calculates date and time expressions (e.g., 'Now + 20 days'), performs arithmetic (e.g., '10 + 5'), and more features are coming soon.\")",
+          "target": ".setDesc(\"Solve是一个低调的Obsidian插件，实时处理方程和模式，灵感来源于NoteMaster的智能模式。Solve以扎实的工程技术为核心，增强笔记记录功能，而无需依赖ChatGPT。例如，它可以轻松计算日期和时间表达式（如“现在 + 20 天”），进行算术运算（如“10 + 5”），更多功能即将推出。\")"
+        }
+      ]
+    }
+  }
+}

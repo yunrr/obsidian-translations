@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-markdown-formatting-assistant-plugin",
+    "version": "2.0.0",
+    "title": "Markdown Formatting Assistant",
+    "description": "This Plugin provides a simple Editor for Markdown, HTML and Colors and in addition a command interface. The command interface facilitate a faster workflow.",
+    "language": "zh-cn",
+    "supportedVersions": "0.4.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice('Copied ' + color + ' to clipboard')",
+          "target": "Notice('已将 ' + color + ' 复制到剪贴板')"
+        },
+        {
+          "source": "Notice('Could not copy the color to clipboard')",
+          "target": "Notice('无法将颜色复制到剪贴板')"
+        },
+        {
+          "source": "Notice(`Selected ${baseFormatterSetting.des}`)",
+          "target": "Notice(`已选择${baseFormatterSetting.des}`)"
+        },
+        {
+          "source": "Notice(`Selected ${calloutsFormatterSetting.des}`)",
+          "target": "Notice(`已选择${calloutsFormatterSetting.des}`)"
+        },
+        {
+          "source": "Notice('The color ' +\r\n                                    color +\r\n                                    'on Line' +\r\n                                    (i + 1)",
+          "target": "Notice('颜色' +\r\n                                    color +\r\n                                    'on Line' +\r\n                                    (i + 1)"
+        },
+        {
+          "source": ".log(key + ':' + value)",
+          "target": ".log(key + ':' + value)"
+        },
+        {
+          "source": ".log(iconPaths)",
+          "target": ".log(iconPaths)"
+        },
+        {
+          "source": "\\log()',\r\n        shift: 5,\r\n        selectionInput: 5,\r\n        type: 'text',\r\n        newLine: false,\r\n        objectType: 'latexFormatterSetting',\r\n    },\r\n    sin: {\r\n        des: 'sin',\r\n        text: 'sin',\r\n        symbol: '\\\\sin()",
+          "target": "\\log()',\r\n        shift: 5,\r\n        selectionInput: 5,\r\n        type: '文本',\r\n        newLine: false,\r\n        objectType: 'latexFormatterSetting',\r\n    },\r\n    sin: {\r\n        des: 'sin',\r\n        text: 'sin',\r\n        symbol: '\\\\sin()"
+        },
+        {
+          "source": ".log('Clicked Button', btn, type)",
+          "target": ".log('点击按钮', btn, type)"
+        },
+        {
+          "source": ".log(baseFormatterSetting.objectType)",
+          "target": ".log(baseFormatterSetting.objectType)"
+        },
+        {
+          "source": ".log(baseFormatterSetting)",
+          "target": ".log(baseFormatterSetting)"
+        },
+        {
+          "source": ".log(calloutsFormatterSetting)",
+          "target": ".log(calloutsFormatterSetting)"
+        },
+        {
+          "source": ".log('loading obsidian-markdown-formatting-assistant-plugin')",
+          "target": ".log('加载 obsidian-markdown 格式化助手插件')"
+        },
+        {
+          "source": ".log('closed')",
+          "target": ".log('关闭')"
+        },
+        {
+          "source": "name: 'Abby'",
+          "target": "name: '艾比'"
+        },
+        {
+          "source": "name: 'Fred'",
+          "target": "name: '弗雷德'"
+        },
+        {
+          "source": "name: 'Rusty'",
+          "target": "name: '瑞斯迪'"
+        },
+        {
+          "source": "name: 'Alois'",
+          "target": "name: '阿洛伊斯'"
+        },
+        {
+          "source": "name: 'ALICE'",
+          "target": "name: '爱丽丝'"
+        },
+        {
+          "source": "name: 'Bob'",
+          "target": "name: '鲍勃'"
+        },
+        {
+          "source": "name: 'clara'",
+          "target": "name: '克拉拉'"
+        },
+        {
+          "source": "name: 'textEdit'",
+          "target": "name: '编辑文本'"
+        },
+        {
+          "source": "name: 'tables'",
+          "target": "name: '表格'"
+        },
+        {
+          "source": "name: 'html'",
+          "target": "name: 'html'"
+        },
+        {
+          "source": "name: 'latex'",
+          "target": "name: 'latex'"
+        },
+        {
+          "source": "name: 'greekLetters'",
+          "target": "name: '希腊字母'"
+        },
+        {
+          "source": "name: 'colors'",
+          "target": "name: '颜色'"
+        },
+        {
+          "source": "name: 'callouts'",
+          "target": "name: '标注'"
+        },
+        {
+          "source": "name: 'Open Command Selector'",
+          "target": "name: '打开命令选择器'"
+        },
+        {
+          "source": "name: 'Open Callouts Selector'",
+          "target": "name: '打开详图索引选择器'"
+        },
+        {
+          "source": "text: 'division'",
+          "target": "text: '除法'"
+        },
+        {
+          "source": "text: 'multiplication'",
+          "target": "text: '乘法'"
+        },
+        {
+          "source": "text: 'Note'",
+          "target": "text: '备注'"
+        },
+        {
+          "source": "text: 'Info'",
+          "target": "text: '信息'"
+        },
+        {
+          "source": "text: 'Todo'",
+          "target": "text: '待办'"
+        },
+        {
+          "source": "text: 'Abstract'",
+          "target": "text: '摘要'"
+        },
+        {
+          "source": "text: 'Summary'",
+          "target": "text: '总结'"
+        },
+        {
+          "source": "text: 'TLDR'",
+          "target": "text: '省流'"
+        },
+        {
+          "source": "text: 'Tip'",
+          "target": "text: '小贴士'"
+        },
+        {
+          "source": "text: 'Hint'",
+          "target": "text: '提示'"
+        },
+        {
+          "source": "text: 'Important'",
+          "target": "text: '重要'"
+        },
+        {
+          "source": "text: 'Success'",
+          "target": "text: '成功'"
+        },
+        {
+          "source": "text: 'Check'",
+          "target": "text: '检查'"
+        },
+        {
+          "source": "text: 'Done'",
+          "target": "text: '完成'"
+        },
+        {
+          "source": "text: 'Question'",
+          "target": "text: '问题'"
+        },
+        {
+          "source": "text: 'Help'",
+          "target": "text: '帮助'"
+        },
+        {
+          "source": "text: 'FAQ'",
+          "target": "text: '常见问题解答'"
+        },
+        {
+          "source": "text: 'Warning'",
+          "target": "text: '警告'"
+        },
+        {
+          "source": "text: 'Caution'",
+          "target": "text: '小心'"
+        },
+        {
+          "source": "text: 'Attention'",
+          "target": "text: '注意'"
+        },
+        {
+          "source": "text: 'Failure'",
+          "target": "text: '失败'"
+        },
+        {
+          "source": "text: 'Fail'",
+          "target": "text: '失败'"
+        },
+        {
+          "source": "text: 'Missing'",
+          "target": "text: '缺失'"
+        },
+        {
+          "source": "text: 'Danger'",
+          "target": "text: '危险'"
+        },
+        {
+          "source": "text: 'Error'",
+          "target": "text: '错误'"
+        },
+        {
+          "source": "text: 'Bug'",
+          "target": "text: '程序错误'"
+        },
+        {
+          "source": "text: 'Example'",
+          "target": "text: '示例'"
+        },
+        {
+          "source": "text: 'Quote'",
+          "target": "text: '引用'"
+        },
+        {
+          "source": "text: 'Glyph'",
+          "target": "text: '字形'"
+        },
+        {
+          "source": "text: 'Markdown Formatting Assistant Settings'",
+          "target": "text: 'Markdown 格式助手设置'"
+        },
+        {
+          "source": ".setName('Trigger Char')",
+          "target": ".setName('触发器字符')"
+        },
+        {
+          "source": ".setName('Side Pane Side')",
+          "target": ".setName('侧窗格侧面')"
+        },
+        {
+          "source": ".setName('Toggle Text Section')",
+          "target": ".setName('切换文本部分')"
+        },
+        {
+          "source": ".setName('Toggle Tabels Section')",
+          "target": ".setName('切换选项卡部分')"
+        },
+        {
+          "source": ".setName('Toggle HTML Section')",
+          "target": ".setName('切换 HTML 部分')"
+        },
+        {
+          "source": ".setName('Toggle Colors Section')",
+          "target": ".setName('切换颜色部分')"
+        },
+        {
+          "source": ".setName('Toggle Latex Section')",
+          "target": ".setName('切换 Latex 部分')"
+        },
+        {
+          "source": ".setName('Toggle Greek Letters Section')",
+          "target": ".setName('切换希腊字母部分')"
+        },
+        {
+          "source": ".setName('Saved Colors')",
+          "target": ".setName('保存的颜色')"
+        },
+        {
+          "source": ".setName('Toggle Callouts Section')",
+          "target": ".setName('切换标注部分')"
+        },
+        {
+          "source": ".setDesc('Char which triggers the autocompletion')",
+          "target": ".setDesc('触发自动补全的字符')"
+        },
+        {
+          "source": ".setDesc('Choose on which side the Side Pane accours. ()')",
+          "target": ".setDesc('选择侧窗格位于哪一侧。 ()')"
+        },
+        {
+          "source": ".setDesc('Activate or deactivate the Text Editor section. (restart required)')",
+          "target": ".setDesc('激活或停用“文本编辑器”部分。（需要重新启动）')"
+        },
+        {
+          "source": ".setDesc('Activate or deactivate the Greek Letters section. (restart required)')",
+          "target": ".setDesc('激活或停用希腊字母部分。（需要重新启动）')"
+        },
+        {
+          "source": ".setDesc('Activate or deactivate the HTML section. (restart required)')",
+          "target": ".setDesc('激活或停用 HTML 部分。（需要重新启动）')"
+        },
+        {
+          "source": ".setDesc('Activate or deactivate the Colors section. (restart required)')",
+          "target": ".setDesc('激活或停用“颜色”部分。（需要重新启动）')"
+        },
+        {
+          "source": ".setDesc('Activate or deactivate the Latex section. (restart required)')",
+          "target": ".setDesc('激活或停用 Latex 部分。（需要重新启动）')"
+        },
+        {
+          "source": ".setDesc('Colors which are saved vie the color picker. The order will be also considered. Requiers a restart of obsidian.')",
+          "target": ".setDesc('通过颜色选择器保存的颜色。订单也将被考虑。需要重新开始 obsidian。')"
+        },
+        {
+          "source": ".setDesc('Activate or deactivate the Callouts section. (restart required)')",
+          "target": ".setDesc('激活或停用“标注”部分。（需要重新启动）')"
+        },
+        {
+          "source": ".setPlaceholder('Enter a char to trigger the autocompletion')",
+          "target": ".setPlaceholder('输入一个字符以触发自动补全')"
+        },
+        {
+          "source": ".setPlaceholder('Enter left or right')",
+          "target": ".setPlaceholder('向左或向右输入')"
+        },
+        {
+          "source": ".appendText('upcoming ...')",
+          "target": ".appendText('即将发生的 ...')"
+        },
+        {
+          "source": ".appendText('Do you miss a Tag? report it!')",
+          "target": ".appendText('你错过了一个标签吗？报告！')"
+        },
+        {
+          "source": ".appendText('Introduction into latex mathematics')",
+          "target": ".appendText('Latex 数学导论')"
+        },
+        {
+          "source": ".appendText('Do you miss a latex function? report it!')",
+          "target": ".appendText('你错过 Latex 功能了吗？报告！')"
+        },
+        {
+          "source": ".appendText('Lower Case')",
+          "target": ".appendText('小写字母')"
+        },
+        {
+          "source": ".appendText('Upper Case')",
+          "target": ".appendText('大写字母')"
+        },
+        {
+          "source": ".appendText('Overview of greek letters')",
+          "target": ".appendText('希腊字母概述')"
+        },
+        {
+          "source": ".appendText('Select a Color')",
+          "target": ".appendText('选择一种颜色')"
+        },
+        {
+          "source": ".appendText('Save Color')",
+          "target": ".appendText('保存颜色')"
+        },
+        {
+          "source": ".appendText('Last used colors:')",
+          "target": ".appendText('上次使用的颜色：')"
+        },
+        {
+          "source": ".appendText('Saved Colors:')",
+          "target": ".appendText('保存的颜色：')"
+        },
+        {
+          "source": ".appendText('Saved colors can be directly edited in the settings.')",
+          "target": ".appendText('保存的颜色可以在设置中直接编辑。')"
+        },
+        {
+          "source": ".appendText('Do you need some Help?')",
+          "target": ".appendText('你需要帮忙吗？')"
+        },
+        {
+          "source": ".appendText('HTML')",
+          "target": ".appendText('HTML')"
+        }
+      ]
+    }
+  }
+}

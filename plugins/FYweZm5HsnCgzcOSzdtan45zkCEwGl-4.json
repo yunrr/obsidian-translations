@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "meld-encrypt",
+    "version": "2.0.0",
+    "title": "Meld Encrypt",
+    "description": "Hide secrets in your vault",
+    "language": "zh-cn",
+    "supportedVersions": "2.3.7",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Copied!\")",
+          "target": "Notice(\"已复制！\")"
+        },
+        {
+          "source": "Notice(\"\\u274C Decryption failed!\")",
+          "target": "Notice(\"\\u274C 解密失败！\")"
+        },
+        {
+          "source": "Notice(\"Nothing to Encrypt.\")",
+          "target": "Notice(\"无需加密。\")"
+        },
+        {
+          "source": "Notice(\"Unable to Encrypt or Decrypt that.\")",
+          "target": "Notice(\"无法加密或解密。\")"
+        },
+        {
+          "source": "Notice(\"Decrypted using remembered password\",2e3)",
+          "target": "Notice(\"使用记住的密码解密\",2e3)"
+        },
+        {
+          "source": "Notice(e,1e4)",
+          "target": "Notice(e,1e4)"
+        },
+        {
+          "source": "Notice(\"Password and Hint were changed\")",
+          "target": "Notice(\"密码和提示已更改\")"
+        },
+        {
+          "source": "Notice(\"Decryption failed\")",
+          "target": "Notice(\"解密失败\")"
+        },
+        {
+          "source": "Notice(\"Multiple views of the same encrypted note isn't supported\")",
+          "target": "Notice(\"不支持同一加密笔记的多个视图\")"
+        },
+        {
+          "source": "Notice(i,1e4)",
+          "target": "Notice(i,1e4)"
+        },
+        {
+          "source": "Notice(n,1e4)",
+          "target": "Notice(n,1e4)"
+        },
+        {
+          "source": "Notice(\"\\u{1F510} Note was encrypted \\u{1F510}\")",
+          "target": "Notice(\"\\u{1F510} 笔记已加密 \\u{1F510}\")"
+        },
+        {
+          "source": "Notice(\"\\u{1F513} Note was decrypted \\u{1F513}\")",
+          "target": "Notice(\"\\u{1F513} 笔记已解密 \\u{1F513}\")"
+        },
+        {
+          "source": "Notice(s,1e4)",
+          "target": "Notice(s,1e4)"
+        },
+        {
+          "source": "Notice(`Items cleared: ${e}`)",
+          "target": "Notice(`清除的项目： ${e}`)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(i)",
+          "target": ".error(i)"
+        },
+        {
+          "source": "name:\"Password:\"",
+          "target": "name:\"密码：\""
+        },
+        {
+          "source": "name:\"Confirm Password:\"",
+          "target": "name:\"确认密码：\""
+        },
+        {
+          "source": "name:\"PBKDF2\"",
+          "target": "name:\"PBKDF2\""
+        },
+        {
+          "source": "name:\"SHA-256\"",
+          "target": "name:\"SHA-256\""
+        },
+        {
+          "source": "name:\"AES-GCM\"",
+          "target": "name:\"AES-GCM\""
+        },
+        {
+          "source": "name:\"Encrypt/Decrypt\"",
+          "target": "name:\"加密/解密\""
+        },
+        {
+          "source": "name:\"Encrypt/Decrypt In-place\"",
+          "target": "name:\"就地加密/解密\""
+        },
+        {
+          "source": "name:\"Confirm:\"",
+          "target": "name:\"确认：\""
+        },
+        {
+          "source": "name:\"New Password:\"",
+          "target": "name:\"新密码：\""
+        },
+        {
+          "source": "name:\"Create new encrypted note\"",
+          "target": "name:\"创建新的加密笔记\""
+        },
+        {
+          "source": "name:\"Toggle Reading View\"",
+          "target": "name:\"切换阅读视图\""
+        },
+        {
+          "source": "name:\"Convert to or from an Encrypted note\"",
+          "target": "name:\"转换为加密笔记或从加密笔记转换\""
+        },
+        {
+          "source": "name:\"Clear Session Password Cache\"",
+          "target": "name:\"清除会话密码缓存\""
+        },
+        {
+          "source": "text:\"Vault:\"",
+          "target": "text:\"库：\""
+        },
+        {
+          "source": "text:\"typically, you'll use the same password every time.\"",
+          "target": "text:\"通常，您每次都会使用相同的密码。\""
+        },
+        {
+          "source": "text:\"Folder:\"",
+          "target": "text:\"文件夹：\""
+        },
+        {
+          "source": "text:\"typically, you'll use the same password for each note within a folder.\"",
+          "target": "text:\"通常，您将对文件夹中的每个笔记使用相同的密码。\""
+        },
+        {
+          "source": "text:\"File:\"",
+          "target": "text:\"文件：\""
+        },
+        {
+          "source": "text:\"typically, each note will have a unique password.\"",
+          "target": "text:\"通常，每个笔记都有一个唯一的密码。\""
+        },
+        {
+          "source": "text:\"\\u{1F510}\"",
+          "target": "text:\"\\u{1F510}\""
+        },
+        {
+          "source": "text:`\\u{1F510} ${n} \\u{1F510}`",
+          "target": "text:`\\u{1F510} ${n} \\u{1F510}`"
+        },
+        {
+          "source": ".setButtonText(\"Copy\")",
+          "target": ".setButtonText(\"复制\")"
+        },
+        {
+          "source": ".setButtonText(\"Decrypt in-place\")",
+          "target": ".setButtonText(\"就地解密\")"
+        },
+        {
+          "source": ".setButtonText(\"Confirm\")",
+          "target": ".setButtonText(\"确认\")"
+        },
+        {
+          "source": ".setName(\"Confirm password?\")",
+          "target": ".setName(\"确认密码？\")"
+        },
+        {
+          "source": ".setName(`Remember Password (${o})`)",
+          "target": ".setName(`记住密码 (${o})`)"
+        },
+        {
+          "source": ".setName(\"Remember password?\")",
+          "target": ".setName(\"记住密码？\")"
+        },
+        {
+          "source": ".setName(\"Remember passwords by:\")",
+          "target": ".setName(\"通过以下方式记住密码：\")"
+        },
+        {
+          "source": ".setName(\"Optional Password Hint\")",
+          "target": ".setName(\"可选密码提示\")"
+        },
+        {
+          "source": ".setName(\"Show encrypted marker in Reading view\")",
+          "target": ".setName(\"在阅读视图中显示加密的标记\")"
+        },
+        {
+          "source": ".setName(\"Text to encrypt\")",
+          "target": ".setName(\"要加密的文本\")"
+        },
+        {
+          "source": ".setName(\"In-place encryption\")",
+          "target": ".setName(\"就地加密\")"
+        },
+        {
+          "source": ".setName(\"Expand selection to whole line?\")",
+          "target": ".setName(\"将选择范围扩展到整行？\")"
+        },
+        {
+          "source": ".setName(\"By default, show encrypted marker when reading\")",
+          "target": ".setName(\"默认情况下，读取时显示加密标记\")"
+        },
+        {
+          "source": ".setName(\"Hint:\")",
+          "target": ".setName(\"提示：\")"
+        },
+        {
+          "source": ".setName(\"New Hint:\")",
+          "target": ".setName(\"新提示：\")"
+        },
+        {
+          "source": ".setName(\"Whole note encryption\")",
+          "target": ".setName(\"整个笔记加密\")"
+        },
+        {
+          "source": ".setName(\"Default view for new tabs\")",
+          "target": ".setName(\"新选项卡的默认视图\")"
+        },
+        {
+          "source": ".setDesc(\"Confirm password when encrypting. (Recommended)\")",
+          "target": ".setDesc(\"加密时确认密码。（推荐）\")"
+        },
+        {
+          "source": ".setDesc(\"Remember the last used passwords when encrypting or decrypting.  Passwords are remembered until they timeout or Obsidian is closed\")",
+          "target": ".setDesc(\"在加密或解密时记住上次使用的密码。 系统会记住密码，直到密码超时或 Obsidian 关闭\")"
+        },
+        {
+          "source": ".setDesc(\"The number of minutes to remember passwords.\")",
+          "target": ".setDesc(\"记住密码的分钟数。\")"
+        },
+        {
+          "source": ".setDesc(\"\"),this.confirmPassword&&n!=i?(a.setDesc(\"Passwords don't match\")",
+          "target": ".setDesc(\"\"),this.confirmPassword&&n!=i?(a.setDesc(\"密码不匹配\")"
+        },
+        {
+          "source": ".setDesc(\"Partial selections will get expanded to the whole line.\")",
+          "target": ".setDesc(\"部分选择将扩展到整行。\")"
+        },
+        {
+          "source": ".setDesc(\"When encrypting inline text, should the default be to have a visible marker in Reading view?\")",
+          "target": ".setDesc(\"加密内联文本时，是否应该默认在阅读视图中有一个可见标记？\")"
+        },
+        {
+          "source": ".setDesc(\"Please provide a password and hint to start editing this note.\")",
+          "target": ".setDesc(\"请提供密码和提示以开始编辑此说明。\")"
+        },
+        {
+          "source": ".setDesc(\"Please provide a password to unlock this note.\")",
+          "target": ".setDesc(\"请提供密码以解锁此笔记。\")"
+        },
+        {
+          "source": ".setDesc(\"The default view that a new encrypted note tab gets opened in\")",
+          "target": ".setDesc(\"在其中打开新的加密笔记选项卡的默认视图\")"
+        },
+        {
+          "source": ".setDesc(\"\"),this.confirmPassword&&n!=i?(s.setDesc(\"Passwords don't match\")",
+          "target": ".setDesc(\"\"),this.confirmPassword&&n!=i?(s.setDesc(\"密码不匹配\")"
+        },
+        {
+          "source": ".setTooltip(\"Edit\")",
+          "target": ".setTooltip(\"编辑\")"
+        },
+        {
+          "source": ".setTooltip(\"Unlock & Edit\")",
+          "target": ".setTooltip(\"解锁 & 编辑\")"
+        },
+        {
+          "source": ".setTooltip(\"Cancel\")",
+          "target": ".setTooltip(\"取消\")"
+        },
+        {
+          "source": ".setTooltip(\"Change Password\")",
+          "target": ".setTooltip(\"修改密码\")"
+        },
+        {
+          "source": ".setTitle(\"Toggle Editing/Reading\")",
+          "target": ".setTitle(\"切换编辑/阅读\")"
+        },
+        {
+          "source": ".setTitle(\"Lock\")",
+          "target": ".setTitle(\"锁定\")"
+        },
+        {
+          "source": ".setTitle(\"Change Password\")",
+          "target": ".setTitle(\"修改密码\")"
+        },
+        {
+          "source": ".setTitle(\"New encrypted note\")",
+          "target": ".setTitle(\"新建加密笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Encrypt note\")",
+          "target": ".setTitle(\"加密笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Decrypt note\")",
+          "target": ".setTitle(\"解密笔记\")"
+        }
+      ]
+    }
+  }
+}

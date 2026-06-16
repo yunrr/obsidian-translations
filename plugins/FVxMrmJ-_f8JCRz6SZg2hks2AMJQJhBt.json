@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "calendar-beta",
+    "version": "2.0.0",
+    "title": "Calendar (Beta)",
+    "description": "Calendar view of your daily notes",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "name: \"hide\"",
+          "target": "name: \"隐藏\""
+        },
+        {
+          "source": "name: \"Links\"",
+          "target": "name: \"链接\""
+        },
+        {
+          "source": "name: \"Tasks\"",
+          "target": "name: \"任务\""
+        },
+        {
+          "source": "name: \"weekStart\"",
+          "target": "name: \"周开始\""
+        },
+        {
+          "source": "name: \"Confirm before creating new note\"",
+          "target": "name: \"创建新笔记前确认\""
+        },
+        {
+          "source": "name: \"Show week numbers\"",
+          "target": "name: \"显示周数\""
+        },
+        {
+          "source": "name: \"Open view\"",
+          "target": "name: \"打开视图\""
+        },
+        {
+          "source": "name: \"Toggle week numbers\"",
+          "target": "name: \"切换周数\""
+        },
+        {
+          "source": "name: \"Reveal active note\"",
+          "target": "name: \"显示活动笔记\""
+        },
+        {
+          "source": ".setName(\"Max incomplete tasks shown\")",
+          "target": ".setName(\"显示的最大未完成任务数\")"
+        },
+        {
+          "source": ".setName(\"Display\")",
+          "target": ".setName(\"显示\")"
+        },
+        {
+          "source": "name: \"offset\"",
+          "target": "name: \"抵消\""
+        },
+        {
+          "source": "name: \"Backlinks\"",
+          "target": "name: \"导入链接\""
+        },
+        {
+          "source": "name: \"Emoji Tags\"",
+          "target": "name: \"表情符号标签\""
+        },
+        {
+          "source": "name: \"Words\"",
+          "target": "name: \"话\""
+        },
+        {
+          "source": "name: \"shouldConfirmBeforeCreate\"",
+          "target": "name: \"应在创建前确认\""
+        },
+        {
+          "source": "name: \"showWeeklyNote\"",
+          "target": "name: \"ShowWeeklyNote\""
+        },
+        {
+          "source": "name: \"localeOverride\"",
+          "target": "name: \"本地覆盖\""
+        },
+        {
+          "source": "name: \"Start week on\"",
+          "target": "name: \"开始一周\""
+        },
+        {
+          "source": "name: \"Locale\"",
+          "target": "name: \"区域设置\""
+        },
+        {
+          "source": "description: \"Show tags containing emojis directly on the calendar face\"",
+          "target": "description: \"在日历面上直接显示包含表情符号的标签\""
+        },
+        {
+          "source": "description: \"Track your pending tasks for any given day\"",
+          "target": "description: \"跟踪任何一天的待办任务\""
+        },
+        {
+          "source": "description: \"Visualize the word count of your daily note.\"",
+          "target": "description: \"想象一下你每日笔记的字数。\""
+        },
+        {
+          "source": "description: \"Show how many notes use a Zettelkasten prefix matching the current day\"",
+          "target": "description: \"显示有多少笔记使用与当前日期匹配的Zettelkasten前缀\""
+        },
+        {
+          "source": "description: \"Show a confirmation modal before creating a new note\"",
+          "target": "description: \"在创建新笔记之前显示确认模式\""
+        },
+        {
+          "source": "description: \"Enable this to add a column with the week number\"",
+          "target": "description: \"启用此选项可添加包含周数的列\""
+        },
+        {
+          "source": "description: \"Choose what day of the week to start. Select 'locale default' to use the default specified by moment.js\"",
+          "target": "description: \"选择一周中的哪一天开始。选择“locale default”以使用moment.js指定的默认值\""
+        },
+        {
+          "source": "description: \"Override the locale used by the calendar and other plugins\"",
+          "target": "description: \"覆盖日历和其他插件使用的区域设置\""
+        },
+        {
+          "source": ".setName(\"Words per dot\")",
+          "target": ".setName(\"每点字数\")"
+        },
+        {
+          "source": ".setDesc(\"Limit the number of dots shown for incomplete tasks\")",
+          "target": ".setDesc(\"限制未完成任务显示的点数\")"
+        },
+        {
+          "source": ".setDesc(\"How many words should be represented by a single dot?\")",
+          "target": ".setDesc(\"一个点应该代表多少个单词？\")"
+        },
+        {
+          "source": ".setTitle(\"Delete\")",
+          "target": ".setTitle(\"删去\")"
+        },
+        {
+          "source": "Notice(\"Failed to read the daily note template\")",
+          "target": "Notice(\"读取日报模板失败\")"
+        },
+        {
+          "source": "Notice(\"Unable to create new file.\")",
+          "target": "Notice(\"无法创建新文件。\")"
+        },
+        {
+          "source": "alog({ cta, onAccept, text, title, })",
+          "target": "alog({ cta, onAccept, text, title, })"
+        },
+        {
+          "source": "alog({\n            cta: \"Create\",\n            onAccept: createFile,\n            text: `File ${filename} does not exist. Would you like to create it?`,\n            title: `New ${capitalize(getPeriodicity(granularity)",
+          "target": "alog({\n            cta: \"创建\",\n            onAccept: createFile,\n            text: `File ${filename} does not exist. Would you like to create it?`,\n            title: `New ${capitalize(getPeriodicity(granularity)"
+        },
+        {
+          "source": ".error('SEMVER', ...args)",
+          "target": ".error('森弗', ...args)"
+        },
+        {
+          "source": ".error(`Failed to read the daily note template '${templatePath}'`, err)",
+          "target": ".error(`无法读取日记模板“${templatePath}”`, err)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${normalizedPath}'`, err)",
+          "target": ".error(`创建文件失败：“$｛normalizedPath｝”`, err)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" element must be an HTMLElement (not an SVGElement)",
+          "target": ".error(['Popper: \"箭\" element must be an HTMLElement (not an SVGElement)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" modifier\\'s `element` must be a child of the popper', 'element.'].join(' ')",
+          "target": ".error(['Popper：“arrow”修饰符的“element”必须是Popper“element”的子级。]。加入（'')"
+        },
+        {
+          "source": ".error(['Popper: The `allowedAutoPlacements` option did not allow any', 'placements. Ensure the `placement` option matches the variation', 'of the allowed placements.', 'For example, \"auto\" cannot be used to allow \"bottom-start\".', 'Use \"auto-start\" instead.'].join(' ')",
+          "target": ".error(['波普尔：“allowedAutoPlacements”选项不允许任何“，”放置。确保“放置”选项与允许放置的变体“、”匹配例如，“auto”不能用于允许“底部启动”。'，'请改用“自动启动”。加入（'')"
+        },
+        {
+          "source": ".error(format$1(INVALID_MODIFIER_ERROR$1, String(modifier.name)",
+          "target": ".error(format$1(INVALID_MODIFIER_ERROR$1, String(modifier.name)"
+        },
+        {
+          "source": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '\"enabled\"', '\"boolean\"', \"\\\"\" + String(modifier.enabled)",
+          "target": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '“启用”，“布尔值”', \"\\\"\" + String(modifier.enabled)"
+        },
+        {
+          "source": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '\"phase\"', \"either \" + modifierPhases$1.join(', ')",
+          "target": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '\"phase\"', \"either \" + modifierPhases$1.join(', ')"
+        },
+        {
+          "source": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '\"fn\"', '\"function\"', \"\\\"\" + String(modifier.fn)",
+          "target": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '“fn”，“函数”', \"\\\"\" + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '\"effect\"', '\"function\"', \"\\\"\" + String(modifier.fn)",
+          "target": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '“效果”、“功能”', \"\\\"\" + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '\"requires\"', '\"array\"', \"\\\"\" + String(modifier.requires)",
+          "target": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '需要“，”数组', \"\\\"\" + String(modifier.requires)"
+        },
+        {
+          "source": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, '\"requiresIfExists\"', '\"array\"', \"\\\"\" + String(modifier.requiresIfExists)",
+          "target": ".error(format$1(INVALID_MODIFIER_ERROR$1, modifier.name, 'requiresIf存在数组', \"\\\"\" + String(modifier.requiresIfExists)"
+        },
+        {
+          "source": ".error(\"PopperJS: an invalid property has been provided to the \\\"\" + modifier.name + \"\\\" modifier, valid properties are \" + VALID_PROPERTIES$1.map(function (s)",
+          "target": ".error(\"PopperJS: an invalid property has been provided to the \\\"\" + modifier.name + \"\\\" modifier, valid properties are \" + VALID_PROPERTIES$1.map(function (s)"
+        },
+        {
+          "source": ".error(format$1(MISSING_DEPENDENCY_ERROR$1, String(modifier.name)",
+          "target": ".error(format$1(MISSING_DEPENDENCY_ERROR$1, String(modifier.name)"
+        },
+        {
+          "source": ".error(['Popper: \"auto\" placements require the \"flip\" modifier be', 'present and enabled to work.'].join(' ')",
+          "target": ".error(['波普尔：“自动”放置要求“翻转”修饰符为“，”呈现并启用才能工作。]join（'')"
+        },
+        {
+          "source": ".error(INVALID_ELEMENT_ERROR$1)",
+          "target": ".error(INVALID_ELEMENT_ERROR$1)"
+        },
+        {
+          "source": ".error(INFINITE_LOOP_ERROR$1)",
+          "target": ".error(INFINITE_LOOP_ERROR$1)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, String(modifier.name)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"enabled\"', '\"boolean\"', \"\\\"\" + String(modifier.enabled)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '“启用”，“布尔值”', \"\\\"\" + String(modifier.enabled)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"phase\"', \"either \" + modifierPhases.join(', ')",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"phase\"', \"either \" + modifierPhases.join(', ')"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"fn\"', '\"function\"', \"\\\"\" + String(modifier.fn)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '“fn”，“函数”', \"\\\"\" + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"effect\"', '\"function\"', \"\\\"\" + String(modifier.fn)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '“效果”、“功能”', \"\\\"\" + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requires\"', '\"array\"', \"\\\"\" + String(modifier.requires)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '需要“，”数组', \"\\\"\" + String(modifier.requires)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requiresIfExists\"', '\"array\"', \"\\\"\" + String(modifier.requiresIfExists)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, 'requiresIf存在数组', \"\\\"\" + String(modifier.requiresIfExists)"
+        },
+        {
+          "source": ".error(\"PopperJS: an invalid property has been provided to the \\\"\" + modifier.name + \"\\\" modifier, valid properties are \" + VALID_PROPERTIES.map(function (s)",
+          "target": ".error(\"PopperJS: an invalid property has been provided to the \\\"\" + modifier.name + \"\\\" modifier, valid properties are \" + VALID_PROPERTIES.map(function (s)"
+        },
+        {
+          "source": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)",
+          "target": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(INVALID_ELEMENT_ERROR)",
+          "target": ".error(INVALID_ELEMENT_ERROR)"
+        },
+        {
+          "source": ".error(INFINITE_LOOP_ERROR)",
+          "target": ".error(INFINITE_LOOP_ERROR)"
+        },
+        {
+          "source": "name: 'applyStyles'",
+          "target": "name: '应用程序样式'"
+        },
+        {
+          "source": "name: 'arrow'",
+          "target": "name: '箭'"
+        },
+        {
+          "source": "name: 'computeStyles'",
+          "target": "name: '计算机样式'"
+        },
+        {
+          "source": "name: 'eventListeners'",
+          "target": "name: '预约前1小时'"
+        },
+        {
+          "source": "name: 'flip'",
+          "target": "name: '快速翻转'"
+        },
+        {
+          "source": "name: 'hide'",
+          "target": "name: '隐藏'"
+        },
+        {
+          "source": "name: 'offset'",
+          "target": "name: '抵消'"
+        },
+        {
+          "source": "name: 'popperOffsets'",
+          "target": "name: 'popper偏移'"
+        },
+        {
+          "source": "name: 'preventOverflow'",
+          "target": "name: 'preventOverflow'"
+        },
+        {
+          "source": "name: \"updateState\"",
+          "target": "name: \"updateState\""
+        },
+        {
+          "source": "name: \"applyStyles\"",
+          "target": "name: \"应用程序样式\""
+        },
+        {
+          "source": "name: \"Zettels\"",
+          "target": "name: \"笔记\""
+        },
+        {
+          "source": "name: \"dark0\"",
+          "target": "name: \"黑暗0\""
+        },
+        {
+          "source": "name: \"dark0-soft\"",
+          "target": "name: \"暗0软\""
+        },
+        {
+          "source": "name: \"dark1\"",
+          "target": "name: \"深色1\""
+        },
+        {
+          "source": "name: \"dark2\"",
+          "target": "name: \"深色2\""
+        },
+        {
+          "source": "name: \"dark3\"",
+          "target": "name: \"深色3\""
+        },
+        {
+          "source": "name: \"dark4\"",
+          "target": "name: \"深色4\""
+        },
+        {
+          "source": "name: \"gray\"",
+          "target": "name: \"灰色\""
+        },
+        {
+          "source": "name: \"light0-hard\"",
+          "target": "name: \"轻0硬\""
+        },
+        {
+          "source": "name: \"light0\"",
+          "target": "name: \"灯0\""
+        },
+        {
+          "source": "name: \"light0-soft\"",
+          "target": "name: \"轻0软\""
+        },
+        {
+          "source": "name: \"light1\"",
+          "target": "name: \"灯1\""
+        },
+        {
+          "source": "name: \"light2\"",
+          "target": "name: \"灯2\""
+        },
+        {
+          "source": "name: \"light3\"",
+          "target": "name: \"灯3\""
+        },
+        {
+          "source": "name: \"light4\"",
+          "target": "name: \"灯4\""
+        },
+        {
+          "source": "name: \"bright-red\"",
+          "target": "name: \"鲜红色\""
+        },
+        {
+          "source": "name: \"bright-green\"",
+          "target": "name: \"亮绿色\""
+        },
+        {
+          "source": "name: \"bright-yellow\"",
+          "target": "name: \"亮黄色\""
+        },
+        {
+          "source": "name: \"bright-blue\"",
+          "target": "name: \"亮蓝色\""
+        },
+        {
+          "source": "name: \"bright-purple\"",
+          "target": "name: \"亮紫色\""
+        },
+        {
+          "source": "name: \"bright-aqua\"",
+          "target": "name: \"明亮的水\""
+        },
+        {
+          "source": "name: \"bright-orange\"",
+          "target": "name: \"亮橙色\""
+        },
+        {
+          "source": "name: \"neutral-red\"",
+          "target": "name: \"中性红\""
+        },
+        {
+          "source": "name: \"neutral-green\"",
+          "target": "name: \"中性绿色\""
+        },
+        {
+          "source": "name: \"neutral-yellow\"",
+          "target": "name: \"中性黄色\""
+        },
+        {
+          "source": "name: \"neutral-blue\"",
+          "target": "name: \"中性蓝\""
+        },
+        {
+          "source": "name: \"neutral-purple\"",
+          "target": "name: \"中性紫色\""
+        },
+        {
+          "source": "name: \"neutral-aqua\"",
+          "target": "name: \"中性水\""
+        },
+        {
+          "source": "name: \"neutral-orange\"",
+          "target": "name: \"中性橙色\""
+        },
+        {
+          "source": "name: \"faded-red\"",
+          "target": "name: \"褪色的红色\""
+        },
+        {
+          "source": "name: \"faded-green\"",
+          "target": "name: \"褪色的绿色\""
+        },
+        {
+          "source": "name: \"faded-yellow\"",
+          "target": "name: \"褪色的黄色\""
+        },
+        {
+          "source": "name: \"faded-blue\"",
+          "target": "name: \"褪色的蓝色\""
+        },
+        {
+          "source": "name: \"faded-purple\"",
+          "target": "name: \"褪色的紫色\""
+        },
+        {
+          "source": "name: \"faded-aqua\"",
+          "target": "name: \"褪色的水\""
+        },
+        {
+          "source": "name: \"faded-orange\"",
+          "target": "name: \"褪色的橙色\""
+        },
+        {
+          "source": "name: \"Gunmetal\"",
+          "target": "name: \"炮铜\""
+        },
+        {
+          "source": "name: \"Bright Gray\"",
+          "target": "name: \"亮灰色\""
+        },
+        {
+          "source": "name: \"River Bed\"",
+          "target": "name: \"河床\""
+        },
+        {
+          "source": "name: \"Easy Bay\"",
+          "target": "name: \"易湾\""
+        },
+        {
+          "source": "name: \"Hawkes Blue\"",
+          "target": "name: \"霍克斯蓝\""
+        },
+        {
+          "source": "name: \"Mystic\"",
+          "target": "name: \"神秘的\""
+        },
+        {
+          "source": "name: \"Athens Gray\"",
+          "target": "name: \"雅典灰色\""
+        },
+        {
+          "source": "name: \"Contessa\"",
+          "target": "name: \"孔泰萨\""
+        },
+        {
+          "source": "name: \"Feldspar\"",
+          "target": "name: \"长石\""
+        },
+        {
+          "source": "name: \"Putty\"",
+          "target": "name: \"油灰\""
+        },
+        {
+          "source": "name: \"Norway\"",
+          "target": "name: \"挪威\""
+        },
+        {
+          "source": "name: \"London Hue\"",
+          "target": "name: \"伦敦色调\""
+        },
+        {
+          "source": "name: \"Shadow Green\"",
+          "target": "name: \"阴影绿\""
+        },
+        {
+          "source": "name: \"Half Baked\"",
+          "target": "name: \"抢救肯尼小子\""
+        },
+        {
+          "source": "name: \"Dark Pastel Blue\"",
+          "target": "name: \"深淡蓝色\""
+        },
+        {
+          "source": "name: \"Air Force Blue\"",
+          "target": "name: \"空军蓝\""
+        },
+        {
+          "source": "name: \"Black Rock\"",
+          "target": "name: \"黑岩\""
+        },
+        {
+          "source": "name: \"Casper\"",
+          "target": "name: \"卡斯珀\""
+        },
+        {
+          "source": "name: \"Japanese Laurel\"",
+          "target": "name: \"日本月桂\""
+        },
+        {
+          "source": "name: \"Blue Gem\"",
+          "target": "name: \"蓝色宝石\""
+        },
+        {
+          "source": "name: \"Medium Slate Blue\"",
+          "target": "name: \"中号板岩蓝\""
+        },
+        {
+          "source": "name: \"Ou Crimson Red\"",
+          "target": "name: \"欧深红\""
+        },
+        {
+          "source": "name: \"Jaguar\"",
+          "target": "name: \"美洲虎\""
+        },
+        {
+          "source": "name: \"Code Gray\"",
+          "target": "name: \"代码灰色\""
+        },
+        {
+          "source": "name: \"Mineshaft\"",
+          "target": "name: \"井筒\""
+        },
+        {
+          "source": "name: \"Gigas\"",
+          "target": "name: \"吉加斯\""
+        },
+        {
+          "source": "name: \"Steel\"",
+          "target": "name: \"钢\""
+        },
+        {
+          "source": "name: \"Aluminium\"",
+          "target": "name: \"铝\""
+        },
+        {
+          "source": "name: \"Red Orange\"",
+          "target": "name: \"红橙色\""
+        },
+        {
+          "source": "name: \"Mona Lisa 40%\"",
+          "target": "name: \"蒙娜丽莎40%\""
+        },
+        {
+          "source": "name: \"Yellow 40%\"",
+          "target": "name: \"黄色40%\""
+        },
+        {
+          "source": "name: \"White\"",
+          "target": "name: \"白色\""
+        },
+        {
+          "source": "name: \"Light Gray\"",
+          "target": "name: \"浅灰色\""
+        },
+        {
+          "source": "name: \"Dark Electric Blue\"",
+          "target": "name: \"深电蓝色\""
+        },
+        {
+          "source": "name: \"Chicago\"",
+          "target": "name: \"芝加哥\""
+        },
+        {
+          "source": "name: \"Charcoal\"",
+          "target": "name: \"木炭\""
+        },
+        {
+          "source": "name: \"Dark Jungle Green\"",
+          "target": "name: \"深丛林绿\""
+        },
+        {
+          "source": "name: \"background-secondary\"",
+          "target": "name: \"背景次要\""
+        },
+        {
+          "source": "name: \"background-tag\"",
+          "target": "name: \"背景标签\""
+        },
+        {
+          "source": "name: \"background-quick\"",
+          "target": "name: \"背景快速\""
+        },
+        {
+          "source": "name: \"interactive-hover\"",
+          "target": "name: \"交互式悬停\""
+        },
+        {
+          "source": "name: \"interactive-accent\"",
+          "target": "name: \"交互式口音\""
+        },
+        {
+          "source": "name: \"interactive-accent-hover\"",
+          "target": "name: \"交互式重音悬停\""
+        },
+        {
+          "source": "name: \"text-accent\"",
+          "target": "name: \"文本重音\""
+        },
+        {
+          "source": "name: \"text-muted\"",
+          "target": "name: \"文本已静音\""
+        },
+        {
+          "source": "name: \"text-normal\"",
+          "target": "name: \"文本正常\""
+        },
+        {
+          "source": "name: \"text-on-accent\"",
+          "target": "name: \"口音文本\""
+        },
+        {
+          "source": "name: \"text-tag\"",
+          "target": "name: \"文本标签\""
+        },
+        {
+          "source": "name: \"text-error\"",
+          "target": "name: \"文本错误\""
+        },
+        {
+          "source": "text: \"Never mind\"",
+          "target": "text: \"没关系\""
+        },
+        {
+          "source": "text: `File ${filename} does not exist. Would you like to create it?`",
+          "target": "text: `文件${filename}不存在。您想创建它吗？`"
+        },
+        {
+          "source": "text: 'reference'",
+          "target": "text: '参考'"
+        },
+        {
+          "source": "text: \"Close\"",
+          "target": "text: \"关\""
+        },
+        {
+          "source": "text: `${source.name} Settings`",
+          "target": "text: `${source.name}设置`"
+        }
+      ]
+    }
+  }
+}
