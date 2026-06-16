@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-reading-time",
+    "version": "2.0.0",
+    "title": "Reading Time",
+    "description": "Add the current note's reading time to Obsidian's status bar.",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "name: \"Selected Text\"",
+          "target": "name: \"所选文本\""
+        },
+        {
+          "source": ".setText(\"0 min read\")",
+          "target": ".setText(\"0 分阅读\")"
+        },
+        {
+          "source": ".setName(\"Reading speed\")",
+          "target": ".setName(\"阅读速度\")"
+        },
+        {
+          "source": ".setName(\"Format\")",
+          "target": ".setName(\"格式\")"
+        },
+        {
+          "source": ".setName(\"Append Text\")",
+          "target": ".setName(\"附加文本\")"
+        },
+        {
+          "source": ".setDesc(\"Words per minute used for reading speed (default: 200).\")",
+          "target": ".setDesc(\"用于阅读速度的每分钟字数(默认: 200).\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the output format\")",
+          "target": ".setDesc(\"选择输出格式\")"
+        },
+        {
+          "source": ".setDesc(\"Append 'read' to formatted string.\")",
+          "target": ".setDesc(\"将 '字符串' 附加到格式化字符串。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: 200\")",
+          "target": ".setPlaceholder(\"例如: 200\")"
+        },
+        {
+          "source": "addOption(\"compact\", \"Compact (10m)\")",
+          "target": "addOption(\"compact\", \"紧凑(10分)\")"
+        },
+        {
+          "source": "addOption(\"simple\", \"Simple (10m 4s)\")",
+          "target": "addOption(\"simple\", \"简单 (10分4秒)\")"
+        },
+        {
+          "source": "addOption(\"verbose\", \"Verbose (10 minutes 4 seconds)\")",
+          "target": "addOption(\"verbose\", \"详细(10分钟4秒)\")"
+        },
+        {
+          "source": "addOption(\"digital\", \"Colon Notation (10:04)\")",
+          "target": "addOption(\"digital\", \"冒号表示法 (10:04)\")"
+        },
+        {
+          "source": "return plugin.settings.appendText ? `${result.minutes} min read` : `${result.minutes} min`;",
+          "target": "return plugin.settings.appendText ? `${result.minutes} 分` : `${result.minutes} 分`;"
+        },
+        {
+          "source": "add(parsed.days % 365, \"day\", \"d\");",
+          "target": "add(parsed.days % 365, \"天\", \"天\");"
+        },
+        {
+          "source": "add(parsed.hours, \"hour\", \"h\");",
+          "target": "add(parsed.hours, \"小时\", \"时\");"
+        },
+        {
+          "source": "add(parsed.minutes, \"minute\", \"m\");",
+          "target": "add(parsed.minutes, \"分钟\", \"分\");"
+        },
+        {
+          "source": "add(parsed.seconds, \"second\", \"s\");",
+          "target": "add(parsed.seconds, \"秒\", \"秒\");"
+        },
+        {
+          "source": "add(parsed.milliseconds, \"millisecond\", \"ms\");",
+          "target": "add(parsed.milliseconds, \"毫秒\", \"毫秒\");"
+        },
+        {
+          "source": "add(parsed.microseconds, \"microsecond\", \"\\xB5s\");",
+          "target": "add(parsed.microseconds, \"微秒\", \"\\微秒\");"
+        },
+        {
+          "source": "add(parsed.nanoseconds, \"nanosecond\", \"ns\");",
+          "target": "add(parsed.nanoseconds, \"纳秒\", \"纳秒\");"
+        },
+        {
+          "source": "add(Number.parseFloat(secondsString, 10), \"second\", \"s\", secondsString);",
+          "target": "add(Number.parseFloat(secondsString, 10), \"秒\", \"秒\", secondsString);"
+        },
+        {
+          "source": "var pluralize = (word, count) => (count === 1 ? word : `${word}s`);",
+          "target": "var pluralize = (word, count) => (count === 1 ? word : `${word}`);"
+        },
+        {
+          "source": ".addOption(\"default\", \"Default (10 min)\")",
+          "target": ".addOption(\"default\", \"默认(10 分)\")"
+        }
+      ]
+    }
+  }
+}

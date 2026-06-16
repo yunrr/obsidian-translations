@@ -1,0 +1,707 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "novel-word-count",
+    "version": "2.0.0",
+    "title": "Novel word count",
+    "description": "Displays a word count (and more!) for each file, folder and vault in the File Explorer pane.",
+    "language": "zh-cn",
+    "supportedVersions": "4.5.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".error(`Unable to parse canvas file [${file.name}]: ${ex}`)",
+          "target": ".error(`无法解析画布文件 [${file.name}]: ${ex}`)"
+        },
+        {
+          "source": "text: \"Notes\"",
+          "target": "text: \"笔记\""
+        },
+        {
+          "source": ".setButtonText(\"Recount\")",
+          "target": ".setButtonText(\"重新计算\")"
+        },
+        {
+          "source": ".setButtonText(\"Done\")",
+          "target": ".setButtonText(\"完成\")"
+        },
+        {
+          "source": ".setName(\"Abbreviate descriptions\")",
+          "target": ".setName(\"缩写描述\")"
+        },
+        {
+          "source": ".setName(\"Alignment\")",
+          "target": ".setName(\"对齐方式\")"
+        },
+        {
+          "source": ".setName(\"Show advanced options\")",
+          "target": ".setName(\"显示高级选项\")"
+        },
+        {
+          "source": ".setName(\"Exclude comments\")",
+          "target": ".setName(\"排除注释\")"
+        },
+        {
+          "source": ".setName(\"Exclude code blocks\")",
+          "target": ".setName(\"排除代码块\")"
+        },
+        {
+          "source": ".setName(\"Exclude footnotes\")",
+          "target": ".setName(\"排除脚注\")"
+        },
+        {
+          "source": ".setName(\"Character count method\")",
+          "target": ".setName(\"字符计数方法\")"
+        },
+        {
+          "source": ".setName(\"Words per page\")",
+          "target": ".setName(\"每页字数\")"
+        },
+        {
+          "source": ".setName(\"Characters per page\")",
+          "target": ".setName(\"每页字符数\")"
+        },
+        {
+          "source": ".setName(\"Date format\")",
+          "target": ".setName(\"日期格式\")"
+        },
+        {
+          "source": ".setName(\"Debug mode\")",
+          "target": ".setName(\"调试模式\")"
+        },
+        {
+          "source": ".setDesc(\"Use advanced formatting\")",
+          "target": ".setDesc(\"使用高级格式\")"
+        },
+        {
+          "source": ".setDesc(\"Language compatibility and fine-tuning\")",
+          "target": ".setDesc(\"语言兼容性和微调\")"
+        },
+        {
+          "source": ".setDesc(\"MomentJS date format to use for date strings\")",
+          "target": ".setDesc(\"用于日期字符串的 MomentJS 日期格式\")"
+        },
+        {
+          "source": ".setDesc(\"Log debugging information to the developer console\")",
+          "target": ".setDesc(\"将调试信息记录到开发者控制台\")"
+        },
+        {
+          "source": ".setDesc(\"[Track Session] Session count type\")",
+          "target": ".setDesc(\"[跟踪会话] 会话计数类型\")"
+        },
+        {
+          "source": ".setPlaceholder(\"\").setValue(this.plugin.settings.includeDirectories).onChange((0, import_obsidian4.debounce)(includePathsChanged.bind(this, txt), 1e3));\n      });\n      new import_obsidian4.Setting(containerEl).setName(\"Exclude comments\")",
+          "target": ".setPlaceholder(\"\").setValue(this.plugin.settings.includeDirectories).onChange((0, import_obsidian4.debounce)(includePathsChanged.bind(this, txt), 1e3));\n      });\n      new import_obsidian4.Setting(containerEl).setName(\"排除注释\")"
+        },
+        {
+          "source": "name: \"1st data type to show\"",
+          "target": "name: \"要显示的第一个数据类型\""
+        },
+        {
+          "source": "name: \"2nd data type to show\"",
+          "target": "name: \"要显示的第二个数据类型\""
+        },
+        {
+          "source": "name: \"3rd data type to show\"",
+          "target": "name: \"要显示的第三个数据类型\""
+        },
+        {
+          "source": "name: \"Recount all notes / Reset session\"",
+          "target": "name: \"重新计算所有笔记 / 重置会话\""
+        },
+        {
+          "source": "name: \"Show next data type (1st position)\"",
+          "target": "name: \"显示下一个数据类型（第一位置）\""
+        },
+        {
+          "source": "name: \"Toggle abbreviation on Notes\"",
+          "target": "name: \"切换笔记上的缩写\""
+        },
+        {
+          "source": "name: `Show ${COUNT_TYPE_DISPLAY_STRINGS[countType]} (1st position)`",
+          "target": "name: `显示 ${COUNT_TYPE_DISPLAY_STRINGS[countType]}（第一位置）`"
+        },
+        {
+          "source": "text: \"You can display up to three data types side by side.\"",
+          "target": "text: \"您可以并排显示多达三种数据类型。\""
+        },
+        {
+          "source": ".setName(\"Data type separator\")",
+          "target": ".setName(\"数据类型分隔符\")"
+        },
+        {
+          "source": ".setName(\"Folders: Same data as Notes\")",
+          "target": ".setName(\"文件夹：与笔记相同的数据\")"
+        },
+        {
+          "source": ".setName(\"Root: Same data as Notes\")",
+          "target": ".setName(\"根目录：与笔记相同的数据\")"
+        },
+        {
+          "source": ".setName(\"Include file/folder names\")",
+          "target": ".setName(\"包含文件名/文件夹名\")"
+        },
+        {
+          "source": ".setName(\"Exclude non-visible portions of links\")",
+          "target": ".setName(\"排除链接的非可见部分\")"
+        },
+        {
+          "source": ".setName(\"Page count method\")",
+          "target": ".setName(\"页面计数方法\")"
+        },
+        {
+          "source": ".setName(\"Words per minute\")",
+          "target": ".setName(\"每分钟字数\")"
+        },
+        {
+          "source": ".setName(\"CJK characters per minute\")",
+          "target": ".setName(\"每分钟中日韩字符数\")"
+        },
+        {
+          "source": ".setName(\"Include whitespace characters in page count\")",
+          "target": ".setName(\"页面计数包含空格符\")"
+        },
+        {
+          "source": ".setName(\"Recount all documents\")",
+          "target": ".setName(\"重新计算所有文档\")"
+        },
+        {
+          "source": ".setDesc(\"E.g. show '120w' instead of '120 words'\")",
+          "target": ".setDesc(\"例如：显示 '120w' 而不是 '120 words'\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Show data inline with file/folder names, right-aligned, or underneath\"\n    )",
+          "target": ".setDesc(\n      \"将数据显示在文件名/文件夹名旁边，右对齐或下方显示\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n        \"Only count paths matching the indicated term(s). Case-sensitive, comma-separated. Defaults to all files. Any term starting with ! will be excluded instead of included.\"\n      )",
+          "target": ".setDesc(\n        \"仅计算匹配指定术语的路径。区分大小写，逗号分隔。默认为所有文件。任何以 '!' 开头的术语将被排除而不是包含。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Exclude %%Obsidian%% and <!--HTML--> comments from counts. May affect performance on large vaults.\"\n      )",
+          "target": ".setDesc(\n        \"从计数中排除 %%Obsidian%% 和 <!--HTML--> 注释。可能会影响大型库的性能。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Exclude ```code blocks``` (e.g. DataView snippets) from all counts. May affect performance on large vaults.\"\n      )",
+          "target": ".setDesc(\n        \"从所有计数中排除 ```代码块```（例如 DataView 代码片段）。可能会影响大型库的性能。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"For external links, exclude the URI from all counts. For internal links with aliases, only count the alias. May affect performance on large vaults.\"\n      )",
+          "target": ".setDesc(\n        \"对于外部链接，从所有计数中排除 URI。对于带有别名的内部链接，仅计算别名。可能会影响大型库的性能。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Exclude footnotes[^1] from counts. May affect performance on large vaults.\"\n      )",
+          "target": ".setDesc(\n        \"从计数中排除脚注[^1]。可能会影响大型库的性能。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"For language compatibility\")",
+          "target": ".setDesc(\"用于语言兼容性\")"
+        },
+        {
+          "source": ".setDesc(\n        \"Used to calculate Reading Time. 265 is the average speed of an English-speaking adult.\"\n      )",
+          "target": ".setDesc(\n        \"用于计算阅读时间。265 是英语母语成人的平均阅读速度。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Used to calculate Reading Time. 500 is the average speed for CJK texts.\"\n      )",
+          "target": ".setDesc(\n        \"用于计算阅读时间。500 是中日韩文本的平均阅读速度。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n          \"Used for page count. 300 is standard in English language publishing.\"\n        )",
+          "target": ".setDesc(\n          \"用于页面计数。300 是英语出版物的标准。\"\n        )"
+        },
+        {
+          "source": ".setDesc(\n          `Used for page count. ${this.plugin.settings.charsPerPageIncludesWhitespace ? \"2400 is common in Danish.\" : \"1500 is common in German (Normseite).\"}`\n        )",
+          "target": ".setDesc(\n          `用于页面计数。${this.plugin.settings.charsPerPageIncludesWhitespace ? \"2400 是丹麦的常用标准。\" : \"1500 是德语的常用标准 (Normseite)。\"}`\n        )"
+        },
+        {
+          "source": ".setDesc(\n      \"If changes have occurred outside of Obsidian, you may need to trigger a manual recount\"\n    )",
+          "target": ".setDesc(\n      \"如果在 Obsidian 之外发生了更改，您可能需要进行手动分析\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n        `[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] can't be formatted.`\n      )",
+          "target": ".setDesc(\n        `[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] 无法格式化。`\n      )"
+        },
+        {
+          "source": ".setDesc(\n        `[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] Custom suffix`\n      )",
+          "target": ".setDesc(\n        `[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] 自定义后缀`\n      )"
+        },
+        {
+          "source": ".setDesc(\n      `[${COUNT_TYPE_DISPLAY_STRINGS[\"frontmatterKey\" /* FrontmatterKey */]}] Key name`\n    )",
+          "target": ".setDesc(\n      `[${COUNT_TYPE_DISPLAY_STRINGS[\"frontmatterKey\" /* FrontmatterKey */]}] 属性名称 `\n    )"
+        },
+        {
+          "source": ".log(\"novel-word-count:\", ...args)",
+          "target": ".log(\"小说字数：\", ...args)"
+        },
+        {
+          "source": " error(message)",
+          "target": " error(message)"
+        },
+        {
+          "source": ".error(message)",
+          "target": ".error(message)"
+        },
+        {
+          "source": ".error(err)",
+          "target": ".error(err)"
+        },
+        {
+          "source": ".setName(\"Label opacity\")",
+          "target": ".setName(\"标签不透明度\")"
+        },
+        {
+          "source": ".setDesc(\"Increase this value to make all count labels in the File Explorer more visible.\")",
+          "target": ".setDesc(\"增加此值可使文件浏览器中的所有计数标签更明显。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"265\")",
+          "target": ".setPlaceholder(\"265\")"
+        },
+        {
+          "source": ".setPlaceholder(\"500\")",
+          "target": ".setPlaceholder(\"500\")"
+        },
+        {
+          "source": ".setPlaceholder(\"300\")",
+          "target": ".setPlaceholder(\"300\")"
+        },
+        {
+          "source": ".setPlaceholder(\"1500\")",
+          "target": ".setPlaceholder(\"1500\")"
+        },
+        {
+          "source": ".setPlaceholder(\"YYYY/MM/DD\")",
+          "target": ".setPlaceholder(\"YYYY/MM/DD\")"
+        },
+        {
+          "source": "name: \"Word Count\"",
+          "target": "name: \"字数统计\""
+        },
+        {
+          "source": "name: \"Page Count\"",
+          "target": "name: \"页数统计\""
+        },
+        {
+          "source": "name: \"Page Count (decimal)\"",
+          "target": "name: \"页数统计（十进制）\""
+        },
+        {
+          "source": "name: \"Line Break Count\"",
+          "target": "name: \"换行符计数\""
+        },
+        {
+          "source": "name: \"Reading Time\"",
+          "target": "name: \"阅读时间\""
+        },
+        {
+          "source": "name: \"% of Word Goal\"",
+          "target": "name: \"% 目标字数\""
+        },
+        {
+          "source": "name: \"Note Count\"",
+          "target": "name: \"笔记计数\""
+        },
+        {
+          "source": "name: \"Character Count\"",
+          "target": "name: \"字符计数\""
+        },
+        {
+          "source": "name: \"Link Count\"",
+          "target": "name: \"链接计数\""
+        },
+        {
+          "source": "name: \"Embed Count\"",
+          "target": "name: \"嵌入计数\""
+        },
+        {
+          "source": "name: \"First Alias\"",
+          "target": "name: \"首个别名\""
+        },
+        {
+          "source": "name: \"Created Date\"",
+          "target": "name: \"创建日期\""
+        },
+        {
+          "source": "name: \"Last Updated Date\"",
+          "target": "name: \"最后更新日期\""
+        },
+        {
+          "source": "name: \"File Size\"",
+          "target": "name: \"文件大小\""
+        },
+        {
+          "source": "name: \"Frontmatter Key\"",
+          "target": "name: \"前置内容\""
+        },
+        {
+          "source": "name: \"Track Session\"",
+          "target": "name: \"跟踪会话\""
+        },
+        {
+          "source": "Total words.",
+          "target": "字数。"
+        },
+        {
+          "source": "Total pages, rounded up.",
+          "target": "页数，向上取整。"
+        },
+        {
+          "source": "Total pages, precise to 2 digits after the decimal.",
+          "target": "页数，精确到小数点后两位。"
+        },
+        {
+          "source": "Estimated time to read the note.",
+          "target": "预计阅读笔记所需时间。"
+        },
+        {
+          "source": "Set a word goal by adding the 'word-goal' property to a note.",
+          "target": "通过向笔记添加 'word-goal' 属性来设置目标字数。"
+        },
+        {
+          "source": "Total notes.",
+          "target": "笔记总数。"
+        },
+        {
+          "source": "Total characters (letters, symbols, numbers, and spaces).",
+          "target": "字符总数（字母、符号、数字和空格）。"
+        },
+        {
+          "source": "Total links to other notes.",
+          "target": "指向其他笔记的链接总数。"
+        },
+        {
+          "source": "Total embedded images, files, and notes.",
+          "target": "嵌入的图片、文件和笔记总数。"
+        },
+        {
+          "source": "The first alias property of each note.",
+          "target": "每条笔记的首个别名属性。"
+        },
+        {
+          "source": "Creation date. (On folders: earliest creation date of any note.)",
+          "target": "创建日期。（对于文件夹：任何笔记的最早创建日期。）"
+        },
+        {
+          "source": "Date of last edit. (On folders: latest edit date of any note.)",
+          "target": "最后编辑日期。（对于文件夹：任何笔记的最新编辑日期。）"
+        },
+        {
+          "source": "Total size on hard drive.",
+          "target": "硬盘上的总大小。"
+        },
+        {
+          "source": "Key in the frontmatter block.",
+          "target": "Frontmatter 块中的键。"
+        },
+        {
+          "source": "Track progress since last Obsidian startup, plugin init, settings change, or recount",
+          "target": "跟踪自上次 Obsidian 启动、插件初始化、设置更改或重新计数以来的进度"
+        },
+        {
+          "source": "Hidden.",
+          "target": "隐藏。"
+        },
+        {
+          "source": "All characters",
+          "target": "所有字符"
+        },
+        {
+          "source": "Exclude whitespace",
+          "target": "排除空格"
+        },
+        {
+          "source": "Words per page",
+          "target": "每页字数"
+        },
+        {
+          "source": "Characters per page",
+          "target": "每页字符数"
+        },
+        {
+          "source": "Inline",
+          "target": "内联"
+        },
+        {
+          "source": "Right-aligned",
+          "target": "右对齐"
+        },
+        {
+          "source": "Below",
+          "target": "下方显示"
+        },
+        {
+          "source": "Show advanced options",
+          "target": "显示高级选项"
+        },
+        {
+          "source": "Label opacity",
+          "target": "标签不透明度"
+        },
+        {
+          "source": "Increase this value to make all count labels in the File Explorer more visible.",
+          "target": "增加此值可使文件浏览器中的所有计数标签更明显。"
+        },
+        {
+          "source": "Only count paths matching the indicated term(s). Case-sensitive, comma-separated. Defaults to all files. Any term starting with ! will be excluded instead of included.",
+          "target": "仅计算匹配指定术语的路径。区分大小写，逗号分隔。默认为所有文件。任何以 '!' 开头的术语将被排除而不是包含。"
+        },
+        {
+          "source": "Exclude %%Obsidian%% and <!--HTML--> comments from counts. May affect performance on large vaults.",
+          "target": "从计数中排除 %%Obsidian%% 和 <!--HTML--> 注释。可能会影响大型库的性能。"
+        },
+        {
+          "source": "Exclude ```code blocks``` (e.g. DataView snippets) from all counts. May affect performance on large vaults.",
+          "target": "从所有计数中排除 ```代码块```（例如 DataView 代码片段）。可能会影响大型库的性能。"
+        },
+        {
+          "source": "For external links, exclude the URI from all counts. For internal links with aliases, only count the alias. May affect performance on large vaults.",
+          "target": "对于外部链接，从所有计数中排除 URI。对于带有别名的内部链接，仅计算别名。可能会影响大型库的性能。"
+        },
+        {
+          "source": "Exclude footnotes[^1] from counts. May affect performance on large vaults.",
+          "target": "从计数中排除脚注[^1]。可能会影响大型库的性能。"
+        },
+        {
+          "source": "For language compatibility",
+          "target": "用于语言兼容性"
+        },
+        {
+          "source": "Used to calculate Reading Time. 265 is the average speed of an English-speaking adult.",
+          "target": "用于计算阅读时间。265 是英语母语成人的平均阅读速度。"
+        },
+        {
+          "source": "Used to calculate Reading Time. 500 is the average speed for CJK texts.",
+          "target": "用于计算阅读时间。500 是中日韩文本的平均阅读速度。"
+        },
+        {
+          "source": "Used for page count. 300 is standard in English language publishing.",
+          "target": "用于页面计数。300 是英语出版物的标准。"
+        },
+        {
+          "source": "Used for page count. This is common in Danish.",
+          "target": "用于页面计数。丹麦语通常是 2400。"
+        },
+        {
+          "source": "Used for page count. This is common in German (Normseite).",
+          "target": "用于页面计数。德语通常是 1500 (Normseite)。"
+        },
+        {
+          "source": "MomentJS date format to use for date strings",
+          "target": "用于日期字符串的 MomentJS 日期格式"
+        },
+        {
+          "source": "Log debugging information to the developer console",
+          "target": "将调试信息记录到开发者控制台"
+        },
+        {
+          "source": "If changes have occurred outside of Obsidian, you may need to trigger a manual recount",
+          "target": "如果 Obsidian 外部发生了更改，您可能需要触发手动重新计数"
+        },
+        {
+          "source": "[Track Session] Session count type",
+          "target": "[跟踪会话] 会话计数类型"
+        },
+        {
+          "source": "[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] can't be formatted.",
+          "target": "[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] 无法格式化。"
+        },
+        {
+          "source": "[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] Custom suffix",
+          "target": "[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] 自定义后缀"
+        },
+        {
+          "source": "[${COUNT_TYPE_DISPLAY_STRINGS[\"frontmatterKey\" /* FrontmatterKey */]}] Key name",
+          "target": "[${COUNT_TYPE_DISPLAY_STRINGS[\"frontmatterKey\" /* FrontmatterKey */]}] 键名"
+        },
+        {
+          "source": "Show data inline with file/folder names, right-aligned, or underneath",
+          "target": "将数据显示在文件名/文件夹名旁边，右对齐或下方显示"
+        },
+        {
+          "source": "Folders: Same data as Notes",
+          "target": "文件夹：与笔记相同的数据"
+        },
+        {
+          "source": "Root: Same data as Notes",
+          "target": "根目录：与笔记相同的数据"
+        },
+        {
+          "source": "Word Count",
+          "target": "字数统计"
+        },
+        {
+          "source": "Page Count",
+          "target": "页数统计"
+        },
+        {
+          "source": "Page Count (decimal)",
+          "target": "页数（十进制）"
+        },
+        {
+          "source": "Line Break Count",
+          "target": "换行符计数"
+        },
+        {
+          "source": "Reading Time",
+          "target": "阅读时间"
+        },
+        {
+          "source": "% of Word Goal",
+          "target": "% 目标字数"
+        },
+        {
+          "source": "Note Count",
+          "target": "笔记计数"
+        },
+        {
+          "source": "Character Count",
+          "target": "字符计数"
+        },
+        {
+          "source": "Link Count",
+          "target": "链接计数"
+        },
+        {
+          "source": "Embed Count",
+          "target": "嵌入计数"
+        },
+        {
+          "source": "First Alias",
+          "target": "首个别名"
+        },
+        {
+          "source": "Created Date",
+          "target": "创建日期"
+        },
+        {
+          "source": "Last Updated Date",
+          "target": "最后更新日期"
+        },
+        {
+          "source": "File Size",
+          "target": "文件大小"
+        },
+        {
+          "source": "Frontmatter Key",
+          "target": "前置内容"
+        },
+        {
+          "source": "Track Session",
+          "target": "跟踪会话"
+        },
+        {
+          "source": "Cannot format ': ': `[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] Cannot format ': '`",
+          "target": "无法格式化 ': '： `[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] 无法格式化 ': '`"
+        },
+        {
+          "source": "Cannot format 'No value provided': `[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] Cannot format 'No value provided'`",
+          "target": "无法格式化 '未提供值'： `[${COUNT_TYPE_DISPLAY_STRINGS[config.countType]}] 无法格式化 '未提供值'`"
+        },
+        {
+          "source": "Could not find file explorer leaf.",
+          "target": "未能找到文件浏览器窗格。"
+        },
+        {
+          "source": "Error while updating displayed counts",
+          "target": "更新显示计数时出错"
+        },
+        {
+          "source": "File explorer leaf not found; skipping update.",
+          "target": "未找到文件浏览器窗格；跳过更新。"
+        },
+        {
+          "source": "No cached data found; skipping update.",
+          "target": "未找到缓存数据；跳过更新。"
+        },
+        {
+          "source": "Setting display counts for",
+          "target": "设置显示计数为"
+        },
+        {
+          "source": "fileItems matching path",
+          "target": "匹配路径的文件项"
+        },
+        {
+          "source": "Setting display counts for ALL fileItems",
+          "target": "为所有文件项设置显示计数"
+        },
+        {
+          "source": "container already touched, skipping display update",
+          "target": "容器已触摸，跳过显示更新"
+        },
+        {
+          "source": "container is clean, updating display",
+          "target": "容器干净，正在更新显示"
+        },
+        {
+          "source": "metadataCache hook fired, scheduling file for analysis",
+          "target": "metadataCache 钩子已触发，正在调度文件进行分析"
+        },
+        {
+          "source": "vault hook fired, analyzing file",
+          "target": "vault 钩子已触发，正在分析文件"
+        },
+        {
+          "source": "vault hook fired, scheduling file for analysis",
+          "target": "vault 钩子已触发，正在调度文件进行分析"
+        },
+        {
+          "source": "vault hook fired, forgetting file",
+          "target": "vault 钩子已触发，正在忽略文件"
+        },
+        {
+          "source": "vault hook fired, recounting file",
+          "target": "vault 钩子已触发，正在重新计数文件"
+        },
+        {
+          "source": "initialize",
+          "target": "初始化"
+        },
+        {
+          "source": "Saving to data.json.",
+          "target": "正在保存到 data.json。"
+        },
+        {
+          "source": "Detected locales: [...]",
+          "target": "检测到的区域设置：[...]"
+        },
+        {
+          "source": "onload lifecycle hook",
+          "target": "onload 生命周期钩子"
+        },
+        {
+          "source": "[Recount] command triggered",
+          "target": "[重新计算] 命令已触发"
+        },
+        {
+          "source": "[Cycle next data type] command triggered",
+          "target": "[循环下一个数据类型] 命令已触发"
+        },
+        {
+          "source": "[Toggle abbrevation - Notes] command triggered",
+          "target": "[切换缩写 - 笔记] 命令已触发"
+        },
+        {
+          "source": "[Set count type to ...] command triggered",
+          "target": "[设置为 ... 计数类型] 命令已触发"
+        },
+        {
+          "source": "updateDisplayedCounts [ALL]",
+          "target": "updateDisplayedCounts [全部]"
+        },
+        {
+          "source": "updateDisplayedCounts [...]",
+          "target": "updateDisplayedCounts [...]"
+        },
+        {
+          "source": "Newlines (\\xB6), including empty lines.",
+          "target": "换行符 (\\xB6)，包括空行。"
+        }
+      ]
+    }
+  }
+}

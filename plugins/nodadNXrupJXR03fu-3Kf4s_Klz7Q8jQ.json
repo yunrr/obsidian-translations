@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "note-refactor-obsidian",
+    "version": "2.0.0",
+    "title": "Note Refactor",
+    "description": "Extract note content into new notes and split notes",
+    "language": "zh-cn",
+    "supportedVersions": "1.8.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setName('Default location for new notes')",
+          "target": ".setName('新笔记的默认位置')"
+        },
+        {
+          "source": ".setName('Folder for new notes')",
+          "target": ".setName('新笔记的文件夹')"
+        },
+        {
+          "source": ".setName('File name prefix')",
+          "target": ".setName('文件名前缀')"
+        },
+        {
+          "source": ".setName('Transclude by default')",
+          "target": ".setName('默认情况下进行转录')"
+        },
+        {
+          "source": ".setName('Note link template')",
+          "target": ".setName('笔记链接模板')"
+        },
+        {
+          "source": ".setName('Refactored note template')",
+          "target": ".setName('重构笔记模板')"
+        },
+        {
+          "source": ".setName('Exclude First Line')",
+          "target": ".setName('排除第一行')"
+        },
+        {
+          "source": ".setName('Include Heading')",
+          "target": ".setName('包括标题')"
+        },
+        {
+          "source": ".setName('Open New Note')",
+          "target": ".setName('打开新笔记')"
+        },
+        {
+          "source": ".setName('Heading format')",
+          "target": ".setName('标题格式')"
+        },
+        {
+          "source": ".setName('Normalize heading levels')",
+          "target": ".setName('使标题级别标准化')"
+        },
+        {
+          "source": ".setDesc('Where newly created notes are placed.')",
+          "target": ".setDesc('新创建的笔记放在哪里。')"
+        },
+        {
+          "source": ".setDesc('When content has been extracted/split into a new note, include a transclusion of the new note')",
+          "target": ".setDesc('当内容被提取/拆分为新笔记时，请包含新笔记的摘要')"
+        },
+        {
+          "source": ".setDesc('Prevent the first line of selected/split note content from being included in the new note (only applies for first line as file name commands)')",
+          "target": ".setDesc('防止所选/拆分注释内容的第一行包含在新注释中（仅适用于作为文件名命令的第一行）')"
+        },
+        {
+          "source": ".setDesc('Include first line of selected/split note content as note heading (applies for both first line as title and content only commands)')",
+          "target": ".setDesc('将所选/拆分笔记内容的第一行作为笔记标题（适用于第一行作为标题和仅内容命令）')"
+        },
+        {
+          "source": ".setDesc('Open the new note in a new pane')",
+          "target": ".setDesc('在新窗格中打开新笔记')"
+        },
+        {
+          "source": ".setDesc('Set format of the heading to be included in note content')",
+          "target": ".setDesc('设置要包含在注释内容中的标题格式')"
+        },
+        {
+          "source": ".setDesc('When content has been extracted/split into a new note, normalize the levels of the headings')",
+          "target": ".setDesc('当内容被提取/拆分为新注释时，对标题的级别进行标准化')"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: folder 1/folder\")",
+          "target": ".setPlaceholder(\"示例：文件夹1/文件夹\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: {{date:YYYYMMDDHHmm}}-\")",
+          "target": ".setPlaceholder(\"示例: {{date:YYYYMMDDHHmm}}-\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example:\\n\\nSee also -> {{new_note_link}}\")",
+          "target": ".setPlaceholder(\"示例:\\n\\nSee also -> {{new_note_link}}\")"
+        },
+        {
+          "source": ".setPlaceholder('Example:\\n\\n{{new_note_content}}\\n\\n---\\nLink to original note: {{link}}')",
+          "target": ".setPlaceholder('示例:\\n\\n{{new_note_content}}\\n\\n---\\nLink to original note: {{link}}')"
+        },
+        {
+          "source": ".setPlaceholder(\"# or ##\")",
+          "target": ".setPlaceholder(\"# or ##\")"
+        },
+        {
+          "source": ".appendText('Supported placeholders:')",
+          "target": ".appendText('支持的占位符:')"
+        },
+        {
+          "source": ".appendText('{{date}} {{title}} {{link}} {{new_note_title}} {{new_note_link}} {{new_note_content}}')",
+          "target": ".appendText('{{date}} {{title}} {{link}} {{new_note_title}} {{new_note_link}} {{new_note_content}}')"
+        },
+        {
+          "source": ".appendText('Newly created notes will appear under this folder.')",
+          "target": ".appendText('新创建的笔记将显示在此文件夹下。')"
+        },
+        {
+          "source": ".appendText('For more syntax, refer to ')",
+          "target": ".appendText('有关更多语法，请参阅 ')"
+        },
+        {
+          "source": ".appendText('Your current folder path syntax looks like this:')",
+          "target": ".appendText('您当前的文件夹路径语法如下：')"
+        },
+        {
+          "source": ".appendText('Newly created notes will have this prefix')",
+          "target": ".appendText('新创建的笔记将具有此前缀')"
+        },
+        {
+          "source": ".appendText('Your current file name prefix syntax looks like this:')",
+          "target": ".appendText('您当前的文件名前缀语法如下：')"
+        },
+        {
+          "source": ".appendText('Date formats are supported {{date:YYYYMMDDHHmm}}')",
+          "target": ".appendText('支持日期格式{{date:YYYYMMDDHHmm}}')"
+        },
+        {
+          "source": ".appendText('and used with current date and time when note is created.')",
+          "target": ".appendText('并在创建注释时与当前日期和时间一起使用。')"
+        },
+        {
+          "source": ".tempalteDescriptionContent('The template used to generate the link to the extracted note. This overrides the Transclude by Default setting.')",
+          "target": ".tempalteDescriptionContent('用于生成指向提取笔记的链接的模板。这将覆盖“默认转录”设置。')"
+        },
+        {
+          "source": ".tempalteDescriptionContent('The template used to generate the content for the refactored note.')",
+          "target": ".tempalteDescriptionContent('用于生成重构笔记内容的模板。')"
+        },
+        {
+          "source": ".addOption(Location[Location.VaultFolder], \"Vault folder\")",
+          "target": ".addOption(Location[Location.VaultFolder], \"库文件夹\")"
+        },
+        {
+          "source": ".addOption(Location[Location.SameFolder], \"Same folder as current file\")",
+          "target": ".addOption(Location[Location.SameFolder], \"与当前文件同文件夹\")"
+        },
+        {
+          "source": ".addOption(Location[Location.SpecifiedFolder], \"In the folder specified below\")",
+          "target": ".addOption(Location[Location.SpecifiedFolder], \"在下面指定的文件夹中\")"
+        },
+        {
+          "source": "name: 'Split note by headings - H1'",
+          "target": "name: '按 H1 标题拆分笔记'"
+        },
+        {
+          "source": "name: 'Split note by headings - H2'",
+          "target": "name: '按 H2 标题拆分笔记'"
+        },
+        {
+          "source": "name: 'Split note by headings - H3'",
+          "target": "name: '按 H3 标题拆分笔记'"
+        },
+        {
+          "source": "name: 'Split note here - first line as file name'",
+          "target": "name: '拆分笔记 - 将第一行作为文件名'"
+        },
+        {
+          "source": "name: 'Split note here - content only'",
+          "target": "name: '拆分笔记 - 仅内容'"
+        },
+        {
+          "source": "name: 'Extract selection to new note - content only'",
+          "target": "name: '提取所选内容到新的笔记 - 仅内容'"
+        },
+        {
+          "source": "name: 'Extract selection to new note - first line as file name'",
+          "target": "name: '提取所选内容到新的笔记 - 将第一行作为文件名'"
+        },
+        {
+          "source": "name: 'Extract selection to new note - only prefix as file name'",
+          "target": "name: '提取所选内容到新的笔记 - 仅使用前缀作为文件名'"
+        },
+        {
+          "source": "name: 'Anno Domini'",
+          "target": "name: '公元'"
+        },
+        {
+          "source": "name: 'Before Christ'",
+          "target": "name: '公元前'"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "tag-page-preview",
+    "version": "2.0.0",
+    "title": "tag-page-preview",
+    "description": "Clicking a tag opens a dialog listing pages that use that tag",
+    "language": "zh-cn",
+    "supportedVersions": "0.0.12",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".createEl(\"h2\",{text:`Pages with ${t.tag}`})",
+          "target": ".createEl(\"h2\",{text:`匹配标签 ${t.tag} 的页面`})"
+        },
+        {
+          "source": ".createEl(\"h2\",{text:\"Search tag\"})",
+          "target": ".createEl(\"h2\",{text:\"搜索标签\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:`#${this.inputValue.replace(\"#\",\"\")} did not match any tags in your vault`})",
+          "target": ".createEl(\"p\",{text:`#${this.inputValue.replace(\"#\",\"\")} 与库中的任何标签都不匹配`})"
+        }
+      ]
+    }
+  }
+}
