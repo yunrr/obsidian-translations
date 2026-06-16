@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "url-name-extractor",
+    "version": "1.0.0",
+    "title": "URL Name Extractor",
+    "description": "URL Name Extractor Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.5",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Archive.org → Microlink (privacy-focused: non-profit first)",
+          "target": "Archive.org → Microlink（注重隐私：非营利优先）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Microlink → Archive.org (recommended: more reliable)",
+          "target": "Microlink → Archive.org（推荐：更可靠）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Simple fetchWithHeaders call failed:",
+          "target": "简单的 fetchWithHeaders 调用失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Regular expression to detect URLs in text. Uses JavaScript regex syntax with global and case-insensitive flags.",
+          "target": "用于检测文本中 URL 的正则表达式。使用 JavaScript 正则表达式语法，带有全局和不区分大小写的标志。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For websites with non-standard title tags. Format: one pattern per line as \"urlMatch|titleRegex\". Example: \"arxiv.org|<meta name=\\\"citation_title\\\" content=\\\"([^\\\"]*)\\\">\"",
+          "target": "对于具有非标准标题标签的网站。格式：每行一个模式，格式为“urlMatch|titleRegex”。示例：“arxiv.org|<meta name=\\\\\\\"citation_title\\\\\\\" content=\\\\\\\"([^\\\\\\\"]*)\\\\\\\">”"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When a site blocks access, fetch title via Microlink API. URLs are sent to a third-party service. ⚠️ Free tier: 50 requests/day — when exhausted, other fallbacks will be tried.",
+          "target": "当网站阻止访问时，通过 Microlink API 获取标题。URL 会发送到第三方服务。⚠️ 免费额度：每天 50 次请求 — 用尽后，将尝试其他回退方案。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When both fallbacks are enabled, which should be tried first?",
+          "target": "当两个回退方案都启用时，应优先尝试哪一个？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Milliseconds to wait between requests when processing multiple URLs. Helps avoid rate limiting. (Default: 1000ms = 1 second)",
+          "target": "处理多个 URL 时，请求之间的等待时间（毫秒）。有助于避免速率限制。（默认：1000 毫秒 = 1 秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "URL regex pattern",
+          "target": "URL 正则表达式模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Site-specific title patterns",
+          "target": "特定网站的标题模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Archive.org fallback",
+          "target": "使用 Archive.org 回退"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Microlink fallback",
+          "target": "使用 Microlink 回退"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Microlink API key (optional)",
+          "target": "Microlink API 密钥（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Fallback priority order",
+          "target": "回退优先顺序"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Delay between bulk requests",
+          "target": "批量请求之间的延迟"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter regex pattern",
+          "target": "输入正则表达式模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "arxiv.org|<meta name=\"citation_title\" content=\"([^\"]*)\">",
+          "target": "arxiv.org|<meta name=\\\"citation_title\\\" content=\\\"([^\\\"]*)\\\">"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter API key",
+          "target": "输入 API 密钥"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Fetching titles for selected text...",
+          "target": "正在为选中文本获取标题..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No raw URLs found to process.",
+          "target": "未找到要处理的原始 URL。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⚠️ Microlink daily limit reached (50/day). Trying next fallback...",
+          "target": "⚠️ Microlink 每日限额已达（50/天）。正在尝试下一个回退方案..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Name the URL links in the selected text",
+          "target": "为选中文本中的 URL 链接命名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Microlink",
+          "target": "Microlink"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

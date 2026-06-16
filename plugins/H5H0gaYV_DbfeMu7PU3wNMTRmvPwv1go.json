@@ -1,0 +1,703 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "vault-brain",
+    "version": "1.0.0",
+    "title": "Vault Brain",
+    "description": "Vault Brain Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append to today's daily note",
+          "target": "追加到今天的每日笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Serbian",
+          "target": "塞尔维亚语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "English",
+          "target": "英语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Auto (match input)",
+          "target": "自动（匹配输入）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open setup",
+          "target": "打开设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Re-run the guided setup — verify Ollama and pull missing models.",
+          "target": "重新运行引导设置 — 验证 Ollama 并拉取缺失的模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Local endpoint only. Defaults to loopback for privacy.",
+          "target": "仅限本地端点。默认为回环地址以保护隐私。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Local model used to index your vault for whole-vault search.",
+          "target": "用于为整个库搜索索引您的库的本地模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How many note chunks to retrieve for a whole-vault question.",
+          "target": "为整个库问题检索多少个笔记块。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Device used for in-app recording. Device names appear after you grant mic access once.",
+          "target": "应用内录音使用的设备。设备名称在您授予麦克风访问权限后出现。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "New audio files dropped into this vault folder are transcribed automatically. Leave blank to disable.",
+          "target": "放入此库文件夹的新音频文件将自动转录。留空则禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How many pages to OCR when extracting text from a PDF.",
+          "target": "从 PDF 中提取文本时要 OCR 的页数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hard cap on Q&A context size.",
+          "target": "问答上下文大小的硬性上限。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Periodically ping Ollama to avoid cold starts during a session.",
+          "target": "定期 ping Ollama 以避免会话期间冷启动。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Placeholders: {{date}} {{title}} {{summary}} {{tasks}} {{transcript}}",
+          "target": "占位符：{{date}} {{title}} {{summary}} {{tasks}} {{transcript}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One per line as \"Name :: instruction\". They appear in the right-click → Vault Brain submenu on a selection.",
+          "target": "每行一个，格式为 \\\"名称 :: 指令\\\"。它们会出现在选中文本的右键菜单 → 库大脑子菜单中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Setup & health check",
+          "target": "设置与健康检查"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama host",
+          "target": "Ollama 主机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama port",
+          "target": "Ollama 端口"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Embedding model",
+          "target": "嵌入模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Vault search results (top-K)",
+          "target": "库搜索结果（前 K 个）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Daily-note mode",
+          "target": "日记模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Microphone",
+          "target": "麦克风"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-watch folder for audio",
+          "target": "自动监视音频文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PDF max pages",
+          "target": "PDF最大页数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output language",
+          "target": "输出语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Context token cap",
+          "target": "上下文令牌上限"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Keep model warm",
+          "target": "保持模型预热"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom prompts",
+          "target": "自定义提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. Recordings",
+          "target": "例如：录音"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Add a note or folder as context…",
+          "target": "添加笔记或文件夹作为上下文…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Vault Brain — Setup",
+          "target": "Vault Brain — 设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": " starting…",
+          "target": " 正在启动…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Testing…",
+          "target": "测试中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Thinking…",
+          "target": "思考中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Writing…",
+          "target": "写作中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "✓ Working",
+          "target": "✓ 运行正常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Test it",
+          "target": "测试一下"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Out of date",
+          "target": "已过期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Applied ✓ (Cmd-Z to undo)",
+          "target": "已应用 ✓ (Cmd-Z 撤销)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Applied ✓",
+          "target": "已应用 ✓"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Copied",
+          "target": "已复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "⏳ Vault Brain",
+          "target": "⏳ Vault Brain"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Vault Brain: Process as meeting (who said what)",
+          "target": "Vault Brain：按会议处理（谁说了什么）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Vault Brain",
+          "target": "Vault Brain"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Vault Brain: Extract text (vision OCR)",
+          "target": "Vault Brain：提取文本（视觉OCR）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "No recent activity",
+          "target": "无近期活动"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: non-local host set — your notes would leave this machine. Use a localhost address to keep everything private.",
+          "target": "Vault Brain：已设置非本地主机 — 您的笔记将离开此设备。请使用本地主机地址以保持所有内容私密。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: this note changed since the preview — re-run the edit.",
+          "target": "Vault Brain：此笔记自预览后已更改 — 请重新运行编辑。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: extracting text from image…",
+          "target": "Vault Brain：正在从图像中提取文本…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: no text could be extracted from that image.",
+          "target": "Vault Brain：无法从该图像中提取文本。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: image text inserted.",
+          "target": "Vault Brain：图像文本已插入。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: no audio files found in the vault.",
+          "target": "Vault Brain：在保险库中未找到音频文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: recording cancelled.",
+          "target": "Vault Brain：录音已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: already recording.",
+          "target": "Vault Brain：已在录音中。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: select some text first.",
+          "target": "Vault Brain：请先选择一些文本。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: no result produced.",
+          "target": "Vault Brain：未产生结果。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: suggesting tags…",
+          "target": "Vault Brain：正在建议标签…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: no tags suggested.",
+          "target": "Vault Brain：未建议标签。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: linked existing-note mentions.",
+          "target": "Vault Brain：已链接现有笔记提及。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: no new mentions to link.",
+          "target": "Vault Brain：没有新的提及需要链接。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: write something first.",
+          "target": "Vault Brain：请先写点什么。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: nothing to continue.",
+          "target": "Vault Brain：没有可继续的内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: PDF engine not ready — open any PDF in Obsidian once, then try again.",
+          "target": "Vault Brain：PDF引擎未就绪 — 请先在Obsidian中打开任意PDF，然后重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: rebuilding vault index…",
+          "target": "Vault Brain：正在重建保险库索引…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault Brain: …",
+          "target": "Vault Brain：…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Ollama is running",
+          "target": "Ollama 正在运行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Summarize",
+          "target": "总结"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Improve",
+          "target": "改进"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Format as Markdown",
+          "target": "格式化为Markdown"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Translate SR↔EN",
+          "target": "翻译 SR↔EN"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Fix grammar & spelling",
+          "target": "修正语法和拼写"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Setup & health check",
+          "target": "设置与健康检查"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract text from image below cursor",
+          "target": "从光标下方图像提取文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start voice recording",
+          "target": "开始语音录音"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stop voice recording",
+          "target": "停止语音录音"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suggest tags for this note",
+          "target": "为此笔记建议标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Link mentions of existing notes",
+          "target": "链接现有笔记的提及"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Continue writing at cursor",
+          "target": "在光标处继续写作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Test connection (stream a hello)",
+          "target": "测试连接（流式传输一个问候）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Q&A panel",
+          "target": "打开问答面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open related notes",
+          "target": "打开相关笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rebuild vault index",
+          "target": "重建保险库索引"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Ask about your notes… (Cmd/Ctrl-Enter to send)",
+          "target": "询问您的笔记… (Cmd/Ctrl-Enter 发送)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Vault Brain runs entirely on your machine via Ollama — nothing leaves your computer. Let's make sure it's ready.",
+          "target": "Vault Brain 通过 Ollama 完全在您的机器上运行 — 任何数据都不会离开您的电脑。让我们确保它已准备就绪。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Download Ollama →",
+          "target": "下载 Ollama →"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pull now",
+          "target": "立即拉取"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Test it",
+          "target": "测试一下"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Done",
+          "target": "完成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Say hello in 3 words.",
+          "target": "用3个词打个招呼。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🔴 Vault Brain",
+          "target": "🔴 Vault Brain"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🟡 Vault Brain",
+          "target": "🟡 Vault Brain"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🟢 Vault Brain",
+          "target": "🟢 保险库大脑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This note + links",
+          "target": "此笔记 + 链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Whole vault (search)",
+          "target": "整个保险库（搜索）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Edit this note",
+          "target": "编辑此笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "+ Context",
+          "target": "+ 上下文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Send",
+          "target": "发送"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Stop",
+          "target": "停止"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Apply to note",
+          "target": "应用到笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open a note to see related notes.",
+          "target": "打开一个笔记以查看相关笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Finding related notes…",
+          "target": "正在查找相关笔记…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No related notes yet — the index may still be building.",
+          "target": "暂无相关笔记 — 索引可能仍在构建中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⏳ Transcribing…",
+          "target": "⏳ 转录中…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🔴",
+          "target": "🔴"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⏸ Pause",
+          "target": "⏸ 暂停"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "■ Stop",
+          "target": "■ 停止"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "✕ Cancel",
+          "target": "✕ 取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🧠",
+          "target": "🧠"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Say hello in 5 words.",
+          "target": "用5个词打个招呼。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Vault Brain — idle (click for recent activity)",
+          "target": "Vault Brain — 空闲（点击查看近期活动）"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
