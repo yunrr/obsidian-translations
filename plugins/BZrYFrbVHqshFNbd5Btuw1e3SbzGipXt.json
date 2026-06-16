@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "book-exporter",
+    "version": "1.0.0",
+    "title": "Book Exporter",
+    "description": "Book Exporter Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.0.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "☕ Donate",
+          "target": "☕ 捐赠"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Required. Full path to the pandoc binary, or just `pandoc` to rely on $PATH.",
+          "target": "必填。pandoc 二进制文件的完整路径，或仅输入 `pandoc` 以依赖 $PATH。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list. Used by \"Export to all formats\" when the manifest doesn't specify any.",
+          "target": "逗号分隔的列表。当清单未指定任何格式时，“导出到所有格式”将使用此列表。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pandoc PDF engine used unless the book overrides it. Typst is recommended — single small binary, no LaTeX install needed.",
+          "target": "除非书籍另有指定，否则使用此 Pandoc PDF 引擎。推荐 Typst — 单个小型二进制文件，无需安装 LaTeX。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "BCP-47 code (en, fr, ...) used when the manifest doesn't set one.",
+          "target": "BCP-47 代码（en, fr, ...），当清单未设置时使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of heading names (case-insensitive) to skip. Applied to the manifest before parsing (drops authoring scaffolding like \"Title Options\", \"Target Audience\") and to each linked note when inlining (drops housekeeping sections like \"Related\", \"References\").",
+          "target": "以逗号分隔的标题名称列表（不区分大小写），用于跳过。在解析清单前应用（用于移除“标题选项”、“目标受众”等创作脚手架），并在内联笔记时应用于每个链接笔记（用于移除“相关”、“参考”等维护性章节）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Forwarded to pandoc as `-V monofont=…` for code blocks. Examples: Liberation Mono, DejaVu Sans Mono, JetBrainsMono NF.",
+          "target": "作为 `-V monofont=…` 传递给 pandoc，用于代码块。示例：Liberation Mono、DejaVu Sans Mono、JetBrainsMono NF。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled (default), the TOC depth is computed from the deepest heading level actually present in the manifest (parts + chapters → depth 3, flat chapters → depth 2). Disable to fall back to the static TOC depth below. Per-book `book_export.toc_depth` always wins.",
+          "target": "启用时（默认），目录深度将根据清单中实际存在的最深标题级别计算（部分+章节 → 深度 3，扁平章节 → 深度 2）。禁用则回退到下面的静态目录深度。每本书的 `book_export.toc_depth` 设置始终优先。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used when \"Auto TOC depth\" is off, or when the manifest has no parseable heading.",
+          "target": "当“自动目录深度”关闭，或清单中没有可解析的标题时使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Forwards `--number-sections` to pandoc — headings get hierarchical numbers (1, 1.1, 1.1.1, ...). Per-book override: `book_export.number_sections`.",
+          "target": "将 `--number-sections` 传递给 pandoc — 标题将获得层级编号（1, 1.1, 1.1.1, ...）。每本书可覆盖：`book_export.number_sections`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Insert a page break before each top-level section (the lowest-numbered heading level used in the manifest).",
+          "target": "在每个顶级章节（清单中使用的最低编号标题级别）前插入分页符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Useful when an export fails to inspect the compiled manuscript.",
+          "target": "当导出失败时，可用于检查编译后的手稿。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "External tools",
+          "target": "外部工具"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pandoc path",
+          "target": "Pandoc 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PDF engine path",
+          "target": "PDF 引擎路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Extra PATH directories",
+          "target": "额外 PATH 目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output",
+          "target": "输出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default output folder",
+          "target": "默认输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default formats",
+          "target": "默认格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PDF engine",
+          "target": "PDF 引擎"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default language",
+          "target": "默认语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default author(s)",
+          "target": "默认作者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note processing",
+          "target": "笔记处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cover frontmatter property",
+          "target": "封面元数据属性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inlined-note separator",
+          "target": "内联笔记分隔符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sections to skip",
+          "target": "要跳过的章节"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rendering",
+          "target": "渲染"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PDF main font",
+          "target": "PDF 主字体"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PDF mono font",
+          "target": "PDF 等宽字体"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Typst image width",
+          "target": "Typst 图片宽度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include TOC by default",
+          "target": "默认包含目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto TOC depth",
+          "target": "自动目录深度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "TOC depth (fallback)",
+          "target": "目录深度（回退）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Number sections",
+          "target": "章节编号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Page break per chapter",
+          "target": "每章分页"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug",
+          "target": "调试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verbose console logging",
+          "target": "详细控制台日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Support",
+          "target": "支持"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Follow Sébastien on X",
+          "target": "在 X 上关注 Sébastien"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Buy me a coffee",
+          "target": "请我喝杯咖啡"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Sébastien Dubois",
+          "target": "Sébastien Dubois"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Related, References, Title Options, Target Audience",
+          "target": "相关、参考、标题选项、目标受众"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Liberation Serif",
+          "target": "Liberation Serif"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Liberation Mono",
+          "target": "Liberation Mono"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Output folder is not configured. Set \"Default output folder\" in Settings → Book Exporter (e.g. ~/Downloads).",
+          "target": "输出文件夹未配置。请在 设置 → 书籍导出器 中设置“默认输出文件夹”（例如 ~/Downloads）。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No export formats selected.",
+          "target": "未选择任何导出格式。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Output folder is not configured. Set it in Settings → Book Exporter.",
+          "target": "输出文件夹未配置。请在 设置 → 书籍导出器 中进行设置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open the book manifest note before running this command.",
+          "target": "请在运行此命令前打开书籍清单笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "None — notes flow into one another (legacy)",
+          "target": "无 — 笔记直接衔接（旧版）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Glyph rule (* * *)",
+          "target": "符号分隔线 (* * *)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Blank line",
+          "target": "空行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Note title as sub-heading",
+          "target": "笔记标题作为子标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Missing book title.",
+          "target": "缺少书名。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Missing or default `authors` field — falling back to \"Anonymous\".",
+          "target": "缺少或使用默认的 `authors` 字段 — 回退为“匿名”。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "No sections found. The manifest body must contain at least one ## heading with a list of wikilinks underneath.",
+          "target": "未找到章节。清单正文必须包含至少一个 ## 标题，其下方有一个维基链接列表。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Manifest has sections but no resolved note references. Add bulleted wikilinks under your headings.",
+          "target": "清单有章节但没有解析的笔记引用。请在标题下方添加带项目符号的维基链接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Export current book to EPUB",
+          "target": "将当前书籍导出为 EPUB"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Export current book to PDF",
+          "target": "将当前书籍导出为 PDF"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Export current book to all formats",
+          "target": "将当前书籍导出为所有格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Preview compiled manuscript (.md)",
+          "target": "预览编译后的手稿 (.md)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Validate current book",
+          "target": "验证当前书籍"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open exports folder",
+          "target": "打开导出文件夹"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
