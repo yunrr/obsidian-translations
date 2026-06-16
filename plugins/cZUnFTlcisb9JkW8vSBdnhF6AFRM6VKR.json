@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "native-mcp",
+    "version": "1.0.1",
+    "title": "Native MCP",
+    "description": "Native MCP Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.5.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Rotate",
+          "target": "旋转"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Restart server",
+          "target": "重启服务器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy log",
+          "target": "复制日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paste this into your AI client's MCP server config.",
+          "target": "将此内容粘贴到您的 AI 客户端的 MCP 服务器配置中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Server not running. Enable at least one vault below.",
+          "target": "服务器未运行。请在下方启用至少一个保险库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Generate a new bearer token (restarts the server).",
+          "target": "生成新的承载令牌（将重启服务器）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "HTTP port (restart required).",
+          "target": "HTTP 端口（需要重启）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Block all mutating tools. Recommended when granting access to less-trusted clients.",
+          "target": "阻止所有变更性工具。在向受信任度较低的客户端授予权限时推荐使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Max markdown files scanned per search.content / vault.info call (0 = unlimited).",
+          "target": "每次 search.content / vault.info 调用扫描的最大 Markdown 文件数（0 = 无限制）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Max raw bytes of file content read per search.content / vault.info call (0 = unlimited).",
+          "target": "每次 search.content / vault.info 调用读取的最大原始文件内容字节数（0 = 无限制）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Max number of ops in a single bulk.apply call (0 = unlimited).",
+          "target": "单次 bulk.apply 调用中的最大操作数（0 = 无限制）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Wall-clock time limit in milliseconds for long-walk tools (0 = no deadline). Best-effort: checked once per file.",
+          "target": "长时间运行工具的挂钟时间限制（毫秒）（0 = 无截止时间）。尽力而为：每个文件检查一次。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "MCP Server URL",
+          "target": "MCP 服务器 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rotate token",
+          "target": "轮换令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Port",
+          "target": "端口"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Read-only mode",
+          "target": "只读模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max files scanned",
+          "target": "最大扫描文件数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max bytes read",
+          "target": "最大读取字节数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max bulk ops",
+          "target": "最大批量操作数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Deadline (ms)",
+          "target": "截止时间（毫秒）"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "URL copied.",
+          "target": "URL 已复制。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audit log copied.",
+          "target": "审计日志已复制。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "MCP token rotated.",
+          "target": "MCP 令牌已轮换。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Obsidian Native MCP: no vaults enabled.",
+          "target": "Obsidian 原生 MCP：未启用任何保险库。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Optional per-call budget overrides. Each field overrides the server default for this call only. 0 = unlimited.",
+          "target": "可选的单次调用预算覆盖。每个字段仅覆盖本次调用的服务器默认值。0 = 无限制。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vault-relative directory",
+          "target": "保险库相对目录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "picomatch glob, matched against vault-relative path",
+          "target": "picomatch glob，与保险库相对路径匹配"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Dot-notated key path, e.g. 'status.priority'",
+          "target": "点分键路径，例如 'status.priority'"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Optional per-call budget override. maxBulkOps overrides the server default for this call only. 0 = unlimited.",
+          "target": "可选的单次调用预算覆盖。maxBulkOps 仅覆盖本次调用的服务器默认值。0 = 无限制。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "unauthorized",
+          "target": "未授权"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Unexpected block-seq-ind on same line with key",
+          "target": "同一行上出现意外的 block-seq-ind 和键"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "attention",
+          "target": "注意"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "autolink",
+          "target": "自动链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "definition",
+          "target": "定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "list",
+          "target": "列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "strikethrough",
+          "target": "删除线"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "table",
+          "target": "表格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "outline",
+          "target": "大纲"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "List all configured vaults by name.",
+          "target": "列出所有已配置的保险库名称。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Get statistics for a single vault.",
+          "target": "获取单个保险库的统计信息。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "List files/directories in the vault, optionally recursively, with optional glob filter.",
+          "target": "列出保险库中的文件/目录，可选递归，可选 glob 过滤器。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Find files by name (exact / substring / glob / regex).",
+          "target": "按名称查找文件（精确/子字符串/glob/正则表达式）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Read a file's full content. Returns content + content_hash + totalLines so subsequent surgical edits can use the hash as a precondition.",
+          "target": "读取文件的完整内容。返回内容 + content_hash + totalLines，以便后续精确编辑可以使用哈希作为前提条件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Read a line range from a file (1-based, inclusive). Returns the slice + rangeHash + contentHash for surgical follow-ups.",
+          "target": "读取文件中的行范围（基于 1，包含）。返回切片 + rangeHash + contentHash，用于精确的后续操作。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Return the heading tree of a markdown file. Each entry includes path, level, line, end_line, section_hash, children_count, and (when applicable) duplicate_of[]. Use this to navigate large notes without reading them.",
+          "target": "返回 Markdown 文件的标题树。每个条目包括 path、level、line、end_line、section_hash、children_count 和（适用时）duplicate_of[]。使用此功能导航大型笔记而无需读取它们。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Find headings by leaf text OR by full Parent::Child::Leaf path. Returns ALL matches; surgical-edit tools require disambiguation when count > 1.",
+          "target": "通过叶文本或完整的 Parent::Child::Leaf 路径查找标题。返回所有匹配项；当计数 > 1 时，精确编辑工具需要消歧。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Find a block-reference (^id) in a file. Returns line/structuralType/blockHash so block.replace can be called with the precondition.",
+          "target": "在文件中查找块引用 (^id)。返回 line/structuralType/blockHash，以便可以使用前提条件调用 block.replace。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Read the frontmatter (or a nested key via dot-notation) from a markdown file.",
+          "target": "读取 Markdown 文件的 frontmatter（或通过点表示法读取嵌套键）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "List tags found in a single file (when 'file' is supplied) or aggregated across the vault.",
+          "target": "列出在单个文件中（当提供 'file' 时）或在整个保险库中聚合的标签。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Return outlinks (from the given file) and/or backlinks (vault-wide search for refs targeting the file's basename).",
+          "target": "返回出链（来自给定文件）和/或反向链接（在整个保险库中搜索针对文件基本名称的引用）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Read structural metadata for a file: frontmatter, headings, tags, link counts, total lines, content_hash.",
+          "target": "读取文件的结构元数据：frontmatter、标题、标签、链接计数、总行数、content_hash。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Substring search across markdown files. Returns hits with surrounding context and per-line hashes (each hit can be surgically rewritten with str_replace).",
+          "target": "在 Markdown 文件中进行子字符串搜索。返回带有周围上下文和每行哈希的命中结果（每个命中都可以通过 str_replace 进行精确重写）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "(planned) Diff a file against a prior content_hash. Stubbed for v1.0 — requires history cache; returns NOT_FOUND until enabled.",
+          "target": "（计划中）将文件与先前的 content_hash 进行差异比较。v1.0 的存根 — 需要历史记录缓存；启用前返回 NOT_FOUND。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Create a NEW file with the given content. Errors if the file already exists; use file.replace for overwrite.",
+          "target": "使用给定内容创建新文件。如果文件已存在则出错；使用 file.replace 进行覆盖。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "HEAVY: replace the entire content of a file. Prefer str_replace / apply_patch / heading.replace_body / block.replace / frontmatter.set / lines.replace for surgical edits. Requires expected_content_hash unless create_if_missing is true and the file does not exist.",
+          "target": "重量级操作：替换文件的全部内容。对于小于整个文件的任何编辑，首选 str_replace / apply_patch / heading.replace_body / block.replace / frontmatter.set / lines.replace 进行精确编辑。除非 create_if_missing 为 true 且文件不存在，否则需要 expected_content_hash。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Append text to a file (creating it if missing). Cheap: no read of existing content required.",
+          "target": "向文件追加文本（如果缺失则创建）。成本低：无需读取现有内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Move or rename a file. Defaults to on_conflict='error' — never silently overwrites.",
+          "target": "移动或重命名文件。默认 on_conflict='error' — 从不静默覆盖。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Delete a file. Default trash=true → moved to <vault>/.obsidian/trash. Hard delete (trash=false) requires expected_content_hash.",
+          "target": "删除文件。默认 trash=true → 移动到 <vault>/.obsidian/trash。硬删除 (trash=false) 需要 expected_content_hash。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Surgical edit: replace a literal substring in a file. Default occurrence='unique' (errors on >1 match). Tiny payload in/out; preferred over file.replace for any edit smaller than the whole file.",
+          "target": "精确编辑：替换文件中的字面子字符串。默认 occurrence='unique'（匹配 >1 时出错）。输入/输出负载小；对于小于整个文件的任何编辑，优于 file.replace。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Apply a batch of str_replace edits to a single file in one round-trip. Edits applied in order against the running in-memory text; atomic (rolled back in memory if any edit fails).",
+          "target": "在单次往返中对单个文件应用一批 str_replace 编辑。编辑按顺序应用于运行中的内存文本；原子性（如果任何编辑失败则在内存中回滚）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Replace a contiguous line range (1-based, inclusive). Requires expected_range_hash returned by file.read_range or outline (section_hash).",
+          "target": "替换连续的行范围（基于 1，包含）。需要 file.read_range 或 outline（section_hash）返回的 expected_range_hash。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Insert content before line N (1-based). Use line=totalLines+1 to append. No hash precondition required.",
+          "target": "在第 N 行之前插入内容（基于 1）。使用 line=totalLines+1 进行追加。不需要哈希前提条件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Replace the BODY beneath a heading (not the heading line itself). Errors if heading missing or path is ambiguous. Requires expected_section_hash from heading.find/outline.",
+          "target": "替换标题下方的正文（不包括标题行本身）。如果标题缺失或路径不明确则出错。需要来自 heading.find/outline 的 expected_section_hash。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Rename a heading's text in place. Errors on missing/duplicate. Preserves heading level. Does NOT update backlinks (use bulk.apply for that).",
+          "target": "就地重命名标题的文本。缺失/重复时出错。保留标题级别。不更新反向链接（为此请使用 bulk.apply）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Replace the structural block referenced by ^id (paragraph/list-item/table-row/etc.) preserving the ^id marker. Requires expected_block_hash from block.find.",
+          "target": "替换由 ^id 引用的结构块（段落/列表项/表格行等），保留 ^id 标记。需要来自 block.find 的 expected_block_hash。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Rename a block reference (^old → ^new) on the same line, preserving line content.",
+          "target": "在同一行中重命名块引用（^old → ^new），同时保留行内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Set a (possibly nested via dot-notation) key in the file's frontmatter. Creates the frontmatter block if absent. Requires expected_frontmatter_hash unless file has no frontmatter yet.",
+          "target": "在文件的前置元数据中设置一个（可能通过点表示法嵌套的）键。如果前置元数据块不存在，则创建它。除非文件尚无前置元数据，否则需要 expected_frontmatter_hash。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Delete a (possibly nested) key from the file's frontmatter. No-op if key absent. Requires expected_frontmatter_hash when frontmatter exists.",
+          "target": "从文件的前置元数据中删除一个（可能嵌套的）键。如果键不存在，则不执行任何操作。当前置元数据存在时，需要 expected_frontmatter_hash。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Apply a unified diff to a file. Context lines (' ' prefix) are validated verbatim per hunk — the diff IS the content precondition. expected_content_hash is optional belt-and-suspenders. Use this for multi-hunk surgical edits.",
+          "target": "将统一差异应用到文件。上下文行（' ' 前缀）按块逐字验证——差异本身就是内容前提条件。expected_content_hash 是可选的额外保障。用于多块精确编辑。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Execute a batch of write operations. With atomic=true (default), all ops are first validated in dry-run mode against in-memory snapshots; the actual writes happen only if every op would succeed. If any post-validation write fails, best-effort restore is attempted.",
+          "target": "执行一批写入操作。当 atomic=true（默认）时，所有操作首先在内存快照上以干运行模式进行验证；只有当每个操作都会成功时，才会进行实际写入。如果任何验证后的写入失败，将尝试尽力恢复。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "POWER TOOL: regex replacement on a file. TWO-STEP: first call MUST be dry_run=true; server returns a proposal_token + preview. Second call must supply the same token + matching expected_content_hash. Disabled by default in permissions.",
+          "target": "强力工具：对文件进行正则表达式替换。分两步：第一次调用必须设置 dry_run=true；服务器返回一个 proposal_token + 预览。第二次调用必须提供相同的 token + 匹配的 expected_content_hash。默认情况下在权限中禁用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Obsidian Native MCP",
+          "target": "Obsidian 原生 MCP"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Vaults",
+          "target": "保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tools",
+          "target": "工具"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Disable individual tools you don't want exposed (default: regex.replace off).",
+          "target": "禁用您不想暴露的单个工具（默认：regex.replace 关闭）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Performance budgets",
+          "target": "性能预算"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Limits for long-running operations. 0 = unlimited (default). Raise freely for large vaults or batch workflows.",
+          "target": "长时间运行操作的限制。0 = 无限制（默认）。对于大型保险库或批量工作流，可以自由提高。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recent audit log",
+          "target": "近期审计日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No Obsidian vaults detected.",
+          "target": "未检测到 Obsidian 保险库。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
