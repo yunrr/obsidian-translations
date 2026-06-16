@@ -1,0 +1,913 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "pi-agent",
+    "version": "1.0.1",
+    "title": "Pi Agent",
+    "description": "Pi Agent Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.0.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Check",
+          "target": "检查"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Provider/model from Pi's built-in and custom model registry. Use default to follow ~/.pi/agent/settings.json or .pi/settings.json.",
+          "target": "来自 Pi 内置和自定义模型注册表的提供商/模型。使用 default 以遵循 ~/.pi/agent/settings.json 或 .pi/settings.json。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Provider/model ID, for example anthropic/claude-sonnet-4-5.",
+          "target": "提供商/模型 ID，例如 anthropic/claude-sonnet-4-5。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Controls reasoning effort only. Values come from the selected model returned by Pi.",
+          "target": "仅控制推理努力程度。值来自 Pi 返回的所选模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Controls which Pi CLI tools are enabled. Tool modes are not an OS-level sandbox.",
+          "target": "控制启用哪些 Pi CLI 工具。工具模式不是操作系统级别的沙盒。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-specific instructions added to every Pi run.",
+          "target": "添加到每次 Pi 运行的特定于仓库的指令。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional path to the Pi CLI. Leave empty to auto-detect common install locations. Supports ~ and environment variables like ${USER}.",
+          "target": "Pi CLI 的可选路径。留空以自动检测常见安装位置。支持 ~ 和环境变量，如 ${USER}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Verify that Obsidian can run the Pi CLI from its current environment.",
+          "target": "验证 Obsidian 是否能从其当前环境运行 Pi CLI。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Load skills discovered by Pi from global and vault/project skill locations. Turn this off to use only the additional skill folders below.",
+          "target": "加载 Pi 从全局和仓库/项目技能位置发现的技能。关闭此选项将仅使用下方指定的额外技能文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One trusted skill file or folder per line. Supports absolute and vault-relative paths.",
+          "target": "每行一个受信任的技能文件或文件夹。支持绝对路径和仓库相对路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated folder prefixes that Pi pre-attached context and retrieval should ignore.",
+          "target": "逗号分隔的文件夹前缀，Pi 预附加上下文和检索应忽略这些前缀。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom model ID",
+          "target": "自定义模型 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Thinking level",
+          "target": "思考级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tool mode",
+          "target": "工具模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom instructions",
+          "target": "自定义指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pi CLI",
+          "target": "Pi CLI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pi executable path",
+          "target": "Pi 可执行文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Check Pi installation",
+          "target": "检查 Pi 安装"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Skills",
+          "target": "技能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include default Pi skills",
+          "target": "包含默认 Pi 技能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Additional skill folders",
+          "target": "额外技能文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Context and file access",
+          "target": "上下文和文件访问"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignored folders/directories",
+          "target": "忽略的文件夹/目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Approve vault change",
+          "target": "批准仓库更改"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Set up Pi CLI",
+          "target": "设置 Pi CLI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. anthropic/claude-sonnet-4-5",
+          "target": "例如 anthropic/claude-sonnet-4-5"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Prefer PARA folders. Keep project notes concise.",
+          "target": "优先使用 PARA 文件夹。保持项目笔记简洁。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Edit and resend",
+          "target": "编辑并重新发送"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Search vault for this",
+          "target": "在仓库中搜索此项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Copy response",
+          "target": "复制回复"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Insert into current note",
+          "target": "插入到当前笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Create note from response",
+          "target": "从回复创建笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open cited notes",
+          "target": "打开引用的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Regenerate",
+          "target": "重新生成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Rename",
+          "target": "重命名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open link",
+          "target": "打开链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Copy link",
+          "target": "复制链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open",
+          "target": "打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open in new tab",
+          "target": "在新标签页中打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open in split",
+          "target": "在分屏中打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open in new window",
+          "target": "在新窗口中打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Refresh models from Pi",
+          "target": "从 Pi 刷新模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Pi Agent: failed to restore editor scroll after external file change",
+          "target": "Pi 代理：外部文件更改后恢复编辑器滚动失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Pi Agent: failed to refresh model catalog",
+          "target": "Pi 代理：刷新模型目录失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Pi Agent: failed to save thread history",
+          "target": "Pi 代理：保存对话历史失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied response.",
+          "target": "已复制回复。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied to clipboard.",
+          "target": "已复制到剪贴板。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a note first.",
+          "target": "请先打开一个笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No vault links found.",
+          "target": "未找到仓库链接。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Chat thread was not found.",
+          "target": "未找到对话线程。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Wait for the agent run to finish before deleting this chat.",
+          "target": "请等待智能体运行完成后再删除此对话。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Chat deleted.",
+          "target": "对话已删除。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Set custom model ID in plugin settings.",
+          "target": "请在插件设置中设置自定义模型ID。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Nothing to fork yet.",
+          "target": "暂无可分叉的内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Wait for this chat's agent run to finish before forking it.",
+          "target": "请等待此对话的智能体运行完成后再进行分叉。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Agent run canceled.",
+          "target": "智能体运行已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Pi Agent is desktop-only.",
+          "target": "Pi智能体仅限桌面端使用。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Pi returned no models.",
+          "target": "Pi未返回任何模型。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not open Pi view.",
+          "target": "无法打开Pi视图。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a markdown note first.",
+          "target": "请先打开一个Markdown笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Run this queued message next",
+          "target": "运行此排队消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Remove queued message",
+          "target": "移除排队消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Back to chat",
+          "target": "返回对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "New chat",
+          "target": "新建对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Thread actions",
+          "target": "线程操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Message actions",
+          "target": "消息操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Fork chat",
+          "target": "分叉对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Manage chat threads",
+          "target": "管理对话线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Send message",
+          "target": "发送消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Chat title",
+          "target": "对话标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon pi-agent-prompt-queue-action",
+          "target": "clickable-icon pi-agent-prompt-queue-action"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon pi-agent-header-action",
+          "target": "clickable-icon pi-agent-header-action"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon pi-agent-thread-list-action",
+          "target": "clickable-icon pi-agent-thread-list-action"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pi-agent-message pi-agent-message-assistant pi-agent-message-streaming",
+          "target": "pi-agent-message pi-agent-message-assistant pi-agent-message-streaming"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pi-agent-message-content pi-agent-message-content-streaming",
+          "target": "pi-agent-message-content pi-agent-message-content-streaming"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pi-agent-message pi-agent-message-assistant pi-agent-message-activity",
+          "target": "pi-agent-message pi-agent-message-assistant pi-agent-message-activity"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon pi-agent-message-actions",
+          "target": "clickable-icon pi-agent-message-actions"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon pi-agent-thread-menu",
+          "target": "clickable-icon pi-agent-thread-menu"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon pi-agent-send-button",
+          "target": "clickable-icon pi-agent-send-button"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "confirmText",
+          "source": "Enable tools",
+          "target": "启用工具"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "confirmText",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Attach the active note, selection, links, tags, headings, and frontmatter.",
+          "target": "附加当前笔记、选区、链接、标签、标题和前置信息。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Attach notes that link to the active note.",
+          "target": "附加链接到当前笔记的笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Attach notes linked from the active note.",
+          "target": "附加从当前笔记链接出去的笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Attach ranked vault note matches for a query.",
+          "target": "附加针对查询的、按相关性排序的库笔记匹配项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Ask Pi to compact the current session context, optionally with custom instructions.",
+          "target": "要求Pi压缩当前会话上下文，可选择附加自定义指令。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Display the current Obsidian context packet without calling Pi.",
+          "target": "显示当前Obsidian上下文数据包，而不调用Pi。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Folder",
+          "target": "文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Note",
+          "target": "笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Tag",
+          "target": "标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Prompt template",
+          "target": "提示模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Current note",
+          "target": "当前笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Backlinks",
+          "target": "反向链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Outgoing links",
+          "target": "出站链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Vault search",
+          "target": "库搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Compact Pi context",
+          "target": "压缩Pi上下文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Show context",
+          "target": "显示上下文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Read files",
+          "target": "读取文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Search files",
+          "target": "搜索文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Edit files",
+          "target": "编辑文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Shell",
+          "target": "Shell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Thinking",
+          "target": "思考中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "No current note",
+          "target": "无当前笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Pi tool modes are not an OS-level sandbox. Edit and Full agent can modify vault/project files, and Full agent can run shell commands.",
+          "target": "Pi工具模式并非操作系统级别的沙盒。编辑和完整智能体可以修改库/项目文件，完整智能体可以运行Shell命令。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open agent chat",
+          "target": "打开智能体对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check Pi installation",
+          "target": "检查Pi安装"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ask about current note",
+          "target": "询问当前笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Research around current note",
+          "target": "围绕当前笔记进行研究"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suggest frontmatter for current note",
+          "target": "为当前笔记建议前置信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Draft base from current note context",
+          "target": "基于当前笔记上下文起草基础内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Ask the agent about your vault... Enter sends, Shift+Enter adds a line.",
+          "target": "向智能体询问您的库...按Enter发送，Shift+Enter换行。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Before",
+          "target": "之前"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "After",
+          "target": "之后"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reject",
+          "target": "拒绝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Apply change",
+          "target": "应用更改"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Start in Chat or Review mode. Only enable Edit or Full agent in vaults you are comfortable letting Pi modify.",
+          "target": "从对话或审阅模式开始。仅在您允许Pi修改的库中启用编辑或完整智能体。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Do not show again",
+          "target": "不再显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Runs after the current response.",
+          "target": "在当前响应之后运行。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Threads",
+          "target": "线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No chat threads.",
+          "target": "无线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You",
+          "target": "你"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Agent",
+          "target": "智能体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Send",
+          "target": "发送"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Enable write tools?",
+          "target": "启用写入工具？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Run next",
+          "target": "运行下一个"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Remove",
+          "target": "移除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Back to chat",
+          "target": "返回对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "New chat",
+          "target": "新建对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Open chat",
+          "target": "打开对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Agent is running in this chat",
+          "target": "智能体正在此对话中运行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Favorite chat",
+          "target": "收藏对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Thread actions",
+          "target": "线程操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Delete chat?",
+          "target": "删除对话？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Pi Agent",
+          "target": "Pi智能体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Rename chat",
+          "target": "重命名对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Fork chat",
+          "target": "分叉对话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Manage chat threads",
+          "target": "管理对话线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Send message",
+          "target": "发送消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Open a markdown note to attach it automatically",
+          "target": "打开一个Markdown笔记以自动附加"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Pi compacted this session. Exact context usage is unknown until the next model response returns fresh token usage.",
+          "target": "Pi已压缩此会话。在下一个模型响应返回新的令牌使用量之前，确切的上下文使用量未知。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
