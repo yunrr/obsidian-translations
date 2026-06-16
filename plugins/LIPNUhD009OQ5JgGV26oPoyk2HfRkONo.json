@@ -1,0 +1,1525 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "diffzip",
+    "version": "1.0.0",
+    "title": "Differential ZIP Backup",
+    "description": "Differential ZIP Backup Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "- / -",
+          "target": "- / -"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Scanning local vault...",
+          "target": "正在扫描本地保险库..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Computing differences...",
+          "target": "正在计算差异..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Only New",
+          "target": "仅新增"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Full",
+          "target": "完整"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error extracting file",
+          "target": "提取文件时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Fetch] start",
+          "target": "[DiffZip][SyncExec][Fetch] 开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Fetch] extracting",
+          "target": "[DiffZip][SyncExec][Fetch] 正在提取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Fetch] extracted",
+          "target": "[DiffZip][SyncExec][Fetch] 已提取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Fetch] deleting",
+          "target": "[DiffZip][SyncExec][Fetch] 正在删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Fetch] deleted",
+          "target": "[DiffZip][SyncExec][Fetch] 已删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Fetch] done",
+          "target": "[DiffZip][SyncExec][Fetch] 完成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Send] preparing",
+          "target": "[DiffZip][SyncExec][Send] 正在准备"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Send] prepared",
+          "target": "[DiffZip][SyncExec][Send] 已准备"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Send] planned",
+          "target": "[DiffZip][SyncExec][Send] 已计划"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Send] batch start",
+          "target": "[DiffZip][SyncExec][Send] 批次开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Send] batch done",
+          "target": "[DiffZip][SyncExec][Send] 批次完成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[DiffZip][SyncExec][Send] done",
+          "target": "[DiffZip][SyncExec][Send] 完成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test",
+          "target": "测试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create Bucket",
+          "target": "创建存储桶"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset",
+          "target": "重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy to Clipboard",
+          "target": "复制到剪贴板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Apply",
+          "target": "应用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you want to backup automatically, select the type of backup",
+          "target": "如果需要自动备份，请选择备份类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "node_modules, .git, and trash of Obsidian are ignored automatically",
+          "target": "node_modules、.git 和 Obsidian 的回收站会被自动忽略"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, Delete defaults to Fetch and Extra (Delete) defaults to Send in selective sync",
+          "target": "启用后，在选择性同步中，“删除”默认为“获取”，“额外（删除）”默认为“发送”"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select where to save the backup",
+          "target": "选择备份保存位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "We can use external folder of Obsidian only if on desktop and it is enabled. This feature uses Internal API.",
+          "target": "仅当在桌面端且启用时，我们才能使用 Obsidian 的外部文件夹。此功能使用内部 API。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "endPoint is a host name or an IP address",
+          "target": "端点是主机名或 IP 地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you are using a custom HTTP handler, enable this option.",
+          "target": "如果您使用自定义 HTTP 处理程序，请启用此选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder to keep each backup ZIPs and information file",
+          "target": "用于存放每个备份 ZIP 文件和信息文件的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder to save the restored file (Not applied on folder restore)",
+          "target": "用于保存恢复文件的文件夹（不适用于文件夹恢复）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "(0 to disabled) Limit the number of files in a single ZIP file to better restore performance",
+          "target": "（0 表示禁用）限制单个 ZIP 文件中的文件数量以提升恢复性能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "(0 to disabled) Limit the total size of files in a single ZIP file to better restore performance",
+          "target": "（0 表示禁用）限制单个 ZIP 文件中的总源文件大小（MB）以提升恢复性能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "(MB) Size to split the backup zip file. Unzipping requires 7z or other compatible tools.",
+          "target": "（MB）拆分备份 ZIP 文件的大小。解压需要 7z 或其他兼容工具。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "After resetting, backup information will be lost.",
+          "target": "重置后，备份信息将丢失。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Warning: This is not compatible with the usual ZIP tools. You can decrypt each file using OpenSSL with openssl  openssl enc -aes-256-cbc  -in [file]  -k [passphrase] -pbkdf2 -d -md sha256 > [out]",
+          "target": "警告：这与通常的 ZIP 工具不兼容。您可以使用 OpenSSL 解密每个文件：openssl enc -aes-256-cbc -in [file] -k [passphrase] -pbkdf2 -d -md sha256 > [out]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "You can encrypt the settings with a passphrase",
+          "target": "您可以使用密码短语加密设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "You can copy the settings to another device by URI",
+          "target": "您可以通过 URI 将设置复制到另一台设备"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "You can paste the settings from another device by URI",
+          "target": "您可以通过 URI 从另一台设备粘贴设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Start backup at launch",
+          "target": "启动时开始备份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto backup style",
+          "target": "自动备份样式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include hidden folders",
+          "target": "包含隐藏文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default destructive sync actions",
+          "target": "默认破坏性同步操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backup Destination",
+          "target": "备份目标位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backup folder (desktop)",
+          "target": "备份文件夹（桌面端）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Endpoint",
+          "target": "端点"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AccessKey",
+          "target": "访问密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "SecretKey",
+          "target": "秘密密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Region",
+          "target": "区域"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bucket",
+          "target": "存储桶"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Custom HTTP Handler",
+          "target": "使用自定义 HTTP 处理程序"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Test and Initialise",
+          "target": "测试并初始化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backup folder",
+          "target": "备份文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Restore folder",
+          "target": "恢复文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max files in a single ZIP",
+          "target": "单个 ZIP 文件中的最大文件数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max total source size in a single ZIP in MB",
+          "target": "单个 ZIP 文件中的最大总源文件大小（MB）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Perform all files over the max files",
+          "target": "处理超过最大文件数的所有文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max size of each output ZIP file",
+          "target": "每个输出 ZIP 文件的最大大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reset Backup Information",
+          "target": "重置备份信息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Encryption",
+          "target": "加密"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Passphrase",
+          "target": "密码短语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Copy setting to another device via URI",
+          "target": "通过 URI 将设置复制到另一台设备"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Paste setting from another device",
+          "target": "从另一台设备粘贴设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Passphrase",
+          "target": "密码短语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Restore (Revision Selector)",
+          "target": "恢复（版本选择器）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "userAgentAppId must be a string or undefined.",
+          "target": "userAgentAppId 必须是字符串或 undefined。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "The provided userAgentAppId exceeds the maximum length of 50 characters.",
+          "target": "提供的 userAgentAppId 超过了 50 个字符的最大长度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "An error was encountered in a non-retryable streaming request.",
+          "target": "在不可重试的流式请求中遇到错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "%c[svelte] lifecycle_double_unmount\n%cTried to unmount a component that was not mounted\nhttps://svelte.dev/e/lifecycle_double_unmount",
+          "target": "%c[svelte] lifecycle_double_unmount\\n%c尝试卸载一个未挂载的组件\\nhttps://svelte.dev/e/lifecycle_double_unmount"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to hydrate: ",
+          "target": "水合失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[DiffZip][SyncExec][Fetch] extract failed",
+          "target": "[DiffZip][SyncExec][Fetch] 提取失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[DiffZip][SyncExec][Fetch] delete failed",
+          "target": "[DiffZip][SyncExec][Fetch] 删除失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[DiffZip][SyncExec][Send] local stat missing -> mark missing",
+          "target": "[DiffZip][SyncExec][Send] 本地状态缺失 -> 标记为缺失"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No sync action selected.",
+          "target": "未选择任何同步操作。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Connection is successful, and bucket is existing",
+          "target": "连接成功，且存储桶已存在"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Connection is successful, aut bucket is missing",
+          "target": "连接成功，但存储桶缺失"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Connection failed",
+          "target": "连接失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bucket has been created",
+          "target": "存储桶已创建"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "URI has been copied to the clipboard",
+          "target": "URI 已复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cancelled",
+          "target": "已取消"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to decrypt the settings",
+          "target": "解密设置失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Africa (Cape Town)",
+          "target": "非洲（开普敦）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Hong Kong)",
+          "target": "亚太地区（中国香港特别行政区）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Taipei)",
+          "target": "亚太地区（台北）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Tokyo)",
+          "target": "亚太地区（东京）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Seoul)",
+          "target": "亚太地区（首尔）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Osaka)",
+          "target": "亚太地区（大阪）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Mumbai)",
+          "target": "亚太地区（孟买）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Hyderabad)",
+          "target": "亚太地区（海得拉巴）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Singapore)",
+          "target": "亚太地区（新加坡）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Sydney)",
+          "target": "亚太地区（悉尼）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Jakarta)",
+          "target": "亚太地区（雅加达）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Melbourne)",
+          "target": "亚太地区（墨尔本）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Malaysia)",
+          "target": "亚太地区（马来西亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Thailand)",
+          "target": "亚太地区（泰国）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS Standard global region",
+          "target": "AWS 标准全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Canada (Central)",
+          "target": "加拿大（中部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Canada West (Calgary)",
+          "target": "加拿大西部（卡尔加里）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Frankfurt)",
+          "target": "欧洲（法兰克福）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Zurich)",
+          "target": "欧洲（苏黎世）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Stockholm)",
+          "target": "欧洲（斯德哥尔摩）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Milan)",
+          "target": "欧洲（米兰）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Spain)",
+          "target": "欧洲（西班牙）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Ireland)",
+          "target": "欧洲（爱尔兰）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (London)",
+          "target": "欧洲（伦敦）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Paris)",
+          "target": "欧洲（巴黎）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Israel (Tel Aviv)",
+          "target": "以色列（特拉维夫）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Middle East (UAE)",
+          "target": "中东（阿联酋）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Middle East (Bahrain)",
+          "target": "中东（巴林）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mexico (Central)",
+          "target": "墨西哥（中部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "South America (Sao Paulo)",
+          "target": "南美洲（圣保罗）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US East (N. Virginia)",
+          "target": "美国东部（北弗吉尼亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US East (Ohio)",
+          "target": "美国东部（俄亥俄）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US West (N. California)",
+          "target": "美国西部（北加利福尼亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US West (Oregon)",
+          "target": "美国西部（俄勒冈）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS China global region",
+          "target": "AWS 中国全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "China (Beijing)",
+          "target": "中国（北京）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "China (Ningxia)",
+          "target": "中国（宁夏）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS GovCloud (US) global region",
+          "target": "AWS GovCloud（美国）全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS GovCloud (US-East)",
+          "target": "AWS GovCloud（美国东部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS GovCloud (US-West)",
+          "target": "AWS GovCloud（美国西部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS ISO (US) global region",
+          "target": "AWS ISO（美国）全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISO East",
+          "target": "美国 ISO 东部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISO WEST",
+          "target": "美国 ISO 西部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS ISOB (US) global region",
+          "target": "AWS ISOB（美国）全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISOB East (Ohio)",
+          "target": "美国 ISOB 东部（俄亥俄）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS ISOE (Europe) global region",
+          "target": "AWS ISOE（欧洲）全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "EU ISOE West",
+          "target": "欧盟 ISOE 西部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS ISOF global region",
+          "target": "AWS ISOF 全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISOF EAST",
+          "target": "美国 ISOF 东部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISOF SOUTH",
+          "target": "美国 ISOF 南部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "EU (Germany)",
+          "target": "欧盟（德国）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS SDK for JavaScript S3 Client for Node.js, Browser and React Native",
+          "target": "适用于 Node.js、浏览器和 React Native 的 AWS SDK for JavaScript S3 客户端"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Accelerate cannot be used with FIPS",
+          "target": "加速功能不能与 FIPS 一起使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Cannot set dual-stack in combination with a custom endpoint.",
+          "target": "不能将双栈与自定义端点结合使用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "A custom endpoint cannot be combined with FIPS",
+          "target": "自定义端点不能与 FIPS 结合使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "A custom endpoint cannot be combined with S3 Accelerate",
+          "target": "自定义端点不能与 S3 加速结合使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Partition does not support FIPS",
+          "target": "分区不支持 FIPS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Unrecognized hardware type: \"Expected hardware type o or e but got {hardwareType}\"",
+          "target": "无法识别的硬件类型：“预期硬件类型为 o 或 e，但得到 {hardwareType}”"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`.",
+          "target": "无效的 ARN：Outpost ID 只能包含 a-z、A-Z、0-9 和 `-`。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Custom endpoint `{Endpoint}` was not a valid URI",
+          "target": "自定义端点 `{Endpoint}` 不是有效的 URI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 Accelerate cannot be used in this region",
+          "target": "S3 加速不能在此区域使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: Missing account id",
+          "target": "无效的 ARN：缺少账户 ID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: bucket ARN is missing a region",
+          "target": "无效的 ARN：存储桶 ARN 缺少区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: Object Lambda ARNs only support `accesspoint` arn types, but found: `{arnType}`",
+          "target": "无效的 ARN：对象 Lambda ARN 仅支持 `accesspoint` ARN 类型，但找到：`{arnType}`"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Access Points do not support S3 Accelerate",
+          "target": "接入点不支持 S3 加速"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: The ARN was not for the S3 service, found: {bucketArn#service}",
+          "target": "无效的 ARN：该 ARN 不属于 S3 服务，找到：{bucketArn#service}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 MRAP does not support dual-stack",
+          "target": "S3 MRAP 不支持双栈"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 MRAP does not support FIPS",
+          "target": "S3 MRAP 不支持 FIPS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 MRAP does not support S3 Accelerate",
+          "target": "S3 MRAP 不支持 S3 加速"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid configuration: Multi-Region Access Point ARNs are disabled.",
+          "target": "无效配置：多区域接入点 ARN 已禁用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Client was configured for partition `{mrapPartition#name}` but bucket referred to partition `{bucketArn#partition}`",
+          "target": "客户端配置为分区 `{mrapPartition#name}`，但存储桶引用了分区 `{bucketArn#partition}`"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid Access Point Name",
+          "target": "无效的接入点名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 Outposts does not support Dual-stack",
+          "target": "S3 Outposts 不支持双栈"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 Outposts does not support FIPS",
+          "target": "S3 Outposts 不支持 FIPS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 Outposts does not support S3 Accelerate",
+          "target": "S3 Outposts 不支持 S3 加速"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid Arn: Outpost Access Point ARN contains sub resources",
+          "target": "无效的 ARN：Outpost 接入点 ARN 包含子资源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Expected an outpost type `accesspoint`, found {outpostType}",
+          "target": "期望一个 `accesspoint` 类型的前哨站，但发现 {outpostType}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: expected an access point name",
+          "target": "无效的 ARN：期望一个接入点名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: Expected a 4-component resource",
+          "target": "无效的 ARN：期望一个包含四个组件的资源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: The outpost Id may only contain a-z, A-Z, 0-9 and `-`. Found: `{outpostId}`",
+          "target": "无效的 ARN：前哨站 ID 只能包含 a-z、A-Z、0-9 和 `-`。发现：`{outpostId}`"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: The Outpost Id was not set",
+          "target": "无效的 ARN：未设置前哨站 ID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: Unrecognized format: {Bucket} (type: {arnType})",
+          "target": "无效的 ARN：无法识别的格式：{Bucket}（类型：{arnType}）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: No ARN type specified",
+          "target": "无效的 ARN：未指定 ARN 类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: `{Bucket}` was not a valid ARN",
+          "target": "无效的 ARN：`{Bucket}` 不是一个有效的 ARN"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Path-style addressing cannot be used with ARN buckets",
+          "target": "路径样式寻址不能用于 ARN 存储桶"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Path-style addressing cannot be used with S3 Accelerate",
+          "target": "路径样式寻址不能用于 S3 加速传输"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "A region must be set when sending requests to S3.",
+          "target": "向 S3 发送请求时必须设置区域。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Googlebot",
+          "target": "Googlebot"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Opera",
+          "target": "Opera"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Samsung Internet for Android",
+          "target": "Samsung Internet for Android"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NAVER Whale Browser",
+          "target": "NAVER Whale Browser"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pale Moon",
+          "target": "Pale Moon"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MZ Browser",
+          "target": "MZ Browser"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Focus",
+          "target": "Focus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Swing",
+          "target": "Swing"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Opera Coast",
+          "target": "Opera Coast"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Opera Touch",
+          "target": "Opera Touch"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Yandex Browser",
+          "target": "Yandex Browser"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "UC Browser",
+          "target": "UC Browser"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Maxthon",
+          "target": "Maxthon"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Epiphany",
+          "target": "Epiphany"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Puffin",
+          "target": "Puffin"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sleipnir",
+          "target": "Sleipnir"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "WeChat",
+          "target": "微信"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Internet Explorer",
+          "target": "Internet Explorer"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Microsoft Edge",
+          "target": "Microsoft Edge"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vivaldi",
+          "target": "Vivaldi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SeaMonkey",
+          "target": "SeaMonkey"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sailfish",
+          "target": "Sailfish"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Amazon Silk",
+          "target": "Amazon Silk"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PhantomJS",
+          "target": "PhantomJS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SlimerJS",
+          "target": "SlimerJS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BlackBerry",
+          "target": "BlackBerry"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "WebOS Browser",
+          "target": "WebOS Browser"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bada",
+          "target": "Bada"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tizen",
+          "target": "Tizen"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "QupZilla",
+          "target": "QupZilla"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Firefox",
+          "target": "Firefox"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Electron",
+          "target": "Electron"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Miui",
+          "target": "Miui"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chromium",
+          "target": "Chromium"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chrome",
+          "target": "Chrome"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Google Search",
+          "target": "Google 搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Android Browser",
+          "target": "Android 浏览器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PlayStation 4",
+          "target": "PlayStation 4"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Safari",
+          "target": "Safari"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchUpload",
+          "target": "NoSuchUpload"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ObjectNotInActiveTierError",
+          "target": "ObjectNotInActiveTierError"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BucketAlreadyExists",
+          "target": "BucketAlreadyExists"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BucketAlreadyOwnedByYou",
+          "target": "BucketAlreadyOwnedByYou"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchBucket",
+          "target": "NoSuchBucket"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InvalidObjectState",
+          "target": "InvalidObjectState"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchKey",
+          "target": "NoSuchKey"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NotFound",
+          "target": "NotFound"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "EncryptionTypeMismatch",
+          "target": "EncryptionTypeMismatch"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InvalidRequest",
+          "target": "InvalidRequest"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InvalidWriteOffset",
+          "target": "InvalidWriteOffset"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TooManyParts",
+          "target": "TooManyParts"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ObjectAlreadyInActiveTierError",
+          "target": "ObjectAlreadyInActiveTierError"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bucket",
+          "target": "Bucket"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AWS SDK for JavaScript Team",
+          "target": "AWS SDK for JavaScript 团队"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Key",
+          "target": "Key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CopySource",
+          "target": "CopySource"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ChecksumAlgorithm",
+          "target": "ChecksumAlgorithm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefix",
+          "target": "Prefix"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Restore from backups",
+          "target": "从备份恢复"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Restore from backups (previous behaviour)",
+          "target": "从备份恢复（旧行为）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Restore from backups per folder",
+          "target": "按文件夹从备份恢复"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create Differential Backup",
+          "target": "创建差异备份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create Differential Backup Only Newer Files",
+          "target": "仅创建较新文件的差异备份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create Non-Destructive Differential Backup",
+          "target": "创建非破坏性差异备份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create Non-Destructive Differential Backup Only Newer Files",
+          "target": "仅创建较新文件的非破坏性差异备份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fetch all new files from the backups",
+          "target": "从备份中获取所有新文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "⚠ Restore Vault from backups and delete with deletion",
+          "target": "⚠ 从备份恢复保险库并删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "General",
+          "target": "通用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Backup Destination",
+          "target": "备份目标位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Restore",
+          "target": "恢复"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Backup ZIP Settings",
+          "target": "备份 ZIP 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Misc",
+          "target": "杂项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tools",
+          "target": "工具"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Stop",
+          "target": "停止"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Gathering Files",
+          "target": "正在收集文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Checking file and TOC",
+          "target": "正在检查文件和目录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Check and Archiving Files",
+          "target": "正在检查和归档文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "File Processing",
+          "target": "文件处理中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Archiving Files",
+          "target": "正在归档文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Committing ZIP Files",
+          "target": "正在提交 ZIP 文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Creating Differential Backup",
+          "target": "正在创建差异备份"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
