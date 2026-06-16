@@ -1,0 +1,1321 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ca-sync",
+    "version": "1.0.1",
+    "title": "Cognitive Architect Sync",
+    "description": "Cognitive Architect Sync Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder to save imported Cognitive Architect artifacts to (relative to Vaults root folder)",
+          "target": "保存导入的认知架构工件的文件夹（相对于保险库根文件夹）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add all diagrams (.svg or .png files) to a subfolder of the import folder.                  Leave empty to include in Artificats Import Folder.",
+          "target": "将所有图表（.svg 或 .png 文件）添加到导入文件夹的子文件夹中。留空以包含在工件导入文件夹中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include your private architectures",
+          "target": "包含您的私人架构"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include your collaboration architectures",
+          "target": "包含您的协作架构"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The base url for the Cognitive Architect / IT Architect Assistant service (something like https://.../)",
+          "target": "认知架构 / IT 架构助手服务的基础 URL（类似 https://.../）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Request a personal token at cogarch@us.ibm.com",
+          "target": "在 cogarch@us.ibm.com 请求个人令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add an identifier to the architecture folder to make the folder more unique.                 Should not be necessary as names are unique in Cognitive Architect.",
+          "target": "向架构文件夹添加标识符以使其更唯一。由于名称在认知架构中是唯一的，因此应该没有必要。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "General",
+          "target": "常规"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Artifacts import folder",
+          "target": "工件导入文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Diagrams subfolder",
+          "target": "图表子文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Private architectures",
+          "target": "私人架构"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Collaboration architectures",
+          "target": "协作架构"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remote service",
+          "target": "远程服务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Base URL",
+          "target": "基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Personal token",
+          "target": "个人令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Extra",
+          "target": "额外"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add identifier to project folder",
+          "target": "将标识符添加到项目文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter path",
+          "target": "输入路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter url like https://...",
+          "target": "输入类似 https://... 的网址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter Personal Token",
+          "target": "输入个人令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Since Acorn 8.0.0, options.ecmaVersion is required.\nDefaulting to 2020, but this will stop working in the future.",
+          "target": "自 Acorn 8.0.0 起，需要设置 options.ecmaVersion。\\n默认为 2020，但这在未来将停止工作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Couldn't create file",
+          "target": "无法创建文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Not provided valid arguments",
+          "target": "未提供有效参数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Not provided valid arguments, or requested artifact is not a diagram",
+          "target": "未提供有效参数，或请求的构件不是图表"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Note not found at the provided path.",
+          "target": "在提供的路径中未找到笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "const",
+          "target": "const"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "role",
+          "target": "role"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "type",
+          "target": "type"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "frontmatter",
+          "target": "frontmatter"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "level",
+          "target": "level"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "alert",
+          "target": "alert"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Device Independence Delivery Unit",
+          "target": "设备独立交付单元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "article",
+          "target": "article"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "header",
+          "target": "header"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "blockquote",
+          "target": "blockquote"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "trigger",
+          "target": "trigger"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "caption",
+          "target": "caption"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "td",
+          "target": "td"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "option",
+          "target": "option"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "th",
+          "target": "th"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "scope",
+          "target": "scope"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "list",
+          "target": "list"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "multiple",
+          "target": "multiple"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "size",
+          "target": "size"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "select",
+          "target": "select"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "aside",
+          "target": "aside"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "footer",
+          "target": "footer"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dd",
+          "target": "dd"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "del",
+          "target": "del"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dialog",
+          "target": "dialog"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "html",
+          "target": "html"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "figure",
+          "target": "figure"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "form",
+          "target": "form"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "name",
+          "target": "name"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "area",
+          "target": "area"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "bdo",
+          "target": "bdo"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "body",
+          "target": "body"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "data",
+          "target": "data"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "hgroup",
+          "target": "hgroup"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "samp",
+          "target": "samp"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "section",
+          "target": "section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "small",
+          "target": "small"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "details",
+          "target": "详情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "fieldset",
+          "target": "字段集"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "optgroup",
+          "target": "选项组"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "address",
+          "target": "地址"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "alt",
+          "target": "替代文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "img",
+          "target": "图像"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "imggroup",
+          "target": "图像组"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ins",
+          "target": "插入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "href",
+          "target": "超链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "menu",
+          "target": "菜单"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ol",
+          "target": "有序列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ul",
+          "target": "无序列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "datalist",
+          "target": "数据列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "li",
+          "target": "列表项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "item",
+          "target": "项目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "main",
+          "target": "主要内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "mark",
+          "target": "标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "math",
+          "target": "数学公式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sidebar",
+          "target": "侧边栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "toolbar",
+          "target": "工具栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "listitem",
+          "target": "列表项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "menuitem",
+          "target": "菜单项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "meter",
+          "target": "仪表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "nav",
+          "target": "导航"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "progress",
+          "target": "进度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "status",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Device Independence Glossart perceivable unit",
+          "target": "设备独立词汇表可感知单元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tr",
+          "target": "表格行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tbody",
+          "target": "表格主体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tfoot",
+          "target": "表格脚注"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "thead",
+          "target": "表格表头"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "hr",
+          "target": "水平线"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "output",
+          "target": "输出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "strong",
+          "target": "强调"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sub",
+          "target": "下标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sup",
+          "target": "上标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "table",
+          "target": "表格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "guide",
+          "target": "指南"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dfn",
+          "target": "定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dt",
+          "target": "定义术语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "textarea",
+          "target": "文本区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "time",
+          "target": "时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "menubar",
+          "target": "菜单栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "abstract [EPUB-SSV]",
+          "target": "摘要 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "acknowledgments [EPUB-SSV]",
+          "target": "致谢 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "afterword [EPUB-SSV]",
+          "target": "后记 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "appendix [EPUB-SSV]",
+          "target": "附录 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "referrer [EPUB-SSV]",
+          "target": "引用者 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "EPUB biblioentry [EPUB-SSV]",
+          "target": "EPUB 参考文献条目 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "bibliography [EPUB-SSV]",
+          "target": "参考文献 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "biblioref [EPUB-SSV]",
+          "target": "文献引用 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "chapter [EPUB-SSV]",
+          "target": "章节 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "colophon [EPUB-SSV]",
+          "target": "版权页 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "conclusion [EPUB-SSV]",
+          "target": "结论 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "cover [EPUB-SSV]",
+          "target": "封面 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "credit [EPUB-SSV]",
+          "target": "致谢 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "credits [EPUB-SSV]",
+          "target": "致谢页 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dedication [EPUB-SSV]",
+          "target": "献词页 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "rearnote [EPUB-SSV]",
+          "target": "后注 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "rearnotes [EPUB-SSV]",
+          "target": "后注列表 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "epigraph [EPUB-SSV]",
+          "target": "题记 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "epilogue [EPUB-SSV]",
+          "target": "尾声 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "errata [EPUB-SSV]",
+          "target": "勘误表 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "footnote [EPUB-SSV]",
+          "target": "脚注 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "foreword [EPUB-SSV]",
+          "target": "前言 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "glossary [EPUB-SSV]",
+          "target": "术语表 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "glossref [EPUB-SSV]",
+          "target": "术语引用 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "index [EPUB-SSV]",
+          "target": "索引 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "introduction [EPUB-SSV]",
+          "target": "引言 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "noteref [EPUB-SSV]",
+          "target": "注释引用 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "notice [EPUB-SSV]",
+          "target": "通知 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "pagebreak [EPUB-SSV]",
+          "target": "分页符 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "page-list [EPUB-SSV]",
+          "target": "页码列表 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "part [EPUB-SSV]",
+          "target": "部分 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "preface [EPUB-SSV]",
+          "target": "序言 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "prologue [EPUB-SSV]",
+          "target": "序幕 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "pullquote [EPUB-SSV]",
+          "target": "引文 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "qna [EPUB-SSV]",
+          "target": "问答 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "subtitle [EPUB-SSV]",
+          "target": "副标题 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "help [EPUB-SSV]",
+          "target": "帮助 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "toc [EPUB-SSV]",
+          "target": "目录 [EPUB-SSV]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "group",
+          "target": "分组"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "abbr",
+          "target": "缩写"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "alertdialog",
+          "target": "警告对话框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "application",
+          "target": "应用程序"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "audio",
+          "target": "音频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "banner",
+          "target": "横幅"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "canvas",
+          "target": "画布"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "cell",
+          "target": "单元格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gridcell",
+          "target": "网格单元格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "checkbox",
+          "target": "复选框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "columnheader",
+          "target": "列标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "combobox",
+          "target": "组合框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "complementary",
+          "target": "补充内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "structureinfo",
+          "target": "结构信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dl",
+          "target": "定义列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "directory",
+          "target": "目录列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dir",
+          "target": "目录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "summary",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "document",
+          "target": "文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "embed",
+          "target": "嵌入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "feed",
+          "target": "信息流"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "figcaption",
+          "target": "图注"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "grid",
+          "target": "网格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "heading",
+          "target": "标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iframe",
+          "target": "内联框架"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "usemap",
+          "target": "图像映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "label",
+          "target": "标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "legend",
+          "target": "图例"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "br",
+          "target": "换行符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "link",
+          "target": "链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "listbox",
+          "target": "列表框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "log",
+          "target": "日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "marquee",
+          "target": "滚动字幕"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "menuitemcheckbox",
+          "target": "菜单项复选框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "menuitemradio",
+          "target": "菜单项单选按钮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "navigation",
+          "target": "导航"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "none",
+          "target": "无"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "note",
+          "target": "注释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "presentation",
+          "target": "呈现"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "progressbar",
+          "target": "进度条"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "radio",
+          "target": "单选按钮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "radiogroup",
+          "target": "单选按钮组"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "region",
+          "target": "区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "rowheader",
+          "target": "行标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "row",
+          "target": "行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ruby",
+          "target": "注音"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "scrollbar",
+          "target": "滚动条"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "search",
+          "target": "搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "searchbox",
+          "target": "搜索框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "slider",
+          "target": "滑块"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "spinbutton",
+          "target": "数值调节按钮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "separator",
+          "target": "分隔符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "switch",
+          "target": "开关"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tablist",
+          "target": "标签列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tab",
+          "target": "标签页"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tabpanel",
+          "target": "标签面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "term",
+          "target": "术语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "textbox",
+          "target": "文本框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "timer",
+          "target": "计时器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tree",
+          "target": "树形视图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "treegrid",
+          "target": "树形网格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "treeitem",
+          "target": "树形项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tooltip",
+          "target": "工具提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "video",
+          "target": "视频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "download",
+          "target": "下载"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "info",
+          "target": "信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "settings",
+          "target": "设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Cognitive Architect Sync panel.",
+          "target": "打开认知架构同步面板。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
