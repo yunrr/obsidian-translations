@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-attachment-name-formatting",
+    "version": "2.0.0",
+    "title": "obsidian-attachment-name-formatting",
+    "description": "Obsidian 插件用于格式化附件名称（文件名 附件类型 索引号.xxx）",
+    "language": "zh-cn",
+    "supportedVersions": "2.1.8",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(file.basename + \" attachments exported.\")",
+          "target": "Notice(file.basename + \" 附件已导出。\")"
+        },
+        {
+          "source": "Notice(\"Unused attachments exported.\")",
+          "target": "Notice(\"未使用的附件已导出。\")"
+        },
+        {
+          "source": "Notice(`Error when open log file: ${error}`)",
+          "target": "Notice(`打开日志文件时出错：${error}`)"
+        },
+        {
+          "source": ".log(`Will scan the folder: ${folder}`)",
+          "target": ".log(`将扫描文件夹：${folder}`)"
+        },
+        {
+          "source": ".log(\"No active editor.\")",
+          "target": ".log(\"没有活动编辑器。\")"
+        },
+        {
+          "source": ".log(\"Formatting attachments...\")",
+          "target": ".log(\"正在格式化附件...\")"
+        },
+        {
+          "source": ".log(\"Getting attachments list...\")",
+          "target": ".log(\"获取附件列表...\")"
+        },
+        {
+          "source": ".log(`NoChange option enable, skip renaming ${item.link}`)",
+          "target": ".log(`已启用 NoChange 选项，跳过重命名 ${item.link}`)"
+        },
+        {
+          "source": ".log(`Copy option enable, will copy ${item.link}`)",
+          "target": ".log(`已启用复制选项，将复制 ${item.link}`)"
+        },
+        {
+          "source": ".log(\"Attachment list:\", attachmentList)",
+          "target": ".log(\"附件列表：\", attachmentList)"
+        },
+        {
+          "source": ".log(\"Renaming attachments...\")",
+          "target": ".log(\"正在重命名附件...\")"
+        },
+        {
+          "source": ".log('Rename attachment \"' + destinationFile.name + '\" to \"' + destinationFile_path + tmpName + '\"')",
+          "target": ".log('将附件 \"' + destinationFile.name + '\" 重命名为 \"' + destinationFile_path + tmpName + '\"')"
+        },
+        {
+          "source": ".log('Rename attachment \"' + attachmentFile.path + '\" to \"' + fullName + '\"')",
+          "target": ".log('将附件 \"' + attachmentFile.path + '\" 重命名为 \"' + fullName + '\"')"
+        },
+        {
+          "source": ".log(\"No attachments found...\")",
+          "target": ".log(\"未找到附件...\")"
+        },
+        {
+          "source": ".log(\"Exporting attachments...\")",
+          "target": ".log(\"正在导出附件...\")"
+        },
+        {
+          "source": ".log(\"Collecting attachments...\")",
+          "target": ".log(\"正在收集附件...\")"
+        },
+        {
+          "source": ".log(\"Get attachment\", file_path)",
+          "target": ".log(\"获取附件\", file_path)"
+        },
+        {
+          "source": ".log(\"Saving attachemnts...\")",
+          "target": ".log(\"正在保存附件...\")"
+        },
+        {
+          "source": ".log(\"Saving Done...\")",
+          "target": ".log(\"保存完成...\")"
+        },
+        {
+          "source": ".log(\"Deleting attachments...\")",
+          "target": ".log(\"正在删除附件...\")"
+        },
+        {
+          "source": ".log(\"Delete attachment\", attachmentFile.name)",
+          "target": ".log(\"删除附件\", attachmentFile.name)"
+        },
+        {
+          "source": ".log(\"Deleting Done...\")",
+          "target": ".log(\"删除完成...\")"
+        },
+        {
+          "source": ".log(\"Exporting unused attachments...\")",
+          "target": ".log(\"正在导出未使用的附件...\")"
+        },
+        {
+          "source": ".log(\"Getting all unused attachments...\")",
+          "target": ".log(\"正在获取所有未使用的附件...\")"
+        },
+        {
+          "source": ".log(\"Delete attachment\", file.name)",
+          "target": ".log(\"删除附件\", file.name)"
+        },
+        {
+          "source": ".error(e3)",
+          "target": ".error(e3)"
+        },
+        {
+          "source": ".error(e2)",
+          "target": ".error(e2)"
+        },
+        {
+          "source": ".error(this.generatedError)",
+          "target": ".error(this.generatedError)"
+        },
+        {
+          "source": ".error(\"Error when open log file:\", error)",
+          "target": ".error(\"打开日志文件时出错：\", error)"
+        },
+        {
+          "source": "name: \"Export Attachments in Current File\"",
+          "target": "name: \"导出当前文件中的附件\""
+        },
+        {
+          "source": "name: \"Export All Unused Attachments in the Vault\"",
+          "target": "name: \"导出库中所有未使用的附件\""
+        },
+        {
+          "source": "name: \"Rescan Attachments in Current File\"",
+          "target": "name: \"重新扫描当前文件中的附件\""
+        },
+        {
+          "source": "name: \"Scan Files in the Folder\"",
+          "target": "name: \"扫描文件夹中的文件\""
+        },
+        {
+          "source": "text: `Excluded Folders`",
+          "target": "text: `排除的文件夹`"
+        },
+        {
+          "source": "text: `Connectors`",
+          "target": "text: `连接符`"
+        },
+        {
+          "source": "text: `Subfolders for attachments`",
+          "target": "text: `附件的子文件夹`"
+        },
+        {
+          "source": "text: `Enable/Disable the ${this.attachmentType} extenstions.`",
+          "target": "text: `启用/禁用 ${this.attachmentType} 扩展。`"
+        },
+        {
+          "source": "text: \"This operation will scan all files in the foler and rename the attachments in them.\"",
+          "target": "text: \"此操作将扫描文件夹中的所有文件并重命名其中的附件。\""
+        },
+        {
+          "source": "text: \"This operation can not be revoked, are you sure to keep doing this?\"",
+          "target": "text: \"此操作无法撤销，您确定要继续吗？\""
+        },
+        {
+          "source": "text: \"Note: this operation will take some time, depends on the number of files.\"",
+          "target": "text: \"注意：此操作将需要一些时间，具体取决于文件的数量。\""
+        },
+        {
+          "source": "text: \"Attachment Name Formatting\"",
+          "target": "text: \"附件名称格式化\""
+        },
+        {
+          "source": "text: 'This plugin will format all attachments in the format: \"filename attachmentType indexNumber.xxx\".'",
+          "target": "text: '此插件将按格式化所有附件：\"文件名 附件类型 索引号.xxx\"。'"
+        },
+        {
+          "source": "text: \"Each type of attachment will have individual index.\"",
+          "target": "text: \"每种附件类型将有单独的索引号。\""
+        },
+        {
+          "source": "text: \"Only recognize the file type that can be recognized by Obsidian.\"",
+          "target": "text: \"仅识别Obsidian能够识别的文件类型。\""
+        },
+        {
+          "source": "text: \"Supported file formats\"",
+          "target": "text: \"支持的文件格式\""
+        },
+        {
+          "source": "text: \"Image files: png, webp, jpg, jpeg, gif, bmp, svg\"",
+          "target": "text: \"图片文件：png, webp, jpg, jpeg, gif, bmp, svg\""
+        },
+        {
+          "source": "text: \"Audio files: mp3, wav, m4a, ogg, 3gp, flac\"",
+          "target": "text: \"音频文件：mp3, wav, m4a, ogg, 3gp, flac\""
+        },
+        {
+          "source": "text: \"Video files: mp4, webm, ogv, mov, mkv\"",
+          "target": "text: \"视频文件：mp4, webm, ogv, mov, mkv\""
+        },
+        {
+          "source": "text: \"PDF files: pdf\"",
+          "target": "text: \"PDF文件：pdf\""
+        },
+        {
+          "source": "text: '\"webm\" extension will be regard as video even if it can also be audio'",
+          "target": "text: '即使 \"webm\" 扩展名也可以作为音频，但它将被视为视频文件。'"
+        },
+        {
+          "source": "text: \"Attachments Format Setting\"",
+          "target": "text: \"附件格式设置\""
+        },
+        {
+          "source": "text: \"Export Setting\"",
+          "target": "text: \"导出设置\""
+        },
+        {
+          "source": "text: \"Right-Click Menu Setting\"",
+          "target": "text: \"右键菜单设置\""
+        },
+        {
+          "source": "text: \"Log Setting\"",
+          "target": "text: \"日志设置\""
+        },
+        {
+          "source": "text: `Attachment renaming: ${fileIndex + 1}/${fileList.length}`",
+          "target": "text: `附件重命名：${fileIndex + 1}/${fileList.length}`"
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset\")",
+          "target": ".setButtonText(\"重置\")"
+        },
+        {
+          "source": ".setButtonText(\"OK\")",
+          "target": ".setButtonText(\"确定\")"
+        },
+        {
+          "source": ".setButtonText(\"Continue\")",
+          "target": ".setButtonText(\"继续\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setName(\"Format for connector\")",
+          "target": ".setName(\"连接符格式\")"
+        },
+        {
+          "source": ".setName(`Format for ${attachmentType}`)",
+          "target": ".setName(`格式为 ${attachmentType}`)"
+        },
+        {
+          "source": ".setName(\"Handle same attachment used in different notes\")",
+          "target": ".setName(\"处理在不同笔记中使用的相同附件\")"
+        },
+        {
+          "source": ".setName(\"Automatic formatting\")",
+          "target": ".setName(\"自动格式化\")"
+        },
+        {
+          "source": ".setName(\"Add modify time after index\")",
+          "target": ".setName(\"在索引后添加修改时间\")"
+        },
+        {
+          "source": ".setName(\"Add path hash at end of attachment name\")",
+          "target": ".setName(\"在附件名称末尾添加路径哈希值\")"
+        },
+        {
+          "source": ".setName(\"Exclude the note name in the attachment name\")",
+          "target": ".setName(\"附件名称中排除笔记名称\")"
+        },
+        {
+          "source": ".setName(\"Excluded folders\")",
+          "target": ".setName(\"排除的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Subfolders for attachments\")",
+          "target": ".setName(\"附件的子文件夹\")"
+        },
+        {
+          "source": ".setName(\"Ribbon: Export Attachments in Current File\")",
+          "target": ".setName(\"快捷菜单：导出当前文件中的附件\")"
+        },
+        {
+          "source": ".setName(\"Ribbon: Export Unused Attachments in Vault\")",
+          "target": ".setName(\"快捷菜单：导出库中未使用的附件\")"
+        },
+        {
+          "source": ".setName(\"Deletion After Exporting Attachments in Current File\")",
+          "target": ".setName(\"导出当前文件附件后删除\")"
+        },
+        {
+          "source": ".setName(\"Deletion After Exporting Unused Attachments in Vault\")",
+          "target": ".setName(\"导出库中未使用的附件后删除\")"
+        },
+        {
+          "source": ".setName(\"Copy Attachment Link\")",
+          "target": ".setName(\"复制附件链接\")"
+        },
+        {
+          "source": ".setName(\"Set Copy Link Type\")",
+          "target": ".setName(\"设置复制链接类型\")"
+        },
+        {
+          "source": ".setName(\"Logging Attachment Name Changes\")",
+          "target": ".setName(\"记录附件名称更改\")"
+        },
+        {
+          "source": ".setName(\"Log File Path\")",
+          "target": ".setName(\"日志文件路径\")"
+        },
+        {
+          "source": ".setDesc(\"Set the format for connector between file name and attachment name, you can also set multiple connectors seperately.\")",
+          "target": ".setDesc(\"设置文件名和附件名之间的连接符格式，也可以分别设置多个连接符。\")"
+        },
+        {
+          "source": ".setDesc(`Set the format for ${attachmentType} attachment.`)",
+          "target": ".setDesc(`设置 ${attachmentType} 附件的格式。`)"
+        },
+        {
+          "source": ".setDesc(\"Choose to how to handle the same attachment used in different notes.There are three options: 1. Default: Always rename with the note name; 2. Copy: Create a copy for the attachment; 3. NoChange: Stick to the first time that attachment is renamed, and will not occupy index number;\")",
+          "target": ".setDesc(\"选择如何处理在不同笔记中使用的相同附件。共有三种选项：1. 默认：始终以笔记名重命名；2. 复制：为附件创建副本；3. 不更改：保留附件第一次被重命名时的状态，并且不占用索引号；\")"
+        },
+        {
+          "source": ".setDesc(\"Automatic formatting the attachments' name when changing note content\")",
+          "target": ".setDesc(\"更改笔记内容时自动格式化附件名称\")"
+        },
+        {
+          "source": ".setDesc(\"Add modify time after index to track the change time in file name\")",
+          "target": ".setDesc(\"在索引后添加修改时间以在文件名中跟踪变更时间\")"
+        },
+        {
+          "source": ".setDesc(\"For uniqueness in attachment names if there are note files with the same name (but at different levels)\")",
+          "target": ".setDesc(\"如果存在同名但不同层级的笔记文件，则确保附件名称的唯一性\")"
+        },
+        {
+          "source": ".setDesc(\"Exclude the note name when rename the attachment name, will enable time suffix and disable one attachment in many notes setting automically.\")",
+          "target": ".setDesc(\"重命名附件时排除笔记名，将自动启用时间后缀并禁用一个附件用于多个笔记的设置。\")"
+        },
+        {
+          "source": ".setDesc(\"The notes under these folders will not reformat auto format the attachment name\")",
+          "target": ".setDesc(\"这些文件夹下的笔记将不会自动格式化附件名称\")"
+        },
+        {
+          "source": ".setDesc(\"You can add subfolders for each attachment type under the attachment folder you set\")",
+          "target": ".setDesc(\"您可以在设置的附件文件夹下为每种附件类型添加子文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Toggle the display of export attachments in current file ribbon.\")",
+          "target": ".setDesc(\"切换显示当前文件中导出附件的快捷菜单。\")"
+        },
+        {
+          "source": ".setDesc(\"Toggle the display of export unused attachments ribbon. Will take long time for a large vault.\")",
+          "target": ".setDesc(\"切换显示导出未使用附件的快捷菜单。对于大型库，操作可能会耗时较长。\")"
+        },
+        {
+          "source": ".setDesc(\"Autodeletion after exporting attachments in current file.\")",
+          "target": ".setDesc(\"导出当前文件附件后自动删除。\")"
+        },
+        {
+          "source": ".setDesc(\"Autodeletion after exporting unused attachments in vault.\")",
+          "target": ".setDesc(\"导出库中未使用的附件后自动删除。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable copy attachment link item in right-click menu.\")",
+          "target": ".setDesc(\"在右键菜单中启用复制附件链接选项。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose to use relative path or absolute path.\")",
+          "target": ".setDesc(\"选择使用相对路径或绝对路径。\")"
+        },
+        {
+          "source": ".setDesc(\"Logging the attachment name changes into file.\")",
+          "target": ".setDesc(\"将附件名称的更改记录到文件中。\")"
+        },
+        {
+          "source": ".setDesc(\"Set where the log file saved. Note: change path will not move the old log.\")",
+          "target": ".setDesc(\"设置日志文件的保存位置。注意：更改路径不会移动旧日志。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"_\")",
+          "target": ".setPlaceholder(\"_\")"
+        },
+        {
+          "source": ".setTitle(\"Copy Attachment Path\")",
+          "target": ".setTitle(\"复制附件路径\")"
+        }
+      ]
+    }
+  }
+}

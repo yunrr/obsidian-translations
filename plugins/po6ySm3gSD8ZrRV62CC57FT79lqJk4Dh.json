@@ -1,0 +1,791 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "local-gpt",
+    "version": "2.0.0",
+    "title": "Local GPT",
+    "description": "Local GPT assistance for maximum privacy and offline access",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\n              \"Please enter a name for the action.\"\n            )",
+          "target": "Notice(\n              \"请输入操作的名称.\"\n            )"
+        },
+        {
+          "source": "Notice(\n                `An action with the name \"${editingAction.name}\" already exists.`\n              )",
+          "target": "Notice(\n                `一个名为\"${editingAction.name}\"的操作已经存在.`\n              )"
+        },
+        {
+          "source": "Notice(\"Copied\")",
+          "target": "Notice(\"已复制\")"
+        },
+        {
+          "source": "Notice(`Rewritten \"${editingAction.name}\" action`)",
+          "target": "Notice(`重命名“${editingAction.name}”操作`)"
+        },
+        {
+          "source": "Notice(`Added \"${editingAction.name}\" action`)",
+          "target": "Notice(`已添加“${editingAction.name}”操作`)"
+        },
+        {
+          "source": "Notice(`Error while generating text: ${error.message}`)",
+          "target": "Notice(`生成文本时出错：${error.message}`)"
+        },
+        {
+          "source": "Notice(\n        `Error processing related documents: ${error.message}. Continuing with original text.`\n      )",
+          "target": "Notice(\n        `处理相关文档时出错: ${error.message}. 继续使用原始文本。`\n      )"
+        },
+        {
+          "source": "Notice(\n            `\\u{1F389} LocalGPT can finally use\ncontext from links!\nCheck the Settings!`,\n            0\n          )",
+          "target": "Notice(\n            `\\u{1F389} LocalGPT 终于可以链接使用了！快去设置里看看吧！`,\n            0\n          )"
+        },
+        {
+          "source": "Notice(\"\\uFE0F\\u{1F6A8} IMPORTANT! Update Local GPT settings!\", 0)",
+          "target": "Notice(\"\\uFE0F\\u{1F6A8} 重要提示！更新本地GPT设置！\", 0)"
+        },
+        {
+          "source": "Notice(`\\u2B06\\uFE0F Local GPT: a new version is available`)",
+          "target": "Notice(`\\u2B06\\uFE0F Local GPT：新版本已发布。`)"
+        },
+        {
+          "source": ".log(\"Using RetryOperation.try()",
+          "target": ".log(\"Using RetryOperation.try()"
+        },
+        {
+          "source": ".log(\"Using RetryOperation.start()",
+          "target": ".log(\"Using RetryOperation.start()"
+        },
+        {
+          "source": ".log(`Dataset ${finalDatasetName} already exists in your tenant. Skipping.`)",
+          "target": ".log(`Dataset ${finalDatasetName} already exists in your tenant. Skipping.`)"
+        },
+        {
+          "source": ".log(`${wrap(color.green, \"[chain/start]\")",
+          "target": ".log(`${wrap(color.green, \"[chain/start]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.cyan, \"[chain/end]\")",
+          "target": ".log(`${wrap(color.cyan, \"[chain/end]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.red, \"[chain/error]\")",
+          "target": ".log(`${wrap(color.red, \"[chain/error]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.green, \"[llm/start]\")",
+          "target": ".log(`${wrap(color.green, \"[llm/start]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.cyan, \"[llm/end]\")",
+          "target": ".log(`${wrap(color.cyan, \"[llm/end]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.red, \"[llm/error]\")",
+          "target": ".log(`${wrap(color.red, \"[llm/error]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.green, \"[tool/start]\")",
+          "target": ".log(`${wrap(color.green, \"[tool/start]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.cyan, \"[tool/end]\")",
+          "target": ".log(`${wrap(color.cyan, \"[tool/end]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.red, \"[tool/error]\")",
+          "target": ".log(`${wrap(color.red, \"[tool/error]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.green, \"[retriever/start]\")",
+          "target": ".log(`${wrap(color.green, \"[retriever/start]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.cyan, \"[retriever/end]\")",
+          "target": ".log(`${wrap(color.cyan, \"[retriever/end]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.red, \"[retriever/error]\")",
+          "target": ".log(`${wrap(color.red, \"[retriever/error]\")"
+        },
+        {
+          "source": ".log(`${wrap(color.blue, \"[agent/action]\")",
+          "target": ".log(`${wrap(color.blue, \"[agent/action]\")"
+        },
+        {
+          "source": ".log(`${emoji} %c${message}`, \"font-weight: bold;\")",
+          "target": ".log(`${emoji} %c${message}`, \"font-weight: bold;\")"
+        },
+        {
+          "source": ".log(arg)",
+          "target": ".log(arg)"
+        },
+        {
+          "source": ".log(`${key}: ${value}`)",
+          "target": ".log(`${key}: ${value}`)"
+        },
+        {
+          "source": ".log(\n        `\\u23F1\\uFE0F %c${label}: timer started`,\n        `color: black; font-weight: bold; background-color: ${color2}; padding: 2px 5px; border-radius: 3px;`\n      )",
+          "target": ".log(\n        `\\u23F1\\uFE0F %c${label}: timer started`,\n        `color: black; font-weight: bold; background-color: ${color2}; padding: 2px 5px; border-radius: 3px;`\n      )"
+        },
+        {
+          "source": ".log(\n          `\\u23F1\\uFE0F %c${label}: ${duration.toFixed(2)",
+          "target": ".log(\n          `\\u23F1\\uFE0F %c${label}: ${duration.toFixed(2)"
+        },
+        {
+          "source": ".log(\n        \"\\n%c\" + separatorLine,\n        \"color: #FF4500; font-weight: bold; font-size: 1.2em;\"\n      )",
+          "target": ".log(\n        \"\\n%c\" + separatorLine,\n        \"color: #FF4500; font-weight: bold; font-size: 1.2em;\"\n      )"
+        },
+        {
+          "source": ".log(\"embeddings\", embeddings)",
+          "target": ".log(\"embeddings\", embeddings)"
+        },
+        {
+          "source": ".log(`Info: ${msg}`)",
+          "target": ".log(`Info: ${msg}`)"
+        },
+        {
+          "source": ".log(`Warning: ${msg}`)",
+          "target": ".log(`Warning: ${msg}`)"
+        },
+        {
+          "source": ".log(`Info: ${e}`)",
+          "target": ".log(`Info: ${e}`)"
+        },
+        {
+          "source": ".log(`Warning: ${e}`)",
+          "target": ".log(`Warning: ${e}`)"
+        },
+        {
+          "source": ".log(o+g)",
+          "target": ".log(o+g)"
+        },
+        {
+          "source": ".log(r)",
+          "target": ".log(r)"
+        },
+        {
+          "source": " log(A)",
+          "target": " log(A)"
+        },
+        {
+          "source": "alog(\"acroForm\")",
+          "target": "alog(\"acroForm\")"
+        },
+        {
+          "source": "alog(\"structTreeRoot\")",
+          "target": "alog(\"structTreeRoot\")"
+        },
+        {
+          "source": "alog(\"baseUrl\")",
+          "target": "alog(\"baseUrl\")"
+        },
+        {
+          "source": "alog(\"attachments\")",
+          "target": "alog(\"attachments\")"
+        },
+        {
+          "source": "alog(\"getPageIndex\",[a])",
+          "target": "alog(\"getPageIndex\",[a])"
+        },
+        {
+          "source": "alog(\"lang\")",
+          "target": "alog(\"lang\")"
+        },
+        {
+          "source": "alog(\"xfaImages\")",
+          "target": "alog(\"xfaImages\")"
+        },
+        {
+          "source": "alog(\"numPages\")",
+          "target": "alog(\"numPages\")"
+        },
+        {
+          "source": "alog(\"jsActions\")",
+          "target": "alog(\"jsActions\")"
+        },
+        {
+          "source": "alog(){return this.pdfDocument.catalog}ensureDoc(A,t)",
+          "target": "alog(){return this.pdfDocument.catalog}ensureDoc(A,t)"
+        },
+        {
+          "source": "alog(A,t)",
+          "target": "alog(A,t)"
+        },
+        {
+          "source": "alog(\"getPageIndex\",[x])",
+          "target": "alog(\"getPageIndex\",[x])"
+        },
+        {
+          "source": "alog(\"destinations\")",
+          "target": "alog(\"destinations\")"
+        },
+        {
+          "source": "alog(\"getDestination\",[d.id])",
+          "target": "alog(\"getDestination\",[d.id])"
+        },
+        {
+          "source": "alog(\"pageLabels\")",
+          "target": "alog(\"pageLabels\")"
+        },
+        {
+          "source": "alog(\"pageLayout\")",
+          "target": "alog(\"pageLayout\")"
+        },
+        {
+          "source": "alog(\"pageMode\")",
+          "target": "alog(\"pageMode\")"
+        },
+        {
+          "source": "alog(\"viewerPreferences\")",
+          "target": "alog(\"viewerPreferences\")"
+        },
+        {
+          "source": "alog(\"openAction\")",
+          "target": "alog(\"openAction\")"
+        },
+        {
+          "source": "alog(\"documentOutline\")",
+          "target": "alog(\"documentOutline\")"
+        },
+        {
+          "source": "alog(\"optionalContentConfig\")",
+          "target": "alog(\"optionalContentConfig\")"
+        },
+        {
+          "source": "alog(\"permissions\")",
+          "target": "alog(\"permissions\")"
+        },
+        {
+          "source": "alog(\"metadata\")",
+          "target": "alog(\"metadata\")"
+        },
+        {
+          "source": "alog(\"markInfo\")",
+          "target": "alog(\"markInfo\")"
+        },
+        {
+          "source": "alog(\"acroFormRef\")",
+          "target": "alog(\"acroFormRef\")"
+        },
+        {
+          "source": ".log(\"abort handled\")",
+          "target": ".log(\"abort handled\")"
+        },
+        {
+          "source": ".log(\"make abort\")",
+          "target": ".log(\"make abort\")"
+        },
+        {
+          "source": ".error(`AI Providers compatibility check failed: ${error}`)",
+          "target": ".error(`AI Providers compatibility check failed: ${error}`)"
+        },
+        {
+          "source": ".error(\"SEMVER\", ...args)",
+          "target": ".error(\"SEMVER\", ...args)"
+        },
+        {
+          "source": ".error(error)",
+          "target": ".error(error)"
+        },
+        {
+          "source": " error() {\n        if (this._error)",
+          "target": " error() {\n        if (this._error)"
+        },
+        {
+          "source": " error() {\n              return new ZodError(newCtx.common.issues)",
+          "target": " error() {\n              return new ZodError(newCtx.common.issues)"
+        },
+        {
+          "source": " error() {\n            return new ZodError(newCtx.common.issues)",
+          "target": " error() {\n            return new ZodError(newCtx.common.issues)"
+        },
+        {
+          "source": ".error(`An error occurred while creating dataset ${finalDatasetName}. You should delete it manually.`)",
+          "target": ".error(`An error occurred while creating dataset ${finalDatasetName}. You should delete it manually.`)"
+        },
+        {
+          "source": ".error(`Error in postRun for run ${this.id}:`, error)",
+          "target": ".error(`Error in postRun for run ${this.id}:`, error)"
+        },
+        {
+          "source": ".error(`Error in patchRun for run ${this.id}`, error)",
+          "target": ".error(`Error in patchRun for run ${this.id}`, error)"
+        },
+        {
+          "source": " error(message, ...args)",
+          "target": " error(message, ...args)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": " error(reason)",
+          "target": " error(reason)"
+        },
+        {
+          "source": ".error(wrapReason(data.reason)",
+          "target": ".error(wrapReason(data.reason)"
+        },
+        {
+          "source": "_error(reason)",
+          "target": "_error(reason)"
+        },
+        {
+          "source": "_error(new AbortException(\"streaming is disabled\")",
+          "target": "_error(new AbortException(\"streaming is disabled\")"
+        },
+        {
+          "source": ".error(reason)",
+          "target": ".error(reason)"
+        },
+        {
+          "source": ",error(o)",
+          "target": ",error(o)"
+        },
+        {
+          "source": ".error(ut(A.reason)",
+          "target": ".error(ut(A.reason)"
+        },
+        {
+          "source": ".error(w)",
+          "target": ".error(w)"
+        },
+        {
+          "source": ".error(U)",
+          "target": ".error(U)"
+        },
+        {
+          "source": ".error(\"Error extracting text from PDF\", { error })",
+          "target": ".error(\"Error extracting text from PDF\", { error })"
+        },
+        {
+          "source": ".error(`Error processing document ${file.path}:`, error)",
+          "target": ".error(`Error processing document ${file.path}:`, error)"
+        },
+        {
+          "source": ".error(\"Mismatch between chunks and embeddings length\")",
+          "target": ".error(\"Mismatch between chunks and embeddings length\")"
+        },
+        {
+          "source": ".error(`Missing chunk at index ${i}`)",
+          "target": ".error(`Missing chunk at index ${i}`)"
+        },
+        {
+          "source": ".error(`Error creating embeddings:`, error)",
+          "target": ".error(`Error creating embeddings:`, error)"
+        },
+        {
+          "source": ".error(\"Error processing RAG:\", error)",
+          "target": ".error(\"Error processing RAG:\", error)"
+        },
+        {
+          "source": ".error(\"Error checking for updates:\", error)",
+          "target": ".error(\"Error checking for updates:\", error)"
+        },
+        {
+          "source": "name: \"\\u{1FA84} General help\"",
+          "target": "name: \"\\u{1FA84} 通用帮助\""
+        },
+        {
+          "source": "name: \"\\u270D\\uFE0F Continue writing\"",
+          "target": "name: \"\\u270D\\uFE0F 继续写作\""
+        },
+        {
+          "source": "name: \"\\u{1F36D} Summarize\"",
+          "target": "name: \"\\u{1F36D} 总结\""
+        },
+        {
+          "source": "name: \"\\u{1F4D6} Fix spelling and grammar\"",
+          "target": "name: \"\\u{1F4D6} 修改拼写和语法上的错误\""
+        },
+        {
+          "source": "name: \"\\u2705 Find action items\"",
+          "target": "name: \"\\u2705 查找待办事项\""
+        },
+        {
+          "source": "name: \"\\u{1F9E0} New System Prompt\"",
+          "target": "name: \"\\u{1F9E0} 新的System Prompt\""
+        },
+        {
+          "source": "name: \"\",\n      prompt: \"",
+          "target": "name: \"\",\n      prompt: \""
+        },
+        {
+          "source": "name: \"Name: \"",
+          "target": "name: \"命名: \""
+        },
+        {
+          "source": "name: `${method}.${payload.id}`",
+          "target": "name: `${method}.${payload.id}`"
+        },
+        {
+          "source": "name: `${method}.${payload.id}.${key}`",
+          "target": "name: `${method}.${payload.id}.${key}`"
+        },
+        {
+          "source": "name: `attachment.${payload.id}.${name}`",
+          "target": "name: `attachment.${payload.id}.${name}`"
+        },
+        {
+          "source": "name: \"start\"",
+          "target": "name: \"开始\""
+        },
+        {
+          "source": "name: \"end\"",
+          "target": "name: \"结束\""
+        },
+        {
+          "source": "name: \"error\"",
+          "target": "name: \"错误\""
+        },
+        {
+          "source": "name: \"agent_action\"",
+          "target": "name: \"agent_action\""
+        },
+        {
+          "source": "name: \"agent_end\"",
+          "target": "name: \"agent_end\""
+        },
+        {
+          "source": "name: \"text\"",
+          "target": "name: \"text\""
+        },
+        {
+          "source": "name: \"new_token\"",
+          "target": "name: \"new_token\""
+        },
+        {
+          "source": "name: \"<runnable_lambda>\"",
+          "target": "name: \"<runnable_lambda>\""
+        },
+        {
+          "source": "name : `${run.name}:${count}`",
+          "target": "name : `${run.name}:${count}`"
+        },
+        {
+          "source": "name: `${this.getName()}Input`",
+          "target": "name: `${this.getName()}Input`"
+        },
+        {
+          "source": "name: `${this.getName()}Output`",
+          "target": "name: `${this.getName()}Output`"
+        },
+        {
+          "source": "name: \"ResetForm\"",
+          "target": "name: \"重置表格\""
+        },
+        {
+          "source": "name: \"Keystroke\"",
+          "target": "name: \"按键\""
+        },
+        {
+          "source": "name: \"div\"",
+          "target": "name: \"div\""
+        },
+        {
+          "source": "name: \"p\"",
+          "target": "name: \"p\""
+        },
+        {
+          "source": "name: \"span\"",
+          "target": "name: \"span\""
+        },
+        {
+          "source": "name: \"freeTextEditor\"",
+          "target": "name: \"自由文本编辑器\""
+        },
+        {
+          "source": "name: \"highlightEditor\"",
+          "target": "name: \"高亮编辑器\""
+        },
+        {
+          "source": "name: \"inkEditor\"",
+          "target": "name: \"inkEditor\""
+        },
+        {
+          "source": "name: \"stampEditor\"",
+          "target": "name: \"印章编辑器\""
+        },
+        {
+          "source": "name: \"altText\"",
+          "target": "name: \"altText\""
+        },
+        {
+          "source": "name: \"+e);if(!A)throw new Error(\"",
+          "target": "name: \"+e);if(!A)throw new Error(\""
+        },
+        {
+          "source": "name:\"LiberationSans-Regular\"",
+          "target": "name:\"LiberationSans-常规\""
+        },
+        {
+          "source": "name:\"LiberationSans-Bold\"",
+          "target": "name:\"LiberationSans-粗体\""
+        },
+        {
+          "source": "name:\"LiberationSans-Italic\"",
+          "target": "name:\"LiberationSans-斜体\""
+        },
+        {
+          "source": "name:\"LiberationSans-BoldItalic\"",
+          "target": "name:\"LiberationSans-粗斜体\""
+        },
+        {
+          "source": "name:\"\",{root:i}=this.tree;return i.roleMap.has(t)?i.roleMap.get(t):t}parseKids(){let A=null,t=this.dict.getRaw(\"",
+          "target": "name:\"\",{root:i}=this.tree;return i.roleMap.has(t)?i.roleMap.get(t):t}parseKids(){let A=null,t=this.dict.getRaw(\""
+        },
+        {
+          "source": "name:\"#text\"",
+          "target": "name:\"#text\""
+        },
+        {
+          "source": "name:\"div\"",
+          "target": "name:\"div\""
+        },
+        {
+          "source": "name:\"span\"",
+          "target": "name:\"跨度\""
+        },
+        {
+          "source": "name:\"ellipse\"",
+          "target": "name:\"椭圆\""
+        },
+        {
+          "source": "name:\"path\"",
+          "target": "name:\"路径\""
+        },
+        {
+          "source": "name:\"svg\"",
+          "target": "name:\"svg\""
+        },
+        {
+          "source": "name:\"button\"",
+          "target": "name:\"按钮\""
+        },
+        {
+          "source": "name:\"a\"",
+          "target": "name:\"a\""
+        },
+        {
+          "source": "name:\"input\"",
+          "target": "name:\"输入\""
+        },
+        {
+          "source": "name:\"label\"",
+          "target": "name:\"标签\""
+        },
+        {
+          "source": "name:\"option\"",
+          "target": "name:\"选项\""
+        },
+        {
+          "source": "name:\"select\"",
+          "target": "name:\"筛选\""
+        },
+        {
+          "source": "name:\"img\"",
+          "target": "name:\"img\""
+        },
+        {
+          "source": "name:\"line\"",
+          "target": "name:\"line\""
+        },
+        {
+          "source": "name:\"rect\"",
+          "target": "name:\"rect\""
+        },
+        {
+          "source": "name:\"br\"",
+          "target": "name:\"br\""
+        },
+        {
+          "source": "name:\"p\"",
+          "target": "name:\"p\""
+        },
+        {
+          "source": "name:\"textarea\"",
+          "target": "name:\"textarea\""
+        },
+        {
+          "source": "name:\"Note\"",
+          "target": "name:\"Note\""
+        },
+        {
+          "source": "name:\"Regular\"",
+          "target": "name:\"常规\""
+        },
+        {
+          "source": "name:\"Bold\"",
+          "target": "name:\"粗体\""
+        },
+        {
+          "source": "name:\"Italic\"",
+          "target": "name:\"斜体\""
+        },
+        {
+          "source": "name:\"BoldItalic\"",
+          "target": "name:\"粗斜体\""
+        },
+        {
+          "source": "name: \"Show context menu\"",
+          "target": "name: \"显示上下文菜单\""
+        },
+        {
+          "source": "name: `${index + 1} | ${action.name}`",
+          "target": "name: `${index + 1} | ${action.name}`"
+        },
+        {
+          "source": "name: `Local GPT ${provider}`",
+          "target": "name: `Local GPT ${provider}`"
+        },
+        {
+          "source": "name: `Local GPT ${provider} embeddings`",
+          "target": "name: `Local GPT ${provider} embeddings`"
+        },
+        {
+          "source": "text: \"Actions\"",
+          "target": "text: \"Actions\""
+        },
+        {
+          "source": "text: \"Actions list\"",
+          "target": "text: \"Actions list\""
+        },
+        {
+          "source": "text: \"Danger zone\"",
+          "target": "text: \"Danger zone\""
+        },
+        {
+          "source": "text: \"pdfjs-editor-remove-freetext-button\"",
+          "target": "text: \"pdfjs-editor-remove-freetext-button\""
+        },
+        {
+          "source": "page: \"${l}\"",
+          "target": "page: \"${l}\""
+        },
+        {
+          "source": ".setText(` `)",
+          "target": ".setText(` `)"
+        },
+        {
+          "source": ".setButtonText(\"Remove\")",
+          "target": ".setButtonText(\"清除\")"
+        },
+        {
+          "source": ".setButtonText(\"Close\")",
+          "target": ".setButtonText(\"关闭\")"
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Edit\")",
+          "target": ".setButtonText(\"编辑\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset\")",
+          "target": ".setButtonText(\"重置\")"
+        },
+        {
+          "source": ".setName(\"Main AI Provider\")",
+          "target": ".setName(\"主要AI服务商\")"
+        },
+        {
+          "source": ".setName(\"Embedding AI Provider\")",
+          "target": ".setName(\"嵌入式AI服务商\")"
+        },
+        {
+          "source": ".setName(\"Vision AI Provider\")",
+          "target": ".setName(\"视觉AI服务商\")"
+        },
+        {
+          "source": ".setName(\"Creativity\")",
+          "target": ".setName(\"创造力\")"
+        },
+        {
+          "source": ".setName(\"Quick add\")",
+          "target": ".setName(\"快速添加\")"
+        },
+        {
+          "source": ".setName(\"Add new manually\")",
+          "target": ".setName(\"手动添加\")"
+        },
+        {
+          "source": ".setName(\"Action name\")",
+          "target": ".setName(\"操作名称\")"
+        },
+        {
+          "source": ".setName(\"System prompt\")",
+          "target": ".setName(\"系统提示词\")"
+        },
+        {
+          "source": ".setName(\"Prompt\")",
+          "target": ".setName(\"提示词\")"
+        },
+        {
+          "source": ".setName(\"Replace selected text\")",
+          "target": ".setName(\"替换选定的文本\")"
+        },
+        {
+          "source": ".setName(\"\");\n      if (this.editExistingAction) {\n        actionButtonsRow.addButton((button) => {\n          button.buttonEl.style.marginRight = \"2em\";\n          button.setButtonText(\"Remove\")",
+          "target": ".setName(\"\");\n      if (this.editExistingAction) {\n        actionButtonsRow.addButton((button) => {\n          button.buttonEl.style.marginRight = \"2em\";\n          button.setButtonText(\"Remove\")"
+        },
+        {
+          "source": ".setName(\"\").addButton((button) => {\n        this.changingOrder && button.setCta();\n        button.setButtonText(this.changingOrder ? \"Done\" : \"Change order\")",
+          "target": ".setName(\"\").addButton((button) => {\n        this.changingOrder && button.setCta();\n        button.setButtonText(this.changingOrder ? \"Done\" : \"Change order\")"
+        },
+        {
+          "source": ".setName(\"Reset actions\")",
+          "target": ".setName(\"Reset actions\")"
+        },
+        {
+          "source": ".setDesc(\"\").addDropdown((dropdown) => {\n        dropdown.addOption(\"\", \"\\u26AA None\")",
+          "target": ".setDesc(\"\").addDropdown((dropdown) => {\n        dropdown.addOption(\"\", \"\\u26AA None\")"
+        },
+        {
+          "source": ".setDesc(\"\").addText((text) => {\n        text.inputEl.style.minWidth = \"100%\";\n        text.setPlaceholder(\"Paste action\")",
+          "target": ".setDesc(\"\").addText((text) => {\n        text.inputEl.style.minWidth = \"100%\";\n        text.setPlaceholder(\"Paste action\")"
+        },
+        {
+          "source": ".setDesc(\"Optional\")",
+          "target": ".setDesc(\"Optional\")"
+        },
+        {
+          "source": ".setDesc(\n        \"If checked, the highlighted text will be replaced with a response from the model.\"\n      )",
+          "target": ".setDesc(\n        \"如果勾选此选项，高亮显示的文本将被模型的响应所替换。.\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"\").addButton(\n          (button) => button.setIcon(\"copy\")",
+          "target": ".setDesc(\"\").addButton(\n          (button) => button.setIcon(\"copy\")"
+        },
+        {
+          "source": ".setDesc(\"\");\n        if (actionIndex > 0) {\n          actionRow.addButton(\n            (button) => button.setIcon(\"arrow-up\")",
+          "target": ".setDesc(\"\");\n        if (actionIndex > 0) {\n          actionRow.addButton(\n            (button) => button.setIcon(\"arrow-up\")"
+        },
+        {
+          "source": ".setDesc(\n      \"\\u{1F6A8} Reset all actions to the default. This cannot be undone and will delete all your custom actions.\"\n    )",
+          "target": ".setDesc(\n      \"\\u{1F6A8} 将所有操作重置为默认设置。此操作不可撤销，并且将删除您所有的自定义操作。.\"\n    )"
+        },
+        {
+          "source": ".setPlaceholder(\"Paste action\")",
+          "target": ".setPlaceholder(\"粘贴操作\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Summarize selection\")",
+          "target": ".setPlaceholder(\"总结选定内容\")"
+        },
+        {
+          "source": ".setPlaceholder(\"You are a helpful assistant.\")",
+          "target": ".setPlaceholder(\"你是一位乐于助人的伙伴.\")"
+        }
+      ]
+    }
+  }
+}

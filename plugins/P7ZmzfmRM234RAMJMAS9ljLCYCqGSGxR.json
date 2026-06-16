@@ -1,0 +1,1055 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "codeblock-customizer",
+    "version": "2.0.0",
+    "title": "Codeblock Customizer",
+    "description": "This Obsidian plugin lets you customize your codeblocks in editing, and reading mode as well.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.8",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Copied to your clipboard\")",
+          "target": "Notice(\"已复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Could not copy to your clipboard\")",
+          "target": "Notice(\"无法复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Code wrapped\")",
+          "target": "Notice(\"代码已折叠\")"
+        },
+        {
+          "source": "Notice(\"Code unwrapped\")",
+          "target": "Notice(\"代码已展开\")"
+        },
+        {
+          "source": "Notice(`Theme \"${this.plugin.settings.ThemeName}\" updated successfully!`)",
+          "target": "Notice(`主题 \"${this.plugin.settings.ThemeName}\" 更新成功！`)"
+        },
+        {
+          "source": "Notice(`Theme \"${this.plugin.settings.ThemeName}\" restored to its original state!`)",
+          "target": "Notice(`主题 \"${this.plugin.settings.ThemeName}\" 已恢复到初始状态！`)"
+        },
+        {
+          "source": "Notice(\"Select a theme first to delete\")",
+          "target": "Notice(\"请选择一个主题进行删除\")"
+        },
+        {
+          "source": "Notice(\"You cannot delete the default themes\")",
+          "target": "Notice(\"无法删除默认主题\")"
+        },
+        {
+          "source": "Notice(`Theme \"${this.plugin.settings.ThemeName}\" deleted successfully!`)",
+          "target": "Notice(`主题 \"${this.plugin.settings.ThemeName}\" 删除成功！`)"
+        },
+        {
+          "source": "Notice(\"Set a name for your theme!\")",
+          "target": "Notice(\"为您的主题设置一个名称！\")"
+        },
+        {
+          "source": "Notice(\"You can't overwrite default themes\")",
+          "target": "Notice(\"无法覆盖默认主题\")"
+        },
+        {
+          "source": "Notice(`Theme \"${this.plugin.settings.newThemeName}\" updated successfully!`)",
+          "target": "Notice(`主题 \"${this.plugin.settings.newThemeName}\" 更新成功！`)"
+        },
+        {
+          "source": "Notice(`Theme \"${this.plugin.settings.newThemeName}\" saved successfully!`)",
+          "target": "Notice(`主题 \"${this.plugin.settings.newThemeName}\" 保存成功！`)"
+        },
+        {
+          "source": "Notice(\"Default themes restored to their original state!\")",
+          "target": "Notice(\"默认主题已恢复到初始状态！\")"
+        },
+        {
+          "source": "Notice(\"Please enter a language name.\")",
+          "target": "Notice(\"请输入语言名称。\")"
+        },
+        {
+          "source": "Notice(`\"${this.plugin.settings.languageSpecificLanguageName}\" is not a valid language name.`)",
+          "target": "Notice(`\"${this.plugin.settings.languageSpecificLanguageName}\" 不是有效的语言名称。`)"
+        },
+        {
+          "source": "Notice(`A language with the name \"${this.plugin.settings.languageSpecificLanguageName}\" already exists.`)",
+          "target": "Notice(`已存在名为 \"${this.plugin.settings.languageSpecificLanguageName}\" 的语言。`)"
+        },
+        {
+          "source": "Notice(`Added language \"${this.plugin.settings.languageSpecificLanguageName}\".`)",
+          "target": "Notice(`已添加语言 \"${this.plugin.settings.languageSpecificLanguageName}\"。`)"
+        },
+        {
+          "source": "Notice(\"Please enter a color name.\")",
+          "target": "Notice(\"请输入颜色名称。\")"
+        },
+        {
+          "source": "Notice(`\"${this.plugin.settings.alternateHighlightColorName}\" is not a valid color name.`)",
+          "target": "Notice(`\"${this.plugin.settings.alternateHighlightColorName}\" 不是有效的颜色名称。`)"
+        },
+        {
+          "source": "Notice(\"You cannot override the default hl parameter.\")",
+          "target": "Notice(\"无法覆盖默认的 hl 参数。\")"
+        },
+        {
+          "source": "Notice(\"You cannot override the fold parameter.\")",
+          "target": "Notice(\"无法覆盖默认的 fold 参数。\")"
+        },
+        {
+          "source": "Notice(`A color with the name \"${this.plugin.settings.alternateHighlightColorName}\" already exists.`)",
+          "target": "Notice(`已存在名为 \"${this.plugin.settings.alternateHighlightColorName}\" 的颜色。`)"
+        },
+        {
+          "source": "Notice(`Added color \"${this.plugin.settings.alternateHighlightColorName}\".`)",
+          "target": "Notice(`已添加颜色 \"${this.plugin.settings.alternateHighlightColorName}\"。`)"
+        },
+        {
+          "source": "Notice(`Removed color \"${name}\".`)",
+          "target": "Notice(`已删除颜色 \"${name}\"。`)"
+        },
+        {
+          "source": "Notice(`${propDisplayText} is already defined for code block language \"${languageName}\"`)",
+          "target": "Notice(`${propDisplayText} 已为代码块语言 \"${languageName}\" 定义。`)"
+        },
+        {
+          "source": "Notice(`Updated ${linkUpdateCount} code block links in ${fileCount} files.`)",
+          "target": "Notice(`已更新 ${linkUpdateCount} 个代码块链接，涉及 ${fileCount} 个文件。`)"
+        },
+        {
+          "source": ".log(\"loading CodeBlock Customizer plugin\")",
+          "target": ".log(\"加载 CodeBlock Customizer 插件\")"
+        },
+        {
+          "source": ".log(\"unloading CodeBlock Customizer plugin\")",
+          "target": ".log(\"卸载 CodeBlock Customizer 插件\")"
+        },
+        {
+          "source": ".error(\"Invalid JSON content in the SVG configuration file:\", error)",
+          "target": ".error(\"SVG 配置文件中的 JSON 内容无效:\", error)"
+        },
+        {
+          "source": ".error(`File not found: ${filePath}`)",
+          "target": ".error(`文件未找到: ${filePath}`)"
+        },
+        {
+          "source": ".error(`Error reading file: ${error.message}`)",
+          "target": ".error(`读取文件时出错: ${error.message}`)"
+        },
+        {
+          "source": ".error(`Metadata cache not found for file: ${context.sourcePath}`)",
+          "target": ".error(`未找到文件的元数据缓存: ${context.sourcePath}`)"
+        },
+        {
+          "source": ".error(`Error exporting to PDF: ${error.message}`)",
+          "target": ".error(`导出为 PDF 时出错: ${error.message}`)"
+        },
+        {
+          "source": ".error(\"Selected color not found.\")",
+          "target": ".error(\"未找到所选颜色。\")"
+        },
+        {
+          "source": ".error(\"Error modifying file:\", error)",
+          "target": ".error(\"修改文件时出错:\", error)"
+        },
+        {
+          "source": "name: \"Fold all code blocks\"",
+          "target": "name: \"折叠所有代码块\""
+        },
+        {
+          "source": "name: \"Unfold all code blocks\"",
+          "target": "name: \"展开所有代码块\""
+        },
+        {
+          "source": "name: \"Restore folding state of all code blocks to default\"",
+          "target": "name: \"将所有代码块的折叠状态恢复为默认\""
+        },
+        {
+          "source": "name: \"Indent code block by one level\"",
+          "target": "name: \"将代码块缩进一级\""
+        },
+        {
+          "source": "name: \"Unindent code block by one level\"",
+          "target": "name: \"将代码块取消缩进一级\""
+        },
+        {
+          "source": "description: \"Unexpected element after head. Expected the element before `</head>`\"",
+          "target": "description: \"head 之后的元素意外。预期元素在 `</head>` 之前\""
+        },
+        {
+          "source": "description: \"Unexpected `>` or `->`. Expected `-->` to close comments\"",
+          "target": "description: \"意外的 `>` 或 `->`。预期 `-->` 来关闭注释\""
+        },
+        {
+          "source": "description: \"Unexpected `>`. Expected a closing `\\\"",
+          "target": "description: \"意外的 `>`。预期一个关闭的 `\\\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Expected `[0-9]` for decimal references or `[0-9a-fA-F]` for hexadecimal references\"",
+          "target": "description: \"意外的 `%c`。预期 `[0-9]` 用于十进制引用或 `[0-9a-fA-F]` 用于十六进制引用\""
+        },
+        {
+          "source": "description: \"Unexpected `<![CDATA[` in HTML. Remove it, use a comment, or encode special characters instead\"",
+          "target": "description: \"HTML 中的 `<![CDATA[` 意外。请删除它，使用注释或编码特殊字符\""
+        },
+        {
+          "source": "description: \"Unexpectedly high character reference. Expected character references to be at most hexadecimal 10ffff (or decimal 1114111)\"",
+          "target": "description: \"意外地高的字符引用。预期字符引用最多为十六进制 10ffff（或十进制 1114111）\""
+        },
+        {
+          "source": "description: \"Unexpectedly closing tag. Expected other tags to be closed first\"",
+          "target": "description: \"意外地关闭标签。预期其他标签先关闭\""
+        },
+        {
+          "source": "description: \"Unexpected control character `%x`. Expected a non-control code point, 0x00, or ASCII whitespace\"",
+          "target": "description: \"意外的控制字符 `%x`。预期一个非控制码点，0x00，或 ASCII 空白\""
+        },
+        {
+          "source": "description: \"Unexpectedly control character in reference. Expected a non-control code point, 0x00, or ASCII whitespace\"",
+          "target": "description: \"引用中的意外控制字符。预期一个非控制码点，0x00，或 ASCII 空白\""
+        },
+        {
+          "source": "description: \"Unexpected text character `%c`. Only use text in `<noscript>`s in `<body>`\"",
+          "target": "description: \"意外的文本字符 `%c`。仅在 `<body>` 中的 `<noscript>` 中使用文本\""
+        },
+        {
+          "source": "description: \"Unexpectedly double attribute. Expected attributes to occur only once\"",
+          "target": "description: \"意外地重复属性。预期属性只出现一次\""
+        },
+        {
+          "source": "description: \"Unexpected attribute. Expected `>` instead\"",
+          "target": "description: \"意外属性。预期 `>`\""
+        },
+        {
+          "source": "description: \"Unexpected `%c-1`. Expected `>` instead\"",
+          "target": "description: \"意外 `%c-1`。预期 `>`\""
+        },
+        {
+          "source": "description: \"Unexpected end tag. Expected no end tag or another end tag\"",
+          "target": "description: \"意外的结束标签。预期没有结束标签或另一个结束标签\""
+        },
+        {
+          "source": "description: \"Unexpected end of file. Expected tag name instead\"",
+          "target": "description: \"意外文件末尾。预期标签名\""
+        },
+        {
+          "source": "description: \"Unexpected end of file. Expected `]]>` to close the CDATA\"",
+          "target": "description: \"意外文件末尾。预期 `]]>` 来关闭 CDATA\""
+        },
+        {
+          "source": "description: \"Unexpected end of file. Expected `-->` to close the comment\"",
+          "target": "description: \"意外文件末尾。预期 `-->` 来关闭注释\""
+        },
+        {
+          "source": "description: \"Unexpected end of file. Expected a valid doctype (such as `<!doctype html>`)\"",
+          "target": "description: \"意外文件末尾。预期有效的 doctype（如 `<!doctype html>`）\""
+        },
+        {
+          "source": "description: \"Unexpected end of file. Expected text or a closing tag\"",
+          "target": "description: \"意外文件末尾。预期文本或关闭标签\""
+        },
+        {
+          "source": "description: \"Unexpected end of file. Expected `>` to close the tag\"",
+          "target": "description: \"意外文件末尾。预期 `>` 来关闭标签\""
+        },
+        {
+          "source": "description: \"Unexpected `%c-1`. Expected `-->` to close the comment\"",
+          "target": "description: \"意外 `%c-1`。预期 `-->` 来关闭注释\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Expected `<!--` to open the comment\"",
+          "target": "description: \"意外 `%c`。预期 `<!--` 来打开注释\""
+        },
+        {
+          "source": "description: \"Unexpected sequence at `%c`. Expected `public` or `system`\"",
+          "target": "description: \"在 `%c` 处意外的序列。预期 `public` 或 `system`\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Expected an ASCII letter instead\"",
+          "target": "description: \"意外的 `%c`。预期 ASCII 字母\""
+        },
+        {
+          "source": "description: \"Unexpected doctype. Expected doctype before head\"",
+          "target": "description: \"意外的 doctype。预期 doctype 在 head 之前\""
+        },
+        {
+          "source": "description: \"Unexpected start tag `<head>`. Expected `<head>` directly after doctype\"",
+          "target": "description: \"意外的开始标签 `<head>`。预期 `<head>` 在 doctype 之后\""
+        },
+        {
+          "source": "description: \"Unexpected `%c-1`. Expected an attribute value or no `%c-1` instead\"",
+          "target": "description: \"意外的 `%c-1`。预期属性值或没有 `%c-1`\""
+        },
+        {
+          "source": "description: \"Expected a `<!doctype html>` before anything else\"",
+          "target": "description: \"预期 `<!doctype html>` 位于任何其他内容之前\""
+        },
+        {
+          "source": "description: \"Unexpected doctype end at `%c`. Expected `html` instead\"",
+          "target": "description: \"在 `%c` 处意外的 doctype 结束。预期 `html`\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Expected identifier for `public` instead\"",
+          "target": "description: \"意外的 `%c`。预期 `public` 的标识符\""
+        },
+        {
+          "source": "description: 'Unexpected `%c`. Expected identifier for `system` instead (suggested: `\"about:legacy-compat\"`)'",
+          "target": "description: '意外的 `%c`。预期 `system` 的标识符（建议：`\"about:legacy-compat\"`）'"
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Expected `\\\"",
+          "target": "description: \"意外的 `%c`。预期 `\\\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Expected `;` instead\"",
+          "target": "description: \"意外的 `%c`。预期 `;`\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Expected ASCII whitespace instead\"",
+          "target": "description: \"意外的 `%c`。预期 ASCII 空白\""
+        },
+        {
+          "source": "description: \"Unexpected `<!--`. Expected `-->`\"",
+          "target": "description: \"意外的 `<!--`。预期 `-->`\""
+        },
+        {
+          "source": "description: \"Unexpected `<noscript>`. Expected a closing tag or a meta element\"",
+          "target": "description: \"意外的 `<noscript>`。预期关闭标签或 meta 元素\""
+        },
+        {
+          "source": "description: 'Expected `<!doctype html>` or `<!doctype html system \"about:legacy-compat\">`'",
+          "target": "description: '预期 `<!doctype html>` 或 `<!doctype html system \"about:legacy-compat\">`'"
+        },
+        {
+          "source": "description: \"Unexpected `/`. Expected `>` instead\"",
+          "target": "description: \"意外的 `/`。预期 `>`\""
+        },
+        {
+          "source": "description: \"Unexpected code point. Do not use noncharacters in HTML\"",
+          "target": "description: \"意外的码点。HTML 中不要使用非法字符\""
+        },
+        {
+          "source": "description: \"Unexpected code point `%x`. Do not use noncharacters in HTML\"",
+          "target": "description: \"意外的码点 `%x`。HTML 中不要使用非法字符\""
+        },
+        {
+          "source": "description: \"Unexpected code point. Do not use NULL characters in HTML\"",
+          "target": "description: \"意外的码点。HTML 中不要使用 NULL 字符\""
+        },
+        {
+          "source": "description: \"Unexpected end of file. Expected closing tag instead\"",
+          "target": "description: \"意外文件末尾。预期关闭标签\""
+        },
+        {
+          "source": "description: \"Unexpected code point. Do not use lone surrogate characters in HTML\"",
+          "target": "description: \"意外的码点。HTML 中不要使用孤立的代理字符\""
+        },
+        {
+          "source": "description: \"Unexpected code point `%x`. Do not use lone surrogate characters in HTML\"",
+          "target": "description: \"意外的码点 `%x`。HTML 中不要使用孤立的代理字符\""
+        },
+        {
+          "source": "description: \"Unexpected character at `%c`. Expected `>`\"",
+          "target": "description: \"在 `%c` 处意外的字符。预期 `>`\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Expected whitespace, `/`, `>`, `=`, or probably an ASCII letter\"",
+          "target": "description: \"意外的 `%c`。预期空格、`/`、`>`、`=` 或 ASCII 字母\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Quote the attribute value to include it\"",
+          "target": "description: \"意外的 `%c`。引用属性值以包含它\""
+        },
+        {
+          "source": "description: \"Unexpected `%c`. Add an attribute name before it\"",
+          "target": "description: \"意外的 `%c`。在其前添加属性名\""
+        },
+        {
+          "source": "description: \"Unexpected code point `%x`. Do not use NULL characters in HTML\"",
+          "target": "description: \"意外的码点 `%x`。HTML 中不要使用 NULL 字符\""
+        },
+        {
+          "source": "description: \"Unexpected `%c-1`. Expected it followed by `>` or in a quoted attribute value\"",
+          "target": "description: \"意外的 `%c-1`。预期其后跟 `>` 或在引用的属性值中\""
+        },
+        {
+          "source": "description: \"Unexpected character reference. Expected known named character references\"",
+          "target": "description: \"意外的字符引用。预期已知的命名字符引用\""
+        },
+        {
+          "source": "text: \"Codeblock Customizer Settings\"",
+          "target": "text: \"代码块自定义设置\""
+        },
+        {
+          "source": "text: \"Basic settings\"",
+          "target": "text: \"基本设置\""
+        },
+        {
+          "source": "text: \"Codeblock settings\"",
+          "target": "text: \"代码块设置\""
+        },
+        {
+          "source": "text: \"Extra buttons\"",
+          "target": "text: \"额外按钮\""
+        },
+        {
+          "source": "text: \"Text highlight settings\"",
+          "target": "text: \"文本高亮设置\""
+        },
+        {
+          "source": "text: \"Semi-fold settings\"",
+          "target": "text: \"半折叠设置\""
+        },
+        {
+          "source": "text: \"Codeblock language specific colors\"",
+          "target": "text: \"代码块语言特定颜色\""
+        },
+        {
+          "source": "text: \"Alternative highlight colors\"",
+          "target": "text: \"替代高亮颜色\""
+        },
+        {
+          "source": "text: \"Header settings\"",
+          "target": "text: \"标题设置\""
+        },
+        {
+          "source": "text: \"Header language settings\"",
+          "target": "text: \"标题语言设置\""
+        },
+        {
+          "source": "text: \"Header language icon settings\"",
+          "target": "text: \"标题语言图标设置\""
+        },
+        {
+          "source": "text: \"Gutter settings\"",
+          "target": "text: \"行号设置\""
+        },
+        {
+          "source": "text: \"Inline code settings\"",
+          "target": "text: \"内联代码设置\""
+        },
+        {
+          "source": "text: \"Print to PDF settings \"",
+          "target": "text: \"打印为 PDF 设置 \""
+        },
+        {
+          "source": "text: `${languageName} specific color settings`",
+          "target": "text: `${languageName} 特定颜色设置`"
+        },
+        {
+          "source": ".setButtonText(\"Restore\")",
+          "target": ".setButtonText(\"恢复\")"
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setName(\"Theme\")",
+          "target": ".setName(\"主题\")"
+        },
+        {
+          "source": ".setName(\"Create your theme\")",
+          "target": ".setName(\"创建您的主题\")"
+        },
+        {
+          "source": ".setName(\"Select settings page\")",
+          "target": ".setName(\"选择设置页面\")"
+        },
+        {
+          "source": ".setName(\"Enable plugin in source mode\")",
+          "target": ".setName(\"在源模式下启用插件\")"
+        },
+        {
+          "source": ".setName(\"Enable editor active line highlight\")",
+          "target": ".setName(\"启用编辑器活动行高亮\")"
+        },
+        {
+          "source": ".setName(\"Exclude languages\")",
+          "target": ".setName(\"排除语言\")"
+        },
+        {
+          "source": ".setName(\"Restore default themes\")",
+          "target": ".setName(\"恢复默认主题\")"
+        },
+        {
+          "source": ".setName(\"Enable line numbers\")",
+          "target": ".setName(\"启用行号\")"
+        },
+        {
+          "source": ".setName(\"Enable codeblock active line highlight\")",
+          "target": ".setName(\"启用代码块活动行高亮\")"
+        },
+        {
+          "source": ".setName(\"Show indentation lines in reading view\")",
+          "target": ".setName(\"在阅读视图中显示缩进线\")"
+        },
+        {
+          "source": ".setName(\"Enable links usage\")",
+          "target": ".setName(\"启用链接使用\")"
+        },
+        {
+          "source": ".setName(\"Enable automatically updating links on file rename\")",
+          "target": ".setName(\"启用文件重命名时自动更新链接\")"
+        },
+        {
+          "source": ".setName(\"Enable bracket highlight for matching brackets\")",
+          "target": ".setName(\"启用匹配括号的高亮\")"
+        },
+        {
+          "source": ".setName(\"Enable bracket highlight for non matching brackets\")",
+          "target": ".setName(\"启用不匹配括号的高亮\")"
+        },
+        {
+          "source": ".setName(\"Inverse fold behavior\")",
+          "target": ".setName(\"反转折叠行为\")"
+        },
+        {
+          "source": ".setName(\"Enable selection matching\")",
+          "target": ".setName(\"启用选择匹配\")"
+        },
+        {
+          "source": ".setName(\"Unwrap code\")",
+          "target": ".setName(\"展开代码\")"
+        },
+        {
+          "source": ".setName(\"Show 'Delete Code' button (only editing view)\")",
+          "target": ".setName(\"显示 '删除代码' 按钮（仅在编辑视图中）\")"
+        },
+        {
+          "source": ".setName(\"Show 'Select Code' button (only editing view)\")",
+          "target": ".setName(\"显示 '选择代码' 按钮（仅在编辑视图中）\")"
+        },
+        {
+          "source": ".setName(\"Show 'Wrap Code' button (only reading view)\")",
+          "target": ".setName(\"显示 '折叠代码' 按钮（仅在阅读视图中）\")"
+        },
+        {
+          "source": ".setName(\"Always show buttons (only editing view)\")",
+          "target": ".setName(\"始终显示按钮（仅在编辑视图中）\")"
+        },
+        {
+          "source": ".setName(\"Always show 'Copy Code' button for collapsed code blocks\")",
+          "target": ".setName(\"始终显示折叠代码块的 '复制代码' 按钮\")"
+        },
+        {
+          "source": ".setName(\"Line separator\")",
+          "target": ".setName(\"行分隔符\")"
+        },
+        {
+          "source": ".setName(\"Text separator\")",
+          "target": ".setName(\"文本分隔符\")"
+        },
+        {
+          "source": ".setName(\"Enable semi-fold\")",
+          "target": ".setName(\"启用半折叠\")"
+        },
+        {
+          "source": ".setName(\"Add languages to set colors\")",
+          "target": ".setName(\"添加语言以设置颜色\")"
+        },
+        {
+          "source": ".setName(\"Code block border styling position\")",
+          "target": ".setName(\"代码块边框样式位置\")"
+        },
+        {
+          "source": ".setName(\"Add alternative highlight color\")",
+          "target": ".setName(\"添加替代高亮颜色\")"
+        },
+        {
+          "source": ".setName(\"Header bold text\")",
+          "target": ".setName(\"标题粗体文本\")"
+        },
+        {
+          "source": ".setName(\"Header italic text\")",
+          "target": ".setName(\"标题斜体文本\")"
+        },
+        {
+          "source": ".setName(\"Disable folding for code blocks without fold or unfold specified\")",
+          "target": ".setName(\"禁用未指定折叠或展开的代码块的折叠\")"
+        },
+        {
+          "source": ".setName(\"Collapse icon position\")",
+          "target": ".setName(\"折叠图标位置\")"
+        },
+        {
+          "source": ".setName(\"Collapsed code text\")",
+          "target": ".setName(\"折叠的代码文本\")"
+        },
+        {
+          "source": ".setName(\"Display codeblock language (if language is defined)\")",
+          "target": ".setName(\"显示代码块语言（如果已定义语言）\")"
+        },
+        {
+          "source": ".setName(\"Bold text\")",
+          "target": ".setName(\"粗体文本\")"
+        },
+        {
+          "source": ".setName(\"Italic text\")",
+          "target": ".setName(\"斜体文本\")"
+        },
+        {
+          "source": ".setName(\"Always display codeblock language\")",
+          "target": ".setName(\"始终显示代码块语言\")"
+        },
+        {
+          "source": ".setName(\"Display codeblock language icon (if available)\")",
+          "target": ".setName(\"显示代码块语言图标（如果有）\")"
+        },
+        {
+          "source": ".setName(\"Always display codeblock language icon (if available)\")",
+          "target": ".setName(\"始终显示代码块语言图标（如果有）\")"
+        },
+        {
+          "source": ".setName(\"Highlight gutter\")",
+          "target": ".setName(\"高亮行号\")"
+        },
+        {
+          "source": ".setName(\"Highlight active line number\")",
+          "target": ".setName(\"高亮活动行号\")"
+        },
+        {
+          "source": ".setName(\"Enable inline code styling\")",
+          "target": ".setName(\"启用内联代码样式\")"
+        },
+        {
+          "source": ".setName(\"Enable print to PDF\")",
+          "target": ".setName(\"启用打印为 PDF\")"
+        },
+        {
+          "source": ".setName(\"Force current color mode use\")",
+          "target": ".setName(\"强制使用当前颜色模式\")"
+        },
+        {
+          "source": ".setName(\"Expand all code blocks during printing\")",
+          "target": ".setName(\"打印时展开所有代码块\")"
+        },
+        {
+          "source": ".setName(\"Select color to set\")",
+          "target": ".setName(\"选择要设置的颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Select which theme to use\")",
+          "target": ".setDesc(\"选择要使用的主题\")"
+        },
+        {
+          "source": ".setDesc(\"Create your theme with the current colors and settings\")",
+          "target": ".setDesc(\"使用当前颜色和设置创建您的主题\")"
+        },
+        {
+          "source": ".setDesc(\"Select which settings group you want to modify.\")",
+          "target": ".setDesc(\"选择要修改的设置组。\")"
+        },
+        {
+          "source": ".setDesc(\"By default the plugin is disabled in source mode. You can enable it in source mode as well using this toggle.\")",
+          "target": ".setDesc(\"默认情况下，插件在源模式下禁用。您也可以通过此切换在源模式下启用它。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, you can set the color for the active line (including codeblocks).\")",
+          "target": ".setDesc(\"如果启用，您可以为活动行设置颜色（包括代码块）。\")"
+        },
+        {
+          "source": ".setDesc(\"Define languages, separated by a comma, to which the plugin should not apply. You can use a wildcard (*) either at the beginning, or at the end. For example: ad-* will exclude codeblocks where the language starts with ad- e.g.: ad-info, ad-error etc.\")",
+          "target": ".setDesc(\"定义插件不应用于的语言，用逗号分隔。您可以在开头或结尾使用通配符（*）。例如：ad-* 将排除以 ad- 开头的语言，如 ad-info、ad-error 等。\")"
+        },
+        {
+          "source": ".setDesc(\"Restore all settings of all the default themes to their original state.\")",
+          "target": ".setDesc(\"恢复所有默认主题的所有设置到初始状态。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, you can set the color for the active line inside codeblocks only.\")",
+          "target": ".setDesc(\"如果启用，您可以仅为代码块内的活动行设置颜色。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, indentation lines will be shown in reading view.\")",
+          "target": ".setDesc(\"如果启用，缩进线将在阅读视图中显示。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, you can use links in the header, and code blocks as well. In code blocks, you must comment them to work! Examples: [[Document1]], [[Document1|DisplayText]], [[Document1#Paragraph|DisplayText]], [[Document1#^<BlockId>|DisplayText]], [DisplayText](Link), http://example.com etc.\")",
+          "target": ".setDesc(\"如果启用，您可以在标题和代码块中使用链接。在代码块中，您必须注释它们才能生效！示例：[[Document1]]、[[Document1|DisplayText]]、[[Document1#Paragraph|DisplayText]]、[[Document1#^<BlockId>|DisplayText]]、[DisplayText](Link)、http://example.com 等。\")"
+        },
+        {
+          "source": ".setDesc(\"To enable this setting, enable links usage option first! If enabled, code block links will be automatically updated, when a file is renamed. Please read the README for more information!\")",
+          "target": ".setDesc(\"要启用此设置，请首先启用链接使用选项！如果启用，当文件重命名时，代码块链接将自动更新。请阅读 README 以获取更多信息！\")"
+        },
+        {
+          "source": ".setDesc(\"If you click next to a bracket, and if the corresponding opening/closing bracket has been found both of them will be highlighted.\")",
+          "target": ".setDesc(\"如果您点击括号附近，且对应的开/闭括号已找到，它们都会被高亮。\")"
+        },
+        {
+          "source": ".setDesc(`If you click next to a bracket, and it doesn't have a corresponding pair, or the pair does not match the opening/closing bracket (e.g: print(\"hello\"] ), they will be highlighted.`)",
+          "target": ".setDesc(`如果您点击括号附近，且它没有对应的成对括号，或成对括号与开/闭括号不匹配（例如：print(\"hello\"]），它们将被高亮。`)"
+        },
+        {
+          "source": ".setDesc('If enabled, all code blocks are folded by default when opening a document. To disable this behavior for a specific code block, use the \"unfold\" parameter.')",
+          "target": ".setDesc('如果启用，打开文档时所有代码块默认折叠。要为特定代码块禁用此行为，请使用 \"unfold\" 参数。')"
+        },
+        {
+          "source": ".setDesc(\"If enabled, all occurrences of the selected text will be highlighted for easy identification.\")",
+          "target": ".setDesc(\"如果启用，选定文本的所有出现将被高亮以方便识别。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the code will be unwrapped in reading view.\")",
+          "target": ".setDesc(\"如果启用，代码将在阅读视图中展开。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, an additional button will be displayed on every codeblock. If clicked, the content of that codeblock is deleted. Be careful!\")",
+          "target": ".setDesc(\"如果启用，每个代码块上将显示一个额外的按钮。点击后，该代码块的内容将被删除。请小心！\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, an additional button will be displayed on every codeblock. If clicked, the content of that codeblock is selected (including the first and last lines of the code blocks which begin with three backticks).\")",
+          "target": ".setDesc(\"如果启用，每个代码块上将显示一个额外的按钮。点击后，该代码块的内容将被选中（包括以三个反引号开头的代码块的首尾行）。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, an additional button will be displayed on every codeblock. If clicked, the content of that codeblock is wrapped/unwrapped.\")",
+          "target": ".setDesc(\"如果启用，每个代码块上将显示一个额外的按钮。点击后，该代码块的内容将被折叠/展开。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, all enabled buttons will always be displayed, even when you click inside the code block. Otherwise, they will only be shown when the cursor is outside the code block.\")",
+          "target": ".setDesc(\"如果启用，所有启用的按钮将始终显示，即使您点击代码块内。否则，它们仅在光标处于代码块外部时显示。\")"
+        },
+        {
+          "source": ".setDesc('Override the default line separator (|) globally for text highlighting. You can also specify it for specific code blocks using the \"lsep\" parameter. The separator can only be one character long!')",
+          "target": ".setDesc('全局覆盖默认行分隔符（|）进行文本高亮。您还可以使用 \"lsep\" 参数为特定代码块指定分隔符。分隔符只能是一个字符！')"
+        },
+        {
+          "source": ".setDesc('Override the default text separator (:) globally for text highlighting. You can also specify it for specific code blocks using the \"tsep\" parameter. The separator can only be one character long!')",
+          "target": ".setDesc('全局覆盖默认文本分隔符（:）进行文本高亮。您还可以使用 \"tsep\" 参数为特定代码块指定分隔符。分隔符只能是一个字符！')"
+        },
+        {
+          "source": ".setDesc(\"If enabled folding will use semi-fold method. This means, that the first X lines will be visible only. Select the number of visisble lines. You can also enable an additional uncollapse button. Please refer to the README for more information.\")",
+          "target": ".setDesc(\"如果启用，折叠将使用半折叠方法。这意味着，只有前 X 行是可见的。选择可见行数。您还可以启用一个额外的展开按钮。请参考 README 以获取更多信息。\")"
+        },
+        {
+          "source": ".setDesc('Add a language, to set the colors for this specific language. If you want to set colors for code blocks without a language, add \"nolang\" as a language.')",
+          "target": ".setDesc('添加语言，以设置特定语言的颜色。如果您想为没有指定语言的代码块设置颜色，请添加 \"nolang\" 作为语言。')"
+        },
+        {
+          "source": ".setDesc(\"Select on which side the border should be displayed.\")",
+          "target": ".setDesc(\"选择边框应显示在哪一侧。\")"
+        },
+        {
+          "source": ".setDesc(\"Define a name, by which you will reference the color. You can set the color itself after adding it to the list.\")",
+          "target": ".setDesc(\"定义一个名称，您将用此名称引用颜色。您可以在将其添加到列表后设置颜色本身。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the header text will be set to bold.\")",
+          "target": ".setDesc(\"如果启用，标题文本将设置为粗体。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the header text will be set to italic.\")",
+          "target": ".setDesc(\"如果启用，标题文本将设置为斜体。\")"
+        },
+        {
+          "source": ".setDesc('If enabled, code blocks without \"fold\" or \"unfold\" specified will not collapse when clicking the header.')",
+          "target": ".setDesc('如果启用，点击标题时，没有指定 \"fold\" 或 \"unfold\" 的代码块将不会折叠。')"
+        },
+        {
+          "source": ".setDesc(\"If enabled a collapse icon will be displayed in the header. Select the position of the collapse icon.\")",
+          "target": ".setDesc(\"如果启用，标题中将显示折叠图标。选择折叠图标的显示位置。\")"
+        },
+        {
+          "source": ".setDesc('Overwrite the default \"Collapsed Code\" text in the header, when the file parameter is not defined.')",
+          "target": ".setDesc('当文件参数未定义时，覆盖标题中的默认 \"折叠代码\" 文本。')"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the codeblock language will be displayed in the header. If disabled, all below settings are disabled as well!\")",
+          "target": ".setDesc(\"如果启用，代码块语言将显示在标题中。如果禁用，所有以下设置也将禁用！\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the codeblock language text will be set to bold.\")",
+          "target": ".setDesc(\"如果启用，代码块语言文本将设置为粗体。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the codeblock language text will be set to italic.\")",
+          "target": ".setDesc(\"如果启用，代码块语言文本将设置为斜体。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the codeblock language will always be displayed (if a language is defined), even if the file parameter is not specified.\")",
+          "target": ".setDesc(\"如果启用，即使文件参数未指定，代码块语言（如果有定义）也将始终显示。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the codeblock language icon will be displayed in the header. If disabled, all below settings are disabled as well!\")",
+          "target": ".setDesc(\"如果启用，代码块语言图标将显示在标题中。如果禁用，所有以下设置也将禁用！\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the codeblock language icon will always be displayed (if a language is defined and it has an icon), even if the file parameter is not specified.\")",
+          "target": ".setDesc(\"如果启用，即使文件参数未指定，代码块语言图标（如果有定义且有图标）也将始终显示。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, highlighted lines will also highlight the gutter (line number), not just the line.\")",
+          "target": ".setDesc(\"如果启用，高亮的行将高亮行号，而不仅仅是行。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the active line number will be highlighted with a separate color.\")",
+          "target": ".setDesc(\"如果启用，活动行号将用单独的颜色高亮。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the background color, and the text color of inline code can be styled.\")",
+          "target": ".setDesc(\"如果启用，可以设置内联代码的背景色和文本颜色。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the styling is applied to documents when printed to PDF. By default PDF printing uses light theme colors.\")",
+          "target": ".setDesc(\"如果启用，打印为 PDF 时将应用样式。默认情况下，PDF 打印使用浅色主题颜色。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, PDF printing will use the dark theme colors when a dark theme is selected, and light theme colors when a light theme is selected.\")",
+          "target": ".setDesc(\"如果启用，PDF 打印将在选择深色主题时使用深色主题颜色，选择浅色主题时使用浅色主题颜色。\")"
+        },
+        {
+          "source": ".setDesc('If enabled, all collapsed code blocks specified by the \"fold\" parameter will be expanded when printing. This results in the printed document containing expanded code blocks where \"fold\" was used.')",
+          "target": ".setDesc('如果启用，打印时将展开所有由 \"fold\" 参数指定的折叠代码块。这将导致打印的文档包含在使用 \"fold\" 时展开的代码块。')"
+        },
+        {
+          "source": ".setDesc(`Select which color you would like to set for ${this.plugin.settings.languageSpecificLanguageName} specifically.`)",
+          "target": ".setDesc(`选择您要为 ${this.plugin.settings.languageSpecificLanguageName} 特别设置的颜色。`)"
+        },
+        {
+          "source": ".setPlaceholder(\"Name for your theme\")",
+          "target": ".setPlaceholder(\"您的主题名称\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g. dataview, python etc.\")",
+          "target": ".setPlaceholder(\"例如：dataview, python 等\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g. cpp, csharp\")",
+          "target": ".setPlaceholder(\"例如：cpp, csharp\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g. error, warn\")",
+          "target": ".setPlaceholder(\"例如：error, warn\")"
+        },
+        {
+          "source": ".setTooltip(\"Update theme\")",
+          "target": ".setTooltip(\"更新主题\")"
+        },
+        {
+          "source": ".setTooltip(\"Restore default theme to its original state\")",
+          "target": ".setTooltip(\"将默认主题恢复到初始状态\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete theme\")",
+          "target": ".setTooltip(\"删除主题\")"
+        },
+        {
+          "source": ".setTooltip(\"Save theme\")",
+          "target": ".setTooltip(\"保存主题\")"
+        },
+        {
+          "source": ".setTooltip(\"Show additional uncollapse button\")",
+          "target": ".setTooltip(\"显示额外的展开按钮\")"
+        },
+        {
+          "source": ".setTooltip(\"restore default color\")",
+          "target": ".setTooltip(\"恢复默认颜色\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete color\")",
+          "target": ".setTooltip(\"删除颜色\")"
+        },
+        {
+          "source": ".setTooltip(`Add the selected property to customize it for code block language ${languageName} specifically`)",
+          "target": ".setTooltip(`添加选定的属性以专门针对代码块语言 ${languageName} 进行自定义`)"
+        },
+        {
+          "source": ".setTooltip(`Delete all language specific colors for code block language ${languageName}`)",
+          "target": ".setTooltip(`删除代码块语言 ${languageName} 的所有语言特定颜色`)"
+        },
+        {
+          "source": ".appendText(\"If you like this plugin, and would like to help support continued development, use the button below!\")",
+          "target": ".appendText(\"如果您喜欢此插件，并希望支持持续开发，请使用下面的按钮！\")"
+        },
+        {
+          "source": "createTextNode(\"For more information, please read the \")",
+          "target": "createTextNode(\"如需更多信息，请阅读 \")"
+        },
+        {
+          "source": "\"Editor active line color\"",
+          "target": "\"编辑器活动行颜色\""
+        },
+        {
+          "source": "'To set this color, enable the option \"Enable editor active line highlighting\" first.'",
+          "target": "'要设置此颜色，请先启用选项 \"启用编辑器活动行高亮\"。'"
+        },
+        {
+          "source": "\"Codeblock active line color\"",
+          "target": "\"代码块活动行颜色\""
+        },
+        {
+          "source": "'To set this color, enable the option \"Enable codeblock active line highlight\" first.'",
+          "target": "'要设置此颜色，请先启用选项 \"启用代码块活动行高亮\"。'"
+        },
+        {
+          "source": "\"Background color\"",
+          "target": "\"背景颜色\""
+        },
+        {
+          "source": "'Highlight color (used by the \"hl\" parameter)'",
+          "target": "'高亮颜色（由 \"hl\" 参数使用）'"
+        },
+        {
+          "source": "\"Bracket highlight color for matching brackets\"",
+          "target": "\"匹配括号的括号高亮颜色\""
+        },
+        {
+          "source": "\"Background color for matching brackets\"",
+          "target": "\"匹配括号的背景颜色\""
+        },
+        {
+          "source": "\"Bracket highlight color for non matching brackets\"",
+          "target": "\"不匹配括号的括号高亮颜色\""
+        },
+        {
+          "source": "\"Background color for non matching brackets\"",
+          "target": "\"不匹配括号的背景颜色\""
+        },
+        {
+          "source": "\"Selection match highlight color\"",
+          "target": "\"选择匹配高亮颜色\""
+        },
+        {
+          "source": ".setDesc(\"If enabled, in editing mode the 'Copy Code' button will always be visible on collapsed code blocks in the header. In reading mode the 'Copy Code' button will always be visible on collapsed and uncollapsed code blocks as well. Otherwise, it will only appear when hovering over the header (in editing mode) or the code block (in reading mode).\")",
+          "target": ".setDesc(\"如果启用，在编辑模式下，'复制代码' 按钮将始终显示在标题中的折叠代码块上。在阅读模式下，'复制代码' 按钮也将始终显示在折叠和未折叠的代码块上。否则，只有将鼠标悬停在标题（在编辑模式下）或代码块（在阅读模式下）上时才会显示。\")"
+        },
+        {
+          "source": ".addOptions({ \"disable\": \"Disable\", \"left\": \"Left\", \"right\": \"Right\" })",
+          "target": ".addOptions({ \"disable\": \"禁用\", \"left\": \"左边\", \"right\": \"右边\" })"
+        },
+        {
+          "source": "\"Header color\"",
+          "target": "\"标题颜色\""
+        },
+        {
+          "source": "\"Header text color\"",
+          "target": "\"标题文本颜色\""
+        },
+        {
+          "source": "\"Header line color\"",
+          "target": "\"标题行颜色\""
+        },
+        {
+          "source": ".addOptions({ \"hide\": \"Hide\", \"middle\": \"Middle\", \"right\": \"Right\" })",
+          "target": ".addOptions({ \"hide\": \"隐藏\", \"middle\": \"中间\", \"right\": \"右边\" })"
+        },
+        {
+          "source": "\"Codeblock language text color\"",
+          "target": "\"代码块语言文本颜色\""
+        },
+        {
+          "source": "'To set this color, enable the option \"Display codeblock language\" first.'",
+          "target": "'要设置此颜色，请先启用选项 \"显示代码块语言\"。'"
+        },
+        {
+          "source": "\"Codeblock language background color\"",
+          "target": "\"代码块语言背景颜色\""
+        },
+        {
+          "source": "\"Gutter background color\"",
+          "target": "\"行号背景颜色\""
+        },
+        {
+          "source": "\"Active line number color\"",
+          "target": "\"活动行号颜色\""
+        },
+        {
+          "source": "'To set this color enable the option \"Highlight active line number\" first.'",
+          "target": "'要设置此颜色，请先启用选项 \"高亮活动行号\"。'"
+        },
+        {
+          "source": "\"Inline code background color\"",
+          "target": "\"内联代码背景颜色\""
+        },
+        {
+          "source": "\"Inline code text color\"",
+          "target": "\"内联代码文本颜色\""
+        },
+        {
+          "source": "'To set this color enable the option \"Enable inline code styling\" first.'",
+          "target": "'要设置此颜色，请先启用选项 \"启用内联代码样式\"。'"
+        },
+        {
+          "source": ".addOptions({ \"basic\": \"Basic\", \"codeblock\": \"Codeblock\", \"languageSpecific\": \"Language specific colors\", \"alternateHighlight\": \"Alternative highlight colors\", \"header\": \"Header\", \"headerLanguage\": \"Header language\", \"gutter\": \"Gutter\", \"inlineCode\": \"Inline code\", \"printToPDF\": \"Print to PDF\" })",
+          "target": ".addOptions({ \"basic\": \"基本设置\", \"codeblock\": \"代码块\", \"languageSpecific\": \"语言特定颜色\", \"alternateHighlight\": \"替代高亮颜色\", \"header\": \"标题\", \"headerLanguage\": \"标题语言\", \"gutter\": \"行号\", \"inlineCode\": \"内联代码\", \"printToPDF\": \"打印为 PDF\" })"
+        },
+        {
+          "source": "\"Gutter text color\"",
+          "target": "\"活动行文本颜色\""
+        },
+        {
+          "source": "'To set this color enable the option \"Hihglight active line number\" first.'",
+          "target": "'要设置此颜色，请先启用 \"高亮显示活动行号\" 选项。'"
+        },
+        {
+          "source": "\"color picker dialog\"",
+          "target": "\"颜色选择对话框\""
+        },
+        {
+          "source": "\"toggle color picker dialog\"",
+          "target": "\"切换颜色选择对话框\""
+        },
+        {
+          "source": "\"color swatch\"",
+          "target": "\"颜色样本\""
+        },
+        {
+          "source": "\"use previous color\"",
+          "target": "\"使用上一个颜色\""
+        },
+        {
+          "source": "\"Save\"",
+          "target": "\"保存\""
+        },
+        {
+          "source": "\"Cancel\"",
+          "target": "\"取消\""
+        },
+        {
+          "source": "\"Clear\"",
+          "target": "\"清除\""
+        },
+        {
+          "source": "\"save and close\"",
+          "target": "\"保存并关闭\""
+        },
+        {
+          "source": "\"cancel and close\"",
+          "target": "\"取消并关闭\""
+        },
+        {
+          "source": "\"clear and close\"",
+          "target": "\"清除并关闭\""
+        },
+        {
+          "source": "\"color input field\"",
+          "target": "\"颜色输入字段\""
+        },
+        {
+          "source": "\"color selection area\"",
+          "target": "\"颜色选择区域\""
+        },
+        {
+          "source": "\"hue selection slider\"",
+          "target": "\"色调选择滑块\""
+        },
+        {
+          "source": "\"selection slider\"",
+          "target": "\"选择滑块\""
+        },
+        {
+          "source": "\"Copy code\"",
+          "target": "\"复制代码\""
+        },
+        {
+          "source": "\"Wrap/Unwrap code\"",
+          "target": "\"折叠/展开代码\""
+        }
+      ]
+    }
+  }
+}

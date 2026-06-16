@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "dashboard-navigator",
+    "version": "2.0.0",
+    "title": "Dashboard navigator",
+    "description": "Vault dashboard and navigator. Show recent files by type, files per day, week, month, search files by name, date, tags and more.",
+    "language": "zh-cn",
+    "supportedVersions": "3.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "name: \", cls: \"",
+          "target": "name: \", cls: \""
+        },
+        {
+          "source": "name: \"Open dashboard\"",
+          "target": "name: \"打开仪表盘\""
+        },
+        {
+          "source": "name: \"Open navigator\"",
+          "target": "name: \"打开导航器\""
+        },
+        {
+          "source": "text: \"Dashboard\"",
+          "target": "text: \"仪表盘\""
+        },
+        {
+          "source": "text: \"Navigator\"",
+          "target": "text: \"导航器\""
+        },
+        {
+          "source": "text: \"Layout:\"",
+          "target": "text: \"布局：\""
+        },
+        {
+          "source": "text: \"Default\"",
+          "target": "text: \"默认\""
+        },
+        {
+          "source": "text: \"Row striped\"",
+          "target": "text: \"条纹行\""
+        },
+        {
+          "source": "text: \"Column striped\"",
+          "target": "text: \"条纹列\""
+        },
+        {
+          "source": "text: \"Bordered\"",
+          "target": "text: \"带边框\""
+        },
+        {
+          "source": "text: \"Sort by:\"",
+          "target": "text: \"排序：\""
+        },
+        {
+          "source": "text: \"File name (A to Z)\"",
+          "target": "text: \"文件名 (A到Z)\""
+        },
+        {
+          "source": "text: \"File name (Z to A)\"",
+          "target": "text: \"文件名 (Z到A)\""
+        },
+        {
+          "source": "text: \"Path (A to Z)\"",
+          "target": "text: \"路径 (A到Z)\""
+        },
+        {
+          "source": "text: \"Path (Z to A)\"",
+          "target": "text: \"路径 (Z到A)\""
+        },
+        {
+          "source": "text: \"File size (smallest to largest)\"",
+          "target": "text: \"文件大小 (小到大)\""
+        },
+        {
+          "source": "text: \"File size (largest to smallest)\"",
+          "target": "text: \"文件大小 (大到小)\""
+        },
+        {
+          "source": "text: \"Date/time (oldest to newest)\"",
+          "target": "text: \"日期/时间 (最旧到最新)\""
+        },
+        {
+          "source": "text: \"Date/time (newest to oldest)\"",
+          "target": "text: \"日期/时间 (最新到最旧)\""
+        },
+        {
+          "source": "text: \"Files: \"",
+          "target": "text: \"文件：\""
+        },
+        {
+          "source": "text: \"Folders: \"",
+          "target": "text: \"文件夹：\""
+        },
+        {
+          "source": "text: \"Name\"",
+          "target": "text: \"名称\""
+        },
+        {
+          "source": "text: \"Path\"",
+          "target": "text: \"路径\""
+        },
+        {
+          "source": "text: \"Size\"",
+          "target": "text: \"大小\""
+        },
+        {
+          "source": "text: \"Date\"",
+          "target": "text: \"日期\""
+        },
+        {
+          "source": "text: \"Tags\"",
+          "target": "text: \"标签\""
+        },
+        {
+          "source": "text: `File(s): ${f.length}`",
+          "target": "text: `文件数：${f.length}`"
+        },
+        {
+          "source": "text: `Page ${currentPage} of ${this._total_pages}`",
+          "target": "text: `第 ${currentPage} 页，共 ${this._total_pages} 页`"
+        },
+        {
+          "source": "text: \"◀\"",
+          "target": "text: \"◀\""
+        },
+        {
+          "source": "text: \"▶\"",
+          "target": "text: \"▶\""
+        },
+        {
+          "source": "text: \"No files found.\"",
+          "target": "text: \"未找到文件。\""
+        },
+        {
+          "source": "text: \"Properties\"",
+          "target": "text: \"属性\""
+        },
+        {
+          "source": "text: \"File name: \"",
+          "target": "text: \"文件名：\""
+        },
+        {
+          "source": "text: \"Extension: \"",
+          "target": "text: \"扩展名：\""
+        },
+        {
+          "source": "text: \"Path: \"",
+          "target": "text: \"路径：\""
+        },
+        {
+          "source": "text: \"Size: \"",
+          "target": "text: \"大小：\""
+        },
+        {
+          "source": "text: \"Created: \"",
+          "target": "text: \"创建时间：\""
+        },
+        {
+          "source": "text: \"Modified: \"",
+          "target": "text: \"修改时间：\""
+        },
+        {
+          "source": "text: \"Tag(s): \"",
+          "target": "text: \"标签：\""
+        },
+        {
+          "source": "text: \"No tags\"",
+          "target": "text: \"无标签\""
+        },
+        {
+          "source": "text: \"Ok\"",
+          "target": "text: \"确定\""
+        },
+        {
+          "source": ".setButtonText(\"Open\")",
+          "target": ".setButtonText(\"打开\")"
+        },
+        {
+          "source": "\"Open dashboard navigator\"",
+          "target": "\"打开仪表盘导航器\""
+        },
+        {
+          "source": "\"Default view\"",
+          "target": "\"默认视图\""
+        },
+        {
+          "source": "\"Navigator table layout\"",
+          "target": "\"导航器表格布局\""
+        },
+        {
+          "source": "\"Date format\"",
+          "target": "\"日期格式\""
+        },
+        {
+          "source": "\"Font size\"",
+          "target": "\"字体大小\""
+        },
+        {
+          "source": "\"Files per page\"",
+          "target": "\"每页文件数\""
+        },
+        {
+          "source": "\"Recent files\"",
+          "target": "\"最近文件\""
+        },
+        {
+          "source": "\"Hide column: Path\"",
+          "target": "\"隐藏列：路径\""
+        },
+        {
+          "source": "\"Hide column: Size\"",
+          "target": "\"隐藏列：大小\""
+        },
+        {
+          "source": "\"Hide column: Date\"",
+          "target": "\"隐藏列：日期\""
+        },
+        {
+          "source": "\"Hide column: Tags\"",
+          "target": "\"隐藏列：标签\""
+        },
+        {
+          "source": "\"Excluded file extensions\"",
+          "target": "\"排除的文件扩展名\""
+        },
+        {
+          "source": "\"Excluded folders\"",
+          "target": "\"排除的文件夹\""
+        },
+        {
+          "source": "\"Toggle colored files\"",
+          "target": "\"切换彩色文件\""
+        },
+        {
+          "source": "\"Color: Notes\"",
+          "target": "\"颜色：笔记\""
+        },
+        {
+          "source": "\"Color: Canvas\"",
+          "target": "\"颜色：画布\""
+        },
+        {
+          "source": "\"Color: Images\"",
+          "target": "\"颜色：图片\""
+        },
+        {
+          "source": "\"Color: Videos\"",
+          "target": "\"颜色：视频\""
+        },
+        {
+          "source": "\"Color: Audios\"",
+          "target": "\"颜色：音频\""
+        },
+        {
+          "source": "\"Color: PDF\"",
+          "target": "\"颜色：PDF\""
+        },
+        {
+          "source": "\"Color: Other files\"",
+          "target": "\"颜色：其他文件\""
+        },
+        {
+          "source": ".setDesc(\"Select view when opening window\")",
+          "target": ".setDesc(\"选择打开窗口时的视图\")"
+        },
+        {
+          "source": ".setDesc(\"Select table results layout\")",
+          "target": ".setDesc(\"选择表格结果布局\")"
+        },
+        {
+          "source": ".setDesc(\"Select date format\")",
+          "target": ".setDesc(\"选择日期格式\")"
+        },
+        {
+          "source": ".setDesc(\"Select font size in pixels for results and links\")",
+          "target": ".setDesc(\"为结果和链接选择像素字体大小\")"
+        },
+        {
+          "source": ".setDesc(\"Number of results per page\")",
+          "target": ".setDesc(\"每页结果数量\")"
+        },
+        {
+          "source": ".setDesc(\"Number of recent files per category\")",
+          "target": ".setDesc(\"每个类别的最近文件数量\")"
+        },
+        {
+          "source": ".setDesc(\"Navigator: Hide path column\")",
+          "target": ".setDesc(\"导航器：隐藏路径列\")"
+        },
+        {
+          "source": ".setDesc(\"Navigator: Hide size column\")",
+          "target": ".setDesc(\"导航器：隐藏大小列\")"
+        },
+        {
+          "source": ".setDesc(\"Navigator: Hide date column\")",
+          "target": ".setDesc(\"导航器：隐藏日期列\")"
+        },
+        {
+          "source": ".setDesc(\"Navigator: Hide tags column\")",
+          "target": ".setDesc(\"导航器：隐藏标签列\")"
+        },
+        {
+          "source": ".setDesc(\"File extensions to exclude, separated by commas\")",
+          "target": ".setDesc(\"排除的文件扩展名，用逗号分隔\")"
+        },
+        {
+          "source": ".setDesc(\"List of folder paths to exclude, separated by commas\")",
+          "target": ".setDesc(\"排除的文件夹路径列表，用逗号分隔\")"
+        },
+        {
+          "source": ".setDesc(\"Turn on/off colored files\")",
+          "target": ".setDesc(\"开启/关闭彩色文件\")"
+        },
+        {
+          "source": ".setDesc(\"Color of notes\")",
+          "target": ".setDesc(\"笔记颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Color of canvas\")",
+          "target": ".setDesc(\"画布颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Color of images\")",
+          "target": ".setDesc(\"图片颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Color of videos\")",
+          "target": ".setDesc(\"视频颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Color of audios\")",
+          "target": ".setDesc(\"音频颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Color of PDF files\")",
+          "target": ".setDesc(\"PDF文件颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Color of other files\")",
+          "target": ".setDesc(\"其他文件颜色\")"
+        },
+        {
+          "source": ".setPlaceholder(\"File extensions to exclude\")",
+          "target": ".setPlaceholder(\"排除的文件扩展名\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Folder paths to exclude\")",
+          "target": ".setPlaceholder(\"排除的文件夹路径\")"
+        },
+        {
+          "source": ".setTooltip(\"Open dashboard navigator\")",
+          "target": ".setTooltip(\"打开仪表盘导航器\")"
+        },
+        {
+          "source": ".setTooltip(\"Restore default\")",
+          "target": ".setTooltip(\"恢复默认\")"
+        },
+        {
+          "source": ".setTitle(\"Open\")",
+          "target": ".setTitle(\"打开\")"
+        },
+        {
+          "source": ".setTitle(\"Open in new tab\")",
+          "target": ".setTitle(\"在新标签页中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Open to the right\")",
+          "target": ".setTitle(\"在右侧打开\")"
+        },
+        {
+          "source": ".setTitle(\"Open in new window\")",
+          "target": ".setTitle(\"在新窗口中打开\")"
+        },
+        {
+          "source": ".setTitle(\"File properties\")",
+          "target": ".setTitle(\"文件属性\")"
+        },
+        {
+          "source": "\"Notes\"",
+          "target": "\"笔记\""
+        },
+        {
+          "source": "\"Images\"",
+          "target": "\"图片\""
+        },
+        {
+          "source": "\"Canvas\"",
+          "target": "\"画布\""
+        },
+        {
+          "source": "\"Videos\"",
+          "target": "\"视频\""
+        },
+        {
+          "source": "\"Audios\"",
+          "target": "\"音频\""
+        },
+        {
+          "source": "\"PDF\"",
+          "target": "\"PDF\""
+        },
+        {
+          "source": "\"Other\"",
+          "target": "\"其他\""
+        },
+        {
+          "source": "\"Recent notes\"",
+          "target": "\"最近笔记\""
+        },
+        {
+          "source": "\"Recent canvases\"",
+          "target": "\"最近画布\""
+        },
+        {
+          "source": "\"Recent images\"",
+          "target": "\"最近图片\""
+        },
+        {
+          "source": "\"Recent audios\"",
+          "target": "\"最近音频\""
+        },
+        {
+          "source": "\"Recent videos\"",
+          "target": "\"最近视频\""
+        },
+        {
+          "source": "\"Recent PDFs\"",
+          "target": "\"最近PDF\""
+        },
+        {
+          "source": "\"Recent other files\"",
+          "target": "\"最近其他文件\""
+        },
+        {
+          "source": "\"Search...\"",
+          "target": "\"搜索...\""
+        },
+        {
+          "source": "\"Dashboard\"",
+          "target": "\"仪表盘\""
+        },
+        {
+          "source": "\"Navigator\"",
+          "target": "\"导航器\""
+        },
+        {
+          "source": "\"Default\"",
+          "target": "\"默认\""
+        },
+        {
+          "source": "\"Row striped\"",
+          "target": "\"行条纹\""
+        },
+        {
+          "source": "\"Column striped\"",
+          "target": "\"列条纹\""
+        },
+        {
+          "source": "\"Bordered\"",
+          "target": "\"带边框\""
+        }
+      ]
+    }
+  }
+}
