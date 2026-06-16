@@ -1,0 +1,1129 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "heraldry-weaver",
+    "version": "1.0.0",
+    "title": "Heraldry Weaver",
+    "description": "Heraldry Weaver Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.3.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Search name, tincture, charge…",
+          "target": "搜索名称、纹章底色、纹章图案…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Keep the artwork’s own colours (then recolour individual ones below)",
+          "target": "保留艺术品自身的颜色（然后在下方重新着色单个部分）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Keep original colour",
+          "target": "保留原始颜色"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Fur variants & custom",
+          "target": "毛皮变体与自定义"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "No background (transparent)",
+          "target": "无背景（透明）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Heraldry guide — terms, options & examples",
+          "target": "纹章学指南——术语、选项与示例"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Mirror horizontally",
+          "target": "水平镜像"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Flip vertically",
+          "target": "垂直翻转"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Filter by whether the arms are referenced in the vault",
+          "target": "按纹章是否在库中被引用筛选"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Original colours",
+          "target": "原始颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Custom script",
+          "target": "自定义脚本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Built-in generator",
+          "target": "内置生成器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Heraldry Weaver reads standard SVG and WMF vector art, so it works with commercial heraldic art packs such as ",
+          "target": "Heraldry Weaver 读取标准 SVG 和 WMF 矢量图，因此它适用于商业纹章艺术包，例如 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Put each file in the matching reserved subfolder inside your asset folder (set below):",
+          "target": "将每个文件放入你资源文件夹（下方设置）中匹配的保留子文件夹中："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open guide",
+          "target": "打开指南"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Run once",
+          "target": "运行一次"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create subfolders",
+          "target": "创建子文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reload",
+          "target": "重新加载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A reference to the shields, fields, tinctures, furs, ordinaries and charges this plugin offers — each with an example and a little history.",
+          "target": "关于此插件提供的盾牌、纹章底色、纹章底色、毛皮、普通纹章图案和纹章图案的参考——每个都附有示例和一点历史。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Inline code starting with this renders a shield, e.g. `heraldry:House Aldori`.",
+          "target": "以此开头的内联代码会渲染一个盾牌，例如 `heraldry:House Aldori`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Width in pixels for exported PNGs (height keeps the shield aspect).",
+          "target": "导出 PNG 的宽度（像素）（高度保持盾牌的宽高比）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Colour of the escutcheon outline.",
+          "target": "盾牌轮廓的颜色。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where rolled names come from. The built-in generator is deterministic per seed; a custom script can call another plugin (Randomness, Dice Roller, …) or your own logic.",
+          "target": "随机名称的来源。内置生成器对每个种子是确定性的；自定义脚本可以调用另一个插件（Randomness、Dice Roller 等）或你自己的逻辑。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Plugin whose API is bound to `api` in the script. e.g. \"randomness\", or \"obsidian-dice-roller\". Leave blank if your script does not need it.",
+          "target": "其 API 绑定到脚本中 `api` 的插件。例如 \\\"randomness\\\" 或 \\\"obsidian-dice-roller\\\"。如果你的脚本不需要它，请留空。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "JavaScript run to produce one name. In scope: app, api, seed. Return a string (async is fine). Falls back to the built-in generator on any error.",
+          "target": "运行 JavaScript 以生成一个名称。作用域中包含：app、api、seed。返回一个字符串（异步也可以）。任何错误都会回退到内置生成器。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Runs the script once and shows the result (or the error).",
+          "target": "运行脚本一次并显示结果（或错误）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Insert heraldry blocks with controls off (adds a \"controls: false\" line) so a note shows a fixed coat of arms. Turn this off to insert rollable blocks with Reroll/Save/SVG/PNG buttons. You can always edit the line on an individual note.",
+          "target": "插入纹章块时关闭控件（添加一行 \\\"controls: false\\\"），这样笔记会显示固定的纹章。关闭此选项可插入带有重新滚动/保存/SVG/PNG 按钮的可滚动块。你始终可以在单个笔记中编辑该行。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include the built-in fantasy charge pack (game-icons.net, CC BY 3.0 — see CREDITS).",
+          "target": "包含内置的奇幻纹章图案包（game-icons.net，CC BY 3.0 — 见致谢）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Let the Roll tab use your imported assets — custom charges, ordinaries, shields, fields, variations and furs — alongside the built-ins. Off by default so rolls stay reproducible.",
+          "target": "让“滚动”标签页使用你导入的资源——自定义纹章图案、普通纹章图案、盾牌、纹章底色、纹章变体和毛皮——与内置资源一起使用。默认关闭，以便滚动结果保持可重现。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Heraldry guide",
+          "target": "纹章学指南"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inline prefix",
+          "target": "内联前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PNG export width",
+          "target": "PNG 导出宽度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Outline colour",
+          "target": "轮廓颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Names",
+          "target": "名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Name source",
+          "target": "名称来源"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Connector plugin id",
+          "target": "连接器插件 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Name script",
+          "target": "名称脚本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Test the script",
+          "target": "测试脚本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API name provider active",
+          "target": "API 名称提供者已激活"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Seed property",
+          "target": "种子属性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inserting blocks",
+          "target": "插入块"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Static inserts",
+          "target": "静态插入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom assets",
+          "target": "自定义资源"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Compatible art packs",
+          "target": "兼容的艺术包"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bundled charge pack",
+          "target": "捆绑的纹章图案包"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Asset folder",
+          "target": "资源文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Recolour imported charges",
+          "target": "重新着色导入的纹章图案"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include custom content in rolls",
+          "target": "在滚动中包含自定义内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reload custom assets",
+          "target": "重新加载自定义资源"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Saved arms",
+          "target": "已保存的纹章"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Scanning the vault for references…",
+          "target": "正在扫描库以查找引用…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Create the asset folder and its five reserved type-subfolders in your vault",
+          "target": "在你的库中创建资源文件夹及其五个保留的类型子文件夹"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Set an asset folder name first.",
+          "target": "请先设置一个资源文件夹名称。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Name the arms first (type a name in the box).",
+          "target": "请先命名纹章（在框中输入一个名称）。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Saved & copied inline reference.",
+          "target": "已保存并复制内联引用。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a note in editing view (not reading mode) first.",
+          "target": "请先在编辑视图（非阅读模式）中打开一个笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Inserted heraldry block.",
+          "target": "已插入纹章块。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Config copied — share it to reproduce these arms.",
+          "target": "配置已复制——分享它以重现这些纹章。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not read that config.",
+          "target": "无法读取该配置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "hw-field hw-field-swatches",
+          "target": "hw-field hw-field-swatches"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "hw-field hw-field-swatches hw-colour-editor",
+          "target": "hw-field hw-field-swatches hw-colour-editor"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "hw-swatch hw-swatch-reset",
+          "target": "hw-swatch hw-swatch-reset"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "hw-swatch hw-swatch-fur",
+          "target": "hw-swatch hw-swatch-fur"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "hw-swatch hw-swatch-more",
+          "target": "hw-swatch hw-swatch-more"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "dropdown hw-browser-usage",
+          "target": "dropdown hw-browser-usage"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "hw-fur-tile hw-fur-preview",
+          "target": "hw-fur-tile hw-fur-preview"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Pack",
+          "target": "包"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "eagle's head",
+          "target": "鹰首"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "wolf's head",
+          "target": "狼首"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "bear's head",
+          "target": "熊首"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "stag's head",
+          "target": "鹿首"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "horse's head",
+          "target": "马首"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "dragon's head",
+          "target": "龙首"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "fox's head",
+          "target": "狐首"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "bull's horns",
+          "target": "牛角"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "sun in splendour",
+          "target": "光辉灿烂的太阳"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "oak leaf",
+          "target": "橡树叶"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "battle axe",
+          "target": "战斧"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Heater",
+          "target": "加热器形"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "French",
+          "target": "法国形"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Spanish",
+          "target": "西班牙形"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lozenge",
+          "target": "菱形"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Round",
+          "target": "圆形"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Plain",
+          "target": "素色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Divided (party)",
+          "target": "分割（分块）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Variation",
+          "target": "变体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Per pale",
+          "target": "纵分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Per fess",
+          "target": "横分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Per bend",
+          "target": "斜分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Per chevron",
+          "target": "人字分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Per saltire",
+          "target": "X形分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Quarterly",
+          "target": "四分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Barry",
+          "target": "横条纹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Paly",
+          "target": "纵条纹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Checky",
+          "target": "棋盘格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Or",
+          "target": "金色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Argent",
+          "target": "银色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gules",
+          "target": "红色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Azure",
+          "target": "蓝色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sable",
+          "target": "黑色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vert",
+          "target": "绿色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Purpure",
+          "target": "紫色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ermine",
+          "target": "貂皮纹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vair",
+          "target": "松鼠皮纹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Potent",
+          "target": "T形纹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chief",
+          "target": "盾顶"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pale",
+          "target": "纵带"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fess",
+          "target": "横带"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bend",
+          "target": "斜带"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bend sinister",
+          "target": "反斜带"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chevron",
+          "target": "人字带"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cross",
+          "target": "十字"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Saltire",
+          "target": "X形十字"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pile",
+          "target": "楔形"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mullet",
+          "target": "五角星"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Roundel",
+          "target": "圆盘"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Annulet",
+          "target": "圆环"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Billet",
+          "target": "长方块"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Crescent",
+          "target": "新月"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Heart",
+          "target": "心形"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tower",
+          "target": "塔楼"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sword",
+          "target": "剑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Key",
+          "target": "钥匙"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lion",
+          "target": "狮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Eagle",
+          "target": "鹰"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Crown",
+          "target": "王冠"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rose",
+          "target": "玫瑰"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Heraldry Weaver panel",
+          "target": "打开纹章编织器面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Insert heraldry block (from note title)",
+          "target": "插入纹章块（来自笔记标题）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Insert random heraldry block",
+          "target": "插入随机纹章块"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reload custom assets",
+          "target": "重新加载自定义资产"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Name…",
+          "target": "名称…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Heraldry guide",
+          "target": "纹章指南"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No saved arms yet. Use the Save button on a heraldry codeblock to keep one.",
+          "target": "尚无保存的纹章。请使用纹章代码块上的保存按钮来保存一个。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Type",
+          "target": "类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Colours",
+          "target": "颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Original colours",
+          "target": "原始颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Map to",
+          "target": "映射为"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Background",
+          "target": "背景"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Position",
+          "target": "位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Roll",
+          "target": "随机生成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Build",
+          "target": "构建"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Guide",
+          "target": "指南"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Generate",
+          "target": "生成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Roll 1",
+          "target": "随机生成 1"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Roll 9",
+          "target": "随机生成 9"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mirror",
+          "target": "镜像"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "+ Add charge",
+          "target": "+ 添加纹饰"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy reference",
+          "target": "复制引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Insert block",
+          "target": "插入块"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy config",
+          "target": "复制配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import config",
+          "target": "导入配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Click a result to select it, then Save.",
+          "target": "点击一个结果以选中它，然后保存。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Nothing saved yet.",
+          "target": "尚无保存内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Load",
+          "target": "加载"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Insert ref",
+          "target": "插入引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import heraldry config",
+          "target": "导入纹章配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Paste an HF config string (HF1:…) or spec JSON.",
+          "target": "粘贴一个 HF 配置字符串（HF1:…）或规范 JSON。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Browse saved arms",
+          "target": "浏览已保存的纹章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recent",
+          "target": "最近"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All",
+          "target": "全部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Used",
+          "target": "已使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Unused",
+          "target": "未使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Furs",
+          "target": "毛皮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Standard furs",
+          "target": "标准毛皮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Imported furs",
+          "target": "进口毛皮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recolour",
+          "target": "重新着色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Custom",
+          "target": "自定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pattern",
+          "target": "图案"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Countered",
+          "target": "已计数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use this fur",
+          "target": "使用此毛皮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reroll",
+          "target": "重新随机"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Shields",
+          "target": "盾牌"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "The field",
+          "target": "纹章底色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Divisions",
+          "target": "分区"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Variations",
+          "target": "变体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Tinctures",
+          "target": "纹章色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Furs",
+          "target": "毛皮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ordinaries",
+          "target": "普通纹章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Charges — geometric",
+          "target": "纹章图案 — 几何图形"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Charges — the bundled pack",
+          "target": "纹章图案 — 组合包"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
