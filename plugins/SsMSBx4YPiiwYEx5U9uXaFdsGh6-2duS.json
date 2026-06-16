@@ -1,0 +1,883 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "pairwise-glicko-ranking",
+    "version": "1.0.1",
+    "title": "Pairwise Glicko Ranking",
+    "description": "Pairwise Glicko Ranking Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.7.5",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Suggestions are based on notes in this cohort that still exist in your vault.",
+          "target": "建议基于此队列中仍存在于您库中的笔记。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Two or more notes in this cohort share the same note ID. This usually happens when a note is copied.\n      Pairwise Glicko Ranking uses the ID to track ratings - duplicates will cause notes to share a single rating history.",
+          "target": "此队列中有两个或更多笔记共享相同的笔记 ID。这通常发生在笔记被复制时。成对 Glicko 排名使用 ID 来跟踪评分 - 重复项将导致笔记共享单一的评分历史。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "If you are not sure which note should keep the ID, keep it on the oldest note and remove it from the newest copy.",
+          "target": "如果您不确定哪个笔记应保留 ID，请将其保留在最旧的笔记上，并从最新的副本中移除它。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "hr",
+          "target": "hr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Glicko] Failed to plan note ID transfer",
+          "target": "[Glicko] 规划笔记 ID 转移失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Glicko] Failed to generate example template",
+          "target": "[Glicko] 生成示例模板失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Glicko] Failed to save data",
+          "target": "[Glicko] 保存数据失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Glicko] Failed to generate session report",
+          "target": "[Glicko] 生成会话报告失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Glicko] Failed to update ranks in frontmatter",
+          "target": "[Glicko] 更新 frontmatter 中的排名失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset",
+          "target": "重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create cohort",
+          "target": "创建队列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Select",
+          "target": "选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add tag...",
+          "target": "添加标签..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create",
+          "target": "创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Generate template",
+          "target": "生成模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Pick view...",
+          "target": "选择视图..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Pick base...",
+          "target": "选择基础..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Use",
+          "target": "使用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Keep note ID",
+          "target": "保留笔记 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Shown in menus. Optional - leave blank to use an automatic description.",
+          "target": "在菜单中显示。可选 - 留空以使用自动描述。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Auto-scroll notes to this position for quicker comparisons.",
+          "target": "自动滚动笔记至此位置，以便更快比较。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Scroll both panes together during the session.",
+          "target": "在会话期间同步滚动两个窗格。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create an Obsidian note summarising the session when it ends.",
+          "target": "会话结束时生成一份总结会话的 Obsidian 笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-relative path for session reports.",
+          "target": "会话报告的库相对路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Available: {{cohort}}, {{date}}, {{datetime}}, {{count}}",
+          "target": "可用：{{cohort}}、{{date}}、{{datetime}}、{{count}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault path to a markdown file with {{glicko:...}} placeholders. Leave blank for built-in.",
+          "target": "指向包含 {{glicko:...}} 占位符的 Markdown 文件的库路径。留空则使用内置模板。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose whether to include subfolders.",
+          "target": "选择是否包含子文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose how notes match the tags.",
+          "target": "选择笔记如何匹配标签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "This is what was saved in the cohort definition.",
+          "target": "这是在队列定义中保存的内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cohort name",
+          "target": "队列名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Initial scroll position",
+          "target": "初始滚动位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Synchronised scrolling",
+          "target": "同步滚动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Generate post-session report",
+          "target": "生成会话后报告"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Report folder",
+          "target": "报告文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Report name",
+          "target": "报告名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Report template",
+          "target": "报告模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scope",
+          "target": "范围"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Select tags",
+          "target": "选择标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Selected tags",
+          "target": "已选标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Match mode",
+          "target": "匹配模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Current selection",
+          "target": "当前选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scan progress",
+          "target": "扫描进度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Suggested folders",
+          "target": "建议的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Duplicate note ID",
+          "target": "重复的笔记 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Choose a cohort to reset rating in...",
+          "target": "选择一个队列以重置评分..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "My reading list",
+          "target": "我的阅读清单"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Pick a \".base\" file...",
+          "target": "选择一个 \\\".base\\\" 文件..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Pick a view...",
+          "target": "选择一个视图..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Pick a folder...",
+          "target": "选择一个文件夹..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Search tags...",
+          "target": "搜索标签..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Reset to global default",
+          "target": "重置为全局默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Start session",
+          "target": "开始会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Configure",
+          "target": "配置"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "This note has no note ID.",
+          "target": "此笔记没有笔记 ID。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "This note has no rating data in any cohort.",
+          "target": "此笔记在任何队列中都没有评分数据。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No \".base\" files found in your vault.",
+          "target": "在您的库中未找到 \\\".base\\\" 文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No file selected. Please select a file to use its folder.",
+          "target": "未选择文件。请选择一个文件以使用其文件夹。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Note ID property change cancelled.",
+          "target": "笔记 ID 属性更改已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to scan notes for note IDs.",
+          "target": "扫描笔记以查找笔记 ID 失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Report template created and set as default.",
+          "target": "报告模板已创建并设为默认。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to generate example template.",
+          "target": "生成示例模板失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Pop-out windows are not available on this platform. Using tabs instead.",
+          "target": "此平台不支持弹出窗口。将改用标签页。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to open a new window. Using tabs instead.",
+          "target": "打开新窗口失败。将改用标签页。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Base/view not found. Cancelled.",
+          "target": "基础/视图未找到。已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Folder not found. Cancelled.",
+          "target": "文件夹未找到。已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Need at least two Markdown notes to compare.",
+          "target": "至少需要两个 Markdown 笔记才能进行比较。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to generate session report. Check the console for details.",
+          "target": "生成会话报告失败。请检查控制台获取详情。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "all",
+          "source": "All of (AND)",
+          "target": "全部满足 (AND)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "any",
+          "source": "Any of (OR)",
+          "target": "任一满足 (OR)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "tag",
+          "target": "标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "glicko-side left",
+          "target": "glicko-side left"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "glicko-side right",
+          "target": "glicko-side right"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Write the current Glicko rating to this property.",
+          "target": "将当前 Glicko 评分写入此属性。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Write how uncertain the rating is. Starts high and decreases as more comparisons are made.",
+          "target": "写入评分的不确定性。初始值较高，随着比较次数增加而降低。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Write the cohort rank (1 = highest) to this property.",
+          "target": "将队列排名（1 = 最高）写入此属性。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Write the number of matches to this property.",
+          "target": "将比赛次数写入此属性。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Write the number of wins to this property.",
+          "target": "将胜利次数写入此属性。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Choose how and where the arena opens.",
+          "target": "选择竞技场如何以及在哪里打开。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Where to store the note ID.",
+          "target": "存储笔记 ID 的位置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "The frontmatter property (or HTML comment tag) used to store note IDs.",
+          "target": "用于存储笔记 ID 的前置属性（或 HTML 注释标签）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Excludes templates from cohorts to keep note IDs from appearing on them.",
+          "target": "将模板排除在队列之外，以防止笔记 ID 出现在模板上。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Choose which Glicko statistics to write into frontmatter and the property names to use.",
+          "target": "选择要写入前置属性的 Glicko 统计信息以及要使用的属性名称。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Defaults used when configuring reports on a new cohort.",
+          "target": "在新队列上配置报告时使用的默认值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Log detailed debug information to the developer console.",
+          "target": "将详细的调试信息记录到开发者控制台。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Generate a post-session report for new cohorts by default.",
+          "target": "默认为新队列生成会话后报告。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Pre-filled vault-relative folder for session reports.",
+          "target": "会话报告的预填充库相对文件夹。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Available: {{cohort}}, {{date}}, {{datetime}}, {{count}}",
+          "target": "可用：{{cohort}}、{{date}}、{{datetime}}、{{count}}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Vault path to a markdown file with {{glicko:...}} placeholders. Leave blank to use the built-in template.",
+          "target": "指向包含 {{glicko:...}} 占位符的 Markdown 文件的库路径。留空则使用内置模板。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "end",
+          "source": "End of note (HTML comment)",
+          "target": "笔记末尾 (HTML 注释)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "folder",
+          "source": "Only this folder",
+          "target": "仅此文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "folder-recursive",
+          "source": "This folder and all subfolders",
+          "target": "此文件夹及所有子文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "frontmatter",
+          "source": "Frontmatter (YAML)",
+          "target": "前置属性 (YAML)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Progress bar",
+          "target": "进度条"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Cohort defaults",
+          "target": "队列默认值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Cohorts",
+          "target": "队列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Vault: all notes",
+          "target": "库：所有笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Rating",
+          "target": "评分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Uncertainty",
+          "target": "不确定性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Rank",
+          "target": "排名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Matches",
+          "target": "比赛次数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Wins",
+          "target": "胜利次数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "New: from base...",
+          "target": "新建：从基础..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "New: from #tags...",
+          "target": "新建：从 #标签..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "New: current active folder",
+          "target": "新建：当前活动文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "New: pick a folder...",
+          "target": "新建：选择一个文件夹..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Vault: All notes",
+          "target": "库：所有笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show win/draw notices",
+          "target": "显示胜利/平局通知"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Session layout",
+          "target": "会话布局"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Note ID location",
+          "target": "笔记 ID 位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Note ID property name",
+          "target": "笔记 ID 属性名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Templates folder",
+          "target": "模板文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Highlight surprising results",
+          "target": "高亮显示意外结果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stability threshold",
+          "target": "稳定性阈值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Default frontmatter properties",
+          "target": "默认前置属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Post-session report defaults",
+          "target": "会话后报告默认值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Debug logging",
+          "target": "调试日志记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add cohort",
+          "target": "添加队列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ask for per-cohort overrides on creation",
+          "target": "创建时询问每个队列的覆盖设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Property name",
+          "target": "属性名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ask for report settings on creation",
+          "target": "创建时询问报告设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable reports by default",
+          "target": "默认启用报告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Default report folder",
+          "target": "默认报告文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Default report name",
+          "target": "默认报告名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Default report template",
+          "target": "默认报告模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start rating session",
+          "target": "开始评分会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "End current session",
+          "target": "结束当前会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reset rating for active note",
+          "target": "重置当前笔记的评分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Generate example report template",
+          "target": "生成示例报告模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Templates",
+          "target": "模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cohort options",
+          "target": "队列选项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Auto-scroll and synchronised scrolling are both enabled. These settings can conflict with each other if your notes have embedded content that loads slowly. If the notes jump unexpectedly, either disable synchronised scrolling or set auto-scroll to \"no auto-scroll\".",
+          "target": "自动滚动和同步滚动均已启用。如果您的笔记包含加载缓慢的嵌入内容，这些设置可能会相互冲突。如果笔记意外跳转，请禁用同步滚动或将自动滚动设置为“不自动滚动”。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Folder scope",
+          "target": "文件夹范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No tags selected.",
+          "target": "未选择标签。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create tag cohort",
+          "target": "创建标签队列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Base missing",
+          "target": "基础缺失"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Folder missing",
+          "target": "文件夹缺失"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Duplicate note IDs detected",
+          "target": "检测到重复的笔记ID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Notes using this note ID",
+          "target": "使用此笔记ID的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " (oldest)",
+          "target": "（最旧的）"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
