@@ -1,0 +1,1543 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "arxiv-daily",
+    "version": "1.0.0",
+    "title": "arXiv Daily",
+    "description": "arXiv Daily Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.14",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "e.g. Photometric Redshift",
+          "target": "例如 光度红移"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "What kinds of papers should be grouped under this topic? (natural language)",
+          "target": "哪些类型的论文应归类在此主题下？（自然语言）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Standard relative link",
+          "target": "标准相对链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Obsidian wikilink",
+          "target": "Obsidian 维基链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Detail report",
+          "target": "详细报告"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unable to preventDefault inside passive event listener invocation.",
+          "target": "无法在被动事件监听器调用中阻止默认行为。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "scheduler tick failed",
+          "target": "调度器 tick 失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not parse message into JSON:",
+          "target": "无法将消息解析为 JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "From chunk:",
+          "target": "来自数据块："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "paper-filter: LLM call failed",
+          "target": "paper-filter：LLM 调用失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "paper-filter: no JSON in LLM response",
+          "target": "paper-filter：LLM 响应中无 JSON"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "paper-filter: JSON parse failed",
+          "target": "paper-filter：JSON 解析失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "scheduler initial tickTodayScheduled failed",
+          "target": "调度器初始 tickTodayScheduled 失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[agentkeepalive:deprecated] %s",
+          "target": "[agentkeepalive:deprecated] %s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "+ Add Category",
+          "target": "+ 添加类别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "+ Add Topic",
+          "target": "+ 添加主题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Summarize",
+          "target": "总结"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Set mark",
+          "target": "设置标记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Auto-summarize arXiv papers on schedule (skips weekends)",
+          "target": "按计划自动总结 arXiv 论文（跳过周末）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Required. Your LLM provider's API key. Stored locally in data.json.",
+          "target": "必填。你的 LLM 提供商的 API 密钥。本地存储于 data.json 中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "LLM endpoint base. Auto-filled when you pick a provider; override for self-hosted or proxy.",
+          "target": "LLM 端点基础。选择提供商时自动填充；可覆盖以用于自托管或代理。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pick a preset or type a custom model ID in the right-hand box.",
+          "target": "选择预设或在右侧框中输入自定义模型 ID。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Model ID for the custom provider.",
+          "target": "自定义提供商的模型 ID。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Fetch one or more arXiv categories; duplicate papers are merged by arXiv ID.",
+          "target": "获取一个或多个 arXiv 类别；重复论文按 arXiv ID 合并。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Load a preset bundle of topics or add one manually.",
+          "target": "加载预设主题包或手动添加。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Relative path in vault",
+          "target": "库中的相对路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Markdown links generated in daily reports",
+          "target": "每日报告中生成的 Markdown 链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Local time the scheduler aims to fire today's batch. Earlier ticks for today are skipped.",
+          "target": "调度器计划触发今日批次的本地时间。更早的今日 tick 将被跳过。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Max 5 (limited by arXiv /recent)",
+          "target": "最多 5 个（受 arXiv /recent 限制）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "e.g. 2605.08080, arXiv:2605.08080v1, https://arxiv.org/abs/2605.08080",
+          "target": "例如 2605.08080, arXiv:2605.08080v1, https://arxiv.org/abs/2605.08080"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paper must already exist in the internal arXiv Daily paper index",
+          "target": "论文必须已存在于内部 arXiv Daily 论文索引中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API Key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Base URL",
+          "target": "基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Timeout (sec)",
+          "target": "超时（秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Thinking mode",
+          "target": "思考模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reasoning effort",
+          "target": "推理努力程度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "arXiv Categories",
+          "target": "arXiv 类别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Quick start",
+          "target": "快速开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Timezone",
+          "target": "时区"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Daily path",
+          "target": "每日路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Papers path",
+          "target": "论文路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link style",
+          "target": "链接样式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Run time (HH:MM)",
+          "target": "运行时间 (HH:MM)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tick interval (min)",
+          "target": "刷新间隔 (分钟)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Lookback days",
+          "target": "回溯天数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Request delay (ms)",
+          "target": "请求延迟 (毫秒)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cache expiry (days)",
+          "target": "缓存过期 (天)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Section char limit",
+          "target": "章节字符限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Paper char limit",
+          "target": "论文字符限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Daily char limit",
+          "target": "每日字符限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log level",
+          "target": "日志级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date",
+          "target": "日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "arXiv ID or URL",
+          "target": "arXiv ID 或 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Mark",
+          "target": "标记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "or enter custom model ID",
+          "target": "或输入自定义模型 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "or enter custom value",
+          "target": "或输入自定义值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "or enter custom category",
+          "target": "或输入自定义类别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "or enter custom timezone",
+          "target": "或输入自定义时区"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Confirm",
+          "target": "确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Retry failed dates",
+          "target": "重试失败的日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "paper-filter: no topics configured, skipping LLM call",
+          "target": "paper-filter: 未配置主题，跳过 LLM 调用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "status bar unavailable, using noop",
+          "target": "状态栏不可用，使用 noop"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "cache cleanup failed",
+          "target": "缓存清理失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: no workspace leaf available",
+          "target": "arXiv Daily: 没有可用的工作区叶节点"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open Settings -> Community plugins -> arXiv Daily.",
+          "target": "打开设置 -> 社区插件 -> arXiv Daily。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: running all pending in lookback...",
+          "target": "arXiv Daily: 正在运行回溯窗口内所有待处理项..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: nothing pending in lookback window",
+          "target": "arXiv Daily: 回溯窗口内没有待处理项"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: retrying failed dates in lookback...",
+          "target": "arXiv Daily: 正在重试回溯窗口内失败的日期..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: no failed dates in lookback window",
+          "target": "arXiv Daily: 回溯窗口内没有失败的日期"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: no selected papers have detail summaries",
+          "target": "arXiv Daily: 所选论文均无详细摘要"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: no selected papers need changes",
+          "target": "arXiv Daily: 所选论文无需更改"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: running all pending in lookback…",
+          "target": "arXiv Daily: 正在运行回溯窗口内所有待处理项…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: retrying failed dates in lookback…",
+          "target": "arXiv Daily: 正在重试回溯窗口内失败的日期…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: run state cleared",
+          "target": "arXiv Daily: 运行状态已清除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: no active run to cancel",
+          "target": "arXiv Daily: 没有活动的运行可取消"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invalid arXiv ID",
+          "target": "无效的 arXiv ID"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: current note is not an indexed arXiv paper",
+          "target": "arXiv Daily: 当前笔记不是已索引的 arXiv 论文"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invalid date format",
+          "target": "无效的日期格式"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter an arXiv ID",
+          "target": "请输入一个 arXiv ID"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "arXiv Daily: diagnostics copied",
+          "target": "arXiv Daily: 诊断信息已复制"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not copy diagnostics; text is selectable",
+          "target": "无法复制诊断信息；文本可选中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Go to current month",
+          "target": "转到当前月份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Previous month",
+          "target": "上个月"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Next month",
+          "target": "下个月"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Date from",
+          "target": "开始日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Date to",
+          "target": "结束日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Reset filters",
+          "target": "重置筛选器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Select visible papers",
+          "target": "选择可见论文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Clear selection",
+          "target": "清除选择"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "arxiv-daily-dashboard__state arxiv-daily-dashboard__state--error",
+          "target": "arxiv-daily-dashboard__state arxiv-daily-dashboard__state--error"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "arxiv-daily-dashboard__tab arxiv-daily-dashboard__tab--filter",
+          "target": "arxiv-daily-dashboard__tab arxiv-daily-dashboard__tab--filter"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon arxiv-daily-dashboard__filter-reset",
+          "target": "clickable-icon arxiv-daily-dashboard__filter-reset"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon arxiv-daily-dashboard__batch-icon",
+          "target": "clickable-icon arxiv-daily-dashboard__batch-icon"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon arxiv-daily-dashboard__star",
+          "target": "clickable-icon arxiv-daily-dashboard__star"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon arxiv-daily-dashboard__action",
+          "target": "clickable-icon arxiv-daily-dashboard__action"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "YYYY-MM-DD. Clears stored run state for this date before running; existing daily files are still not overwritten.",
+          "target": "YYYY-MM-DD。运行前清除此日期的存储运行状态；现有的每日文件仍不会被覆盖。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Photometric redshift methods, catalogs, comparisons.",
+          "target": "测光红移方法、目录、比较。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Cluster surveys, mass calibration, catalogs, SZ/X-ray/optical.",
+          "target": "星系团巡天、质量校准、目录、SZ/X射线/光学。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Deep learning, simulation-based inference, and related ML/DL applications in astrophysics.",
+          "target": "深度学习、基于模拟的推断以及天体物理学中相关的机器学习/深度学习应用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pre-training, fine-tuning, RLHF, scaling laws, mixture-of-experts.",
+          "target": "预训练、微调、RLHF、缩放定律、专家混合。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Retrieval-augmented generation, vector stores, hybrid retrieval.",
+          "target": "检索增强生成、向量存储、混合检索。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Safety, interpretability, jailbreaks, constitutional AI.",
+          "target": "安全性、可解释性、越狱、宪法式人工智能。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Benchmarks, leaderboards, evaluation methodology, contamination.",
+          "target": "基准测试、排行榜、评估方法、数据污染。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Diffusion-based image / video / 3D generation models.",
+          "target": "基于扩散的图像/视频/3D生成模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "NeRF, Gaussian splatting, 3D reconstruction, depth estimation.",
+          "target": "NeRF、高斯泼溅、3D重建、深度估计。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Video understanding, generation, action recognition.",
+          "target": "视频理解、生成、动作识别。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Structure prediction, AlphaFold-style models, protein design.",
+          "target": "结构预测、AlphaFold风格模型、蛋白质设计。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Foundation models for genomics, single-cell, sequence modeling.",
+          "target": "用于基因组学、单细胞、序列建模的基础模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Molecular generation, docking, binding affinity prediction.",
+          "target": "分子生成、对接、结合亲和力预测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "DeepSeek-V4 Pro (rec.)",
+          "target": "DeepSeek-V4 Pro (推荐)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "DeepSeek-V4 Flash",
+          "target": "DeepSeek-V4 Flash"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GPT-5.5 (rec.)",
+          "target": "GPT-5.5 (推荐)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GPT-5.4-mini (budget)",
+          "target": "GPT-5.4-mini (经济)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GPT-5.3-codex (coding)",
+          "target": "GPT-5.3-codex (编码)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude Opus 4.7 (rec.)",
+          "target": "Claude Opus 4.7 (推荐)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude Sonnet 4.6",
+          "target": "Claude Sonnet 4.6"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude Haiku 4.5",
+          "target": "Claude Haiku 4.5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GLM-5.1 (rec.)",
+          "target": "GLM-5.1 (推荐)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GLM-4.7-Flash (free)",
+          "target": "GLM-4.7-Flash (免费)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Physics",
+          "target": "物理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Computer Science",
+          "target": "计算机科学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Statistics / Biology / Economics",
+          "target": "统计学/生物学/经济学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "All",
+          "target": "全部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Starred",
+          "target": "已加星标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Starred first",
+          "target": "已加星标优先"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Recently seen",
+          "target": "最近查看"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Published newest",
+          "target": "最新发布"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Published oldest",
+          "target": "最早发布"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Topic A-Z",
+          "target": "主题 A-Z"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Title A-Z",
+          "target": "标题 A-Z"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Any topic",
+          "target": "任意主题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Clear state",
+          "target": "清除状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Unmarked",
+          "target": "未标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Watch",
+          "target": "关注"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Highlight",
+          "target": "高亮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Saved",
+          "target": "已保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Ignored",
+          "target": "已忽略"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Skip today",
+          "target": "跳过今天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Run today",
+          "target": "运行今天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "DeepSeek",
+          "target": "DeepSeek"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Anthropic",
+          "target": "Anthropic"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Zhipu GLM",
+          "target": "智谱 GLM"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Custom",
+          "target": "自定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Astrophysics",
+          "target": "天体物理学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cosmology",
+          "target": "宇宙学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxies",
+          "target": "星系"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "High Energy",
+          "target": "高能物理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Solar & Stellar",
+          "target": "太阳与恒星物理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Condensed Matter",
+          "target": "凝聚态物理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GR & Quantum Cosmology",
+          "target": "广义相对论与量子宇宙学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HEP Experiment",
+          "target": "高能物理实验"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HEP Lattice",
+          "target": "高能物理格点计算"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HEP Phenomenology",
+          "target": "高能物理现象学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HEP Theory",
+          "target": "高能物理理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nuclear Experiment",
+          "target": "核物理实验"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nuclear Theory",
+          "target": "核物理理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Physics (General)",
+          "target": "物理学（综合）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Quantum Physics",
+          "target": "量子物理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Artificial Intelligence",
+          "target": "人工智能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hardware Architecture",
+          "target": "硬件架构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Computation & Language",
+          "target": "计算与语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cryptography",
+          "target": "密码学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Computer Vision",
+          "target": "计算机视觉"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Data Structures",
+          "target": "数据结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Information Retrieval",
+          "target": "信息检索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Information Theory",
+          "target": "信息论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Machine Learning",
+          "target": "机器学习"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Neural & Evolutionary",
+          "target": "神经与进化计算"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Networking",
+          "target": "网络"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Robotics",
+          "target": "机器人学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Software Engineering",
+          "target": "软件工程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Algebraic Geometry",
+          "target": "代数几何"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Analysis of PDEs",
+          "target": "偏微分方程分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Combinatorics",
+          "target": "组合数学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Number Theory",
+          "target": "数论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Optimization",
+          "target": "优化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Probability",
+          "target": "概率论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Statistics Theory",
+          "target": "统计理论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Machine Learning (Stats)",
+          "target": "机器学习（统计）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Methodology",
+          "target": "方法论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Quantitative Biology",
+          "target": "定量生物学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Econometrics",
+          "target": "计量经济学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Blank",
+          "target": "空白"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Astrophysics + ML",
+          "target": "天体物理学 + 机器学习"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy Cluster",
+          "target": "星系团"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ML in Astro",
+          "target": "天文学中的机器学习"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NLP / LLMs",
+          "target": "自然语言处理 / 大语言模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LLM Training",
+          "target": "大语言模型训练"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Alignment",
+          "target": "对齐"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Evaluation",
+          "target": "评估"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Diffusion",
+          "target": "扩散模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "3D Vision",
+          "target": "三维视觉"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Video",
+          "target": "视频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bioinformatics",
+          "target": "生物信息学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Protein Structure",
+          "target": "蛋白质结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Genomics ML",
+          "target": "基因组学机器学习"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Drug Discovery",
+          "target": "药物发现"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run now (today)",
+          "target": "立即运行（今天）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run for date…",
+          "target": "为指定日期运行…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run all pending in lookback window",
+          "target": "运行回溯窗口内所有待处理项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Retry failed dates in lookback window",
+          "target": "重试回溯窗口内失败的日期"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Force run for date…",
+          "target": "强制为指定日期运行…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clear run state…",
+          "target": "清除运行状态…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cancel current run",
+          "target": "取消当前运行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Summarize by arXiv ID…",
+          "target": "按 arXiv ID 摘要…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Set paper mark…",
+          "target": "设置论文标记…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create paper note…",
+          "target": "创建论文笔记…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open today's daily report",
+          "target": "打开今日每日报告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open reading dashboard",
+          "target": "打开阅读仪表板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show recent run state",
+          "target": "显示最近运行状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show diagnostics",
+          "target": "显示诊断信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "ID, title, author, topic, summary",
+          "target": "ID、标题、作者、主题、摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Finish setup before running arXiv Daily",
+          "target": "运行 arXiv Daily 前请先完成设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add your LLM settings and at least one research topic, then run today from the Dashboard.",
+          "target": "添加您的大语言模型设置并至少选择一个研究主题，然后从仪表板运行今日任务。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No papers indexed yet",
+          "target": "尚未索引任何论文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Run today or run pending dates to create daily reports and populate this Dashboard.",
+          "target": "运行今日任务或运行待处理日期以创建每日报告并填充此仪表板。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No papers match these filters",
+          "target": "没有论文匹配这些筛选条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset filters to return to the current reading list.",
+          "target": "重置筛选条件以返回当前阅读列表。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No starred papers yet",
+          "target": "尚无星标论文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Star the papers worth returning to. Use All to browse everything already indexed.",
+          "target": "为值得回顾的论文添加星标。使用“全部”浏览所有已索引的论文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No papers in this view",
+          "target": "此视图中没有论文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Run arXiv Daily again or adjust your topic settings if this looks unexpected.",
+          "target": "如果这看起来异常，请再次运行 arXiv Daily 或调整您的主题设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "arXiv Daily Dashboard",
+          "target": "arXiv Daily 仪表板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Daily reports",
+          "target": "每日报告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Today",
+          "target": "今天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No daily reports found.",
+          "target": "未找到每日报告。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Display",
+          "target": "显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sort",
+          "target": "排序"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configuration incomplete",
+          "target": "配置不完整"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No topics yet.",
+          "target": "尚无主题。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Getting Started",
+          "target": "快速入门"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Show missing configuration",
+          "target": "显示缺失的配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Run Today",
+          "target": "运行今日任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open Dashboard",
+          "target": "打开仪表板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Name",
+          "target": "名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tag",
+          "target": "标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Auto",
+          "target": "自动"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Description",
+          "target": "描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Replace",
+          "target": "替换"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Summarize paper by arXiv ID",
+          "target": "通过 arXiv ID 总结论文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Set arXiv Daily paper mark",
+          "target": "设置 arXiv 每日论文标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "arXiv Daily — Recent state",
+          "target": "arXiv 每日 — 最近状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No runs yet.",
+          "target": "尚无运行记录。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "arXiv Daily diagnostics",
+          "target": "arXiv 每日诊断"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Detail report enabled",
+          "target": "启用详细报告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Force run arXiv Daily for date",
+          "target": "强制运行指定日期的 arXiv 每日"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

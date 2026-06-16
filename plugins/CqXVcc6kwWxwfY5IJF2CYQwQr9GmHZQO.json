@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "bookmarker",
+    "version": "1.0.0",
+    "title": "Bookmarker",
+    "description": "Bookmarker Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.11",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Heuristic (offline)",
+          "target": "启发式（离线）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Claude (default)",
+          "target": "Claude（默认）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test",
+          "target": "测试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Testing…",
+          "target": "测试中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "GitHub",
+          "target": "GitHub"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Confirm duplicate save",
+          "target": "确认重复保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open similar bookmark",
+          "target": "打开相似书签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Import",
+          "target": "导入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used by the Claude classifier. Stored in plaintext in this plugin's data.json.",
+          "target": "供Claude分类器使用。以明文形式存储在此插件的data.json文件中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Claude proposes tags and folder via the API. Heuristic is offline and free.",
+          "target": "Claude通过API提出标签和文件夹建议。启发式模式离线且免费。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Anthropic model ID used by the Claude classifier.",
+          "target": "Claude分类器使用的Anthropic模型ID。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Bookmarks are written under this folder; categories are subfolders.",
+          "target": "书签将写入此文件夹下；分类为子文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Open a review window (edit title, tags, and destination folder) before writing the note. Turn off for a silent one-click save with the proposed values.",
+          "target": "在写入笔记前打开一个审阅窗口（编辑标题、标签和目标文件夹）。关闭此选项可使用建议值进行静默一键保存。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Serve preview images through wsrv.nl: caching, resizing, and it hides your IP from the origin site. Trade-off: wsrv.nl sees the image URLs.",
+          "target": "通过wsrv.nl提供预览图片：缓存、调整大小，并隐藏您的IP地址。权衡：wsrv.nl会看到图片URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When a page exposes no image, fetch a Microlink screenshot (synchronous, no placeholder). Free, ~50/day; may still fail on bot-protected sites like Amazon.",
+          "target": "当页面未提供图片时，获取Microlink截图（同步，无占位符）。免费，每天约50次；在亚马逊等机器人防护网站上仍可能失败。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use a favicon service when the page declares no favicon.",
+          "target": "当页面未声明网站图标时，使用网站图标服务。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Trigger a Wayback Machine snapshot in the background.",
+          "target": "在后台触发Wayback Machine快照。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Let the classifier introduce tags not already in the vault.",
+          "target": "允许分类器引入保险库中尚未存在的标签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Let the classifier create a destination subfolder if none fits.",
+          "target": "允许分类器在没有合适选项时创建目标子文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Before saving, check if the URL is already bookmarked. In the review window you can open the existing note or save anyway.",
+          "target": "保存前检查URL是否已被收藏。在审阅窗口中，您可以打开现有笔记或仍然保存。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of tags proposed per bookmark.",
+          "target": "每个书签建议的最大标签数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Characters of page text sent to the classifier.",
+          "target": "发送给分类器的页面文本字符数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For the 'Import from Raindrop' command. Create a test token at raindrop.io: Settings, Integrations, For Developers, then a new app. Stored in plaintext in data.json.",
+          "target": "用于“从Raindrop导入”命令。在raindrop.io创建测试令牌：设置，集成，面向开发者，然后新建一个应用。以明文形式存储在data.json中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paste the page address you want to bookmark.",
+          "target": "粘贴您想要收藏的页面地址。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The file name of the note. Defaults to the title; edit to rename.",
+          "target": "笔记的文件名。默认为标题；编辑可重命名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where to file this bookmark, under the root folder.",
+          "target": "将此书签归档到根文件夹下的哪个位置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create a new subfolder instead of picking above. Use a slash to nest, e.g. folder/subfolder.",
+          "target": "创建一个新的子文件夹，而不是从上面选择。使用斜杠进行嵌套，例如 folder/subfolder。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pick a preview image, or paste your own below.",
+          "target": "选择一张预览图片，或在下方粘贴您自己的图片。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paste an image URL to use a custom cover.",
+          "target": "粘贴图片URL以使用自定义封面。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Classification",
+          "target": "分类"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Anthropic API key",
+          "target": "Anthropic API密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Classifier mode",
+          "target": "分类器模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Vault layout",
+          "target": "保险库布局"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Root folder",
+          "target": "根文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Always review before saving",
+          "target": "保存前始终审阅"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preview",
+          "target": "预览"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preview card plugin",
+          "target": "预览卡片插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cache & privacy proxy",
+          "target": "缓存与隐私代理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Screenshot fallback",
+          "target": "截图回退"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Free service layers",
+          "target": "免费服务层"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Favicon fallback",
+          "target": "网站图标回退"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Wayback archive",
+          "target": "Wayback存档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Classification behavior",
+          "target": "分类行为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allow new tags",
+          "target": "允许新标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allow new folders",
+          "target": "允许新建文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Warn on duplicate URL",
+          "target": "URL重复时警告"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Notice on same domain",
+          "target": "同域名时提示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max tags",
+          "target": "最大标签数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excerpt length",
+          "target": "摘要长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Import",
+          "target": "导入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Raindrop API token",
+          "target": "Raindrop API 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Title",
+          "target": "标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note name",
+          "target": "笔记名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Description",
+          "target": "描述"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Type",
+          "target": "类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Favorite",
+          "target": "收藏"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tags",
+          "target": "标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add tag",
+          "target": "添加标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Destination folder",
+          "target": "目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "New folder",
+          "target": "新建文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cover",
+          "target": "封面"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cover URL",
+          "target": "封面 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "E.g. Tech/AI",
+          "target": "例如：科技/人工智能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Move to category, or type a new one…",
+          "target": "移动到分类，或输入新分类…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Your note…",
+          "target": "你的笔记…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Insert link to bookmark…",
+          "target": "插入书签链接…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Enter a valid HTTP(s) URL.",
+          "target": "请输入有效的 HTTP(s) URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Choose a file first.",
+          "target": "请先选择一个文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "No bookmarks found in that file.",
+          "target": "在该文件中未找到书签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open URL",
+          "target": "打开 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Show related",
+          "target": "显示相关项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Move to category…",
+          "target": "移动到分类…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Add note",
+          "target": "添加笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Regenerate tags",
+          "target": "重新生成标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Check that the saved key and model reach the Anthropic API",
+          "target": "检查已保存的密钥和模型是否能访问 Anthropic API"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Check that the saved Raindrop token is valid",
+          "target": "检查已保存的 Raindrop 令牌是否有效"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bookmarker: Claude classifier failed, using the offline heuristic.",
+          "target": "书签管理器：Claude 分类器失败，正在使用离线启发式方法。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Fetching tags…",
+          "target": "正在获取标签…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bookmarker: obsidian://bookmark needs a valid HTTP(s) URL.",
+          "target": "书签管理器：obsidian://bookmark 需要一个有效的 HTTP(s) URL。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bookmarker: no bookmarks yet.",
+          "target": "书签管理器：暂无书签。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Checking links…",
+          "target": "正在检查链接…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bookmarker: set your Raindrop API token in settings first.",
+          "target": "书签管理器：请先在设置中设置您的 Raindrop API 令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Fetching from Raindrop…",
+          "target": "正在从 Raindrop 获取…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bookmarker: no bookmarks found in Raindrop.",
+          "target": "书签管理器：在 Raindrop 中未找到书签。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "bookmarker-cover-option bookmarker-cover-none",
+          "target": "bookmarker-cover-option bookmarker-cover-none"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "bookmarker-tag-chip bookmarker-tag-active",
+          "target": "bookmarker-tag-chip bookmarker-tag-active"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "no API key set",
+          "target": "未设置 API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "no token set",
+          "target": "未设置令牌"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "HTTP 401: invalid token",
+          "target": "HTTP 401：令牌无效"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bookmark a URL",
+          "target": "为 URL 添加书签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open bookmarks board",
+          "target": "打开书签面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check for broken links",
+          "target": "检查失效链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Import bookmarks…",
+          "target": "导入书签…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Import from Raindrop",
+          "target": "从 Raindrop 导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Insert bookmark link",
+          "target": "插入书签链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search bookmarks…",
+          "target": "搜索书签…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bookmark a URL",
+          "target": "为 URL 添加书签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Review bookmark",
+          "target": "查看书签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No cover",
+          "target": "无封面"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "None",
+          "target": "无"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No tags",
+          "target": "无标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Regenerate tags",
+          "target": "重新生成标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No tags.",
+          "target": "无标签。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " ✕",
+          "target": " ✕"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add note",
+          "target": "添加笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All folders",
+          "target": "所有文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All types",
+          "target": "所有类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "★ Favorites",
+          "target": "★ 收藏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Broken",
+          "target": "失效"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import bookmarks",
+          "target": "导入书签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pick a Netscape HTML export (Pocket, Raindrop, browser) or a Raindrop CSV. Existing URLs are skipped.",
+          "target": "选择一个 Netscape HTML 导出文件（Pocket、Raindrop、浏览器）或 Raindrop CSV 文件。已存在的 URL 将被跳过。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
