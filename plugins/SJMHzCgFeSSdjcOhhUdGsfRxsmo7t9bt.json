@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "meeting-detector",
+    "version": "1.0.1",
+    "title": "Meeting Detector",
+    "description": "Meeting Detector Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "none",
+          "target": "none"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Do nothing",
+          "target": "不执行任何操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "notice",
+          "target": "notice"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Show notification",
+          "target": "显示通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Stop recording",
+          "target": "停止录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Toggle meeting detection on or off.",
+          "target": "切换会议检测的开启或关闭状态。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Detect running meetings.",
+          "target": "检测正在运行的会议。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Detect running sessions via browser tab title.",
+          "target": "通过浏览器标签页标题检测正在运行的会议。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How often to check for running meeting apps.",
+          "target": "检查正在运行的会议应用程序的频率。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Path to a template file in your vault. Leave empty for the default template.",
+          "target": "指向您保险库中模板文件的路径。留空则使用默认模板。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder where meeting notes are saved.",
+          "target": "保存会议笔记的文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Format string for the note file name, e.g. `YYYY-MM-DD_HHmm_Meeting`.",
+          "target": "笔记文件名的格式字符串，例如 `YYYY-MM-DD_HHmm_Meeting`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "What to do when a meeting app closes.",
+          "target": "当会议应用程序关闭时执行的操作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable plugin",
+          "target": "启用插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Monitoring",
+          "target": "监控"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Zoom",
+          "target": "Zoom"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Google meet",
+          "target": "Google Meet"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Microsoft teams",
+          "target": "Microsoft Teams"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Polling interval (seconds)",
+          "target": "轮询间隔（秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Notes",
+          "target": "笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Template file path",
+          "target": "模板文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Notes folder",
+          "target": "笔记文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File name format",
+          "target": "文件名格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "End behavior",
+          "target": "结束行为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Action on meeting end",
+          "target": "会议结束时的操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Meetings",
+          "target": "会议"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. `YYYY-MM-DD_HHmm_Meeting`",
+          "target": "例如 `YYYY-MM-DD_HHmm_Meeting`"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audio recorder is not available. Please enable the core audio recorder plugin.",
+          "target": "音频录制器不可用。请启用核心音频录制器插件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Recording started.",
+          "target": "录制已开始。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Checking for meetings...",
+          "target": "正在检查会议..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "meeting-detector-btn meeting-detector-btn-record",
+          "target": "meeting-detector-btn meeting-detector-btn-record"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "meeting-detector-btn meeting-detector-btn-note",
+          "target": "meeting-detector-btn meeting-detector-btn-note"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "meeting-detector-btn meeting-detector-btn-both",
+          "target": "meeting-detector-btn meeting-detector-btn-both"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "meeting-detector-btn meeting-detector-btn-dismiss",
+          "target": "meeting-detector-btn meeting-detector-btn-dismiss"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check for meetings now",
+          "target": "立即检查会议"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Meeting detected",
+          "target": "检测到会议"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Start recording",
+          "target": "开始录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create meeting note",
+          "target": "创建会议笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Record & create note",
+          "target": "录制并创建笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Dismiss",
+          "target": "忽略"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
