@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "pds-sync",
+    "version": "1.0.1",
+    "title": "PDS Sync",
+    "description": "PDS Sync Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "App password",
+          "target": "应用密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "oauth",
+          "target": "oauth"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OAuth",
+          "target": "OAuth"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "PDS auto-sync errors:",
+          "target": "PDS自动同步错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "PDS interval-sync errors:",
+          "target": "PDS间隔同步错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "PDS Sync pull errors:",
+          "target": "PDS同步拉取错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "PDS Sync errors:",
+          "target": "PDS同步错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open sign-in page",
+          "target": "打开登录页面"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy link",
+          "target": "复制链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Connect",
+          "target": "连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create / update",
+          "target": "创建 / 更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy .well-known",
+          "target": "复制 .well-known"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open repository",
+          "target": "打开仓库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Open the page in your browser; you'll return here automatically.",
+          "target": "在浏览器中打开该页面；您将自动返回此处。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "OAuth (granular scopes, recommended) or app password (universal fallback).",
+          "target": "OAuth（细粒度权限，推荐）或应用密码（通用后备方案）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "e.g. https://bsky.social or a self-hosted PDS.",
+          "target": "例如 https://bsky.social 或自托管的PDS。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Opt-in per note: checkbox property 'pds' -> private (encrypted), 'publish' -> public (standard.site).",
+          "target": "按笔记选择加入：复选框属性 'pds' -> 私有（加密），'publish' -> 公开（standard.site）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Restrict syncing to this vault folder. Empty = whole vault.",
+          "target": "将同步限制在此保险库文件夹内。留空 = 整个保险库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Push edited notes automatically (debounced). Pull stays manual.",
+          "target": "自动推送编辑过的笔记（防抖）。拉取仍为手动。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Push the whole vault on a timer. 0 = off.",
+          "target": "定时推送整个保险库。0 = 关闭。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where the publication lives on the web (combined with each document's path).",
+          "target": "发布内容在网络上的位置（与每个文档的路径组合）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault path to a PNG/JPEG/WebP/GIF under 1 MB; uploaded on Create / update.",
+          "target": "指向小于1 MB的PNG/JPEG/WebP/GIF的保险库路径；在创建/更新时上传。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Send publication colours readers can use.",
+          "target": "发送读者可使用的发布颜色。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Writes a site.standard.publication record (with theme/discover) and fills the URI below.",
+          "target": "写入一个 site.standard.publication 记录（包含主题/发现）并填充下方的URI。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Copy the AT-URI to host at <base URL>/.well-known/site.standard.publication.",
+          "target": "复制AT-URI以托管在 <base URL>/.well-known/site.standard.publication。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Filled by the helper, or set manually (at:// or https://) to use an existing publication.",
+          "target": "由助手填充，或手动设置（at:// 或 https://）以使用现有发布。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Public HTTPS URL serving client-metadata.json (hosted on Tangled).",
+          "target": "提供 client-metadata.json 的公共HTTPS URL（托管在Tangled上）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Same origin as the client metadata; bounces back to obsidian://.",
+          "target": "与客户端元数据同源；重定向回 obsidian://。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Changing this requires updating the OAuth scope + client metadata.",
+          "target": "更改此项需要更新OAuth范围 + 客户端元数据。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Documentation, issues, and source.",
+          "target": "文档、问题和源代码。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sign in to your PDS",
+          "target": "登录您的PDS"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Connection",
+          "target": "连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auth mode",
+          "target": "认证模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Handle or DID",
+          "target": "Handle 或 DID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PDS service URL",
+          "target": "PDS服务URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "App password",
+          "target": "应用密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Connect",
+          "target": "连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync behaviour",
+          "target": "同步行为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync folder (optional)",
+          "target": "同步文件夹（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-sync on change",
+          "target": "更改时自动同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-sync interval (minutes)",
+          "target": "自动同步间隔（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Private (E2E-encrypted)",
+          "target": "私有（端到端加密）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Encryption passphrase",
+          "target": "加密密码短语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Public (standard.site)",
+          "target": "公开（standard.site）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Publication name",
+          "target": "发布名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Publication base URL",
+          "target": "发布基础URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Publication description (optional)",
+          "target": "发布描述（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Publication icon (optional)",
+          "target": "发布图标（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show in discovery feeds",
+          "target": "在发现信息流中显示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom theme",
+          "target": "自定义主题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Create / update publication",
+          "target": "创建/更新发布"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Domain verification",
+          "target": "域名验证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Publication URI",
+          "target": "发布 URI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Advanced",
+          "target": "高级"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Client metadata URL",
+          "target": "客户端元数据 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Redirect URL",
+          "target": "重定向 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Private collection (NSID)",
+          "target": "私有集合 (NSID)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Public collection (NSID)",
+          "target": "公开集合 (NSID)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Help & feedback",
+          "target": "帮助与反馈"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. Published",
+          "target": "例如：已发布"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "My Notes",
+          "target": "我的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[pds-sync] OAuth resume failed:",
+          "target": "[pds-sync] OAuth 恢复失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[pds-sync] failed to delete remote record:",
+          "target": "[pds-sync] 删除远程记录失败："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: not logged in - check settings.",
+          "target": "PDS 同步：未登录 - 请检查设置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: run “Connect to PDS” to sign in with OAuth.",
+          "target": "PDS 同步：运行“连接到 PDS”以通过 OAuth 登录。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: enter your handle and app password in settings.",
+          "target": "PDS 同步：请在设置中输入您的用户名和应用密码。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: enter your handle in settings first.",
+          "target": "PDS 同步：请先在设置中输入您的用户名。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: continue sign-in in your browser…",
+          "target": "PDS 同步：请在浏览器中继续登录…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: syncing vault…",
+          "target": "PDS 同步：正在同步保险库…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: set a publication name and base URL in settings first.",
+          "target": "PDS 同步：请先在设置中设置发布名称和基础 URL。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: icon must be PNG, JPEG, WebP, or GIF.",
+          "target": "PDS 同步：图标必须是 PNG、JPEG、WebP 或 GIF 格式。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: icon must be under 1 MB.",
+          "target": "PDS 同步：图标大小必须小于 1 MB。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: create a publication first.",
+          "target": "PDS 同步：请先创建一个发布。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: pulling…",
+          "target": "PDS 同步：正在拉取…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: removed deleted note from PDS.",
+          "target": "PDS 同步：已从 PDS 中移除已删除的笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: sign-in link copied.",
+          "target": "PDS 同步：登录链接已复制。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDS Sync: couldn't copy the link.",
+          "target": "PDS 同步：无法复制链接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "UnknownXRPCError",
+          "target": "未知XRPC错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "InvalidToken",
+          "target": "无效令牌"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "connect",
+          "target": "连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Connect to PDS (sign in)",
+          "target": "连接到 PDS（登录）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync vault to PDS",
+          "target": "同步保险库到 PDS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pull from PDS (restore)",
+          "target": "从 PDS 拉取（恢复）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create / update standard.site publication",
+          "target": "创建/更新 standard.site 发布"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy publication verification (.well-known)",
+          "target": "复制发布验证 (.well-known)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync current note to PDS",
+          "target": "同步当前笔记到 PDS"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
