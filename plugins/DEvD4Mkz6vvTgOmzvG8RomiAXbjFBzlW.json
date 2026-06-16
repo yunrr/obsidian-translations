@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "yunseul",
+    "version": "1.0.0",
+    "title": "Yunseul",
+    "description": "Yunseul Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "LM Studio (OpenAI-compatible)",
+          "target": "LM Studio（兼容 OpenAI）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Claude Code (CLI subprocess)",
+          "target": "Claude Code（CLI 子进程）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not save conversation.",
+          "target": "无法保存对话。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Append failed.",
+          "target": "追加失败。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Copy failed.",
+          "target": "复制失败。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not restore previous sessions.",
+          "target": "无法恢复之前的会话。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault index build failed. See console for details.",
+          "target": "库索引构建失败。详情请查看控制台。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset",
+          "target": "重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test",
+          "target": "测试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Type the exact model id as it appears in /v1/models.",
+          "target": "输入模型的确切 ID，与 /v1/models 中显示的一致。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Lower = deterministic, higher = creative. 0.0–2.0.",
+          "target": "值越低越确定，值越高越具创造性。范围 0.0–2.0。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Truncates oldest history pairs first. Bound-file excerpt is always kept.",
+          "target": "优先截断最早的历史对话对。绑定的文件摘录始终保留。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Drops oldest turn pairs once this many rounds accumulate. 1–20.",
+          "target": "当累积的对话轮次达到此数量时，丢弃最早的对话对。范围 1–20。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder for \"Download conversation\" Markdown files.",
+          "target": "用于存放“下载对话”Markdown 文件的文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Index every markdown file so the assistant can find relevant notes for each question (BM25, on-device).",
+          "target": "索引每个 Markdown 文件，以便助手能为每个问题找到相关笔记（BM25，本地运行）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How many vault notes to include as retrieved context per question. 1–20.",
+          "target": "每个问题检索上下文时包含的库笔记数量。范围 1–20。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of tags. Notes carrying any of these tags are excluded from retrieval. Leading \"#\" optional.",
+          "target": "以逗号分隔的标签列表。带有这些标签的笔记将被排除在检索之外。前导“#”可选。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Rebuilds the vault index from scratch. Useful after a major vault reorganization.",
+          "target": "从头开始重建库索引。在对库进行大规模重组后很有用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When off, ![](https://...) is replaced with a placeholder so the renderer cannot fire a request.",
+          "target": "关闭时，![](https://...) 会被替换为占位符，以防止渲染器发起请求。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Files in the clippings folder are never auto-included via context collection.",
+          "target": "剪藏文件夹中的文件永远不会通过上下文收集自动包含。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder treated as untrusted when the toggle above is on.",
+          "target": "当上方的开关打开时，此文件夹将被视为不受信任。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enables debug logging to the developer console.",
+          "target": "启用开发者控制台的调试日志记录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Works with LM Studio, Ollama, llama.cpp server, vLLM, LocalAI.",
+          "target": "兼容 LM Studio、Ollama、llama.cpp server、vLLM、LocalAI。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pings /v1/models via requestUrl and a streaming fetch to distinguish CORS from server-off.",
+          "target": "通过 requestUrl 和流式 fetch 来 ping /v1/models，以区分 CORS 问题和服务器离线。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Absolute path to the `claude` executable. Leave blank to use whatever `claude` resolves to on PATH.",
+          "target": "`claude` 可执行文件的绝对路径。留空则使用 PATH 中解析到的 `claude`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Passed to `claude --model <id>`. Blank uses the CLI default for your subscription.",
+          "target": "可选。传递给 `claude --model <id>`。留空则使用您订阅对应的 CLI 默认值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When on, Claude can use Edit and Write tools inside your vault. Off by default — reads/search only.",
+          "target": "开启后，Claude 可以在您的库中使用编辑和写入工具。默认关闭——仅限读取/搜索。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Runs `claude --version` to confirm the CLI is reachable. Does not check auth.",
+          "target": "运行 `claude --version` 以确认 CLI 可访问。不检查认证。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sent as Authorization: Bearer. Stored in data.json — sync services see plain text.",
+          "target": "作为 Authorization: Bearer 发送。存储在 data.json 中——同步服务会看到明文。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "LLM provider",
+          "target": "LLM 提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Chat model",
+          "target": "聊天模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max context characters",
+          "target": "最大上下文字符数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max conversation rounds",
+          "target": "最大对话轮次"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download folder",
+          "target": "下载文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable vault search",
+          "target": "启用库搜索"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Top results per query",
+          "target": "每次查询返回的顶部结果数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude tags",
+          "target": "排除标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Force re-index now",
+          "target": "立即强制重新索引"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reset index",
+          "target": "重置索引"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allow external images in chat",
+          "target": "允许聊天中的外部图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Treat clippings as untrusted",
+          "target": "将剪藏视为不受信任"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clippings folder",
+          "target": "剪藏文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Base URL (OpenAI-compatible)",
+          "target": "基础 URL（兼容 OpenAI）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Claude binary path",
+          "target": "Claude 二进制文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model override",
+          "target": "模型覆盖"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable file writes",
+          "target": "启用文件写入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key (optional)",
+          "target": "API 密钥（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "AI Chats",
+          "target": "AI 聊天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "private, draft",
+          "target": "私密，草稿"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Clippings",
+          "target": "剪藏"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "claude — falls back to PATH",
+          "target": "claude — 回退到 PATH"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "(use Claude Code's default)",
+          "target": "（使用 Claude Code 的默认值）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "sk-... or local-token",
+          "target": "sk-... 或 local-token"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Yunseul can index your vault so the assistant can find relevant notes for every question.",
+          "target": "Yunseul 可以索引您的库，以便助手为每个问题找到相关笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Heads-up: this is a large vault. The build will take several minutes and the index file may be tens to hundreds of megabytes.",
+          "target": "注意：这是一个大型库。构建将需要几分钟，索引文件可能达到数十到数百兆字节。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "The index file lives under your vault root, so sync tools (Syncthing, iCloud, git) will see it. See the README for ignore patterns. You can change these settings later in Settings → Yunseul → Vault search.",
+          "target": "索引文件位于您的库根目录下，因此同步工具（Syncthing、iCloud、git）会看到它。请参阅 README 了解忽略模式。您稍后可以在设置 → Yunseul → 库搜索中更改这些设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "An API token is set. data.json stores it as plain text — sync services (Obsidian Sync, git) will see it.",
+          "target": "已设置 API 令牌。data.json 以明文形式存储它——同步服务（Obsidian Sync、git）会看到它。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Connected",
+          "target": "已连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Disconnected",
+          "target": "已断开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Unknown connection",
+          "target": "连接状态未知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "This deletes the on-disk index file and disables vault search.",
+          "target": "这将删除磁盘上的索引文件并禁用库搜索。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "You will need to rebuild before the assistant can search your vault. On a large vault the rebuild can take several minutes.",
+          "target": "您需要重建索引，助手才能搜索您的库。对于大型库，重建可能需要几分钟。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Search across your vault?",
+          "target": "搜索整个库？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Append to note",
+          "target": "追加到笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Copy all",
+          "target": "全部复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open plugin settings",
+          "target": "打开插件设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Reset vault index?",
+          "target": "重置库索引？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Show/hide token",
+          "target": "显示/隐藏令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "claude-code: stdout buffer exceeded cap; discarding",
+          "target": "claude-code: 标准输出缓冲区超出上限；正在丢弃"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "claude-code: refusing invalid claudeCodeSessionId; starting a fresh session",
+          "target": "claude-code: 拒绝无效的 claudeCodeSessionId；正在启动新会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Bound note no longer exists. Sending without note context.",
+          "target": "绑定的笔记已不存在。发送时不带笔记上下文。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault search skipped. You will be asked again on the next session.",
+          "target": "库搜索已跳过。下次会话时将再次询问您。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault search disabled. Re-enable any time from Settings.",
+          "target": "库搜索已禁用。可随时从设置中重新启用。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Max context characters must be a positive integer.",
+          "target": "最大上下文字符数必须是正整数。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Claude can now modify files in your vault. Disable this in Settings if you do not need it.",
+          "target": "Claude 现在可以修改您库中的文件。如果不需要，请在设置中禁用此功能。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No bound note for this session yet.",
+          "target": "此会话尚未绑定笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bound note no longer exists.",
+          "target": "绑定的笔记已不存在。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bound note changed since the modal opened. Append aborted.",
+          "target": "绑定的笔记在模态框打开后已更改。追加已中止。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No note is bound to this session yet.",
+          "target": "此会话尚未绑定笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open Settings → Yunseul to configure.",
+          "target": "打开设置 → Yunseul 进行配置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied",
+          "target": "已复制"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a note in the main pane first, then click to bind it.",
+          "target": "请先在主窗格中打开一个笔记，然后点击以绑定它。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Previous reply cancelled — starting new session.",
+          "target": "上一条回复已取消——正在开始新会话。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Provider switched; pending stream cancelled.",
+          "target": "提供商已切换；待处理的流已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault index build already in progress.",
+          "target": "库索引构建已在进行中。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Index build cancelled — previous index preserved.",
+          "target": "索引构建已取消——保留了之前的索引。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault search enabled. Existing index loaded.",
+          "target": "库搜索已启用。已加载现有索引。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Copy message",
+          "target": "复制消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Append to bound note",
+          "target": "追加到绑定的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Retry from this turn",
+          "target": "从此轮重试"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Stop streaming",
+          "target": "停止流式传输"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Preview",
+          "target": "预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Chat header",
+          "target": "聊天头部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Start a new session",
+          "target": "开始新会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Export conversation as Markdown",
+          "target": "将对话导出为 Markdown"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "More actions",
+          "target": "更多操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Session status",
+          "target": "会话状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Bound note",
+          "target": "绑定笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Context size",
+          "target": "上下文大小"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Chat message",
+          "target": "聊天消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Send message",
+          "target": "发送消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Bind a note to this session",
+          "target": "将笔记绑定到此会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Cancel vault index build",
+          "target": "取消保险库索引构建"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "yunseul-msg-ts yunseul-tnum",
+          "target": "yunseul-msg-ts yunseul-tnum"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "yunseul-thinking-elapsed yunseul-tnum",
+          "target": "yunseul-thinking-elapsed yunseul-tnum"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "yunseul-msg-tokens yunseul-tnum",
+          "target": "yunseul-msg-tokens yunseul-tnum"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "yunseul-status-dot is-unknown",
+          "target": "yunseul-status-dot is-unknown"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "yunseul-context-tokens yunseul-tnum",
+          "target": "yunseul-context-tokens yunseul-tnum"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "yunseul-sources-count yunseul-tnum",
+          "target": "yunseul-sources-count yunseul-tnum"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "internal-link yunseul-sources-name",
+          "target": "internal-link yunseul-sources-name"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "yunseul-sources-score yunseul-tnum",
+          "target": "yunseul-sources-score yunseul-tnum"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Server is reachable but blocks browser requests. Enable CORS in LM Studio (lms server start --cors).",
+          "target": "服务器可达，但阻止了浏览器请求。请在 LM Studio 中启用 CORS（lms server start --cors）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Server reachable.",
+          "target": "服务器可达。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Claude Code is not logged in. Open a terminal and run `claude login`, then click Test again.",
+          "target": "Claude Code 未登录。请打开终端并运行 `claude login`，然后再次点击测试。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open chat",
+          "target": "打开聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Force re-index vault",
+          "target": "强制重新索引保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reset vault index",
+          "target": "重置保险库索引"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable vault search",
+          "target": "启用保险库搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Ask Yunseul",
+          "target": "询问 Yunseul"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Index now",
+          "target": "立即索引"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skip for now",
+          "target": "暂时跳过"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Don't ask again",
+          "target": "不再询问"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Yunseul uses your existing Claude Code login. See ",
+          "target": "Yunseul 使用您现有的 Claude Code 登录。请参阅 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "authentication docs",
+          "target": "认证文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Current setup",
+          "target": "当前设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "——————————————————",
+          "target": "——————————————————"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Append",
+          "target": "追加"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Retry",
+          "target": "重试"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Stop",
+          "target": "停止"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sharpening…",
+          "target": "正在优化…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Assistant is responding",
+          "target": "助手正在响应"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Assistant finished responding",
+          "target": "助手已完成响应"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " tok",
+          "target": " tok"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " · ",
+          "target": " · "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Where your notes catch the light.",
+          "target": "您的笔记在此处闪耀光芒。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Chat with the current note, or pull context from anywhere in your vault.",
+          "target": "与当前笔记聊天，或从保险库中的任何位置提取上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bind a note to chat about it, or start typing to ask anything.",
+          "target": "绑定笔记以进行讨论，或开始输入以询问任何问题。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Target: ",
+          "target": "目标："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Preview",
+          "target": "预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " Strip \"Sources:\" section if present",
+          "target": " 如果存在，则去除“来源：”部分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Yunseul",
+          "target": "Yunseul"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New",
+          "target": "新建"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export",
+          "target": "导出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Unknown connection",
+          "target": "未知连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Offline",
+          "target": "离线"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " file, tag, or prompt",
+          "target": " 文件、标签或提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter",
+          "target": "Enter"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " to send · ",
+          "target": " 发送 · "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " for newline",
+          "target": " 换行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Send",
+          "target": "发送"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "bind a note ↑",
+          "target": "绑定笔记 ↑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sources",
+          "target": "来源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset index",
+          "target": "重置索引"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
