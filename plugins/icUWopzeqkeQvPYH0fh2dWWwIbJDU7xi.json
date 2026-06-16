@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "math-convert",
+    "version": "1.0.0",
+    "title": "Math Convert - Local Image-to-LaTeX",
+    "description": "Math Convert - Local Image-to-LaTeX Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.3.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Find…",
+          "target": "查找…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Replace with…",
+          "target": "替换为…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Treat 'find' as a regular expression",
+          "target": "将“查找”视为正则表达式"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Enable this rule",
+          "target": "启用此规则"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Inputs given to model:",
+          "target": "输入到模型的数据："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[MathConvert] Failed to load image",
+          "target": "[MathConvert] 加载图像失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[MathConvert] Clipboard write failed",
+          "target": "[MathConvert] 写入剪贴板失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No vocoder specified, using default HifiGan vocoder.",
+          "target": "未指定声码器，使用默认的 HifiGan 声码器。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add rule",
+          "target": "添加规则"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Huggingface model ID used for inference.",
+          "target": "用于推理的 Huggingface 模型 ID。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model ID",
+          "target": "模型 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing rules",
+          "target": "后处理规则"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "`label_ids_to_fuse` unset. No instance will be fused.",
+          "target": "`label_ids_to_fuse` 未设置。不会融合任何实例。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "No language specified - defaulting to English (en).",
+          "target": "未指定语言 - 默认使用英语 (en)。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Token-level timestamps may not be reliable for task 'translate'.",
+          "target": "对于“翻译”任务，词元级时间戳可能不可靠。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "`num_frames` has not been set, meaning the entire audio will be analyzed. This may lead to inaccurate token-level timestamps for short audios (< 30 seconds).",
+          "target": "`num_frames` 未设置，意味着将分析整个音频。这可能导致短音频（< 30 秒）的词元级时间戳不准确。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Model config has no `median_filter_width`, using default value of 7.",
+          "target": "模型配置中没有 `median_filter_width`，使用默认值 7。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not find 'entailment' in label2id mapping. Using 2 as entailment_id.",
+          "target": "在 label2id 映射中找不到 'entailment'。使用 2 作为 entailment_id。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not find 'contradiction' in label2id mapping. Using 0 as contradiction_id.",
+          "target": "在 label2id 映射中找不到 'contradiction'。使用 0 作为 contradiction_id。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "`language` parameter is not yet supported for `wav2vec2` models, defaulting to \"English\".",
+          "target": "`wav2vec2` 模型尚不支持 `language` 参数，默认为 \\\"English\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "`task` parameter is not yet supported for `wav2vec2` models, defaulting to \"transcribe\".",
+          "target": "`wav2vec2` 模型尚不支持 `task` 参数，默认为 \\\"transcribe\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Unknown pattern type:",
+          "target": "未知模式类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "`max_length` is ignored when `padding: true` and there is no truncation strategy. To pad to max length, use `padding: 'max_length'`.",
+          "target": "当 `padding: true` 且没有截断策略时，`max_length` 将被忽略。要填充到最大长度，请使用 `padding: 'max_length'`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation: true` to explicitly truncate examples to max length.",
+          "target": "截断未明确激活，但提供了特定的 `max_length` 值，请使用 `truncation: true` 来明确将示例截断到最大长度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "WARNING: `XLMTokenizer` is not yet supported by Hugging Face's \"fast\" tokenizers library. Therefore, you may experience slightly inaccurate results.",
+          "target": "警告：`XLMTokenizer` 尚未被 Hugging Face 的 \\\"fast\\\" 分词器库支持。因此，您可能会遇到略微不准确的结果。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "WARNING: `MarianTokenizer` is not yet supported by Hugging Face's \"fast\" tokenizers library. Therefore, you may experience slightly inaccurate results.",
+          "target": "警告：`MarianTokenizer` 尚未被 Hugging Face 的 \\\"fast\\\" 分词器库支持。因此，您可能会遇到略微不准确的结果。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "An error occurred while opening the browser cache:",
+          "target": "打开浏览器缓存时发生错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Unable to determine content-length from response headers. Will expand buffer when needed.",
+          "target": "无法从响应头确定 content-length。将在需要时扩展缓冲区。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not load that image.",
+          "target": "无法加载该图像。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please load an image first.",
+          "target": "请先加载一张图像。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No LaTeX formula to copy yet.",
+          "target": "尚无 LaTeX 公式可复制。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied!",
+          "target": "已复制！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not copy to the clipboard.",
+          "target": "无法复制到剪贴板。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No LaTeX formula to insert yet.",
+          "target": "尚无 LaTeX 公式可插入。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active editor — click into a note first.",
+          "target": "没有活动的编辑器 — 请先点击进入一个笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "math-convert-btn math-convert-btn--sm",
+          "target": "math-convert-btn math-convert-btn--sm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "math-convert-btn math-convert-btn--primary math-convert-browse-btn",
+          "target": "math-convert-btn math-convert-btn--primary math-convert-browse-btn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "math-convert-canvas-container math-convert-hidden",
+          "target": "math-convert-canvas-container math-convert-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "math-convert-btn math-convert-btn--primary",
+          "target": "math-convert-btn math-convert-btn--primary"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "math-convert-result math-convert-hidden",
+          "target": "math-convert-result math-convert-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "math-convert-btn math-convert-btn--sm math-convert-btn--primary",
+          "target": "math-convert-btn math-convert-btn--sm math-convert-btn--primary"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TransposeCopy",
+          "target": "转置复制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TransposeShared",
+          "target": "转置共享"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Transpose",
+          "target": "转置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AttentionProbsSoftmax",
+          "target": "注意力概率Softmax"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AttentionProbs",
+          "target": "注意力概率"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AttentionScore",
+          "target": "注意力分数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AttentionPrepare",
+          "target": "注意力准备"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BatchNormalization",
+          "target": "批归一化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BiasAdd",
+          "target": "偏置加法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BiasSplitGelu",
+          "target": "偏置分裂Gelu"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Concat",
+          "target": "拼接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MatMulNaive",
+          "target": "朴素矩阵乘法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MatMul",
+          "target": "矩阵乘法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GroupedConv",
+          "target": "分组卷积"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CumSum",
+          "target": "累积和"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "DepthToSpace",
+          "target": "深度到空间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Einsum",
+          "target": "爱因斯坦求和"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Expand",
+          "target": "扩展"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "FastGeluWithBias",
+          "target": "带偏置的快速Gelu"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gather",
+          "target": "收集"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GatherND",
+          "target": "收集ND"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GatherBlockQuantized",
+          "target": "分块量化收集"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GridSample",
+          "target": "网格采样"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MultiHeadAttentionAddBias",
+          "target": "多头注意力加偏置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Split",
+          "target": "分割"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "RotaryEmbedding",
+          "target": "旋转位置编码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GeneratePositionIds",
+          "target": "生成位置ID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InstanceNormComputeChannelScaleShift",
+          "target": "实例归一化计算通道缩放偏移"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InstanceNormalization",
+          "target": "实例归一化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InstanceNormalizationNHWC",
+          "target": "NHWC格式实例归一化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LayerNormalization",
+          "target": "层归一化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MatMulNBits",
+          "target": "N位矩阵乘法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pad",
+          "target": "填充"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "DequantizeLinear",
+          "target": "反量化线性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Range",
+          "target": "范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ScatterND",
+          "target": "散射ND"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Resize",
+          "target": "调整大小"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SkipLayerNormalization",
+          "target": "跳过层归一化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Slice",
+          "target": "切片"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Softmax",
+          "target": "Softmax"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tile",
+          "target": "平铺"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Where",
+          "target": "条件选择"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open math-convert sidebar",
+          "target": "打开数学转换侧边栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Define rules to automatically modify the output LaTeX before it is inserted or copied. Rules are applied in order from top to bottom.",
+          "target": "定义规则以在插入或复制前自动修改输出LaTeX。规则按从上到下的顺序应用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No rules defined. Click 'add rule' to create one.",
+          "target": "未定义规则。点击“添加规则”以创建一条。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Downloading math-convert model",
+          "target": "正在下载数学转换模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This only happens once. The model (~100 mb) will be cached locally.",
+          "target": "此操作仅需执行一次。模型（约100 MB）将被本地缓存。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Starting…",
+          "target": "启动中…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Drop or paste an image here",
+          "target": "将图片拖放或粘贴至此处"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Browse file…",
+          "target": "浏览文件…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Detect formula",
+          "target": "检测公式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "LaTeX formula",
+          "target": "LaTeX公式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Insert",
+          "target": "插入"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
