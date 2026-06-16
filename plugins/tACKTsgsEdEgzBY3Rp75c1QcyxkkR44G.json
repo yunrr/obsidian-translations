@@ -1,0 +1,643 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ai-image-analyzer",
+    "version": "1.0.1",
+    "title": "AI image analyzer",
+    "description": "AI image analyzer Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "alt",
+          "source": "media",
+          "target": "媒体"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s [%s|%s] %s%s",
+          "target": "%s [%s|%s] %s%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[%s] error %j",
+          "target": "[%s] 错误 %j"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "error parsing url",
+          "target": "解析 URL 错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not parse message into JSON:",
+          "target": "无法将消息解析为 JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "From chunk:",
+          "target": "来自数据块："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading SVG image:",
+          "target": "加载 SVG 图像错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error converting SVG to PNG:",
+          "target": "将 SVG 转换为 PNG 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "instance request %j",
+          "target": "实例请求 %j"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "instance metadata is %s",
+          "target": "实例元数据为 %s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "%s [%s] request %j",
+          "target": "%s [%s] 请求 %j"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "[%s] request %j",
+          "target": "[%s] 请求 %j"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "%s [%s] response %j",
+          "target": "%s [%s] 响应 %j"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "[%s] response %j",
+          "target": "[%s] 响应 %j"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "%s [%s] error %j",
+          "target": "%s [%s] 错误 %j"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Using RetryOperation.try() is deprecated",
+          "target": "使用 RetryOperation.try() 已弃用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Using RetryOperation.start() is deprecated",
+          "target": "使用 RetryOperation.start() 已弃用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to parse error response as JSON",
+          "target": "无法将错误响应解析为 JSON"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Getting text from response",
+          "target": "从响应中获取文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to get text from error response",
+          "target": "无法从错误响应中获取文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Pull model",
+          "target": "拉取模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear cache",
+          "target": "清除缓存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pull the selected models",
+          "target": "拉取选定的模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the URL for the ollama server",
+          "target": "设置 Ollama 服务器的 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set a fallback URL for the ollama server",
+          "target": "设置 Ollama 服务器的备用 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the token used to authenticate with the ollama server",
+          "target": "设置用于向 Ollama 服务器进行身份验证的令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set your Gemini API token",
+          "target": "设置您的 Gemini API 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the provider to use",
+          "target": "选择要使用的提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the image model to use",
+          "target": "选择要使用的图像模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Clear the cache, reanalyzing images could take a while",
+          "target": "清除缓存，重新分析图像可能需要一些时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable debug mode to see logs in the console",
+          "target": "启用调试模式以在控制台中查看日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the prompt to use alongside the image",
+          "target": "设置与图像一起使用的提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Clear the cache after changing the model or the prompt to reanalyze images (if toggled on the cache will be cleared)",
+          "target": "更改模型或提示词后清除缓存以重新分析图像（如果开启，缓存将被清除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama",
+          "target": "Ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pull models",
+          "target": "拉取模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama URL",
+          "target": "Ollama URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Fallback URL (optional)",
+          "target": "备用 URL（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama token (optional)",
+          "target": "Ollama 令牌（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Gemini",
+          "target": "Gemini"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Gemini API key",
+          "target": "Gemini API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image model",
+          "target": "图像模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clear cache",
+          "target": "清除缓存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI configuration",
+          "target": "AI 配置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Advanced",
+          "target": "高级"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Prompt",
+          "target": "提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto clear cache",
+          "target": "自动清除缓存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter the host (http://127.0.0.1:11434)",
+          "target": "输入主机地址 (http://127.0.0.1:11434)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter the prompt",
+          "target": "输入提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "AI analyze image",
+          "target": "AI 分析图像"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Analyze image to clipboard",
+          "target": "分析图像到剪贴板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Analyze image",
+          "target": "分析图像"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Clear cache",
+          "target": "清除缓存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.",
+          "target": "实例方法 `debug.destroy()` 已弃用且不再执行任何操作。它将在 `debug` 的下一个主要版本中移除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "invalid json: ",
+          "target": "无效的 JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "there are multiple candidates in the response, returning text from the first one.",
+          "target": "响应中存在多个候选项，返回第一个候选项的文本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "there are multiple candidates in the response, returning data from the first one.",
+          "target": "响应中存在多个候选项，返回第一个候选项的数据。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "there are multiple candidates in the response, returning function calls from the first one.",
+          "target": "响应中存在多个候选项，返回第一个候选项的函数调用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "there are multiple candidates in the response, returning executable code from the first one.",
+          "target": "响应中存在多个候选项，返回第一个候选项的可执行代码。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "there are multiple candidates in the response, returning code execution result from the first one.",
+          "target": "响应中存在多个候选项，返回第一个候选项的代码执行结果。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "batches.createEmbeddings() is experimental and may change without notice.",
+          "target": "batches.createEmbeddings() 是实验性的，可能在不另行通知的情况下更改。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "API key should be set when using the Gemini API.",
+          "target": "使用 Gemini API 时应设置 API 密钥。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "includeExtraBodyToRequestInit: extraBody provided but current request body is a Blob. extraBody will be ignored as merging is not supported for Blob bodies.",
+          "target": "includeExtraBodyToRequestInit：提供了 extraBody，但当前请求体是 Blob。由于不支持合并 Blob 体，extraBody 将被忽略。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "includeExtraBodyToRequestInit: Original request body is valid JSON but not a non-array object. Skip applying extraBody to the request body.",
+          "target": "includeExtraBodyToRequestInit：原始请求体是有效的 JSON，但不是非数组对象。跳过将 extraBody 应用到请求体。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "includeExtraBodyToRequestInit: Original request body is not valid JSON. Skip applying extraBody to the request body.",
+          "target": "includeExtraBodyToRequestInit：原始请求体不是有效的 JSON。跳过将 extraBody 应用到请求体。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Live music generation is experimental and may change in future versions.",
+          "target": "实时音乐生成是实验性的，可能在未来版本中更改。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Warning: Ephemeral token support is experimental and may change in future versions.",
+          "target": "警告：临时令牌支持是实验性的，可能在未来版本中更改。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Warning: The SDK's ephemeral token support is in v1alpha only. Please use const ai = new GoogleGenAI({apiKey: token.name, httpOptions: { apiVersion: 'v1alpha' }}); before session connection.",
+          "target": "警告：SDK 的临时令牌支持仅处于 v1alpha 阶段。请在会话连接前使用 const ai = new GoogleGenAI({apiKey: token.name, httpOptions: { apiVersion: 'v1alpha' }});。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Setting `LiveConnectConfig.generation_config` is deprecated, please set the fields on `LiveConnectConfig` directly. This will become an error in a future version (not before Q3 2025).",
+          "target": "设置 `LiveConnectConfig.generation_config` 已弃用，请直接在 `LiveConnectConfig` 上设置字段。这将在未来版本中成为错误（不早于 2025 年第三季度）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Invalid maximumRemoteCalls value provided for automatic function calling. Disabled automatic function calling. Please provide a valid integer value greater than 0. maximumRemoteCalls provided:",
+          "target": "为自动函数调用提供了无效的 maximumRemoteCalls 值。已禁用自动函数调用。请提供一个大于 0 的有效整数值。提供的 maximumRemoteCalls："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Warning: Both GOOGLE_GENAI_USE_ENTERPRISE and GOOGLE_GENAI_USE_VERTEXAI are set with conflicting values. The value of GOOGLE_GENAI_USE_ENTERPRISE will be used.",
+          "target": "警告：GOOGLE_GENAI_USE_ENTERPRISE 和 GOOGLE_GENAI_USE_VERTEXAI 设置了冲突的值。将使用 GOOGLE_GENAI_USE_ENTERPRISE 的值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "GoogleGenAI.interactions: Client level httpOptions.extraBody is not supported by the interactions client and will be ignored.",
+          "target": "GoogleGenAI.interactions：客户端级别的 httpOptions.extraBody 不受交互客户端支持，将被忽略。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.",
+          "target": "同时设置了 GOOGLE_API_KEY 和 GEMINI_API_KEY。使用 GOOGLE_API_KEY。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error connecting to ollama.",
+          "target": "连接到 Ollama 时出错。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error connecting to Gemini API. Please check your Gemini API key.",
+          "target": "连接 Gemini API 时出错。请检查您的 Gemini API 密钥。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Provider not initialized",
+          "target": "提供程序未初始化"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cache cleared",
+          "target": "缓存已清除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Analyzing image",
+          "target": "正在分析图像"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to analyze image",
+          "target": "图像分析失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image analyzed",
+          "target": "图像已分析"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Text copied to clipboard",
+          "target": "文本已复制到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "A simple common HTTP client specifically for Google APIs and services.",
+          "target": "一个专为 Google API 和服务设计的简单通用 HTTP 客户端。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gaxios",
+          "target": "gaxios"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SyntaxError",
+          "target": "SyntaxError"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llava-llama3 (8B) [default]",
+          "target": "llava-llama3 (8B) [默认]"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llama3.2-vision (11B)",
+          "target": "llama3.2-vision (11B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llama3.2-vision (90B)",
+          "target": "llama3.2-vision (90B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llava (7B)",
+          "target": "llava (7B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llava (13B)",
+          "target": "llava (13B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llava (34B)",
+          "target": "llava (34B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llama3.3 (70B)",
+          "target": "llama3.3 (70B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "deepseek-r1 (7B)",
+          "target": "deepseek-r1 (7B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llama3.2 (3B)",
+          "target": "llama3.2 (3B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llama3.2 (1B)",
+          "target": "llama3.2 (1B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llama3.1 (8B)",
+          "target": "llama3.1 (8B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "llama3.1 (70B)",
+          "target": "llama3.1 (70B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gemma3 (1B)",
+          "target": "gemma3 (1B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gemma3 (4B)",
+          "target": "gemma3 (4B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gemma3 (12B)",
+          "target": "gemma3 (12B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gemma3 (27B)",
+          "target": "gemma3 (27B)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Analyze image to clipboard",
+          "target": "分析图像到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Analyze image",
+          "target": "分析图像"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clear cache of active image",
+          "target": "清除活动图像的缓存"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
