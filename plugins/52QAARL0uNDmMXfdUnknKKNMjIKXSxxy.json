@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "tag-lens",
+    "version": "1.0.0",
+    "title": "Tag Lens",
+    "description": "Tag Lens Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.3.11",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "frontmatter field",
+          "target": "前置元数据字段"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "▾ (all)",
+          "target": "▾ (全部)"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "▸ (all)",
+          "target": "▸ (全部)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[tag-lens] note navigator failed to render (figure still drawn):",
+          "target": "[tag-lens] 笔记导航器渲染失败（图形仍已绘制）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open Tag Lens",
+          "target": "打开标签透镜"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Filter and partition expressions are edited inside the view. Open the Tag Lens view and click the sliders icon in its toolbar.",
+          "target": "筛选和分区表达式在视图内编辑。请打开标签透镜视图，然后点击其工具栏中的滑块图标。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cluster spacing",
+          "target": "聚类间距"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Node spacing",
+          "target": "节点间距"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "WHERE / GROUP_BY",
+          "target": "WHERE / GROUP_BY"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "No layers in the current graph (set GROUP_BY to create clusters).",
+          "target": "当前图中没有图层（请设置 GROUP_BY 以创建聚类）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "This layer no longer exists.",
+          "target": "此图层已不存在。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⚠️ Cognitive Load is CRITICAL. Please check the Insight tab in Tag Lens for advice.",
+          "target": "⚠️ 认知负荷已达临界值。请检查标签透镜中的洞察选项卡以获取建议。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Per-note icon: nested groups of notes sharing its tags, plus its links and backlinks",
+          "target": "每笔记图标：共享其标签的嵌套笔记组，加上其链接和反向链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Per-tag boxes; shared nodes duplicated into a*b*c intersection sub-boxes",
+          "target": "每标签框；共享节点复制到 a*b*c 交集子框中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Subset → nested rectangles; partial overlaps as exclaves (each node once)",
+          "target": "子集 → 嵌套矩形；部分重叠显示为飞地（每个节点仅出现一次）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Overlapping tag rectangles (each node once; bbox-simplified)",
+          "target": "重叠的标签矩形（每个节点仅出现一次；边界框简化）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Containment layout drawn as rectangular iso-contour bubbles",
+          "target": "包含布局绘制为矩形等高线气泡"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tag × tag co-occurrence grid; cell shade = shared note count (Jaccard)",
+          "target": "标签 × 标签共现网格；单元格阴影 = 共享笔记数（Jaccard）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Degree-tiered Hasse layout + subset links; each node auto-switches between overview / density / individual rendering by count",
+          "target": "度数分层 Hasse 布局 + 子集链接；每个节点根据计数自动在概览/密度/个体渲染之间切换"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Stack of cards per intersection + dot matrix (handles ≥4-way intersections)",
+          "target": "每个交集的卡片堆叠 + 点阵（处理 ≥4 路交集）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "This folder holds a disproportionate number of files compared to the vault average.",
+          "target": "此文件夹包含的文件数量与保险库平均水平相比不成比例。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "This tag is applied to an excessive percentage of your total notes (Tag Abstractness).",
+          "target": "此标签应用于您笔记总数中过高的百分比（标签抽象度）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "The link density of this note vastly exceeds the vault average.",
+          "target": "此笔记的链接密度远高于保险库平均水平。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "This note is a monolith. It has a large file size but very few links.",
+          "target": "此笔记是一个庞然大物。它文件大小很大，但链接很少。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Note contains excessive tags relative to co-occurring tag variance.",
+          "target": "笔记包含相对于共现标签方差而言过多的标签。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Icon Gallery",
+          "target": "图标库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Nested set diagram",
+          "target": "嵌套集合图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Containment map",
+          "target": "包含图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Euler diagram",
+          "target": "欧拉图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Tag graph",
+          "target": "标签图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Connection matrix",
+          "target": "连接矩阵"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "BubbleSets",
+          "target": "BubbleSets"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Co-occurrence heatmap",
+          "target": "共现热图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Intersection lattice",
+          "target": "交集格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "UpSet plot",
+          "target": "UpSet 图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "File",
+          "target": "文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Graph",
+          "target": "图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Frontmatter",
+          "target": "前置元数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Other",
+          "target": "其他"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "View",
+          "target": "视图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Filter",
+          "target": "筛选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Sort",
+          "target": "排序"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Display",
+          "target": "显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Layers",
+          "target": "图层"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Show nodes",
+          "target": "显示节点"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Show enclosures",
+          "target": "显示包含区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Show edges",
+          "target": "显示边"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Show grid",
+          "target": "显示网格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Architectural Imbalance",
+          "target": "架构失衡"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Contextual Ambiguity",
+          "target": "上下文模糊性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Network Hub",
+          "target": "网络枢纽"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Monolith Note",
+          "target": "庞然大物笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Interface Bloat",
+          "target": "界面臃肿"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open",
+          "target": "打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "e.g. count >= 3",
+          "target": "例如 count >= 3"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "limit 10 / brief 30",
+          "target": "limit 10 / brief 30"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search: word, #tag, key:value",
+          "target": "搜索：单词、#标签、键:值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Overcrowded folder",
+          "target": "文件夹过度拥挤"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Tag is too broad",
+          "target": "标签过于宽泛"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Excessive links",
+          "target": "链接过多"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Monolithic note",
+          "target": "庞然大物笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "Too many tags",
+          "target": "标签过多"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "degree (links)",
+          "target": "度数（链接）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "+ Add row",
+          "target": "+ 添加行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "custom frontmatter…",
+          "target": "自定义前置元数据…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Total Cognitive Load Score",
+          "target": "总认知负荷分数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "/ 100",
+          "target": "/ 100"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sensitivity (K)",
+          "target": "灵敏度 (K)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recommendation: ",
+          "target": "建议："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Min font size (px)",
+          "target": "最小字号 (px)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Floor for every label / card font",
+          "target": "所有标签/卡片字体的下限"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Display",
+          "target": "显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Inherit from",
+          "target": "继承自"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cards",
+          "target": "卡片"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Show all",
+          "target": "全部显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Hide all",
+          "target": "全部隐藏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Node display",
+          "target": "节点显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Size (m × n)",
+          "target": "尺寸 (m × n)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Size by",
+          "target": "按大小排序"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Min column size",
+          "target": "最小列尺寸"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Min tag size",
+          "target": "最小标签尺寸"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Jaccard color scale",
+          "target": "Jaccard 颜色比例尺"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Lattice",
+          "target": "格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Node LOD",
+          "target": "节点 LOD"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Min intersection size",
+          "target": "最小交集尺寸"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Max nodes per tier",
+          "target": "每层最大节点数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Max names per node",
+          "target": "每节点最大名称数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Show subset links",
+          "target": "显示子集链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Most-specific tier on top",
+          "target": "最具体的层级在顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "View mode",
+          "target": "查看模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Experimental (beta)",
+          "target": "实验性（测试版）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tag graph",
+          "target": "标签图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Layout",
+          "target": "布局"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Max tags",
+          "target": "最大标签数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Singleton + giant (>40% of notes) tags are dropped first; then the top-N by size are kept. Click a tag node to highlight its notes; click a note to open it.",
+          "target": "单例和巨型（超过40%笔记）标签会被优先移除；然后保留按大小排序的前N个。点击标签节点可高亮其关联笔记；点击笔记可打开它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tag Lens",
+          "target": "标签透镜"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "▸ (all)",
+          "target": "▸ (全部)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "(no matches)",
+          "target": "(无匹配项)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "(no shared notes)",
+          "target": "(无共享笔记)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Dismiss",
+          "target": "关闭"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
