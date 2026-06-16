@@ -1,0 +1,3931 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "beancount-finance",
+    "version": "1.0.1",
+    "title": "Beancount Ledger",
+    "description": "Beancount Ledger Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"card-icon svelte-ruthsm\">💻</span> <h5 class=\"svelte-ruthsm\">System Platform</h5>",
+          "target": "<span class=\\\"card-icon svelte-ruthsm\\\">💻</span> <h5 class=\\\"svelte-ruthsm\\\">系统平台</h5>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"card-icon svelte-ruthsm\">⚡</span> <h5 class=\"svelte-ruthsm\">Terminal Specification</h5>",
+          "target": "<span class=\\\"card-icon svelte-ruthsm\\\">⚡</span> <h5 class=\\\"svelte-ruthsm\\\">终端规格</h5>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"command-icon svelte-ruthsm\">🔹</span> <span class=\"command-name svelte-ruthsm\">Bean Query Command</span>",
+          "target": "<span class=\\\"command-icon svelte-ruthsm\\\">🔹</span> <span class=\\\"command-name svelte-ruthsm\\\">Bean 查询命令</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<p class=\"help-text svelte-ruthsm\">Executes BQL queries against your Beancount file. Common\n\t\t\t\t\t\tvalues: <code class=\"svelte-ruthsm\">bean-query</code>,\n\t\t\t\t\t\t<code class=\"svelte-ruthsm\">wsl bean-query</code>, or\n\t\t\t\t\t\t<code class=\"svelte-ruthsm\">python3 -m beancount.query</code></p>",
+          "target": "<p class=\\\"help-text svelte-ruthsm\\\">对你的 Beancount 文件执行 BQL 查询。常用值：<code class=\\\"svelte-ruthsm\\\">bean-query</code>、\\n\\t\\t\\t\\t\\t\\t<code class=\\\"svelte-ruthsm\\\">wsl bean-query</code> 或\\n\\t\\t\\t\\t\\t\\t<code class=\\\"svelte-ruthsm\\\">python3 -m beancount.query</code></p>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"command-icon svelte-ruthsm\">💹</span> <span class=\"command-name svelte-ruthsm\">Bean Price Command <span class=\"optional-badge svelte-ruthsm\">optional</span></span>",
+          "target": "<span class=\\\"command-icon svelte-ruthsm\\\">💹</span> <span class=\\\"command-name svelte-ruthsm\\\">Bean 价格命令 <span class=\\\"optional-badge svelte-ruthsm\\\">可选</span></span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "\n            <p>Configure your Beancount file path and connection settings. The plugin will automatically detect your Python environment and test the connection.</p>\n        ",
+          "target": "\\n            <p>配置你的 Beancount 文件路径和连接设置。插件将自动检测你的 Python 环境并测试连接。</p>\\n        "
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span>Commodities without price data are excluded from totals</span>",
+          "target": "<span>没有价格数据的商品将从总计中排除</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<div class=\"skeleton-card svelte-379gh7\"></div> <div class=\"skeleton-card svelte-379gh7\"></div>",
+          "target": "<div class=\\\"skeleton-card svelte-379gh7\\\"></div> <div class=\\\"skeleton-card svelte-379gh7\\\"></div>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<div class=\"mini-skeleton svelte-379gh7\" style=\"height:10px; width:40%;\"></div> <div class=\"mini-skeleton svelte-379gh7\" style=\"height:6px;\"></div> <div class=\"mini-skeleton svelte-379gh7\" style=\"height:10px; width:60%;\"></div>",
+          "target": "<div class=\\\"mini-skeleton svelte-379gh7\\\" style=\\\"height:10px; width:40%;\\\"></div> <div class=\\\"mini-skeleton svelte-379gh7\\\" style=\\\"height:6px;\\\"></div> <div class=\\\"mini-skeleton svelte-379gh7\\\" style=\\\"height:10px; width:60%;\\\"></div>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Name <span class=\"required svelte-wgezvi\">*</span>",
+          "target": "名称 <span class=\\\"required svelte-wgezvi\\\">*</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Expense Account <span class=\"required svelte-wgezvi\">*</span>",
+          "target": "费用账户 <span class=\\\"required svelte-wgezvi\\\">*</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Target <span class=\"required svelte-wgezvi\">*</span>",
+          "target": "目标 <span class=\\\"required svelte-wgezvi\\\">*</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Tag <span class=\"optional svelte-wgezvi\">(optional)</span>",
+          "target": "标签 <span class=\\\"optional svelte-wgezvi\\\">（可选）</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Asset Account <span class=\"required svelte-wgezvi\">*</span>",
+          "target": "资产账户 <span class=\\\"required svelte-wgezvi\\\">*</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Target Amount <span class=\"required svelte-wgezvi\">*</span>",
+          "target": "目标金额 <span class=\\\"required svelte-wgezvi\\\">*</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<div class=\"loading-spinner svelte-ghvmcp\"></div> <span>Loading commodities data...</span>",
+          "target": "<div class=\\\"loading-spinner svelte-ghvmcp\\\"></div> <span>正在加载商品数据...</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<li class=\"svelte-ghvmcp\">• Commodity declarations (e.g., <code>2024-01-01 commodity BTC</code>)</li> <li class=\"svelte-ghvmcp\">• With metadata for price sources (e.g., <code>price: &quot;USD&quot;</code>)</li> <li class=\"svelte-ghvmcp\">• Or other metadata like exchange symbols</li>",
+          "target": "<li class=\\\"svelte-ghvmcp\\\">• 商品声明（例如 <code>2024-01-01 commodity BTC</code>）</li> <li class=\\\"svelte-ghvmcp\\\">• 包含价格来源的元数据（例如 <code>price: &quot;USD&quot;</code>）</li> <li class=\\\"svelte-ghvmcp\\\">• 或其他元数据，如交易所代码</li>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"icon\">💰</span> TRANSACTIONS",
+          "target": "<span class=\\\"icon\\\">💰</span> 交易"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"icon\">⚖️</span> BALANCE",
+          "target": "<span class=\\\"icon\\\">⚖️</span> 余额"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"icon\">📝</span> NOTE",
+          "target": "<span class=\\\"icon\\\">📝</span> 备注"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Format: provider/symbol \\u2014 e.g. <code>yahoo/AAPL</code>\n\t\t\t\t\t\tor <code>crypto:coingecko/bitcoin</code>",
+          "target": "格式：提供商/代码 \\\\u2014 例如 <code>yahoo/AAPL</code>\\n\\t\\t\\t\\t\\t\\t或 <code>crypto:coingecko/bitcoin</code>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Symbol <span class=\"required svelte-1koq55l\">*</span>",
+          "target": "代码 <span class=\\\"required svelte-1koq55l\\\">*</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Date <span class=\"required svelte-1koq55l\">*</span>",
+          "target": "日期 <span class=\\\"required svelte-1koq55l\\\">*</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Price Source <span class=\"optional svelte-1koq55l\">(optional)</span>",
+          "target": "价格来源 <span class=\\\"optional svelte-1koq55l\\\">（可选）</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Logo URL <span class=\"optional svelte-1koq55l\">(optional)</span>",
+          "target": "Logo URL <span class=\\\"optional svelte-1koq55l\\\">（可选）</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Bean Price <em style=\"color:var(--text-muted)\">(optional)</em> — for automated price fetching (pip install beanprice — separate package)",
+          "target": "豆价 <em style=\\\"color:var(--text-muted)\\\">(可选)</em> — 用于自动获取价格 (pip install beanprice — 独立包)"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<strong>Note:</strong> bean-query and bean-price are NOT included with Beancount and each require a separate pip install.",
+          "target": "<strong>注意：</strong> bean-query 和 bean-price 并未包含在 Beancount 中，各自需要单独通过 pip 安装。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<p>📖 <a href=\"https://beancount.github.io/docs/installing_beancount.html\" target=\"_blank\">Official Beancount Installation Guide</a></p>",
+          "target": "<p>📖 <a href=\\\"https://beancount.github.io/docs/installing_beancount.html\\\" target=\\\"_blank\\\">官方 Beancount 安装指南</a></p>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "💡 <strong>Note:</strong> Demo data uses USD. You can change this setting later.",
+          "target": "💡 <strong>注意：</strong> 演示数据使用美元。您可以稍后更改此设置。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading system info...",
+          "target": "正在加载系统信息..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "OS:",
+          "target": "操作系统："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Architecture:",
+          "target": "架构："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading terminal info...",
+          "target": "正在加载终端信息..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Shell:",
+          "target": "Shell："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Environment:",
+          "target": "环境："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Path Format:",
+          "target": "路径格式："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "✖ Cancel",
+          "target": "✖ 取消"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "✏️ Edit",
+          "target": "✏️ 编辑"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "💾 Save",
+          "target": "💾 保存"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "🖥️ System Information",
+          "target": "🖥️ 系统信息"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "⚙️ Commands",
+          "target": "⚙️ 命令"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "✅ OK",
+          "target": "✅ 确定"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Net Worth",
+          "target": "净资产"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Assets",
+          "target": "资产"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Liabilities",
+          "target": "负债"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Snapshot",
+          "target": "快照"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Key Metrics",
+          "target": "关键指标"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Date *",
+          "target": "日期 *"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Flag",
+          "target": "标志"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "* Complete",
+          "target": "* 完成"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "! Incomplete",
+          "target": "! 未完成"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Payee",
+          "target": "收款人"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Narration",
+          "target": "描述"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "📋",
+          "target": "📋"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "+ Add Posting",
+          "target": "+ 添加分录"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Tags",
+          "target": "标签"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Links",
+          "target": "链接"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Transaction Metadata",
+          "target": "交易元数据"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "+ Add Metadata",
+          "target": "+ 添加元数据"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "🗑️",
+          "target": "🗑️"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Amount",
+          "target": "金额"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Currency",
+          "target": "货币"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Date",
+          "target": "日期"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Label",
+          "target": "标签"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Account *",
+          "target": "账户 *"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "💬",
+          "target": "💬"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Amount *",
+          "target": "金额 *"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Currency *",
+          "target": "货币 *"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Comment *",
+          "target": "备注 *"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Query name *",
+          "target": "查询名称 *"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "SQL *",
+          "target": "SQL *"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Error:",
+          "target": "错误："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Saved Named Queries",
+          "target": "已保存的命名查询"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No named queries saved yet.",
+          "target": "尚未保存任何命名查询。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading…",
+          "target": "加载中…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Load",
+          "target": "加载"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Available",
+          "target": "可用"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Financial Indicators",
+          "target": "财务指标"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Start Date",
+          "target": "开始日期"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Add Budget",
+          "target": "添加预算"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Period",
+          "target": "周期"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Monthly",
+          "target": "每月"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Weekly",
+          "target": "每周"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Quarterly",
+          "target": "每季度"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Yearly",
+          "target": "每年"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Has tag",
+          "target": "包含标签"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Does not have tag",
+          "target": "不包含标签"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Save Budget",
+          "target": "保存预算"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Add Target",
+          "target": "添加目标"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Save Target",
+          "target": "保存目标"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading overview data...",
+          "target": "正在加载概览数据..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Financial Overview",
+          "target": "财务概览"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Account:",
+          "target": "账户："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "From:",
+          "target": "从："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "To:",
+          "target": "至："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Payee:",
+          "target": "收款人："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Tag:",
+          "target": "标签："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading filters...",
+          "target": "正在加载筛选器..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No transactions found for the selected criteria.",
+          "target": "未找到符合所选条件的交易。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading transactions...",
+          "target": "正在加载交易..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Click to drill down ›",
+          "target": "点击查看详情 ›"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No data to display. Load your balance sheet first.",
+          "target": "无数据可显示。请先加载您的资产负债表。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Balance Sheet",
+          "target": "资产负债表"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Valuation:",
+          "target": "估值："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "At Cost",
+          "target": "按成本"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Units",
+          "target": "单位"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Account",
+          "target": "账户"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Equity",
+          "target": "权益"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading data...",
+          "target": "正在加载数据..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "⚠️",
+          "target": "⚠️"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Not enough data to display chart.",
+          "target": "数据不足，无法显示图表。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading chart...",
+          "target": "正在加载图表..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Other Currencies",
+          "target": "其他货币"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Accounts and Balances",
+          "target": "账户与余额"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "➕ Open Account",
+          "target": "➕ 开户"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "❌ Close Account",
+          "target": "❌ 关户"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Operating",
+          "target": "运营中"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Price",
+          "target": "价格"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Holdings",
+          "target": "持仓"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No price available",
+          "target": "无可用价格"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "\\u2139\\uFE0F No commodities found in your Beancount file. Add\n\t\t\t\t\tcommodity declarations to see price metadata and holdings\n\t\t\t\t\tinformation.",
+          "target": "\\\\u2139\\\\uFE0F 在您的 Beancount 文件中未找到商品。请添加商品声明以查看价格元数据和持仓信息。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "🪙",
+          "target": "🪙"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No commodities found",
+          "target": "未找到商品"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Commodities appear when you declare them in your Beancount\n\t\t\t\t\tfile:",
+          "target": "当您在 Beancount 文件中声明商品时，它们就会出现："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Commodities & Prices",
+          "target": "商品与价格"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "+ Add Commodity",
+          "target": "+ 添加商品"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "All",
+          "target": "全部"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Has Holding",
+          "target": "有持仓"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Has Price",
+          "target": "有价格"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Has Both",
+          "target": "两者皆有"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Difference:",
+          "target": "差额："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading entries...",
+          "target": "正在加载条目..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No entries found matching your filters.",
+          "target": "未找到符合筛选条件的条目。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Search",
+          "target": "搜索"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Type",
+          "target": "类型"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "All Types",
+          "target": "所有类型"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Transactions",
+          "target": "交易"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Notes",
+          "target": "笔记"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Balances",
+          "target": "余额"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "From",
+          "target": "从"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "To",
+          "target": "至"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Tag",
+          "target": "标签"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Income Statement",
+          "target": "利润表"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Income",
+          "target": "收入"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Total Income",
+          "target": "总收入"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Expenses",
+          "target": "支出"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Total Expenses",
+          "target": "总支出"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Net Profit",
+          "target": "净利润"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Test",
+          "target": "测试"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Source",
+          "target": "来源"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Direct image URL (PNG, SVG, or JPG)",
+          "target": "直接图片 URL（PNG、SVG 或 JPG）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Test URL",
+          "target": "测试 URL"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "URL",
+          "target": "URL"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Other Metadata",
+          "target": "其他元数据"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Price Source",
+          "target": "价格来源"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Logo",
+          "target": "徽标"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Delete Commodity",
+          "target": "删除商品"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Done",
+          "target": "完成"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Add New Commodity",
+          "target": "添加新商品"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Uppercase alphanumeric recommended (e.g., BTC, AAPL)",
+          "target": "建议使用大写字母和数字（例如，BTC、AAPL）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Date when the commodity was first introduced",
+          "target": "商品首次引入的日期"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Price source for automated price fetching (e.g., yahoo/AAPL)",
+          "target": "用于自动获取价格的价格来源（例如，yahoo/AAPL）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "URL to commodity logo image (will be displayed in UI)",
+          "target": "商品徽标图片的 URL（将在用户界面中显示）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "📤",
+          "target": "📤"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Not found",
+          "target": "未找到"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Not found - Install beanquery package",
+          "target": "未找到 - 请安装 beanquery 包"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Not found — install with: pip install beanprice",
+          "target": "未找到 — 请使用以下命令安装：pip install beanprice"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "⏳ Checking...",
+          "target": "⏳ 正在检查..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Setting up...",
+          "target": "正在设置..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "On change (2 s debounce)",
+          "target": "更改时（2 秒防抖）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "On save (recommended)",
+          "target": "保存时（推荐）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "off",
+          "target": "关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Off",
+          "target": "关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "-- Select an account --",
+          "target": "-- 选择一个账户 --"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "-- Select a file --",
+          "target": "-- 选择一个文件 --"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "select",
+          "target": "select"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "option",
+          "target": "option"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "details",
+          "target": "details"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "summary",
+          "target": "summary"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tr",
+          "target": "tr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "thead",
+          "target": "thead"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "th",
+          "target": "th"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tbody",
+          "target": "tbody"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "td",
+          "target": "td"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ol",
+          "target": "ol"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[structuredLayout] Failed to update ledger file after retry:",
+          "target": "[structuredLayout] 重试后更新账本文件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[structuredLayout] Failed to create/update ledger file:",
+          "target": "[structuredLayout] 创建/更新账本文件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[structuredLayout] Failed to create structured folder:",
+          "target": "[structuredLayout] 创建结构化文件夹失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[updateLedgerIncludes] Failed to update ledger includes:",
+          "target": "[updateLedgerIncludes] 更新账本包含项失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Migration] ! Failed to fetch transactions:",
+          "target": "[Migration] ! 获取交易失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Migration] Migration failed:",
+          "target": "[Migration] 迁移失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Migration] Failed to extract transaction years:",
+          "target": "[Migration] 提取交易年份失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing amount:",
+          "target": "解析金额时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "String:",
+          "target": "字符串："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing commodities list CSV:",
+          "target": "解析商品列表 CSV 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "CSV:",
+          "target": "CSV："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing commodities price data CSV:",
+          "target": "解析商品价格数据 CSV 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing commodity details CSV:",
+          "target": "解析商品详情 CSV 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing combined commodity data CSV:",
+          "target": "解析组合商品数据 CSV 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing commodities holdings CSV:",
+          "target": "解析商品持仓 CSV 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getOpenAccounts] Error:",
+          "target": "[getOpenAccounts] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getPayees] Error:",
+          "target": "[getPayees] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getTags] Error:",
+          "target": "[getTags] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getCommodities] Error:",
+          "target": "[getCommodities] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getBalanceEntries] Error:",
+          "target": "[getBalanceEntries] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getNoteEntries] Error:",
+          "target": "[getNoteEntries] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getTransactionEntries] Error:",
+          "target": "[getTransactionEntries] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[saveOpenDirective] Error:",
+          "target": "[saveOpenDirective] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[saveCloseDirective] Error:",
+          "target": "[saveCloseDirective] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[createBalanceAssertion] Error:",
+          "target": "[createBalanceAssertion] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[updateBalance] Error:",
+          "target": "[updateBalance] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[deleteBalance] Error:",
+          "target": "[deleteBalance] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[createNote] Error:",
+          "target": "[createNote] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[updateNote] Error:",
+          "target": "[updateNote] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[deleteNote] Error:",
+          "target": "[deleteNote] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[createCommodity] Error:",
+          "target": "[createCommodity] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[saveCommodityMetadata] Error:",
+          "target": "[saveCommodityMetadata] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[deleteCommodityDirective] Error:",
+          "target": "[deleteCommodityDirective] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[createPriceDirective] Error:",
+          "target": "[createPriceDirective] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[createTransaction] Error:",
+          "target": "[createTransaction] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[updateTransaction] Error:",
+          "target": "[updateTransaction] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[deleteTransaction] Error:",
+          "target": "[deleteTransaction] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[updateOperatingCurrency] Error:",
+          "target": "[updateOperatingCurrency] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[createQueryDirective] Error:",
+          "target": "[createQueryDirective] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[createIndicatorDirective] Error:",
+          "target": "[createIndicatorDirective] 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Auto-detection failed:",
+          "target": "自动检测失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error updating snapshot view:",
+          "target": "更新快照视图时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading form data:",
+          "target": "加载表单数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error refreshing dashboard:",
+          "target": "刷新仪表盘时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error adding entry:",
+          "target": "添加条目时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error updating entry:",
+          "target": "更新条目时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error deleting entry:",
+          "target": "删除条目时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[AddBudgetModal] Error creating budget:",
+          "target": "[AddBudgetModal] 创建预算时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[AddTargetModal] Error creating target:",
+          "target": "[AddTargetModal] 创建目标时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to fetch accounts:",
+          "target": "获取账户失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to create chart: can't acquire context from the given item",
+          "target": "创建图表失败：无法从给定项目获取上下文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to load suggestions:",
+          "target": "加载建议失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Plugin instance not found",
+          "target": "未找到插件实例"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[CommodityCreateModal] Error creating commodity:",
+          "target": "[CommodityCreateModal] 创建商品时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[CommodityCreateModal] test-price error:",
+          "target": "[CommodityCreateModal] 测试价格时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[CommodityCreateModal] test-logo error:",
+          "target": "[CommodityCreateModal] 测试徽标时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading overview data:",
+          "target": "加载概览数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error fetching transaction filters:",
+          "target": "获取交易筛选器时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error fetching transactions:",
+          "target": "获取交易时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading chart data:",
+          "target": "加载图表数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error processing chart data:",
+          "target": "处理图表数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading chart data in loadData:",
+          "target": "在 loadData 中加载图表数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading balance sheet:",
+          "target": "加载资产负债表时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error querying commodities via BQL:",
+          "target": "通过 BQL 查询商品时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error saving commodity metadata:",
+          "target": "保存商品元数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error testing price source:",
+          "target": "测试价格源时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error testing logo URL:",
+          "target": "测试徽标 URL 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[CommoditiesController] createCommodity error:",
+          "target": "[CommoditiesController] createCommodity 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[CommoditiesController] deleteCommodity error:",
+          "target": "[CommoditiesController] deleteCommodity 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[CommoditiesController] fetchPrices error:",
+          "target": "[CommoditiesController] fetchPrices 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading income chart data:",
+          "target": "加载收入图表数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error processing income chart data:",
+          "target": "处理收入图表数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading income chart data in loadData:",
+          "target": "在 loadData 中加载收入图表数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading income statement:",
+          "target": "加载利润表时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error refreshing dashboard data:",
+          "target": "刷新仪表盘数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Onboarding] Prerequisites check failed",
+          "target": "[Onboarding] 前置条件检查失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Onboarding: Setup failed",
+          "target": "引导：设置失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Onboarding: Demo structured setup failed",
+          "target": "引导：演示结构化设置失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Onboarding] Could not find file in vault:",
+          "target": "[Onboarding] 在保险库中找不到文件："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to load entries",
+          "target": "加载条目失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Main] Automatic price fetch error:",
+          "target": "[Main] 自动获取价格时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[structuredLayout] Creating structured folder:",
+          "target": "[structuredLayout] 正在创建结构化文件夹："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[structuredLayout] Created main folder",
+          "target": "[structuredLayout] 已创建主文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[structuredLayout] Folder creation error:",
+          "target": "[structuredLayout] 文件夹创建错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[structuredLayout] Created transactions folder",
+          "target": "[structuredLayout] 已创建交易文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[structuredLayout] Transactions folder creation error:",
+          "target": "[structuredLayout] 交易文件夹创建错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[updateTransactionIncludes] Found ledger file, reading content...",
+          "target": "[updateTransactionIncludes] 找到账本文件，正在读取内容..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Migration] Starting migration to structured layout",
+          "target": "[Migration] 开始迁移到结构化布局"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Migration] Extracting transaction years...",
+          "target": "[Migration] 正在提取交易年份..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Migration] Migrating transactions by year...",
+          "target": "[Migration] 正在按年份迁移交易..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Migration] Generating main ledger with includes...",
+          "target": "[Migration] 正在生成包含引用的主账本..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Migration] ✓ Migration completed successfully!",
+          "target": "[Migration] ✓ 迁移成功完成！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Migration] No transactions found",
+          "target": "[Migration] 未找到交易"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getBalanceEntries] Fetching with filters:",
+          "target": "[getBalanceEntries] 使用筛选器获取："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getBalanceEntries] Running BQL query:",
+          "target": "[getBalanceEntries] 正在运行 BQL 查询："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getNoteEntries] Fetching with filters:",
+          "target": "[getNoteEntries] 使用筛选器获取："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getNoteEntries] Running BQL query:",
+          "target": "[getNoteEntries] 正在运行 BQL 查询："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getTransactionEntries] Fetching with filters:",
+          "target": "[getTransactionEntries] 使用筛选器获取："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getTransactionEntries] Running BQL query:",
+          "target": "[getTransactionEntries] 正在运行 BQL 查询："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[updateProps] Updating state with:",
+          "target": "[updateProps] 正在更新状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[updateProps] New state:",
+          "target": "[updateProps] 新状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[updateProps] Component updated with new state",
+          "target": "[updateProps] 组件已使用新状态更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[updateProps] Warning: Component not initialized yet",
+          "target": "[updateProps] 警告：组件尚未初始化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[refreshData] Check result from runBeanCheck:",
+          "target": "[refreshData] runBeanCheck 的检查结果："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[refreshData] Error count:",
+          "target": "[refreshData] 错误计数："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[refreshData] Error list:",
+          "target": "[refreshData] 错误列表："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Starting validation check",
+          "target": "[runBeanCheck] 开始验证检查"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] File path:",
+          "target": "[runBeanCheck] 文件路径："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Command base:",
+          "target": "[runBeanCheck] 命令基础："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Executing command (safe):",
+          "target": "[runBeanCheck] 正在执行命令（安全模式）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Command completed",
+          "target": "[runBeanCheck] 命令已完成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Error object:",
+          "target": "[runBeanCheck] 错误对象："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Stdout length:",
+          "target": "[runBeanCheck] 标准输出长度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Stderr length:",
+          "target": "[runBeanCheck] 标准错误长度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Stdout content:",
+          "target": "[runBeanCheck] 标准输出内容："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Stderr content:",
+          "target": "[runBeanCheck] 标准错误内容："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Command execution failed",
+          "target": "[runBeanCheck] 命令执行失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Parsing stdout output",
+          "target": "[runBeanCheck] 正在解析标准输出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Parsed error lines count:",
+          "target": "[runBeanCheck] 已解析的错误行数："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Parsed error lines:",
+          "target": "[runBeanCheck] 已解析的错误行："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] Returning error result:",
+          "target": "[runBeanCheck] 正在返回错误结果："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] No parseable errors found in output",
+          "target": "[runBeanCheck] 在输出中未找到可解析的错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[runBeanCheck] No stdout output, assuming OK",
+          "target": "[runBeanCheck] 无标准输出，假定正常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] Starting parse",
+          "target": "[parseErrorsFromFormattedOutput] 开始解析"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] Output length:",
+          "target": "[parseErrorsFromFormattedOutput] 输出长度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] First 500 chars:",
+          "target": "[parseErrorsFromFormattedOutput] 前 500 个字符："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] Empty output, returning empty array",
+          "target": "[parseErrorsFromFormattedOutput] 输出为空，返回空数组"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] Total lines:",
+          "target": "[parseErrorsFromFormattedOutput] 总行数："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] Adding error:",
+          "target": "[parseErrorsFromFormattedOutput] 添加错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] Using line as-is:",
+          "target": "[parseErrorsFromFormattedOutput] 直接使用该行："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] Total parsed errors:",
+          "target": "[parseErrorsFromFormattedOutput] 已解析的错误总数："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[parseErrorsFromFormattedOutput] Error lines:",
+          "target": "[parseErrorsFromFormattedOutput] 错误行："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[beancount-lint] Lint run skipped:",
+          "target": "[beancount-lint] 代码检查运行已跳过："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Opening UnifiedTransactionModal",
+          "target": "打开统一交易模态框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Adding entry",
+          "target": "添加条目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Updating entry",
+          "target": "更新条目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Deleting entry",
+          "target": "删除条目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[AddBudgetModal] Could not prefetch accounts/currencies:",
+          "target": "[AddBudgetModal] 无法预取账户/货币："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[AddBudgetModal] save event",
+          "target": "[AddBudgetModal] 保存事件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[AddTargetModal] Could not prefetch accounts/currencies:",
+          "target": "[AddTargetModal] 无法预取账户/货币："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[AddTargetModal] save event",
+          "target": "[AddTargetModal] 保存事件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Toggle collapse for:",
+          "target": "切换折叠状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Currently collapsed?",
+          "target": "当前是否已折叠？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "New collapsed state:",
+          "target": "新的折叠状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "JournalTab mounted",
+          "target": "日志标签页已挂载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommodityCreateModal] Opening modal",
+          "target": "[CommodityCreateModal] 打开模态框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommodityCreateModal] save event",
+          "target": "[CommodityCreateModal] 保存事件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommodityCreateModal] cancel event",
+          "target": "[CommodityCreateModal] 取消事件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommodityCreateModal] test-price event",
+          "target": "[CommodityCreateModal] 测试价格事件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommodityCreateModal] test-logo event",
+          "target": "[CommodityCreateModal] 测试徽标事件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "OverviewController: Net Worth Result:",
+          "target": "概览控制器：净资产结果："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "OverviewController: Parsed Net Worth:",
+          "target": "概览控制器：已解析的净资产："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[PriceService] fetchAndSavePrices — starting",
+          "target": "[PriceService] fetchAndSavePrices — 开始执行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] initialized",
+          "target": "[CommoditiesController] 已初始化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] loadData: starting",
+          "target": "[CommoditiesController] loadData：开始执行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] loadData: received CSV data",
+          "target": "[CommoditiesController] loadData：已接收CSV数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] loadCommodityDetails:",
+          "target": "[CommoditiesController] loadCommodityDetails："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] loadCommodityDetails: parsed ->",
+          "target": "[CommoditiesController] loadCommodityDetails：已解析 ->"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] saveMetadata: result ->",
+          "target": "[CommoditiesController] saveMetadata：结果 ->"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] testPriceSource result ->",
+          "target": "[CommoditiesController] testPriceSource 结果 ->"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] testLogoUrl result ->",
+          "target": "[CommoditiesController] testLogoUrl 结果 ->"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] selectCommodity ->",
+          "target": "[CommoditiesController] selectCommodity ->"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[CommoditiesController] Price fetch already in progress",
+          "target": "[CommoditiesController] 价格获取已在进行中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Onboarding] Detecting Python environment...",
+          "target": "[Onboarding] 正在检测Python环境..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Onboarding] Detecting bean-query command...",
+          "target": "[Onboarding] 正在检测bean-query命令..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Onboarding] Auto-detection failed; trying saved beancountCommand from settings...",
+          "target": "[Onboarding] 自动检测失败；正在尝试使用设置中保存的beancountCommand..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Onboarding] Saved beancountCommand verified successfully",
+          "target": "[Onboarding] 保存的beancountCommand已成功验证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Onboarding] Detecting bean-price command...",
+          "target": "[Onboarding] 正在检测bean-price命令..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Onboarding] Prerequisites check completed",
+          "target": "[Onboarding] 先决条件检查已完成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Onboarding] Searching for .beancount files in vault...",
+          "target": "[Onboarding] 正在保险库中搜索.beancount文件..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Demo + Structured",
+          "target": "Onboarding：演示 + 结构化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Temp file exists, deleting...",
+          "target": "Onboarding：临时文件存在，正在删除..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Successfully deleted existing temp file",
+          "target": "Onboarding：已成功删除现有临时文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Error - vault did not register temp file after write",
+          "target": "Onboarding：错误 - 保险库在写入后未注册临时文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Starting migration from demo file to structured layout",
+          "target": "Onboarding：开始从演示文件迁移到结构化布局"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Successfully migrated demo data to structured layout",
+          "target": "Onboarding：已成功将演示数据迁移到结构化布局"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Cleaned up temporary demo file",
+          "target": "Onboarding：已清理临时演示文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Existing + Structured - migrating",
+          "target": "Onboarding：现有 + 结构化 - 正在迁移"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Onboarding: Migrated existing file to structured",
+          "target": "Onboarding：已将现有文件迁移到结构化布局"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loading entries...",
+          "target": "正在加载条目..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Setting filters",
+          "target": "设置筛选器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Plugin loading...",
+          "target": "插件加载中..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No Beancount file configured. Triggering onboarding.",
+          "target": "未配置Beancount文件。正在触发引导流程。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Main] Fetching prices via command (dashboard not open)",
+          "target": "[Main] 通过命令获取价格（仪表盘未打开）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Main] Running automatic price fetch",
+          "target": "[Main] 正在运行自动价格获取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Plugin unloading...",
+          "target": "插件卸载中..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Save to ledger",
+          "target": "保存到账本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Saving…",
+          "target": "保存中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Confirm",
+          "target": "确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The currency to use for transaction defaults and for consolidating totals (e.g., USD, INR).",
+          "target": "用于交易默认值和汇总总额的货币（例如，USD、INR）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable debug logging to the console.",
+          "target": "启用调试日志记录到控制台。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically fetch commodity prices at scheduled intervals using bean-price.",
+          "target": "使用bean-price按计划间隔自动获取商品价格。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How often to automatically fetch prices for all commodities with configured price sources.",
+          "target": "自动获取所有已配置价格来源的商品的频率。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display refresh, copy, and download buttons above BQL query results.",
+          "target": "在BQL查询结果上方显示刷新、复制和下载按钮。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display the BQL query text above the results in a collapsible section.",
+          "target": "在结果上方的可折叠部分中显示BQL查询文本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show context-aware completions in .beancount files: account names, payees, narrations, currencies/commodities, tags (#), and links (^). Reopen the file to apply changes.",
+          "target": "在.beancount文件中显示上下文感知的自动补全：账户名称、收款人、叙述、货币/商品、标签(#)和链接(^)。重新打开文件以应用更改。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically format the Beancount file when saving: normalises indentation to 2 spaces, right-aligns amounts, and fixes @ price annotation spacing. Off by default.",
+          "target": "保存时自动格式化Beancount文件：将缩进标准化为2个空格，右对齐金额，并修正@价格注释的间距。默认关闭。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show Beancount validation errors as inline squiggly underlines using the existing bean-query connection. Reopen the file to apply changes.",
+          "target": "使用现有的bean-query连接，将Beancount验证错误显示为内联波浪下划线。重新打开文件以应用更改。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of transactions to load at once (to prevent memory issues with large datasets).",
+          "target": "一次加载的最大交易数量（以防止大型数据集出现内存问题）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of journal entries to load at once.",
+          "target": "一次加载的最大日志条目数量。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create timestamped backup files before modifying your Beancount file. Highly recommended for data safety.",
+          "target": "在修改Beancount文件之前创建带时间戳的备份文件。强烈建议用于数据安全。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of backup files to keep (oldest are deleted automatically). Set to 0 for unlimited backups.",
+          "target": "保留的最大备份数量（自动删除最旧的备份）。设置为0表示无限制备份。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Name of the folder containing your structured Beancount files.",
+          "target": "包含结构化Beancount文件的文件夹名称。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable detailed logging to the developer console for troubleshooting.",
+          "target": "启用详细的日志记录到开发者控制台以进行故障排除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select an account to close",
+          "target": "选择要关闭的账户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the full account name (e.g., Assets:Bank:Checking)",
+          "target": "输入完整的账户名称（例如，Assets:Bank:Checking）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the date in YYYY-MM-DD format",
+          "target": "以YYYY-MM-DD格式输入日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional: Enter comma-separated currencies (e.g., USD,EUR)",
+          "target": "可选：输入逗号分隔的货币（例如，USD,EUR）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose from existing .beancount files in your vault",
+          "target": "从保险库中现有的.beancount文件中选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Absolute path to your .beancount file (if outside vault)",
+          "target": ".beancount文件的绝对路径（如果在保险库外部）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Absolute path to your .beancount file",
+          "target": ".beancount文件的绝对路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Name of the folder where your organized finance files will be stored",
+          "target": "用于存储有组织的财务文件的文件夹名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The main currency for your financial records (e.g., USD, EUR, GBP)",
+          "target": "财务记录的主要货币（例如，USD、EUR、GBP）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Operating currency",
+          "target": "操作货币"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable automatic price fetching",
+          "target": "启用自动价格获取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Fetch interval (hours)",
+          "target": "获取间隔（小时）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show query tools",
+          "target": "显示查询工具"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show query text",
+          "target": "显示查询文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Editor autocomplete",
+          "target": "编辑器自动补全"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Format on save",
+          "target": "保存时格式化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inline lint mode",
+          "target": "内联检查模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max transaction results",
+          "target": "最大交易结果数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max journal results",
+          "target": "最大日志结果数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Create backups",
+          "target": "创建备份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max backup files",
+          "target": "最大备份文件数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Folder name",
+          "target": "文件夹名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Account name",
+          "target": "账户名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date",
+          "target": "日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Currencies",
+          "target": "货币"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Select Beancount file",
+          "target": "选择 Beancount 文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Or enter path manually",
+          "target": "或手动输入路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Beancount file path",
+          "target": "Beancount 文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Structured folder name",
+          "target": "结构化文件夹名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "USD",
+          "target": "USD"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Finances",
+          "target": "财务"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Add Budget",
+          "target": "添加预算"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Add Target",
+          "target": "添加目标"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Update the operating_currency option in your ledger.beancount file",
+          "target": "请在您的 ledger.beancount 文件中更新 operating_currency 选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[updateTransactionIncludes] Transaction marker not found in ledger. File might be customized. Skipping automatic update.",
+          "target": "[updateTransactionIncludes] 在账本中未找到交易标记。文件可能已自定义。跳过自动更新。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not parse amount string:",
+          "target": "无法解析金额字符串："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to parse metadata string:",
+          "target": "无法解析元数据字符串："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Tried to use the 'fill' option without the 'Filler' plugin enabled. Please import and register the 'Filler' plugin and make sure it is not disabled in the options",
+          "target": "尝试使用 'fill' 选项，但未启用 'Filler' 插件。请导入并注册 'Filler' 插件，并确保其未在选项中禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not load commodity details before opening modal",
+          "target": "无法在打开模态框前加载商品详情"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[CommodityDetailModal] Failed to reload commodity details:",
+          "target": "[CommodityDetailModal] 重新加载商品详情失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Onboarding: Failed to clean up temporary demo file",
+          "target": "引导流程：清理临时演示文件失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "JournalStore: Received invalid entries data",
+          "target": "JournalStore：接收到无效的条目数据"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to create structured folder layout",
+          "target": "创建结构化文件夹布局失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Warning: ledger.beancount appears to be customized. Please manually add transaction includes.",
+          "target": "警告：ledger.beancount 似乎已自定义。请手动添加交易包含项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ Bean-query commands validated successfully",
+          "target": "✅ Bean-query 命令验证成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Some Beancount command tests failed",
+          "target": "❌ 部分 Beancount 命令测试失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Command cannot be empty",
+          "target": "❌ 命令不能为空"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ Command saved successfully",
+          "target": "✅ 命令保存成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ Bean-price command saved",
+          "target": "✅ Bean-price 命令已保存"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ Command verified successfully",
+          "target": "✅ 命令验证成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Command verification failed",
+          "target": "❌ 命令验证失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ bean-price verified",
+          "target": "✅ bean-price 已验证"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ bean-price verification failed",
+          "target": "❌ bean-price 验证失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Operating currency is not set.",
+          "target": "未设置运营货币。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Refreshing snapshot...",
+          "target": "正在刷新快照..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transaction added successfully!",
+          "target": "交易添加成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Balance assertion added successfully!",
+          "target": "余额断言添加成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open directive added successfully!",
+          "target": "开户指令添加成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Close directive added successfully!",
+          "target": "销户指令添加成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Note added successfully!",
+          "target": "备注添加成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transaction updated successfully!",
+          "target": "交易更新成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Balance updated successfully!",
+          "target": "余额更新成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Note updated successfully!",
+          "target": "备注更新成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transaction deleted successfully!",
+          "target": "交易删除成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Balance deleted successfully!",
+          "target": "余额删除成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Note deleted successfully!",
+          "target": "备注删除成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to delete entry. Check console for details.",
+          "target": "删除条目失败。请检查控制台获取详情。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to fetch accounts list",
+          "target": "获取账户列表失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter an account name",
+          "target": "请输入账户名称"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter a date",
+          "target": "请输入日期"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invalid date format. Use YYYY-MM-DD",
+          "target": "日期格式无效。请使用 YYYY-MM-DD 格式。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Metadata saved successfully",
+          "target": "元数据保存成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to save metadata",
+          "target": "元数据保存失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Price test successful",
+          "target": "价格测试成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Logo test successful",
+          "target": "Logo 测试成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ Price source test successful",
+          "target": "✅ 价格源测试成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ Logo URL is valid",
+          "target": "✅ Logo URL 有效"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Price fetch already in progress",
+          "target": "价格获取已在进行中"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Fetching prices via bean-price...",
+          "target": "正在通过 bean-price 获取价格..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⚠ bean-price returned no price directives. Check your commodity price metadata.",
+          "target": "⚠ bean-price 未返回任何价格指令。请检查您的商品价格元数据。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "You can configure commands manually in Settings → Connection",
+          "target": "您可以在 设置 → 连接 中手动配置命令"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Prerequisites check failed. See console for details.",
+          "target": "先决条件检查失败。请查看控制台获取详情。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select an option",
+          "target": "请选择一个选项"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter the path to your existing file",
+          "target": "请输入您现有文件的路径"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a .beancount file first.",
+          "target": "请先打开一个 .beancount 文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No prices fetched. Check commodity price sources.",
+          "target": "未获取到价格。请检查商品价格源。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "payee",
+          "target": "收款方"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "narration",
+          "target": "叙述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "tag",
+          "target": "标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "link",
+          "target": "链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "commodity",
+          "target": "商品"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "transaction snippet",
+          "target": "交易代码片段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "open account snippet",
+          "target": "开户指令代码片段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "close account snippet",
+          "target": "销户指令代码片段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "balance assertion snippet",
+          "target": "余额断言代码片段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "pad directive snippet",
+          "target": "填充指令代码片段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "price directive snippet",
+          "target": "价格指令代码片段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "note directive snippet",
+          "target": "备注指令代码片段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "No source Beancount file configured",
+          "target": "未配置源 Beancount 文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Beancount file path not set",
+          "target": "未设置 Beancount 文件路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Beancount file path not configured",
+          "target": "未配置 Beancount 文件路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Filename not returned from query",
+          "target": "查询未返回文件名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid commodity symbol. Use alphanumeric characters, dots, underscores, or hyphens.",
+          "target": "商品代码无效。请使用字母数字字符、点、下划线或连字符。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid date format.",
+          "target": "日期格式无效。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid commodity symbol.",
+          "target": "商品代码无效。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid amount.",
+          "target": "金额无效。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid currency code.",
+          "target": "货币代码无效。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Main ledger path not set",
+          "target": "未设置主账本路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Could not find option \"operating_currency\" in ledger file",
+          "target": "在账本文件中找不到选项 \\\"operating_currency\\\""
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Events file path not set. Please configure the plugin.",
+          "target": "未设置事件文件路径。请配置插件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Empty price metadata",
+          "target": "价格元数据为空"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "bean-price command not configured or found. Please install bean-price (pip install beanprice) and configure it in settings.",
+          "target": "bean-price 命令未配置或未找到。请安装 bean-price (pip install beanprice) 并在设置中配置它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid characters in price metadata. Price metadata must only contain alphanumeric characters, underscores, hyphens, slashes, dots, and colons.",
+          "target": "价格元数据中包含无效字符。价格元数据只能包含字母数字字符、下划线、连字符、斜杠、点和冒号。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Price source validation timed out after 10 seconds.",
+          "target": "价格源验证在 10 秒后超时。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid bean-price command configuration.",
+          "target": "bean-price 命令配置无效。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Empty URL",
+          "target": "URL 为空"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Indicator data incomplete — check the event directive in events.beancount.",
+          "target": "指标数据不完整 — 请检查 events.beancount 中的事件指令。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Operating currency is not set in plugin settings.",
+          "target": "插件设置中未设置运营货币。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Failed to load filters.",
+          "target": "加载筛选器失败。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Operating currency not set.",
+          "target": "未设置运营货币。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "No price metadata found for commodity",
+          "target": "未找到商品的价格元数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "No URL provided",
+          "target": "未提供 URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Empty result set",
+          "target": "结果集为空"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Expand a full transaction block",
+          "target": "展开完整交易块"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Expand an open directive",
+          "target": "展开开放指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Expand a close directive",
+          "target": "展开关闭指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Expand a balance directive",
+          "target": "展开余额指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Expand a pad directive",
+          "target": "展开填充指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Expand a price directive",
+          "target": "展开价格指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Expand a note directive",
+          "target": "展开备注指令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "⚙️ General",
+          "target": "⚙️ 通用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "🔌 Connection",
+          "target": "🔌 连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "📁 File Organization",
+          "target": "📁 文件组织"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "📊 BQL",
+          "target": "📊 BQL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "⚡ Performance",
+          "target": "⚡ 性能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "💾 Backup",
+          "target": "💾 备份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "txn",
+          "target": "交易"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "open",
+          "target": "开放"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "bal",
+          "target": "余额"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "pad",
+          "target": "填充"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "price",
+          "target": "价格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "note",
+          "target": "备注"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Over Budget",
+          "target": "超预算"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Warning",
+          "target": "警告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "On Track",
+          "target": "正常进行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Complete",
+          "target": "已完成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "In Progress",
+          "target": "进行中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Total Balance",
+          "target": "总余额"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Monthly Income",
+          "target": "月收入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Monthly Expenses",
+          "target": "月支出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Savings Rate",
+          "target": "储蓄率"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Overview",
+          "target": "概览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Transactions",
+          "target": "交易记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Journal",
+          "target": "日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Accounts & Balances",
+          "target": "账户与余额"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Income Statement",
+          "target": "损益表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Commodities",
+          "target": "商品"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Table",
+          "target": "表格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Text",
+          "target": "文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Beancount",
+          "target": "Beancount"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "1. Prerequisites",
+          "target": "1. 前提条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "2. File Setup",
+          "target": "2. 文件设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "3. Verification",
+          "target": "3. 验证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "No beancount file configured. Please run onboarding first.",
+          "target": "未配置 beancount 文件。请先运行引导设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "✅ All bean-query commands tested successfully!",
+          "target": "✅ 所有 bean-query 命令测试成功！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "❌ Some command tests failed - check individual results",
+          "target": "❌ 部分命令测试失败 - 请检查个别结果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "✅ Valid currency code",
+          "target": "✅ 有效的货币代码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Currency must start with a letter and contain only uppercase letters, digits, or ' . _ -",
+          "target": "货币必须以字母开头，且仅包含大写字母、数字或 ' . _ -"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Currency is required",
+          "target": "货币为必填项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "File path not set.",
+          "target": "文件路径未设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Command not set.",
+          "target": "命令未设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "File OK",
+          "target": "文件正常"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Root",
+          "target": "根目录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "beancount",
+          "target": "beancount"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "All Accounts",
+          "target": "所有账户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add Beancount Transaction",
+          "target": "添加 Beancount 交易"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Beancount Unified Dashboard",
+          "target": "打开 Beancount 统一仪表盘"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Beancount Snapshot",
+          "target": "打开 Beancount 快照"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run Setup/Onboarding",
+          "target": "运行设置/引导"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Format Beancount Document",
+          "target": "格式化 Beancount 文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fetch Commodity Prices",
+          "target": "获取商品价格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search markdown files...",
+          "target": "搜索 Markdown 文件..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Beancount Settings",
+          "target": "Beancount 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "General Settings",
+          "target": "通用设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Automatic Price Fetching",
+          "target": "自动价格获取"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "BQL Code Block Settings",
+          "target": "BQL 代码块设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Editor Settings",
+          "target": "编辑器设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Named Queries",
+          "target": "命名查询"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Performance Settings",
+          "target": "性能设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Backup Settings",
+          "target": "备份设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File Organization",
+          "target": "文件组织"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Your finances are organized using a structured folder layout with separate files for accounts, transactions, prices, and more.",
+          "target": "您的财务数据通过结构化的文件夹布局进行组织，账户、交易、价格等分别存储在单独的文件中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Structured Layout File Organization:",
+          "target": "结构化布局文件组织："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Main ledger file path:",
+          "target": "主账本文件路径："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced Settings",
+          "target": "高级设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Connection Configuration",
+          "target": "连接配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select Template File",
+          "target": "选择模板文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No markdown files found",
+          "target": "未找到 Markdown 文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "BQL Query",
+          "target": "BQL 查询"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📋",
+          "target": "📋"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📤",
+          "target": "📤"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "View Query",
+          "target": "查看查询"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Executing query...",
+          "target": "正在执行查询..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No results returned",
+          "target": "未返回结果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Welcome to Obsidian Finance",
+          "target": "欢迎使用 Obsidian Finance"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "First, let's verify that your system has the required tools installed.",
+          "target": "首先，让我们验证您的系统是否已安装所需的工具。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📋 Required Software",
+          "target": "📋 所需软件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Python 3.8 or higher",
+          "target": "Python 3.8 或更高版本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Beancount v3+ (pip install beancount)",
+          "target": "Beancount v3+ (pip install beancount)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bean Query (pip install beanquery — separate package)",
+          "target": "Bean Query (pip install beanquery — 独立包)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🎯 Detection Results",
+          "target": "🎯 检测结果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Python:",
+          "target": "Python："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bean Query:",
+          "target": "Bean Query："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bean Price:",
+          "target": "Bean Price："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🔍 Check Prerequisites",
+          "target": "🔍 检查前提条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Next: File Setup →",
+          "target": "下一步：文件设置 →"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skip (Manual Config)",
+          "target": "跳过（手动配置）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📚 Installation Instructions",
+          "target": "📚 安装说明"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose your starting point. A structured folder layout will be created to organize your finances.",
+          "target": "选择您的起点。将创建一个结构化的文件夹布局来组织您的财务数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Start with Demo Data",
+          "target": "从演示数据开始"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Perfect for testing! We'll create sample accounts and transactions so you can explore the plugin features immediately.",
+          "target": "非常适合测试！我们将创建示例账户和交易，让您能立即探索插件功能。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use My Existing Ledger",
+          "target": "使用我的现有账本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Already have a Beancount file? Point us to it.",
+          "target": "已有 Beancount 文件？请指向它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No .beancount files found in vault.",
+          "target": "在保险库中未找到 .beancount 文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "← Back to Prerequisites",
+          "target": "← 返回先决条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Start Setup",
+          "target": "开始设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Beancount for Obsidian is now configured and ready to use!",
+          "target": "Beancount for Obsidian 现已配置完成，可以使用了！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🎉 Setup Complete!",
+          "target": "🎉 设置完成！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configuration Summary:",
+          "target": "配置摘要："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🚀 Next Steps:",
+          "target": "🚀 后续步骤："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open the Finance Dashboard (Command Palette → \"Open Finance Dashboard\")",
+          "target": "打开财务仪表板（命令面板 → \\\"打开财务仪表板\\\"）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Explore the 5 tabs: Overview, Transactions, Journal, Balance Sheet, Commodities",
+          "target": "探索 5 个标签页：概览、交易、日记账、资产负债表、商品"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Try BQL queries in markdown notes with code blocks",
+          "target": "在 Markdown 笔记中使用代码块尝试 BQL 查询"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enable Automatic Price Fetching in Settings → General to keep commodity prices up to date",
+          "target": "在设置 → 常规中启用自动价格获取，以保持商品价格最新"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open Dashboard & Close",
+          "target": "打开仪表板并关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Equity",
+          "target": "权益"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Liabilities",
+          "target": "负债"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Assets",
+          "target": "资产"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Expenses",
+          "target": "费用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Income",
+          "target": "收入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Output format",
+          "target": "输出格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Refresh query results",
+          "target": "刷新查询结果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Copy results to clipboard",
+          "target": "复制结果到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Export results",
+          "target": "导出结果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "text"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "radio",
+          "target": "radio"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
