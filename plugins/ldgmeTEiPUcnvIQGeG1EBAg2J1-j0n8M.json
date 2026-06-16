@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "llm-workspace",
+    "version": "1.0.1",
+    "title": "LLM workspace",
+    "description": "LLM workspace Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Additional settings",
+          "target": "附加设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Last ten effects were: ",
+          "target": "最近的十个效果是："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed request's response body",
+          "target": "失败请求的响应正文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "error",
+          "target": "错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not parse message into JSON:",
+          "target": "无法将消息解析为JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "From chunk:",
+          "target": "来自数据块："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to list models from OpenAI-compatible API:",
+          "target": "无法从OpenAI兼容API列出模型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "QueryEngine invoke error",
+          "target": "QueryEngine调用错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Workspace not found",
+          "target": "未找到工作区"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to build questions",
+          "target": "构建问题失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to rebuild linked files",
+          "target": "重建链接文件失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to rebuild linked file",
+          "target": "重建链接文件失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Anthropic",
+          "target": "Anthropic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Ollama",
+          "target": "Ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Prune",
+          "target": "清理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Settings for the different LLM providers",
+          "target": "不同LLM提供商的设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The model used to answer questions in the LLM workspace view",
+          "target": "用于在LLM工作区视图中回答问题的模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The model used to generate note context (summary, key topics)",
+          "target": "用于生成笔记上下文（摘要、关键主题）的模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The model used to compute embeddings of documents and finding relevant ones for the conversation.",
+          "target": "用于计算文档嵌入并为对话查找相关文档的模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Files in this folder will be available as prompts. Type @ in the chat input to open the prompt selector.",
+          "target": "此文件夹中的文件将作为提示词可用。在聊天输入框中输入@以打开提示词选择器。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Don't create note context (summary, key topics) for notes shorter than this many characters.",
+          "target": "对于短于此字符数的笔记，不创建笔记上下文（摘要、关键主题）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For most file change events in your vault, the plugin's database is kept in sync automatically. However, some vault changes don't remove plugin data immediately to avoid expensive LLM API calls in case it's needed again (such as building embeddings). This button manually prunes the plugin database.",
+          "target": "对于您保险库中的大多数文件更改事件，插件的数据库会自动保持同步。然而，某些保险库更改不会立即移除插件数据，以避免在需要时（例如构建嵌入）产生昂贵的LLM API调用。此按钮用于手动清理插件数据库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable logging to the developer console.",
+          "target": "启用开发者控制台日志记录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The instructions and extra context included in all LLM queries.",
+          "target": "包含在所有LLM查询中的指令和额外上下文。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Notes are chunked into smaller parts before indexing and during retrieval. This setting controls the maximum size of a chunk (in characters).",
+          "target": "笔记在索引和检索前会被分割成更小的部分。此设置控制一个块的最大大小（以字符为单位）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "In workspace chat mode, the most relevant notes are added to the LLM context. This setting controls the number of chunks to include.\nNote: one note does not necessarily equal one chunk, as notes are split into smaller chunks.",
+          "target": "在工作区聊天模式下，最相关的笔记会被添加到LLM上下文中。此设置控制要包含的块数量。\\n注意：一个笔记不一定等于一个块，因为笔记会被分割成更小的块。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider settings",
+          "target": "提供商设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model for conversations",
+          "target": "对话模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model for note context",
+          "target": "笔记上下文模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model for document embedding",
+          "target": "文档嵌入模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Prompt folder location",
+          "target": "提示词文件夹位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note context minimum length",
+          "target": "笔记上下文最小长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Prune database",
+          "target": "清理数据库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable logging",
+          "target": "启用日志记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Retrieval parameters",
+          "target": "检索参数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "System prompt",
+          "target": "系统提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Chunk size",
+          "target": "块大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Number of chunks in context",
+          "target": "上下文中的块数量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Select a folder",
+          "target": "选择一个文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "System prompt",
+          "target": "系统提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Number of characters",
+          "target": "字符数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Number of chunks",
+          "target": "块数量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Select a workspace to open",
+          "target": "选择一个要打开的工作区"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Danger zone",
+          "target": "危险区域"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Chat with note",
+          "target": "与笔记聊天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open as LLM workspace",
+          "target": "作为LLM工作区打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Dexie: Need to reopen db",
+          "target": "Dexie: 需要重新打开数据库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Dexie SchemaDiff: Schema was extended without increasing the number passed to db.version(). Dexie will add missing parts and increment native version number to workaround this.",
+          "target": "Dexie SchemaDiff: 模式已扩展但未增加传递给db.version()的数字。Dexie将添加缺失部分并递增原生版本号以解决此问题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Dexie: Workaround for Chrome UnknownError on open()",
+          "target": "Dexie: 针对Chrome open()时UnknownError的解决方案"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "%c[svelte] lifecycle_double_unmount\n%cTried to unmount a component that was not mounted\nhttps://svelte.dev/e/lifecycle_double_unmount",
+          "target": "%c[svelte] lifecycle_double_unmount\\n%c尝试卸载一个未挂载的组件\\nhttps://svelte.dev/e/lifecycle_double_unmount"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to add workspace property to frontmatter",
+          "target": "向frontmatter添加工作区属性失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied to clipboard",
+          "target": "已复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Workspace has no linked notes",
+          "target": "工作区没有关联的笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Chunk size must be a number",
+          "target": "块大小必须是数字"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Chunk count must be a number",
+          "target": "块数量必须是数字"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a note first and try again",
+          "target": "请先打开一个笔记再试"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "LOG:",
+          "target": "LOG:"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "INFO:",
+          "target": "INFO:"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "WARN:",
+          "target": "WARN:"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ERROR:",
+          "target": "ERROR:"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "LLM",
+          "target": "LLM"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Chunk size",
+          "target": "块大小"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Number of chunks in context",
+          "target": "上下文中的块数量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Conversation grounded in",
+          "target": "对话基于"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "VirtualIndexMiddleware",
+          "target": "VirtualIndexMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HooksMiddleware",
+          "target": "HooksMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Observability",
+          "target": "可观测性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cache",
+          "target": "缓存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open context panel",
+          "target": "打开上下文面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open active note as LLM workspace",
+          "target": "将活动笔记作为LLM工作区打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chat with active note",
+          "target": "与活动笔记聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open existing workspace",
+          "target": "打开现有工作区"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Connection error",
+          "target": "连接错误"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
