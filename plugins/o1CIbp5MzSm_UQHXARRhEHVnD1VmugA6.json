@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-tweet-to-markdown",
+    "version": "1.0.0",
+    "title": "Tweet to Markdown",
+    "description": "Tweet to Markdown Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "2.12.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "There was an error creating the tweet directory.",
+          "target": "创建推文目录时出错。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Loading Tweet to Markdown",
+          "target": "正在加载推文转 Markdown 功能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Cleaning up note location setting.",
+          "target": "正在清理笔记位置设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Cleaning up asset location setting.",
+          "target": "正在清理资源位置设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "unloading Tweet to Markdown",
+          "target": "正在卸载推文转 Markdown 功能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Save Tweet",
+          "target": "保存推文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Download Tweet",
+          "target": "下载推文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where to store the created notes. You can use the placeholders [[handle]], [[name]], [[text]] and [[id]]. Defaults to the root of the vault.",
+          "target": "存储创建笔记的位置。您可以使用占位符 [[handle]]、[[name]]、[[text]] 和 [[id]]。默认为保险库的根目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include images in the generated markdown.",
+          "target": "在生成的 Markdown 中包含图片。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set a custom size for images. Enter just the width (e.g. 200) or the width and height (e.g. 200x300).",
+          "target": "设置图片的自定义尺寸。仅输入宽度（例如 200）或宽度和高度（例如 200x300）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where to store the downloaded images. You can use the placeholders [[handle]], [[name]], [[text]] and [[id]]. Defaults to `assets/`.",
+          "target": "存储下载图片的位置。您可以使用占位符 [[handle]]、[[name]]、[[text]] 和 [[id]]。默认为 `assets/`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Embed images in markdown style or Obsidian style. Obsidian style will only work if you download images.",
+          "target": "以 Markdown 风格或 Obsidian 风格嵌入图片。Obsidian 风格仅在您下载图片时有效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The name to give the saved tweet file. You can use the placeholders [[handle]], [[name]], [[text]] and [[id]]. Defaults to \"[[handle]] - [[id]]\"",
+          "target": "保存推文文件的名称。您可以使用占位符 [[handle]]、[[name]]、[[text]] 和 [[id]]。默认为 \\\"[[handle]] - [[id]]\\\""
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How (or whether) to open the tweet once it is finished downloading.",
+          "target": "下载完成后如何（或是否）打开推文。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Defaults to downloading a tweet thread instead of a single tweet. This option can still be toggled on the tweet download window This does not apply to pasted tweets.",
+          "target": "默认下载推文线程而非单条推文。此选项仍可在推文下载窗口中切换。此设置不适用于粘贴的推文。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For tweet threads, only show author information on the first tweet in the thread (or if a new author appears).",
+          "target": "对于推文线程，仅在线程的第一条推文中显示作者信息（或当出现新作者时）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include tweet metadata such as  author, original link, and metrics (likes, retweets, &c.) as a frontmatter block.",
+          "target": "将推文元数据（如作者、原始链接和指标（点赞、转发等））作为前置信息块包含在内。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A space-separated list of tags you'd like to include in the frontmatter.",
+          "target": "您希望包含在前置信息中的、以空格分隔的标签列表。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A `cssclass` field to include in the frontmatter. Obsidian will apply this class to tweet notes for CSS styling.",
+          "target": "包含在前置信息中的 `cssclass` 字段。Obsidian 将应用此类别到推文笔记以进行 CSS 样式设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Prevent hashtags from being included in Obsidian tags (change # to \\#)",
+          "target": "防止主题标签被包含在 Obsidian 标签中（将 # 更改为 \\\\#）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include the profile image of the tweet author in the saved tweet.",
+          "target": "在保存的推文中包含推文作者的头像图片。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set a custom size for avatar images. Enter just the width (e.g. 200) or the width and height (e.g. 200x300).",
+          "target": "设置头像图片的自定义尺寸。仅输入宽度（例如 200）或宽度和高度（例如 200x300）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include user profile and original tweet links in the generated markdown.",
+          "target": "在生成的 Markdown 中包含用户资料和原始推文链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include the tweet date next to the author's name.",
+          "target": "在作者姓名旁边包含推文日期。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The format to display the tweet timestamp.",
+          "target": "显示推文时间戳的格式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The locale to apply to the date format",
+          "target": "应用于日期格式的区域设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the name of the file. You can use the placeholders [[handle]], [[name]], [[text]], and [[id]].",
+          "target": "设置文件的名称。您可以使用占位符 [[handle]]、[[name]]、[[text]] 和 [[id]]。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the URL of the tweet to download.",
+          "target": "输入要下载的推文 URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Download a tweet thread. (Put the link to the LAST tweet in the thread).",
+          "target": "下载推文线程。（请提供线程中最后一条推文的链接）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key or bearer token",
+          "target": "API 密钥或 Bearer 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note Location",
+          "target": "笔记位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include images",
+          "target": "包含图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download images",
+          "target": "下载图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image size",
+          "target": "图片尺寸"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image Location",
+          "target": "图片位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Filename",
+          "target": "文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Open tweet once downloaded",
+          "target": "下载后打开推文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default to thread download",
+          "target": "默认下载线程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Condensed threads",
+          "target": "精简线程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include frontmatter",
+          "target": "包含前置信息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tags",
+          "target": "标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Freeform frontmatter",
+          "target": "自由格式前置信息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Escape hashtags",
+          "target": "转义主题标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include profile pictures",
+          "target": "包含头像图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Profile picture size",
+          "target": "头像图片尺寸"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include links",
+          "target": "包含链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include date",
+          "target": "包含日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date Format",
+          "target": "日期格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date locale",
+          "target": "日期区域设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download Tweet on paste",
+          "target": "粘贴时下载推文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tweet URL",
+          "target": "推文 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tweet thread",
+          "target": "推文主题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Twitter v2 bearer token",
+          "target": "Twitter v2 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: notes/tweets",
+          "target": "示例：notes/tweets"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: assets/tweets",
+          "target": "示例：assets/tweets"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "[[handle]] - [[id]]",
+          "target": "[[handle]] - [[id]]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "literature-note tweet",
+          "target": "文献笔记推文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "newfield: value\nanother: another value",
+          "target": "newfield: value\\nanother: another value"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Tweet URL",
+          "target": "推文 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Name tweet file",
+          "target": "命名推文文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Download Tweet",
+          "target": "下载推文"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Downloading images...",
+          "target": "正在下载图片..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Twitter bearer token was not found.",
+          "target": "未找到 Twitter 令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Images downloaded",
+          "target": "图片已下载"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "There was an error downloading the images.",
+          "target": "下载图片时出错。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error creating tweet directory.",
+          "target": "创建推文目录时出错。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bearer token was not found.",
+          "target": "未找到令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No tweet link provided.",
+          "target": "未提供推文链接。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "One of the tweets in this thread is unavailable to be viewed. Download failed.",
+          "target": "此主题中的某条推文无法查看。下载失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Images downloaded.",
+          "target": "图片已下载。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Download Tweet from URL",
+          "target": "从 URL 下载推文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Settings for Tweet to Markdown",
+          "target": "推文转 Markdown 设置"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
