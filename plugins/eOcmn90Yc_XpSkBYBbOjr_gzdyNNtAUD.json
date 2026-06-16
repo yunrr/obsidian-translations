@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "auto-file-organizer",
+    "version": "2.0.0",
+    "title": "Auto File Organizer",
+    "description": "Automatically organizes files into folders based on their extensions or tags",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.7",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Files organized\")",
+          "target": "Notice(\"文件已整理。\")"
+        },
+        {
+          "source": "Notice(`Moved ${movedFiles.length} files:\n${movedFiles.join(\", \")",
+          "target": "Notice(`移动 ${movedFiles.length} 文件夹:\n${movedFiles.join(\", \")"
+        },
+        {
+          "source": "Notice(\"No files were moved.\")",
+          "target": "Notice(\"没有文件被移动。\")"
+        },
+        {
+          "source": "Notice(`update extension-to-folder mapping`)",
+          "target": "Notice(`更新扩展程序到文件夹的映射`)"
+        },
+        {
+          "source": "Notice(`update tag-to-folder mapping.`)",
+          "target": "Notice(`更新标签到文件夹的映射。`)"
+        },
+        {
+          "source": "Notice(`Priority set to: ${value === \"extension\" ? \"Extension\" : \"Tag\"}`)",
+          "target": "Notice(`优先级设置为：${value === \"extension\" ? \"Extension\" : \"Tag\"}`)"
+        },
+        {
+          "source": "Notice(`The extension input is invalid.`)",
+          "target": "Notice(`扩展输入无效。`)"
+        },
+        {
+          "source": "Notice(`Folder for .${extension} files updated to: ${value}`)",
+          "target": "Notice(`用于.${extension} 文件的文件夹已更新至： ${value}`)"
+        },
+        {
+          "source": "Notice(`The tag input is invalid.`)",
+          "target": "Notice(`标签输入无效。`)"
+        },
+        {
+          "source": "Notice(`Folder for ${tag} files updated to: ${value}`)",
+          "target": "Notice(`用于 ${tag} 文件的文件夹已更新至：${value}`)"
+        },
+        {
+          "source": ".log(\"Auto File Organizer loaded!\")",
+          "target": ".log(\"自动文件整理程序已加载！\")"
+        },
+        {
+          "source": ".log(\"No folder mapping defined. Skipping file organization.\")",
+          "target": ".log(\"未定义文件夹映射。跳过文件整理操作。\")"
+        },
+        {
+          "source": ".log(`No metadata found for file: ${file.path}`)",
+          "target": ".log(`未找到文件的元数据： ${file.path}`)"
+        },
+        {
+          "source": ".log(`No suitable folder mapping found for file: ${file.name}`)",
+          "target": ".log(`未找到适合该文件的文件夹映射：${file.name}`)"
+        },
+        {
+          "source": ".error(`Failed to move file ${file.name} by tag:`, err)",
+          "target": ".error(`按标签移动文件 ${file.name} 失败`, err)"
+        },
+        {
+          "source": ".error(`Failed to move file ${file.name} by extension:`, err)",
+          "target": ".error(`根据扩展名移动文件 ${file.name} 失败:`, err)"
+        },
+        {
+          "source": "name: \"applyStyles\"",
+          "target": "name: \"应用样式\""
+        },
+        {
+          "source": "name: \"arrow\"",
+          "target": "name: \"指向\""
+        },
+        {
+          "source": "name: \"computeStyles\"",
+          "target": "name: \"计算样式\""
+        },
+        {
+          "source": "name: \"eventListeners\"",
+          "target": "name: \"事件监听器\""
+        },
+        {
+          "source": "name: \"flip\"",
+          "target": "name: \"浏览​\""
+        },
+        {
+          "source": "name: \"hide\"",
+          "target": "name: \"隐藏\""
+        },
+        {
+          "source": "name: \"offset\"",
+          "target": "name: \"偏移量\""
+        },
+        {
+          "source": "name: \"popperOffsets\"",
+          "target": "name: \"弹出框偏移量\""
+        },
+        {
+          "source": "name: \"preventOverflow\"",
+          "target": "name: \"防止溢出\""
+        },
+        {
+          "source": "name: \"sameWidth\"",
+          "target": "name: \"相同宽度\""
+        },
+        {
+          "source": "name: \"Organize Files\"",
+          "target": "name: \"整理文件\""
+        },
+        {
+          "source": "text: \"reference\"",
+          "target": "text: \"参考\""
+        },
+        {
+          "source": "text: \"Extension-to-Folder Mapping\"",
+          "target": "text: \"扩展名到文件夹的映射\""
+        },
+        {
+          "source": "text: \"Extension mapping list\"",
+          "target": "text: \"扩展映射列表\""
+        },
+        {
+          "source": "text: \"Auto Extension Mapping\"",
+          "target": "text: \"自动扩展映射\""
+        },
+        {
+          "source": "text: \"Excluded list\"",
+          "target": "text: \"排除清单\""
+        },
+        {
+          "source": "text: \"Tag-to-Folder Mapping\"",
+          "target": "text: \"标签到文件夹映射\""
+        },
+        {
+          "source": "text: \"Tag mapping list\"",
+          "target": "text: \"标签映射列表\""
+        },
+        {
+          "source": "text: \"Auto Tag Mapping\"",
+          "target": "text: \"自动标签映射\""
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setButtonText(\"Delete\")",
+          "target": ".setButtonText(\"删除\")"
+        },
+        {
+          "source": ".setButtonText(\"Start scan\")",
+          "target": ".setButtonText(\"开始扫描\")"
+        },
+        {
+          "source": ".setName(\"Priority\")",
+          "target": ".setName(\"优先\")"
+        },
+        {
+          "source": ".setName(\"Enable Extension Mapping\")",
+          "target": ".setName(\"启用扩展映射\")"
+        },
+        {
+          "source": ".setName(\"Add new extension mapping\")",
+          "target": ".setName(\"添加新的扩展映射\")"
+        },
+        {
+          "source": ".setName(`Extension: ${extension}`)",
+          "target": ".setName(`扩展名: ${extension}`)"
+        },
+        {
+          "source": ".setName(\"Get extension mapping\")",
+          "target": ".setName(\"获取扩展映射\")"
+        },
+        {
+          "source": ".setName(\"Set Black Folder List\")",
+          "target": ".setName(\"设置黑色文件夹列表\")"
+        },
+        {
+          "source": ".setName(`Exclude \"${folder1}\"`)",
+          "target": ".setName(`排除 \"${folder1}\"`)"
+        },
+        {
+          "source": ".setName(\"Enable Tag Mapping\")",
+          "target": ".setName(\"启用标签映射\")"
+        },
+        {
+          "source": ".setName(\"Add new tag mapping\")",
+          "target": ".setName(\"添加新的标签映射\")"
+        },
+        {
+          "source": ".setName(`Tag: ${tag}`)",
+          "target": ".setName(`标签: ${tag}`)"
+        },
+        {
+          "source": ".setName(\"Get tag mapping\")",
+          "target": ".setName(\"获取标签映射\")"
+        },
+        {
+          "source": ".setDesc(\"Decide which mapping takes precedence when both are enabled.\")",
+          "target": ".setDesc(\"当两种映射都启用时，确定哪种映射优先。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable or disable extension-to-folder mapping.\")",
+          "target": ".setDesc(\"启用或禁用扩展程序到文件夹的映射。\")"
+        },
+        {
+          "source": ".setDesc(\"Add a new extension and target folder\")",
+          "target": ".setDesc(\"添加一个新的扩展名和目标文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Change the folder for this extension\")",
+          "target": ".setDesc(\"更改此扩展程序的文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Scan the extension in the file and make mapping extension to folder automatically\")",
+          "target": ".setDesc(\"扫描文件中的扩展名，并自动将扩展名映射到文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"Indicate what folder is excluded for automatically get extension mapping\")",
+          "target": ".setDesc(\"指出哪个文件夹被排除在自动获取扩展名映射之外。\")"
+        },
+        {
+          "source": ".setDesc(\"This folder is excluded when pushing get extension button\")",
+          "target": ".setDesc(\"当点击获取扩展按钮时，此文件夹被排除在外。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable or disable tag-to-folder mapping.\")",
+          "target": ".setDesc(\"启用或禁用标签到文件夹的映射。\")"
+        },
+        {
+          "source": ".setDesc(\"Add a new tag and target folder\")",
+          "target": ".setDesc(\"添加一个新标签和目标文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Change the folder for this tag\")",
+          "target": ".setDesc(\"更改此标签的文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Scan the tag in the file and make mapping tag to folder automatically\")",
+          "target": ".setDesc(\"扫描文件中的标签，并自动将标签映射到文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"Indicate what folder is excluded for automatically get tag mapping\")",
+          "target": ".setDesc(\"指出哪个文件夹被排除在自动获取标签映射之外。\")"
+        },
+        {
+          "source": ".setDesc(\"This folder is excluded when pushing get tag mapping button\")",
+          "target": ".setDesc(\"当按下获取标签映射按钮时，此文件夹被排除在外。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter extension (e.g., pdf)\")",
+          "target": ".setPlaceholder(\"输入扩展名 (e.g., pdf)\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Search folder...\")",
+          "target": ".setPlaceholder(\"搜索文件夹……\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Search tag...\")",
+          "target": ".setPlaceholder(\"搜索标签……\")"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-omnivore",
+    "version": "2.0.0",
+    "title": "Omnivore",
+    "description": "This is an Omnivore plugin for Obsidian.",
+    "language": "zh-cn",
+    "supportedVersions": "1.10.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Frequency must be a positive integer\")",
+          "target": "Notice(\"频率必须为正整数\")"
+        },
+        {
+          "source": "Notice(\"Template reset\")",
+          "target": "Notice(\"模板重置\")"
+        },
+        {
+          "source": "Notice(\"Saved highlight color settings\")",
+          "target": "Notice(\"已保存突出显示颜色设置\")"
+        },
+        {
+          "source": "Notice(\"Front matter template reset\")",
+          "target": "Notice(\"Front matter 模板重置\")"
+        },
+        {
+          "source": "Notice(releaseNotes, 1e4)",
+          "target": "Notice(releaseNotes, 1e4)"
+        },
+        {
+          "source": "Notice(\"Omnivore Last Sync reset\")",
+          "target": "Notice(\"Omnivore上次同步重置\")"
+        },
+        {
+          "source": "Notice(\"\\u{1F422} Already syncing ...\")",
+          "target": "Notice(\"\\u{1F422} Already syncing ...\")"
+        },
+        {
+          "source": "Notice(\"Missing Omnivore api key\")",
+          "target": "Notice(\"缺少Omnivore api密钥\")"
+        },
+        {
+          "source": "Notice(\"\\u{1F680} Fetching items ...\")",
+          "target": "Notice(\"\\u{1F680} Fetching items ...\")"
+        },
+        {
+          "source": "Notice(`Skipping file creation: ${normalizedPath}. Please check if you have duplicated article titles and delete the file if needed.`)",
+          "target": "Notice(`Skipping file creation: ${normalizedPath}. Please check if you have duplicated article titles and delete the file if needed.`)"
+        },
+        {
+          "source": "Notice(\"\\u{1F389} Sync completed\")",
+          "target": "Notice(\"\\u{1F389} Sync completed\")"
+        },
+        {
+          "source": "Notice(\"Failed to fetch items\")",
+          "target": "Notice(\"无法获取项目\")"
+        },
+        {
+          "source": "Notice(\"Failed to delete article: article id not found\")",
+          "target": "Notice(\"删除文章失败：找不到文章id\")"
+        },
+        {
+          "source": "Notice(\"Failed to delete article in Omnivore\")",
+          "target": "Notice(\"删除Omnivore中的文章失败\")"
+        },
+        {
+          "source": ".log(\"[Exchange debug]: Completed operation: \", result)",
+          "target": ".log(\"[Exchange debug]: Completed operation: \", result)"
+        },
+        {
+          "source": ".log(\"[Exchange debug]: Incoming operation: \", op)",
+          "target": ".log(\"[Exchange debug]: Incoming operation: \", op)"
+        },
+        {
+          "source": ".log(\"obsidian-omnivore: advanced filter is replaced with all filter\")",
+          "target": ".log(\"obsidian-omnivore: advanced filter is replaced with all filter\")"
+        },
+        {
+          "source": ".log(`obsidian-omnivore: custom query is set to ${this.settings.customQuery}`)",
+          "target": ".log(`obsidian-omnivore: custom query is set to ${this.settings.customQuery}`)"
+        },
+        {
+          "source": ".log(`obsidian-omnivore starting sync since: '${syncAt}'`)",
+          "target": ".log(`obsidian-omnivore starting sync since: '${syncAt}'`)"
+        },
+        {
+          "source": ".log(\"obsidian-omnivore sync completed\", this.settings.syncAt)",
+          "target": ".log(\"obsidian-omnivore sync completed\", this.settings.syncAt)"
+        },
+        {
+          "source": " error(e2)",
+          "target": " error(e2)"
+        },
+        {
+          "source": " error(\"ListValue\")",
+          "target": " error(\"列表值\")"
+        },
+        {
+          "source": " error(\"ObjectField\")",
+          "target": " error(\"对象字段\")"
+        },
+        {
+          "source": " error(\"ObjectValue\")",
+          "target": " error(\"对象值\")"
+        },
+        {
+          "source": " error(\"Argument\")",
+          "target": " error(\"参数\")"
+        },
+        {
+          "source": " error(\"Directive\")",
+          "target": " error(\"指令\")"
+        },
+        {
+          "source": " error(\"Field\")",
+          "target": " error(\"字段\")"
+        },
+        {
+          "source": " error(\"ListType\")",
+          "target": " error(\"列表类型\")"
+        },
+        {
+          "source": " error(\"NamedType\")",
+          "target": " error(\"名称类型\")"
+        },
+        {
+          "source": " error(\"InlineFragment\")",
+          "target": " error(\"内联片段\")"
+        },
+        {
+          "source": " error(\"SelectionSet\")",
+          "target": " error(\"选择范围\")"
+        },
+        {
+          "source": " error(\"FragmentDefinition\")",
+          "target": " error(\"片段定义\")"
+        },
+        {
+          "source": " error(\"VariableDefinition\")",
+          "target": " error(\"可变定义\")"
+        },
+        {
+          "source": " error(\"ValueNode\")",
+          "target": " error(\"值节点\")"
+        },
+        {
+          "source": " error(e3)",
+          "target": " error(e3)"
+        },
+        {
+          "source": " error(error)",
+          "target": " error(error)"
+        },
+        {
+          "source": ".error(\"Search error\", err)",
+          "target": ".error(\"搜索错误\", err)"
+        },
+        {
+          "source": ".error(\"UpdatesSince error\", err)",
+          "target": ".error(\"UpdatesSince error\", err)"
+        },
+        {
+          "source": ".error(\"Delete error\", err)",
+          "target": ".error(\"删除错误\", err)"
+        },
+        {
+          "source": ".error(\"SaveByURL error\", err)",
+          "target": ".error(\"通过URL保存错误\", err)"
+        },
+        {
+          "source": ".error(\"Error fetching content\", c.error)",
+          "target": ".error(\"获取内容时出错\", c.error)"
+        },
+        {
+          "source": ".error(\"Item not found\", c.libraryItemId)",
+          "target": ".error(\"未找到项目\", c.libraryItemId)"
+        },
+        {
+          "source": ".error(\"Error fetching content\", error)",
+          "target": ".error(\"获取内容时出错\", error)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(\"Error parsing front matter template\", error)",
+          "target": ".error(\"解析 front matter 模板时出错\", error)"
+        },
+        {
+          "source": "name: \"mustache.js\"",
+          "target": "name: \"mustache.js\""
+        },
+        {
+          "source": "name: \"LINE FEED\"",
+          "target": "name: \"LINE FEED\""
+        },
+        {
+          "source": "name: \"LINE TABULATION\"",
+          "target": "name: \"LINE TABULATION\""
+        },
+        {
+          "source": "name: \"FORM FEED\"",
+          "target": "name: \"FORM FEED\""
+        },
+        {
+          "source": "name: \"CARRIAGE RETURN\"",
+          "target": "name: \"回车\""
+        },
+        {
+          "source": "name: \"NEXT LINE\"",
+          "target": "name: \"下一行\""
+        },
+        {
+          "source": "name: \"NO-BREAK SPACE\"",
+          "target": "name: \"NO-BREAK SPACE\""
+        },
+        {
+          "source": "name: \"LINE SEPARATOR\"",
+          "target": "name: \"LINE SEPARATOR\""
+        },
+        {
+          "source": "name: \"PARAGRAPH SEPARATOR\"",
+          "target": "name: \"段落分隔符\""
+        },
+        {
+          "source": "name: \"CHARACTER TABULATION\"",
+          "target": "name: \"字符制表\""
+        },
+        {
+          "source": "name: \"SPACE\"",
+          "target": "name: \"空格\""
+        },
+        {
+          "source": "name: \"SOFT HYPHEN\"",
+          "target": "name: \"软连字符\""
+        },
+        {
+          "source": "name: \"COMBINING GRAPHEME JOINER\"",
+          "target": "name: \"组合字符连接器\""
+        },
+        {
+          "source": "name: \"ARABIC LETTER MARK\"",
+          "target": "name: \"阿拉伯字母标记\""
+        },
+        {
+          "source": "name: \"SYRIAC ABBREVIATION MARK\"",
+          "target": "name: \"叙利亚语缩写标记\""
+        },
+        {
+          "source": "name: \"HANGUL CHOSEONG FILLER\"",
+          "target": "name: \"韩文初声填充符\""
+        },
+        {
+          "source": "name: \"HANGUL JUNGSEONG FILLER\"",
+          "target": "name: \"韩文中声填充符\""
+        },
+        {
+          "source": "name: \"OGHAM SPACE MARK\"",
+          "target": "name: \"欧甘空格标记\""
+        },
+        {
+          "source": "name: \"KHMER VOWEL INHERENT AQ\"",
+          "target": "name: \"高棉语固有元音 AQ\""
+        },
+        {
+          "source": "name: \"KHMER VOWEL INHERENT AA\"",
+          "target": "name: \"高棉语固有元音 AA\""
+        },
+        {
+          "source": "name: \"MONGOLIAN VOWEL SEPARATOR\"",
+          "target": "name: \"蒙古语元音分隔符\""
+        },
+        {
+          "source": "name: \"EN QUAD\"",
+          "target": "name: \"EN四分之一空格\""
+        },
+        {
+          "source": "name: \"EM QUAD\"",
+          "target": "name: \"EM四分之一空格\""
+        },
+        {
+          "source": "name: \"EN SPACE\"",
+          "target": "name: \"EN空格\""
+        },
+        {
+          "source": "name: \"EM SPACE\"",
+          "target": "name: \"EM空格\""
+        },
+        {
+          "source": "name: \"THREE-PER-EM SPACE\"",
+          "target": "name: \"三分之一个EM空格\""
+        },
+        {
+          "source": "name: \"FOUR-PER-EM SPACE\"",
+          "target": "name: \"四分之一个EM空格\""
+        },
+        {
+          "source": "name: \"SIX-PER-EM SPACE\"",
+          "target": "name: \"六分之一个EM空格\""
+        },
+        {
+          "source": "name: \"FIGURE SPACE\"",
+          "target": "name: \"数字空格\""
+        },
+        {
+          "source": "name: \"PUNCTUATION SPACE\"",
+          "target": "name: \"标点符号空格\""
+        },
+        {
+          "source": "name: \"THIN SPACE\"",
+          "target": "name: \"窄空格\""
+        },
+        {
+          "source": "name: \"HAIR SPACE\"",
+          "target": "name: \"细空格\""
+        },
+        {
+          "source": "name: \"ZERO WIDTH SPACE\"",
+          "target": "name: \"零宽度空格\""
+        },
+        {
+          "source": "name: \"ZERO WIDTH NON-JOINER\"",
+          "target": "name: \"零宽度非连接符\""
+        },
+        {
+          "source": "name: \"ZERO WIDTH\"",
+          "target": "name: \"零宽度\""
+        },
+        {
+          "source": "name: \"LEFT-TO-RIGHT MARK\"",
+          "target": "name: \"从左到右标记\""
+        },
+        {
+          "source": "name: \"RIGHT-TO-LEFT MARK\"",
+          "target": "name: \"从右到左标记\""
+        },
+        {
+          "source": "name: \"NARROW NO-BREAK SPACE\"",
+          "target": "name: \"窄不间断空格\""
+        },
+        {
+          "source": "name: \"MEDIUM MATHEMATICAL SPACE\"",
+          "target": "name: \"中等数学空格\""
+        },
+        {
+          "source": "name: \"WORD JOINER\"",
+          "target": "name: \"单词连接符\""
+        },
+        {
+          "source": "name: \"FUNCTION APPLICATION\"",
+          "target": "name: \"函数应用\""
+        },
+        {
+          "source": "name: \"INVISIBLE TIMES\"",
+          "target": "name: \"不可见乘号\""
+        },
+        {
+          "source": "name: \"INVISIBLE SEPARATOR\"",
+          "target": "name: \"不可见分隔符\""
+        },
+        {
+          "source": "name: \"INVISIBLE PLUS\"",
+          "target": "name: \"隐形加号\""
+        },
+        {
+          "source": "name: \"INHIBIT SYMMETRIC SWAPPING\"",
+          "target": "name: \"禁止对称交换\""
+        },
+        {
+          "source": "name: \"ACTIVATE SYMMETRIC SWAPPING\"",
+          "target": "name: \"激活对称交换\""
+        },
+        {
+          "source": "name: \"INHIBIT ARABIC FORM SHAPING\"",
+          "target": "name: \"抑制阿拉伯形体形成\""
+        },
+        {
+          "source": "name: \"ACTIVATE ARABIC FORM SHAPING\"",
+          "target": "name: \"激活阿拉伯形体塑造\""
+        },
+        {
+          "source": "name: \"NATIONAL DIGIT SHAPES\"",
+          "target": "name: \"国家数字形状\""
+        },
+        {
+          "source": "name: \"NOMINAL DIGIT SHAPES\"",
+          "target": "name: \"标称数字形状\""
+        },
+        {
+          "source": "name: \"IDEOGRAPHIC SPACE\"",
+          "target": "name: \"表意空间\""
+        },
+        {
+          "source": "name: \"BRAILLE PATTERN BLANK\"",
+          "target": "name: \"盲文图案空白\""
+        },
+        {
+          "source": "name: \"HANGUL FILLER\"",
+          "target": "name: \"韩文填充符\""
+        },
+        {
+          "source": "name: \"ZERO WIDTH NO-BREAK SPACE\"",
+          "target": "name: \"零宽度无中断空间\""
+        },
+        {
+          "source": "name: \"HALFWIDTH HANGUL FILLER\"",
+          "target": "name: \"半宽韩文填充符\""
+        },
+        {
+          "source": "name: \"KAITHI VOWEL SIGN I\"",
+          "target": "name: \"凯希元音符号I\""
+        },
+        {
+          "source": "name: \"SHORTHAND FORMAT LETTER OVERLAP\"",
+          "target": "name: \"速记格式字母重叠\""
+        },
+        {
+          "source": "name: \"SHORTHAND FORMAT CONTINUING OVERLAP\"",
+          "target": "name: \"速记格式继续重叠\""
+        },
+        {
+          "source": "name: \"SHORTHAND FORMAT DOWN STEP\"",
+          "target": "name: \"速记格式逐步降低\""
+        },
+        {
+          "source": "name: \"SHORTHAND FORMAT UP STEP\"",
+          "target": "name: \"速记格式升级\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL NULL NOTEHEAD\"",
+          "target": "name: \"音乐符号空音符头\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL BEGIN BEAM\"",
+          "target": "name: \"音乐符号开始梁\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL END BEAM\"",
+          "target": "name: \"音乐符号端梁\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL BEGIN TIE\"",
+          "target": "name: \"音乐符号开始领带\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL END TIE\"",
+          "target": "name: \"音乐符号结束领带\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL BEGIN SLUR\"",
+          "target": "name: \"音乐符号开始含糊不清\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL END SLUR\"",
+          "target": "name: \"音乐符号结束语\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL BEGIN PHRASE\"",
+          "target": "name: \"音乐符号开始短语\""
+        },
+        {
+          "source": "name: \"MUSICAL SYMBOL END PHRASE\"",
+          "target": "name: \"音乐符号结束语\""
+        },
+        {
+          "source": "name: \"{{{title}}}\"",
+          "target": "name: \"{{{title}}}\""
+        },
+        {
+          "source": "name: \"applyStyles\"",
+          "target": "name: \"应用程序样式\""
+        },
+        {
+          "source": "name: \"arrow\"",
+          "target": "name: \"箭头\""
+        },
+        {
+          "source": "name: \"computeStyles\"",
+          "target": "name: \"计算机样式\""
+        },
+        {
+          "source": "name: \"eventListeners\"",
+          "target": "name: \"事件监听器\""
+        },
+        {
+          "source": "name: \"flip\"",
+          "target": "name: \"翻转\""
+        },
+        {
+          "source": "name: \"hide\"",
+          "target": "name: \"隐藏\""
+        },
+        {
+          "source": "name: \"offset\"",
+          "target": "name: \"抵消\""
+        },
+        {
+          "source": "name: \"popperOffsets\"",
+          "target": "name: \"弹出偏移\""
+        },
+        {
+          "source": "name: \"preventOverflow\"",
+          "target": "name: \"防止溢出\""
+        },
+        {
+          "source": "name: \"sameWidth\"",
+          "target": "name: \"相同宽度\""
+        },
+        {
+          "source": "name: \"Sync new changes\"",
+          "target": "name: \"同步新更改\""
+        },
+        {
+          "source": "name: \"Delete Current Article from Omnivore\"",
+          "target": "name: \"从 Omnivore 中删除当前文章\""
+        },
+        {
+          "source": "name: \"Resync all articles\"",
+          "target": "name: \"重新同步所有文章\""
+        },
+        {
+          "source": "text: \"reference\"",
+          "target": "text: \"参考\""
+        },
+        {
+          "source": "text: \"https://omnivore.app/settings/api\"",
+          "target": "text: \"https://omnivore.app/settings/api\""
+        },
+        {
+          "source": "text: \"Query\"",
+          "target": "text: \"查询\""
+        },
+        {
+          "source": "text: \"https://docs.omnivore.app/using/search\"",
+          "target": "text: \"https://docs.omnivore.app/using/search\""
+        },
+        {
+          "source": "text: \"Sync\"",
+          "target": "text: \"同步\""
+        },
+        {
+          "source": "text: \"Article\"",
+          "target": "text: \"文章\""
+        },
+        {
+          "source": "text: \"Reference\"",
+          "target": "text: \"参考资料\""
+        },
+        {
+          "source": "text: \"Highlights\"",
+          "target": "text: \"高亮显示\""
+        },
+        {
+          "source": "text: \"Highlightr\"",
+          "target": "text: \"高亮标记\""
+        },
+        {
+          "source": "text: \"Advanced Settings\"",
+          "target": "text: \"高级设置\""
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setName(\"API Key\")",
+          "target": ".setName(\"API密钥\")"
+        },
+        {
+          "source": ".setName(\"Filter\")",
+          "target": ".setName(\"过滤器\")"
+        },
+        {
+          "source": ".setName(\"Custom Query\")",
+          "target": ".setName(\"自定义查询\")"
+        },
+        {
+          "source": ".setName(\"Sync on startup\")",
+          "target": ".setName(\"启动时同步\")"
+        },
+        {
+          "source": ".setName(\"Frequency\")",
+          "target": ".setName(\"频率\")"
+        },
+        {
+          "source": ".setName(\"Last Sync\")",
+          "target": ".setName(\"上次同步\")"
+        },
+        {
+          "source": ".setName(\"Is Single File\")",
+          "target": ".setName(\"是单个文件\")"
+        },
+        {
+          "source": ".setName(\"Folder\")",
+          "target": ".setName(\"文件夹\")"
+        },
+        {
+          "source": ".setName(\"Folder Date Format\")",
+          "target": ".setName(\"文件夹日期格式\")"
+        },
+        {
+          "source": ".setName(\"Attachment Folder\")",
+          "target": ".setName(\"附件文件夹\")"
+        },
+        {
+          "source": ".setName(\"Filename\")",
+          "target": ".setName(\"文件名\")"
+        },
+        {
+          "source": ".setName(\"Filename Date Format\")",
+          "target": ".setName(\"文件名日期格式\")"
+        },
+        {
+          "source": ".setName(\"Front Matter\")",
+          "target": ".setName(\"Front Matter\")"
+        },
+        {
+          "source": ".setName(\"Article Template\")",
+          "target": ".setName(\"文章模板\")"
+        },
+        {
+          "source": ".setName(\"Date Saved Format\")",
+          "target": ".setName(\"保存日期格式\")"
+        },
+        {
+          "source": ".setName(\"Date Highlighted Format\")",
+          "target": ".setName(\"日期突出显示格式\")"
+        },
+        {
+          "source": ".setName(\"Highlight Order\")",
+          "target": ".setName(\"高亮顺序\")"
+        },
+        {
+          "source": ".setName(\"Render Highlight Color\")",
+          "target": ".setName(\"渲染高亮颜色\")"
+        },
+        {
+          "source": ".setName(\"Use Highlightr for Highlight styling\")",
+          "target": ".setName(\"使用Highlightr突出显示样式\")"
+        },
+        {
+          "source": ".setName(\"Configure highlight colors\")",
+          "target": ".setName(\"配置突出显示颜色\")"
+        },
+        {
+          "source": ".setName(\"API Endpoint\")",
+          "target": ".setName(\"API端点\")"
+        },
+        {
+          "source": ".setName(\"Front Matter Template\")",
+          "target": ".setName(\"Front Matter模板\")"
+        },
+        {
+          "source": ".setDesc(\"Select an Omnivore search filter type. Changing this would update the 'Custom Query' accordingly and reset the 'Last sync' timestamp\")",
+          "target": ".setDesc(\"选择杂食搜索筛选器类型。更改此设置将相应地更新“自定义查询”并重置“上次同步”时间戳\")"
+        },
+        {
+          "source": ".setDesc(\"Check this box if you want to sync with Omnivore when the app is loaded\")",
+          "target": ".setDesc(\"如果您想在加载应用程序时与Omnivore同步，请选中此框\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the frequency in minutes to sync with Omnivore automatically. 0 means manual sync\")",
+          "target": ".setDesc(\"输入频率（以分钟为单位），以便自动与Omnivore同步。0表示手动同步\")"
+        },
+        {
+          "source": ".setDesc(\"Last time the plugin synced with Omnivore. The 'Sync' command fetches articles updated after this timestamp\")",
+          "target": ".setDesc(\"上次插件与Omnivore同步。“Sync”命令获取在此时间戳之后更新的文章\")"
+        },
+        {
+          "source": ".setDesc(\"Check this box if you want to save all articles in a single file\")",
+          "target": ".setDesc(\"如果要将所有文章保存在单个文件中，请选中此框\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the folder where the data will be stored. {{{title}}}, {{{dateSaved}}} and {{{datePublished}}} could be used in the folder name\")",
+          "target": ".setDesc(\"输入存储数据的文件夹。文件夹名称中可以使用 {{{title}}}, {{{dateSaved}}} and {{{datePublished}}} \")"
+        },
+        {
+          "source": ".setDesc(\"Enter the folder where the attachment will be downloaded to. {{{title}}}, {{{dateSaved}}} and {{{datePublished}}} could be used in the folder name\")",
+          "target": ".setDesc(\"输入附件将下载到的文件夹。文件夹名称中可以使用 {{{title}}}, {{{dateSaved}}} and {{{datePublished}}}\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the filename where the data will be stored. {{id}}, {{{title}}}, {{{dateSaved}}} and {{{datePublished}}} could be used in the filename\")",
+          "target": ".setDesc(\"输入存储数据的文件名。文件名中可以使用{{id}}, {{{title}}}, {{{dateSaved}}} 和 {{{datePublished}}}\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the date format for dateSaved variable in rendered template\")",
+          "target": ".setDesc(\"输入渲染模板中dateSaved变量的日期格式\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the date format for dateHighlighted variable in rendered template\")",
+          "target": ".setDesc(\"输入渲染模板中dateHighlighted变量的日期格式\")"
+        },
+        {
+          "source": ".setDesc(\"Select the order in which highlights are applied\")",
+          "target": ".setDesc(\"选择应用高亮显示的顺序\")"
+        },
+        {
+          "source": ".setDesc(\"Check this box if you want to render highlights with color used in the Omnivore App\")",
+          "target": ".setDesc(\"如果要使用Omnivore应用程序中使用的颜色渲染高光，请选中此框\")"
+        },
+        {
+          "source": ".setDesc(\"Configure how the highlight colors in Omnivore should render in notes\")",
+          "target": ".setDesc(\"配置Omnivore中的突出显示颜色在注释中的呈现方式\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the Omnivore server's API endpoint\")",
+          "target": ".setDesc(\"输入Omnivore服务器的API端点\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your Omnivore Api Key\")",
+          "target": ".setPlaceholder(\"输入您的Omnivore Api密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter an Omnivore custom search query if advanced filter is selected\")",
+          "target": ".setPlaceholder(\"如果选择了高级筛选器，请输入Omnivore自定义搜索查询\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter the frequency\")",
+          "target": ".setPlaceholder(\"输入频率\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Last Sync\")",
+          "target": ".setPlaceholder(\"上次同步\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter the folder\")",
+          "target": ".setPlaceholder(\"输入文件夹\")"
+        },
+        {
+          "source": ".setPlaceholder(\"yyyy-MM-dd\")",
+          "target": ".setPlaceholder(\"yyyy-MM-dd\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter the attachment folder\")",
+          "target": ".setPlaceholder(\"输入附件文件夹\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter the filename\")",
+          "target": ".setPlaceholder(\"输入文件名\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter the metadata\")",
+          "target": ".setPlaceholder(\"输入元数据\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter the template\")",
+          "target": ".setPlaceholder(\"输入模板\")"
+        },
+        {
+          "source": ".setPlaceholder(\"yyyy-MM-dd'T'HH:mm:ss\")",
+          "target": ".setPlaceholder(\"yyyy-MM-dd'T'HH:mm:ss\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Date Highlighted Format\")",
+          "target": ".setPlaceholder(\"日期突出显示格式\")"
+        },
+        {
+          "source": ".setPlaceholder(\"API endpoint\")",
+          "target": ".setPlaceholder(\"API终点\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset template\")",
+          "target": ".setTooltip(\"重置模板\")"
+        },
+        {
+          "source": ".setTooltip(\"Save highlight color setting\")",
+          "target": ".setTooltip(\"保存突出显示颜色设置\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset front matter template\")",
+          "target": ".setTooltip(\"重置 front matter 模板\")"
+        },
+        {
+          "source": ".append(\"You can create an API key at \"",
+          "target": ".append(\"您可以在以下位置创建 API 密钥:\""
+        },
+        {
+          "source": ".append(\"See \"",
+          "target": ".append(\"请参阅\""
+        },
+        {
+          "source": ".append(\"If date is used as part of folder name, specify the format date for use. Format \"",
+          "target": ".append(\"如果日期用作文件夹名称的一部分，请指定要使用的格式日期。格式\""
+        },
+        {
+          "source": ".append(\"If date is used as part of file name, specify the format date for use. Format \"",
+          "target": ".append(\"如果日期用作文件名的一部分，请指定要使用的格式日期。格式\""
+        },
+        {
+          "source": ".append(\"Enter the metadata to be used in your note separated by commas. You can also use custom aliases in the format of metatdata::alias, e.g. date_saved::date. \"",
+          "target": ".append(\"输入要在笔记中使用的元数据，用逗号分隔。您还可以使用元数据::alias 格式的自定义别名，例如 date_saved::date.。\""
+        },
+        {
+          "source": ".append(\"Enter template to render articles with \"",
+          "target": ".append(\"输入模板以呈现文章\""
+        },
+        {
+          "source": ".append(\"Enter YAML template to render the front matter with \"",
+          "target": ".append(\"输入 YAML 模板以渲染前端内容\""
+        },
+        {
+          "source": "\" for more info on search query syntax. Changing this would reset the 'Last Sync' timestamp\"",
+          "target": "\" 有关搜索查询语法的更多信息。更改此设置将重置‘上次同步’时间戳\""
+        },
+        {
+          "source": "\"If you want to use a custom front matter template, you can enter it below under the advanced settings\"",
+          "target": "\"如果要使用自定义前端模板，可以在下面的高级设置下输入\""
+        },
+        {
+          "source": "\"Available metadata can be found at \"",
+          "target": "\"可用元数据可以在以下网址找到 \""
+        },
+        {
+          "source": "`For more information, please visit our <a href=\"https://github.com/omnivore-app/obsidian-omnivore\">GitHub page</a>, email us at <a href=\"mailto:feedback@omnivore.app\">feedback@omnivore.app</a> or join our <a href=\"https://discord.gg/h2z5rppzz9\">Discord server</a>.`",
+          "target": "`如需更多信息，请访问我们的 <a href=\"https://github.com/omnivore-app/obsidian-omnivore\">GitHub 页面</a>, 给我们发邮件 <a href=\"mailto:feedback@omnivore.app\">feedback@omnivore.app</a> 或加入我们的 <a href=\"https://discord.gg/h2z5rppzz9\">Discord 服务器</a>.`"
+        }
+      ]
+    }
+  }
+}

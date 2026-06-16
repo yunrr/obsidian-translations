@@ -1,0 +1,939 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "image-converter",
+    "version": "2.0.0",
+    "title": "Image Converter",
+    "description": "Convert, compress and resize images from one format to another by dragging and dropping or pasting into the note. HEIC, TIF, JPG, WEBP, PNG.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Image copied to clipboard\")",
+          "target": "Notice(\"图像已复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Image processing cancelled\")",
+          "target": "Notice(\"图像处理已取消\")"
+        },
+        {
+          "source": "Notice(\"Image conversion paused\")",
+          "target": "Notice(\"图片转换已暂停\")"
+        },
+        {
+          "source": "Notice(\"Image conversion resumed\")",
+          "target": "Notice(\"图片转换已恢复\")"
+        },
+        {
+          "source": "Notice(\"Unable to open settings. Please check if the settings plugin is enabled.\")",
+          "target": "Notice(\"无法打开设置。请检查设置插件是否已启用。\")"
+        },
+        {
+          "source": "Notice(\"No images found in the vault.\")",
+          "target": "Notice(\"在保险库中找不到任何图片。\")"
+        },
+        {
+          "source": "Notice(\"Original file kept without any compression.\")",
+          "target": "Notice(\"原始文件未经任何压缩。\")"
+        },
+        {
+          "source": "Notice(\"Original file kept without any compression or conversion.\")",
+          "target": "Notice(\"原始文件未经任何压缩或转换保存。\")"
+        },
+        {
+          "source": "Notice(\"External image link deleted from the note\")",
+          "target": "Notice(\"笔记中的外部图片链接已删除\")"
+        },
+        {
+          "source": "Notice(`Image deleted: ${s.path}`)",
+          "target": "Notice(`图片已删除: ${s.path}`)"
+        },
+        {
+          "source": "Notice(\"Failed to delete image. Check console for details.\")",
+          "target": "Notice(\"无法删除图片。请查看控制台获取详细信息。\")"
+        },
+        {
+          "source": ".log(\"Decoding image failed\",this.handle,F)",
+          "target": ".log(\"解码图像失败\",this.handle,F)"
+        },
+        {
+          "source": ".log(\"Decoding image failed\",this.handle,$)",
+          "target": ".log(\"解码图像失败\",this.handle,$)"
+        },
+        {
+          "source": ".log(\"Could not create HEIF context\")",
+          "target": ".log(\"无法创建 HEIF 上下文\")"
+        },
+        {
+          "source": ".log(\"Error loading image ids\",M)",
+          "target": ".log(\"加载图片 ID 出错\",M)"
+        },
+        {
+          "source": ".log(\"No images found\")",
+          "target": ".log(\"未找到图片\")"
+        },
+        {
+          "source": ".log(`Extended processing time for remaining ${I} files`)",
+          "target": ".log(`剩余 ${I} 个文件的处理时间已延长`)"
+        },
+        {
+          "source": ".log(\"No active editor found\")",
+          "target": ".log(\"未找到活跃的编辑器\")"
+        },
+        {
+          "source": ".log(\"Failed to get image dimensions\")",
+          "target": ".log(\"获取图片尺寸失败。\")"
+        },
+        {
+          "source": ".error(`Error processing ${o.file.name}:`,l)",
+          "target": ".error(`处理 ${o.file.name} 时出现错误:`,l)"
+        },
+        {
+          "source": ".error(\"An error occurred:\",n)",
+          "target": ".error(\"发生了错误:\",n)"
+        },
+        {
+          "source": ".error(\"Error during file update:\",k)",
+          "target": ".error(\"文件更新过程中发生错误:\",k)"
+        },
+        {
+          "source": ".error(`Invalid date format: ${C}`)",
+          "target": ".error(`日期格式无效: ${C}`)"
+        },
+        {
+          "source": ".error(\"Error in handleHeicImage:\",A)",
+          "target": ".error(\"处理HEIC图像时出错:\",A)"
+        },
+        {
+          "source": ".error(\"Error getting image dimensions:\",f)",
+          "target": ".error(\"获取图片尺寸时出错:\",f)"
+        },
+        {
+          "source": ".error(\"Element not found\")",
+          "target": ".error(\"元素未找到\")"
+        },
+        {
+          "source": ".error(\"Error processing image path:\",i)",
+          "target": ".error(\"处理图片路径时出错:\",i)"
+        },
+        {
+          "source": ".error(\"Error deleting image:\",k)",
+          "target": ".error(\"删除图片时出现错误:\",k)"
+        },
+        {
+          "source": ".error(\"Preview generation error:\",n)",
+          "target": ".error(\"预览生成错误:\",n)"
+        },
+        {
+          "source": "name:\"needle\"",
+          "target": "name:\"指针\""
+        },
+        {
+          "source": "name:\"probe-image-size\"",
+          "target": "name:\"探测图像尺寸\""
+        },
+        {
+          "source": "name:\"duplicate_rename\"",
+          "target": "name:\"重复重命名\""
+        },
+        {
+          "source": "name:\"Process all vault images\"",
+          "target": "name:\"处理所有保险库图片\""
+        },
+        {
+          "source": "name:\"Process all images in current note\"",
+          "target": "name:\"处理当前笔记中的所有图片\""
+        },
+        {
+          "source": "name:\"Open Image Converter Settings\"",
+          "target": "name:\"打开图片转换器设置\""
+        },
+        {
+          "source": "name:\"Convert\"",
+          "target": "name:\"转换\""
+        },
+        {
+          "source": "name:\"Output\"",
+          "target": "name:\"输出\""
+        },
+        {
+          "source": "name:\"Settings\"",
+          "target": "name:\"设置\""
+        },
+        {
+          "source": "name:\"Advanced\"",
+          "target": "name:\"高级\""
+        },
+        {
+          "source": "description:\"The leanest and most handsome HTTP client in the Nodelands.\"",
+          "target": "description:\"Nodelands 中最简洁、最漂亮的 HTTP 客户端。\""
+        },
+        {
+          "source": "text:\"Error generating preview\"",
+          "target": "text:\"生成预览时出错\""
+        },
+        {
+          "source": "text:\"Show available variables\"",
+          "target": "text:\"显示可用变量\""
+        },
+        {
+          "source": "text:\"Non-destructive image resizing\"",
+          "target": "text:\"非破坏性图像调整\""
+        },
+        {
+          "source": "text:\"Editor Behavior\"",
+          "target": "text:\"编辑器行为\""
+        },
+        {
+          "source": "text:\"Notifications\"",
+          "target": "text:\"通知\""
+        },
+        {
+          "source": "text:\"Enter new dimensions\"",
+          "target": "text:\"输入新维度\""
+        },
+        {
+          "source": "text:\"Aspect ratio is always preserved.\"",
+          "target": "text:\"宽高比始终保持不变。\""
+        },
+        {
+          "source": ".setText(`Processing ${i} of ${r}`)",
+          "target": ".setText(`处理 ${i} 中的 ${r}`)"
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Submit\")",
+          "target": ".setButtonText(\"提交\")"
+        },
+        {
+          "source": ".setName(\"Format\")",
+          "target": ".setName(\"格式\")"
+        },
+        {
+          "source": ".setName(\"Quality\")",
+          "target": ".setName(\"质量\")"
+        },
+        {
+          "source": ".setName(\"Image resize mode\")",
+          "target": ".setName(\"图片调整大小模式\")"
+        },
+        {
+          "source": ".setName(\"Output Location\")",
+          "target": ".setName(\"输出位置\")"
+        },
+        {
+          "source": ".setName(\"File Naming\")",
+          "target": ".setName(\"文件命名\")"
+        },
+        {
+          "source": ".setName(\"If an output file already exists\")",
+          "target": ".setName(\"如果输出文件已存在\")"
+        },
+        {
+          "source": ".setName(\"Use Markdown links\")",
+          "target": ".setName(\"使用 Markdown 链接\")"
+        },
+        {
+          "source": ".setName('Prepend paths with \"./\" for relative linking')",
+          "target": ".setName('为相对链接添加\"./\"前缀')"
+        },
+        {
+          "source": ".setName(\"Subfolder name\")",
+          "target": ".setName(\"子文件夹名称\")"
+        },
+        {
+          "source": ".setName(\"Custom output path\")",
+          "target": ".setName(\"自定义输出路径\")"
+        },
+        {
+          "source": ".setName(\"Filename template\")",
+          "target": ".setName(\"文件名模板\")"
+        },
+        {
+          "source": ".setName(\"Non-destructive resize\")",
+          "target": ".setName(\"非破坏性调整大小\")"
+        },
+        {
+          "source": ".setName(\"Custom size\")",
+          "target": ".setName(\"自定义大小\")"
+        },
+        {
+          "source": ".setName(\"Resize by dragging edge of an image\")",
+          "target": ".setName(\"通过拖动图像边缘调整大小\")"
+        },
+        {
+          "source": ".setName(\"Enable scrollwheel resize\")",
+          "target": ".setName(\"启用滚轮调整大小\")"
+        },
+        {
+          "source": ".setName(\"Scrollwheel modifier key\")",
+          "target": ".setName(\"滚轮修改键\")"
+        },
+        {
+          "source": ".setName(\"Allow drag resize in Reading mode\")",
+          "target": ".setName(\"允许在阅读模式下拖动调整大小\")"
+        },
+        {
+          "source": ".setName(\"Cursor position\")",
+          "target": ".setName(\"光标位置\")"
+        },
+        {
+          "source": ".setName(\"Remember scroll position\")",
+          "target": ".setName(\"记住滚动位置\")"
+        },
+        {
+          "source": ".setName(\"Right-click menu\")",
+          "target": ".setName(\"右键菜单\")"
+        },
+        {
+          "source": ".setName(\"Show progress notification\")",
+          "target": ".setName(\"显示进度通知\")"
+        },
+        {
+          "source": ".setName(\"Show summary notification\")",
+          "target": ".setName(\"显示摘要通知\")"
+        },
+        {
+          "source": ".setName(\"Show rename notification\")",
+          "target": ".setName(\"显示重命名通知\")"
+        },
+        {
+          "source": ".setName(\"Width\")",
+          "target": ".setName(\"宽度\")"
+        },
+        {
+          "source": ".setName(\"Height\")",
+          "target": ".setName(\"高度\")"
+        },
+        {
+          "source": ".setName(\"Select format to convert images to\")",
+          "target": ".setName(\"选择要转换图像的格式\")"
+        },
+        {
+          "source": ".setName(\"Skip images in target format\")",
+          "target": ".setName(\"跳过目标格式中的图片\")"
+        },
+        {
+          "source": ".setDesc(\"Select format to convert images to\")",
+          "target": ".setDesc(\"选择要将图像转换成的格式\")"
+        },
+        {
+          "source": ".setDesc(\"Select the mode to use when resizing the image\")",
+          "target": ".setDesc(\"选择调整图像大小时使用的模式\")"
+        },
+        {
+          "source": ".setDesc(\"Select where to save converted images.\")",
+          "target": ".setDesc(\"选择要保存转换后的图片的位置。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how to rename processed images\")",
+          "target": ".setDesc(\"选择如何命名已处理的图像\")"
+        },
+        {
+          "source": ".setDesc(\"Name of subfolder under current note's folder\")",
+          "target": ".setDesc(\"当前笔记文件夹下的子文件夹名称\")"
+        },
+        {
+          "source": ".setDesc(\"Turn this on to allow resizing images by dragging the edge of an image\")",
+          "target": ".setDesc(\"启用此选项以允许通过拖曳图像边缘来调整图像大小。\")"
+        },
+        {
+          "source": ".setDesc(\"Allow resizing images using the scrollwheel\")",
+          "target": ".setDesc(\"允许使用滚轮调整图片大小\")"
+        },
+        {
+          "source": ".setDesc(\"Choose which modifier key to hold while using the scrollwheel to resize\")",
+          "target": ".setDesc(\"选择在使用滚轮调整大小时按住的修饰键:\")"
+        },
+        {
+          "source": ".setDesc(\"Choose cursor position after processing the image\")",
+          "target": ".setDesc(\"处理完图像后选择光标位置\")"
+        },
+        {
+          "source": ".setDesc(\"This is work in progress. Toggle ON to remember the scroll position when processing images. Toggle OFF to automatically scroll to the last image\")",
+          "target": ".setDesc(\"这是一个正在进行的工作。开启以记住处理图像时的滚动位置。关闭以自动滚动到最后一张图片。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable right-click context menu\")",
+          "target": ".setDesc(\"启用右键上下文菜单\")"
+        },
+        {
+          "source": ".setDesc(\"Show summary after processing completes\")",
+          "target": ".setDesc(\"处理完成后显示摘要\")"
+        },
+        {
+          "source": ".setDesc(\"Show notification when files are renamed\")",
+          "target": ".setDesc(\"当文件被重命名时显示通知\")"
+        },
+        {
+          "source": ".setDesc(\"Base processing timeout for all images\")",
+          "target": ".setDesc(\"为所有图片设置基本处理超时时间\")"
+        },
+        {
+          "source": ".setDesc('\"Same as original\" - will keep original file format.')",
+          "target": ".setDesc('与原始文件相同 - 将保持原始文件格式。')"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter quality (0-100)\")",
+          "target": ".setPlaceholder(\"输入质量 (0-100)\")"
+        },
+        {
+          "source": ".setPlaceholder(\"images/{yyyy}/{mm}\")",
+          "target": ".setPlaceholder(\"图片/{年}/{月}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"custom/path/{yyyy}/{mm}\")",
+          "target": ".setPlaceholder(\"自定义/路径/{年}/{月}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"{noteName}-{date}\")",
+          "target": ".setPlaceholder(\"{笔记名称}-{日期}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Width\")",
+          "target": ".setPlaceholder(\"宽度\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Height\")",
+          "target": ".setPlaceholder(\"高度\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter desired length in pixels\")",
+          "target": ".setPlaceholder(\"输入所需的像素长度\")"
+        },
+        {
+          "source": ".setTitle(\"Process all images in current note\")",
+          "target": ".setTitle(\"处理当前笔记中的所有图片\")"
+        },
+        {
+          "source": ".setTitle(\"Copy Image\")",
+          "target": ".setTitle(\"复制图片\")"
+        },
+        {
+          "source": ".setTitle(\"Copy as Base64 encoded image\")",
+          "target": ".setTitle(\"复制为Base64编码的图像\")"
+        },
+        {
+          "source": ".setTitle(\"Resize Image\")",
+          "target": ".setTitle(\"调整图片大小\")"
+        },
+        {
+          "source": ".setTitle(\"Delete Image from vault\")",
+          "target": ".setTitle(\"从保险库中删除图片\")"
+        },
+        {
+          "source": ".addOptions({None:\"None\",Fit:\"Fit\",Fill:\"Fill\",LongestEdge:\"Longest Edge\",ShortestEdge:\"Shortest Edge\",Width:\"Width\",Height:\"Height\"})",
+          "target": ".addOptions({None:\"无\",Fit:\"适合\",Fill:\"填充\",LongestEdge:\"最长边\",ShortestEdge:\"最短边\",Width:\"宽度\",Height:\"高度\"})"
+        },
+        {
+          "source": ".addOption(\"default\",\"Default\")",
+          "target": ".addOption(\"default\",\"默认\")"
+        },
+        {
+          "source": ".addOption(\"root\",\"Root folder\")",
+          "target": ".addOption(\"root\",\"根目录\")"
+        },
+        {
+          "source": ".addOption(\"current\",\"Same folder as current file\")",
+          "target": ".addOption(\"current\",\"与当前文件相同的文件夹\")"
+        },
+        {
+          "source": ".addOption(\"subfolder\",\"In subfolder\")",
+          "target": ".addOption(\"subfolder\",\"在子文件夹中\")"
+        },
+        {
+          "source": ".addOption(\"customOutput\",\"Custom output path\")",
+          "target": ".addOption(\"customOutput\",\"自定义输出路径\")"
+        },
+        {
+          "source": ".addOption(\"front\",\"Front of the link\").addOption(\"back\",\"Back of the link\")",
+          "target": ".addOption(\"front\",\"链接的前面\").addOption(\"back\",\"链接的后面\")"
+        },
+        {
+          "source": ".addOptions({disabled:\"Keep original name\",custom:\"Custom template\"})",
+          "target": ".addOptions({disabled:\"保留原始名称\",custom:\"自定义模板\"})"
+        },
+        {
+          "source": ".addOptions({duplicate_replace:\"Replace\",duplicate_rename:\"Rename\"})",
+          "target": ".addOptions({duplicate_replace:\"替换\",duplicate_rename:\"重命名\"})"
+        },
+        {
+          "source": "Notice(`Failed to process ${o.file.name}: ${l.message}`)",
+          "target": "Notice(`无法处理 ${o.file.name} 文件：${l.message}`)"
+        },
+        {
+          "source": "Notice(`Renamed: ${decodeURIComponent(t)",
+          "target": "Notice(`已重命名：${decodeURIComponent(t)"
+        },
+        {
+          "source": "Notice(\"Error: Failed to compress image.\")",
+          "target": "Notice(\"错误：图像压缩失败。\")"
+        },
+        {
+          "source": "Notice(\"Error: No format selected for conversion.\")",
+          "target": "Notice(\"错误：未选择转换格式。\")"
+        },
+        {
+          "source": "Notice(\"Error: Failed to resize image.\")",
+          "target": "Notice(\"错误：调整图像大小失败。\")"
+        },
+        {
+          "source": "Notice(\"Error: No active file found.\")",
+          "target": "Notice(\"错误：未找到活动文件。\")"
+        },
+        {
+          "source": "Notice(\"Error: No active note found.\")",
+          "target": "Notice(\"错误：未找到活动笔记。\")"
+        },
+        {
+          "source": ".log(`Processing image ${A} of ${r.length}: ${k.name} ${k.path}`)",
+          "target": ".log(`处理图像 ${A}，共 ${r.length} 张：${k.name} ${k.path}`)"
+        },
+        {
+          "source": ".log(`${A} of ${r.length} ${k.name} ${k.path}  ${o} seconds elapsed`)",
+          "target": ".log(`已翻译为：已完成 ${r.length} 个 ${k.name} ${k.path}，已耗时 ${o} 秒`)"
+        },
+        {
+          "source": ".error(\"Could not determine image dimensions, using default settings\")",
+          "target": ".error(\"无法确定图像尺寸，使用默认设置。\")"
+        },
+        {
+          "source": "name:\"Toggle Image Conversion (Pause/Resume)\"",
+          "target": "name:\"切换图片转换（暂停/恢复）\""
+        },
+        {
+          "source": "description:\"Get image size without full download (JPG, GIF, PNG, WebP, BMP, TIFF, PSD)\"",
+          "target": "description:\"获取图片尺寸而无需完全下载（JPG、GIF、PNG、WebP、BMP、TIFF、PSD）\""
+        },
+        {
+          "source": "text:\"Please backup you images, this will resize your original image.\"",
+          "target": "text:\"请备份您的图片，这将调整原始图片的大小。\""
+        },
+        {
+          "source": "text:\"To resize only width, you can leave Height input empty\"",
+          "target": "text:\"只调整宽度，请将高度输入框留空。\""
+        },
+        {
+          "source": "text:\"To resize only Height, you can leave width input empty\"",
+          "target": "text:\"只调整高度，请将宽度输入框留空。\""
+        },
+        {
+          "source": ".setText(\"Image Conversion: Paused \\u23F8\\uFE0F\")",
+          "target": ".setText(\"图像转换：暂停 ⏸️\")"
+        },
+        {
+          "source": ".setText(\"Image Conversion: Active \\u25B6\\uFE0F\")",
+          "target": ".setText(\"图片转换：激活 🔶\")"
+        },
+        {
+          "source": ".setText(`Processing image ${A} of ${r.length}, elapsed time: ${o} seconds`)",
+          "target": ".setText(`处理第 ${A} 张图片，共 ${r.length} 张，已经耗时: ${o} 秒`)"
+        },
+        {
+          "source": ".setText(`Finished processing ${A} images, total time: ${k} seconds`)",
+          "target": ".setText(`已完成处理 ${A} 张图片，总耗时: ${k} 秒`)"
+        },
+        {
+          "source": ".setText(`Processing image ${r} of ${s}, elapsed time: ${g} seconds`)",
+          "target": ".setText(`处理图像 ${r} 中的 ${s}，已经经过 ${g} 秒。`)"
+        },
+        {
+          "source": ".setText(`Finished processing ${r} images, total time: ${k} seconds`)",
+          "target": ".setText(`已处理 ${r} 张图片，总共用时: ${k} 秒`)"
+        },
+        {
+          "source": ".setText(\"\")},5e3)}}async convertCurrentNoteImages(i){let r=this.app.workspace.getActiveFile();if(!r){new H.Notice(\"Error: No active file found.\")",
+          "target": ".setText(\"\")},5e3)}}async convertCurrentNoteImages(i){let r=this.app.workspace.getActiveFile();if(!r){new H.Notice(\"错误：未找到活动文件。\")"
+        },
+        {
+          "source": ".setName(\"Base timeout (seconds)\")",
+          "target": ".setName(\"基础超时时间（秒）\")"
+        },
+        {
+          "source": ".setDesc(\"0 - low quality, 99 - high quality, 100 - no compression; 75 - recommended\")",
+          "target": ".setDesc(\"0 - 低质量，99 - 高质量，100 - 无压缩；75 - 推荐\")"
+        },
+        {
+          "source": ".setDesc(\"Define custom path with variables (e.g., {date}, {title})\")",
+          "target": ".setDesc(\"定义带有变量（例如，{日期}，{标题}）的自定义路径。\")"
+        },
+        {
+          "source": ".setDesc(\"Non-destructive resizing in Reading Mode is only visual, thus if it is too distractive you can disable it\")",
+          "target": ".setDesc(\"在阅读模式中的非破坏性调整仅为视觉效果，因此如果它过于分散注意力，您可以禁用它。\")"
+        },
+        {
+          "source": ".setDesc('Show processing status report when multiple images were detected e.g.: When enabled it will show \"Processing 1 of 20\" ')",
+          "target": ".setDesc('检测到多张图片时显示处理状态报告，例如：启用后将显示“正在处理 1/20”。')"
+        },
+        {
+          "source": ".setDesc(\"Select the mode to use when resizing the image. Resizing an image will further reduce file-size, but it will resize your actual file, which means that the original file will be modified, and the changes will be permanent.\")",
+          "target": ".setDesc(\"选择调整图像大小时要使用的模式。调整图像大小将进一步减小文件大小，但它将调整您的实际文件，这意味着原始文件将被修改，更改将是永久性的。\")"
+        },
+        {
+          "source": ".setDesc(\"Selecting this will skip images that already are in the target format. This is useful if you have a very large library, and want to process images in batches.\")",
+          "target": ".setDesc(\"选择此选项将跳过已经是目标格式的图片。如果您有一个非常庞大的图片库，并且希望批量处理图片，这将非常有用。\")"
+        },
+        {
+          "source": "text:\"Below settings allow you to specify how long Obsidian should \t\t\t\t\t\t\t\t\t\t\t\twait before timing-out the image processing. E.g.: when file is extra\t\t\t\t\t\t\t\t\t\t\t\tlarge 100MB+ it might freeze Obsidian - Image Converter will try to do\t\t\t\t\t\t\t\t\t\t\t\tthe best it can to process it - however if it takes too long it will stop\"",
+          "target": "text:\"以下设置允许您指定 Obsidian 在超时图像处理之前应等待的时间。例如：当文件超大 100MB+ 时，它可能会冻结 Obsidian - Image Converter 将尝试尽最大努力处理它 - 但是，如果时间过长，它会停止。\""
+        },
+        {
+          "source": "name:\"Rename\"",
+          "target": "name:\"重命名\""
+        },
+        {
+          "source": "Notice(\"Image plugin disabled\")",
+          "target": "Notice(\"图像插件已禁用\")"
+        },
+        {
+          "source": "Notice(\"Image plugin enabled\")",
+          "target": "Notice(\"图像插件已启用\")"
+        },
+        {
+          "source": "Notice(\"Full image processing resumed\")",
+          "target": "Notice(\"全面图像处理已恢复\")"
+        },
+        {
+          "source": "Notice(\"No processing needed: All vault images are either in skip list or kept in original format with no compression or resizing.\")",
+          "target": "Notice(\"无需处理：所有库图像要么以跳过列表的形式保存，要么以原始格式保存，无需压缩或调整大小。\")"
+        },
+        {
+          "source": "Notice(\"No images found that need processing.\")",
+          "target": "Notice(\"未找到需要处理的图像。\")"
+        },
+        {
+          "source": "Notice(`Successfully processed ${o} images.`)",
+          "target": "Notice(`已成功处理 ${o} 张图像。`)"
+        },
+        {
+          "source": "Notice(\"No active note found.\")",
+          "target": "Notice(\"未找到活动笔记。\")"
+        },
+        {
+          "source": "Notice(\"No images found in the note.\")",
+          "target": "Notice(\"在笔记中找不到图像。\")"
+        },
+        {
+          "source": "Notice(\"No processing needed: All images are either in skip list or kept in original format with no compression or resizing.\")",
+          "target": "Notice(\"无需处理：所有图像要么在跳过列表中，要么以原始格式保存，无需压缩或调整大小。\")"
+        },
+        {
+          "source": "Notice(\"No processing needed: Original format selected with no compression or resizing.\")",
+          "target": "Notice(\"无需处理：选择原始格式，无需压缩或调整大小。\")"
+        },
+        {
+          "source": "Notice(\"Error: Failed to process image.\")",
+          "target": "Notice(\"错误：处理图像失败。\")"
+        },
+        {
+          "source": "Notice(`Error converting image: ${i.message}`)",
+          "target": "Notice(`转换图像时出错: ${i.message}`)"
+        },
+        {
+          "source": "Notice(`Error updating links: ${i.message}`)",
+          "target": "Notice(`更新链接时出错: ${i.message}`)"
+        },
+        {
+          "source": "Notice(\"No active markdown view\")",
+          "target": "Notice(\"没有活动的标记视图\")"
+        },
+        {
+          "source": "Notice(\"No current file found\")",
+          "target": "Notice(\"未找到当前文件\")"
+        },
+        {
+          "source": "Notice(\"No source attribute found\")",
+          "target": "Notice(\"未找到源属性\")"
+        },
+        {
+          "source": "Notice(`Unable to find image: ${f}`)",
+          "target": "Notice(`找不到图像: ${f}`)"
+        },
+        {
+          "source": "Notice(\"Unable to locate image file\")",
+          "target": "Notice(\"无法找到图像文件\")"
+        },
+        {
+          "source": "Notice(\"Error processing image path\")",
+          "target": "Notice(\"处理图像路径时出错\")"
+        },
+        {
+          "source": "Notice(\"Error loading image\")",
+          "target": "Notice(\"加载图像时出错\")"
+        },
+        {
+          "source": "Notice(\"Image saved successfully\")",
+          "target": "Notice(\"图像保存成功\")"
+        },
+        {
+          "source": "Notice(\"Error saving image\")",
+          "target": "Notice(\"保存图像时出错\")"
+        },
+        {
+          "source": "name:\"Enable/Disable all image processing and renaming\"",
+          "target": "name:\"启用/禁用所有图片处理和重命名\""
+        },
+        {
+          "source": "name:\"Pause/Continue image processing (Keep Renaming Active)\"",
+          "target": "name:\"暂停/继续图片处理 (保持重命名激活)\""
+        },
+        {
+          "source": "text:'Below settings allow you to adjust image dimensions using the standard ObsidianMD\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tmethod by modifying image links. For instance, to change the width of ![[Engelbart.jpg]],\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\twe add \"| 100\" at the end, resulting in ![[Engelbart.jpg | 100]]'",
+          "target": "text:'以下设置允许您通过修改图片链接来调整图片尺寸,使用标准的 ObsidianMD 方法。例如,要更改 ![[Engelbart.jpg]] 的宽度,我们在末尾添加 \"| 100\",结果为 ![[Engelbart.jpg | 100]]'"
+        },
+        {
+          "source": "text:\"Convert, compress and resize\"",
+          "target": "text:\"转换、压缩和调整大小\""
+        },
+        {
+          "source": "text:\"Running this will modify all your internal images in the Vault. Please create backups. All internal image links will be automatically updated.\"",
+          "target": "text:\"运行此操作将修改保险库中的所有内部图片。请创建备份。所有内部图片链接将自动更新。\""
+        },
+        {
+          "source": "text:\"⚠️ This will modify all images in the current note. Please ensure you have backups.\"",
+          "target": "text:\"⚠️ 这将修改当前笔记中的所有图片。请确保您已创建备份。\""
+        },
+        {
+          "source": ".setText(`Processing ${i} of ${e}`)",
+          "target": ".setText(`正在处理第 ${i} 项,共 ${e} 项`)"
+        },
+        {
+          "source": ".setName(\"Convert to ⓘ \")",
+          "target": ".setName(\"转换为 ⓘ \")"
+        },
+        {
+          "source": ".setName(\"Quality ⓘ\")",
+          "target": ".setName(\"质量 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Resize Mode ⓘ\")",
+          "target": ".setName(\"调整大小模式 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Enlarge or Reduce ⓘ\")",
+          "target": ".setName(\"放大或缩小 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Resize dimensions\")",
+          "target": ".setName(\"调整尺寸\")"
+        },
+        {
+          "source": ".setName(\"Target size\")",
+          "target": ".setName(\"目标尺寸\")"
+        },
+        {
+          "source": ".setName(\"Allow larger file sizes after conversion ⓘ\")",
+          "target": ".setName(\"允许转换后更大的文件大小 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Skip File Formats ⓘ\")",
+          "target": ".setName(\"跳过文件格式 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Skip images in target format ⓘ\")",
+          "target": ".setName(\"跳过目标格式的图片 ⓘ\")"
+        },
+        {
+          "source": ".setDesc(\"Choose output format for your images\")",
+          "target": ".setDesc(\"选择图片的输出格式\")"
+        },
+        {
+          "source": ".setDesc(\"Compression level (0-100)\")",
+          "target": ".setDesc(\"压缩级别 (0-100)\")"
+        },
+        {
+          "source": ".setDesc(\"Replace - to replace already existing file in the destination with a new file.\\t\\t\\t\\t\\tRename - automatically add '-1, -2 -3 etc.' suffix to the end of file\")",
+          "target": ".setDesc(\"替换 - 用新文件替换目标位置中已存在的文件。\\t\\t\\t\\t\\t重命名 - 自动在文件末尾添加 '-1, -2, -3 等' 后缀\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the default size which should be applied on all dropped/pasted images. For example, if you specify \\t\\t\\t\\t\\t\\t\\tcustom size as '250' then when you drop or paste an 'image.jpg' it would become ![[image.jpg | 250]] \")",
+          "target": ".setDesc(\"指定应应用于所有拖放或粘贴图片的默认尺寸。例如,如果您指定自定义尺寸为 '250',则当您拖放或粘贴 'image.jpg' 时,它将变为 ![[image.jpg | 250]]\")"
+        },
+        {
+          "source": ".addOption(\"front\",\"Front of the link\")",
+          "target": ".addOption(\"front\",\"链接前\")"
+        },
+        {
+          "source": ".addOption(\"back\",\"Back of the link\")",
+          "target": ".addOption(\"back\",\"链接后\")"
+        },
+        {
+          "source": "super(\"\".concat(i,\" 'options.signal' is in 'aborted' state\")",
+          "target": "super(\"\".concat(i,\" 'options.signal' 处于 '已中止' 状态\")"
+        },
+        {
+          "source": "text:\"Below settings allow you to specify how long Obsidian should \\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\twait before timing-out the image processing. E.g.: when file is extra\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tlarge 100MB+ it might freeze Obsidian - Image Converter will try to do\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tthe best it can to process it - however if it takes too long it will stop\"",
+          "target": "text:\"以下设置允许您指定 Obsidian 在超时图像处理之前应等待的时间。例如:当文件超大 100MB+ 时,它可能会冻结 Obsidian - Image Converter 将尝试尽最大努力处理它 - 但是,如果时间过长,它会停止。\""
+        },
+        {
+          "source": ".log(\"====\",_,x)",
+          "target": ".log(\"====\",_,x)"
+        },
+        {
+          "source": ".setPlaceholder(\"800\")",
+          "target": ".setPlaceholder(\"800\")"
+        },
+        {
+          "source": "text:'Below settings allow you to adjust image dimensions using the standard ObsidianMD\t\t\t\t\t\t\t\t\t\t\t\t\tmethod by modifying image links. For instance, to change the width of ![[Engelbart.jpg]],\t\t\t\t\t\t\t\t\t\t\t\t\twe add \"| 100\" at the end, resulting in ![[Engelbart.jpg | 100]]'",
+          "target": "text:'以下设置允许您通过修改图像链接的标准 ObsidianMD 方法来调整图像尺寸。例如，要更改 ![[Engelbart.jpg]] 的宽度，我们在末尾添加\"| 100\"，结果为 ![[Engelbart.jpg | 100]]。'"
+        },
+        {
+          "source": "Notice(`Could not get file stats for: ${i.name}`)",
+          "target": "Notice(`无法获取 ${i.name} 的文件统计信息`)"
+        },
+        {
+          "source": "Notice(`Error processing queue for ${i.name}: ${e.message}`)",
+          "target": "Notice(`处理 ${i.name} 的队列时出错：${e.message}`)"
+        },
+        {
+          "source": "Notice(`Failed to process mobile file ${i.name}`)",
+          "target": "Notice(`无法处理移动文件 ${i.name}`)"
+        },
+        {
+          "source": "Notice(`Error processing images: ${i.message}`)",
+          "target": "Notice(`处理图像时出错: ${i.message}`)"
+        },
+        {
+          "source": "Notice(`Unsupported image format: ${i.extension}`)",
+          "target": "Notice(`不支持的图像格式: ${i.extension}`)"
+        },
+        {
+          "source": "text:`all images in: ${t}.${f}`",
+          "target": "text:`文件夹中的所有图片: ${t}.${f}`"
+        },
+        {
+          "source": ".setText(\"Image Plugin: Disabled ⏸️\")",
+          "target": ".setText(\"图片插件：已禁用 ⏸️\")"
+        },
+        {
+          "source": ".setText(\"Image Plugin: Enabled ▶️\")",
+          "target": ".setText(\"图片插件：已启用 ▶️\")"
+        },
+        {
+          "source": ".setText(\"Image Processing: Paused ⏸️ (Renaming & Non-destructive Resize Only)\")",
+          "target": ".setText(\"图片处理：已暂停 ⏸️(仅重命名和非破坏性调整大小)\")"
+        },
+        {
+          "source": ".setText(\"Image Processing: Active ▶️\")",
+          "target": ".setText(\"图片处理：活跃中 ▶️\")"
+        },
+        {
+          "source": ".setText(`Processing image ${o} of ${A.length}, elapsed time: ${e} seconds`)",
+          "target": ".setText(`正在处理第 ${o} 张图片，共 ${A.length} 张，已用时: ${e} 秒`)"
+        },
+        {
+          "source": ".setText(`Finished processing ${o} images, total time: ${k} seconds`)",
+          "target": ".setText(`已完成处理 ${o} 张图片，总耗时: ${k} 秒`)"
+        },
+        {
+          "source": ".setText(`Processing image ${s} of ${u}, elapsed time: ${e} seconds`)",
+          "target": ".setText(`正在处理第 ${s} 张图片，共 ${u} 张，已用时: ${e} 秒`)"
+        },
+        {
+          "source": ".setText(`Finished processing ${s} images, total time: ${h} seconds`)",
+          "target": ".setText(`已完成处理 ${s} 张图片，总耗时: ${h} 秒`)"
+        },
+        {
+          "source": ".setText(\"Grayscale:\")",
+          "target": ".setText(\"灰度: \")"
+        },
+        {
+          "source": ".setText(\"Palette:\")",
+          "target": ".setText(\"调色板: \")"
+        },
+        {
+          "source": ".setText(\"Dominant:\")",
+          "target": ".setText(\"主导色: \")"
+        },
+        {
+          "source": ".setText(\"Layer:\")",
+          "target": ".setText(\"图层: \")"
+        },
+        {
+          "source": ".setText(\"Size:\")",
+          "target": ".setText(\"大小: \")"
+        },
+        {
+          "source": ".setText(\"Opacity:\")",
+          "target": ".setText(\"不透明度: \")"
+        },
+        {
+          "source": ".setText(\"Blend:\")",
+          "target": ".setText(\"混合: \")"
+        },
+        {
+          "source": ".setDesc(\"Choose how images should be resized. Note: Results are permanent.\")",
+          "target": ".setDesc(\"选择图片应如何调整大小。注意：结果是永久性的。\")"
+        },
+        {
+          "source": ".setDesc(\"Controls how images are adjusted relative to target size:\")",
+          "target": ".setDesc(\"控制图片相对于目标尺寸的调整方式：\")"
+        },
+        {
+          "source": ".setName(\"Resize mode ⓘ\")",
+          "target": ".setName(\"调整大小模式 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Skip patterns ⓘ\")",
+          "target": ".setName(\"跳过模式 ⓘ\")"
+        },
+        {
+          "source": ".setDesc(\"Skip files matching these patterns (comma-separated)\")",
+          "target": ".setDesc(\"跳过匹配这些模式的文件 (逗号分隔)\")"
+        },
+        {
+          "source": "disabled:\"Same as original\"",
+          "target": "disabled:\"与原始文件相同\""
+        },
+        {
+          "source": ".setTooltip(\"Fit: Maintains aspect ratio within dimensions\\nFill: Exactly matches dimensions\\nLongest Edge: Limits the longest side\\nShortest Edge: Limits the shortest side\\nWidth/Height: Constrains single dimension\")",
+          "target": ".setTooltip(\"适应：在尺寸内保持纵横比\\n填充：完全匹配尺寸\\n最长边：限制最长边\\n最短边：限制最短边\\n宽度/高度：限制单个维度\")"
+        },
+        {
+          "source": ".setTooltip(\"Supports multiple pattern types:\\n\\n1. Glob patterns:\\n   *.png, draft-*, test-?.jpg\\n   * = any characters\\n   ? = single character\\n\\n2. Regular expressions:\\n   /pattern/ or r/pattern/ or regex:pattern\\n\\nExamples:\\n *.png (all PNG files)\\n draft-* (files starting with draft-)\\n /^IMG_\\\\d{4}\\\\./ (IMG_ followed by 4 digits)\\n r/\\\\.(jpe?g|png)$/ (files ending in .jpg/.jpeg/.png)\\n regex:^(draft|temp)- (files starting with draft- or temp-)\")",
+          "target": ".setTooltip(\"支持多种模式类型：\\n\\n1. 通配符模式：\\n   *.png, draft-*, test-?.jpg\\n   * = 任意字符\\n   ? = 单个字符\\n\\n2. 正则表达式：\\n   /pattern/ 或 r/pattern/ 或 regex:pattern\\n\\n示例：\\n *.png（所有PNG文件）\\n draft-*（以 draft- 开头的文件）\\n /^IMG_\\\\d{4}\\\\./（以 IMG_ 后跟 4 位数字开头）\\n r/\\\\.(jpe?g|png)$/（以 .jpg/.jpeg/.png 结尾的文件）\\n regex:^(draft|temp)-（以 draft- 或 temp- 开头的文件）\")"
+        },
+        {
+          "source": "text:\"Cache for Image Alignment\"",
+          "target": "text:\"用于图像对齐的缓存\""
+        },
+        {
+          "source": "text:\"Image position cache stores information about image alignments and sizes. Large caches might impact performance.\"",
+          "target": "text:\"图片位置缓存存储有关图片对齐和大小的信息。较大的缓存可能会影响性能。\""
+        },
+        {
+          "source": "text:`Current cache size: ${i.notes} notes, ${i.images} images`",
+          "target": "text:`当前缓存大小: ${i.notes} 条笔记, ${i.images} 张图片`"
+        },
+        {
+          "source": ".setName(\"Clean Cache\")",
+          "target": ".setName(\"清理缓存\")"
+        },
+        {
+          "source": ".setDesc(\"Remove unused entries from the image position cache\")",
+          "target": ".setDesc(\"从图像位置缓存中移除未使用的条目\")"
+        },
+        {
+          "source": ".setName(\"Auto-clean interval (minutes)\")",
+          "target": ".setName(\"自动清理间隔（分钟）\")"
+        },
+        {
+          "source": ".setDesc(\"How often should the cache be automatically cleaned (0 to disable)\")",
+          "target": ".setDesc(\"缓存应该多久清理一次（ 0 为禁用）\")"
+        },
+        {
+          "source": ".setButtonText(\"Clean Now\")",
+          "target": ".setButtonText(\"立即清理\")"
+        }
+      ]
+    }
+  }
+}

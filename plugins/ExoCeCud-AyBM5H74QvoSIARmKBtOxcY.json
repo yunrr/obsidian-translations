@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "pexels-banner",
+    "version": "2.0.0",
+    "title": "Pixel Banner",
+    "description": "Apply an image from various sources as a banner to your notes.",
+    "language": "zh-cn",
+    "supportedVersions": "2.4.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Please enter an API key first\")",
+          "target": "Notice(\"请先输入API密钥\")"
+        },
+        {
+          "source": "Notice(isValid ? \"\\u2705 Pexels API key is valid!\" : \"\\u274C Invalid Pexels API key\")",
+          "target": "Notice(isValid ? \"\\u2705 Pexels API密钥有效！\" : \"\\u274C Pexels API密钥无效\")"
+        },
+        {
+          "source": "Notice(isValid ? \"\\u2705 Pixabay API key is valid!\" : \"\\u274C Invalid Pixabay API key\")",
+          "target": "Notice(isValid ? \"\\u2705 Pixabay API密钥有效！\" : \"\\u274C Pixabay API密钥无效\")"
+        },
+        {
+          "source": "Notice(`\\u{1F9FC} Cleaned ${result.cleaned} orphaned pinned images`)",
+          "target": "Notice(`\\u{1F9FC} Cleaned ${result.cleaned} orphaned pinned images`)"
+        },
+        {
+          "source": "Notice(\"Failed to clean orphaned pins\")",
+          "target": "Notice(\"未能清洁孤立的 pins\")"
+        },
+        {
+          "source": "Notice(\"Field names must be unique!\")",
+          "target": "Notice(\"字段名称必须是唯一的！\")"
+        },
+        {
+          "source": "Notice(\"\\u{1F504} Refreshed banner image\")",
+          "target": "Notice(\"\\u{1F504} 刷新横幅图像\")"
+        },
+        {
+          "source": "Notice(\"\\u{1F62D} Failed to refresh image\")",
+          "target": "Notice(\"\\u{1F62D} 刷新图像失败\")"
+        },
+        {
+          "source": "Notice(\"Pexels API key is not set. Please set it in the plugin settings.\")",
+          "target": "Notice(\"Pexels API密钥未设置。请在插件设置中设置它。\")"
+        },
+        {
+          "source": "Notice(`Failed to fetch image: ${error.message}`)",
+          "target": "Notice(`获取图片失败：${error.message}`)"
+        },
+        {
+          "source": "Notice(\"Pixabay API key is not set. Please set it in the plugin settings.\")",
+          "target": "Notice(\"Pixabay API密钥未设置。请在插件设置中设置它。\")"
+        },
+        {
+          "source": "Notice(\"Failed to fetch an image after multiple attempts, try a different keyword and/or update the backup keyword list in settings.\")",
+          "target": "Notice(\"多次尝试后未能获取图片，尝试使用不同的关键词和/或在设置中更新备份关键词列表。\")"
+        },
+        {
+          "source": "Notice(\"\\u{1F62D} Failed to pin the image.\")",
+          "target": "Notice(\"\\u{1F62D} 固定图像失败。\")"
+        },
+        {
+          "source": "Notice(\"Failed to save image - file not found\")",
+          "target": "Notice(\"保存图像失败-找不到文件\")"
+        },
+        {
+          "source": ".log(`converting ${field} to array`)",
+          "target": ".log(`将 ${field} 转换为数组`)"
+        },
+        {
+          "source": ".log(`setting default value for ${field}`)",
+          "target": ".log(`为 ${field} 设置默认值`)"
+        },
+        {
+          "source": ".log(`No image found for \"${keyword}\". Using image for \"${currentKeyword}\" instead.`)",
+          "target": ".log(`未找到关键词 \"${keyword}\" 的图片。改为使用 \"${currentKeyword}\" 的图片。`)"
+        },
+        {
+          "source": ".log(`No image found for the provided keyword: \"${keyword}\". Trying a random default keyword.`)",
+          "target": ".log(`未找到提供关键词 \"${keyword}\" 的图片。尝试使用随机默认关键词。`)"
+        },
+        {
+          "source": ".log(`No images found for keyword: ${currentKeyword}`)",
+          "target": ".log(`未找到关键词 ${currentKeyword} 的图片`)"
+        },
+        {
+          "source": ".error(\"Error cleaning orphaned pins:\", error)",
+          "target": ".error(\"清洁孤立pins时出错:\", error)"
+        },
+        {
+          "source": ".error(\"Error refreshing image:\", error)",
+          "target": ".error(\"错误刷新图像:\", error)"
+        },
+        {
+          "source": ".error(\"Failed to fetch images:\", response.status, response.text)",
+          "target": ".error(\"获取图片失败：\", response.status, response.text)"
+        },
+        {
+          "source": ".error(`Failed to preload image: ${error.message}`)",
+          "target": ".error(`预加载图片失败：${error.message}`)"
+        },
+        {
+          "source": ".error(`Error fetching image from API for keyword \"${currentKeyword}\":`, error)",
+          "target": ".error(`从API获取关键词 \"${currentKeyword}\" 的图片时出错：`, error)"
+        },
+        {
+          "source": ".error(\"No images found for any keywords, including the random default.\")",
+          "target": ".error(\"没有任何关键词找到图片，包括随机默认值。\")"
+        },
+        {
+          "source": ".error(`Pixabay API error: ${response.status} ${response.statusText}`)",
+          "target": ".error(`Pixabay API错误：${response.status} ${response.statusText}`)"
+        },
+        {
+          "source": ".error(\"Failed to parse Pixabay response:\", error)",
+          "target": ".error(\"解析Pixabay响应失败：\", error)"
+        },
+        {
+          "source": ".error(\"Unexpected response format:\", response)",
+          "target": ".error(\"意外的响应格式：\", response)"
+        },
+        {
+          "source": ".error(\"Error fetching image from Pixabay:\", error)",
+          "target": ".error(\"从Pixabay获取图片出错：\", error)"
+        },
+        {
+          "source": ".error(\"No images found after all attempts\")",
+          "target": ".error(\"所有尝试后未找到图片\")"
+        },
+        {
+          "source": ".error(\"Request failed:\", error)",
+          "target": ".error(\"请求失败：\", error)"
+        },
+        {
+          "source": ".error(\"Error reading vault image:\", error)",
+          "target": ".error(\"读取库图片出错：\", error)"
+        },
+        {
+          "source": ".error(\"Error in cleanOrphanedPins:\", error)",
+          "target": ".error(\"Error in cleanOrphanedPins:\", error)"
+        },
+        {
+          "source": ".error(\"Error pinning image:\", error)",
+          "target": ".error(\"Error pinning image:\", error)"
+        },
+        {
+          "source": ".error(\"\\u274C Failed to resolve valid file path\")",
+          "target": ".error(\"\\u274C  无法解析有效的文件路径\")"
+        },
+        {
+          "source": "name: \"Banner Field Names\"",
+          "target": "name: \"横幅字段名称\""
+        },
+        {
+          "source": "name: \"Y-Position Field Names\"",
+          "target": "name: \"Y位置字段名称\""
+        },
+        {
+          "source": "name: \"Content Start Position Field Names\"",
+          "target": "name: \"内容开始位置字段名称\""
+        },
+        {
+          "source": "name: \"Image Display Field Names\"",
+          "target": "name: \"图片显示字段名称\""
+        },
+        {
+          "source": "name: \"Image Repeat Field Names\"",
+          "target": "name: \"图片重复字段名称\""
+        },
+        {
+          "source": "name: \"Banner Height Field Names\"",
+          "target": "name: \"横幅高度字段名称\""
+        },
+        {
+          "source": "name: \"Fade Field Names\"",
+          "target": "name: \"淡入字段名称\""
+        },
+        {
+          "source": "name: \"Border Radius Field Names\"",
+          "target": "name: \"边框半径字段名称\""
+        },
+        {
+          "source": "name: \"\\u{1F4CC} Pin current banner image\"",
+          "target": "name: \"\\u{1F4CC} 固定当前的横幅图像\""
+        },
+        {
+          "source": "name: \"\\u{1F504} Refresh current banner image\"",
+          "target": "name: \"\\u{1F504} 刷新当前横幅图像\""
+        },
+        {
+          "source": "text: \"y-position\"",
+          "target": "text: \"y位置\""
+        },
+        {
+          "source": "text: \"content start\"",
+          "target": "text: \"内容开始\""
+        },
+        {
+          "source": "text: \"banner height\"",
+          "target": "text: \"横幅高度\""
+        },
+        {
+          "source": "text: \"fade\"",
+          "target": "text: \"淡入\""
+        },
+        {
+          "source": "text: \"border radius\"",
+          "target": "text: \"边框半径\""
+        },
+        {
+          "source": "text: \"Optionally select which API provider to use for fetching images. See the Examples tab for more information on referencing images by URL or local image. You can use any combination of API keyword, URL, or local image between notes.\"",
+          "target": "text: \"可选择使用哪个API提供商来获取图片。有关通过URL或本地图片引用图片的更多信息，请参见示例标签。您可以在笔记之间使用API关键词、URL或本地图片的任何组合。\""
+        },
+        {
+          "source": "text: \"Enter your Pexels API key. Get your API key from \"",
+          "target": "text: \"输入您的Pexels API密钥。从 \""
+        },
+        {
+          "source": "text: \"Pexels API\"",
+          "target": "text: \"Pexels API\""
+        },
+        {
+          "source": "text: \"Enter your Pixabay API key. Get your API key from \"",
+          "target": "text: \"输入您的Pixabay API密钥。从 \""
+        },
+        {
+          "source": "text: \"Pixabay API\"",
+          "target": "text: \"Pixabay API\""
+        },
+        {
+          "source": "text: \"Set the default vertical position of the image, how it should be displayed, and where the content should start. These are global settings and apply to all notes with banners unless overridden by folder or note-specific settings.\"",
+          "target": "text: \"设置图片的默认垂直位置、显示方式以及内容的起始位置。这些是全局设置，适用于所有带有横幅的笔记，除非被文件夹或笔记特定的设置覆盖。\""
+        },
+        {
+          "source": "text: 'Set default banner images for specific folders. These will apply to all notes in the folder unless overridden by note-specific settings. To get started, add a folder image setting and click the \"+ Add Folder Image Setting\" button below.'",
+          "target": "text: '为特定文件夹设置默认横幅图像。这些将应用于文件夹中的所有笔记，除非被特定于笔记的设置覆盖。要开始使用，请添加文件夹图像设置并单击下面的\"+添加文件夹图像设置\"按钮。'"
+        },
+        {
+          "source": "text: \"Add the following fields to your note's frontmatter to customize the banner:\"",
+          "target": "text: \"将以下字段添加到您的笔记的frontmatter中以自定义横幅：\""
+        },
+        {
+          "source": "text: 'Note: The image display options are \"auto\", \"cover\", or \"contain\". The image repeat option is only applicable when the display is set to \"contain\".'",
+          "target": "text: '注意：图片显示选项为“auto”、“cover”或“contain”。图片重复选项仅在显示设置为“contain”时适用。'"
+        },
+        {
+          "source": "text: `Welcome to \\u{1F6A9} Pixel Banner v${this.version}`",
+          "target": "text: `欢迎来到\\u{1F6A9}像素横幅v${this. version}`"
+        },
+        {
+          "source": "text: \"After each update you'll be prompted with the release notes. You can disable this in the plugin settings General tab.\"",
+          "target": "text: \"每次更新后，系统都会提示您发布说明。您可以在插件设置常规选项卡中禁用此功能。\""
+        },
+        {
+          "source": "text: \"Save Banner Image\"",
+          "target": "text: \"保存横幅图像\""
+        },
+        {
+          "source": "text: \"Save\"",
+          "target": "text: \"保存\""
+        },
+        {
+          "source": "text: \"Cancel\"",
+          "target": "text: \"取消\""
+        },
+        {
+          "source": ".setText(\"Choose Folder to save Pinned Banner Image\")",
+          "target": ".setText(\"选择文件夹以保存固定横幅图像\")"
+        },
+        {
+          "source": ".setButtonText(\"Browse\")",
+          "target": ".setButtonText(\"浏览\")"
+        },
+        {
+          "source": ".setButtonText(\"Test API\")",
+          "target": ".setButtonText(\"测试API\")"
+        },
+        {
+          "source": ".setButtonText(\"Testing...\")",
+          "target": ".setButtonText(\"测试中...\")"
+        },
+        {
+          "source": ".setButtonText(\"Clean Orphaned Pins\")",
+          "target": ".setButtonText(\"清理孤立的Pins\")"
+        },
+        {
+          "source": ".setButtonText(\"\\u{1FAE7} Cleaning...\")",
+          "target": ".setButtonText(\"\\u{1FAE7} 清理中...\")"
+        },
+        {
+          "source": ".setButtonText(\"+ Add Folder Image Setting\")",
+          "target": ".setButtonText(\"+ 添加文件夹图片设置\")"
+        },
+        {
+          "source": ".setButtonText(\"Close\")",
+          "target": ".setButtonText(\"关闭\")"
+        },
+        {
+          "source": ".setName(\"folder path\")",
+          "target": ".setName(\"文件夹路径\")"
+        },
+        {
+          "source": ".setName(\"image url or keyword\")",
+          "target": ".setName(\"图片URL或关键词\")"
+        },
+        {
+          "source": ".setName(\"image display\")",
+          "target": ".setName(\"图片显示\")"
+        },
+        {
+          "source": ".setName(\"repeat\")",
+          "target": ".setName(\"重复\")"
+        },
+        {
+          "source": ".setName(\"Direct Children Only\")",
+          "target": ".setName(\"仅直接子文件夹\")"
+        },
+        {
+          "source": ".setName(\"API Provider\")",
+          "target": ".setName(\"API提供商\")"
+        },
+        {
+          "source": ".setName(\"Images\")",
+          "target": ".setName(\"图片\")"
+        },
+        {
+          "source": ".setName(\"Show Pin Icon\")",
+          "target": ".setName(\"显示 Pin 图标\")"
+        },
+        {
+          "source": ".setName(\"Pinned Images Folder\")",
+          "target": ".setName(\"Pinn的图片文件\")"
+        },
+        {
+          "source": ".setName(\"Show Refresh Icon\")",
+          "target": ".setName(\"显示刷新图标\")"
+        },
+        {
+          "source": ".setName(\"Size\")",
+          "target": ".setName(\"大小\")"
+        },
+        {
+          "source": ".setName(\"Orientation\")",
+          "target": ".setName(\"方向\")"
+        },
+        {
+          "source": ".setName(\"Number of images\")",
+          "target": ".setName(\"图片数量\")"
+        },
+        {
+          "source": ".setName(\"Default keywords\")",
+          "target": ".setName(\"默认关键词\")"
+        },
+        {
+          "source": ".setName(\"Image Vertical Position\")",
+          "target": ".setName(\"图片垂直位置\")"
+        },
+        {
+          "source": ".setName(\"Content Start Position\")",
+          "target": ".setName(\"内容开始位置\")"
+        },
+        {
+          "source": ".setName(\"Image Display\")",
+          "target": ".setName(\"图片显示\")"
+        },
+        {
+          "source": ".setName(\"Image Repeat\")",
+          "target": ".setName(\"图片重复\")"
+        },
+        {
+          "source": ".setName(\"Banner Height\")",
+          "target": ".setName(\"横幅高度\")"
+        },
+        {
+          "source": ".setName(\"Banner Fade\")",
+          "target": ".setName(\"横幅淡出\")"
+        },
+        {
+          "source": ".setName(\"Border Radius\")",
+          "target": ".setName(\"边框半径\")"
+        },
+        {
+          "source": ".setName(\"Show Release Notes\")",
+          "target": ".setName(\"显示发行说明\")"
+        },
+        {
+          "source": ".setName(\"How to use\")",
+          "target": ".setName(\"如何使用\")"
+        },
+        {
+          "source": ".setDesc(\"Apply banner only to direct children of the folder\")",
+          "target": ".setDesc(\"仅对文件夹的直接子文件夹应用横幅\")"
+        },
+        {
+          "source": ".setDesc(\"Select the API provider for fetching images\")",
+          "target": ".setDesc(\"选择获取图片的API提供商\")"
+        },
+        {
+          "source": ".setDesc(\"Configure settings for images fetched from API. These settings apply when using keywords to fetch random images.\")",
+          "target": ".setDesc(\"配置从API获取的图片设置。这些设置适用于使用关键词获取随机图片时。\")"
+        },
+        {
+          "source": ".setDesc(\"Show a pin icon on random banner images that allows saving them to your vault. Once pinned, your frontmatter will be updated to use the local image instead of the API image.\")",
+          "target": ".setDesc(\"在随机横幅图像上显示一个大头针图标，允许将它们保存到您的保管库。固定后，您的前端将更新为使用本地图像而不是API图像。\")"
+        },
+        {
+          "source": ".setDesc(\"Default folder where pinned banner images will be saved\")",
+          "target": ".setDesc(\"将保存固定横幅图像的默认文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Show a refresh icon next to the pin icon to get a new random image\")",
+          "target": ".setDesc(\"在pin图标旁边显示刷新图标以获取新的随机图像\")"
+        },
+        {
+          "source": ".setDesc(\"Select the size of the image - (API only)\")",
+          "target": ".setDesc(\"选择图片的大小 - (仅限API)\")"
+        },
+        {
+          "source": ".setDesc(\"Select the orientation of the image - (API only)\")",
+          "target": ".setDesc(\"选择图片的方向 - (仅限API)\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the number of random images to fetch (3-50) - (API only)\")",
+          "target": ".setDesc(\"输入要获取的随机图片数量 (3-50) - (仅限API)\")"
+        },
+        {
+          "source": ".setDesc(\"Enter a comma-separated list of default keywords to be used when no keyword is provided in the frontmatter, or when the provided keyword does not return any results. - (API only)\")",
+          "target": ".setDesc(\"输入默认关键词列表，使用逗号分隔，当在frontmatter中未提供关键词，或提供的关键词没有返回任何结果时使用。- (仅限API)\")"
+        },
+        {
+          "source": ".setDesc(\"Set the vertical position of the image (0-100)\")",
+          "target": ".setDesc(\"设置图片的垂直位置 (0-100)\")"
+        },
+        {
+          "source": ".setDesc(\"Set the default vertical position where the content starts (in pixels)\")",
+          "target": ".setDesc(\"设置内容开始的默认垂直位置(以像素为单位)\")"
+        },
+        {
+          "source": ".setDesc(\"Set how the banner image should be displayed\")",
+          "target": ".setDesc(\"设置横幅图片的显示方式\")"
+        },
+        {
+          "source": ".setDesc('Enable image repetition when \"Contain\" is selected')",
+          "target": ".setDesc('当选择\"Contain\"时启用图片重复')"
+        },
+        {
+          "source": ".setDesc(\"Set the default height of the banner image (100-2500 pixels)\")",
+          "target": ".setDesc(\"设置横幅图片的默认高度 (100-2500像素)\")"
+        },
+        {
+          "source": ".setDesc(\"Set the default fade effect for the banner image (-1500 to 100)\")",
+          "target": ".setDesc(\"设置横幅图片的默认淡出效果 (-1500至100)\")"
+        },
+        {
+          "source": ".setDesc(\"Set the default border radius of the banner image (0-50 pixels)\")",
+          "target": ".setDesc(\"设置横幅图片的默认边框半径 (0-50像素)\")"
+        },
+        {
+          "source": ".setDesc(\"Show release notes after plugin updates\")",
+          "target": ".setDesc(\"插件更新后显示发行说明\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter keywords, separated by commas\")",
+          "target": ".setPlaceholder(\"输入关键词，用逗号分隔\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Select or type folder path to save Pinned Banner Image\")",
+          "target": ".setPlaceholder(\"选择或键入文件夹路径以保存固定横幅图像\")"
+        },
+        {
+          "source": ".setTooltip(\"Remove pinned images from the default folder that are no longer referenced in Notes\")",
+          "target": ".setTooltip(\"从Notes中不再引用的默认文件夹中删除固定图像\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset to default\")",
+          "target": ".setTooltip(\"重置为默认值\")"
+        },
+        {
+          "source": ".addOption(\"auto\", \"Auto\")",
+          "target": ".addOption(\"auto\", \"Auto\")"
+        },
+        {
+          "source": ".addOption(\"cover\", \"Cover\")",
+          "target": ".addOption(\"cover\", \"Cover\")"
+        },
+        {
+          "source": ".addOption(\"contain\", \"Contain\")",
+          "target": ".addOption(\"contain\", \"Contain\")"
+        },
+        {
+          "source": ".addOption(\"pexels\", \"Pexels\")",
+          "target": ".addOption(\"pexels\", \"Pexels\")"
+        },
+        {
+          "source": ".addOption(\"pixabay\", \"Pixabay\")",
+          "target": ".addOption(\"pixabay\", \"Pixabay\")"
+        },
+        {
+          "source": ".addOption(\"small\", \"Small\")",
+          "target": ".addOption(\"small\", \"Small\")"
+        },
+        {
+          "source": ".addOption(\"medium\", \"Medium\")",
+          "target": ".addOption(\"medium\", \"Medium\")"
+        },
+        {
+          "source": ".addOption(\"large\", \"Large\")",
+          "target": ".addOption(\"large\", \"Large\")"
+        },
+        {
+          "source": ".addOption(\"landscape\", \"Landscape\")",
+          "target": ".addOption(\"landscape\", \"Landscape\")"
+        },
+        {
+          "source": ".addOption(\"portrait\", \"Portrait\")",
+          "target": ".addOption(\"portrait\", \"Portrait\")"
+        },
+        {
+          "source": ".addOption(\"square\", \"Square\")",
+          "target": ".addOption(\"square\", \"Square\")"
+        },
+        {
+          "source": "text: 'Customize the frontmatter field names used for the banner and Y-position. You can define multiple names for each field, separated by commas. Field names can only contain letters, numbers, dashes, and underscores. Example: \"banner, pixel-banner, header_image\" could all be used as the banner field name.'",
+          "target": "text: '自定义横幅和Y位置使用的frontmatter字段名称。您可以为每个字段定义多个名称，用逗号分隔。字段名称只能包含字母、数字、破折号和下划线。示例：“banner, pixel-banner, header_image”都可以用作横幅字段名称。'"
+        },
+        {
+          "source": "text: \"Set default banner images for specific folders. These will apply to all notes in the folder unless overridden by note-specific settings.\"",
+          "target": "text: \"为特定文件夹设置默认横幅图片。除非被笔记特定的设置覆盖，否则这些将适用于文件夹中的所有笔记。\""
+        },
+        {
+          "source": "desc: \"Set custom field names for the banner in frontmatter (comma-separated)\"",
+          "target": "desc: \"在frontmatter中设置横幅的自定义字段名称(用逗号分隔)\""
+        },
+        {
+          "source": "desc: \"Set custom field names for the Y-position in frontmatter (comma-separated)\"",
+          "target": "desc: \"在frontmatter中设置Y位置的自定义字段名称(用逗号分隔)\""
+        },
+        {
+          "source": "desc: \"Set custom field names for the content start position in frontmatter (comma-separated)\"",
+          "target": "desc: \"在frontmatter中设置内容开始位置的自定义字段名称(用逗号分隔)\""
+        },
+        {
+          "source": "desc: \"Set custom field names for the image display in frontmatter (comma-separated)\"",
+          "target": "desc: \"在frontmatter中设置图片显示的自定义字段名称(用逗号分隔)\""
+        },
+        {
+          "source": "desc: \"Set custom field names for the image repeat in frontmatter (comma-separated)\"",
+          "target": "desc: \"在frontmatter中设置图片重复的自定义字段名称(用逗号分隔)\""
+        },
+        {
+          "source": "desc: \"Set custom field names for the banner height in frontmatter (comma-separated)\"",
+          "target": "desc: \"在frontmatter中设置横幅高度的自定义字段名称(用逗号分隔)\""
+        },
+        {
+          "source": "desc: \"Set custom field names for the fade effect in frontmatter (comma-separated)\"",
+          "target": "desc: \"在frontmatter中设置淡入效果的自定义字段名称(用逗号分隔)\""
+        },
+        {
+          "source": "desc: \"Set custom field names for the border radius in frontmatter (comma-separated)\"",
+          "target": "desc: \"在frontmatter中设置边框半径的自定义字段名称(用逗号分隔)\""
+        },
+        {
+          "source": "\"API Settings\"",
+          "target": "\"API设置\""
+        },
+        {
+          "source": "\"General\"",
+          "target": "\"常规\""
+        },
+        {
+          "source": "\"Custom Field Names\"",
+          "target": "\"自定义字段名称\""
+        },
+        {
+          "source": "\"Folder Images\"",
+          "target": "\"文件夹图片\""
+        },
+        {
+          "source": "\"Examples\"",
+          "target": "\"示例\""
+        },
+        {
+          "source": "\"Small\"",
+          "target": "\"小型\""
+        },
+        {
+          "source": "\"Medium\"",
+          "target": "\"中型\""
+        },
+        {
+          "source": "\"Large\"",
+          "target": "\"大型\""
+        },
+        {
+          "source": "\"Landscape\"",
+          "target": "\"风景\""
+        },
+        {
+          "source": "\"Portrait\"",
+          "target": "\"肖像\""
+        },
+        {
+          "source": "\"Square\"",
+          "target": "\"正方形\""
+        },
+        {
+          "source": "\"Auto\"",
+          "target": "\"自动\""
+        },
+        {
+          "source": "\"Cover\"",
+          "target": "\"覆盖\""
+        },
+        {
+          "source": "\"Contain\"",
+          "target": "\"包含\""
+        },
+        {
+          "source": "Notice(isValid ? \"\\u2705 Flickr API key is valid!\" : \"\\u274C Invalid Flickr API key\")",
+          "target": "Notice(isValid ? \"\\u2705 Flickr API key is valid!\" : \"\\u274C Invalid Flickr API key\")"
+        },
+        {
+          "source": "Notice(isValid ? \"\\u2705 Unsplash API key is valid!\" : \"\\u274C Invalid Unsplash API key\")",
+          "target": "Notice(isValid ? \"\\u2705 Unsplash API key is valid!\" : \"\\u274C Invalid Unsplash API key\")"
+        },
+        {
+          "source": "Notice(validation.message)",
+          "target": "Notice(validation.message)"
+        },
+        {
+          "source": "Notice(\"Flickr API key is not set. Please set it in the plugin settings.\")",
+          "target": "Notice(\"Flickr API key is not set. Please set it in the plugin settings.\")"
+        },
+        {
+          "source": "Notice(\"Failed to fetch an image after multiple attempts\")",
+          "target": "Notice(\"Failed to fetch an image after multiple attempts\")"
+        },
+        {
+          "source": "Notice(\"Unsplash API key is not set. Please set it in the plugin settings.\")",
+          "target": "Notice(\"Unsplash API key is not set. Please set it in the plugin settings.\")"
+        },
+        {
+          "source": ".error(`Flickr API error: ${response.status} ${response.statusText}`)",
+          "target": ".error(`Flickr API error: ${response.status} ${response.statusText}`)"
+        },
+        {
+          "source": ".error(\"Flickr API error:\", data)",
+          "target": ".error(\"Flickr API error:\", data)"
+        },
+        {
+          "source": ".error(\"Error fetching image from Flickr:\", error)",
+          "target": ".error(\"Error fetching image from Flickr:\", error)"
+        },
+        {
+          "source": ".error(`Unsplash API error: ${response.status}`)",
+          "target": ".error(`Unsplash API error: ${response.status}`)"
+        },
+        {
+          "source": ".error(\"Error fetching image from Unsplash:\", error)",
+          "target": ".error(\"Error fetching image from Unsplash:\", error)"
+        },
+        {
+          "source": "text: \"Enter your Flickr API key. Get your API key from \"",
+          "target": "text: \"输入你的 Flickr API 密钥。从…… 获取你的 API 密钥 \""
+        },
+        {
+          "source": "text: \"Flickr API\"",
+          "target": "text: \"Flickr API\""
+        },
+        {
+          "source": "text: \"Enter your Unsplash API key (Access Key). Get your API key from \"",
+          "target": "text: \"输入你的 Unsplash API 密钥（访问密钥）。从…… 获取你的 API 密钥\""
+        },
+        {
+          "source": "text: \"Unsplash API\"",
+          "target": "text: \"Unsplash API\""
+        },
+        {
+          "source": ".setName(\"Flickr API Key\")",
+          "target": ".setName(\"Flickr API Key\")"
+        },
+        {
+          "source": ".setName(\"Unsplash API Key\")",
+          "target": ".setName(\"Unsplash API Key\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Flickr API key\")",
+          "target": ".setPlaceholder(\"Flickr API key\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Unsplash API key\")",
+          "target": ".setPlaceholder(\"Unsplash API key\")"
+        },
+        {
+          "source": ".setPlaceholder(\"pixel-banner-images\")",
+          "target": ".setPlaceholder(\"pixel-banner-images\")"
+        },
+        {
+          "source": ".setPlaceholder(\"10\")",
+          "target": ".setPlaceholder(\"10\")"
+        },
+        {
+          "source": ".setPlaceholder(\"150\")",
+          "target": ".setPlaceholder(\"150\")"
+        },
+        {
+          "source": ".setPlaceholder(\"350\")",
+          "target": ".setPlaceholder(\"350\")"
+        },
+        {
+          "source": ".setPlaceholder(\"17\")",
+          "target": ".setPlaceholder(\"17\")"
+        },
+        {
+          "source": ".addOption(\"all\", \"All (Random)\")",
+          "target": ".addOption(\"all\", \"All (Random)\")"
+        },
+        {
+          "source": ".addOption(\"flickr\", \"Flickr\")",
+          "target": ".addOption(\"flickr\", \"Flickr\")"
+        },
+        {
+          "source": ".addOption(\"unsplash\", \"Unsplash\")",
+          "target": ".addOption(\"unsplash\", \"Unsplash\")"
+        }
+      ]
+    }
+  }
+}
