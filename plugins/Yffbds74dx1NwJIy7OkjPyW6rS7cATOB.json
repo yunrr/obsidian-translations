@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-day-planner",
+    "version": "2.0.0",
+    "title": "Day Planner",
+    "description": "A day planner with clean UI and readable syntax",
+    "language": "zh-cn",
+    "supportedVersions": "0.24.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Failed to read the daily note template\")",
+          "target": "Notice(\"读取每日便条模板失败\")"
+        },
+        {
+          "source": "Notice(\"Unable to create new file.\")",
+          "target": "Notice(\"无法创建新文件.\")"
+        },
+        {
+          "source": "Notice((n==null?void 0:n.message)",
+          "target": "Notice((n==null?void 0:n.message)"
+        },
+        {
+          "source": "Notice(`Could not read daily notes. Reason: ${t}`)",
+          "target": "Notice(`无法读取每日笔记. Reason: ${t}`)"
+        },
+        {
+          "source": "Notice(\"There is no list under cursor\")",
+          "target": "Notice(\"光标下没有列表\")"
+        },
+        {
+          "source": ".log(e)",
+          "target": ".log(e)"
+        },
+        {
+          "source": ".error(`Failed to read the daily note template '${o}'`,M)",
+          "target": ".error(`读取每日便条模板失败 '${o}'`,M)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${u}'`,l)",
+          "target": ".error(`创建文件失败: '${u}'`,l)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${a}'`,s)",
+          "target": ".error(`创建文件失败: '${a}'`,s)"
+        },
+        {
+          "source": ".error(n)",
+          "target": ".error(n)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(C)",
+          "target": ".error(C)"
+        },
+        {
+          "source": ".error(R)",
+          "target": ".error(R)"
+        },
+        {
+          "source": ".error(\"Failed to render markdown. \",M)",
+          "target": ".error(\"渲染 markdown 失败. \",M)"
+        },
+        {
+          "source": "name:\"wrapper\"",
+          "target": "name:\"wrapper\""
+        },
+        {
+          "source": "name:\"attention\"",
+          "target": "name:\"attention\""
+        },
+        {
+          "source": "name:\"autolink\"",
+          "target": "name:\"autolink\""
+        },
+        {
+          "source": "name:\"blockQuote\"",
+          "target": "name:\"blockQuote\""
+        },
+        {
+          "source": "name:\"characterEscape\"",
+          "target": "name:\"characterEscape\""
+        },
+        {
+          "source": "name:\"characterReference\"",
+          "target": "name:\"characterReference\""
+        },
+        {
+          "source": "name:\"codeFenced\"",
+          "target": "name:\"codeFenced\""
+        },
+        {
+          "source": "name:\"codeIndented\"",
+          "target": "name:\"codeIndented\""
+        },
+        {
+          "source": "name:\"codeText\"",
+          "target": "name:\"codeText\""
+        },
+        {
+          "source": "name:\"definition\"",
+          "target": "name:\"definition\""
+        },
+        {
+          "source": "name:\"hardBreakEscape\"",
+          "target": "name:\"hardBreakEscape\""
+        },
+        {
+          "source": "name:\"headingAtx\"",
+          "target": "name:\"headingAtx\""
+        },
+        {
+          "source": "name:\"htmlFlow\"",
+          "target": "name:\"htmlFlow\""
+        },
+        {
+          "source": "name:\"htmlText\"",
+          "target": "name:\"htmlText\""
+        },
+        {
+          "source": "name:\"labelEnd\"",
+          "target": "name:\"labelEnd\""
+        },
+        {
+          "source": "name:\"labelStartImage\"",
+          "target": "name:\"labelStartImage\""
+        },
+        {
+          "source": "name:\"labelStartLink\"",
+          "target": "name:\"labelStartLink\""
+        },
+        {
+          "source": "name:\"lineEnding\"",
+          "target": "name:\"lineEnding\""
+        },
+        {
+          "source": "name:\"thematicBreak\"",
+          "target": "name:\"thematicBreak\""
+        },
+        {
+          "source": "name:\"list\"",
+          "target": "name:\"list\""
+        },
+        {
+          "source": "name:\"setextUnderline\"",
+          "target": "name:\"setextUnderline\""
+        },
+        {
+          "source": "name:\"\",email:\"",
+          "target": "name:\"\",email:\""
+        },
+        {
+          "source": "name:\"arrow-down-to-line\"",
+          "target": "name:\"arrow-down-to-line\""
+        },
+        {
+          "source": "name:\"arrow-left-to-line\"",
+          "target": "name:\"arrow-left-to-line\""
+        },
+        {
+          "source": "name:\"arrow-left\"",
+          "target": "name:\"arrow-left\""
+        },
+        {
+          "source": "name:\"arrow-right-to-line\"",
+          "target": "name:\"arrow-right-to-line\""
+        },
+        {
+          "source": "name:\"arrow-right\"",
+          "target": "name:\"arrow-right\""
+        },
+        {
+          "source": "name:\"circle-dot\"",
+          "target": "name:\"circle-dot\""
+        },
+        {
+          "source": "name:\"copy\"",
+          "target": "name:\"copy\""
+        },
+        {
+          "source": "name:\"file-input\"",
+          "target": "name:\"file-input\""
+        },
+        {
+          "source": "name:\"filter-x\"",
+          "target": "name:\"filter-x\""
+        },
+        {
+          "source": "name:\"filter\"",
+          "target": "name:\"filter\""
+        },
+        {
+          "source": "name:\"fold-vertical\"",
+          "target": "name:\"fold-vertical\""
+        },
+        {
+          "source": "name:\"grip-vertical\"",
+          "target": "name:\"grip-vertical\""
+        },
+        {
+          "source": "name:\"info\"",
+          "target": "name:\"info\""
+        },
+        {
+          "source": "name:\"move-vertical\"",
+          "target": "name:\"move-vertical\""
+        },
+        {
+          "source": "name:\"refresh-cw-off\"",
+          "target": "name:\"refresh-cw-off\""
+        },
+        {
+          "source": "name:\"refresh-cw\"",
+          "target": "name:\"refresh-cw\""
+        },
+        {
+          "source": "name:\"settings\"",
+          "target": "name:\"settings\""
+        },
+        {
+          "source": "name:\"table-2\"",
+          "target": "name:\"table-2\""
+        },
+        {
+          "source": "name:\"triangle-alert\"",
+          "target": "name:\"triangle-alert\""
+        },
+        {
+          "source": "name:\"x\"",
+          "target": "name:\"x\""
+        },
+        {
+          "source": "name:\"offset\"",
+          "target": "name:\"offset\""
+        },
+        {
+          "source": "name: \"+e)};R1.autodetect.push({p:5,test:(e,...t)=>{if(!t.length&&B1(e)===\"",
+          "target": "name: \"+e)};R1.autodetect.push({p:5,test:(e,...t)=>{if(!t.length&&B1(e)===\""
+        },
+        {
+          "source": "name:\"/\"",
+          "target": "name:\"/\""
+        },
+        {
+          "source": "name:\"Anno Domini\"",
+          "target": "name:\"Anno Domini\""
+        },
+        {
+          "source": "name:\"Before Christ\"",
+          "target": "name:\"Before\""
+        },
+        {
+          "source": "name:\"RRULE\"",
+          "target": "name:\"RRULE\""
+        },
+        {
+          "source": "name:\"Show timeline\"",
+          "target": "name:\"Show timeline\""
+        },
+        {
+          "source": "name:\"Show week planner\"",
+          "target": "name:\"Show week planner\""
+        },
+        {
+          "source": "name:\"Open today's Day Planner\"",
+          "target": "name:\"Open today's Day Planner\""
+        },
+        {
+          "source": "name:\"Insert Planner Heading at Cursor\"",
+          "target": "name:\"Insert Planner Heading at Cursor\""
+        },
+        {
+          "source": "name:\"Sort tasks under cursor by time\"",
+          "target": "name:\"Sort tasks under cursor by time\""
+        },
+        {
+          "source": "name:\"Re-sync tasks\"",
+          "target": "name:\"Re-sync tasks\""
+        },
+        {
+          "source": "text:`${e.text.trimEnd()}\n${IX()}`",
+          "target": "text:`${e.text.trimEnd()}\n${IX()}`"
+        },
+        {
+          "source": "text:`${tk(mz(e.text),t)}\n${em(e.text)}`",
+          "target": "text:`${tk(mz(e.text),t)}\n${em(e.text)}`"
+        },
+        {
+          "source": "text:\"New item\"",
+          "target": "text:\"新项目\""
+        },
+        {
+          "source": "text:`${tm(mz(e.text))}\n${j9(em(e.text)).trimStart()}`",
+          "target": "text:`${tm(mz(e.text))}\n${j9(em(e.text)).trimStart()}`"
+        },
+        {
+          "source": "text:\"Never mind\"",
+          "target": "text:\"不必在意\""
+        },
+        {
+          "source": "text:\"Remote calendars\"",
+          "target": "text:\"远程日历\""
+        },
+        {
+          "source": "text:`Calendar ${o+1}`",
+          "target": "text:`Calendar ${o+1}`"
+        },
+        {
+          "source": "text:\"Date & Time Formats\"",
+          "target": "text:\"日期和时间格式\""
+        },
+        {
+          "source": "text:\"format reference\"",
+          "target": "text:\"格式参考\""
+        },
+        {
+          "source": "text:\"Planner Heading\"",
+          "target": "text:\"计划表标题\""
+        },
+        {
+          "source": "text:\"Status bar widget\"",
+          "target": "text:\"状态栏小组件\""
+        },
+        {
+          "source": "text:\"Task decoration\"",
+          "target": "text:\"任务装饰\""
+        },
+        {
+          "source": "text:\"Duration\"",
+          "target": "text:\"持续时间\""
+        },
+        {
+          "source": "text:\"Color blocking\"",
+          "target": "text:\"色块\""
+        },
+        {
+          "source": "text:\"Define a background color for a block containing some text (it might be a tag, like '#important'). The first color is for light mode, the second is for dark mode.\"",
+          "target": "text:\"为包含某些文本（可能是标签，如 '#important'）的块定义背景色。第一种颜色用于浅色模式，第二种用于深色模式.\""
+        },
+        {
+          "source": "text:\"#important\"",
+          "target": "text:\"#important\""
+        },
+        {
+          "source": "text:\"Colorful Timeline\"",
+          "target": "text:\"多彩时间轴\""
+        },
+        {
+          "source": ".setButtonText(`Delete calendar ${o+1}`)",
+          "target": ".setButtonText(`删除日历 ${o+1}`)"
+        },
+        {
+          "source": ".setButtonText(\"Add remote calendar\")",
+          "target": ".setButtonText(\"添加远程日历\")"
+        },
+        {
+          "source": ".setButtonText(\"Add color override\")",
+          "target": ".setButtonText(\"添加颜色覆盖\")"
+        },
+        {
+          "source": ".setName(\"Show release notes after update\")",
+          "target": ".setName(\"更新后显示发布说明\")"
+        },
+        {
+          "source": ".setName(\"Event format on creation\")",
+          "target": ".setName(\"创建时的事件格式\")"
+        },
+        {
+          "source": ".setName(\"Default task status on creation\")",
+          "target": ".setName(\"创建时的默认任务状态\")"
+        },
+        {
+          "source": ".setName(\"Round time to minutes\")",
+          "target": ".setName(\"将时间四舍五入到分钟\")"
+        },
+        {
+          "source": ".setName(\"Task Notification\")",
+          "target": ".setName(\"任务通知\")"
+        },
+        {
+          "source": ".setName(\"Timeline Zoom Level\")",
+          "target": ".setName(\"时间轴线缩放级别\")"
+        },
+        {
+          "source": ".setName(\"Timeline Icon\")",
+          "target": ".setName(\"时间轴图标\")"
+        },
+        {
+          "source": ".setName(\"Start Hour\")",
+          "target": ".setName(\"开始时间\")"
+        },
+        {
+          "source": ".setName(\"Center the Pointer in the Timeline View\")",
+          "target": ".setName(\"在时间轴视图中将指针居中\")"
+        },
+        {
+          "source": ".setName(\"Sort tasks in planner chronologically after edits\")",
+          "target": ".setName(\"编辑后按时间顺序排列计划表中的任务\")"
+        },
+        {
+          "source": ".setName(\"Mark calendar with color\")",
+          "target": ".setName(\"用颜色标记日历\")"
+        },
+        {
+          "source": ".setName(\"Prepend this text to events from this calendar\")",
+          "target": ".setName(\"将此文本添加到此日历中的事件\")"
+        },
+        {
+          "source": ".setName(\"Your email address, used to show 'tentative'/'needs action'/'declined' marker\")",
+          "target": ".setName(\"您的电子邮件地址，用于显示 ‘tentative'/'needs action'/'declined’ 标记\")"
+        },
+        {
+          "source": ".setName(\"Remote calendar URL\")",
+          "target": ".setName(\"远程日历 URL\")"
+        },
+        {
+          "source": ".setName(\"Hour format\")",
+          "target": ".setName(\"小时格式\")"
+        },
+        {
+          "source": ".setName(\"Default timestamp format\")",
+          "target": ".setName(\"默认时间戳格式\")"
+        },
+        {
+          "source": ".setName(\"Date Format in Timeline Header\")",
+          "target": ".setName(\"时间线标题中的日期格式\")"
+        },
+        {
+          "source": ".setName(\"Planner Heading Text\")",
+          "target": ".setName(\"计划者标题文本\")"
+        },
+        {
+          "source": ".setName(\"Planner heading level\")",
+          "target": ".setName(\"计划者标题级别\")"
+        },
+        {
+          "source": ".setName(\"Show active task\")",
+          "target": ".setName(\"显示当前任务\")"
+        },
+        {
+          "source": ".setName(\"Show upcoming task\")",
+          "target": ".setName(\"显示即将执行的任务\")"
+        },
+        {
+          "source": ".setName(\"Current task progress indicator\")",
+          "target": ".setName(\"当前任务进度指标\")"
+        },
+        {
+          "source": ".setName(\"Show a timestamp next to task text in timeline\")",
+          "target": ".setName(\"在时间轴中的任务文本旁显示时间戳\")"
+        },
+        {
+          "source": ".setName(\"Stretch task until next one in timeline if it has no end time\")",
+          "target": ".setName(\"如果任务没有结束时间，则将其延展至时间线中的下一个任务\")"
+        },
+        {
+          "source": ".setName(\"Default task duration\")",
+          "target": ".setName(\"默认任务持续时间\")"
+        },
+        {
+          "source": ".setName(\"Minimal task duration\")",
+          "target": ".setName(\"任务最短持续时间\")"
+        },
+        {
+          "source": ".setName(`Color ${o+1}`)",
+          "target": ".setName(`Color ${o+1}`)"
+        },
+        {
+          "source": ".setName(\"Enable Colorful Timeline\")",
+          "target": ".setName(\"启用多彩时间线\")"
+        },
+        {
+          "source": ".setName(\"Colorful Timeline - Start Color\")",
+          "target": ".setName(\"彩色时间轴 - 起始颜色\")"
+        },
+        {
+          "source": ".setName(\"Colorful Timeline - End Color\")",
+          "target": ".setName(\"多彩时间轴 - 结束颜色\")"
+        },
+        {
+          "source": ".setDesc(\"You can use custom statuses for more advanced workflows. E.g.: '- [>] Task'\")",
+          "target": ".setDesc(\"您可以使用自定义状态来实现更高级的工作流程. E.g.: '- [>] Task'\")"
+        },
+        {
+          "source": ".setDesc(\"While editing, tasks are going to get rounded to this number\")",
+          "target": ".setDesc(\"在编辑时，任务会被四舍五入到这个数字中\")"
+        },
+        {
+          "source": ".setDesc(\"Display a notification when a new task is started\")",
+          "target": ".setDesc(\"启动新任务时显示通知\")"
+        },
+        {
+          "source": ".setDesc(\"The zoom level to display the timeline. The higher the number, the more vertical space each task will take up.\")",
+          "target": ".setDesc(\"显示时间线的缩放级别。数字越大，每个任务占用的垂直空间就越大.\")"
+        },
+        {
+          "source": ".setDesc(\"The icon of the timeline pane. Reopen timeline pane or restart obsidian to see the change.\")",
+          "target": ".setDesc(\"时间线窗格的图标。重新打开时间线窗格或重启 obsidian 以查看变化.\")"
+        },
+        {
+          "source": ".setDesc(\"The planner is going to start at this hour each day\")",
+          "target": ".setDesc(\"计划器将在每天的这个时间开始工作\")"
+        },
+        {
+          "source": ".setDesc(\"Should the pointer continuously get scrolled to the center of the view\")",
+          "target": ".setDesc(\"指针是否应持续滚动到视图中心\")"
+        },
+        {
+          "source": ".setDesc(\"When you create a planner, this text is going to be in the heading\")",
+          "target": ".setDesc(\"创建计划表时，标题中将出现这段文字\")"
+        },
+        {
+          "source": ".setDesc(\"When you create a planner in a file, this level of heading is going to be used\")",
+          "target": ".setDesc(\"在文件中创建计划表时，将使用这一级标题\")"
+        },
+        {
+          "source": ".setDesc('By \"no end time\" we mean \"- [ ] 10:00 Wake up\" instead of \"- [ ] 10:00 - 11:00 Wake up\"')",
+          "target": ".setDesc('我们所说的 \"无结束时间 \"是指\"- [ ] 10:00 起床\"，而不是\"- [ ] 10:00 - 11:00 起床\"。')"
+        },
+        {
+          "source": ".setDesc(\"Used when you create a task with drag-and-drop & when you don't specify an end time\")",
+          "target": ".setDesc(\"在使用拖放功能创建任务和未指定结束时间时使用\")"
+        },
+        {
+          "source": ".setDesc(\"Used when you create a task with drag-and-drop\")",
+          "target": ".setDesc(\"使用拖放功能创建任务时使用\")"
+        },
+        {
+          "source": ".setDesc(\"If the planner timeline should be monochrome or color tasks based on time of day\")",
+          "target": ".setDesc(\"计划表时间轴是单色还是彩色\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Empty\")",
+          "target": ".setPlaceholder(\"Empty\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Displayed name\")",
+          "target": ".setPlaceholder(\"Displayed name\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Your email address\")",
+          "target": ".setPlaceholder(\"Your email address\")"
+        },
+        {
+          "source": ".setPlaceholder(\"URL\")",
+          "target": ".setPlaceholder(\"URL\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Text\")",
+          "target": ".setPlaceholder(\"Text\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete color override\")",
+          "target": ".setTooltip(\"删除颜色覆盖\")"
+        },
+        {
+          "source": ".appendText(\"This is the format used in the time ruler. Use 'H' for 24 hours; use 'h' for 12 hours. Your current syntax looks like this: \")",
+          "target": ".appendText(\"这是时间标尺中使用的格式。使用 'H '表示 24 小时；使用 'h '表示 12 小时。您当前的语法如下\")"
+        },
+        {
+          "source": ".appendText(\"When you create or edit tasks with drag-and-drop, the plugin use this format. Use 'HH:mm' for 24 hours; use 'hh:mm' for 12 hours. Your current syntax looks like this: \")",
+          "target": ".appendText(\"使用拖放功能创建或编辑任务时，插件会使用这种格式。使用 'HH:mm '表示 24 小时；使用 'hh:mm '表示 12 小时。您当前的语法如下： \")"
+        },
+        {
+          "source": ".appendText(\"Your current syntax looks like this: \")",
+          "target": ".appendText(\"您当前的语法是这样的\")"
+        }
+      ]
+    }
+  }
+}
