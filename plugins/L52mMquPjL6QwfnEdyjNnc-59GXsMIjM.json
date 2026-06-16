@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "copy-document-as-html",
+    "version": "1.0.1",
+    "title": "Copy document as HTML",
+    "description": "Copy document as HTML Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.8.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Display and link",
+          "target": "显示并链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Display only",
+          "target": "仅显示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Remove everything",
+          "target": "移除所有内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Leave as is",
+          "target": "保持原样"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Link to HTML",
+          "target": "链接到 HTML"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Open with Obsidian",
+          "target": "使用 Obsidian 打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Don't link",
+          "target": "不链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "table",
+          "target": "table"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tr",
+          "target": "tr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "td",
+          "target": "td"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "img",
+          "target": "img"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "progress",
+          "target": "progress"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error calling onload()",
+          "target": "调用 onload() 时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No editor in active view, nothing to copy",
+          "target": "活动视图中没有编辑器，无法复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No file in active view, nothing to copy",
+          "target": "活动视图中没有文件，无法复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "copy failed",
+          "target": "复制失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "could not load data uri",
+          "target": "无法加载数据 URI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Document is already being copied",
+          "target": "文档正在被复制中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Nothing to copy: No active markdown view",
+          "target": "无可复制内容：没有活动的 Markdown 视图"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Copied to clipboard as HTML",
+          "target": "已复制为 HTML 到剪贴板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If checked, SVG files are converted to bitmap. This makes the copied documents heavier but improves compatibility (eg. with gmail).",
+          "target": "如果勾选，SVG 文件将转换为位图。这会使复制的文档体积更大，但能提高兼容性（例如与 Gmail 的兼容性）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If checked, external images are downloaded and embedded. If unchecked, the resulting document may contain links to external resources",
+          "target": "如果勾选，外部图片将被下载并嵌入。如果未勾选，生成的文档可能包含指向外部资源的链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If checked code blocks are rendered as tables, which makes pasting into Google docs somewhat prettier.",
+          "target": "如果勾选，代码块将渲染为表格，这会使粘贴到 Google 文档时看起来更美观一些。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If checked callouts are rendered as tables, which makes pasting into Google docs somewhat prettier.",
+          "target": "如果勾选，标注将渲染为表格，这会使粘贴到 Google 文档时看起来更美观一些。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If checked, the filename is inserted as a level 1 header. (only if an entire document is copied)",
+          "target": "如果勾选，文件名将作为一级标题插入。（仅当复制整个文档时）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If checked, only generate a HTML fragment and not a full HTML document. This excludes the header, and effectively disables all styling.",
+          "target": "如果勾选，仅生成 HTML 片段而非完整的 HTML 文档。这会排除头部，并实际上禁用所有样式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If checked, the YAML content between --- lines at the front of the document are removed. If you don't know what this means, leave it on.",
+          "target": "如果勾选，文档开头 --- 行之间的 YAML 内容将被移除。如果你不明白这是什么意思，请保持勾选。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The default stylesheet provides minimalistic theming. You may want to customize it for better looks. Disabling this setting will restore the default stylesheet.",
+          "target": "默认样式表提供极简主题。你可能希望自定义它以获得更好的外观。禁用此设置将恢复默认样式表。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When this option is enabled, images will not be embedded in the HTML document, but <em>broken</em> links will be left in place. This is not recommended.",
+          "target": "启用此选项后，图片将不会嵌入到 HTML 文档中，但会留下<em>损坏的</em>链接。不建议这样做。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert SVG files to bitmap",
+          "target": "将 SVG 文件转换为位图"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Embed external images",
+          "target": "嵌入外部图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Render code with tables",
+          "target": "使用表格渲染代码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Render callouts with tables",
+          "target": "使用表格渲染标注"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include filename as header",
+          "target": "将文件名作为标题包含"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Copy HTML fragment only",
+          "target": "仅复制 HTML 片段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remove properties / front-matter sections",
+          "target": "移除属性 / front-matter 部分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remove dataview metadata lines",
+          "target": "移除 dataview 元数据行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Footnote handling",
+          "target": "脚注处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link handling",
+          "target": "链接处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provide a custom stylesheet",
+          "target": "提供自定义样式表"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provide a custom HTML template",
+          "target": "提供自定义 HTML 模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Don't embed images",
+          "target": "不嵌入图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Copying to clipboard",
+          "target": "正在复制到剪贴板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Copy as HTML",
+          "target": "复制为 HTML"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied to clipboard as HTML",
+          "target": "已复制为 HTML 到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy selection or document to clipboard",
+          "target": "复制选区或文档到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy entire document to clipboard",
+          "target": "复制整个文档到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy current selection to clipboard",
+          "target": "复制当前选区到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy document as HTML Settings",
+          "target": "复制文档为 HTML 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Compatibility",
+          "target": "兼容性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Rendering",
+          "target": "渲染"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Custom templates (advanced)",
+          "target": "自定义模板（高级）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Exotic / Developer options",
+          "target": "高级 / 开发者选项"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
