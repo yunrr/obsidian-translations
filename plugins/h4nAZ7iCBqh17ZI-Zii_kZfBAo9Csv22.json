@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "full-vault-mirror-sync",
+    "version": "1.0.0",
+    "title": "Full Vault Mirror Sync",
+    "description": "Full Vault Mirror Sync Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Full source folder path. Defaults to the current vault root.",
+          "target": "完整的源文件夹路径。默认为当前保险库根目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Full destination folder path.",
+          "target": "完整的目标文件夹路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatic sync interval in minutes. Minimum value is 1.",
+          "target": "自动同步间隔（分钟）。最小值为 1。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Run robocopy automatically on the configured interval after you enable it.",
+          "target": "启用后，在配置的间隔自动运行 robocopy。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Run one sync shortly after Obsidian starts. This only works when automatic sync is enabled.",
+          "target": "Obsidian 启动后不久运行一次同步。仅在启用自动同步时有效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Run robocopy mirror sync now after validation and any required confirmation.",
+          "target": "在验证和任何必要的确认后，立即运行 robocopy 镜像同步。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Verify that source and target match after each successful robocopy run.",
+          "target": "在每次成功的 robocopy 运行后，验证源和目标是否匹配。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Retry robocopy up to 3 more times when post-sync validation fails.",
+          "target": "当同步后验证失败时，自动重试 robocopy 最多 3 次。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Source folder path",
+          "target": "源文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Target folder path",
+          "target": "目标文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync interval",
+          "target": "同步间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable automatic sync",
+          "target": "启用自动同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync once on Obsidian startup",
+          "target": "Obsidian 启动时同步一次"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Manual sync",
+          "target": "手动同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verify after sync",
+          "target": "同步后验证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Retry automatically on verification failure",
+          "target": "验证失败时自动重试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Confirm Mirror Sync",
+          "target": "确认镜像同步"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "A sync is already in progress. Skipping duplicate request.",
+          "target": "同步已在进行中。跳过重复请求。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Sync canceled.",
+          "target": "同步已取消。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Source path is not a folder during post-sync validation.",
+          "target": "同步后验证期间，源路径不是文件夹。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Target path is not a folder during post-sync validation.",
+          "target": "同步后验证期间，目标路径不是文件夹。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Full Vault Mirror Sync",
+          "target": "完整保险库镜像同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configure local folder mirror settings for this Windows-only Obsidian plugin.",
+          "target": "为此仅限 Windows 的 Obsidian 插件配置本地文件夹镜像设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Warnings",
+          "target": "警告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Warning: Robocopy /MIR can delete extra files from the target folder so it exactly matches the source folder.",
+          "target": "警告：Robocopy /MIR 会删除目标文件夹中的多余文件，使其与源文件夹完全匹配。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Status",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Target-only files may be deleted because robocopy /MIR makes the target match the source exactly.",
+          "target": "目标文件夹中的独有文件可能会被删除，因为 robocopy /MIR 会使目标与源完全匹配。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Extra files in the target folder will be deleted because robocopy /MIR makes the target match the source exactly.",
+          "target": "目标文件夹中的多余文件将被删除，因为 robocopy /MIR 会使目标与源完全匹配。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Continue Sync",
+          "target": "继续同步"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
