@@ -1,0 +1,839 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "longform",
+    "version": "2.0.0",
+    "title": "Longform",
+    "description": "Write novels, screenplays, and other long projects in Obsidian.",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.7",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Obsidian cannot open files that begin with a dot. Consider a different name.\")",
+          "target": "Notice(\"Obsidian 无法打开以点开头的文件。请考虑使用其他名称。\")"
+        },
+        {
+          "source": "Notice(\"Compile complete.\")",
+          "target": "Notice(\"编译完成。\")"
+        },
+        {
+          "source": "Notice(`${type === \"undo\" ? \"Undid\" : \"Redid\"} scene reordering`)",
+          "target": "Notice(`$${type === \"undo\" ? \"Undid\" : \"Redid\"} 场景重新排序`)"
+        },
+        {
+          "source": "Notice(\"Writing goal met!\")",
+          "target": "Notice(\"写作目标达成！\")"
+        },
+        {
+          "source": "log('done saving!')",
+          "target": "log('保存完成！')"
+        },
+        {
+          "source": "log('clicked ' + this.label)",
+          "target": "log('点击了 ' + this.label)"
+        },
+        {
+          "source": ".log(`[Longform] Running compile step ${step.description.name} with context:`, context)",
+          "target": ".log(`[Longform] 正在运行编译步骤 ${step.description.name}，上下文为:`, context)"
+        },
+        {
+          "source": ".log(`[Longform] Compile workflow \"${workflow.name}\" finished with final result:`, currentInput)",
+          "target": ".log(`[Longform] 编译工作流 \"${workflow.name}\" 完成，最终结果为:`, currentInput)"
+        },
+        {
+          "source": ".log(\"[Longform] Attempting to open:\", filePath)",
+          "target": ".log(\"[Longform] 尝试打开:\", filePath)"
+        },
+        {
+          "source": ".log(\"[Longform] Writing to:\", filePath)",
+          "target": ".log(\"[Longform] 写入到:\", filePath)"
+        },
+        {
+          "source": ".log(`[Longform] Attempted to migrate settings with version ${settings.version} > current (${LONGFORM_CURRENT_PLUGIN_DATA_VERSION})",
+          "target": ".log(`[Longform] 尝试将设置从版本 ${settings.version} 迁移到当前版本 (${LONGFORM_CURRENT_PLUGIN_DATA_VERSION}))"
+        },
+        {
+          "source": ".log(`[Longform] Migrating ${projectPath} to Projects 2.0…`)",
+          "target": ".log(`[Longform] 将 ${projectPath} 迁移到 Projects 2.0…`)"
+        },
+        {
+          "source": ".log(`[Longform] Error appending deprecation notice to old index file`, error)",
+          "target": ".log(`[Longform] 向旧索引文件追加弃用通知时出错`, error)"
+        },
+        {
+          "source": ".log(`[Longform] Wrote only draft to ${vaultPath}`)",
+          "target": ".log(`[Longform] 仅将草稿写入 ${vaultPath}`)"
+        },
+        {
+          "source": ".log(`[Longform] Error creating folder during migration`, error)",
+          "target": ".log(`[Longform] 在迁移过程中创建文件夹时出错`, error)"
+        },
+        {
+          "source": ".log(`[Longform] Wrote ${oldDraft.name} to ${vaultPath}`)",
+          "target": ".log(`[Longform] 将 ${oldDraft.name} 写入 ${vaultPath}`)"
+        },
+        {
+          "source": ".log(`[Longform] File in user script folder modified, reloading scripts…`)",
+          "target": ".log(`[Longform] 用户脚本文件夹中的文件已修改，正在重新加载脚本…`)"
+        },
+        {
+          "source": ".log(\"[Longform] Cleared user script steps.\")",
+          "target": ".log(\"[Longform] 已清除用户脚本步骤。\")"
+        },
+        {
+          "source": ".log(`[Longform] Loaded ${userSteps.length} user script steps.`)",
+          "target": ".log(`[Longform] 加载了 ${userSteps.length} 个用户脚本步骤。`)"
+        },
+        {
+          "source": ".log(`[Longform] Error loading draft at ${fileWithMetadata.file.path}: invalid longform.format. Ignoring.`)",
+          "target": ".log(`[Longform] 加载草稿时出错，路径为 ${fileWithMetadata.file.path}：无效的 longform.format。忽略。`)"
+        },
+        {
+          "source": ".log(`[Longform] Attempted to insert frontmatter into existing draft at ${file.path}; ignoring.`)",
+          "target": ".log(`[Longform] 尝试将前置元数据插入现有草稿中，路径为 ${file.path}；忽略。`)"
+        },
+        {
+          "source": ".log(`[Longform] Cannot create project at ${path}, already exists.`)",
+          "target": ".log(`[Longform] 无法在 ${path} 创建项目，已存在。`)"
+        },
+        {
+          "source": ".log(`[Longform] Starting Longform ${this.manifest.version}…`)",
+          "target": ".log(`[Longform] 正在启动 Longform ${this.manifest.version}…`)"
+        },
+        {
+          "source": ".log(\"[Longform] No workflows found; adding default workflow.\")",
+          "target": ".log(\"[Longform] 未找到工作流；添加默认工作流。\")"
+        },
+        {
+          "source": ".error(`[Longform] Error using plugin [${pluginUsed}]:`, error)",
+          "target": ".error(`[Longform] 使用插件 [${pluginUsed}] 时出错:`, error)"
+        },
+        {
+          "source": ".error(`[Longform] Failed to create new note at \"${path}\"`, e)",
+          "target": ".error(`[Longform] 无法在 \"${path}\" 创建新笔记`, e)"
+        },
+        {
+          "source": ".error(\"[Longform] Attempted to use Templater plugin while disabled.\")",
+          "target": ".error(\"[Longform] 尝试在禁用状态下使用 Templater 插件。\")"
+        },
+        {
+          "source": ".error(\"[Longform] Attempted to use core template plugin while disabled.\")",
+          "target": ".error(\"[Longform] 尝试在禁用状态下使用核心模板插件。\")"
+        },
+        {
+          "source": ".error(\"[Longform] insertDraftIntoFrontmatter: processFrontMatter error:\", error)",
+          "target": ".error(\"[Longform] insertDraftIntoFrontmatter: 处理前置元数据时出错:\", error)"
+        },
+        {
+          "source": ".error(\"[Longform] Could not open\", filePath, err)",
+          "target": ".error(\"[Longform] 无法打开\", filePath, err)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" element must be an HTMLElement (not an SVGElement)",
+          "target": ".error(['Popper: \"arrow\" 元素必须是 HTMLElement（而不是 SVGElement）`)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" modifier\\'s `element` must be a child of the popper', 'element.'].join(' ')",
+          "target": ".error(['Popper: \"arrow\" 修改器的 `element` 必须是 popper 元素的子元素。'].join(' ')"
+        },
+        {
+          "source": ".error(['Popper: The `allowedAutoPlacements` option did not allow any', 'placements. Ensure the `placement` option matches the variation', 'of the allowed placements.', 'For example, \"auto\" cannot be used to allow \"bottom-start\".', 'Use \"auto-start\" instead.'].join(' ')",
+          "target": ".error(['Popper: `allowedAutoPlacements` 选项不允许任何放置位置。确保 `placement` 选项与允许的放置位置变体匹配。', '例如，\"auto\" 不能用于允许 \"bottom-start\"。', '改用 \"auto-start\"。'].join(' ')"
+        },
+        {
+          "source": ".error(\"PopperJS: an invalid property has been provided to the \\\"\" + modifier.name + \"\\\" modifier, valid properties are \" + VALID_PROPERTIES.map(function (s)",
+          "target": ".error(\"PopperJS: 为 \\\"\" + modifier.name + \"\\\" 修改器提供了无效属性，有效属性为 \" + VALID_PROPERTIES.map(function (s)"
+        },
+        {
+          "source": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)",
+          "target": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(['Popper: \"auto\" placements require the \"flip\" modifier be', 'present and enabled to work.'].join(' ')",
+          "target": ".error(['Popper: \"auto\" 放置位置需要 \"flip\" 修改器存在并启用才能正常工作。'].join(' ')"
+        },
+        {
+          "source": ".error(`[Longform] skipping user script ${file} due to error:`, e)",
+          "target": ".error(`[Longform] 由于错误跳过用户脚本 ${file}:`, e)"
+        },
+        {
+          "source": ".error(`[Longform] Failed to load user script ${path}. No exports detected.`)",
+          "target": ".error(`[Longform] 无法加载用户脚本 ${path}。未检测到导出。`)"
+        },
+        {
+          "source": ".error(\"[Longform] error manually loading frontmatter:\", error)",
+          "target": ".error(\"[Longform] 手动加载前置元数据时出错:\", error)"
+        },
+        {
+          "source": ".error(\"[Longform] Error calling file-explorer.revealInFolder:\", error)",
+          "target": ".error(\"[Longform] 调用 file-explorer.revealInFolder 时出错:\", error)"
+        },
+        {
+          "source": ".error(`[Longform] No manifest.dir for saving sessions.`)",
+          "target": ".error(`[Longform] 没有 manifest.dir 用于保存会话。`)"
+        },
+        {
+          "source": "name: \"Default Workflow\"",
+          "target": "name: \"默认工作流\""
+        },
+        {
+          "source": "name: \"Concatenate Text\"",
+          "target": "name: \"合并文本\""
+        },
+        {
+          "source": "name: \"Separator\"",
+          "target": "name: \"分隔符\""
+        },
+        {
+          "source": "name: \"Prepend Title\"",
+          "target": "name: \"前置标题\""
+        },
+        {
+          "source": "name: \"Title Format\"",
+          "target": "name: \"标题格式\""
+        },
+        {
+          "source": "name: \"Remove Comments\"",
+          "target": "name: \"移除注释\""
+        },
+        {
+          "source": "name: \"Remove Markdown Comments\"",
+          "target": "name: \"移除 Markdown 注释\""
+        },
+        {
+          "source": "name: \"Remove HTML Comments\"",
+          "target": "name: \"移除 HTML 注释\""
+        },
+        {
+          "source": "name: \"Remove Links\"",
+          "target": "name: \"移除链接\""
+        },
+        {
+          "source": "name: \"Remove Wikilinks\"",
+          "target": "name: \"移除 Wiki 链接\""
+        },
+        {
+          "source": "name: \"Remove External Links\"",
+          "target": "name: \"移除外部链接\""
+        },
+        {
+          "source": "name: \"Remove Strikethroughs\"",
+          "target": "name: \"移除删除线\""
+        },
+        {
+          "source": "name: \"Strip Frontmatter\"",
+          "target": "name: \"去除前置元数据\""
+        },
+        {
+          "source": "name: \"Save as Note\"",
+          "target": "name: \"另存为笔记\""
+        },
+        {
+          "source": "name: \"Output path\"",
+          "target": "name: \"输出路径\""
+        },
+        {
+          "source": "name: \"Open Compiled Manuscript\"",
+          "target": "name: \"打开编译后的手稿\""
+        },
+        {
+          "source": "name: \"sameWidth\"",
+          "target": "name: \"相同宽度\""
+        },
+        {
+          "source": "name: \"Compile current project with current workflow\"",
+          "target": "name: \"使用当前工作流编译当前项目\""
+        },
+        {
+          "source": "name: \"Compile project…\"",
+          "target": "name: \"编译项目…\""
+        },
+        {
+          "source": "name: \"Previous scene\"",
+          "target": "name: \"上一个场景\""
+        },
+        {
+          "source": "name: \"Previous scene at indent level\"",
+          "target": "name: \"同一缩进级别的上一个场景\""
+        },
+        {
+          "source": "name: \"Next scene\"",
+          "target": "name: \"下一个场景\""
+        },
+        {
+          "source": "name: \"Next scene at indent level\"",
+          "target": "name: \"同一缩进级别的下一个场景\""
+        },
+        {
+          "source": "name: \"Open current note’s project\"",
+          "target": "name: \"打开当前笔记的项目\""
+        },
+        {
+          "source": "name: \"Open Longform pane\"",
+          "target": "name: \"打开 Longform 面板\""
+        },
+        {
+          "source": "name: \"Jump to project\"",
+          "target": "name: \"跳转到项目\""
+        },
+        {
+          "source": "name: \"Jump to scene in current project\"",
+          "target": "name: \"跳转到当前项目中的场景\""
+        },
+        {
+          "source": "name: \"Reveal current project in navigation\"",
+          "target": "name: \"在导航中显示当前项目\""
+        },
+        {
+          "source": "name: \"Focus new scene field\"",
+          "target": "name: \"聚焦新场景字段\""
+        },
+        {
+          "source": "name: \"Indent scene\"",
+          "target": "name: \"缩进场景\""
+        },
+        {
+          "source": "name: \"Unindent scene\"",
+          "target": "name: \"取消缩进场景\""
+        },
+        {
+          "source": "name: \"Insert multi-scene frontmatter\"",
+          "target": "name: \"插入多场景前置元数据\""
+        },
+        {
+          "source": "name: \"Insert single-scene frontmatter\"",
+          "target": "name: \"插入单场景前置元数据\""
+        },
+        {
+          "source": "name: \"Start new writing session\"",
+          "target": "name: \"开始新的写作会话\""
+        },
+        {
+          "source": "description: \"\",\n        isScript: false,\n        availableKinds: [],\n        options: [],\n    },\n    optionValues: {},\n    compile: (a) => a,\n};\n\nfunction formatOptionValues(values) {\n    const formattedOptions = {};\n    for (const key of Object.keys(values)) {\n        let v = values[key];\n        if (typeof v === \"",
+          "target": "description: \"\",\n        isScript: false,\n        availableKinds: [],\n        options: [],\n    },\n    optionValues: {},\n    compile: (a) => a,\n};\n\nfunction formatOptionValues(values) {\n    const formattedOptions = {};\n    for (const key of Object.keys(values)) {\n        let v = values[key];\n        if (typeof v === \""
+        },
+        {
+          "source": "description: \"A starter workflow. Feel free to edit, rename, or delete it and create your own.\"",
+          "target": "description: \"一个初始工作流。您可以自由编辑、重命名或删除它，并创建自己的工作流。\""
+        },
+        {
+          "source": "description: \"Combines all scenes together in order into a manuscript.\"",
+          "target": "description: \"按顺序将所有场景合并成一篇手稿。\""
+        },
+        {
+          "source": "description: \"Text to put between joined scenes.\"",
+          "target": "description: \"连接场景之间放置的文本。\""
+        },
+        {
+          "source": "description: \"Prepends the scene title to the scene text.\"",
+          "target": "description: \"在场景文本前添加场景标题。\""
+        },
+        {
+          "source": "description: \"Format of title. $1 will be replaced with title. $2, if present, will be replaced with scene number. Wrapping text in $3{} will repeat that text a number of times equal to the scene’s indentation level plus one—e.g., $3{#} for unindented scenes becomes “#”.\"",
+          "target": "description: \"标题格式。$1 将被替换为标题。如果存在 $2，则会被替换为场景编号。将文本包裹在 $3{} 中会重复该文本，次数等于场景的缩进级别加一——例如，对于未缩进的场景，$3{#} 变为 “#”。\""
+        },
+        {
+          "source": "description: \"Text to put between title and scene text.\"",
+          "target": "description: \"标题与场景文本之间放置的文本。\""
+        },
+        {
+          "source": "description: \"Removes markdown and/or html comments.\"",
+          "target": "description: \"移除 markdown 和/或 html 注释。\""
+        },
+        {
+          "source": "description: \"Remove markdown-style comments (%% text %%)\"",
+          "target": "description: \"移除 markdown 样式的注释 (%% 文本 %% )\""
+        },
+        {
+          "source": "description: \"Remove HTML-style comments (<!-- text -->)\"",
+          "target": "description: \"移除 HTML 样式的注释 (<!-- 文本 -->)\""
+        },
+        {
+          "source": "description: \"Removes wiki and/or external links.\"",
+          "target": "description: \"移除 wiki 和/或外部链接。\""
+        },
+        {
+          "source": "description: \"Remove brackets from [[wikilinks]].\"",
+          "target": "description: \"移除来自 [[wiki链接]] 的括号。\""
+        },
+        {
+          "source": "description: \"Remove external links, leaving only the anchor text.\"",
+          "target": "description: \"移除外部链接，只留下锚文本。\""
+        },
+        {
+          "source": "description: \"Removes struck-through ~~text~~.\"",
+          "target": "description: \"移除划线的 ~~文本~~。\""
+        },
+        {
+          "source": "description: \"Removes the YAML frontmatter section from the scene or manuscript.\"",
+          "target": "description: \"从场景或手稿中移除 YAML 前置元数据部分。\""
+        },
+        {
+          "source": "description: \"Saves your manuscript as a note in your vault.\"",
+          "target": "description: \"将您的手稿保存为保险库中的笔记。\""
+        },
+        {
+          "source": "description: \"Path for the created manuscript note, relative to your project. $1 will be replaced with your project’s title.\"",
+          "target": "description: \"相对于项目的创建手稿笔记的路径。$1 将被替换为您的项目标题。\""
+        },
+        {
+          "source": "description: \"If checked, open the compiled manuscript in a new pane.\"",
+          "target": "description: \"如果选中，将在新窗格中打开编译后的手稿。\""
+        },
+        {
+          "source": "description: \"\",\n\t\t\t\t\tsteps: []\n\t\t\t\t},\n\t\t\t\t$workflows\n\t\t\t);\n\t\t} else if (workflowInputState == \"",
+          "target": "description: \"\",\n\t\t\t\t\tsteps: []\n\t\t\t\t},\n\t\t\t\t$workflows\n\t\t\t);\n\t\t} else if (workflowInputState == \""
+        },
+        {
+          "source": "text:`, context);\n            statusCallback({\n                kind: \"CompileStatusStep\",\n                stepIndex: index,\n                totalSteps: workflow.steps.length,\n                stepKind: kind,\n            });\n            // TODO: how to enforce typings here?\n            try {\n                // handle the case where we're going scene -> manuscript -> scene\n                if (draft.format === \"single\" && kind === CompileStepKind.Manuscript) {\n                    const result = yield step.compile({\n                        contents: currentInput[0].contents,\n                    }, context);\n                    currentInput[0].contents = result;\n                }\n                else {\n                    currentInput = yield step.compile(currentInput, context);\n                }\n            }\n            catch (error) {\n                console.error(\"[Longform]\", error);\n                statusCallback({\n                    kind: \"CompileStatusError\",\n                    error: `",
+          "target": "text:`, context);\n            statusCallback({\n                kind: \"CompileStatusStep\",\n                stepIndex: index,\n                totalSteps: workflow.steps.length,\n                stepKind: kind,\n            });\n            // TODO: 如何在这里强制类型检查？\n            try {\n                // 处理从场景 -> 手稿 -> 场景的情况\n                if (draft.format === \"single\" && kind === CompileStepKind.Manuscript) {\n                    const result = yield step.compile({\n                        contents: currentInput[0].contents,\n                    }, context);\n                    currentInput[0].contents = result;\n                }\n                else {\n                    currentInput = yield step.compile(currentInput, context);\n                }\n            }\n            catch (error) {\n                console.error(\"[Longform]\", error);\n                statusCallback({\n                    kind: \"CompileStatusError\",\n                    error: `"
+        },
+        {
+          "source": "text: \"Add Compile Step to Workflow\"",
+          "target": "text: \"向工作流添加编译步骤\""
+        },
+        {
+          "source": "text: `New Draft of ${title}`",
+          "target": "text: `新草稿：${title}`"
+        },
+        {
+          "source": "text: \"Create Project\"",
+          "target": "text: \"创建项目\""
+        },
+        {
+          "source": ".setName(\"Copy Scenes\")",
+          "target": ".setName(\"复制场景\")"
+        },
+        {
+          "source": ".setName(\"Composition\")",
+          "target": ".setName(\"组合\")"
+        },
+        {
+          "source": ".setName(\"New scene template\")",
+          "target": ".setName(\"新场景模板\")"
+        },
+        {
+          "source": ".setName(\"Show scene numbers in Scenes tab\")",
+          "target": ".setName(\"在场景标签中显示场景编号\")"
+        },
+        {
+          "source": ".setName(\"Compile\")",
+          "target": ".setName(\"编译\")"
+        },
+        {
+          "source": ".setName(\"User script step folder\")",
+          "target": ".setName(\"用户脚本步骤文件夹\")"
+        },
+        {
+          "source": ".setName(\"Word Counts & Sessions\")",
+          "target": ".setName(\"字数统计与会话\")"
+        },
+        {
+          "source": ".setName(\"Show word counts in status bar\")",
+          "target": ".setName(\"在状态栏中显示字数统计\")"
+        },
+        {
+          "source": ".setName(\"Start new writing sessions each day\")",
+          "target": ".setName(\"每天开始新的写作会话\")"
+        },
+        {
+          "source": ".setName(\"Session word count goal\")",
+          "target": ".setName(\"会话字数目标\")"
+        },
+        {
+          "source": ".setName(\"Goal applies to\")",
+          "target": ".setName(\"目标适用范围\")"
+        },
+        {
+          "source": ".setName(\"Notify on goal reached\")",
+          "target": ".setName(\"达到目标时通知\")"
+        },
+        {
+          "source": ".setName(\"Count deletions against goal\")",
+          "target": ".setName(\"删除计为负向字数\")"
+        },
+        {
+          "source": ".setName(\"Sessions to keep\")",
+          "target": ".setName(\"保留的会话数量\")"
+        },
+        {
+          "source": ".setName(\"Store session data\")",
+          "target": ".setName(\"存储会话数据\")"
+        },
+        {
+          "source": ".setName(\"Session storage file\")",
+          "target": ".setName(\"会话存储文件\")"
+        },
+        {
+          "source": ".setName(\"Credits\")",
+          "target": ".setName(\"致谢\")"
+        },
+        {
+          "source": ".setDesc(\"If on, all scenes in the current draft will be copied to the new one.\")",
+          "target": ".setDesc(\"如果启用，当前草稿中的所有场景将被复制到新的草稿中。\")"
+        },
+        {
+          "source": ".setDesc(\"If on, shows numbers for scenes with subscenes separated by periods, e.g. 1.1.2. Create subscenes by dragging a scene to an indent under an existing scene, or us an indent command.\")",
+          "target": ".setDesc(\"如果启用，将显示带有子场景编号的场景，例如 1.1.2。通过将场景拖动到现有场景下方的缩进处或使用缩进命令来创建子场景。\")"
+        },
+        {
+          "source": ".setDesc(\".js files in this folder will be available as User Script Steps in the Compile panel.\")",
+          "target": ".setDesc(\"此文件夹中的 .js 文件将在编译面板中作为用户脚本步骤提供。\")"
+        },
+        {
+          "source": ".setDesc(\"Click the status item to show the focused note’s project.\")",
+          "target": ".setDesc(\"单击状态项以显示所关注笔记的项目。\")"
+        },
+        {
+          "source": ".setDesc(\"You can always manually start a new session by running the Longform: Start New Writing Session command. Turning this off will cause writing sessions to carry over across multiple days until you manually start a new one.\")",
+          "target": ".setDesc(\"您可以随时通过运行 Longform: Start New Writing Session 命令手动开始新的会话。关闭此选项后，写作会话将跨多天延续，直到您手动开始新的会话。\")"
+        },
+        {
+          "source": ".setDesc(\"A number of words to target for a given writing session.\")",
+          "target": ".setDesc(\"给定写作会话的目标字数。\")"
+        },
+        {
+          "source": ".setDesc(\"You can set your word count goal to target all Longform writing, or you can make each project or scene have its own discrete goal.\")",
+          "target": ".setDesc(\"您可以设置您的字数目标，以针对所有的 Longform 写作，或者让每个项目或场景都有自己的独立目标。\")"
+        },
+        {
+          "source": ".setDesc(\"If on, deleting words will count as negative words written. You cannot go below zero for a session.\")",
+          "target": ".setDesc(\"如果启用，删除单词将被视为负向写的单词。一个会话中的字数不能低于零。\")"
+        },
+        {
+          "source": ".setDesc(\"Number of sessions to store locally.\")",
+          "target": ".setDesc(\"本地存储的会话数量。\")"
+        },
+        {
+          "source": ".setDesc(\"Where your writing session data is stored. By default, data is stored alongside other Longform settings in the plugin’s data.json file. You may instead store it in a separate .json file in the plugin folder, or in a file in your vault. You may want to do this for selective sync or git reasons.\")",
+          "target": ".setDesc(\"您的写作会话数据存储的位置。默认情况下，数据与其他 Longform 设置一起存储在插件的 data.json 文件中。您也可以将其存储在插件文件夹中的单独 .json 文件中，或存储在您的保险库中的文件中。出于选择性同步或 git 考虑，您可能需要这样做。\")"
+        },
+        {
+          "source": ".setDesc(\"Location in your vault to store session JSON. Created if does not exist, overwritten if it does.\")",
+          "target": ".setDesc(\"在您的保险库中存储会话 JSON 的位置。如果不存在则创建，如果存在则覆盖。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"templates/Scene.md\")",
+          "target": ".setPlaceholder(\"templates/Scene.md\")"
+        },
+        {
+          "source": ".setPlaceholder(\"my/script/steps/\")",
+          "target": ".setPlaceholder(\"my/script/steps/\")"
+        },
+        {
+          "source": ".setTitle(\"Rename\")",
+          "target": ".setTitle(\"重命名\")"
+        },
+        {
+          "source": ".setTitle(\"Delete\")",
+          "target": ".setTitle(\"删除\")"
+        },
+        {
+          "source": ".setTitle(\"Open in new pane\")",
+          "target": ".setTitle(\"在新窗格中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Add new scene above\")",
+          "target": ".setTitle(\"上方添加新场景\")"
+        },
+        {
+          "source": ".setTitle(\"Add new scene below\")",
+          "target": ".setTitle(\"下方添加新场景\")"
+        },
+        {
+          "source": ".setTitle(\"Ignore note in Longform\")",
+          "target": ".setTitle(\"在 Longform 中忽略笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Add new workflow\")",
+          "target": ".setTitle(\"添加新工作流\")"
+        },
+        {
+          "source": ".setTitle(`Rename \"${currentWorkflowName}\"`)",
+          "target": ".setTitle(`重命名 \"${currentWorkflowName}\"`)"
+        },
+        {
+          "source": ".setTitle(`Delete \"${currentWorkflowName}\"`)",
+          "target": ".setTitle(`删除 \"${currentWorkflowName}\"`)"
+        },
+        {
+          "source": ".setTitle(\"Create Longform Project\")",
+          "target": ".setTitle(\"创建 Longform 项目\")"
+        },
+        {
+          "source": ".innerText = `${status.error}. See dev console for more details.`",
+          "target": ".innerText = `${status.error}. 查看开发控制台以获取更多详细信息。`"
+        },
+        {
+          "source": ".innerText = \"Compiled manuscript.\"",
+          "target": ".innerText = \"编译的手稿。\""
+        },
+        {
+          "source": ".innerText = \"default??\"",
+          "target": ".innerText = \"默认？？\""
+        },
+        {
+          "source": ".innerText = `Loaded ${steps.length} step${steps.length !== 1 ? \"s\" : \"\"}:`",
+          "target": ".innerText = `加载了 ${steps.length} 步骤${steps.length !== 1 ? \"s\" : \"\"}:`"
+        },
+        {
+          "source": ".innerText = \"No steps loaded.\"",
+          "target": ".innerText = \"没有加载任何步骤。\""
+        },
+        {
+          "source": "The first step must be of Scene or Join type; compilation begins with all scenes as input.",
+          "target": "第一步必须是 Scene 或 Join 类型；编译从所有场景开始。"
+        },
+        {
+          "source": "A Manuscript step must occur after a Join step; Manuscript steps run on a single file, not all scenes.",
+          "target": "Manuscript 步骤必须在 Join 步骤之后出现；Manuscript 步骤处理单个文件，而不是所有场景。"
+        },
+        {
+          "source": "A Scene or Join step cannot occur after a Join step; at this point in the workflow, steps must operate on a single file.",
+          "target": "Scene 或 Join 步骤不能在 Join 步骤之后出现；此时的工作流程中，步骤必须处理单个文件。"
+        },
+        {
+          "source": "This workflow contains a step that could not be loaded. Please delete or replace it.",
+          "target": "此工作流包含一个无法加载的步骤。请删除或替换它。"
+        },
+        {
+          "source": "Single-scene projects do not support Join steps.",
+          "target": "单场景项目不支持 Join 步骤。"
+        },
+        {
+          "source": ".textContent = \"User Script Steps\"",
+          "target": ".textContent = \"用户脚本步骤\""
+        },
+        {
+          "source": ".textContent = \"Choose a step from the following options to add to your current compile\\n    workflow.\"",
+          "target": ".textContent = \"从以下选项中选择一个步骤，添加到当前编译工作流中。\""
+        },
+        {
+          "source": ".textContent = \"Built-in Steps\"",
+          "target": ".textContent = \"内置步骤\""
+        },
+        {
+          "source": ".textContent = \"X\"",
+          "target": ".textContent = \"X\""
+        },
+        {
+          "source": ".textContent = \"▼\"",
+          "target": ".textContent = \"▼\""
+        },
+        {
+          "source": ".textContent = \"Create a new workflow to begin →\"",
+          "target": ".textContent = \"创建新的工作流以开始 →\""
+        },
+        {
+          "source": ".textContent = \"+ Add Step\"",
+          "target": ".textContent = \"+ 添加步骤\""
+        },
+        {
+          "source": ".textContent = \"Add all\"",
+          "target": ".textContent = \"全部添加\""
+        },
+        {
+          "source": ".textContent = \"Ignore all\"",
+          "target": ".textContent = \"全部忽略\""
+        },
+        {
+          "source": ".textContent = \"Add\"",
+          "target": ".textContent = \"添加\""
+        },
+        {
+          "source": ".textContent = \"Ignore\"",
+          "target": ".textContent = \"忽略\""
+        },
+        {
+          "source": ".textContent = \"Project Metadata\"",
+          "target": ".textContent = \"项目元数据\""
+        },
+        {
+          "source": ".textContent = \"Title\"",
+          "target": ".textContent = \"标题\""
+        },
+        {
+          "source": ".textContent = \"Scene Folder\"",
+          "target": ".textContent = \"场景文件夹\""
+        },
+        {
+          "source": ".textContent = \"Changing scene folder does not move scenes. If you’re moving\\n                scenes to a new folder, move them in your vault first, then\\n                change this setting.\"",
+          "target": ".textContent = \"更改场景文件夹不会移动场景。如果你要将场景移动到新文件夹，请先在你的 vault 中移动它们，然后再更改此设置。\""
+        },
+        {
+          "source": ".textContent = \"Scene Template\"",
+          "target": ".textContent = \"场景模板\""
+        },
+        {
+          "source": ".textContent = \"This file will be used as a template when creating new scenes\\n                via the New Scene… field. If you use a templating plugin\\n                (Templater or the core plugin) it will be used to process this\\n                template.\"",
+          "target": ".textContent = \"创建新场景时，将使用此文件作为模板。如果你使用了模板插件（Templater 或核心插件），它将用于处理此模板。\""
+        },
+        {
+          "source": ".textContent = \"Project:\"",
+          "target": ".textContent = \"项目:\""
+        },
+        {
+          "source": ".textContent = \"Scene:\"",
+          "target": ".textContent = \"场景:\""
+        },
+        {
+          "source": ".textContent = \"Draft:\"",
+          "target": ".textContent = \"草稿:\""
+        },
+        {
+          "source": ".textContent = \"Word Count\"",
+          "target": ".textContent = \"字数\""
+        },
+        {
+          "source": ".textContent = \"Drafts\"",
+          "target": ".textContent = \"草稿\""
+        },
+        {
+          "source": ".textContent = \"Longform has been upgraded and requires a migration to a new format.\\n      Deprecated index files will be deleted, and some scene files may move.\\n      It’s recommended to back up your vault before migrating.\"",
+          "target": ".textContent = \"Longform 已升级，需要迁移到新格式。废弃的索引文件将被删除，某些场景文件可能会移动。建议在迁移前备份你的 vault。\""
+        },
+        {
+          "source": ".textContent = \"Migrate\"",
+          "target": ".textContent = \"迁移\""
+        },
+        {
+          "source": ".textContent = \"Create\"",
+          "target": ".textContent = \"创建\""
+        },
+        {
+          "source": ".textContent = \" with copied scenes\"",
+          "target": ".textContent = \" 带复制的场景\""
+        },
+        {
+          "source": ".textContent = \"Create a new version of this project. Use the name/version field below to\\n    give your draft an internal name that describes it relative to the larger\\n    project.\"",
+          "target": ".textContent = \"创建此项目的全新版本。使用下面的名称/版本字段为你的草稿提供一个内部名称，描述其相对于整个项目的情况。\""
+        },
+        {
+          "source": ".textContent = \"Draft Name/Version\"",
+          "target": ".textContent = \"草稿名称/版本\""
+        },
+        {
+          "source": ".textContent = \"Because this project type involves multiple notes, Longform will create\\n        an enclosing folder for your project and its scenes. You can always\\n        rename the folder, the index file, or both.\"",
+          "target": ".textContent = \"因为这种项目类型涉及多个笔记，Longform 将为你的项目及其场景创建一个包含文件夹。你可以随时重命名文件夹、索引文件或两者。\""
+        },
+        {
+          "source": ".textContent = \"Multi\"",
+          "target": ".textContent = \"多\""
+        },
+        {
+          "source": ".textContent = \"Single\"",
+          "target": ".textContent = \"单\""
+        },
+        {
+          "source": ".addOption(\"all\", \"words written across all projects\")",
+          "target": ".addOption(\"all\", \"跨所有项目书写的单词\")"
+        },
+        {
+          "source": ".addOption(\"project\", \"each project individually\")",
+          "target": ".addOption(\"project\", \"每个项目分别\")"
+        },
+        {
+          "source": ".addOption(\"note\", \"each scene or single-scene project\")",
+          "target": ".addOption(\"note\", \"每个场景或单场景项目\")"
+        },
+        {
+          "source": ".addOption(\"data\", \"with Longform settings\")",
+          "target": ".addOption(\"data\", \"带有 Longform 设置\")"
+        },
+        {
+          "source": ".addOption(\"plugin-folder\", \"as a .json file in the longform/ plugin folder\")",
+          "target": ".addOption(\"plugin-folder\", \"作为 longform/ 插件文件夹中的 .json 文件\")"
+        },
+        {
+          "source": ".addOption(\"file\", \"as a file in your vault\")",
+          "target": ".addOption(\"file\", \"作为你 vault 中的一个文件\")"
+        },
+        {
+          "source": ".innerHTML = `Compile workflows run their steps in order.<br/><b>Scene</b> workflows\n      run once per scene.<br/><b>Join</b> workflows run once and combine the\n      rest of your scene steps into a single manuscript.<br/><b>Manuscript</b>\n      steps run once on the joined manuscript.<br/>Drag to rearrange.\n      <a href=\"",
+          "target": ".innerHTML = `编译工作流按顺序运行其步骤。<br/><b>Scene</b> 工作流\n      每个场景运行一次。<br/><b>Join</b> 工作流运行一次并将\n      其余的场景步骤组合成一个单一的手稿。<br/><b>Manuscript</b>\n      步骤在合并的手稿上运行一次。<br/>拖动以重新排列。\n      <a href=\""
+        },
+        {
+          "source": ".innerHTML = `To begin, find or create a folder somewhere in your vault in which \n      you would like to create your novel. Right-click it and select \n      <code>Create Longform Project.</code>`",
+          "target": ".innerHTML = `首先，在你的 vault 中找到或创建一个文件夹，你希望在此创建你的小说。右键点击它并选择 \n      <code>Create Longform Project.</code>`"
+        },
+        {
+          "source": ".innerHTML = `You can view the docs and an explanation of what this migration does <a href=\"",
+          "target": ".innerHTML = `你可以查看文档和关于此次迁移的说明 <a href=\""
+        },
+        {
+          "source": ".innerHTML =\n                \"This file will be used as a template when creating new scenes via the New Scene… field. If you use a templating plugin (Templater or the core plugin) it will be used to process this template. This setting applies to all projects and can be overridden per-project in the Project > Project Metadata settings in the Longform pane.\"",
+          "target": ".innerHTML =\n                \"创建新场景时将使用此文件作为模板。如果你使用了模板插件（如 Templater 或核心插件），它将用于处理此模板。此设置适用于所有项目，并且可以在 Longform 面板的项目 > 项目元数据设置中按项目覆盖。\""
+        },
+        {
+          "source": ".innerHTML =\n                \"User Script Steps are automatically loaded from this folder. Changes to .js files in this folder are synced with Longform after a slight delay. If your script does not appear here or in the Compile tab, you may have an error in your script—check the dev console for it.\"",
+          "target": ".innerHTML =\n                \"用户脚本步骤会自动从该文件夹加载。对 .js 文件的更改会在稍作延迟后同步到 Longform。如果你的脚本没有出现在这里或编译标签页中，可能是脚本中有错误——请检查开发控制台。\""
+        },
+        {
+          "source": ".innerHTML =\n                'Longform written and maintained by <a href=\"",
+          "target": ".innerHTML =\n                'Longform 由 <a href=\""
+        },
+        {
+          "source": ".innerHTML =\n                'Read the source code and report issues at <a href=\"",
+          "target": ".innerHTML =\n                '阅读源代码并报告问题 <a href=\""
+        },
+        {
+          "source": ".innerHTML =\n                'Icon made by <a href=\"",
+          "target": ".innerHTML =\n                '图标由 <a href=\""
+        },
+        {
+          "source": ".innerHTML = `A <i>single-scene project</i> is a single note, perhaps a short story or\n        essay, that includes its own YAML frontmatter which is used by Longform to\n        track your project.`",
+          "target": ".innerHTML = `一个 <i>单场景项目</i> 是一个单独的笔记，可能是一个短篇故事或\n        文章，包含自己的 YAML 前置事项，Longform 使用这些前置事项来\n        跟踪你的项目。`"
+        },
+        {
+          "source": ".innerHTML = `A <i>multi-scene project</i> is comprised of many ordered notes, called “scenes,”\n        that you can combine together into your manuscript. It also includes an index\n        file, the YAML frontmatter of which is used by Longform to track your project.`",
+          "target": ".innerHTML = `一个 <i>多场景项目</i> 由许多有序的笔记组成，称为“场景”，\n        你可以将它们组合成你的手稿。它还包括一个索引\n        文件，其 YAML 前置事项由 Longform 用于跟踪你的项目。`"
+        },
+        {
+          "source": "text(\"Longform has found \")",
+          "target": "text(\"Longform 发现了 \")"
+        },
+        {
+          "source": "text(\" new file\")",
+          "target": "text(\" 新文件\")"
+        },
+        {
+          "source": "text(\" in your scenes folder.\")",
+          "target": "text(\" 在你的场景文件夹中。\")"
+        },
+        {
+          "source": "text(\"You are creating a new draft\")",
+          "target": "text(\"你正在创建一个新草稿\")"
+        },
+        {
+          "source": "text(\" from your current draft\\n        \")",
+          "target": "text(\" 从你当前的草稿\\n        \")"
+        },
+        {
+          "source": "text(\"You are creating a \")",
+          "target": "text(\"你正在创建一个 \")"
+        },
+        {
+          "source": "My Project Title",
+          "target": "项目标题"
+        },
+        {
+          "source": "Scenes",
+          "target": "场景"
+        },
+        {
+          "source": "Project",
+          "target": "项目"
+        },
+        {
+          "source": "Compile",
+          "target": "编译"
+        }
+      ]
+    }
+  }
+}

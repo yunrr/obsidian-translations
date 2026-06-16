@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "import-attachments-plus",
+    "version": "2.0.0",
+    "title": "Import Attachments+",
+    "description": "Move and link the attachments into the vault.",
+    "language": "zh-cn",
+    "supportedVersions": "1.5.11",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Attachment folder renamed successfully.\")",
+          "target": "Notice(\"附件文件夹重命名成功。\")"
+        },
+        {
+          "source": "Notice(\"Attachment folder could not be found at the given location.\")",
+          "target": "Notice(\"无法在给定位置找到附件文件夹。\")"
+        },
+        {
+          "source": "Notice(\"Attachment folder moved to the system trash successfully.\")",
+          "target": "Notice(\"附件文件夹成功移动到系统垃圾箱。\")"
+        },
+        {
+          "source": "Notice(\"Attachment folder deleted successfully.\")",
+          "target": "Notice(\"附件文件夹成功删除。\")"
+        },
+        {
+          "source": "Notice(`${p} successfully ${g} files to the attachments folder.`)",
+          "target": "Notice(`${p} 成功 ${g} 文件到附件文件夹。`)"
+        },
+        {
+          "source": ".log(\"Loaded plugin Import Attachments+\")",
+          "target": ".log(\"已加载插件 Import Attachments+\")"
+        },
+        {
+          "source": ".error(\"Error formatting date:\",e.message)",
+          "target": ".error(\"日期格式化错误:\",e.message)"
+        },
+        {
+          "source": ".error(\"Error formatting date:\",e)",
+          "target": ".error(\"日期格式化错误:\",e)"
+        },
+        {
+          "source": ".error(\"Error resolving paths:\",n)",
+          "target": ".error(\"解析路径错误:\",n)"
+        },
+        {
+          "source": ".error(\"Error msg:\",s)",
+          "target": ".error(\"错误信息:\",s)"
+        },
+        {
+          "source": ".error(\"Invalid import action type:\",d)",
+          "target": ".error(\"无效的导入操作类型:\",d)"
+        },
+        {
+          "source": ".error(\"Invalid option selection:\",d)",
+          "target": ".error(\"无效的选项选择:\",d)"
+        },
+        {
+          "source": ".error(\"Invalid option selection:\",F)",
+          "target": ".error(\"无效的选项选择:\",F)"
+        },
+        {
+          "source": ".error(\"Invalid option selection:\",a)",
+          "target": ".error(\"无效的选项选择:\",a)"
+        },
+        {
+          "source": ".error(`No matching link found at the click position: ${t.message}`)",
+          "target": ".error(`在点击位置未找到匹配的链接: ${t.message}`)"
+        },
+        {
+          "source": ".error(\"Error hashing the file:\",g)",
+          "target": ".error(\"文件哈希错误:\",g)"
+        },
+        {
+          "source": ".error(h)",
+          "target": ".error(h)"
+        },
+        {
+          "source": ".error(\"Original attachment folder:\",a)",
+          "target": ".error(\"原始附件文件夹:\",a)"
+        },
+        {
+          "source": ".error(\"New attachment folder:\",c)",
+          "target": ".error(\"新附件文件夹:\",c)"
+        },
+        {
+          "source": ".error(\"Error msg:\",r)",
+          "target": ".error(\"错误信息:\",r)"
+        },
+        {
+          "source": ".error(\"No view provided\")",
+          "target": ".error(\"未提供视图\")"
+        },
+        {
+          "source": ".error(\"Unable to determine drop position\")",
+          "target": ".error(\"无法确定放置位置\")"
+        },
+        {
+          "source": ".error(\"No files dropped\")",
+          "target": ".error(\"未放置任何文件\")"
+        },
+        {
+          "source": ".error(y+\":\",b,F)",
+          "target": ".error(y+\":\",b,F)"
+        },
+        {
+          "source": ".error(\"Cannot open the attachment folder. The user must first select a markdown note.\")",
+          "target": ".error(\"无法打开附件文件夹。用户必须先选择一个Markdown笔记。\")"
+        },
+        {
+          "source": "name:\"Move file to vault as linked attachment\"",
+          "target": "name:\"将文件移动到保险库作为链接附件\""
+        },
+        {
+          "source": "name:\"Move file to vault as embedded attachment\"",
+          "target": "name:\"将文件移动到保险库作为嵌入附件\""
+        },
+        {
+          "source": "name:\"Copy file to vault as linked attachment\"",
+          "target": "name:\"将文件复制到保险库作为链接附件\""
+        },
+        {
+          "source": "name:\"Copy file to vault as embedded attachment\"",
+          "target": "name:\"将文件复制到保险库作为嵌入附件\""
+        },
+        {
+          "source": "name:\"Open attachments folder\"",
+          "target": "name:\"打开附件文件夹\""
+        },
+        {
+          "source": "text:\"Import files\"",
+          "target": "text:\"导入文件\""
+        },
+        {
+          "source": "text:\"Configure the import options and then press either enter or the import button.\"",
+          "target": "text:\"配置导入选项，然后按回车键或导入按钮。\""
+        },
+        {
+          "source": "text:\"Import\"",
+          "target": "text:\"导入\""
+        },
+        {
+          "source": "text:\"file\"",
+          "target": "text:\"文件\""
+        },
+        {
+          "source": "text:\"How do you want to proceed?\"",
+          "target": "text:\"您想如何进行？\""
+        },
+        {
+          "source": "text:\"Keep both\"",
+          "target": "text:\"保留两者\""
+        },
+        {
+          "source": "text:\"Overwrite\"",
+          "target": "text:\"覆盖\""
+        },
+        {
+          "source": "text:\"Skip\"",
+          "target": "text:\"跳过\""
+        },
+        {
+          "source": "text:\"Delete the attachment folder?\"",
+          "target": "text:\"删除附件文件夹吗？\""
+        },
+        {
+          "source": "text:\"Delete\"",
+          "target": "text:\"删除\""
+        },
+        {
+          "source": "text:\"Relative path\"",
+          "target": "text:\"相对路径\""
+        },
+        {
+          "source": "text:\"Copy\"",
+          "target": "text:\"复制\""
+        },
+        {
+          "source": "text:\"Ok\"",
+          "target": "text:\"确定\""
+        },
+        {
+          "source": "text:\"Create an empty attachment folder?\"",
+          "target": "text:\"创建一个空的附件文件夹吗？\""
+        },
+        {
+          "source": "text:\"Yes\"",
+          "target": "text:\"是\""
+        },
+        {
+          "source": "text:\"No\"",
+          "target": "text:\"否\""
+        },
+        {
+          "source": "text:\"The attachment folder is now empty, and it should be safe to delete it.\"",
+          "target": "text:\"附件文件夹现在是空的，应该可以安全删除。\""
+        },
+        {
+          "source": "text:\"${original} for the original name (omitting file extension) of the imported attachment files\"",
+          "target": "text:\"${original} 为导入附件文件的原始名称（省略文件扩展名）\""
+        },
+        {
+          "source": "text:\"${notename} for the name of the MarkDown note into which the attachment files will be imported\"",
+          "target": "text:\"${notename} 为导入附件文件的Markdown笔记名称\""
+        },
+        {
+          "source": "text:\"${date} for the current date\"",
+          "target": "text:\"${date} 为当前日期\""
+        },
+        {
+          "source": "text:\"${uuid} for a 128-bit Universally Unique Identifier\"",
+          "target": "text:\"${uuid} 为128位通用唯一标识符\""
+        },
+        {
+          "source": "text:\"${md5} for a MD5 hash of the imported file\"",
+          "target": "text:\"${md5} 为导入文件的MD5哈希\""
+        },
+        {
+          "source": "text:\"momentjs\"",
+          "target": "text:\"momentjs\""
+        },
+        {
+          "source": "text:\"Be aware that this setting is a mirror of the corresponding setting in the vault preference pane \"",
+          "target": "text:\"请注意，此设置是保险库偏好面板中相应设置的镜像。\""
+        },
+        {
+          "source": "text:\"Files and links\"",
+          "target": "text:\"文件和链接\""
+        },
+        {
+          "source": ".setName(\"Importing\")",
+          "target": ".setName(\"导入\")"
+        },
+        {
+          "source": ".setName(\"Whether to move or copy files that are drag-and-dropped?\")",
+          "target": ".setName(\"是否移动或复制拖放的文件？\")"
+        },
+        {
+          "source": ".setName(\"Whether to move or copy files that are copy-and-pasted?\")",
+          "target": ".setName(\"是否移动或复制复制和粘贴的文件？\")"
+        },
+        {
+          "source": ".setName(\"Embed imported documents:\")",
+          "target": ".setName(\"嵌入导入的文档:\")"
+        },
+        {
+          "source": ".setName(\"Import multiple files as:\")",
+          "target": ".setName(\"将多个文件导入为:\")"
+        },
+        {
+          "source": ".setName(\"Use the selected text for the displayed text:\")",
+          "target": ".setName(\"使用选定文本作为显示文本:\")"
+        },
+        {
+          "source": ".setName(\"Use the filename for the displayed text:\")",
+          "target": ".setName(\"使用文件名作为显示文本:\")"
+        },
+        {
+          "source": ".setName(\"Hide the extension in the filename for the displayed text:\")",
+          "target": ".setName(\"在显示文本中隐藏文件名扩展名:\")"
+        },
+        {
+          "source": ".setName(\"Use [[Wikilinks]]:\")",
+          "target": ".setName(\"使用 [[Wikilinks]]:\")"
+        },
+        {
+          "source": ".setName(\"New link format:\")",
+          "target": ".setName(\"新链接格式:\")"
+        },
+        {
+          "source": ".setName(\"Opening\")",
+          "target": ".setName(\"打开\")"
+        },
+        {
+          "source": ".setName(\"Open attachments with default external application:\")",
+          "target": ".setName(\"使用默认外部应用程序打开附件:\")"
+        },
+        {
+          "source": ".setName(\"Exclude the following extensions:\")",
+          "target": ".setName(\"排除以下扩展名:\")"
+        },
+        {
+          "source": ".setName(\"Reveal attachments in system's file manager:\")",
+          "target": ".setName(\"在系统文件管理器中显示附件:\")"
+        },
+        {
+          "source": ".setName(\"Managing\")",
+          "target": ".setName(\"管理\")"
+        },
+        {
+          "source": ".setName(\"Show option in context menu of embedded images to delete them:\")",
+          "target": ".setName(\"在嵌入图像的上下文菜单中显示删除选项:\")"
+        },
+        {
+          "source": ".setName(\"Show option in context menu to delete attachment files:\")",
+          "target": ".setName(\"在上下文菜单中显示删除附件文件的选项:\")"
+        },
+        {
+          "source": ".setName(\"Remove Wikilink when deleting an attachment file:\")",
+          "target": ".setName(\"删除附件文件时移除Wikilink:\")"
+        },
+        {
+          "source": ".setName(\"Automatically remove attachment folders when empty:\")",
+          "target": ".setName(\"当附件文件夹为空时自动删除:\")"
+        },
+        {
+          "source": ".setName(\"Rename the attachment folder automatically and update all links correspondingly:\")",
+          "target": ".setName(\"自动重命名附件文件夹并相应更新所有链接:\")"
+        },
+        {
+          "source": ".setName(\"Delete the attachment folder automatically when the corresponding note is deleted:\")",
+          "target": ".setName(\"删除对应笔记时自动删除附件文件夹:\")"
+        },
+        {
+          "source": ".setName(\"Ask confirmation before deleting the attachment folder:\")",
+          "target": ".setName(\"在删除附件文件夹之前询问确认:\")"
+        },
+        {
+          "source": ".setName(\"Attachment folder\")",
+          "target": ".setName(\"附件文件夹\")"
+        },
+        {
+          "source": ".setName(\"Hide attachment folders:\")",
+          "target": ".setName(\"隐藏附件文件夹:\")"
+        },
+        {
+          "source": ".setName(\"Attachments\")",
+          "target": ".setName(\"附件\")"
+        },
+        {
+          "source": ".setName(\"Name of the imported attachments:\")",
+          "target": ".setName(\"导入附件的名称:\")"
+        },
+        {
+          "source": ".setName(\"Date format for files:\")",
+          "target": ".setName(\"文件的日期格式:\")"
+        },
+        {
+          "source": ".setName(\"Commands and hotkeys\")",
+          "target": ".setName(\"命令和热键:\")"
+        },
+        {
+          "source": ".setName(\"Default location for new attachments:\")",
+          "target": ".setName(\"新附件的默认位置:\")"
+        },
+        {
+          "source": ".setName(\"Attachment folder path:\")",
+          "target": ".setName(\"附件文件夹路径:\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, the user is asked each time whether to delete the attachment folder.\")",
+          "target": ". setDesc(\"如果启用，每次都会询问用户是否删除附件文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, the attachment folders will not be shown.\")",
+          "target": ".setDesc(\"启用此选项后，附件文件夹将不会显示。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter a list of extensions\")",
+          "target": ".setPlaceholder(\"输入扩展名列表\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter attachment name\")",
+          "target": ".setPlaceholder(\"输入扩展名列表\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter date format\")",
+          "target": ".setPlaceholder(\"输入日期格式\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: folder 1/folder\")",
+          "target": ".setPlaceholder(\"示例：文件夹1/文件夹\")"
+        },
+        {
+          "source": ".appendText(\"What links to insert when auto-generating internal links. \")",
+          "target": ".appendText(\"自动生成内部链接时插入哪些链接。 \")"
+        },
+        {
+          "source": ".appendText(\"Note that the file extension of the imported attachments is preserved.\")",
+          "target": ".appendText(\"请注意，导入附件的文件扩展名被保留。\")"
+        },
+        {
+          "source": ".appendText(\" syntax.\")",
+          "target": ".appendText(\" 句法.\")"
+        },
+        {
+          "source": ".appendText(\" configuration pane.\")",
+          "target": ".appendText(\" 配置窗格\")"
+        },
+        {
+          "source": ".appendText(\"Where newly added attachments are placed.\")",
+          "target": ".appendText(\"放置新添加的附件的位置。\")"
+        },
+        {
+          "source": ".appendText(\". Any change made here is carried over to the general setting and viceversa.\")",
+          "target": ".appendText(\"此处所做的任何更改都会传递到常规设置，反之亦然\")"
+        },
+        {
+          "source": ".setTitle(\"Delete link and file\")",
+          "target": ".setTitle(\"删除 link and file\")"
+        },
+        {
+          "source": ".setTitle(`Delete ${Ee[i]}`)",
+          "target": ".setTitle(`删除  ${Ee[i]}`)"
+        },
+        {
+          "source": "text:\"Hotkeys\"",
+          "target": "text:\"Hotkeys\""
+        },
+        {
+          "source": "text:\"You intended to move the file. \t\t\t\t\tHowever, moving a file that is already in the vault to a new \t\t\t\t\tdestination in the same vault is not supported; \t\t\t\t\tonly copying and linking operations are allowed.\"",
+          "target": "text:\"你打算移动这个文件。 \t\t\t\t\t然而，将已在保管库中的文件移动到同一保管库中的新位置是不被支持的；仅允许复制和链接操作。 \t\t\t\t\t同一保管库中的目标位置不被支持; \t\t\t\t\t仅允许复制和链接操作。\""
+        },
+        {
+          "source": "text:\"Do you want to make a copy or refer to the original file in the vault through a relative path?\"",
+          "target": "text:\"是否要复制或通过相对路径引用保管库中的原始文件？\""
+        },
+        {
+          "source": ".setDesc(\"Choose whether files that are dragged and dropped into the editor should be moved or copied. Alternatively, the user is asked each time. By holding the shift key \\u21E7 pressed, you will be shown the import panel, however you configured this option.\")",
+          "target": ".setDesc(\"选择是否应该移动或复制拖放到编辑器中的文件。或者，每次都会询问用户。通过按住shift键按下，您将显示导入面板，但您配置了此选项\")"
+        },
+        {
+          "source": ".setDesc(\"Choose whether files that are copy and pasted into the editor should be moved or copied. Alternatively, the user is asked each time.  By holding the shift key \\u21E7 pressed, you will be shown the import panel, however you configured this option.\")",
+          "target": ".setDesc(\"选择复制并粘贴到编辑器中的文件是应该移动还是复制。或者，每次都询问用户。按住 shift 键不放，将显示导入面板，具体显示方式取决于你的此选项配置。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, the files are imported as an embedded document; if it is deactivated, they are imported as a linked document.  By holding the shift key \\u21E7 pressed, you will be shown the import panel, however you configured this option.\")",
+          "target": ".setDesc(\"启用此选项后，文件将作为嵌入式文档导入；如果禁用此选项，文件将作为链接文档导入。按住 Shift 键不放，无论你如何配置此选项，都将显示导入面板。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how to import multiple files: as a bulleted list, as a numbered list, or inline without using lists.\")",
+          "target": ".setDesc(\"选择如何导入多个文件：项目符号列表、有序列表或不使用列表的内联。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, the filename of the imported document is used as the display text. This option is ignored when                     the previous option applies.\")",
+          "target": ".setDesc(\"启用此选项后，导入文档的文件名将用作显示文本。当应用上一个选项时，此选项将被忽略。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, the extension of the imported file is not included in the displayed text.\")",
+          "target": ".setDesc(\"启用此选项后，导入文件的扩展名不包含在显示的文本中。\")"
+        },
+        {
+          "source": ".setDesc(`With this option enabled, when you open an attachment by holding ${h}, the attachment opens in default external application.`)",
+          "target": ".setDesc(`启用此选项后，当您通过按住${h}打开附件时，附件会在默认外部应用程序中打开`)"
+        },
+        {
+          "source": ".setDesc(\"Enter a list of extensions separated by comma (e.g.: .md, .pdf) for which the default Obsidian behavior applies instead of opening the file in the default external application.\")",
+          "target": ".setDesc(\"输入以逗号分隔的扩展名列表（例如：. md、.pdf），默认黑曜石行为适用于这些扩展名，而不是在默认外部应用程序中打开文件\")"
+        },
+        {
+          "source": ".setDesc(`With this option enabled, when you open an attachment by holding ${h}, the attachment is shown in the system's file manager.`)",
+          "target": ".setDesc(`启用此选项后，当您通过按住${h}打开附件时，该附件会显示在系统的文件管理器中。`)"
+        },
+        {
+          "source": ".setDesc(\"Enter a list of extensions separated by comma (e.g.: .md, .pdf) for which the default Obsidian behavior applies instead of revealing the file in the system's file manager\")",
+          "target": ".setDesc(\"输入以逗号分隔的扩展名列表（例如：. md、.pdf），默认黑曜石行为适用于这些扩展名，而不是在系统的文件管理器中显示文件\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, when you right click on an embedded image in your note, an option 'Delete image'                 will be shown in the context menu.\")",
+          "target": ".setDesc(\"启用此选项后，当您右键单击笔记中的嵌入图像时，上下文菜单中将显示一个选项“删除图像”。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, when you right click on a Wikilink in your note, an 'Delete file'                 will be shown in the context menu.\")",
+          "target": ".setDesc(\"启用此选项后，当你在笔记中的维基链接上右键点击时，上下文菜单中将显示“删除文件”。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, when you right click on a Wikilink or MarkDown link in your note to delete the attachment,                 not only the attachment will be deleted, but also the Wikilink or MarkDown link, respectively, will be removed from your note.\")",
+          "target": ".setDesc(\"启用此选项后，当你在笔记中右键点击维基链接或 MarkDown 链接以删除附件时，不仅附件会被删除，相应的维基链接或 MarkDown 链接也将从你的笔记中移除。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, after deleting an attachment, the plugin will check if the attachments folder                 is now empty, and if it is, it will delete the attachments folder as well.\")",
+          "target": ".setDesc(\"启用此选项后，在删除附件后，插件将检查附件文件夹是否为空，如果是，它也将删除附件文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, when you rename/move an note, if the renamed note has an attachment folder connected to it,                 its attachment folder is renamed/moved to a new name/location corresponding to the new name of the note.\")",
+          "target": ".setDesc(\"启用此选项后，当你重命名/移动一个笔记时，如果重命名后的笔记有一个与之关联的附件文件夹，那么其附件文件夹将被重命名/移动到与该笔记新名称相对应的新名称/位置。\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, when you delete a note, if the deleted note has an attachment folder connected to it,                 its attachment folder will be deleted as well.                 Note: automatic deletion only works when the name of the attachment folder contains ${notename}.\")",
+          "target": ".setDesc(\"启用此选项后，当你删除一个笔记时，如果被删除的笔记有一个与之关联的附件文件夹，那么该附件文件夹也将被删除。注意：自动删除仅在附件文件夹的名称包含${notename}时起作用。\")"
+        },
+        {
+          "source": ".appendText(\"Auto-generate Wikilinks for [[links]] and [[images]] instead of Markdown links and images. Disable this option to generate Markdown links instead. \")",
+          "target": ".appendText(\"自动生成[[链接]]和[[图片]]的维基链接，而不是Markdown链接和图片。禁用此选项以生成Markdown链接。 \")"
+        },
+        {
+          "source": ".appendText(\"Choose how to name the imported attachments, using the following variables as a placeholder:\")",
+          "target": ".appendText(\"选择如何命名导入的附件，使用以下变量作为占位符：\")"
+        },
+        {
+          "source": ".appendText(\"Choose the date format for the placeholder ${date} in the attachment name, based on \")",
+          "target": ".appendText(\"选择附件名称中占位符${date}的日期格式，基于  \")"
+        },
+        {
+          "source": ".appendText(\"The plugin offers a range of commands to import attachments as well.                         You can review the commands and customize them with hotkeys by visiting the \")",
+          "target": ".appendText(\"该插件还提供一系列命令来导入附件。你可以查看这些命令，并通过访问后面超链接来使用热键对其进行自定义。\")"
+        },
+        {
+          "source": ".appendText(\"Place newly created attachment files, such as images created via drag-and-drop or audio recordings, in this folder.  Use the following variables as a placeholder:\")",
+          "target": ".appendText(\"将新创建的附件文件，如通过拖放创建的图像或音频录制文件，放置在此文件夹中。使用以下变量作为占位符：\")"
+        },
+        {
+          "source": ".addOption(\"ASK_USER\",\"Ask each time\")",
+          "target": ".addOption(\"ASK_USER\",\"每次都问\")"
+        },
+        {
+          "source": ".addOption(\"MOVE\",\"Move\")",
+          "target": ".addOption(\"MOVE\",\"移动\")"
+        },
+        {
+          "source": ".addOption(\"COPY\",\"Copy\")",
+          "target": ".addOption(\"COPY\",\"复制\")"
+        },
+        {
+          "source": ".addOption(\"YES\",\"Yes\")",
+          "target": ".addOption(\"YES\",\"Yes\")"
+        },
+        {
+          "source": ".addOption(\"NO\",\"No\")",
+          "target": ".addOption(\"NO\",\"No\")"
+        },
+        {
+          "source": ".addOption(\"BULLETED\",\"Bulleted list\")",
+          "target": ".addOption(\"BULLETED\",\"项目符号列表\")"
+        },
+        {
+          "source": ".addOption(\"NUMBERED\",\"Numbered list\")",
+          "target": ".addOption(\"NUMBERED\",\"编号列表\")"
+        },
+        {
+          "source": ".addOption(\"INLINE\",\"Inline\")",
+          "target": ".addOption(\"INLINE\",\"内联\")"
+        },
+        {
+          "source": ".addOption(\"shortest\",\"Shortest path when possible\")",
+          "target": ".addOption(\"shortest\",\"尽可能短的路径\")"
+        },
+        {
+          "source": ".addOption(\"relative\",\"Relative path to note\")",
+          "target": ".addOption(\"relative\",\"笔记的相对路径\")"
+        },
+        {
+          "source": ".addOption(\"absolute\",\"Absolute path in vault\")",
+          "target": ".addOption(\"absolute\",\"库中的绝对路径\")"
+        },
+        {
+          "source": ".addOption(\"ROOT\",\"Vault folder\")",
+          "target": ".addOption(\"ROOT\",\"库文件夹\")"
+        },
+        {
+          "source": ".addOption(\"FOLDER\",\"In the folder specified below\")",
+          "target": ".addOption(\"FOLDER\",\"在下面指定的文件夹中\")"
+        },
+        {
+          "source": ".addOption(\"CURRENT\",\"Same folder as current file\")",
+          "target": ".addOption(\"CURRENT\",\"与当前文件相同的文件夹\")"
+        },
+        {
+          "source": ".addOption(\"SUBFOLDER\",\"In subfolder under current folder\")",
+          "target": ".addOption(\"SUBFOLDER\",\"在当前文件夹下的子文件夹中\")"
+        },
+        {
+          "source": ".setDesc(\"With this option enabled, the selected text is replaced with the link to the imported document and the same                     selected text is automatically used as the display text for the link itself. Note that you need to drag the attachment onto                     the selected text. This option is ignored when multiple attachments are imported.\")",
+          "target": ".setDesc(\"启用此选项后，所选文本将被替换为导入文档的链接，并且相同的所选文本将自动用作链接本身的显示文本。请注意，您需要将附件拖到所选文本上。当导入多个附件时，此选项将被忽略\")"
+        }
+      ]
+    }
+  }
+}

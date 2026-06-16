@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "edit-history",
+    "version": "2.0.0",
+    "title": "Edit History",
+    "description": "Automatically saves the history of edits of a file when Obsidian saves the file, and allows viewing the differences between edits, copying text from a previous edit, or fully rolling back to a previous edit.",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".error(e3)",
+          "target": ".error(e3)"
+        },
+        {
+          "source": ".error(e2)",
+          "target": ".error(e2)"
+        },
+        {
+          "source": ".error(this.generatedError)",
+          "target": ".error(this.generatedError)"
+        },
+        {
+          "source": "name: \"Open edit history for this file\"",
+          "target": "name: \"打开此文件的编辑历史记录\""
+        },
+        {
+          "source": "name: \"Save current edit in the edit history\"",
+          "target": "name: \"将当前编辑保存在编辑历史中\""
+        },
+        {
+          "source": "text: \"No edit history\"",
+          "target": "text: \"无编辑历史\""
+        },
+        {
+          "source": "text: \"Antonio Tejada\"",
+          "target": "text: \"Antonio Tejada\""
+        },
+        {
+          "source": ".setText(\"? edits\")",
+          "target": ".setText(\"? edits\")"
+        },
+        {
+          "source": ".setButtonText(\"Copy\")",
+          "target": ".setButtonText(\"复制\")"
+        },
+        {
+          "source": ".setName(\"Minimum seconds between edits\")",
+          "target": ".setName(\"编辑间隔最短秒数\")"
+        },
+        {
+          "source": ".setName(\"Maximum number of edits\")",
+          "target": ".setName(\"最大编辑次数\")"
+        },
+        {
+          "source": ".setName(\"Maximum age of edits\")",
+          "target": ".setName(\"编辑的最长期限\")"
+        },
+        {
+          "source": ".setName(\"Maximum size of the history file (KB)\")",
+          "target": ".setName(\"历史文件的最大大小（KB）\")"
+        },
+        {
+          "source": ".setName(\"File extension whitelist\")",
+          "target": ".setName(\"文件扩展名白名单\")"
+        },
+        {
+          "source": ".setName(\"Show on status bar\")",
+          "target": ".setName(\"显示在状态栏上\")"
+        },
+        {
+          "source": ".setName(\"Debug level\")",
+          "target": ".setName(\"调试级别\")"
+        },
+        {
+          "source": ".setDesc(\"Minimum number of seconds that must pass from the previous edit to store a new edit. Modifications done between those seconds will be merged into the next edit, reducing the edit history file size at the expense of less history granularity.\")",
+          "target": ".setDesc(\"从上一次编辑到存储新编辑必须经过的最小秒数。在这几秒之间所做的修改将合并到下一次编辑中，从而减少编辑历史文件的大小，但代价是历史粒度降低。\")"
+        },
+        {
+          "source": ".setDesc(\"Maximum number of edits to keep, set to 0 for no limit. Older edits will be deleted from the history in the next update, reducing the edit history file size at the expense of less history.\")",
+          "target": ".setDesc(\"保留的最大编辑数，设置为 0 表示无限制。较旧的编辑将在下次更新时从历史记录中删除，从而减少编辑历史记录文件的大小，但会减少历史记录。\")"
+        },
+        {
+          "source": ".setDesc(\"Oldest edit to keep in seconds, eg set to 3600 to delete edits that are more than one hour old, set to 0 for no limit. Older edits will be deleted from the history in the next update, reducing the edit history file size at the expense of less history.\")",
+          "target": ".setDesc(\"以秒为单位保留最早的编辑，例如，设置为 3600 表示删除超过一小时的编辑，设置为 0 表示无限制。较旧的编辑将在下次更新时从历史记录中删除，从而减少编辑历史记录文件的大小，但会减少历史记录。\")"
+        },
+        {
+          "source": ".setDesc(\"Maximum size of the history file in kilobytes, set to 0 for no limit. When over the size, edits will be deleted from the history in the next update, older edits first, reducing the edit history file size at the expense of less history.\")",
+          "target": ".setDesc(\"历史文件的最大大小（以千字节为单位），设置为 0 表示无限制。如果超过此大小，则下次更新时将从历史记录中删除编辑内容（先删除较旧的编辑内容），从而以较少的历史记录为代价减小编辑历史文件的大小。\")"
+        },
+        {
+          "source": ".setDesc(\"List of file extensions to store edits for. Empty to store edits for all files.\\nNote if an extension is removed, old edit history files will need to be removed manually.\")",
+          "target": ".setDesc(\"用于存储编辑的文件扩展名列表。如果为空则表示存储所有文件的编辑。\\n请注意，如果删除了扩展名，则需要手动删除旧的编辑历史文件。\")"
+        },
+        {
+          "source": ".setDesc(\"Show edit history file information on the status bar. Click the status bar to show the edit history for the current file.\")",
+          "target": ".setDesc(\"在状态栏上显示编辑历史文件信息。单击状态栏可显示当前文件的编辑历史。\")"
+        },
+        {
+          "source": ".setDesc(\"Messages to show in the javascript console.\")",
+          "target": ".setDesc(\"在 javascript 控制台中显示的消息。\")"
+        },
+        {
+          "source": "text: \"Created by \"",
+          "target": "text: \"创建来自 \""
+        },
+        {
+          "source": "text: \"General\"",
+          "target": "text: \"常规\""
+        },
+        {
+          "source": "text: \"Appearance\"",
+          "target": "text: \"外观\""
+        },
+        {
+          "source": "text: \"Debugging\"",
+          "target": "text: \"调试\""
+        },
+        {
+          "source": ".setText(\"Edits for \")",
+          "target": ".setText(\"编辑来自 \")"
+        },
+        {
+          "source": "text: \"No edit history file\"",
+          "target": "text: \"无编辑历史文件\""
+        }
+      ]
+    }
+  }
+}

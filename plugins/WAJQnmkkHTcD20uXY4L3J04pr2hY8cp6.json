@@ -1,0 +1,1967 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-git",
+    "version": "2.0.0",
+    "title": "Git",
+    "description": "Integrate Git version control with automatic backup and other advanced features.",
+    "language": "zh-cn",
+    "supportedVersions": "2.33.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"ObsidianGit: Base path does not exist\")",
+          "target": "Notice(\"ObsidianGit: 基础路径不存在\")"
+        },
+        {
+          "source": "Notice(\"Authentication failed. Please try with different credentials\")",
+          "target": "Notice(\"验证失败。请尝试使用不同的凭据\")"
+        },
+        {
+          "source": "Notice(\"This takes longer: Getting status\",this.noticeLength)",
+          "target": "Notice(\"这需要较长的时间:获取状态\",this.noticeLength)"
+        },
+        {
+          "source": "Notice(\"Initializing pull\")",
+          "target": "Notice(\"初始化拉取\")"
+        },
+        {
+          "source": "Notice(\"Finished pull\",!1)",
+          "target": "Notice(\"完成拉取\",!1)"
+        },
+        {
+          "source": "Notice(\"Initializing push\")",
+          "target": "Notice(\"初始化推送\")"
+        },
+        {
+          "source": "Notice(\"Initializing clone\")",
+          "target": "Notice(\"初始化克隆\")"
+        },
+        {
+          "source": "Notice(\"Initializing fetch\")",
+          "target": "Notice(\"初始化获取\")"
+        },
+        {
+          "source": "Notice(\"Obsidian must be restarted for the changes to take affect.\")",
+          "target": "Notice(\"Obsidian 必须重新启动以使更改生效。\")"
+        },
+        {
+          "source": "Notice(\"Debug information copied to clipboard. May contain sensitive information!\")",
+          "target": "Notice(\"调试信息已复制到剪贴板。可能包含敏感信息！\")"
+        },
+        {
+          "source": "Notice(\"It seems like you are not using GitHub\")",
+          "target": "Notice(\"您似乎没有使用 GitHub\")"
+        },
+        {
+          "source": "Notice(\"Successfully deleted repository. Reloading plugin...\")",
+          "target": "Notice(\"成功删除了仓库。正在重新加载插件...\")"
+        },
+        {
+          "source": "Notice(\"No repository found\")",
+          "target": "Notice(\"未找到仓库\")"
+        },
+        {
+          "source": "Notice(\"Can't find a valid git repository. Please create one via the given command or clone an existing repo.\",1e4)",
+          "target": "Notice(\"无法找到有效的 Git 仓库。请通过给定的命令创建一个,或克隆一个现有的仓库。\",1e4)"
+        },
+        {
+          "source": "Notice(\"Initialized new repo\")",
+          "target": "Notice(\"初始化新仓库\")"
+        },
+        {
+          "source": "Notice(\"Aborted clone\")",
+          "target": "Notice(\"已终止克隆 clone\")"
+        },
+        {
+          "source": "Notice(\"Invalid depth. Aborting clone.\")",
+          "target": "Notice(\"无效的深度。中止克隆。\")"
+        },
+        {
+          "source": "Notice(`Cloning new repo into \"${a}\"`)",
+          "target": "Notice(`将新的仓库克隆到 \"${a}\"`)"
+        },
+        {
+          "source": "Notice(\"Cloned new repo.\")",
+          "target": "Notice(\"克隆了新的仓库。\")"
+        },
+        {
+          "source": "Notice(\"Please restart Obsidian\")",
+          "target": "Notice(\"请重启 Obsidian\")"
+        },
+        {
+          "source": "Notice(\"Auto backup: Please enter a custom commit message. Leave empty to abort\")",
+          "target": "Notice(\"自动备份:请输入自定义提交信息。留空以中止\")"
+        },
+        {
+          "source": "Notice(\"No upstream branch is set. Please select one.\")",
+          "target": "Notice(\"没有设置上游分支。请选择一个。\")"
+        },
+        {
+          "source": "Notice(\"All local changes have been discarded. New files remain untouched.\")",
+          "target": "Notice(\"所有本地更改已被丢弃。新文件保持不变。\")"
+        },
+        {
+          "source": "Notice(\"Aborted\")",
+          "target": "Notice(\"中止\")"
+        },
+        {
+          "source": ".log(\"No tracking branch found. Ignoring pull of main repo and updating submodules only.\")",
+          "target": ".log(\"未找到跟踪分支。将忽略主仓库的拉取,仅更新子模块。\")"
+        },
+        {
+          "source": ".log(\"No tracking branch found. Ignoring push of main repo and updating submodules only.\")",
+          "target": ".log(\"未找到跟踪分支。将忽略主仓库的推送,仅更新子模块。\")"
+        },
+        {
+          "source": ".log(\"Something weird happened:\")",
+          "target": ".log(\"奇怪的事情发生了:\")"
+        },
+        {
+          "source": ".log(this.plg.manifest.name+\": Enabled line authoring.\")",
+          "target": ".log(this.plg.manifest.name+\": 启用行作者功能。\")"
+        },
+        {
+          "source": ".log(this.plg.manifest.name+\": Disabled line authoring.\")",
+          "target": ".log(this.plg.manifest.name+\": 禁用行作者功能。\")"
+        },
+        {
+          "source": ".log(\"loading \"+this.manifest.name+\" plugin: v\"+this.manifest.version)",
+          "target": ".log(\"加载 \"+this.manifest.name+\" 插件:v\"+this.manifest.version)"
+        },
+        {
+          "source": ".log(\"Reloading settings\")",
+          "target": ".log(\"重新加载设置\")"
+        },
+        {
+          "source": ".log(\"unloading \"+this.manifest.name+\" plugin\")",
+          "target": ".log(\"卸载 \"+this.manifest.name+\" 插件\")"
+        },
+        {
+          "source": ".log(\"Pushing....\")",
+          "target": ".log(\"推送中....\")"
+        },
+        {
+          "source": ".log(\"Pulling....\")",
+          "target": ".log(\"拉取中....\")"
+        },
+        {
+          "source": ".log(\"Encountered network error, but already in offline mode\")",
+          "target": ".log(\"遇到网络错误,但已在离线模式\")"
+        },
+        {
+          "source": ".error(\"This browser lacks typed array (Uint8Array)",
+          "target": ".error(\"此浏览器缺少类型化数组 (Uint8Array))"
+        },
+        {
+          "source": ".error(\"Failed to parse lines, starting in 0!\")",
+          "target": ".error(\"解析行失败,从 0 开始！\")"
+        },
+        {
+          "source": ".error(\"Unknown state reached while processing groups of lines\",a,s,o)",
+          "target": ".error(\"未知状态在处理行组时达到\",a,s,o)"
+        },
+        {
+          "source": "name:\"\",email:\"",
+          "target": "name:\"\",邮件:\""
+        },
+        {
+          "source": "name:\"Source Control\"",
+          "target": "name:\"源代码管理\""
+        },
+        {
+          "source": "name:\"History\"",
+          "target": "name:\"历史记录\""
+        },
+        {
+          "source": "name:\"Diff View\"",
+          "target": "name:\"差异视图\""
+        },
+        {
+          "source": "name:\"Edit .gitignore\"",
+          "target": "name:\"编辑 .gitignore\""
+        },
+        {
+          "source": "name:\"Open source control view\"",
+          "target": "name:\"打开源代码管理视图\""
+        },
+        {
+          "source": "name:\"Open history view\"",
+          "target": "name:\"打开历史记录视图\""
+        },
+        {
+          "source": "name:\"Open diff view\"",
+          "target": "name:\"打开差异视图\""
+        },
+        {
+          "source": "name:\"Open file on GitHub\"",
+          "target": "name:\"在 GitHub 上打开文件\""
+        },
+        {
+          "source": "name:\"Open file history on GitHub\"",
+          "target": "name:\"在 GitHub 上查看文件历史\""
+        },
+        {
+          "source": "name:\"Pull\"",
+          "target": "name:\"拉取\""
+        },
+        {
+          "source": "name:\"Fetch\"",
+          "target": "name:\"获取\""
+        },
+        {
+          "source": "name:\"Switch to remote branch\"",
+          "target": "name:\"切换到远程分支\""
+        },
+        {
+          "source": "name:\"Commit-and-sync\"",
+          "target": "name:\"提交并同步\""
+        },
+        {
+          "source": "name:\"Commit-and-sync and then close Obsidian\"",
+          "target": "name:\"提交并同步，然后关闭 Obsidian\""
+        },
+        {
+          "source": "name:\"Commit-and-sync with specific message\"",
+          "target": "name:\"提交并同步，使用特定消息\""
+        },
+        {
+          "source": "name:\"Commit all changes\"",
+          "target": "name:\"提交所有更改\""
+        },
+        {
+          "source": "name:\"Commit all changes with specific message\"",
+          "target": "name:\"使用特定消息提交所有更改\""
+        },
+        {
+          "source": "name:\"Commit staged\"",
+          "target": "name:\"提交暂存文件\""
+        },
+        {
+          "source": "name:\"Amend staged\"",
+          "target": "name:\"修改暂存文件\""
+        },
+        {
+          "source": "name:\"Commit staged with specific message\"",
+          "target": "name:\"使用特定消息提交暂存文件\""
+        },
+        {
+          "source": "name:\"Push\"",
+          "target": "name:\"推送\""
+        },
+        {
+          "source": "name:\"Stage current file\"",
+          "target": "name:\"暂存当前文件\""
+        },
+        {
+          "source": "name:\"Unstage current file\"",
+          "target": "name:\"取消暂存当前文件\""
+        },
+        {
+          "source": "name:\"Edit remotes\"",
+          "target": "name:\"编辑远程仓库\""
+        },
+        {
+          "source": "name:\"Remove remote\"",
+          "target": "name:\"移除远程仓库\""
+        },
+        {
+          "source": "name:\"Set upstream branch\"",
+          "target": "name:\"设置上游分支\""
+        },
+        {
+          "source": "name:\"CAUTION: Delete repository\"",
+          "target": "name:\"警告：删除仓库\""
+        },
+        {
+          "source": "name:\"Initialize a new repo\"",
+          "target": "name:\"初始化新仓库\""
+        },
+        {
+          "source": "name:\"Clone an existing remote repo\"",
+          "target": "name:\"克隆现有的远程仓库\""
+        },
+        {
+          "source": "name:\"List changed files\"",
+          "target": "name:\"列出已更改的文件\""
+        },
+        {
+          "source": "name:\"Switch branch\"",
+          "target": "name:\"切换分支\""
+        },
+        {
+          "source": "name:\"Create new branch\"",
+          "target": "name:\"创建新分支\""
+        },
+        {
+          "source": "name:\"Delete branch\"",
+          "target": "name:\"删除分支\""
+        },
+        {
+          "source": "name:\"CAUTION: Discard all changes\"",
+          "target": "name:\"警告：放弃所有更改\""
+        },
+        {
+          "source": "name:\"Toggle line author information\"",
+          "target": "name:\"切换行作者信息\""
+        },
+        {
+          "source": "name:\"fileIcon\"",
+          "target": "name:\"文件图标\""
+        },
+        {
+          "source": "name:\"fileTag\"",
+          "target": "name:\"文件标签\""
+        },
+        {
+          "source": "text:\"Save\"",
+          "target": "text:\"保存\""
+        },
+        {
+          "source": "text:\"File not found: \"",
+          "target": "text:\"文件未找到:\""
+        },
+        {
+          "source": "text:\"Cancel\"",
+          "target": "text:\"取消\""
+        },
+        {
+          "source": ".setText(\"Copy Debug Information\")",
+          "target": ".setText(\"复制调试信息\")"
+        },
+        {
+          "source": ".setText(`Debugging and logging:\nYou can always see the logs of this and every other plugin by opening the console with`)",
+          "target": ".setText(`调试和日志记录:\n使用以下命令打开控制台,即可查看本插件和其他所有插件的日志`)"
+        },
+        {
+          "source": ".setText(\"Edit .gitignore\")",
+          "target": ".setText(\"编辑 .gitignore\")"
+        },
+        {
+          "source": ".setText(`${this.deletion?\"Delete\":\"Discard\"} this file?`)",
+          "target": ".setText(`${this.deletion?\"删除\":\"放弃\"} 这个文件？`)"
+        },
+        {
+          "source": ".setButtonText(\"Preview\")",
+          "target": ".setButtonText(\"预览\")"
+        },
+        {
+          "source": ".setButtonText(\"Reload\")",
+          "target": ".setButtonText(\"重新加载\")"
+        },
+        {
+          "source": ".setName(\"Automatic\")",
+          "target": ".setName(\"自动\")"
+        },
+        {
+          "source": ".setName(\"Split timers for automatic commit and sync\")",
+          "target": ".setName(\"用于自动提交和同步的分割计时器\")"
+        },
+        {
+          "source": ".setName(`Auto ${i} interval (minutes)`)",
+          "target": ".setName(`自动${i}间隔(分钟)`)"
+        },
+        {
+          "source": ".setName(`Auto ${i} after stopping file edits`)",
+          "target": ".setName(`在停止文件编辑后自动 ${i} `)"
+        },
+        {
+          "source": ".setName(`Auto ${i} after latest commit`)",
+          "target": ".setName(`在最新提交后自动 ${i} `)"
+        },
+        {
+          "source": ".setName(\"Auto push interval (minutes)\")",
+          "target": ".setName(\"自动推送间隔(分钟)\")"
+        },
+        {
+          "source": ".setName(\"Auto pull interval (minutes)\")",
+          "target": ".setName(\"自动拉取间隔(分钟)\")"
+        },
+        {
+          "source": ".setName(`Specify custom commit message on auto ${i}`)",
+          "target": ".setName(`在自动 ${i} 中指定自定义提交消息`)"
+        },
+        {
+          "source": ".setName(`Commit message on auto ${i}`)",
+          "target": ".setName(`自动 ${i} 的提交信息`)"
+        },
+        {
+          "source": ".setName(\"Commit message\")",
+          "target": ".setName(\"提交信息\")"
+        },
+        {
+          "source": ".setName(\"Commit message on manual commit\")",
+          "target": ".setName(\"手动提交时的提交信息\")"
+        },
+        {
+          "source": ".setName(\"{{date}} placeholder format\")",
+          "target": ".setName(\"{{date}} 占位符格式\")"
+        },
+        {
+          "source": ".setName(\"{{hostname}} placeholder replacement\")",
+          "target": ".setName(\"{{hostname}} 占位符替换\")"
+        },
+        {
+          "source": ".setName(\"Preview commit message\")",
+          "target": ".setName(\"预览提交信息\")"
+        },
+        {
+          "source": ".setName(\"List filenames affected by commit in the commit body\")",
+          "target": ".setName(\"在提交内容中列出受提交影响的文件名\")"
+        },
+        {
+          "source": ".setName(\"Pull\")",
+          "target": ".setName(\"拉取\")"
+        },
+        {
+          "source": ".setName(\"Merge strategy\")",
+          "target": ".setName(\"合并策略\")"
+        },
+        {
+          "source": ".setName(\"Pull on startup\")",
+          "target": ".setName(\"开机时拉取\")"
+        },
+        {
+          "source": ".setName(\"Commit-and-sync\")",
+          "target": ".setName(\"提交并同步\")"
+        },
+        {
+          "source": ".setName(\"Push on commit-and-sync\")",
+          "target": ".setName(\"提交并同步时推送到远程仓库\")"
+        },
+        {
+          "source": ".setName(\"Pull on commit-and-sync\")",
+          "target": ".setName(\"提交并同步时从远程仓库拉取\")"
+        },
+        {
+          "source": ".setName(\"Line author information\")",
+          "target": ".setName(\"线路作者信息\")"
+        },
+        {
+          "source": ".setName(\"History view\")",
+          "target": ".setName(\"历史视图\")"
+        },
+        {
+          "source": ".setName(\"Show Author\")",
+          "target": ".setName(\"显示作者\")"
+        },
+        {
+          "source": ".setName(\"Show Date\")",
+          "target": ".setName(\"显示日期\")"
+        },
+        {
+          "source": ".setName(\"Hide notifications for no changes\")",
+          "target": ".setName(\"隐藏无更改的通知\")"
+        },
+        {
+          "source": ".setName(\"Show status bar\")",
+          "target": ".setName(\"显示状态栏\")"
+        },
+        {
+          "source": ".setName(\"Show branch status bar\")",
+          "target": ".setName(\"显示分支状态栏\")"
+        },
+        {
+          "source": ".setName(\"Show the count of modified files in the status bar\")",
+          "target": ".setName(\"显示状态栏中修改文件的数量\")"
+        },
+        {
+          "source": ".setName(\"Authentication/commit author\")",
+          "target": ".setName(\"身份验证/提交作者\")"
+        },
+        {
+          "source": ".setName(\"Commit author\")",
+          "target": ".setName(\"提交作者\")"
+        },
+        {
+          "source": ".setName(\"Username on your git server. E.g. your username on GitHub\")",
+          "target": ".setName(\"在你的 Git 服务器上的用户名。例如:你在 GitHub 上的用户名\")"
+        },
+        {
+          "source": ".setName(\"Password/Personal access token\")",
+          "target": ".setName(\"密码/个人访问令牌\")"
+        },
+        {
+          "source": ".setName(\"Author name for commit\")",
+          "target": ".setName(\"提交的作者名称\")"
+        },
+        {
+          "source": ".setName(\"Author email for commit\")",
+          "target": ".setName(\"提交作者的电子邮件\")"
+        },
+        {
+          "source": ".setName(\"Advanced\")",
+          "target": ".setName(\"高级\")"
+        },
+        {
+          "source": ".setName(\"Update submodules\")",
+          "target": ".setName(\"更新子模块\")"
+        },
+        {
+          "source": ".setName(\"Submodule recurse checkout/switch\")",
+          "target": ".setName(\"子模块递归检出/切换\")"
+        },
+        {
+          "source": ".setName(\"Additional environment variables\")",
+          "target": ".setName(\"额外的环境变量\")"
+        },
+        {
+          "source": ".setName(\"Additional PATH environment variable paths\")",
+          "target": ".setName(\"其他 PATH 环境变量路径\")"
+        },
+        {
+          "source": ".setName(\"Reload with new environment variables\")",
+          "target": ".setName(\"重新加载新的环境变量\")"
+        },
+        {
+          "source": ".setName(\"Custom base path (Git repository path)\")",
+          "target": ".setName(\"自定义基础路径(Git 仓库路径)\")"
+        },
+        {
+          "source": ".setName(\"Custom Git directory path (Instead of '.git')\")",
+          "target": ".setName(\"自定义 Git 目录路径(取代 .git)\")"
+        },
+        {
+          "source": ".setName(\"Disable on this device\")",
+          "target": ".setName(\"在此设备上禁用\")"
+        },
+        {
+          "source": ".setName(\"Support\")",
+          "target": ".setName(\"支持\")"
+        },
+        {
+          "source": ".setName(\"Donate\")",
+          "target": ".setName(\"捐赠\")"
+        },
+        {
+          "source": ".setName(\"Show commit authoring information next to each line\")",
+          "target": ".setName(\"显示每行旁边的提交作者信息\")"
+        },
+        {
+          "source": ".setName(\"Follow movement and copies across files and commits\")",
+          "target": ".setName(\"跟踪移动并跨文件和提交进行复制\")"
+        },
+        {
+          "source": ".setName(\"Show commit hash\")",
+          "target": ".setName(\"显示提交哈希值\")"
+        },
+        {
+          "source": ".setName(\"Author name display\")",
+          "target": ".setName(\"显示作者姓名\")"
+        },
+        {
+          "source": ".setName(\"Authoring date display\")",
+          "target": ".setName(\"显示创建日期\")"
+        },
+        {
+          "source": ".setName(\"Custom authoring date format\")",
+          "target": ".setName(\"自定义作者日期格式\")"
+        },
+        {
+          "source": ".setName(\"Authoring date display timezone\")",
+          "target": ".setName(\"创建日期显示时区:\")"
+        },
+        {
+          "source": ".setName(\"Oldest age in coloring\")",
+          "target": ".setName(\"着色最旧时间\")"
+        },
+        {
+          "source": ".setName(\"Text color\")",
+          "target": ".setName(\"文本颜色\")"
+        },
+        {
+          "source": ".setName(\"Ignore whitespace and newlines in changes\")",
+          "target": ".setName(\"忽略更改中的空格和换行符\")"
+        },
+        {
+          "source": ".setDesc(\"Enable to use one interval for commit and another for sync.\")",
+          "target": ".setDesc(\"允许使用一个间隔进行提交,另一个间隔进行同步。\")"
+        },
+        {
+          "source": ".setDesc(`If turned on, sets last auto ${i} timestamp to the latest commit timestamp. This reduces the frequency of auto ${i} when doing manual commits.`)",
+          "target": ".setDesc(`如果启用,将最后一次自动 ${i} 时间戳设置为最新的提交时间戳。这减少了在进行手动提交时自动 ${i} 的频率。`)"
+        },
+        {
+          "source": ".setDesc(\"Push commits every X minutes. Set to 0 (default) to disable.\")",
+          "target": ".setDesc(\"每X分钟推送提交。设置为0(默认)以禁用。\")"
+        },
+        {
+          "source": ".setDesc(\"Pull changes every X minutes. Set to 0 (default) to disable.\")",
+          "target": ".setDesc(\"每 X 分钟拉取更改。设置为 0(默认)以禁用。\")"
+        },
+        {
+          "source": ".setDesc(\"You will get a pop up to specify your message.\")",
+          "target": ".setDesc(\"您将收到一个弹出窗口以指定您的消息。\")"
+        },
+        {
+          "source": ".setDesc(\"Available placeholders: {{date}} (see below), {{hostname}} (see below), {{numFiles}} (number of changed files in the commit) and {{files}} (changed files in commit message).\")",
+          "target": ".setDesc(\"可用占位符:{{date}}(见下文)、{{hostname}}(见下文)、{{numFiles}}(提交中更改的文件数量)和{{files}}(提交信息中的更改文件)。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify custom hostname for every device.\")",
+          "target": ".setDesc(\"为每个设备指定自定义主机名。\")"
+        },
+        {
+          "source": ".setDesc(\"Decide how to integrate commits from your remote branch into your local branch.\")",
+          "target": ".setDesc(\"决定如何将远程分支中的提交集成到本地分支中。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically pull commits when Obsidian starts.\")",
+          "target": ".setDesc(\"自动在 Obsidian 启动时拉取提交。\")"
+        },
+        {
+          "source": ".setDesc(\"Commit-and-sync with default settings means staging everything -> committing -> pulling -> pushing. Ideally this is a single action that you do regularly to keep your local and remote repository in sync.\")",
+          "target": ".setDesc(\"使用默认设置的 提交和同步 意味着暂存所有内容 -> 提交 -> 拉取 -> 推送。理想情况下,这是一个你定期执行的单一操作,用于保持本地和远程仓库的同步。\")"
+        },
+        {
+          "source": ".setDesc(\"Show the author of the commit in the history view.\")",
+          "target": ".setDesc(\"在历史视图中显示提交的作者。\")"
+        },
+        {
+          "source": ".setDesc(\"Show the date of the commit in the history view. The {{date}} placeholder format is used to display the date.\")",
+          "target": ".setDesc(\"在历史视图中显示提交的日期。使用 {{date}} 占位符格式来显示日期。\")"
+        },
+        {
+          "source": ".setDesc(\"On slower machines this may cause lags. If so, just disable this option.\")",
+          "target": ".setDesc(\"在较慢的机器上,这可能会导致延迟。如果是这样,请禁用此选项。\")"
+        },
+        {
+          "source": ".setDesc(\"Don't show notifications when there are no changes to commit or push.\")",
+          "target": ".setDesc(\"当没有需要提交或推送的更改时,不显示通知。\")"
+        },
+        {
+          "source": ".setDesc(\"Obsidian must be restarted for the changes to take affect.\")",
+          "target": ".setDesc(\"Obsidian必须重启以使更改生效。\")"
+        },
+        {
+          "source": ".setDesc(\"Type in your password. You won't be able to see it again.\")",
+          "target": ".setDesc(\"输入您的密码。您将无法再次看到它。\")"
+        },
+        {
+          "source": ".setDesc(\"These settings usually don't need to be changed, but may be requried for special setups.\")",
+          "target": ".setDesc(\"这些设置通常无需更改,但在特殊配置中可能需要。\")"
+        },
+        {
+          "source": ".setDesc('\"Commit-and-sync\" and \"pull\" takes care of submodules. Missing features: Conflicted files, count of pulled/pushed/committed files. Tracking branch needs to be set for each submodule.')",
+          "target": ".setDesc('\"提交和同步\"以及\"拉取\"处理子模块。缺失的功能:冲突文件、拉取/推送/提交文件的数量。每个子模块需要设置跟踪分支。')"
+        },
+        {
+          "source": ".setDesc(\"Whenever a checkout happens on the root repository, recurse the checkout on the submodules (if the branches exist).\")",
+          "target": ".setDesc(\"每当根仓库发生检出时,递归检出子模块(如果分支存在)。\")"
+        },
+        {
+          "source": ".setDesc(\"Use each line for a new environment variable in the format KEY=VALUE .\")",
+          "target": ".setDesc(\"使用每一行作为新环境变量,格式为 KEY=VALUE 。\")"
+        },
+        {
+          "source": ".setDesc(\"Use each line for one path\")",
+          "target": ".setDesc(\"每行使用一个路径\")"
+        },
+        {
+          "source": ".setDesc(\"Removing previously added environment variables will not take effect until Obsidian is restarted.\")",
+          "target": ".setDesc(\"移除之前添加的环境变量直到 Obsidian 重启才生效。\")"
+        },
+        {
+          "source": ".setDesc(`\n            Sets the relative path to the vault from which the Git binary should be executed.\n             Mostly used to set the path to the Git repository, which is only required if the Git repository is below the vault root directory. Use \"\\\\\" instead of \"/\" on Windows.\n            `)",
+          "target": ".setDesc(`\n            设置 Git 二进制文件应从哪个存储库执行的相对路径。主要用于设置 Git 仓库的路径,只有当 Git 仓库位于分库根目录之下时才需要。在 Windows 下使用\"\\\\\"代替\"/\"。\n            `)"
+        },
+        {
+          "source": ".setDesc('Requires restart of Obsidian to take effect. Use \"\\\\\" instead of \"/\" on Windows.')",
+          "target": ".setDesc('需要重启 Obsidian 才能生效。在 Windows 上使用\"\\\\\"而不是\"/\"。')"
+        },
+        {
+          "source": ".setDesc(\"Disables the plugin on this device. This setting is not synced.\")",
+          "target": ".setDesc(\"禁用此设备上的插件。此设置不会同步。\")"
+        },
+        {
+          "source": ".setDesc(\"If you like this Plugin, consider donating to support continued development.\")",
+          "target": ".setDesc(\"如果您喜欢这个插件,请考虑捐赠以支持持续开发。\")"
+        },
+        {
+          "source": ".setDesc(\"Only available on desktop currently.\")",
+          "target": ".setDesc(\"目前仅在桌面版可用。\")"
+        },
+        {
+          "source": ".setDesc(\"If and how the author is displayed\")",
+          "target": ".setDesc(\"作者的显示方式(如果有)\")"
+        },
+        {
+          "source": ".setDesc(\"If and how the date and time of authoring the line is displayed\")",
+          "target": ".setDesc(\"如果以及如何显示该行的创作日期和时间\")"
+        },
+        {
+          "source": ".setPlaceholder(\"GIT_DIR=/path/to/git/dir\")",
+          "target": ".setPlaceholder(\"GIT_DIR=/path/to/git/目录\")"
+        },
+        {
+          "source": ".setPlaceholder(\"directory/directory-with-git-repo\")",
+          "target": ".setPlaceholder(\"目录/带 Git 仓库的目录\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Type your message and select optional the version with the added date.\")",
+          "target": ".setPlaceholder(\"输入您的消息并可选择添加日期的版本。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Not supported files will be opened by default app!\")",
+          "target": ".setPlaceholder(\"不支持的文件将由默认应用程序打开！\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Select branch to checkout\")",
+          "target": ".setPlaceholder(\"选择要检出的分支\")"
+        },
+        {
+          "source": ".setTitle(\"Copy commit hash\")",
+          "target": ".setTitle(\"复制提交哈希\")"
+        },
+        {
+          "source": ".setTitle(\"Git: Stage\")",
+          "target": ".setTitle(\"Git: 暂存\")"
+        },
+        {
+          "source": ".setTitle(\"Git: Unstage\")",
+          "target": ".setTitle(\"Git: 撤销暂存\")"
+        },
+        {
+          "source": ".setTitle(\"Git: Add to .gitignore\")",
+          "target": ".setTitle(\"Git: 添加到 .gitignore\")"
+        },
+        {
+          "source": ".innerText=`Color for ${i} commits`",
+          "target": ".innerText=`${i} 提交的颜色`"
+        },
+        {
+          "source": ".setName(\"Disable notifications\")",
+          "target": ".setName(\"禁用通知\")"
+        },
+        {
+          "source": ".setName(\"Show stage/unstage button in file menu\")",
+          "target": ".setName(\"显示文件菜单中的暂存/取消暂存按钮\")"
+        },
+        {
+          "source": ".setDesc(\"Disable notifications for git operations to minimize distraction (refer to status bar for updates). Errors are still shown as notifications even if you enable this setting.\")",
+          "target": ".setDesc(\"禁用 Git 操作的通知以减少干扰(请参阅状态栏以获取更新)。即使您启用此设置,错误仍会作为通知显示。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"vault backup: {{date}}\")",
+          "target": ".setPlaceholder(\"保险库备份:{{date}}\")"
+        },
+        {
+          "source": "Notice(\"Please specify a valid number.\")",
+          "target": "Notice(\"请指定一个有效的数字。\")"
+        },
+        {
+          "source": "Notice(`Automatic ${i} enabled! Every ${$s(r.settings.autoSaveInterval)",
+          "target": "Notice(`自动${i}已启用！每隔${$s(r.settings.autoSaveInterval)"
+        },
+        {
+          "source": "Notice(`Automatic ${i} disabled!`)",
+          "target": "Notice(`自动${i}已禁用！`)"
+        },
+        {
+          "source": "Notice(`Automatic push enabled! Every ${$s(r.settings.autoPushInterval)",
+          "target": "Notice(`自动推送已启用！每隔${$s(r.settings.autoPushInterval)"
+        },
+        {
+          "source": "Notice(\"Automatic push disabled!\")",
+          "target": "Notice(\"自动推送已禁用！\")"
+        },
+        {
+          "source": "Notice(`Automatic pull enabled! Every ${$s(r.settings.autoPullInterval)",
+          "target": "Notice(`自动拉取已启用！每隔${$s(r.settings.autoPullInterval)"
+        },
+        {
+          "source": "Notice(\"Automatic pull disabled!\")",
+          "target": "Notice(\"自动拉取已禁用！\")"
+        },
+        {
+          "source": ".log(`Did not delete ${y} because directory is not empty`)",
+          "target": ".log(`未删除 ${y},因为目录不为空`)"
+        },
+        {
+          "source": "name:\"Add file to gitignore\"",
+          "target": "name:\"将文件添加到 .gitignore\""
+        },
+        {
+          "source": "name:\"Commit Amend\"",
+          "target": "name:\"提交修改\""
+        },
+        {
+          "source": "description:`${st} '${Nr(he)}' of ${C}`",
+          "target": "description:`${st} '${Nr(he)}' 的 ${C}`"
+        },
+        {
+          "source": ".setName(\"Split automatic commit and push\")",
+          "target": ".setName(\"自动提交和推送分离\")"
+        },
+        {
+          "source": ".setName(`Vault ${commitOrBackup} interval (minutes)`)",
+          "target": ".setName(`保险库 ${commitOrBackup} 间隔(分钟)`)"
+        },
+        {
+          "source": ".setName(`Auto Backup after stopping file edits`)",
+          "target": ".setName(`停止文件编辑后自动备份`)"
+        },
+        {
+          "source": ".setName(`Auto ${commitOrBackup} after latest commit`)",
+          "target": ".setName(`在最新提交后自动 ${commitOrBackup}`)"
+        },
+        {
+          "source": ".setName(`Vault push interval (minutes)`)",
+          "target": ".setName(`仓库推送间隔(分钟)`)"
+        },
+        {
+          "source": ".setName(\"Specify custom commit message on auto backup\")",
+          "target": ".setName(\"在自动备份时指定自定义提交信息\")"
+        },
+        {
+          "source": ".setName(\"Commit message on auto backup/commit\")",
+          "target": ".setName(\"自动备份/提交的提交信息\")"
+        },
+        {
+          "source": ".setName(\"Commit message on manual backup/commit\")",
+          "target": ".setName(\"手动备份/提交的提交信息\")"
+        },
+        {
+          "source": ".setName(\"Backup\")",
+          "target": ".setName(\"备份\")"
+        },
+        {
+          "source": ".setName(\"Sync Method\")",
+          "target": ".setName(\"同步方法\")"
+        },
+        {
+          "source": ".setName(\"Pull updates on startup\")",
+          "target": ".setName(\"启动时检查更新\")"
+        },
+        {
+          "source": ".setName(\"Push on backup\")",
+          "target": ".setName(\"备份推送\")"
+        },
+        {
+          "source": ".setName(\"Pull changes before push\")",
+          "target": ".setName(\"在推送前拉取变更\")"
+        },
+        {
+          "source": ".setDesc(`${r.settings.differentIntervalCommitAndPush?\"Commit\":\"Commit and sync\"} changes every X minutes. Set to 0 (default) to disable. (See below setting for further configuration!)`)",
+          "target": ".setDesc(`${r.settings.differentIntervalCommitAndPush?\"提交\":\"提交并同步\"}每 X 分钟变更。设置为 0(默认)以禁用。(请参见下面的设置以进行进一步配置！)`)"
+        },
+        {
+          "source": ".setDesc(`Requires the ${i} interval not to be 0.\n                        If turned on, do auto ${i} every ${$s(r.settings.autoSaveInterval)} after stopping file edits.\n                        This also prevents auto ${i} while editing a file. If turned off, it's independent from the last file edit.`)",
+          "target": ".setDesc(`需要 ${i} 间隔不为 0。\n                        如果开启,则在停止文件编辑后每隔 ${$s(r.settings.autoSaveInterval)} 自动 ${i}。\n                        这也会防止在编辑文件时自动 ${i}。如果关闭,则与上次文件编辑无关。`)"
+        },
+        {
+          "source": ".setDesc(`Most of the time you want to push after committing. Turning this off turns a commit-and-sync action into commit ${r.settings.pullBeforePush?\"and pull \":\"\"}only. It will still be called commit-and-sync.`)",
+          "target": ".setDesc(`大多数情况下,您希望在提交后推送。关闭此选项会将提交并同步操作变为仅提交${r.settings.pullBeforePush?\"和拉取\":\"\"}操作。它仍然会被称为提交并同步。`)"
+        },
+        {
+          "source": ".setDesc(`On commit-and-sync, pull commits as well. Turning this off turns a commit-and-sync action into commit ${r.settings.disablePush?\"\":\"and push \"}only.`)",
+          "target": ".setDesc(`在提交并同步时,同时拉取提交。关闭此选项会将提交并同步操作变为仅提交${r.settings.disablePush?\"\":\"和推送\"}操作。`)"
+        },
+        {
+          "source": ".setDesc(\"Most of the time you want to push after committing. Turning this off turns a commit-and-sync action into commit only. It will still be called commit-and-sync.\")",
+          "target": ".setDesc(\"大多数情况下,您希望在提交后进行推送。关闭此选项会将提交和同步操作变为仅提交。它仍将被称为提交和同步。\")"
+        },
+        {
+          "source": ".setDesc(\"On commit-and-sync, pull commits before pushing. Turning this off turns a commit-and-sync action into commit and push only.\")",
+          "target": ".setDesc(\"在提交和同步时,在推送之前拉取提交。关闭此选项会将提交和同步操作变为仅提交和推送。\")"
+        },
+        {
+          "source": ".setDesc(\n          \"Selects the method used for handling new changes found in your remote git repository.\"\n        )",
+          "target": ".setDesc(\n          \"选择处理远程 Git 仓库中新变更的方法。\"\n        )"
+        },
+        {
+          "source": ".setDesc(\"Automatically pull updates when Obsidian starts\")",
+          "target": ".setDesc(\"启动 Obsidian 时自动拉取更新\")"
+        },
+        {
+          "source": ".setDesc(\"Disable to only commit changes\")",
+          "target": ".setDesc(\"禁用以仅提交更改\")"
+        },
+        {
+          "source": ".setDesc(\"Commit -> pull -> push (Only if pushing is enabled)\")",
+          "target": ".setDesc(\"提交 -> 拉取 -> 推送(仅当启用推送时)\")"
+        },
+        {
+          "source": ".setDesc(\"Show the author of the commit in the history view\")",
+          "target": ".setDesc(\"在历史视图中显示提交的作者\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Show the date of the commit in the history view. The {{date}} placeholder format is used to display the date.\"\n    )",
+          "target": ".setDesc(\n      \"在历史视图中显示提交的日期。使用 {{date}} 占位符格式来显示日期。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"On slower machines this may cause lags. If so, just disable this option\"\n    )",
+          "target": ".setDesc(\n      \"在较慢的机器上,这可能会导致延迟。如果出现这种情况,请禁用此选项。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Milliseconds to wait after file change before refreshing the Source Control View\"\n    )",
+          "target": ".setDesc(\n      \"在文件更改后等待的毫秒数,之后刷新源代码控制视图\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Disable notifications for git operations to minimize distraction (refer to status bar for updates). Errors are still shown as notifications even if you enable this setting\"\n    )",
+          "target": ".setDesc(\n      \"禁用 Git 操作的通知以减少干扰(请参阅状态栏以获取更新)。即使启用此设置,错误仍会以通知形式显示。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n        \"Don't show notifications when there are no changes to commit/push\"\n      )",
+          "target": ".setDesc(\n        \"当没有更改要提交/推送时,不显示通知\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n      \"Obsidian must be restarted for the changes to take affect\"\n    )",
+          "target": ".setDesc(\n      \"Obsidian 必须重启以使更改生效\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n        \"Type in your password. You won't be able to see it again.\"\n      )",
+          "target": ".setDesc(\n        \"输入你的密码。你将无法再次查看它。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        '\"Create backup\" and \"pull\" takes care of submodules. Missing features: Conflicted files, count of pulled/pushed/committed files. Tracking branch needs to be set for each submodule'\n      )",
+          "target": ".setDesc(\n        '创建备份”和“拉取”会处理子模块。缺失的功能:冲突文件,已拉取/推送/提交的文件数量。每个子模块需要设置跟踪分支。'\n      )"
+        },
+        {
+          "source": ".setDesc(\n          \"Whenever a checkout happens on the root repository, recurse the checkout on the submodules (if the branches exist).\"\n        )",
+          "target": ".setDesc(\n          \"每当在根仓库上进行检出时,对子模块递归进行检出(如果分支存在)。\"\n        )"
+        },
+        {
+          "source": ".setDesc(\n        \"Use each line for a new environment variable in the format KEY=VALUE\"\n      )",
+          "target": ".setDesc(\n        \"使用每行来表示一个新的环境变量,格式为 KEY=VALUE\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n      `Requires restart of Obsidian to take effect. Use \"\\\\\" instead of \"/\" on Windows.`\n    )",
+          "target": ".setDesc(\n      `需要重启 Obsidian 才能生效。在 Windows 上使用 \"\\\\\" 代替 \"/\".`\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Disables the plugin on this device. This setting is not synced.\"\n    )",
+          "target": ".setDesc(\n      \"在该设备上禁用插件。此设置不会同步。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"If you like this Plugin, consider donating to support continued development.\"\n    )",
+          "target": ".setDesc(\n      \"如果你喜欢这个插件,考虑捐款支持持续开发。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n        \"If and how the date and time of authoring the line is displayed\"\n      )",
+          "target": ".setDesc(\n        \"作者编写行的日期和时间的显示方式(如果有的话)\"\n      )"
+        },
+        {
+          "source": ".setPlaceholder(\n      \"Not supported files will be opened by default app!\"\n    )",
+          "target": ".setPlaceholder(\n      \"不支持的文件将默认由默认应用程序打开！\"\n    )"
+        },
+        {
+          "source": ".setPlaceholder(\n      \"Type your message and select optional the version with the added date.\"\n    )",
+          "target": ".setPlaceholder(\n      \"输入您的信息并可选地选择带有添加日期的版本。\"\n    )"
+        },
+        {
+          "source": "super(`Modifying the index is not possible because you have unmerged files: ${e.toString}. Fix them up in the work tree, and then use 'git add/rm as appropriate to mark resolution and make a commit.`)",
+          "target": "super(`无法修改索引，因为您有未合并的文件: ${e.toString}。请在工作树中修复它们，然后使用 'git add/rm' 标记解决并提交.`)"
+        },
+        {
+          "source": "super(`An internal error caused this command to fail. Please file a bug report at https://github.com/isomorphic-git/isomorphic-git/issues with this error message: ${e}`)",
+          "target": "super(`内部错误导致此命令失败。请在 https://github.com/isomorphic-git/isomorphic-git/issues 提交错误报告，附上此错误信息: ${e}`)"
+        },
+        {
+          "source": "super(`The filepath \"${e}\" contains unsafe character sequences`)",
+          "target": "super(`文件路径 \"${e}\" 包含不安全的字符序列`)"
+        },
+        {
+          "source": "super(`Could not find ${e}.`)",
+          "target": "super(`无法找到 ${e}.`)"
+        },
+        {
+          "source": "super(`Object ${e} ${i?`at ${i}`:\"\"}was anticipated to be a ${r} but it is a ${n}.`)",
+          "target": "super(`对象 ${e} ${i?`位于 ${i}`:\"\"} 预计是 ${r}，但它是 ${n}.`)"
+        },
+        {
+          "source": "super(`Expected a 40-char hex object id but saw \"${e}\".`)",
+          "target": "super(`预期是一个 40 字符的十六进制对象 ID，但看到的是 \"${e}\".`)"
+        },
+        {
+          "source": "super(`Could not find a fetch refspec for remote \"${e}\". Make sure the config file has an entry like the following:\n[remote \"${e}\"]\n\tfetch = +refs/heads/*:refs/remotes/origin/*\n`)",
+          "target": "super(`找不到远程 \"${e}\" 的 fetch refspec。请确保配置文件中有如下条目：\n[remote \"${e}\"]\n\tfetch = +refs/heads/*:refs/remotes/origin/*\n`) "
+        },
+        {
+          "source": "super(`Failed to create ${e} at ${n} because it already exists.${r?` (Hint: use 'force: true' parameter to overwrite existing ${e}.)`:\"\"}`)",
+          "target": "super(`创建 ${e} 在 ${n} 时失败，因为它已存在。${r?`（提示: 使用 'force: true' 参数覆盖现有的 ${e}。）`:\"\"}`)"
+        },
+        {
+          "source": "super(`Found multiple ${e} matching \"${n}\" (${r.join(\", \")}). Use a longer abbreviation length to disambiguate them.`)",
+          "target": "super(`找到多个匹配 \"${n}\" 的 ${e} (${r.join(\", \")})。请使用更长的缩写长度以消除歧义。`)"
+        },
+        {
+          "source": "super(`Your local changes to the following files would be overwritten by checkout: ${e.join(\", \")}`)",
+          "target": "super(`以下文件的本地更改将在检出时被覆盖：${e.join(\", \")}`)"
+        },
+        {
+          "source": "super(`Failed to checkout \"${e}\" because commit ${n} is not available locally. Do a git fetch to make the branch available locally.`)",
+          "target": "super(`无法检出 \"${e}\"，因为提交 ${n} 在本地不可用。请执行 git fetch 使该分支在本地可用.`)"
+        },
+        {
+          "source": "super(\"Empty response from git server.\")",
+          "target": "super(\"从 git 服务器收到空响应.\")"
+        },
+        {
+          "source": "super(\"A simple fast-forward merge was not possible.\")",
+          "target": "super(\"无法进行简单的快进合并.\")"
+        },
+        {
+          "source": "super(`One or more branches were not updated: ${e}`)",
+          "target": "super(`一个或多个分支未更新: ${e}`)"
+        },
+        {
+          "source": "super(`HTTP Error: ${e} ${n}`)",
+          "target": "super(`HTTP 错误: ${e} ${n}`)"
+        },
+        {
+          "source": "super(`\"${e}\" would be an invalid git reference. (Hint: a valid alternative would be \"${n}\".)`)",
+          "target": "super(`\"${e}\" 将是一个无效的 Git 引用。 (提示: 一个有效的替代方案是 \"${n}\".)`)"
+        },
+        {
+          "source": "super(`Maximum search depth of ${e} exceeded.`)",
+          "target": "super(`超出了最大搜索深度 ${e}.`)"
+        },
+        {
+          "source": "super(\"Merges with conflicts are not supported yet.\")",
+          "target": "super(\"尚不支持带有冲突的合并.\")"
+        },
+        {
+          "source": "super(`Automatic merge failed with one or more merge conflicts in the following files: ${e.toString()}. Fix conflicts then commit the result.`)",
+          "target": "super(`自动合并失败，以下文件存在一个或多个合并冲突: ${e.toString()}。解决冲突后提交结果。`)"
+        },
+        {
+          "source": "super(`No name was provided for ${e} in the argument or in the .git/config file.`)",
+          "target": "super(`在参数或 .git/config 文件中未提供 ${e} 的名称.`)"
+        },
+        {
+          "source": "super(`The function requires a \"${e}\" parameter but none was provided.`)",
+          "target": "super(`该函数需要一个 \"${e}\" 参数，但未提供.`)"
+        },
+        {
+          "source": "super('There are multiple errors that were thrown by the method. Please refer to the \"errors\" property to see more')",
+          "target": "super('该方法抛出了多个错误。请参阅 \"errors\" 属性查看更多')"
+        },
+        {
+          "source": "super(`Expected \"${e}\" but received \"${n}\".`)",
+          "target": "super(`预期是 \"${e}\"，但接收到的是 \"${n}\".`)"
+        },
+        {
+          "source": "super(`Push rejected${n}. Use \"force: true\" to override.`)",
+          "target": "super(`推送被拒绝${n}。使用 \"force: true\" 覆盖.`)"
+        },
+        {
+          "source": "super(`Remote does not support the \"${e}\" so the \"${n}\" parameter cannot be used.`)",
+          "target": "super(`远程不支持 \"${e}\"，因此无法使用 \"${n}\" 参数.`)"
+        },
+        {
+          "source": "super(`Remote did not reply using the \"smart\" HTTP protocol. Expected \"001e# service=git-upload-pack\" but received: ${e}`)",
+          "target": "super(`远程未使用 \"智能\" HTTP 协议回复。预期收到 \"001e# service=git-upload-pack\"，但收到: ${e}`)"
+        },
+        {
+          "source": "super(`Git remote \"${e}\" uses an unrecognized transport protocol: \"${n}\"`)",
+          "target": "super(`Git 远程 \"${e}\" 使用了一个无法识别的传输协议: \"${n}\"`)"
+        },
+        {
+          "source": "super(`Cannot parse remote URL: \"${e}\"`)",
+          "target": "super(`无法解析远程 URL: \"${e}\"`)"
+        },
+        {
+          "source": "super(\"The operation was canceled.\")",
+          "target": "super(\"操作已取消.\")"
+        },
+        {
+          "source": "super(`Could not merge index: Entry for '${e}' is not up to date. Either reset the index entry to HEAD, or stage your unstaged changes.`)",
+          "target": "super(`无法合并索引: '${e}' 的条目未更新。请重置索引条目为 HEAD，或暂存您的未暂存更改.`)"
+        },
+        {
+          "source": "super(`\"${e}\" does not point to any commit. You're maybe working on a repository with no commits yet. `)",
+          "target": "super(`\"${e}\" 没有指向任何提交。您可能正在一个尚未有提交的仓库中工作.`)"
+        },
+        {
+          "source": "super(\"No network connection available\")",
+          "target": "super(\"没有可用的网络连接\")"
+        },
+        {
+          "source": "ue(\"invalid type passed to GitIndex.from\")",
+          "target": "ue(\"传递给 GitIndex.from 的类型无效\")"
+        },
+        {
+          "source": "ue(\"Index file is empty (.git/index)\")",
+          "target": "ue(\"索引文件为空 (.git/index)\")"
+        },
+        {
+          "source": "ue(`Invalid dircache magic file number: ${i}`)",
+          "target": "ue(`无效的 dircache 魔术文件编号: ${i}`)"
+        },
+        {
+          "source": "ue(`Invalid checksum in GitIndex buffer: expected ${s} but saw ${a}`)",
+          "target": "ue(`GitIndex 缓冲区中的校验和无效: 预期 ${s} 但看到 ${a}`)"
+        },
+        {
+          "source": "ue(`Unsupported dircache version: ${o}`)",
+          "target": "ue(`不支持的 dircache 版本: ${o}`)"
+        },
+        {
+          "source": "ue(`Got a path length of: ${h}`)",
+          "target": "ue(`路径长度为: ${h}`)"
+        },
+        {
+          "source": "ue(`Expected 1-8 null characters but got '${p}' after ${u.path}`)",
+          "target": "ue(`预期 1-8 个空字符，但在 ${u.path} 后得到了 '${p}'`)"
+        },
+        {
+          "source": "ue(\"Unexpected end of file\")",
+          "target": "ue(\"文件意外结束\")"
+        },
+        {
+          "source": "ue(`Unexpected GitTree entry mode: ${t.toString(8)`)",
+          "target": "ue(`意外的 GitTree 条目模式: ${t.toString(8)`) "
+        },
+        {
+          "source": "ue(\"Invalid refspec\")",
+          "target": "ue(\"无效的引用规范\")"
+        },
+        {
+          "source": "ue(`Unexpected GitTree entry mode: ${t}`)",
+          "target": "ue(`意外的 GitTree 条目模式: ${t}`)"
+        },
+        {
+          "source": "ue(`GitTree: Error parsing buffer at byte location ${n}: Could not find the next space character.`)",
+          "target": "ue(`GitTree: 解析缓冲区时出错，字节位置 ${n}: 找不到下一个空格字符.`)"
+        },
+        {
+          "source": "ue(`GitTree: Error parsing buffer at byte location ${n}: Could not find the next null character.`)",
+          "target": "ue(`GitTree: 解析缓冲区时出错，字节位置 ${n}: 找不到下一个空字符.`)"
+        },
+        {
+          "source": "ue(`Could not understand file mode: ${t}`)",
+          "target": "ue(`无法理解文件模式: ${t}`)"
+        },
+        {
+          "source": "ue(\"invalid type passed to GitTree constructor\")",
+          "target": "ue(\"传递给 GitTree 构造函数的类型无效\")"
+        },
+        {
+          "source": "ue(`Length mismatch: expected ${a} bytes but got ${s} instead.`)",
+          "target": "ue(`长度不匹配: 预期 ${a} 字节，但实际得到 ${s} 字节.`)"
+        },
+        {
+          "source": "ue(`applyDelta expected source buffer to be ${r} bytes but the provided buffer was ${e.length} bytes`)",
+          "target": "ue(`applyDelta 预期源缓冲区为 ${r} 字节，但提供的缓冲区为 ${e.length} 字节`) "
+        },
+        {
+          "source": "ue(`applyDelta expected target buffer to be ${i} bytes but the resulting buffer was ${l} bytes`)",
+          "target": "ue(`applyDelta 预期目标缓冲区为 ${i} 字节，但结果缓冲区为 ${l} 字节`) "
+        },
+        {
+          "source": "ue(`Invalid PACK header '${r}'`)",
+          "target": "ue(`无效的 PACK 头部 '${r}'`) "
+        },
+        {
+          "source": "ue(`Invalid packfile version: ${i}`)",
+          "target": "ue(`无效的 packfile 版本: ${i}`) "
+        },
+        {
+          "source": "ue(`Pako error: ${f.msg}`)",
+          "target": "ue(`Pako 错误: ${f.msg}`)"
+        },
+        {
+          "source": "ue(\"Inflated object size is different from that stated in packfile.\")",
+          "target": "ue(\"膨胀后的对象大小与 packfile 中声明的不同.\")"
+        },
+        {
+          "source": "ue(`Unable to read version ${a} packfile IDX. (Only version 2 supported)`)",
+          "target": "ue(`无法读取版本 ${a} 的 packfile IDX. (只支持版本 2)`) "
+        },
+        {
+          "source": "ue(\"To keep implementation simple, I haven't implemented the layer 5 feature needed to support packfiles > 2GB in size.\")",
+          "target": "ue(\"为了简化实现，我没有实现支持大于 2GB 的 packfile 所需的第五层功能.\")"
+        },
+        {
+          "source": "ue(`Could not read object ${e} from packfile`)",
+          "target": "ue(`无法从 packfile 中读取对象 ${e}`)"
+        },
+        {
+          "source": "ue(\"Tried to read from a GitPackIndex with no packfile loaded into memory\")",
+          "target": "ue(\"尝试从未加载 packfile 到内存中的 GitPackIndex 中读取\")"
+        },
+        {
+          "source": "ue(\"Unrecognized type: 0b\"+s.toString(2))",
+          "target": "ue(\"无法识别的类型: 0b\"+s.toString(2))"
+        },
+        {
+          "source": "ue(`Packfile told us object would have length ${c} but it had length ${h.byteLength}`)",
+          "target": "ue(`Packfile 告诉我们对象的长度为 ${c}，但它的长度为 ${h.byteLength}`)"
+        },
+        {
+          "source": "ue(`SHA check failed! Expected ${r}, computed ${o}`)",
+          "target": "ue(`SHA 校验失败! 预期 ${r}, 计算得出 ${o}`)"
+        },
+        {
+          "source": "ue(`invalid requested format \"${i}\"`)",
+          "target": "ue(`无效的请求格式 \"${i}\"`) "
+        },
+        {
+          "source": "ue(\"invalid type passed to GitAnnotatedTag constructor\")",
+          "target": "ue(\"传递给 GitAnnotatedTag 构造函数的类型无效\")"
+        },
+        {
+          "source": "ue(\"invalid type passed to GitCommit constructor\")",
+          "target": "ue(\"传递给 GitCommit 构造函数的类型无效\")"
+        },
+        {
+          "source": "ue(\"commit 'parent' property should be an array\")",
+          "target": "ue(\"commit 的 'parent' 属性应该是一个数组\")"
+        },
+        {
+          "source": "ue(\"GitObjectStoreLoose expects objects to write to be in deflated format\")",
+          "target": "ue(\"GitObjectStoreLoose 期望写入的对象应为压缩格式\")"
+        },
+        {
+          "source": "ue(`Invalid mode 0o${_.toString(8)`)",
+          "target": "ue(`无效的模式 0o${_.toString(8)`) "
+        },
+        {
+          "source": ".displayMessage(`Staged ${r.path}`)",
+          "target": ".displayMessage(`已暂存 ${r.path}`)"
+        },
+        {
+          "source": ".displayMessage(`Unstaged ${r.path}`)",
+          "target": ".displayMessage(`未暂存 ${r.path}`)"
+        },
+        {
+          "source": ".displayMessage(\"Everything is up-to-date\")",
+          "target": ".displayMessage(\"一切都是最新的\")"
+        },
+        {
+          "source": ".displayMessage(\"No commits to push\")",
+          "target": ".displayMessage(\"没有提交可以推送\")"
+        },
+        {
+          "source": ".displayMessage(`Committed${d?\" approx.\":\"\"} ${h} ${h==1?\"file\":\"files\"}`)",
+          "target": ".displayMessage(`已提交${d?\" 约\":\"\"} ${h} ${h==1?\"个文件\":\"个文件\"}`)"
+        },
+        {
+          "source": ".displayMessage(\"No changes to commit\")",
+          "target": ".displayMessage(\"没有更改可以提交\")"
+        },
+        {
+          "source": ".displayMessage(`Pushed ${i} ${i==1?\"file\":\"files\"} to remote`)",
+          "target": ".displayMessage(`已推送 ${i} ${i==1?\"个文件\":\"个文件\"} 到远程`) "
+        },
+        {
+          "source": ".displayMessage(`Pulled ${n.length} ${n.length==1?\"file\":\"files\"} from remote`)",
+          "target": ".displayMessage(`已从远程拉取 ${n.length} ${n.length==1?\"个文件\":\"个文件\"}`)"
+        },
+        {
+          "source": ".displayMessage(\"Fetched from remote\")",
+          "target": ".displayMessage(\"已从远程获取\")"
+        },
+        {
+          "source": ".displayMessage(`Staged ${n.path}`)",
+          "target": ".displayMessage(`已暂存 ${n.path}`)"
+        },
+        {
+          "source": ".displayMessage(`Unstaged ${n.path}`)",
+          "target": ".displayMessage(`未暂存 ${n.path}`)"
+        },
+        {
+          "source": ".displayMessage(`Switched to ${r}`)",
+          "target": ".displayMessage(`已切换到 ${r}`)"
+        },
+        {
+          "source": ".displayMessage(`Switched to ${n}`)",
+          "target": ".displayMessage(`已切换到 ${n}`)"
+        },
+        {
+          "source": ".displayMessage(`Created new branch ${n}`)",
+          "target": ".displayMessage(`已创建新分支 ${n}`)"
+        },
+        {
+          "source": ".displayMessage(`Deleted branch ${r}`)",
+          "target": ".displayMessage(`已删除分支 ${r}`)"
+        },
+        {
+          "source": ".displayMessage(`Set upstream branch to ${n}`)",
+          "target": ".displayMessage(`已设置上游分支为 ${n}`)"
+        },
+        {
+          "source": ".displayMessage(\"Fetching remote branches\")",
+          "target": ".displayMessage(\"正在获取远程分支\")"
+        },
+        {
+          "source": ".displayError(`Cannot run git command. Trying to run: '${this.localStorage.getGitPath()||\"git\"}' .`)",
+          "target": ".displayError(`无法运行git命令。尝试运行: '${this.localStorage.getGitPath()||\"git\"}' .`)"
+        },
+        {
+          "source": ".displayError(\"Aborted. No upstream-branch is set!\",1e4)",
+          "target": ".displayError(\"操作已中止。未设置上游分支！\",1e4)"
+        },
+        {
+          "source": ".displayError(\"Too many changes to display\")",
+          "target": ".displayError(\"更改过多,无法显示\")"
+        },
+        {
+          "source": ".displayError(`Did not commit, because following files are too big: ${a.map(s=>s.vault_path).join(` `)}. Please remove them.`)",
+          "target": ".displayError(`未提交,因为以下文件太大:${a.map(s=>s.vault_path).join(` `)}。请移除它们。`)"
+        },
+        {
+          "source": ".displayError(`You have conflicts in ${r.conflicted.length} ${r.conflicted.length==1?\"file\":\"files\"}`)",
+          "target": ".displayError(`您在${r.conflicted.length}个${r.conflicted.length==1?\"文件\":\"文件\"}中有冲突`)"
+        },
+        {
+          "source": ".displayError(`Did not commit, because you have conflicts in ${c.conflicted.length} ${c.conflicted.length==1?\"file\":\"files\"}. Please resolve them and commit per command.`)",
+          "target": ".displayError(`未提交,因为您在${c.conflicted.length}个${c.conflicted.length==1?\"文件\":\"文件\"}中有冲突。请解决这些冲突后通过命令提交。`)"
+        },
+        {
+          "source": ".displayError(\"Did not commit, because you have conflicts. Please resolve them and commit per command.\")",
+          "target": ".displayError(\"未提交,因为您有冲突。请解决冲突后通过命令提交。\")"
+        },
+        {
+          "source": ".displayError(`Cannot push. You have conflicts in ${r.conflicted.length} ${r.conflicted.length==1?\"file\":\"files\"}`)",
+          "target": ".displayError(`无法推送。您在${r.conflicted.length}个${r.conflicted.length==1?\"文件\":\"文件\"}中有冲突`)"
+        },
+        {
+          "source": ".displayError(\"Cannot push. You have conflicts\")",
+          "target": ".displayError(\"无法推送。您有冲突\")"
+        },
+        {
+          "source": ".displayError(\"Git: Going into offline mode. Future network errors will no longer be displayed.\",2e3)",
+          "target": ".displayError(\"Git:进入离线模式。未来的网络错误将不再显示。\",2e3)"
+        },
+        {
+          "source": ".displayError(`Pull failed (${this.plugin.settings.syncMethod})",
+          "target": ".displayError(`拉取失败(${this.plugin.settings.syncMethod})"
+        },
+        {
+          "source": ".displayError(`Sync failed (${this.plugin.settings.syncMethod})",
+          "target": ".displayError(`同步失败(${this.plugin.settings.syncMethod})"
+        },
+        {
+          "source": "\"aria-label\",\"Open File\"",
+          "target": "\"aria-label\",\"打开文件\""
+        },
+        {
+          "source": "\"aria-label\",\"Change Layout\"",
+          "target": "\"aria-label\",\"更改布局\""
+        },
+        {
+          "source": "\"aria-label\",\"Refresh\"",
+          "target": "\"aria-label\",\"刷新\""
+        },
+        {
+          "source": "\"aria-label\",\"Discard\"",
+          "target": "\"aria-label\",\"丢弃\""
+        },
+        {
+          "source": "\"aria-label\",\"Stage\"",
+          "target": "\"aria-label\",\"暂存\""
+        },
+        {
+          "source": "\"aria-label\",\"Unstage\"",
+          "target": "\"aria-label\",\"取消暂存\""
+        },
+        {
+          "source": "\"aria-label\",\"Commit-and-sync\"",
+          "target": "\"aria-label\",\"提交并同步\""
+        },
+        {
+          "source": "\"aria-label\",\"Commit\"",
+          "target": "\"aria-label\",\"提交\""
+        },
+        {
+          "source": "\"aria-label\",\"Stage all\"",
+          "target": "\"aria-label\",\"暂存所有\""
+        },
+        {
+          "source": "\"aria-label\",\"Unstage all\"",
+          "target": "\"aria-label\",\"取消暂存所有\""
+        },
+        {
+          "source": "\"aria-label\",\"Push\"",
+          "target": "\"aria-label\",\"推送\""
+        },
+        {
+          "source": "\"aria-label\",\"Pull\"",
+          "target": "\"aria-label\",\"拉取\""
+        },
+        {
+          "source": "\"aria-label\",s=\"And \"+(t[0].length-500)+\" more files\"",
+          "target": "\"aria-label\",s=\"添加 \"+(t[0].length-500)+\" 更多文件\""
+        },
+        {
+          "source": "\"aria-label\",n=\"Clear\"",
+          "target": "\"aria-label\",n=\"清除\""
+        },
+        {
+          "source": ".ariaLabel=\"You have merge conflicts. Resolve them and commit afterwards.\"",
+          "target": ".ariaLabel=\"您有合并冲突。请解决冲突后再提交。\""
+        },
+        {
+          "source": ".ariaLabel=\"Checking repository status...\"",
+          "target": ".ariaLabel=\"正在检查仓库状态...\""
+        },
+        {
+          "source": ".ariaLabel=\"Adding files...\"",
+          "target": ".ariaLabel=\"正在添加文件...\""
+        },
+        {
+          "source": ".ariaLabel=\"Committing changes...\"",
+          "target": ".ariaLabel=\"正在提交更改...\""
+        },
+        {
+          "source": ".ariaLabel=\"Pushing changes...\"",
+          "target": ".ariaLabel=\"正在推送更改...\""
+        },
+        {
+          "source": ".ariaLabel=\"Pulling changes...\"",
+          "target": ".ariaLabel=\"正在拉取更改...\""
+        },
+        {
+          "source": ".ariaLabel=\"Failed on initialization!\"",
+          "target": ".ariaLabel=\"初始化失败！\""
+        },
+        {
+          "source": ".ariaLabel=`${n?\"Offline: \":\"\"}Last Commit: ${i}`",
+          "target": ".ariaLabel=`${n?\"离线：\":\"\"}上次提交：${i}`"
+        },
+        {
+          "source": ".ariaLabel=n?\"Git is offline\":\"Git is ready\"",
+          "target": ".ariaLabel=n?\"Git离线\":\"Git准备就绪\""
+        },
+        {
+          "source": "placeholder:\"Specify your username\"",
+          "target": "placeholder:\"指定您的用户名\""
+        },
+        {
+          "source": "placeholder:\"Specify your password/personal access token\"",
+          "target": "placeholder:\"指定您的密码/个人访问令牌\""
+        },
+        {
+          "source": "placeholder:\"Do you really want to delete the repository (.git directory)? plugin action cannot be undone.\"",
+          "target": "placeholder:\"您确定要删除该仓库(.git目录)吗？此插件操作无法撤销。\""
+        },
+        {
+          "source": "placeholder:\"Do you want to discard all changes to tracked files? plugin action cannot be undone.\"",
+          "target": "placeholder:\"您想放弃所有跟踪文件的更改吗？此插件操作无法撤销。\""
+        },
+        {
+          "source": "placeholder:\"Enter remote URL\"",
+          "target": "placeholder:\"输入远程URL\""
+        },
+        {
+          "source": "placeholder:\"Enter directory for clone. It needs to be empty or not existent.\"",
+          "target": "placeholder:\"输入克隆目录。目录必须为空或不存在。\""
+        },
+        {
+          "source": "placeholder:\"Specify depth of clone. Leave empty for full clone.\"",
+          "target": "placeholder:\"指定克隆的深度。留空则为完整克隆。\""
+        },
+        {
+          "source": "placeholder:\"Create new branch\"",
+          "target": "placeholder:\"创建新分支\""
+        },
+        {
+          "source": "placeholder:\"Delete branch\"",
+          "target": "placeholder:\"删除分支\""
+        },
+        {
+          "source": "placeholder:\"This branch isn't merged into HEAD. Force delete?\"",
+          "target": "placeholder:\"此分支尚未合并到HEAD中。强制删除？\""
+        },
+        {
+          "source": "placeholder:\"Select or create a new remote by typing its name and selecting it\"",
+          "target": "placeholder:\"通过输入名称并选择来选择或创建新的远程\""
+        },
+        {
+          "source": "placeholder:\"Select or create a new remote branch by typing its name and selecting it\"",
+          "target": "placeholder:\"通过输入名称并选择来选择或创建新的远程分支\""
+        },
+        {
+          "source": "placeholder:\"Select a remote\"",
+          "target": "placeholder:\"选择一个远程\""
+        },
+        {
+          "source": "reason:\"Failed to get remote url of submodule\"",
+          "target": "reason:\"无法获取子模块的远程 URL\""
+        },
+        {
+          "source": "reason:\"Remote branch is not configured\"",
+          "target": "reason:\"远程分支未配置\""
+        },
+        {
+          "source": "reason:\"Failed to get current branch name\"",
+          "target": "reason:\"无法获取当前分支名称\""
+        },
+        {
+          "source": "reason:\"Failed to get remote url\"",
+          "target": "reason:\"无法获取远程 URL\""
+        },
+        {
+          "source": "reason:\"Could not parse remote url\"",
+          "target": "reason:\"无法解析远程 URL\""
+        },
+        {
+          "source": "-------------------------下拉列表-------------------------",
+          "target": "-------------------------下拉列表-------------------------"
+        },
+        {
+          "source": "hide:\"Hide\",full:\"Full\",initials:\"Initials\"",
+          "target": "hide:\"隐藏\",full:\"完整\",initials:\"首字母\""
+        },
+        {
+          "source": "\"viewer-local\":\"My local (default)\",\"author-local\":\"Author's local\",utc0000:\"UTC+0000/Z\"",
+          "target": "\"viewer-local\":\"我的本地 (默认)\",\"author-local\":\"作者的本地\",utc0000:\"UTC+0000/Z\""
+        },
+        {
+          "source": "merge:\"Merge\",rebase:\"Rebase\",reset:\"Other sync service (Only updates the HEAD without touching the working directory)\"",
+          "target": "merge:\"合并\",rebase:\"变基\",reset:\"其他同步服务 (仅更新 HEAD,不触及工作目录)\""
+        },
+        {
+          "source": "hide:\"Hide\",initials:\"Initials (default)\",\"first name\":\"First name\",\"last name\":\"Last name\",full:\"Full name\"",
+          "target": "hide:\"隐藏\",initials:\"首字母 (默认)\",\"first name\":\"名\",\"last name\":\"姓\",full:\"全名\""
+        },
+        {
+          "source": "hide:\"Hide\",date:\"Date (default)\",datetime:\"Date and time\",\"natural language\":\"Natural language\",custom:\"Custom\"",
+          "target": "hide:\"隐藏\",date:\"日期 (默认)\",datetime:\"日期和时间\",\"natural language\":\"自然语言\",custom:\"自定义\""
+        },
+        {
+          "source": "inactive:\"Do not follow (default)\",\"same-commit\":\"Follow within same commit\",\"all-commits\":\"Follow within all commits (maybe slow)\"",
+          "target": "inactive:\"不跟踪 (默认)\",\"same-commit\":\"仅在当前提交中跟踪\",\"all-commits\":\"在所有提交中跟踪 (可能较慢)\""
+        },
+        {
+          "source": "---------------------------------------------------------",
+          "target": "---------------------------------------------------------"
+        },
+        {
+          "source": ".log(\"Something weird happened. The 'checkRequirements' result is \"+r)",
+          "target": ".log(\"奇怪的事情发生了。'checkRequirements'的结果是\"+r)"
+        },
+        {
+          "source": ".createEl(\"button\", {\n      text: \"Cancel\"\n    })",
+          "target": ".createEl(\"按钮\", {\n      text: \"Cancel\"\n    })"
+        },
+        {
+          "source": ".addRibbonIcon(\"git-pull-request\",\"Open Git source control\"",
+          "target": ".addRibbonIcon(\"git-pull-request\",\"打开Git源代码管理\""
+        },
+        {
+          "source": "i=\"commit\"",
+          "target": "i=\" 提交 \""
+        },
+        {
+          "source": "\"commit-and-sync\"",
+          "target": "\" 提交并同步 \""
+        },
+        {
+          "source": "\"Changes\"",
+          "target": "\"更改\""
+        },
+        {
+          "source": "\"Staged Changes\"",
+          "target": "\"已暂存更改\""
+        },
+        {
+          "source": "\"Recently Pulled Files\"",
+          "target": "\"最近拉取的文件\""
+        },
+        {
+          "source": "`\n            Specify custom date format. E.g. \"${Dh}. See <a href=\"https://momentjs.com\">Moment.js</a> for more formats.`",
+          "target": "`\n            指定自定义日期格式。例如:\"${Dh}。更多格式请参见 <a href=\"https://momentjs.com\">Moment.js</a>。`"
+        },
+        {
+          "source": "`\n            <a href=\"${cL}\">Feature guide and quick examples</a></br>\n            The commit hash, author name and authoring date can all be individually toggled.</br>Hide everything, to only show the age-colored sidebar.`",
+          "target": "`\n            <a href=\"${cL}\">功能指南和快速示例</a></br>\n            提交哈希、作者姓名和创作日期都可以单独切换。</br>隐藏所有内容,仅显示着色时间的侧边栏。`"
+        },
+        {
+          "source": "`\n                By default (deactivated), each line only shows the newest commit where it was changed.\n                <br/>\n                With <i>same commit</i>, cut-copy-paste-ing of text is followed within the same commit and the original commit of authoring will be shown.\n                <br/>\n                With <i>all commits</i>, cut-copy-paste-ing text inbetween multiple commits will be detected.\n                <br/>\n                It uses <a href=\"https://git-scm.com/docs/git-blame\">git-blame</a> and\n                for matches (at least ${Sl} characters) within the same (or all) commit(s), <em>the originating</em> commit's information is shown.`",
+          "target": "`\n                默认情况下(未激活),每行只显示最新的更改提交。\n                <br/>\n                使用 <i>同一提交</i>,剪切、复制和粘贴文本会在同一提交内进行,显示原始提交的作者信息。\n                <br/>\n                使用 <i>所有提交</i>,剪切、复制和粘贴文本将跨多个提交进行检测。\n                <br/>\n                它使用 <a href=\"https://git-scm.com/docs/git-blame\">git-blame</a>,并且对于在同一(或所有)提交中匹配的内容(至少 ${Sl} 个字符),显示<em>来源</em>提交的信息。`"
+        },
+        {
+          "source": "`\n                    The time-zone in which the authoring date should be shown.\n                    Either your local time-zone (default),\n                    the author's time-zone during commit creation or\n                    <a href=\"https://en.wikipedia.org/wiki/UTC%C2%B100:00\">UTC\\xB100:00</a>.\n            `",
+          "target": "`\n                    显示创作日期的时区。\n                    可以是您的本地时区(默认),\n                    提交时作者的时区,或者\n                    <a href=\"https://en.wikipedia.org/wiki/UTC%C2%B100:00\">UTC\\xB100:00</a>.\n            `"
+        },
+        {
+          "source": "`\n                    Whitespace and newlines are interpreted as\n                    part of the document and in changes\n                    by default (hence not ignored).\n                    This makes the last line being shown as 'changed'\n                    when a new subsequent line is added,\n                    even if the previously last line's text is the same.\n                    <br>\n                    If you don't care about purely-whitespace changes\n                    (e.g. list nesting / quote indentation changes),\n                    then activating this will provide more meaningful change detection.\n                `",
+          "target": "`\n                    空格和换行符默认被解释为\n                    文档的一部分并且在更改中被识别(因此不会被忽略)。\n                    这使得当添加新行时,最后一行仍然显示为“已更改”,\n                    即使之前的最后一行文本相同。\n                    <br>\n                    如果您不关心纯空白的更改\n                    (例如列表嵌套/引用缩进的变化),\n                    那么启用此功能将提供更有意义的更改检测。\n                `"
+        },
+        {
+          "source": "'Unhandled error in \"FileSystem.exists()\" function'",
+          "target": "'\"FileSystem.exists()\"函数中出现未经处理的错误'"
+        },
+        {
+          "source": "` (${this.unPushedCommits} unpushed commits)`",
+          "target": "` (${this.unPushedCommits} 个未推送的提交)`"
+        },
+        {
+          "source": "            File without changes",
+          "target": "            文件没有更改"
+        },
+        {
+          "source": "<a href=\"${lL}\">Format string</a> to display the authoring date.</br>Currently: ${r}",
+          "target": "<a href=\"${lL}\">格式字符串</a> 用于显示作者日期。</br>当前: ${r}"
+        },
+        {
+          "source": "`The oldest age in the line author coloring. Everything older will have the same color.\n            </br>Smallest valid age is \"1d\". Currently: ${r!==void 0?`${r.asDays()} days`:\"invalid!\"}`",
+          "target": "`行作者着色中的最旧时间。所有更旧的将共享相同的颜色。\n</br>最小有效时间为 \"1d\"。当前：${r!==void 0?`${r.asDays()} 天`:\"无效!\"}`"
+        },
+        {
+          "source": "The CSS color of the gutter text",
+          "target": "垂直线文本的 CSS 颜色"
+        },
+        {
+          "source": "It is higly recommended to use",
+          "target": "强烈推荐使用"
+        },
+        {
+          "source": "CSS variables</a>",
+          "target": "CSS 变量</a>"
+        },
+        {
+          "source": "defined by themes",
+          "target": "由主题定义"
+        },
+        {
+          "source": "</pre> or",
+          "target": "</pre> 或"
+        },
+        {
+          "source": "because they automatically adapt to theme changes.<br/>",
+          "target": "因为它们会自动适应主题变化.<br/>"
+        },
+        {
+          "source": "See: <a href",
+          "target": "参见: <a href"
+        },
+        {
+          "source": "List of available CSS variables in Obsidian",
+          "target": "Obsidian 可用的 CSS 变量列表"
+        },
+        {
+          "source": "`abcdef Author Name ${s}`",
+          "target": "`abcdef 作者姓名 ${s}`"
+        },
+        {
+          "source": "Supports 'rgb(r,g,b)', 'hsl(h,s,l)', hex (#) and",
+          "target": "支持 'rgb(r,g,b)', 'hsl(h,s,l)', hex (#) 和"
+        },
+        {
+          "source": "named colors (e.g. 'black', 'purple'). Color preview:",
+          "target": "颜色命名 (例如: 'black', 'purple'). 颜色预览:"
+        },
+        {
+          "source": "oldest (${this.settings.lineAuthor.coloringMaxAge} or older)",
+          "target": "最旧 (${this.settings.lineAuthor.coloringMaxAge} 或更旧)"
+        },
+        {
+          "source": ":\"newest\"",
+          "target": ":\"最新\""
+        },
+        {
+          "source": "Too many files to list",
+          "target": "文件数量过多，无法列出"
+        },
+        {
+          "source": "Affected files:",
+          "target": "受影响的文件:"
+        },
+        {
+          "source": "\"1 minute\":`${t} minutes`",
+          "target": "\" 1 分钟\":`${t} 分钟`"
+        },
+        {
+          "source": ".log(\"Something weird happened. The 'checkRequirements' result is \"+i)",
+          "target": ".log(\"发生了意料之外的错误“checkRequirements”结果是 \"+i)"
+        },
+        {
+          "source": "text:\"Git is not ready. When all settings are correct you can configure commit-sync, etc.\"",
+          "target": "text:\"Git尚未就绪。当所有设置都正确时，您可以配置提交同步等。\""
+        },
+        {
+          "source": ".setText(`Do you really want to ${this.deletion?\"delete\":\"discard the changes of\"} \"${this.filename}\"`)",
+          "target": ".setText(`你确定要 ${this.deletion?\"删除\":\"放弃更改\"} \"${this.filename}\" 吗？`)"
+        },
+        {
+          "source": ".setName(\"Source control view\")",
+          "target": ".setName(\"源代码管理视图\")"
+        },
+        {
+          "source": ".setName(\"Automatically refresh source control view on file changes\")",
+          "target": ".setName(\"在文件更改时自动刷新源代码管理视图\")"
+        },
+        {
+          "source": ".setName(\"Source control view refresh interval\")",
+          "target": ".setName(\"源代码管理视图刷新间隔\")"
+        },
+        {
+          "source": ".setName(\"Miscellaneous\")",
+          "target": ".setName(\"其他\")"
+        },
+        {
+          "source": ".setName(\"Custom Git binary path\")",
+          "target": ".setName(\"自定义 Git 路径\")"
+        },
+        {
+          "source": ".setDesc(\"Milliseconds to wait after file change before refreshing the Source Control View.\")",
+          "target": ".setDesc(\"文件更改后等待多长时间刷新刷新源代码管理视图，单位毫秒\")"
+        },
+        {
+          "source": "Notice(u,999999)",
+          "target": "Notice(u,999999)"
+        },
+        {
+          "source": "Notice(r,n=!0)",
+          "target": "Notice(r,n=!0)"
+        },
+        {
+          "source": "Notice(r,n?this.noticeLength:void 0)",
+          "target": "Notice(r,n?this.noticeLength:void 0)"
+        },
+        {
+          "source": "Notice(`${f}`)",
+          "target": "Notice(`${f}`)"
+        },
+        {
+          "source": "Notice(n.reason)",
+          "target": "Notice(n.reason)"
+        },
+        {
+          "source": "Notice(r.reason)",
+          "target": "Notice(r.reason)"
+        },
+        {
+          "source": "Notice(`Running '${n}'...`,999999)",
+          "target": "Notice(`Running '${n}'...`,999999)"
+        },
+        {
+          "source": "Notice(r,5*1e3)",
+          "target": "Notice(r,5*1e3)"
+        },
+        {
+          "source": "Notice(i.message,n)",
+          "target": "Notice(i.message,n)"
+        },
+        {
+          "source": ".log(t)",
+          "target": ".log(t)"
+        },
+        {
+          "source": ".log('Unhandled error in \"FileSystem.exists()",
+          "target": ".log('Unhandled error in \"FileSystem.exists()"
+        },
+        {
+          "source": ".log(`Did not delete ${w} because directory is not empty`)",
+          "target": ".log(`Did not delete ${w} because directory is not empty`)"
+        },
+        {
+          "source": ".log(I)",
+          "target": ".log(I)"
+        },
+        {
+          "source": "{log(...r)",
+          "target": "{log(...r)"
+        },
+        {
+          "source": ".log(string, string)",
+          "target": ".log(string, string)"
+        },
+        {
+          "source": ".log({ from: string, to: string })",
+          "target": ".log({ from: string, to: string })"
+        },
+        {
+          "source": ".log(\"Retry watch for ask pass\")",
+          "target": ".log(\"Retry watch for ask pass\")"
+        },
+        {
+          "source": ".log(s)",
+          "target": ".log(s)"
+        },
+        {
+          "source": " log(r,n=!0,i,a)",
+          "target": " log(r,n=!0,i,a)"
+        },
+        {
+          "source": ".log(o)",
+          "target": ".log(o)"
+        },
+        {
+          "source": ".log({n:1})",
+          "target": ".log({n:1})"
+        },
+        {
+          "source": ".log(`Git not found in PATH. Checking standard installation path(${Gu})",
+          "target": ".log(`Git not found in PATH. Checking standard installation path(${Gu})"
+        },
+        {
+          "source": ".log({...this.getRepo()",
+          "target": ".log({...this.getRepo()"
+        },
+        {
+          "source": ".log(void 0,!1,_)",
+          "target": ".log(void 0,!1,_)"
+        },
+        {
+          "source": ".log(void 0,!1,_,(x=R(a)",
+          "target": ".log(void 0,!1,_,(x=R(a)"
+        },
+        {
+          "source": " log(){return R(k)",
+          "target": " log(){return R(k)"
+        },
+        {
+          "source": ".log(r)",
+          "target": ".log(r)"
+        },
+        {
+          "source": "}log(...r)",
+          "target": "}log(...r)"
+        },
+        {
+          "source": ".log(`${this.manifest.id}:`,...r)",
+          "target": ".log(`${this.manifest.id}:`,...r)"
+        },
+        {
+          "source": ".error(\"Error while adding askpass script to exclude file:\",r)",
+          "target": ".error(\"Error while adding askpass script to exclude file:\",r)"
+        },
+        {
+          "source": ".error(i.error)",
+          "target": ".error(i.error)"
+        },
+        {
+          "source": ".error(n.error)",
+          "target": ".error(n.error)"
+        },
+        {
+          "source": ".error(\"Last ten effects were: \",vc.slice(-10)",
+          "target": ".error(\"Last ten effects were: \",vc.slice(-10)"
+        },
+        {
+          "source": ".error(i)",
+          "target": ".error(i)"
+        },
+        {
+          "source": ".error(`${this.manifest.id}:`,i.stack)",
+          "target": ".error(`${this.manifest.id}:`,i.stack)"
+        },
+        {
+          "source": "name:\"'+b(w.partials[S].name)+'\"",
+          "target": "name:\"'+b(w.partials[S].name)+'\""
+        },
+        {
+          "source": "name:\"isomorphic-git\"",
+          "target": "name:\"isomorphic-git\""
+        },
+        {
+          "source": "name:\"Diff view\"",
+          "target": "name:\"Diff view\""
+        },
+        {
+          "source": "name:\"\",epochSeconds:dT(r),tz:\"",
+          "target": "name:\"\",epochSeconds:dT(r),tz:\""
+        },
+        {
+          "source": "name:\"Add file to .gitignore\"",
+          "target": "name:\"Add file to .gitignore\""
+        },
+        {
+          "source": "name:\"Raw command\"",
+          "target": "name:\"Raw 命令\""
+        },
+        {
+          "source": "description:`${ct} '${ca(J)}' of ${T}`",
+          "target": "description:`${ct} '${ca(J)}' of ${T}`"
+        },
+        {
+          "source": "link:'<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"></path><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"></path>'",
+          "target": "link:'<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"></path><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"></path>'"
+        },
+        {
+          "source": "text:\"CMD (\\u2318) + OPTION (\\u2325) + I\"",
+          "target": "text:\"CMD (\\u2318) + OPTION (\\u2325) + I\""
+        },
+        {
+          "source": "text:\"CTRL + SHIFT + I\"",
+          "target": "text:\"CTRL + SHIFT + I\""
+        },
+        {
+          "source": "text:\"\\u26A0\\uFE0F\"",
+          "target": "text:\"\\u26A0\\uFE0F\""
+        },
+        {
+          "source": "search:'<circle cx=\"11\" cy=\"11\" r=\"8\"></circle><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"></line>'",
+          "target": "search:'<circle cx=\"11\" cy=\"11\" r=\"8\"></circle><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"></line>'"
+        },
+        {
+          "source": ".setName(\"Diff view style\")",
+          "target": ".setName(\"差异化视图样式\")"
+        },
+        {
+          "source": ".setName(\"Disable informative notifications\")",
+          "target": ".setName(\"禁用信息通知\")"
+        },
+        {
+          "source": ".setName(\"Disable error notifications\")",
+          "target": ".setName(\"警用错误通知\")"
+        },
+        {
+          "source": ".setName(\"File menu integration\")",
+          "target": ".setName(\"文件菜单集成\")"
+        },
+        {
+          "source": ".setDesc(`${n.settings.differentIntervalCommitAndPush?\"Commit\":\"Commit and sync\"} changes every X minutes. Set to 0 (default) to disable. (See below setting for further configuration!)`)",
+          "target": ".setDesc(`${n.settings.differentIntervalCommitAndPush?\"Commit\":\"Commit and sync\"} changes every X minutes. Set to 0 (default) to disable. (See below setting for further configuration!)`)"
+        },
+        {
+          "source": ".setDesc(`Most of the time you want to push after committing. Turning this off turns a commit-and-sync action into commit ${n.settings.pullBeforePush?\"and pull \":\"\"}only. It will still be called commit-and-sync.`)",
+          "target": ".setDesc(`Most of the time you want to push after committing. Turning this off turns a commit-and-sync action into commit ${n.settings.pullBeforePush?\"and pull \":\"\"}only. It will still be called commit-and-sync.`)"
+        },
+        {
+          "source": ".setDesc(`On commit-and-sync, pull commits as well. Turning this off turns a commit-and-sync action into commit ${n.settings.disablePush?\"\":\"and push \"}only.`)",
+          "target": ".setDesc(`On commit-and-sync, pull commits as well. Turning this off turns a commit-and-sync action into commit ${n.settings.disablePush?\"\":\"and push \"}only.`)"
+        },
+        {
+          "source": ".setDesc('Set the style for the diff view. Note that the actual diff in \"Split\" mode is not generated by Git, but the editor itself instead so it may differ from the diff generated by Git. One advantage of this is that you can edit the text in that view.')",
+          "target": ".setDesc('设置差异视图的样式。请注意，Split 模式下的实际差异不是由Git生成的，而是由编辑器本身生成的，因此，它可能不同于Git生成的diff。这样做的一个优点是可以在该视图中编辑文本。')"
+        },
+        {
+          "source": ".setDesc(\"Disable informative notifications for git operations to minimize distraction (refer to status bar for updates).\")",
+          "target": ".setDesc(\"禁用git操作的信息通知，以尽量减少分心（请参阅状态栏以获取更新）\")"
+        },
+        {
+          "source": ".setDesc(\"Disable errror notifications of any kind to minimize distraction (refer to status bar for updates).\")",
+          "target": ".setDesc(\"禁用所有的错误通知，以最大限度地减少干扰（有关更新，请查看状态栏）\")"
+        },
+        {
+          "source": ".setDesc('Add \"Stage\", \"Unstage\" and \"Add to .gitignore\" actions to the file menu.')",
+          "target": ".setDesc('将 暂存、取消暂存、添加到.gitignore 三个按钮添加到文件菜单中')"
+        },
+        {
+          "source": ".setPlaceholder(\"git\")",
+          "target": ".setPlaceholder(\"git\")"
+        },
+        {
+          "source": ".setPlaceholder(\".git\")",
+          "target": ".setPlaceholder(\".git\")"
+        },
+        {
+          "source": ".setPlaceholder(\"YYYY-MM-DD HH:mm\")",
+          "target": ".setPlaceholder(\"YYYY-MM-DD HH:mm\")"
+        },
+        {
+          "source": ".setPlaceholder(\"1y\")",
+          "target": ".setPlaceholder(\"1y\")"
+        },
+        {
+          "source": ".setTitle(\"Open in default app\")",
+          "target": ".setTitle(\"Open in default app\")"
+        },
+        {
+          "source": ".setTitle(\"Show in system explorer\")",
+          "target": ".setTitle(\"Show in system explorer\")"
+        }
+      ]
+    }
+  }
+}

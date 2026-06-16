@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "mesh-ai",
+    "version": "2.0.0",
+    "title": "Mesh AI",
+    "description": "Mesh AI prompt manager and gererator",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Failed to fetch YouTube transcript: ${s.message}`)",
+          "target": "Notice(`获取 YouTube 字幕失败: ${s.message}`)"
+        },
+        {
+          "source": "Notice(\"Please select a YouTube link\")",
+          "target": "Notice(\"请选择一个 YouTube 链接\")"
+        },
+        {
+          "source": "Notice(`File created: ${r}`)",
+          "target": "Notice(`文件创建成功: ${r}`)"
+        },
+        {
+          "source": "Notice(\"No active Markdown view found\")",
+          "target": "Notice(\"未找到活动的 Markdown 视图\")"
+        },
+        {
+          "source": "Notice(\"Content inserted at cursor position\")",
+          "target": "Notice(\"内容已插入到光标位置\")"
+        },
+        {
+          "source": "Notice(`Pattern Stitching ${q}.`)",
+          "target": "Notice(`模式拼接 ${q}.`) "
+        },
+        {
+          "source": "Notice(`Error: ${n instanceof Error?n.message:String(n)",
+          "target": "Notice(`错误: ${n instanceof Error?n.message:String(n)"
+        },
+        {
+          "source": "Notice(\"Patterns downloaded successfully\")",
+          "target": "Notice(\"模式下载成功\")"
+        },
+        {
+          "source": "Notice(`Failed to download patterns: ${p instanceof Error?p.message:String(p)",
+          "target": "Notice(`下载模式失败: ${p instanceof Error?p.message:String(p)"
+        },
+        {
+          "source": "Notice(`Debugging ${p}.`)",
+          "target": "Notice(`调试 ${p}.`) "
+        },
+        {
+          "source": "Notice(`Please enter an API key for ${t}`)",
+          "target": "Notice(`请输入 ${t} 的 API 密钥`) "
+        },
+        {
+          "source": "Notice(`API key for ${t} is valid`)",
+          "target": "Notice(`${t} 的 API 密钥有效`) "
+        },
+        {
+          "source": "Notice(`Failed to validate API key for ${t}: ${e.message}`)",
+          "target": "Notice(`验证 ${t} 的 API 密钥失败: ${e.message}`)"
+        },
+        {
+          "source": "Notice('No Google model has been selected. Using default model \"chat-bison-001\".')",
+          "target": "Notice('未选择 Google 模型，使用默认模型 \"chat-bison-001\".')"
+        },
+        {
+          "source": "Notice('No Microsoft model has been selected. Using default model \"gpt-35-turbo\".')",
+          "target": "Notice('未选择 Microsoft 模型，使用默认模型 \"gpt-35-turbo\".')"
+        },
+        {
+          "source": "Notice('No Anthropic model has been selected. Using default model \"claude-2\".')",
+          "target": "Notice('未选择 Anthropic 模型，使用默认模型 \"claude-2\".')"
+        },
+        {
+          "source": "Notice('No Groq model has been selected. Using default model \"mixtral-8x7b-32768\".')",
+          "target": "Notice('未选择 Groq 模型，使用默认模型 \"mixtral-8x7b-32768\".')"
+        },
+        {
+          "source": "Notice('No Ollama model has been selected. Using default model \"llama2\".')",
+          "target": "Notice('未选择 Ollama 模型，使用默认模型 \"llama2\".')"
+        },
+        {
+          "source": "Notice(\"No active file\")",
+          "target": "Notice(\"没有活动文件\")"
+        },
+        {
+          "source": "Notice(\"Active note processed successfully\")",
+          "target": "Notice(\"活动笔记处理成功\")"
+        },
+        {
+          "source": "Notice(`Error: ${r instanceof Error?r.message:String(r)",
+          "target": "Notice(`错误: ${r instanceof Error?r.message:String(r)"
+        },
+        {
+          "source": "Notice(\"Failed to read clipboard contents. Please ensure you have given the necessary permissions.\")",
+          "target": "Notice(\"读取剪贴板内容失败，请确保已授予必要权限。\")"
+        },
+        {
+          "source": "Notice(\"No clipboard content\")",
+          "target": "Notice(\"没有剪贴板内容\")"
+        },
+        {
+          "source": "Notice(\"Clipboard content processed successfully\")",
+          "target": "Notice(\"剪贴板内容处理成功\")"
+        },
+        {
+          "source": "Notice(\"Please enter a search query\")",
+          "target": "Notice(\"请输入搜索查询\")"
+        },
+        {
+          "source": "Notice(\"Search processed successfully\")",
+          "target": "Notice(\"搜索处理成功\")"
+        },
+        {
+          "source": "Notice(`Error: ${e instanceof Error?e.message:String(e)",
+          "target": "Notice(`错误: ${e instanceof Error?e.message:String(e)"
+        },
+        {
+          "source": "Notice(\"Workflow processed successfully\")",
+          "target": "Notice(\"工作流处理成功\")"
+        },
+        {
+          "source": "Notice(`Error: ${t instanceof Error?t.message:String(t)",
+          "target": "Notice(`错误: ${t instanceof Error?t.message:String(t)"
+        },
+        {
+          "source": "Notice(\"No LMStudio model has been selected. Using default model.\")",
+          "target": "Notice(\"未选择 LMStudio 模型，使用默认模型。\")"
+        },
+        {
+          "source": "Notice(`Error analyzing pathways: ${t.message}`)",
+          "target": "Notice(`分析路径时出错: ${t.message}`)"
+        },
+        {
+          "source": "Notice(`Pathway created: ${i}`)",
+          "target": "Notice(`路径创建成功: ${i}`)"
+        },
+        {
+          "source": "Notice(`Error creating pathway: ${p.message}`)",
+          "target": "Notice(`创建路径时出错: ${p.message}`)"
+        },
+        {
+          "source": "Notice(`Potential link created: ${e}`)",
+          "target": "Notice(`潜在链接已创建: ${e}`)"
+        },
+        {
+          "source": "Notice(`Error creating potential link: ${r.message}`)",
+          "target": "Notice(`创建潜在链接时出错: ${r.message}`)"
+        },
+        {
+          "source": "Notice(`Potential link deleted: ${t}`)",
+          "target": "Notice(`潜在链接已删除: ${t}`)"
+        },
+        {
+          "source": "Notice(`Error deleting potential link: ${i.message}`)",
+          "target": "Notice(`删除潜在链接时出错: ${i.message}`)"
+        },
+        {
+          "source": "Notice(`Pathway deleted: ${i}`)",
+          "target": "Notice(`路径已删除: ${i}`)"
+        },
+        {
+          "source": "Notice(`Error deleting pathway: ${o.message}`)",
+          "target": "Notice(`删除路径时出错: ${o.message}`)"
+        },
+        {
+          "source": "Notice(\"Please open a markdown file to analyze pathways.\")",
+          "target": "Notice(\"请打开一个 markdown 文件以分析路径。\")"
+        },
+        {
+          "source": "Notice(`Running workflow: ${t.name}...`,0)",
+          "target": "Notice(`正在运行工作流: ${t.name}...`,0)"
+        },
+        {
+          "source": "Notice(`Workflow '${t.name}' processed successfully`)",
+          "target": "Notice(`工作流 '${t.name}' 处理成功`) "
+        },
+        {
+          "source": "Notice(`Error in workflow '${t.name}': ${s instanceof Error?s.message:String(s)",
+          "target": "Notice(`工作流 '${t.name}' 中出错: ${s instanceof Error?s.message:String(s) "
+        },
+        {
+          "source": "Notice(`Successfully downloaded/updated ${p} patterns. ${m} failed.`)",
+          "target": "Notice(`成功下载/更新了 ${p} 种模式。 ${m} 失败。`)"
+        },
+        {
+          "source": "Notice(`Failed to download patterns: ${i.message}`)",
+          "target": "Notice(`下载模式失败: ${i.message}`)"
+        },
+        {
+          "source": ".log(\"Error pJS - Image not found\")",
+          "target": ".log(\"错误 pJS - 图片未找到\")"
+        },
+        {
+          "source": ".log(\"Error pJS - No image.src\")",
+          "target": ".log(\"错误 pJS - 没有 image.src\")"
+        },
+        {
+          "source": ".log(\"Error pJS - XMLHttpRequest status: \"+e.status)",
+          "target": ".log(\"错误 pJS - XMLHttpRequest 状态: \"+e.status)"
+        },
+        {
+          "source": ".log(\"Error pJS - File config not found\")",
+          "target": ".log(\"错误 pJS - 未找到文件配置\")"
+        },
+        {
+          "source": ".log(\"particlesJS loaded successfully\")",
+          "target": ".log(\"particlesJS 加载成功\")"
+        },
+        {
+          "source": ".error(\"Error initializing particles:\",n)",
+          "target": ".error(\"初始化粒子时出错:\",n)"
+        },
+        {
+          "source": ".error(\"Error processing request:\",n)",
+          "target": ".error(\"处理请求时出错:\",n)"
+        },
+        {
+          "source": ".error(\"Error downloading patterns:\",p)",
+          "target": ".error(\"下载模式时出错:\",p)"
+        },
+        {
+          "source": ".error(`Error testing API key for ${t}:`,e)",
+          "target": ".error(`测试 ${t} 的 API 密钥时出错:`,e)"
+        },
+        {
+          "source": ".error(\"Error processing active note:\",r)",
+          "target": ".error(\"处理活动笔记时出错:\",r)"
+        },
+        {
+          "source": ".error(\"Failed to read clipboard contents:\",t)",
+          "target": ".error(\"读取剪贴板内容失败:\",t)"
+        },
+        {
+          "source": ".error(\"Error processing clipboard content:\",r)",
+          "target": ".error(\"处理剪贴板内容时出错:\",r)"
+        },
+        {
+          "source": ".error(\"Error processing search:\",e)",
+          "target": ".error(\"处理搜索时出错:\",e)"
+        },
+        {
+          "source": ".error(\"Error processing workflow:\",t)",
+          "target": ".error(\"处理工作流时出错:\",t)"
+        },
+        {
+          "source": ".error(\"Error processing workflow:\",s)",
+          "target": ".error(\"处理工作流时出错:\",s)"
+        },
+        {
+          "source": ".error(\"particlesJS is not available\")",
+          "target": ".error(\"particlesJS 不可用\")"
+        },
+        {
+          "source": "name:\"input-source\"",
+          "target": "name:\"输入源\""
+        },
+        {
+          "source": "name:\"New Workflow\"",
+          "target": "name:\"新工作流\""
+        },
+        {
+          "source": "name:\"Process Active Note\"",
+          "target": "name:\"处理活动笔记\""
+        },
+        {
+          "source": "name:\"Process Clipboard\"",
+          "target": "name:\"处理剪贴板\""
+        },
+        {
+          "source": "name:\"Tavily Search\"",
+          "target": "name:\"Tavily 搜索\""
+        },
+        {
+          "source": "name:\"Analyze Pathways\"",
+          "target": "name:\"分析路径\""
+        },
+        {
+          "source": "name:`Run Workflow: ${t.name} (Active Note)`",
+          "target": "name:`运行工作流: ${t.name} (活动笔记)`"
+        },
+        {
+          "source": "name:`Run Workflow: ${t.name} (Clipboard)`",
+          "target": "name:`运行工作流: ${t.name} (剪贴板)`"
+        },
+        {
+          "source": "name:`Run Workflow: ${t.name} (Tavily)`",
+          "target": "name:`运行工作流: ${t.name} (Tavily)`"
+        },
+        {
+          "source": "text:\"YouTube links detected\"",
+          "target": "text:\"检测到 YouTube 链接\""
+        },
+        {
+          "source": "text:\"Processing...\"",
+          "target": "text:\"处理中...\""
+        },
+        {
+          "source": "text:\"Select provider:\"",
+          "target": "text:\"选择提供者:\""
+        },
+        {
+          "source": "text:\"Enter your prompt:\"",
+          "target": "text:\"输入你的提示:\""
+        },
+        {
+          "source": "text:\"Submit\"",
+          "target": "text:\"提交\""
+        },
+        {
+          "source": "text:\"The default provider selected is not configured.\"",
+          "target": "text:\"所选的默认提供者未配置。\""
+        },
+        {
+          "source": "text:\"powered by \"",
+          "target": "text:\"由 ... 提供支持\""
+        },
+        {
+          "source": "text:\"Note\"",
+          "target": "text:\"注意\""
+        },
+        {
+          "source": "text:\"Clipboard\"",
+          "target": "text:\"剪贴板\""
+        },
+        {
+          "source": "text:\"Selected patterns\"",
+          "target": "text:\"已选择模式\""
+        },
+        {
+          "source": "text:\"Pattern stitching\"",
+          "target": "text:\"模式拼接\""
+        },
+        {
+          "source": "text:\"Coming soon\"",
+          "target": "text:\"即将推出\""
+        },
+        {
+          "source": "text:\"Note: Currently, the Perplexity API does not support returning citations or images as these features are in closed beta. Additionally, the Perplexity API is a paid feature. After enabling Perplexity close and reopen the plugin for the change to take effect.\"",
+          "target": "text:\"注意：目前，Perplexity API 不支持返回引用或图像，因为这些功能处于封闭测试阶段。此外，Perplexity API 是付费功能。启用 Perplexity 后，请关闭并重新打开插件以使更改生效。\""
+        },
+        {
+          "source": "text:\"Workflows\"",
+          "target": "text:\"工作流\""
+        },
+        {
+          "source": "text:\"Pathways Settings\"",
+          "target": "text:\"路径设置\""
+        },
+        {
+          "source": "text:\"Currently, analyzing pathways is only supported using OpenRouter with either the o1-preview or o1-mini (o1-preview drastically out performs o1-mini which will result in better pathway analysis) models for their advanced reasoning capabilities. If cheaper models with similar performance are found in the future, they will be added as options. The o1 model is only for analysis of suggested pathways, creating backlinks will use the default provider and model.\"",
+          "target": "text:\"目前，分析路径仅支持使用 OpenRouter 及其高级推理能力的 o1-preview 或 o1-mini 模型（o1-preview 的性能明显优于 o1-mini，将带来更好的路径分析）。如果将来找到性能相似的更便宜的模型，将作为选项添加。o1 模型仅用于分析建议的路径，创建反向链接将使用默认提供者和模型。\""
+        },
+        {
+          "source": "text:\"Selected Patterns\"",
+          "target": "text:\"已选择模式\""
+        },
+        {
+          "source": "text:\"Tavily Search\"",
+          "target": "text:\"Tavily 搜索\""
+        },
+        {
+          "source": "text:\"\\u{1F50D}\"",
+          "target": "text:\"\\u{1F50D}\""
+        },
+        {
+          "source": "text:\"Run Workflow\"",
+          "target": "text:\"运行工作流\""
+        },
+        {
+          "source": "text:\"Analyze Pathways\"",
+          "target": "text:\"分析路径\""
+        },
+        {
+          "source": "text:\"Warning: Using o1 models can be expensive. Check the pricing from OpenRouter before continuing.\"",
+          "target": "text:\"警告: 使用 o1 模型可能会很昂贵。在继续之前，请查看 OpenRouter 的定价。\""
+        },
+        {
+          "source": "text:\"Suggested Pathways\"",
+          "target": "text:\"建议的路径\""
+        },
+        {
+          "source": "text:\"Create\"",
+          "target": "text:\"创建\""
+        },
+        {
+          "source": "text:\"Delete\"",
+          "target": "text:\"删除\""
+        },
+        {
+          "source": "text:\"Found Links:\"",
+          "target": "text:\"找到的链接:\""
+        },
+        {
+          "source": "text:\"Link\"",
+          "target": "text:\"链接\""
+        },
+        {
+          "source": "text:\"Create All\"",
+          "target": "text:\"全部创建\""
+        },
+        {
+          "source": ".setButtonText(\"Run\")",
+          "target": ".setButtonText(\"运行\")"
+        },
+        {
+          "source": ".setButtonText(\"Skip\")",
+          "target": ".setButtonText(\"跳过\")"
+        },
+        {
+          "source": ".setButtonText(\"Test API Key\")",
+          "target": ".setButtonText(\"测试 API 密钥\")"
+        },
+        {
+          "source": ".setButtonText(\"Refresh models\")",
+          "target": ".setButtonText(\"刷新模型\")"
+        },
+        {
+          "source": ".setButtonText(\"Download\")",
+          "target": ".setButtonText(\"下载\")"
+        },
+        {
+          "source": ".setButtonText(\"Downloading...\")",
+          "target": ".setButtonText(\"下载中...\")"
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setButtonText(\"Delete\")",
+          "target": ".setButtonText(\"删除\")"
+        },
+        {
+          "source": ".setButtonText(\"Process\")",
+          "target": ".setButtonText(\"处理\")"
+        },
+        {
+          "source": ".setButtonText(\"Refresh clipboard\")",
+          "target": ".setButtonText(\"刷新剪贴板\")"
+        },
+        {
+          "source": ".setButtonText(\"New note\")",
+          "target": ".setButtonText(\"新笔记\")"
+        },
+        {
+          "source": ".setButtonText(\"In place\")",
+          "target": ".setButtonText(\"就地\")"
+        },
+        {
+          "source": ".setButtonText(\"Analyze\")",
+          "target": ".setButtonText(\"分析\")"
+        },
+        {
+          "source": ".setName(\"Ollama server URL\")",
+          "target": ".setName(\"Ollama 服务器 URL\")"
+        },
+        {
+          "source": ".setName(\"Microsoft Azure API key\")",
+          "target": ".setName(\"Microsoft Azure API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Microsoft Azure Endpoint URL\")",
+          "target": ".setName(\"Microsoft Azure 端点 URL\")"
+        },
+        {
+          "source": ".setName(\"LMStudio server URL\")",
+          "target": ".setName(\"LMStudio 服务器 URL\")"
+        },
+        {
+          "source": ".setName(\"API key\")",
+          "target": ".setName(\"API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Model\")",
+          "target": ".setName(\"模型\")"
+        },
+        {
+          "source": ".setName(\"Default Provider\")",
+          "target": ".setName(\"默认提供者\")"
+        },
+        {
+          "source": ".setName(\"Use Perplexity\")",
+          "target": ".setName(\"使用 Perplexity\")"
+        },
+        {
+          "source": ".setName(\"Perplexity API Key\")",
+          "target": ".setName(\"Perplexity API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Tavily API key\")",
+          "target": ".setName(\"Tavily API 密钥\")"
+        },
+        {
+          "source": ".setName(\"YouTube API key\")",
+          "target": ".setName(\"YouTube API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Custom patterns folder\")",
+          "target": ".setName(\"自定义模式文件夹\")"
+        },
+        {
+          "source": ".setName(\"Fabric patterns folder\")",
+          "target": ".setName(\"织物模式文件夹\")"
+        },
+        {
+          "source": ".setName(\"Download patterns\")",
+          "target": ".setName(\"下载模式\")"
+        },
+        {
+          "source": ".setName(\"Mesh output folder\")",
+          "target": ".setName(\"Mesh 输出文件夹\")"
+        },
+        {
+          "source": ".setName(\"Add Workflow\")",
+          "target": ".setName(\"添加工作流\")"
+        },
+        {
+          "source": ".setName(\"Pathways Model\")",
+          "target": ".setName(\"路径模型\")"
+        },
+        {
+          "source": ".setName(\"Pathways Output Folder\")",
+          "target": ".setName(\"路径输出文件夹\")"
+        },
+        {
+          "source": ".setName(\"Default Pathway Workflow\")",
+          "target": ".setName(\"默认路径工作流\")"
+        },
+        {
+          "source": ".setName(\"Enable debugging\")",
+          "target": ".setName(\"启用调试\")"
+        },
+        {
+          "source": ".setName(`Workflow ${e+1}`)",
+          "target": ".setName(`工作流 ${e+1}`)"
+        },
+        {
+          "source": ".setName(\"Provider\")",
+          "target": ".setName(\"提供者\")"
+        },
+        {
+          "source": ".setName(\"Output File Name\")",
+          "target": ".setName(\"输出文件名\")"
+        },
+        {
+          "source": ".setName(\"Clipboard Content\")",
+          "target": ".setName(\"剪贴板内容\")"
+        },
+        {
+          "source": ".setName(\"Tavily Search\")",
+          "target": ".setName(\"Tavily 搜索\")"
+        },
+        {
+          "source": ".setName(\"Confirm Analysis\")",
+          "target": ".setName(\"确认分析\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the URL for your Ollama server\")",
+          "target": ".setDesc(\"输入你的 Ollama 服务器 URL\")"
+        },
+        {
+          "source": ".setDesc(\"Enter your Microsoft Azure API key\")",
+          "target": ".setDesc(\"输入你的 Microsoft Azure API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"Enter your Microsoft Azure Endpoint URL\")",
+          "target": ".setDesc(\"输入你的 Microsoft Azure 端点 URL\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the URL for your LMStudio server\")",
+          "target": ".setDesc(\"输入你的 LMStudio 服务器 URL\")"
+        },
+        {
+          "source": ".setDesc(`Enter your ${n} API key`)",
+          "target": ".setDesc(`输入你的 ${n} API 密钥`)"
+        },
+        {
+          "source": ".setDesc(`Select the model for ${n}`)",
+          "target": ".setDesc(`选择 ${n} 的模型`)"
+        },
+        {
+          "source": ".setDesc(\"Select the default AI provider. You must reload the plugin for the change to take effect.\")",
+          "target": ".setDesc(\"选择默认 AI 提供者。更改后必须重新加载插件才能生效。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable Perplexity integration (disables Tavily)\")",
+          "target": ".setDesc(\"启用 Perplexity 集成（禁用 Tavily）\")"
+        },
+        {
+          "source": ".setDesc(\"Enter your Perplexity API key\")",
+          "target": ".setDesc(\"输入你的 Perplexity API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"Enter your Tavily API key\")",
+          "target": ".setDesc(\"输入你的 Tavily API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"Enter your YouTube API key for transcript fetching\")",
+          "target": ".setDesc(\"输入你的 YouTube API 密钥以获取转录\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the path to your custom patterns folder\")",
+          "target": ".setDesc(\"输入自定义模式文件夹的路径\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the path to the fabric patterns folder\")",
+          "target": ".setDesc(\"输入织物模式文件夹的路径\")"
+        },
+        {
+          "source": ".setDesc(\"Download patterns from GitHub\")",
+          "target": ".setDesc(\"从 GitHub 下载模式\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the name of the folder for Mesh AI output. If it's in the root of your vault, just enter the folder name.\")",
+          "target": ".setDesc(\"输入 Mesh AI 输出文件夹的名称。如果在你的保险库根目录下，只需输入文件夹名称。\")"
+        },
+        {
+          "source": ".setDesc(\"Select the model to use for pathway analysis\")",
+          "target": ".setDesc(\"选择用于路径分析的模型\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the path for the Pathways output folder\")",
+          "target": ".setDesc(\"输入路径输出文件夹的路径\")"
+        },
+        {
+          "source": ".setDesc(\"Select the default workflow to use for pathway creation. This workflow will be used to create backlinks for each pathway.\")",
+          "target": ".setDesc(\"选择用于路径创建的默认工作流。该工作流将用于为每个路径创建反向链接。\")"
+        },
+        {
+          "source": ".setDesc(\"Turn on console logging for debugging purposes\")",
+          "target": ".setDesc(\"启用控制台日志记录以进行调试\")"
+        },
+        {
+          "source": ".setDesc(\"Select the AI provider\")",
+          "target": ".setDesc(\"选择 AI 提供者\")"
+        },
+        {
+          "source": ".setDesc(\"Enter a name for the output file (optional)\")",
+          "target": ".setDesc(\"输入输出文件的名称（可选）\")"
+        },
+        {
+          "source": ".setDesc(\"Preview of clipboard content (read-only)\")",
+          "target": ".setDesc(\"剪贴板内容预览（只读）\")"
+        },
+        {
+          "source": ".setDesc(\"Enter your search query\")",
+          "target": ".setDesc(\"输入你的搜索查询\")"
+        },
+        {
+          "source": ".setDesc(\"Click to analyze the current document and suggest pathways.\")",
+          "target": ".setDesc(\"点击分析当前文档并建议路径。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Search patterns...\")",
+          "target": ".setPlaceholder(\"搜索模式...\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter URL\")",
+          "target": ".setPlaceholder(\"输入 URL\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter API key\")",
+          "target": ".setPlaceholder(\"输入 API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter Endpoint URL\")",
+          "target": ".setPlaceholder(\"输入 端点 URL\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Custom Patterns\")",
+          "target": ".setPlaceholder(\"自定义模式\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Fabric Patterns\")",
+          "target": ".setPlaceholder(\"织物模式\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Mesh Output\")",
+          "target": ".setPlaceholder(\"Mesh 输出\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Pathways\")",
+          "target": ".setPlaceholder(\"路径\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Workflow name\")",
+          "target": ".setPlaceholder(\"工作流名称\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Pattern names (comma-separated)\")",
+          "target": ".setPlaceholder(\"模式名称（以逗号分隔）\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Output file name\")",
+          "target": ".setPlaceholder(\"输出文件名\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Clipboard content will appear here\")",
+          "target": ".setPlaceholder(\"剪贴板内容将出现在这里\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter search query\")",
+          "target": ".setPlaceholder(\"输入搜索查询\")"
+        },
+        {
+          "source": ".setTooltip(\"Use pattern stitching\")",
+          "target": ".setTooltip(\"使用模式拼接\")"
+        },
+        {
+          "source": ".addOption(\"o1-preview\",\"o1-preview\")",
+          "target": ".addOption(\"o1-preview\",\"o1-preview\")"
+        },
+        {
+          "source": ".addOption(\"o1-mini\",\"o1-mini\")",
+          "target": ".addOption(\"o1-mini\",\"o1-mini\")"
+        },
+        {
+          "source": ".addOption(\"\",\"No models available\")",
+          "target": ".addOption(\"\",\"没有可用模型\")"
+        },
+        {
+          "source": ".addOption(\"error\",\"Error fetching models\")",
+          "target": ".addOption(\"error\",\"获取模型时出错\")"
+        }
+      ]
+    }
+  }
+}
