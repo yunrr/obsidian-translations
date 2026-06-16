@@ -1,0 +1,919 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "frontmatter-date-manager",
+    "version": "1.0.0",
+    "title": "Frontmatter Date Manager",
+    "description": "Frontmatter Date Manager Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Updated dates only (from mtime)",
+          "target": "仅更新日期（来自 mtime）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Created dates only (from ctime)",
+          "target": "仅创建日期（来自 ctime）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Both created and updated",
+          "target": "创建和更新日期均包含"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Overwrite all (replaces existing)",
+          "target": "全部覆盖（替换现有）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Fill missing only (safe)",
+          "target": "仅填充缺失项（安全）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "All timestamp fields",
+          "target": "所有时间戳字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Created only",
+          "target": "仅创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Updated only",
+          "target": "仅更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Viewed only",
+          "target": "仅查看"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Body only (default)",
+          "target": "仅正文（默认）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Frontmatter only",
+          "target": "仅前置元数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Both body and frontmatter",
+          "target": "正文与前置元数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "None",
+          "target": "无"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Set created and/or updated dates in frontmatter",
+          "target": "在前置元数据中设置创建和/或更新日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Synced vaults: timestamps may be reset by sync services",
+          "target": "同步的保险库：时间戳可能被同步服务重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "(Obsidian Sync, iCloud, Dropbox, Git).",
+          "target": "（Obsidian Sync、iCloud、Dropbox、Git）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "mtime is generally more reliable than ctime.",
+          "target": "mtime 通常比 ctime 更可靠。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Move values from one frontmatter key to another across all markdown files.",
+          "target": "将值从一个前置元数据键移动到另一个键，适用于所有 Markdown 文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[FDM]:",
+          "target": "[FDM]："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "NAN DATE",
+          "target": "无效日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "NAN DATE from numeric input",
+          "target": "来自数字输入的无效日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "loading plugin IN DEV",
+          "target": "正在开发模式加载插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Error hashing file during auto-populate:",
+          "target": "自动填充期间哈希文件出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Auto-populate complete",
+          "target": "自动填充完成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Ignoring file — SHA is the same",
+          "target": "忽略文件 — SHA 值相同"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Something went wrong, skipping",
+          "target": "出现问题，跳过"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Skipping processFrontMatter — no changes needed",
+          "target": "跳过 processFrontMatter — 无需更改"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "current metadata: ",
+          "target": "当前元数据："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "current stat: ",
+          "target": "当前状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "TRIGGER FROM MODIFY (debounced)",
+          "target": "来自修改的触发（已防抖）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Setup handler",
+          "target": "设置处理器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "unloading Frontmatter Date Manager plugin",
+          "target": "正在卸载 Frontmatter Date Manager 插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Run",
+          "target": "运行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Scan & preview",
+          "target": "扫描与预览"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Back",
+          "target": "返回"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Populate timestamps",
+          "target": "填充时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Rebuild cache",
+          "target": "重建缓存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Overwrite all timestamps",
+          "target": "覆盖所有时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Rename key",
+          "target": "重命名键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reformat dates",
+          "target": "重新格式化日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Preview matching files",
+          "target": "预览匹配文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose which timestamp fields to set.",
+          "target": "选择要设置的时间戳字段。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How to handle files that already have dates.",
+          "target": "如何处理已有日期的文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The frontmatter key currently present in your files.",
+          "target": "当前存在于您文件中的前置元数据键。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The new frontmatter key to rename to.",
+          "target": "要重命名到的新前置元数据键。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose which timestamp fields to standardize.",
+          "target": "选择要标准化的时间戳字段。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Recompute content hashes for all eligible files. Useful after changing tracking mode.",
+          "target": "重新计算所有符合条件文件的内容哈希值。在更改跟踪模式后很有用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Replaces the \"updated\" timestamp on ALL eligible files with the current date/time. Original timestamps will be lost. Irreversible without a backup.",
+          "target": "将所有符合条件文件的“更新”时间戳替换为当前日期/时间。原始时间戳将丢失。没有备份则无法撤销。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Write an updated timestamp to frontmatter on each save.",
+          "target": "每次保存时将更新时间戳写入前置元数据。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Frontmatter key name for the last-modified date.",
+          "target": "最后修改日期的前置元数据键名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Move values from an old key name to a new one across all files. Useful after changing the created or updated key name above.",
+          "target": "将值从旧键名移动到新键名，适用于所有文件。在更改上面的创建或更新键名后很有用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add a creation timestamp to files that don't already have one.",
+          "target": "为尚未有创建时间戳的文件添加创建时间戳。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Frontmatter key name for the creation date.",
+          "target": "创建日期的前置元数据键名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Record when a file was last opened in the Obsidian UI.",
+          "target": "记录文件在 Obsidian UI 中最后打开的时间。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Frontmatter key name for the last-viewed date.",
+          "target": "最后查看日期的前置元数据键名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When the date format produces only digits (e.g. Unix timestamp \"t\"), write the value as a YAML number (updated: 1712930400) instead of a quoted string (updated: \"1712930400\"). Has no effect if your format contains non-digit characters like dashes or colons.",
+          "target": "当日期格式仅产生数字时（例如 Unix 时间戳“t”），将值写为 YAML 数字（updated: 1712930400）而不是带引号的字符串（updated: “1712930400”）。如果您的格式包含非数字字符（如破折号或冒号），则此设置无效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically update timestamps when files are modified. Also available via command palette.",
+          "target": "文件修改时自动更新时间戳。也可通过命令面板使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Prevent frequent timestamp updates during rapid editing or tab switching.",
+          "target": "防止在快速编辑或切换标签页期间频繁更新时间戳。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which parts of the file count as a \"change\" for updating the timestamp. \"Body only\" — editing frontmatter (tags, aliases, etc.) will not update the timestamp. \"Frontmatter only\" — editing the note body will not update the timestamp. \"Both\" — any edit updates the timestamp.",
+          "target": "文件的哪些部分算作更新时间戳的“更改”。“仅正文”——编辑前置元数据（标签、别名等）不会更新时间戳。“仅前置元数据”——编辑笔记正文不会更新时间戳。“两者”——任何编辑都会更新时间戳。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Changes to these keys will not trigger a timestamp update. The created/updated/viewed keys are always ignored automatically.",
+          "target": "对这些键的更改不会触发时间戳更新。创建/更新/查看键始终会被自动忽略。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically hash uncached files when the plugin loads. Runs in the background.",
+          "target": "插件加载时自动哈希未缓存的文件。在后台运行。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Oldest unused entries are evicted when cache exceeds this limit. 0 = unlimited.",
+          "target": "当缓存超过此限制时，最旧的未使用条目将被清除。0 = 无限制。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "What to populate",
+          "target": "填充内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Override behavior",
+          "target": "覆盖行为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Old key name",
+          "target": "旧键名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "New key name",
+          "target": "新键名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Delete old key after renaming",
+          "target": "重命名后删除旧键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Target format",
+          "target": "目标格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Which fields to reformat",
+          "target": "要重新格式化的字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Timestamp fields",
+          "target": "时间戳字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date formatting",
+          "target": "日期格式化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Behavior",
+          "target": "行为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bulk operations",
+          "target": "批量操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rebuild hash cache",
+          "target": "重建哈希缓存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Overwrite all timestamps",
+          "target": "覆盖所有时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Track 'updated' timestamp",
+          "target": "跟踪“更新”时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Updated key",
+          "target": "更新键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rename frontmatter key",
+          "target": "重命名前置元数据键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Track 'created' timestamp",
+          "target": "跟踪“创建”时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Created key",
+          "target": "创建键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Track 'viewed' timestamp",
+          "target": "跟踪“查看”时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Viewed key",
+          "target": "查看键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reformat existing dates",
+          "target": "重新格式化现有日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Timezone",
+          "target": "时区"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Store numeric timestamps without quotes",
+          "target": "存储不带引号的数字时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Minimum seconds between updates",
+          "target": "更新之间的最小秒数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File filter rules",
+          "target": "文件过滤规则"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Change detection (content hashing)",
+          "target": "更改检测（内容哈希）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tracking mode",
+          "target": "跟踪模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignore frontmatter keys",
+          "target": "忽略前置元数据键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "New file delay",
+          "target": "新文件延迟"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-populate cache on startup",
+          "target": "启动时自动填充缓存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Maximum cache entries",
+          "target": "最大缓存条目数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Command after update",
+          "target": "更新后执行的命令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Created",
+          "target": "创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Updated",
+          "target": "更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Viewed",
+          "target": "查看"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Aliases, tags, cssclasses",
+          "target": "别名、标签、cssclasses"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "This will replace existing frontmatter dates. This operation cannot be undone. Make a backup first.",
+          "target": "这将替换现有的前置元数据日期。此操作无法撤销。请先备份。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Preview: populate timestamps",
+          "target": "预览：填充时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Enter the old key name to proceed.",
+          "target": "输入旧键名以继续。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Enter the new key name to proceed.",
+          "target": "输入新键名以继续。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Old and new key names must be different.",
+          "target": "旧键名和新键名必须不同。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Preview: rename key",
+          "target": "预览：重命名键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Preview: standardize dates",
+          "target": "预览：标准化日期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Paused",
+          "target": "已暂停"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Reset to local timezone",
+          "target": "重置为本地时区"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Add key",
+          "target": "添加键"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bulk operation stopped.",
+          "target": "批量操作已停止。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Bulk populate stopped.",
+          "target": "批量填充已停止。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Rename stopped.",
+          "target": "重命名已停止。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Reformat stopped.",
+          "target": "重新格式化已停止。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Hash mode changed. Rebuild the hash cache to avoid false updates.",
+          "target": "哈希模式已更改。请重建哈希缓存以避免错误更新。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Timestamps updated.",
+          "target": "时间戳已更新。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "File is ignored by plugin settings.",
+          "target": "文件已被插件设置忽略。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to update timestamps. Check console for details.",
+          "target": "更新时间戳失败。请检查控制台获取详情。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to update timestamps.",
+          "target": "更新时间戳失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Auto-update resumed.",
+          "target": "自动更新已恢复。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Format string for reading and writing dates",
+          "target": "用于读写日期的格式字符串"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Empty pattern after \"!\"",
+          "target": "\\\"!\\\" 后的模式为空"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "macOS / Windows",
+          "target": "macOS / Windows"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linux",
+          "target": "Linux"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Android",
+          "target": "Android"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Date format",
+          "target": "日期格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Update timestamps for current file",
+          "target": "更新当前文件的时间戳"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Toggle auto-update on/off",
+          "target": "切换自动更新开/关"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pause auto-update for 5 minutes",
+          "target": "暂停自动更新 5 分钟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Finding eligible files in the vault...",
+          "target": "正在查找库中符合条件的文件..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Type OVERWRITE to confirm:",
+          "target": "输入 OVERWRITE 以确认："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Note about auto-update:",
+          "target": "关于自动更新的说明："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recommendation: review results after running. Make a backup first.",
+          "target": "建议：运行后检查结果。请先备份。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scanning files...",
+          "target": "正在扫描文件..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No files need updating. All eligible files already have the requested timestamps.",
+          "target": "无需更新文件。所有符合条件的文件均已具有请求的时间戳。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File",
+          "target": "文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Populating timestamps...",
+          "target": "正在填充时间戳..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Rename frontmatter key",
+          "target": "重命名 frontmatter 键"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Renaming keys...",
+          "target": "正在重命名键..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Standardize date format",
+          "target": "标准化日期格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Dates are auto-detected from common formats (ISO 8601, European, US, numeric timestamps) and rewritten in your current format.",
+          "target": "日期会从常见格式（ISO 8601、欧洲、美国、数字时间戳）自动检测，并以您当前的格式重写。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No files need reformatting. All dates are already in the target format or could not be parsed.",
+          "target": "无需重新格式化文件。所有日期均已是目标格式或无法解析。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reformatting dates...",
+          "target": "正在重新格式化日期..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This plugin writes created/updated timestamps directly into frontmatter and uses content hashing to detect real changes, so your dates reflect actual edits — not sync artifacts.",
+          "target": "此插件将创建/更新时间戳直接写入 frontmatter，并使用内容哈希检测真实更改，因此您的日期反映的是实际编辑——而非同步产物。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enable at least one timestamp type above to configure the plugin.",
+          "target": "请至少启用上方的一种时间戳类型以配置插件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced",
+          "target": "高级"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced syntax reference (gitignore)",
+          "target": "高级语法参考 (gitignore)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No filter rules — timestamps will be updated for all .md files.",
+          "target": "无过滤规则——将为所有 .md 文件更新时间戳。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pattern syntax reference",
+          "target": "模式语法参考"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Date-fns documentation",
+          "target": "Date-fns 文档"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
