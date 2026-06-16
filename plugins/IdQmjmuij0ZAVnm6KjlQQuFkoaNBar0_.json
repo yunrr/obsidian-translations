@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "claude-vault-assistant",
+    "version": "1.0.0",
+    "title": "Claude Vault Assistant",
+    "description": "Claude Vault Assistant Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "What should Claude do?",
+          "target": "Claude 应该做什么？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to save run history:",
+          "target": "保存运行历史记录失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to refresh vault files:",
+          "target": "刷新保险库文件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to save cleared history:",
+          "target": "保存已清除的历史记录失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Run",
+          "target": "运行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of tools Claude is allowed to use.",
+          "target": "允许 Claude 使用的工具列表，以逗号分隔。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Path to the Claude CLI executable.",
+          "target": "Claude CLI 可执行文件的路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of agentic turns per run.",
+          "target": "每次运行的最大代理轮次。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of run history entries to keep. Oldest entries are pruned first.",
+          "target": "保留的最大运行历史记录条目数。最旧的条目将首先被清除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allowed tools",
+          "target": "允许的工具"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "CLI path",
+          "target": "CLI 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max turns",
+          "target": "最大轮次"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max budget (USD)",
+          "target": "最大预算（美元）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model override",
+          "target": "模型覆盖"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max history entries",
+          "target": "最大历史记录条目数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Read, Grep, Glob, Write, Edit",
+          "target": "Read, Grep, Glob, Write, Edit"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Claude",
+          "target": "Claude"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "No limit",
+          "target": "无限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "E.g. Sonnet, Opus, Haiku",
+          "target": "例如 Sonnet, Opus, Haiku"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Choose scope…",
+          "target": "选择范围…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Claude run stopped.",
+          "target": "Claude 运行已停止。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No PROMPT-*.md files found in vault root.",
+          "target": "在保险库根目录中未找到 PROMPT-*.md 文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not open Claude output pane.",
+          "target": "无法打开 Claude 输出面板。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not determine vault path.",
+          "target": "无法确定保险库路径。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active note.",
+          "target": "没有活动笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "claude-output-tab claude-output-tab-active",
+          "target": "claude-output-tab claude-output-tab-active"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "claude-output-pane claude-output-history-pane",
+          "target": "claude-output-pane claude-output-history-pane"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "claude-tool-call-status claude-tool-call-status-pending",
+          "target": "claude-tool-call-status claude-tool-call-status-pending"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Claude can read and edit any file in the vault",
+          "target": "Claude 可以读取和编辑保险库中的任何文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Claude is constrained to the currently open note",
+          "target": "Claude 被限制在当前打开的笔记中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Error",
+          "target": "错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Run on Vault",
+          "target": "在保险库上运行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Run on Active Note",
+          "target": "在活动笔记上运行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run Claude prompt (vault)",
+          "target": "运行 Claude 提示词（保险库）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run Claude prompt (active note)",
+          "target": "运行 Claude 提示词（活动笔记）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stop Claude",
+          "target": "停止 Claude"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run ad-hoc Claude prompt",
+          "target": "运行临时 Claude 提示词"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Claude output",
+          "target": "打开 Claude 输出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Quick prompt",
+          "target": "快速提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Ctrl+Enter to submit",
+          "target": "Ctrl+Enter 提交"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Stop",
+          "target": "停止"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Output",
+          "target": "输出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "History",
+          "target": "历史记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No run history yet.",
+          "target": "尚无运行历史记录。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Clear history",
+          "target": "清除历史记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Prompt",
+          "target": "提示词"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

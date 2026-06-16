@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "cite-wide",
+    "version": "1.0.0",
+    "title": "Cite Wide",
+    "description": "Cite Wide Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Paste LLM output here. Inline citations like [1, 2, 3] (Google AI) or [1][2] (Perplexity) and reference lists like [1] [Title](url) will be converted to Lossless [^hex] format on Insert. Existing hex citations in the active document are accounted for so generated hex IDs never collide.",
+          "target": "在此处粘贴 LLM 输出。内联引用如 [1, 2, 3] (Google AI) 或 [1][2] (Perplexity) 以及参考文献列表如 [1] [Title](url) 将在插入时转换为无损 [^hex] 格式。活动文档中现有的十六进制引用会被考虑，因此生成的十六进制 ID 永远不会冲突。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createDiv",
+          "source": "cite-wide-instance cite-wide-reference-source",
+          "target": "cite-wide-instance cite-wide-reference-source"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error creating citation file:",
+          "target": "创建引用文件时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error updating citation usage:",
+          "target": "更新引用使用情况时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error saving hex citations:",
+          "target": "保存十六进制引用时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error saving citation:",
+          "target": "保存引用时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error converting citation:",
+          "target": "转换引用时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error converting citations:",
+          "target": "转换引用时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error scrolling to line:",
+          "target": "滚动到行时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error scrolling to occurrence:",
+          "target": "滚动到出现位置时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error extracting citation from URL:",
+          "target": "从 URL 提取引用时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error fetching citation data:",
+          "target": "获取引用数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing reader response:",
+          "target": "解析阅读器响应时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Debug: Starting extractCitations",
+          "target": "调试：开始 extractCitations"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Debug: Found hex citation:",
+          "target": "调试：找到十六进制引用："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "with number:",
+          "target": "编号为："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Debug: Found numeric reference definition:",
+          "target": "调试：找到数字参考定义："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Debug: No corresponding citation group found for hex reference:",
+          "target": "调试：未找到十六进制引用对应的引用组："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Debug: Line looks like hex reference but didn't match:",
+          "target": "调试：行看起来像十六进制引用但不匹配："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Debug: Final citation groups:",
+          "target": "调试：最终引用组："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Reader API response:",
+          "target": "阅读器 API 响应："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Extracted citation data:",
+          "target": "提取的引用数据："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Cite Wide LLM citation flags:",
+          "target": "Cite Wide LLM 引用标志："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Cite Wide LLM citation flags (paste):",
+          "target": "Cite Wide LLM 引用标志（粘贴）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Markdown link regex match:",
+          "target": "Markdown 链接正则表达式匹配："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Direct URL regex match:",
+          "target": "直接 URL 正则表达式匹配："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Flexible regex match:",
+          "target": "灵活正则表达式匹配："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Existing file found:",
+          "target": "找到现有文件："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Use Existing",
+          "target": "使用现有"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create New",
+          "target": "创建新文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder where citation files will be stored for Dataview integration.",
+          "target": "用于 Dataview 集成的引用文件存储文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically save citations extracted from URLs as citation files in the Citations folder. When off (default), URL extracts only update the document — use the \"Save All Hex Citations\" command or the per-citation Save button in the Citations modal to canonicalize specific citations.",
+          "target": "自动将从 URL 提取的引用保存为引用文件到引用文件夹。关闭时（默认），URL 提取仅更新文档——使用“保存所有十六进制引用”命令或引用模态框中每个引用的保存按钮来规范化特定引用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Jina.ai API Key (Optional)",
+          "target": "Jina.ai API 密钥（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Citations Folder",
+          "target": "引用文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-save URL Citations",
+          "target": "自动保存 URL 引用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your API key (optional)",
+          "target": "输入您的 API 密钥（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Citations",
+          "target": "引用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Appears on lines",
+          "target": "出现在行上"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not parse published time:",
+          "target": "无法解析发布时间："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No hex citations found in this document.",
+          "target": "在此文档中未找到十六进制引用。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error saving hex citations. See console for details.",
+          "target": "保存十六进制引用时出错。详情请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to save citation.",
+          "target": "保存引用失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error saving citation. See console for details.",
+          "target": "保存引用时出错。详情请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No changes were made to the document",
+          "target": "文档未做任何更改"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error converting citation. See console for details.",
+          "target": "转换引用时出错。详情请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No citations were converted",
+          "target": "未转换任何引用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error converting citations. See console for details.",
+          "target": "转换引用时出错。详情请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No groups selected to dedupe.",
+          "target": "未选择要去重的组。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file to write back to.",
+          "target": "没有活动文件可写回。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select the text containing references to format",
+          "target": "请选择包含要格式化引用的文本"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Formatted links in selection",
+          "target": "已格式化选区中的链接"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No links needed formatting in selection",
+          "target": "选区中无需格式化的链接"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No citations selected to convert.",
+          "target": "未选择要转换的引用。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file to write to.",
+          "target": "没有活动文件可写入。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please open a note to add citations",
+          "target": "请打开一个笔记以添加引用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a citation reference first (e.g., \"[1]: content\")",
+          "target": "请先选择一个引用参考（例如“[1]: 内容”）"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Selected text does not appear to be a valid citation reference",
+          "target": "选定的文本似乎不是有效的引用参考"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select some text first",
+          "target": "请先选择一些文本"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "References cleaned up successfully",
+          "target": "参考文献清理成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a citation section first",
+          "target": "请先选择一个引用部分"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Formatted citations in document",
+          "target": "已格式化文档中的引用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No citations needed formatting",
+          "target": "无需格式化的引用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a URL first",
+          "target": "请先选择一个 URL"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not extract URL from citation reference",
+          "target": "无法从引用参考中提取 URL"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Selected text does not appear to be a valid URL or citation reference",
+          "target": "选定的文本似乎不是有效的 URL 或引用参考"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Extracting citation from URL...",
+          "target": "正在从 URL 提取引用..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Tip: Adding a Jina.ai API key in settings can avoid rate limits",
+          "target": "提示：在设置中添加 Jina.ai API 密钥可以避免速率限制"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to extract citation data",
+          "target": "提取引用数据失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No valid citations found in selection",
+          "target": "在选区中未找到有效引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "cite-wide-meta-pill cite-wide-meta-numeric",
+          "target": "cite-wide-meta-pill cite-wide-meta-numeric"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "cite-wide-meta-pill cite-wide-meta-hex",
+          "target": "cite-wide-meta-pill cite-wide-meta-hex"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-cta cite-wide-convert-all-btn",
+          "target": "mod-cta cite-wide-convert-all-btn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-cta cite-wide-save-all-hex-btn",
+          "target": "mod-cta cite-wide-save-all-hex-btn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-cta cite-wide-card-primary-btn",
+          "target": "mod-cta cite-wide-card-primary-btn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "cite-wide-badge cite-wide-badge-reference",
+          "target": "cite-wide-badge cite-wide-badge-reference"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid URL provided",
+          "target": "提供的 URL 无效"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Failed to extract citation data from URL",
+          "target": "从 URL 提取引用数据失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Google AI Overviews",
+          "target": "Google AI 概览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Perplexity",
+          "target": "Perplexity"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show Citations in Current File",
+          "target": "在当前文件中显示引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dedupe Citations by URL",
+          "target": "按URL去重引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Parse LLM Citations in Current File",
+          "target": "解析当前文件中的LLM引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Paste LLM Content (Convert Citations on Insert)",
+          "target": "粘贴LLM内容（插入时转换引用）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Save All Hex Citations to Citation Files",
+          "target": "将所有十六进制引用保存到引用文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert All Citations to Hex Format",
+          "target": "将所有引用转换为十六进制格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Insert Hex Citation",
+          "target": "插入十六进制引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert Selected Citation to Hex",
+          "target": "将选定引用转换为十六进制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add Colon to Footnote References in Selection",
+          "target": "在选定内容中为脚注引用添加冒号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert Citation Section to Footnotes",
+          "target": "将引用部分转换为脚注"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Assure Spacing for Anchor Link behavior",
+          "target": "确保锚点链接行为的间距"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract Citation from URL",
+          "target": "从URL提取引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Format Reference Links in Selection",
+          "target": "格式化选定内容中的参考链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Citations in Document",
+          "target": "文档中的引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No citations found in the current document.",
+          "target": "当前文档中未找到引用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save to Citations",
+          "target": "保存到引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Convert to Hex",
+          "target": "转换为十六进制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Jump to first",
+          "target": "跳转到第一个"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No duplicate citations by URL were found in the current document.",
+          "target": "当前文档中未发现按URL重复的引用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Apply Dedup",
+          "target": "应用去重"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reference",
+          "target": "参考文献"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " • ",
+          "target": " • "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": ": ",
+          "target": ": "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All",
+          "target": "全部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Apply",
+          "target": "应用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Convert",
+          "target": "转换"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "orphans + collisions — context only, not actionable here",
+          "target": "孤立项 + 冲突项 — 仅作上下文参考，此处不可操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Paste LLM Content (Convert Citations on Insert)",
+          "target": "粘贴LLM内容（插入时转换引用）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Source:",
+          "target": "来源："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Parse and Insert",
+          "target": "解析并插入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cite Wide Settings",
+          "target": "CiteWide 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "How to Use URL Citation Extraction",
+          "target": "如何使用URL引用提取功能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Duplicate Citation Detected",
+          "target": "检测到重复引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Unknown Title",
+          "target": "未知标题"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
