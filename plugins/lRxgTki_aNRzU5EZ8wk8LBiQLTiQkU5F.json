@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "calendar-hub",
+    "version": "1.0.0",
+    "title": "Calendar Hub",
+    "description": "Calendar Hub Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No notes",
+          "target": "无笔记"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Scan folders",
+          "target": "扫描文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "No custom daily note settings found!",
+          "target": "未找到自定义每日笔记设置！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Calendar Hub] Failed to find daily notes folder",
+          "target": "[Calendar Hub] 未能找到每日笔记文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Calendar Hub] Failed to find weekly notes folder",
+          "target": "[Calendar Hub] 未能找到每周笔记文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show a confirmation modal before creating a new note",
+          "target": "创建新笔记前显示确认对话框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Find every Markdown file whose file name matches the daily note format, even outside the configured daily notes folder. Matching notes for the selected date appear below the calendar.",
+          "target": "查找所有文件名符合每日笔记格式的 Markdown 文件，即使它们不在配置的每日笔记文件夹中。所选日期的匹配笔记将显示在日历下方。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Calendar Hub already looks for the Daily Notes date format anywhere in the file name. Add extra comma-separated formats here, such as YYYYMMDD for files like 'meeting 20260529.md'.",
+          "target": "可选。Calendar Hub 已会在文件名中查找每日笔记日期格式。在此处添加额外的逗号分隔格式，例如用于 'meeting 20260529.md' 这类文件的 YYYYMMDD。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When a file name does not contain a matching date, read the configured frontmatter fields and map the note to that date.",
+          "target": "当文件名不包含匹配的日期时，读取配置的 frontmatter 字段并将笔记映射到该日期。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated field names to read when frontmatter fallback is enabled. Nested fields can use dot notation, such as calendar.date.",
+          "target": "启用 frontmatter 回退时读取的逗号分隔字段名。嵌套字段可使用点表示法，例如 calendar.date。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Leave blank to scan the whole vault. Add comma-separated folder paths to limit filename and frontmatter matching.",
+          "target": "可选。留空以扫描整个知识库。添加逗号分隔的文件夹路径以限制文件名和 frontmatter 匹配范围。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable this to add a column with the week number",
+          "target": "启用此项以添加显示周数的列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For more syntax help, refer to format reference",
+          "target": "更多语法帮助，请参阅格式参考"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "New weekly notes will be placed here",
+          "target": "新建的每周笔记将存放在此处"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Find every Markdown file that resolves to a week, even outside the weekly notes folder. Matching notes for the selected week appear below the calendar.",
+          "target": "查找所有可解析为某一周的 Markdown 文件，即使它们不在每周笔记文件夹中。所选周的匹配笔记将显示在日历下方。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Leave blank to scan the whole vault. Add comma-separated folder paths to limit weekly filename and frontmatter matching.",
+          "target": "可选。留空以扫描整个知识库。添加逗号分隔的文件夹路径以限制每周文件名和 frontmatter 匹配范围。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Calendar Hub already looks for the weekly note format anywhere in the file name. Add extra comma-separated formats here, such as GGGG-[W]WW for files like 'review 2026-W23.md'.",
+          "target": "可选。Calendar Hub 已会在文件名中查找每周笔记格式。在此处添加额外的逗号分隔格式，例如用于 'review 2026-W23.md' 这类文件的 GGGG-[W]WW。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When a file name does not contain a matching week, read the configured frontmatter fields and map the note to that week (a week string or a date both work).",
+          "target": "当文件名不包含匹配的周时，读取配置的 frontmatter 字段并将笔记映射到该周（周字符串或日期均可）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated field names to read when weekly frontmatter fallback is enabled. Nested fields can use dot notation, such as calendar.week.",
+          "target": "启用每周 frontmatter 回退时读取的逗号分隔字段名。嵌套字段可使用点表示法，例如 calendar.week。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set this if you want to use a locale different from the default",
+          "target": "如果您想使用不同于默认的区域设置，请设置此项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Start week on:",
+          "target": "每周起始日："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Confirm before creating new note",
+          "target": "创建新笔记前确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Detect daily notes in all folders",
+          "target": "在所有文件夹中检测每日笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date format inside daily note filenames",
+          "target": "每日笔记文件名中的日期格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use frontmatter date fallback",
+          "target": "使用 frontmatter 日期回退"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Frontmatter date fields",
+          "target": "Frontmatter 日期字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Folders to scan for daily notes",
+          "target": "扫描每日笔记的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show week number",
+          "target": "显示周数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Weekly note format",
+          "target": "每周笔记格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Weekly note folder",
+          "target": "每周笔记文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Detect weekly notes in all folders",
+          "target": "在所有文件夹中检测每周笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Folders to scan for weekly notes",
+          "target": "扫描每周笔记的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Week format inside weekly note filenames",
+          "target": "每周笔记文件名中的周格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use frontmatter fallback for weekly notes",
+          "target": "为每周笔记使用 frontmatter 回退"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Weekly frontmatter fields",
+          "target": "每周 frontmatter 字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Override locale:",
+          "target": "覆盖区域设置："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "date, daily_date, calendar_date",
+          "target": "date, daily_date, calendar_date"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Journal, Work/Daily, Projects/Research",
+          "target": "日志, 工作/日常, 项目/研究"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Journal, Work/Weekly, Reviews",
+          "target": "日志, 工作/每周, 回顾"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "week, weekly_date",
+          "target": "week, weekly_date"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Unable to create new file.",
+          "target": "无法创建新文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open calendar view",
+          "target": "打开日历视图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open weekly note",
+          "target": "打开每周笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reveal active note in calendar",
+          "target": "在日历中显示当前笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Daily Notes plugin not enabled",
+          "target": "每日笔记插件未启用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Calendar Hub works best with either the Daily Notes plugin or the Periodic Notes plugin.",
+          "target": "Calendar Hub 最好配合每日笔记插件或周期笔记插件使用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "General Settings",
+          "target": "通用设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Weekly Note Settings",
+          "target": "每周笔记设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Weekly note support is kept for compatibility. For richer periodic notes, consider using the Periodic Notes plugin.",
+          "target": "保留每周笔记支持是为了兼容性。如需更丰富的周期笔记功能，建议使用周期笔记插件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced Settings",
+          "target": "高级设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Never mind",
+          "target": "算了"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "New Daily Note",
+          "target": "新建每日笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "New Weekly Note",
+          "target": "新建每周笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Previous Month",
+          "target": "上个月"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Next Month",
+          "target": "下个月"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
