@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "vault-bridge-sftp",
+    "version": "1.0.1",
+    "title": "Vault Bridge SFTP",
+    "description": "Vault Bridge SFTP Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.9.10",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "key",
+          "target": "key"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Private key",
+          "target": "私钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "password",
+          "target": "password"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Password",
+          "target": "密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "This sync would delete ",
+          "target": "此同步将删除 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " and ",
+          "target": " 和 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Skipping deletes will still perform pushes/pulls/conflict-copies, but leave deletions for review later — the next sync will re-detect them.",
+          "target": "跳过删除仍将执行推送/拉取/冲突复制，但会将删除操作留待稍后审查——下次同步将重新检测到它们。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "The remote manifest looks like it has been wiped or recreated.",
+          "target": "远程清单看起来已被清除或重建。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "If we proceed with a normal sync, the engine will see your local files as \"deleted on remote\" and try to delete them locally.",
+          "target": "如果我们继续进行正常同步，引擎会将您的本地文件视为“在远程被删除”，并尝试在本地删除它们。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "This is almost certainly the wrong outcome — pick one of the safe options below.",
+          "target": "这几乎肯定是错误的结果——请从下面的安全选项中选择一个。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " — re-upload all local files to server, rewriting the manifest. Use if you trust the local copy as the source of truth.",
+          "target": " — 将所有本地文件重新上传到服务器，重写清单。如果您信任本地副本作为事实来源，请使用此选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " \\u2014 clear this device's idea of \"last sync\" so a normal sync treats local files as fresh additions. Useful if other devices have already pushed up-to-date content.",
+          "target": " \\u2014 清除此设备的“上次同步”记录，以便正常同步将本地文件视为全新添加。如果其他设备已推送了最新内容，此选项很有用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " — investigate manually before doing anything.",
+          "target": " — 在执行任何操作前手动调查。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: index flush failed",
+          "target": "Vault Bridge: 索引刷新失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: initial scan failed",
+          "target": "Vault Bridge: 初始扫描失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: connection failed",
+          "target": "Vault Bridge: 连接失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: sync failed",
+          "target": "Vault Bridge: 同步失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: snapshot reset failed",
+          "target": "Vault Bridge: 快照重置失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: rebuild failed",
+          "target": "Vault Bridge: 重建失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: force-push failed",
+          "target": "Vault Bridge: 强制推送失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: pull failed",
+          "target": "Vault Bridge: 拉取失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: inspect failed",
+          "target": "Vault Bridge: 检查失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Vault Bridge: force release failed",
+          "target": "Vault Bridge: 强制释放失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Using RetryOperation.try() is deprecated",
+          "target": "使用 RetryOperation.try() 已弃用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Using RetryOperation.start() is deprecated",
+          "target": "使用 RetryOperation.start() 已弃用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Testing…",
+          "target": "测试中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "SFTP server hostname or IP address.",
+          "target": "SFTP 服务器主机名或 IP 地址。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default 22.",
+          "target": "默认 22。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Password or SSH private key. The server's SSH host key is pinned on first connect; subsequent mismatches refuse to connect. Run the \"forget remembered host fingerprint\" command after a deliberate server reinstall.",
+          "target": "密码或 SSH 私钥。服务器的 SSH 主机密钥在首次连接时固定；后续不匹配将拒绝连接。在服务器重新安装后，请运行“忘记已记住的主机指纹”命令。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Encrypted on this device. Use SSH keys on shared machines.",
+          "target": "在此设备上加密。在共享机器上请使用 SSH 密钥。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Absolute filesystem path to your SSH private key.",
+          "target": "您的 SSH 私钥的绝对文件系统路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Empty if the key is unencrypted.",
+          "target": "如果密钥未加密则留空。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Absolute path on the server. Created if it doesn't exist.",
+          "target": "服务器上的绝对路径。如果不存在则创建。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, plugins/themes/snippets/hotkeys are synced so all devices look identical.",
+          "target": "启用后，插件/主题/代码片段/快捷键将被同步，使所有设备外观一致。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Off by default. Workspace files describe open tabs/panels for this specific device. Turning this on will cause flapping if you work on two devices at once.",
+          "target": "默认关闭。工作区文件描述此特定设备的打开标签页/面板。如果您同时在两台设备上工作，开启此选项会导致状态来回切换。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One pattern per line. Gitignore-style. The plugin's own state/ directory is always excluded regardless.",
+          "target": "每行一个模式。Gitignore 风格。插件自身的 state/ 目录始终被排除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Run a full bidirectional sync once Obsidian finishes loading.",
+          "target": "在 Obsidian 加载完成后运行一次完整的双向同步。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Best-effort push when Obsidian closes (5s timeout, push-only — no prompts).",
+          "target": "Obsidian 关闭时尽力推送（5 秒超时，仅推送——无提示）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Debounced sync triggered by vault edits (create / modify / delete / rename).",
+          "target": "由保险库编辑（创建/修改/删除/重命名）触发的防抖同步。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How long to wait after the last edit before auto-syncing. Lower = more sync traffic.",
+          "target": "最后一次编辑后等待多久再自动同步。值越低 = 同步流量越大。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Connect, create the remote root if missing, then disconnect.",
+          "target": "连接，如果缺少则创建远程根目录，然后断开连接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Run a full sync immediately.",
+          "target": "立即运行完整同步。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used in conflict-copy filenames so you can tell which device the conflicting edit came from. Lives in state/device.json — each machine has its own.",
+          "target": "用于冲突副本文件名，以便您知道冲突编辑来自哪个设备。位于 state/device.json 中——每台机器都有自己的。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Random per-device identifier. Read-only.",
+          "target": "每台设备的随机标识符。只读。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Connection",
+          "target": "连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Host",
+          "target": "主机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Port",
+          "target": "端口"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Username",
+          "target": "用户名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Authentication",
+          "target": "认证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Password",
+          "target": "密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Private key path",
+          "target": "私钥路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Key passphrase",
+          "target": "密钥密码短语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remote root",
+          "target": "远程根目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync scope",
+          "target": "同步范围"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync the Obsidian config folder too",
+          "target": "同时同步 Obsidian 配置文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude patterns",
+          "target": "排除模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync on startup",
+          "target": "启动时同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync on quit",
+          "target": "退出时同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync after changes",
+          "target": "更改后同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debounce delay (seconds)",
+          "target": "防抖延迟（秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Performance",
+          "target": "性能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Concurrent transfers",
+          "target": "并发传输"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Device (local only, not synced)",
+          "target": "设备（仅本地，不同步）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Device label",
+          "target": "设备标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Device ID",
+          "target": "设备 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Home laptop",
+          "target": "家庭笔记本电脑"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: failed to persist host fingerprint",
+          "target": "Vault Bridge: 无法持久化主机指纹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: refusing to release a lock owned by another device",
+          "target": "Vault Bridge: 拒绝释放由其他设备拥有的锁"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: failed to delete lock",
+          "target": "Vault Bridge: 无法删除锁"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: failed to load index, starting fresh",
+          "target": "Vault Bridge: 无法加载索引，重新开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: failed to load device info, regenerating",
+          "target": "Vault Bridge: 无法加载设备信息，正在重新生成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: known-hosts file unreadable, starting empty",
+          "target": "Vault Bridge: 已知主机文件不可读，开始为空"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: cannot read last-synced snapshot, starting fresh",
+          "target": "Vault Bridge: 无法读取上次同步的快照，重新开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: server-reset detected",
+          "target": "Vault Bridge: 检测到服务器重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Vault Bridge: quit-time push failed (ignoring)",
+          "target": "Vault Bridge: 退出时推送失败（已忽略）"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Building initial index…",
+          "target": "正在构建初始索引…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Connection OK",
+          "target": "连接正常"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Already running",
+          "target": "已在运行"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Server-reset cancelled — no changes made.",
+          "target": "服务器重置已取消——未做任何更改。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Forcing push from local…",
+          "target": "正在从本地强制推送…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Local snapshot reset. Next sync will treat all files as fresh additions.",
+          "target": "本地快照已重置。下次同步将把所有文件视为全新添加。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Local snapshot reset.",
+          "target": "本地快照已重置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Another operation is running, try again later",
+          "target": "另一个操作正在运行，请稍后再试"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Walking server and rebuilding manifest — this can take a while…",
+          "target": "正在遍历服务器并重建清单——这可能需要一些时间…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Rebuilding local index…",
+          "target": "正在重建本地索引…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No lock to release",
+          "target": "没有锁可释放"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lock released",
+          "target": "锁已释放"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No host configured",
+          "target": "未配置主机"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "pull",
+          "target": "pull"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rebuild local index",
+          "target": "重建本地索引"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show index stats",
+          "target": "显示索引统计信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Inspect remote state (manifest + lock)",
+          "target": "检查远程状态（清单 + 锁）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Force-release remote sync lock",
+          "target": "强制释放远程同步锁"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Force push everything (re-upload all files)",
+          "target": "强制推送所有内容（重新上传所有文件）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pull from server",
+          "target": "从服务器拉取"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Force pull everything (re-download all files)",
+          "target": "强制拉取所有内容（重新下载所有文件）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rebuild remote manifest (walk server, re-hash)",
+          "target": "重建远程清单（遍历服务器，重新哈希）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reset local snapshot (treat next sync as fresh)",
+          "target": "重置本地快照（将下次同步视为全新）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Forget remembered host fingerprint",
+          "target": "忘记已记住的主机指纹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bulk deletion warning",
+          "target": "批量删除警告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel sync",
+          "target": "取消同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skip deletes",
+          "target": "跳过删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Continue (delete)",
+          "target": "继续（删除）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Server reset detected",
+          "target": "检测到服务器重置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Force push from local",
+          "target": "从本地强制推送"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset local snapshot only",
+          "target": "仅重置本地快照"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset snapshot",
+          "target": "重置快照"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
