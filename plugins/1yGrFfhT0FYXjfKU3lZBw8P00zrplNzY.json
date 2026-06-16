@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "personal-assistant",
+    "version": "2.0.0",
+    "title": "Personal Assistant",
+    "description": "Streamline workflows within Obsidian, managing memos and plugins with just one command.",
+    "language": "zh-cn",
+    "supportedVersions": "1.4.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"AI is not available.\")",
+          "target": "Notice(\"AI 不可用。\")"
+        },
+        {
+          "source": "Notice(\"Prepare LLM failed!\",3e3)",
+          "target": "Notice(\"准备 LLM 失败！\",3e3)"
+        },
+        {
+          "source": "Notice(`disable plugin[${r.name}] successfully`)",
+          "target": "Notice(`成功禁用插件[${r.name}]`)"
+        },
+        {
+          "source": "Notice(`disable plugin[${r.name}] failed, try it again`)",
+          "target": "Notice(`禁用插件[${r.name}]失败，请重试`)"
+        },
+        {
+          "source": "Notice(`enable plugin[${r.name}] successfully`)",
+          "target": "Notice(`成功启用插件[${r.name}]`)"
+        },
+        {
+          "source": "Notice(`enable plugin[${r.name}] failed, try it again`)",
+          "target": "Notice(`启用插件[${r.name}]失败，请重试`)"
+        },
+        {
+          "source": "Notice(\"hover local graph failed\")",
+          "target": "Notice(\"悬停局部图失败\")"
+        },
+        {
+          "source": "Notice(`Can't work correctly! Plugin ${n} missing`)",
+          "target": "Notice(`无法正常工作！缺少插件 ${n}`)"
+        },
+        {
+          "source": "Notice(\"got some network issue when accessing github.com\",500)",
+          "target": "Notice(\"访问 github.com 时出现网络问题\",500)"
+        },
+        {
+          "source": "Notice(\"Tips: please switch to edit mode to insert\",5e3)",
+          "target": "Notice(\"提示：请切换到编辑模式以插入\",5e3)"
+        },
+        {
+          "source": "Notice(\"Error: not a editable markdown file\",5e3)",
+          "target": "Notice(\"错误：不是可编辑的 Markdown 文件\",5e3)"
+        },
+        {
+          "source": "Notice(\"starting obsidian assistant\")",
+          "target": "Notice(\"启动 Obsidian 助手\")"
+        },
+        {
+          "source": "Notice(\"update metadata command is not enabled in setting tab\")",
+          "target": "Notice(\"更新元数据命令未在设置选项卡中启用\")"
+        },
+        {
+          "source": "name:\"Button\"",
+          "target": "name:\"按钮\""
+        },
+        {
+          "source": "name:\"ActionIcon\"",
+          "target": "name:\"动作图标\""
+        },
+        {
+          "source": "name:\"IconRenderer\"",
+          "target": "name:\"图标渲染器\""
+        },
+        {
+          "source": "name:\"Text\"",
+          "target": "name:\"文本\""
+        },
+        {
+          "source": "name:\"Notification\"",
+          "target": "name:\"通知\""
+        },
+        {
+          "source": "name:\"Timeline\"",
+          "target": "name:\"时间线\""
+        },
+        {
+          "source": "name:\"TimelineItem\"",
+          "target": "name:\"时间线项\""
+        },
+        {
+          "source": "name:\"start\"",
+          "target": "name:\"开始\""
+        },
+        {
+          "source": "name:\"end\"",
+          "target": "name:\"结束\""
+        },
+        {
+          "source": "name:\"error\"",
+          "target": "name:\"错误\""
+        },
+        {
+          "source": "name:\"text\"",
+          "target": "name:\"文本\""
+        },
+        {
+          "source": "name:`${this.getName()}Input`",
+          "target": "name:`${this.getName()}输入`"
+        },
+        {
+          "source": "name:`${this.getName()}Output`",
+          "target": "name:`${this.getName()}输出`"
+        },
+        {
+          "source": "name:\"PBKDF2\"",
+          "target": "name:\"密码强化算法\""
+        },
+        {
+          "source": "name:\"Open specific note to record\"",
+          "target": "name:\"打开特定笔记进行记录\""
+        },
+        {
+          "source": "name:\"assistant hover memos\"",
+          "target": "name:\"助手悬停备忘录\""
+        },
+        {
+          "source": "name:\"hover local graph\"",
+          "target": "name:\"悬停局部图\""
+        },
+        {
+          "source": "name:\"switch on/off plugin according to its status\"",
+          "target": "name:\"根据插件状态开启/关闭\""
+        },
+        {
+          "source": "name:\"Set graph view colors\"",
+          "target": "name:\"设置图形视图颜色\""
+        },
+        {
+          "source": "name:\"Update plugins with one command\"",
+          "target": "name:\"用一条命令更新插件\""
+        },
+        {
+          "source": "name:\"Update themes with one command\"",
+          "target": "name:\"用一条命令更新主题\""
+        },
+        {
+          "source": "name:\"Update metadata with one command\"",
+          "target": "name:\"用一条命令更新元数据\""
+        },
+        {
+          "source": "name:\"List callout for quickly insert\"",
+          "target": "name:\"列出标注以便快速插入\""
+        },
+        {
+          "source": "name:\"Preview records that are created by `startup-recording` command\"",
+          "target": "name:\"预览由`startup-recording`命令创建的记录\""
+        },
+        {
+          "source": "name:\"Show statistics\"",
+          "target": "name:\"显示统计\""
+        },
+        {
+          "source": "name:\"AI Helper\"",
+          "target": "name:\"AI 助手\""
+        },
+        {
+          "source": "name:\"AI Auto Robot\"",
+          "target": "name:\"AI 自动机器人\""
+        },
+        {
+          "source": "text:\"Statistics of Obsidian Vault\"",
+          "target": "text:\"Obsidian库的统计\""
+        },
+        {
+          "source": "text:\"words of vault named as Anthelion\"",
+          "target": "text:\"名为Anthelion的库的字数\""
+        },
+        {
+          "source": "text:\"+words\"",
+          "target": "text:\"+字数\""
+        },
+        {
+          "source": "text:\"-pages\"",
+          "target": "text:\"-页面\""
+        },
+        {
+          "source": "text:\"total files/pages of vault named as \"",
+          "target": "text:\"库的总文件数/页面数，名称为 \""
+        },
+        {
+          "source": "text:\"total-files\"",
+          "target": "text:\"总文件数\""
+        },
+        {
+          "source": "text:\"total-pages\"",
+          "target": "text:\"总页面数\""
+        },
+        {
+          "source": "text:\"Settings for Obsidian Assistant\"",
+          "target": "text:\"Obsidian助手的设置\""
+        },
+        {
+          "source": "text:\"Obsidian Assistant by Shadow Walker, \"",
+          "target": "text:\"Obsidian助手 - Shadow Walker\""
+        },
+        {
+          "source": "text:\"Settings for Record\"",
+          "target": "text:\"记录的设置\""
+        },
+        {
+          "source": "text:\"Obsidian Management for Recording in Specific Path\"",
+          "target": "text:\"Obsidian在特定路径中的记录管理\""
+        },
+        {
+          "source": "text:\"Settings for Hover Local Graph\"",
+          "target": "text:\"悬停局部图设置\""
+        },
+        {
+          "source": "text:\"Obsidian Management for Hover Local Graph\"",
+          "target": "text:\"Obsidian管理悬停局部图\""
+        },
+        {
+          "source": "text:\"Graph Resize\"",
+          "target": "text:\"图形大小调整\""
+        },
+        {
+          "source": "text:\"Settings for Memos\"",
+          "target": "text:\"备忘录设置\""
+        },
+        {
+          "source": "text:\"Memos Resize\"",
+          "target": "text:\"备忘录大小调整\""
+        },
+        {
+          "source": "text:\"Graph Colors\"",
+          "target": "text:\"图形颜色\""
+        },
+        {
+          "source": "text:\"Metadata Management\"",
+          "target": "text:\"元数据管理\""
+        },
+        {
+          "source": "text:\"Vault Statistics\"",
+          "target": "text:\"库统计\""
+        },
+        {
+          "source": "text:\"AI Assistant\"",
+          "target": "text:\"AI助手\""
+        },
+        {
+          "source": "text:\"AI Helper Only Support \\u901A\\u4E49\\u5343\\u95EE LLM\"",
+          "target": "text:\"AI助手仅支持通义千问LLM\""
+        },
+        {
+          "source": ".setText(\"Open GitHub repository\")",
+          "target": ".setText(\"打开GitHub仓库\")"
+        },
+        {
+          "source": ".setButtonText(\"Change Color\")",
+          "target": ".setButtonText(\"更改颜色\")"
+        },
+        {
+          "source": ".setButtonText(\"Add Color\")",
+          "target": ".setButtonText(\"添加颜色\")"
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setName(\"Debug\")",
+          "target": ".setName(\"调试\")"
+        },
+        {
+          "source": ".setName(\"Target Path\")",
+          "target": ".setName(\"目标路径\")"
+        },
+        {
+          "source": ".setName(\"File Format\")",
+          "target": ".setName(\"文件格式\")"
+        },
+        {
+          "source": ".setName(\"Preview Number\")",
+          "target": ".setName(\"预览数量\")"
+        },
+        {
+          "source": ".setName(\"Type\")",
+          "target": ".setName(\"类型\")"
+        },
+        {
+          "source": ".setName(\"Depth\")",
+          "target": ".setName(\"深度\")"
+        },
+        {
+          "source": ".setName(\"Show Tags\")",
+          "target": ".setName(\"显示标签\")"
+        },
+        {
+          "source": ".setName(\"Show Attachment\")",
+          "target": ".setName(\"显示附件\")"
+        },
+        {
+          "source": ".setName(\"Show Neighbor\")",
+          "target": ".setName(\"显示邻居\")"
+        },
+        {
+          "source": ".setName(\"Collapse\")",
+          "target": ".setName(\"折叠\")"
+        },
+        {
+          "source": ".setName(\"Auto Local Graph Colors\")",
+          "target": ".setName(\"自动局部图颜色\")"
+        },
+        {
+          "source": ".setName(\"Enable Graph Colors\")",
+          "target": ".setName(\"启用图形颜色\")"
+        },
+        {
+          "source": ".setName(\"Enable Updating Metadata\")",
+          "target": ".setName(\"启用元数据更新\")"
+        },
+        {
+          "source": ".setName(\"Add Key:Value in frontmatter\")",
+          "target": ".setName(\"在前置区添加键值对\")"
+        },
+        {
+          "source": ".setName(\"Meta Updating Exclude Path\")",
+          "target": ".setName(\"元数据更新排除路径\")"
+        },
+        {
+          "source": ".setName(\"Show Statistics\")",
+          "target": ".setName(\"显示统计信息\")"
+        },
+        {
+          "source": ".setName(\"Vault Stats File Path\")",
+          "target": ".setName(\"库统计文件路径\")"
+        },
+        {
+          "source": ".setName(\"Animation\")",
+          "target": ".setName(\"动画\")"
+        },
+        {
+          "source": ".setName(\"Set Model Name\")",
+          "target": ".setName(\"设置模型名称\")"
+        },
+        {
+          "source": ".setName(\"API Token\")",
+          "target": ".setName(\"API令牌\")"
+        },
+        {
+          "source": ".setDesc(\"Target directory to do recording\")",
+          "target": ".setDesc(\"记录的目标目录\")"
+        },
+        {
+          "source": ".setDesc(\"File numbers to preview\")",
+          "target": ".setDesc(\"预览的文件数量\")"
+        },
+        {
+          "source": ".setDesc(\"Type of hover\")",
+          "target": ".setDesc(\"悬停的类型\")"
+        },
+        {
+          "source": ".setDesc(\"Depth of link jumps\")",
+          "target": ".setDesc(\"链接跳转的深度\")"
+        },
+        {
+          "source": ".setDesc(\"Show tags in local graph view\")",
+          "target": ".setDesc(\"在局部图中显示标签\")"
+        },
+        {
+          "source": ".setDesc(\"Show attachments in local graph view\")",
+          "target": ".setDesc(\"在局部图中显示附件\")"
+        },
+        {
+          "source": ".setDesc(\"Show neighbors in local graph view\")",
+          "target": ".setDesc(\"在局部图中显示邻居\")"
+        },
+        {
+          "source": ".setDesc(\"Collapse local graph view setting\")",
+          "target": ".setDesc(\"折叠局部图设置\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically set colors of local graph view.\")",
+          "target": ".setDesc(\"自动设置局部图的颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Use personal assistant set colors of graph view.\")",
+          "target": ".setDesc(\"使用个人助手设置图形颜色\")"
+        },
+        {
+          "source": ".setDesc(\"This will be the Color used in the graph view.\")",
+          "target": ".setDesc(\"这将是图形视图中使用的颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Value now only upport formatted timestamp and regular string.\")",
+          "target": ".setDesc(\"目前仅支持格式化的时间戳和普通字符串\")"
+        },
+        {
+          "source": ".setDesc(\"Exclude files in the directory to update metadata\")",
+          "target": ".setDesc(\"排除更新元数据的目录中的文件\")"
+        },
+        {
+          "source": ".setDesc(\"Show statistics in the status bar\")",
+          "target": ".setDesc(\"在状态栏中显示统计信息\")"
+        },
+        {
+          "source": ".setDesc(\"Reload required for change to take effect. The location of the vault statistics file, relative to the vault root.\")",
+          "target": ".setDesc(\"需要重新加载以生效。库统计文件的位置，相对于库根目录\")"
+        },
+        {
+          "source": ".setDesc(\"Select the model name for AI Helper, only support qwen-max, qwen-turbo, qwen-plus\")",
+          "target": ".setDesc(\"选择AI助手的模型名称，仅支持qwen-max、qwen-turbo、qwen-plus\")"
+        },
+        {
+          "source": ".setDesc(\"LLM Model related API Token. NOTE: your input token is protected by AES-GCM encryption.\")",
+          "target": ".setDesc(\"LLM模型相关的API令牌。注意：您的输入令牌受到AES-GCM加密保护\")"
+        },
+        {
+          "source": ".setPlaceholder(\"popover\")",
+          "target": ".setPlaceholder(\"弹出框\")"
+        },
+        {
+          "source": ".setPlaceholder(\"height\")",
+          "target": ".setPlaceholder(\"高度\")"
+        },
+        {
+          "source": ".setPlaceholder(\"width\")",
+          "target": ".setPlaceholder(\"宽度\")"
+        },
+        {
+          "source": ".setPlaceholder(\"key\")",
+          "target": ".setPlaceholder(\"键\")"
+        },
+        {
+          "source": ".setPlaceholder(\"value\")",
+          "target": ".setPlaceholder(\"值\")"
+        },
+        {
+          "source": ".setPlaceholder(\"path strings with comma as separator, e.g. `tmp/,notes/templates`\")",
+          "target": ".setPlaceholder(\"路径字符串，逗号分隔，例如 `tmp/,notes/templates`\")"
+        },
+        {
+          "source": ".setPlaceholder(\"llm api token\")",
+          "target": ".setPlaceholder(\"llm API令牌\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Type plugin name to find it\")",
+          "target": ".setPlaceholder(\"输入插件名称以查找\")"
+        },
+        {
+          "source": ".setTooltip(\"Remove\")",
+          "target": ".setTooltip(\"移除\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset to default\")",
+          "target": ".setTooltip(\"重置为默认\")"
+        },
+        {
+          "source": ".appendText(` Color for #${m.query}`)",
+          "target": ".appendText(` #${m.query}的颜色`)"
+        },
+        {
+          "source": ".innerText=`File format which is like Diary setting.\nFor more syntax details, `",
+          "target": ".innerText=`文件格式类似日记设置。\n有关更多语法细节，`"
+        },
+        {
+          "source": ".innerText=\"please check moment format.\"",
+          "target": ".innerText=\"请检查moment格式\""
+        },
+        {
+          "source": ".innerText=\"height\"",
+          "target": ".innerText=\"高度\""
+        },
+        {
+          "source": ".innerText=\"width\"",
+          "target": ".innerText=\"宽度\""
+        },
+        {
+          "source": ".innerText=\"top\"",
+          "target": ".innerText=\"顶部\""
+        },
+        {
+          "source": ".innerText=\"left\"",
+          "target": ".innerText=\"左侧\""
+        },
+        {
+          "source": ".innerText=\"Auto updating metadata in frontmatter when file is modified.\\nTimestamp format follows `moment.js` and syntax details, \"",
+          "target": ".innerText=\"修改文件时自动更新frontmatter中的元数据。\\nTimestamp格式遵循`moment.js `和语法细节，\""
+        },
+        {
+          "source": ".append(\"Content-Type\",l)}this[Nn]={type:\"default\",url:r.url,status:n,statusText:r.statusText||\"\",headers:i,counter:r.counter,highWaterMark:r.highWaterMark}}get type(){return this[Nn].type}get url(){return this[Nn].url||\"\"}get status(){return this[Nn].status}get ok(){return this[Nn].status>=200&&this[Nn].status<300}get redirected(){return this[Nn].counter>0}get statusText(){return this[Nn].statusText}get headers(){return this[Nn].headers}get highWaterMark(){return this[Nn].highWaterMark}clone(){return new t(b0(this,this.highWaterMark),{type:this.type,url:this.url,status:this.status,statusText:this.statusText,headers:this.headers,ok:this.ok,redirected:this.redirected,size:this.size,highWaterMark:this.highWaterMark})}static redirect(e,r=302){if(!j3(r))throw new RangeError('Failed to execute \"redirect\" on \"response\": Invalid status code');return new t(null,{headers:{location:new URL(e).toString()},status:r})}static error(){let e=new t(null,{status:0,statusText:\"\"});return e[Nn].type=\"error\",e}static json(e=void 0,r={}){let n=JSON.stringify(e);if(n===void 0)throw new TypeError(\"data is not JSON serializable\")",
+          "target": ".append(\"Content-Type\",l)}this[Nn]={type:\"default\",url:r.url,status:n,statusText:r.statusText||\"\",headers:i,counter:r.counter,highWaterMark:r.highWaterMark}}get type(){return this[Nn].type}get url(){return this[Nn].url||\"\"}get status(){return this[Nn].status}get ok(){return this[Nn].status>=200&&this[Nn].status<300}get redirected(){return this[Nn].counter>0}get statusText(){return this[Nn].statusText}get headers(){return this[Nn].headers}get highWaterMark(){return this[Nn].highWaterMark}clone(){return new t(b0(this,this.highWaterMark),{type:this.type,url:this.url,status:this.status,statusText:this.statusText,headers:this.headers,ok:this.ok,redirected:this.redirected,size:this.size,highWaterMark:this.highWaterMark})}static redirect(e,r=302){if(!j3(r))throw new RangeError('“redirect” 方法在 “response” 上执行失败：无效的状态码');return new t(null,{headers:{location:new URL(e).toString()},status:r})}static error(){let e=new t(null,{status:0,statusText:\"\"});return e[Nn].type=\"error\",e}static json(e=void 0,r={}){let n=JSON.stringify(e);if(n===void 0)throw new TypeError(\"数据不是有效的JSON序列化对象\")"
+        },
+        {
+          "source": ".append(\"id\",o);return dt(e),await(await this.caller.call(je(),`${this.apiUrl}/public/${e}/runs${n}`,{method:\"GET\",headers:this.headers,signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions})).json()}async readDatasetSharedSchema(e,r){if(!e&&!r)throw new Error(\"Either datasetId or datasetName must be given\")",
+          "target": ".append(\"id\",o);return dt(e),await(await this.caller.call(je(),`${this.apiUrl}/public/${e}/runs${n}`,{method:\"GET\",headers:this.headers,signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions})).json()}async readDatasetSharedSchema(e,r){if(!e&&!r)throw new Error(\"必须提供数据集ID或数据集名称\")"
+        },
+        {
+          "source": ".append(\"name\",r);else throw new Error(\"Must provide projectName or projectId\")",
+          "target": ".append(\"name\",r);else throw new Error(\"必须提供项目名称或项目ID\")"
+        },
+        {
+          "source": ".append(\"include_stats\",n.toString());let o=await this._get(i,l),a;if(Array.isArray(o)){if(o.length===0)throw new Error(`Project[id=${e}, name=${r}] not found`);a=o[0]}else a=o;return a}async getProjectUrl({projectId:e,projectName:r}){if(e===void 0&&r===void 0)throw new Error(\"Must provide either projectName or projectId\")",
+          "target": ".append(\"include_stats\",n.toString());let o=await this._get(i,l),a;if(Array.isArray(o)){if(o.length===0)throw new Error(`项目[id=${e}, 名称=${r}] 未找到`);a=o[0]}else a=o;return a}async getProjectUrl({projectId:e,projectName:r}){if(e===void 0&&r===void 0)throw new Error(\"必须提供项目名称或项目ID\")"
+        },
+        {
+          "source": ".append(\"id\",u);if(r!==void 0&&s.append(\"name\",r),n!==void 0&&s.append(\"name_contains\",n),i!==void 0)s.append(\"reference_dataset\",i);else if(l!==void 0){let u=await this.readDataset({datasetName:l});s.append(\"reference_dataset\",u.id)}o!==void 0&&s.append(\"reference_free\",o.toString()),a!==void 0&&s.append(\"metadata\",JSON.stringify(a));for await(let u of this._getPaginated(\"/sessions\",s))yield*u}async deleteProject({projectId:e,projectName:r}){let n;if(e===void 0&&r===void 0)throw new Error(\"Must provide projectName or projectId\")",
+          "target": ".append(\"id\",u);if(r!==void 0&&s.append(\"name\",r),n!==void 0&&s.append(\"name_contains\",n),i!==void 0)s.append(\"reference_dataset\",i);else if(l!==void 0){let u=await this.readDataset({datasetName:l});s.append(\"reference_dataset\",u.id)}o!==void 0&&s.append(\"reference_free\",o.toString()),a!==void 0&&s.append(\"metadata\",JSON.stringify(a));for await(let u of this._getPaginated(\"/sessions\",s))yield*u}async deleteProject({projectId:e,projectName:r}){let n;if(e===void 0&&r===void 0)throw new Error(\"必须提供项目名称或项目ID\")"
+        },
+        {
+          "source": ".append(\"file\",e,r),n.forEach(f=>{u.append(\"input_keys\",f)}),i.forEach(f=>{u.append(\"output_keys\",f)}),l&&u.append(\"description\",l),o&&u.append(\"data_type\",o),a&&u.append(\"name\",a);let c=await this.caller.call(je(),s,{method:\"POST\",headers:this.headers,body:u,signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});return await ht(c,\"upload CSV\")",
+          "target": ".append(\"file\",e,r),n.forEach(f=>{u.append(\"input_keys\",f)}),i.forEach(f=>{u.append(\"output_keys\",f)}),l&&u.append(\"description\",l),o&&u.append(\"data_type\",o),a&&u.append(\"name\",a);let c=await this.caller.call(je(),s,{method:\"POST\",headers:this.headers,body:u,signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});return await ht(c,\"上传CSV\")"
+        },
+        {
+          "source": ".append(\"name\",r);else throw new Error(\"Must provide datasetName or datasetId\")",
+          "target": ".append(\"name\",r);else throw new Error(\"必须提供数据集名称或数据集ID\")"
+        },
+        {
+          "source": ".append(\"id\",u);i!==void 0&&s.append(\"name\",i),l!==void 0&&s.append(\"name_contains\",l),o!==void 0&&s.append(\"metadata\",JSON.stringify(o));for await(let u of this._getPaginated(a,s))yield*u}async updateDataset(e){let{datasetId:r,datasetName:n,...i}=e;if(!r&&!n)throw new Error(\"Must provide either datasetName or datasetId\")",
+          "target": ".append(\"id\",u);i!==void 0&&s.append(\"name\",i),l!==void 0&&s.append(\"name_contains\",l),o!==void 0&&s.append(\"metadata\",JSON.stringify(o));for await(let u of this._getPaginated(a,s))yield*u}async updateDataset(e){let{datasetId:r,datasetName:n,...i}=e;if(!r&&!n)throw new Error(\"必须提供数据集名称或数据集ID\")"
+        },
+        {
+          "source": ".append(\"as_of\",m);let p=o!=null?o:!0;if(f.append(\"inline_s3_urls\",p.toString()),n!==void 0)for(let b of n)f.append(\"id\",b);if(l!==void 0)for(let b of l)f.append(\"splits\",b);if(a!==void 0){let b=JSON.stringify(a);f.append(\"metadata\",b)}s!==void 0&&f.append(\"limit\",s.toString()),u!==void 0&&f.append(\"offset\",u.toString()),c!==void 0&&f.append(\"filter\",c);let v=0;for await(let b of this._getPaginated(\"/examples\",f)){for(let w of b)yield w,v++;if(s!==void 0&&v>=s)break}}async deleteExample(e){dt(e);let r=`/examples/${e}`,n=await this.caller.call(je(),this.apiUrl+r,{method:\"DELETE\",headers:this.headers,signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});await ht(n,`delete ${r}`),await n.json()}async updateExample(e,r){dt(e);let n=await this.caller.call(je(),`${this.apiUrl}/examples/${e}`,{method:\"PATCH\",headers:{...this.headers,\"Content-Type\":\"application/json\"},body:JSON.stringify(r),signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});return await ht(n,\"update example\")",
+          "target": ".append(\"as_of\",m);let p=o!=null?o:!0;if(f.append(\"inline_s3_urls\",p.toString()),n!==void 0)for(let b of n)f.append(\"id\",b);if(l!==void 0)for(let b of l)f.append(\"splits\",b);if(a!==void 0){let b=JSON.stringify(a);f.append(\"metadata\",b)}s!==void 0&&f.append(\"limit\",s.toString()),u!==void 0&&f.append(\"offset\",u.toString()),c!==void 0&&f.append(\"filter\",c);let v=0;for await(let b of this._getPaginated(\"/examples\",f)){for(let w of b)yield w,v++;if(s!==void 0&&v>=s)break}}async deleteExample(e){dt(e);let r=`/examples/${e}`,n=await this.caller.call(je(),this.apiUrl+r,{method:\"DELETE\",headers:this.headers,signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});await ht(n,`删除 ${r}`),await n.json()}async updateExample(e,r){dt(e);let n=await this.caller.call(je(),`${this.apiUrl}/examples/${e}`,{method:\"PATCH\",headers:{...this.headers,\"Content-Type\":\"application/json\"},body:JSON.stringify(r),signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});return await ht(n,\"更新示例\")"
+        },
+        {
+          "source": ".append(\"as_of\",o),await this._get(`/datasets/${i}/splits`,l)}async updateDatasetSplits({datasetId:e,datasetName:r,splitName:n,exampleIds:i,remove:l=!1}){let o;if(e===void 0&&r===void 0)throw new Error(\"Must provide dataset name or ID\")",
+          "target": ".append(\"as_of\",o),await this._get(`/datasets/${i}/splits`,l)}async updateDatasetSplits({datasetId:e,datasetName:r,splitName:n,exampleIds:i,remove:l=!1}){let o;if(e===void 0&&r===void 0)throw new Error(\"必须提供数据集名称或ID\")"
+        },
+        {
+          "source": ".append(\"key\",l);if(n)for(let l of n)i.append(\"source\",l);for await(let l of this._getPaginated(\"/feedback\",i))yield*l}async createPresignedFeedbackToken(e,r,{expiration:n,feedbackConfig:i}={}){let l={run_id:e,feedback_key:r,feedback_config:i};return n?typeof n==\"string\"?l.expires_at=n:(n!=null&&n.hours||n!=null&&n.minutes||n!=null&&n.days)&&(l.expires_in=n):l.expires_in={hours:3},await(await this.caller.call(je(),`${this.apiUrl}/feedback/tokens`,{method:\"POST\",headers:{...this.headers,\"Content-Type\":\"application/json\"},body:JSON.stringify(l),signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions})).json()}async createComparativeExperiment({name:e,experimentIds:r,referenceDatasetId:n,createdAt:i,description:l,metadata:o,id:a}){var c;if(r.length===0)throw new Error(\"At least one experiment is required\")",
+          "target": ".append(\"key\",l);if(n)for(let l of n)i.append(\"source\",l);for await(let l of this._getPaginated(\"/feedback\",i))yield*l}async createPresignedFeedbackToken(e,r,{expiration:n,feedbackConfig:i}={}){let l={run_id:e,feedback_key:r,feedback_config:i};return n?typeof n==\"string\"?l.expires_at=n:(n!=null&&n.hours||n!=null&&n.minutes||n!=null&&n.days)&&(l.expires_in=n):l.expires_in={hours:3},await(await this.caller.call(je(),`${this.apiUrl}/feedback/tokens`,{method:\"POST\",headers:{...this.headers,\"Content-Type\":\"application/json\"},body:JSON.stringify(l),signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions})).json()}async createComparativeExperiment({name:e,experimentIds:r,referenceDatasetId:n,createdAt:i,description:l,metadata:o,id:a}){var c;if(r.length===0)throw new Error(\"至少需要一个实验\")"
+        },
+        {
+          "source": ".append(\"ids\",s)}),n&&o.append(\"name\",n),i&&o.append(\"name_contains\",i),o.append(\"limit\",(l!==void 0?Math.min(l,100):100).toString());let a=0;for await(let s of this._getPaginated(\"/annotation-queues\",o))if(yield*s,a++,l!==void 0&&a>=l)break}async createAnnotationQueue(e){let{name:r,description:n,queueId:i}=e,l={name:r,description:n,id:i||kr()},o=await this.caller.call(je(),`${this.apiUrl}/annotation-queues`,{method:\"POST\",headers:{...this.headers,\"Content-Type\":\"application/json\"},body:JSON.stringify(Object.fromEntries(Object.entries(l).filter(([s,u])=>u!==void 0))),signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});return await ht(o,\"create annotation queue\")",
+          "target": ".append(\"ids\",s)}),n&&o.append(\"name\",n),i&&o.append(\"name_contains\",i),o.append(\"limit\",(l!==void 0?Math.min(l,100):100).toString());let a=0;for await(let s of this._getPaginated(\"/annotation-queues\",o))if(yield*s,a++,l!==void 0&&a>=l)break}async createAnnotationQueue(e){let{name:r,description:n,queueId:i}=e,l={name:r,description:n,id:i||kr()},o=await this.caller.call(je(),`${this.apiUrl}/annotation-queues`,{method:\"POST\",headers:{...this.headers,\"Content-Type\":\"application/json\"},body:JSON.stringify(Object.fromEntries(Object.entries(l).filter(([s,u])=>u!==void 0))),signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});return await ht(o,\"创建标注队列\")"
+        },
+        {
+          "source": ".append(\"is_archived\",(!!(e!=null&&e.isArchived)).toString()),(e==null?void 0:e.isPublic)!==void 0&&r.append(\"is_public\",e.isPublic.toString()),e!=null&&e.query&&r.append(\"query\",e.query);for await(let i of this._getPaginated(\"/repos\",r,l=>l.repos))yield*i}async getPrompt(e){let[r,n,i]=El(e),l=await this.caller.call(je(),`${this.apiUrl}/repos/${r}/${n}`,{method:\"GET\",headers:this.headers,signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});if(l.status===404)return null;await ht(l,\"get prompt\")",
+          "target": ".append(\"is_archived\",(!!(e!=null&&e.isArchived)).toString()),(e==null?void 0:e.isPublic)!==void 0&&r.append(\"is_public\",e.isPublic.toString()),e!=null&&e.query&&r.append(\"query\",e.query);for await(let i of this._getPaginated(\"/repos\",r,l=>l.repos))yield*i}async getPrompt(e){let[r,n,i]=El(e),l=await this.caller.call(je(),`${this.apiUrl}/repos/${r}/${n}`,{method:\"GET\",headers:this.headers,signal:AbortSignal.timeout(this.timeout_ms),...this.fetchOptions});if(l.status===404)return null;await ht(l,\"获取提示\")"
+        },
+        {
+          "source": ".addOption(\"string\",\"1 Regular String\")",
+          "target": ".addOption(\"string\",\"1 常规字符\")"
+        },
+        {
+          "source": ".addOption(\"moment\",\"2 Timestamp\")",
+          "target": ".addOption(\"moment\",\"2 时间戳\")"
+        },
+        {
+          "source": ".addOption(\"daily\",\"Daily Statistcs\")",
+          "target": ".addOption(\"daily\",\"每日统计\")"
+        },
+        {
+          "source": ".addOption(\"total\",\"Total Statistics\")",
+          "target": ".addOption(\"total\",\"全部统计\")"
+        },
+        {
+          "source": "label:\"Daily Words\"",
+          "target": "label:\"每日词汇\""
+        },
+        {
+          "source": "label:\"Daily Pages\"",
+          "target": "label:\"每日页面\""
+        },
+        {
+          "source": "label:\"Total Files\"",
+          "target": "label:\"文件总数\""
+        },
+        {
+          "source": "label:\"Total Pages\"",
+          "target": "label:\"页面总数\""
+        },
+        {
+          "source": "innerText=\"Auto updating metadata in frontmatter when file is modified.\\nTimestamp format follows `moment.js` and syntax details, \"",
+          "target": "innerText=\"文件修改时自动更新前置元数据。\\n时间戳格式遵循 `moment.js` 和语法细节，\""
+        }
+      ]
+    }
+  }
+}

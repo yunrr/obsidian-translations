@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "tokenz",
+    "version": "2.0.0",
+    "title": "Tokenz",
+    "description": "Insert shortcodes into your document, e.g smileys :) or emojis :wink: . User-defined short code maps are also supported.",
+    "language": "zh-cn",
+    "supportedVersions": "0.74",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(\"Code map list loaded, processing...\")",
+          "target": ".log(\"代码地图列表已加载，正在处理...\")"
+        },
+        {
+          "source": ".log(`${loadResultMsgHeader} loaded`)",
+          "target": ".log(`${loadResultMsgHeader}已加载`)"
+        },
+        {
+          "source": ".log(\"Tokenz loaded!\")",
+          "target": ".log(\"标记加载完成！\")"
+        },
+        {
+          "source": ".log(\"Tokenz unloaded!\")",
+          "target": ".log(\"Tokenz已卸载！\")"
+        },
+        {
+          "source": ".error(`Error loading file: ${fileName}, ${e}`)",
+          "target": ".error(`加载文件时出错: ${fileName}, ${e}`)"
+        },
+        {
+          "source": ".setName(\"Suggestions\")",
+          "target": ".setName(\"建议\")"
+        },
+        {
+          "source": ".setName(\"Show suggestions\")",
+          "target": ".setName(\"显示建议\")"
+        },
+        {
+          "source": ".setName(\"Replace tokens with icons\")",
+          "target": ".setName(\"用图标替换令牌\")"
+        },
+        {
+          "source": ".setName(\"Limit number of suggested tokens\")",
+          "target": ".setName(\"限制建议令牌的数量\")"
+        },
+        {
+          "source": ".setName(\"Editing\")",
+          "target": ".setName(\"编辑\")"
+        },
+        {
+          "source": ".setName(\"Current word's highlighting mode\")",
+          "target": ".setName(\"当前单词的高亮模式\")"
+        },
+        {
+          "source": ".setDesc(\"While typing: If enabled, a dropdown list will appear showing the actually matching tokens, if there's any.\")",
+          "target": ".setDesc(\"在输入时：如果启用，将显示一个下拉列表，显示实际匹配的标记，如果有的话。\")"
+        },
+        {
+          "source": ".setDesc(\"Replace the selected token with its matching icon. If enabled, the choosed token's icon will be inserted directly into the text instead of the the token's name.\")",
+          "target": ".setDesc(\"将选定的标记替换为相应的图标。如果启用了该功能，所选标记的图标将直接插入到文本中，而不是标记的名称。\")"
+        },
+        {
+          "source": ".setDesc('Only available when \"Show suggestions dropdown list\" is enabled')",
+          "target": ".setDesc('仅当“显示建议下拉列表”启用时可用')"
+        },
+        {
+          "source": ".setDesc(\"Maximum number of suggestions to show in the dropdown list (per group; per code map)\")",
+          "target": ".setDesc(\"在下拉列表中显示的建议的最大数量（每个组；每个代码地图）\")"
+        },
+        {
+          "source": "currentModeDesc = 'Completion (Suggested): Highlight if the current word is the beginning of a token. E.g. \":smi\" matches \":smile:\"';",
+          "target": "currentModeDesc = '完成（建议）：如果当前单词是标记的开头，请高亮显示。例如，\":smi\" 匹配 \":smile:\"';"
+        }
+      ]
+    }
+  }
+}

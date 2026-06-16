@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-file-cooker",
+    "version": "2.0.0",
+    "title": "File Cooker",
+    "description": "Deal multi notes from Search results、current file、Dataview query string...",
+    "language": "zh-cn",
+    "supportedVersions": "1.9.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Delete Success!\")",
+          "target": "Notice(\"删除成功！\")"
+        },
+        {
+          "source": "Notice(\"Delete Canceled!\")",
+          "target": "Notice(\"删除已取消！\")"
+        },
+        {
+          "source": "Notice(\"No Files Found!\")",
+          "target": "Notice(\"未找到文件！\")"
+        },
+        {
+          "source": "Notice(\"Key could not be empty!\")",
+          "target": "Notice(\"键不能为空！\")"
+        },
+        {
+          "source": "Notice(\"Value could not be empty!\")",
+          "target": "Notice(\"值不能为空！\")"
+        },
+        {
+          "source": "Notice(\"Modify Property Success!\")",
+          "target": "Notice(\"属性修改成功！\")"
+        },
+        {
+          "source": "Notice(\"Modify Property Canceled!\")",
+          "target": "Notice(\"属性修改已取消！\")"
+        },
+        {
+          "source": "Notice(\"Copy Success!\")",
+          "target": "Notice(\"复制成功！\")"
+        },
+        {
+          "source": "Notice(\"Move Success!\")",
+          "target": "Notice(\"移动成功！\")"
+        },
+        {
+          "source": "Notice(\"Move Canceled!\")",
+          "target": "Notice(\"移动已取消！\")"
+        },
+        {
+          "source": "Notice(\"Prefix and Suffix could not be all empty!\")",
+          "target": "Notice(\"前缀和后缀不能同时为空！\")"
+        },
+        {
+          "source": "Notice(\"Rename Success!\")",
+          "target": "Notice(\"重命名成功！\")"
+        },
+        {
+          "source": "Notice(\"Rename Canceled!\")",
+          "target": "Notice(\"重命名已取消！\")"
+        },
+        {
+          "source": "Notice(`Sync to flomo Error!${response.text}[${response.status}]`)",
+          "target": "Notice(`同步到flomo出错！${response.text}[${response.status}]`)"
+        },
+        {
+          "source": "Notice(\"Sync to flomo Success!\")",
+          "target": "Notice(\"同步到flomo成功！\")"
+        },
+        {
+          "source": "Notice(\"Sync to flomo Canceled!\")",
+          "target": "Notice(\"同步到flomo已取消！\")"
+        },
+        {
+          "source": "Notice(\"Please config flomoAPI first!\")",
+          "target": "Notice(\"请先配置flomoAPI！\")"
+        },
+        {
+          "source": "Notice(\"Add to Canvas Success!\")",
+          "target": "Notice(\"成功添加到画布！\")"
+        },
+        {
+          "source": "Notice(this.targetFilePath + \" is not a Canvas!\")",
+          "target": "Notice(this.targetFilePath + \" 不是画布文件！\")"
+        },
+        {
+          "source": "Notice(\"Add to Canvas Canceled!\")",
+          "target": "Notice(\"添加到画布已取消！\")"
+        },
+        {
+          "source": "Notice(\"Merge Success!\")",
+          "target": "Notice(\"合并成功！\")"
+        },
+        {
+          "source": "Notice(\"Merge Canceled!\")",
+          "target": "Notice(\"合并已取消！\")"
+        },
+        {
+          "source": "Notice(e.message)",
+          "target": "Notice(e.message)"
+        },
+        {
+          "source": "Notice(\"Clipboard File Content Error!\" + e)",
+          "target": "Notice(\"剪贴板文件内容错误！\" + e)"
+        },
+        {
+          "source": "Notice(\"Clipboard Content Error!\" + e)",
+          "target": "Notice(\"剪贴板内容错误！\" + e)"
+        },
+        {
+          "source": "Notice(\"Create Success!\")",
+          "target": "Notice(\"创建成功！\")"
+        },
+        {
+          "source": "Notice(\"Create Canceled!\")",
+          "target": "Notice(\"创建已取消！\")"
+        },
+        {
+          "source": "Notice(\"No active file!\")",
+          "target": "Notice(\"无当前文件！\")"
+        },
+        {
+          "source": "Notice(\"Copy links success!\")",
+          "target": "Notice(\"链接复制成功！\")"
+        },
+        {
+          "source": "Notice(\"Copy to Clipboard Canceled!\")",
+          "target": "Notice(\"复制到剪贴板已取消！\")"
+        },
+        {
+          "source": "Notice(\"Query string error![\" + this.queryStr + \"]\")",
+          "target": "Notice(\"查询字符串错误！[\" + this.queryStr + \"]\")"
+        },
+        {
+          "source": "Notice(\"Has no search results!Please search first!\")",
+          "target": "Notice(\"无搜索结果！请先搜索。\")"
+        },
+        {
+          "source": ".log(\"can not find \" + this.targetFilePath)",
+          "target": ".log(\"找不到 \" + this.targetFilePath)"
+        },
+        {
+          "source": ".log(innerFilePath)",
+          "target": ".log(innerFilePath)"
+        },
+        {
+          "source": ".log(resolvedFile)",
+          "target": ".log(resolvedFile)"
+        },
+        {
+          "source": ".log(\"You should have at least one edge in the canvas to use this feature!\")",
+          "target": ".log(\"使用此功能需至少有一条画布连线！\")"
+        },
+        {
+          "source": ".log(\"can not find file :\" + f)",
+          "target": ".log(\"找不到文件：\" + f)"
+        },
+        {
+          "source": ".log(\"can not find file :\" + k.path)",
+          "target": ".log(\"找不到文件：\" + k.path)"
+        },
+        {
+          "source": "name: \"Rename files in clipboard ...\"",
+          "target": "name: \"重命名剪贴板中的文件...\""
+        },
+        {
+          "source": "name: \"Edit Properties in clipboard files ...\"",
+          "target": "name: \"编辑剪贴板文件的属性...\""
+        },
+        {
+          "source": "name: \"Delete files in clipboard!\"",
+          "target": "name: \"删除剪贴板中的文件！\""
+        },
+        {
+          "source": "name: \"Merge files in clipboard to ...\"",
+          "target": "name: \"合并剪贴板文件至...\""
+        },
+        {
+          "source": "name: \"Sync files in clipboard to flomo ...\"",
+          "target": "name: \"同步剪贴板文件到flomo...\""
+        },
+        {
+          "source": "name: \"Move files in clipboard to ...\"",
+          "target": "name: \"移动剪贴板文件至...\""
+        },
+        {
+          "source": "name: \"Add content in clipboard to canvas ...\"",
+          "target": "name: \"添加剪贴板内容到画布...\""
+        },
+        {
+          "source": "name: \"Add files in clipboard to target canvas ...\"",
+          "target": "name: \"添加剪贴板文件到目标画布...\""
+        },
+        {
+          "source": "name: \"Rename in current file links ...\"",
+          "target": "name: \"重命名当前文件链接...\""
+        },
+        {
+          "source": "name: \"Edit Properties in current file links ...\"",
+          "target": "name: \"编辑当前文件链接属性...\""
+        },
+        {
+          "source": "name: \"Delete link-files in current file!\"",
+          "target": "name: \"删除当前文件中的链接文件！\""
+        },
+        {
+          "source": "name: \"Merge links in current file to ...\"",
+          "target": "name: \"合并当前文件链接至...\""
+        },
+        {
+          "source": "name: \"Create links in current file ...\"",
+          "target": "name: \"在当前文件中创建链接...\""
+        },
+        {
+          "source": "name: \"Sync links in current file to flomo ...\"",
+          "target": "name: \"同步当前文件链接到flomo...\""
+        },
+        {
+          "source": "name: \"Sync content in current file to flomo ...\"",
+          "target": "name: \"同步当前文件内容到flomo...\""
+        },
+        {
+          "source": "name: \"Sync selection in current file to flomo ...\"",
+          "target": "name: \"同步当前文件选中内容到flomo...\""
+        },
+        {
+          "source": "name: \"Add selection in current file to canvas ...\"",
+          "target": "name: \"添加当前文件选中内容到画布...\""
+        },
+        {
+          "source": "name: \"Move links in current file to ...\"",
+          "target": "name: \"移动当前文件链接至...\""
+        },
+        {
+          "source": "name: \"Add links in current file to target canvas ...\"",
+          "target": "name: \"添加当前文件链接到目标画布...\""
+        },
+        {
+          "source": "name: \"Rename in dataview results ...\"",
+          "target": "name: \"重命名Dataview结果...\""
+        },
+        {
+          "source": "name: \"Edit Properties in dataview results ...\"",
+          "target": "name: \"编辑Dataview结果属性...\""
+        },
+        {
+          "source": "name: \"Copy dataview result links!\"",
+          "target": "name: \"复制Dataview结果链接！\""
+        },
+        {
+          "source": "name: \"Delete dataview query results!\"",
+          "target": "name: \"删除Dataview查询结果！\""
+        },
+        {
+          "source": "name: \"Merge dataview query results to ...\"",
+          "target": "name: \"合并Dataview查询结果至...\""
+        },
+        {
+          "source": "name: \"Sync dataview query results to flomo ...\"",
+          "target": "name: \"同步Dataview查询结果到flomo...\""
+        },
+        {
+          "source": "name: \"Move dataview query results to ...\"",
+          "target": "name: \"移动Dataview查询结果至...\""
+        },
+        {
+          "source": "name: \"Add dataview query results to canvas...\"",
+          "target": "name: \"添加Dataview查询结果到画布...\""
+        },
+        {
+          "source": "name: \"Add dataview task to canvas...\"",
+          "target": "name: \"添加Dataview任务到画布...\""
+        },
+        {
+          "source": "name: \"Start Presentation\"",
+          "target": "name: \"开始演示\""
+        },
+        {
+          "source": "name: \"Stop Presentation\"",
+          "target": "name: \"停止演示\""
+        },
+        {
+          "source": "name: \"Rename files in searchresults ...\"",
+          "target": "name: \"重命名搜索结果中的文件...\""
+        },
+        {
+          "source": "name: \"Edit Properties in searchresults files ...\"",
+          "target": "name: \"编辑搜索结果文件属性...\""
+        },
+        {
+          "source": "name: \"Delete files in searchresults!\"",
+          "target": "name: \"删除搜索结果中的文件！\""
+        },
+        {
+          "source": "name: \"Merge files in searchresults to ...\"",
+          "target": "name: \"合并搜索结果文件至...\""
+        },
+        {
+          "source": "name: \"Sync files in searchresults to flomo ...\"",
+          "target": "name: \"同步搜索结果文件到flomo...\""
+        },
+        {
+          "source": "name: \"Move files in searchresults to ...\"",
+          "target": "name: \"移动搜索结果文件至...\""
+        },
+        {
+          "source": "name: \"Add files in searchresults to target canvas ...\"",
+          "target": "name: \"添加搜索结果文件到目标画布...\""
+        },
+        {
+          "source": "text: \"Confirm Delete?\"",
+          "target": "text: \"确认删除？\""
+        },
+        {
+          "source": "text: \"No files found!\"",
+          "target": "text: \"未找到文件！\""
+        },
+        {
+          "source": "text: \"Edit Properties\"",
+          "target": "text: \"编辑属性\""
+        },
+        {
+          "source": "text: \"Confirm Move/Copy?\"",
+          "target": "text: \"确认移动/复制？\""
+        },
+        {
+          "source": "text: \"Rename Files\"",
+          "target": "text: \"重命名文件\""
+        },
+        {
+          "source": "text: \"Confirm Sync to flomo?\"",
+          "target": "text: \"确认同步到flomo？\""
+        },
+        {
+          "source": "text: \"Sync Selection\"",
+          "target": "text: \"同步选中内容\""
+        },
+        {
+          "source": "text: \"Confirm Add to Canvas?\"",
+          "target": "text: \"确认添加到画布？\""
+        },
+        {
+          "source": "text: \"Add cont below to Canvas -> \"",
+          "target": "text: \"添加以下内容到画布 -> \""
+        },
+        {
+          "source": "text: \"Add all files below to Canvas -> \"",
+          "target": "text: \"添加所有以下文件到画布 -> \""
+        },
+        {
+          "source": "text: \"Confirm Merge?\"",
+          "target": "text: \"确认合并？\""
+        },
+        {
+          "source": "text: \"Merge all files below -> \"",
+          "target": "text: \"合并所有以下文件 -> \""
+        },
+        {
+          "source": "text: \"Confirm Create?\"",
+          "target": "text: \"确认创建？\""
+        },
+        {
+          "source": "text: \"Confirm copy to clipboard?\"",
+          "target": "text: \"确认复制到剪贴板？\""
+        },
+        {
+          "source": "text: \"Settings for File Cooker!\"",
+          "target": "text: \"File Cooker 设置！\""
+        },
+        {
+          "source": ".setButtonText(\"Close\")",
+          "target": ".setButtonText(\"关闭\")"
+        },
+        {
+          "source": ".setButtonText(\"Confirm\")",
+          "target": ".setButtonText(\"确认\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setName(\"Limit\")",
+          "target": ".setName(\"限制\")"
+        },
+        {
+          "source": ".setName(\"flomoAPI\")",
+          "target": ".setName(\"flomoAPI\")"
+        },
+        {
+          "source": ".setDesc(\"config batch file limit\")",
+          "target": ".setDesc(\"配置批量文件处理限制\")"
+        },
+        {
+          "source": ".setDesc(\"config flomo API to sync notes\")",
+          "target": ".setDesc(\"配置flomo API以同步笔记\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Properties Key\")",
+          "target": ".setPlaceholder(\"属性键\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Properties Value\")",
+          "target": ".setPlaceholder(\"属性值\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Prefix\")",
+          "target": ".setPlaceholder(\"前缀\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Suffix\")",
+          "target": ".setPlaceholder(\"后缀\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter batch file limit\")",
+          "target": ".setPlaceholder(\"输入批量文件处理限制\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter flomo API\")",
+          "target": ".setPlaceholder(\"输入flomo API\")"
+        },
+        {
+          "source": ".setTooltip(\"Override if exists!\")",
+          "target": ".setTooltip(\"存在则覆盖！\")"
+        },
+        {
+          "source": ".setTooltip(\"Copy instead!\")",
+          "target": ".setTooltip(\"改为复制！\")"
+        },
+        {
+          "source": ".setTooltip(\"Split by line!\")",
+          "target": ".setTooltip(\"按行分割！\")"
+        },
+        {
+          "source": ".setTooltip(\"Include resolved links!\")",
+          "target": ".setTooltip(\"包含已解析链接！\")"
+        },
+        {
+          "source": ".setTooltip(\"Copy name only!\")",
+          "target": ".setTooltip(\"仅复制名称！\")"
+        }
+      ]
+    }
+  }
+}

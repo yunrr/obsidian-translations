@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-banners",
+    "version": "2.0.0",
+    "title": "Banners",
+    "description": "Add banner images to your notes!",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.5-beta",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(createFragment(e=>{e.createEl(\"b\",{text:\"Hey! Looks like you've used Banners in the past. \"})",
+          "target": "Notice(createFragment(e=>{e.createEl(\"b\",{text:\"嘿！看起来你以前用过横幅。\"})"
+        },
+        {
+          "source": "Notice(`Updated Banner settings from ${e.version??\"1.x\"} to ${A.manifest.version}`)",
+          "target": "Notice(`已将横幅设置从${e.version??\"1.x\"}更新为${A.manifest.version}`)"
+        },
+        {
+          "source": "Notice(\"Unable to add a banner to the leaflet!\")",
+          "target": "Notice(\"无法在leaflet上添加横幅！\")"
+        },
+        {
+          "source": "Notice(`Failed to update banner at leaf ${a}!`)",
+          "target": "Notice(`更新leaf ${a}处的横幅失败！`)"
+        },
+        {
+          "source": "Notice('Error: Make sure that you set the \"Banners folder\" setting to a valid folder',7e3)",
+          "target": "Notice('错误：请确保将“横幅文件夹”设置为有效文件夹',7e3)"
+        },
+        {
+          "source": "Notice(`Downloaded the banner to ${i.path} and linked the note to it!`)",
+          "target": "Notice(`将横幅下载到${i.path}并将笔记链接到它！`)"
+        },
+        {
+          "source": "Notice(\"Couldn't download the image into the vault!\")",
+          "target": "Notice(\"无法将图像下载到库中！\")"
+        },
+        {
+          "source": "Notice(\"Your clipboard didn't have a valid URL!\")",
+          "target": "Notice(\"您的剪贴板没有有效的URL！\")"
+        },
+        {
+          "source": "Notice(`Pasted a new banner for ${e.name}!`)",
+          "target": "Notice(`粘贴了${e.name}的新横幅！`)"
+        },
+        {
+          "source": ".log(A.settings)",
+          "target": ".log(A.settings)"
+        },
+        {
+          "source": ".log(\"open note!\")",
+          "target": ".log(\"打开笔记！\")"
+        },
+        {
+          "source": "name:\"Add/Change banner with local image\"",
+          "target": "name:\"使用本地图像添加/更改横幅\""
+        },
+        {
+          "source": "name:\"Remove banner\"",
+          "target": "name:\"删除横幅\""
+        },
+        {
+          "source": "name:\"Paste banner from clipboard\"",
+          "target": "name:\"从剪贴板粘贴横幅\""
+        },
+        {
+          "source": "name:\"Download banner in note to vault\"",
+          "target": "name:\"将笔记中的横幅下载到库中\""
+        },
+        {
+          "source": "name:\"Lock/Unlock banner position\"",
+          "target": "name:\"锁定/解锁横幅位置\""
+        },
+        {
+          "source": "name:\"Add/Change icon\"",
+          "target": "name:\"添加/更改图标\""
+        },
+        {
+          "source": "name:\"Remove icon\"",
+          "target": "name:\"删除图标\""
+        },
+        {
+          "source": "name:\"Add/Change header\"",
+          "target": "name:\"添加/更改标题\""
+        },
+        {
+          "source": "name:\"Remove header\"",
+          "target": "name:\"移除标题\""
+        },
+        {
+          "source": "description:\"A nice, lil' thing to add some flair to your notes :)\"",
+          "target": "description:\"为您的笔记增添光彩的小玩意儿 :)\""
+        },
+        {
+          "source": "description:\"Kinda like inline titles, but with a bit of pizazz\"",
+          "target": "description:\"有点像内嵌标题，但更花哨一些\""
+        },
+        {
+          "source": "description:\"Give a lil' notion of what your note is about\"",
+          "target": "description:\"简要说明一下你的笔记是关于什么的\""
+        },
+        {
+          "source": "description:'For the modal that shows when you run the \"Add/Change banner with local image\" command'",
+          "target": "description:'运行\"使用本地图像添加/更改横幅\"命令时显示的模式对话框'"
+        },
+        {
+          "source": "description:\"'Cause I do not know where else to put these...\"",
+          "target": "description:\"因为我不知道还能把这些放在哪里……\""
+        },
+        {
+          "source": "text:\"Update banner sources\"",
+          "target": "text:\"更新横幅来源\""
+        },
+        {
+          "source": "text:\"Flush banner cache\"",
+          "target": "text:\"刷新横幅缓存\""
+        },
+        {
+          "source": "text:\"Hey! Looks like you've used Banners in the past. \"",
+          "target": "text:\"嘿！看起来你以前用过横幅。\""
+        },
+        {
+          "source": "text:\"Banners created in 1.x use an outdated syntax for internal files that no longer work in 2.0. To update this throughout your vault, go to the bottom of the Banners settings tab\"",
+          "target": "text:\"在 1.x 中创建的横幅使用过时的内部文件语法，在 2.0 中已不再适用。要在整个库中更新，请转到 横幅设置 选项卡底部\""
+        },
+        {
+          "source": ".setText(\"Update legacy syntax for banner sources\")",
+          "target": ".setText(\"更新横幅源的旧语法\")"
+        },
+        {
+          "source": ".setText(\"What would you like to put on your header?\")",
+          "target": ".setText(\"你想把什么放在你的标题上？\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Pick an emoji to use as an icon\")",
+          "target": ".setPlaceholder(\"选择一个 emoji 用作图标\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Pick an image to use as a banner\")",
+          "target": ".setPlaceholder(\"选择一张图片用作横幅\")"
+        },
+        {
+          "source": ".innerHTML=\"Though personally, I like setting it to <code>2.5em</code>\"",
+          "target": ".innerHTML=\"就个人而言，我喜欢将其设置为<code>2.5em</code>\""
+        },
+        {
+          "source": ".innerHTML=\"<em>Note:</em> this setting stacks with the <b>Header font size</b> setting above\"",
+          "target": ".innerHTML=\"<em>注意：</em>此设置与上面的<b>标题字体大小</b>设置叠加使用\""
+        },
+        {
+          "source": "I(\"Update\")",
+          "target": "I(\"更新\")"
+        },
+        {
+          "source": "I(\"such as \")",
+          "target": "I(\"例如\")"
+        },
+        {
+          "source": "I(\", and so on...\")",
+          "target": "I(\"等等……\")"
+        },
+        {
+          "source": "I(`This can be any valid number or\n`)",
+          "target": "I(`这可以是任何有效的数字或`)"
+        },
+        {
+          "source": "I(`Set how big the banner should be in pixels.\n    `)",
+          "target": "I(`设置横幅的大小（像素）。`)"
+        },
+        {
+          "source": "I(`Set how big the banner should be on mobile devices.\n    `)",
+          "target": "I(`设置横幅在移动设备上的大小。`)"
+        },
+        {
+          "source": "I(\"Set a prefix field name to be used for banner data in the frontmatter/\")",
+          "target": "I(\"在frontmatter中设置用于横幅数据的前缀字段名/\")"
+        },
+        {
+          "source": "I(` view.\n    `)",
+          "target": "I(`查看。`)"
+        },
+        {
+          "source": "I(`\n    For example, using `)",
+          "target": "I(`例如：使用`)"
+        },
+        {
+          "source": "I(` means that banner data will be extracted\n    from fields like `)",
+          "target": "I(` 意味着将从以下字段中提取横幅数据 `)"
+        },
+        {
+          "source": "I(\", etc.\")",
+          "target": "I(\"等等。\")"
+        },
+        {
+          "source": "I(`Set how big the banner should be within an internal embed.\n      `)",
+          "target": "I(`设置内部嵌入横幅的大小。`)"
+        },
+        {
+          "source": "I(`Set how big the banner should be within the preview popover.\n      `)",
+          "target": "I(`设置预览弹出窗口中横幅的大小。`)"
+        },
+        {
+          "source": "I(`Set the font size of the banner header.\n    `)",
+          "target": "I(`设置横幅标题的字体大小。`)"
+        },
+        {
+          "source": "I(`\n    If left blank, it will use Obsidian's built-in font size for inline titles.\n    `)",
+          "target": "I(`如果留空，它将使用 Obsidian 的内置字体大小来显示内嵌标题。`)"
+        },
+        {
+          "source": "I(`Set an offset relative to the left side of the note.\n      `)",
+          "target": "I(`设置相对于笔记左侧的偏移量。`)"
+        },
+        {
+          "source": "I(`Set an offset relative to the bottom edge of the banner, if any.\n      `)",
+          "target": "I(`设置相对于横幅底部边缘的偏移量（如果有）。`)"
+        },
+        {
+          "source": "I(\"Display a banner header without having to define a \")",
+          "target": "I(\"显示横幅标题，无需定义\")"
+        },
+        {
+          "source": "I(`\n    property. This will essentially make it behave like Obsidian's native inline title feature.\n    `)",
+          "target": "I(` 属性。这基本上会使其行为类似于Obsidian的原生内嵌标题功能。`)"
+        },
+        {
+          "source": "I(`\n    You can override this setting at an individual note level by having an empty\n    `)",
+          "target": "I(`您也可以在单个笔记级别覆盖此设置，方法是使用空`)"
+        },
+        {
+          "source": "I(\" property too.\")",
+          "target": "I(\"属性。\")"
+        },
+        {
+          "source": "I(`The default header text when the setting above is in effect for a given note.\n      `)",
+          "target": "I(`当上述设置对某一笔记有效时，默认的标题文本。`)"
+        },
+        {
+          "source": "I(`\n      Any text is allowed, but you can also combine it with `)",
+          "target": "I(`允许使用任何文本，但也可以将其与 `)"
+        },
+        {
+          "source": "I(` to\n      reference a property in your note, as well as `)",
+          "target": "I(`来引用笔记中的属性，以及 `)"
+        },
+        {
+          "source": "I(` to use\n      the file's name. You can also set fallback keys with the\n      `)",
+          "target": "I(`来使用文件名。您还可以使用 `)"
+        },
+        {
+          "source": "I(`Set the size of the banner icon.\n    `)",
+          "target": "I(`设置横幅图标的大小。`)"
+        },
+        {
+          "source": "I(\"Couldn't load the banner! Is the \")",
+          "target": "I(\"无法加载横幅！这是\")"
+        },
+        {
+          "source": "I(\" field correct?\")",
+          "target": "I(\" field correct?\")"
+        },
+        {
+          "source": "l(\"\\u{1F3C1} Done!\")",
+          "target": "l(\"\\u{1F3C1}完成！\")"
+        },
+        {
+          "source": "l(\"open-icon-modal\")",
+          "target": "l(\"打开图标模式\")"
+        },
+        {
+          "source": "l(`Scanning ${y} files...`)",
+          "target": "l(`正在扫描${y}文件……`)"
+        },
+        {
+          "source": "l(`Updated ${b.name}!`)",
+          "target": "l(`已更新${b.name}！`)"
+        },
+        {
+          "source": "l(`\\u26A0 ERROR with ${b.name}`)",
+          "target": "l(`\\u26A0 ${b.name} 错误`)"
+        },
+        {
+          "source": ".innerHTML=`Adjust the banner width to only be as wide as the <em>readable line length</em>, which is used\n    by Obsidian&#39;s <b>Readable line length</b> setting. It is recommended to toggle this together\n    with that setting.`",
+          "target": ".innerHTML=`将横幅宽度调整为仅与<em>可读行长</em>一样宽，该长度由 Obsidian 的 <b>可读的行长（Readable line length）</b> 设置使用。建议将此设置与该设置一起切换。`"
+        },
+        {
+          "source": ".innerHTML=`Set a modifier key that must be used to drag a banner.\n    <br/>\n    For example, setting it to <b>\\u21E7 Shift</b> means you must hold down <b>Shift</b> in order to\n    move a banner by dragging it. This can help avoid accidental banner movements.`",
+          "target": ".innerHTML=`设置必须用于拖动横幅的修改键。<br/>例如，将其设置为 <b>\\u21E7 Shift</b> 意味着您必须按住 <b>Shift</b> 才能通过拖动横幅来移动横幅。这有助于避免横幅意外移动。`"
+        },
+        {
+          "source": ".innerHTML=`Display the banner in the internal file embed. This is the embed that appears when you\n    write <code>![[file]]</code> in a file.\n    <br/> <b>Note:</b> You might need to reload Obsidian after toggling this setting`",
+          "target": ".innerHTML=`在内部文件嵌入中显示横幅。这是在文件中写入  <code>![[file]]</code> 时出现的嵌入。<br/> <b>注意：</b> 切换此设置后，您可能需要重新加载 Obsidian。`"
+        },
+        {
+          "source": ".innerHTML=`Display the banner in the page preview popover. This is the preview that appears from the\n    <em>Page Preview</em> core plugin.`",
+          "target": ".innerHTML=`在页面预览弹出窗口中显示横幅。这是从<em>页面预览</em>核心插件中出现的预览。`"
+        },
+        {
+          "source": ".innerHTML=`Enable and display the lock button on the corner of a banner. When combined with the\n    <b>Banner drag modifier key</b> setting, it might be desirable to disable this.`",
+          "target": ".innerHTML=`在横幅的角落启用并显示锁定按钮。当与 <b>横幅拖动修改键</b> 设置结合使用时，可能需要禁用此功能。`"
+        },
+        {
+          "source": ".innerHTML=`Use <a href=\"https://github.com/jdecked/twemoji\" rel=\"noopener noreferrer\">Twemoji</a>\n    instead of your device&#39;s native emoji set. Makes emojis consistent across devices`",
+          "target": ".innerHTML=`使用<a href=\"https://github.com/jdecked/twemoji\" rel=\"noopener noreferrer\">Twemoji</a>而不是您设备的本地表情符号集。这使得不同设备之间的表情符号保持一致。`"
+        },
+        {
+          "source": ".innerHTML=`Limit how many suggestions to display in this modal.\n    <br/> <em>Note:</em> setting a high number while <b>Show preview images</b> setting is toggled on\n    may cause slowdowns`",
+          "target": ".innerHTML=`限制在此模式中显示的建议数量。<br/><em>注意：</em>在打开<b>“显示预览图像</b>”设置时设置较高的数字可能会导致速度变慢`"
+        },
+        {
+          "source": ".innerHTML=`If enabled, the <b>Paste banner from clipboard</b> command will automatically download the\n    image from the URL into your vault and link it as an internal file. Great if you want to\n    keep some banners you found online!\n    <br/>\n    If you want to download them on a case-by-case basis though, you can use the\n    <b>Download banner in note to vault</b> command for a note with a remote banner URL.`",
+          "target": ".innerHTML=`如果启用，<b>从剪贴板粘贴横幅 </b>命令会自动将图像从 URL 下载到 Vault 中，并将其链接为内部文件。如果您想保留一些在网上找到的横幅，那就太好了！<br/>但是，如果您想根据具体情况下载它们，您可以对具有远程横幅 URL 的注释使用 <b>将笔记中的横幅下载到库中</b> 命令。`"
+        },
+        {
+          "source": "title:\"Banners\"",
+          "target": "title:\"横幅\""
+        },
+        {
+          "source": "title:\"Banner Headers\"",
+          "target": "title:\"横幅标题\""
+        },
+        {
+          "source": "title:\"Banner Icons\"",
+          "target": "title:\"横幅图标\""
+        },
+        {
+          "source": "title:\"Local Image Modal\"",
+          "target": "title:\"本地图像模式\""
+        },
+        {
+          "source": "title:\"Extras\"",
+          "target": "title:\"其他\""
+        },
+        {
+          "source": ".textContent=`Allow banner dragging from within the preview popover.\n      This may act a bit finicky though.`",
+          "target": ".textContent=`允许在预览弹出窗口中拖动横幅。不过这可能会有点麻烦。`"
+        },
+        {
+          "source": ".textContent=`Align the header vertically relative to a banner, if any. If there's no banner, this setting\n    has no effect.`",
+          "target": ".textContent=`相对于横幅（如果有）垂直对齐标题。如果没有横幅，此设置无效。`"
+        },
+        {
+          "source": ".textContent=`Select a folder to exclusively search for banner files in. If empty, it will search\n    the entire vault for image files`",
+          "target": ".textContent=`选择专门搜索横幅文件的文件夹。如果为空，它将搜索整个库的图像文件`"
+        },
+        {
+          "source": ".textContent=`If you used Banners 1.x in the past, you may need to update the syntax for your banners'\n    sources across your notes. This will help you do that automatically in one go.`",
+          "target": ".textContent=`如果您过去使用的是 Banners 1.x，您可能需要更新整个笔记中横幅源的语法。这将帮助您一次性自动完成更新。`"
+        },
+        {
+          "source": ".textContent=`This plugin uses a cache to quickly return banner images, which is especially useful with\n    remote images. While this cache resets whenever you reopen/reload Obsidian, you can flush\n    the cache here if you're running into an issue with it.`",
+          "target": ".textContent=`该插件使用缓存快速返回横幅图片，这对远程图片尤其有用。只要重新打开/加载 Obsidian，缓存就会重置，如果遇到问题，可以在这里刷新缓存。`"
+        },
+        {
+          "source": ".textContent=\"CSS length value\"",
+          "target": ".textContent=\"CSS长度值\""
+        },
+        {
+          "source": ".textContent=\"Banner style\"",
+          "target": ".textContent=\"横幅样式\""
+        },
+        {
+          "source": ".textContent=\"Set a style for all of your banners\"",
+          "target": ".textContent=\"为所有横幅设置样式\""
+        },
+        {
+          "source": ".textContent=\"Banner height\"",
+          "target": ".textContent=\"横幅高度\""
+        },
+        {
+          "source": ".textContent=\"Mobile banner height\"",
+          "target": ".textContent=\"移动设备横幅高度\""
+        },
+        {
+          "source": ".textContent=\"Adjust width to readable line length\"",
+          "target": ".textContent=\"将宽度调整为可读的行长\""
+        },
+        {
+          "source": ".textContent=\"Banner drag modifier key\"",
+          "target": ".textContent=\"横幅拖动修改键\""
+        },
+        {
+          "source": ".textContent=\"Property field name\"",
+          "target": ".textContent=\"属性字段名称\""
+        },
+        {
+          "source": ".textContent=\"Properties\"",
+          "target": ".textContent=\"属性\""
+        },
+        {
+          "source": ".textContent=\"Show in internal embed\"",
+          "target": ".textContent=\"在内部嵌入中显示\""
+        },
+        {
+          "source": ".textContent=\"Internal embed banner height\"",
+          "target": ".textContent=\"内部嵌入横幅高度\""
+        },
+        {
+          "source": ".textContent=\"Enable drag in internal embed\"",
+          "target": ".textContent=\"在内部嵌入中启用拖动\""
+        },
+        {
+          "source": ".textContent=\"Allow banner dragging from within an internal embed\"",
+          "target": ".textContent=\"允许从内部嵌入中拖动横幅\""
+        },
+        {
+          "source": ".textContent=\"Show in preview popover\"",
+          "target": ".textContent=\"在预览弹出窗口中显示\""
+        },
+        {
+          "source": ".textContent=\"Preview popover banner height\"",
+          "target": ".textContent=\"预览弹出横幅高度\""
+        },
+        {
+          "source": ".textContent=\"Enable drag in preview popover\"",
+          "target": ".textContent=\"在预览弹出窗口中启用拖动\""
+        },
+        {
+          "source": ".textContent=\"Enable lock button\"",
+          "target": ".textContent=\"启用锁定按钮\""
+        },
+        {
+          "source": ".textContent=\"Header font size\"",
+          "target": ".textContent=\"标题字体大小\""
+        },
+        {
+          "source": ".textContent=\"Header decoration\"",
+          "target": ".textContent=\"标题装饰\""
+        },
+        {
+          "source": ".textContent=\"Add a shadow or border on the header elements to help with readability.\"",
+          "target": ".textContent=\"在标题元素上添加阴影或边框以帮助提高可读性。\""
+        },
+        {
+          "source": ".textContent=\"Horizontal alignment\"",
+          "target": ".textContent=\"水平对齐\""
+        },
+        {
+          "source": ".textContent=\"Align the header horizontally.\"",
+          "target": ".textContent=\"将标题水平对齐。\""
+        },
+        {
+          "source": ".textContent=\"Custom horizontal alignment\"",
+          "target": ".textContent=\"自定义水平对齐\""
+        },
+        {
+          "source": ".textContent=\"Vertical alignment\"",
+          "target": ".textContent=\"垂直对齐\""
+        },
+        {
+          "source": ".textContent=\"Custom vertical alignment\"",
+          "target": ".textContent=\"自定义垂直对齐\""
+        },
+        {
+          "source": ".textContent=\"Display header by default\"",
+          "target": ".textContent=\"默认情况下显示标题\""
+        },
+        {
+          "source": ".textContent=\"Default header value\"",
+          "target": ".textContent=\"默认标题值\""
+        },
+        {
+          "source": ".textContent=\"{{property1, property2, property3}} syntax.\"",
+          "target": ".textContent=\"{{property1, property2, property3}} 语法。\""
+        },
+        {
+          "source": ".textContent=\"Icon size\"",
+          "target": ".textContent=\"图标大小\""
+        },
+        {
+          "source": ".textContent=\"Use Twemoji\"",
+          "target": ".textContent=\"使用Twemoji\""
+        },
+        {
+          "source": ".textContent=\"Show preview images\"",
+          "target": ".textContent=\"显示预览图像\""
+        },
+        {
+          "source": ".textContent=\"Display a preview image of the suggested banner images\"",
+          "target": ".textContent=\"显示建议横幅图像的预览图像\""
+        },
+        {
+          "source": ".textContent=\"Suggestions limit\"",
+          "target": ".textContent=\"建议限制\""
+        },
+        {
+          "source": ".textContent=\"Banners folder\"",
+          "target": ".textContent=\"横幅文件夹\""
+        },
+        {
+          "source": ".textContent=\"Auto-download pasted banners\"",
+          "target": ".textContent=\"自动下载已粘贴的横幅\""
+        },
+        {
+          "source": ".textContent=\"Update legacy source syntax\"",
+          "target": ".textContent=\"更新旧版源语法\""
+        },
+        {
+          "source": ".textContent=\"Flush banner image cache\"",
+          "target": ".textContent=\"刷新横幅图像缓存\""
+        },
+        {
+          "source": ".textContent=\"Use file name as header\"",
+          "target": ".textContent=\"使用文件名作为标题\""
+        },
+        {
+          "source": ".textContent=\"Cancel\"",
+          "target": ".textContent=\"取消\""
+        },
+        {
+          "source": ".textContent=\"Submit\"",
+          "target": ".textContent=\"提交\""
+        },
+        {
+          "source": ".innerHTML=`<p>As of Obsidian 1.4, the new Properties view supports the internal file syntax,\n        which makes it more straightforward to use local images as banners.</p> <p>Because of this,\n        <b>Banners 2.0 will no longer use the previous syntax for local images</b>\n        (<code>&quot;![[filename]]&quot;</code>).\n        If you used Banners 1.x in the past, this modal can facillitate this change\n        by scanning all of your notes in your vault for the legacy source syntax\n        and update it appropriately (at least to the best of its ability).</p> <p class=\"mod-warning\"><b>Warning:</b> this process will check the frontmatter of <b>all</b> your files and\n        make changes to files with the legacy syntax. This should be safe, but may take a bit\n        and backing up your files beforehand is always good.</p>`",
+          "target": ".innerHTML=`<p>从 Obsidian 1.4 开始，新的属性视图支持内部文件语法，这使得使用本地图像作为横幅变得更加简单。</p>\n<p>因此，<b>Banners 2.0 将不再使用以前的本地图像语法</b>（<code>&quot;![[filename]]&quot;</code>）。如果您过去使用过 Banners 1.x，此模式可以通过扫描您库中所有笔记的遗留源语法来便于此更改，并相应地更新它（至少尽其所能）。</p>\n<p class=\"mod-warning\"><b>警告：</b>此过程将检查<b>所有</b>文件的前置数据，并对具有遗留语法的文件进行更改。这应该是安全的，但可能需要一些时间，提前备份文件总是好的。</p>`"
+        },
+        {
+          "source": "\"All files are already good to go!\"",
+          "target": "\"所有文件都可以使用了！\""
+        },
+        {
+          "source": "\"\\u{1F6A9} Start updating!\"",
+          "target": "\"\\u{1F6A9}开始更新！\""
+        },
+        {
+          "source": "\"Solid\"",
+          "target": "\"固体\""
+        },
+        {
+          "source": "\"Gradient\"",
+          "target": "\"梯度\""
+        },
+        {
+          "source": "\"Shadow behind text\"",
+          "target": "\"阴影在文字后\""
+        },
+        {
+          "source": "\"Border around text\"",
+          "target": "\"环绕文本\""
+        },
+        {
+          "source": "\"None\"",
+          "target": "\"无\""
+        },
+        {
+          "source": "\"Left\"",
+          "target": "\"左\""
+        },
+        {
+          "source": "\"Center\"",
+          "target": "\"中心\""
+        },
+        {
+          "source": "\"Right\"",
+          "target": "\"右\""
+        },
+        {
+          "source": "\"Center of the banner\"",
+          "target": "\"横幅中心\""
+        },
+        {
+          "source": "\"Just above the banner\"",
+          "target": "\"在横幅上方\""
+        },
+        {
+          "source": "\"Edge of the banner\"",
+          "target": "\"横幅边缘\""
+        },
+        {
+          "source": "\"Just below the banner\"",
+          "target": "\"在横幅下方\""
+        },
+        {
+          "source": "\"Custom\"",
+          "target": "\"自定义\""
+        }
+      ]
+    }
+  }
+}

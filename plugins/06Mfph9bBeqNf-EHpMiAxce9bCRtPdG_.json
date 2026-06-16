@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "better-export-pdf",
+    "version": "2.0.0",
+    "title": "Better Export PDF",
+    "description": "Export your notes to PDF, support export preview, add bookmarks outline and header/footer.",
+    "language": "zh-cn",
+    "supportedVersions": "1.11.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"data is empty!\")",
+          "target": "Notice(\"数据为空！\")"
+        },
+        {
+          "source": ".log(\"output pdf:\", outputFile)",
+          "target": ".log(\"输出pdf:\", outputFile)"
+        },
+        {
+          "source": "alog({\n    title: \"Export to PDF\",\n    defaultPath: filename + (isTimestamp ? \"-\" + Date.now()",
+          "target": "alog({\n    title: \"导出为PDF\",\n    defaultPath: filename + (isTimestamp ? \"-\" + Date.now()"
+        },
+        {
+          "source": "alog({\n    title: \"Export to PDF\",\n    defaultPath: filename,\n    properties: [\"openDirectory\"]\n  })",
+          "target": "alog({\n    title: \"导出为PDF\",\n    defaultPath: filename,\n    properties: [\"openDirectory\"]\n  })"
+        },
+        {
+          "source": ".log(`md render time:${(/* @__PURE__ */ new Date()",
+          "target": ".log(`md render time:${(/* @__PURE__ */ new Date()"
+        },
+        {
+          "source": ".log(\"output:\", outputPath)",
+          "target": ".log(\"输出:\", outputPath)"
+        },
+        {
+          "source": " error(\"Invalid rotation: \" + JSON.stringify(rotation)",
+          "target": " error(\"无效的旋转参数: \" + JSON.stringify(rotation)"
+        },
+        {
+          "source": " error(\"Invalid color: \" + JSON.stringify(color)",
+          "target": " error(\"无效的颜色参数: \" + JSON.stringify(color)"
+        },
+        {
+          "source": "name: \"' + name + '\"",
+          "target": "name: \"' + 名称+ '\""
+        },
+        {
+          "source": "name: \"All Files\"",
+          "target": "name: \"所有文件\""
+        },
+        {
+          "source": "text: \"Support the continued development of this plugin.\"",
+          "target": "text: \"支持此插件的持续开发\""
+        },
+        {
+          "source": ".setText(\"Export to PDF\")",
+          "target": ".setText(\"导出为PDF\")"
+        },
+        {
+          "source": ".setButtonText(\"Export\")",
+          "target": ".setButtonText(\"导出\")"
+        },
+        {
+          "source": ".setButtonText(\"Refresh\")",
+          "target": ".setButtonText(\"刷新预览\")"
+        },
+        {
+          "source": ".setButtonText(\"Debug\")",
+          "target": ".setButtonText(\"调试\")"
+        },
+        {
+          "source": ".setName(\"Width/Height\")",
+          "target": ".setName(\"宽度/高度\")"
+        },
+        {
+          "source": ".setName(\"Top/Bottom\")",
+          "target": ".setName(\"顶部/底部\")"
+        },
+        {
+          "source": ".setName(\"Left/Right\")",
+          "target": ".setName(\"左/右\")"
+        },
+        {
+          "source": ".setName(\"Generate tagged PDF\")",
+          "target": ".setName(\"生成带标签的 PDF\")"
+        },
+        {
+          "source": ".setName(\"Advanced\")",
+          "target": ".setName(\"高级\")"
+        },
+        {
+          "source": ".setName(\"Debug\")",
+          "target": ".setName(\"调试\")"
+        },
+        {
+          "source": ".setDesc(\"The unit is millimeters.\")",
+          "target": ".setDesc(\"单位是毫米\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to print background graphics\")",
+          "target": ".setDesc(\"是否打印背景图形\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Whether or not to generate a tagged (accessible) PDF. Defaults to false. As this property is experimental, the generated PDF may not adhere fully to PDF/UA and WCAG standards.\"\n    )",
+          "target": ".setDesc(\n      \"即是否生成一个带标签的（可访问的）PDF，默认值为 false ,这个特性是实验性的，生成的带标签的 PDF 可能无法完全符合 PDF/UA 和 WCAG 标准\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Add frontMatter(title, author, keywords, subject creator, etc) to pdf metadata\")",
+          "target": ".setDesc(\"将Front tMatter（标题、作者、关键字、主题创建者等）添加到pdf元数据\")"
+        },
+        {
+          "source": ".setDesc(\n      'HTML template for the print header. Should be valid HTML markup with following classes used to inject printing values into them: date (formatted print date), title (document title), url (document location), pageNumber (current page number) and totalPages (total pages in the document). For example, <span class=\"title\"></span> would generate span containing the title.'\n    )",
+          "target": ".setDesc(\n      '页眉的 HTML 模板。应为有效的 HTML 标记，并使用以下类将打印值注入其中：date（格式化的打印日期）、title（文档标题）、url（文档位置）、pageNumber（当前页码）和 totalPages（文档的总页数）。例如，<span class=\"title\"></span> 会生成一个包含标题的 span 元素。'\n    )"
+        },
+        {
+          "source": ".setDesc(\"HTML template for the print footer. Should use the same format as the headerTemplate.\")",
+          "target": ".setDesc(\"页脚的HTML模板。应使用与页眉模版相同的格式。\")"
+        },
+        {
+          "source": ".setDesc(\"Add timestamp to output file name\")",
+          "target": ".setDesc(\"在输出文件名中添加时间戳\")"
+        },
+        {
+          "source": ".setDesc(\"Select the css snippet that are not enabled\")",
+          "target": ".setDesc(\"选择未启用的css片段\")"
+        },
+        {
+          "source": ".setDesc(\"This is useful for troubleshooting.\")",
+          "target": ".setDesc(\"用于故障排除\")"
+        },
+        {
+          "source": ".setPlaceholder(\"width\")",
+          "target": ".setPlaceholder(\"宽度\")"
+        },
+        {
+          "source": ".setPlaceholder(\"height\")",
+          "target": ".setPlaceholder(\"高度\")"
+        },
+        {
+          "source": ".setPlaceholder(\"margin top\")",
+          "target": ".setPlaceholder(\"页边距上\")"
+        },
+        {
+          "source": ".setPlaceholder(\"margin bottom\")",
+          "target": ".setPlaceholder(\"页边距下\")"
+        },
+        {
+          "source": ".setPlaceholder(\"margin left\")",
+          "target": ".setPlaceholder(\"页边距左\")"
+        },
+        {
+          "source": ".setPlaceholder(\"margin right\")",
+          "target": ".setPlaceholder(\"页边距右\")"
+        },
+        {
+          "source": ".setTooltip(\"Include file name as title\")",
+          "target": ".setTooltip(\"包含文件名作为标题\")"
+        },
+        {
+          "source": ".setTooltip(\"landscape\")",
+          "target": ".setTooltip(\"横向排版\")"
+        },
+        {
+          "source": ".setTooltip(\"Display header\")",
+          "target": ".setTooltip(\"显示页眉\")"
+        },
+        {
+          "source": ".setTooltip(\"Display footer\")",
+          "target": ".setTooltip(\"显示页脚\")"
+        },
+        {
+          "source": ".setTooltip(\"Open the exported file after exporting.\")",
+          "target": ".setTooltip(\"导出后自动打开文件\")"
+        },
+        {
+          "source": "\"Export folder to PDF\"",
+          "target": "\"将文件夹导出为PDF\""
+        },
+        {
+          "source": "\"Export each file to PDF\"",
+          "target": "\"将每个文件单独导出为PDF\""
+        },
+        {
+          "source": "\"Better Export PDF\"",
+          "target": "\"导出为 PDF (Better Export PDF)\""
+        },
+        {
+          "source": ".addOption(\"0\", \"None\")",
+          "target": ".addOption(\"0\", \"无\")"
+        },
+        {
+          "source": ".addOption(\"1\", \"Default\")",
+          "target": ".addOption(\"1\", \"默认\")"
+        },
+        {
+          "source": ".addOption(\"2\", \"Small\")",
+          "target": ".addOption(\"2\", \"窄页边距\")"
+        },
+        {
+          "source": ".addOption(\"3\", \"Custom\")",
+          "target": ".addOption(\"3\", \"自定义\")"
+        },
+        {
+          "source": ".addOption(\"0\", \"Not select\")",
+          "target": ".addOption(\"0\", \"不选择\")"
+        },
+        {
+          "source": "\"Legal\",",
+          "target": "\"法律专用纸(Legal)\","
+        },
+        {
+          "source": "\"Letter\",",
+          "target": "\"信纸(Letter)\","
+        },
+        {
+          "source": "\"Tabloid\",",
+          "target": "\"Tabloid\","
+        },
+        {
+          "source": "\"Ledger\",",
+          "target": "\"Ledger\","
+        },
+        {
+          "source": "\"Custom\"",
+          "target": "\"自定义\""
+        },
+        {
+          "source": ".setDesc(\"Limit the number of concurrent renders\")",
+          "target": ".setDesc(\"限制并发渲染数量\")"
+        },
+        {
+          "source": ".setTitle(\"Export each file to PDF\")",
+          "target": ".setTitle(\"将每个文件导出为 PDF\")"
+        },
+        {
+          "source": ".setTitle(\"Generate TOC.md file\")",
+          "target": ".setTitle(\"生成 TOC.md 文件\")"
+        },
+        {
+          "source": "\"Export to PDF...\"",
+          "target": "\"导出为 PDF...\""
+        }
+      ]
+    }
+  }
+}

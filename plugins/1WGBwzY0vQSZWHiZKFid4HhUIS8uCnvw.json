@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-view-mode-by-frontmatter",
+    "version": "2.0.0",
+    "title": "Force note view mode",
+    "description": "This plugin allows to force the view mode and editing mode for a note by using front matter",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setName(\"Ignore opened files\")",
+          "target": ".setName(\"忽略打开的文件\")"
+        },
+        {
+          "source": ".setName(\"Debounce timeout in milliseconds\")",
+          "target": ".setName(\"防抖超时（以毫秒为单位）\")"
+        },
+        {
+          "source": ".setDesc(`Debounce timeout is the time in milliseconds after which the view mode is set. Set \"0\" to disable debouncing (default value is \"300\"). If you experience issues with the plugin, try increasing this value.`)",
+          "target": ".setDesc(`防抖超时是设置视图模式的时间（以毫秒为单位）。设置 “0” 以禁用防抖动 （默认值为 “300”）。如果您在使用插件时遇到问题，请尝试增加此值。`)"
+        },
+        {
+          "source": ".setDesc(\"Add new folder\")",
+          "target": ".setDesc(\"添加新文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Add new file\")",
+          "target": ".setDesc(\"添加新文件\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: folder1/templates\")",
+          "target": ".setPlaceholder(\"例如： folder1/templates\")"
+        },
+        {
+          "source": ".setPlaceholder(`Example: \" - All$\" or \"1900-01\")`)",
+          "target": ".setPlaceholder(`例如： \" - All$\" or \"1900-01\")`)"
+        },
+        {
+          "source": ".setTooltip(\"Add another folder to the list\")",
+          "target": ".setTooltip(\"向列表添加其他文件夹\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete\")",
+          "target": ".setTooltip(\"删除\")"
+        },
+        {
+          "source": ".setTooltip(\"Add another file to the list\")",
+          "target": ".setTooltip(\"将其他文件添加到列表中\")"
+        },
+        {
+          "source": ".error(\"ForceViewMode: This folder already has a template associated with\", newFolder)",
+          "target": ".error(\"ForceViewMode: 该文件夹已关联了一个模板\", newFolder)"
+        },
+        {
+          "source": ".error(\"ForceViewMode: Pattern already exists\", value)",
+          "target": ".error(\"ForceViewMode: 模式已经存在\", value)"
+        },
+        {
+          "source": ".setName(\"Ignore force view when not in frontmatter\")",
+          "target": ".setName(\"不在属性中时，忽略强制视图\")"
+        },
+        {
+          "source": ".setDesc(\"Never change the view mode on a note which was already open.\")",
+          "target": ".setDesc(\"永不更改已打开的笔记的视图模式。\")"
+        },
+        {
+          "source": ".setDesc(\"Never change the view mode on a note that was opened from another one in a certain view mode\")",
+          "target": ".setDesc(\"永不更改在特定视图模式下从另一个笔记打开的笔记的视图模式\")"
+        },
+        {
+          "source": ".append(\"Changing the view mode can be done through the key \", desc.createEl(\"code\", { text: \"obsidianUIMode\" }), \", which can have the value \", desc.createEl(\"code\", { text: \"source\" }), \" or \", desc.createEl(\"code\", { text: \"preview\" }), \".\", desc.createEl(\"br\"), \"Changing the editing mode happens by declaring the key \", desc.createEl(\"code\", { text: \"obsidianEditingMode\" }), \"; it takes \", desc.createEl(\"code\", { text: \"live\" }), \" or \", desc.createEl(\"code\", { text: \"source\" }), \" as value.\")",
+          "target": ".append(\"更改视图模式可通过属性 \", desc.createEl(\"code\", { text: \"obsidianUIMode\" }), \" ，其值可以是 \", desc.createEl(\"code\", { text: \"source\" }), \" or \", desc.createEl(\"code\", { text: \"preview\" }), \".（分别代表“编辑模式”和“阅读模式”）\", desc.createEl(\"br\"), \"更改编辑模式可通过属性 \", desc.createEl(\"code\", { text: \"obsidianEditingMode\" }), \" ，其值可以是 \", desc.createEl(\"code\", { text: \"live\" }), \" or \", desc.createEl(\"code\", { text: \"source\" }), \".（分别代表“实时预览”和“源码模式”）\")"
+        },
+        {
+          "source": ".append(\"Specify a view mode for notes in a given folder.\", folderDesc.createEl(\"br\"), \"Note that this will force the view mode on all the notes in the folder, even if they have a different view mode set in their frontmatter.\", folderDesc.createEl(\"br\"), \"Precedence is from bottom (highest) to top (lowest), so if you have child folders specified, make sure to put them below their parent folder.\")",
+          "target": ".append(\"为指定文件夹中的笔记指定一种视图模式。\", folderDesc.createEl(\"br\"), \"请注意，这将在文件夹中的所有笔记上强制使用该视图模式，即使这些笔记的属性中设置了不同的视图模式也是如此。\", folderDesc.createEl(\"br\"), \"优先级从下（最高）到上（最低），因此如果指定了子文件夹，请确保将它们放在父文件夹的下面。\")"
+        },
+        {
+          "source": "createHeader(\"Folders\")",
+          "target": "createHeader(\"文件夹\")"
+        },
+        {
+          "source": "createHeader(\"Files\")",
+          "target": "createHeader(\"文件\")"
+        },
+        {
+          "source": ".append(\"Specify a view mode for notes with specific patterns (regular expression; example \\\" - All$\\\" for all notes ending with \\\" - All\\\" or \\\"1900-01\\\" for all daily notes starting with \\\"1900-01\\\"\", filesDesc.createEl(\"br\"), \"Note that this will force the view mode, even if it have a different view mode set in its frontmatter.\", filesDesc.createEl(\"br\"), \"Precedence is from bottom (highest) to top (lowest).\", filesDesc.createEl(\"br\"), \"Notice that configuring a file pattern will override the folder configuration for the same file.\")",
+          "target": ".append(\"为具有特定样式的笔记指定视图模式（正则表达式；例如 \\\" - All$\\\" 是所有结尾带有 \\\" - All\\\" 的笔记；以及 \\\"1900-01\\\" 是所有开头带有 \\\"1900-01\\\" 的日记\", filesDesc.createEl(\"br\"), \"请注意，这将强制使用视图模式，即使其属性中设置了不同的视图模式也是如此。\", filesDesc.createEl(\"br\"), \"优先级从下（最高）到上（最低）。\", filesDesc.createEl(\"br\"), \"请注意，配置文件模式将覆盖同一文件的文件夹配置。\")"
+        },
+        {
+          "source": "\"default\"",
+          "target": "\"默认\""
+        },
+        {
+          "source": "\"obsidianUIMode: preview\"",
+          "target": "\"obsidian视图模式：阅读模式\""
+        },
+        {
+          "source": "\"obsidianUIMode: source\"",
+          "target": "\"obsidian视图模式：编辑模式\""
+        },
+        {
+          "source": "\"obsidianEditingMode: live\"",
+          "target": "\"obsidian编辑模式：实时预览\""
+        },
+        {
+          "source": "\"obsidianEditingMode: source\"",
+          "target": "\"obsidian编辑模式：源码模式\""
+        }
+      ]
+    }
+  }
+}

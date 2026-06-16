@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-clipper",
+    "version": "2.0.0",
+    "title": "Clipper",
+    "description": "This plugin helps you capture highlights from the web.",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.9",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Failed to read the daily note template\")",
+          "target": "Notice(\"读取日报模板失败\")"
+        },
+        {
+          "source": "Notice(\"Unable to create new file.\")",
+          "target": "Notice(\"无法创建新文件\")"
+        },
+        {
+          "source": "Notice(\"Failed to read the Obsidian Clipper daily note entry template configured in Settings\")",
+          "target": "Notice(\"读取“设置”中配置的黑曜石快船日记条目模板失败\")"
+        },
+        {
+          "source": "Notice(\"Can't find heading\")",
+          "target": "Notice(\"找不到标题\")"
+        },
+        {
+          "source": "Notice(`Obsidian Clipper couldn't find the note to ${this.sectionPosition} to`)",
+          "target": "Notice(`Obsidian Clipper couldn't find the note to ${this.sectionPosition} to`)"
+        },
+        {
+          "source": "Notice(this.notice)",
+          "target": "Notice(this.notice)"
+        },
+        {
+          "source": "Notice(errorMessage)",
+          "target": "Notice(errorMessage)"
+        },
+        {
+          "source": "Notice(\"Obsidian Clipper Bookmarklet copied to clipboard.\")",
+          "target": "Notice(\"黑曜石剪藏书签已复制到剪贴板\")"
+        },
+        {
+          "source": ".log(name + \" time: \" + (Date.now()",
+          "target": ".log(name + \" time: \" + (Date.now()"
+        },
+        {
+          "source": ".log(nodeData)",
+          "target": ".log(nodeData)"
+        },
+        {
+          "source": ".error(`Failed to read the daily note template '${templatePath}'`, err)",
+          "target": ".error(`Failed to read the daily note template '${templatePath}'`, err)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${normalizedPath}'`, err)",
+          "target": ".error(`Failed to create file: '${normalizedPath}'`, err)"
+        },
+        {
+          "source": ".error(`Failed to read the clipper entry template '${normalizedTemplatePath}'`, err)",
+          "target": ".error(`Failed to read the clipper entry template '${normalizedTemplatePath}'`, err)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" element must be an HTMLElement (not an SVGElement)",
+          "target": ".error(['Popper: \"arrow\" element must be an HTMLElement (not an SVGElement)"
+        },
+        {
+          "source": ".error(['Popper: \"arrow\" modifier\\'s `element` must be a child of the popper', \"element.\"].join(\" \")",
+          "target": ".error(['Popper: \"arrow\" modifier\\'s `element` must be a child of the popper', \"element.\"].join(\" \")"
+        },
+        {
+          "source": ".error([\"Popper: The `allowedAutoPlacements` option did not allow any\", \"placements. Ensure the `placement` option matches the variation\", \"of the allowed placements.\", 'For example, \"auto\" cannot be used to allow \"bottom-start\".', 'Use \"auto-start\" instead.'].join(\" \")",
+          "target": ".error([\"Popper: The `allowedAutoPlacements` option did not allow any\", \"placements. Ensure the `placement` option matches the variation\", \"of the allowed placements.\", 'For example, \"auto\" cannot be used to allow \"bottom-start\".', 'Use \"auto-start\" instead.'].join(\" \")"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, String(modifier.name)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"enabled\"', '\"boolean\"', '\"' + String(modifier.enabled)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"enabled\"', '\"boolean\"', '\"' + String(modifier.enabled)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"phase\"', \"either \" + modifierPhases.join(\", \")",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"phase\"', \"either \" + modifierPhases.join(\", \")"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"fn\"', '\"function\"', '\"' + String(modifier.fn)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"fn\"', '\"function\"', '\"' + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"effect\"', '\"function\"', '\"' + String(modifier.fn)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"effect\"', '\"function\"', '\"' + String(modifier.fn)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requires\"', '\"array\"', '\"' + String(modifier.requires)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requires\"', '\"array\"', '\"' + String(modifier.requires)"
+        },
+        {
+          "source": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requiresIfExists\"', '\"array\"', '\"' + String(modifier.requiresIfExists)",
+          "target": ".error(format(INVALID_MODIFIER_ERROR, modifier.name, '\"requiresIfExists\"', '\"array\"', '\"' + String(modifier.requiresIfExists)"
+        },
+        {
+          "source": ".error('PopperJS: an invalid property has been provided to the \"' + modifier.name + '\" modifier, valid properties are ' + VALID_PROPERTIES.map(function(s)",
+          "target": ".error('PopperJS: an invalid property has been provided to the \"' + modifier.name + '\" modifier, valid properties are ' + VALID_PROPERTIES.map(function(s)"
+        },
+        {
+          "source": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)",
+          "target": ".error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name)"
+        },
+        {
+          "source": ".error(['Popper: \"auto\" placements require the \"flip\" modifier be', \"present and enabled to work.\"].join(\" \")",
+          "target": ".error(['Popper: \"auto\" placements require the \"flip\" modifier be', \"present and enabled to work.\"].join(\" \")"
+        },
+        {
+          "source": ".error(INVALID_ELEMENT_ERROR)",
+          "target": ".error(INVALID_ELEMENT_ERROR)"
+        },
+        {
+          "source": ".error(INFINITE_LOOP_ERROR)",
+          "target": ".error(INFINITE_LOOP_ERROR)"
+        },
+        {
+          "source": ".error(errorMessage)",
+          "target": ".error(errorMessage)"
+        },
+        {
+          "source": "name: \"applyStyles\"",
+          "target": "name: \"应用程序样式\""
+        },
+        {
+          "source": "name: \"arrow\"",
+          "target": "name: \"箭头\""
+        },
+        {
+          "source": "name: \"computeStyles\"",
+          "target": "name: \"计算机样式\""
+        },
+        {
+          "source": "name: \"eventListeners\"",
+          "target": "name: \"事件监听器\""
+        },
+        {
+          "source": "name: \"flip\"",
+          "target": "name: \"翻转\""
+        },
+        {
+          "source": "name: \"hide\"",
+          "target": "name: \"隐藏\""
+        },
+        {
+          "source": "name: \"offset\"",
+          "target": "name: \"抵消\""
+        },
+        {
+          "source": "name: \"popperOffsets\"",
+          "target": "name: \"弹出偏移量\""
+        },
+        {
+          "source": "name: \"preventOverflow\"",
+          "target": "name: \"防止溢出\""
+        },
+        {
+          "source": "name: \"sameWidth\"",
+          "target": "name: \"相同宽度\""
+        },
+        {
+          "source": "name: \"Clipped Entry Template - Daily\"",
+          "target": "name: \"剪藏条目模板-日记\""
+        },
+        {
+          "source": "name: \"Clipped Entry Template - Weekly\"",
+          "target": "name: \"剪藏条目模板-周记\""
+        },
+        {
+          "source": "name: \"Clipped Entry Template\"",
+          "target": "name: \"剪藏条目模板\""
+        },
+        {
+          "source": "name: \"Vault Bookmarklet to Clipboard\"",
+          "target": "name: \"保险库书签工具到剪贴板\""
+        },
+        {
+          "source": "name: \"Vault Bookmarklet\"",
+          "target": "name: \"保险库书签工具\""
+        },
+        {
+          "source": "name: \"Topic Bookmarklet to Clipboard\"",
+          "target": "name: \"主题书签到剪贴板\""
+        },
+        {
+          "source": "name: \"Topic Bookmarklet\"",
+          "target": "name: \"主题书签\""
+        },
+        {
+          "source": "name: \"Canvas Bookmarklet\"",
+          "target": "name: \"画布书签\""
+        },
+        {
+          "source": "description: \"Choose the template to use as for the clipped entry in the daily \\n\t\t\tperiodic note\"",
+          "target": "description: \"选择用作日记剪贴条目的模板 \\n\t\t\t周期性笔记\""
+        },
+        {
+          "source": "description: \"Choose the template to use as for the clipped entry in the weekly\\n\t\t\tperiodic note\"",
+          "target": "description: \"选择用作周记剪贴条目的模板 \\n\t\t\t周期性笔记\""
+        },
+        {
+          "source": "description: \"Choose the template to use for the clipped entry in a topic note\"",
+          "target": "description: \"选择主题注释中剪切条目的模板\""
+        },
+        {
+          "source": "text: \"reference\"",
+          "target": "text: \"参考\""
+        },
+        {
+          "source": "text: \"Copy Your Bookmarklet\"",
+          "target": "text: \"复制您的书签\""
+        },
+        {
+          "source": "div0.innerHTML = `<h1 class=\"setting-item-name\">Daily Note Entry</h1>`;",
+          "target": "div0.innerHTML = `<h1 class=\"setting-item-name\">每日笔记输入</h1>`;"
+        },
+        {
+          "source": "div0.innerHTML = `<h1 class=\"setting-item-name\">Weekly Note Entry</h1>`;",
+          "target": "div0.innerHTML = `<h1 class=\"setting-item-name\">每周笔记输入</h1>`;"
+        },
+        {
+          "source": "label: \"Base\"",
+          "target": "label: \"基本\""
+        },
+        {
+          "source": "label: \"Topic Note\"",
+          "target": "label: \"主题说明\""
+        },
+        {
+          "source": "label: \"Browser\"",
+          "target": "label: \"浏览器\""
+        },
+        {
+          "source": "label: \"Advanced\"",
+          "target": "label: \"高级\""
+        },
+        {
+          "source": "div2.innerHTML = `<div class=\"setting-item-name\">Daily Note Header</div> ",
+          "target": "div2.innerHTML = `<div class=\"setting-item-name\">每日笔记标题</div> "
+        },
+        {
+          "source": ".textContent = \"None\"",
+          "target": ".textContent = \"没有\""
+        },
+        {
+          "source": ".textContent = \"Template Example\"",
+          "target": ".textContent = \"模板示例\""
+        },
+        {
+          "source": ".textContent = \"Yes\"",
+          "target": ".textContent = \"是的\""
+        },
+        {
+          "source": ".textContent = \"No\"",
+          "target": ".textContent = \"不\""
+        },
+        {
+          "source": ".textContent = \"Common Settings\"",
+          "target": ".textContent = \"常用设置\""
+        },
+        {
+          "source": ".textContent = \"You can drag or copy the link below to your browser bookmark bar. This\n    bookmarklet will allow you to highlight information on the web and send\n    it to obsidian\"",
+          "target": ".textContent = \"您可以将下面的链接拖动或复制到浏览器书签栏。此书签允许您突出显示网络上的信息并将其发送给黑曜石\""
+        },
+        {
+          "source": ".textContent = \"Download Chrome Extension\"",
+          "target": ".textContent = \"下载 Chrome 扩展程序\""
+        },
+        {
+          "source": ".textContent = \"Bookmarklet Settings\"",
+          "target": ".textContent = \"书签小程序设置\""
+        },
+        {
+          "source": ".textContent = \"Advanced Settings\"",
+          "target": ".textContent = \"高级设置\""
+        },
+        {
+          "source": ".textContent = \"Experimental Settings\"",
+          "target": ".textContent = \"实验设置\""
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Daily Note Header</div> ",
+          "target": "<div class=\"setting-item-name\">每日笔记标题</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">What header should highlight data be prepended/appended under in the",
+          "target": "<div class=\"setting-item-description\">应在以下标题中突出显示数据"
+        },
+        {
+          "source": "daily note?</div>`;",
+          "target": "</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Daily Note Position</div> ",
+          "target": "<div class=\"setting-item-name\">每日笔记位置</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Prepend clippings to the top of the section or append them to the",
+          "target": "<div class=\"setting-item-description\">将剪报预先放在部分顶部或附加到"
+        },
+        {
+          "source": "bottom of the section?</div>`;",
+          "target": "</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Open Note After Adding Clipping?</div> ",
+          "target": "<div class=\"setting-item-name\">添加剪辑后打开笔记？</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Open the daily note after adding the clipping?</div>`;",
+          "target": "<div class=\"setting-item-description\">添加剪辑后打开每日笔记？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Weekly Note Header</div> ",
+          "target": "<div class=\"setting-item-name\">每周笔记标题</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Weekly Note Position</div> ",
+          "target": "<div class=\"setting-item-name\">每周笔记位置</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Open the weekly note after adding the clipping?</div>`;",
+          "target": "<div class=\"setting-item-description\">添加剪辑后打开周报？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Tags</div> ",
+          "target": "<div class=\"setting-item-name\">标签</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Tags to add to captured highlights?</div>`;",
+          "target": "<div class=\"setting-item-description\">要添加标签到捕获的高亮中吗？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Time Format</div> ",
+          "target": "<div class=\"setting-item-name\">时间格式</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\"><div>Format to use for the {{ time }} template in",
+          "target": "<div class=\"setting-item-description\"><div>中 {{ time }} 模板使用的格式"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Date Format</div> ",
+          "target": "<div class=\"setting-item-name\">日期格式</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\"><div>Format to use for the {{ date }} template in",
+          "target": "<div class=\"setting-item-description\"><div>中 {{ date }} 模板使用的格式"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Topic Note Position</div> ",
+          "target": "<div class=\"setting-item-name\">主题笔记位置</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Prepend clippings or append them to the bottom?</div>`;",
+          "target": "<div class=\"setting-item-description\">预先剪下还是把它们附加到底部？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Open the note after adding the clipping?</div>`;",
+          "target": "<div class=\"setting-item-description\">添加剪辑后打开笔记？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Capture Comment in Browser</div> ",
+          "target": "<div class=\"setting-item-name\">在浏览器中捕获评论</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Display a modal in the browser to capture any comments before sending",
+          "target": "<div class=\"setting-item-description\">在浏览器中显示一个模式，以便在发送之前捕获任何评论"
+        },
+        {
+          "source": "<div class=\"setting-item-info\"><h1 class=\"setting-item-name\">Markdown Headings</h1></div>`;",
+          "target": "<div class=\"setting-item-info\"><h1 class=\"setting-item-name\">Markdown标题</h1></div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">H2</div> ",
+          "target": "<div class=\"setting-item-name\">H2</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">What should replace H2 elements found in the highlight data?</div>`;",
+          "target": "<div class=\"setting-item-description\">应该用什么来替换突出显示数据中的H2元素？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">H3</div> ",
+          "target": "<div class=\"setting-item-name\">H3</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">What should replace H3 elements found in the highlight data?</div>`;",
+          "target": "<div class=\"setting-item-description\">应该用什么来替换突出显示数据中的H3元素？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">H4</div> ",
+          "target": "<div class=\"setting-item-name\">H4</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">What should replace H4 elements found in the highlight data?</div>`;",
+          "target": "<div class=\"setting-item-description\">应该用什么来替换突出显示数据中的H4元素？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">H5</div> ",
+          "target": "<div class=\"setting-item-name\">H5</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">What should replace H5 elements found in the highlight data?</div>`;",
+          "target": "<div class=\"setting-item-description\">应该用什么来替换突出显示数据中的H5元素？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">H6</div> ",
+          "target": "<div class=\"setting-item-name\">H6</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">What should replace H6 elements found in the highlight data?</div>`;",
+          "target": "<div class=\"setting-item-description\">应该用什么来替换突出显示数据中的H6元素？</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Clipped Entry Storage Location</div> ",
+          "target": "<div class=\"setting-item-name\">剪辑入口存储位置</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Choose the folder to store all of your clippings. A note per domain",
+          "target": "<div class=\"setting-item-description\">选择用于存储所有剪报的文件夹。从中剪切的每个域的注释。默认值为\\`clippings\\`"
+        },
+        {
+          "source": "clipped from. Default is a \\`clippings\\`</div>`;",
+          "target": "</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-name\">Store Clippings Per Domain</div> ",
+          "target": "<div class=\"setting-item-name\">按域存储剪辑</div> "
+        },
+        {
+          "source": "<div class=\"setting-item-description\">Creates a note per top-level domain and stores all clippings from that",
+          "target": "<div class=\"setting-item-description\">为每个顶级域创建一个笔记，并将该域中的所有剪报存储在其中。它将在您的每日笔记中添加一个嵌入式文档链接。"
+        },
+        {
+          "source": "domain within it. It will add an embedded document link in your Daily",
+          "target": ""
+        },
+        {
+          "source": "reinstall the bookmarklet.</div>`;",
+          "target": "</div>`;"
+        },
+        {
+          "source": "Note.</div>`;",
+          "target": "</div>`;"
+        },
+        {
+          "source": "<div class=\"setting-item-description\">After enabling this option, you must go to the &#39;Browser&#39; tab, update",
+          "target": "<div class=\"setting-item-description\">启用此选项后，您必须转到&#39；浏览器&#39；选项卡，更新设置以打开&#39；在浏览器中捕获评论&#39；设置并重新安装书签小程序。"
+        },
+        {
+          "source": "your settings to turn on the &#39;Capture Comment in Browser&#39; setting and",
+          "target": ""
+        },
+        {
+          "source": "noticeText = \"Lost on how to get started? Check out the new documentation website\";",
+          "target": "noticeText = \"不知道如何开始？查看新的文档网站\";"
+        },
+        {
+          "source": "clippings. See</div>",
+          "target": "剪报。请参阅</div>"
+        },
+        {
+          "source": ">format reference</a></div>",
+          "target": ">格式参考</a></div>"
+        },
+        {
+          "source": ".textContent = \"You can drag or copy the link below to your browser bookmark bar. This",
+          "target": ".textContent = \"您可以将下面的链接拖动或复制到浏览器书签栏。这个"
+        },
+        {
+          "source": "text(\". After clicking\\\n   the button, use the link to download the .zip file.\");",
+          "target": "text(\". 单击按钮后，使用链接下载.zip文件。\");"
+        },
+        {
+          "source": "bookmarklet will allow you to highlight information on the web and send\\n    it to obsidian\";",
+          "target": "书签小程序将允许您突出显示网络上的信息并将其发送给黑曜石\";"
+        },
+        {
+          "source": "text(\"Click the button below to generate a personalized Chrome-based extension",
+          "target": "text(\"单击下面的按钮为生成基于 Chrome 的个性化扩展"
+        },
+        {
+          "source": "the button, use the link to download the .zip file.\");",
+          "target": "点击按钮，使用链接下载.zip文件。\");"
+        },
+        {
+          "source": "bookmarklet will allow you to highlight information on the web and send",
+          "target": "书签小程序将允许您突出显示网络上的信息并将其发送给黑曜石"
+        },
+        {
+          "source": "it to obsidian\";",
+          "target": "\";"
+        },
+        {
+          "source": "for the \");",
+          "target": "\");"
+        },
+        {
+          "source": "text(\". After clicking",
+          "target": "text(\". "
+        },
+        {
+          "source": "text(\"Obsidian Clipper (\");",
+          "target": "text(\"Obsidian 剪藏 (\");"
+        },
+        {
+          "source": "`${vaultName} vault`;",
+          "target": "`${vaultName} 库`;"
+        },
+        {
+          "source": "text(\"Chrome Extension (\");",
+          "target": "text(\"扩展功能 (\");"
+        },
+        {
+          "source": ".innerHTML = `<h1 class=\"setting-item-name\">Support Canvas</h1>`;",
+          "target": ".innerHTML = `<h1 class=\"setting-item-name\">支持白板</h1>`;"
+        },
+        {
+          "source": ".innerHTML = `<h1 class=\"setting-item-name\">Comment Support in Browser</h1> ",
+          "target": ".innerHTML = `<h1 class=\"setting-item-name\">浏览器中的评论支持</h1> "
+        },
+        {
+          "source": "hover:text-blue-600\">Details",
+          "target": "hover:text-blue-600\">详情"
+        }
+      ]
+    }
+  }
+}

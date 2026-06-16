@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ob-table-enhancer",
+    "version": "2.0.0",
+    "title": "ob-table-enhancer",
+    "description": "Manipulate markdown tables without touching the source code in Obsidian.",
+    "language": "zh-cn",
+    "supportedVersions": "0.5.11",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Current column is already the top row.\")",
+          "target": "Notice(\"当前列已经是顶行。\")"
+        },
+        {
+          "source": "Notice(\"Current column is already the bottom row.\")",
+          "target": "Notice(\"当前列已经是底行。\")"
+        },
+        {
+          "source": "Notice(\"Current column is already the leftmost column.\")",
+          "target": "Notice(\"当前列已经是最左列。\")"
+        },
+        {
+          "source": "Notice(\"You can't delete the header of a table.\")",
+          "target": "Notice(\"无法删除表格的表头。\")"
+        },
+        {
+          "source": "Notice(\"Current column is already the rightmost column.\")",
+          "target": "Notice(\"当前列已经是最右列。\")"
+        },
+        {
+          "source": ".error(\"Cannot get cell i=\", i, \", j=\", j, \" from table=\", table)",
+          "target": ".error(\"无法从表=\", table, 中获取单元格i=\", i, \", j=\", j, \" )"
+        },
+        {
+          "source": ".error(\"Cannot get table element of cell \", cellEl)",
+          "target": ".error(\"无法获取单元格\", cellEl)"
+        },
+        {
+          "source": ".error(\"More than 1 tables were found\")",
+          "target": ".error(\"找到多个表格\")"
+        },
+        {
+          "source": ".error(\"Cannot get editor\")",
+          "target": ".error(\"无法获取编辑器\")"
+        },
+        {
+          "source": ".error(\"Move out of range\")",
+          "target": ".error(\"移动超出范围\")"
+        },
+        {
+          "source": ".error(\"Cannot create an empty table\")",
+          "target": ".error(\"无法创建空表格\")"
+        },
+        {
+          "source": ".error(err)",
+          "target": ".error(err)"
+        },
+        {
+          "source": ".error(cells)",
+          "target": ".error(cells)"
+        },
+        {
+          "source": ".error(\"Cannot get table.\")",
+          "target": ".error(\"无法获取表格。\")"
+        },
+        {
+          "source": ".error(\"cannot locate table when trying to insert row below \")",
+          "target": ".error(\"尝试在下方插入行时无法定位表格\")"
+        },
+        {
+          "source": ".error(\"cannot locate table when trying to insert column below \")",
+          "target": ".error(\"尝试在下方插入列时无法定位表格\")"
+        },
+        {
+          "source": ".error(\"cannot locate table when trying to copy row below \")",
+          "target": ".error(\"尝试在下方复制行时无法定位表格\")"
+        },
+        {
+          "source": ".error(\"cannot locate table when trying sort table \")",
+          "target": ".error(\"尝试排序表格时无法定位表格\")"
+        },
+        {
+          "source": ".error(\"Cannot get cursor coordinate\")",
+          "target": ".error(\"无法获取光标坐标\")"
+        },
+        {
+          "source": ".error(\"Cannot relocate table cell\")",
+          "target": ".error(\"无法重新定位表格单元格\")"
+        },
+        {
+          "source": ".error(\"Cannot find table of cell\", cellEl)",
+          "target": ".error(\"无法找到单元格\", cellEl)"
+        },
+        {
+          "source": ".error(\"Cannot get table of cell \", cellEl)",
+          "target": ".error(\"无法获取单元格\", cellEl)"
+        },
+        {
+          "source": ".error(\"Cannot get table when trying to done edit\")",
+          "target": ".error(\"尝试完成编辑时无法获取表格\")"
+        },
+        {
+          "source": "text: \"Table Enhancer Settings\"",
+          "target": "text: \"表格增强设置\""
+        },
+        {
+          "source": ".setName(\"Enable button panel\")",
+          "target": ".setName(\"启用按钮面板\")"
+        },
+        {
+          "source": ".setName(\"Enable table generator\")",
+          "target": ".setName(\"启用表格生成器\")"
+        },
+        {
+          "source": ".setName(\"Enable floating panel\")",
+          "target": ".setName(\"启用浮动面板\")"
+        },
+        {
+          "source": ".setName(\"Adjust height of cells\")",
+          "target": ".setName(\"调整单元格高度\")"
+        },
+        {
+          "source": ".setName(\"Default alignment for new created table\")",
+          "target": ".setName(\"新创建表格的默认对齐方式\")"
+        },
+        {
+          "source": ".setName(\"Default alignment for new inserted column\")",
+          "target": ".setName(\"新插入列的默认对齐方式\")"
+        },
+        {
+          "source": ".setDesc(\"The default height of an empty cell is very short. Activate this to increase the cell height and make it easier to click.\")",
+          "target": ".setDesc(\"空单元格的默认高度很短。激活此选项以增加单元格高度，使其更容易点击。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if you want to align the text in a cell to the right, left or in the middle.\")",
+          "target": ".setDesc(\"选择单元格中的文本对齐方式：右对齐、左对齐或居中对齐。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if you want to align the text in a cell to the right, left, in the middle, or follow other columns.\")",
+          "target": ".setDesc(\"选择单元格中的文本对齐方式：右对齐、左对齐、居中对齐或跟随其他列。\")"
+        },
+        {
+          "source": ".setTooltip(\"Insert row below\")",
+          "target": ".setTooltip(\"在下方插入行\")"
+        },
+        {
+          "source": ".setTooltip(\"Insert column right\")",
+          "target": ".setTooltip(\"在右侧插入列\")"
+        },
+        {
+          "source": ".setTooltip(\"Clone row\")",
+          "target": ".setTooltip(\"克隆行\")"
+        },
+        {
+          "source": ".setTooltip(\"Clone column\")",
+          "target": ".setTooltip(\"克隆列\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete row\")",
+          "target": ".setTooltip(\"删除行\")"
+        },
+        {
+          "source": ".setTooltip(\"Wider\")",
+          "target": ".setTooltip(\"更宽\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete column\")",
+          "target": ".setTooltip(\"删除列\")"
+        },
+        {
+          "source": ".setTooltip(\"Move column left\")",
+          "target": ".setTooltip(\"左移列\")"
+        },
+        {
+          "source": ".setTooltip(\"Move column right\")",
+          "target": ".setTooltip(\"右移列\")"
+        },
+        {
+          "source": ".setTooltip(\"Move row upward\")",
+          "target": ".setTooltip(\"上移行\")"
+        },
+        {
+          "source": ".setTooltip(\"Move row down\")",
+          "target": ".setTooltip(\"下移行\")"
+        },
+        {
+          "source": ".setTooltip(\"Narrower\")",
+          "target": ".setTooltip(\"更窄\")"
+        },
+        {
+          "source": ".setTooltip(\"Center align\")",
+          "target": ".setTooltip(\"居中对齐\")"
+        },
+        {
+          "source": ".setTooltip(\"Left align\")",
+          "target": ".setTooltip(\"左对齐\")"
+        },
+        {
+          "source": ".setTooltip(\"Right align\")",
+          "target": ".setTooltip(\"右对齐\")"
+        },
+        {
+          "source": ".setTooltip(\"Sort ascending\")",
+          "target": ".setTooltip(\"升序排序\")"
+        },
+        {
+          "source": ".setTooltip(\"Sort descending\")",
+          "target": ".setTooltip(\"降序排序\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset Column Width\")",
+          "target": ".setTooltip(\"重置列宽\")"
+        },
+        {
+          "source": ".setTitle(\"Create new table\")",
+          "target": ".setTitle(\"创建新表格\")"
+        },
+        {
+          "source": ".innerText = `${i + 1} rows ${j + 1} columns`",
+          "target": ".innerText = `${i + 1} 行 ${j + 1} 列`"
+        }
+      ]
+    }
+  }
+}
