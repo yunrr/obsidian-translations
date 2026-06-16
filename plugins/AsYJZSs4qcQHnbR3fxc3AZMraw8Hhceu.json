@@ -1,0 +1,427 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "vantage-obsidian",
+    "version": "1.0.1",
+    "title": "Vantage - Advanced search builder",
+    "description": "Vantage - Advanced search builder Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.4.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "select",
+          "target": "select"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "option",
+          "target": "option"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loading the Vantage plugin.",
+          "target": "正在加载 Vantage 插件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Unloading the Vantage plugin",
+          "target": "正在卸载 Vantage 插件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Dates go forward in time.",
+          "target": "日期向前推进。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Dates go backwards in time.",
+          "target": "日期向后回溯。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "This is an AND query",
+          "target": "这是一个 AND 查询。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "This is an OR query",
+          "target": "这是一个 OR 查询。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "This is a NOT query",
+          "target": "这是一个 NOT 查询。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Start date could not be processed.",
+          "target": "无法处理开始日期。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "End date could not be processed.",
+          "target": "无法处理结束日期。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add an AND search token",
+          "target": "添加 AND 搜索词元"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add an OR search token",
+          "target": "添加 OR 搜索词元"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add a NOT search token",
+          "target": "添加 NOT 搜索词元"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create embedded search",
+          "target": "创建嵌入式搜索"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "New search",
+          "target": "新建搜索"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Vantage - Advanced Search",
+          "target": "Vantage - 高级搜索"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "The Natural Language Dates plugin was not found. The Vantage plugin requires the Natural Language Dates plugin. Please install it first and make sure it is updated and enabled before using Vantage.",
+          "target": "未找到自然语言日期插件。Vantage 插件需要自然语言日期插件。请先安装该插件，并确保其已更新并启用后再使用 Vantage。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Sorry, something seems to be wrong with that start date.",
+          "target": "抱歉，该开始日期似乎有问题。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Sorry, something seems to be wrong with that end date.",
+          "target": "抱歉，该结束日期似乎有问题。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No editable document is open. Perhaps you meant to click \"New search\"?",
+          "target": "没有打开可编辑的文档。您是否想点击“新建搜索”？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Build a new search",
+          "target": "构建新搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Vantage helps create complex search queries. See Obsidian's search documentation for more.",
+          "target": "Vantage 可帮助创建复杂的搜索查询。详情请参阅 Obsidian 的搜索文档。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Many complex searches use Regular Expressions. These help us search for patterns in our text. Visit RegExr to learn more and to practice with regular expressions.",
+          "target": "许多复杂搜索会使用正则表达式。它们帮助我们在文本中搜索模式。访问 RegExr 了解更多并练习正则表达式。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search note attributes",
+          "target": "搜索笔记属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Note title contains: ",
+          "target": "笔记标题包含："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Date range: ",
+          "target": "日期范围："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "(Entering data here will make the search include only daily notes (and may conflict with the above). Use natural language.)",
+          "target": "（在此处输入数据将使搜索仅包含每日笔记，并可能与上述设置冲突。请使用自然语言。）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Start date: ",
+          "target": "开始日期："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "End date: ",
+          "target": "结束日期："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tagged with: ",
+          "target": "标签为："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Notes in folder or path: ",
+          "target": "位于文件夹或路径中的笔记："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "For example, include the folder to your Daily Notes to search all daily notes.",
+          "target": "例如，包含您的每日笔记文件夹以搜索所有每日笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search note contents",
+          "target": "搜索笔记内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "AND search⠀",
+          "target": "AND 搜索⠀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "notes",
+          "target": "笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "sections",
+          "target": "章节"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "blocks",
+          "target": "块"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "lines",
+          "target": "行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⠀for⠀",
+          "target": "⠀用于⠀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "any line type",
+          "target": "任何行类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "list items",
+          "target": "列表项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "incomplete tasks",
+          "target": "未完成的任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "completed tasks",
+          "target": "已完成的任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "all tasks",
+          "target": "所有任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "with text containing",
+          "target": "文本包含"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "with links to notes with names containing",
+          "target": "链接到名称包含以下内容的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "with email addresses (ignores the following search field)",
+          "target": "包含电子邮件地址（忽略以下搜索字段）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "with phone numbers (ignores the following search field)",
+          "target": "包含电话号码（忽略以下搜索字段）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "OR search⠀",
+          "target": "OR 搜索⠀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "NOT search⠀",
+          "target": "NOT 搜索⠀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "text"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "note",
+          "target": "note"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "section",
+          "target": "section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "block",
+          "target": "block"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "line",
+          "target": "line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "any",
+          "target": "any"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "list item",
+          "target": "list item"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "incomplete tasks",
+          "target": "incomplete tasks"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "completed tasks",
+          "target": "completed tasks"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "all tasks",
+          "target": "all tasks"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "with a link to notes with names containing",
+          "target": "with a link to notes with names containing"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "with an email address",
+          "target": "with an email address"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "value",
+          "source": "with a phone number",
+          "target": "with a phone number"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
