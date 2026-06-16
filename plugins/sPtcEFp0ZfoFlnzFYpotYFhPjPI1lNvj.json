@@ -1,0 +1,853 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "neurovox",
+    "version": "1.0.0",
+    "title": "NeuroVox",
+    "description": "NeuroVox Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Enhanced quality (larger files)",
+          "target": "增强质量（较大文件）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "CD quality (balanced)",
+          "target": "CD 音质（平衡）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Voice optimized (smaller files)",
+          "target": "语音优化（较小文件）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "No API keys configured",
+          "target": "未配置 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The MediaRecorder is not in a state in which the proposed operation is allowed to be executed.",
+          "target": "MediaRecorder 当前状态不允许执行所提议的操作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "MIME type (",
+          "target": "MIME 类型（"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": ") is not supported.",
+          "target": "）不受支持。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "MediaRecorder security error",
+          "target": "MediaRecorder 安全错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A modification to the stream has occurred that makes it impossible to continue recording. An example would be the addition of a Track while recording is occurring. User agents SHOULD provide as much additional information as possible in the message attribute.",
+          "target": "流发生了修改，导致无法继续录制。例如，在录制过程中添加了轨道。用户代理应在 message 属性中提供尽可能多的附加信息。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Used for an fatal error other than those listed above. User agents SHOULD provide as much additional information as possible in the message attribute.",
+          "target": "用于除上述列出之外的致命错误。用户代理应在 message 属性中提供尽可能多的附加信息。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The UA cannot provide the codec or recording option that has been requested.",
+          "target": "用户代理无法提供所请求的编解码器或录制选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "MediaRecorder Error",
+          "target": "MediaRecorder 错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Canvas recording is NOT supported in Firefox.",
+          "target": "Firefox 不支持画布录制。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "IndexedDB API are not available in this browser.",
+          "target": "此浏览器中 IndexedDB API 不可用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Upgrade to latest Chrome or otherwise enable this flag: chrome://flags/#enable-experimental-web-platform-features",
+          "target": "请升级到最新版Chrome，或启用此标志：chrome://flags/#enable-experimental-web-platform-features"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "workerPath parameter is missing.",
+          "target": "缺少 workerPath 参数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Got image, but recorder is finished!",
+          "target": "获取到图像，但录制器已结束！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error splitting audio:",
+          "target": "音频分割错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error concatenating audio:",
+          "target": "音频拼接错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error processing chunk:",
+          "target": "处理数据块时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error waiting for processing to complete:",
+          "target": "等待处理完成时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to load plugin:",
+          "target": "加载插件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to load settings:",
+          "target": "加载设置失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to save settings:",
+          "target": "保存设置失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "API key validation failed:",
+          "target": "API 密钥验证失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to initialize AI adapters:",
+          "target": "初始化 AI 适配器失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to save settings on unload:",
+          "target": "卸载时保存设置失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "RecordRTC version: ",
+          "target": "RecordRTC 版本："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Initialized recorderType:",
+          "target": "已初始化录制器类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "for output-type:",
+          "target": "用于输出类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Paused recording.",
+          "target": "录制已暂停。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Resumed recording.",
+          "target": "录制已恢复。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Cleared old recorded data.",
+          "target": "已清除旧录制数据。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Recorder state changed:",
+          "target": "录制器状态已更改："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "RecordRTC is destroyed.",
+          "target": "RecordRTC 已销毁。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Writing recorded blob(s) to disk!",
+          "target": "正在将录制的 blob 写入磁盘！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Using recorderType:",
+          "target": "正在使用录制器类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Passing following config over MediaRecorder API.",
+          "target": "正在通过 MediaRecorder API 传递以下配置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "sample-rate must be under range 22050 and 96000.",
+          "target": "采样率必须在 22050 到 96000 范围内。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Your browser supports both MediRecorder API and canvas.captureStream!",
+          "target": "您的浏览器同时支持 MediaRecorder API 和 canvas.captureStream！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Generating WebM",
+          "target": "正在生成 WebM"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Recording finished!",
+          "target": "录制完成！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Using frames-interval:",
+          "target": "正在使用帧间隔："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "canvas resolutions",
+          "target": "画布分辨率"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "video width/height",
+          "target": "视频宽度/高度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "failed to send download progress event: ",
+          "target": "发送下载进度事件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter your OpenAI API key",
+          "target": "输入您的 OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "✅ API key validated successfully",
+          "target": "✅ API 密钥验证成功"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "✅ API key valid, but failed to update model lists",
+          "target": "✅ API 密钥有效，但更新模型列表失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "❌ Invalid API key. Please check your credentials.",
+          "target": "❌ API 密钥无效。请检查您的凭据。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter your Groq API key",
+          "target": "输入您的 Groq API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter your Deepgram API key",
+          "target": "输入您的 Deepgram API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify the folder path to save transcripts relative to the vault root",
+          "target": "指定相对于保险库根目录的转录文件保存文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify the folder path to save recordings relative to the vault root",
+          "target": "指定相对于保险库根目录的录制文件保存文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the recording quality (affects file size and clarity)",
+          "target": "设置录制质量（影响文件大小和清晰度）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show a floating microphone button for quick recording",
+          "target": "显示浮动麦克风按钮以便快速录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show a microphone button in the toolbar",
+          "target": "在工具栏中显示麦克风按钮"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the color for the microphone buttons",
+          "target": "选择麦克风按钮的颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Customize the transcription callout format. Use {audioPath} for audio file path and {transcription} for the transcribed text",
+          "target": "自定义转录标注格式。使用 {audioPath} 表示音频文件路径，使用 {transcription} 表示转录文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the AI model for transcription",
+          "target": "选择用于转录的 AI 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically generate AI post-processing after transcription",
+          "target": "转录后自动生成 AI 后处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the AI model for post-processing",
+          "target": "选择用于后处理的 AI 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Customize the prompt used for generating summaries. Use {transcript} as a placeholder for the transcribed text.",
+          "target": "自定义用于生成摘要的提示词。使用 {transcript} 作为转录文本的占位符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Customize the post-processing callout format. Use {postProcessing} for the generated content",
+          "target": "自定义后处理标注格式。使用 {postProcessing} 表示生成的内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the maximum number of tokens for the post-processing output",
+          "target": "设置后处理输出的最大 token 数量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Adjust the creativity level of the post-processing (0 = more focused, 1 = more creative)",
+          "target": "调整后处理的创造力水平（0 = 更专注，1 = 更具创造性）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API Key",
+          "target": "OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Groq API Key",
+          "target": "Groq API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Deepgram API Key",
+          "target": "Deepgram API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Transcript path",
+          "target": "转录路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Recording path",
+          "target": "录制路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Audio quality",
+          "target": "音频质量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show floating button",
+          "target": "显示浮动按钮"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show toolbar button",
+          "target": "显示工具栏按钮"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Mic button color",
+          "target": "麦克风按钮颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Transcription format",
+          "target": "转录格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Transcription model",
+          "target": "转录模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable AI Post-Processing",
+          "target": "启用 AI 后处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing model",
+          "target": "后处理模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing format",
+          "target": "后处理格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Maximum post-processing length",
+          "target": "最大后处理长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing creativity",
+          "target": "后处理创造力"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your Deepgram API key...",
+          "target": "输入您的 Deepgram API 密钥..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Transcripts",
+          "target": "转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Recordings",
+          "target": "录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": ">[!info]- Transcription\n>![[{audioPath}]]\n>{transcription}",
+          "target": ">[!info]- 转录\\n>![[{audioPath}]]\\n>{transcription}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Please process the following transcript: {transcript}",
+          "target": "请处理以下转录文本：{transcript}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": ">[!note]- Post-Processing\n>{postProcessing}",
+          "target": ">[!note]- 后处理\\n>{postProcessing}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Recording state should be: \"recording\", however current state is: ",
+          "target": "录制状态应为：“recording”，但当前状态为："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Unable to pause the recording. Recording state: ",
+          "target": "无法暂停录制。录制状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Unable to resume the recording. Recording state: ",
+          "target": "无法恢复录制。录制状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Blob encoder did not finish its job yet.",
+          "target": "Blob 编码器尚未完成其工作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Stop an active recorder.",
+          "target": "停止一个活动的录制器。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🎥 Starting video processing...",
+          "target": "🎥 开始视频处理..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✨ Video transcription completed",
+          "target": "✨ 视频转录完成"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🎵 Extracting audio from video...",
+          "target": "🎵 正在从视频中提取音频..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Recording started",
+          "target": "录制已开始"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to start recording",
+          "target": "启动录制失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file to insert recording",
+          "target": "没有活动文件可插入录制"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to stop recording",
+          "target": "停止录制失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Recording paused",
+          "target": "录制已暂停"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Finishing transcription...",
+          "target": "正在完成转录..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Maximum recording duration reached",
+          "target": "已达到最大录制时长"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file to insert transcription.",
+          "target": "没有活动文件可插入转录。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active note found to insert transcription.",
+          "target": "未找到可插入转录的活动笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to initialize NeuroVox plugin",
+          "target": "初始化 NeuroVox 插件失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to load NeuroVox settings. Using defaults.",
+          "target": "加载 NeuroVox 设置失败。使用默认值。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to save NeuroVox settings",
+          "target": "保存 NeuroVox 设置失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ OpenAI API key validation failed",
+          "target": "❌ OpenAI API 密钥验证失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Groq API key validation failed",
+          "target": "❌ Groq API 密钥验证失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Deepgram API key validation failed",
+          "target": "❌ Deepgram API 密钥验证失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Active file is not a valid audio file",
+          "target": "❌ 活动文件不是有效的音频文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🎙️ Processing audio file...",
+          "target": "🎙️ 正在处理音频文件..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✨ Transcription completed successfully!",
+          "target": "✨ 转录成功完成！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ Failed to process video file",
+          "target": "❌ 视频文件处理失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ No active note found to insert transcription.",
+          "target": "❌ 未找到活动笔记以插入转录内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "❌ No active file found.",
+          "target": "❌ 未找到活动文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Something went wrong. Maybe WebP format is not supported in the current browser.",
+          "target": "出现错误。当前浏览器可能不支持WebP格式。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Whisper",
+          "target": "Whisper"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT-4o Mini Transcribe",
+          "target": "GPT-4o Mini 转录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT-4o Transcribe",
+          "target": "GPT-4o 转录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT 4o",
+          "target": "GPT 4o"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT 4o Mini",
+          "target": "GPT 4o Mini"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT 5",
+          "target": "GPT 5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT 5 Mini",
+          "target": "GPT 5 Mini"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "GPT 5 Nano",
+          "target": "GPT 5 Nano"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Whisper Large v3 Turbo",
+          "target": "Whisper Large v3 Turbo"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Whisper Large v3",
+          "target": "Whisper Large v3"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Llama 3.3 70B Versatile",
+          "target": "Llama 3.3 70B Versatile"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Llama 3.1 8B Instant",
+          "target": "Llama 3.1 8B Instant"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Llama 4 Scout 17B",
+          "target": "Llama 4 Scout 17B"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Llama 4 Maverick 17B",
+          "target": "Llama 4 Maverick 17B"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Qwen 3 32B",
+          "target": "Qwen 3 32B"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kimi K2",
+          "target": "Kimi K2"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OpenAI GPT-OSS 20B",
+          "target": "OpenAI GPT-OSS 20B"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OpenAI GPT-OSS 120B",
+          "target": "OpenAI GPT-OSS 120B"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start recording",
+          "target": "开始录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Transcribe audio file",
+          "target": "转录音频文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Transcribe video file",
+          "target": "转录视频文件"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

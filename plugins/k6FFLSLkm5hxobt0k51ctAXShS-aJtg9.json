@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "neighbourhood-graph",
+    "version": "1.0.0",
+    "title": "Neighbourhood Graph",
+    "description": "Neighbourhood Graph Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "2 hops",
+          "target": "2跳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "1 hop",
+          "target": "1跳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "When Excalibrain is installed, this plugin reads its typed relationship fields (parent, child, friend, opposes, etc.) to draw distinct edge styles and weight connections more accurately. ",
+          "target": "当安装了Excalibrain时，此插件会读取其类型化关系字段（父级、子级、朋友、对立等），以绘制不同的边样式并更准确地加权连接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add group",
+          "target": "添加分组"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How many tiers of connections light up when you hover a node. 1 hop highlights only direct connections. 2 hops also highlights connections of connections.",
+          "target": "当您悬停在一个节点上时，有多少层连接会亮起。1跳仅高亮直接连接。2跳还会高亮连接的连接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of notes shown around the focus note. The most strongly connected neighbours are shown first.",
+          "target": "围绕焦点笔记显示的最大笔记数量。连接最强的邻居会优先显示。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum radius (px) of the largest neighbour node. Reduce for a compact sidebar; increase for a full-panel view. Default 10 is optimised for a narrow sidebar.",
+          "target": "最大邻居节点的最大半径（像素）。减小此值可获得紧凑的侧边栏视图；增大此值可获得全面板视图。默认值10针对窄侧边栏进行了优化。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When hovering a note node, show its vault-relative folder path below the title. Useful for distinguishing notes with similar names.",
+          "target": "当悬停在笔记节点上时，在标题下方显示其相对于保险库的文件夹路径。这对于区分名称相似的笔记很有用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Edges where source or target note has a matching frontmatter field will be styled distinctly and ranked higher.",
+          "target": "源笔记或目标笔记具有匹配的frontmatter字段的边将被独特地样式化并排名更高。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Read Excalibrain relationship fields to type edges and boost connection strength.",
+          "target": "读取Excalibrain关系字段以对边进行分类并增强连接强度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Highlight depth",
+          "target": "高亮深度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max neighbours",
+          "target": "最大邻居数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max node size",
+          "target": "最大节点大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show path in tooltip",
+          "target": "在工具提示中显示路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default node colour",
+          "target": "默认节点颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Excalibrain relationships",
+          "target": "使用Excalibrain关系"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. path:people/",
+          "target": "例如 path:people/"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Import colour groups from Obsidian's built-in graph view",
+          "target": "从Obsidian内置的图谱视图导入颜色分组"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Move up",
+          "target": "上移"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Move down",
+          "target": "下移"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[neighbourhood-graph] Failed to import graph colours:",
+          "target": "[neighbourhood-graph] 导入图谱颜色失败："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No graph.json found. Open Obsidian's graph view and configure colour groups first.",
+          "target": "未找到graph.json。请先打开Obsidian的图谱视图并配置颜色分组。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No colour groups found in Obsidian's graph view settings.",
+          "target": "在Obsidian的图谱视图设置中未找到颜色分组。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to read graph view settings.",
+          "target": "读取图谱视图设置失败。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Graph settings",
+          "target": "图谱设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Scales node size by how strongly connected a neighbour is. More shared tags and links = bigger node. 0 = all same size. 10 = maximum variation.",
+          "target": "根据邻居的连接强度缩放节点大小。共享的标签和链接越多，节点越大。0 = 所有节点大小相同。10 = 最大变化。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Maximum radius of the largest neighbour node in pixels. Reduce for a compact sidebar view; increase for a full-panel view.",
+          "target": "最大邻居节点的最大半径（像素）。减小此值可获得紧凑的侧边栏视图；增大此值可获得全面板视图。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ng-settings-panel ng-panel-hidden",
+          "target": "ng-settings-panel ng-panel-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ng-excali-status ng-excali-missing",
+          "target": "ng-excali-status ng-excali-missing"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ng-excali-status ng-excali-pending",
+          "target": "ng-excali-status ng-excali-pending"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ng-excali-status ng-excali-found",
+          "target": "ng-excali-status ng-excali-found"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Line colour",
+          "target": "线条颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Line thickness",
+          "target": "线条粗细"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Spread",
+          "target": "扩散"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Link pull",
+          "target": "链接拉力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open neighbourhood graph",
+          "target": "打开邻域图谱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "shared tag",
+          "target": "共享标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Key",
+          "target": "键"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Focus note",
+          "target": "焦点笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Neighbour (size = relevance)",
+          "target": "邻居（大小=相关性）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Shared tag",
+          "target": "共享标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Parent / child",
+          "target": "父级/子级"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Friend",
+          "target": "朋友"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Opposes",
+          "target": "对立"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Previous / next",
+          "target": "上一个 / 下一个"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Display",
+          "target": "显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Size by relevance",
+          "target": "按相关性调整大小"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Max node size",
+          "target": "最大节点大小"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Physics",
+          "target": "物理效果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Content & display",
+          "target": "内容与显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Colour groups, tooltip options, and Excalibrain integration are in plugin settings.",
+          "target": "颜色组、工具提示选项和 Excalibrain 集成位于插件设置中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import colours",
+          "target": "导入颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open settings",
+          "target": "打开设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Graph behaviour",
+          "target": "图表行为"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Colour groups",
+          "target": "颜色组"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Assign colours to notes by query. Supported: \"path:folder/\", \"tag:#name\", or plain text matching note title. First matching rule wins.",
+          "target": "通过查询为笔记分配颜色。支持：\\\"path:folder/\\\"、\\\"tag:#name\\\" 或纯文本匹配笔记标题。第一个匹配的规则生效。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import from Obsidian graph view",
+          "target": "从 Obsidian 图谱视图导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Excalibrain integration",
+          "target": "Excalibrain 集成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Excalibrain is not installed",
+          "target": "Excalibrain 未安装"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Get Excalibrain →",
+          "target": "获取 Excalibrain →"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Excalibrain installed — using default fields",
+          "target": "Excalibrain 已安装 — 使用默认字段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Excalibrain hasn't been opened yet so it has no saved configuration. This plugin is currently using Excalibrain's built-in English field names (Parent, Children, Friends, etc.). Open Excalibrain to generate its config and customise which fields map to which relationship types.",
+          "target": "Excalibrain 尚未打开，因此没有保存的配置。此插件当前使用 Excalibrain 的内置英文字段名称（Parent、Children、Friends 等）。请打开 Excalibrain 以生成其配置并自定义哪些字段映射到哪些关系类型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Excalibrain installed and configured",
+          "target": "Excalibrain 已安装并配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Relationship fields from your Excalibrain configuration are active. Edges typed as parent/child draw as solid lines, friends as dashed, opposes as dotted, previous/next as dash-dot. Typed links also receive a strength bonus so they rank higher in the neighbourhood.",
+          "target": "来自您的 Excalibrain 配置的关系字段已激活。类型为 parent/child 的边绘制为实线，friends 为虚线，opposes 为点线，previous/next 为点划线。类型化链接还会获得强度加成，因此在邻域中排名更高。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
