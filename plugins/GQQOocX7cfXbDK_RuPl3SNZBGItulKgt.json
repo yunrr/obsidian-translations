@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-markdown-export-plugin",
+    "version": "1.0.1",
+    "title": "markdown export",
+    "description": "markdown export Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.39",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "输入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "按钮"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error getting heading content:",
+          "target": "获取标题内容时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error getting embed content from source:",
+          "target": "从源获取嵌入内容时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error getting block content:",
+          "target": "获取块内容时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "default directory for one-click export",
+          "target": "一键导出的默认目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "attachment path, relative to the output path. Supports variables: {{fileName}}, {{date}}, {{time}}, {{datetime}}, {{timestamp}}, {{year}}, {{month}}, {{day}}, {{hour}}, {{minute}}, {{second}}, {{vaultName}}. Example: 'images/{{date}}' becomes 'images/2024-12-06'",
+          "target": "附件路径，相对于输出路径。支持变量：{{fileName}}、{{date}}、{{time}}、{{datetime}}、{{timestamp}}、{{year}}、{{month}}、{{day}}、{{hour}}、{{minute}}、{{second}}、{{vaultName}}。示例：'images/{{date}}' 变为 'images/2024-12-06'"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Changes an images path in an exported file, rather than use the attachment path. Only applies to unrelative attachments. Useful if your using a static site generator.",
+          "target": "更改导出文件中的图像路径，而不是使用附件路径。仅适用于非相对附件。如果您使用静态网站生成器，这很有用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The format of markdown is more inclined to choose Github Flavored Markdown",
+          "target": "Markdown 格式更倾向于选择 Github 风格 Markdown"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "false default, <img /> tag will use the size specified in obsidian.",
+          "target": "默认为 false，<img /> 标签将使用 Obsidian 中指定的尺寸。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "true default, if you want to keep the original file name, set this to false",
+          "target": "默认为 true，如果您想保留原始文件名，请将其设置为 false"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "false default, if you want to remove the brackets in links, set this to true",
+          "target": "默认为 false，如果您想移除链接中的方括号，请将其设置为 true"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Determines when a subdirectory with the exported file's name gets created",
+          "target": "决定何时创建以导出文件名命名的子目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "update if you want a custom filename, leave off extension",
+          "target": "如需自定义文件名，请更新，无需添加扩展名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, the attachment path will be relative to the output.",
+          "target": "启用后，附件路径将相对于输出路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically convert WikiLink style links to Markdown links",
+          "target": "自动将WikiLink风格的链接转换为Markdown链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, block embeds like ![[#^blockid]] will be replaced with the actual block content. If disabled, block embeds will be preserved as-is (may not work in exported markdown).",
+          "target": "启用后，块嵌入（如 ![[#^blockid]]）将被替换为实际的块内容。禁用后，块嵌入将按原样保留（在导出的Markdown中可能无法正常工作）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, the YAML metadata header will be removed from embedded files when exporting.",
+          "target": "启用后，导出时将从嵌入文件中移除YAML元数据头。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Symbol for top-level bullet points",
+          "target": "顶级项目符号的符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Symbol for first-level indented bullet points (4 spaces)",
+          "target": "一级缩进项目符号的符号（4个空格）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Symbol for second-level indented bullet points (8 spaces)",
+          "target": "二级缩进项目符号的符号（8个空格）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Symbol for third-level indented bullet points (12 spaces)",
+          "target": "三级缩进项目符号的符号（12个空格）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Symbol for fourth-level indented bullet points (16 spaces)",
+          "target": "四级缩进项目符号的符号（16个空格）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Symbol for unchecked checkboxes",
+          "target": "未选中复选框的符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Symbol for checked checkboxes",
+          "target": "已选中复选框的符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output Path",
+          "target": "输出路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Attachment Path (optional)",
+          "target": "附件路径（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Attachment Path",
+          "target": "自定义附件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use GitHub Flavored Markdown Format",
+          "target": "使用GitHub风格Markdown格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Html tag <img /> to display image",
+          "target": "使用HTML标签 <img /> 显示图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Encode file name",
+          "target": "编码文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remove brackets for outgoing links",
+          "target": "移除出站链接的方括号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Create Subdirectory",
+          "target": "创建子目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Filename",
+          "target": "自定义文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Set Attachment Path as Relative",
+          "target": "将附件路径设为相对路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert WikiLinks to Markdown",
+          "target": "将WikiLinks转换为Markdown"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inline Block Embeds",
+          "target": "内联块嵌入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remove YAML Metadata Header",
+          "target": "移除YAML元数据头"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Level 0 Bullet Point",
+          "target": "0级项目符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Level 1 Bullet Point",
+          "target": "1级项目符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Level 2 Bullet Point",
+          "target": "2级项目符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Level 3 Bullet Point",
+          "target": "3级项目符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Level 4 Bullet Point",
+          "target": "4级项目符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Unchecked Checkbox",
+          "target": "未选中复选框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Checked Checkbox",
+          "target": "已选中复选框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter default output path",
+          "target": "输入默认输出路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter attachment path",
+          "target": "输入附件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "index",
+          "target": "索引"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file",
+          "target": "没有活动文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "blog",
+          "target": "博客"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export notes by tag",
+          "target": "按标签导出笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter the tag to export (e.g. 'blog' or '#blog')",
+          "target": "输入要导出的标签（例如 'blog' 或 '#blog'）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Please enter a tag",
+          "target": "请输入一个标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export",
+          "target": "导出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Obsidian Markdown Export",
+          "target": "Obsidian Markdown 导出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "bingryan 🤓",
+          "target": "bingryan 🤓"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Created by ",
+          "target": "创建者："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Baisc Setting",
+          "target": "基础设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export Text Setting",
+          "target": "导出文本设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Bullet Point Symbols",
+          "target": "项目符号符号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configure symbols for different indentation levels of bullet points.",
+          "target": "配置不同缩进级别项目符号的符号。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Checkbox Symbols",
+          "target": "复选框符号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configure symbols for checkboxes.",
+          "target": "配置复选框的符号。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "文本"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
