@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "audio-transcript",
+    "version": "1.0.0",
+    "title": "Audio Transcript",
+    "description": "Audio Transcript Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.7.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Universal-3 Pro",
+          "target": "Universal-3 Pro"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Automatica",
+          "target": "Automatica"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Manual",
+          "target": "Manual"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Misma carpeta que la nota activa",
+          "target": "与活动笔记相同的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Mobile (iOS/Android)",
+          "target": "移动端 (iOS/Android)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Desktop (PC/Mac)",
+          "target": "桌面端 (PC/Mac)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Audio Transcript] All providers failed:",
+          "target": "[音频转录] 所有提供商均失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Probar",
+          "target": "测试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "URL del servidor whisper.cpp (ej: http://localhost:8080)",
+          "target": "whisper.cpp 服务器 URL（例如：http://localhost:8080）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Universal-3 Pro: maxima precision, diarizacion avanzada. Universal-2: mas rapido.",
+          "target": "Universal-3 Pro：最高精度，高级说话人分离。Universal-2：更快。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Auto: el proveedor detecta el idioma. Manual: usas el idioma de abajo.",
+          "target": "自动：提供商检测语言。手动：使用下方的语言。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Idioma del audio a transcribir",
+          "target": "待转录音频的语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Variables: {speaker}, {time}, {text}. Cada bloque de hablante se separa con un salto de linea doble.",
+          "target": "变量：{speaker}、{time}、{text}。每个说话人块用双换行符分隔。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Envuelve la transcripcion en un bloque >[!transcription] plegable",
+          "target": "将转录内容包裹在可折叠的 >[!transcription] 块中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Carpeta del vault donde guardar los audios. Elegi una existente.",
+          "target": "保存音频的保险库文件夹。请选择一个现有文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Desktop: mejor calidad, usa ScriptProcessor + WAV. Mobile: mas estable en iOS/Android, usa MediaRecorder nativo.",
+          "target": "桌面端：质量更好，使用 ScriptProcessor + WAV。移动端：在 iOS/Android 上更稳定，使用原生 MediaRecorder。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Proveedor LLM a usar en este modo",
+          "target": "此模式下使用的 LLM 提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Proveedor de voz a texto",
+          "target": "语音转文本提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "URL del servidor spob (por defecto localhost:8080)",
+          "target": "spob 服务器 URL（默认 localhost:8080）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Modelo",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Deteccion de idioma",
+          "target": "语言检测"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Idioma predeterminado",
+          "target": "默认语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Plantilla de salida",
+          "target": "输出模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Insertar en callout",
+          "target": "插入到标注中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Carpeta de grabaciones",
+          "target": "录音文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Modo de grabacion",
+          "target": "录音模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Proveedor",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "spob Backend URL",
+          "target": "spob 后端 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Probar conexion",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Nombre",
+          "target": "名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Prompt",
+          "target": "提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Ingresa tu API key",
+          "target": "输入你的 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Ej: Minuta de reunion",
+          "target": "例如：会议纪要"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Instruccion para el LLM...",
+          "target": "给 LLM 的指令..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Historial de chats",
+          "target": "聊天历史"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No hay chats anteriores",
+          "target": "没有之前的聊天记录"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Historial vacío",
+          "target": "历史记录为空"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Historial limpiado",
+          "target": "历史记录已清除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No se pudo abrir una nota para la transcripcion.",
+          "target": "无法为转录内容打开笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "audio-transcript-status loading",
+          "target": "audio-transcript-status loading"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Flagship. 1M ctx.",
+          "target": "旗舰版。100万上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Professional. 1M ctx.",
+          "target": "专业版。100万上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Fast, cheap. 400k ctx.",
+          "target": "快速、经济。40万上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Previous frontier.",
+          "target": "上一代前沿模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Most capable. 1M ctx.",
+          "target": "最强大。100万上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Speed/iq balance.",
+          "target": "速度与智能平衡。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Fast, near-frontier.",
+          "target": "快速，接近前沿。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Top-tier. 1M ctx.",
+          "target": "顶级。100万上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Fast, cheap. 1M ctx.",
+          "target": "快速、经济。100万上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Flagship. 1M+ ctx.",
+          "target": "旗舰版。100万+上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Fast, high-volume.",
+          "target": "快速，高吞吐量。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Most affordable.",
+          "target": "最经济实惠。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Via OpenRouter",
+          "target": "通过 OpenRouter"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Razonamiento off.",
+          "target": "推理关闭。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Top-tier. 128k ctx.",
+          "target": "顶级。12.8万上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Fast, low-cost.",
+          "target": "快速、低成本。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vía spob.",
+          "target": "通过 spob。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Gladia",
+          "target": "Gladia"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Deepgram",
+          "target": "Deepgram"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "OpenAI Whisper",
+          "target": "OpenAI Whisper"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Groq (Whisper)",
+          "target": "Groq (Whisper)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Whisper (local)",
+          "target": "Whisper（本地）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Anthropic Claude",
+          "target": "Anthropic Claude"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "DeepSeek",
+          "target": "DeepSeek"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "OpenRouter",
+          "target": "OpenRouter"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Grok (xAI)",
+          "target": "Grok (xAI)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GLM (Z.ai)",
+          "target": "GLM (Z.ai)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Smart Plugins Obsidian (DeepSeek)",
+          "target": "Smart Plugins Obsidian (DeepSeek)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GPT-5.4 Mini",
+          "target": "GPT-5.4 Mini"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GPT-5.4 Nano",
+          "target": "GPT-5.4 Nano"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude Opus 4.7",
+          "target": "Claude Opus 4.7"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude Sonnet 4.6",
+          "target": "Claude Sonnet 4.6"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude Haiku 4.5",
+          "target": "Claude Haiku 4.5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "DeepSeek V4 Pro",
+          "target": "DeepSeek V4 Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "DeepSeek V4 Flash",
+          "target": "DeepSeek V4 Flash"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GPT-5.5 (via OR)",
+          "target": "GPT-5.5（通过 OR）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude Opus 4.7 (via OR)",
+          "target": "Claude Opus 4.7（通过 OR）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "DeepSeek V4 Pro (via OR)",
+          "target": "DeepSeek V4 Pro（通过 OR）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Grok 4.3",
+          "target": "Grok 4.3"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Grok 4.20 Non-Reasoning",
+          "target": "Grok 4.20 非推理版"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GLM-4 Plus",
+          "target": "GLM-4 Plus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "GLM-4 Flash",
+          "target": "GLM-4 Flash"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "DeepSeek V4 Pro (spob)",
+          "target": "DeepSeek V4 Pro (spob)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "DeepSeek V4 Flash (spob)",
+          "target": "DeepSeek V4 Flash (spob)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Espanol",
+          "target": "西班牙语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "English",
+          "target": "英语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Portugues",
+          "target": "葡萄牙语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Francais",
+          "target": "法语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Deutsch",
+          "target": "德语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Italiano",
+          "target": "意大利语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "日本語",
+          "target": "日语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "中文",
+          "target": "中文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "العربية",
+          "target": "阿拉伯语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Русский",
+          "target": "俄语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "हिन्दी",
+          "target": "印地语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Nederlands",
+          "target": "荷兰语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Polski",
+          "target": "波兰语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Turkce",
+          "target": "土耳其语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "한국어",
+          "target": "韩语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Resumir",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Decisiones",
+          "target": "决策"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tareas",
+          "target": "任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Minuta",
+          "target": "纪要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Grabar y transcribir",
+          "target": "录音并转录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Transcribir archivo",
+          "target": "转录文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Transcribir varios archivos",
+          "target": "转录多个文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir dashboard de transcripciones",
+          "target": "打开转录仪表板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Buscar nota por nombre...",
+          "target": "按名称搜索笔记..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mostrar",
+          "target": "显示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Idioma",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Formato de salida",
+          "target": "输出格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Archivos de audio",
+          "target": "音频文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "IA (Proveedores LLM)",
+          "target": "AI（LLM 提供商）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Configura los proveedores de IA para chat y resumenes. Elegi cual usar en modo Flash y Advanced.",
+          "target": "配置用于聊天和摘要的 AI 提供商。选择在快速模式和高级模式下使用哪个。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Obten tu API key y creditos en spob-backend.fly.dev ->",
+          "target": "在 spob-backend.fly.dev 获取你的 API 密钥和积分 ->"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Modos de chat",
+          "target": "聊天模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Todas las API Keys",
+          "target": "所有 API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Las claves se almacenan localmente en los datos del plugin.",
+          "target": "密钥存储在插件的本地数据中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Obten tu API key en spob-backend.fly.dev ->",
+          "target": "在 spob-backend.fly.dev 获取您的 API 密钥 ->"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": ":coffee: Support this plugin",
+          "target": ":coffee: 支持此插件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " . Free and open source",
+          "target": " . 免费且开源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Audio Transcript",
+          "target": "音频转录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "☕ Donar vía PayPal",
+          "target": "☕ 通过 PayPal 捐赠"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🚀 Servicios SPOB",
+          "target": "🚀 SPOB 服务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Limpiar historial",
+          "target": "清除历史记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⚡ Flash",
+          "target": "⚡ 闪存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🧠 Advanced",
+          "target": "🧠 高级"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📋 Historial",
+          "target": "📋 历史记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🤖",
+          "target": "🤖"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "← Volver al chat",
+          "target": "← 返回聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Guardar",
+          "target": "保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancelar",
+          "target": "取消"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
