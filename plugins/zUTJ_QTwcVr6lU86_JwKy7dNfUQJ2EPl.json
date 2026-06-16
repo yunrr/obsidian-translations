@@ -1,0 +1,1771 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "execute-code",
+    "version": "2.0.0",
+    "title": "Execute Code",
+    "description": "Allows to execute code snippets within a note. Supported programming languages:  C, CPP, Dart, Golang, Groovy, Kotlin, Java, JavaScript, TypeScript, Lean, Lua, CSharp, Prolog, Rust, Python, R, Ruby, Wolfram Mathematica, Haskell, Scala, Racket, F#, Batch, Shell & Powershell.",
+    "language": "zh-cn",
+    "supportedVersions": "1.12.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Failed to parse code block arguments from line:\n${firstLineOfCode}\n\nFailed with error:\n${err}`)",
+          "target": "Notice(`无法解析代码块参数，来自以下行:\n${firstLineOfCode}\n\n错误信息:\n${err}`)"
+        },
+        {
+          "source": "Notice(`Named export \"${namedImport}\" does not exist but was imported`)",
+          "target": "Notice(`命名导出 \"${namedImport}\" 不存在，但已被导入`)"
+        },
+        {
+          "source": "Notice(`Error: named export ${currentArgs.label} exported more than once`)",
+          "target": "Notice(`错误：执行了多次命名导出 ${currentArgs.label} `)"
+        },
+        {
+          "source": "Notice(label)",
+          "target": "Notice(标签)"
+        },
+        {
+          "source": "Notice(\"Runtime exited\")",
+          "target": "Notice(\"运行中退出\")"
+        },
+        {
+          "source": "Notice(\"Error!\")",
+          "target": "Notice(\"错误！\")"
+        },
+        {
+          "source": "Notice(\"Running...\")",
+          "target": "Notice(\"正在运行...\")"
+        },
+        {
+          "source": "Notice(\"Done!\")",
+          "target": "Notice(\"已完成\")"
+        },
+        {
+          "source": ".log(\"Cling path set to: \" + sanitized)",
+          "target": ".log(\"粘贴路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"CPP args set to: \" + value)",
+          "target": ".log(\"CPP 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Cling std set to: \" + value)",
+          "target": ".log(\"Cling标准设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Cpp use main set to: \" + value)",
+          "target": ".log(\"Cpp使用的main设置改为: \" + value)"
+        },
+        {
+          "source": ".log(\"gcc / Cling path set to: \" + sanitized)",
+          "target": ".log(\"gcc / Cling 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"gcc / Cling args set to: \" + value)",
+          "target": ".log(\"gcc / Cling 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"C use main set to: \" + value)",
+          "target": ".log(\"C 使用主设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"dotnet path set to: \" + sanitized)",
+          "target": ".log(\"已设置的 dotnet 路径为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"CSharp args set to: \" + value)",
+          "target": ".log(\"CSharp 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"F# path set to: \" + sanitized)",
+          "target": ".log(\"F# 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"F# args set to: \" + value)",
+          "target": ".log(\"F# 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"F# file extension set to: \" + value)",
+          "target": ".log(\"F# 文件扩展名设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Golang path set to: \" + sanitized)",
+          "target": ".log(\"Golang路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Groovy path set to: \" + sanitized)",
+          "target": ".log(\"Groovy 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Groovy args set to: \" + value)",
+          "target": ".log(\"Groovy 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(value ? \"Now using ghci for haskell\" : \"Now using runghc for haskell.\")",
+          "target": ".log(value ? \"现在使用 ghci 运行 Haskell\" : \"现在使用 runghc 运行 Haskell。\")"
+        },
+        {
+          "source": ".log(\"ghci path set to: \" + sanitized)",
+          "target": ".log(\"ghci 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"runghc path set to: \" + sanitized)",
+          "target": ".log(\"runghc 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"ghc path set to: \" + sanitized)",
+          "target": ".log(\"ghc 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Java path set to: \" + sanitized)",
+          "target": ".log(\"Java 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Java args set to: \" + value)",
+          "target": ".log(\"Java 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Node path set to: \" + sanitized)",
+          "target": ".log(\"节点路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Node args set to: \" + value)",
+          "target": ".log(\"节点参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Kotlin path set to: \" + sanitized)",
+          "target": ".log(\"Kotlin 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Kotlin args set to: \" + value)",
+          "target": ".log(\"Kotlin 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"lean path set to: \" + sanitized)",
+          "target": ".log(\"lean 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Lean args set to: \" + value)",
+          "target": ".log(\"lean 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"lua path set to: \" + sanitized)",
+          "target": ".log(\"lua 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Lua args set to: \" + value)",
+          "target": ".log(\"lua 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"dart path set to: \" + sanitized)",
+          "target": ".log(\"Dart 路径已设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Dart args set to: \" + value)",
+          "target": ".log(\"Dart 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Mathematica path set to: \" + sanitized)",
+          "target": ".log(\"Mathematica 路径已设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Mathematica args set to: \" + value)",
+          "target": ".log(\"Mathematica 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Powershell path set to: \" + sanitized)",
+          "target": ".log(\"已将 PowerShell 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Powershell args set to: \" + value)",
+          "target": ".log(\"PowerShell 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Powershell file extension set to: \" + value)",
+          "target": ".log(\"PowerShell 文件扩展名设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Prolog answer limit set to: \" + value)",
+          "target": ".log(\"Prolog 回答限制设置为: \" + value)"
+        },
+        {
+          "source": ".log(value ? \"Embedding Plots into Notes.\" : \"Not embedding Plots into Notes.\")",
+          "target": ".log(value ? \"将图嵌入到笔记中。\" : \"不将图嵌入到笔记中。\")"
+        },
+        {
+          "source": ".log(\"Python path set to: \" + sanitized)",
+          "target": ".log(\"Python路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Python args set to: \" + value)",
+          "target": ".log(\"Python 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(value ? \"Embedding R Plots into Notes.\" : \"Not embedding R Plots into Notes.\")",
+          "target": ".log(value ? \"将 R 图嵌入到笔记中。\" : \"不将 R 图嵌入到笔记中。\")"
+        },
+        {
+          "source": ".log(\"R path set to: \" + sanitized)",
+          "target": ".log(\"R路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"R args set to: \" + value)",
+          "target": ".log(\"R 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"ruby path set to: \" + sanitized)",
+          "target": ".log(\"Ruby 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"ruby args set to: \" + value)",
+          "target": ".log(\"ruby 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Cargo path set to: \" + sanitized)",
+          "target": ".log(\"Cargo 路径设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"scala path set to: \" + sanitized)",
+          "target": ".log(\"Scala 路径已设置为: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Scala args set to: \" + value)",
+          "target": ".log(\"Scala 参数设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"racket path set to: \" + sanitized)",
+          "target": ".log(\"racket path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Racket args set to: \" + value)",
+          "target": ".log(\"Racket args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Shell path set to: \" + sanitized)",
+          "target": ".log(\"Shell path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Shell args set to: \" + value)",
+          "target": ".log(\"Shell args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Shell file extension set to: \" + value)",
+          "target": ".log(\"Shell file extension set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Batch path set to: \" + sanitized)",
+          "target": ".log(\"Batch path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Batch args set to: \" + value)",
+          "target": ".log(\"Batch args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Batch file extension set to: \" + value)",
+          "target": ".log(\"Batch file extension set to: \" + value)"
+        },
+        {
+          "source": ".log(\"ts-node path set to: \" + sanitized)",
+          "target": ".log(\"ts-node path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"TypeScript args set to: \" + value)",
+          "target": ".log(\"TypeScript args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"SQL args set to: \" + value)",
+          "target": ".log(\"SQL args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Octave path set to: \" + sanitized)",
+          "target": ".log(\"Octave path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Octave args set to: \" + value)",
+          "target": ".log(\"Octave args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Maxima path set to: \" + sanitized)",
+          "target": ".log(\"Maxima path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Maxima args set to: \" + value)",
+          "target": ".log(\"Maxima args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Applescript path set to: \" + sanitized)",
+          "target": ".log(\"Applescript path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Applescript args set to: \" + value)",
+          "target": ".log(\"Applescript args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"zig path set to: \" + sanitized)",
+          "target": ".log(\"zig path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"zig args set to: \" + value)",
+          "target": ".log(\"zig args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"ocaml path set to: \" + sanitized)",
+          "target": ".log(\"ocaml path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"ocaml args set to: \" + value)",
+          "target": ".log(\"ocaml args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Swift path set to: \" + sanitized)",
+          "target": ".log(\"Swift path set to: \" + sanitized)"
+        },
+        {
+          "source": ".log(\"Swift args set to: \" + value)",
+          "target": ".log(\"Swift args set to: \" + value)"
+        },
+        {
+          "source": ".log(\"Timeout set to: \" + value)",
+          "target": ".log(\"超时设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Allow Input set to: \" + value)",
+          "target": ".log(\"Allow Input set to: \" + value)"
+        },
+        {
+          "source": ".log(\"WSL Mode set to: \" + value)",
+          "target": ".log(\"WSL 模式设置为: \" + value)"
+        },
+        {
+          "source": ".log(\"Only Show Current Block Log set to: \" + value)",
+          "target": ".log(\"Only Show Current Block Log set to: \" + value)"
+        },
+        {
+          "source": ".log(`${language} inject set to ${value}`)",
+          "target": ".log(`${language} inject set to ${value}`)"
+        },
+        {
+          "source": ".log('\" + TOGGLE_HTML_SIGIL + image + TOGGLE_HTML_SIGIL + \"')",
+          "target": ".log('\" + TOGGLE_HTML_SIGIL + image + TOGGLE_HTML_SIGIL + \"')"
+        },
+        {
+          "source": ".log(source)",
+          "target": ".log(source)"
+        },
+        {
+          "source": ".log(${toggle})",
+          "target": ".log(${toggle})"
+        },
+        {
+          "source": ".log(${html})",
+          "target": ".log(${html})"
+        },
+        {
+          "source": ".log(\"setup\")",
+          "target": ".log(\"setup\")"
+        },
+        {
+          "source": ".log(\"Unloaded plugin: Execute Code\")",
+          "target": ".log(\"已卸载插件: Execute Code\")"
+        },
+        {
+          "source": "<error(\\n)",
+          "target": "<error(\\n)"
+        },
+        {
+          "source": ".error(new Term(\"throw\", [expr.value])",
+          "target": ".error(new Term(\"throw\", [expr.value])"
+        },
+        {
+          "source": "_error(answer)",
+          "target": "_error(answer)"
+        },
+        {
+          "source": ".error(answer)",
+          "target": ".error(answer)"
+        },
+        {
+          "source": ".error(\n                new Term(\"throw\", [\n                  pl.error.syntax(\n                    token ? token : tokens[expr_position - 1],\n                    token && token.error ? token.error : \". or operator expected\",\n                    !token\n                  )",
+          "target": ".error(\n                new Term(\"throw\", [\n                  pl.error.syntax(\n                    token ? token : tokens[expr_position - 1],\n                    token && token.error ? token.error : \". or operator expected\",\n                    !token\n                  )"
+        },
+        {
+          "source": "_error(pl.error.type(\"module\", closure.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"module\", closure.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.instantiation(atom.indicator)",
+          "target": "_error(pl.error.instantiation(atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", closure, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", closure, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", goal, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", goal, atom.indicator)"
+        },
+        {
+          "source": ".error(ex)",
+          "target": ".error(ex)"
+        },
+        {
+          "source": ".error(pl.error.existence(\"source_sink\", new Term(string)",
+          "target": ".error(pl.error.existence(\"source_sink\", new Term(string)"
+        },
+        {
+          "source": "_error(error)",
+          "target": "_error(error)"
+        },
+        {
+          "source": "_error(pl.error.type(\"module\", context_module, this.level.indicator)",
+          "target": "_error(pl.error.type(\"module\", context_module, this.level.indicator)"
+        },
+        {
+          "source": "_error(pl.error.existence(\"procedure\", atom.indicator, this.level.indicator)",
+          "target": "_error(pl.error.existence(\"procedure\", atom.indicator, this.level.indicator)"
+        },
+        {
+          "source": "_error(pl.error.instantiation(this.level.indicator)",
+          "target": "_error(pl.error.instantiation(this.level.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", term, this.level.indicator)",
+          "target": "_error(pl.error.type(\"callable\", term, this.level.indicator)"
+        },
+        {
+          "source": "_error(this.head_point()",
+          "target": "_error(this.head_point()"
+        },
+        {
+          "source": "_error(this.points.pop()",
+          "target": "_error(this.points.pop()"
+        },
+        {
+          "source": ".error(error2)",
+          "target": ".error(error2)"
+        },
+        {
+          "source": ".error(pl.error.existence(\"module\", module_id, atom.indicator)",
+          "target": ".error(pl.error.existence(\"module\", module_id, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"modify\", \"operator\", operator, atom.indicator)",
+          "target": "_error(pl.error.permission(\"modify\", \"operator\", operator, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"variable\", variable, atom.indicator)",
+          "target": "_error(pl.error.type(\"variable\", variable, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", module3, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", module3, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", priority, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", priority, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", type, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", type, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"list\", operators, atom.indicator)",
+          "target": "_error(pl.error.type(\"list\", operators, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"create\", \"operator\", operators, atom.indicator)",
+          "target": "_error(pl.error.permission(\"create\", \"operator\", operators, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", operator, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", operator, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"operator_priority\", priority, atom.indicator)",
+          "target": "_error(pl.error.domain(\"operator_priority\", priority, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"create\", \"operator\", operator, atom.indicator)",
+          "target": "_error(pl.error.permission(\"create\", \"operator\", operator, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"operator_specifier\", type, atom.indicator)",
+          "target": "_error(pl.error.domain(\"operator_specifier\", type, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", specifier, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", specifier, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"operator_specifier\", specifier, atom.indicator)",
+          "target": "_error(pl.error.domain(\"operator_specifier\", specifier, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.instantiation(thread.level.indicator)",
+          "target": "_error(pl.error.instantiation(thread.level.indicator)"
+        },
+        {
+          "source": "_error(answer.args[0])",
+          "target": "_error(answer.args[0])"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", call, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", call, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", cleanup, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", cleanup, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", setup, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", setup, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"list\", instances, atom.indicator)",
+          "target": "_error(pl.error.type(\"list\", instances, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"list\", tail, atom.indicator)",
+          "target": "_error(pl.error.type(\"list\", tail, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", atom.args[2], atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", atom.args[2], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atomic\", atom.args[1], atom.indicator)",
+          "target": "_error(pl.error.type(\"atomic\", atom.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", atom.args[1], atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", atom.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", atom.args[2], atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", atom.args[2], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", atom.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", atom.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", atom.args[0], atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", atom.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"compound\", atom.args[1], atom.indicator)",
+          "target": "_error(pl.error.type(\"compound\", atom.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"list\", atom.args[1], atom.indicator)",
+          "target": "_error(pl.error.type(\"list\", atom.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"non_empty_list\", atom.args[1], atom.indicator)",
+          "target": "_error(pl.error.domain(\"non_empty_list\", atom.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atomic\", atom.args[1].args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"atomic\", atom.args[1].args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", atom.args[1].args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", atom.args[1].args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"list\", vars, atom.indicator)",
+          "target": "_error(pl.error.type(\"list\", vars, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", start, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", start, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", end, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", end, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"module\", head.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"module\", head.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", head, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", head, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", body, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", body, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"access\", \"private_procedure\", str_indicator(head.indicator)",
+          "target": "_error(pl.error.permission(\"access\", \"private_procedure\", str_indicator(head.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"modify\", \"static_procedure\", str_indicator(head.indicator)",
+          "target": "_error(pl.error.permission(\"modify\", \"static_procedure\", str_indicator(head.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"module\", indicator2.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"module\", indicator2.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"predicate_indicator\", indicator2, atom.indicator)",
+          "target": "_error(pl.error.type(\"predicate_indicator\", indicator2, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", indicator2.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", indicator2.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", indicator2.args[1], atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", indicator2.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", indicator2.args[1], atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", indicator2.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", module_id, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", module_id, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"predicate_property\", property, atom.indicator)",
+          "target": "_error(pl.error.domain(\"predicate_property\", property, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"list\", expected, atom.indicator)",
+          "target": "_error(pl.error.type(\"list\", expected, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"list\", list, atom.indicator)",
+          "target": "_error(pl.error.type(\"list\", list, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"pair\", elem, atom.indicator)",
+          "target": "_error(pl.error.type(\"pair\", elem, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"pair\", head, atom.indicator)",
+          "target": "_error(pl.error.type(\"pair\", head, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", clause, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", clause, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"module\", module_atom, atom.indicator)",
+          "target": "_error(pl.error.type(\"module\", module_atom, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"module\", predicate.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"module\", predicate.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"predicate_indicator\", predicate, atom.indicator)",
+          "target": "_error(pl.error.type(\"predicate_indicator\", predicate, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", predicate.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", predicate.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", predicate.args[1], atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", predicate.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", predicate.args[1], atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", predicate.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.representation(\"max_arity\", atom.indicator)",
+          "target": "_error(pl.error.representation(\"max_arity\", atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"modify\", \"static_procedure\", atom.args[0], atom.indicator)",
+          "target": "_error(pl.error.permission(\"modify\", \"static_procedure\", atom.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", atom.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", atom.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", atom.args[1], atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", atom.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", atom.args[1], atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", atom.args[1], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", start, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", start, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", end, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", end, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", whole, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", whole, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", atom1, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", atom1, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", before, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", before, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", length, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", length, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", after, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", after, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", before, atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", before, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", length, atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", length, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", after, atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", after, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", subatom, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", subatom, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"character\", pointer.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"character\", pointer.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", pointer.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", pointer.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.representation(\"character_code\", atom.indicator)",
+          "target": "_error(pl.error.representation(\"character_code\", atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"character\", char, atom.indicator)",
+          "target": "_error(pl.error.type(\"character\", char, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", code, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", code, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"number\", num, atom.indicator)",
+          "target": "_error(pl.error.type(\"number\", num, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.syntax_by_predicate(\"parseable_number\", atom.indicator)",
+          "target": "_error(pl.error.syntax_by_predicate(\"parseable_number\", atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", original, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", original, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", upcase, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", upcase, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", downcase, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", downcase, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atomic\", atomic1, atom.indicator)",
+          "target": "_error(pl.error.type(\"atomic\", atomic1, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atomic\", atomic2, atom.indicator)",
+          "target": "_error(pl.error.type(\"atomic\", atomic2, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", concat, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", concat, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atomic\", separator, atom.indicator)",
+          "target": "_error(pl.error.type(\"atomic\", separator, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atomic\", pointer.args[0], atom.indicator)",
+          "target": "_error(pl.error.type(\"atomic\", pointer.args[0], atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", order, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", order, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"order\", order, atom.indicator)",
+          "target": "_error(pl.error.domain(\"order\", order, atom.indicator)"
+        },
+        {
+          "source": "_error(op)",
+          "target": "_error(op)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", lower, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", lower, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", upper, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", upper, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", bet, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", bet, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", n, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", n, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", m, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", m, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", n, atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", n, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"not_less_than_zero\", m, atom.indicator)",
+          "target": "_error(pl.error.domain(\"not_less_than_zero\", m, atom.indicator)"
+        },
+        {
+          "source": "_error(cmp)",
+          "target": "_error(cmp)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.domain(\"stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"stream_or_alias\", input, atom.indicator)",
+          "target": "_error(pl.error.domain(\"stream_or_alias\", input, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.existence(\"stream\", input, atom.indicator)",
+          "target": "_error(pl.error.existence(\"stream\", input, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"input\", \"stream\", input, atom.indicator)",
+          "target": "_error(pl.error.permission(\"input\", \"stream\", input, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"stream_or_alias\", output, atom.indicator)",
+          "target": "_error(pl.error.domain(\"stream_or_alias\", output, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.existence(\"stream\", output, atom.indicator)",
+          "target": "_error(pl.error.existence(\"stream\", output, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"output\", \"stream\", output, atom.indicator)",
+          "target": "_error(pl.error.permission(\"output\", \"stream\", output, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", mode, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", mode, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"list\", options, atom.indicator)",
+          "target": "_error(pl.error.type(\"list\", options, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.uninstantiation(stream, atom.indicator)",
+          "target": "_error(pl.error.uninstantiation(stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"source_sink\", dest, atom.indicator)",
+          "target": "_error(pl.error.domain(\"source_sink\", dest, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"io_mode\", mode, atom.indicator)",
+          "target": "_error(pl.error.domain(\"io_mode\", mode, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"stream_option\", property, atom.indicator)",
+          "target": "_error(pl.error.domain(\"stream_option\", property, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"open\", \"source_sink\", new Term(\"alias\", [new Term(alias, [])",
+          "target": "_error(pl.error.permission(\"open\", \"source_sink\", new Term(\"alias\", [new Term(alias, [])"
+        },
+        {
+          "source": "_error(pl.error.permission(\"open\", \"source_sink\", dest, atom.indicator)",
+          "target": "_error(pl.error.permission(\"open\", \"source_sink\", dest, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.existence(\"source_sink\", dest, atom.indicator)",
+          "target": "_error(pl.error.existence(\"source_sink\", dest, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"stream_or_alias\", stream, atom.indicator)",
+          "target": "_error(pl.error.domain(\"stream_or_alias\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.existence(\"stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.existence(\"stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"close_option\", property, atom.indicator)",
+          "target": "_error(pl.error.domain(\"close_option\", property, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"output\", \"stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"output\", \"stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"stream_property\", property, atom.indicator)",
+          "target": "_error(pl.error.domain(\"stream_property\", property, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"stream_position\", position, atom.indicator)",
+          "target": "_error(pl.error.domain(\"stream_position\", position, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", field, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", field, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", value, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", value, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"reposition\", \"stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"reposition\", \"stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"in_character\", char, atom.indicator)",
+          "target": "_error(pl.error.type(\"in_character\", char, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"input\", \"stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"input\", \"stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"input\", \"binary_stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"input\", \"binary_stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"input\", \"past_end_of_stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"input\", \"past_end_of_stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.representation(\"character\", atom.indicator)",
+          "target": "_error(pl.error.representation(\"character\", atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.representation(\"in_character_code\", atom.indicator)",
+          "target": "_error(pl.error.representation(\"in_character_code\", atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"output\", \"binary_stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"output\", \"binary_stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"in_byte\", byte, atom.indicator)",
+          "target": "_error(pl.error.type(\"in_byte\", byte, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"input\", \"text_stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"input\", \"text_stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.representation(\"byte\", atom.indicator)",
+          "target": "_error(pl.error.representation(\"byte\", atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"byte\", byte, atom.indicator)",
+          "target": "_error(pl.error.type(\"byte\", byte, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"output\", \"text_stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"output\", \"text_stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"read_option\", property, atom.indicator)",
+          "target": "_error(pl.error.domain(\"read_option\", property, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.syntax(last_token, \"unexpected end of file\", false)",
+          "target": "_error(pl.error.syntax(last_token, \"unexpected end of file\", false)"
+        },
+        {
+          "source": "_error(pl.error.syntax(last_token, \"token not found\", true)",
+          "target": "_error(pl.error.syntax(last_token, \"token not found\", true)"
+        },
+        {
+          "source": "_error(pl.error.syntax(tokens[expr.len], \"unexpected token\", false)",
+          "target": "_error(pl.error.syntax(tokens[expr.len], \"unexpected token\", false)"
+        },
+        {
+          "source": "_error(expr.value)",
+          "target": "_error(expr.value)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"output\", \"past_end_of_stream\", stream, atom.indicator)",
+          "target": "_error(pl.error.permission(\"output\", \"past_end_of_stream\", stream, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"write_option\", property, atom.indicator)",
+          "target": "_error(pl.error.domain(\"write_option\", property, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", int, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", int, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", flag, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", flag, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"prolog_flag\", flag, atom.indicator)",
+          "target": "_error(pl.error.domain(\"prolog_flag\", flag, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.permission(\"modify\", \"flag\", flag, atom.indicator)",
+          "target": "_error(pl.error.permission(\"modify\", \"flag\", flag, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"flag_value\", new Term(\"+\", [flag, value])",
+          "target": "_error(pl.error.domain(\"flag_value\", new Term(\"+\", [flag, value])"
+        },
+        {
+          "source": "_error(pl.error.type(\"atom\", src, atom.indicator)",
+          "target": "_error(pl.error.type(\"atom\", src, atom.indicator)"
+        },
+        {
+          "source": "_error(err)",
+          "target": "_error(err)"
+        },
+        {
+          "source": "_error(pl.error.type(\"number\", time, atom.indicator)",
+          "target": "_error(pl.error.type(\"number\", time, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.domain(\"time_property\", property, atom.indicator)",
+          "target": "_error(pl.error.domain(\"time_property\", property, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", year, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", year, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"integer\", month, atom.indicator)",
+          "target": "_error(pl.error.type(\"integer\", month, atom.indicator)"
+        },
+        {
+          "source": "_error(pl.error.type(\"callable\", grbody, atom.indicator)",
+          "target": "_error(pl.error.type(\"callable\", grbody, atom.indicator)"
+        },
+        {
+          "source": ".error(\"Invalid encoding. \" + value + 'Please use one of the following encodings: \"ascii\", \"utf8\", \"utf-8\", \"utf16le\", \"ucs2\", \"ucs-2\", \"base64\", \"latin1\", \"binary\", \"hex\"')",
+          "target": ".error(\"无效编码. \" + value + '请使用一下编码方式之一: \"ascii\", \"utf8\", \"utf-8\", \"utf16le\", \"ucs2\", \"ucs-2\", \"base64\", \"latin1\", \"binary\", \"hex\"')"
+        },
+        {
+          "source": ".error(errorMSG)",
+          "target": ".error(MSG出错)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(\"Error in 'Obsidian Execute Code' Plugin while removing file: \" + err)",
+          "target": ".error(\"在 'Obsidian Execute Code' 插件中移除文件时出错: \" + err)"
+        },
+        {
+          "source": ".error(err)",
+          "target": ".error(err)"
+        },
+        {
+          "source": "name: \"lexical\"",
+          "target": "name: \"lexical\""
+        },
+        {
+          "source": "name : \"/\"",
+          "target": "name : \"/\""
+        },
+        {
+          "source": "name: \"Open Code Runtime Management\"",
+          "target": "name: \"打开代码执行管理\""
+        },
+        {
+          "source": "name: \"Run all Code Blocks in Current File\"",
+          "target": "name: \"运行当前文件中的所有代码块\""
+        },
+        {
+          "source": "text: \"C++ Settings\"",
+          "target": "text: \"C++ 设置\""
+        },
+        {
+          "source": "text: \"C Settings\"",
+          "target": "text: \"C 设置\""
+        },
+        {
+          "source": "text: \"CSharp Settings\"",
+          "target": "text: \"CSharp 设置\""
+        },
+        {
+          "source": "text: \"F# Settings\"",
+          "target": "text: \"F# 设置\""
+        },
+        {
+          "source": "text: \"Golang Settings\"",
+          "target": "text: \"Golang 设置\""
+        },
+        {
+          "source": "text: \"Groovy Settings\"",
+          "target": "text: \"Groovy 设置\""
+        },
+        {
+          "source": "text: \"Haskell Settings\"",
+          "target": "text: \"Haskell 设置\""
+        },
+        {
+          "source": "text: \"Java Settings\"",
+          "target": "text: \"Java 设置\""
+        },
+        {
+          "source": "text: \"JavaScript / Node Settings\"",
+          "target": "text: \"JavaScript / Node 设置\""
+        },
+        {
+          "source": "text: \"Kotlin Settings\"",
+          "target": "text: \"Kotlin 设置\""
+        },
+        {
+          "source": "text: \"Lean Settings\"",
+          "target": "text: \"Lean 设置\""
+        },
+        {
+          "source": "text: \"Lua Settings\"",
+          "target": "text: \"Lua 设置\""
+        },
+        {
+          "source": "text: \"Dart Settings\"",
+          "target": "text: \"Dart 设置\""
+        },
+        {
+          "source": "text: \"Wolfram Mathematica Settings\"",
+          "target": "text: \"Wolfram Mathematica 设置\""
+        },
+        {
+          "source": "text: \"Powershell Settings\"",
+          "target": "text: \"Powershell 设置\""
+        },
+        {
+          "source": "text: \"Prolog Settings\"",
+          "target": "text: \"Prolog 设置\""
+        },
+        {
+          "source": "text: \"Python Settings\"",
+          "target": "text: \"Python 设置\""
+        },
+        {
+          "source": "text: \"R Settings\"",
+          "target": "text: \"R 设置\""
+        },
+        {
+          "source": "text: \"Ruby Settings\"",
+          "target": "text: \"Ruby 设置\""
+        },
+        {
+          "source": "text: \"Rust Settings\"",
+          "target": "text: \"Rust 设置\""
+        },
+        {
+          "source": "text: \"Scala Settings\"",
+          "target": "text: \"Scala 设置\""
+        },
+        {
+          "source": "text: \"Racket Settings\"",
+          "target": "text: \"Racket 设置\""
+        },
+        {
+          "source": "text: \"Shell Settings\"",
+          "target": "text: \"Shell 设置\""
+        },
+        {
+          "source": "text: \"Batch Settings\"",
+          "target": "text: \"Batch 设置\""
+        },
+        {
+          "source": "text: \"TypeScript Settings\"",
+          "target": "text: \"TypeScript 设置\""
+        },
+        {
+          "source": "text: \"SQL Settings\"",
+          "target": "text: \"SQL 设置\""
+        },
+        {
+          "source": "text: \"Octave Settings\"",
+          "target": "text: \"Octave 设置\""
+        },
+        {
+          "source": "text: \"Maxima Settings\"",
+          "target": "text: \"Maxima 设置\""
+        },
+        {
+          "source": "text: \"Applescript Settings\"",
+          "target": "text: \"Applescript 设置\""
+        },
+        {
+          "source": "text: \"Zig Settings\"",
+          "target": "text: \"Zig 设置\""
+        },
+        {
+          "source": "text: \"OCaml Settings\"",
+          "target": "text: \"OCaml 设置\""
+        },
+        {
+          "source": "text: \"Swift Settings\"",
+          "target": "text: \"Swift 设置\""
+        },
+        {
+          "source": "text: \"Settings for the Code Execution Plugin.\"",
+          "target": "text: \"代码执行插件设置\""
+        },
+        {
+          "source": "text: \"General Settings\"",
+          "target": "text: \"通用设置\""
+        },
+        {
+          "source": ".setText(\"Clear\")",
+          "target": ".setText(\"清空\")"
+        },
+        {
+          "source": ".setName(\"Cling path\")",
+          "target": ".setName(\"Cling 路径\")"
+        },
+        {
+          "source": ".setName(\"Cling arguments for C++\")",
+          "target": ".setName(\"Cling arguments for C++\")"
+        },
+        {
+          "source": ".setName(\"Cling std\")",
+          "target": ".setName(\"Cling std\")"
+        },
+        {
+          "source": ".setName(\"Use main function\")",
+          "target": ".setName(\"使用main功能\")"
+        },
+        {
+          "source": ".setName(\"gcc / Cling path\")",
+          "target": ".setName(\"gcc / Cling 路径\")"
+        },
+        {
+          "source": ".setName(\"gcc / Cling arguments for C\")",
+          "target": ".setName(\"gcc / Cling arguments for C\")"
+        },
+        {
+          "source": ".setName(\"Cling std (ignored for gcc)\")",
+          "target": ".setName(\"Cling std(为 gcc 设置忽略)\")"
+        },
+        {
+          "source": ".setName(\"Use main function (mandatory for gcc)\")",
+          "target": ".setName(\"使用主函数(gcc 必要)\")"
+        },
+        {
+          "source": ".setName(\"dotnet path\")",
+          "target": ".setName(\"dotnet 路径\")"
+        },
+        {
+          "source": ".setName(\"CSharp arguments\")",
+          "target": ".setName(\"CSharp 参数\")"
+        },
+        {
+          "source": ".setName(\"F# path\")",
+          "target": ".setName(\"F# 路径\")"
+        },
+        {
+          "source": ".setName(\"F# arguments\")",
+          "target": ".setName(\"F# 参数\")"
+        },
+        {
+          "source": ".setName(\"F# file extension\")",
+          "target": ".setName(\"F# 文件拓展名\")"
+        },
+        {
+          "source": ".setName(\"Golang Path\")",
+          "target": ".setName(\"Golang 路径\")"
+        },
+        {
+          "source": ".setName(\"Groovy path\")",
+          "target": ".setName(\"Groovy 路径\")"
+        },
+        {
+          "source": ".setName(\"Groovy arguments\")",
+          "target": ".setName(\"Groovy 参数\")"
+        },
+        {
+          "source": ".setName(\"Use Ghci\")",
+          "target": ".setName(\"使用 Ghci\")"
+        },
+        {
+          "source": ".setName(\"Ghci path\")",
+          "target": ".setName(\"Ghci 路径\")"
+        },
+        {
+          "source": ".setName(\"Rungch path\")",
+          "target": ".setName(\"Rungch 路径\")"
+        },
+        {
+          "source": ".setName(\"Ghc path\")",
+          "target": ".setName(\"Ghc 路径\")"
+        },
+        {
+          "source": ".setName(\"Java path (Java 11 or higher)\")",
+          "target": ".setName(\"Java路径(Java 11或更高版本)\")"
+        },
+        {
+          "source": ".setName(\"Java arguments\")",
+          "target": ".setName(\"Java 参数\")"
+        },
+        {
+          "source": ".setName(\"Node path\")",
+          "target": ".setName(\"Node 路径\")"
+        },
+        {
+          "source": ".setName(\"Node arguments\")",
+          "target": ".setName(\"Node 参数\")"
+        },
+        {
+          "source": ".setName(\"Run Javascript blocks in Notebook Mode\")",
+          "target": ".setName(\"在Notebook模式下运行JavaScript代码块\")"
+        },
+        {
+          "source": ".setName(\"Kotlin path\")",
+          "target": ".setName(\"Kotlin 路径\")"
+        },
+        {
+          "source": ".setName(\"Kotlin arguments\")",
+          "target": ".setName(\"Kotlin 参数\")"
+        },
+        {
+          "source": ".setName(\"lean path\")",
+          "target": ".setName(\"lean 路径\")"
+        },
+        {
+          "source": ".setName(\"Lean arguments\")",
+          "target": ".setName(\"Lean 参数\")"
+        },
+        {
+          "source": ".setName(\"lua path\")",
+          "target": ".setName(\"lua 路径\")"
+        },
+        {
+          "source": ".setName(\"Lua arguments\")",
+          "target": ".setName(\"Lua 参数\")"
+        },
+        {
+          "source": ".setName(\"dart path\")",
+          "target": ".setName(\"dart 路径\")"
+        },
+        {
+          "source": ".setName(\"Dart arguments\")",
+          "target": ".setName(\"Dart 参数\")"
+        },
+        {
+          "source": ".setName(\"Mathematica path\")",
+          "target": ".setName(\"Mathematica 路径\")"
+        },
+        {
+          "source": ".setName(\"Mathematica arguments\")",
+          "target": ".setName(\"Mathematica 参数\")"
+        },
+        {
+          "source": ".setName(\"Powershell path\")",
+          "target": ".setName(\"Powershell 路径\")"
+        },
+        {
+          "source": ".setName(\"Powershell arguments\")",
+          "target": ".setName(\"Powershell 参数\")"
+        },
+        {
+          "source": ".setName(\"Powershell file extension\")",
+          "target": ".setName(\"Powershell file extension\")"
+        },
+        {
+          "source": ".setName(\"PowerShell script encoding\")",
+          "target": ".setName(\"PowerShell 脚本编码\")"
+        },
+        {
+          "source": ".setName(\"Prolog Answer Limit\")",
+          "target": ".setName(\"Prolog 回答限制\")"
+        },
+        {
+          "source": ".setName(\"Embed Python Plots\")",
+          "target": ".setName(\"嵌入Python绘图\")"
+        },
+        {
+          "source": ".setName(\"Python path\")",
+          "target": ".setName(\"Python 路径\")"
+        },
+        {
+          "source": ".setName(\"Python arguments\")",
+          "target": ".setName(\"Python 参数\")"
+        },
+        {
+          "source": ".setName(\"Run Python blocks in Notebook Mode\")",
+          "target": ".setName(\"在Notebook模式下运行Python代码块\")"
+        },
+        {
+          "source": ".setName(\"Embed R Plots created via `plot()` into Notes\")",
+          "target": ".setName(\"将通过 `plot()` 创建的 R 图嵌入到笔记中\")"
+        },
+        {
+          "source": ".setName(\"Rscript path\")",
+          "target": ".setName(\"Rscript 路径\")"
+        },
+        {
+          "source": ".setName(\"R arguments\")",
+          "target": ".setName(\"R 参数\")"
+        },
+        {
+          "source": ".setName(\"Run R blocks in Notebook Mode\")",
+          "target": ".setName(\"在Notebook模式下运行R代码块\")"
+        },
+        {
+          "source": ".setName(\"ruby path\")",
+          "target": ".setName(\"ruby 路径\")"
+        },
+        {
+          "source": ".setName(\"ruby arguments\")",
+          "target": ".setName(\"ruby 参数\")"
+        },
+        {
+          "source": ".setName(\"Cargo Path\")",
+          "target": ".setName(\"Cargo 路径\")"
+        },
+        {
+          "source": ".setName(\"scala path\")",
+          "target": ".setName(\"scala 路径\")"
+        },
+        {
+          "source": ".setName(\"Scala arguments\")",
+          "target": ".setName(\"Scala 参数\")"
+        },
+        {
+          "source": ".setName(\"racket path\")",
+          "target": ".setName(\"racket 路径\")"
+        },
+        {
+          "source": ".setName(\"Racket arguments\")",
+          "target": ".setName(\"Racket 参数\")"
+        },
+        {
+          "source": ".setName(\"Shell path\")",
+          "target": ".setName(\"Shell 路径\")"
+        },
+        {
+          "source": ".setName(\"Shell arguments\")",
+          "target": ".setName(\"Shell 参数\")"
+        },
+        {
+          "source": ".setName(\"Shell file extension\")",
+          "target": ".setName(\"Shell file extension\")"
+        },
+        {
+          "source": ".setName(\"Shell WSL mode\")",
+          "target": ".setName(\"Shell WSL 模式\")"
+        },
+        {
+          "source": ".setName(\"Batch path\")",
+          "target": ".setName(\"Batch 路径\")"
+        },
+        {
+          "source": ".setName(\"Batch arguments\")",
+          "target": ".setName(\"Batch 参数\")"
+        },
+        {
+          "source": ".setName(\"Batch file extension\")",
+          "target": ".setName(\"Batch file extension\")"
+        },
+        {
+          "source": ".setName(\"ts-node path\")",
+          "target": ".setName(\"ts-node 路径\")"
+        },
+        {
+          "source": ".setName(\"TypeScript arguments\")",
+          "target": ".setName(\"TypeScript 参数\")"
+        },
+        {
+          "source": ".setName(\"SQL path\")",
+          "target": ".setName(\"SQL 路径\")"
+        },
+        {
+          "source": ".setName(\"SQL arguments\")",
+          "target": ".setName(\"SQL 参数\")"
+        },
+        {
+          "source": ".setName(\"Octave path\")",
+          "target": ".setName(\"Octave 路径\")"
+        },
+        {
+          "source": ".setName(\"Octave arguments\")",
+          "target": ".setName(\"Octave 参数\")"
+        },
+        {
+          "source": ".setName(\"Maxima path\")",
+          "target": ".setName(\"Maxima 路径\")"
+        },
+        {
+          "source": ".setName(\"Maxima arguments\")",
+          "target": ".setName(\"Maxima 参数\")"
+        },
+        {
+          "source": ".setName(\"Osascript path\")",
+          "target": ".setName(\"Osascript 路径\")"
+        },
+        {
+          "source": ".setName(\"Applescript arguments\")",
+          "target": ".setName(\"Applescript 参数\")"
+        },
+        {
+          "source": ".setName(\"zig path\")",
+          "target": ".setName(\"zig 路径\")"
+        },
+        {
+          "source": ".setName(\"zig arguments\")",
+          "target": ".setName(\"zig 参数\")"
+        },
+        {
+          "source": ".setName(\"ocaml path\")",
+          "target": ".setName(\"ocaml 路径\")"
+        },
+        {
+          "source": ".setName(\"ocaml arguments\")",
+          "target": ".setName(\"ocaml 参数\")"
+        },
+        {
+          "source": ".setName(\"Swift path\")",
+          "target": ".setName(\"Swift 路径\")"
+        },
+        {
+          "source": ".setName(\"Swift arguments\")",
+          "target": ".setName(\"Swift 配置\")"
+        },
+        {
+          "source": ".setName(\"Timeout (in seconds)\")",
+          "target": ".setName(\"超时（秒）\")"
+        },
+        {
+          "source": ".setName(\"Allow Input\")",
+          "target": ".setName(\"允许输入\")"
+        },
+        {
+          "source": ".setName(\"WSL Mode\")",
+          "target": ".setName(\"WSL 模式\")"
+        },
+        {
+          "source": ".setName(\"Only Current Log\")",
+          "target": ".setName(\"仅当前日志\")"
+        },
+        {
+          "source": ".setName(\"Language-Specific Settings\")",
+          "target": ".setName(\"语言特定设置\")"
+        },
+        {
+          "source": ".setName(`Inject ${languageAlt} code`)",
+          "target": ".setName(`注入 ${languageAlt} 代码`)"
+        },
+        {
+          "source": ".setDesc(\"The path to your Cling installation.\")",
+          "target": ".setDesc(\"您 Cling 安装的路径.\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, will use a main() function as the code block entrypoint.\")",
+          "target": ".setDesc(\"如果启用，将使用 main() 函数作为代码块的开始.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your gcc / Cling installation.\")",
+          "target": ".setDesc(\"您的gcc / Cling安装路径\")"
+        },
+        {
+          "source": ".setDesc(\"The path to dotnet.\")",
+          "target": ".setDesc(\"您的 dotnet 路径.\")"
+        },
+        {
+          "source": ".setDesc(\"Changes the file extension for generated F# scripts.\")",
+          "target": ".setDesc(\"更改生成的 F# 脚本的文件扩展名.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Golang installation.\")",
+          "target": ".setDesc(\"您的 Golang 安装路径.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Groovy installation.\")",
+          "target": ".setDesc(\"您的 Groovy 安装路径.\")"
+        },
+        {
+          "source": ".setDesc(\"Run haskell code with ghci instead of runghc\")",
+          "target": ".setDesc(\"使用 ghci 运行 Haskell 代码而不是 runghc\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your ghci installation.\")",
+          "target": ".setDesc(\"您的 ghci 安装路径.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your runghc installation.\")",
+          "target": ".setDesc(\"您的 runghc 安装路径.\")"
+        },
+        {
+          "source": ".setDesc(\"The Ghc path your runghc installation will call.\")",
+          "target": ".setDesc(\"您的 runghc 安装将调用的 Ghc 的路径.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Java installation.\")",
+          "target": ".setDesc(\"您的 Java 安装路径.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Kotlin installation.\")",
+          "target": ".setDesc(\"您的 Kotlin 安装路径.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Mathematica installation.\")",
+          "target": ".setDesc(\"您的 Mathematica 安装路径.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to Powershell.\")",
+          "target": ".setDesc(\"您的PowerShell路径.\")"
+        },
+        {
+          "source": ".setDesc(\"Changes the file extension for generated shell scripts. This is useful if you don't want to use PowerShell.\")",
+          "target": ".setDesc(\"更改生成的 shell 脚本的文件扩展名。如果您不想使用 PowerShell，这非常有用.\")"
+        },
+        {
+          "source": ".setDesc(\"Maximal number of answers to be returned by the Prolog engine. tab is to prevent creating too huge texts in the notebook.\")",
+          "target": ".setDesc(\"Prolog引擎返回的最大答案数量.tab用于防止在笔记本中生成过大的文本.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Python installation.\")",
+          "target": ".setDesc(\"您的 Python 安装路径.\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Rscript installation. Ensure you provide the Rscript binary instead of the ordinary R binary.\")",
+          "target": ".setDesc(\"Rscript安装路径。确保提供的是Rscript二进制文件，而不是普通的R二进制文件.\")"
+        },
+        {
+          "source": ".setDesc(\"Path to your ruby installation\")",
+          "target": ".setDesc(\"您的 Ruby 安装路径\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Cargo installation.\")",
+          "target": ".setDesc(\"您的 Cargo 安装路径\")"
+        },
+        {
+          "source": ".setDesc(\"Path to your scala installation\")",
+          "target": ".setDesc(\"您的 Scala 安装路径\")"
+        },
+        {
+          "source": ".setDesc(\"Path to your racket installation\")",
+          "target": ".setDesc(\"您的 racket 安装路径\")"
+        },
+        {
+          "source": ".setDesc(\"The path to shell. Default is Bash but you can use any shell you want, e.g. bash, zsh, fish, ...\")",
+          "target": ".setDesc(\"shell的路径。默认是Bash，但您可以使用任何您想要的shell，例如bash、zsh、fish等...\")"
+        },
+        {
+          "source": ".setDesc(\"Changes the file extension for generated shell scripts. This is useful if you want to use a shell other than bash.\")",
+          "target": ".setDesc(\"更改生成的 shell 脚本的文件扩展名。如果您想使用除 bash 之外的其他 shell，这非常有用.\")"
+        },
+        {
+          "source": ".setDesc('Run the shell script in Windows Subsystem for Linux. This option is used if the global \"WSL Mode\" is disabled.')",
+          "target": ".setDesc('在Windows子系统Linux中运行Shell脚本。如果全局\"WSL模式\"被禁用，则使用此选项.')"
+        },
+        {
+          "source": ".setDesc(\"The path to the terminal. Default is command prompt.\")",
+          "target": ".setDesc(\"终端路径，默认为命令提示符.\")"
+        },
+        {
+          "source": ".setDesc(\"Changes the file extension for generated batch scripts. Default is .bat\")",
+          "target": ".setDesc(\"更改生成的批处理脚本的文件扩展名。默认是 .bat\")"
+        },
+        {
+          "source": ".setDesc(\"Path to your SQL installation. You can select the SQL dialect you prefer but you need to set the right arguments by yourself.\")",
+          "target": ".setDesc(\"您的 SQL 安装路径。您可以选择您喜欢的 SQL 方言，但您需要自行设置正确的参数。\")"
+        },
+        {
+          "source": ".setDesc(\"Set the right arguments for your database.\")",
+          "target": ".setDesc(\"为您的数据库设置正确的参数。\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Octave installation.\")",
+          "target": ".setDesc(\"您的 Octave 安装路径。\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Maxima installation.\")",
+          "target": ".setDesc(\"您的 Maxima 安装路径。\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your osascript installation (only available on MacOS).\")",
+          "target": ".setDesc(\"您的 osascript 安装路径(仅适用于 MacOS).\")"
+        },
+        {
+          "source": ".setDesc(\"Path to your zig installation\")",
+          "target": ".setDesc(\"您的 Zig 安装路径\")"
+        },
+        {
+          "source": ".setDesc(\"Path to your ocaml installation\")",
+          "target": ".setDesc(\"您的 OCaml 安装路径\")"
+        },
+        {
+          "source": ".setDesc(\"The path to your Swift installation.\")",
+          "target": ".setDesc(\"您的 Swift 安装路径。\")"
+        },
+        {
+          "source": ".setDesc(\"The time after which a program gets shut down automatically. This is to prevent infinite loops. \")",
+          "target": ".setDesc(\"程序将在此时间后将自动关闭，以防止无限循环。\")"
+        },
+        {
+          "source": ".setDesc(\"Whether or not to include a stdin input box when running blocks. In order to apply changes to this, Obsidian must be refreshed. \")",
+          "target": ".setDesc(\"在运行块时是否包含一个标准输入框。要应用对此的更改，必须刷新 Obsidian.\")"
+        },
+        {
+          "source": ".setDesc(\"Whether or not to run code in the Windows Subsystem for Linux. If you don't have WSL installed, don't turn this on!\")",
+          "target": ".setDesc(\"是否在Windows子系统Linux中运行代码。如果您没有安装WSL,请不要开启此选项!\")"
+        },
+        {
+          "source": ".setDesc(\"Whether or not show print log only in current code block.\")",
+          "target": ".setDesc(\"是否仅在当前代码块中显示打印日志\")"
+        },
+        {
+          "source": ".setDesc(\"Pick a language to edit its language-specific settings\")",
+          "target": ".setDesc(\"选择一种语言以编辑其特定语言设置\")"
+        },
+        {
+          "source": ".setDesc(`Code to add to the top of every ${languageAlt} code block before running.`)",
+          "target": ".setDesc(`在运行之前，添加到每个 ${languageAlt} 代码块顶部的代码`)"
+        },
+        {
+          "source": ".renderMarkdown(\"```\" + l + \"\\n\" + src + (src.endsWith(\"\\n\")",
+          "target": ".renderMarkdown(\"```\" + l + \"\\n\" + src + (src.endsWith(\"\\n\")"
+        },
+        {
+          "source": ".setName(\"gcc / Cling arguments for C \")",
+          "target": ".setName(\"gcc / Cling 配置用于 C 语言\")"
+        },
+        {
+          "source": "",
+          "target": ""
+        }
+      ]
+    }
+  }
+}

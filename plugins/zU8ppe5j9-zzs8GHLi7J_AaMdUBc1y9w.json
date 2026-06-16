@@ -1,0 +1,887 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "zotlit",
+    "version": "2.0.0",
+    "title": "ZotLit",
+    "description": "Plugin to integrate with Zotero, create literature notes and insert citations from a Zotero library.",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.9",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Server port is saved and applied.\")",
+          "target": "Notice(\"服务器端口已保存并应用。\")"
+        },
+        {
+          "source": "Notice(\"Zotero search index updated.\")",
+          "target": "Notice(\"Zotero搜索索引已更新。\")"
+        },
+        {
+          "source": "Notice(\"ZoteroDB Refresh complete.\")",
+          "target": "Notice(\"Zotero数据库刷新完成。\")"
+        },
+        {
+          "source": "Notice(`Failed to import module from ${t}: ${e}`)",
+          "target": "Notice(`Failed to import module from ${t}: ${e}`)"
+        },
+        {
+          "source": "Notice(`The electron (electron: ${o.electron}, module version: ${o.modules})",
+          "target": "Notice(`The electron (electron: ${o.electron}, module version: ${o.modules})"
+        },
+        {
+          "source": "Notice(`Your device (${o.arch}-${o.platform})",
+          "target": "Notice(`Your device (${o.arch}-${o.platform})"
+        },
+        {
+          "source": "Notice(\"Path to database library occupied, please check the location manually: \"+t,2e3)",
+          "target": "Notice(\"数据库库路径被占用，请手动检查位置: \"+t,2e3)"
+        },
+        {
+          "source": "Notice(`Unexpected error while checking path of better-sqlite3, please check the location manually: ${t}, error: ${l}`,2e3)",
+          "target": "Notice(`Unexpected error while checking path of better-sqlite3, please check the location manually: ${t}, error: ${l}`,2e3)"
+        },
+        {
+          "source": "Notice(`Failed to load database library: ${n}`)",
+          "target": "Notice(`加载数据库库失败: ${n}`)"
+        },
+        {
+          "source": "Notice(`Error parsing frontmatter, ${v}`)",
+          "target": "Notice(`解析Frontmatter错误, ${v}`)"
+        },
+        {
+          "source": "Notice(`Error parsing frontmatter, ${f}`)",
+          "target": "Notice(`解析Frontmatter错误, ${f}`)"
+        },
+        {
+          "source": "Notice(\"Failed to renderYaml\")",
+          "target": "Notice(\"Failed to renderYaml\")"
+        },
+        {
+          "source": "Notice(\"Failed to set frontmatter to file \"+e.path)",
+          "target": "Notice(\"设置文件Frontmatter失败 \"+e.path)"
+        },
+        {
+          "source": "Notice(\"Copied JSON code block to clipboard\")",
+          "target": "Notice(\"已复制JSON代码块到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Template file not found: \"+e)",
+          "target": "Notice(\"模板文件未找到: \"+e)"
+        },
+        {
+          "source": "Notice(\"Cannot switch to template\")",
+          "target": "Notice(\"无法切换到模板\")"
+        },
+        {
+          "source": "Notice(\"Template file not found: \"+t)",
+          "target": "Notice(\"模板文件未找到: \"+t)"
+        },
+        {
+          "source": "Notice(\"No embed for this annotation in current note\")",
+          "target": "Notice(\"当前笔记中无此批注的嵌入\")"
+        },
+        {
+          "source": "Notice(\"No note found for selected literature\")",
+          "target": "Notice(\"未找到所选文献的笔记\")"
+        },
+        {
+          "source": "Notice(\"Selected note is empty\")",
+          "target": "Notice(\"所选笔记为空\")"
+        },
+        {
+          "source": "Notice(`Note imported: ${i.title??i.key}`)",
+          "target": "Notice(`笔记已导入: ${i.title??i.key}`)"
+        },
+        {
+          "source": "Notice(\"Not implemented yet\")",
+          "target": "Notice(\"尚未实现\")"
+        },
+        {
+          "source": "Notice(\"No items to open\")",
+          "target": "Notice(\"没有可打开的项目\")"
+        },
+        {
+          "source": "Notice(\"Single annotation update not yet supported\")",
+          "target": "Notice(\"暂不支持单个批注更新\")"
+        },
+        {
+          "source": "Notice(\"Multiple literature note update not yet supported\")",
+          "target": "Notice(\"暂不支持批量文献笔记更新\")"
+        },
+        {
+          "source": "Notice(\"Multiple items not yet supported\")",
+          "target": "Notice(\"暂不支持多项目操作\")"
+        },
+        {
+          "source": "Notice(\"Item not found: \"+n)",
+          "target": "Notice(\"Item not found: \"+n)"
+        },
+        {
+          "source": "Notice(\"Cannot get zotero item key from file name\")",
+          "target": "Notice(\"无法从文件名获取Zotero项目键\")"
+        },
+        {
+          "source": "Notice(\"Cannot find zotero item with key \"+a)",
+          "target": "Notice(\"Cannot find zotero item with key \"+a)"
+        },
+        {
+          "source": "Notice(`No literature note found for zotero item with key ${e.key}`)",
+          "target": "Notice(`未找到键为${e.key}的Zotero项目的文献笔记`)"
+        },
+        {
+          "source": "Notice(`Cannot find zotero item with key ${e.key}`)",
+          "target": "Notice(`未找到键为${e.key}的Zotero项目`)"
+        },
+        {
+          "source": "Notice(`Affected ${n.notes} notes, annotations: ${n.addedAnnots} added, ${n.updatedAnnots} updated`)",
+          "target": "Notice(`影响${n.notes}篇笔记，批注: 新增${n.addedAnnots}条，更新${n.updatedAnnots}条`)"
+        },
+        {
+          "source": "Notice(`Affected ${n.notes} notes, no annotation updated`)",
+          "target": "Notice(`影响${n.notes}篇笔记，无批注更新`)"
+        },
+        {
+          "source": "Notice(\"No note found for this literature\")",
+          "target": "Notice(\"未找到该文献的笔记\")"
+        },
+        {
+          "source": "Notice(`Citekey ${d} not found in Zotero`)",
+          "target": "Notice(`引用键${d}在Zotero中未找到`)"
+        },
+        {
+          "source": "Notice(`Item not found for citekey ${d}`)",
+          "target": "Notice(`未找到引用键${d}对应的项目`)"
+        },
+        {
+          "source": "Notice(\"Literature notes re-indexed\")",
+          "target": "Notice(\"文献笔记已重新索引\")"
+        },
+        {
+          "source": "Notice(\"PDF file not found\")",
+          "target": "Notice(\"未找到PDF文件\")"
+        },
+        {
+          "source": "Notice(a)",
+          "target": "Notice(a)"
+        },
+        {
+          "source": "Notice(u)",
+          "target": "Notice(u)"
+        },
+        {
+          "source": "Notice(`Copied image excerpt cache to vault: ${e}`)",
+          "target": "Notice(`已复制图片摘录缓存到库: ${e}`)"
+        },
+        {
+          "source": "Notice(l)",
+          "target": "Notice(l)"
+        },
+        {
+          "source": "Notice(`Failed to symlink image excerpt cache to vault: permission denied ${r}, check directory permission or change import mode to copy. If you are using FAT32 drive, symlink is not supported.`)",
+          "target": "Notice(`创建图片摘录缓存符号链接失败: 权限拒绝 ${r}，请检查目录权限或改为复制模式。若使用FAT32驱动器，不支持符号链接。`)"
+        },
+        {
+          "source": "Notice(`linked image excerpt cache to vault: ${e}`)",
+          "target": "Notice(`已链接图片摘录缓存到库: ${e}`)"
+        },
+        {
+          "source": "Notice(\"Invalid port number: \"+n)",
+          "target": "Notice(\"Invalid port number: \"+n)"
+        },
+        {
+          "source": "Notice(`Port is currently occupied, a different port is provided: ${a}, confirm again to apply the change.`)",
+          "target": "Notice(`Port is currently occupied, a different port is provided: ${a}, confirm again to apply the change.`)"
+        },
+        {
+          "source": "Notice(`Failed to set data directory: ${s}`)",
+          "target": "Notice(`Failed to set data directory: ${s}`)"
+        },
+        {
+          "source": "Notice(`Template '${l}' reset`)",
+          "target": "Notice(`Template '${l}' reset`)"
+        },
+        {
+          "source": "Notice(`The path '${n}' is occupied by a folder`)",
+          "target": "Notice(`The path '${n}' is occupied by a folder`)"
+        },
+        {
+          "source": "Notice(`Template '${n}' created`)",
+          "target": "Notice(`Template '${n}' created`)"
+        },
+        {
+          "source": "glog(\"gfs4\")",
+          "target": "glog(\"gfs4\")"
+        },
+        {
+          "source": "}log(e,...r)",
+          "target": "}log(e,...r)"
+        },
+        {
+          "source": "_log(n,r)",
+          "target": "_log(n,r)"
+        },
+        {
+          "source": ".log(Qr.WARN,\"log4js:logger.log: valid log-level not found as first parameter given:\",e)",
+          "target": ".log(Qr.WARN,\"log4js:logger.log: valid log-level not found as first parameter given:\",e)"
+        },
+        {
+          "source": ".log(Qr.INFO,`[${e}]`,...r)",
+          "target": ".log(Qr.INFO,`[${e}]`,...r)"
+        },
+        {
+          "source": ".log(Qr.INFO,e,...r)",
+          "target": ".log(Qr.INFO,e,...r)"
+        },
+        {
+          "source": "_log(e,r)",
+          "target": "_log(e,r)"
+        },
+        {
+          "source": ".log(e,...i)",
+          "target": ".log(e,...i)"
+        },
+        {
+          "source": "olog(s,a)",
+          "target": "olog(s,a)"
+        },
+        {
+          "source": ".log(o,h)",
+          "target": ".log(o,h)"
+        },
+        {
+          "source": ".log(o,PO(i,d)",
+          "target": ".log(o,PO(i,d)"
+        },
+        {
+          "source": "}log(t,...r)",
+          "target": "}log(t,...r)"
+        },
+        {
+          "source": ".log(ct.WARN,\"log4js:logger.log: valid log-level not found as first parameter given:\",t)",
+          "target": ".log(ct.WARN,\"log4js:logger.log: valid log-level not found as first parameter given:\",t)"
+        },
+        {
+          "source": ".log(ct.INFO,`[${t}]`,...r)",
+          "target": ".log(ct.INFO,`[${t}]`,...r)"
+        },
+        {
+          "source": ".log(ct.INFO,t,...r)",
+          "target": ".log(ct.INFO,t,...r)"
+        },
+        {
+          "source": "_log(t,r)",
+          "target": "_log(t,r)"
+        },
+        {
+          "source": ".log(t,...i)",
+          "target": ".log(t,...i)"
+        },
+        {
+          "source": ".log(o,w)",
+          "target": ".log(o,w)"
+        },
+        {
+          "source": ".log(o,vd(i,g)",
+          "target": ".log(o,vd(i,g)"
+        },
+        {
+          "source": ".log(i)",
+          "target": ".log(i)"
+        },
+        {
+          "source": ".log(10)",
+          "target": ".log(10)"
+        },
+        {
+          "source": "alog({defaultPath:e,properties:[\"openDirectory\"]})",
+          "target": "alog({defaultPath:e,properties:[\"openDirectory\"]})"
+        },
+        {
+          "source": ".error(t)",
+          "target": ".error(t)"
+        },
+        {
+          "source": ".error(\"log4js.fileAppender - Writing to file %s, error happened \",u,h)",
+          "target": ".error(\"log4js.fileAppender - Writing to file %s, error happened \",u,h)"
+        },
+        {
+          "source": ".error(\"log4js.dateFileAppender - Writing to file %s, error happened \",t,o)",
+          "target": ".error(\"log4js.dateFileAppender - Writing to file %s, error happened \",t,o)"
+        },
+        {
+          "source": ".error(\"log4js.logger - defaultParseCallStack error\")",
+          "target": ".error(\"log4js.logger - defaultParseCallStack error\")"
+        },
+        {
+          "source": ".error(\"log4js.logger - defaultParseCallStack error\",r)",
+          "target": ".error(\"log4js.logger - defaultParseCallStack error\",r)"
+        },
+        {
+          "source": ".error(s)",
+          "target": ".error(s)"
+        },
+        {
+          "source": ".error(\"Request without url\")",
+          "target": ".error(\"Request without url\")"
+        },
+        {
+          "source": ".error(e===\"\"?Ib(t)",
+          "target": ".error(e===\"\"?Ib(t)"
+        },
+        {
+          "source": "{error(e)",
+          "target": "{error(e)"
+        },
+        {
+          "source": ".error(sA)",
+          "target": ".error(sA)"
+        },
+        {
+          "source": ".error(lp(r)",
+          "target": ".error(lp(r)"
+        },
+        {
+          "source": ".error(lA(`${this.branches.range.limit}`,this.branches.range.comparator,`${e}`,n)",
+          "target": ".error(lA(`${this.branches.range.limit}`,this.branches.range.comparator,`${e}`,n)"
+        },
+        {
+          "source": ".error(iA(this.scanner.unscanned)",
+          "target": ".error(iA(this.scanner.unscanned)"
+        },
+        {
+          "source": ".error(aA(`${this.branches.range.limit}`,this.branches.range.comparator)",
+          "target": ".error(aA(`${this.branches.range.limit}`,this.branches.range.comparator)"
+        },
+        {
+          "source": ".error(aW(r,e)",
+          "target": ".error(aW(r,e)"
+        },
+        {
+          "source": ".error(Ib(t)",
+          "target": ".error(Ib(t)"
+        },
+        {
+          "source": ".error(cW)",
+          "target": ".error(cW)"
+        },
+        {
+          "source": ".error(mW({min:o,max:i})",
+          "target": ".error(mW({min:o,max:i})"
+        },
+        {
+          "source": ".error(lp(e)",
+          "target": ".error(lp(e)"
+        },
+        {
+          "source": ".error(fA(e.rootToString()",
+          "target": ".error(fA(e.rootToString()"
+        },
+        {
+          "source": ".error(mA(0)",
+          "target": ".error(mA(0)"
+        },
+        {
+          "source": ".error(dA(t.rootToString()",
+          "target": ".error(dA(t.rootToString()"
+        },
+        {
+          "source": ".error(gW)",
+          "target": ".error(gW)"
+        },
+        {
+          "source": ".error(\"Couldn\\'t convert value into a JSON string: \",c)",
+          "target": ".error(\"Couldn\\'t convert value into a JSON string: \",c)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(\"log4js.fileAppender - Writing to file %s, error happened \",m,w)",
+          "target": ".error(\"log4js.fileAppender - Writing to file %s, error happened \",m,w)"
+        },
+        {
+          "source": ".error(\"log4js.dateFileAppender - Writing to file %s, error happened \",e,o)",
+          "target": ".error(\"log4js.dateFileAppender - Writing to file %s, error happened \",e,o)"
+        },
+        {
+          "source": ".error(t===\"\"?Ds(e)",
+          "target": ".error(t===\"\"?Ds(e)"
+        },
+        {
+          "source": "{error(t)",
+          "target": "{error(t)"
+        },
+        {
+          "source": ".error(Tc)",
+          "target": ".error(Tc)"
+        },
+        {
+          "source": ".error(Eo(r)",
+          "target": ".error(Eo(r)"
+        },
+        {
+          "source": ".error(Cc(`${this.branches.range.limit}`,this.branches.range.comparator,`${t}`,n)",
+          "target": ".error(Cc(`${this.branches.range.limit}`,this.branches.range.comparator,`${t}`,n)"
+        },
+        {
+          "source": ".error(_c(this.scanner.unscanned)",
+          "target": ".error(_c(this.scanner.unscanned)"
+        },
+        {
+          "source": ".error(Nc(`${this.branches.range.limit}`,this.branches.range.comparator)",
+          "target": ".error(Nc(`${this.branches.range.limit}`,this.branches.range.comparator)"
+        },
+        {
+          "source": ".error(vb(r,t)",
+          "target": ".error(vb(r,t)"
+        },
+        {
+          "source": ".error(Ds(e)",
+          "target": ".error(Ds(e)"
+        },
+        {
+          "source": ".error(xb)",
+          "target": ".error(xb)"
+        },
+        {
+          "source": ".error(Db({min:o,max:i})",
+          "target": ".error(Db({min:o,max:i})"
+        },
+        {
+          "source": ".error(Eo(t)",
+          "target": ".error(Eo(t)"
+        },
+        {
+          "source": ".error(Fc(t.rootToString()",
+          "target": ".error(Fc(t.rootToString()"
+        },
+        {
+          "source": ".error(kc(0)",
+          "target": ".error(kc(0)"
+        },
+        {
+          "source": ".error(Pc(e.rootToString()",
+          "target": ".error(Pc(e.rootToString()"
+        },
+        {
+          "source": ".error(Tb)",
+          "target": ".error(Tb)"
+        },
+        {
+          "source": ".error(o)",
+          "target": ".error(o)"
+        },
+        {
+          "source": ".error(\"Failed to open database\",t)",
+          "target": ".error(\"Failed to open database\",t)"
+        },
+        {
+          "source": ".error(\"error while waiting for db refresh during execute\",s)",
+          "target": ".error(\"error while waiting for db refresh during execute\",s)"
+        },
+        {
+          "source": ".error(\"error while waiting for db refresh during request\",u)",
+          "target": ".error(\"error while waiting for db refresh during request\",u)"
+        },
+        {
+          "source": ".error(t,...r)",
+          "target": ".error(t,...r)"
+        },
+        {
+          "source": ".error(t,e instanceof Error?e.message:String(e)",
+          "target": ".error(t,e instanceof Error?e.message:String(e)"
+        },
+        {
+          "source": ".error(\"useMemoizedFn expected parameter is a function, got \".concat(typeof t)",
+          "target": ".error(\"useMemoizedFn expected parameter is a function, got \".concat(typeof t)"
+        },
+        {
+          "source": ".error(p)",
+          "target": ".error(p)"
+        },
+        {
+          "source": ".error(d)",
+          "target": ".error(d)"
+        },
+        {
+          "source": ".error(h)",
+          "target": ".error(h)"
+        },
+        {
+          "source": ".error(e,t.itemID)",
+          "target": ".error(e,t.itemID)"
+        },
+        {
+          "source": ".error(\"Error while rendering\",e,n)",
+          "target": ".error(\"Error while rendering\",e,n)"
+        },
+        {
+          "source": ".error(\"TemplatePreview: no docItem provided\")",
+          "target": ".error(\"TemplatePreview: no docItem provided\")"
+        },
+        {
+          "source": ".error(\"TemplatePreview: no docItem found for id \"+r.docItem)",
+          "target": ".error(\"TemplatePreview: no docItem found for id \"+r.docItem)"
+        },
+        {
+          "source": ".error(\"TemplatePreview: no attachment found for id \"+r.attachment)",
+          "target": ".error(\"TemplatePreview: no attachment found for id \"+r.attachment)"
+        },
+        {
+          "source": ".error(\"TemplatePreview: no annotation found for id \"+r.annot)",
+          "target": ".error(\"TemplatePreview: no annotation found for id \"+r.annot)"
+        },
+        {
+          "source": ".error(\"Failed to load annot view: \",o)",
+          "target": ".error(\"Failed to load annot view: \",o)"
+        },
+        {
+          "source": ".error(\"citation not found, key: \",b,p)",
+          "target": ".error(\"citation not found, key: \",b,p)"
+        },
+        {
+          "source": ".error(\"citation not found, key:\",f,p)",
+          "target": ".error(\"citation not found, key:\",f,p)"
+        },
+        {
+          "source": ".error(\"annotation not found, key: \",p.annotationKey,p)",
+          "target": ".error(\"annotation not found, key: \",p.annotationKey,p)"
+        },
+        {
+          "source": ".error(\"Unexpected citation data\",e,n)",
+          "target": ".error(\"Unexpected citation data\",e,n)"
+        },
+        {
+          "source": ".error(\"Unexpected annotation data\",e,n)",
+          "target": ".error(\"Unexpected annotation data\",e,n)"
+        },
+        {
+          "source": ".error(\"Failed to set data directory\",s)",
+          "target": ".error(\"Failed to set data directory\",s)"
+        },
+        {
+          "source": ".error(\"Failed to patch unload, unexpected tabContentContainer\")",
+          "target": ".error(\"Failed to patch unload, unexpected tabContentContainer\")"
+        },
+        {
+          "source": "name:\"127.0.0.1\"",
+          "target": "name:\"127.0.0.1\""
+        },
+        {
+          "source": "name:\"<%= it.citekey ?? it.DOI ?? it.title ?? it.key %>.md\"",
+          "target": "name:\"<%= it.citekey ?? it.DOI ?? it.title ?? it.key %>.md\""
+        },
+        {
+          "source": "name:`scope${++OW}`",
+          "target": "name:`scope${++OW}`"
+        },
+        {
+          "source": "name:\"root\"",
+          "target": "name:\"root\""
+        },
+        {
+          "source": "name:\"jsObjects\"",
+          "target": "name:\"jsObjects\""
+        },
+        {
+          "source": "name:\"ts\"",
+          "target": "name:\"ts\""
+        },
+        {
+          "source": "name:\"validation\"",
+          "target": "name:\"validation\""
+        },
+        {
+          "source": "name:\"standard\"",
+          "target": "name:\"standard\""
+        },
+        {
+          "source": "name:\"localforage\"",
+          "target": "name:\"localforage\""
+        },
+        {
+          "source": "name:`scope${++qb}`",
+          "target": "name:`scope${++qb}`"
+        },
+        {
+          "source": "name:\"zotlit database worker\"",
+          "target": "name:\"zotlit数据库工作线程\""
+        },
+        {
+          "source": "name:\"Refresh Zotero data\"",
+          "target": "name:\"刷新Zotero数据\""
+        },
+        {
+          "source": "name:\"Refresh Zotero search index\"",
+          "target": "name:\"刷新Zotero搜索索引\""
+        },
+        {
+          "source": "name:\"Auto Install\"",
+          "target": "name:\"自动安装\""
+        },
+        {
+          "source": "name:\"Manual Install\"",
+          "target": "name:\"手动安装\""
+        },
+        {
+          "source": "name:\"interpolate tag\"",
+          "target": "name:\"插值标签\""
+        },
+        {
+          "source": "name:\"evaluation tag\"",
+          "target": "name:\"求值标签\""
+        },
+        {
+          "source": "name:\"Open quick switcher for literature notes\"",
+          "target": "name:\"打开文献笔记快速切换器\""
+        },
+        {
+          "source": "name:\"Open Zotero annotation view in side panel\"",
+          "target": "name:\"在侧边面板打开Zotero批注视图\""
+        },
+        {
+          "source": "name:\"Insert Markdown citation\"",
+          "target": "name:\"插入Markdown引用\""
+        },
+        {
+          "source": "name:\"Update literature note\"",
+          "target": "name:\"更新文献笔记\""
+        },
+        {
+          "source": "name:\"Force update literature note by overwriting\"",
+          "target": "name:\"通过覆盖强制更新文献笔记\""
+        },
+        {
+          "source": "name:\"Import note\"",
+          "target": "name:\"导入笔记\""
+        },
+        {
+          "source": "name:\"Refresh literature notes index\"",
+          "target": "name:\"刷新文献笔记索引\""
+        },
+        {
+          "source": "name:\"Background connect\"",
+          "target": "name:\"后台连接\""
+        },
+        {
+          "source": "name:\"Enable\"",
+          "target": "name:\"启用\""
+        },
+        {
+          "source": "name:\"Port number\"",
+          "target": "name:\"端口号\""
+        },
+        {
+          "source": "name:\"Zotero data directory\"",
+          "target": "name:\"Zotero数据目录\""
+        },
+        {
+          "source": "name:\"Refresh automatically when Zotero updates database\"",
+          "target": "name:\"Zotero更新数据库时自动刷新\""
+        },
+        {
+          "source": "name:\"Image excerpt\"",
+          "target": "name:\"图片摘录\""
+        },
+        {
+          "source": "name:\"Mode\"",
+          "target": "name:\"模式\""
+        },
+        {
+          "source": "name:\"Default location\"",
+          "target": "name:\"默认位置\""
+        },
+        {
+          "source": "name:\"My Library\"",
+          "target": "name:\"我的文库\""
+        },
+        {
+          "source": "name:\"Citation library\"",
+          "target": "name:\"引用库\""
+        },
+        {
+          "source": "name:\"Default location for new literature notes\"",
+          "target": "name:\"新文献笔记默认位置\""
+        },
+        {
+          "source": "name:\"Debug\"",
+          "target": "name:\"调试\""
+        },
+        {
+          "source": "name:\"Log Level\"",
+          "target": "name:\"日志级别\""
+        },
+        {
+          "source": "name:\"Citation editor suggester\"",
+          "target": "name:\"引用编辑器建议器\""
+        },
+        {
+          "source": "name:\"Show BibTex citekey in suggester\"",
+          "target": "name:\"在建议器中显示BibTex引用键\""
+        },
+        {
+          "source": "name:\"Auto trim\"",
+          "target": "name:\"自动修剪\""
+        },
+        {
+          "source": "name:\"Template location\"",
+          "target": "name:\"模板位置\""
+        },
+        {
+          "source": "name:\"Auto pair for Eta\"",
+          "target": "name:\"Eta自动配对\""
+        },
+        {
+          "source": "name:\"Simple\"",
+          "target": "name:\"简单模式\""
+        },
+        {
+          "source": "name:\"Ejectable\"",
+          "target": "name:\"可弹出模式\""
+        },
+        {
+          "source": "name:\"Update note\"",
+          "target": "name:\"更新笔记\""
+        },
+        {
+          "source": "name:\"Overwrite existing note\"",
+          "target": "name:\"覆盖现有笔记\""
+        },
+        {
+          "source": "name:\"In-place update of existing annotations\"",
+          "target": "name:\"就地更新现有批注\""
+        },
+        {
+          "source": "description:\"\",driver:zg.slice(),name:\"",
+          "target": "description:\"\",driver:zg.slice(),name:\""
+        },
+        {
+          "source": "description:\"An interpolation outputs data into the template\"",
+          "target": "description:\"插值标签用于向模板输出数据\""
+        },
+        {
+          "source": "description:\"An evaluate tag inserts its contents into the template function.\"",
+          "target": "description:\"求值标签将其内容插入模板函数中\""
+        },
+        {
+          "source": "description:\"Allow Zotero to send status in the background, which is required for some features like focus annotation on selection in Zotero\"",
+          "target": "description:\"允许Zotero在后台发送状态，这是某些功能（如在Zotero中聚焦选中批注）的必要条件\""
+        },
+        {
+          "source": "description:`Default to ${t}`",
+          "target": "description:`Default to ${t}`"
+        },
+        {
+          "source": "description:\"Controls how to import images in annotaion excerpts.\"",
+          "target": "description:\"控制如何导入批注摘录中的图片\""
+        },
+        {
+          "source": "description:\"These templates can be customized once saved to the template folder\"",
+          "target": "description:\"这些模板保存到模板文件夹后即可自定义\""
+        },
+        {
+          "source": "text:\"No Prefix\"",
+          "target": "text:\"无前缀\""
+        },
+        {
+          "source": "text:`Error while rendering ${r}`",
+          "target": "text:`渲染${r}时出错`"
+        },
+        {
+          "source": "text:\"Loading...\"",
+          "target": "text:\"加载中...\""
+        },
+        {
+          "source": "text:\"Failed to load, Check console for details\"",
+          "target": "text:\"加载失败，请查看控制台详情\""
+        },
+        {
+          "source": ".setText(\"Setup ZotLit\")",
+          "target": ".setText(\"设置ZotLit\")"
+        },
+        {
+          "source": ".setText(\"Title missing\")",
+          "target": ".setText(\"标题缺失\")"
+        },
+        {
+          "source": ".setText(\"No template preview available\")",
+          "target": ".setText(\"无可用模板预览\")"
+        },
+        {
+          "source": ".setText(\"No preview data available\")",
+          "target": ".setText(\"无可用预览数据\")"
+        },
+        {
+          "source": ".setText(\"No annotation data available\")",
+          "target": ".setText(\"无可用批注数据\")"
+        },
+        {
+          "source": ".setTitle(\"Copy template\")",
+          "target": ".setTitle(\"复制模板\")"
+        },
+        {
+          "source": ".setTitle(\"Copy template (using with)\")",
+          "target": ".setTitle(\"复制模板(使用with语句)\")"
+        },
+        {
+          "source": ".setTitle(\"Copy template (using for-of loop)\")",
+          "target": ".setTitle(\"复制模板(使用for-of循环)\")"
+        },
+        {
+          "source": ".setTitle(\"Copy template (using forEach)\")",
+          "target": ".setTitle(\"复制模板(使用forEach)\")"
+        },
+        {
+          "source": ".setTitle(\"Copy template (pick first element)\")",
+          "target": ".setTitle(\"复制模板(选择首元素)\")"
+        },
+        {
+          "source": ".setTitle(\"Copy template (pick last element)\")",
+          "target": ".setTitle(\"复制模板(选择末元素)\")"
+        },
+        {
+          "source": ".setTitle(\"Copy template (render when present)\")",
+          "target": ".setTitle(\"复制模板(存在时渲染)\")"
+        },
+        {
+          "source": ".setTitle(\"Jump to note\")",
+          "target": ".setTitle(\"跳转到笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Follow active literature in Zotero reader\")",
+          "target": ".setTitle(\"在Zotero阅读器中跟踪活跃文献\")"
+        },
+        {
+          "source": ".setTitle(\"Follow active literature note\")",
+          "target": ".setTitle(\"跟踪活跃文献笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Link with selected literature\")",
+          "target": ".setTitle(\"与选中文献关联\")"
+        },
+        {
+          "source": ".setTitle(\"Open template preview\")",
+          "target": ".setTitle(\"打开模板预览\")"
+        },
+        {
+          "source": ".setTitle(\"Update literature note\")",
+          "target": ".setTitle(\"更新文献笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Force update by overwriting\")",
+          "target": ".setTitle(\"通过覆盖强制更新\")"
+        },
+        {
+          "source": ".setTitle(\"Reset to default\")",
+          "target": ".setTitle(\"重置为默认值\")"
+        }
+      ]
+    }
+  }
+}

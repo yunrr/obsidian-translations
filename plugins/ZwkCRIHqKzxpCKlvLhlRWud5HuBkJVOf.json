@@ -1,0 +1,1467 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-local-images-plus",
+    "version": "2.0.0",
+    "title": "Local Images Plus",
+    "description": "Local Images Plus plugin searches for all external media links in your notes, downloads and saves them locally and adjusts the links in your notes to point to the saved files.",
+    "language": "zh-cn",
+    "supportedVersions": "0.16.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "name: \"Localize attachments for the current note (plugin folder)\"",
+          "target": "name: \"本地化当前笔记的附件（插件文件夹）\""
+        },
+        {
+          "source": "name: \"Localize attachments for the current note (Obsidian folder)\"",
+          "target": "name: \"本地化当前笔记的附件（Obsidian文件夹）\""
+        },
+        {
+          "source": "name: \"Set the first found # header as a note name.\"",
+          "target": "name: \"将找到的第一个#标题作为笔记名称。\""
+        },
+        {
+          "source": "name: \"Localize attachments for all your notes (plugin folder)\"",
+          "target": "name: \"本地化所有笔记的附件（插件文件夹）\""
+        },
+        {
+          "source": "name: \"Convert selection to URI\"",
+          "target": "name: \"将选择转换为URI\""
+        },
+        {
+          "source": "name: \"Convert selection from html to markdown\"",
+          "target": "name: \"将选择从html转换为markdown\""
+        },
+        {
+          "source": "name: \"Remove all orphaned attachments (Obsidian folder)\"",
+          "target": "name: \"移除所有孤立的附件（Obsidian文件夹）\""
+        },
+        {
+          "source": "name: \"Remove all orphaned attachments (Plugin folder)\"",
+          "target": "name: \"移除所有孤立的附件（插件文件夹）\""
+        },
+        {
+          "source": ".setName(\"Show notifications\")",
+          "target": ".setName(\"显示通知\")"
+        },
+        {
+          "source": ".setName(\"Disable additional commands\")",
+          "target": ".setName(\"禁用附加命令\")"
+        },
+        {
+          "source": ".setName(\"Automatic processing\")",
+          "target": ".setName(\"自动处理\")"
+        },
+        {
+          "source": ".setName(\"Automatic processing interval\")",
+          "target": ".setName(\"自动处理间隔\")"
+        },
+        {
+          "source": ".setName(\"Number of retries for every single attachment\")",
+          "target": ".setName(\"每个附件的重试次数\")"
+        },
+        {
+          "source": ".setName(\"Process all new markdown files\")",
+          "target": ".setName(\"处理所有新的Markdown文件\")"
+        },
+        {
+          "source": ".setName(\"Download unknown filetypes\")",
+          "target": ".setName(\"下载未知文件类型\")"
+        },
+        {
+          "source": ".setName(\"File size lower limit in Kb\")",
+          "target": ".setName(\"文件大小下限（KB）\")"
+        },
+        {
+          "source": ".setName(\"Exclusions\")",
+          "target": ".setName(\"排除项\")"
+        },
+        {
+          "source": ".setName(\"Do not create Obsidian attachment folder (For compatibility with other plugins)\")",
+          "target": ".setName(\"不创建Obsidian附件文件夹（与其他插件兼容）\")"
+        },
+        {
+          "source": ".setName(\"Preserve link captions\")",
+          "target": ".setName(\"保留链接标题\")"
+        },
+        {
+          "source": ".setName(\"Add original filename or 'Open file' tag\")",
+          "target": ".setName(\"添加原始文件名或'打开文件'标签\")"
+        },
+        {
+          "source": ".setName(\"Include\")",
+          "target": ".setName(\"包含\")"
+        },
+        {
+          "source": ".setName(\"Remove files completely\")",
+          "target": ".setName(\"完全移除文件\")"
+        },
+        {
+          "source": ".setName(\"How to write paths in tags\")",
+          "target": ".setName(\"如何在标签中写入路径\")"
+        },
+        {
+          "source": ".setName(\"Move/delete/rename media folder\")",
+          "target": ".setName(\"移动/删除/重命名媒体文件夹\")"
+        },
+        {
+          "source": ".setName(\"Media folder\")",
+          "target": ".setName(\"媒体文件夹\")"
+        },
+        {
+          "source": ".setName(\"Debug\")",
+          "target": ".setName(\"调试\")"
+        },
+        {
+          "source": ".setDesc(\"Show notifications when pages were processed.\")",
+          "target": ".setDesc(\"当页面处理完毕时显示通知。\")"
+        },
+        {
+          "source": ".setDesc(\"Do not show additional commands in command palette. Reload the plugin in settings to take effect (turn off/on).\")",
+          "target": ".setDesc(\"不在命令面板中显示附加命令。在设置中重新加载插件以生效（关闭/开启）。\")"
+        },
+        {
+          "source": ".setDesc(\"Process notes on create/copy/paste.\")",
+          "target": ".setDesc(\"在创建/复制/粘贴时处理笔记。\")"
+        },
+        {
+          "source": ".setDesc(\"Interval in seconds for processing update. It takes some time to reveal changed content of a note to plugins.\")",
+          "target": ".setDesc(\"处理更新的时间间隔（秒）。向插件显示笔记更改内容需要一些时间。\")"
+        },
+        {
+          "source": ".setDesc(\"If an error occurs during downloading (network etc.) try to re-download several times.\")",
+          "target": ".setDesc(\"如果下载过程中出现错误（如网络问题），尝试重新下载多次。\")"
+        },
+        {
+          "source": ".setDesc(\"Process all new created/cloud-synced files with corresponding extensions.\")",
+          "target": ".setDesc(\"处理所有具有相应扩展名的新创建/云同步文件。\")"
+        },
+        {
+          "source": ".setDesc(\"Download unknown filetypes and save them with .unknown extension.\")",
+          "target": ".setDesc(\"下载未知文件类型并以.unknown扩展名保存它们。\")"
+        },
+        {
+          "source": ".setDesc(\"The plugin will not download attachements with these extensions.\")",
+          "target": ".setDesc(\"该插件不会下载具有这些扩展名的附件。\")"
+        },
+        {
+          "source": ".setDesc(\"Add [[original filename]] or [original filename](link to attachement) after replaced tag (only for file:// protocol or dropped/pasted files ).\")",
+          "target": ".setDesc(\"在替换标签后添加[[原始文件名]]或[原始文件名]（链接到附件）（仅适用于file://协议或拖放/粘贴文件）。\")"
+        },
+        {
+          "source": ".setDesc(\"Include only files matching this regex pattern when running on all notes.\")",
+          "target": ".setDesc(\"在运行所有笔记时只包含匹配此正则表达式的文件。\")"
+        },
+        {
+          "source": ".setDesc(\"Do not move orphaned files into the garbage can.\")",
+          "target": ".setDesc(\"不要将孤立文件移到回收站。\")"
+        },
+        {
+          "source": ".setDesc(\"Select whether to write full paths in tags or not.\")",
+          "target": ".setDesc(\"选择是否在标签中写入完整路径。\")"
+        },
+        {
+          "source": ".setDesc(\"Select where all new attachements will be saved.\\nYou can use templates e.g. _resouces/${date}/${notename}\")",
+          "target": ".setDesc(\"选择所有新附件将保存的位置。\\n您可以使用模板例如_resouces/${date}/${notename}\")"
+        },
+        {
+          "source": ".createEl(\"a\", { text: \"Support the project! \", href: \"https://www.buymeacoffee.com/sergeikorneev\", cls: \"donheader_txt\" })",
+          "target": ".createEl(\"a\", { text: \"支持该项目！\", href: \"https://www.buymeacoffee.com/sergeikorneev\", cls: \"donheader_txt\" })"
+        },
+        {
+          "source": ".createEl(\"h3\", { text: \"Interface settings\" })",
+          "target": ".createEl(\"h3\", { text: \"界面设置\" })"
+        },
+        {
+          "source": ".createEl(\"h3\", { text: \"Processing settings\" })",
+          "target": ".createEl(\"h3\", { text: \"处理设置\" })"
+        },
+        {
+          "source": ".createEl(\"h3\", { text: \"Note settings\" })",
+          "target": ".createEl(\"h3\", { text: \"笔记设置\" })"
+        },
+        {
+          "source": ".createEl(\"h3\", { text: \"Orphaned attachments\" })",
+          "target": ".createEl(\"h3\", { text: \"孤立附件\" })"
+        },
+        {
+          "source": ".createEl(\"h3\", { text: \"Media folder settings\" })",
+          "target": ".createEl(\"h3\", { text: \"媒体文件夹设置\" })"
+        },
+        {
+          "source": ".createEl(\"h3\", { text: \"Troubleshooting\" })",
+          "target": ".createEl(\"h3\", { text: \"故障排除\" })"
+        },
+        {
+          "source": ".addOption(\"fullDirPath\", \"Full path\")",
+          "target": ".addOption(\"fullDirPath\", \"完整路径\")"
+        },
+        {
+          "source": ".addOption(\"onlyRelative\", \"Relative to note\")",
+          "target": ".addOption(\"onlyRelative\", \"相对于笔记\")"
+        },
+        {
+          "source": ".addOption(\"baseFileName\", \"Only filename\")",
+          "target": ".addOption(\"baseFileName\", \"仅文件名\")"
+        },
+        {
+          "source": ".addOption(\"obsFolder\", \"Copy Obsidian settings\")",
+          "target": ".addOption(\"obsFolder\", \"复制Obsidian设置\")"
+        },
+        {
+          "source": ".addOption(\"inFolderBelow\", \"In the root folder specified below\")",
+          "target": ".addOption(\"inFolderBelow\", \"在下面指定的根文件夹中\")"
+        },
+        {
+          "source": ".addOption(\"nextToNoteS\", \"Next to note in the folder specified below\")",
+          "target": ".addOption(\"nextToNoteS\", \"在下面指定的文件夹中紧邻笔记\")"
+        },
+        {
+          "source": "new Error('Expected an instance of stream.Readable')",
+          "target": "new Error('期望一个stream.Readable的实例')"
+        },
+        {
+          "source": "new Error('Stream closed')",
+          "target": "new Error('流已关闭')"
+        },
+        {
+          "source": "new Error('peekData should be defined')",
+          "target": "new Error('peekData应该被定义')"
+        },
+        {
+          "source": "new Error('`options.position` must be equal or greater than `tokenizer.position`')",
+          "target": "new Error('`options.position`必须等于或大于`tokenizer.position`')"
+        },
+        {
+          "source": "new Error('Cannot peek from a negative offset in a stream')",
+          "target": "new Error('不能从流中的负偏移量进行预览')"
+        },
+        {
+          "source": "new Error(`File not a file: ${sourceFilePath}`)",
+          "target": "new Error(`不是文件: ${sourceFilePath}`)"
+        },
+        {
+          "source": "new Error(\"Invalid DOCTYPE\")",
+          "target": "new Error(\"无效的DOCTYPE\")"
+        },
+        {
+          "source": "new Error(`Unclosed DOCTYPE`)",
+          "target": "new Error(`未闭合的DOCTYPE`)"
+        },
+        {
+          "source": "new Error(`Invalid Tag instead of DOCTYPE`)",
+          "target": "new Error(`无效的标签代替了DOCTYPE`)"
+        },
+        {
+          "source": "new Error(\"External entites are not supported\")",
+          "target": "new Error(\"不支持外部实体\")"
+        },
+        {
+          "source": "new Error(`Invalid entity name ${name}`)",
+          "target": "new Error(`无效的实体名称 ${name}`)"
+        },
+        {
+          "source": "new Error(`Unpaired tag can not be used as closing tag: </${tagName}>`)",
+          "target": "new Error(`未配对的标签不能作为结束标签使用: </${tagName}>`)"
+        },
+        {
+          "source": "new Error(\"Pi Tag is not closed.\")",
+          "target": "new Error(\"Pi 标签没有关闭。\")"
+        },
+        {
+          "source": "new Error(`Unexpected end of ${rawTagName}`)",
+          "target": "new Error(`意外结束的 ${rawTagName}`)"
+        },
+        {
+          "source": "new Error(\"XML data is accepted in String or Bytes[] form.\")",
+          "target": "new Error(\"XML数据接受String或Bytes[]形式。\")"
+        },
+        {
+          "source": "new Error(\"Entity value can't have '&'\")",
+          "target": "new Error(\"实体值不能包含'&'\")"
+        },
+        {
+          "source": "new Error(\"An entity must be set without '&' and ';'. Eg. use '#xD' for '&#xD;'\")",
+          "target": "new Error(\"实体必须没有'&'和';'。例如，使用'#xD'代替'&#xD;'。\")"
+        },
+        {
+          "source": "new Error(\"An entity with value '&' is not permitted\")",
+          "target": "new Error(\"不允许有'&'值的实体\")"
+        },
+        {
+          "source": "new Error('Replacement string cannot contain reserved filename characters')",
+          "target": "new Error('替换字符串不能包含保留的文件名字符')"
+        },
+        {
+          "source": "new Error('Could not dynamically require \"' + path + '\". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.')",
+          "target": "new Error('无法动态加载\"' + path + '\"。请适当配置@rollup/plugin-commonjs的dynamicRequireTargets或ignoreDynamicRequires选项，以便此require调用可以工作。')"
+        },
+        {
+          "source": "new Error(\"Cannot find module '\"+i+\"'\")",
+          "target": "new Error(\"无法找到模块 '\"+i+\"'\")"
+        },
+        {
+          "source": "new Error('Bad alphabet')",
+          "target": "new Error('错误的字母表')"
+        },
+        {
+          "source": "new Error('Number \"' + number + '\" contains of non-alphabetic digits (' + this.srcAlphabet + ')",
+          "target": "new Error('数字\"' + number + '\"包含非字母数字（' + this.srcAlphabet + '）"
+        },
+        {
+          "source": "new Error('Invalid string. Length must be a multiple of 4')",
+          "target": "new Error('无效的字符串。长度必须是4的倍数')"
+        },
+        {
+          "source": "new Error(\"Invalid BMP File\")",
+          "target": "new Error(\"无效的BMP文件\")"
+        },
+        {
+          "source": "new Error('Invalid flush value')",
+          "target": "new Error('无效的刷新值')"
+        },
+        {
+          "source": "new Error('invalid number of gzip magic number bytes read')",
+          "target": "new Error('读取的gzip魔术数字字节数无效')"
+        },
+        {
+          "source": "new Error('deflateParams Not supported')",
+          "target": "new Error('不支持deflateParams')"
+        },
+        {
+          "source": "new Error('Unknown mode ' + this.mode);\n\t  }\n\n\t  if (this.err !== exports.Z_OK) {\n\t    this._error('Init error')",
+          "target": "new Error('未知模式 ' + this.mode);\n\t  }\n\n\t  if (this.err !== exports.Z_OK) {\n\t    this._error('初始化错误')"
+        },
+        {
+          "source": "new Error('invalid input')",
+          "target": "new Error('输入无效')"
+        },
+        {
+          "source": "new Error('zlib binding closed')",
+          "target": "new Error('zlib绑定已关闭')"
+        },
+        {
+          "source": "new Error('Invalid code point')",
+          "target": "new Error('无效的代码点')"
+        },
+        {
+          "source": "new Error('Unhandled \"error\" event. (' + er + ')",
+          "target": "new Error('未处理的\"error\"事件。(' + er + ')"
+        },
+        {
+          "source": "new Error('Possible EventEmitter memory leak detected. ' +\n\t            existing.length + ' \"' + String(type) + '\" listeners ' +\n\t            'added. Use emitter.setMaxListeners() to ' +\n\t            'increase limit.')",
+          "target": "new Error('检测到可能的EventEmitter内存泄漏。' +\n\t            existing.length + ' \"' + String(type) + '\"监听器 ' +\n\t            '已添加。使用emitter.setMaxListeners()来 ' +\n\t            '增加限制。')"
+        },
+        {
+          "source": "new Error('Invalid EXIF header')",
+          "target": "new Error('无效的EXIF头部')"
+        },
+        {
+          "source": "new Error('Invalid TIFF header')",
+          "target": "new Error('无效的TIFF头部')"
+        },
+        {
+          "source": "new Error('Invalid TIFF data')",
+          "target": "new Error('无效的TIFF数据')"
+        },
+        {
+          "source": "new Error('Invalid JPEG section offset')",
+          "target": "new Error('无效的JPEG部分偏移量')"
+        },
+        {
+          "source": "new Error('Protocol \"' + params.protocol + '\" not supported. Expected \"https:\"')",
+          "target": "new Error('不支持协议\"' + params.protocol + '\"。预期\"https:\"')"
+        },
+        {
+          "source": "new Error(\"invalid ACn encoding\")",
+          "target": "new Error(\"无效的ACn编码\")"
+        },
+        {
+          "source": "new Error(\"marker was not found\")",
+          "target": "new Error(\"标记未找到\")"
+        },
+        {
+          "source": "new Error(\"SOI not found\")",
+          "target": "new Error(\"SOI未找到\")"
+        },
+        {
+          "source": "new Error(\"DQT: invalid table spec\")",
+          "target": "new Error(\"DQT: 无效的表格规格\")"
+        },
+        {
+          "source": "new Error(\"unknown JPEG marker \" + fileMarker.toString(16));\n\t        }\n\t        fileMarker = readUint16();\n\t      }\n\t      if (frames.length != 1)\n\t        throw new Error(\"only single frame JPEGs supported\")",
+          "target": "new Error(\"未知JPEG标记 \" + fileMarker.toString(16));\n\t        }\n\t        fileMarker = readUint16();\n\t      }\n\t      if (frames.length != 1)\n\t        throw new Error(\"仅支持单帧JPEG\")"
+        },
+        {
+          "source": "new Error(\"Unsupported amount of components\")",
+          "target": "new Error(\"不支持的组件数量\")"
+        },
+        {
+          "source": "new Error(\"JPX Error: Invalid box field size\")",
+          "target": "new Error(\"JPX错误：无效的盒子字段大小\")"
+        },
+        {
+          "source": "new Error(\"JPX Error: No size marker found in JPX stream\")",
+          "target": "new Error(\"JPX错误：JPX流中未找到尺寸标记\")"
+        },
+        {
+          "source": "new Error(\"JPX Error: Unsupported COD options (\" + unsupported.join(\", \")",
+          "target": "new Error(\"JPX错误：不支持的COD选项 (\" + unsupported.join(\", \")"
+        },
+        {
+          "source": "new Error(\"JPX Error: Codestream code 0xFF53 (COC) is \" + \"not implemented\")",
+          "target": "new Error(\"JPX错误：码流代码0xFF53 (COC)未实现\")"
+        },
+        {
+          "source": "new Error(\"JPX Error: Out of packets\")",
+          "target": "new Error(\"JPX错误：超出包范围\")"
+        },
+        {
+          "source": "new Error('http status code: '+res.statusCode))\n\t    if (!body)\n\t      return cb(new Error('no body result')",
+          "target": "new Error('http状态码: '+res.statusCode))\n\t    if (!body)\n\t      return cb(new Error('没有正文结果')"
+        },
+        {
+          "source": "new Error('your browser does not support XHR loading')",
+          "target": "new Error('您的浏览器不支持XHR加载')"
+        },
+        {
+          "source": "new Error(\"Width/Height invalid.\")",
+          "target": "new Error(\"宽度/高度无效。\")"
+        },
+        {
+          "source": "new Error(\"Background index out of range.\")",
+          "target": "new Error(\"背景索引超出范围。\")"
+        },
+        {
+          "source": "new Error(\"Background index explicitly passed as 0.\")",
+          "target": "new Error(\"背景索引明确地传递为0。\")"
+        },
+        {
+          "source": "new Error(\"Loop count invalid.\")",
+          "target": "new Error(\"循环计数无效。\")"
+        },
+        {
+          "source": "new Error(\"x/y invalid.\")",
+          "target": "new Error(\"x/y无效。\")"
+        },
+        {
+          "source": "new Error(\"Not enough pixels for the frame size.\")",
+          "target": "new Error(\"帧大小所需的像素不足。\")"
+        },
+        {
+          "source": "new Error(\"Must supply either a local or global palette.\")",
+          "target": "new Error(\"必须提供局部或全局调色板。\")"
+        },
+        {
+          "source": "new Error(\"Disposal out of range.\")",
+          "target": "new Error(\"清除超出范围。\")"
+        },
+        {
+          "source": "new Error(\"Transparent color index.\")",
+          "target": "new Error(\"透明颜色索引。\")"
+        },
+        {
+          "source": "new Error(\"Invalid GIF 87a/89a header.\")",
+          "target": "new Error(\"无效的GIF 87a/89a头。\")"
+        },
+        {
+          "source": "new Error(\"Invalid graphics extension block.\")",
+          "target": "new Error(\"无效的图形扩展块。\")"
+        },
+        {
+          "source": "new Error(\"slide too late\")",
+          "target": "new Error(\"幻灯片太晚\")"
+        },
+        {
+          "source": "new Error(\"block gone\")",
+          "target": "new Error(\"块已消失\")"
+        },
+        {
+          "source": "new Error('no data provided')",
+          "target": "new Error('未提供数据')"
+        },
+        {
+          "source": "new Error('no data in BMFont file')",
+          "target": "new Error('BMFont文件中无数据')"
+        },
+        {
+          "source": "new Error('malformed file at line ' + i + ' -- needs page id=N')",
+          "target": "new Error('第' + i + '行的文件格式错误 -- 需要页面id=N')"
+        },
+        {
+          "source": "new Error('malformed file at line ' + i + ' -- needs page file=\"path\"')",
+          "target": "new Error('第' + i + '行的文件格式错误 -- 需要页面file=\"path\"')"
+        },
+        {
+          "source": "new Error('invalid buffer length for BMFont')",
+          "target": "new Error('BMFont的缓冲区长度无效')"
+        },
+        {
+          "source": "new Error('BMFont missing BMF byte header')",
+          "target": "new Error('BMFont缺少BMF字节头')"
+        },
+        {
+          "source": "new Error('Only supports BMFont Binary v3 (BMFont App v1.10)')",
+          "target": "new Error('仅支持BMFont Binary v3 (BMFont App v1.10)')"
+        },
+        {
+          "source": "new Error('malformed file -- no <pages> element')",
+          "target": "new Error('文件格式错误 -- 没有<pages>元素')"
+        },
+        {
+          "source": "new Error('malformed file -- page \"id\" attribute is NaN')",
+          "target": "new Error('文件格式错误 -- 页面\"id\"属性为NaN')"
+        },
+        {
+          "source": "new Error('malformed file -- needs page \"file\" attribute')",
+          "target": "new Error('文件格式错误 -- 需要页面\"file\"属性')"
+        },
+        {
+          "source": "new Error('Missing url option from options for request method.')",
+          "target": "new Error('请求方法的选项中缺少url选项。')"
+        },
+        {
+          "source": "new Error('phin \\'form\\' option must be of type Object if present.')",
+          "target": "new Error('如果存在，phin \\'form\\' 选项必须是Object类型。')"
+        },
+        {
+          "source": "new Error('Invalid / unknown URL protocol. Expected HTTP or HTTPS.')",
+          "target": "new Error('无效或未知的URL协议。预期HTTP或HTTPS。')"
+        },
+        {
+          "source": "new Error('Timeout has been reached.')",
+          "target": "new Error('超时已到达。')"
+        },
+        {
+          "source": "new Error('Couldn\\'t stringify object. (Likely due to a circular reference.)')",
+          "target": "new Error('无法序列化对象。(可能是由于循环引用。)')"
+        },
+        {
+          "source": "new Error('Ran out of data')",
+          "target": "new Error('数据耗尽')"
+        },
+        {
+          "source": "new Error('unrecognised depth')",
+          "target": "new Error('未识别的深度')"
+        },
+        {
+          "source": "new Error('extra data found')",
+          "target": "new Error('发现多余的数据')"
+        },
+        {
+          "source": "new Error('input color type:' + options.inputColorType + ' is not supported at present')",
+          "target": "new Error('输入颜色类型:' + options.inputColorType + '目前不支持')"
+        },
+        {
+          "source": "new Error('Stream not writable')",
+          "target": "new Error('流不可写')"
+        },
+        {
+          "source": "new Error('There are some read requests waiting on finished stream')",
+          "target": "new Error('有一些读请求正在已完成的流上等待')"
+        },
+        {
+          "source": "new Error('unrecognised filter types')",
+          "target": "new Error('未识别的过滤器类型')"
+        },
+        {
+          "source": "new Error('To use the sync capability of this library in old node versions, please pin pngjs to v2.3.0')",
+          "target": "new Error('要在旧版本的Node.js中使用此库的同步功能，请将pngjs固定到v2.3.0')"
+        },
+        {
+          "source": "new Error('bad png - invalid compressed data response')",
+          "target": "new Error('损坏的png - 无效的压缩数据响应')"
+        },
+        {
+          "source": "new Error('option color type:' + options.colorType + ' is not supported at present')",
+          "target": "new Error('选项颜色类型:' + options.colorType + '目前不支持')"
+        },
+        {
+          "source": "new Error('option input color type:' + options.inputColorType + ' is not supported at present')",
+          "target": "new Error('选项输入颜色类型:' + options.inputColorType + '目前不支持')"
+        },
+        {
+          "source": "new Error('option bit depth:' + options.bitDepth + ' is not supported at present')",
+          "target": "new Error('选项位深度:' + options.bitDepth + '目前不支持')"
+        },
+        {
+          "source": "new Error('bad png - invalid inflate data response')",
+          "target": "new Error('损坏的png - 无效的解压数据响应')"
+        },
+        {
+          "source": "new Error('Invalid file signature')",
+          "target": "new Error('无效的文件签名')"
+        },
+        {
+          "source": "new Error('Expected IHDR on beggining')",
+          "target": "new Error('期望在开始处有IHDR')"
+        },
+        {
+          "source": "new Error('Unsupported compression method')",
+          "target": "new Error('不支持的压缩方法')"
+        },
+        {
+          "source": "new Error('Unsupported filter method')",
+          "target": "new Error('不支持的过滤方法')"
+        },
+        {
+          "source": "new Error('Unsupported interlace method')",
+          "target": "new Error('不支持的交织方法')"
+        },
+        {
+          "source": "new Error('Transparency chunk must be after palette')",
+          "target": "new Error('透明度块必须在调色板之后')"
+        },
+        {
+          "source": "new Error('More transparent colors than palette size')",
+          "target": "new Error('比调色板大小更多的透明颜色')"
+        },
+        {
+          "source": "new Error('Expected palette not found')",
+          "target": "new Error('未找到期望的调色板')"
+        },
+        {
+          "source": "new Error('bitblt reading outside image')",
+          "target": "new Error('bitblt读取图像之外的数据')"
+        },
+        {
+          "source": "new Error('bitblt writing outside image')",
+          "target": "new Error('bitblt写入图像之外的数据')"
+        },
+        {
+          "source": "new Error('There are some read requests waitng on finished stream')",
+          "target": "new Error('有一些读请求正在已完成的流上等待')"
+        },
+        {
+          "source": "new Error('unrecognised content at end of stream')",
+          "target": "new Error('流末尾处的未识别内容')"
+        },
+        {
+          "source": "new Error('setTimeout has not been defined')",
+          "target": "new Error('setTimeout尚未定义')"
+        },
+        {
+          "source": "new Error('clearTimeout has not been defined')",
+          "target": "new Error('clearTimeout尚未定义')"
+        },
+        {
+          "source": "new Error('process.binding is not supported')",
+          "target": "new Error('不支持process.binding')"
+        },
+        {
+          "source": "new Error('process.chdir is not supported')",
+          "target": "new Error('不支持process.chdir')"
+        },
+        {
+          "source": "new Error('stream.unshift() after end event')",
+          "target": "new Error('在结束事件后调用stream.unshift()')"
+        },
+        {
+          "source": "new Error('stream.push() after EOF')",
+          "target": "new Error('在EOF后调用stream.push()')"
+        },
+        {
+          "source": "new Error('_read() is not implemented')",
+          "target": "new Error('_read()尚未实现')"
+        },
+        {
+          "source": "new Error('\"endReadable()\" called on non-empty stream')",
+          "target": "new Error('\"endReadable()\" 被调用于非空流')"
+        },
+        {
+          "source": "new Error('write callback called multiple times')",
+          "target": "new Error('write回调被多次调用')"
+        },
+        {
+          "source": "new Error('_transform() is not implemented')",
+          "target": "new Error('_transform()尚未实现')"
+        },
+        {
+          "source": "new Error('Calling transform done when ws.length != 0')",
+          "target": "new Error('在ws.length != 0时调用transform完成')"
+        },
+        {
+          "source": "new Error('Calling transform done when still transforming')",
+          "target": "new Error('仍在转换时调用transform完成')"
+        },
+        {
+          "source": "new Error('Cannot pipe, not readable')",
+          "target": "new Error('无法管道传输，不是可读的')"
+        },
+        {
+          "source": "new Error('write after end')",
+          "target": "new Error('在结束之后写入')"
+        },
+        {
+          "source": "new Error('_write() is not implemented')",
+          "target": "new Error('_write()尚未实现')"
+        },
+        {
+          "source": "new Error('Invalid value for opts.mode')",
+          "target": "new Error('opts.mode的有效值无效')"
+        },
+        {
+          "source": "new Error('XHR error')",
+          "target": "new Error('XHR错误')"
+        },
+        {
+          "source": "new Error('Argument must be a Buffer')",
+          "target": "new Error('参数必须是Buffer')"
+        },
+        {
+          "source": "new Error(\"callback argument missing\")",
+          "target": "new Error(\"缺少回调参数\")"
+        },
+        {
+          "source": "new Error(\"\" + (evt || \"Unknown XMLHttpRequest Error\")",
+          "target": "new Error(\"\" + (evt || \"未知的XMLHttpRequest错误\")"
+        },
+        {
+          "source": "new Error(\"Internal XMLHttpRequest Error\")",
+          "target": "new Error(\"内部XMLHttpRequest错误\")"
+        },
+        {
+          "source": "new Error(\"XMLHttpRequest timeout\")",
+          "target": "new Error(\"XMLHttpRequest超时\")"
+        },
+        {
+          "source": "new Error(\"Headers cannot be set on an XDomainRequest object\")",
+          "target": "new Error(\"不能在一个XDomainRequest对象上设置头部\")"
+        },
+        {
+          "source": "new Error('Buffer length is incorrect')",
+          "target": "new Error('缓冲区长度不正确')"
+        },
+        {
+          "source": "new Error('Cant access the filesystem. You can use the getBase64 method.')",
+          "target": "new Error('无法访问文件系统。您可以使用getBase64方法。')"
+        },
+        {
+          "source": "new Error('Could not find MIME for Buffer <' + path + '>')",
+          "target": "new Error('无法为Buffer <' + path + '> 找到MIME类型')"
+        },
+        {
+          "source": "new Error('Invalid settings specified for the resizer.')",
+          "target": "new Error('为调整器指定的设置无效。')"
+        },
+        {
+          "source": "new Error('Native crypto module could not be used to get secure random number.')",
+          "target": "new Error('无法使用原生crypto模块来获取安全随机数。')"
+        },
+        {
+          "source": "new Error('Malformed UTF-8 data')",
+          "target": "new Error('格式错误的UTF-8数据')"
+        },
+        {
+          "source": "new Error('Tokenizer instance wasn\\'t specified.')",
+          "target": "new Error('未指定Tokenizer实例。')"
+        },
+        {
+          "source": "new Error('Node of type ' + this.node.type + ' doesn\\'t have \"' + property + '\" collection.')",
+          "target": "new Error('类型为 ' + this.node.type + ' 的节点没有 \"' + property + '\" 集合。')"
+        },
+        {
+          "source": "new Error('Unknown compat-transform: ' + transformName + '. ' + 'Available transforms are: ' + Object.keys(compatTransforms).join(', ')",
+          "target": "new Error('未知的兼容转换: ' + transformName + '. 可用的转换有: ' + Object.keys(compatTransforms).join(', ')"
+        },
+        {
+          "source": "new Error('Unknown optimization-transform: ' + transformName + '. ' + 'Available transforms are: ' + Array.from(optimizationTransforms.keys()).join(', ')",
+          "target": "new Error('未知的优化转换: ' + transformName + '. 可用的转换有: ' + Array.from(optimizationTransforms.keys()).join(', ')"
+        },
+        {
+          "source": "new Error('NFA/DFA: Flags are not supported yet.')",
+          "target": "new Error('NFA/DFA: 尚不支持标志。')"
+        },
+        {
+          "source": "new Error('Unknown repeatition: ' + node.quantifier.kind + '.')",
+          "target": "new Error('未知的重复: ' + node.quantifier.kind + '.')"
+        },
+        {
+          "source": "new Error('NFA/DFA: Only simple chars are supported yet.')",
+          "target": "new Error('NFA/DFA: 目前只支持简单字符。')"
+        },
+        {
+          "source": "new Error('You must pass a function to execute')",
+          "target": "new Error('您必须传递一个函数来执行')"
+        },
+        {
+          "source": "new Error(\"Failed to generate file name for media file.\")",
+          "target": "new Error(\"生成媒体文件名失败。\")"
+        },
+        {
+          "source": "new TypeError(`Expected the \\`input\\` argument to be of type \\`Uint8Array\\` or \\`Buffer\\` or \\`ArrayBuffer\\`, got \\`${typeof input}\\``)",
+          "target": "new TypeError(`期望 \\`input\\` 参数为 \\`Uint8Array\\` 或 \\`Buffer\\` 或 \\`ArrayBuffer\\` 类型，实际得到 \\`${typeof input}\\` 类型`)"
+        },
+        {
+          "source": "new TypeError('Expected a string')",
+          "target": "new TypeError('期望字符串')"
+        },
+        {
+          "source": "new TypeError('\"block\" argument must be a function')",
+          "target": "new TypeError('\"block\" 参数必须是一个函数')"
+        },
+        {
+          "source": "new TypeError('Bad argument')",
+          "target": "new TypeError('参数错误')"
+        },
+        {
+          "source": "new TypeError('Not a string or buffer')",
+          "target": "new TypeError('不是字符串或缓冲区')"
+        },
+        {
+          "source": "new TypeError('Invalid strategy: ' + strategy);\n\t  }\n\n\t  if (this._level !== level || this._strategy !== strategy) {\n\t    var self = this;\n\t    this.flush(binding.Z_SYNC_FLUSH, function () {\n\t      assert(self._handle, 'zlib binding closed')",
+          "target": "new TypeError('无效策略: ' + strategy);\n\t  }\n\n\t  if (this._level !== level || this._strategy !== strategy) {\n\t    var self = this;\n\t    this.flush(binding.Z_SYNC_FLUSH, function () {\n\t      assert(self._handle, 'zlib绑定关闭')"
+        },
+        {
+          "source": "new TypeError('\"size\" argument must be of type number')",
+          "target": "new TypeError('\"size\" 参数必须是数字类型')"
+        },
+        {
+          "source": "new TypeError('\"list\" argument must be an Array of Buffers')",
+          "target": "new TypeError('\"list\" 参数必须是Buffer数组')"
+        },
+        {
+          "source": "new TypeError('Unknown encoding: ' + encoding)\n\t        encoding = (encoding + '')",
+          "target": "new TypeError('未知编码: ' + encoding)\n\t        encoding = (encoding + '')"
+        },
+        {
+          "source": "new TypeError('Argument must be a Buffer')",
+          "target": "new TypeError('参数必须是Buffer')"
+        },
+        {
+          "source": "new TypeError('val must be string, number or Buffer')",
+          "target": "new TypeError('val 必须是字符串、数字或Buffer')"
+        },
+        {
+          "source": "new TypeError('\"buffer\" argument must be a Buffer instance')",
+          "target": "new TypeError('\"buffer\" 参数必须是Buffer实例')"
+        },
+        {
+          "source": "new TypeError('argument should be a Buffer')",
+          "target": "new TypeError('参数应该是Buffer')"
+        },
+        {
+          "source": "new TypeError('encoding must be a string')",
+          "target": "new TypeError('编码必须是字符串')"
+        },
+        {
+          "source": "new TypeError('Unknown encoding: ' + encoding)\n\t    }\n\t    if (val.length === 1) {\n\t      var code = val.charCodeAt(0);\n\t      if ((encoding === 'utf8' && code < 128) ||\n\t          encoding === 'latin1')",
+          "target": "new TypeError('未知编码: ' + encoding)\n\t    }\n\t    if (val.length === 1) {\n\t      var code = val.charCodeAt(0);\n\t      if ((encoding === 'utf8' && code < 128) ||\n\t          encoding === 'latin1')"
+        },
+        {
+          "source": "new TypeError('The value \"' + val +\n\t        '\" is invalid for argument \"value\"')",
+          "target": "new TypeError('值 \"' + val +\n\t        '\" 对于参数 \"value\" 是无效的')"
+        },
+        {
+          "source": "new TypeError('\"defaultMaxListeners\" must be a positive number')",
+          "target": "new TypeError('\"defaultMaxListeners\" 必须是正数')"
+        },
+        {
+          "source": "new TypeError('\"n\" argument must be a positive number')",
+          "target": "new TypeError('\"n\" 参数必须是正数')"
+        },
+        {
+          "source": "new TypeError('\"listener\" argument must be a function')",
+          "target": "new TypeError('\"listener\" 参数必须是函数')"
+        },
+        {
+          "source": "new TypeError(\"Invalid attempt to spread non-iterable instance\")",
+          "target": "new TypeError(\"尝试展开非可迭代实例无效\")"
+        },
+        {
+          "source": "new TypeError('iterator must be a function')",
+          "target": "new TypeError('iterator 必须是函数')"
+        },
+        {
+          "source": "new TypeError('Arguments to path.resolve must be strings')",
+          "target": "new TypeError('path.resolve的参数必须是字符串')"
+        },
+        {
+          "source": "new TypeError('Arguments to path.join must be strings')",
+          "target": "new TypeError('path.join的参数必须是字符串')"
+        },
+        {
+          "source": "new TypeError('\"callback\" argument must be a function')",
+          "target": "new TypeError('\"callback\" 参数必须是函数')"
+        },
+        {
+          "source": "new TypeError('Invalid non-string/buffer chunk')",
+          "target": "new TypeError('无效的非字符串/缓冲区块')"
+        },
+        {
+          "source": "new TypeError('May not write null values to stream')",
+          "target": "new TypeError('不能向流中写入null值')"
+        },
+        {
+          "source": "new TypeError('Unknown encoding: ' + encoding);\n\t  this._writableState.defaultEncoding = encoding;\n\t  return this;\n\t};\n\n\tfunction decodeChunk(state, chunk, encoding) {\n\t  if (!state.objectMode && state.decodeStrings !== false && typeof chunk === 'string')",
+          "target": "new TypeError('未知编码: ' + encoding);\n\t  this._writableState.defaultEncoding = encoding;\n\t  return this;\n\t};\n\n\tfunction decodeChunk(state, chunk, encoding) {\n\t  if (!state.objectMode && state.decodeStrings !== false && typeof chunk === 'string')"
+        },
+        {
+          "source": "new TypeError(\"Cannot call a class as a function\")",
+          "target": "new TypeError(\"不能将类作为函数调用\")"
+        },
+        {
+          "source": "new TypeError('Argument must not be a number')",
+          "target": "new TypeError('参数不能是数字')"
+        },
+        {
+          "source": "new TypeError('Argument must be a number')",
+          "target": "new TypeError('参数必须是数字')"
+        },
+        {
+          "source": "new TypeError(\"Invalid attempt to destructure non-iterable instance\")",
+          "target": "new TypeError(\"尝试解构非可迭代实例无效\")"
+        },
+        {
+          "source": "new TypeError(\"Super expression must either be null or a function\")",
+          "target": "new TypeError(\"Super表达式必须是null或者是一个函数\")"
+        },
+        {
+          "source": "new TypeError('Callback must be a function')",
+          "target": "new TypeError('回调必须是函数')"
+        },
+        {
+          "source": "new TypeError('Unknown Assertion kind: ' + node.kind);\n    }\n  },\n  CharacterClass: function CharacterClass(node) {\n    var expressions = node.expressions.map(gen$1).join('')",
+          "target": "new TypeError('未知断言类型: ' + node.kind);\n    }\n  },\n  CharacterClass: function CharacterClass(node) {\n    var expressions = node.expressions.map(gen$1).join('')"
+        },
+        {
+          "source": "new TypeError('Expected \"Disjunction\" node, got \"' + node.type + '\"')",
+          "target": "new TypeError('期望 \"Disjunction\" 节点，实际得到 \"' + node.type + '\"')"
+        },
+        {
+          "source": "msg = \"Invalid space after '<'.\";",
+          "target": "msg = \"'<之后的空格无效。\";"
+        },
+        {
+          "source": "msg = \"Tag '\"+tagName+\"' is an invalid name.\";",
+          "target": "msg = \"标签 '\"+tagName+\"' 名称无效。\";"
+        },
+        {
+          "source": "msg = 'invalid distance too far back';",
+          "target": "msg = '距离太远，无效';"
+        },
+        {
+          "source": "msg = 'invalid distance code';",
+          "target": "msg = '无效的距离代码';"
+        },
+        {
+          "source": "msg = 'invalid literal/length code';",
+          "target": "msg = '无效的文字/长度代码';"
+        },
+        {
+          "source": "msg = 'incorrect header check';",
+          "target": "msg = '头校验错误';"
+        },
+        {
+          "source": "msg = 'unknown compression method';",
+          "target": "msg = '未知的压缩方法';"
+        },
+        {
+          "source": "msg = 'invalid window size';",
+          "target": "msg = '窗口大小无效';"
+        },
+        {
+          "source": "msg = 'unknown header flags set';",
+          "target": "msg = '未知的头标志已设置';"
+        },
+        {
+          "source": "msg = 'header crc mismatch';",
+          "target": "msg = '头CRC不匹配';"
+        },
+        {
+          "source": "msg = 'invalid block type';",
+          "target": "msg = '块类型无效';"
+        },
+        {
+          "source": "msg = 'invalid stored block lengths';",
+          "target": "msg = '存储的块长度无效';"
+        },
+        {
+          "source": "msg = 'too many length or distance symbols';",
+          "target": "msg = '长度或距离符号过多';"
+        },
+        {
+          "source": "msg = 'invalid code lengths set';",
+          "target": "msg = '代码长度设置无效';"
+        },
+        {
+          "source": "msg = 'invalid bit length repeat';",
+          "target": "msg = '位长度重复无效';"
+        },
+        {
+          "source": "msg = 'invalid code -- missing end-of-block';",
+          "target": "msg = '代码无效 -- 缺少块结束';"
+        },
+        {
+          "source": "msg = 'invalid literal/lengths set';",
+          "target": "msg = '文字/长度设置无效';"
+        },
+        {
+          "source": "msg = 'invalid distances set';",
+          "target": "msg = '距离设置无效';"
+        },
+        {
+          "source": "msg = 'incorrect data check';",
+          "target": "msg = '数据校验错误';"
+        },
+        {
+          "source": "msg = 'incorrect length check';",
+          "target": "msg = '长度校验错误';"
+        },
+        {
+          "source": "msg = 'Could not load Buffer from <' + src + '> ' + '(HTTP: ' + response.statusCode + ')';",
+          "target": "msg = '无法从 <' + src + '> 加载 Buffer ' + '(HTTP: ' + response.statusCode + ')';"
+        },
+        {
+          "source": "msg = \"were deleted completely.\";",
+          "target": "msg = \"已被完全删除。\";"
+        },
+        {
+          "source": "msg = \"were moved to the system garbage can.\";",
+          "target": "msg = \"已被移至系统回收站。\";"
+        },
+        {
+          "source": "msg = \"were moved to the Obsidian garbage can.\";",
+          "target": "msg = \"已被移至Obsidian回收站。\";"
+        },
+        {
+          "source": "logError(`LocalImagesPlus: error: ${error}`, false)",
+          "target": "logError(`LocalImagesPlus: 错误: ${error}`, false)"
+        },
+        {
+          "source": "logError(\"Cannot generate md5: \" + e, false)",
+          "target": "logError(\"无法生成md5: \" + e, false)"
+        },
+        {
+          "source": "logError(\"replaceAsync: \\r\\nstr: \" + str + \"\\r\\nregex: \")",
+          "target": "logError(\"replaceAsync: \\r\\nstr: \" + str + \"\\r\\nregex: \")"
+        },
+        {
+          "source": "logError(\"cur regex:  \" + element)",
+          "target": "logError(\"当前正则表达式:  \" + element)"
+        },
+        {
+          "source": "logError(\"match: \")",
+          "target": "logError(\"匹配: \")"
+        },
+        {
+          "source": "logError(\"repl: \" + replp +\n                    \"\\r\\nahc: \" + anchor +\n                    \"\\r\\nlink: \" + link +\n                    \"\\r\\ncaption: \" + caption)",
+          "target": "logError(\"替换: \" + replp +\n                    \"\\r\\nahc: \" + anchor +\n                    \"\\r\\n链接: \" + link +\n                    \"\\r\\n标题: \" + caption)"
+        },
+        {
+          "source": "logError(\"el: \" + element[0] + \"  el2: \" + element[1] + element[2])",
+          "target": "logError(\"元素: \" + element[0] + \"  元素2: \" + element[1] + element[2])"
+        },
+        {
+          "source": "logError(\"IsUrl: \" + link, false)",
+          "target": "logError(\"是否为URL: \" + link, false)"
+        },
+        {
+          "source": "logError(\"Cannot convert to jpeg: \" + e, false)",
+          "target": "logError(\"无法转换为jpeg: \" + e, false)"
+        },
+        {
+          "source": "logError(\"base64ToBuff: \\r\\n\", false)",
+          "target": "logError(\"base64转缓冲区: \\r\\n\", false)"
+        },
+        {
+          "source": "logError(\"Cannot read base64: \" + e, false)",
+          "target": "logError(\"无法读取base64: \" + e, false)"
+        },
+        {
+          "source": "logError(\"Cannot read the file: \" + e, false)",
+          "target": "logError(\"无法读取文件: \" + e, false)"
+        },
+        {
+          "source": "logError(\"readFromDisk: \" + file, false)",
+          "target": "logError(\"从磁盘读取: \" + file, false)"
+        },
+        {
+          "source": "logError(\"Downloading: \" + url, false)",
+          "target": "logError(\"下载: \" + url, false)"
+        },
+        {
+          "source": "logError(\"Cannot download the file: \" + e, false)",
+          "target": "logError(\"无法下载文件: \" + e, false)"
+        },
+        {
+          "source": "logError(\"processImageTag: \" + match)",
+          "target": "logError(\"处理图片标签: \" + match)"
+        },
+        {
+          "source": "logError(\"ReadBase64: \\r\\n\" + fpath, false)",
+          "target": "logError(\"读取Base64: \\r\\n\" + fpath, false)"
+        },
+        {
+          "source": "logError(\"Readlocal: \\r\\n\" + fpath, false)",
+          "target": "logError(\"读取本地: \\r\\n\" + fpath, false)"
+        },
+        {
+          "source": "logError(\"\\r\\n\\nDownloading (try)",
+          "target": "logError(\"\\r\\n\\n下载（尝试)"
+        },
+        {
+          "source": "logError(\"Cannot get an attachment content!\", fileDatafalse)",
+          "target": "logError(\"无法获取附件内容！\", fileDatafalse)"
+        },
+        {
+          "source": "logError(\"Lower limit of the file size!\", false)",
+          "target": "logError(\"文件大小低于限制！\", false)"
+        },
+        {
+          "source": "logError(\"Image processing failed: \" + error, false)",
+          "target": "logError(\"图像处理失败: \" + error, false)"
+        },
+        {
+          "source": "logError(\"file: \" + link + \" content: \" + contentData + \" file ext: \" + fileExt, false)",
+          "target": "logError(\"文件: \" + link + \" 内容: \" + contentData + \" 文件扩展名: \" + fileExt, false)"
+        },
+        {
+          "source": "logError(\"File name: \" + fileName, false)",
+          "target": "logError(\"文件名: \" + fileName, false)"
+        },
+        {
+          "source": "logError(\"processactive\")",
+          "target": "logError(\"进程活动\")"
+        },
+        {
+          "source": "logError(\"Cannot find \" + el.link + \" skipping...\")",
+          "target": "logError(\"找不到 \" + el.link + \" 跳过...\")"
+        },
+        {
+          "source": "logError(\"oldbindata\")",
+          "target": "logError(\"旧二进制数据\")"
+        },
+        {
+          "source": "logError(\"oldext\")",
+          "target": "logError(\"旧扩展名\")"
+        },
+        {
+          "source": "logError(\"converting to Jpeg\")",
+          "target": "logError(\"转换为Jpeg\")"
+        },
+        {
+          "source": "logError(\"Deleting duplicate file: \" + oldpath)",
+          "target": "logError(\"删除重复文件: \" + oldpath)"
+        },
+        {
+          "source": "logError(\"Renaming existing: \" + oldpath)",
+          "target": "logError(\"重命名现有: \" + oldpath)"
+        },
+        {
+          "source": "logError(`renaming  ${oldpath}  to  ${newpath}`)",
+          "target": "logError(`重命名  ${oldpath}  到  ${newpath}`)"
+        },
+        {
+          "source": "logError(\"New file created: \")",
+          "target": "logError(\"新文件创建: \")"
+        },
+        {
+          "source": "logError(\"File modified: \\r\\n\")",
+          "target": "logError(\"文件修改: \\r\\n\")"
+        },
+        {
+          "source": "logError(\"file created  \")",
+          "target": "logError(\"文件创建  \")"
+        },
+        {
+          "source": "logError(\" unloaded.\")",
+          "target": "logError(\"卸载.\")"
+        },
+        {
+          "source": "showBalloon(`LocalImagesPlus: Error while handling file ${file.name}, ${error.toString()`",
+          "target": "showBalloon(`LocalImagesPlus: 在处理文件 ${file.name} 时出错, ${error.toString()`"
+        },
+        {
+          "source": "showBalloon(`Please select a note or click inside selected note in canvas.`, this.settings.showNotifications)",
+          "target": "showBalloon(`请选择一个笔记或点击画布中选定的笔记。`, this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"This command requires the settings 'Next to note in the folder specified below' and pattern '${notename}' at the end to be enabled, also the path cannot contain ${date} pattern.\\nPlease, change settings first!\\r\\n\", this.settings.showNotifications)",
+          "target": "showBalloon(\"此命令需要启用设置 '在下面指定文件夹中的笔记旁边' 并且路径末尾有模式 '${notename}'，同时路径不能包含 ${date} 模式。\\n请先更改设置！\\r\\n\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"Please, select a note or click inside a note in canvas!\", this.settings.showNotifications)",
+          "target": "showBalloon(\"请选择一个笔记或点击画布中的笔记！\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"The attachment folder \" + oldRootdir + \" does not exist!\", this.settings.showNotifications)",
+          "target": "showBalloon(\"附件文件夹 \" + oldRootdir + \" 不存在！\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"No orphaned files found!\", this.settings.showNotifications)",
+          "target": "showBalloon(\"未找到孤立文件！\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"This command cannot run on vault's root or on subfolder next to note!\\nPlease, change settings first!\\r\\n\", this.settings.showNotifications)",
+          "target": "showBalloon(\"此命令不能在仓库根目录或笔记旁边的子目录上运行！\\n请先更改设置！\\r\\n\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"You obsidian media folder set to '\" + obsmdir + \"', and has been created by the plugin. Please, try again. \", this.settings.showNotifications)",
+          "target": "showBalloon(\"您的 Obsidian 媒体文件夹设置为 '\" + obsmdir + \"'，并且是由插件创建的。请再试一次。\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(`The note was renamed to ` + fullPath, this.settings.showNotifications)",
+          "target": "showBalloon(`笔记已重命名为 ` + fullPath, this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(`Cannot rename.`, this.settings.showNotifications)",
+          "target": "showBalloon(`无法重命名。`, this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"Attachment folder \" + rootdir + \" was moved to trash can.\", this.settings.showNotifications)",
+          "target": "showBalloon(\"附件文件夹 \" + rootdir + \" 已移动到回收站。\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"Attachment folder was renamed to \" + newRootDir_, this.settings.showNotifications)",
+          "target": "showBalloon(\"附件文件夹已重命名为 \" + newRootDir_, this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"Cannot move attachment folder: \\r\\n\" + e, this.settings.showNotifications)",
+          "target": "showBalloon(\"无法移动附件文件夹: \\r\\n\" + e, this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"Cannot get current note! \", this.settings.showNotifications)",
+          "target": "showBalloon(\"无法获取当前笔记！\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(`Attachements for \"${file.path}\" were processed.`, this.settings.showNotifications)",
+          "target": "showBalloon(`\"${file.path}\" 的附件已被处理。`, this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(`WARNING!\\r\\nAttachements for \"${file.path}\" were processed, but some attachements were not downloaded/replaced...`, this.settings.showNotifications)",
+          "target": "showBalloon(`警告！\\r\\n\"${file.path}\" 的附件已被处理，但有些附件未被下载/替换...`, this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(`Page \"${file.path}\" has been processed, but nothing was changed.`, this.settings.showNotifications)",
+          "target": "showBalloon(`页面 \"${file.path}\" 已被处理，但没有任何改变。`, this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(\"Media links were found, processing...\", this.settings.showNotifications)",
+          "target": "showBalloon(\"发现了媒体链接，正在处理...\", this.settings.showNotifications)"
+        },
+        {
+          "source": "showBalloon(itemcount + \" attachements for note \" + note.path + \" were processed.\"",
+          "target": "showBalloon(itemcount + \"个附件以处理，笔记路径为: \" + note.path + \".\""
+        },
+        {
+          "source": ".setDesc(\"Do not download files with size less than this value. Set 0 for no limit.\")",
+          "target": ".setDesc(\"最小下载文件大小。设置为 0 表示无限制。\")"
+        },
+        {
+          "source": ".setDesc(\"The plugin will not create an Obsidian attachments folder. This may cause the plugin to behave incorrectly. \")",
+          "target": ".setDesc(\"该插件不会创建 Obsidian 的附件文件夹。这可能会导致插件行为异常。\")"
+        },
+        {
+          "source": ".setDesc(\"Add media links captions to converted tags.\")",
+          "target": ".setDesc(\"为转换后的标签添加媒体链接说明文字。\")"
+        },
+        {
+          "source": ".setDesc(\"Folder to keep all downloaded media files.\")",
+          "target": ".setDesc(\"用于存放所有下载媒体文件的文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable debug output to console.\")",
+          "target": ".setDesc(\"在控制台中启用调试输出。\")"
+        },
+        {
+          "source": "name: 'Before Christ'",
+          "target": "name: 'Before Christ'"
+        },
+        {
+          "source": "text: \"Support the project! \"",
+          "target": "text: \"支持本项目！\""
+        },
+        {
+          "source": "text: \"Interface settings\"",
+          "target": "text: \"界面设置\""
+        },
+        {
+          "source": "text: \"Processing settings\"",
+          "target": "text: \"处理设置\""
+        },
+        {
+          "source": "text: \"Note settings\"",
+          "target": "text: \"笔记设置\""
+        },
+        {
+          "source": "text: \"Orphaned attachments\"",
+          "target": "text: \"孤立附件\""
+        },
+        {
+          "source": "text: \"Media folder settings\"",
+          "target": "text: \"媒体文件夹设置\""
+        },
+        {
+          "source": "text: \"Troubleshooting\"",
+          "target": "text: \"疑难解答\""
+        },
+        {
+          "source": "text: \"Cancel\"",
+          "target": "text: \"取消\""
+        },
+        {
+          "source": "text: \"Confirm\"",
+          "target": "text: \"确认\""
+        },
+        {
+          "source": ".setName(\"Process all new attachments\")",
+          "target": ".setName(\"处理所有新的附件\")"
+        },
+        {
+          "source": ".setName(\"Use MD5 for new attachments (Pasted images and files)\")",
+          "target": ".setName(\"对新附件（粘贴的图片和文件）使用 MD5\")"
+        },
+        {
+          "source": ".setName(\"Compress images (Web Images)\")",
+          "target": ".setName(\"压缩图像（网络图像）\")"
+        },
+        {
+          "source": ".setName(\"Compress images (Pasted Images)\")",
+          "target": ".setName(\"压缩图像（粘贴的图像）\")"
+        },
+        {
+          "source": ".setName(\"Compression type\")",
+          "target": ".setName(\"压缩类型\")"
+        },
+        {
+          "source": ".setName(\"Excluded folders\")",
+          "target": ".setName(\"排除的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Image Quality\")",
+          "target": ".setName(\"图片质量\")"
+        },
+        {
+          "source": ".setName(\"Date format\")",
+          "target": ".setName(\"日期格式\")"
+        },
+        {
+          "source": ".setName(\"Folder to save new attachments\")",
+          "target": ".setName(\"保存新附件的文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"The plugin will also move all attachments from obsidian default folder to plugin folder.\")",
+          "target": ".setDesc(\"该插件还将把所有附件从Obsidian默认文件夹移动到插件文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"The plugin will use MD5 when renaming all new attachments.\")",
+          "target": ".setDesc(\"该插件在重命名所有新附件时将使用MD5。\")"
+        },
+        {
+          "source": ".setDesc(\"Compress all downloaded images. May reduce file size by several times, but can also affect performance.\")",
+          "target": ".setDesc(\"压缩所有下载的图片。这可能会将文件大小减少数倍，但也可能影响性能。\")"
+        },
+        {
+          "source": ".setDesc(\"Compress all pasted images. May reduce file size by several times, but can also affect performance.\")",
+          "target": ".setDesc(\"压缩所有粘贴的图像。这可能会将文件大小减小数倍，但也可能影响性能。\")"
+        },
+        {
+          "source": ".setDesc(\"Select image compression type. Keep in mind that webp format has image size limitations.\")",
+          "target": ".setDesc(\"选择图像压缩类型。请记住，webp格式有图像大小限制。\")"
+        },
+        {
+          "source": ".setDesc(\"Excluded folders. New files in these folders will not be processed automatically.\")",
+          "target": ".setDesc(\"排除的文件夹。这些文件夹中的新文件将不会被自动处理。\")"
+        },
+        {
+          "source": ".setDesc(\"Image quality selection (30 to 100).\")",
+          "target": ".setDesc(\"图像质量选择（30 到 100）。\")"
+        },
+        {
+          "source": ".setDesc(\"The plugin will not download attachments with these extensions.\")",
+          "target": ".setDesc(\"插件不会下载具有这些扩展名的附件。\")"
+        },
+        {
+          "source": ".setDesc(\"Add [[original filename]] or [original filename](link to attachment) after replaced tag (only for file:// protocol or dropped/pasted files ).\")",
+          "target": ".setDesc(\"请在替换标签后添加 [[原始文件名]] 或 [原始文件名](附件链接)（仅适用于 file:// 协议或拖放/粘贴的文件）。\")"
+        },
+        {
+          "source": ".setDesc(\"Include only files with extensions only matching this pattern. Example: md|canvas\")",
+          "target": ".setDesc(\"仅包含扩展名与该模式匹配的文件。示例：md|canvas\")"
+        },
+        {
+          "source": ".setDesc(\"Date format for ${date} variable. E.g. \\\n                 | MMMM Do YYYY, h:mm:ss a (March 20th 2024, 10:54:46 am) \\\n                 | dddd  (Wednesday)\\\n                 | MMM Do YY  (Mar 20th 24)\")",
+          "target": ".setDesc(\"${date} 变量的日期格式。例如： \\\n                 | MMMM Do YYYY, h:mm:ss a (March 20th 2024, 10:54:46 am) \\\n                 | dddd  (Wednesday)\\\n                 | MMM Do YY  (Mar 20th 24)\")"
+        },
+        {
+          "source": ".setDesc(\"Select where all new attachments will be saved.\\nYou can use templates e.g. _resouces/${date}/${notename}\")",
+          "target": ".setDesc(\"选择所有新附件的保存位置。\n您可以使用模板，例如 _resources/${date}/${notename}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter the full path in new lines, e.g. RootFolder/Subfolder.\")",
+          "target": ".setPlaceholder(\"在新行中输入完整路径，例如：RootFolder/Subfolder。\")"
+        },
+        {
+          "source": ".setName(\"Process all new attachements\")",
+          "target": ".setName(\"处理所有新的附件\")"
+        },
+        {
+          "source": ".setName(\"Use MD5 for new attachements\")",
+          "target": ".setName(\"为新附件使用MD5\")"
+        },
+        {
+          "source": ".setName(\"Convert PNG to JPEG (Web Images)\")",
+          "target": ".setName(\"将PNG转换为JPEG（网络图片）\")"
+        },
+        {
+          "source": ".setName(\"Convert PNG to JPEG (Pasted Images)\")",
+          "target": ".setName(\"将PNG转换为JPEG（粘贴图片）\")"
+        },
+        {
+          "source": ".setName(\"Jpeg Quality\")",
+          "target": ".setName(\"JPEG质量\")"
+        },
+        {
+          "source": ".setName(\"Folder to save new attachements\")",
+          "target": ".setName(\"保存新附件的文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"The plugin will also move all attachements from obsidian default folder to plugin folder.\")",
+          "target": ".setDesc(\"该插件还将把所有附件从Obsidian默认文件夹移动到插件文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"The plugin will use MD5 when renaming all new attachements.\")",
+          "target": ".setDesc(\"该插件在重命名所有新附件时将使用MD5。\")"
+        },
+        {
+          "source": ".setDesc(\"Convert all downloaded PNG files to JPEG. May reduce file size by several times, but can also affect performance.\")",
+          "target": ".setDesc(\"将所有下载的PNG文件转换为JPEG。可能会使文件大小减少几倍，但也可能影响性能。\")"
+        },
+        {
+          "source": ".setDesc(\"Convert all pasted PNG files to JPEG. May reduce file size by several times, but can also affect performance.\")",
+          "target": ".setDesc(\"将所有粘贴的PNG文件转换为JPEG。可能会使文件大小减少几倍，但也可能影响性能。\")"
+        },
+        {
+          "source": ".setDesc(\"Jpeg quality selection (30 to 100).\")",
+          "target": ".setDesc(\"Jpeg质量选择（30到100）。\")"
+        },
+        {
+          "source": "name: 'GPSLatitude'",
+          "target": "name: 'GPS纬度'"
+        },
+        {
+          "source": "name: 'GPSLongitude'",
+          "target": "name: 'GPS经度'"
+        },
+        {
+          "source": "name: 'ModifyDate'",
+          "target": "name: '修改日期'"
+        },
+        {
+          "source": "name: 'DateTimeOriginal'",
+          "target": "name: '原始日期时间'"
+        },
+        {
+          "source": "name: 'CreateDate'",
+          "target": "name: '创建日期'"
+        }
+      ]
+    }
+  }
+}
