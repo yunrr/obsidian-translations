@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "blackglass",
+    "version": "1.0.0",
+    "title": "Blackglass",
+    "description": "Blackglass Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.5.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Asking Claude...",
+          "target": "正在询问Claude..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Ask Claude",
+          "target": "询问Claude"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Copied!",
+          "target": "已复制！"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Copy response",
+          "target": "复制响应"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Start a new Claude Code session",
+          "target": "开始新的Claude Code会话"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Clear terminal output without ending the session",
+          "target": "清除终端输出而不结束会话"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "No session",
+          "target": "无会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Normal",
+          "target": "正常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Light (300)",
+          "target": "细体 (300)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Medium (500)",
+          "target": "中等 (500)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Bold",
+          "target": "粗体"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "anchorNode and/or focusNode are null",
+          "target": "anchorNode和/或focusNode为空"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Parsing error: ",
+          "target": "解析错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Blackglass: failed to start vault MCP server:",
+          "target": "Blackglass：启动保险库MCP服务器失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Blackglass: failed to write .mcp.json:",
+          "target": "Blackglass：写入.mcp.json失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Path to the claude CLI executable. Use 'claude' if it's on your PATH, or provide the full absolute path (e.g. /usr/local/bin/claude).",
+          "target": "Claude CLI可执行文件的路径。如果它在您的PATH中，请使用'claude'，或提供完整的绝对路径（例如/usr/local/bin/claude）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Directory Claude Code starts in. Leave blank to use vault root. Claude will have access to files in this directory.",
+          "target": "Claude Code启动的目录。留空以使用保险库根目录。Claude将有权访问此目录中的文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Claude model to use for the quick ask modal.",
+          "target": "用于快速询问模态框的Claude模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Font size in pixels for the terminal panel.",
+          "target": "终端面板的字体大小（像素）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Number of lines to keep in the terminal's scroll history (default 5000). Takes effect the next time the terminal is opened.",
+          "target": "终端滚动历史记录中保留的行数（默认5000）。下次打开终端时生效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Font family for the terminal panel. Loading fonts...",
+          "target": "终端面板的字体系列。正在加载字体..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Weight or style variant for the selected font. Loading fonts...",
+          "target": "所选字体的粗细或样式变体。正在加载字体..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically open the Claude Code terminal when Obsidian starts.",
+          "target": "Obsidian启动时自动打开Claude Code终端。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pass --continue when starting a new session to resume the previous conversation context.",
+          "target": "启动新会话时传递--continue以恢复之前的对话上下文。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pass --dangerously-skip-permissions to Claude Code. Claude will execute tool calls without asking for confirmation. Only enable this if you trust the tasks you are running.",
+          "target": "向Claude Code传递--dangerously-skip-permissions。Claude将执行工具调用而无需确认。仅在您信任正在运行的任务时才启用此选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Starts a local MCP server that gives Claude vault-aware tools (read, search, create, update notes). Registers automatically in .mcp.json in the vault root.",
+          "target": "启动一个本地MCP服务器，为Claude提供保险库感知工具（读取、搜索、创建、更新笔记）。自动在保险库根目录的.mcp.json中注册。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Port the vault MCP server listens on (default 27123). If the port is in use, the next available port up to +4 is used automatically. Restart the plugin after changing.",
+          "target": "保险库MCP服务器监听的端口（默认27123）。如果端口被占用，将自动使用下一个可用端口，最多+4。更改后请重启插件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Font family for the terminal panel.",
+          "target": "终端面板的字体系列。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Weight or style variant for the selected font.",
+          "target": "所选字体的粗细或样式变体。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Claude binary path",
+          "target": "Claude二进制文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Working directory",
+          "target": "工作目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Quick ask model",
+          "target": "快速询问模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Terminal font size",
+          "target": "终端字体大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Terminal scrollback",
+          "target": "终端滚动历史记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Terminal font family",
+          "target": "终端字体系列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Terminal font weight",
+          "target": "终端字体粗细"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Open Claude panel on startup",
+          "target": "启动时打开 Claude 面板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Resume last Claude session",
+          "target": "恢复上次 Claude 会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Skip permission prompts",
+          "target": "跳过权限提示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable vault MCP server",
+          "target": "启用保险库 MCP 服务器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Read-only vault access",
+          "target": "保险库只读访问"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "MCP server port",
+          "target": "MCP 服务器端口"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "(vault root)",
+          "target": "(保险库根目录)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Ask Claude about this",
+          "target": "向 Claude 询问此内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "row is invalid. Race condition?",
+          "target": "行无效。竞态条件？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "columns is null. Race condition?",
+          "target": "列为空。竞态条件？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Opening link blocked as opener could not be cleared",
+          "target": "由于无法清除打开器，打开链接被阻止"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "async parser handler taking longer than 5000 ms",
+          "target": "异步解析器处理程序耗时超过 5000 毫秒"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault MCP server started. Start a new session for Claude to pick it up.",
+          "target": "保险库 MCP 服务器已启动。请启动新会话以便 Claude 识别。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Vault MCP server stopped. Start a new session for the change to take effect in Claude.",
+          "target": "保险库 MCP 服务器已停止。请启动新会话以使更改在 Claude 中生效。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter a prompt.",
+          "target": "请输入提示词。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Response copied to clipboard.",
+          "target": "响应已复制到剪贴板。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active note.",
+          "target": "没有活动笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No text selected.",
+          "target": "未选择文本。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Read the full markdown content of a note in the Obsidian vault.",
+          "target": "读取 Obsidian 保险库中笔记的完整 Markdown 内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vault-relative path to the note, e.g. 'Daily Notes/2026-04-11.md'",
+          "target": "笔记的保险库相对路径，例如 'Daily Notes/2026-04-11.md'"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "List notes and subfolders at a path in the vault. Omit directory or pass '' for the vault root.",
+          "target": "列出保险库中指定路径下的笔记和子文件夹。省略目录或传入 '' 表示保险库根目录。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vault-relative directory path. Omit or pass '' for the vault root.",
+          "target": "保险库相对目录路径。省略或传入 '' 表示保险库根目录。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Search for notes whose filename or vault-relative path contains the query string (case-insensitive). Returns up to 20 matches.",
+          "target": "搜索文件名或保险库相对路径包含查询字符串的笔记（不区分大小写）。最多返回 20 个匹配项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "String to match against note filenames and paths",
+          "target": "用于匹配笔记文件名和路径的字符串"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Get the vault-relative path and full content of the note currently open in Obsidian.",
+          "target": "获取当前在 Obsidian 中打开的笔记的保险库相对路径和完整内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Create a new note in the vault. Fails if the note already exists.",
+          "target": "在保险库中创建新笔记。如果笔记已存在则失败。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vault-relative path for the new note, e.g. 'Notes/my-note.md'",
+          "target": "新笔记的保险库相对路径，例如 'Notes/my-note.md'"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Markdown content for the note",
+          "target": "笔记的 Markdown 内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Replace the entire content of an existing note.",
+          "target": "替换现有笔记的全部内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vault-relative path to the note",
+          "target": "笔记的保险库相对路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "New markdown content to write",
+          "target": "要写入的新 Markdown 内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Search the full text content of all notes in the vault for a query string (case-insensitive). Returns matching notes with surrounding line context so you can decide which notes to read in full. Use this when you need to find notes by what they contain rather than what they are named.",
+          "target": "在保险库中所有笔记的全文内容中搜索查询字符串（不区分大小写）。返回匹配的笔记及其周围行上下文，以便您决定要完整阅读哪些笔记。当您需要根据笔记内容而非名称查找笔记时使用此功能。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "String to search for within note content (case-insensitive)",
+          "target": "在笔记内容中搜索的字符串（不区分大小写）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Maximum number of matching notes to return (default 10, max 50)",
+          "target": "返回的最大匹配笔记数量（默认 10，最大 50）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Limit search to notes under this vault-relative directory. Omit to search the whole vault.",
+          "target": "将搜索限制在此保险库相对目录下的笔记。省略则搜索整个保险库。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Unauthorized",
+          "target": "未授权"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Method Not Allowed",
+          "target": "方法不允许"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Parse error",
+          "target": "解析错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Claude Code terminal",
+          "target": "打开 Claude Code 终端"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ask Claude (quick)",
+          "target": "快速询问 Claude"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ask Claude about this note",
+          "target": "向 Claude 询问此笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ask Claude about selection",
+          "target": "向 Claude 询问选中内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start new Claude Code session",
+          "target": "启动新的 Claude Code 会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Ask Claude anything...",
+          "target": "向 Claude 提问..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Claude Code Settings",
+          "target": "Claude Code 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Vault MCP server",
+          "target": "保险库 MCP 服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Black",
+          "target": "黑色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New session",
+          "target": "新建会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Ask Claude",
+          "target": "询问 Claude"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Context:",
+          "target": "上下文："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Model:",
+          "target": "模型："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy response",
+          "target": "复制响应"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Claude is thinking...",
+          "target": "Claude 正在思考..."
+        }
+      ],
+      "regex": []
+    }
+  }
+}
