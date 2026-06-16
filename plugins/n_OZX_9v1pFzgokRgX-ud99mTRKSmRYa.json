@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "docx-importer",
+    "version": "1.0.1",
+    "title": "DOCX Importer",
+    "description": "DOCX Importer Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "browser",
+          "target": "浏览器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "skip",
+          "target": "跳过"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Skip (remove)",
+          "target": "跳过（移除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "plaintext",
+          "target": "纯文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Plain text",
+          "target": "纯文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "unexpected end of input",
+          "target": "输入意外结束"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unclosed comment",
+          "target": "未关闭的注释"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "invalid doc source",
+          "target": "无效的文档源"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "This browser lacks typed array (Uint8Array) support which is required by `buffer` v5.x. Use `buffer` v4.x if you require old browser support.",
+          "target": "此浏览器缺少 `buffer` v5.x 所需的类型化数组（Uint8Array）支持。如果您需要旧版浏览器支持，请使用 `buffer` v4.x。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s %d: %s",
+          "target": "%s %d: %s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "%s - %s",
+          "target": "%s - %s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Choose file…",
+          "target": "选择文件…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "/ (vault root)",
+          "target": "/（库根目录）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Export HTML (debug)",
+          "target": "导出 HTML（调试）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Import",
+          "target": "导入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select one or more .docx files to import",
+          "target": "选择一个或多个 .docx 文件进行导入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Subfolder and note filename",
+          "target": "子文件夹和笔记文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where to create the import subfolder(s)",
+          "target": "在哪里创建导入子文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How to handle [[Note Name]] links (not image attachments) when exporting to DOCX.",
+          "target": "导出为 DOCX 时如何处理 [[笔记名称]] 链接（非图像附件）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "DOCX file",
+          "target": "DOCX 文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note name",
+          "target": "笔记名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Parent folder",
+          "target": "父文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Non-attachment wikilinks",
+          "target": "非附件维基链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Select a parent folder...",
+          "target": "选择一个父文件夹..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. My Document",
+          "target": "例如 我的文档"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a DOCX file.",
+          "target": "请选择一个 DOCX 文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter a note name.",
+          "target": "请输入一个笔记名称。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a markdown note to export.",
+          "target": "请打开一个 Markdown 笔记以进行导出。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "actual",
+          "source": "end of tokens",
+          "target": "标记结束"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "docx-batch-row docx-batch-header",
+          "target": "docx-batch-row docx-batch-header"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "link",
+          "source": "FootnoteTextChar",
+          "target": "FootnoteTextChar"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "link",
+          "source": "FootnoteText",
+          "target": "FootnoteText"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "link",
+          "source": "EndnoteTextChar",
+          "target": "EndnoteTextChar"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "link",
+          "source": "EndnoteText",
+          "target": "EndnoteText"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "identifier",
+          "target": "标识符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "dot",
+          "target": "点"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "colon",
+          "target": "冒号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gt",
+          "target": "大于号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "whitespace",
+          "target": "空白"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "arrow",
+          "target": "箭头"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "equals",
+          "target": "等号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "string",
+          "target": "字符串"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "integer",
+          "target": "整数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "choice",
+          "target": "选择"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "bang",
+          "target": "感叹号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "class",
+          "target": "类"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Word Documents",
+          "target": "Word 文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "name",
+          "target": "名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Relationship",
+          "target": "关系"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Default",
+          "target": "默认"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Override",
+          "target": "覆盖"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Title",
+          "target": "标题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Heading 1",
+          "target": "标题 1"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Heading 2",
+          "target": "标题 2"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Heading 3",
+          "target": "标题 3"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Heading 4",
+          "target": "标题 4"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Heading 5",
+          "target": "标题 5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Heading 6",
+          "target": "标题 6"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Strong",
+          "target": "加粗"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "List Paragraph",
+          "target": "列表段落"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "footnote text",
+          "target": "脚注文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "footnote reference",
+          "target": "脚注引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Footnote Text Char",
+          "target": "脚注文本字符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "endnote text",
+          "target": "尾注文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "endnote reference",
+          "target": "尾注引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Endnote Text Char",
+          "target": "尾注文本字符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hyperlink",
+          "target": "超链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Relationships",
+          "target": "关系"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Import DOCX file",
+          "target": "导入 DOCX 文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Export active note as DOCX",
+          "target": "将活动笔记导出为 DOCX"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tab",
+          "source": "tab",
+          "target": "标签页"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "text",
+          "target": "文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Import DOCX",
+          "target": "导入 DOCX"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File",
+          "target": "文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Note name",
+          "target": "笔记名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "文本"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
