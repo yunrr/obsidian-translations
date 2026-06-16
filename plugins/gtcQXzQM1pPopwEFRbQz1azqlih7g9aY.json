@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "duplicate-detector",
+    "version": "2.0.0",
+    "title": "Duplicate Detector",
+    "description": "Highlights duplicate lines in the open note.",
+    "language": "zh-cn",
+    "supportedVersions": "0.0.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(o,u)",
+          "target": "Notice(o,u)"
+        },
+        {
+          "source": "Notice(e,i)",
+          "target": "Notice(e,i)"
+        },
+        {
+          "source": "Notice(`Duplicate line inserted: ${e.number} -- ${i.number}`,5e3)",
+          "target": "Notice(`插入重复行：${e.number} -- ${i.number}`,5e3)"
+        },
+        {
+          "source": ".setName(\"Enable highlighting\")",
+          "target": ".setName(\"启用高亮\")"
+        },
+        {
+          "source": ".setName(\"Enable notices\")",
+          "target": ".setName(\"启用通知\")"
+        },
+        {
+          "source": ".setName(\"Highlight color\")",
+          "target": ".setName(\"高亮颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Enable highlighting of duplicate lines in editor\")",
+          "target": ".setDesc(\"启用编辑器中重复行的高亮显示\")"
+        },
+        {
+          "source": ".setDesc(\"Show a notice when pasting a duplicated line\")",
+          "target": ".setDesc(\"粘贴重复行时显示通知\")"
+        },
+        {
+          "source": ".setDesc(\"Change the highlight color for duplicated lines\")",
+          "target": ".setDesc(\"更改重复行的高亮颜色\")"
+        }
+      ]
+    }
+  }
+}

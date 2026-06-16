@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-plugin-update-tracker",
+    "version": "2.0.0",
+    "title": "Plugin Update Tracker",
+    "description": "Know when installed plugins have updates and evaluate the risk of upgrading",
+    "language": "zh-cn",
+    "supportedVersions": "1.6.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Error checking for plugin updates. Please check your internet connection and security settings. Report an issue on github if the issue continues\",_A)",
+          "target": "Notice(\"检查插件更新。请检查您的Internet连接和安全设置。如果问题仍然存在，请在 github 上报告\",_A)"
+        },
+        {
+          "source": "Notice(\"Up-to-date! There aren't any plugin updates ready based on the filters configured in this plugin's settings.\",_A)",
+          "target": "Notice(\"最新！根据该插件设置中配置的过滤器，目前还没有任何插件更新。\",_A)"
+        },
+        {
+          "source": ".log(\"diff\")",
+          "target": ".log(\"差异\")"
+        },
+        {
+          "source": ".log(\"\\u2014\\u2014 no diff \\u2014\\u2014\")",
+          "target": ".log(\"\\u2014\\u2014 no diff \\u2014\\u2014\")"
+        },
+        {
+          "source": ".log(\"\\u2014\\u2014 diff end \\u2014\\u2014 \")",
+          "target": ".log(\"\\u2014\\u2014 diff end \\u2014\\u2014 \")"
+        },
+        {
+          "source": ".log(P1)",
+          "target": ".log(P1)"
+        },
+        {
+          "source": ".log(\"\\u2014\\u2014 log end \\u2014\\u2014\")",
+          "target": ".log(\"\\u2014\\u2014 log end \\u2014\\u2014\")"
+        },
+        {
+          "source": ".error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\")",
+          "target": ".error(\"forceFrameRate 取 0 到 125 之间的正整数，不支持强制帧频高于 125 fps\")"
+        },
+        {
+          "source": ".error(t.value)",
+          "target": ".error(t.value)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(e2,u1)",
+          "target": ".error(e2,u1)"
+        },
+        {
+          "source": ".error(`[redux-logger] redux-logger not installed. Make sure to pass logger instance as middleware:\n// Logger with default options\nimport { logger } from 'redux-logger'\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)",
+          "target": ".error(`[redux-logger] redux-logger没有安装。 确保将Logger实例作为中间件传递：\n// 带有默认选项的记录器\nimport { logger } from 'redux-logger'\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)"
+        },
+        {
+          "source": ".error('Icon with name \"'.concat(e,'\" and prefix \"')",
+          "target": ".error('Icon with name \"'.concat(e,'\" and prefix \"')"
+        },
+        {
+          "source": ".error(h)",
+          "target": ".error(h)"
+        },
+        {
+          "source": ".error(\"Error updating \"+h,T)",
+          "target": ".error(\"更新时出错 \"+h,T)"
+        },
+        {
+          "source": ".error(\"Error cleaning up dismissed plugin versions\",n)",
+          "target": ".error(\"错误清理删除插件版本\",n)"
+        },
+        {
+          "source": "name:\"\")?K0(e):\"",
+          "target": "name:\"\")?K0(e):\""
+        },
+        {
+          "source": "name:\"en\"",
+          "target": "name:\"en\""
+        },
+        {
+          "source": "name:\"attributeName\"",
+          "target": "name:\"attributeName\""
+        },
+        {
+          "source": "name:\"actuate\"",
+          "target": "name:\"actuate\""
+        },
+        {
+          "source": "name:\"arcrole\"",
+          "target": "name:\"arcrole\""
+        },
+        {
+          "source": "name:\"href\"",
+          "target": "name:\"href\""
+        },
+        {
+          "source": "name:\"role\"",
+          "target": "name:\"role\""
+        },
+        {
+          "source": "name:\"show\"",
+          "target": "name:\"show\""
+        },
+        {
+          "source": "name:\"title\"",
+          "target": "name:\"title\""
+        },
+        {
+          "source": "name:\"type\"",
+          "target": "name:\"type\""
+        },
+        {
+          "source": "name:\"base\"",
+          "target": "name:\"base\""
+        },
+        {
+          "source": "name:\"lang\"",
+          "target": "name:\"lang\""
+        },
+        {
+          "source": "name:\"space\"",
+          "target": "name:\"space\""
+        },
+        {
+          "source": "name:\"xmlns\"",
+          "target": "name:\"xmlns\""
+        },
+        {
+          "source": "name:\"xlink\"",
+          "target": "name:\"xlink\""
+        },
+        {
+          "source": "name:\"AbortError\"",
+          "target": "name:\"AbortError\""
+        },
+        {
+          "source": "name:\"ConditionError\"",
+          "target": "name:\"ConditionError\""
+        },
+        {
+          "source": "name:\"obsidian\"",
+          "target": "name:\"obsidian\""
+        },
+        {
+          "source": "name:\"release\"",
+          "target": "name:\"release\""
+        },
+        {
+          "source": "name:\"attention\"",
+          "target": "name:\"attention\""
+        },
+        {
+          "source": "name:\"autolink\"",
+          "target": "name:\"autolink\""
+        },
+        {
+          "source": "name:\"blockQuote\"",
+          "target": "name:\"blockQuote\""
+        },
+        {
+          "source": "name:\"characterEscape\"",
+          "target": "name:\"characterEscape\""
+        },
+        {
+          "source": "name:\"characterReference\"",
+          "target": "name:\"characterReference\""
+        },
+        {
+          "source": "name:\"codeFenced\"",
+          "target": "name:\"codeFenced\""
+        },
+        {
+          "source": "name:\"codeIndented\"",
+          "target": "name:\"codeIndented\""
+        },
+        {
+          "source": "name:\"codeText\"",
+          "target": "name:\"codeText\""
+        },
+        {
+          "source": "name:\"definition\"",
+          "target": "name:\"definition\""
+        },
+        {
+          "source": "name:\"hardBreakEscape\"",
+          "target": "name:\"hardBreakEscape\""
+        },
+        {
+          "source": "name:\"headingAtx\"",
+          "target": "name:\"headingAtx\""
+        },
+        {
+          "source": "name:\"htmlFlow\"",
+          "target": "name:\"htmlFlow\""
+        },
+        {
+          "source": "name:\"htmlText\"",
+          "target": "name:\"htmlText\""
+        },
+        {
+          "source": "name:\"labelEnd\"",
+          "target": "name:\"labelEnd\""
+        },
+        {
+          "source": "name:\"labelStartImage\"",
+          "target": "name:\"labelStartImage\""
+        },
+        {
+          "source": "name:\"labelStartLink\"",
+          "target": "name:\"labelStartLink\""
+        },
+        {
+          "source": "name:\"lineEnding\"",
+          "target": "name:\"lineEnding\""
+        },
+        {
+          "source": "name:\"thematicBreak\"",
+          "target": "name:\"thematicBreak\""
+        },
+        {
+          "source": "name:\"list\"",
+          "target": "name:\"list\""
+        },
+        {
+          "source": "name:\"setextUnderline\"",
+          "target": "name:\"setextUnderline\""
+        },
+        {
+          "source": "name:\"class\"",
+          "target": "name:\"class\""
+        },
+        {
+          "source": "name:\"html\"",
+          "target": "name:\"html\""
+        },
+        {
+          "source": "link:\"+t.slice(5).toLowerCase()},properties:{xLinkActuate:null,xLinkArcRole:null,xLinkHref:null,xLinkRole:null,xLinkShow:null,xLinkTitle:null,xLinkType:null}});var Ql=Z4({space:\"",
+          "target": "link:\"+t.slice(5).toLowerCase()},properties:{xLinkActuate:null,xLinkArcRole:null,xLinkHref:null,xLinkRole:null,xLinkShow:null,xLinkTitle:null,xLinkType:null}});var Ql=Z4({space:\""
+        },
+        {
+          "source": "link:\"xmlns:xlink\"",
+          "target": "link:\"xmlns:xlink\""
+        },
+        {
+          "source": "link:\"+t.slice(5).toLowerCase()},properties:{xLinkActuate:null,xLinkArcRole:null,xLinkHref:null,xLinkRole:null,xLinkShow:null,xLinkTitle:null,xLinkType:null}});var Qf=c3({space:\"",
+          "target": "link:\"+t.slice(5).toLowerCase()},properties:{xLinkActuate:null,xLinkArcRole:null,xLinkHref:null,xLinkRole:null,xLinkShow:null,xLinkTitle:null,xLinkType:null}});var Qf=c3({space:\""
+        },
+        {
+          "source": "link:\"http://www.w3.org/1999/xlink\"",
+          "target": "link:\"http://www.w3.org/1999/xlink\""
+        },
+        {
+          "source": "text:\"CHANGED:\"",
+          "target": "text:\"CHANGED:\""
+        },
+        {
+          "source": "text:\"ADDED:\"",
+          "target": "text:\"ADDED:\""
+        },
+        {
+          "source": "text:\"DELETED:\"",
+          "target": "text:\"DELETED:\""
+        },
+        {
+          "source": "text:\"ARRAY:\"",
+          "target": "text:\"ARRAY:\""
+        },
+        {
+          "source": "text:\"Error\"",
+          "target": "text:\"Error\""
+        },
+        {
+          "source": "text:\"Plugin Update Filters\"",
+          "target": "text:\"Plugin Update Filters\""
+        },
+        {
+          "source": "text:\"Appearance\"",
+          "target": "text:\"Appearance\""
+        },
+        {
+          "source": "text:\"View CSS Snippet selector list\"",
+          "target": "text:\"查看CSS摘要选择器列表\""
+        },
+        {
+          "source": "text:\"Restore Ignored Plugin Versions\"",
+          "target": "text:\"恢复被忽略的插件版本\""
+        },
+        {
+          "source": ".setName(\"Days until new plugin versions are shown\")",
+          "target": ".setName(\"显示新插件版本前的天数\")"
+        },
+        {
+          "source": ".setName(\"Ignore Beta Versions\")",
+          "target": ".setName(\"忽略Beta版本\")"
+        },
+        {
+          "source": ".setName(\"Ignore Updates to Disabled Plugins\")",
+          "target": ".setName(\"忽略已禁用插件的更新\")"
+        },
+        {
+          "source": ".setName(\"Minimum update count to show plugin icon\")",
+          "target": ".setName(\"显示插件图标的最小更新次数\")"
+        },
+        {
+          "source": ".setName(\"Hours between checking for new plugin updates\")",
+          "target": ".setName(\"检查新插件更新的间隔时间\")"
+        },
+        {
+          "source": ".setName(\"Show on Mobile\")",
+          "target": ".setName(\"在手机上显示\")"
+        },
+        {
+          "source": ".setDesc(\"Waiting a few days can help avoid bugs and security issues\")",
+          "target": ".setDesc(\"等待几天有助于避免错误和安全问题\")"
+        },
+        {
+          "source": ".setDesc(\"Plugin beta versions are less stable but allow trying out new features sooner\")",
+          "target": ".setDesc(\"插件测试版的稳定性较差，但可以更快地试用新功能。\")"
+        },
+        {
+          "source": ".setDesc(\"Hide the plugin icon if there are fewer than this many plugin updates available (unless this plugin has updates)\")",
+          "target": ".setDesc(\"如果可用的插件更新少于此数量，则隐藏插件图标（除非此插件有更新）\")"
+        },
+        {
+          "source": ".setDesc(\"Check for updates when obsidian starts and whenever this many hours passes\")",
+          "target": ".setDesc(\"当黑曜石启动时，以及每当过了这么多小时，请检查更新\")"
+        },
+        {
+          "source": ".setDesc(\"Adds a ribbon action icon to mobile whenever updates are available. Note that the update count is not currently shown.\")",
+          "target": ".setDesc(\"只要有更新，就会在移动设备上添加一个功能区操作图标。请注意，目前不显示更新次数。\")"
+        },
+        {
+          "source": ".innerText=`Updating ${r} ${A0(\"Plugin\",r)}...`",
+          "target": ".innerText=`更新 ${r} ${A0(\"插件\",r)}...`"
+        },
+        {
+          "source": ".innerText=\"Finished Updating Plugins\"",
+          "target": ".innerText=\"完成更新插件\""
+        }
+      ]
+    }
+  }
+}

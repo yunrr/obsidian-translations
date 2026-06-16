@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "automatic-renumbering",
+    "version": "2.0.0",
+    "title": "Automatic List Management",
+    "description": "Automatically renumber numbered lists as you edit them.",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.7",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setName(\"Smart pasting\")",
+          "target": ".setName(\"智能粘贴\")"
+        },
+        {
+          "source": ".setName(\"Start numbering from 1\")",
+          "target": ".setName(\"始终从 1 开始编号\")"
+        },
+        {
+          "source": ".setDesc(\"Pasting keeps the sequencing consistent with the original numbered list.\")",
+          "target": ".setDesc(\"粘贴时保持与原有序号的连续性。\")"
+        },
+        {
+          "source": ".error(\"Error in handleMouseClick:\", error)",
+          "target": ".error(\"处理鼠标点击时发生错误:\", error)"
+        },
+        {
+          "source": "name: \"Renumber lists: in selection or at cursor\"",
+          "target": "name: \"对列表重新编号: 在选区或光标处\""
+        },
+        {
+          "source": "name: \"Renumber lists: entire note\"",
+          "target": "name: \"对列表重新编号: 整篇笔记\""
+        },
+        {
+          "source": "name: \"Reorder checkboxes: in selection or at cursor\"",
+          "target": "name: \"对复选框重新排列: 在选区或光标处\""
+        },
+        {
+          "source": "name: \"Reorder checkboxes: entire note\"",
+          "target": "name: \"对复选框重新排列: 整篇笔记\""
+        },
+        {
+          "source": "name: \"Delete all checked Items in note\"",
+          "target": "name: \"删除全部已勾选项\""
+        },
+        {
+          "source": "text: \"Enter single characters separated by spaces (case-insensitive). Default: 'X'.\"",
+          "target": "text: \"输入单个字符（空格分隔，不区分大小写）。默认值： 'X'.\""
+        },
+        {
+          "source": "text: \"Example: '- /' means tasks with [x], [-], or [/] will be removed, while tasks with other characters like [>] will remain.\"",
+          "target": "text: \"示例：输入 '- /' 表示将删除包含[x]、[-]或[/]的待办项，而其他字符如[>]的项将保留。\""
+        },
+        {
+          "source": ".setName(\"Tab size\")",
+          "target": ".setName(\"缩进宽度\")"
+        },
+        {
+          "source": ".setName(\"Checklists\")",
+          "target": ".setName(\"任务列表\")"
+        },
+        {
+          "source": ".setName(\"Auto-sort on changes\")",
+          "target": ".setName(\"变更时自动排序\")"
+        },
+        {
+          "source": ".setName(\"Place checked items at bottom\")",
+          "target": ".setName(\"置底已勾选项\")"
+        },
+        {
+          "source": ".setName(\"Sort all special checkboxes\")",
+          "target": ".setName(\"排序所有特殊复选框\")"
+        },
+        {
+          "source": ".setName(\"Checkbox delete-characters\")",
+          "target": ".setName(\"删除字符配置\")"
+        },
+        {
+          "source": ".setName(\"Numbered lists\")",
+          "target": ".setName(\"有序列表\")"
+        },
+        {
+          "source": ".setName(\"Auto-renumber on changes\")",
+          "target": ".setName(\"变更时自动重新编号\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Set the indent size to the same size as in the editor's settings. Can be found under: Options > Editor > Tab indent size/Indent visual width.\"\n    )",
+          "target": ".setDesc(\n      \"设置与编辑器配置一致的缩进宽度（路径：选项> 编辑器 > 制表符宽度）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Automatically sort checklists whenever checkboxes are checked or unchecked.\")",
+          "target": ".setDesc(\"勾选/取消勾选复选框时自动对任务列表进行排序。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"When enabled, checked tasks will be placed at the bottom. When disabled, they will be at the top.\"\n    )",
+          "target": ".setDesc(\n      \"启用时，已勾选项置于底部；禁用时则置于顶部。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Specify which checkbox characters mark tasks for deletion. Tasks with these characters are always sorted below tasks with other characters, and can be removed by using the delete command.\"\n    )",
+          "target": ".setDesc(\n      \"指定用于标记删除的复选框字符，含这些字符的项始终排列在其他项下方，可通过删除命令移除。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Automatically sort numbered lists as changes are made.\")",
+          "target": ".setDesc(\"内容变更时自动对有序列表重新排序。\")"
+        },
+        {
+          "source": ".setDesc(\"Whether lists always start from 1 or preserve their original starting numbers.\")",
+          "target": ".setDesc(\"选择列表始终从1开始编号，或保留其原始起始数字。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter characters\")",
+          "target": ".setPlaceholder(\"输入字符\")"
+        },
+        {
+          "source": ".appendText(\"For more information, visit \")",
+          "target": ".appendText(\"更多信息请访问 \")"
+        },
+        {
+          "source": ".appendText(\"When enabled, tasks with any special checkbox characters will be sorted according to \")",
+          "target": ".appendText(\"启用时，含任意特殊复选框字符的任务将根据 \")"
+        },
+        {
+          "source": ".appendText(\". When disabled, only tasks marked for deletion will be sorted.\")",
+          "target": ".appendText(\" 排序。禁用时仅排序标记为删除的任务\")"
+        },
+        {
+          "source": ".error(       `reorderAllListsInRange is invalid with index=${start}, limit=${limit}. editor.lastLine()=${editor.lastLine()}`     )",
+          "target": ".error(       `reorderAllListsInRange 函数调用无效=${start}, limit=${limit}. editor.lastLine()=${editor.lastLine()}`     )"
+        },
+        {
+          "source": ".error(           `renumbering range is invalid with index=${start}, limit=${limit}. editor.lastLine()=${editor.lastLine()}`         )",
+          "target": ".error(           `renumbering 范围无效=${start}, limit=${limit}. editor.lastLine()=${editor.lastLine()}`         )"
+        },
+        {
+          "source": "name: \"At cursor position\"",
+          "target": "name: \"在光标位置\""
+        },
+        {
+          "source": "name: \"Selected lists\"",
+          "target": "name: \"已选择列表\""
+        },
+        {
+          "source": "name: \"All numbered lists note\"",
+          "target": "name: \"所有编号列表笔记\""
+        },
+        {
+          "source": ".setName(\"Live update\")",
+          "target": ".setName(\"实时更新\")"
+        },
+        {
+          "source": ".setName(\"Tab indent size\")",
+          "target": ".setName(\"标签缩进大小\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically update numbered lists as changes are made.\")",
+          "target": ".setDesc(\"自动更新编号列表以反映更改。\")"
+        },
+        {
+          "source": ".setDesc(\"The first item of every numbered list is 1.\")",
+          "target": ".setDesc(\"每个编号列表的第一个项目都是1。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Set the indent size to the same size as in the editor's settings. Can be found under: Options > Editor > Tab indent size.\"\n    )",
+          "target": ".setDesc(\n      \"将缩进大小设置为与编辑器设置中相同。可以在以下位置找到：选项 > 编辑器 > 制表符缩进大小。\"\n    )"
+        }
+      ]
+    }
+  }
+}

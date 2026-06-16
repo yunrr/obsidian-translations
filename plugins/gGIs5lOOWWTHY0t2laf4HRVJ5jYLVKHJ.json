@@ -1,0 +1,927 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "folder-notes",
+    "version": "2.0.0",
+    "title": "Folder notes",
+    "description": "Create notes within folders that can be accessed without collapsing the folder, similar to the functionality offered in Notion.",
+    "language": "zh-cn",
+    "supportedVersions": "1.7.30",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"This extension is already supported\")",
+          "target": "Notice(\"此扩展已被支持\")"
+        },
+        {
+          "source": "Notice(\"Please choose a file extension\")",
+          "target": "Notice(\"请选择文件扩展名\")"
+        },
+        {
+          "source": "Notice(\"Folder overview: Couldn't find the folder\")",
+          "target": "Notice(\"文件夹概览：无法找到文件夹\")"
+        },
+        {
+          "source": "Notice(\"Starting to update folder notes...\")",
+          "target": "Notice(\"开始更新文件夹笔记...\")"
+        },
+        {
+          "source": "Notice(\"Finished updating folder notes\")",
+          "target": "Notice(\"已完成更新文件夹笔记\")"
+        },
+        {
+          "source": "Notice(\"Starting to switch storage location...\")",
+          "target": "Notice(\"开始切换存储位置...\")"
+        },
+        {
+          "source": "Notice(\"Finished switching storage location\")",
+          "target": "Notice(\"已完成切换存储位置\")"
+        },
+        {
+          "source": "Notice(\"Folder already exists\")",
+          "target": "Notice(\"文件夹已存在\")"
+        },
+        {
+          "source": "Notice('File name cannot contain any of the following characters: * \" \\\\ / < > : | ?')",
+          "target": "Notice('文件名不能包含以下字符：* \" \\\\ / < > : | ?')"
+        },
+        {
+          "source": "Notice(\"File name cannot end with a dot\")",
+          "target": "Notice(\"文件名不能以点结束\")"
+        },
+        {
+          "source": "Notice(\"Folder note already exists\")",
+          "target": "Notice(\"文件夹笔记已存在\")"
+        },
+        {
+          "source": "Notice(\"File already exists\")",
+          "target": "Notice(\"文件已存在\")"
+        },
+        {
+          "source": "Notice(\"Successfully removed folder from excluded folders\")",
+          "target": "Notice(\"成功从排除的文件夹中移除文件夹\")"
+        },
+        {
+          "source": "Notice(\"Successfully excluded folder from folder notes\")",
+          "target": "Notice(\"成功从文件夹笔记中排除文件夹\")"
+        },
+        {
+          "source": "Notice(\"Folder with same name already exists!\")",
+          "target": "Notice(\"已存在同名文件夹！\")"
+        },
+        {
+          "source": "Notice(\"A folder with the same name already exists\")",
+          "target": "Notice(\"已存在同名文件夹\")"
+        },
+        {
+          "source": "Notice(\"Error creating folder overview (folder notes plugin)\")",
+          "target": "Notice(\"创建文件夹概览时出错（文件夹笔记插件）\")"
+        },
+        {
+          "source": ".log(\"loading folder notes plugin\")",
+          "target": ".log(\"加载文件夹笔记插件\")"
+        },
+        {
+          "source": ".log(\"unloading folder notes plugin\")",
+          "target": ".log(\"卸载文件夹笔记插件\")"
+        },
+        {
+          "source": "name: \"manager:update\"",
+          "target": "name: \"管理器: 更新\""
+        },
+        {
+          "source": "name: \"General\"",
+          "target": "name: \"通用\""
+        },
+        {
+          "source": "name: \"Folder overview\"",
+          "target": "name: \"文件夹概览\""
+        },
+        {
+          "source": "name: \"Exclude folders\"",
+          "target": "name: \"排除文件夹\""
+        },
+        {
+          "source": "name: \"File explorer\"",
+          "target": "name: \"文件资源管理器\""
+        },
+        {
+          "source": "name: \"Path\"",
+          "target": "name: \"路径\""
+        },
+        {
+          "source": "name: \"Make current active note a folder note for the folder of the active note\"",
+          "target": "name: \"将当前活动笔记作为活动笔记所在文件夹的文件夹笔记\""
+        },
+        {
+          "source": "name: \"Create folder note with a new folder for the active note in the current folder\"",
+          "target": "name: \"在当前文件夹中为活动笔记创建新的文件夹笔记\""
+        },
+        {
+          "source": "name: \"Create markdown folder note for current folder of active note\"",
+          "target": "name: \"为活动笔记的当前文件夹创建Markdown文件夹笔记\""
+        },
+        {
+          "source": "name: `Create ${fileType} folder note for current folder of active note`",
+          "target": "name: `为活动笔记的当前文件夹创建 ${fileType} 文件夹笔记`"
+        },
+        {
+          "source": "name: \"Delete folder note of current folder of active note\"",
+          "target": "name: \"删除活动笔记当前文件夹的文件夹笔记\""
+        },
+        {
+          "source": "name: \"Open folder note of current folder of active note\"",
+          "target": "name: \"打开活动笔记当前文件夹的文件夹笔记\""
+        },
+        {
+          "source": "name: \"Insert folder overview\"",
+          "target": "name: \"插入文件夹概览\""
+        },
+        {
+          "source": "name: \"Create folder note from selected text\"",
+          "target": "name: \"从选定文本创建文件夹笔记\""
+        },
+        {
+          "source": "text: \"A folder note for this folder already exists\"",
+          "target": "text: \"此文件夹的文件夹笔记已存在\""
+        },
+        {
+          "source": "text: \"Are you sure you want to turn the note into a folder note and rename the existing folder note?\"",
+          "target": "text: \"您确定要将笔记转换为文件夹笔记并重命名现有文件夹笔记吗？\""
+        },
+        {
+          "source": "text: \"Rename and don't ask again\"",
+          "target": "text: \"重命名并不再询问\""
+        },
+        {
+          "source": "text: \"Don't ask again\"",
+          "target": "text: \"不再询问\""
+        },
+        {
+          "source": "text: \"Rename\"",
+          "target": "text: \"重命名\""
+        },
+        {
+          "source": "text: \"Cancel\"",
+          "target": "text: \"取消\""
+        },
+        {
+          "source": "text: \"Delete folder note\"",
+          "target": "text: \"删除文件夹笔记\""
+        },
+        {
+          "source": "text: `Are you sure you want to delete the folder note \"${this.file.name}\" ?`",
+          "target": "text: `您确定要删除文件夹笔记 \"${this.file.name}\" 吗？`"
+        },
+        {
+          "source": "text: \"It will be moved to your system trash.\"",
+          "target": "text: \"它将被移动到您的系统回收站。\""
+        },
+        {
+          "source": "text: 'It will be moved to your Obsidian trash, which is located in the \".trash\" hidden folder in your vault.'",
+          "target": "text: '它将被移动到您的 Obsidian 回收站，该回收站位于您保险库中的 \".trash\" 隐藏文件夹中。'"
+        },
+        {
+          "source": "text: \"It will be permanently deleted.\"",
+          "target": "text: \"它将被永久删除。\""
+        },
+        {
+          "source": "text: \"Delete and don't ask again\"",
+          "target": "text: \"删除并不再询问\""
+        },
+        {
+          "source": "text: \"Delete\"",
+          "target": "text: \"删除\""
+        },
+        {
+          "source": "text: \"reference\"",
+          "target": "text: \"引用\""
+        },
+        {
+          "source": "text: \"Excluded folder settings\"",
+          "target": "text: \"排除的文件夹设置\""
+        },
+        {
+          "source": "text: \"Pattern settings\"",
+          "target": "text: \"模式设置\""
+        },
+        {
+          "source": "text: \"Extension name\"",
+          "target": "text: \"扩展名\""
+        },
+        {
+          "source": "text: \"Create folder note for every folder\"",
+          "target": "text: \"为每个文件夹创建文件夹笔记\""
+        },
+        {
+          "source": "text: \"Make sure to backup your vault before using this feature.\"",
+          "target": "text: \"使用此功能之前，请确保备份您的保险库。\""
+        },
+        {
+          "source": "text: \"This feature will create a folder note for every folder in your vault.\"",
+          "target": "text: \"此功能将为您保险库中的每个文件夹创建文件夹笔记。\""
+        },
+        {
+          "source": "text: \"Every folder that already has a folder note will be ignored.\"",
+          "target": "text: \"每个已存在文件夹笔记的文件夹将被忽略。\""
+        },
+        {
+          "source": "text: \"Every excluded folder will be ignored.\"",
+          "target": "text: \"每个排除的文件夹将被忽略。\""
+        },
+        {
+          "source": "text: \"Style settings\"",
+          "target": "text: \"样式设置\""
+        },
+        {
+          "source": "text: \"Folder overview settings\"",
+          "target": "text: \"文件夹概览设置\""
+        },
+        {
+          "source": "text: \"Default folder overview settings\"",
+          "target": "text: \"默认文件夹概览设置\""
+        },
+        {
+          "source": ".setButtonText(\"Create\")",
+          "target": ".setButtonText(\"创建\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Rename existing folder notes\")",
+          "target": ".setButtonText(\"重命名现有文件夹笔记\")"
+        },
+        {
+          "source": ".setButtonText(\"Add custom file type\")",
+          "target": ".setButtonText(\"添加自定义文件类型\")"
+        },
+        {
+          "source": ".setButtonText(\"Switch\")",
+          "target": ".setButtonText(\"切换\")"
+        },
+        {
+          "source": ".setButtonText(\"Manage\")",
+          "target": ".setButtonText(\"管理\")"
+        },
+        {
+          "source": ".setName(\"Include subfolders\")",
+          "target": ".setName(\"包含子文件夹\")"
+        },
+        {
+          "source": ".setName(\"Disable folder name sync\")",
+          "target": ".setName(\"禁用文件夹名称同步\")"
+        },
+        {
+          "source": ".setName(\"Don't show folder in folder overview\")",
+          "target": ".setName(\"在文件夹概览中不显示文件夹\")"
+        },
+        {
+          "source": ".setName(\"Disable auto creation of folder notes in this folder\")",
+          "target": ".setName(\"禁用在此文件夹中自动创建文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Disable open folder note\")",
+          "target": ".setName(\"禁用打开文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Collapse folder when opening folder note\")",
+          "target": ".setName(\"打开文件夹笔记时折叠文件夹\")"
+        },
+        {
+          "source": ".setName('Enter the name of the extension (only the short form, e.g. \"md\")')",
+          "target": ".setName('输入扩展名（仅短形式，如 \"md\"）')"
+        },
+        {
+          "source": ".setName(\"Folder note file extension\")",
+          "target": ".setName(\"文件夹笔记文件扩展名\")"
+        },
+        {
+          "source": ".setName(\"Folder note name\")",
+          "target": ".setName(\"文件夹笔记名称\")"
+        },
+        {
+          "source": ".setName(\"Use folder name instead of folder note name in the tab title\")",
+          "target": ".setName(\"在标签标题中使用文件夹名称而不是文件夹笔记名称\")"
+        },
+        {
+          "source": ".setName(\"Default folder note type for new folder notes\")",
+          "target": ".setName(\"新文件夹笔记的默认文件夹笔记类型\")"
+        },
+        {
+          "source": ".setName(\"Supported file types for folder notes\")",
+          "target": ".setName(\"文件夹笔记支持的文件类型\")"
+        },
+        {
+          "source": ".setName(\"Template path\")",
+          "target": ".setName(\"模板路径\")"
+        },
+        {
+          "source": ".setName(\"Storage location\")",
+          "target": ".setName(\"存储位置\")"
+        },
+        {
+          "source": ".setName(\"Switch to new storage location\")",
+          "target": ".setName(\"切换到新存储位置\")"
+        },
+        {
+          "source": ".setName(\"Delete folder notes when deleting the folder\")",
+          "target": ".setName(\"删除文件夹时删除文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Move folder notes when moving the folder\")",
+          "target": ".setName(\"移动文件夹时移动文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Key for creating folder note\")",
+          "target": ".setName(\"创建文件夹笔记的键\")"
+        },
+        {
+          "source": ".setName(\"Key for opening folder note\")",
+          "target": ".setName(\"打开文件夹笔记的键\")"
+        },
+        {
+          "source": ".setName(\"Sync folder name\")",
+          "target": ".setName(\"同步文件夹名称\")"
+        },
+        {
+          "source": ".setName(\"Confirm folder note deletion\")",
+          "target": ".setName(\"确认删除文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Deleted folder notes\")",
+          "target": ".setName(\"已删除的文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Open folder note in a new tab by default\")",
+          "target": ".setName(\"默认在新标签页中打开文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Automatically create folder notes\")",
+          "target": ".setName(\"自动创建文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Enable front matter title plugin integration\")",
+          "target": ".setName(\"启用前置内容标题插件集成\")"
+        },
+        {
+          "source": ".setName(\"Create folder note for every folder\")",
+          "target": ".setName(\"为每个文件夹创建文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Hide folder note\")",
+          "target": ".setName(\"隐藏文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Don't open folder notes by clicking on the name (on mobile)\")",
+          "target": ".setName(\"在手机上点击名称时不打开文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Only open folder notes through the name\")",
+          "target": ".setName(\"仅通过名称打开文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Disable folder collapsing\")",
+          "target": ".setName(\"禁用文件夹折叠\")"
+        },
+        {
+          "source": ".setName(\"Use submenus\")",
+          "target": ".setName(\"使用子菜单\")"
+        },
+        {
+          "source": ".setName(\"Change folder name in the file explorer\")",
+          "target": ".setName(\"在文件资源管理器中更改文件夹名称\")"
+        },
+        {
+          "source": ".setName(\"Hide collapse icon\")",
+          "target": ".setName(\"隐藏折叠图标\")"
+        },
+        {
+          "source": ".setName(\"Hide collapse icon also when the attachment folder is in the same folder\")",
+          "target": ".setName(\"当附件文件夹在同一文件夹中时也隐藏折叠图标\")"
+        },
+        {
+          "source": ".setName(\"Underline the name of folder notes\")",
+          "target": ".setName(\"为文件夹笔记的名称添加下划线\")"
+        },
+        {
+          "source": ".setName(\"Bold the name of folder notes\")",
+          "target": ".setName(\"将文件夹笔记的名称加粗\")"
+        },
+        {
+          "source": ".setName(\"Cursive the name of folder notes\")",
+          "target": ".setName(\"将文件夹笔记的名称斜体\")"
+        },
+        {
+          "source": ".setName(\"Open folder note through path\")",
+          "target": ".setName(\"通过路径打开文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"Change folder name in the path\")",
+          "target": ".setName(\"在路径中更改文件夹名称\")"
+        },
+        {
+          "source": ".setName(\"Underline folders in the path\")",
+          "target": ".setName(\"为路径中的文件夹添加下划线\")"
+        },
+        {
+          "source": ".setName(\"Bold folders in the path\")",
+          "target": ".setName(\"将路径中的文件夹名称加粗\")"
+        },
+        {
+          "source": ".setName(\"Cursive the name of folder notes in the path\")",
+          "target": ".setName(\"在路径中将文件夹笔记的名称斜体\")"
+        },
+        {
+          "source": ".setName(\"Show the title\")",
+          "target": ".setName(\"显示标题\")"
+        },
+        {
+          "source": ".setName(\"Title\")",
+          "target": ".setName(\"标题\")"
+        },
+        {
+          "source": ".setName(\"Folder path for the overview\")",
+          "target": ".setName(\"概览的文件夹路径\")"
+        },
+        {
+          "source": ".setName(\"Overview style\")",
+          "target": ".setName(\"概览样式\")"
+        },
+        {
+          "source": ".setName(\"Store collapsed condition\")",
+          "target": ".setName(\"存储折叠状态\")"
+        },
+        {
+          "source": ".setName(\"Include types\")",
+          "target": ".setName(\"包含类型\")"
+        },
+        {
+          "source": ".setName(\"Disable file tag\")",
+          "target": ".setName(\"禁用文件标签\")"
+        },
+        {
+          "source": ".setName(\"Show folder notes\")",
+          "target": ".setName(\"显示文件夹笔记\")"
+        },
+        {
+          "source": ".setName(\"File depth\")",
+          "target": ".setName(\"文件深度\")"
+        },
+        {
+          "source": ".setName(\"Sort files by\")",
+          "target": ".setName(\"按以下方式排序文件\")"
+        },
+        {
+          "source": ".setName(\"Show folder names of folders that appear empty in the folder overview\")",
+          "target": ".setName(\"显示在文件夹概览中似乎为空的文件夹的名称\")"
+        },
+        {
+          "source": ".setName(\"Only show first empty subfolders of current folder\")",
+          "target": ".setName(\"仅显示当前文件夹的第一个空子文件夹\")"
+        },
+        {
+          "source": ".setName(\"Disable collapse icon for folder notes\")",
+          "target": ".setName(\"禁用文件夹笔记的折叠图标\")"
+        },
+        {
+          "source": ".setName(\"Manage folder overview defaults\")",
+          "target": ".setName(\"管理文件夹概览默认设置\")"
+        },
+        {
+          "source": ".setName(\"Manage excluded folders\")",
+          "target": ".setName(\"管理排除的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Exclude folder default settings\")",
+          "target": ".setName(\"排除文件夹默认设置\")"
+        },
+        {
+          "source": ".setName(\"Exclude pattern default settings\")",
+          "target": ".setName(\"排除模式默认设置\")"
+        },
+        {
+          "source": ".setName(\"Add excluded folder\")",
+          "target": ".setName(\"添加排除的文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the subfolders of the folder should also be excluded\")",
+          "target": ".setDesc(\"选择是否也排除文件夹的子文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the folder note should be renamed when the folder name is changed\")",
+          "target": ".setDesc(\"选择是否在文件夹名称更改时重命名文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the folder should be shown in the folder overview\")",
+          "target": ".setDesc(\"选择是否在文件夹概览中显示该文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if a folder note should be created when a new folder is created\")",
+          "target": ".setDesc(\"选择在创建新文件夹时是否创建文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the folder note should be opened when the folder is opened\")",
+          "target": ".setDesc(\"选择在打开文件夹时是否打开文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the folder should be collapsed when the folder note is opened\")",
+          "target": ".setDesc(\"选择在打开文件夹笔记时是否折叠文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the folder name should be renamed when the file name has been changed\")",
+          "target": ".setDesc(\"选择在文件名更改时是否重命名文件夹名称\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if a folder note should be created when a new folder is created that matches this pattern\")",
+          "target": ".setDesc(\"选择在创建新文件夹时，如果符合此模式，是否创建文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the file extension for the folder notes.\")",
+          "target": ".setDesc(\"选择文件夹笔记的文件扩展名。\")"
+        },
+        {
+          "source": ".setDesc(\"{{folder_name}} will be replaced with the name of the folder\")",
+          "target": ".setDesc(\"{{folder_name}} 将替换为文件夹的名称\")"
+        },
+        {
+          "source": ".setDesc(`When you're using a folder note name like \"folder note\" and have multiple folder notes open you can't separate them anymore by their name. This setting uses the folder name instead and allows you to indentify the different files.`)",
+          "target": ".setDesc(`当您使用诸如 \"文件夹笔记\" 的文件夹笔记名称且打开多个文件夹笔记时，无法通过名称区分它们。此设置使用文件夹名称来代替，并允许您识别不同的文件。`)"
+        },
+        {
+          "source": ".setDesc(\"Choose the default file type for new folder notes. (canvas, markdown, ...)\")",
+          "target": ".setDesc(\"选择新文件夹笔记的默认文件类型。（画布、Markdown 等）\")"
+        },
+        {
+          "source": ".setDesc(\"Choose where to store the folder notes\")",
+          "target": ".setDesc(\"选择存储文件夹笔记的位置\")"
+        },
+        {
+          "source": ".setDesc(\"Move all folder notes to the new storage location\")",
+          "target": ".setDesc(\"将所有文件夹笔记移动到新的存储位置\")"
+        },
+        {
+          "source": ".setDesc(\"Delete the folder note when deleting the folder\")",
+          "target": ".setDesc(\"删除文件夹时删除文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Move the folder note when moving the folder\")",
+          "target": ".setDesc(\"移动文件夹时移动文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"The key combination to create a folder note\")",
+          "target": ".setDesc(\"创建文件夹笔记的快捷键组合\")"
+        },
+        {
+          "source": ".setDesc(\"Select the combination to open a folder note\")",
+          "target": ".setDesc(\"选择打开文件夹笔记的组合键\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically rename the folder note when the folder name is changed\")",
+          "target": ".setDesc(\"当文件夹名称更改时自动重命名文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Ask for confirmation before deleting a folder note\")",
+          "target": ".setDesc(\"删除文件夹笔记前询问确认\")"
+        },
+        {
+          "source": ".setDesc(\"What happens to the folder note after you delete it\")",
+          "target": ".setDesc(\"删除后文件夹笔记会发生什么\")"
+        },
+        {
+          "source": ".setDesc(\"Always open folder notes in a new tab (except when you try to open the same note) instead of having to use ctrl/cmd + click to open in a new tab\")",
+          "target": ".setDesc(\"始终在新标签页中打开文件夹笔记（除非您尝试打开同一笔记），而不必使用 ctrl/cmd + 点击在新标签页中打开\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically create a folder note when a new folder is created\")",
+          "target": ".setDesc(\"创建新文件夹时自动创建文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically rename a folder name when the folder note is renamed\")",
+          "target": ".setDesc(\"当文件夹笔记重命名时自动重命名文件夹名称\")"
+        },
+        {
+          "source": ".setDesc(\"Create a folder note for every folder in the vault\")",
+          "target": ".setDesc(\"为保管库中的每个文件夹创建文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Hide the folder note in the file explorer\")",
+          "target": ".setDesc(\"在文件资源管理器中隐藏文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Folder notes don't open when clicking on the name of the folder (on mobile)\")",
+          "target": ".setDesc(\"在手机上点击文件夹名称时文件夹笔记不会打开\")"
+        },
+        {
+          "source": ".setDesc(\"Only open folder notes in the file explorer by clicking on the folder name\")",
+          "target": ".setDesc(\"仅通过点击文件夹名称在文件资源管理器中打开文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Disable the ability to collapse folders by clicking exactly on the folder name\")",
+          "target": ".setDesc(\"禁用通过准确点击文件夹名称来折叠文件夹的功能\")"
+        },
+        {
+          "source": ".setDesc(\"Use submenus for file/folder commands\")",
+          "target": ".setDesc(\"为文件/文件夹命令使用子菜单\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically rename a folder name in the file explorer when the folder note is renamed\")",
+          "target": ".setDesc(\"当文件夹笔记重命名时，自动重命名文件资源管理器中的文件夹名称\")"
+        },
+        {
+          "source": ".setDesc(\"Hide the collapse icon in the file explorer next to the name of a folder when a folder only contains a folder note\")",
+          "target": ".setDesc(\"当文件夹仅包含文件夹笔记时，在文件资源管理器中隐藏文件夹名称旁的折叠图标\")"
+        },
+        {
+          "source": ".setDesc(\"Add an underline to folders that have a folder note in the file explorer\")",
+          "target": ".setDesc(\"为在文件资源管理器中有文件夹笔记的文件夹添加下划线\")"
+        },
+        {
+          "source": ".setDesc(\"Make the folder name bold in the file explorer\")",
+          "target": ".setDesc(\"在文件资源管理器中使文件夹名称加粗\")"
+        },
+        {
+          "source": ".setDesc(\"Make the folder name cursive in the file explorer\")",
+          "target": ".setDesc(\"在文件资源管理器中使文件夹名称斜体\")"
+        },
+        {
+          "source": ".setDesc(\"Open a folder note when clicking on a folder name in the path if it is a folder note\")",
+          "target": ".setDesc(\"在路径中点击文件夹名称时，如果它是文件夹笔记，则打开文件夹笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically rename a folder name in the path above a note when the folder note is renamed\")",
+          "target": ".setDesc(\"当文件夹笔记重命名时，自动重命名笔记上方路径中的文件夹名称\")"
+        },
+        {
+          "source": ".setDesc(\"Add an underline to folders that have a folder note in the path above a note\")",
+          "target": ".setDesc(\"为在笔记上方路径中有文件夹笔记的文件夹添加下划线\")"
+        },
+        {
+          "source": ".setDesc(\"Make the folder name bold in the path above a note\")",
+          "target": ".setDesc(\"在笔记上方路径中使文件夹名称加粗\")"
+        },
+        {
+          "source": ".setDesc(\"Make the folder name cursive in the path above a note\")",
+          "target": ".setDesc(\"在笔记上方路径中使文件夹名称斜体\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the title should be shown\")",
+          "target": ".setDesc(\"选择是否显示标题\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the title of the folder overview\")",
+          "target": ".setDesc(\"选择文件夹概览的标题\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the folder path for the overview\")",
+          "target": ".setDesc(\"选择概览的文件夹路径\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the style of the overview (grid style soon)\")",
+          "target": ".setDesc(\"选择概览的样式（网格样式即将推出）\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the collapsed condition should be stored stored until you restart Obsidian\")",
+          "target": ".setDesc(\"选择折叠条件是否应存储直到您重启 Obsidian\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if the file tag should be shown after the file name\")",
+          "target": ".setDesc(\"选择文件名后是否显示文件标签\")"
+        },
+        {
+          "source": ".setDesc(\"Choose if folder notes (the note itself and not the folder name) should be shown in the overview\")",
+          "target": ".setDesc(\"选择文件夹笔记（笔记本身而不是文件夹名称）是否应显示在概览中\")"
+        },
+        {
+          "source": ".setDesc(\"File & folder = +1 depth\")",
+          "target": ".setDesc(\"文件与文件夹 = +1 深度\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how the files should be sorted\")",
+          "target": ".setDesc(\"选择文件的排序方式\")"
+        },
+        {
+          "source": ".setDesc(\"Show the names of folders that appear to have no files/folders in the folder overview. That's mostly the case when you set the file depth to 1.\")",
+          "target": ".setDesc(\"显示在文件夹概览中似乎没有文件/文件夹的文件夹名称。这通常发生在您将文件深度设置为 1 时。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove the collapse icon next to the folder name for folder notes when they only contain the folder note itself\")",
+          "target": ".setDesc(\"当文件夹仅包含文件夹笔记本身时，移除文件夹名称旁的折叠图标\")"
+        },
+        {
+          "source": ".setDesc(\"Manage the default settings for the folder overview plugin\")",
+          "target": ".setDesc(\"管理文件夹概览插件的默认设置\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Pattern\")",
+          "target": ".setPlaceholder(\"模式\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Folder path\")",
+          "target": ".setPlaceholder(\"文件夹路径\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Template path\")",
+          "target": ".setPlaceholder(\"模板路径\")"
+        },
+        {
+          "source": ".setTooltip(\"Edit pattern\")",
+          "target": ".setTooltip(\"编辑模式\")"
+        },
+        {
+          "source": ".setTooltip(\"Move up\")",
+          "target": ".setTooltip(\"向上移动\")"
+        },
+        {
+          "source": ".setTooltip(\"Move down\")",
+          "target": ".setTooltip(\"向下移动\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete pattern\")",
+          "target": ".setTooltip(\"删除模式\")"
+        },
+        {
+          "source": ".setTooltip(\"Edit folder note\")",
+          "target": ".setTooltip(\"编辑文件夹笔记\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete excluded folder\")",
+          "target": ".setTooltip(\"删除排除的文件夹\")"
+        },
+        {
+          "source": ".setTooltip(\"Create folder notes\")",
+          "target": ".setTooltip(\"创建文件夹笔记\")"
+        },
+        {
+          "source": ".setTooltip(\"Add excluded folder\")",
+          "target": ".setTooltip(\"添加排除的文件夹\")"
+        },
+        {
+          "source": ".appendText(\"Don't ask again\")",
+          "target": ".appendText(\"不要再问\")"
+        },
+        {
+          "source": ".appendText(\"Requires a restart to take effect\")",
+          "target": ".appendText(\"需要重启才能生效\")"
+        },
+        {
+          "source": ".appendText(\"The regexes and wildcards are only for the folder name, not the path.\")",
+          "target": ".appendText(\"正则表达式和通配符仅适用于文件夹名称，而不是路径。\")"
+        },
+        {
+          "source": ".appendText(\"If you want to switch to a folder path delete the pattern first.\")",
+          "target": ".appendText(\"如果您想切换到文件夹路径，请先删除模式。\")"
+        },
+        {
+          "source": ".setTitle(\"Folder Note Commands\")",
+          "target": ".setTitle(\"文件夹笔记命令\")"
+        },
+        {
+          "source": ".setTitle(\"Create folder note\")",
+          "target": ".setTitle(\"创建文件夹笔记\")"
+        },
+        {
+          "source": ".setTitle(`Turn into folder note for ${folder == null ? void 0 : folder.name}`)",
+          "target": ".setTitle(`转换为文件夹笔记 ${folder == null ? void 0 : folder.name}`)"
+        },
+        {
+          "source": ".setTitle(\"Remove folder from excluded folders\")",
+          "target": ".setTitle(\"从排除的文件夹中移除文件夹\")"
+        },
+        {
+          "source": ".setTitle(\"Exclude folder from folder notes\")",
+          "target": ".setTitle(\"将文件夹排除在文件夹笔记之外\")"
+        },
+        {
+          "source": ".setTitle(\"Delete folder note\")",
+          "target": ".setTitle(\"删除文件夹笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Open folder note\")",
+          "target": ".setTitle(\"打开文件夹笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Copy Obsidian URL\")",
+          "target": ".setTitle(\"复制 Obsidian URL\")"
+        },
+        {
+          "source": ".setTitle(\"Create markdown folder note\")",
+          "target": ".setTitle(\"创建 markdown 文件夹笔记\")"
+        },
+        {
+          "source": ".setTitle(`Create ${fileType} folder note`)",
+          "target": ".setTitle(`创建 ${fileType} 文件夹笔记`) "
+        },
+        {
+          "source": ".setTitle(\"Create folder overview\")",
+          "target": ".setTitle(\"创建文件夹概览\")"
+        },
+        {
+          "source": ".innerText = \"Edit overview\"",
+          "target": ".innerText = \"编辑概览\""
+        },
+        {
+          "source": ".innerText = \"markdown\"",
+          "target": ".innerText = \"markdown\""
+        },
+        {
+          "source": ".addOption(\".\" + extension, extension);\n        });\n        cb.setValue(this.extension);\n        cb.onChange(async (value) => {\n          this.extension = value;\n        });\n      });\n    }\n    new import_obsidian15.Setting(contentEl).addButton((cb) => {\n      cb.setButtonText(\"Create\")",
+          "target": ".addOption(\".\" + extension, extension);\n        });\n        cb.setValue(this.extension);\n        cb.onChange(async (value) => {\n          this.extension = value;\n        });\n      });\n    }\n    new import_obsidian15.Setting(contentEl).addButton((cb) => {\n      cb.setButtonText(\"Create\")"
+        },
+        {
+          "source": ".addOption(\".ask\", \"ask for file type\")",
+          "target": ".addOption(\".ask\", \"询问文件类型\")"
+        },
+        {
+          "source": ".addOption(\".md\", \"markdown\")",
+          "target": ".addOption(\".md\", \"markdown\")"
+        },
+        {
+          "source": ".addOption(\".\" + type, type);\n      }\n    });\n    if (!settingsTab.plugin.settings.supportedFileTypes.includes(settingsTab.plugin.settings.folderNoteType.replace(\".\", \"\")",
+          "target": ".addOption(\".\" + type, type);\n      }\n    });\n    if (!settingsTab.plugin.settings.supportedFileTypes.includes(settingsTab.plugin.settings.folderNoteType.replace(\".\", \"\")"
+        },
+        {
+          "source": ".addOption(\"+\", \"+\")",
+          "target": ".addOption(\"+\", \"+\")"
+        },
+        {
+          "source": ".addOption(\"insideFolder\", \"Inside the folder\")",
+          "target": ".addOption(\"insideFolder\", \"在文件夹内\")"
+        },
+        {
+          "source": ".addOption(\"parentFolder\", \"In the parent folder\")",
+          "target": ".addOption(\"parentFolder\", \"在父文件夹中\")"
+        },
+        {
+          "source": ".addOption(\"ctrl\", \"Ctrl + Click\")",
+          "target": ".addOption(\"ctrl\", \"Ctrl + 点击\")"
+        },
+        {
+          "source": ".addOption(\"ctrl\", \"Cmd + Click\")",
+          "target": ".addOption(\"ctrl\", \"Cmd + 点击\")"
+        },
+        {
+          "source": ".addOption(\"alt\", \"Alt + Click\")",
+          "target": ".addOption(\"alt\", \"Alt + 点击\")"
+        },
+        {
+          "source": ".addOption(\"click\", \"Mouse Click\")",
+          "target": ".addOption(\"click\", \"鼠标点击\")"
+        },
+        {
+          "source": ".addOption(\"trash\", \"Move to system trash\")",
+          "target": ".addOption(\"trash\", \"移动到系统垃圾桶\")"
+        },
+        {
+          "source": ".addOption(\"obsidianTrash\", \"Move to Obsidian trash (.trash folder)\")",
+          "target": ".addOption(\"obsidianTrash\", \"移动到 Obsidian 垃圾桶 (.trash 文件夹)\")"
+        },
+        {
+          "source": ".addOption(\"delete\", \"Delete permanently\")",
+          "target": ".addOption(\"delete\", \"永久删除\")"
+        },
+        {
+          "source": ".addOption(\"list\", \"List\")",
+          "target": ".addOption(\"list\", \"列表\")"
+        },
+        {
+          "source": ".addOption(\"explorer\", \"Explorer\")",
+          "target": ".addOption(\"explorer\", \"资源管理器\")"
+        },
+        {
+          "source": ".addOption(\"name\", \"Name\")",
+          "target": ".addOption(\"name\", \"名称\")"
+        },
+        {
+          "source": ".addOption(\"created\", \"Created\")",
+          "target": ".addOption(\"created\", \"创建\")"
+        },
+        {
+          "source": ".addOption(\"modified\", \"Modified\")",
+          "target": ".addOption(\"modified\", \"修改\")"
+        },
+        {
+          "source": ".addOption(\"desc\", \"Descending\")",
+          "target": ".addOption(\"desc\", \"降序\")"
+        },
+        {
+          "source": ".addOption(\"asc\", \"Ascending\")",
+          "target": ".addOption(\"asc\", \"升序\")"
+        },
+        {
+          "source": ".append(\"Choose the file types that should be supported for folder notes. (e.g. if you click on a folder name it searches for all file extensions that are supported)\", desc0.createEl(\"br\"), \"Adding more file types may cause performance issues becareful when adding more file types and don't add too many.\")",
+          "target": ".append(\"选择应支持的文件夹笔记文件类型。 (例如，如果您点击文件夹名称，它将搜索所有支持的文件扩展名)\", desc0.createEl(\"br\"), \"添加更多文件类型可能会导致性能问题，添加时要小心，不要添加太多。\")"
+        },
+        {
+          "source": ".append(\"Add {regex} at the beginning of the folder name to use a regex pattern.\", desc3.createEl(\"br\"), \"Use * before and after to exclude folders that include the name between the *s.\", desc3.createEl(\"br\"), \"Use * before the folder name to exclude folders that end with the folder name.\", desc3.createEl(\"br\"), \"Use * after the folder name to exclude folders that start with the folder name.\")",
+          "target": ".append(\"在文件夹名称开头添加 {regex} 以使用正则表达式模式。\", desc3.createEl(\"br\"), \"在前后使用 * 来排除包含 *s 之间名称的文件夹。\", desc3.createEl(\"br\"), \"在文件夹名称前使用 * 来排除以文件夹名称结尾的文件夹。\", desc3.createEl(\"br\"), \"在文件夹名称后使用 * 来排除以文件夹名称开头的文件夹。\")"
+        }
+      ]
+    }
+  }
+}
