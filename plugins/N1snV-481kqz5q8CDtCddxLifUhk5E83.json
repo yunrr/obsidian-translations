@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-import-json",
+    "version": "1.0.0",
+    "title": "JSON/CSV Importer",
+    "description": "JSON/CSV Importer Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.38.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "in handlebars-helpers v1.0.0, please use the {{match}}",
+          "target": "在 handlebars-helpers v1.0.0 中，请使用 {{match}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "helper instead.",
+          "target": "辅助函数代替。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose JSON/CSV data file to import, or paste text into the text box",
+          "target": "选择要导入的 JSON/CSV 数据文件，或将文本粘贴到文本框中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify the URL location of the JSON data",
+          "target": "指定 JSON 数据的 URL 位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select this option if the JSON data might contain more than one object (the selected data is split into separate objects by looking for '}s+{' as the separator",
+          "target": "如果 JSON 数据可能包含多个对象，请选择此选项（通过查找 '}s+{' 作为分隔符将选定数据拆分为单独的对象）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optionally select a file containing some Handlebars Helpers functions",
+          "target": "可选择包含一些 Handlebars 辅助函数的文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optionally select a file which controls multiple parses of the data",
+          "target": "可选择控制数据多次解析的文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The field containing the array of data (leave blank to use entire file) [in batch file 'fieldName']",
+          "target": "包含数据数组的字段（留空则使用整个文件）[在批处理文件中为 'fieldName']"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select this option if 'Field containing the data' is a single object and a separate note should be created for each field of that object.",
+          "target": "如果“包含数据的字段”是单个对象，并且应为该对象的每个字段创建单独的笔记，请选择此选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Field in each row of the JSON/CSV data to be used for the note name [in batch file 'noteName']",
+          "target": "JSON/CSV 数据每行中用于笔记名称的字段 [在批处理文件中为 'noteName']"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When checked, if a second or subsequent Note has the same name as a Note created during this import, then the second or subsequent note will have a numeric identifier added to the end of the Note Name to make it unique",
+          "target": "如果选中，当第二个或后续笔记与本次导入期间创建的笔记同名时，将在笔记名称末尾添加数字标识符以使其唯一。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional prefix/suffix to be added either side of the value from the above Note name field [in batch file 'namePrefix', 'nameSuffix']",
+          "target": "可选的前缀/后缀，将添加到上述笔记名称字段值的两侧 [在批处理文件中为 'namePrefix', 'nameSuffix']"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Allow / in the Note name field to be used to create folders (when not selected / will be replaced by _ as part of note name)",
+          "target": "允许笔记名称字段中的 / 用于创建文件夹（未选中时，/ 将作为笔记名称的一部分被替换为 _）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "REPLACE: Replace the existing note with the newly generated note; APPEND: Append the new note contents to the end of the existing note; KEEP: Leave the original note untouched and generate a warning",
+          "target": "REPLACE：用新生成的笔记替换现有笔记；APPEND：将新笔记内容附加到现有笔记末尾；KEEP：保持原始笔记不变并生成警告"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The name of the folder in your Obsidian Vault, which will be created if required [in batch file, 'folderName']",
+          "target": "Obsidian 库中文件夹的名称，如果需要将创建该文件夹 [在批处理文件中为 'folderName']"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Press to start the Import Process",
+          "target": "按下以开始导入过程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Choose JSON/CSV File",
+          "target": "选择 JSON/CSV 文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Specify URL to JSON data",
+          "target": "指定 JSON 数据的 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Data contains multiple JSON objects",
+          "target": "数据包含多个 JSON 对象"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Choose TEMPLATE File",
+          "target": "选择模板文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Choose HELPERS File",
+          "target": "选择辅助函数文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Choose BATCH File",
+          "target": "选择批处理文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Field containing the data",
+          "target": "包含数据的字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Each subfield is a separate note",
+          "target": "每个子字段是一个单独的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Field to use as Note name",
+          "target": "用作笔记名称的字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add suffix on duplicate Note Names",
+          "target": "在重复的笔记名称上添加后缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note name prefix/suffix",
+          "target": "笔记名称前缀/后缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allow paths in Note name",
+          "target": "允许笔记名称中包含路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "How to handle existing Notes",
+          "target": "如何处理已存在的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Name of Destination Folder in Vault",
+          "target": "保险库中目标文件夹的名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Import",
+          "target": "导入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Duplicate headers found and renamed.",
+          "target": "发现并重命名了重复的标题。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to GET data from URL",
+          "target": "从URL获取数据失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No JSON file selected",
+          "target": "未选择JSON文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Import Finished",
+          "target": "导入完成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "an error",
+          "target": "一个错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Quoted field unterminated",
+          "target": "引号字段未终止"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Trailing quote on quoted field is malformed",
+          "target": "引号字段末尾的引号格式错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Import JSON/CSV file",
+          "target": "导入JSON/CSV文件"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
