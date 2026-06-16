@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "graph-heatmap",
+    "version": "1.0.0",
+    "title": "Graph Heatmap",
+    "description": "Graph Heatmap Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.5.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Absolute (days, time metrics only)",
+          "target": "绝对（仅限天数、时间指标）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Relative (percentile rank)",
+          "target": "相对（百分位排名）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Custom",
+          "target": "自定义"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Dark (from scale)",
+          "target": "深色（基于色阶）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Light (from scale)",
+          "target": "浅色（基于色阶）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Auto (best contrast)",
+          "target": "自动（最佳对比度）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Custom color",
+          "target": "自定义颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Follow heatmap scale",
+          "target": "跟随热力图色阶"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Glow (blend)",
+          "target": "辉光（混合）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Last modified",
+          "target": "最后修改时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Created",
+          "target": "创建时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Apply heatmap colors to graph view nodes.",
+          "target": "将热力图颜色应用于图谱视图中的节点。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "What drives the color. Time metrics (last modified, created) measure recency. Link metrics measure how connected a note is — useful for spotting hubs and orphans.",
+          "target": "决定颜色的因素。时间指标（最后修改时间、创建时间）衡量新近程度。链接指标衡量笔记的连接程度——有助于识别枢纽节点和孤立节点。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Relative: rank nodes by value, spread the gradient across the whole vault — every color is always used. Absolute: anchor the gradient to wall-clock age via 'Span (days)'. Absolute only applies to time metrics; link metrics always use relative.",
+          "target": "相对：按值对节点排序，将渐变色分布在整个保险库中——每种颜色始终会被使用。绝对：通过“跨度（天）”将渐变色锚定到实际时间。绝对模式仅适用于时间指标；链接指标始终使用相对模式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pre-built palettes. Pick 'Custom' to define your own three stops below.",
+          "target": "预设调色板。选择“自定义”以在下方定义您自己的三个色标。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Absolute mode only. Age at which a note is fully 'cold'. Older notes saturate at cold color.",
+          "target": "仅限绝对模式。笔记完全“冷却”的年龄。更旧的笔记会饱和于冷色。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Compress the long tail — recent edits become more visually distinct.",
+          "target": "压缩长尾分布——使近期编辑在视觉上更加突出。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show the 'newest / oldest' or 'most / least' labels under the gradient swatch inside the controls panel.",
+          "target": "在控制面板内的渐变色样下方显示“最新/最旧”或“最多/最少”标签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Floating panel inside the graph view (bottom-left) with metric, scale, color preset, and gradient swatch — change everything without opening settings.",
+          "target": "图谱视图左下角的浮动面板，包含指标、色阶、颜色预设和渐变色样——无需打开设置即可更改所有内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Highlight notes touched within the recency window below.",
+          "target": "高亮显示在下方新近度窗口内被触及的笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Glow blends the node color toward the marker color.",
+          "target": "辉光将节点颜色向标记颜色混合。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which timestamp decides 'recent' — when the note was last modified, or when it was created.",
+          "target": "哪个时间戳决定“近期”——笔记最后被修改的时间，还是其创建时间。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How far back counts as 'recent'. e.g. 24 = last day, 168 = last week, 720 = last month.",
+          "target": "多远的时间范围算作“近期”。例如，24 = 最近一天，168 = 最近一周，720 = 最近一个月。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Glow blends toward this color; outline draws the ring in it.",
+          "target": "辉光向此颜色混合；轮廓线用此颜色绘制环。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When hovering a node in the graph view, show its file path, the current metric's raw value, modification time, connection count, and rank within the vault.",
+          "target": "在图谱视图中悬停节点时，显示其文件路径、当前指标的原始值、修改时间、连接数以及在保险库中的排名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enabled",
+          "target": "已启用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Metric",
+          "target": "指标"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scale mode",
+          "target": "色阶模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Color preset",
+          "target": "颜色预设"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom hot color (newest / most)",
+          "target": "自定义热色（最新/最多）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom mid color",
+          "target": "自定义中间色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom cold color (oldest / least)",
+          "target": "自定义冷色（最旧/最少）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Span (days)",
+          "target": "跨度（天）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log scale",
+          "target": "对数色阶"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show gradient labels",
+          "target": "显示渐变标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show controls panel in graph view",
+          "target": "在图谱视图中显示控制面板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Background color",
+          "target": "背景颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Connection color",
+          "target": "连接颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Connection opacity",
+          "target": "连接不透明度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Hide completely vs dim",
+          "target": "完全隐藏 vs 变暗"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Mark recent notes",
+          "target": "标记近期笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Marker style",
+          "target": "标记样式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Recency criterion",
+          "target": "新近度标准"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Recency window (hours)",
+          "target": "新近度窗口（小时）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Marker color",
+          "target": "标记颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show hover tooltip",
+          "target": "显示悬停工具提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Toggle graph heatmap",
+          "target": "切换图谱热力图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Refresh graph heatmap now",
+          "target": "立即刷新图谱热力图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Heatmap",
+          "target": "热力图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "On",
+          "target": "开启"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Metric",
+          "target": "指标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scale",
+          "target": "色阶"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Colors",
+          "target": "颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Custom",
+          "target": "自定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Focus",
+          "target": "聚焦"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Range",
+          "target": "范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Graph chrome",
+          "target": "图谱界面"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Focus Mode",
+          "target": "聚焦模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recent-edit marker",
+          "target": "近期编辑标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tooltip",
+          "target": "工具提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Reset range",
+          "target": "重置范围"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
