@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "whisper",
+    "version": "1.0.0",
+    "title": "Whisper",
+    "description": "Whisper Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.9.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Paused",
+          "target": "已暂停"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Whisper Idle",
+          "target": "Whisper 空闲"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Record",
+          "target": " 录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Stop",
+          "target": " 停止"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Cancel",
+          "target": " 取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error saving audio file:",
+          "target": "保存音频文件时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Post-processing failed:",
+          "target": "后处理失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Title generation failed:",
+          "target": "标题生成失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing audio:",
+          "target": "解析音频时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error enumerating audio devices:",
+          "target": "枚举音频设备时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error initializing recorder:",
+          "target": "初始化录音器时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Microphone permission not granted, device labels may be limited",
+          "target": "未授予麦克风权限，设备标签可能受限"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": " Record",
+          "target": " 录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": " Pause",
+          "target": " 暂停"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": " Stop",
+          "target": " 停止"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": " Cancel",
+          "target": " 取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the audio input device to use for recording",
+          "target": "选择用于录制的音频输入设备"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Save the audio recording to the vault",
+          "target": "将音频录制保存到保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder in the vault where audio files are saved",
+          "target": "保险库中保存音频文件的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Create a new note file for each transcription",
+          "target": "为每个转录创建一个新的笔记文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder in the vault where note files are saved",
+          "target": "保险库中保存笔记文件的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Send text around the cursor to Whisper for better transcription accuracy",
+          "target": "将光标周围的文本发送给 Whisper 以提高转录准确性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Anthropic and OpenAI use the API keys from the API Keys section above",
+          "target": "Anthropic 和 OpenAI 使用上方 API 密钥部分中的 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Endpoint for post-processing requests",
+          "target": "后处理请求的端点"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "API key for the custom endpoint",
+          "target": "自定义端点的 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Model ID for the selected provider",
+          "target": "所选提供商的模型 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Instructions for the LLM on how to clean up the transcription",
+          "target": "指导 LLM 如何清理转录的指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use the LLM to generate a descriptive filename for notes",
+          "target": "使用 LLM 为笔记生成描述性文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Instructions for the LLM on how to generate the title",
+          "target": "指导 LLM 如何生成标题的指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Append the raw Whisper transcription below the post-processed text",
+          "target": "将原始 Whisper 转录附加在后处理文本下方"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Increase the plugin's verbosity for troubleshooting",
+          "target": "增加插件的详细程度以进行故障排除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API Keys",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Transcription",
+          "target": "转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Recording",
+          "target": "录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output",
+          "target": "输出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Advanced",
+          "target": "高级"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Microphone",
+          "target": "麦克风"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save audio file",
+          "target": "保存音频文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Audio save path",
+          "target": "音频保存路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Create note file",
+          "target": "创建笔记文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note save path",
+          "target": "笔记保存路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cursor context",
+          "target": "光标上下文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable post-processing",
+          "target": "启用后处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing API URL",
+          "target": "后处理 API URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing API Key",
+          "target": "后处理 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing model",
+          "target": "后处理模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Post-processing prompt",
+          "target": "后处理提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-generate title",
+          "target": "自动生成标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Title generation prompt",
+          "target": "标题生成提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Keep original transcription",
+          "target": "保留原始转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: folder/audio",
+          "target": "示例：文件夹/音频"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: folder/note",
+          "target": "示例：文件夹/笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "![[{{audioFile}}]]\n{{transcription}}",
+          "target": "![[{{audioFile}}]]\\n{{transcription}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "You are a transcription editor...",
+          "target": "你是一位转录编辑器..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Generate a short title...",
+          "target": "生成一个简短的标题..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Transcribe audio file 🔊",
+          "target": "转录音频文件 🔊"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✘ Add your API key in Whisper settings",
+          "target": "✘ 请在 Whisper 设置中添加您的 API 密钥"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✘ Recording too short",
+          "target": "✘ 录音时间太短"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✘ Add your post-processing API key in settings",
+          "target": "✘ 请在设置中添加您的后处理 API 密钥"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✘ Post-processing failed, using original transcription",
+          "target": "✘ 后处理失败，使用原始转录"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcription complete",
+          "target": "转录完成"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✘ Couldn't access microphone",
+          "target": "✘ 无法访问麦克风"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Already recording",
+          "target": "已在录音中"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✘ Could not start recording",
+          "target": "✘ 无法开始录音"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Recording paused",
+          "target": "录音已暂停"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Recording resumed",
+          "target": "录音已恢复"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Recording cancelled",
+          "target": "录音已取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start/stop recording",
+          "target": "开始/停止录音"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Upload audio file",
+          "target": "上传音频文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pause/resume recording",
+          "target": "暂停/恢复录音"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open recording controls",
+          "target": "打开录音控件"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
