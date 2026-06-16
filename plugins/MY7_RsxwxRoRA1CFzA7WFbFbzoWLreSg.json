@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-extract-pdf-annotations",
+    "version": "1.0.1",
+    "title": "Extract PDF Annotations",
+    "description": "Extract PDF Annotations Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.9.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "error",
+          "target": "错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "loading from file ",
+          "target": "正在从文件加载 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Data in clipboard is no file.",
+          "target": "剪贴板中的数据不是文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Data in clipboard could not be read as filepath.",
+          "target": "剪贴板中的数据无法作为文件路径读取。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If disabled, no structuring headlines will be shown. Just the annotations in the specified template style.",
+          "target": "如果禁用，将不显示结构标题。仅显示指定模板样式的注释。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, uses the PDF's folder name (instead of the PDF-Filename) for sorting",
+          "target": "如果启用，将使用 PDF 的文件夹名称（而不是 PDF 文件名）进行排序。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, uses the notes first line as Topic for primary sorting",
+          "target": "如果启用，将使用笔记的第一行作为主题进行主要排序。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The path to which the notes, including the extracted annotations, will be exported. The path can be dynamic './' to create a note next to the PDF or it has to be relative to the vault root. Paths must end with a '/'. Leave blank to export to the vault root.",
+          "target": "笔记（包括提取的注释）将导出到的路径。路径可以是动态的 './' 以在 PDF 旁边创建笔记，或者必须相对于保险库根目录。路径必须以 '/' 结尾。留空则导出到保险库根目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The name of the note to which the notes, including the extracted annotations, will be exported. You can use the variable '{{filename}}' to use the PDF's filename and combine it with prefix or suffix. If you don't use the variable all notes will be exported to the same file until you change the name.",
+          "target": "笔记（包括提取的注释）将导出到的笔记名称。您可以使用变量 '{{filename}}' 来使用 PDF 的文件名，并将其与前缀或后缀组合。如果您不使用该变量，所有笔记将导出到同一个文件，直到您更改名称。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, every annotation is exported to a separate note.",
+          "target": "如果启用，每个注释将导出到单独的笔记中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The name of the notes to which each extracted annotation will be exported. You can use the variable '{{filename}}' to use the PDF's filename and combine it with prefix or suffix. Additionally you should use the variable '{{counter}}' to add the index of the exported annotation.",
+          "target": "每个提取的注释将导出到的笔记名称。您可以使用变量 '{{filename}}' 来使用 PDF 的文件名，并将其与前缀或后缀组合。此外，您应该使用变量 '{{counter}}' 来添加导出注释的索引。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, the plugin will overwrite the content of an existing note with the same name.",
+          "target": "如果启用，插件将覆盖具有相同名称的现有笔记的内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, the plugin will extract tags from the annotations and add them as Obsidian tags to the note's header.",
+          "target": "如果启用，插件将从注释中提取标签，并将它们作为 Obsidian 标签添加到笔记的标题中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "The following types of annotations should be extracted:",
+          "target": "应提取以下类型的注释："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Template for notes of PDFs outside Obsidian:",
+          "target": "Obsidian 外部 PDF 的笔记模板："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Template for notes of PDFs inside Obsidian:",
+          "target": "Obsidian 内部 PDF 的笔记模板："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Template for highlights of PDFs outside Obsidian:",
+          "target": "Obsidian 外部 PDF 的高亮模板："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Template for highlights of PDFs inside Obsidian:",
+          "target": "Obsidian 内部 PDF 的高亮模板："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use structuring headlines",
+          "target": "使用结构标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Folder Name",
+          "target": "使用文件夹名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sort by Topic",
+          "target": "按主题排序"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Notes export path",
+          "target": "笔记导出路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Notes export name",
+          "target": "笔记导出名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "One note per annotation",
+          "target": "每个注释一个笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "One note per annotation - export name",
+          "target": "每个注释一个笔记 - 导出名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Overwrite existing note",
+          "target": "覆盖现有笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Extract tags in annotations as Obsidian tags",
+          "target": "将注释中的标签提取为 Obsidian 标签"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error creating note with annotations, because the notes export path is invalid. Please check the file path in the settings. Folders must exist.",
+          "target": "创建带注释的笔记时出错，因为笔记导出路径无效。请检查设置中的文件路径。文件夹必须存在。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "body",
+          "source": "Body of annotation",
+          "target": "注释正文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract PDF Annotations on single file",
+          "target": "在单个文件上提取 PDF 注释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract PDF Annotations on single file from path in clipboard",
+          "target": "从剪贴板路径在单个文件上提取 PDF 注释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract PDF Annotations",
+          "target": "提取 PDF 注释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Desired annotations",
+          "target": "所需注释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You can specify which types of annotations should be extracted by the plugin. List the types exactly as listed here, separated by commas. The plugin supports the following types of annotations: ",
+          "target": "您可以指定插件应提取哪些类型的注释。请严格按照此处列出的类型名称，用逗号分隔。插件支持以下注释类型："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Styling settings",
+          "target": "样式设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Template settings",
+          "target": "模板设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "The following settings determine how the highlights and notes created by the plugin will be rendered. There are four types that you can specify, because you might want to have other templates for highlights and notes which include links to external files. Templates are interpreted using ",
+          "target": "以下设置决定了插件创建的高亮和笔记将如何渲染。您可以指定四种类型，因为您可能希望为包含外部文件链接的高亮和笔记使用不同的模板。模板使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Handlebars",
+          "target": "Handlebars"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " syntax. The following variables are available:",
+          "target": "语法进行解析。可用的变量如下："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Structure settings",
+          "target": "结构设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Settings for `Extract PDF Annotations on single file`",
+          "target": "“提取单个文件的PDF注释”设置"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

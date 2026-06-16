@@ -1,0 +1,4849 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "evc-team-relay",
+    "version": "1.0.1",
+    "title": "EVC Team Relay",
+    "description": "EVC Team Relay Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.16",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<p>No relay servers configured. Add a server to get started.</p>",
+          "target": "<p>未配置中继服务器。请添加一个服务器以开始使用。</p>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<p>No shares yet. Create your first share to get started!</p>",
+          "target": "<p>尚无共享。创建您的第一个共享以开始使用！</p>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"evc-connection-status svelte-7s0huj\">Not connected to a local folder</span>",
+          "target": "<span class=\\\"evc-connection-status svelte-7s0huj\\\">未连接到本地文件夹</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span>Publish to Web</span>",
+          "target": "<span>发布到网络</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span>Sync Content</span>",
+          "target": "<span>同步内容</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span>Allow search engines</span>",
+          "target": "<span>允许搜索引擎</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span>Sync Mode</span>",
+          "target": "<span>同步模式</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span>Web Slug</span>",
+          "target": "<span>网络标识符</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span>Change Visibility</span> <span class=\"evc-setting-desc svelte-7s0huj\">Control who can access this share</span>",
+          "target": "<span>更改可见性</span> <span class=\\\"evc-setting-desc svelte-7s0huj\\\">控制谁可以访问此共享</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span>Delete Share</span> <span class=\"evc-setting-desc svelte-7s0huj\">Permanently delete this share</span>",
+          "target": "<span>删除共享</span> <span class=\\\"evc-setting-desc svelte-7s0huj\\\">永久删除此共享</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<tr><th class=\"svelte-1rjo33u\">Label</th> <th class=\"svelte-1rjo33u\">Created</th> <th class=\"svelte-1rjo33u\">Expires</th> <th class=\"svelte-1rjo33u\"></th></tr>",
+          "target": "<tr><th class=\\\"svelte-1rjo33u\\\">标签</th> <th class=\\\"svelte-1rjo33u\\\">创建时间</th> <th class=\\\"svelte-1rjo33u\\\">过期时间</th> <th class=\\\"svelte-1rjo33u\\\"></th></tr>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Save this key — it will <strong>not</strong> be shown again.",
+          "target": "请保存此密钥——它<strong>不会</strong>再次显示。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<span class=\"ak-modal-title svelte-1rjo33u\">Revoke key?</span>",
+          "target": "<span class=\\\"ak-modal-title svelte-1rjo33u\\\">撤销密钥？</span>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<div class=\"evc-section-heading-title svelte-1weal63\">Relay Servers</div> <div class=\"evc-section-heading-desc svelte-1weal63\">Configure your relay-onprem servers. Click &quot;Shares&quot; to manage shares.</div>",
+          "target": "<div class=\\\"evc-section-heading-title svelte-1weal63\\\">中继服务器</div> <div class=\\\"evc-section-heading-desc svelte-1weal63\\\">配置您的本地部署中继服务器。点击“共享”以管理共享。</div>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<div class=\"evc-header-title svelte-1weal63\">EVC Team Relay</div> <div class=\"evc-header-desc svelte-1weal63\">Self-hosted relay for real-time collaboration</div>",
+          "target": "<div class=\\\"evc-header-title svelte-1weal63\\\">EVC 团队中继</div> <div class=\\\"evc-header-desc svelte-1weal63\\\">用于实时协作的自托管中继</div>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<div class=\"suggestion-icon\"></div>",
+          "target": "<div class=\\\"suggestion-icon\\\"></div>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<p style=\"margin: 1em; text-align: center\">This Shared Folder is not on a Relay Server, or else you do not have\n\t\tpermission to access it.</p>",
+          "target": "<p style=\\\"margin: 1em; text-align: center\\\">此共享文件夹不在中继服务器上，或者您没有访问权限。</p>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<p style=\"margin: 1em; text-align: center\">As Relay Server owner, you can manage this Shared Folder but cannot access\n\t\t\tits contents. You must be added to the Shared Folder in order to\n\t\t\tcollaborate.</p>",
+          "target": "<p style=\\\"margin: 1em; text-align: center\\\">作为中继服务器所有者，您可以管理此共享文件夹，但无法访问其内容。您必须被添加到共享文件夹中才能进行协作。</p>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<p>Manage your organization&#39;s enterprise Relay tenants. Add tenants to switch between different enterprise deployments.</p>",
+          "target": "<p>管理您组织的企业中继租户。添加租户以在不同的企业部署之间切换。</p>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<div id=\"spinner\" class=\"d-flex align-items-center\"><strong>Sending Bug Report...</strong> <div class=\"spinner-border ms-auto\" role=\"status\" aria-hidden=\"true\"></div></div>",
+          "target": "<div id=\\\"spinner\\\" class=\\\"d-flex align-items-center\\\"><strong>正在发送错误报告...</strong> <div class=\\\"spinner-border ms-auto\\\" role=\\\"status\\\" aria-hidden=\\\"true\\\"></div></div>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Warning: high number of databases.<br/>\n\t\t\t\t\t\tConsider cleaning up unused databases.",
+          "target": "警告：数据库数量过多。<br/>\\n\\t\\t\\t\\t\\t\\t请考虑清理未使用的数据库。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Critical: approaching IndexedDB database limit!<br/>\n\t\t\t\t\t\tYour browser may start deleting old databases soon.",
+          "target": "严重警告：即将达到 IndexedDB 数据库上限！<br/>\\n\\t\\t\\t\\t\\t\\t您的浏览器可能很快会开始删除旧数据库。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<div class=\"setting-item-name\">Search across vaults</div> <div class=\"setting-item-description\"><div class=\"mod-warning\">Warning: This is a dangerous setting. It allows you to delete relay\n\t\t\t\t\tdatabases from other vaults.</div></div>",
+          "target": "<div class=\\\"setting-item-name\\\">跨库搜索</div> <div class=\\\"setting-item-description\\\"><div class=\\\"mod-warning\\\">警告：这是一个危险设置。它允许您删除其他库中的中继数据库。</div></div>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "<p>Create a new self-hosted Relay Server. Select an existing host or add a\n\t\t\tnew one.</p>",
+          "target": "<p>创建一个新的自托管中继服务器。选择一个现有主机或添加一个新主机。</p>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "/* empty */",
+          "target": "/* empty */"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Create: ",
+          "target": "创建："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Enter to create",
+          "target": "按回车键创建"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Copy ID",
+          "target": "复制 ID"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Login to enable live edits",
+          "target": "登录以启用实时编辑"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Merge conflict",
+          "target": "合并冲突"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "View on GitHub",
+          "target": "在 GitHub 上查看"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "EVC Team Relay",
+          "target": "EVC 团队中继"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Real-time collaboration in Obsidian",
+          "target": "Obsidian 中的实时协作"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Share folders with your team, edit together in real time, and keep your\n\tknowledge library exactly how you want it.",
+          "target": "与您的团队共享文件夹，实时协同编辑，并让您的知识库完全按照您想要的方式保持。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Why do I need to sign in?",
+          "target": "为什么我需要登录？"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Continue in your browser...",
+          "target": "在浏览器中继续..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "(try again)",
+          "target": "（重试）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "(click here)",
+          "target": "（点击此处）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "(choose another provider)",
+          "target": "（选择其他提供商）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Logout",
+          "target": "登出"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Default",
+          "target": "默认"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Login",
+          "target": "登录"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Shares",
+          "target": "共享"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Agent Keys",
+          "target": "代理密钥"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Plan & Usage",
+          "target": "计划与用量"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Remove",
+          "target": "移除"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Edit",
+          "target": "编辑"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "+ Add Server",
+          "target": "+ 添加服务器"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Control Plane URL",
+          "target": "控制平面 URL"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Server Name (auto-detected if empty)",
+          "target": "服务器名称（为空则自动检测）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Relay Server URL (auto-detected if empty)",
+          "target": "中继服务器 URL（为空则自动检测）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading shares...",
+          "target": "正在加载共享..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Create Share",
+          "target": "创建共享"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Members",
+          "target": "成员"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading share details...",
+          "target": "正在加载共享详情..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Local Folder",
+          "target": "本地文件夹"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Connect to local folder",
+          "target": "连接到本地文件夹"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Connected and syncing",
+          "target": "已连接并同步中"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Disconnect",
+          "target": "断开连接"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No members yet.",
+          "target": "暂无成员。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Viewer",
+          "target": "查看者"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Editor",
+          "target": "编辑者"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Add",
+          "target": "添加"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Invite Links",
+          "target": "邀请链接"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Create Invite",
+          "target": "创建邀请"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No active invite links.",
+          "target": "暂无活跃邀请链接。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Copy Link",
+          "target": "复制链接"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Revoke",
+          "target": "撤销"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Manage",
+          "target": "管理"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "API keys for automated agents to access this share without your login credentials.",
+          "target": "用于自动化代理访问此共享的 API 密钥，无需您的登录凭据。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Web Publishing",
+          "target": "网页发布"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Sync Now",
+          "target": "立即同步"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Manual",
+          "target": "手动"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Auto",
+          "target": "自动"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Web URL",
+          "target": "网页 URL"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Open",
+          "target": "打开"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Private",
+          "target": "私有"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Public",
+          "target": "公开"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Protected",
+          "target": "受保护"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Password",
+          "target": "密码"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Create New Share",
+          "target": "创建新共享"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Path",
+          "target": "路径"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Type",
+          "target": "类型"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Document",
+          "target": "文档"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Folder",
+          "target": "文件夹"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Visibility",
+          "target": "可见性"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Private - Only members",
+          "target": "私有 - 仅限成员"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Public - Anyone with link",
+          "target": "公开 - 任何拥有链接者"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Protected - Password required",
+          "target": "受保护 - 需要密码"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Create Invite Link",
+          "target": "创建邀请链接"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Role",
+          "target": "角色"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Expiration",
+          "target": "过期时间"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "7 days",
+          "target": "7 天"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "14 days",
+          "target": "14 天"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "30 days",
+          "target": "30 天"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No expiration",
+          "target": "永不过期"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Max Uses (optional)",
+          "target": "最大使用次数（可选）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Your Usage",
+          "target": "您的用量"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading billing info...",
+          "target": "正在加载账单信息..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Current",
+          "target": "当前"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Active",
+          "target": "活跃"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Cancelling",
+          "target": "取消中"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Current plan",
+          "target": "当前计划"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Billing & Plan",
+          "target": "账单与计划"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No shares found for this server. Create a share first to manage agent keys.",
+          "target": "此服务器未找到共享。请先创建一个共享以管理代理密钥。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No keys for this share.",
+          "target": "此共享暂无密钥。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "+ Create key",
+          "target": "+ 创建密钥"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Create agent key",
+          "target": "创建代理密钥"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Label",
+          "target": "标签"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Expiry",
+          "target": "过期时间"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Never",
+          "target": "永不"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "90 days",
+          "target": "90 天"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "1 year",
+          "target": "1 年"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Share",
+          "target": "共享"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Download .txt",
+          "target": "下载 .txt"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "I've copied this key — close",
+          "target": "我已复制此密钥 — 关闭"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "You haven't copied the key yet. Click ✕ again to close anyway.",
+          "target": "您尚未复制密钥。再次点击 ✕ 以强制关闭。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Expires: Never",
+          "target": "过期时间：永不"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Revoke key",
+          "target": "撤销密钥"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "+ Create agent key",
+          "target": "+ 创建代理密钥"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "(Untitled folder)",
+          "target": "（未命名文件夹）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "(Untitled Relay Server)",
+          "target": "（未命名中继服务器）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "GitHub",
+          "target": "GitHub"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Create:\n\t\t\t\t\t\t\t\t",
+          "target": "创建：\\n\\t\\t\\t\\t\\t\\t\\t\\t"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Add to vault",
+          "target": "添加到保险库"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Relay Servers",
+          "target": "中继服务器"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Create",
+          "target": "创建"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Add folder",
+          "target": "添加文件夹"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Back",
+          "target": "返回"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Required (You)",
+          "target": "必需（您）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No configuration available",
+          "target": "无可用配置"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Share a folder",
+          "target": "共享文件夹"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Kick",
+          "target": "踢出"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "The owner of this Relay Server has disabled key sharing.",
+          "target": "此中继服务器的所有者已禁用密钥共享。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "The owner of this Relay Server has enabled key sharing.",
+          "target": "此中继服务器的所有者已启用密钥共享。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Allow others to join this Relay Server with a Share Key.",
+          "target": "允许其他人使用共享密钥加入此中继服务器。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Share key is currently disabled",
+          "target": "共享密钥当前已禁用"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Rotate key",
+          "target": "轮换密钥"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Upgrade",
+          "target": "升级"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Status: Cancelled",
+          "target": "状态：已取消"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Relay Server Configuration",
+          "target": "中继服务器配置"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Copy this configuration to your Relay Server's TOML file.",
+          "target": "将此配置复制到您中继服务器的 TOML 文件中。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading configuration...",
+          "target": "正在加载配置..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Leave",
+          "target": "离开"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Destroy",
+          "target": "销毁"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Delete metadata",
+          "target": "删除元数据"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Move to trash",
+          "target": "移至回收站"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Already has access",
+          "target": "已有访问权限"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Invite users to this folder",
+          "target": "邀请用户加入此文件夹"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Buy storage",
+          "target": "购买存储空间"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Make private",
+          "target": "设为私有"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Delete from Relay Server",
+          "target": "从中继服务器删除"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "⚠️",
+          "target": "⚠️"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Available Tenants",
+          "target": "可用租户"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Apply",
+          "target": "应用"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Feature Flags",
+          "target": "功能标志"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Debug Info",
+          "target": "调试信息"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Send Bug Report",
+          "target": "发送错误报告"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Global Database Limit",
+          "target": "全局数据库限制"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Relay Databases",
+          "target": "中继数据库"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Document Updates",
+          "target": "文档更新"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Total Size",
+          "target": "总大小"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Analyzing Databases...",
+          "target": "正在分析数据库..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Relay database analysis",
+          "target": "中继数据库分析"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Legacy host",
+          "target": "旧版主机"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Relay Server URL",
+          "target": "中继服务器 URL"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "This should be accessible to users within your private network, but not\n\t\t\texposed to the public internet.",
+          "target": "此链接应可被您私有网络内的用户访问，但不应暴露在公共互联网上。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "This link points outside the shared folder and may not be accessible to other users.",
+          "target": "此链接指向共享文件夹外部，其他用户可能无法访问。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "editor",
+          "target": "editor"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Editor",
+          "target": "编辑者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "viewer",
+          "target": "viewer"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Viewer",
+          "target": "查看者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "protected",
+          "target": "protected"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Protected - password required",
+          "target": "受保护 - 需要密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "public",
+          "target": "public"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Public - anyone with link",
+          "target": "公开 - 任何拥有链接者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "private",
+          "target": "private"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Private - only members",
+          "target": "私有 - 仅限成员"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Auto - sync on file save",
+          "target": "自动 - 文件保存时同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "manual",
+          "target": "manual"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Manual - sync on demand",
+          "target": "手动 - 按需同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "7 days",
+          "target": "7 天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "14 days",
+          "target": "14 天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "30 days",
+          "target": "30 天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "No expiration",
+          "target": "无过期时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "doc",
+          "target": "doc"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Document",
+          "target": "文档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "folder",
+          "target": "folder"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Folder",
+          "target": "文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Private",
+          "target": "私有"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Public",
+          "target": "公开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Protected (password required)",
+          "target": "受保护（需要密码）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "form",
+          "target": "form"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Max retries reached. Discarding log entries.",
+          "target": "已达到最大重试次数。正在丢弃日志条目。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[WebSync] syncFolderItems error:",
+          "target": "[WebSync] syncFolderItems 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[ShareManagement] Failed to get doc_id for path:",
+          "target": "[ShareManagement] 无法获取路径的 doc_id："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to change visibility:",
+          "target": "更改可见性失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to read document content:",
+          "target": "读取文档内容失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to get folder items:",
+          "target": "获取文件夹项目失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[RelayOnPrem] Failed to create SharedFolder:",
+          "target": "[RelayOnPrem] 创建 SharedFolder 失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[yjs] Tried to remove event handler that doesn't exist.",
+          "target": "[yjs] 尝试移除不存在的事件处理器。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "This document was already integrated as a sub-document. You should create a second instance instead with the same guid.",
+          "target": "此文档已作为子文档集成。您应使用相同的 guid 创建第二个实例。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Yjs was already imported. This breaks constructor checks and will lead to issues! - https://github.com/yjs/yjs/issues/438",
+          "target": "Yjs 已被导入。这会破坏构造函数检查并导致问题！- https://github.com/yjs/yjs/issues/438"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Caught error while handling a Yjs update",
+          "target": "处理 Yjs 更新时捕获到错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unable to compute message",
+          "target": "无法计算消息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Logout error:",
+          "target": "登出错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No collection found for",
+          "target": "未找到集合"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No collection found for record",
+          "target": "未找到记录的集合"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error opening ContentAddressedFile database:",
+          "target": "打开 ContentAddressedFile 数据库时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error saving hash:",
+          "target": "保存哈希时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error retrieving hash:",
+          "target": "检索哈希值时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error removing hash:",
+          "target": "移除哈希值时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Sync Failed]",
+          "target": "[同步失败]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Sync Startup Failed]",
+          "target": "[同步启动失败]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Download Startup Failed]",
+          "target": "[下载启动失败]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getCanvas] WS sync fallback also failed:",
+          "target": "[getCanvas] WS 同步回退也失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[getDocument] WS sync fallback also failed:",
+          "target": "[getDocument] WS 同步回退也失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "duplicate guid",
+          "target": "重复的 GUID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Deleting doc (somehow moved outside of shared folder)",
+          "target": "删除文档（不知何故移出了共享文件夹）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error during GUID remapping:",
+          "target": "GUID 重映射期间出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error during SyncFile to Canvas upgrade:",
+          "target": "SyncFile 升级到 Canvas 期间出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error during monkeypatch cleanup",
+          "target": "monkeypatch 清理期间出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error rendering preview:",
+          "target": "渲染预览时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error rendering metadata:",
+          "target": "渲染元数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error syncing during save:",
+          "target": "保存期间同步出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error in renderer:",
+          "target": "渲染器中出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error initializing ViewHookPlugin:",
+          "target": "初始化 ViewHookPlugin 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error initializing ViewHookPlugin for canvas embed:",
+          "target": "为画布嵌入初始化 ViewHookPlugin 时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[TextViewPlugin] CRITICAL: Document TFile mismatch!",
+          "target": "[TextViewPlugin] 严重错误：文档 TFile 不匹配！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[RelayOnPrem] Server info fetch error:",
+          "target": "[RelayOnPrem] 服务器信息获取错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[RelayOnPrem] OAuth login failed:",
+          "target": "[RelayOnPrem] OAuth 登录失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to copy: ",
+          "target": "复制失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to copy text: ",
+          "target": "复制文本失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "❌ Enterprise tenant validation failed on startup",
+          "target": "❌ 企业租户验证在启动时失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Startup endpoint validation error:",
+          "target": "启动端点验证错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to patch webviewer:",
+          "target": "修补 webviewer 失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "applying server flags",
+          "target": "应用服务器标志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "_storageGet: found in fallback, migrating to localStorage",
+          "target": "_storageGet：在回退中找到，正在迁移到 localStorage"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "_storageSet: successfully saved to localStorage",
+          "target": "_storageSet：已成功保存到 localStorage"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "_storageSet: using fallback storage",
+          "target": "_storageSet：使用回退存储"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "restoreAuth: no stored auth data found",
+          "target": "restoreAuth：未找到已存储的认证数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "restoreAuth: attempting token refresh...",
+          "target": "restoreAuth：尝试刷新令牌..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "restoreAuth: keeping auth state for later refresh retry",
+          "target": "restoreAuth：保留认证状态以供稍后重试刷新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "restoreAuth: no refresh token, clearing auth",
+          "target": "restoreAuth：无刷新令牌，清除认证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "getToken: access token expired, triggering background refresh",
+          "target": "getToken：访问令牌已过期，触发后台刷新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to decode token:",
+          "target": "解码令牌失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Login error:",
+          "target": "登录错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "OAuth2 login error:",
+          "target": "OAuth2 登录错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Using refresh token to get new access token",
+          "target": "使用刷新令牌获取新的访问令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Token refreshed successfully with refresh token",
+          "target": "使用刷新令牌成功刷新令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No refresh token available, verifying current token",
+          "target": "无可用刷新令牌，正在验证当前令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Token verified successfully",
+          "target": "令牌验证成功"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Token refresh error:",
+          "target": "令牌刷新错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Refresh token rejected by server, clearing auth",
+          "target": "服务器拒绝了刷新令牌，清除认证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Refresh failed (network/server error), keeping auth for retry",
+          "target": "刷新失败（网络/服务器错误），保留认证以供重试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Logout error:",
+          "target": "登出错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Logged out successfully",
+          "target": "已成功登出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Logging out from all servers",
+          "target": "正在从所有服务器登出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Initializing in relay-onprem mode with multi-server support",
+          "target": "以 relay-onprem 模式初始化，支持多服务器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Restored relay-onprem user:",
+          "target": "已恢复 relay-onprem 用户："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Token Refreshed",
+          "target": "令牌已刷新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "JWT Info:",
+          "target": "JWT 信息："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Updated PocketBase instance with validated endpoints",
+          "target": "已使用验证过的端点更新 PocketBase 实例"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Relay-onprem login successful",
+          "target": "Relay-onprem 登录成功"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Relay-onprem login failed:",
+          "target": "Relay-onprem 登录失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Token request error:",
+          "target": "令牌请求错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "starting",
+          "target": "正在启动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "stopping",
+          "target": "正在停止"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "check and refresh tokens",
+          "target": "检查并刷新令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "adding to refresh queue",
+          "target": "添加到刷新队列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "getting next item in queue",
+          "target": "获取队列中的下一项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "token was valid, cache hit!",
+          "target": "令牌有效，缓存命中！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "get provider token",
+          "target": "获取提供者令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "diffMatchPatch solution is stale an cannot be applied",
+          "target": "diffMatchPatch 解决方案已过时，无法应用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "awaiting updates",
+          "target": "等待更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "connected",
+          "target": "已连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "synced",
+          "target": "已同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loaded settings from disk:",
+          "target": "从磁盘加载设置："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Saving settings to disk:",
+          "target": "将设置保存到磁盘："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "reading content from disk",
+          "target": "从磁盘读取内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "created",
+          "target": "已创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "push",
+          "target": "推送"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "skipping push -- folder is disconnected",
+          "target": "跳过推送 -- 文件夹已断开连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "skipping push -- filetype is disabled",
+          "target": "跳过推送 -- 文件类型已禁用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "sync",
+          "target": "同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "verify upload",
+          "target": "验证上传"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "pull",
+          "target": "拉取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "file is not tracking local disk. resolve merge conflicts before syncing.",
+          "target": "文件未跟踪本地磁盘。请在同步前解决合并冲突。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getCanvas] applying content from server",
+          "target": "[getCanvas] 正在应用来自服务器的内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Skipping flush - file requires merge conflict resolution.",
+          "target": "跳过刷新 - 文件需要解决合并冲突。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getCanvas] flushed",
+          "target": "[getCanvas] 已刷新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getCanvas] WS sync fallback successful, flushed to disk",
+          "target": "[getCanvas] WS 同步回退成功，已刷新到磁盘"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getDocument] Server contains uninitialized document. Waiting for peer to upload.",
+          "target": "[getDocument] 服务器包含未初始化的文档。正在等待对等方上传。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getDocument] local crdt has contents, but remote is empty",
+          "target": "[getDocument] 本地 CRDT 有内容，但远程为空"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getDocument] applying content from server",
+          "target": "[getDocument] 正在应用来自服务器的内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getDocument] flushed",
+          "target": "[getDocument] 已刷新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getDocument] WS sync fallback successful, flushed to disk",
+          "target": "[getDocument] WS 同步回退成功，已刷新到磁盘"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "setting new path",
+          "target": "设置新路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "files",
+          "target": "文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "resolving alias",
+          "target": "解析别名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "moving file",
+          "target": "移动文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "to",
+          "target": "到"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "legacy vpath set to a different ID",
+          "target": "旧版 vpath 设置为不同的 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "new meta diff",
+          "target": "新的元数据差异"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "metadata write (path, existing, meta)",
+          "target": "元数据写入（路径、现有、元数据）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "setting alias",
+          "target": "设置别名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "paths to move",
+          "target": "待移动的路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "no changes detected",
+          "target": "未检测到更改"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "type registry change",
+          "target": "类型注册表更改"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "committing overlay",
+          "target": "提交覆盖层"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "committing deleteSet",
+          "target": "正在提交删除集"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "moving folder",
+          "target": "正在移动文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "cleanupExtraLocalFiles: skipping — provider/persistence not synced",
+          "target": "清理额外本地文件：跳过 — 提供程序/持久性未同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "remote paths",
+          "target": "远程路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "operations",
+          "target": "操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "skipping flush for pending delete",
+          "target": "跳过待删除项的刷新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "writing to ",
+          "target": "正在写入 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getDoc]: creating doc for shared ID",
+          "target": "[getDoc]：为共享ID创建文档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[getCanvas]: creating canvas for shared ID",
+          "target": "[getCanvas]：为共享ID创建画布"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "new meta",
+          "target": "新元数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "skipping place hold for pending delete",
+          "target": "跳过待删除项的占位"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "place hold new",
+          "target": "占位新项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "getting syncfolder",
+          "target": "正在获取同步文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "get syncfile missing meta",
+          "target": "获取同步文件时缺少元数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "marked pending delete",
+          "target": "已标记为待删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "cleared pending delete",
+          "target": "已清除待删除项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Moving out of shared folder",
+          "target": "正在移出共享文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Moving in from outside of shared folder",
+          "target": "正在从共享文件夹外部移入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "back online",
+          "target": "已恢复在线"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Completed cleanup of monkeypatches",
+          "target": "已完成猴子补丁清理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "unable to subscribe to metadata updates",
+          "target": "无法订阅元数据更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "byte level difference with differ equivalence",
+          "target": "字节级差异与差异等价"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "relay canvas is already destroyed",
+          "target": "中继画布已被销毁"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "canvas is already destroyed",
+          "target": "画布已被销毁"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "event is for another node",
+          "target": "事件针对另一个节点"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Installing awareness component for",
+          "target": "正在为...安装感知组件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Awareness component successfully mounted",
+          "target": "感知组件已成功挂载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Awareness component destroyed",
+          "target": "感知组件已销毁"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[System 3][Relay][Live Views] going offline",
+          "target": "[System 3][Relay][实时视图] 正在离线"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[System 3][Relay][Live Views] going online",
+          "target": "[System 3][Relay][实时视图] 正在上线"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[RelayOnPrem] Fetching server info from:",
+          "target": "[RelayOnPrem] 正在从...获取服务器信息："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[RelayOnPrem] Server info response status:",
+          "target": "[RelayOnPrem] 服务器信息响应状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[RelayOnPrem] Server info data:",
+          "target": "[RelayOnPrem] 服务器信息数据："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[RelayOnPrem] Server info:",
+          "target": "[RelayOnPrem] 服务器信息："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[RelayOnPrem] OAuth enabled, provider:",
+          "target": "[RelayOnPrem] OAuth已启用，提供程序："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[RelayOnPrem] Auth provider for server:",
+          "target": "[RelayOnPrem] 服务器的认证提供程序："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "exists:",
+          "target": "存在："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Add tenant failed with error:",
+          "target": "添加租户失败，错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to load default tenant info:",
+          "target": "加载默认租户信息失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No active enterprise tenant configured, using defaults",
+          "target": "未配置活动企业租户，使用默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to validate tenant:",
+          "target": "验证租户失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Successfully validated enterprise tenant",
+          "target": "成功验证企业租户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Fetching tenant license from:",
+          "target": "正在从...获取租户许可证："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Tenant license fetch error:",
+          "target": "租户许可证获取错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "JWT verification failed:",
+          "target": "JWT验证失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Cleared validated endpoints, reverted to defaults",
+          "target": "已清除验证端点，恢复为默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to get customer info:",
+          "target": "获取客户信息失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to get default tenant info:",
+          "target": "获取默认租户信息失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to test validate endpoints:",
+          "target": "测试验证端点失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Test validation successful for tenant",
+          "target": "租户测试验证成功"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "License response received from:",
+          "target": "收到来自...的许可证响应："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "License fetch error:",
+          "target": "许可证获取错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "License validation successful:",
+          "target": "许可证验证成功："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Active tenant not found, using defaults",
+          "target": "未找到活动租户，使用默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Enterprise tenant configured, validating on startup...",
+          "target": "已配置企业租户，正在启动时验证..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "✓ Enterprise tenant validated and applied on startup",
+          "target": "✓ 企业租户已在启动时验证并应用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Intercepted webviewer, opening in default browser",
+          "target": "已拦截webviewer，在默认浏览器中打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Confirm",
+          "target": "确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "OK",
+          "target": "确定"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Remove",
+          "target": "移除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add member",
+          "target": "添加成员"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Disconnect",
+          "target": "断开连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Connect to local folder",
+          "target": "连接到本地文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy link",
+          "target": "复制链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open",
+          "target": "打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Revoke",
+          "target": "撤销"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create invite link",
+          "target": "创建邀请链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create share",
+          "target": "创建共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter email address of user to add as member",
+          "target": "输入要添加为成员的用户电子邮件地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Connected and syncing",
+          "target": "已连接并正在同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Connect a local folder to start syncing",
+          "target": "连接本地文件夹以开始同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Control who can access this share",
+          "target": "控制谁可以访问此共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Permanently delete this share and remove all members",
+          "target": "永久删除此共享并移除所有成员"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Make this share accessible via a web URL",
+          "target": "使此共享可通过网络URL访问"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Update the web page with the latest document content",
+          "target": "使用最新文档内容更新网页"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Update the web page with the latest folder listing",
+          "target": "使用最新文件夹列表更新网页"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Allow search engines to index this page",
+          "target": "允许搜索引擎索引此页面"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Custom URL path (letters, numbers, hyphens)",
+          "target": "自定义URL路径（字母、数字、连字符）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Access level for invited users",
+          "target": "受邀用户的访问级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How long the invite link will be valid",
+          "target": "邀请链接的有效期"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Limit how many times this invite can be used",
+          "target": "限制此邀请的使用次数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select which server to create the share on",
+          "target": "选择要在哪个服务器上创建共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Path to the document or folder",
+          "target": "文档或文件夹的路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Type of share",
+          "target": "共享类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Password required to access this share",
+          "target": "访问此共享所需的密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Who can access this share",
+          "target": "谁可以访问此共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "User email",
+          "target": "用户电子邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Role",
+          "target": "角色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Not connected",
+          "target": "未连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Change visibility",
+          "target": "更改可见性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Delete share",
+          "target": "删除共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Publish to web",
+          "target": "发布到网络"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Web URL",
+          "target": "网络URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync content",
+          "target": "同步内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync folder",
+          "target": "同步文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allow search engines",
+          "target": "允许搜索引擎"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync mode",
+          "target": "同步模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Web slug",
+          "target": "Web 别名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Expiration",
+          "target": "过期时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max uses (optional)",
+          "target": "最大使用次数（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Server",
+          "target": "服务器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Path",
+          "target": "路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Type",
+          "target": "类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Password",
+          "target": "密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Visibility",
+          "target": "可见性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Folder",
+          "target": "文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "E.g., user@example.com",
+          "target": "例如，user@example.com"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Unlimited",
+          "target": "无限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter password for protected share",
+          "target": "输入受保护共享的密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay on-premise shares",
+          "target": "中继本地共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay on-premise login",
+          "target": "中继本地登录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Share a folder",
+          "target": "共享文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Enterprise tenant configuration",
+          "target": "企业租户配置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Self-host relay server",
+          "target": "自托管中继服务器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Share folder",
+          "target": "共享文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay: share folder",
+          "target": "中继：共享文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay: relay settings",
+          "target": "中继：中继设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay: share settings",
+          "target": "中继：共享设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay: unshare folder",
+          "target": "中继：取消共享文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay: sync",
+          "target": "中继：同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay: download",
+          "target": "中继：下载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay: verify upload",
+          "target": "中继：验证上传"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Relay: upload",
+          "target": "中继：上传"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Sync all shares",
+          "target": "同步所有共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Sync current file",
+          "target": "同步当前文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Manage shares",
+          "target": "管理共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Settings",
+          "target": "设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Relay] Polyfilling Fetch API (Electron Bug: https://github.com/electron/electron/pull/42419)",
+          "target": "[中继] 正在为 Fetch API 添加 Polyfill（Electron 错误：https://github.com/electron/electron/pull/42419）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Relay] Polyfilling EventSource API required, but unable to polyfill on Mobile",
+          "target": "[中继] 需要为 EventSource API 添加 Polyfill，但在移动端无法实现"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Relay] Polyfilling EventSource API",
+          "target": "[中继] 正在为 EventSource API 添加 Polyfill"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "PocketBase: This form of authWithOAuth2() is deprecated and may get removed in the future. Please replace with authWithOAuth2Code() OR use the authWithOAuth2() realtime form as shown in https://pocketbase.io/docs/authentication/#oauth2-integration.",
+          "target": "PocketBase：此形式的 authWithOAuth2() 已弃用，未来可能会被移除。请替换为 authWithOAuth2Code() 或使用 https://pocketbase.io/docs/authentication/#oauth2-integration 中所示的 authWithOAuth2() 实时形式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Deprecated format of beforeSend return: please use `return { url, options }`, instead of `return options`.",
+          "target": "已弃用的 beforeSend 返回格式：请使用 `return { url, options }`，而不是 `return options`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "connect() failed:",
+          "target": "connect() 失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Unable to open persistence.",
+          "target": "无法打开持久化存储。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "diffMatchPatch solution is stale an cannot be applied",
+          "target": "diffMatchPatch 解决方案已过时，无法应用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "skipping save for pending delete",
+          "target": "跳过待删除项的保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "file saved",
+          "target": "文件已保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "couldn't find role",
+          "target": "找不到角色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "record has no id",
+          "target": "记录没有 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "cascade delete parent",
+          "target": "级联删除父项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Parent collection not found during validation",
+          "target": "验证期间未找到父集合"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "cascade delete child (no valid permission parents)",
+          "target": "级联删除子项（无有效的权限父项）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "preserving child with valid permission parents",
+          "target": "保留具有有效权限父项的子项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "cascade delete child",
+          "target": "级联删除子项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to process child during cascade",
+          "target": "级联期间处理子项失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "no pb!",
+          "target": "没有 pb！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "unable to subscribe, pocketbase client is not ready",
+          "target": "无法订阅，PocketBase 客户端未就绪"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "No role found to leave relay",
+          "target": "未找到可离开中继的角色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Attempted to save before loading settings from disk",
+          "target": "尝试在从磁盘加载设置前保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Attempted to update before loading settings from disk",
+          "target": "尝试在从磁盘加载设置前更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to load hash from store:",
+          "target": "从存储加载哈希失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to save hash to store:",
+          "target": "保存哈希到存储失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to remove hash from store:",
+          "target": "从存储移除哈希失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "file in metadata, but not on the server!",
+          "target": "文件存在于元数据中，但不在服务器上！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "synctime",
+          "target": "同步时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "unable to compute hash",
+          "target": "无法计算哈希"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[downloadItem] HTTP auth failed (expected with CWT tokens):",
+          "target": "[downloadItem] HTTP 认证失败（使用 CWT 令牌时预期）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[syncDocumentWebsocket] connect failed for",
+          "target": "[syncDocumentWebsocket] 连接失败，针对"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[syncDocumentWebsocket] timed out for",
+          "target": "[syncDocumentWebsocket] 超时，针对"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[getCanvas] HTTP download failed, falling back to WS sync:",
+          "target": "[getCanvas] HTTP 下载失败，回退到 WS 同步："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[getDocument] HTTP download failed, falling back to WS sync:",
+          "target": "[getDocument] HTTP 下载失败，回退到 WS 同步："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "skipping folder creation for pending delete",
+          "target": "跳过待删除项的文件夹创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "deleting pending upload record because file is missing",
+          "target": "删除待上传记录，因为文件丢失"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "server changed -- reinitializing all connections",
+          "target": "服务器已更改 -- 正在重新初始化所有连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "unknown sync type",
+          "target": "未知的同步类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[getDoc]: creating new shared ID for existing tfile",
+          "target": "[getDoc]：为现有 tfile 创建新的共享 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[getCanvas]: creating new shared ID for existing tfile",
+          "target": "[getCanvas]：为现有 tfile 创建新的共享 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[observer] RangeError, scheduling resync",
+          "target": "[observer] RangeError，计划重新同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[mergeBanner] checkStale failed:",
+          "target": "[mergeBanner] checkStale 失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[resync] relay is empty but editor has content — uploading to Y.Text",
+          "target": "[resync] 中继为空但编辑器有内容 — 正在上传到 Y.Text"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "no document",
+          "target": "没有文档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "ytext and editor buffer need syncing",
+          "target": "ytext 和编辑器缓冲区需要同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "local db missing, not setting buffer",
+          "target": "本地数据库缺失，未设置缓冲区"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[getKeyFrame] checkStale failed, relying on WS sync:",
+          "target": "[getKeyFrame] checkStale 失败，依赖 WS 同步："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[update] Yjs transact failed:",
+          "target": "[update] Yjs transact 失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "range errors!",
+          "target": "范围错误！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not find inline-title element to position awareness component",
+          "target": "找不到用于定位感知组件的内联标题元素"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "No awareness provider available",
+          "target": "没有可用的感知提供程序"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to create awareness component:",
+          "target": "创建感知组件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Error destroying awareness component:",
+          "target": "销毁感知组件时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[TextViewPlugin] Switched to correct document:",
+          "target": "[TextViewPlugin] 已切换到正确的文档："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[TextViewPlugin] getDocument() lookup:",
+          "target": "[TextViewPlugin] getDocument() 查找："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[TextViewPlugin] getDocument() found:",
+          "target": "[TextViewPlugin] getDocument() 找到："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[TextViewPlugin] getDocument() using fallback:",
+          "target": "[TextViewPlugin] getDocument() 使用回退："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "resync() - no document available",
+          "target": "resync() - 没有可用的文档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "resync() - content matches, setting tracking=true",
+          "target": "resync() - 内容匹配，设置 tracking=true"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "diff in resync - DETAILED DEBUG:",
+          "target": "resync 中的差异 - 详细调试："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[resync] checkStale failed, relying on WS sync:",
+          "target": "[resync] checkStale 失败，依赖 WS 同步："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Document is stale - showing merge banner",
+          "target": "文档已过时 - 显示合并横幅"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Document is authoritative - syncing view to CRDT state",
+          "target": "文档具有权威性 - 将视图同步到 CRDT 状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Syncing view to CRDT - setViewData",
+          "target": "将视图同步到 CRDT - setViewData"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "view file not ready, deferring install",
+          "target": "视图文件未就绪，延迟安装"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "connecting textfile view",
+          "target": "正在连接文本文件视图"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "instance hook: setViewData",
+          "target": "实例钩子：setViewData"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "setViewData called before file loaded, deferring to original",
+          "target": "在文件加载前调用了 setViewData，延迟到原始操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "instance hook: requestSave called",
+          "target": "实例钩子：requestSave 已调用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "tracking - applying diff",
+          "target": "正在跟踪 - 应用差异"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "not tracking - resync",
+          "target": "未跟踪 - 重新同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "resync from update, not tracking",
+          "target": "从更新重新同步，未跟踪"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "setting view data",
+          "target": "正在设置视图数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "destroying view",
+          "target": "正在销毁视图"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Relay] setMergeButton checkStale failed:",
+          "target": "[Relay] setMergeButton 检查过期失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Relay] mergeBanner checkStale failed:",
+          "target": "[Relay] mergeBanner 检查过期失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Relay] LiveView.checkStale failed, relying on WS sync:",
+          "target": "[Relay] LiveView.checkStale 失败，依赖 WS 同步："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[LiveView] Creating TextFileViewPlugin in attach() for:",
+          "target": "[LiveView] 在 attach() 中为以下内容创建 TextFileViewPlugin："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[System 3][Relay][Live Views] error getting views",
+          "target": "[System 3][Relay][Live Views] 获取视图时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[RelayOnPrem] Server info failed with status:",
+          "target": "[RelayOnPrem] 服务器信息获取失败，状态码："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[RelayOnPrem] No auth provider found for server:",
+          "target": "[RelayOnPrem] 未找到服务器的认证提供程序："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "RelayInstances",
+          "target": "RelayInstances"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Webviewer plugin not found or not initialized",
+          "target": "Webviewer 插件未找到或未初始化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not find openExternalURLs property",
+          "target": "未找到 openExternalURLs 属性"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Share ID copied to clipboard",
+          "target": "分享 ID 已复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter a user email",
+          "target": "请输入用户邮箱"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Folder disconnected",
+          "target": "文件夹已断开连接"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Folder connected! Syncing...",
+          "target": "文件夹已连接！正在同步..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Password is required for protected shares",
+          "target": "受保护的分享需要密码"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Web URL copied to clipboard!",
+          "target": "网页 URL 已复制到剪贴板！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Folder is empty or could not be read",
+          "target": "文件夹为空或无法读取"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not read document content",
+          "target": "无法读取文档内容"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Web content synced successfully!",
+          "target": "网页内容同步成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Auto-sync enabled - changes will sync on save",
+          "target": "自动同步已启用 - 保存时将同步更改"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Auto-sync disabled, use sync now to update",
+          "target": "自动同步已禁用，使用立即同步来更新"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Max uses must be a positive number",
+          "target": "最大使用次数必须是正数"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invite link created successfully!",
+          "target": "邀请链接创建成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Server not found",
+          "target": "未找到服务器"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No server configured",
+          "target": "未配置服务器"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Share client not available",
+          "target": "分享客户端不可用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invite link copied to clipboard!",
+          "target": "邀请链接已复制到剪贴板！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invite link revoked",
+          "target": "邀请链接已撤销"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a folder path",
+          "target": "请选择文件夹路径"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a server",
+          "target": "请选择服务器"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Added member to share",
+          "target": "已将成员添加到分享"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Member removed from share",
+          "target": "已从分享中移除成员"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Share deleted successfully",
+          "target": "分享删除成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invite link copied",
+          "target": "邀请链接已复制"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Successfully logged in to relay-onprem!",
+          "target": "成功登录到 relay-onprem！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Connection successful!",
+          "target": "连接成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Auth provider not ready. Please try again.",
+          "target": "认证提供程序未就绪。请重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Logged out",
+          "target": "已注销"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Default server cleared",
+          "target": "默认服务器已清除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Default server set",
+          "target": "默认服务器已设置"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Share ID copied",
+          "target": "分享 ID 已复制"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Member added",
+          "target": "成员已添加"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Member removed",
+          "target": "成员已移除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invite link copied!",
+          "target": "邀请链接已复制！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invite revoked",
+          "target": "邀请已撤销"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Share deleted",
+          "target": "分享已删除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to change visibility",
+          "target": "更改可见性失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not read document",
+          "target": "无法读取文档"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Content synced!",
+          "target": "内容已同步！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Folder empty",
+          "target": "文件夹为空"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Auto-sync enabled",
+          "target": "自动同步已启用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Auto-sync disabled",
+          "target": "自动同步已禁用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "URL copied!",
+          "target": "URL 已复制！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invite link created!",
+          "target": "邀请链接已创建！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Opening checkout in browser...",
+          "target": "正在浏览器中打开结账页面..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Subscription activated!",
+          "target": "订阅已激活！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Opening subscription portal in browser...",
+          "target": "正在浏览器中打开订阅门户..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Subscription cancelled. Access continues until end of billing period.",
+          "target": "订阅已取消。访问权限将持续到计费周期结束。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Share removed — key inactive",
+          "target": "分享已移除 — 密钥已失效"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to copy key",
+          "target": "复制密钥失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Slow down",
+          "target": "请稍候"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please configure an enterprise tenant first",
+          "target": "请先配置企业租户"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Validating endpoints...",
+          "target": "正在验证端点..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Endpoints validated and applied successfully!",
+          "target": "端点验证并应用成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Reset to default endpoints",
+          "target": "重置为默认端点"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please sign in to use relay",
+          "target": "请登录以使用 relay"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No share client available",
+          "target": "没有可用的分享客户端"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Syncing all shares...",
+          "target": "正在同步所有分享..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file",
+          "target": "没有活动文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Current file is not in a web-published share",
+          "target": "当前文件不在网页发布的分享中"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Payment successful! Refreshing billing data...",
+          "target": "支付成功！正在刷新账单数据..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "relay-onprem-share-list evc-share-list",
+          "target": "relay-onprem-share-list evc-share-list"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "relay-onprem-share-item evc-share-item",
+          "target": "relay-onprem-share-item evc-share-item"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "share-name evc-share-name",
+          "target": "share-name evc-share-name"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "share-kind evc-text-muted evc-text-sm",
+          "target": "share-kind evc-text-muted evc-text-sm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "share-server evc-text-xs evc-text-accent",
+          "target": "share-server evc-text-xs evc-text-accent"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "share-date evc-text-xs evc-text-faint",
+          "target": "share-date evc-text-xs evc-text-faint"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-muted evc-mb-3",
+          "target": "mod-muted evc-mb-3"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "relay-onprem-share-info evc-share-info-row",
+          "target": "relay-onprem-share-info evc-share-info-row"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "relay-onprem-badge evc-badge",
+          "target": "relay-onprem-badge evc-badge"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-muted evc-btn-sm",
+          "target": "mod-muted evc-btn-sm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-cta evc-btn-sm",
+          "target": "mod-cta evc-btn-sm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "relay-onprem-error evc-text-error",
+          "target": "relay-onprem-error evc-text-error"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "no-decoration text-xxs file-diff__action-line",
+          "target": "no-decoration text-xxs file-diff__action-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "text-xxs file-diff__action-line",
+          "target": "text-xxs file-diff__action-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "flex flex-row gap-1 py-0-5",
+          "target": "flex flex-row gap-1 py-0-5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "difference",
+          "target": "difference"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "file-diff__line file-diff__top-line__bg",
+          "target": "file-diff__line file-diff__top-line__bg"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "file-diff__line file-diff__bottom-line__bg",
+          "target": "file-diff__line file-diff__bottom-line__bg"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "relay-onprem-oauth-section evc-oauth-section",
+          "target": "relay-onprem-oauth-section evc-oauth-section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-item-name evc-oauth-label",
+          "target": "setting-item-name evc-oauth-label"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Delete a shared folder",
+          "target": "删除共享文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Rename a shared folder",
+          "target": "重命名共享文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Read folder contents and add to vault",
+          "target": "读取文件夹内容并添加到保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Edit notes in folder",
+          "target": "编辑文件夹中的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Upload attachments to folder",
+          "target": "将附件上传到文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Download attachments from folder",
+          "target": "从文件夹下载附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Add/remove/rename files in folder",
+          "target": "在文件夹中添加/删除/重命名文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Delete a relay server",
+          "target": "删除中继服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Rename a relay server",
+          "target": "重命名中继服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Manage users in relay server (add/remove/change roles)",
+          "target": "管理中继服务器中的用户（添加/删除/更改角色）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Manage relay share keys (enable/disable sharing, rotate keys)",
+          "target": "管理中继共享密钥（启用/禁用共享、轮换密钥）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Manage relay subscriptions and plans",
+          "target": "管理中继订阅和计划"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Manage users in folder (add/remove/change roles)",
+          "target": "管理文件夹中的用户（添加/删除/更改角色）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sync image files (.bmp, .png, .jpg, .jpeg, .gif, .svg, .webp, .avif)",
+          "target": "同步图像文件（.bmp, .png, .jpg, .jpeg, .gif, .svg, .webp, .avif）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sync audio files (.mp3, .wav, .m4a, .3gp, .flac, .ogg, .oga, .opus)",
+          "target": "同步音频文件（.mp3, .wav, .m4a, .3gp, .flac, .ogg, .oga, .opus）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sync video files (.mp4, .webm, .ogv, .mov, .mkv)",
+          "target": "同步视频文件（.mp4, .webm, .ogv, .mov, .mkv）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sync PDF files (.pdf)",
+          "target": "同步PDF文件（.pdf）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sync unsupported file types",
+          "target": "同步不支持的文件类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Set the name of the folder to be added.",
+          "target": "设置要添加的文件夹名称。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Set the location in your vault.",
+          "target": "设置您在保险库中的位置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Enter the code that was shared with you.",
+          "target": "输入与您共享的代码。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "No shared folders on this device. Share folders from a Relay Server's settings page to begin collaboration.",
+          "target": "此设备上没有共享文件夹。请从中继服务器的设置页面共享文件夹以开始协作。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Only selected users can access this folder",
+          "target": "仅选定用户可访问此文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Set the Relay Server's name.",
+          "target": "设置中继服务器的名称。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Share this key with your collaborators.",
+          "target": "将此密钥与您的协作者共享。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Create a new share key. The old key will no longer work.",
+          "target": "创建新的共享密钥。旧密钥将不再有效。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Total available storage.",
+          "target": "总可用存储空间。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Storage for images, audio, video, etc",
+          "target": "用于图像、音频、视频等的存储空间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Maximum supported file size.",
+          "target": "支持的最大文件大小。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Leave the Relay Server. Local data is preserved.",
+          "target": "离开中继服务器。本地数据将保留。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "This will destroy the Relay Server (deleting all data on the server). Local data is preserved.",
+          "target": "这将销毁中继服务器（删除服务器上的所有数据）。本地数据将保留。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Deletes edit history and disables change tracking.",
+          "target": "删除编辑历史记录并禁用更改跟踪。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Delete the local Shared Folder and all of its contents.",
+          "target": "删除本地共享文件夹及其所有内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Set the Shared Folder's default name. A Shared Folder can always be renamed locally.",
+          "target": "设置共享文件夹的默认名称。共享文件夹始终可以在本地重命名。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Download and sync this folder to your local device",
+          "target": "将此文件夹下载并同步到您的本地设备"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "This folder has a different name in your Vault",
+          "target": "此文件夹在您的保险库中具有不同的名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Convert this folder to a private folder and manage access",
+          "target": "将此文件夹转换为私有文件夹并管理访问权限"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Deletes the remote folder from the Relay Server. Local files will be preserved.",
+          "target": "从中继服务器删除远程文件夹。本地文件将保留。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Enter your organization's tenant URL",
+          "target": "输入您组织的租户URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Please describe what went wrong and what you were trying to do.",
+          "target": "请描述出了什么问题以及您当时试图做什么。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Send logs to the Relay developers to help them debug the issue.",
+          "target": "将日志发送给中继开发人员以帮助他们调试问题。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Your bug report will help us improve Relay.",
+          "target": "您的错误报告将帮助我们改进中继。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Select who will own this self-hosted relay server.",
+          "target": "选择谁将拥有此自托管中继服务器。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "color: #ff5555; background: rgba(255, 85, 85, 0.1); font-weight: normal; padding: 1px 4px; border-radius: 2px;",
+          "target": "color: #ff5555; background: rgba(255, 85, 85, 0.1); font-weight: normal; padding: 1px 4px; border-radius: 2px;"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Network request failed",
+          "target": "网络请求失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Only HTTP and HTTPS URLs are allowed in development",
+          "target": "开发环境中仅允许HTTP和HTTPS URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Only HTTPS URLs are allowed in production",
+          "target": "生产环境中仅允许HTTPS URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid hostname",
+          "target": "无效的主机名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid URL format",
+          "target": "无效的URL格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "License missing required apiUrl or authUrl",
+          "target": "许可证缺少必需的apiUrl或authUrl"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "This tenant is already configured",
+          "target": "此租户已配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Tenant not found",
+          "target": "未找到租户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "reload",
+          "target": "reload"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Syncing this file type is disabled",
+          "target": "同步此文件类型已被禁用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Make public (open access)",
+          "target": "设为公开（开放访问）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Make protected (password)",
+          "target": "设为受保护（密码）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Add to vault",
+          "target": "添加到保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "The requested resource wasn't found.",
+          "target": "未找到请求的资源。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Missing required record id.",
+          "target": "缺少必需的记录ID。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Missing required log id.",
+          "target": "缺少必需的日志ID。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "EVC Team Relay",
+          "target": "EVC团队中继"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "check",
+          "target": "check"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "download",
+          "target": "download"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "folder",
+          "target": "folder"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "home",
+          "target": "home"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "info",
+          "target": "info"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "layers",
+          "target": "layers"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "lock",
+          "target": "lock"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "satellite",
+          "target": "satellite"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "settings",
+          "target": "settings"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Owner",
+          "target": "所有者"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Member",
+          "target": "成员"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "relays",
+          "target": "relays"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "providers",
+          "target": "providers"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "subscriptions",
+          "target": "subscriptions"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Images",
+          "target": "图像"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Audio",
+          "target": "音频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Videos",
+          "target": "视频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PDFs",
+          "target": "PDF文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Other files",
+          "target": "其他文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Account",
+          "target": "账户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Remote folder",
+          "target": "远程文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Folder name",
+          "target": "文件夹名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Folder location",
+          "target": "文件夹位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Share key",
+          "target": "共享密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Subscriptions",
+          "target": "订阅"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Join a Relay Server",
+          "target": "加入中继服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "My vault",
+          "target": "我的保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Selected Folder",
+          "target": "选定文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Users",
+          "target": "用户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Folder",
+          "target": "文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Private",
+          "target": "私有"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Name",
+          "target": "名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Share Key",
+          "target": "共享密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rotate key",
+          "target": "轮换密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Plan",
+          "target": "计划"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Storage",
+          "target": "存储空间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Total storage",
+          "target": "总存储空间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Usage",
+          "target": "使用情况"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "File size limit",
+          "target": "文件大小限制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Host",
+          "target": "主机"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Status",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "URL",
+          "target": "URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Membership",
+          "target": "成员资格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Leave Relay Server",
+          "target": "离开中继服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Danger zone",
+          "target": "危险区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Destroy Relay Server",
+          "target": "销毁中继服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Shared Folders on this Relay Server",
+          "target": "此中继服务器上的共享文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sharing",
+          "target": "共享"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Delete metadata",
+          "target": "删除元数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Delete from vault",
+          "target": "从保险库中删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add to vault",
+          "target": "添加到保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add this folder to your vault",
+          "target": "将此文件夹添加到您的保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Users with access",
+          "target": "有权访问的用户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync settings for this device",
+          "target": "此设备的同步设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Local path",
+          "target": "本地路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Make private",
+          "target": "设为私有"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Remove from Relay Server",
+          "target": "从中继服务器移除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add Enterprise Tenant",
+          "target": "添加企业租户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "User Agent",
+          "target": "用户代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fetch",
+          "target": "获取"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Response",
+          "target": "响应"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Blink Fetch",
+          "target": "Blink 获取"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Startup Time",
+          "target": "启动时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Environment",
+          "target": "环境"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Connections",
+          "target": "连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Log Files",
+          "target": "日志文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Description",
+          "target": "描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Include Logs",
+          "target": "包含日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Thank you!",
+          "target": "谢谢！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Logs",
+          "target": "日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Large Stores (>1MB)",
+          "target": "大型存储 (>1MB)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show feature flags",
+          "target": "显示功能标志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Send bug report",
+          "target": "发送错误报告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show debug info",
+          "target": "显示调试信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Analyze database",
+          "target": "分析数据库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Disable debugging",
+          "target": "禁用调试"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable debugging",
+          "target": "启用调试"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reload relay",
+          "target": "重新加载中继"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open settings",
+          "target": "打开设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Configure enterprise tenant",
+          "target": "配置企业租户"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Register self-hosted relay server",
+          "target": "注册自托管中继服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Enter your password",
+          "target": "请输入您的密码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search folders...",
+          "target": "搜索文件夹..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Enter share key",
+          "target": "输入共享密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "please wait...",
+          "target": "请稍候..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Please add a server and log in first.",
+          "target": "请先添加服务器并登录。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Loading shares...",
+          "target": "正在加载共享..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Loading share details...",
+          "target": "正在加载共享详情..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create share",
+          "target": "创建共享"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No shares yet. Create your first share to get started!",
+          "target": "暂无共享。创建您的第一个共享以开始使用！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Back to list",
+          "target": "返回列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Members",
+          "target": "成员"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No members yet. Add members to collaborate.",
+          "target": "暂无成员。添加成员以进行协作。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add member",
+          "target": "添加成员"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Local folder",
+          "target": "本地文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Web publishing",
+          "target": "网页发布"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Invite links",
+          "target": "邀请链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create invite",
+          "target": "创建邀请"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No active invite links. Create one to share access.",
+          "target": "暂无活跃邀请链接。创建一个以共享访问权限。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Back to share",
+          "target": "返回共享"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create invite link",
+          "target": "创建邀请链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create new share",
+          "target": "创建新共享"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You must be logged in to at least one server to create shares.",
+          "target": "您必须至少登录到一个服务器才能创建共享。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Accept Top (Editor)",
+          "target": "接受顶部（编辑器）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Accept Bottom (Local Disk)",
+          "target": "接受底部（本地磁盘）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Accept All",
+          "target": "全部接受"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Accept None",
+          "target": "全部拒绝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Keep in Editor",
+          "target": "保留在编辑器中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Discard in Editor",
+          "target": "在编辑器中丢弃"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Accept from Local Disk",
+          "target": "从本地磁盘接受"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Discard on Disk",
+          "target": "在磁盘上丢弃"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Keep Editor Contents",
+          "target": "保留编辑器内容"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Accept All from Local Disk",
+          "target": "从本地磁盘全部接受"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "NOT SYNCED",
+          "target": "未同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Email",
+          "target": "电子邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Password",
+          "target": "密码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Login",
+          "target": "登录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Or sign in with:",
+          "target": "或使用以下方式登录："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Plan & Usage",
+          "target": "计划与用量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create Share",
+          "target": "创建共享"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create Invite",
+          "target": "创建邀请"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Agent Keys",
+          "target": "代理密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Please log in to a server first.",
+          "target": "请先登录到服务器。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Hint",
+          "target": "提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "email",
+          "target": "email"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "password",
+          "target": "password"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
