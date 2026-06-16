@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "scholar-sidekick",
+    "version": "1.0.1",
+    "title": "Scholar Sidekick — Cite from any identifier",
+    "description": "Scholar Sidekick — Cite from any identifier Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Searching…",
+          "target": "搜索中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "html",
+          "target": "html"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "text",
+          "target": "text"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Plain text",
+          "target": "纯文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "append",
+          "target": "append"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Append after identifier",
+          "target": "在标识符后追加"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "replace",
+          "target": "replace"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Replace in place",
+          "target": "原地替换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "table",
+          "target": "table"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "colgroup",
+          "target": "colgroup"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "col",
+          "target": "col"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tr",
+          "target": "tr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "thead",
+          "target": "thead"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "th",
+          "target": "th"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tbody",
+          "target": "tbody"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "td",
+          "target": "td"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "dl",
+          "target": "dl"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "dt",
+          "target": "dt"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "dd",
+          "target": "dd"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[scholar-sidekick] requestUrl threw despite throw:false",
+          "target": "[scholar-sidekick] requestUrl 尽管设置了 throw:false 仍抛出异常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter a citation identifier or URL.",
+          "target": "输入引用标识符或URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Required. The title as written in the citation.",
+          "target": "必填。引用中所写的标题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Improves family ↔ given swap detection.",
+          "target": "可选。改进姓 ↔ 名交换检测。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pick the kind, then paste the value. DOI is preferred when available.",
+          "target": "选择类型，然后粘贴值。可用时首选 DOI。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used by every command unless overridden in the modal. Five built-in styles are listed; the modal lets you search 10,000+ citation styles.",
+          "target": "除非在模态框中覆盖，否则每个命令都使用此设置。列出了五种内置样式；模态框允许您搜索 10,000 多种引文样式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Plain text is the safest default. HTML preserves italics and inline markup but only applies to styles selected via the modal — the five built-in styles emit text only and fall back automatically.",
+          "target": "纯文本是最安全的默认选项。HTML 保留斜体和内联标记，但仅适用于通过模态框选择的样式——五种内置样式仅输出文本并自动回退。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Whether the command swaps the identifier in place or appends the citation after it.",
+          "target": "命令是就地替换标识符还是在其后附加引文。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sends ?provenance=1 with each citation request. Adds the upstream registry (Crossref / PubMed / DataCite / etc.), fetch timestamp, and transform version to each item so you can see where the metadata came from.",
+          "target": "每次引文请求都发送 ?provenance=1。将上游注册中心（Crossref / PubMed / DataCite 等）、获取时间戳和转换版本添加到每个项目，以便您查看元数据的来源。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sends ?checks=retraction,oa with each citation request. Adds retraction status (Crossref + Retraction Watch) and open-access status (Unpaywall) to each item. Adds a few seconds of latency per request.",
+          "target": "每次引文请求都发送 ?checks=retraction,oa。将撤回状态（Crossref + Retraction Watch）和开放获取状态（Unpaywall）添加到每个项目。每个请求会增加几秒钟的延迟。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Identifier",
+          "target": "标识符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Style",
+          "target": "样式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Claimed title",
+          "target": "声称的标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "First author",
+          "target": "第一作者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "First author (given name)",
+          "target": "第一作者（名）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Year",
+          "target": "年份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Container / journal",
+          "target": "容器 / 期刊"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default citation style",
+          "target": "默认引文样式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output format",
+          "target": "输出格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Replace identifier at caret",
+          "target": "替换插入点处的标识符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include source provenance",
+          "target": "包含来源出处"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include safety checks (retraction + open access)",
+          "target": "包含安全检查（撤回 + 开放获取）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Effect of ... on ...",
+          "target": "... 对 ... 的影响"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Family name",
+          "target": "姓"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Given name",
+          "target": "名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Nature, JAMA, ...",
+          "target": "Nature, JAMA, ..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "No notices.",
+          "target": "无通知。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Verifying…",
+          "target": "验证中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Verify",
+          "target": "验证"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Summary inserted at caret.",
+          "target": "摘要已插入插入点。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Enter an identifier first.",
+          "target": "请先输入标识符。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Formatting…",
+          "target": "格式化中…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "A claimed title is required.",
+          "target": "需要提供声称的标题。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Select an identifier first.",
+          "target": "请先选择一个标识符。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No identifier found near the caret. Try selecting it first.",
+          "target": "在插入点附近未找到标识符。请尝试先选择它。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No identifiers found in this note.",
+          "target": "在此笔记中未找到标识符。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a note first.",
+          "target": "请先打开一个笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "identifier",
+          "target": "identifier"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "status",
+          "target": "status"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "doi",
+          "target": "doi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "detail",
+          "target": "detail"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "scholar-sidekick-status scholar-sidekick-status-error",
+          "target": "scholar-sidekick-status scholar-sidekick-status-error"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Rate-limited. Try again shortly.",
+          "target": "请求频率受限。请稍后再试。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Request cancelled.",
+          "target": "请求已取消。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Timed out. Try again.",
+          "target": "请求超时。请重试。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Couldn't reach scholar-sidekick.com — check your connection.",
+          "target": "无法连接到 scholar-sidekick.com — 请检查您的网络连接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Couldn't format that selection.",
+          "target": "无法格式化该选区。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "No identifiers to export.",
+          "target": "没有可导出的标识符。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Check returned no result.",
+          "target": "检查未返回结果。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Format selection as citation",
+          "target": "将选区格式化为引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Replace identifier at caret with citation",
+          "target": "用引文替换插入点处的标识符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Insert citation…",
+          "target": "插入引文…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Export note citations to bibtex",
+          "target": "将笔记引文导出为 bibtex"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Export note citations to ris",
+          "target": "将笔记引文导出为 ris"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check identifier at caret for retraction",
+          "target": "检查插入点处的标识符是否被撤回"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check identifier at caret for open access",
+          "target": "检查插入点处的标识符是否为开放获取"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check note citations for retractions",
+          "target": "检查笔记引文是否被撤回"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check note citations for open access",
+          "target": "检查笔记引文是否为开放获取"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Verify selected citation",
+          "target": "验证选定的引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search 10,000+ styles…",
+          "target": "搜索 10,000 多种样式…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No identifiers found in this note.",
+          "target": "在此笔记中未找到标识符。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Identifier",
+          "target": "标识符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Status",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "DOI",
+          "target": "DOI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Title / notice",
+          "target": "标题 / 通知"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Best legal copy",
+          "target": "最佳合法副本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Append summary at caret",
+          "target": "在插入点附加摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Insert citation",
+          "target": "插入引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search styles",
+          "target": "搜索样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Insert",
+          "target": "插入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Verify citation",
+          "target": "验证引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter the citation you want to check. The verifier cross-references the claimed title and identifier against Crossref, PubMed, and OpenAlex to detect fabricated or wrong-identifier citations.",
+          "target": "输入您要检查的引文。验证器会将声称的标题和标识符与 Crossref、PubMed 和 OpenAlex 进行交叉引用，以检测伪造或标识符错误的引文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open in web verifier",
+          "target": "在网络验证器中打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Verify",
+          "target": "验证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Verifying…",
+          "target": "验证中…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mismatches",
+          "target": "不匹配项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Matched record",
+          "target": "匹配的记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Candidates",
+          "target": "候选记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Provenance",
+          "target": "出处"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "text"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

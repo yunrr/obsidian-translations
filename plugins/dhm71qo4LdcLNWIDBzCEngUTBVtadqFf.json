@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "scholia",
+    "version": "1.0.1",
+    "title": "Scholia",
+    "description": "Scholia Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "marker",
+          "target": "marker"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Marker CLI (not recommended)",
+          "target": "Marker CLI（不推荐）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Scholar-md (beta)",
+          "target": "Scholar-md（测试版）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Paper2mdviallm (default)",
+          "target": "Paper2mdviallm（默认）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "anthropic",
+          "target": "anthropic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Anthropic (claude models)",
+          "target": "Anthropic（claude 模型）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "openai",
+          "target": "openai"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Openai (gpt models)",
+          "target": "Openai（gpt 模型）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "sparse",
+          "target": "sparse"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Sparse",
+          "target": "稀疏"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "medium",
+          "target": "medium"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Medium",
+          "target": "中等"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "brief",
+          "target": "brief"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Concise (30-50 words)",
+          "target": "简洁（30-50 词）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "standard",
+          "target": "standard"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Standard (current)",
+          "target": "标准（当前）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Use local paper2mdviallm",
+          "target": "使用本地 paper2mdviallm"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Use local marker",
+          "target": "使用本地 marker"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paper2mdviallm is the default path. Scholar-md stays available as a lighter beta path. Marker remains optional and not recommended.",
+          "target": "Paper2mdviallm 是默认路径。Scholar-md 作为更轻量的测试版路径保持可用。Marker 仍然是可选的且不推荐。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Resolution order: explicit setting, plugin .venv local tool, then shell PATH. You can paste either the executable itself or an environment root such as a conda env. The plugin resolves `bin/paper2mdviallm` or `Scripts/paper2mdviallm.exe` inside it.",
+          "target": "可选。解析顺序：显式设置、插件 .venv 本地工具，然后是 shell PATH。您可以粘贴可执行文件本身或环境根目录（例如 conda 环境）。插件会在其中解析 `bin/paper2mdviallm` 或 `Scripts/paper2mdviallm.exe`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used by paper2mdviallm. The provider is inferred from the model name, so API keys stay global and only need to be filled once.",
+          "target": "由 paper2mdviallm 使用。提供程序从模型名称推断，因此 API 密钥保持全局性，只需填写一次。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Only used when the backend is paper2mdviallm. Higher values are faster but cost more API work in parallel.",
+          "target": "仅在后端为 paper2mdviallm 时使用。数值越高，速度越快，但并行 API 工作量也越大。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional. Only used when the backend is marker CLI, which is not recommended.",
+          "target": "可选。仅在后端为 marker CLI 时使用，不推荐。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Stored in this plugin's Obsidian data.json for compatibility with older supported Obsidian versions.",
+          "target": "存储在此插件的 Obsidian data.json 中，以兼容较旧的 Obsidian 版本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used for key-sentence highlighting plus term discovery and explanation after Markdown import.",
+          "target": "用于 Markdown 导入后的关键句高亮以及术语发现与解释。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "This can differ from the Markdown generation model above. One-click import and reading prep stays available either way.",
+          "target": "这可以与上面的 Markdown 生成模型不同。一键导入和阅读准备功能无论如何都可用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, import runs key-sentence highlighting before glossary preprocessing.",
+          "target": "启用后，导入时会在术语表预处理前运行关键句高亮。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Medium matches the current behavior. Sparse highlights only structurally important sentences.",
+          "target": "中等匹配当前行为。稀疏高亮仅针对结构上重要的句子。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The default is 40. Higher values cost more and take longer.",
+          "target": "默认值为 40。数值越高，成本越高，耗时越长。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Controls newly generated glossary entries. Standard stores a fuller contextual definition plus cluster notes. Concise stores a 30-50 word definition plus cluster notes. Rebuild glossary entries to refresh existing cache.",
+          "target": "控制新生成的术语表条目。标准存储更完整的上下文定义及聚类笔记。简洁存储 30-50 词的定义及聚类笔记。重建术语表条目以刷新现有缓存。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "After glossary entries are prepared, fetch matching Stanford encyclopedia introductions and cache a short supplement for hover.",
+          "target": "术语表条目准备就绪后，获取匹配的斯坦福百科全书介绍，并为悬停缓存一个简短的补充说明。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Milliseconds before the hover tooltip appears. Reload Obsidian after changing this.",
+          "target": "悬停工具提示出现前的毫秒数。更改此设置后请重新加载 Obsidian。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "General",
+          "target": "通用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Markdown generation",
+          "target": "Markdown 生成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PDF import backend",
+          "target": "PDF 导入后端"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "CLI path for paper2mdviallm",
+          "target": "paper2mdviallm 的 CLI 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Markdown generation model",
+          "target": "Markdown 生成模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Concurrency for paper2mdviallm",
+          "target": "paper2mdviallm 的并发数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "CLI path for marker",
+          "target": "marker 的 CLI 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API keys",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Openai key",
+          "target": "Openai 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Anthropic key",
+          "target": "Anthropic 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reading prep",
+          "target": "阅读准备"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reading prep provider",
+          "target": "阅读准备提供者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reading prep model",
+          "target": "阅读准备模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto highlight key sentences after import",
+          "target": "导入后自动高亮关键句"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Key sentence density",
+          "target": "关键句密度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Glossary",
+          "target": "术语表"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max precomputed terms",
+          "target": "最大预计算术语数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Glossary folder name",
+          "target": "术语表文件夹名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Glossary explanation length",
+          "target": "术语表解释长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable sep enrichment",
+          "target": "启用 SEP 丰富"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Hover delay",
+          "target": "悬停延迟"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter command path",
+          "target": "输入命令路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Paste key here",
+          "target": "在此处粘贴密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "SEP",
+          "target": "SEP"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "No prepared glossary entry yet.",
+          "target": "尚无准备好的术语表条目。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Explain now",
+          "target": "立即解释"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Import PDF and prepare for reading",
+          "target": "导入 PDF 并准备阅读"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Convert PDF to Markdown only",
+          "target": "仅将 PDF 转换为 Markdown"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Highlight key sentences",
+          "target": "高亮关键句"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Extract terms and explain",
+          "target": "提取术语并解释"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Enrich glossary with sep",
+          "target": "使用 SEP 丰富术语表"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Set the marker CLI path in settings first.",
+          "target": "请先在设置中设置 marker CLI 路径。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDF import requires a local filesystem vault.",
+          "target": "PDF 导入需要本地文件系统库。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDF imported. Key sentence highlighting and glossary preprocessing are running in the background.",
+          "target": "PDF 已导入。关键句高亮和术语表预处理正在后台运行。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "PDF imported. Glossary preprocessing is running in the background. Check _glossary/_status.md for progress.",
+          "target": "PDF 已导入。术语表预处理正在后台运行。请检查 _glossary/_status.md 了解进度。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "The file was converted. Run the extract command when you are ready.",
+          "target": "文件已转换。准备好后运行提取命令。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Converting PDF with marker...",
+          "target": "正在使用 marker 转换 PDF..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No multi-sentence prose paragraphs were eligible for key-sentence highlighting.",
+          "target": "没有符合条件的多句散文段落可用于关键句高亮。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No key sentences were selected for highlighting.",
+          "target": "没有选择关键句进行高亮。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No readable paragraphs found in this paper.",
+          "target": "在此论文中未找到可读段落。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Glossary is already prepared for the top discovered terms.",
+          "target": "术语表已为发现的顶级术语准备就绪。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Sep enrichment is already cached for the selected glossary entries.",
+          "target": "SEP 丰富已为选定的术语表条目缓存。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Local paper2mdviallm was not found in this plugin's .venv.",
+          "target": "在此插件的 .venv 中未找到本地 paper2mdviallm。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "CLI path for paper2mdviallm set to the local tool.",
+          "target": "paper2mdviallm 的 CLI 路径已设置为本地工具。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Local marker_single was not found in this plugin's .venv.",
+          "target": "在此插件的 .venv 中未找到本地 marker_single。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "CLI path for marker set to the local command.",
+          "target": "marker 的 CLI 路径已设置为本地命令。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Return the requested structured JSON object.",
+          "target": "返回请求的结构化 JSON 对象。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Paper context",
+          "target": "论文上下文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Import PDF and prepare for reading",
+          "target": "导入 PDF 并准备阅读"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert current PDF to Markdown only",
+          "target": "仅将当前 PDF 转换为 Markdown"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rebuild glossary for current paper",
+          "target": "为当前论文重建术语表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract terms and explain from current Markdown",
+          "target": "从当前 Markdown 提取术语并解释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enrich glossary with sep for current paper",
+          "target": "使用 SEP 丰富当前论文的术语表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Highlight key sentences for current paper",
+          "target": "为当前论文高亮关键句"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Explain term now",
+          "target": "立即解释术语"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
