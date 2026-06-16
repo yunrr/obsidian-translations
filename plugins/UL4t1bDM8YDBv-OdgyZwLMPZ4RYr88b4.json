@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "spotify-link",
+    "version": "2.0.0",
+    "title": "Spotify Link",
+    "description": "Include the song you're currently listening to in your note.",
+    "language": "zh-cn",
+    "supportedVersions": "1.6.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\n          \"[WARN] Spotify Link Plugin: The provided template looks like a path, if so, the file hasn't been found.\",\n          1e4\n        )",
+          "target": "Notice(\n          \"[错误] Spotify链接插件: 提供的模板看起来像一个路径，如果是这样，文件未找到。\",\n          1e4\n        )"
+        },
+        {
+          "source": "Notice(\"[ERROR] Spotify Link Plugin: \" + e.message, 1e4)",
+          "target": "Notice(\"[错误] Spotify链接插件: \" + e.message, 1e4)"
+        },
+        {
+          "source": "Notice(\"Spotify Link Plugin: track or episode overwritten.\")",
+          "target": "Notice(\"Spotify链接插件: 曲目或剧集已被覆盖。\")"
+        },
+        {
+          "source": "Notice(\"Spotify Link Plugin: Connected to Spotify !\", 3e3)",
+          "target": "Notice(\"Spotify链接插件: 已连接到Spotify！\", 3e3)"
+        },
+        {
+          "source": "Notice(\"[ERROR] Spotify Link Plugin: \" + e.message, 3e3)",
+          "target": "Notice(\"[错误] Spotify链接插件: \" + e.message, 3e3)"
+        },
+        {
+          "source": "Notice(`Spotify Link Plugin: Access Refreshed`)",
+          "target": "Notice(`Spotify链接插件: 访问已刷新`) "
+        },
+        {
+          "source": "Notice(`[ERROR] Spotify Link Plugin: ${e.message}`)",
+          "target": "Notice(`[错误] Spotify链接插件: ${e.message}`)"
+        },
+        {
+          "source": "Notice(\"Your spotify link configuration might be outdated.\")",
+          "target": "Notice(\"您的Spotify链接配置可能已过时。\")"
+        },
+        {
+          "source": "name: \"Create file for currently playing episode using template\"",
+          "target": "name: \"使用模板创建当前播放的剧集文件\""
+        },
+        {
+          "source": "name: \"Create file for currently playing episode\"",
+          "target": "name: \"创建当前播放的剧集文件\""
+        },
+        {
+          "source": "name: \"Create file for currently playing track using template\"",
+          "target": "name: \"使用模板创建当前播放的曲目文件\""
+        },
+        {
+          "source": "name: \"Create file for currently playing track\"",
+          "target": "name: \"创建当前播放的曲目文件\""
+        },
+        {
+          "source": "name: \"Append Spotify currently playing episode using template\"",
+          "target": "name: \"使用模板追加当前播放的剧集\""
+        },
+        {
+          "source": "name: \"Append Spotify currently playing episode with timestamp\"",
+          "target": "name: \"追加当前播放的剧集及时间戳\""
+        },
+        {
+          "source": "name: \"Append Spotify currently playing track using template\"",
+          "target": "name: \"使用模板追加当前播放的曲目\""
+        },
+        {
+          "source": "name: \"Append Spotify currently playing track with timestamp\"",
+          "target": "name: \"追加当前播放的曲目及时间戳\""
+        },
+        {
+          "source": "name: \"Refresh session\"",
+          "target": "name: \"刷新会话\""
+        },
+        {
+          "source": "text: \"Follow the link below to get your Client Id and Client Secret, you need a spotify account to get access.\"",
+          "target": "text: \"请点击下面的链接获取您的客户端ID和客户端密钥，您需要一个Spotify账户才能访问。\""
+        },
+        {
+          "source": "text: \"Spotify Developer\"",
+          "target": "text: \"Spotify开发者\""
+        },
+        {
+          "source": "text: \"Create an App\"",
+          "target": "text: \"创建应用\""
+        },
+        {
+          "source": "text: \"Click Settings\"",
+          "target": "text: \"点击设置\""
+        },
+        {
+          "source": "text: \"Copy the Client Id and Secret\"",
+          "target": "text: \"复制客户端ID和密钥\""
+        },
+        {
+          "source": "text: \"Set the Redirect URI to : obsidian://spotify-auth/\"",
+          "target": "text: \"将重定向URI设置为 : obsidian://spotify-auth/\""
+        },
+        {
+          "source": "text: \"Select the Spotify icon located in Obsidian's left sidebar to connect.\"",
+          "target": "text: \"选择位于Obsidian左侧边栏的Spotify图标以连接。\""
+        },
+        {
+          "source": "text: \"NOTICE: The id and secret will be stored unencrypted on your local device. If you sync your data to a public source, the id and secret will be shown as-is.\"",
+          "target": "text: \"注意：ID和密钥将以未加密的形式存储在您的本地设备上。如果您将数据同步到公共来源，ID和密钥将原样显示。\""
+        },
+        {
+          "source": "text: \"Templates\"",
+          "target": "text: \"模板\""
+        },
+        {
+          "source": "text: \"Custom Template Documentation\"",
+          "target": "text: \"自定义模板文档\""
+        },
+        {
+          "source": "text: \"Available variables (song):\"",
+          "target": "text: \"可用变量（歌曲）：\""
+        },
+        {
+          "source": "text: \"Template Selection:\"",
+          "target": "text: \"模板选择:\""
+        },
+        {
+          "source": "text: \"You have two options to specify a template: 'Inline' or 'Path-based'.\"",
+          "target": "text: \"您有两种方式来指定模板：'内联'或'基于路径'。\""
+        },
+        {
+          "source": "text: \"To use the inline method, simply include your template directly.\"",
+          "target": "text: \"要使用内联方法，只需直接包含您的模板。\""
+        },
+        {
+          "source": "text: \"For path-based selection, you must reference the Vault. A valid example would be: 'Templates/Spotify/track.md' and the content structure is exactly the same as the inline template.\"",
+          "target": "text: \"对于基于路径的选择，您必须引用Vault。有效示例为：'Templates/Spotify/track.md'，内容结构与内联模板完全相同。\""
+        },
+        {
+          "source": "text: \"Spotify Integration (Advanced)\"",
+          "target": "text: \"Spotify集成（高级）\""
+        },
+        {
+          "source": "text: \"Official Plugin Documentation\"",
+          "target": "text: \"官方插件文档\""
+        },
+        {
+          "source": ".setText(\n      `Spotify ${!this.spotifyConnected ? \"not\" : \"\"} Connected`\n    )",
+          "target": ".setText(\n      `Spotify ${!this.spotifyConnected ? \"not\" : \"\"} 已连接`\n    )"
+        },
+        {
+          "source": ".setName(\"Spotify Client ID\")",
+          "target": ".setName(\"Spotify客户端ID\")"
+        },
+        {
+          "source": ".setName(\"Spotify Client Secret\")",
+          "target": ".setName(\"Spotify客户端密钥\")"
+        },
+        {
+          "source": ".setName(\"Spotify State\")",
+          "target": ".setName(\"Spotify状态\")"
+        },
+        {
+          "source": ".setName(\"Spotify Redirect URI\")",
+          "target": ".setName(\"Spotify重定向URI\")"
+        },
+        {
+          "source": ".setName(\"Template for song\")",
+          "target": ".setName(\"歌曲模板\")"
+        },
+        {
+          "source": ".setName(\"Template for podcast\")",
+          "target": ".setName(\"播客模板\")"
+        },
+        {
+          "source": ".setName(\"Default destination\")",
+          "target": ".setName(\"默认目标\")"
+        },
+        {
+          "source": ".setName(\"Allow overwrite\")",
+          "target": ".setName(\"允许覆盖\")"
+        },
+        {
+          "source": ".setName(\"Auto Open\")",
+          "target": ".setName(\"自动打开\")"
+        },
+        {
+          "source": ".setName(\"Spotify Scopes\")",
+          "target": ".setName(\"Spotify权限\")"
+        },
+        {
+          "source": ".setDesc(\"Client ID (Keep this secured)\")",
+          "target": ".setDesc(\"客户端ID（请妥善保管）\")"
+        },
+        {
+          "source": ".setDesc(\"Client Secret (Keep this secured)\")",
+          "target": ".setDesc(\"客户端密钥（请妥善保管）\")"
+        },
+        {
+          "source": ".setDesc(\"State\")",
+          "target": ".setDesc(\"状态\")"
+        },
+        {
+          "source": ".setDesc(\"Redirect URI (Read Only)\")",
+          "target": ".setDesc(\"重定向URI（只读）\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Define a custom template to print the currently playing song (Song only) or a path to your template definition\"\n    )",
+          "target": ".setDesc(\n      \"定义一个自定义模板以打印当前播放的歌曲（仅限歌曲）或您模板定义的路径\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Define a custom template to print the currently playing episode (Podcast only) or a path to your template definition\"\n    )",
+          "target": ".setDesc(\n      \"定义一个自定义模板以打印当前播放的剧集（仅限播客）或您模板定义的路径\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Destination to store track or episode when using the command palette, default at the root of your vault\"\n    )",
+          "target": ".setDesc(\n      \"使用命令面板时存储曲目或剧集的目标，默认在您的Vault根目录\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Overwrite the file if it already exists in the vault.\")",
+          "target": ".setDesc(\"如果文件已存在于Vault中，则覆盖该文件。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically open the newly created file in the active leaf.\")",
+          "target": ".setDesc(\"在活动叶子中自动打开新创建的文件。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Scopes (comma-delimited list, you should update this only if you know what you are doing.\"\n    )",
+          "target": ".setDesc(\n      \"权限（以逗号分隔的列表，只有在您知道自己在做什么时才应更新此项。\"\n    )"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your client id\")",
+          "target": ".setPlaceholder(\"输入您的客户端ID\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your client Secret\")",
+          "target": ".setPlaceholder(\"输入您的客户端密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your State\")",
+          "target": ".setPlaceholder(\"输入您的状态\")"
+        },
+        {
+          "source": ".setPlaceholder(\n        \"Example: '{{ song_name }}' by {{ artists }} from {{ album }} released in {{ album_release }}\\n{{ timestamp }}\"\n      )",
+          "target": ".setPlaceholder(\n        \"示例：'由{{ artists }}演唱的'{{ song_name }}'，来自{{ album }}，发行于{{ album_release }}\\n{{ timestamp }}\"\n      )"
+        },
+        {
+          "source": ".setPlaceholder(\n        \"Example: '{{ podcast_name }}': {{ description }} released {{ release_date }}\\n{{ timestamp }}\"\n      )",
+          "target": ".setPlaceholder(\n        \"示例：'{{ podcast_name }}': {{ description }}，发行于{{ release_date }}\\n{{ timestamp }}\"\n      )"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your Scopes\")",
+          "target": ".setPlaceholder(\"输入您的权限\")"
+        },
+        {
+          "source": "Error(\"Not an episode.\");",
+          "target": "Error(\"不是剧集。\");"
+        },
+        {
+          "source": "Error(\"Not a track.\");",
+          "target": "Error(\"不是曲目。\");"
+        },
+        {
+          "source": "Error(\"Invalid state\");",
+          "target": "Error(\"无效状态\");"
+        },
+        {
+          "source": "Error(\"Missing Code\");",
+          "target": "Error(\"缺少代码\");"
+        },
+        {
+          "source": "Error(\"Unable to get the currently playing track.\");",
+          "target": "Error(\"无法获取当前播放的曲目。\");"
+        },
+        {
+          "source": "Error(\"Unable to get the artist.\");",
+          "target": "Error(\"无法获取艺术家。\");"
+        },
+        {
+          "source": "Error(\"You are not connected to Spotify.\");",
+          "target": "Error(\"您未连接到Spotify。\");"
+        },
+        {
+          "source": "\"Invalid state\"",
+          "target": "\"无效状态\""
+        },
+        {
+          "source": "\"Missing Code\"",
+          "target": "\"缺少代码\""
+        },
+        {
+          "source": "\"Folder already exists.\"",
+          "target": "\"文件夹已存在。\""
+        },
+        {
+          "source": "\"No song is playing.\"",
+          "target": "\"没有歌曲正在播放。\""
+        },
+        {
+          "source": "\"Something went wrong, please manually log back to spotify.\"",
+          "target": "\"出现了问题，请手动重新登录到Spotify。\""
+        },
+        {
+          "source": "\"The data received is not handle. You can request it by opening a GitHub issue and providing the track URL so that I can adjust the tool accordingly.\"",
+          "target": "\"接收到的数据无法处理。您可以通过打开GitHub问题并提供曲目URL来请求，以便我可以相应地调整工具。\""
+        }
+      ]
+    }
+  }
+}

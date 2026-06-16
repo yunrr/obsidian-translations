@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "automatic-table-of-contents",
+    "version": "2.0.0",
+    "title": "Automatic Table Of Contents",
+    "description": "Create a table of contents in a note, that updates itself when the note changes",
+    "language": "zh-cn",
+    "supportedVersions": "1.6.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(\n    ...[\n      `%cAutomatic Table Of Contents %c${type}:\\n`,\n      'color: orange; font-weight: bold',\n      'font-weight: bold',\n      data,\n    ],\n  )",
+          "target": ".log(\n    ...[\n      `%c自动生成目录 %c${type}：`,\n      'color: orange; font-weight: bold',\n      'font-weight: bold',\n      data,\n    ],\n  )"
+        },
+        {
+          "source": "name: 'Insert table of contents'",
+          "target": "name: '插入目录'"
+        },
+        {
+          "source": "name: 'Insert table of contents (with available options)'",
+          "target": "name: '插入目录（含可选设置）'"
+        }
+      ]
+    }
+  }
+}

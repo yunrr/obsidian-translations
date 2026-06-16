@@ -1,0 +1,1215 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "tickticksync",
+    "version": "2.0.0",
+    "title": "TickTickSync",
+    "description": "Sync TickTick tasks to Obsidian, and Obsidian tasks to TickTick",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.13",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`All content from ${e} APPEARS to have been removed.\\nIf this is correct, please confirm task deletion. Otherwise, cancel task deletion.`,0)",
+          "target": "Notice(`${e} 中的内容似乎已被全部移除。\\n如果确认无误，请批准删除任务。否则请取消删除操作。`,0)"
+        },
+        {
+          "source": "Notice(`new task ${h.title} id is ${h.id}`)",
+          "target": "Notice(`新任务 ${h.title} 的ID是 ${h.id}`)"
+        },
+        {
+          "source": "Notice(`There is no task ${this.plugin.taskParser.getTaskContentFromLineText(t)",
+          "target": "Notice(`找不到任务 ${this.plugin.taskParser.getTaskContentFromLineText(t)"
+        },
+        {
+          "source": "Notice(`Task Status for ${J} updated `)",
+          "target": "Notice(`任务 ${J} 的状态已更新 `)"
+        },
+        {
+          "source": "Notice(`Task ${e} is closed.`)",
+          "target": "Notice(`任务 ${e} 已关闭。`)"
+        },
+        {
+          "source": "Notice(`Task ${e} is reopened.`)",
+          "target": "Notice(`任务 ${e} 已重新开启。`)"
+        },
+        {
+          "source": "Notice(\"Tasks will not be deleted. Please rectify the issue before the next sync.\",5e3)",
+          "target": "Notice(\"任务将不会被删除。请在下一次同步前修复问题。\",5e3)"
+        },
+        {
+          "source": "Notice(`Task ${o} is deleted.`)",
+          "target": "Notice(`任务 ${o} 已被删除。`)"
+        },
+        {
+          "source": "Notice(`Task ${r.object_id} is closed.`)",
+          "target": "Notice(`任务 ${r.object_id} 已关闭。`)"
+        },
+        {
+          "source": "Notice(`Task ${r.object_id} is reopened.`)",
+          "target": "Notice(`任务 ${r.object_id} 已重新开启。`)"
+        },
+        {
+          "source": "Notice(`TickTick backup data is saved in the path ${r}`)",
+          "target": "Notice(`TickTick 备份数据已保存至路径 ${r}`)"
+        },
+        {
+          "source": "Notice(\"An error occurred while creating TickTick backup\"+t,5e3)",
+          "target": "Notice(\"创建TickTick备份时出错\"+t,5e3)"
+        },
+        {
+          "source": "Notice(`Task ${e.title} modified.`)",
+          "target": "Notice(`任务 ${e.title} 已修改。`)"
+        },
+        {
+          "source": "Notice(`error on save projects: ${t}`)",
+          "target": "Notice(`保存项目时出错：${t}`)"
+        },
+        {
+          "source": "Notice(`Renamed project file to: ${n}`)",
+          "target": "Notice(`项目文件已重命名为：${n}`)"
+        },
+        {
+          "source": "Notice(`Failed to rename project file: ${r}`)",
+          "target": "Notice(`重命名项目文件失败：${r}`)"
+        },
+        {
+          "source": "Notice(\"New Tasks will be added to TickTick on next Sync.\")",
+          "target": "Notice(\"新任务将在下次同步时添加到TickTick。\")"
+        },
+        {
+          "source": "Notice(`Creating new file: ${n.path}/${e}`)",
+          "target": "Notice(`正在创建新文件：${n.path}/${e}`)"
+        },
+        {
+          "source": "Notice(\"A circular Parent-Child dependency was found. Please fix in TickTick by checking parent-child relationships.\")",
+          "target": "Notice(\"检测到循环父子依赖关系。请在TickTick中检查父子任务关系后修复。\")"
+        },
+        {
+          "source": "Notice(\"All files have been scanned.\")",
+          "target": "Notice(\"所有文件已完成扫描。\")"
+        },
+        {
+          "source": "Notice(`Duplicate check failed:  ${Error}`,5e3)",
+          "target": "Notice(`重复项检查失败：${Error}`,5e3)"
+        },
+        {
+          "source": "Notice(\"Please login from Settings.\",5e3)",
+          "target": "Notice(\"请通过设置页面登录。\",5e3)"
+        },
+        {
+          "source": "Notice(\"Login failed, please login through settings.\")",
+          "target": "Notice(\"登录失败，请通过设置页面重新登录。\")"
+        },
+        {
+          "source": "Notice(`Login failed: ${o}\\nPlease login again`)",
+          "target": "Notice(`登录失败：${o}\\n请重新登录`)"
+        },
+        {
+          "source": "Notice(\"Unable to get project groups: \"+r,5e3)",
+          "target": "Notice(\"无法获取项目分组：\"+r,5e3)"
+        },
+        {
+          "source": "Notice(`Task ${t.title} was moved in TickTick, but is in ${i}. Assuming that this is intentional and not moving it.`,1e4)",
+          "target": "Notice(`任务 ${t.title} 在TickTick中被移动，但当前位于 ${i}。假定此为有意操作，不再移动。`,1e4)"
+        },
+        {
+          "source": "Notice(\"Please fill in both Username and Password\")",
+          "target": "Notice(\"请同时填写用户名和密码\")"
+        },
+        {
+          "source": "Notice(\"Login Failed. \")",
+          "target": "Notice(\"登录失败。\")"
+        },
+        {
+          "source": "Notice(\"You are logged in with a different user ID.\")",
+          "target": "Notice(\"您当前登录的是其他用户ID。\")"
+        },
+        {
+          "source": "Notice(`New folder ${t.path} created.`)",
+          "target": "Notice(`新文件夹 ${t.path} 已创建。`)"
+        },
+        {
+          "source": "Notice(`Folder ${s} creation failed: ${i}. Please correct and try again.`,5e3)",
+          "target": "Notice(`文件夹 ${s} 创建失败：${i}。请修正后重试。`,5e3)"
+        },
+        {
+          "source": "Notice(`${e} folder is now ${t.path}.`)",
+          "target": "Notice(`${e} 文件夹已重命名为 ${t.path}。`)"
+        },
+        {
+          "source": "Notice(\"Please log in from settings first\")",
+          "target": "Notice(\"请先在设置页面登录\")"
+        },
+        {
+          "source": "Notice(\"Sync completed.\")",
+          "target": "Notice(\"同步完成。\")"
+        },
+        {
+          "source": "Notice(`An error occurred while syncing: ${g}`)",
+          "target": "Notice(`同步过程中出错：${g}`)"
+        },
+        {
+          "source": "Notice(\"Unable to create file for selected default project \"+I()",
+          "target": "Notice(\"无法为选定的默认项目创建文件\"+I()"
+        },
+        {
+          "source": "Notice(\"Wrong type, please enter a integer.\")",
+          "target": "Notice(\"类型错误，请输入整数。\")"
+        },
+        {
+          "source": "Notice(\"The synchronization interval time cannot be less than 20 seconds.\")",
+          "target": "Notice(\"同步间隔时间不能小于20秒。\")"
+        },
+        {
+          "source": "Notice(\"Settings have been updated.\")",
+          "target": "Notice(\"设置已更新。\")"
+        },
+        {
+          "source": "Notice(`Folder ${e} creation failed: ${i}. Please correct and try again.`,5e3)",
+          "target": "Notice(`文件夹 ${e} 创建失败：${i}。请修正后重试。`,5e3)"
+        },
+        {
+          "source": "Notice(\"TickTickSync plugin initialization failed, please check userID and password in settings.\")",
+          "target": "Notice(\"TickTickSync插件初始化失败，请检查设置中的用户ID和密码。\")"
+        },
+        {
+          "source": "Notice(\"error creating user data folder\")",
+          "target": "Notice(\"创建用户数据文件夹出错\")"
+        },
+        {
+          "source": "Notice(\"TickTickSync loaded successfully.\"+I()",
+          "target": "Notice(\"TickTickSync插件加载成功。\"+I()"
+        },
+        {
+          "source": "Notice(\"Item will be updated on next sync\")",
+          "target": "Notice(\"项目将在下次同步时更新\")"
+        },
+        {
+          "source": "Notice(\"Please login from settings.\")",
+          "target": "Notice(\"请通过设置页面登录。\")"
+        },
+        {
+          "source": "Notice(`An error occurred: ${i}`)",
+          "target": "Notice(`发生错误：${i}`)"
+        },
+        {
+          "source": "Notice(`An error in saveProjectsToCache occurred: ${n}`)",
+          "target": "Notice(`保存项目到缓存时出错：${n}`)"
+        },
+        {
+          "source": "Notice(\"Settings failed to load. Please reload the TickTickSync plugin.\")",
+          "target": "Notice(\"设置加载失败，请重新加载TickTickSync插件。\")"
+        },
+        {
+          "source": "Notice(\"No active file.\")",
+          "target": "Notice(\"没有活动文件。\")"
+        },
+        {
+          "source": "Notice(\"Sync completed..\")",
+          "target": "Notice(\"同步完成。\")"
+        },
+        {
+          "source": ".error(\"Get Inbox Properties failed: \",e)",
+          "target": ".error(\"获取收件箱属性失败: \",e)"
+        },
+        {
+          "source": ".error(\"Get Project Groups failed: \",e)",
+          "target": ".error(\"获取项目分组失败: \",e)"
+        },
+        {
+          "source": ".error(\"Get Projects failed: \",e)",
+          "target": ".error(\"获取项目列表失败: \",e)"
+        },
+        {
+          "source": ".error(\"Get Project Sections failed: \",t)",
+          "target": ".error(\"获取项目分区失败: \",t)"
+        },
+        {
+          "source": ".error(\"Get All Resources failed: \",e)",
+          "target": ".error(\"获取全部资源失败: \",e)"
+        },
+        {
+          "source": ".error(\"Get Tasks Details failed: \",e)",
+          "target": ".error(\"获取任务详情失败: \",e)"
+        },
+        {
+          "source": ".error(\"Get Tasks failed: \",e)",
+          "target": ".error(\"获取任务列表失败: \",e)"
+        },
+        {
+          "source": ".error(\"Get Tasks failed: \",i)",
+          "target": ".error(\"获取任务列表失败: \",i)"
+        },
+        {
+          "source": ".error(\"Get All Completed Items failed: \",e)",
+          "target": ".error(\"获取已完成项失败: \",e)"
+        },
+        {
+          "source": ".error(\"Add Task failed: \",t)",
+          "target": ".error(\"添加任务失败: \",t)"
+        },
+        {
+          "source": ".error(\"Update Task failed: \",t)",
+          "target": ".error(\"更新任务失败: \",t)"
+        },
+        {
+          "source": ".error(\"Delete Task  failed: \",i)",
+          "target": ".error(\"删除任务失败: \",i)"
+        },
+        {
+          "source": ".error(\"Export failed: \",e)",
+          "target": ".error(\"导出失败: \",e)"
+        },
+        {
+          "source": ".error(\"Project Move failed: \",n)",
+          "target": ".error(\"项目移动失败: \",n)"
+        },
+        {
+          "source": ".error(\"Parent Move failed: \",n)",
+          "target": ".error(\"父任务移动失败: \",n)"
+        },
+        {
+          "source": ".error(\"Error: \",r)",
+          "target": ".error(\"错误: \",r)"
+        },
+        {
+          "source": ".error(\"Task Item removal failed: \",b)",
+          "target": ".error(\"移除任务项失败: \",b)"
+        },
+        {
+          "source": ".error(\"Content not readable.\",i,r,\" file could open elsewhere or deleted.\")",
+          "target": ".error(\"内容不可读。\",i,r,\"文件可能在其他地方打开或已被删除。\")"
+        },
+        {
+          "source": ".error(\"Error adding task:\",p)",
+          "target": ".error(\"添加任务时出错:\",p)"
+        },
+        {
+          "source": ".error(`The error occurred in file: ${r.getFilePath()",
+          "target": ".error(`错误发生在文件: ${r.getFilePath()"
+        },
+        {
+          "source": ".error(`File: ${e} not found. Removing from Meta Data`)",
+          "target": ".error(`文件: ${e} 未找到。正在从元数据中移除`)"
+        },
+        {
+          "source": ".error(\"Task Not Found in file map\",n.file,e,J)",
+          "target": ".error(\"在文件映射中找不到任务\",n.file,e,J)"
+        },
+        {
+          "source": ".error(\"Task Not Found in file map\",te,J)",
+          "target": ".error(\"在文件映射中找不到任务\",te,J)"
+        },
+        {
+          "source": ".error(`There is no task for ${t.substring(0,10)",
+          "target": ".error(`找不到对应任务: ${t.substring(0,10)"
+        },
+        {
+          "source": ".error(\"Error updating task:\",ge)",
+          "target": ".error(\"更新任务时出错:\",ge)"
+        },
+        {
+          "source": ".error(\"Error modifying task:\",g)",
+          "target": ".error(\"修改任务时出错:\",g)"
+        },
+        {
+          "source": ".error(\"Error:\",i)",
+          "target": ".error(\"错误:\",i)"
+        },
+        {
+          "source": ".error(\"Error closing task:\",n)",
+          "target": ".error(\"关闭任务时出错:\",n)"
+        },
+        {
+          "source": ".error(\"Error opening task:\",n)",
+          "target": ".error(\"开启任务时出错:\",n)"
+        },
+        {
+          "source": ".error(`Failed to delete task ${o}: ${l}`)",
+          "target": ".error(`删除任务 ${o} 失败: ${l}`)"
+        },
+        {
+          "source": ".error(\"Error synchronizing task status:\",n)",
+          "target": ".error(\"同步任务状态时出错:\",n)"
+        },
+        {
+          "source": ".error(\"probable network connection error.\")",
+          "target": ".error(\"可能是网络连接错误。\")"
+        },
+        {
+          "source": ".error(\"An error occurred while synchronizing:\",d)",
+          "target": ".error(\"同步过程中发生错误:\",d)"
+        },
+        {
+          "source": ".error(\"An error occurred while creating TickTick backup\",t)",
+          "target": ".error(\"创建TickTick备份时出错\",t)"
+        },
+        {
+          "source": ".error(\"An error occurred in updateTaskDescription:\",d)",
+          "target": ".error(\"更新任务描述时出错:\",d)"
+        },
+        {
+          "source": ".error(`Error updating item: ${k}`)",
+          "target": ".error(`更新项目时出错: ${k}`)"
+        },
+        {
+          "source": ".error(`${n} does not exist and metadata is empty.`)",
+          "target": ".error(`${n} 不存在且元数据为空。`)"
+        },
+        {
+          "source": ".error(`Error loading tasks from Cache: ${e}`)",
+          "target": ".error(`从缓存加载任务时出错: ${e}`)"
+        },
+        {
+          "source": ".error(`Error saving tasks to Cache: ${t}`)",
+          "target": ".error(`保存任务到缓存时出错: ${t}`)"
+        },
+        {
+          "source": ".error(`Error appending task to Cache: ${i}`)",
+          "target": ".error(`添加任务到缓存时出错: ${i}`)"
+        },
+        {
+          "source": ".error(\"Error finding task from Cache:\",t)",
+          "target": ".error(\"从缓存查找任务时出错:\",t)"
+        },
+        {
+          "source": ".error(`Error updating task to Cache: ${i}`)",
+          "target": ".error(`更新缓存任务时出错: ${i}`)"
+        },
+        {
+          "source": ".error(`Error open task to Cache file: ${i}`)",
+          "target": ".error(`打开缓存文件任务时出错: ${i}`)"
+        },
+        {
+          "source": ".error(`Error close task to Cache file: ${i}`)",
+          "target": ".error(`关闭缓存文件任务时出错: ${i}`)"
+        },
+        {
+          "source": ".error(`Error deleting task from Cache file: ${t}`)",
+          "target": ".error(`从缓存文件删除任务时出错: ${t}`)"
+        },
+        {
+          "source": ".error(`Error deleting task from Cache : ${t}`)",
+          "target": ".error(`从缓存删除任务时出错: ${t}`)"
+        },
+        {
+          "source": ".error(`Error finding project from Cache file: ${t}`)",
+          "target": ".error(`从缓存文件查找项目时出错: ${t}`)"
+        },
+        {
+          "source": ".error(\"Error on save projects: \",t)",
+          "target": ".error(\"保存项目时出错: \",t)"
+        },
+        {
+          "source": ".error(`Error updating renamed file path to cache: ${i}`)",
+          "target": ".error(`更新重命名文件路径到缓存时出错: ${i}`)"
+        },
+        {
+          "source": ".error(\"Attempt to create undefined FileMetaData Entry: \",e)",
+          "target": ".error(\"尝试创建未定义的元数据条目: \",e)"
+        },
+        {
+          "source": ".error(\"Not adding \",e,\" to Metadata because it's a folder.\")",
+          "target": ".error(\"未添加 \",e,\" 到元数据，因为它是文件夹。\")"
+        },
+        {
+          "source": ".error(`Failed to rename file ${r} to ${n}:`,l)",
+          "target": ".error(`重命名文件 ${r} 为 ${n} 失败:`,l)"
+        },
+        {
+          "source": ".error(\"No tasks to add.\")",
+          "target": ".error(\"没有可添加的任务。\")"
+        },
+        {
+          "source": ".error(\"Error on create file: \",i)",
+          "target": ".error(\"创建文件时出错: \",i)"
+        },
+        {
+          "source": ".error(\"Duplicate check Skipping \",a,\" because it's not readable.\")",
+          "target": ".error(\"跳过重复检查 \",a,\" 因为文件不可读。\")"
+        },
+        {
+          "source": ".error(`Could not ${i?\"update\":\"add\"} Tasks to file ${e.path} \n Error: ${n}`)",
+          "target": ".error(`无法${i?\"更新\":\"添加\"}任务到文件 ${e.path} \n 错误: ${n}`)"
+        },
+        {
+          "source": ".error(\"Error on initialization: \",e)",
+          "target": ".error(\"初始化时出错: \",e)"
+        },
+        {
+          "source": ".error(\"Error on login: \",n)",
+          "target": ".error(\"登录时出错: \",n)"
+        },
+        {
+          "source": ".error(\"Error on synchronization: \",e)",
+          "target": ".error(\"同步时出错: \",e)"
+        },
+        {
+          "source": ".error(\"An error occurred while loading task cache: \",b)",
+          "target": ".error(\"加载任务缓存时出错: \",b)"
+        },
+        {
+          "source": ".error(\"An error occurred while loading task from api: \",b)",
+          "target": ".error(\"从API加载任务时出错: \",b)"
+        },
+        {
+          "source": ".error(`An error occurred while check new tasks in the file: ${h.path}`,m)",
+          "target": ".error(`检查文件 ${h.path} 中新任务时出错`,m)"
+        },
+        {
+          "source": ".error(\"An error occurred while checking for unsynced tasks.:\",p)",
+          "target": ".error(\"检查未同步任务时出错:\",p)"
+        },
+        {
+          "source": ".error(\"Metadata Duplicates: \",a.duplicates)",
+          "target": ".error(\"元数据重复项: \",a.duplicates)"
+        },
+        {
+          "source": ".error(\"Duplicates in file: \",l)",
+          "target": ".error(\"文件中的重复项: \",l)"
+        },
+        {
+          "source": ".error(\"An error occurred in fullTextNewTaskCheck:\",l)",
+          "target": ".error(\"全文检查新任务时出错:\",l)"
+        },
+        {
+          "source": ".error(\"An error occurred in fullTextModifiedTaskCheck:\",l)",
+          "target": ".error(\"全文检查修改任务时出错:\",l)"
+        },
+        {
+          "source": ".error(\"An error occurred in deletedTaskCheck:\",l)",
+          "target": ".error(\"检查已删除任务时出错:\",l)"
+        },
+        {
+          "source": ".error(\"No Token\")",
+          "target": ".error(\"没有令牌\")"
+        },
+        {
+          "source": ".error(\"Login failed! \")",
+          "target": ".error(\"登录失败! \")"
+        },
+        {
+          "source": ".error(\"Login failed! \",o)",
+          "target": ".error(\"登录失败! \",o)"
+        },
+        {
+          "source": ".error(\"Error\",\"Update Failed.\",(i=this.api)",
+          "target": ".error(\"错误\",\"更新失败。\",(i=this.api)"
+        },
+        {
+          "source": ".error(\"Didn't get back the updated Task\")",
+          "target": ".error(\"未收到更新后的任务\")"
+        },
+        {
+          "source": ".error(\"Error modifying task:\",a)",
+          "target": ".error(\"修改任务时出错:\",a)"
+        },
+        {
+          "source": ".error(\"Error open a task:\",i)",
+          "target": ".error(\"开启任务时出错:\",i)"
+        },
+        {
+          "source": ".error(\"Error closing task:\",i)",
+          "target": ".error(\"关闭任务时出错:\",i)"
+        },
+        {
+          "source": ".error(\"Error get all projects\",t)",
+          "target": ".error(\"获取所有项目时出错\",t)"
+        },
+        {
+          "source": ".error(\"Error: \",a.operation,a.statusCode,a.errorMessage)",
+          "target": ".error(\"错误: \",a.operation,a.statusCode,a.errorMessage)"
+        },
+        {
+          "source": ".error(\"Error get project groups\",r)",
+          "target": ".error(\"获取项目分组时出错\",r)"
+        },
+        {
+          "source": ".error(\"Error get user resources\",t)",
+          "target": ".error(\"获取用户资源时出错\",t)"
+        },
+        {
+          "source": ".error(\"Error get all completed items\",t)",
+          "target": ".error(\"获取所有已完成项时出错\",t)"
+        },
+        {
+          "source": ".error(\"getAllResources No API.\")",
+          "target": ".error(\"getAllResources 无API。\")"
+        },
+        {
+          "source": ".error(\"Error get all resources\",t)",
+          "target": ".error(\"获取所有资源时出错\",t)"
+        },
+        {
+          "source": ".error(\"Error get all Tasks\",i)",
+          "target": ".error(\"获取所有任务时出错\",i)"
+        },
+        {
+          "source": ".error(\"Project Moved Failed: \",(a=this.api)",
+          "target": ".error(\"项目移动失败: \",(a=this.api)"
+        },
+        {
+          "source": ".error(\"Converting line to Object, could not find project Id: \",S)",
+          "target": ".error(\"转换行到对象时找不到项目ID: \",S)"
+        },
+        {
+          "source": ".error(\"No Text passed to getLineItemId\")",
+          "target": ".error(\"未传递文本到getLineItemId\")"
+        },
+        {
+          "source": ".error(\"Hashing error.\",t)",
+          "target": ".error(\"哈希错误。\",t)"
+        },
+        {
+          "source": ".error(\"Date Holder Keys Not found.\")",
+          "target": ".error(\"未找到日期占位键。\")"
+        },
+        {
+          "source": ".error(\"Edited Task has no dateholder\")",
+          "target": ".error(\"编辑的任务无日期占位\")"
+        },
+        {
+          "source": ".error(\"Cached Task has no dateholder\")",
+          "target": ".error(\"缓存的任务无日期占位\")"
+        },
+        {
+          "source": ".error(\"Failed to migrate data:\",i)",
+          "target": ".error(\"迁移数据失败:\",i)"
+        },
+        {
+          "source": ".error(`Failed to load data:( ${e})",
+          "target": ".error(`加载数据失败:( ${e})"
+        },
+        {
+          "source": ".error(\"Error saving settings:\",e)",
+          "target": ".error(\"保存设置时出错:\",e)"
+        },
+        {
+          "source": ".error(\"error creating user data folder: \",t)",
+          "target": ".error(\"创建用户数据文件夹时出错: \",t)"
+        },
+        {
+          "source": ".error(\"An error occurred: \",i)",
+          "target": ".error(\"发生错误: \",i)"
+        },
+        {
+          "source": ".error(`An error in saveProjectsToCache occurred:( ${n}`)",
+          "target": ".error(`保存项目到缓存时出错:( ${n}`)"
+        },
+        {
+          "source": ".error(`API Initialization Failed.( ${i})",
+          "target": ".error(`API初始化失败。( ${i})"
+        },
+        {
+          "source": ".error(\"An error occurred while check new task in line: \",n)",
+          "target": ".error(\"检查行中新任务时出错: \",n)"
+        },
+        {
+          "source": ".error(\"An error occurred while modifying the file: \",i)",
+          "target": ".error(\"修改文件时出错: \",i)"
+        },
+        {
+          "source": "name:\"Set default TickTick project for current file\"",
+          "target": "name:\"为当前文件设置默认TickTick项目\""
+        },
+        {
+          "source": "name:\"Synchronize\"",
+          "target": "name:\"同步\""
+        },
+        {
+          "source": "text:\"Set default project for TickTick tasks in the current file\"",
+          "target": "text:\"为当前文件中的TickTick任务设置默认项目\""
+        },
+        {
+          "source": ".setText(\"Project Name\")",
+          "target": ".setText(\"项目名称\")"
+        },
+        {
+          "source": ".setText(\"Project ID\")",
+          "target": ".setText(\"项目 ID\")"
+        },
+        {
+          "source": ".setName(\"Default project\")",
+          "target": ".setName(\"默认项目\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Select or Create folder\")",
+          "target": ".setPlaceholder(\"选择或创建文件夹\")"
+        },
+        {
+          "source": "title:\"Defaults\"",
+          "target": "title:\"默认值\""
+        },
+        {
+          "source": "title:\"Limit synchronization\"",
+          "target": "title:\"限制同步\""
+        },
+        {
+          "source": "title:\"Automatic sync interval time\"",
+          "target": "title:\"自动同步间隔时间\""
+        },
+        {
+          "source": "title:\"Full vault sync\"",
+          "target": "title:\"全库同步\""
+        },
+        {
+          "source": "Select home server",
+          "target": "选择主服务器"
+        },
+        {
+          "source": "Username</div>",
+          "target": "用户名</div>"
+        },
+        {
+          "source": "Your TickTick/Dida account username",
+          "target": "你的 TickTick/滴答清单用户名"
+        },
+        {
+          "source": "Password</div>",
+          "target": "密码</div>"
+        },
+        {
+          "source": "Your TickTick/Dida account password",
+          "target": "你的TickTick/滴答清单账户密码"
+        },
+        {
+          "source": "Login</div>",
+          "target": "登录</div>"
+        },
+        {
+          "source": "Login</button>",
+          "target": "登录</button>"
+        },
+        {
+          "source": "\"You are logged in. You can re-login here.\":\"Please login here.\"",
+          "target": "\"你已经登录。你可以在这里重新登录。\":\"请在这里登录\""
+        },
+        {
+          "source": "access:\"Access Control\",sync:\"Sync Control\",manual:\"Manual Operations\",debug:\"Debug Options\",tasks:\"Task Links\",notes:\"Notes\"",
+          "target": "access:\"访问控制\",sync:\"同步控制\",manual:\"手动操作\",debug:\"调试选项\",tasks:\"任务链接\",notes:\"笔记\""
+        },
+        {
+          "source": "TickTick/Dida",
+          "target": "TickTick/滴答清单"
+        },
+        {
+          "source": "Manually perform a synchronization task",
+          "target": "手动执行任务同步"
+        },
+        {
+          "source": "Check for possible issues: sync error, file renaming not updated, or missed tasks not synchronized",
+          "target": "检查可能存在的问题：同步错误、文件重命名未更新或未同步的遗漏任务"
+        },
+        {
+          "source": "Skip backup on startup",
+          "target": "启动时跳过备份"
+        },
+        {
+          "source": "Choose the folder to store the backup files.",
+          "target": "选择用于存储备份文件的文件夹。"
+        },
+        {
+          "source": "Determine log level",
+          "target": "确定日志级别"
+        },
+        {
+          "source": "Allow access to developer settings",
+          "target": "允许访问开发人员设置"
+        },
+        {
+          "source": "Choose how Notes are separated from a Task. <br/>Changes will be applied on next update from TickTick.",
+          "target": "选择笔记与任务的分隔方式。<br/>更改将在 TickTick 下次更新时应用。"
+        },
+        {
+          "source": "Synchronize Notes",
+          "target": "同步笔记"
+        },
+        {
+          "source": "Only tasks in this project will be synchronized.",
+          "target": "只有该项目中的任务才会被同步。"
+        },
+        {
+          "source": "Determine how Tags will be handled.",
+          "target": "决定如何处理标签。"
+        },
+        {
+          "source": "Tag value, no \"#\".",
+          "target": "标签值，不含 “#”。"
+        },
+        {
+          "source": "Add TickTick task link to Tasks in Obsidian",
+          "target": "将 TickTick 任务链接添加到 Obsidian 中的任务"
+        },
+        {
+          "source": "Add Obsidian file link to Tasks in TickTick",
+          "target": "在 TickTick 的任务中添加 Obsidian 文件链接"
+        },
+        {
+          "source": "Manual sync",
+          "target": "手动同步"
+        },
+        {
+          "source": "Check database",
+          "target": "检查数据库"
+        },
+        {
+          "source": "Backup TickTick data",
+          "target": "备份 TickTick 数据"
+        },
+        {
+          "source": "Skip backup",
+          "target": "跳过备份"
+        },
+        {
+          "source": "Backup folder",
+          "target": "备份文件夹"
+        },
+        {
+          "source": "Log Level",
+          "target": "日志级别"
+        },
+        {
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "source": "Note Delimiter",
+          "target": "笔记分隔符"
+        },
+        {
+          "source": "Sync Notes",
+          "target": "同步笔记"
+        },
+        {
+          "source": "Reset Notes",
+          "target": "重置笔记"
+        },
+        {
+          "source": "Default Project",
+          "target": "默认项目"
+        },
+        {
+          "source": "Default folder location",
+          "target": "默认文件夹位置"
+        },
+        {
+          "source": "Project</div>",
+          "target": "项目</div>"
+        },
+        {
+          "source": "Tag Behavior",
+          "target": "标签行为"
+        },
+        {
+          "source": "Tag</div>",
+          "target": "标签</div>"
+        },
+        {
+          "source": "Automatic sync interval time",
+          "target": "自动同步间隔时间"
+        },
+        {
+          "source": "Notice:</div>",
+          "target": "注意:"
+        },
+        {
+          "source": "<p>Note syncing is disabled. Links can only be added to the Task text or not added at all.</p>",
+          "target": "笔记同步已禁用。链接只能添加到任务文本中，或者根本不能添加。"
+        },
+        {
+          "source": "Task link handling in TickTick",
+          "target": "TickTick 中任务链接的处理"
+        },
+        {
+          "source": "Tasks are added to the default project associated with a file. If",
+          "target": "任务会添加到与文件关联的默认项目中。如果"
+        },
+        {
+          "source": "tasks are added to a file with no default project association the will be added to the <span class=\"setting-item-name\"> </span> project.",
+          "target": "任务被添加到没有默认项目关联的文件中，则会被添加到项目<span class=\"setting-item-name\"> </span>中。"
+        },
+        {
+          "source": "If not set, TickTickSync saves Task files to the root folder",
+          "target": "如果未设置，TickTickSync 会将任务文件保存到根文件夹"
+        },
+        {
+          "source": "(\"/\"). To choose an alternative directory, search for or type in the new folder name.",
+          "target": "(\"/\")。要选择其他目录，请搜索或键入新文件夹名称。"
+        },
+        {
+          "source": "To limit the tasks TickTickSync will synchronize from TickTick to",
+          "target": "要限制 TickTickSync 将从 TickTick 同步到 Obsidian 的任务，请在下面选择一个标签 和/或 项目（列表）。如果输入标签，则只同步具有该标签的任务。如果选择了项目（列表），则只会同步该项目中的任务。如果两者都选，则行为将由您的设置决定。请看下面的结果。"
+        },
+        {
+          "source": "Obsidian select a tag and/or project(list) below. If a tag is entered, only tasks with that tag will be",
+          "target": " "
+        },
+        {
+          "source": "synchronized. If a project(list) is selected, only tasks in that project will be synchronized. If",
+          "target": " "
+        },
+        {
+          "source": "both are chosen the behavior will be determined by your settings. See result below.",
+          "target": " "
+        },
+        {
+          "source": "Please specify the desired interval time, with seconds as the default",
+          "target": "请指定所需的间隔时间，默认单位为秒。0 表示手动同步。默认设置为 300 秒，相当于每 5 分钟同步一次。您可以自定义，但不能低于 20 秒。"
+        },
+        {
+          "source": "unit. 0 for manual sync. The default setting is 300 seconds, which corresponds to syncing once every 5",
+          "target": " "
+        },
+        {
+          "source": "minutes. You can customize it, but it cannot be lower than 20 seconds.",
+          "target": " "
+        },
+        {
+          "source": "By default, only tasks marked with #TickTick are synchronized. If this option is turned on, all",
+          "target": "默认情况下，只有标有 #TickTick 的任务才会同步。如果打开此选项，库中的所有任务都将同步。"
+        },
+        {
+          "source": "tasks in",
+          "target": " "
+        },
+        {
+          "source": "the vault will be synchronized.",
+          "target": " "
+        },
+        {
+          "source": "NOTE: This includes all tasks that are currently Items of a task.",
+          "target": "注意：这包括当前属于任务项的所有任务。"
+        },
+        {
+          "source": "Are you sure you want to Sync ALL tasks?",
+          "target": "您确定要同步所有任务吗？"
+        },
+        {
+          "source": "Indented Tasks created in Obsidian will be created as sub  TickTick",
+          "target": "在 Obsidian 中创建的缩进任务将被创建为 TickTick 的子任务"
+        },
+        {
+          "source": "Task Items created in TickTick will still be Task Items. This is the only way to create Task Items when Full Vault Sync is enabled.",
+          "target": "在 TickTick 中创建的任务项仍将是任务项。这是启用完全库同步时创建任务项的唯一方法。"
+        },
+        {
+          "source": "Tasks that are currently \"Items\" of tasks MAY be converted to \"Sub Tasks\" of the containing Tasks.",
+          "target": "当前作为任务项的内容，可能会被转换为包含任务的“子任务”"
+        },
+        {
+          "source": "The \"Items\" will not be deleted.",
+          "target": "任务项不会被删除"
+        },
+        {
+          "source": "Please proceed with Caution.",
+          "target": "请谨慎操作。"
+        },
+        {
+          "source": "Reset Notes.</button>",
+          "target": "重置笔记</button>"
+        },
+        {
+          "source": "Click to backup TickTick data. The backed-up files will be stored in the selected directory of the",
+          "target": "点击备份 TickTick 数据。备份文件将保存在 Obsidian 库的选定目录中"
+        },
+        {
+          "source": "Obsidian vault",
+          "target": " "
+        },
+        {
+          "source": "Links will be added/removed on the next update of the task from TickTick/Obsidian.",
+          "target": "链接将在 TickTick/Obsidian 下次更新任务时添加/删除。"
+        },
+        {
+          "source": "No delimiter",
+          "target": "无分隔符"
+        },
+        {
+          "source": "Custom</label>",
+          "target": "自定义</label>"
+        },
+        {
+          "source": "Preview:",
+          "target": "预览："
+        },
+        {
+          "source": "Notes will be not synchronized.",
+          "target": "笔记将不会同步。"
+        },
+        {
+          "source": "shortDesc:\"Default Folder and Project settings\"",
+          "target": "shortDesc:\"默认文件夹和任务设置\""
+        },
+        {
+          "source": "shortDesc:\"Synchronization settings added for effect\"",
+          "target": "shortDesc:\"添加同步设置，以提高效果\""
+        },
+        {
+          "source": "shortDesc:\"Sync interval setting\"",
+          "target": "shortDesc:\"同步间隔设置\""
+        },
+        {
+          "source": "shortDesc:\"Full vault settings\"",
+          "target": "shortDesc:\"全库设置\""
+        },
+        {
+          "source": "Caution: This may take",
+          "target": "注意：这可能需要一些时间。"
+        },
+        {
+          "source": "\t\t\t\t\tsome",
+          "target": " "
+        },
+        {
+          "source": "time.</em>",
+          "target": " </em>"
+        },
+        {
+          "source": "\"Get all Notes from TickTick?\":\"Remove all Notes from Obsidian? (This will not delete Notes in TickTick)\"",
+          "target": "\"从 TickTick 中获取所有笔记吗？\":\"在 Obsidian 中删除所有笔记吗？（这不会删除 TickTick 中的笔记）\""
+        },
+        {
+          "source": "Do you want to",
+          "target": "你想要"
+        },
+        {
+          "source": "placeholder=\"Username\"",
+          "target": "placeholder=\"用户名\""
+        },
+        {
+          "source": "placeholder=\"Password\"",
+          "target": "placeholder=\"密码\""
+        },
+        {
+          "source": "placeholder=\"Enter delimiter (e.g., ---)\"",
+          "target": "placeholder=\"输入分隔符 (例如, ---)\""
+        },
+        {
+          "source": "placeholder=\"Only tasks with this tag will be synced\"",
+          "target": "placeholder=\"只有具有该标签的任务会被同步\""
+        },
+        {
+          "source": "Placeholder=\"Sync interval\"",
+          "target": "Placeholder=\"同步间隔\""
+        },
+        {
+          "source": "No limitation.",
+          "target": "无限制"
+        },
+        {
+          "source": "Only Tasks in <b> </b> will be synchronized",
+          "target": "只有在 <b> </b> 中的任务会被同步"
+        },
+        {
+          "source": "Only Tasks tagged with <b> </b> tag will be synchronized",
+          "target": "只有具有标签<b> </b> 的任务会被同步"
+        },
+        {
+          "source": "Only   <b> </b> AND tagged with <b> </b> tag",
+          "target": "仅 <b> </b>且同时具有<b> </b> 标签"
+        },
+        {
+          "source": "\t\t\t\twill be synchronized",
+          "target": "将会被同步"
+        },
+        {
+          "source": "All   <b> </b> will be synchronized. All tasks tagged with <b> </b> tag will be synchronized",
+          "target": "所有 <b> </b> 将会被同步。所有具有<b> </b>标签的任务将会被同步"
+        },
+        {
+          "source": "Task link handling in Obsidian",
+          "target": "Obsidian 中的任务链接处理"
+        },
+        {
+          "source": "`Did not find a default Project File for Project ${(_=E(a))==null?void 0:_[w]}. Please create a file and set its default to this project, or select a file to be the default for this project.`",
+          "target": "`未找到项目 ${(_=E(a))==null?void 0:_[w]} 的默认项目文件。请创建一个文件并将其默认设置为本项目，或选择一个文件作为本项目的默认设置。`"
+        },
+        {
+          "source": "this.title=\"Task Deletion Confirmation\",this.message=\"The following Task(s) will be deleted because: \",this.cancelLabel=\"Cancel\",this.confirmLabel=\"Confirm Deletion\"",
+          "target": "this.title=\"任务删除确认n\",this.message=\"以下任务将会被删除，因为: \",this.cancelLabel=\"取消\",this.confirmLabel=\"确认删除\""
+        },
+        {
+          "source": "`The following duplicate Projects/Lists were found. On ${I().baseURL},please either choose one of those to contain the tasks from both lists, or rename one of the lists.`",
+          "target": "`发现以下重复的项目/列表。在 ${I().baseURL} 中，请选择其中一个包含两个列表中的任务，或重命名其中一个列表。`"
+        },
+        {
+          "source": "this.cancelLabel=\"Cancel\",this.confirmLabel=\"Confirm Full Vault Task Sync\"",
+          "target": "this.cancelLabel=\"取消\",this.confirmLabel=\"确认全库任务同步\""
+        },
+        {
+          "source": "d=\"Full vault sync is disabled.\"):await o()?(M(n,!0),d=\"Full vault sync is enabled.\"):(M(n,!1),d=\"Full vault sync not enabled.\"",
+          "target": "d=\"已禁用全库同步。\"):await o()?(M(n,!0),d=\"已启用全库同步。\"):(M(n,!1),d=\"未启用全库同步。\""
+        },
+        {
+          "source": "Full vault sync</div>",
+          "target": "全库同步</div>"
+        },
+        {
+          "source": "\" Skipping backup.\":\"TickTick data has been backed up.\"",
+          "target": "\"跳过备份。\":\"已备份 TickTick 数据。\""
+        },
+        {
+          "source": "noLink:\"No Link\",taskLink:\"Link in Task\",noteLink:\"Link in Description\"",
+          "target": "noLink:\"无链接\",taskLink:\"在任务中链接\",noteLink:\"在描述中链接\""
+        },
+        {
+          "source": "Check Database</button>",
+          "target": "检查数据库</button>"
+        },
+        {
+          "source": "Sync</button>",
+          "target": "同步</button>"
+        },
+        {
+          "source": "Backup</button>",
+          "target": "备份</button>"
+        },
+        {
+          "source": "Notes will be synchronized.",
+          "target": "笔记将会被同步"
+        },
+        {
+          "source": "Generate Debug Info.",
+          "target": "生成调试信息"
+        },
+        {
+          "source": "Click to report settings for a bug.",
+          "target": "点击以报告错误设置。"
+        },
+        {
+          "source": "Move Existing Files.",
+          "target": "移动现有文件"
+        },
+        {
+          "source": "Tasks are added to the default project associated with a file.",
+          "target": "任务会添加到与文件关联的默认项目中。"
+        },
+        {
+          "source": "If tasks are added to a file with no default project association",
+          "target": "如果任务被添加到没有默认项目关联的文件中"
+        },
+        {
+          "source": "they will be added to the <span class=\"setting-item-name\"> </span> project.",
+          "target": "它们会被添加到 <span class=\"setting-item-name\"> </span> 项目中。"
+        },
+        {
+          "source": "Changes will only be reflected on update of a task.",
+          "target": "只有在更新任务时才会反映出更改。"
+        },
+        {
+          "source": "Changes to the appearance settings of   Obsidian or TickTick will only be reflected in the other app when you update those tasks.",
+          "target": "对 Obsidian 或 TickTick 外观设置的更改只会在你更新这些任务时反映在另一个应用程序中。"
+        },
+        {
+          "source": "Tasks are <em>NOT</em> updated automatically.",
+          "target": "任务<em>不会</em>自动更新。"
+        },
+        {
+          "source": "Folder where TickTick tasks are stored.",
+          "target": "存储 TickTick 任务的文件夹。"
+        },
+        {
+          "source": "Generate</button>",
+          "target": "生成</button>"
+        },
+        {
+          "source": "Copy to clipboard",
+          "target": "复制到剪贴板"
+        },
+        {
+          "source": "Reset Tasks</div>",
+          "target": "重置任务</div>"
+        },
+        {
+          "source": "Reset Tasks.</button>",
+          "target": "重置任务</button>"
+        },
+        {
+          "source": "\"Update Tasks in TickTick and Obsidian?\"",
+          "target": "\"在TickTick和Obsidian中更新任务？\""
+        },
+        {
+          "source": "Caution: This will take some time and update Tasks from TickTick to Obsidian and Obsidian to TickTick.",
+          "target": "请注意：此操作需要一定时间，并会从 TickTick 同步任务至 Obsidian，再从 Obsidian 同步回 TickTick。"
+        },
+        {
+          "source": "will be created",
+          "target": "将会创建"
+        },
+        {
+          "source": "after you hit  ENTER",
+          "target": "当你按下ENTER键后"
+        },
+        {
+          "source": "Did not find a default Project File for Project ${(A=P(c))==null?void 0:A[E]}. Please create a file and set its default to this project, or select a file to be the default for this project.`",
+          "target": "未找到项目${(A=P(c))==null?void 0:A[E]}的默认项目文件。请创建一个文件并将其设置为该项目的默认文件，或者选择一个文件作为该项目的默认文件。`"
+        },
+        {
+          "source": "\"Full Vault Task Sync Confirmation\"",
+          "target": "\"全库任务同步确认\""
+        },
+        {
+          "source": "\"Full vault sync not enabled.\"",
+          "target": "\"全库同步未启用。\""
+        },
+        {
+          "source": "\"Full vault sync is enabled.\"",
+          "target": "\"全库同步已启用。\""
+        },
+        {
+          "source": "Confirm Reset",
+          "target": "确认重置"
+        },
+        {
+          "source": "Do you <strong>REALLY</strong>",
+          "target": "你<strong>真的</strong>"
+        },
+        {
+          "source": "This will sync everything and can take a while.",
+          "target": "这将同步所有内容，并且可能需要一段时间。"
+        },
+        {
+          "source": "No, cancel",
+          "target": "不，取消"
+        },
+        {
+          "source": "Yes, reset",
+          "target": "是，重置"
+        },
+        {
+          "source": "want to $",
+          "target": "想要 $"
+        },
+        {
+          "source": "Update the World",
+          "target": "更新整个世界"
+        },
+        {
+          "source": "want to move existing files to",
+          "target": "想要将现有文件移动到"
+        },
+        {
+          "source": "Yes, update it!",
+          "target": "是，更新它！"
+        },
+        {
+          "source": "Choose how Notes are separated from a Task.",
+          "target": "选择任务与笔记之间的分隔方式。"
+        },
+        {
+          "source": "Changes will be applied on next update from",
+          "target": "下次更新后， TickTick 将会应用相关更改。"
+        },
+        {
+          "source": "TickTick.</div></div> <div class",
+          "target": "</div></div> <div class"
+        }
+      ]
+    }
+  }
+}
