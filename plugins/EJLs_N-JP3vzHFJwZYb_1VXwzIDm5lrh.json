@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "table-editor-obsidian",
+    "version": "1.0.0",
+    "title": "Advanced Tables",
+    "description": "Advanced Tables Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.23.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "If this plugin adds value for you and you would like to help support continued development, please use the buttons below:",
+          "target": "如果此插件对您有价值，并且您愿意支持其持续开发，请使用下方的按钮："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Requires restart of Obsidian. If enabled, when the cursor is in a table, enter advances to the next row. Disabling this can help avoid conflicting with tag or CJK autocompletion. If disabling, bind \"Go to ...\" in the Obsidian Hotkeys settings.",
+          "target": "需要重启 Obsidian。启用后，当光标在表格中时，按回车键将跳转到下一行。禁用此功能有助于避免与标签或 CJK 自动补全冲突。如需禁用，请在 Obsidian 快捷键设置中绑定“前往...”。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Requires restart of Obsidian. If enabled, when the cursor is in a table, tab/shift+tab navigate between cells. Disabling this can help avoid conflicting with tag or CJK autocompletion. If disabling, bind \"Go to ...\" in the Obsidian Hotkeys settings.",
+          "target": "需要重启 Obsidian。启用后，当光标在表格中时，按 Tab/Shift+Tab 键可在单元格间导航。禁用此功能有助于避免与标签或 CJK 自动补全冲突。如需禁用，请在 Obsidian 快捷键设置中绑定“前往...”。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, table cells will have spaces added to match the width of the longest cell in the column.",
+          "target": "启用后，表格单元格将添加空格以匹配该列中最宽单元格的宽度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, a button which opens the table controls toolbar will be added to the Obsidian sidebar. The toolbar can also be opened with a Hotkey. Changes only take effect on reload.",
+          "target": "启用后，一个用于打开表格控制工具栏的按钮将被添加到 Obsidian 侧边栏。该工具栏也可以通过快捷键打开。更改仅在重新加载后生效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bind enter to table navigation",
+          "target": "绑定回车键用于表格导航"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bind tab to table navigation",
+          "target": "绑定 Tab 键用于表格导航"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pad cell width using spaces",
+          "target": "使用空格填充单元格宽度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show icon in sidebar",
+          "target": "在侧边栏显示图标"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Include table headers",
+          "target": "包含表头"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Advanced Tables",
+          "target": "高级表格"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Align:",
+          "target": "对齐："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Move:",
+          "target": "移动："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Edit:",
+          "target": "编辑："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Sort/F:",
+          "target": "排序/筛选："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Misc:",
+          "target": "其他："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Advanced Tables: Unable to determine current editor.",
+          "target": "高级表格：无法确定当前编辑器。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Advanced Tables: Cursor must be in a table.",
+          "target": "高级表格：光标必须在表格内。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Advanced Tables: Next row also bound to enter. Possibly producing double actions. See Advanced Tables settings.",
+          "target": "高级表格：下一行也绑定了回车键。可能会产生双重操作。请查看高级表格设置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Advanced Tables: Next cell also bound to tab. Possibly producing double actions. See Advanced Tables settings.",
+          "target": "高级表格：下一个单元格也绑定了 Tab 键。可能会产生双重操作。请查看高级表格设置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Advanced Tables: Previous cell also bound to shift+tab. Possibly producing double actions. See Advanced Tables settings.",
+          "target": "高级表格：上一个单元格也绑定了 Shift+Tab 键。可能会产生双重操作。请查看高级表格设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "advanced-tables-button nav-action-button",
+          "target": "advanced-tables-button nav-action-button"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Grammar",
+          "target": "语法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Production",
+          "target": "生产"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NCName",
+          "target": "NCName"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Choice",
+          "target": "选择"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SequenceOrDifference",
+          "target": "序列或差异"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Minus",
+          "target": "减法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PrimaryDecoration",
+          "target": "主要装饰"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "DecorationName",
+          "target": "装饰名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "StringLiteral",
+          "target": "字符串字面量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CharCode",
+          "target": "字符代码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CharClass",
+          "target": "字符类"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CharRange",
+          "target": "字符范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CharCodeRange",
+          "target": "字符代码范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Comment",
+          "target": "注释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Link",
+          "target": "链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Url",
+          "target": "网址"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Attributes",
+          "target": "属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Attribute",
+          "target": "属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AttributeValue",
+          "target": "属性值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PrimaryPreDecoration",
+          "target": "主要预装饰"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Go to next row",
+          "target": "转到下一行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Go to next cell",
+          "target": "转到下一个单元格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Go to previous cell",
+          "target": "转到上一个单元格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Format table at the cursor",
+          "target": "格式化光标所在的表格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Format all tables in this file",
+          "target": "格式化此文件中的所有表格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Insert column before current",
+          "target": "在当前列前插入列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Insert row before current",
+          "target": "在当前行前插入行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Move cursor out of table",
+          "target": "将光标移出表格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Left align column",
+          "target": "左对齐列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Center align column",
+          "target": "居中对齐列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Right align column",
+          "target": "右对齐列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Move column left",
+          "target": "向左移动列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Move column right",
+          "target": "向右移动列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Move row up",
+          "target": "向上移动行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Move row down",
+          "target": "向下移动行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Delete column",
+          "target": "删除列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Delete row",
+          "target": "删除行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sort rows ascending",
+          "target": "按升序排序行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sort rows descending",
+          "target": "按降序排序行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Transpose",
+          "target": "转置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Evaluate table formulas",
+          "target": "计算表格公式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open table controls toolbar",
+          "target": "打开表格控制工具栏"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
