@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "blue-star",
+    "version": "2.0.0",
+    "title": "Blue Star",
+    "description": "Generate Anki flashcards in multiple ways.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"No active file found\")",
+          "target": "Notice(\"未找到活动文件\")"
+        },
+        {
+          "source": "Notice('Regex pattern is required for \"Regex\" parser strategy')",
+          "target": "Notice('对于 \"Regex\" 解析策略,正则表达式模式是必需的')"
+        },
+        {
+          "source": "Notice('Heading level is required for \"Section::Subsectioin\" parser strategy')",
+          "target": "Notice('对于 \"部分::子标题\" 解析策略,标题级别是必需的')"
+        },
+        {
+          "source": "Notice('Heading level is required for \"Heading::Paragraph\" parser strategy')",
+          "target": "Notice('对于 \"标题::段落\" 解析策略,标题级别是必需的')"
+        },
+        {
+          "source": "Notice('Heading level is required for \"Multi-Subsection\" parser strategy')",
+          "target": "Notice('对于 \"多子部分\" 解析策略,标题级别是必需的')"
+        },
+        {
+          "source": "Notice('Heading level is required for \"Multi-Subparagraph\" parser strategy')",
+          "target": "Notice('对于 \"多子段落\" 解析策略,标题级别是必需的')"
+        },
+        {
+          "source": "Notice('Custom delimiter is required for \"Custom delimiter\" parser strategy')",
+          "target": "Notice('对于 \"自定义分隔符\" 解析策略,自定义分隔符是必需的')"
+        },
+        {
+          "source": "Notice('Custom delimiter is required for \"Single delimiter\" parser strategy')",
+          "target": "Notice('对于 \"单个分隔符\" 解析策略,自定义分隔符是必需的')"
+        },
+        {
+          "source": "Notice(`Unknown parser type: ${parserType}`)",
+          "target": "Notice(`未知解析类型: ${parserType}`)"
+        },
+        {
+          "source": "Notice(`Anki model \"${settings.model}\" does not exist.`)",
+          "target": "Notice(`Anki 模型 \"${settings.model}\" 不存在。`)"
+        },
+        {
+          "source": "Notice(`Added ${addedCount} Anki cards and\nSkipped ${skippedCount} Anki cards\nfrom file \"${fileName}\".`)",
+          "target": "Notice(`已添加 ${addedCount} 张 Anki 卡片,\n跳过了 ${skippedCount} 张 Anki 卡片,\n来自文件 \"${fileName}\"。`)"
+        },
+        {
+          "source": "Notice(`Added ${addedCount} Anki cards\nUpdated ${updatedCount} Anki cards\nSkipped ${skipCount} Anki cards\nfrom file \"${fileName}\".`)",
+          "target": "Notice(`已添加 ${addedCount} 张 Anki 卡片,\n已更新 ${updatedCount} 张 Anki 卡片,\n跳过了 ${skipCount} 张 Anki 卡片,\n来自文件 \"${fileName}\"。`)"
+        },
+        {
+          "source": "Notice(\"Generating Anki flashcards...\")",
+          "target": "Notice(\"正在生成 Anki 记忆卡片...\")"
+        },
+        {
+          "source": "Notice(\"Generating flashcards...\\n\\nPlease do not click repeatedly or execute the command multiple times.\")",
+          "target": "Notice(\"正在生成记忆卡片...\\n\\n请勿重复点击或多次执行命令。\")"
+        },
+        {
+          "source": "Notice(`No content matched the pattern in file \"${activeFile.name}\".`)",
+          "target": "Notice(`文件 \"${activeFile.name}\" 中没有内容匹配该模式。`)"
+        },
+        {
+          "source": "Notice(`Error: ${error.message}\n\nWhen creating Anki cards from file \"${activeFile.name}\".`)",
+          "target": "Notice(`错误: ${error.message}\n\n在从文件 \"${activeFile.name}\" 创建 Anki 卡片时。`)"
+        },
+        {
+          "source": "Notice(\"Directory path must be specified.\")",
+          "target": "Notice(\"必须指定目录路径。\")"
+        },
+        {
+          "source": "Notice(\"Invalid directory path.\")",
+          "target": "Notice(\"无效的目录路径。\")"
+        },
+        {
+          "source": "Notice(`Error creating Anki cards from file \"${file.name}\": ${error.message}`)",
+          "target": "Notice(`从文件 \"${file.name}\" 创建 Anki 卡片时出错: ${error.message}`)"
+        },
+        {
+          "source": "Notice(`Processing completed. Total files: ${totalFiles}, Processed files: ${processedFiles}, Skipped files: ${skippedFiles}.`)",
+          "target": "Notice(`处理完成。总文件数: ${totalFiles},已处理文件数: ${processedFiles},跳过文件数: ${skippedFiles}。`)"
+        },
+        {
+          "source": ".log(\"Loading Blue Star plugin\")",
+          "target": ".log(\"加载 Blue Star 插件\")"
+        },
+        {
+          "source": ".log(\"Unloading Blue Star plugin\")",
+          "target": ".log(\"卸载 Blue Star 插件\")"
+        },
+        {
+          "source": "name: \"Create Anki cards from current file\"",
+          "target": "name: \"从当前文件创建 Anki 卡片\""
+        },
+        {
+          "source": "name: \"Create Anki cards from directory\"",
+          "target": "name: \"从目录创建 Anki 卡片\""
+        },
+        {
+          "source": "text: \"2. For usage instructions, please refer to: \"",
+          "target": "text: \"2. 使用说明请参阅: \""
+        },
+        {
+          "source": "text: \"3. Obsidian_2_Anki is a powerful Obsidian plugin for generating Anki flashcards. Our Regex come from \"",
+          "target": "text: \"3. Obsidian_2_Anki 是一个强大的 Obsidian 插件,用于生成 Anki 记忆卡片。我们的正则表达式来自\""
+        },
+        {
+          "source": "text: \"Confirm\"",
+          "target": "text: \"确认\""
+        },
+        {
+          "source": ".setButtonText(\"Remove\")",
+          "target": ".setButtonText(\"移除\")"
+        },
+        {
+          "source": ".setName(\"Directory path\")",
+          "target": ".setName(\"目录路径\")"
+        },
+        {
+          "source": ".setName(\"Include file tag\")",
+          "target": ".setName(\"包含文件标签\")"
+        },
+        {
+          "source": ".setName(\"Exclude file tag\")",
+          "target": ".setName(\"排除文件标签\")"
+        },
+        {
+          "source": ".setName(\"Update existing cards\")",
+          "target": ".setName(\"更新现有卡片\")"
+        },
+        {
+          "source": ".setName(\"Allow single field cards\")",
+          "target": ".setName(\"允许单字段卡片\")"
+        },
+        {
+          "source": ".setName(\"Add HTML break\")",
+          "target": ".setName(\"添加 HTML 换行\")"
+        },
+        {
+          "source": ".setName(\"Anki deck\")",
+          "target": ".setName(\"Anki 卡组\")"
+        },
+        {
+          "source": ".setName(\"Anki model (note type)\")",
+          "target": ".setName(\"Anki 模型（笔记类型）\")"
+        },
+        {
+          "source": ".setName(\"Anki tag\")",
+          "target": ".setName(\"Anki 标签\")"
+        },
+        {
+          "source": ".setName(\"Match mode\")",
+          "target": ".setName(\"匹配模式\")"
+        },
+        {
+          "source": ".setName(\"Heading level\")",
+          "target": ".setName(\"标题级别\")"
+        },
+        {
+          "source": ".setName(\"Regex patterns\")",
+          "target": ".setName(\"正则表达式模式\")"
+        },
+        {
+          "source": ".setName(\"Card start delimiter\")",
+          "target": ".setName(\"卡片开始分隔符\")"
+        },
+        {
+          "source": ".setName(\"Field separator\")",
+          "target": ".setName(\"字段分隔符\")"
+        },
+        {
+          "source": ".setName(\"Card end delimiter\")",
+          "target": ".setName(\"卡片结束分隔符\")"
+        },
+        {
+          "source": ".setName(\"Usage Instructions\")",
+          "target": ".setName(\"使用说明\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the directory path to scan for files.\")",
+          "target": ".setDesc(\"指定要扫描文件的目录路径。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the tag for files that need to be included in the specified directory.\")",
+          "target": ".setDesc(\"指定需要包含在指定目录中的文件标签。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the tag for files that need to be excluded in the specified directory.\")",
+          "target": ".setDesc(\"指定需要排除在指定目录中的文件标签。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, existing cards in Anki will be updated. Otherwise, only new cards will be added.\")",
+          "target": ".setDesc(\"如果启用,现有的 Anki 卡片将被更新。否则,仅添加新卡片。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, allows generating Anki cards with a single field.\")",
+          "target": ".setDesc(\"如果启用,允许生成单字段的 Anki 卡片。\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, add HTML line break <br>.\")",
+          "target": ".setDesc(\"如果启用,添加 HTML 换行 <br>。\")"
+        },
+        {
+          "source": ".setDesc(\"The default deck to add cards to.\")",
+          "target": ".setDesc(\"默认添加卡片的卡组。\")"
+        },
+        {
+          "source": ".setDesc(\"The default model (note type) to use for cards.\")",
+          "target": ".setDesc(\"卡片使用的默认模型（笔记类型）。\")"
+        },
+        {
+          "source": ".setDesc(\"The default tag to add to cards.\")",
+          "target": ".setDesc(\"默认添加到卡片的标签。\")"
+        },
+        {
+          "source": ".setDesc(\"The mode to use for matching content.\")",
+          "target": ".setDesc(\"用于匹配内容的模式。\")"
+        },
+        {
+          "source": ".setDesc('Select the title level to match for \"section-subsection\" mode.')",
+          "target": ".setDesc('选择用于 \"section-subsection\" 模式的标题级别。')"
+        },
+        {
+          "source": ".setDesc('Select the heading level to match for \"heading-paragraph\" mode.')",
+          "target": ".setDesc('选择用于 \"heading-paragraph\" 模式的标题级别。')"
+        },
+        {
+          "source": ".setDesc('Select the title heading to match for \"multi-section\" mode.')",
+          "target": ".setDesc('选择用于 \"multi-section\" 模式的标题标题。')"
+        },
+        {
+          "source": ".setDesc('Select the title heading to match for \"multi-paragraph\" mode.')",
+          "target": ".setDesc('选择用于 \"multi-paragraph\" 模式的标题标题。')"
+        },
+        {
+          "source": ".setDesc(\"Add or edit regex patterns.\")",
+          "target": ".setDesc(\"添加或编辑正则表达式模式。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the delimiter to mark the start of a card.\")",
+          "target": ".setDesc(\"指定标记卡片开始的分隔符。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the delimiter to separate fields within a card.\")",
+          "target": ".setDesc(\"指定卡片内字段的分隔符。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the delimiter to mark the end of a card.\")",
+          "target": ".setDesc(\"指定标记卡片结束的分隔符。\")"
+        },
+        {
+          "source": ".setDesc(\"1. You can specify Anki's multi-level decks using ::, for example: Deck::SubDeck\")",
+          "target": ".setDesc(\"1. 可以使用 :: 指定 Anki 的多级卡组,例如:Deck::SubDeck\")"
+        },
+        {
+          "source": ".setPlaceholder(\"anki-ignore\")",
+          "target": ".setPlaceholder(\"忽略 Anki\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Default\")",
+          "target": ".setPlaceholder(\"默认\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Basic\")",
+          "target": ".setPlaceholder(\"基础\")"
+        },
+        {
+          "source": ".setPlaceholder(\"blue-star\")",
+          "target": ".setPlaceholder(\"蓝色星星\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Regex pattern\")",
+          "target": ".setPlaceholder(\"正则表达式模式\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Flags\")",
+          "target": ".setPlaceholder(\"标志\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Desc\")",
+          "target": ".setPlaceholder(\"描述\")"
+        },
+        {
+          "source": ".setPlaceholder(\"card start symbol\")",
+          "target": ".setPlaceholder(\"卡片开始符号\")"
+        },
+        {
+          "source": ".setPlaceholder(\"field separator\")",
+          "target": ".setPlaceholder(\"字段分隔符\")"
+        },
+        {
+          "source": ".setPlaceholder(\"card en symbol\")",
+          "target": ".setPlaceholder(\"卡片结束符号\")"
+        },
+        {
+          "source": ".addOption(\"section-subsection\", \"Section :: Subsection\")",
+          "target": ".addOption(\"section-subsection\", \"部分 :: 子部分\")"
+        },
+        {
+          "source": ".addOption(\"heading-paragraph\", \"Heading :: Paragraph\")",
+          "target": ".addOption(\"heading-paragraph\", \"标题 :: 段落\")"
+        },
+        {
+          "source": ".addOption(\"multi-subsection\", \"Multi-Subsection\")",
+          "target": ".addOption(\"multi-subsection\", \"多子部分\")"
+        },
+        {
+          "source": ".addOption(\"multi-subparagraph\", \"Multi-Subparagraph\")",
+          "target": ".addOption(\"multi-subparagraph\", \"多子段落\")"
+        },
+        {
+          "source": ".addOption(\"regex\", \"Regex\")",
+          "target": ".addOption(\"regex\", \"正则表达式\")"
+        },
+        {
+          "source": ".addOption(\"custom-delimiter\", \"Custom delimiter\")",
+          "target": ".addOption(\"custom-delimiter\", \"自定义分隔符\")"
+        },
+        {
+          "source": ".addOption(\"single-delimiter\", \"Single delimiter\")",
+          "target": ".addOption(\"single-delimiter\", \"单个分隔符\")"
+        },
+        {
+          "source": ".addOption(\"1\", \"Heading 1\")",
+          "target": ".addOption(\"1\", \"标题 1\")"
+        },
+        {
+          "source": ".addOption(\"2\", \"Heading 2\")",
+          "target": ".addOption(\"2\", \"标题 2\")"
+        },
+        {
+          "source": ".addOption(\"3\", \"Heading 3\")",
+          "target": ".addOption(\"3\", \"标题 3\")"
+        },
+        {
+          "source": ".addOption(\"4\", \"Heading 4\")",
+          "target": ".addOption(\"4\", \"标题 4\")"
+        },
+        {
+          "source": ".addOption(\"5\", \"Heading 5\")",
+          "target": ".addOption(\"5\", \"标题 5\")"
+        },
+        {
+          "source": "alias: \"Single line separated by ::\"",
+          "target": "alias: \"单行由 :: 分隔\""
+        },
+        {
+          "source": "alias: \"Multi-line Q&A starting with Q: and A:\"",
+          "target": "alias: \"多行 Q&A 以 Q: 和 A: 开头\""
+        },
+        {
+          "source": "alias: \"Multi-line text separated by '#flashcard'\"",
+          "target": "alias: \"多行文本由 '#flashcard' 分隔\""
+        },
+        {
+          "source": "alias: \"Multi-line text separated by ---\"",
+          "target": "alias: \"多行文本由 --- 分隔\""
+        },
+        {
+          "source": "alias: \"Cloze paragraph format\"",
+          "target": "alias: \"填空段落格式\""
+        },
+        {
+          "source": "alias: \"All headings and paragraph, starting from h1\"",
+          "target": "alias: \"所有标题和段落,从 h1 开始\""
+        },
+        {
+          "source": "alias: \"All headings and paragraph, starting from h2\"",
+          "target": "alias: \"所有标题和段落,从 h2 开始\""
+        },
+        {
+          "source": "alias: \"All headings and paragraph, starting from h3\"",
+          "target": "alias: \"所有标题和段落,从 h3 开始\""
+        },
+        {
+          "source": "Error(\"Regex pattern is required for RegexParserStrategy\")",
+          "target": "Error(\"对于 RegexParserStrategy,正则表达式模式是必需的\")"
+        },
+        {
+          "source": "Error(\"Heading level is required for SectionSubsectioinParserStrategy\")",
+          "target": "Error(\"对于 SectionSubsectionParserStrategy,标题级别是必需的\")"
+        },
+        {
+          "source": "Error(\"Heading level is required for HeadingParagraphParserStrategy\")",
+          "target": "Error(\"对于 HeadingParagraphParserStrategy,标题级别是必需的\")"
+        },
+        {
+          "source": "Error(\"Heading level is required for MultiSubsectionParserStrategy\")",
+          "target": "Error(\"对于 MultiSubsectionParserStrategy,标题级别是必需的\")"
+        },
+        {
+          "source": "Error(\"Heading level is required for MultiSubparagraphParserStrategy\")",
+          "target": "Error(\"对于 MultiSubparagraphParserStrategy,标题级别是必需的\")"
+        },
+        {
+          "source": "Error(\"Custom delimiter is required for CustomDelimiterParserStrategy\")",
+          "target": "Error(\"对于 CustomDelimiterParserStrategy,自定义分隔符是必需的\")"
+        },
+        {
+          "source": "Error(\"Custom delimiter is required for CustomSingleDelimiterParserStrategy\")",
+          "target": "Error(\"对于 CustomSingleDelimiterParserStrategy,自定义分隔符是必需的\")"
+        },
+        {
+          "source": "Error(`Unknown parser type: ${parserType}`)",
+          "target": "Error(`未知解析类型: ${parserType}`)"
+        },
+        {
+          "source": "Create Anki cards from current file",
+          "target": "从当前文件创建 Anki 卡片"
+        },
+        {
+          "source": "Create Anki cards from directory",
+          "target": "从目录创建 Anki 卡片"
+        },
+        {
+          "source": "Directory path must be specified.",
+          "target": "必须指定目录路径。"
+        },
+        {
+          "source": "Invalid directory path.",
+          "target": "无效的目录路径。"
+        }
+      ]
+    }
+  }
+}
