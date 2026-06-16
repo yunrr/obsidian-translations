@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "vault-full-statistics",
+    "version": "2.0.0",
+    "title": "Vault Full Statistics",
+    "description": "Status bar item with vault full statistics such as number of notes, files, attachments, links, tags and quality of vault.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(`error processing ${s}: ${e}`)",
+          "target": ".log(`加载错误 ${s}: ${e}`)"
+        },
+        {
+          "source": ".log(`${s.path}: no tokenizer, section.type=${p.type}`)",
+          "target": ".log(`${s.path}: 无分词器 tokenizer, section.type=${p.type}`)"
+        },
+        {
+          "source": ".log(\"Loading vault-statistics Plugin\")",
+          "target": ".log(\"vault-statistics 插件加载中\")"
+        },
+        {
+          "source": ".setName(\"Exclude directories\")",
+          "target": ".setName(\"排除目录\")"
+        },
+        {
+          "source": ".setName(\"Show individual items\")",
+          "target": ".setName(\"显示独立条目\")"
+        },
+        {
+          "source": ".setName(\"Show notes\")",
+          "target": ".setName(\"显示笔记\")"
+        },
+        {
+          "source": ".setName(\"Show attachments\")",
+          "target": ".setName(\"显示附件\")"
+        },
+        {
+          "source": ".setName(\"Show files\")",
+          "target": ".setName(\"显示文件\")"
+        },
+        {
+          "source": ".setName(\"Show links\")",
+          "target": ".setName(\"显示链接\")"
+        },
+        {
+          "source": ".setName(\"Show words\")",
+          "target": ".setName(\"显示字数\")"
+        },
+        {
+          "source": ".setName(\"Show size\")",
+          "target": ".setName(\"显示大小\")"
+        },
+        {
+          "source": ".setName(\"Show tags\")",
+          "target": ".setName(\"显示标签\")"
+        },
+        {
+          "source": ".setName(\"Show quality\")",
+          "target": ".setName(\"显示健康度\")"
+        },
+        {
+          "source": ".setDesc(\"Exclude directories from statistics\")",
+          "target": ".setDesc(\"在统计指标中排除指定目录\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to show multiple items at once or cycle them with a click\")",
+          "target": ".setDesc(\"选择展示模式：同时显示多项内容 或 点击轮播\")"
+        },
+        {
+          "source": ".setFormatter(e=>new u(\"notes\").format(e.notes)))",
+          "target": ".setFormatter(e=>new u(\"篇笔记\").format(e.notes)))"
+        },
+        {
+          "source": ".setFormatter(e=>new u(\"attachments\").format(e.attachments)))",
+          "target": ".setFormatter(e=>new u(\"个附件\").format(e.attachments)))"
+        },
+        {
+          "source": ".setFormatter(e=>new u(\"files\").format(e.files)))",
+          "target": ".setFormatter(e=>new u(\"份文件\").format(e.files)))"
+        },
+        {
+          "source": ".setFormatter(e=>new u(\"links\").format(e.links)))",
+          "target": ".setFormatter(e=>new u(\"条链接\").format(e.links)))"
+        },
+        {
+          "source": ".setFormatter(e=>new u(\"words\").format(e.words)))",
+          "target": ".setFormatter(e=>new u(\"字\").format(e.words)))"
+        },
+        {
+          "source": ".setFormatter(e=>new u(\"tags\").format(e.tags)))",
+          "target": ".setFormatter(e=>new u(\"个标签\").format(e.tags)))"
+        }
+      ]
+    }
+  }
+}

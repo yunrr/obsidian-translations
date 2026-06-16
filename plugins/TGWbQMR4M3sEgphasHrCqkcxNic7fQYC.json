@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "virtual-linker",
+    "version": "2.0.0",
+    "title": "Virtual Linker / Glossary",
+    "description": "Automatically creates virtual links for text within your notes that match the titles or aliases of other notes in your vault. Create a glossary-like functionality, show unlinked mentions and transform them to real links.",
+    "language": "zh-cn",
+    "supportedVersions": "1.5.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".error(\"[VL LC] Error filtering aliases\", aliases, e)",
+          "target": ".error(\"[VL LC] 过滤别名时出错\", aliases, e)"
+        },
+        {
+          "source": ".error(\"[VL LC] Error adding file to tree\", file, e)",
+          "target": ".error(\"[VL LC] 将文件添加到树时出错\", file, e)"
+        },
+        {
+          "source": ".error(\"No target element\")",
+          "target": ".error(\"没有目标元素\")"
+        },
+        {
+          "source": ".error(\"No from or to position\")",
+          "target": ".error(\"没有起始或结束位置\")"
+        },
+        {
+          "source": ".error(\"No active file\")",
+          "target": ".error(\"没有活动文件\")"
+        },
+        {
+          "source": ".error(\"No target file\")",
+          "target": ".error(\"没有目标文件\")"
+        },
+        {
+          "source": ".error(\"No target folder\")",
+          "target": ".error(\"没有目标文件夹\")"
+        },
+        {
+          "source": "name: \"Activate Virtual Linker\"",
+          "target": "name: \"激活虚拟链接器\""
+        },
+        {
+          "source": "name: \"Deactivate Virtual Linker\"",
+          "target": "name: \"停用虚拟链接器\""
+        },
+        {
+          "source": ".setName(\"Activate Virtual Linker\")",
+          "target": ".setName(\"激活虚拟链接器\")"
+        },
+        {
+          "source": ".setName(\"Show advanced settings\")",
+          "target": ".setName(\"显示高级设置\")"
+        },
+        {
+          "source": ".setName(\"Matching behavior\")",
+          "target": ".setName(\"匹配行为\")"
+        },
+        {
+          "source": ".setName(\"Include aliases\")",
+          "target": ".setName(\"包含别名\")"
+        },
+        {
+          "source": ".setName(\"Only link once\")",
+          "target": ".setName(\"仅链接一次\")"
+        },
+        {
+          "source": ".setName(\"Exclude links to real linked files\")",
+          "target": ".setName(\"排除指向真实链接文件的链接\")"
+        },
+        {
+          "source": ".setName(\"Include headers\")",
+          "target": ".setName(\"包含标题\")"
+        },
+        {
+          "source": ".setName(\"Match any part of a word\")",
+          "target": ".setName(\"匹配单词的任意部分\")"
+        },
+        {
+          "source": ".setName(\"Match the beginning of words\")",
+          "target": ".setName(\"匹配单词的开头\")"
+        },
+        {
+          "source": ".setName(\"Match the end of words\")",
+          "target": ".setName(\"匹配单词的结尾\")"
+        },
+        {
+          "source": ".setName(\"Suppress suffix for sub words\")",
+          "target": ".setName(\"抑制子单词的后缀\")"
+        },
+        {
+          "source": ".setName(\"Fix IME problem\")",
+          "target": ".setName(\"修复IME问题\")"
+        },
+        {
+          "source": ".setName(\"Avoid linking in current line\")",
+          "target": ".setName(\"避免在同一行中链接\")"
+        },
+        {
+          "source": ".setName(\"Case sensitivity\")",
+          "target": ".setName(\"区分大小写\")"
+        },
+        {
+          "source": ".setName(\"Case sensitive\")",
+          "target": ".setName(\"区分大小写\")"
+        },
+        {
+          "source": ".setName(\"Capital letter percentage for automatic match case\")",
+          "target": ".setName(\"自动匹配情况的大写字母百分比\")"
+        },
+        {
+          "source": ".setName(\"Tag to ignore case\")",
+          "target": ".setName(\"忽略大小写的标签\")"
+        },
+        {
+          "source": ".setName(\"Tag to match case\")",
+          "target": ".setName(\"匹配大小写的标签\")"
+        },
+        {
+          "source": ".setName(\"Property name to ignore case\")",
+          "target": ".setName(\"忽略大小写的属性名称\")"
+        },
+        {
+          "source": ".setName(\"Property name to match case\")",
+          "target": ".setName(\"匹配大小写的属性名称\")"
+        },
+        {
+          "source": ".setName(\"Matched files\")",
+          "target": ".setName(\"已匹配的文件\")"
+        },
+        {
+          "source": ".setName(\"Include all files\")",
+          "target": ".setName(\"包含所有文件\")"
+        },
+        {
+          "source": ".setName(\"Glossary linker directories\")",
+          "target": ".setName(\"词典链接目录\")"
+        },
+        {
+          "source": ".setName(\"Excluded directories\")",
+          "target": ".setName(\"排除的目录\")"
+        },
+        {
+          "source": ".setName(\"Tag to include file\")",
+          "target": ".setName(\"包含文件的标签\")"
+        },
+        {
+          "source": ".setName(\"Tag to ignore file\")",
+          "target": ".setName(\"忽略文件的标签\")"
+        },
+        {
+          "source": ".setName(\"Exclude self-links to the current note\")",
+          "target": ".setName(\"排除到当前笔记的自链接\")"
+        },
+        {
+          "source": ".setName(\"Excluded directories for generating virtual links\")",
+          "target": ".setName(\"生成虚拟链接时排除的目录\")"
+        },
+        {
+          "source": ".setName(\"Link style\")",
+          "target": ".setName(\"链接样式\")"
+        },
+        {
+          "source": ".setName(\"Always show multiple references\")",
+          "target": ".setName(\"始终显示多个引用\")"
+        },
+        {
+          "source": ".setName(\"Virtual link suffix\")",
+          "target": ".setName(\"虚拟链接后缀\")"
+        },
+        {
+          "source": ".setName(\"Virtual link suffix for aliases\")",
+          "target": ".setName(\"别名的虚拟链接后缀\")"
+        },
+        {
+          "source": ".setName(\"Apply default link styling\")",
+          "target": ".setName(\"应用默认链接样式\")"
+        },
+        {
+          "source": ".setName(\"Use default link style for conversion\")",
+          "target": ".setName(\"转换时使用默认链接样式\")"
+        },
+        {
+          "source": ".setName(\"Use [[Wiki-links]]\")",
+          "target": ".setName(\"使用[[维基链接]]\")"
+        },
+        {
+          "source": ".setName(\"Link format\")",
+          "target": ".setName(\"链接格式\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, the virtual linker will also include aliases for the files.\")",
+          "target": ".setDesc(\"如果激活，虚拟链接器也将包含文件的别名。\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, there will not be several identical virtual links in the same note (Wikipedia style).\")",
+          "target": ".setDesc(\"如果激活，在同一笔记中不会出现多个相同的虚拟链接（维基百科风格）。\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, there will be no links to files that are already linked in the note by real links.\")",
+          "target": ".setDesc(\"如果激活，将不会链接已经通过真实链接在笔记中链接的文件。\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, headers (so your lines beginning with at least one `#`) are included for virtual links.\")",
+          "target": ".setDesc(\"如果激活，包含标题（即以至少一个`#`开始的行）用于虚拟链接。\")"
+        },
+        {
+          "source": ".setDesc(\"If deactivated, only whole words are matched. Otherwise, every part of a word is found.\")",
+          "target": ".setDesc(\"如果未激活，则只匹配整个单词。否则，将匹配单词的任意部分。\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, the beginnings of words are also linked, even if it is not a whole match.\")",
+          "target": ".setDesc(\"如果激活，单词的开头也会被链接，即使它不是一个完整的匹配。\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, the ends of words are also linked, even if it is not a whole match.\")",
+          "target": ".setDesc(\"如果激活，即使不是完全匹配，也会链接单词的结尾。\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, the suffix is not added to links for subwords, but only for complete matches.\")",
+          "target": ".setDesc(\"如果激活，子单词的链接不会添加后缀，而仅对完整匹配添加。\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, there will be no links in the current line.\")",
+          "target": ".setDesc(\"如果激活，当前行中不会有链接。\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, the matching is case sensitive.\")",
+          "target": ".setDesc(\"如果激活，匹配是区分大小写的。\")"
+        },
+        {
+          "source": ".setDesc(\"The percentage (0 - 100) of capital letters in a file name or alias to be automatically considered as case sensitive.\")",
+          "target": ".setDesc(\"文件名或别名中大写字母的百分比（0-100），将自动被视为区分大小写。\")"
+        },
+        {
+          "source": ".setDesc(\"By adding this tag to a file, the linker will ignore the case for the file.\")",
+          "target": ".setDesc(\"通过向文件添加此标签，链接器将忽略文件的大小写。\")"
+        },
+        {
+          "source": ".setDesc(\"By adding this tag to a file, the linker will match the case for the file.\")",
+          "target": ".setDesc(\"通过向文件添加此标签，链接器将匹配文件的大小写。\")"
+        },
+        {
+          "source": ".setDesc(\"By adding this property to a note, containing a list of names, the linker will ignore the case for the specified names / aliases. This way you can decide, which alias should be insensitive.\")",
+          "target": ".setDesc(\"通过向笔记中添加此属性，包含名字列表，链接器将忽略指定的名字/别名的大小写。这样你可以决定哪些别名应不区分大小写。\")"
+        },
+        {
+          "source": ".setDesc(\"By adding this property to a note, containing a list of names, the linker will match the case for the specified names / aliases. This way you can decide, which alias should be case sensitive.\")",
+          "target": ".setDesc(\"通过向笔记中添加此属性，包含名字列表，链接器将匹配指定的名字/别名的大小写。这样你可以决定哪些别名应区分大小写。\")"
+        },
+        {
+          "source": ".setDesc(\"Include all files for the virtual linker.\")",
+          "target": ".setDesc(\"包含所有文件供虚拟链接器使用。\")"
+        },
+        {
+          "source": ".setDesc(\"Directories to include for the virtual linker (separated by new lines).\")",
+          "target": ".setDesc(\"包含供虚拟链接器使用的目录（由换行符分隔）。\")"
+        },
+        {
+          "source": ".setDesc(\"Directories from which files are to be excluded for the virtual linker (separated by new lines). Files in these directories will not create any virtual links in other files.\")",
+          "target": ".setDesc(\"从这些目录排除供虚拟链接器使用的文件（由换行符分隔）。这些目录中的文件不会在其他文件中创建任何虚拟链接。\")"
+        },
+        {
+          "source": ".setDesc(\"Tag to explicitly include the file for the linker.\")",
+          "target": ".setDesc(\"标签以明确地包括文件供链接器使用。\")"
+        },
+        {
+          "source": ".setDesc(\"Tag to ignore the file for the linker.\")",
+          "target": ".setDesc(\"标签以忽略文件供链接器使用。\")"
+        },
+        {
+          "source": ".setDesc(\"If toggled, links to the note itself are excluded from the linker. (This might not work in preview windows.)\")",
+          "target": ".setDesc(\"如果切换，链接到笔记本身的链接将从链接器中排除。（这可能在预览窗口中不起作用。）\")"
+        },
+        {
+          "source": ".setDesc(\"Directories in which the plugin will not create virtual links (separated by new lines).\")",
+          "target": ".setDesc(\"插件不会创建虚拟链接的目录（由换行符分隔）。\")"
+        },
+        {
+          "source": ".setDesc(\"If toggled, if there are multiple matching notes, all references are shown behind the match. If not toggled, the references are only shown if hovering over the match.\")",
+          "target": ".setDesc(\"如果启用，如果有多个匹配的笔记，所有引用都会显示在匹配项之后。如果不启用，只有在悬停于匹配项上时才会显示引用。\")"
+        },
+        {
+          "source": ".setDesc(\"The suffix to add to auto generated virtual links.\")",
+          "target": ".setDesc(\"要添加到自动生成的虚拟链接的后缀。\")"
+        },
+        {
+          "source": ".setDesc(\"The suffix to add to auto generated virtual links for aliases.\")",
+          "target": ".setDesc(\"要添加到为别名自动生成的虚拟链接的后缀。\")"
+        },
+        {
+          "source": ".setDesc(\"If toggled, the default link styling will be applied to virtual links. Furthermore, you can style the links yourself with a CSS-snippet affecting the class `virtual-link`. (Find the CSS snippet directory at Appearance -> CSS Snippets -> Open snippets folder)\")",
+          "target": ".setDesc(\"如果切换，将默认链接样式应用于虚拟链接。此外，您可以使用影响`virtual-link`类的CSS片段来自定义链接样式。（在外观 -> CSS片段 -> 打开片段文件夹中查找CSS片段目录）\")"
+        },
+        {
+          "source": ".setDesc(\"If toggled, the default link style will be used for the conversion of virtual links to real links.\")",
+          "target": ".setDesc(\"如果切换，默认链接样式将用于将虚拟链接转换为真实链接。\")"
+        },
+        {
+          "source": ".setDesc(\"If toggled, the virtual links will be created as wiki-links instead of markdown links.\")",
+          "target": ".setDesc(\"如果切换，虚拟链接将以维基链接而不是Markdown链接的形式创建。\")"
+        },
+        {
+          "source": ".setDesc(\"The format of the generated links.\")",
+          "target": ".setDesc(\"生成链接的格式。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"List of directory names (separated by new line)\")",
+          "target": ".setPlaceholder(\"目录名称列表（由换行符分隔）\")"
+        },
+        {
+          "source": ".setTitle(\"[Virtual Linker] Converting link is not here.\")",
+          "target": ".setTitle(\"[虚拟链接器] 转换链接不存在。\")"
+        },
+        {
+          "source": ".setTitle(\"[Virtual Linker] Convert to real link\")",
+          "target": ".setTitle(\"[虚拟链接器] 转换为实际链接\")"
+        },
+        {
+          "source": ".setTitle(\"[Virtual Linker] Exclude this file\")",
+          "target": ".setTitle(\"[虚拟链接器] 排除此文件\")"
+        },
+        {
+          "source": ".setTitle(\"[Virtual Linker] Include this file\")",
+          "target": ".setTitle(\"[虚拟链接器] 包含此文件\")"
+        },
+        {
+          "source": ".setTitle(\"[Virtual Linker] Exclude this directory\")",
+          "target": ".setTitle(\"[虚拟链接器] 排除此目录\")"
+        },
+        {
+          "source": ".setTitle(\"[Virtual Linker] Include this directory\")",
+          "target": ".setTitle(\"[虚拟链接器] 包含此目录\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, there will be no links in the current line start which is followed immediately by the Input Method Editor (IME). This is the recommended setting if you are using IME (input method editor) for typing, e.g. for chinese characters, because instant linking might interfere with IME.\")",
+          "target": ".setDesc(\"如果激活，当前行开头紧接输入法编辑器 (IME) 的地方将不会出现链接。如果您使用输入法编辑器（如输入中文字符）进行输入，这是推荐的设置，因为即时链接可能会干扰输入法。\")"
+        },
+        {
+          "source": ".setName(\"Match only whole words\")",
+          "target": ".setName(\"仅匹配整个单词\")"
+        },
+        {
+          "source": ".setName(\"Match also beginning of words\")",
+          "target": ".setName(\"也匹配单词的开头\")"
+        },
+        {
+          "source": ".setDesc(\"If activated, only whole words are matched. Otherwise, every part of a word is found.\")",
+          "target": ".setDesc(\"如果激活，仅匹配整个单词。否则，会找到单词的每个部分。\")"
+        },
+        {
+          "source": "name: \"Convert All Virtual Links in Selection to Real Links\"",
+          "target": "name: \"将选中的所有虚拟链接转换为真实链接\""
+        }
+      ]
+    }
+  }
+}

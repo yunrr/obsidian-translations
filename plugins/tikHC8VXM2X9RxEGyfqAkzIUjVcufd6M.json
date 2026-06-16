@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "sidebar-highlights",
+    "version": "2.0.0",
+    "title": "Sidebar Highlights",
+    "description": "View and manage text highlights, comments on highlights, native comments, and collections for your highlights.",
+    "language": "zh-cn",
+    "supportedVersions": "1.20.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Collection name is required\")",
+          "target": "Notice(\"集合名称是必需的\")"
+        },
+        {
+          "source": "Notice(\"Collection not found\")",
+          "target": "Notice(\"未找到集合\")"
+        },
+        {
+          "source": "Notice(\"Could not find the highlight in the editor. It might have been modified.\")",
+          "target": "Notice(\"在编辑器中找不到高亮显示的内容。它可能已被修改。\")"
+        },
+        {
+          "source": "Notice(\"Could not insert inline footnote.\")",
+          "target": "Notice(\"无法插入内联脚注。\")"
+        },
+        {
+          "source": "Notice(\"Could not access the editor.\")",
+          "target": "Notice(\"无法访问编辑器。\")"
+        },
+        {
+          "source": "Notice(\"Could not find the highlight in the editor.\")",
+          "target": "Notice(\"在编辑器中找不到高亮显示的内容。\")"
+        },
+        {
+          "source": "Notice(\"No footnotes found for this highlight.\")",
+          "target": "Notice(\"此高亮内容无脚注。\")"
+        },
+        {
+          "source": "Notice(\"Footnote index out of range.\")",
+          "target": "Notice(\"脚注索引超出范围。\")"
+        },
+        {
+          "source": "Notice(\"Could not find footnote definition.\")",
+          "target": "Notice(\"无法找到脚注定义。\")"
+        },
+        {
+          "source": "Notice(\"No tags or collections found\")",
+          "target": "Notice(\"发现无标签或集合\")"
+        },
+        {
+          "source": "Notice(\"Please select some text first\")",
+          "target": "Notice(\"请先选择一些文本\")"
+        },
+        {
+          "source": "Notice(\"No active file\")",
+          "target": "Notice(\"无活动文件\")"
+        },
+        {
+          "source": "Notice(\"Highlight created\")",
+          "target": "Notice(\"已创建高亮\")"
+        },
+        {
+          "source": "Notice(`Settings backup created: ${i}`)",
+          "target": "Notice(`已创建集合备份：${i}`)"
+        },
+        {
+          "source": "Notice(\"Warning: Could not create settings backup\")",
+          "target": "Notice(\"警告：无法创建集合备份\")"
+        },
+        {
+          "source": "Notice(`Migrating settings from ${e} to ${i}...`)",
+          "target": "Notice(`正在从 ${e} 迁移集合设置至 ${i}...`)"
+        },
+        {
+          "source": "Notice(`Settings successfully migrated to ${i}`)",
+          "target": "Notice(`集合设置已成功迁移至 ${i}`)"
+        },
+        {
+          "source": "Notice(\"Error during settings migration. Please check console for details.\")",
+          "target": "Notice(\"集合设置迁移期间出错。请查看控制台了解详细信息。\")"
+        },
+        {
+          "source": "Notice(`Migration complete, but ${e} highlight reference(s)",
+          "target": "Notice(`迁移完成，但存在 ${e} 处高亮引用"
+        },
+        {
+          "source": "Notice(\"Migration successful! All collections and highlights preserved.\",3e3)",
+          "target": "Notice(\"迁移成功！所有集合及高亮内容均已保留。\",3e3)"
+        },
+        {
+          "source": "Notice(\"Warning: Could not validate collection references after migration.\")",
+          "target": "Notice(\"警告：迁移后无法验证集合引用\")"
+        },
+        {
+          "source": "alog()})",
+          "target": "alog()})"
+        },
+        {
+          "source": "alog(e.id)",
+          "target": "alog(e.id)"
+        },
+        {
+          "source": "alog(t)",
+          "target": "alog(t)"
+        },
+        {
+          "source": "alog(e)",
+          "target": "alog(e)"
+        },
+        {
+          "source": ".log(\"Collection validation results:\",{totalBrokenReferences:e,collectionsWithIssues:i,message:\"Some highlight references were lost during migration, likely due to file changes. Automatic cleanup completed.\"})",
+          "target": ".log(\"Collection validation results:\",{totalBrokenReferences:e,collectionsWithIssues:i,message:\"Some highlight references were lost during migration, likely due to file changes. Automatic cleanup completed.\"})"
+        },
+        {
+          "source": ".error(\"Failed to create backup:\",e)",
+          "target": ".error(\"Failed to create backup:\",e)"
+        },
+        {
+          "source": ".error(\"Migration failed:\",e)",
+          "target": ".error(\"Migration failed:\",e)"
+        },
+        {
+          "source": ".error(\"Collection validation failed:\",t)",
+          "target": ".error(\"Collection validation failed:\",t)"
+        },
+        {
+          "source": ".error(\"Error handling external settings change:\",t)",
+          "target": ".error(\"Error handling external settings change:\",t)"
+        },
+        {
+          "source": "name:\"Create highlight from selection\"",
+          "target": "name:\"从选中内容创建高亮\""
+        },
+        {
+          "source": "name:\"Toggle\"",
+          "target": "name:\"开启或关闭侧边栏高亮\""
+        },
+        {
+          "source": "name:`Go to ${t.name}`",
+          "target": "name:`Go to ${t.name}`"
+        },
+        {
+          "source": "text:\"Create a new collection\"",
+          "target": "text:\"新建集合\""
+        },
+        {
+          "source": "text:\"Cancel\"",
+          "target": "text:\"取消\""
+        },
+        {
+          "source": "text:\"Create collection\"",
+          "target": "text:\"新建集合\""
+        },
+        {
+          "source": "text:\"Edit collection\"",
+          "target": "text:\"编辑集合\""
+        },
+        {
+          "source": "text:\"Save changes\"",
+          "target": "text:\"保存更改\""
+        },
+        {
+          "source": "text:\"Add comment\"",
+          "target": "text:\"添加评论\""
+        },
+        {
+          "source": "text:\"Use #tag @collection (-# to exclude)\"",
+          "target": "text:\"Use #tag @collection (-# to exclude)\""
+        },
+        {
+          "source": "text:\"Matching: \"",
+          "target": "text:\"匹配：\""
+        },
+        {
+          "source": "text:\"No collections.\"",
+          "target": "text:\"无集合\""
+        },
+        {
+          "source": "text:`${h.highlightCount}`",
+          "target": "text:`${h.highlightCount}`"
+        },
+        {
+          "source": "text:`${h.nativeCommentsCount}`",
+          "target": "text:`${h.nativeCommentsCount}`"
+        },
+        {
+          "source": "text:`${h.fileCount}`",
+          "target": "text:`${h.fileCount}`"
+        },
+        {
+          "source": "text:\"No highlights in collection.\"",
+          "target": "text:\"No highlights in collection.\""
+        },
+        {
+          "source": "text:\"No file open.\"",
+          "target": "text:\"No file open.\""
+        },
+        {
+          "source": "text:`${this.currentPage+1}/${e}`",
+          "target": "text:`${this.currentPage+1}/${e}`"
+        },
+        {
+          "source": "text:`${d}`",
+          "target": "text:`${d}`"
+        },
+        {
+          "source": "text:`${g}`",
+          "target": "text:`${g}`"
+        },
+        {
+          "source": "text:`${h}`",
+          "target": "text:`${h}`"
+        },
+        {
+          "source": "text:`${this.currentGroupPage+1}/${i}`",
+          "target": "text:`${this.currentGroupPage+1}/${i}`"
+        },
+        {
+          "source": "text:`${C}`",
+          "target": "text:`${C}`"
+        },
+        {
+          "source": "text:`${x}`",
+          "target": "text:`${x}`"
+        },
+        {
+          "source": "text:`${p}`",
+          "target": "text:`${p}`"
+        },
+        {
+          "source": "text:\"Clear\"",
+          "target": "text:\"Clear\""
+        },
+        {
+          "source": "text:`#${a}`",
+          "target": "text:`#${a}`"
+        },
+        {
+          "source": "text:\"\",separator:!0}),s.length>0&&n.push(...s.map(a=>({id:`collection-${a.id}`,text:a.name,uncheckedIcon:\"",
+          "target": "text:\"\",separator:!0}),s.length>0&&n.push(...s.map(a=>({id:`collection-${a.id}`,text:a.name,uncheckedIcon:\""
+        },
+        {
+          "source": "text:\"New collection\"",
+          "target": "text:\"新集合\""
+        },
+        {
+          "source": "text:\"No collections available\"",
+          "target": "text:\"无可用集合\""
+        },
+        {
+          "source": "text:\"Excluded files\"",
+          "target": "text:\"排除的文件\""
+        },
+        {
+          "source": "text:\"Filter\"",
+          "target": "text:\"筛选\""
+        },
+        {
+          "source": "text:\"Add\"",
+          "target": "text:\"添加\""
+        },
+        {
+          "source": "text:\"Save\"",
+          "target": "text:\"保存\""
+        },
+        {
+          "source": ".setText(\"No excluded filter is applied right now. Add one below.\")",
+          "target": ".setText(\"当前未应用任何排除筛选器。请在下面添加一个。\")"
+        },
+        {
+          "source": ".setText(\"Files matching the following filters are currently excluded:\")",
+          "target": ".setText(\"当前已排除符合以下筛选条件的文件：\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset\")",
+          "target": ".setButtonText(\"重置\")"
+        },
+        {
+          "source": ".setButtonText(\"Manage\")",
+          "target": ".setButtonText(\"管理\")"
+        },
+        {
+          "source": ".setName(\"Collection name\")",
+          "target": ".setName(\"集合名称\")"
+        },
+        {
+          "source": ".setName(\"Collection description\")",
+          "target": ".setName(\"集合描述\")"
+        },
+        {
+          "source": ".setName(\"Display\")",
+          "target": ".setName(\"显示\")"
+        },
+        {
+          "source": ".setName(\"Show note titles in all notes and collections\")",
+          "target": ".setName(\"在所有笔记和集合中显示笔记标题\")"
+        },
+        {
+          "source": ".setName(\"Show note timestamps\")",
+          "target": ".setName(\"显示笔记时间戳\")"
+        },
+        {
+          "source": ".setName(\"Show highlight actions\")",
+          "target": ".setName(\"显示高亮操作项\")"
+        },
+        {
+          "source": ".setName(\"Show toolbar\")",
+          "target": ".setName(\"显示工具栏\")"
+        },
+        {
+          "source": ".setName(\"Auto-unfold on focus\")",
+          "target": ".setName(\"聚焦时自动展开\")"
+        },
+        {
+          "source": ".setName(\"Date format\")",
+          "target": ".setName(\"日期格式\")"
+        },
+        {
+          "source": ".setName(\"Minimum character count\")",
+          "target": ".setName(\"最小字符数\")"
+        },
+        {
+          "source": ".setName(\"Typography\")",
+          "target": ".setName(\"排版\")"
+        },
+        {
+          "source": ".setName(\"Main highlight text\")",
+          "target": ".setName(\"主要高亮文本\")"
+        },
+        {
+          "source": ".setName(\"Details text size\")",
+          "target": ".setName(\"详情文本大小\")"
+        },
+        {
+          "source": ".setName(\"Comment text size\")",
+          "target": ".setName(\"评论文本大小\")"
+        },
+        {
+          "source": ".setName(\"Styling\")",
+          "target": ".setName(\"样式\")"
+        },
+        {
+          "source": ".setName(`Highlight color: ${this.plugin.settings.customColors.yellow.toUpperCase()}`)",
+          "target": ".setName(`Highlight color: ${this.plugin.settings.customColors.yellow.toUpperCase()}`)"
+        },
+        {
+          "source": ".setName(`Highlight color: ${o.toUpperCase()}`)",
+          "target": ".setName(`Highlight color: ${o.toUpperCase()}`)"
+        },
+        {
+          "source": ".setName(\"Highlight name\")",
+          "target": ".setName(\"Highlight name\")"
+        },
+        {
+          "source": ".setName(`Highlight color: ${this.plugin.settings.customColors.red.toUpperCase()}`)",
+          "target": ".setName(`Highlight color: ${this.plugin.settings.customColors.red.toUpperCase()}`)"
+        },
+        {
+          "source": ".setName(`Highlight color: ${this.plugin.settings.customColors.teal.toUpperCase()}`)",
+          "target": ".setName(`Highlight color: ${this.plugin.settings.customColors.teal.toUpperCase()}`)"
+        },
+        {
+          "source": ".setName(`Highlight color: ${this.plugin.settings.customColors.blue.toUpperCase()}`)",
+          "target": ".setName(`Highlight color: ${this.plugin.settings.customColors.blue.toUpperCase()}`)"
+        },
+        {
+          "source": ".setName(`Highlight color: ${this.plugin.settings.customColors.green.toUpperCase()}`)",
+          "target": ".setName(`Highlight color: ${this.plugin.settings.customColors.green.toUpperCase()}`)"
+        },
+        {
+          "source": ".setName(\"Comments\")",
+          "target": ".setName(\"Comments\")"
+        },
+        {
+          "source": ".setName(\"Use inline footnotes by default\")",
+          "target": ".setName(\"默认使用内联脚注\")"
+        },
+        {
+          "source": ".setName(\"Select text on click\")",
+          "target": ".setName(\"点击时选择文本\")"
+        },
+        {
+          "source": ".setName(\"Filters\")",
+          "target": ".setName(\"筛选\")"
+        },
+        {
+          "source": ".setName(\"Exclude Excalidraw files\")",
+          "target": ".setName(\"排除 Excalidraw 文件\")"
+        },
+        {
+          "source": ".setName(\"Excluded files\")",
+          "target": ".setName(\"排除的文件\")"
+        },
+        {
+          "source": ".setDesc(\"The name of your collection (Required)\")",
+          "target": ".setDesc(\"你的集合名称（必填项）\")"
+        },
+        {
+          "source": ".setDesc(\"Provide more context about the collection (Optional)\")",
+          "target": ".setDesc(\"提供关于该集合的更多背景信息（选填项）\")"
+        },
+        {
+          "source": ".setDesc(\"Display the filename/note title below highlights when viewing All Notes or Collections.\")",
+          "target": ".setDesc(\"查看 “所有笔记” 或 “集合” 时，在高亮内容下方显示文件名 / 笔记标题\")"
+        },
+        {
+          "source": ".setDesc(\"Display creation timestamps for highlights.\")",
+          "target": ".setDesc(\"为高亮内容显示创建时间戳\")"
+        },
+        {
+          "source": ".setDesc(\"Display the actions area below each highlight (filename, stats, and buttons).\")",
+          "target": ".setDesc(\"在每个高亮内容下方显示操作区域（包含文件名、统计信息及操作按钮 ）\")"
+        },
+        {
+          "source": ".setDesc(\"Display the toolbar with search, grouping, and other action buttons.\")",
+          "target": ".setDesc(\"显示包含搜索、分组及其他操作按钮的工具栏\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically unfold content when focusing highlights from the sidebar.\")",
+          "target": ".setDesc(\"从侧边栏聚焦高亮内容时，自动展开对应内容\")"
+        },
+        {
+          "source": ".setDesc(\"Format string for timestamps using moment.js syntax (e.g., YYYY-MM-DD HH:mm, MMM DD YYYY, DD/MM/YYYY h:mm A).\")",
+          "target": ".setDesc(\"使用 moment.js 语法设置时间戳的格式化字符串（示例：YYYY-MM-DD HH:mm、MMM DD YYYY、DD/MM/YYYY h:mm A 这类格式 ）\")"
+        },
+        {
+          "source": ".setDesc(\"Hide highlights and native comments shorter than this character count from the sidebar (default 0).\")",
+          "target": ".setDesc(\"从侧边栏隐藏字符数量少于该数值的高亮内容和原生评论（默认值为 0 ，即不隐藏短内容 ）\")"
+        },
+        {
+          "source": ".setDesc(\"Adjust main highlight text size (default 11).\")",
+          "target": ".setDesc(\"调整主要高亮文本大小（默认值为 11 ）\")"
+        },
+        {
+          "source": ".setDesc(\"Adjust details text size (filename, line number, etc) (default 11).\")",
+          "target": ".setDesc(\"调整详情文本（文件名、行号等 ）大小（默认值为 11 ）\")"
+        },
+        {
+          "source": ".setDesc(\"Adjust comment text size (default 11).\")",
+          "target": ".setDesc(\"调整评论文本大小（默认值为 11 ）\")"
+        },
+        {
+          "source": ".setDesc(\"Customize the first highlight color.\")",
+          "target": ".setDesc(\"自定义第一种高亮颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Optional: Add a custom name for this color to use in Group By Color instead of the hex code.\")",
+          "target": ".setDesc(\"可选：为该颜色添加自定义名称，以便在 “按颜色分组” 功能中使用，替代十六进制颜色代码\")"
+        },
+        {
+          "source": ".setDesc(\"Customize the second highlight color.\")",
+          "target": ".setDesc(\"自定义第二种高亮颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Customize the third highlight color.\")",
+          "target": ".setDesc(\"自定义第三种高亮颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Customize the fourth highlight color.\")",
+          "target": ".setDesc(\"自定义第四种高亮颜色\")"
+        },
+        {
+          "source": ".setDesc(\"Customize the fifth highlight color.\")",
+          "target": ".setDesc(\"自定义第五种高亮颜色\")"
+        },
+        {
+          "source": ".setDesc(\"When adding comments via the sidebar, use inline footnotes (^[comment]) instead of standard footnotes ([^ref]: comment).\")",
+          "target": ".setDesc(\"通过侧边栏添加评论时，使用内联脚注（格式为 ^[comment] ），而非标准脚注（格式为 [^ref]: comment ）\")"
+        },
+        {
+          "source": ".setDesc(\"When clicking a comment, select the comment instead of positioning the cursor in front of it.\")",
+          "target": ".setDesc(\"点击评论时，直接选中评论文本，而非将光标定位到评论前方\")"
+        },
+        {
+          "source": ".setDesc(\"Skip .excalidraw files when scanning for highlights. This prevents highlights from being detected in Excalidraw drawing files.\")",
+          "target": ".setDesc(\"扫描高亮内容时跳过 .excalidraw 文件，避免在 Excalidraw 绘图文件中检测到高亮内容\")"
+        },
+        {
+          "source": ".setDesc(\"Excluded files or folders will be hidden from Sidebar Highlights.\")",
+          "target": ".setDesc(\"被排除的文件或文件夹将从侧边栏高亮中隐藏\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Important Highlights\")",
+          "target": ".setPlaceholder(\"Important Highlights\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Research, etc.\")",
+          "target": ".setPlaceholder(\"Research, etc.\")"
+        },
+        {
+          "source": ".setPlaceholder(\"YYYY-MM-DD HH:mm\")",
+          "target": ".setPlaceholder(\"YYYY-MM-DD HH:mm\")"
+        },
+        {
+          "source": ".setPlaceholder(\"0\")",
+          "target": ".setPlaceholder(\"0\")"
+        },
+        {
+          "source": ".setPlaceholder(\"11\")",
+          "target": ".setPlaceholder(\"11\")"
+        },
+        {
+          "source": ".setPlaceholder('e.g., \"Important\", \"Research\"')",
+          "target": ".setPlaceholder('e.g., \"Important\", \"Research\"')"
+        },
+        {
+          "source": ".setTooltip(\"Reset to default yellow (#ffd700)\")",
+          "target": ".setTooltip(\"Reset to default yellow (#ffd700)\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset to default red (#ff6b6b)\")",
+          "target": ".setTooltip(\"Reset to default red (#ff6b6b)\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset to default teal (#4ecdc4)\")",
+          "target": ".setTooltip(\"Reset to default teal (#4ecdc4)\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset to default blue (#45b7d1)\")",
+          "target": ".setTooltip(\"Reset to default blue (#45b7d1)\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset to default green (#96ceb4)\")",
+          "target": ".setTooltip(\"Reset to default green (#96ceb4)\")"
+        },
+        {
+          "source": ".setTitle(\"Open in new tab\")",
+          "target": ".setTitle(\"Open in new tab\")"
+        },
+        {
+          "source": ".setTitle(\"Open to the right\")",
+          "target": ".setTitle(\"Open to the right\")"
+        },
+        {
+          "source": ".setTitle(\"None\")",
+          "target": ".setTitle(\"None\")"
+        },
+        {
+          "source": ".setTitle(\"Color\")",
+          "target": ".setTitle(\"Color\")"
+        },
+        {
+          "source": ".setTitle(\"Highlight comments \\u2191\")",
+          "target": ".setTitle(\"Highlight comments \\u2191\")"
+        },
+        {
+          "source": ".setTitle(\"Highlight comments \\u2193\")",
+          "target": ".setTitle(\"Highlight comments \\u2193\")"
+        },
+        {
+          "source": ".setTitle(\"Date created \\u2191\")",
+          "target": ".setTitle(\"Date created \\u2191\")"
+        },
+        {
+          "source": ".setTitle(\"Date created \\u2193\")",
+          "target": ".setTitle(\"Date created \\u2193\")"
+        },
+        {
+          "source": ".setTitle(\"Parent\")",
+          "target": ".setTitle(\"Parent\")"
+        },
+        {
+          "source": ".setTitle(\"Collection\")",
+          "target": ".setTitle(\"集合\")"
+        },
+        {
+          "source": ".setTitle(\"Filename\")",
+          "target": ".setTitle(\"文件名\")"
+        },
+        {
+          "source": ".setTitle(\"Edit\")",
+          "target": ".setTitle(\"编辑\")"
+        },
+        {
+          "source": ".setTitle(\"Delete\")",
+          "target": ".setTitle(\"删除\")"
+        },
+        {
+          "source": ".setTitle(\"Create highlight\")",
+          "target": ".setTitle(\"创建高亮\")"
+        }
+      ]
+    }
+  }
+}

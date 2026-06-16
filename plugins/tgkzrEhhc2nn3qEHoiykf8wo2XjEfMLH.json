@@ -1,0 +1,775 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "vault-explorer",
+    "version": "2.0.0",
+    "title": "Vault Explorer",
+    "description": "Explore your vault in visual format",
+    "language": "zh-cn",
+    "supportedVersions": "1.46.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\n          \"This feature requires a premium Vault Explorer license.\"\n        )",
+          "target": "Notice(\n          \"此功能需要高级 Vault Explorer 许可证。\"\n        )"
+        },
+        {
+          "source": "Notice(\"Vault Explorer: Image cache cleared\")",
+          "target": "Notice(\"Vault Explorer：图像缓存已清除\")"
+        },
+        {
+          "source": "Notice(\"Vault Explorer: Failed to clear image cache\")",
+          "target": "Notice(\"Vault Explorer：清除图像缓存失败\")"
+        },
+        {
+          "source": "Notice(\"Vault Explorer: error loading favorites\")",
+          "target": "Notice(\"Vault Explorer：加载收藏夹时出错\")"
+        },
+        {
+          "source": "Notice(\"Vault Explorer: error saving favorites\")",
+          "target": "Notice(\"Vault Explorer：保存收藏夹时出错\")"
+        },
+        {
+          "source": "Notice(\"Vault Explorer: error creating config directory\")",
+          "target": "Notice(\"Vault Explorer：创建配置目录时出错\")"
+        },
+        {
+          "source": "Notice(\"Vault Explorer: error creating favorites file\")",
+          "target": "Notice(\"Vault Explorer：创建收藏夹文件时出错\")"
+        },
+        {
+          "source": ".log(`Upgrading settings from version ${from} to ${to}`)",
+          "target": ".log(`将设置从版本${from}升级到${to}`)"
+        },
+        {
+          "source": ".log(\"Cleaning up old keys from local storage\")",
+          "target": ".log(\"从本地存储中清理旧密钥\")"
+        },
+        {
+          "source": ".log(\"Clearing image cache\")",
+          "target": ".log(\"清除图像缓存\")"
+        },
+        {
+          "source": ".error(\n      {\n        fileName: \"social-media-image.ts\",\n        functionName: \"fetchSocialMediaImage\",\n        message: \"failed to fetch\"\n      },\n      error\n    )",
+          "target": ".error(\n      {\n        fileName: \"social-media-image.ts\",\n        functionName: \"fetchSocialMediaImage\",\n        message: \"获取失败\"\n      },\n      error\n    )"
+        },
+        {
+          "source": ".error(\n      {\n        fileName: \"smi-cache.ts\",\n        functionName: \"clearSMICache\",\n        message: \"failed to clear cache\"\n      },\n      error.message\n    )",
+          "target": ".error(\n      {\n        fileName: \"smi-cache.ts\",\n        functionName: \"clearSMICache\",\n        message: \"清除缓存失败\"\n      },\n      error.message\n    )"
+        },
+        {
+          "source": ".error(\n        {\n          fileName: \"favorites-store.ts\",\n          functionName: \"load\",\n          message: \"error loading favorites cache\"\n        },\n        error.message\n      )",
+          "target": ".error(\n        {\n          fileName: \"favorites-store.ts\",\n          functionName: \"load\",\n          message: \"加载收藏夹缓存时出错\"\n        },\n        error.message\n      )"
+        },
+        {
+          "source": ".error(\n        {\n          fileName: \"favorites-store.ts\",\n          functionName: \"save\",\n          message: \"error saving favorites cache\"\n        },\n        error.message\n      )",
+          "target": ".error(\n        {\n          fileName: \"favorites-store.ts\",\n          functionName: \"save\",\n          message: \"保存收藏夹缓存时出错\"\n        },\n        error.message\n      )"
+        },
+        {
+          "source": ".error(\n        {\n          fileName: \"favorites-store.ts\",\n          functionName: \"load\",\n          message: \"error creating config directory\"\n        },\n        error.message\n      )",
+          "target": ".error(\n        {\n          fileName: \"favorites-store.ts\",\n          functionName: \"load\",\n          message: \"创建配置目录时出错\"\n        },\n        error.message\n      )"
+        },
+        {
+          "source": ".error(\n        {\n          fileName: \"favorites-store.ts\",\n          functionName: \"load\",\n          message: \"error creating favorites file\"\n        },\n        error.message\n      )",
+          "target": ".error(\n        {\n          fileName: \"favorites-store.ts\",\n          functionName: \"load\",\n          message: \"创建收藏夹文件时出错\"\n        },\n        error.message\n      )"
+        },
+        {
+          "source": ".error({\n        fileName: \"app/index.svelte\",\n        functionName: \"handleCoverImageFitChange\",\n        message: \"file not found. returning...\"\n      })",
+          "target": ".error({\n        fileName: \"app/index.svelte\",\n        functionName: \"handleCoverImageFitChange\",\n        message: \"找不到文件。返回……\"\n      })"
+        },
+        {
+          "source": "name: `Group ${groups.length + 1}`",
+          "target": "name: `组别 ${groups.length + 1}`"
+        },
+        {
+          "source": "name: \"Open vault explorer view\"",
+          "target": "name: \"打开vault explorer视图\""
+        },
+        {
+          "source": "text: \"Premium features are enabled.\"",
+          "target": "text: \"高级功能已启用。\""
+        },
+        {
+          "source": "text: \"Validating key...\"",
+          "target": "text: \"正在验证密钥……\""
+        },
+        {
+          "source": "text: \"Invalid key.\"",
+          "target": "text: \"无效密钥。\""
+        },
+        {
+          "source": "text: \"Property used to store a creation date. This must be a date or datetime property.\"",
+          "target": "text: \"用于存储创建日期的属性。这必须是日期或日期时间属性。\""
+        },
+        {
+          "source": "text: \"If set, the property will be preferred over the file's creation date.\"",
+          "target": "text: \"如果设置，则该属性将优先于文件的创建日期。\""
+        },
+        {
+          "source": "text: \"Property used to store a modification date. This must be a date or datetime property.\"",
+          "target": "text: \"用于存储修改日期的属性。这必须是日期或日期时间属性。\""
+        },
+        {
+          "source": "text: \"If set, the property will be preferred over the file's modification date.\"",
+          "target": "text: \"如果设置，则该属性将优先于文件的修改日期。\""
+        },
+        {
+          "source": "text: \"Set the plugin configuration folder.\"",
+          "target": "text: \"设置插件配置文件夹。\""
+        },
+        {
+          "source": "text: \"Restart Obsidian after changing this setting.\"",
+          "target": "text: \"更改此设置后重新启动 Obsidian。\""
+        },
+        {
+          "source": ".setButtonText(\"Clear cache\")",
+          "target": ".setButtonText(\"清除缓存\")"
+        },
+        {
+          "source": ".setName(\"General\")",
+          "target": ".setName(\"常规\")"
+        },
+        {
+          "source": ".setName(\"File icons\")",
+          "target": ".setName(\"文件图标\")"
+        },
+        {
+          "source": ".setName(\"Load tags from body\")",
+          "target": ".setName(\"从正文加载标签\")"
+        },
+        {
+          "source": ".setName(\"Page size\")",
+          "target": ".setName(\"页面大小\")"
+        },
+        {
+          "source": ".setName(\"Context menu\")",
+          "target": ".setName(\"功能菜单\")"
+        },
+        {
+          "source": ".setName(\"Confirm before delete\")",
+          "target": ".setName(\"删除前确认\")"
+        },
+        {
+          "source": ".setName(\"Filters\")",
+          "target": ".setName(\"过滤器\")"
+        },
+        {
+          "source": ".setName(\"Search filter\")",
+          "target": ".setName(\"搜索过滤器\")"
+        },
+        {
+          "source": ".setName(\"Sort filter\")",
+          "target": ".setName(\"排序过滤器\")"
+        },
+        {
+          "source": ".setName(\"Custom filter\")",
+          "target": ".setName(\"自定义过滤器\")"
+        },
+        {
+          "source": ".setName(\"Views\")",
+          "target": ".setName(\"视图\")"
+        },
+        {
+          "source": ".setName(\"Grid view\")",
+          "target": ".setName(\"网格视图\")"
+        },
+        {
+          "source": ".setName(\"List view\")",
+          "target": ".setName(\"列表视图\")"
+        },
+        {
+          "source": ".setName(\"Feed view\")",
+          "target": ".setName(\"Feed视图\")"
+        },
+        {
+          "source": ".setName(\"Table view\")",
+          "target": ".setName(\"表格视图\")"
+        },
+        {
+          "source": ".setName(\"Load social media image\")",
+          "target": ".setName(\"加载社交媒体图片\")"
+        },
+        {
+          "source": ".setName(\"Cover image fit\")",
+          "target": ".setName(\"封面图像大小\")"
+        },
+        {
+          "source": ".setName(\"Tags\")",
+          "target": ".setName(\"标签\")"
+        },
+        {
+          "source": ".setName(\"Remove H1\")",
+          "target": ".setName(\"删除H1\")"
+        },
+        {
+          "source": ".setName(\"Collapse style\")",
+          "target": ".setName(\"折叠样式\")"
+        },
+        {
+          "source": ".setName(\"Large screen line clamp\")",
+          "target": ".setName(\"大屏幕行数\")"
+        },
+        {
+          "source": ".setName(\"Medium screen line clamp\")",
+          "target": ".setName(\"中等屏幕行数\")"
+        },
+        {
+          "source": ".setName(\"Small screen line clamp\")",
+          "target": ".setName(\"小屏幕行数\")"
+        },
+        {
+          "source": ".setName(\"Built-in properties\")",
+          "target": ".setName(\"内置属性\")"
+        },
+        {
+          "source": ".setName(\"Cover image property\")",
+          "target": ".setName(\"封面图片属性\")"
+        },
+        {
+          "source": ".setName(\"Cover image fit property\")",
+          "target": ".setName(\"封面图像匹配属性\")"
+        },
+        {
+          "source": ".setName(\"URL property\")",
+          "target": ".setName(\"URL属性\")"
+        },
+        {
+          "source": ".setName(\"Creation date property\")",
+          "target": ".setName(\"创建日期属性\")"
+        },
+        {
+          "source": ".setName(\"Modification date property\")",
+          "target": ".setName(\"创建日期属性\")"
+        },
+        {
+          "source": ".setName(\"Custom properties\")",
+          "target": ".setName(\"自定义属性\")"
+        },
+        {
+          "source": ".setName(\"Custom property 1\")",
+          "target": ".setName(\"自定义属性 1\")"
+        },
+        {
+          "source": ".setName(\"Custom property 2\")",
+          "target": ".setName(\"自定义属性 2\")"
+        },
+        {
+          "source": ".setName(\"Custom property 3\")",
+          "target": ".setName(\"自定义属性 3\")"
+        },
+        {
+          "source": ".setName(\"Updates\")",
+          "target": ".setName(\"更新\")"
+        },
+        {
+          "source": ".setName(\"Clock updates\")",
+          "target": ".setName(\"更新时钟\")"
+        },
+        {
+          "source": ".setName(\"Premium\")",
+          "target": ".setName(\"高级\")"
+        },
+        {
+          "source": ".setName(\"Debugging\")",
+          "target": ".setName(\"调试\")"
+        },
+        {
+          "source": ".setName(\"Log level\")",
+          "target": ".setName(\"日志级别\")"
+        },
+        {
+          "source": ".setName(\"Data\")",
+          "target": ".setName(\"数据\")"
+        },
+        {
+          "source": ".setName(\"Config folder\")",
+          "target": ".setName(\"配置文件夹\")"
+        },
+        {
+          "source": ".setName(\"Image cache\")",
+          "target": ".setName(\"图像缓存\")"
+        },
+        {
+          "source": ".setDesc(\"Display an icon next to the file name.\")",
+          "target": ".setDesc(\"在文件名旁边显示一个图标。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Load tags from the both the tags property and the body of a markdown note.\"\n    )",
+          "target": ".setDesc(\n      \"从tags属性和markdown注释的正文中加载标签。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Number of items to display per page.\")",
+          "target": ".setDesc(\"每页显示的项目数。\")"
+        },
+        {
+          "source": ".setDesc(\"Ask for confirmation before deleting a file.\")",
+          "target": ".setDesc(\"在删除文件之前要求确认。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"If a non-image url is found, try to load its social media image\"\n    )",
+          "target": ".setDesc(\n      \"如果找到非图像url，请尝试加载其社交媒体图像\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Set the default cover image fit\")",
+          "target": ".setDesc(\"设置默认的封面图像大小\")"
+        },
+        {
+          "source": ".setDesc(\"Display tags for each list item\")",
+          "target": ".setDesc(\"显示每个列表项的标签\")"
+        },
+        {
+          "source": ".setDesc(\"Remove level 1 headers from feed content\")",
+          "target": ".setDesc(\"移除 feed 内容中的一级标题\")"
+        },
+        {
+          "source": ".setDesc(\"Set the collapse style for feed content\")",
+          "target": ".setDesc(\"设置 feed 内容的折叠样式\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Number of lines to clamp on large screens (>= 1024px) (2-8, default 5)\"\n    )",
+          "target": ".setDesc(\n      \"大屏幕上要显示的行数（>=1024px）（2-8，默认值5）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Number of lines to clamp on medium screens (>= 600px and < 1024px) (2-8, default 3)\"\n    )",
+          "target": ".setDesc(\n      \"中等屏幕（>=600px和<1024px）上要显示的行数（2-8，默认3）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Number of lines to clamp on small screens (< 600px) (2-8, default 2)\"\n    )",
+          "target": ".setDesc(\n      \"小屏幕（<600px）上要显示的行数（2-8，默认2）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Property used to store a cover image. This must be a text property.\"\n    )",
+          "target": ".setDesc(\n      \"用于存储封面图像的属性。该属性必须是文本属性。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Property used to store the cover image fit. This must be a text property.\"\n    )",
+          "target": ".setDesc(\n      \"用于存储封面图像大小的属性。该属性必须是文本属性。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Property used to store a URL. This must be a text property.\"\n    )",
+          "target": ".setDesc(\n      \"用于存储 URL 的属性。该属性必须是文本属性。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"First custom property. This must be a text property.\")",
+          "target": ".setDesc(\"第一个自定义属性。该属性必须是文本属性。\")"
+        },
+        {
+          "source": ".setDesc(\"Second custom property. This must be a text property.\")",
+          "target": ".setDesc(\"第二个自定义属性。该属性必须是文本属性。\")"
+        },
+        {
+          "source": ".setDesc(\"Third custom property. This must be a text property.\")",
+          "target": ".setDesc(\"第三个自定义属性。该属性必须是文本属性。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Update time values every minute. This will refresh the Vault Explorer view\"\n    )",
+          "target": ".setDesc(\n      \"每分钟更新一次时间值。这将刷新 Vault Explorer 视图\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Set the log level. Please use trace to see all log messages.\"\n    )",
+          "target": ".setDesc(\n      \"设置日志级别。请使用跟踪功能查看所有日志信息。\"\n    )"
+        },
+        {
+          "source": ".setTooltip(\"Restore default\")",
+          "target": ".setTooltip(\"恢复默认设置\")"
+        },
+        {
+          "source": ".setTitle(\"Open in new tab\")",
+          "target": ".setTitle(\"在新标签页中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Open to the right\")",
+          "target": ".setTitle(\"在右侧打开\")"
+        },
+        {
+          "source": ".setTitle(\"Open in new window\")",
+          "target": ".setTitle(\"在新窗口中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Cover\")",
+          "target": ".setTitle(\"封面\")"
+        },
+        {
+          "source": ".setTitle(\"Contain\")",
+          "target": ".setTitle(\"包含\")"
+        },
+        {
+          "source": ".setTitle(\"Delete\")",
+          "target": ".setTitle(\"删除\")"
+        },
+        {
+          "source": ".setTitle(\"File name (A-Z)\")",
+          "target": ".setTitle(\"文件名（A-Z）\")"
+        },
+        {
+          "source": ".setTitle(\"File name (Z-A)\")",
+          "target": ".setTitle(\"文件名（Z-A）\")"
+        },
+        {
+          "source": ".setTitle(\"Modified time (new to old)\")",
+          "target": ".setTitle(\"修改时间（从新到旧）\")"
+        },
+        {
+          "source": ".setTitle(\"Modified time (old to new)\")",
+          "target": ".setTitle(\"修改时间（从旧到新）\")"
+        },
+        {
+          "source": ".setTitle(\"Created time (new to old)\")",
+          "target": ".setTitle(\"创建时间（从新到旧）\")"
+        },
+        {
+          "source": ".setTitle(\"Created time (old to new)\")",
+          "target": ".setTitle(\"创建时间（从旧到新）\")"
+        },
+        {
+          "source": ".setTitle(\"Random\")",
+          "target": ".setTitle(\"随机\")"
+        },
+        {
+          "source": ".setTitle(\"Duplicate\")",
+          "target": ".setTitle(\"复制\")"
+        },
+        {
+          "source": ".addRibbonIcon(\"compass\", \"Open vault explorer\"",
+          "target": ".addRibbonIcon(\"compass\", \"打开库资源管理器（Vault Explorer）\""
+        },
+        {
+          "source": "return \"Vault Explorer\"",
+          "target": "return \"库资源管理器（Vault Explorer）\""
+        },
+        {
+          "source": "return \"List\"",
+          "target": "return \"列表\""
+        },
+        {
+          "source": "return \"Dashboard\"",
+          "target": "return \"仪表盘\""
+        },
+        {
+          "source": "return \"Grid\";",
+          "target": "return \"画廊\";"
+        },
+        {
+          "source": "return \"Table\";",
+          "target": "return \"表格\";"
+        },
+        {
+          "source": "return \"Recommended\";",
+          "target": "return \"推荐\";"
+        },
+        {
+          "source": "return \"Related\";",
+          "target": "return \"相关\";"
+        },
+        {
+          "source": "key: \"extension\", label: \"Extension\"",
+          "target": "key: \"extension\", label: \"扩展名\""
+        },
+        {
+          "source": "key: \"basePath\", label: \"Folder\"",
+          "target": "key: \"basePath\", label: \"文件夹\""
+        },
+        {
+          "source": "key: \"tags\", label: \"Tags\"",
+          "target": "key: \"tags\", label: \"标签\""
+        },
+        {
+          "source": "label: \"Created\"",
+          "target": "label: \"创建时间\""
+        },
+        {
+          "source": "label: \"Modified\"",
+          "target": "label: \"修改时间\""
+        },
+        {
+          "source": "label: \"Name\"",
+          "target": "label: \"名称\""
+        },
+        {
+          "source": ".textContent = \"Learn more\"",
+          "target": ".textContent = \"了解更多\""
+        },
+        {
+          "source": ".textContent = \"This feature requires a premium license\"",
+          "target": ".textContent = \"此功能需要高级许可证\""
+        },
+        {
+          "source": ".textContent = \"select a property\"",
+          "target": ".textContent = \"选择属性\""
+        },
+        {
+          "source": ".textContent = \"No results found\"",
+          "target": ".textContent = \"未找到结果\""
+        },
+        {
+          "source": ".textContent = \"Clear\"",
+          "target": ".textContent = \"清除\""
+        },
+        {
+          "source": ".textContent = \"No rules to display.\"",
+          "target": ".textContent = \"没有要显示的规则。\""
+        },
+        {
+          "source": ".textContent = \"Custom filter\"",
+          "target": ".textContent = \"自定义过滤器\""
+        },
+        {
+          "source": ".textContent = \"No groups to display\"",
+          "target": ".textContent = \"没有要显示的组\""
+        },
+        {
+          "source": ".textContent = \"Configure\"",
+          "target": ".textContent = \"配置\""
+        },
+        {
+          "source": ".textContent = \"Remove key\"",
+          "target": ".textContent = \"删除密钥\""
+        },
+        {
+          "source": ".textContent = \"License key\"",
+          "target": ".textContent = \"许可证密钥\""
+        },
+        {
+          "source": ".textContent = \"Enter your license key to enable premium features.\"",
+          "target": ".textContent = \"输入您的许可证密钥以启用高级功能。\""
+        },
+        {
+          "source": ".textContent = \"Cover image sources\"",
+          "target": ".textContent = \"封面图片来源\""
+        },
+        {
+          "source": "ariaLabel: \"Search\"",
+          "target": "ariaLabel: \"搜索\""
+        },
+        {
+          "source": "ariaLabel: \"Change sort order\"",
+          "target": "ariaLabel: \"更改排序顺序\""
+        },
+        {
+          "source": "ariaLabel: \"First page\"",
+          "target": "ariaLabel: \"首页\""
+        },
+        {
+          "source": "ariaLabel: \"Previous page\"",
+          "target": "ariaLabel: \"上一页\""
+        },
+        {
+          "source": "ariaLabel: \"Next page\"",
+          "target": "ariaLabel: \"下一页\""
+        },
+        {
+          "source": "ariaLabel: \"Last page\"",
+          "target": "ariaLabel: \"最后一页\""
+        },
+        {
+          "source": "ariaLabel: \"Rule actions\"",
+          "target": "ariaLabel: \"规则操作\""
+        },
+        {
+          "source": "ariaLabel: \"Delete group\"",
+          "target": "ariaLabel: \"删除组\""
+        },
+        {
+          "source": "ariaLabel: \"Reshuffle files\"",
+          "target": "ariaLabel: \"重新整理文件\""
+        },
+        {
+          "source": "text(\"selectedTab\"",
+          "target": "text(\"已选择选项卡\""
+        },
+        {
+          "source": "text(\"registerTab\"",
+          "target": "text(\"注册表选项卡\""
+        },
+        {
+          "source": "text(\"unregisterTab\"",
+          "target": "text(\"取消注册表选项卡\""
+        },
+        {
+          "source": "text(\"Add group\"",
+          "target": "text(\"添加组\""
+        },
+        {
+          "source": "text(\"Add rule\"",
+          "target": "text(\"添加规则\""
+        },
+        {
+          "source": "Text(\"Clear cache\"",
+          "target": "Text(\"清除缓存\""
+        },
+        {
+          "source": "return \"content\"",
+          "target": "return \"内容\""
+        },
+        {
+          "source": "return \"file name\"",
+          "target": "return \"文件名\""
+        },
+        {
+          "source": "return \"folder\"",
+          "target": "return \"文件夹\""
+        },
+        {
+          "source": "return \"property\"",
+          "target": "return \"属性\""
+        },
+        {
+          "source": "return \"is\"",
+          "target": "return \"是\""
+        },
+        {
+          "source": "return \"is not\"",
+          "target": "return \"不是\""
+        },
+        {
+          "source": "return \"contains\"",
+          "target": "return \"包含\""
+        },
+        {
+          "source": "return \"does not contain\"",
+          "target": "return \"不包含\""
+        },
+        {
+          "source": "return \"starts with\"",
+          "target": "return \"开头为\""
+        },
+        {
+          "source": "return \"ends with\"",
+          "target": "return \"结尾为\""
+        },
+        {
+          "source": "return \"Invalid URL\"",
+          "target": "return \"无效的 URL\""
+        },
+        {
+          "source": "return \"Just now\"",
+          "target": "return \"刚刚\""
+        },
+        {
+          "source": "return `${diffInMinutes} minutes ago`",
+          "target": "return `${diffInMinutes} 分钟前`"
+        },
+        {
+          "source": "return `${diffInHours} hours ago`",
+          "target": "return `${diffInHours} 小时前`"
+        },
+        {
+          "source": "return `Yesterday at ${time.format(\"h:mm A\")}`",
+          "target": "return `在昨天 ${time.format(\"h:mm A\")}`"
+        },
+        {
+          "source": "return \"one week ago\"",
+          "target": "return \"一周前\""
+        },
+        {
+          "source": "return \"one week from now\"",
+          "target": "return \"一周后\""
+        },
+        {
+          "source": "return \"one month ago\"",
+          "target": "return \"一月前\""
+        },
+        {
+          "source": "return \"one month from now\"",
+          "target": "return \"一月后\""
+        },
+        {
+          "source": "return \"exists\"",
+          "target": "return \"存在\""
+        },
+        {
+          "source": "return \"does not exist\"",
+          "target": "return \"不存在\""
+        },
+        {
+          "source": "return \"is empty\"",
+          "target": "return \"是空的\""
+        },
+        {
+          "source": "return \"is not empty\"",
+          "target": "return \"不是空的\""
+        },
+        {
+          "source": "return \"is after\"",
+          "target": "return \"是之后\""
+        },
+        {
+          "source": "return \"is before\"",
+          "target": "return \"是之前\""
+        },
+        {
+          "source": "return \"is on or after\"",
+          "target": "return \"在或之后\""
+        },
+        {
+          "source": "return \"is on or before\"",
+          "target": "return \"在或之前\""
+        },
+        {
+          "source": "return \"Image property\"",
+          "target": "return \"图像属性\""
+        },
+        {
+          "source": "return \"URL property\"",
+          "target": "return \"URL 属性\""
+        },
+        {
+          "source": "return \"Frontmatter\"",
+          "target": "return \"前置属性\""
+        },
+        {
+          "source": "\"Select a property\"",
+          "target": "\"选择一个属性\""
+        },
+        {
+          "source": "PropertyType2[\"CHECKBOX\"] = \"checkbox\"",
+          "target": "PropertyType2[\"CHECKBOX\"] = \"复选框\""
+        },
+        {
+          "source": "PropertyType2[\"TEXT\"] = \"text\"",
+          "target": "PropertyType2[\"TEXT\"] = \"文本\""
+        },
+        {
+          "source": "PropertyType2[\"NUMBER\"] = \"number\"",
+          "target": "PropertyType2[\"NUMBER\"] = \"数字\""
+        },
+        {
+          "source": "PropertyType2[\"LIST\"] = \"list\"",
+          "target": "PropertyType2[\"LIST\"] = \"列表\""
+        },
+        {
+          "source": "PropertyType2[\"DATE\"] = \"date\"",
+          "target": "PropertyType2[\"DATE\"] = \"日期\""
+        },
+        {
+          "source": "PropertyType2[\"DATETIME\"] = \"datetime\"",
+          "target": "PropertyType2[\"DATETIME\"] = \"日期时间\""
+        },
+        {
+          "source": "\"Search...\"",
+          "target": "\"搜索……\""
+        },
+        {
+          "source": "\"Cover\"",
+          "target": "\"填充\""
+        },
+        {
+          "source": "\"Contain\"",
+          "target": "\"适应\""
+        },
+        {
+          "source": "\"No new lines\"",
+          "target": "\"没有新行\""
+        },
+        {
+          "source": "\"No extra new lines\"",
+          "target": "\"没有额外的行\""
+        }
+      ]
+    }
+  }
+}
