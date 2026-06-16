@@ -1,0 +1,823 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "easy-git",
+    "version": "1.0.0",
+    "title": "Easy Git",
+    "description": "Easy Git Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.4.10",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Easy Git: failed to read plugin data, using defaults.",
+          "target": "Easy Git：读取插件数据失败，使用默认值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[Easy Git] sync results",
+          "target": "[Easy Git] 同步结果"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear log",
+          "target": "清除日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "+ Add destination",
+          "target": "+ 添加目标"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy code",
+          "target": "复制代码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open browser",
+          "target": "打开浏览器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sign in",
+          "target": "登录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test",
+          "target": "测试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "+ Add mapping",
+          "target": "+ 添加映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "View sync log",
+          "target": "查看同步日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open",
+          "target": "打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open sync log",
+          "target": "打开同步日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Keep local",
+          "target": "保留本地"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel sync",
+          "target": "取消同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Apply resolutions",
+          "target": "应用解决方案"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display name for this mapping",
+          "target": "此映射的显示名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder inside your Obsidian vault. Pick the vault root for whole-vault sync.",
+          "target": "Obsidian 库内的文件夹。选择库根目录以进行整个库的同步。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which way changes flow",
+          "target": "变更流向"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When to sync automatically",
+          "target": "自动同步时机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How often to sync (only used when Auto mode = On interval)",
+          "target": "同步频率（仅在自动模式 = 定时模式时使用）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paste a token with the `repo` scope. Create one at github.com/settings/tokens (fine-grained tokens with content read/write also work).",
+          "target": "粘贴一个具有 `repo` 权限的令牌。在 github.com/settings/tokens 创建（具有内容读写权限的细粒度令牌也可使用）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Open a one-time code in your browser. Easier than copying a PAT. Requires the plugin's OAuth App client_id to be configured.",
+          "target": "在浏览器中打开一次性代码。比复制个人访问令牌更简单。需要配置插件的 OAuth 应用 client_id。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Verifies the current token works.",
+          "target": "验证当前令牌是否有效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When local was clearly edited after the last sync (2s grace), keep local without asking. Safe direction only — the reverse stays a user decision.",
+          "target": "当本地文件在上次同步后明显被编辑（2秒宽限期）时，无需询问直接保留本地版本。仅适用于安全方向——反向操作仍需用户决定。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For Markdown and other text files where both sides edited disjoint regions, merge automatically using GitHub's stored base blob as the common ancestor.",
+          "target": "对于 Markdown 和其他文本文件，当双方编辑了不重叠的区域时，使用 GitHub 存储的基础 blob 作为共同祖先自动合并。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "0 keeps every snapshot forever. Pruning runs at the end of each sync that touches the mapping.",
+          "target": "0 表示永远保留所有快照。清理操作在每次涉及该映射的同步结束时运行。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Reveal .easy-git-backup/ in the vault file explorer.",
+          "target": "在库文件资源管理器中显示 .easy-git-backup/ 文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Tokens: {date}, {datetime}, {n}, {added}, {modified}, {deleted}, {files}, {vault}, {mapping}",
+          "target": "令牌：{date}, {datetime}, {n}, {added}, {modified}, {deleted}, {files}, {vault}, {mapping}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Files larger than this are skipped (GitHub blob limit is 100 MB).",
+          "target": "大于此大小的文件将被跳过（GitHub blob 限制为 100 MB）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One glob per line. Matched against vault-relative paths.",
+          "target": "每行一个 glob 模式。与库相对路径进行匹配。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show a Notice after each sync run.",
+          "target": "每次同步运行后显示通知。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Log sync details to the developer console.",
+          "target": "将同步详情记录到开发者控制台。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "See recent sync runs, errors, and which files were touched.",
+          "target": "查看最近的同步运行、错误以及涉及的文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set a resolution for every conflict that doesn't have one yet.",
+          "target": "为所有尚未设置解决方案的冲突设置解决方案。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Name",
+          "target": "名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Vault folder",
+          "target": "库文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Direction",
+          "target": "方向"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto mode",
+          "target": "自动模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Interval (minutes)",
+          "target": "间隔（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert Obsidian wikilinks for GitHub",
+          "target": "为 GitHub 转换 Obsidian 双链"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Personal access token",
+          "target": "个人访问令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sign in with GitHub (Device Flow)",
+          "target": "使用 GitHub 登录（设备流程）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clear credentials",
+          "target": "清除凭据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-resolve by local mtime",
+          "target": "按本地修改时间自动解决"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "3-way merge text files",
+          "target": "三向合并文本文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-prune backups older than (days)",
+          "target": "自动清理早于（天）的备份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Open backup folder",
+          "target": "打开备份文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max file size (MB)",
+          "target": "最大文件大小 (MB)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excluded paths",
+          "target": "排除路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show notifications",
+          "target": "显示通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug logging",
+          "target": "调试日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync log",
+          "target": "同步日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Apply to all unset",
+          "target": "应用到所有未设置项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Choose a folder in your vault",
+          "target": "在库中选择一个文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Loading repositories…",
+          "target": "正在加载仓库…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Choose a repository",
+          "target": "选择一个仓库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Loading branches…",
+          "target": "正在加载分支…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Choose a branch",
+          "target": "选择一个分支"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Loading folders…",
+          "target": "正在加载文件夹…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Choose a folder in the repo (or / for repo root)",
+          "target": "选择仓库中的一个文件夹（或 / 表示仓库根目录）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Work notes",
+          "target": "工作笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Use global default",
+          "target": "使用全局默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Note: the recursive tree response was truncated. Walked it folder-by-folder.",
+          "target": "注意：递归树形响应被截断。已逐文件夹遍历。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Syncing…",
+          "target": "同步中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Pick a choice for every file first",
+          "target": "请先为每个文件选择一个选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Apply resolutions",
+          "target": "应用分辨率"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "↻ Syncing…",
+          "target": "↻ 同步中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "! Easy Git error",
+          "target": "! Easy Git 错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "↻ Ready",
+          "target": "↻ 就绪"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "No mappings configured",
+          "target": "未配置映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Sync all",
+          "target": "全部同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Open Easy Git settings",
+          "target": "打开 Easy Git 设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "See recent sync runs, errors, and which files were touched",
+          "target": "查看最近的同步运行、错误以及哪些文件被修改"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: diagnostic report copied to clipboard.",
+          "target": "Easy Git：诊断报告已复制到剪贴板。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please configure GitHub authentication first.",
+          "target": "请先配置 GitHub 认证。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please choose a repository first.",
+          "target": "请先选择一个仓库。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: diagnose isn't wired up from this entry point. Open settings → Edit mapping → Diagnose.",
+          "target": "Easy Git：诊断功能未从此入口点连接。请打开设置 → 编辑映射 → 诊断。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: sync state cleared for this destination.",
+          "target": "Easy Git：此目标的同步状态已清除。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Code copied to clipboard.",
+          "target": "代码已复制到剪贴板。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: signed in with GitHub.",
+          "target": "Easy Git：已使用 GitHub 登录。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: no token configured.",
+          "target": "Easy Git：未配置令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: credentials cleared.",
+          "target": "Easy Git：凭据已清除。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: no backups yet. Backups appear after the first pull-modify or pull-delete.",
+          "target": "Easy Git：尚无备份。备份会在首次拉取-修改或拉取-删除后出现。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: could not read saved settings (data.json may be corrupted). Started with defaults.",
+          "target": "Easy Git：无法读取已保存的设置（data.json 可能已损坏）。已使用默认设置启动。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: no mappings configured.",
+          "target": "Easy Git：未配置映射。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Easy Git: no mappings configured yet.",
+          "target": "Easy Git：尚未配置映射。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "easy-git-section easy-git-section-flat",
+          "target": "easy-git-section easy-git-section-flat"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync all mappings",
+          "target": "同步所有映射"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync mapping…",
+          "target": "同步映射…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Push mapping…",
+          "target": "推送映射…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pull mapping…",
+          "target": "拉取映射…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open settings",
+          "target": "打开设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show sync log",
+          "target": "显示同步日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reset sync state (force full re-scan on next sync)",
+          "target": "重置同步状态（下次同步时强制完全重新扫描）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sync log",
+          "target": "同步日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No sync activity recorded yet. Trigger a sync from the ribbon or settings to populate the log.",
+          "target": "尚未记录同步活动。请从功能区或设置触发同步以填充日志。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Gathering diagnostics…",
+          "target": "正在收集诊断信息…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Some live data could not be fetched:",
+          "target": "部分实时数据无法获取："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Branch state (live)",
+          "target": "分支状态（实时）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Head commit: ",
+          "target": "头部提交："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " · ",
+          "target": " · "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open folder on GitHub",
+          "target": "在 GitHub 上打开文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Summary",
+          "target": "摘要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "If something's missing",
+          "target": "如有遗漏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Click the commit SHA above to verify it matches the latest commit on GitHub.",
+          "target": "点击上方的提交 SHA 以验证其是否与 GitHub 上的最新提交匹配。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Empty folders aren't tracked by git. A \"new folder\" only exists once you commit at least one file inside it (often a .gitkeep placeholder).",
+          "target": "空文件夹不会被 git 跟踪。一个“新文件夹”只有在你向其中提交至少一个文件（通常是 .gitkeep 占位文件）后才存在。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "If you pushed via the GitHub web UI, double-check the file landed on the correct branch — the mapping syncs only the branch shown above.",
+          "target": "如果你通过 GitHub 网页界面推送，请仔细检查文件是否已到达正确的分支——映射仅同步上方显示的分支。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "A repo-level .gitignore can block files from ever being committed. If git didn't commit it, Easy Git can't see it.",
+          "target": "仓库级别的 .gitignore 可以阻止文件被提交。如果 git 没有提交它，Easy Git 就无法看到它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy as text",
+          "target": "复制为文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Repository",
+          "target": "仓库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Branch",
+          "target": "分支"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose…",
+          "target": "选择…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Diagnose",
+          "target": "诊断"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset sync state",
+          "target": "重置同步状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sign in with GitHub",
+          "target": "使用 GitHub 登录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Requesting device code…",
+          "target": "正在请求设备代码…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open the link below in your browser and enter the code:",
+          "target": "请在浏览器中打开下方链接并输入代码："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Waiting for authorization…",
+          "target": "正在等待授权…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Each mapping pairs a vault folder with a folder inside a GitHub repo.",
+          "target": "每个映射将一个保险库文件夹与 GitHub 仓库中的一个文件夹配对。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No mappings yet. Click the button below to add one.",
+          "target": "尚无映射。请点击下方按钮添加一个。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Edit",
+          "target": "编辑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Three layers stop a conflict modal from popping up when there's a safe answer: mtime auto-resolve catches single-user device drift, 3-way merge catches disjoint edits, anything left over is shown for you to decide.",
+          "target": "当存在安全答案时，三层机制可防止冲突模态框弹出：mtime 自动解决捕获单用户设备漂移，三方合并捕获不相交的编辑，剩余的任何内容都会显示出来供你决定。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Before any pull operation overwrites or deletes a local file, Easy Git copies the original to .easy-git-backup/<timestamp>/. Always on for push and bidirectional mappings; skipped only for pull-only mappings.",
+          "target": "在任何拉取操作覆盖或删除本地文件之前，Easy Git 会将原始文件复制到 .easy-git-backup/<timestamp>/。对于推送和双向映射始终启用；仅对仅拉取映射跳过。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Global glob patterns applied to every mapping. For per-mapping exclusions, drop a .easygitignore file at the mapping's vault folder root.",
+          "target": "应用于每个映射的全局 glob 模式。对于每个映射的排除项，请在映射的保险库文件夹根目录放置一个 .easygitignore 文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Resolve sync conflicts",
+          "target": "解决同步冲突"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Reset sync state?",
+          "target": "重置同步状态？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Delete mapping",
+          "target": "删除映射"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
