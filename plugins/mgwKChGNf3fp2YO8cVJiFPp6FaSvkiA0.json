@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "github-gitless-sync",
+    "version": "2.0.0",
+    "title": "GitHub Gitless Sync",
+    "description": "Sync a GitHub repository with vaults on different platforms without requiring git installation",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Syncing...\")",
+          "target": "Notice(\"同步中...\")"
+        },
+        {
+          "source": "Notice(\"Sync successful\",5e3)",
+          "target": "Notice(\"同步成功\",5e3)"
+        },
+        {
+          "source": "Notice(`Error syncing. ${a}`)",
+          "target": "Notice(`同步出错. ${a}`)"
+        },
+        {
+          "source": "Notice(\"Go to settings to configure syncing\")",
+          "target": "Notice(\"前往设置配置同步\")"
+        },
+        {
+          "source": "Notice(\"Sync plugin not configured\")",
+          "target": "Notice(\"同步插件未配置\")"
+        },
+        {
+          "source": ".log(t)",
+          "target": ".log(t)"
+        },
+        {
+          "source": ".error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\")",
+          "target": ".error(\"forceFrameRate需要一个介于 0 到 125 的正整数，不支持强制设置高于 125 fps 的帧率。\")"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(\"Failed to get repo content\",t)",
+          "target": ".error(\"获取仓库内容失败\",t)"
+        },
+        {
+          "source": ".error(\"Failed to create tree\",a)",
+          "target": ".error(\"创建树结构失败\",a)"
+        },
+        {
+          "source": ".error(\"Failed to create commit\",n)",
+          "target": ".error(\"创建提交失败\",n)"
+        },
+        {
+          "source": ".error(\"Failed to get branch head sha\",t)",
+          "target": ".error(\"获取分支头部的 SHA 值失败\",t)"
+        },
+        {
+          "source": ".error(\"Failed to update branch head sha\",a)",
+          "target": ".error(\"更新分支头部的 SHA 值失败\",a)"
+        },
+        {
+          "source": ".error(\"Failed to create blob\",i)",
+          "target": ".error(\"创建二进制大对象（Blob）失败\",i)"
+        },
+        {
+          "source": ".error(\"Failed to get blob\",a)",
+          "target": ".error(\"获取二进制大对象（Blob）失败\",a)"
+        },
+        {
+          "source": ".error(\"Failed to create file\",n)",
+          "target": ".error(\"创建文件失败\",n)"
+        },
+        {
+          "source": ".error(\"Both remote and local have files, can't sync\")",
+          "target": ".error(\"远程和本地都有文件，无法同步\")"
+        },
+        {
+          "source": ".error(\"Remote manifest is missing\",{files:t,treeSha:a})",
+          "target": ".error(\"远程清单文件缺失\",{files:t,treeSha:a})"
+        },
+        {
+          "source": " error(t,a)",
+          "target": " error(t,a)"
+        },
+        {
+          "source": "name:\"\")?gl(a):\"",
+          "target": "name:\"\")?gl(a):\""
+        },
+        {
+          "source": "name:\"Strikethrough\"",
+          "target": "name:\"Strikethrough\""
+        },
+        {
+          "source": "name:\"StrikethroughMark\"",
+          "target": "name:\"StrikethroughMark\""
+        },
+        {
+          "source": "name:\"Table\"",
+          "target": "name:\"Table\""
+        },
+        {
+          "source": "name:\"TableHeader\"",
+          "target": "name:\"TableHeader\""
+        },
+        {
+          "source": "name:\"TableCell\"",
+          "target": "name:\"TableCell\""
+        },
+        {
+          "source": "name:\"TableDelimiter\"",
+          "target": "name:\"TableDelimiter\""
+        },
+        {
+          "source": "name:\"Task\"",
+          "target": "name:\"Task\""
+        },
+        {
+          "source": "name:\"TaskMarker\"",
+          "target": "name:\"TaskMarker\""
+        },
+        {
+          "source": "name:\"TaskList\"",
+          "target": "name:\"TaskList\""
+        },
+        {
+          "source": "name:\"Autolink\"",
+          "target": "name:\"Autolink\""
+        },
+        {
+          "source": "name:\"Superscript\"",
+          "target": "name:\"Superscript\""
+        },
+        {
+          "source": "name:\"SuperscriptMark\"",
+          "target": "name:\"SuperscriptMark\""
+        },
+        {
+          "source": "name:\"Subscript\"",
+          "target": "name:\"Subscript\""
+        },
+        {
+          "source": "name:\"SubscriptMark\"",
+          "target": "name:\"SubscriptMark\""
+        },
+        {
+          "source": "name:\"Emoji\"",
+          "target": "name:\"Emoji\""
+        },
+        {
+          "source": "name:\"css\"",
+          "target": "name:\"css\""
+        },
+        {
+          "source": "name:\"javascript\"",
+          "target": "name:\"javascript\""
+        },
+        {
+          "source": "name:\"style\"",
+          "target": "name:\"style\""
+        },
+        {
+          "source": "name:\"html\"",
+          "target": "name:\"html\""
+        },
+        {
+          "source": "name:\"Sync with GitHub\"",
+          "target": "name:\"与 GitHub 同步\""
+        },
+        {
+          "source": "name:\"Open sync conflicts view\"",
+          "target": "name:\"打开同步冲突视图\""
+        },
+        {
+          "source": "text:\"Accept\"",
+          "target": "text:\"接受\""
+        },
+        {
+          "source": "text:\"Discard\"",
+          "target": "text:\"放弃\""
+        },
+        {
+          "source": "text:\"Accept above\"",
+          "target": "text:\"接受上方内容\""
+        },
+        {
+          "source": "text:\"Accept below\"",
+          "target": "text:\"接受下方内容\""
+        },
+        {
+          "source": "text:\"Accept both\"",
+          "target": "text:\"接受两个\""
+        },
+        {
+          "source": "text:\"Discard both\"",
+          "target": "text:\"放弃两个\""
+        },
+        {
+          "source": ".setText(`GitHub: ${i}`)",
+          "target": ".setText(`GitHub: ${i}`)"
+        },
+        {
+          "source": ".setButtonText(\"RESET\")",
+          "target": ".setButtonText(\"RESET\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset\")",
+          "target": ".setButtonText(\"重置\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setName(\"Remote Repository\")",
+          "target": ".setName(\"远程仓库\")"
+        },
+        {
+          "source": ".setName(\"GitHub token\")",
+          "target": ".setName(\"GitHub token\")"
+        },
+        {
+          "source": ".setName(\"Owner\")",
+          "target": ".setName(\"拥有者\")"
+        },
+        {
+          "source": ".setName(\"Repository\")",
+          "target": ".setName(\"仓库\")"
+        },
+        {
+          "source": ".setName(\"Repository branch\")",
+          "target": ".setName(\"仓库分支\")"
+        },
+        {
+          "source": ".setName(\"Sync\")",
+          "target": ".setName(\"同步\")"
+        },
+        {
+          "source": ".setName(\"Sync strategy\")",
+          "target": ".setName(\"同步策略\")"
+        },
+        {
+          "source": ".setName(\"Sync interval\")",
+          "target": ".setName(\"同步间隔\")"
+        },
+        {
+          "source": ".setName(\"Sync on startup\")",
+          "target": ".setName(\"启动时同步\")"
+        },
+        {
+          "source": ".setName(\"Sync configs\")",
+          "target": ".setName(\"同步配置\")"
+        },
+        {
+          "source": ".setName(\"Conflict handling\")",
+          "target": ".setName(\"冲突处理\")"
+        },
+        {
+          "source": ".setName(\"Interface\")",
+          "target": ".setName(\"界面\")"
+        },
+        {
+          "source": ".setName(\"Show status bar item\")",
+          "target": ".setName(\"显示状态栏项目\")"
+        },
+        {
+          "source": ".setName(\"Show sync button\")",
+          "target": ".setName(\"显示同步按钮\")"
+        },
+        {
+          "source": ".setName(\"Show conflicts view button\")",
+          "target": ".setName(\"显示冲突视图按钮\")"
+        },
+        {
+          "source": ".setName(\"Conflict resolution view mode\")",
+          "target": ".setName(\"冲突解决视图模式\")"
+        },
+        {
+          "source": ".setName(\"Extra\")",
+          "target": ".setName(\"额外选项\")"
+        },
+        {
+          "source": ".setName(\"Enable logging\")",
+          "target": ".setName(\"启用日志记录\")"
+        },
+        {
+          "source": ".setName(\"Reset\")",
+          "target": ".setName(\"重置\")"
+        },
+        {
+          "source": ".setDesc(\"A personal access token or a fine-grained token with read and write access to your repository\")",
+          "target": ".setDesc(\"用于访问你的仓库的个人访问令牌或具有读写权限的精细访问令牌\")"
+        },
+        {
+          "source": ".setDesc(\"Owner of the repository to sync\")",
+          "target": ".setDesc(\"要同步的仓库的所有者\")"
+        },
+        {
+          "source": ".setDesc(\"Name of the repository to sync\")",
+          "target": ".setDesc(\"要同步的仓库名称\")"
+        },
+        {
+          "source": ".setDesc(\"Branch to sync\")",
+          "target": ".setDesc(\"要同步的分支\")"
+        },
+        {
+          "source": ".setDesc(\"How to sync files with remote repository\")",
+          "target": ".setDesc(\"如何与远程仓库同步文件\")"
+        },
+        {
+          "source": ".setDesc(\"Interval in minutes between automatic syncs\")",
+          "target": ".setDesc(\"自动同步间隔（以分钟为单位）\")"
+        },
+        {
+          "source": ".setDesc(\"Download up to date files from remote on startup\")",
+          "target": ".setDesc(\"启动时从远程下载最新文件\")"
+        },
+        {
+          "source": ".setDesc(\"Sync Vault config folder with remote repository\")",
+          "target": ".setDesc(\"与远程仓库同步保险库配置文件夹\")"
+        },
+        {
+          "source": ".setDesc(`What to do in case remote and local files conflict\n        when downloading from GitHub repository`)",
+          "target": ".setDesc(`远程和本地文件冲突时的处理方式\n        从GitHub仓库下载时`)"
+        },
+        {
+          "source": ".setDesc(\"Displays the status bar item that show the file sync status\")",
+          "target": ".setDesc(\"显示显示文件同步状态的状态栏项目\")"
+        },
+        {
+          "source": ".setDesc(\"Displays a ribbon button to sync files\")",
+          "target": ".setDesc(\"显示用于同步文件的侧边栏按钮\")"
+        },
+        {
+          "source": ".setDesc(\"Displays a ribbon button that opens the conflicts view\")",
+          "target": ".setDesc(\"显示用于打开冲突视图的侧边栏按钮\")"
+        },
+        {
+          "source": ".setDesc(\"Set which diff view mode should be shown in case of conflicts\")",
+          "target": ".setDesc(\"设置冲突时应显示的差异视图模式\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled logs from this plugin will be saved in a file in your config directory.\")",
+          "target": ".setDesc(\"如果启用，此插件的日志将保存在配置目录中的一个文件中\")"
+        },
+        {
+          "source": ".setDesc(\"Reset the plugin settings and metadata\")",
+          "target": ".setDesc(\"重置插件设置和元数据\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Token\")",
+          "target": ".setPlaceholder(\"Token\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Owner\")",
+          "target": ".setPlaceholder(\"拥有者\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Repository\")",
+          "target": ".setPlaceholder(\"仓库\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Branch name\")",
+          "target": ".setPlaceholder(\"分支名称\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Interval in minutes\")",
+          "target": ".setPlaceholder(\"间隔（以分钟为单位）\")"
+        },
+        {
+          "source": ".setTitle(\"Are you sure?\")",
+          "target": ".setTitle(\"确定吗？\")"
+        }
+      ]
+    }
+  }
+}

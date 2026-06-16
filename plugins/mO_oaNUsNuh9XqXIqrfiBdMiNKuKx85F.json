@@ -1,0 +1,2491 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "copilot",
+    "version": "2.0.0",
+    "title": "Copilot",
+    "description": "A ChatGPT Copilot in Obsidian.",
+    "language": "zh-cn",
+    "supportedVersions": "2.7.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\n              `Embedding error: please check your embedding model context length, and consider switching to a model with a larger context length: ${error.message}`\n            )",
+          "target": "Notice(\n              `嵌入错误：请检查您嵌入模型的上下文长度，并考虑切换到上下文长度更大的模型：${error.message}`\n            )"
+        },
+        {
+          "source": "Notice(`Setting model: ${modelConfig.modelName}`)",
+          "target": "Notice(`设置模型:${modelConfig.modelName}`)"
+        },
+        {
+          "source": "Notice(`Error creating model: ${modelKey}`)",
+          "target": "Notice(`创建模型时出错:${modelKey}`)"
+        },
+        {
+          "source": "Notice(\"Error creating chain:\", error)",
+          "target": "Notice(\"创建LLM链时出错：\", error)"
+        },
+        {
+          "source": "Notice(`LangChain error: ${errorCode}`)",
+          "target": "Notice(`LangChain错误:${errorCode}`)"
+        },
+        {
+          "source": "Notice(\"An error occurred while indexing vault to vector store.\")",
+          "target": "Notice(\"将保管库(Vault)索引到矢量存储时出错。\")"
+        },
+        {
+          "source": "Notice(\"Indexing is disabled on mobile devices\")",
+          "target": "Notice(\"移动设备上已禁用索引\")"
+        },
+        {
+          "source": "Notice(\"Detected change in embedding model. Rebuilding vector store from scratch.\")",
+          "target": "Notice(\"检测到嵌入模型中的更改。从头开始重建矢量存储。\")"
+        },
+        {
+          "source": "Notice(\"Copilot vault index is up-to-date.\")",
+          "target": "Notice(\"Copilot 保管库(Vault)索引是最新的。\")"
+        },
+        {
+          "source": "Notice(`Indexing completed with errors. Check the console for details.`)",
+          "target": "Notice(`索引已完成，但有错误。请查看控制台了解详细信息。`)"
+        },
+        {
+          "source": "Notice(\n          \"An unexpected error occurred while indexing the vault. Please check the console for details.\"\n        )",
+          "target": "Notice(\n          \"为保管库(Vault)建立索引时发生意外错误。请检查控制台以了解详细信息。\"\n        )"
+        },
+        {
+          "source": "Notice(\"Local vector store cleared successfully.\")",
+          "target": "Notice(\"本地矢量存储已成功清除。\")"
+        },
+        {
+          "source": "Notice(\"An error occurred while clearing the local vector store.\")",
+          "target": "Notice(\"清除本地矢量存储时出错。\")"
+        },
+        {
+          "source": "Notice(\"No documents to remove during garbage collection.\")",
+          "target": "Notice(\"在垃圾回收过程中没有要删除的文档。\")"
+        },
+        {
+          "source": "Notice(`Removed stale documents during garbage collection.`)",
+          "target": "Notice(`在垃圾回收过程中删除了过时的文档。`)"
+        },
+        {
+          "source": "Notice(\"Local vector store garbage collected successfully.\")",
+          "target": "Notice(\"已成功收集本地矢量存储垃圾。\")"
+        },
+        {
+          "source": "Notice(\"An error occurred while garbage collecting the vector store.\")",
+          "target": "Notice(\"对矢量存储进行垃圾回收时出错。\")"
+        },
+        {
+          "source": "Notice(\"Please select a language.\")",
+          "target": "Notice(\"请选择一种语言。\")"
+        },
+        {
+          "source": "Notice(\"Please select a tone.\")",
+          "target": "Notice(\"请选中一种对话风格/语气。\")"
+        },
+        {
+          "source": "Notice(`Total tokens in your vault: ${totalTokens}`)",
+          "target": "Notice(`您的保管库(Vault)中的Tokens总数:${totalTokens}`)"
+        },
+        {
+          "source": "Notice(\"Please fill in both fields: Title and Prompt.\")",
+          "target": "Notice(\"请同时填写两个字段：标题和聊天提示\")"
+        },
+        {
+          "source": "Notice(\"No active note found.\")",
+          "target": "Notice(\"未找到激活的文档\")"
+        },
+        {
+          "source": "Notice(`Error: ${error.msg}. Please check your embedding model settings.`)",
+          "target": "Notice(`错误: ${error.msg}. 请检查您的嵌入模型设置。`)"
+        },
+        {
+          "source": "Notice(\n            \"An unexpected error occurred while setting up the QA chain. Please check the console for details.\"\n          )",
+          "target": "Notice(\n            \"设置QA链时发生意外错误，请检查控制台以了解详细信息。\"\n          )"
+        },
+        {
+          "source": "Notice(\"No messages to save.\")",
+          "target": "Notice(\"没有要保存的消息。\")"
+        },
+        {
+          "source": "Notice(`Chat updated in existing note: ${noteFileName}`)",
+          "target": "Notice(`聊天记录已在现有文档中更新:${noteFileName}`)"
+        },
+        {
+          "source": "Notice(`Chat saved as new note: ${noteFileName}`)",
+          "target": "Notice(`聊天另存为新笔记: ${noteFileName}`)"
+        },
+        {
+          "source": "Notice(\"Failed to save chat as note. Check console for details.\")",
+          "target": "Notice(\"无法将聊天另存为文档，请查看控制台了解详细信息。\")"
+        },
+        {
+          "source": "Notice(\"Vault index refreshed.\")",
+          "target": "Notice(\"保管库(Vault)中的索引已刷新。\")"
+        },
+        {
+          "source": "Notice(\"Failed to refresh vault index. Check console for details.\")",
+          "target": "Notice(\"刷新保管库(Vault)的索引失败。查看控制台了解详细信息。\")"
+        },
+        {
+          "source": "Notice(\"Cannot regenerate the first message or a user message.\")",
+          "target": "Notice(\"无法重新生成第一条消息或用户消息。\")"
+        },
+        {
+          "source": "Notice(\"Failed to regenerate message. Please try again.\")",
+          "target": "Notice(\"重新生成消息失败，请再试一次。\")"
+        },
+        {
+          "source": "Notice(\"No active leaf found.\")",
+          "target": "Notice(\"未找到激活的子项\")"
+        },
+        {
+          "source": "Notice(\"Failed to open a markdown view.\")",
+          "target": "Notice(\"无法打开Markdown视图\")"
+        },
+        {
+          "source": "Notice(\"Message inserted into the active note.\")",
+          "target": "Notice(\"消息已插入到激活的文档中。\")"
+        },
+        {
+          "source": "Notice(\"Please fill in necessary fields!\")",
+          "target": "Notice(\"请填写必要字段！\")"
+        },
+        {
+          "source": "Notice(\"Plugin reloaded successfully.\")",
+          "target": "Notice(\"插件已成功重新加载。\")"
+        },
+        {
+          "source": "Notice(\"Failed to reload the plugin. Please reload manually.\")",
+          "target": "Notice(\"无法重新加载插件，请手动重新加载。\")"
+        },
+        {
+          "source": "Notice(\"Custom prompt saved successfully.\")",
+          "target": "Notice(\"自定义聊天提示已成功保存。\")"
+        },
+        {
+          "source": "Notice(\"Error saving custom prompt. Please check if the title already exists.\")",
+          "target": "Notice(\"保存自定义聊天提示时出错，请检查标题是否已存在。\")"
+        },
+        {
+          "source": "Notice(\"Please select a prompt title.\")",
+          "target": "Notice(\"请选择一个聊天提示的标题\")"
+        },
+        {
+          "source": "Notice(`No prompt found with the title \"${promptTitle}\".`)",
+          "target": "Notice(`未找到标题为\"${promptTitle}\"的聊天提示。`)"
+        },
+        {
+          "source": "Notice(\"An error occurred.\")",
+          "target": "Notice(\"发生了一个错误。\")"
+        },
+        {
+          "source": "Notice(`Prompt \"${promptTitle}\" has been deleted.`)",
+          "target": "Notice(`聊天提示\"${promptTitle}\"已被删除。`)"
+        },
+        {
+          "source": "Notice(\"An error occurred while deleting the prompt.\")",
+          "target": "Notice(\"删除聊天提示时出错。\")"
+        },
+        {
+          "source": "Notice(`Prompt \"${title}\" has been updated.`)",
+          "target": "Notice(`聊天提示\"${title}\"已更新。`)"
+        },
+        {
+          "source": "Notice(`${indexedFileCount} vault files indexed to vector store.`)",
+          "target": "Notice(`索引到矢量存储的${indexedFileCount}保管库(Vault)文件。`)"
+        },
+        {
+          "source": "Notice(`${indexedFileCount} vault files re-indexed to vector store.`)",
+          "target": "Notice(`${indexedFileCount}保管库(Vault)文件已重新索引到矢量存储。`)"
+        },
+        {
+          "source": "Notice(\"An error occurred while re-indexing vault to vector store.\")",
+          "target": "Notice(\"将保管库(Vault)重新索引到矢量存储时出错。\")"
+        },
+        {
+          "source": "Notice(\"No active file\")",
+          "target": "Notice(\"无活动文档\")"
+        },
+        {
+          "source": "Notice(\"An error occurred while saving vault to vector store.\")",
+          "target": "Notice(\"将保管库(Vault)保存到矢量存储时出错。\")"
+        },
+        {
+          "source": "Notice(\"No chat history found.\")",
+          "target": "Notice(\"未找到聊天记录。\")"
+        },
+        {
+          "source": "Notice(\"Index does not exist, indexing vault for similarity search...\")",
+          "target": "Notice(\"索引不存在，正在为保管库(Vault)建立索引以进行相似性搜索...\")"
+        },
+        {
+          "source": ".log(\"New LLM chain created.\")",
+          "target": ".log(\"创建了新的LLM链。\")"
+        },
+        {
+          "source": ".log(\"Failed to parse error response as JSON\")",
+          "target": ".log(\"未能将错误响应解析为JSON\")"
+        },
+        {
+          "source": ".log(\"Getting text from response\")",
+          "target": ".log(\"从响应中获取文本\")"
+        },
+        {
+          "source": ".log(\"Failed to get text from error response\")",
+          "target": ".log(\"无法从错误响应中获取文本\")"
+        },
+        {
+          "source": ".log(\"clearing chat memory\")",
+          "target": ".log(\"清除聊天记忆\")"
+        },
+        {
+          "source": ".log(\"New Vault QA chain with hybrid retriever created for entire vault\")",
+          "target": ".log(\"为整个保管库(Vault)创建了带有混合检索器的新QA链\")"
+        },
+        {
+          "source": ".log(\"Copilot database initialized successfully.\")",
+          "target": ".log(\"Copilot数据库初始化成功。\")"
+        },
+        {
+          "source": ".log(\"Copilot index is disabled on mobile devices.\")",
+          "target": ".log(\"移动设备上的Copilot索引已禁用。\")"
+        },
+        {
+          "source": ".log(\"Index loading disabled on mobile device\")",
+          "target": ".log(\"移动设备上已禁用索引加载\")"
+        },
+        {
+          "source": ".log(`Config directory does not exist. Creating: ${configDir}`)",
+          "target": ".log(`配置目录不存在，正在创建:${configDir}`)"
+        },
+        {
+          "source": ".log(`Loaded existing Orama database for ${this.dbPath} from disk.`)",
+          "target": ".log(`已从磁盘加载${this.dbPath}的现有Orama数据库。`)"
+        },
+        {
+          "source": ".log(\n        `Schema mismatch detected. Rebuilding database with new vector length: ${currentVectorLength}`\n      )",
+          "target": ".log(\n        `检测到架构不匹配，使用新的向量长度重建数据库: ${currentVectorLength}`\n      )"
+        },
+        {
+          "source": ".log(`Saved Orama database to ${this.dbPath}.`)",
+          "target": ".log(`已将Orama数据库保存到${this.dbPath}.`)"
+        },
+        {
+          "source": ".log(\"Detected change in embedding model. Rebuilding vector store from scratch.\")",
+          "target": ".log(\"检测到嵌入模型中的更改，将从头开始重建矢量存储。\")"
+        },
+        {
+          "source": ".log(\"No previous embedding model found in the database.\")",
+          "target": ".log(\"在数据库中找不到以前的嵌入模型。\")"
+        },
+        {
+          "source": ".log(\"Local vector store cleared successfully, new instance created.\")",
+          "target": ".log(\"本地向量存储已成功清除，新实例已创建。\")"
+        },
+        {
+          "source": ".log(\"Local vector store garbage collected successfully.\")",
+          "target": ".log(\"已成功收集本地矢量存储垃圾。\")"
+        },
+        {
+          "source": ".log(\"Message regenerated successfully\")",
+          "target": ".log(\"消息已成功重新生成\")"
+        },
+        {
+          "source": ".log(`${indexedFileCount} vault files indexed to vector store.`)",
+          "target": ".log(`索引到矢量存储的${indexedFileCount}保管库(Vault)文件。`)"
+        },
+        {
+          "source": ".log(`${indexedFileCount} vault files re-indexed to vector store.`)",
+          "target": ".log(`${indexedFileCount}保管库(Vault)文件已重新索引到矢量存储。`)"
+        },
+        {
+          "source": "name: \"Anno Domini\"",
+          "target": "name: \"公元\""
+        },
+        {
+          "source": "name: \"Before Christ\"",
+          "target": "name: \"公元前\""
+        },
+        {
+          "source": "name: \"Samsung Internet for Android\"",
+          "target": "name: \"三星互联网浏览器 for Android\""
+        },
+        {
+          "source": "name: \"NAVER Whale Browser\"",
+          "target": "name: \"NAVER 鲸鱼浏览器\""
+        },
+        {
+          "source": "name: \"MZ Browser\"",
+          "target": "name: \"MZ 浏览器\""
+        },
+        {
+          "source": "name: \"Yandex Browser\"",
+          "target": "name: \"Yandex 浏览器\""
+        },
+        {
+          "source": "name: \"UC Browser\"",
+          "target": "name: \"UC 浏览器\""
+        },
+        {
+          "source": "name: \"WeChat\"",
+          "target": "name: \"微信\""
+        },
+        {
+          "source": "name: \"Microsoft Edge\"",
+          "target": "name: \"微软 Edge\""
+        },
+        {
+          "source": "name: \"Amazon Silk\"",
+          "target": "name: \"亚马逊 Silk\""
+        },
+        {
+          "source": "name: \"WebOS Browser\"",
+          "target": "name: \"WebOS 浏览器\""
+        },
+        {
+          "source": "name: \"Google Search\"",
+          "target": "name: \"Google 搜索\""
+        },
+        {
+          "source": "name: \"Android Browser\"",
+          "target": "name: \"Android 浏览器\""
+        },
+        {
+          "source": "name: \"Fix grammar and spelling of selection\"",
+          "target": "name: \"修正选中内容的语法和拼写\""
+        },
+        {
+          "source": "name: \"Summarize selection\"",
+          "target": "name: \"总结选中内容\""
+        },
+        {
+          "source": "name: \"Generate table of contents for selection\"",
+          "target": "name: \"为选中内容生成目录\""
+        },
+        {
+          "source": "name: \"Generate glossary for selection\"",
+          "target": "name: \"为选中内容生成术语表\""
+        },
+        {
+          "source": "name: \"Simplify selection\"",
+          "target": "name: \"简化选中内容\""
+        },
+        {
+          "source": "name: \"Emojify selection\"",
+          "target": "name: \"为选中内容添加表情符号\""
+        },
+        {
+          "source": "name: \"Remove URLs from selection\"",
+          "target": "name: \"从选中内容中移除 URL\""
+        },
+        {
+          "source": "name: \"Rewrite selection to a tweet\"",
+          "target": "name: \"将选中内容改写为推文\""
+        },
+        {
+          "source": "name: \"Rewrite selection to a tweet thread\"",
+          "target": "name: \"将选中内容改写为推文串\""
+        },
+        {
+          "source": "name: \"Make selection shorter\"",
+          "target": "name: \"使选中内容更简短\""
+        },
+        {
+          "source": "name: \"Make selection longer\"",
+          "target": "name: \"使选中内容更长\""
+        },
+        {
+          "source": "name: \"Explain selection like I'm 5\"",
+          "target": "name: \"像解释给五岁孩子一样解释选中内容\""
+        },
+        {
+          "source": "name: \"Rewrite selection to a press release\"",
+          "target": "name: \"将选中内容改写为新闻稿\""
+        },
+        {
+          "source": "name: \"Translate selection\"",
+          "target": "name: \"翻译选中内容\""
+        },
+        {
+          "source": "name: \"Change tone of selection\"",
+          "target": "name: \"改变选中内容的语气\""
+        },
+        {
+          "source": "name: \"English\"",
+          "target": "name: \"英语\""
+        },
+        {
+          "source": "name: \"Chinese\"",
+          "target": "name: \"中文\""
+        },
+        {
+          "source": "name: \"Count words and tokens in selection\"",
+          "target": "name: \"计算选中内容的单词和Token数\""
+        },
+        {
+          "source": "name: \"Count total tokens in your vault\"",
+          "target": "name: \"计算保管库(Vault)中的总Token数\""
+        },
+        {
+          "source": "name: \"Model Name\"",
+          "target": "name: \"模型名称\""
+        },
+        {
+          "source": "name: \"Provider\"",
+          "target": "name: \"提供商\""
+        },
+        {
+          "source": "name: \"Base URL (optional)\"",
+          "target": "name: \"基础 URL(可选)\""
+        },
+        {
+          "source": "name: \"API Key (optional)\"",
+          "target": "name: \"API 密钥(可选)\""
+        },
+        {
+          "source": "name: \"User System Prompt\"",
+          "target": "name: \"用户系统聊天提示\""
+        },
+        {
+          "source": "name: \"Default Conversation Folder Name\"",
+          "target": "name: \"默认对话文件夹名称\""
+        },
+        {
+          "source": "name: \"Default Conversation Tag\"",
+          "target": "name: \"默认对话标签\""
+        },
+        {
+          "source": "name: \"Autosave Chat\"",
+          "target": "name: \"自动保存聊天\""
+        },
+        {
+          "source": "name: \"Custom Prompts Folder Name\"",
+          "target": "name: \"自定义聊天提示文件夹名称\""
+        },
+        {
+          "source": "name: \"Temperature\"",
+          "target": "name: \"温度参数\""
+        },
+        {
+          "source": "name: \"Token limit\"",
+          "target": "name: \"Token限制\""
+        },
+        {
+          "source": "name: \"Conversation turns in context\"",
+          "target": "name: \"上下文中的对话轮次\""
+        },
+        {
+          "source": "name: \"Auto-index vault strategy\"",
+          "target": "name: \"自动索引保管库(Vault)策略\""
+        },
+        {
+          "source": "name: \"Max Sources\"",
+          "target": "name: \"最大来源\""
+        },
+        {
+          "source": "name: \"Requests per second\"",
+          "target": "name: \"每秒请求数\""
+        },
+        {
+          "source": "name: \"Exclusions\"",
+          "target": "name: \"排除不需要的项目\""
+        },
+        {
+          "source": "name: \"Inclusions\"",
+          "target": "name: \"指定需要包含的项目\""
+        },
+        {
+          "source": "name: \"Disable index loading on mobile\"",
+          "target": "name: \"禁用移动设备上的索引加载\""
+        },
+        {
+          "source": "name: \"Toggle Copilot Chat Window\"",
+          "target": "name: \"切换 Copilot 聊天窗口\""
+        },
+        {
+          "source": "name: \"Add custom prompt\"",
+          "target": "name: \"添加自定义聊天提示\""
+        },
+        {
+          "source": "name: \"Apply custom prompt\"",
+          "target": "name: \"应用自定义聊天提示\""
+        },
+        {
+          "source": "name: \"Apply ad-hoc custom prompt\"",
+          "target": "name: \"应用临时自定义聊天提示\""
+        },
+        {
+          "source": "name: \"Delete custom prompt\"",
+          "target": "name: \"删除自定义聊天提示\""
+        },
+        {
+          "source": "name: \"Edit custom prompt\"",
+          "target": "name: \"编辑自定义聊天提示\""
+        },
+        {
+          "source": "name: \"Clear local vector store\"",
+          "target": "name: \"清除本地向量存储\""
+        },
+        {
+          "source": "name: \"Garbage collect vector store (remove files that no longer exist in vault)\"",
+          "target": "name: \"清理向量存储(移除保管库(Vault)中已不存在的文件)\""
+        },
+        {
+          "source": "name: \"Index (refresh) vault for QA\"",
+          "target": "name: \"为 QA 索引(刷新)保管库(Vault)\""
+        },
+        {
+          "source": "name: \"Force re-index vault for QA\"",
+          "target": "name: \"强制重新索引保管库(Vault)用于 QA\""
+        },
+        {
+          "source": "name: \"Load Copilot Chat conversation\"",
+          "target": "name: \"加载 Copilot 聊天对话\""
+        },
+        {
+          "source": "name: \"Find similar notes to active note\"",
+          "target": "name: \"查找与活动文档类似的其它文档\""
+        },
+        {
+          "source": "description: `The name of the model, i.e. ${isEmbeddingModel ? \"text-embedding-3-small\" : \"gpt-4o-mini\"}`",
+          "target": "description: `模型的名称,例如 ${isEmbeddingModel ? 'text-embedding-3-small' : 'gpt-4o-mini'}`"
+        },
+        {
+          "source": "description: \"For 3rd party OpenAI Format endpoints only. Leave blank for other providers.\"",
+          "target": "description: \"仅适用于第三方 OpenAI 格式端点。对于其他提供商请留空。\""
+        },
+        {
+          "source": "description: \"API key for the 3rd party provider\"",
+          "target": "description: \"第三方提供商的 API 密钥\""
+        },
+        {
+          "source": "description: \"Warning: It will override the default system prompt for all messages!\"",
+          "target": "description: \"警告:这将覆盖所有消息的默认系统聊天提示！\""
+        },
+        {
+          "source": "description: \"This is your actual model, no need to pass a model name separately.\"",
+          "target": "description: \"这是你的实际模型,无需单独传递模型名称。\""
+        },
+        {
+          "source": "description: \"(Optional) For embedding provider Azure OpenAI\"",
+          "target": "description: \"(可选)对于嵌入提供商 Azure OpenAI\""
+        },
+        {
+          "source": "description: \"The default folder name where chat conversations will be saved. Default is 'copilot-conversations'\"",
+          "target": "description: \"默认的文件夹名称,聊天对话将保存在此处。默认是 'copilot-conversations'\""
+        },
+        {
+          "source": "description: \"The default tag to be used when saving a conversation. Default is 'ai-conversations'\"",
+          "target": "description: \"保存对话时使用的默认标签。默认是'ai-conversations'\""
+        },
+        {
+          "source": "description: \"Automatically save the chat when starting a new one or when the plugin reloads\"",
+          "target": "description: \"在开始新聊天或插件重新加载时自动保存聊天\""
+        },
+        {
+          "source": "description: \"The default folder name where custom prompts will be saved. Default is 'copilot-custom-prompts'\"",
+          "target": "description: \"自定义聊天提示将保存的默认文件夹名称。默认是 'copilot-custom-prompts'\""
+        },
+        {
+          "source": "description: \"Default is 0.1. Higher values will result in more creativeness, but also more mistakes. Set to 0 for no randomness.\"",
+          "target": "description: \"默认是 0.1。更高值的温度参数将导致更多的创造性,但也可能带来更多错误。设置为 0 表示无随机性。\""
+        },
+        {
+          "source": "description: \"The number of previous conversation turns to include in the context. Default is 15 turns, i.e. 30 messages.\"",
+          "target": "description: \"要包含在上下文中的先前对话轮数。默认是 15 轮,即 30 条消息。\""
+        },
+        {
+          "source": "description: \"Decide when you want the vault to be indexed.\"",
+          "target": "description: \"决定何时对保管库(Vault)进行索引。\""
+        },
+        {
+          "source": "description: \"Copilot goes through your vault to find relevant blocks and passes the top N blocks to the LLM. Default for N is 3. Increase if you want more sources included in the answer generation step.\"",
+          "target": "description: \"Copilot会遍历您的知识库，查找相关块，并将前N个块传递给LLM。N的默认值为3。如果您希望在答案生成步骤中包含更多来源，请增加N的值。\""
+        },
+        {
+          "source": "description: \"Default is 10. Decrease if you are rate limited by your embedding provider.\"",
+          "target": "description: \"默认值为10。若您的embedding提供商对速率进行了限制，请相应减少该值。\""
+        },
+        {
+          "source": "description: \"When specified, ONLY these paths, tags, or note titles will be indexed (comma separated). Takes precedence over exclusions. Files which were previously indexed will remain in the index unless you force re-index. Format: folder1, folder1/folder2, #tag1, #tag2, [[note1]], [[note2]]\"",
+          "target": "description: \"指定后，只有以下这些路径、标签或文档标题会被索引（请用逗号分隔开）。这将优先于排除的，除非您强制重新索引，否则以前索引的文件将保留在索引中。格式：文件夹1、文件夹1/文件夹2、#标签1、#标签2、[[note1]]、[[note 2]]\""
+        },
+        {
+          "source": "description: \"When enabled, vector store index won't be loaded on mobile devices to save resources. Only chat mode will be available. Any existing index from desktop sync will be preserved.\"",
+          "target": "description: \"启用此功能后，矢量存储索引将不会在移动设备上加载，以节省资源。只有在聊天模式可用，来自桌面同步的任何现有索引都将被保留。\""
+        },
+        {
+          "source": "text: \"User Custom Prompt\"",
+          "target": "text: \"用户自定义聊天提示\""
+        },
+        {
+          "source": "text: \"Title\"",
+          "target": "text: \"标题\""
+        },
+        {
+          "source": "text: \"The title of the prompt, must be unique.\"",
+          "target": "text: \"聊天提示的标题,必须是唯一的。\""
+        },
+        {
+          "source": "text: \"Prompt\"",
+          "target": "text: \"聊天提示\""
+        },
+        {
+          "source": "text: \"- {} represents the selected text (not required). \"",
+          "target": "text: \"- {} 代表所选文本(非必需)。\""
+        },
+        {
+          "source": "text: \"- {[[Note Title]]} represents a note. \"",
+          "target": "text: \"- {[[笔记标题]]} 代表一个笔记。\""
+        },
+        {
+          "source": "text: \"- {activeNote} represents the active note. \"",
+          "target": "text: \"- {activeNote} 代表活动笔记。\""
+        },
+        {
+          "source": "text: \"- {FolderPath} represents a folder of notes. \"",
+          "target": "text: \"- {FolderPath} 代表一个笔记文件夹。\""
+        },
+        {
+          "source": "text: \"- {#tag1, #tag2} represents ALL notes with ANY of the specified tags in their property (an OR operation). \"",
+          "target": "text: \"- {#tag1, #tag2} 代表所有具有指定标签中的任何一个标签的笔记(或操作)。\""
+        },
+        {
+          "source": "text: \"Apply custom prompt to selection.\"",
+          "target": "text: \"将自定义聊天提示应用于选择。\""
+        },
+        {
+          "source": "text: \"awesome chatGPT prompts\"",
+          "target": "text: \"超赞的 chatGPT 聊天提示\""
+        },
+        {
+          "source": "text: \"Save\"",
+          "target": "text: \"保存\""
+        },
+        {
+          "source": "text: \"Powerful AI agents\"",
+          "target": "text: \"强大的AI代理\""
+        },
+        {
+          "source": "text: \"keeping all your data stored locally\"",
+          "target": "text: \"将所有数据存储在本地\""
+        },
+        {
+          "source": "text: \"Stay Updated\"",
+          "target": "text: \"保持更新\""
+        },
+        {
+          "source": "text: \"Alpha access spots are limited. \"",
+          "target": "text: \"Alpha接入点有限。\""
+        },
+        {
+          "source": "text: \"prioritize supporters who have donated\"",
+          "target": "text: \"优先考虑已捐款的支持者\""
+        },
+        {
+          "source": "text: \"donating now\"",
+          "target": "text: \"现在捐赠\""
+        },
+        {
+          "source": "text: \"Learn More about Copilot Plus mode and join the waitlist here:\"",
+          "target": "text: \"了解更多关于Copilot Plus模式的信息，并在此处加入候补名单：\""
+        },
+        {
+          "source": "text: \"Similar Note Blocks to Current Note\"",
+          "target": "text: \"与当前文档类似的文档块\""
+        },
+        {
+          "source": "text: \"Additional Settings\"",
+          "target": "text: \"附加设置\""
+        },
+        {
+          "source": ".setName(\"Enable Encryption\")",
+          "target": ".setName(\"启用加密\")"
+        },
+        {
+          "source": ".setName(\"Debug mode\")",
+          "target": ".setName(\"调试模式\")"
+        },
+        {
+          "source": ".appendText(\"Tip: turn on debug mode to show the processed prompt in the chat window.\")",
+          "target": ".appendText(\"Tip：打开调试模式，会在聊天窗口中显示已处理过的聊天提示。\")"
+        },
+        {
+          "source": ".appendText(\n        \"Save the prompt to the local prompt library. You can then use it with the Copilot command: \"\n      )",
+          "target": ".appendText(\n        \"将聊天提示保存到本地聊天提示库，然后，您可以将其与Copilot命令一起使用：\"\n      )"
+        },
+        {
+          "source": ".appendText(\" for inspiration.\")",
+          "target": ".appendText(\"为获得灵感\")"
+        },
+        {
+          "source": ".appendText(\"Enable encryption for the API keys.\")",
+          "target": ".appendText(\"为API密钥启用加密\")"
+        },
+        {
+          "source": ".appendText(\"Debug mode will log all API requests and prompts to the console.\")",
+          "target": ".appendText(\"调试模式会将所有的API请求和聊天提示都记录到控制台\")"
+        },
+        {
+          "source": ".setTitle(\"Copilot: Summarize Selection\")",
+          "target": ".setTitle(\"Copilot: 总结选中内容\")"
+        },
+        {
+          "source": "name: \"Toggle Copilot Chat Window in Note Area\"",
+          "target": "name: \"在笔记区域切换 Copilot 聊天窗口\""
+        },
+        {
+          "source": "), \"(Set with Copilot command: \"",
+          "target": "), \"(使用 Copilot 命令设置。: \""
+        },
+        {
+          "source": "), \"set note context \"",
+          "target": "), \"设置笔记上下文\""
+        },
+        {
+          "source": "), \"Default is active note)\"",
+          "target": "), \"默认是活动笔记)\""
+        },
+        {
+          "source": "), \"If errors occur, please re-enter the API key, save and reload the plugin to see if it resolves the issue.\"",
+          "target": "), \"如果出现错误，请重新输入 API 密钥，保存并重载插件以查看是否解决了问题。\""
+        },
+        {
+          "source": "), \"Your API key is stored locally and is only used to make requests to Google's services.\"",
+          "target": "), \"您的 API 密钥存储在本地，并且仅用于向 Google 的服务发起请求。\""
+        },
+        {
+          "source": "), \"Your API key is stored locally and is only used to make requests to Anthropic's services.\"",
+          "target": "), \"您的 API 密钥存储在本地，并且仅用于向 Anthropic 的服务发起请求。\""
+        },
+        {
+          "source": "), \"Your API key is stored locally and is only used to make requests to Groq's services.\"",
+          "target": "), \"您的 API 密钥存储在本地，并且仅用于向 Groq 的服务发起请求。\""
+        },
+        {
+          "source": "), \" to generate. Default is 1000.\"",
+          "target": "), \" 生成的数量。默认是 1000.\""
+        },
+        {
+          "source": "), \": Notes are never indexed to the vector store unless users run the command \"",
+          "target": "), \": 除非用户运行相应的命令，否则笔记不会被索引到向量数据库中。\""
+        },
+        {
+          "source": "), \": Vault index is refreshed on plugin load/reload.\"",
+          "target": "), \": 保管库(Vault)索引在插件加载或重载时刷新。\""
+        },
+        {
+          "source": "), \": Vault index is refreshed when switching to Vault QA mode.\"",
+          "target": "), \": 切换到保管库(Vault) QA 模式时刷新保管库(Vault)索引。\""
+        },
+        {
+          "source": "), 'By \"refreshed\", it means the vault index is not rebuilt from scratch but rather updated incrementally with new/modified notes since the last index. If you need a complete rebuild, run the commands \"Clear vector store\" and \"Force re-index for QA\" manually. This helps reduce costs when using paid embedding models.'",
+          "target": "), '所谓的\"刷新\"意味着保管库(Vault)索引不会从头开始重建，而是通过增量方式更新自上次索引以来的新笔记或修改过的笔记。如果您需要完全重建索引，请手动运行命令\"清除向量数据库\"和\"强制重新索引以进行 QA\"。这有助于在使用付费嵌入模型时减少成本。'"
+        },
+        {
+          "source": "), \"Beware of the cost if you are using a paid embedding model and have a large vault! You can run Copilot command \"",
+          "target": "), \"如果您使用的是付费嵌入模型并且保管库(Vault)很大，请注意成本！您可以运行 Copilot 命令，\""
+        },
+        {
+          "source": "), \" and refer to your selected embedding model pricing to estimate indexing costs.\"",
+          "target": "), \"并参考您所选嵌入模型的定价来估算索引成本。\""
+        },
+        {
+          "source": "Error(\"Private accessor was defined without a getter\"",
+          "target": "Error(\"私有访问器定义时没有提供 getter\""
+        },
+        {
+          "source": "Error(\"Cannot read private member from an object whose class did not declare it\"",
+          "target": "Error(\"无法从其类未声明的对象读取私有成员\""
+        },
+        {
+          "source": "Error(\"Private method is not writable\"",
+          "target": "Error(\"私有方法不可写\""
+        },
+        {
+          "source": "Error(\"Private accessor was defined without a setter\"",
+          "target": "Error(\"私有访问器定义时没有提供 setter\""
+        },
+        {
+          "source": "Error(\"Cannot write private member to an object whose class did not declare it\"",
+          "target": "Error(\"无法向其类未声明的对象写入私有成员\""
+        },
+        {
+          "source": "Error(`Can't use \"invalid_type_error\" or \"required_error\" in conjunction with custom error map.`",
+          "target": "Error(`不能在自定义错误映射中使用 \"invalid_type_error\" 或 \"required_error\"`"
+        },
+        {
+          "source": "Error(`Not a ZodError: ${value}`",
+          "target": "Error(`不是 ZodError: ${value}`"
+        },
+        {
+          "source": "Error(\"Validation failed but no issues detected.\"",
+          "target": "Error(\"验证失败但未检测到问题。\""
+        },
+        {
+          "source": "Error(\"Synchronous parse encountered promise.\"",
+          "target": "Error(\"同步解析遇到 Promise。\""
+        },
+        {
+          "source": "Error(`Internal ZodObject error: invalid unknownKeys value.`",
+          "target": "Error(`内部 ZodObject 错误:无效的 unknownKeys 值。`"
+        },
+        {
+          "source": "Error(`A discriminator value for key \\`",
+          "target": "Error(`带有键 \\ 的区分器值 \\`"
+        },
+        {
+          "source": "Error(`Discriminator property ${String(discriminator)} has duplicate value ${String(value)}`",
+          "target": "Error(`区分属性 ${String(discriminator)} 有重复值 ${String(value)}`"
+        },
+        {
+          "source": "Error(\"You must pass an array of schemas to z.tuple([ ... ])\"",
+          "target": "Error(\"必须将模式数组传递给 z.tuple([...])\""
+        },
+        {
+          "source": "Error(\"Async refinement encountered during synchronous parse operation. Use .parseAsync instead.\"",
+          "target": "Error(\"异步细化在同步解析操作中遇到。使用 .parseAsync 替代。\""
+        },
+        {
+          "source": "Error(`Asynchronous transform encountered during synchronous parse operation. Use .parseAsync instead.`",
+          "target": "Error(`同步解析操作中遇到异步转换。使用 .parseAsync 替代。`"
+        },
+        {
+          "source": "Error(\"RetryOperation timeout occurred\"",
+          "target": "Error(\"重试操作超时\""
+        },
+        {
+          "source": "Error(\"minTimeout is greater than maxTimeout\"",
+          "target": "Error(\"minTimeout 大于 maxTimeout\""
+        },
+        {
+          "source": "Error(`Non-error was thrown: \"${error}\". You should only throw errors.`",
+          "target": "Error(`抛出了非错误:\"${error}\"。您应该只抛出错误。`"
+        },
+        {
+          "source": "Error(\"crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported\"",
+          "target": "Error(\"crypto.getRandomValues() 不受支持。参见 https://github.com/uuidjs/uuid#getrandomvalues-not-supported\""
+        },
+        {
+          "source": "Error(\"Expected a string\"",
+          "target": "Error(\"期望是一个字符串\""
+        },
+        {
+          "source": "Error(\"Expected the input to be `string | string[]`\"",
+          "target": "Error(\"期望输入为 `string | string[]`\""
+        },
+        {
+          "source": "Error(\"No LLM run to end.\"",
+          "target": "Error(\"没有 LLM 运行结束。\""
+        },
+        {
+          "source": "Error(\"No chain run to end.\"",
+          "target": "Error(\"没有LLM链运行结束。\""
+        },
+        {
+          "source": "Error(\"No tool run to end\"",
+          "target": "Error(\"没有工具运行结束。\""
+        },
+        {
+          "source": "Error(\"No retriever run to end\"",
+          "target": "Error(\"没有检索器运行结束。\""
+        },
+        {
+          "source": "Error(`Invalid \"runId\" provided to \"handleLLMNewToken\" callback.`",
+          "target": "Error(`提供的 \"runId\" 无效。`"
+        },
+        {
+          "source": "Error(\"The listener must be a function\"",
+          "target": "Error(\"监听器必须是一个函数\""
+        },
+        {
+          "source": "Error(\"Expected `milliseconds` to be a positive number\"",
+          "target": "Error(\"期望 `milliseconds` 是一个正数\""
+        },
+        {
+          "source": "Error(`Expected \\`",
+          "target": "Error(`期望 \\`"
+        },
+        {
+          "source": "Error(`Invalid UUID: ${str2}`",
+          "target": "Error(`无效的 UUID: ${str2}`"
+        },
+        {
+          "source": "Error(`LANGCHAIN_TRACING_SAMPLING_RATE must be between 0 and 1 if set. Got: ${samplingRate}`",
+          "target": "Error(`LANGCHAIN_TRACING_SAMPLING_RATE 必须在 0 和 1 之间(如果设置了的话)。得到: ${samplingRate}`"
+        },
+        {
+          "source": "Error(`Failed to ${operation}: ${response.status} ${response.statusText} ${body}`",
+          "target": "Error(`${operation} 失败: ${response.status} ${response.statusText} ${body}`"
+        },
+        {
+          "source": "Error(\"Number of items to pop off may not be less than 1.\"",
+          "target": "Error(\"弹出项的数量不得少于 1。\""
+        },
+        {
+          "source": "Error(`Failed to fetch ${path}: ${response.status} ${response.statusText}`",
+          "target": "Error(`获取 ${path} 失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(\"Failed to retrieve server info.\"",
+          "target": "Error(\"获取服务器信息失败。\""
+        },
+        {
+          "source": "Error(`Run ${runId} has no app_path`",
+          "target": "Error(`运行 ${runId} 没有 app_path`"
+        },
+        {
+          "source": "Error(\"Must provide either runId or run\"",
+          "target": "Error(\"必须提供 runId 或 run\""
+        },
+        {
+          "source": "Error(`Child run ${childRun.id} has no parent`",
+          "target": "Error(`子运行 ${childRun.id} 没有父运行`"
+        },
+        {
+          "source": "Error(\"Invalid response from server\"",
+          "target": "Error(\"无效的服务器响应\""
+        },
+        {
+          "source": "Error(\"Either datasetId or datasetName must be given\"",
+          "target": "Error(\"必须提供 datasetId 或 datasetName\""
+        },
+        {
+          "source": "Error(`Failed to create session ${projectName}: ${response.status} ${response.statusText}`",
+          "target": "Error(`创建会话 ${projectName} 失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(`Failed to update project ${projectId}: ${response.status} ${response.statusText}`",
+          "target": "Error(`更新项目 ${projectId} 失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(\"Must provide either projectName or projectId, not both\"",
+          "target": "Error(\"必须提供 projectName 或 projectId,但不能同时提供两者\""
+        },
+        {
+          "source": "Error(\"Must provide projectName or projectId\"",
+          "target": "Error(\"必须提供 projectName 或 projectId\""
+        },
+        {
+          "source": "Error(`Project[id=${projectId}, name=${projectName}] not found`",
+          "target": "Error(`项目[id=${projectId}, name=${projectName}] 未找到`"
+        },
+        {
+          "source": "Error(\"No projects found to resolve tenant.\"",
+          "target": "Error(\"未找到可解决租户的项目。\""
+        },
+        {
+          "source": "Error(`Dataset ${fileName} already exists`",
+          "target": "Error(`数据集 ${fileName} 已存在`"
+        },
+        {
+          "source": "Error(`Failed to upload CSV: ${response.status} ${response.statusText}`",
+          "target": "Error(`上传 CSV 失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(`Dataset ${name2} already exists`",
+          "target": "Error(`数据集 ${name2} 已存在`"
+        },
+        {
+          "source": "Error(`Failed to create dataset ${response.status} ${response.statusText}`",
+          "target": "Error(`创建数据集失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(\"Must provide either datasetName or datasetId, not both\"",
+          "target": "Error(\"必须提供 datasetName 或 datasetId,但不能同时提供两者\""
+        },
+        {
+          "source": "Error(\"Must provide datasetName or datasetId\"",
+          "target": "Error(\"必须提供 datasetName 或 datasetId\""
+        },
+        {
+          "source": "Error(`Dataset[id=${datasetId}, name=${datasetName}] not found`",
+          "target": "Error(`数据集[id=${datasetId}, name=${datasetName}] 未找到`"
+        },
+        {
+          "source": "Error(\"Must provide either datasetName or datasetId\"",
+          "target": "Error(\"必须提供 datasetName 或 datasetId\""
+        },
+        {
+          "source": "Error(`Failed to delete ${path}: ${response.status} ${response.statusText}`",
+          "target": "Error(`删除 ${path} 失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(`Failed to create example: ${response.status} ${response.statusText}`",
+          "target": "Error(`创建示例失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(`Failed to create examples: ${response.status} ${response.statusText}`",
+          "target": "Error(`创建示例失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(\"Must provide a datasetName or datasetId\"",
+          "target": "Error(\"必须提供数据集名称或数据集 ID\""
+        },
+        {
+          "source": "Error(`Failed to update example ${exampleId}: ${response.status} ${response.statusText}`",
+          "target": "Error(`更新示例 ${exampleId} 失败: ${response.status} ${response.statusText}`"
+        },
+        {
+          "source": "Error(`Invalid run type: ${typeof run}`",
+          "target": "Error(`无效的运行类型: ${typeof run}`"
+        },
+        {
+          "source": "Error(\"One of runId or projectId must be provided\"",
+          "target": "Error(\"必须提供 runId 或 projectId\""
+        },
+        {
+          "source": "Error(\"Only one of runId or projectId can be provided\"",
+          "target": "Error(\"只能提供 runId 或 projectId 中的一个\""
+        },
+        {
+          "source": "Error(`field[${key}] already exists in the message chunk, but with a different type.`",
+          "target": "Error(`字段 [${key}] 在消息块中已存在,但类型不同。`"
+        },
+        {
+          "source": "Error(\"Malformed tool call chunk args.\"",
+          "target": "Error(\"工具调用块参数格式错误。\""
+        },
+        {
+          "source": "Error(`Unable to coerce message from array: only human, AI, or system message coercion is currently supported.`",
+          "target": "Error(`无法从数组强制转换消息:目前仅支持 human, AI 或 system 消息的强制转换。`"
+        },
+        {
+          "source": "Error(`Got unsupported message type: ${m3._getType()}`",
+          "target": "Error(`收到不受支持的消息类型: ${m3._getType()}`"
+        },
+        {
+          "source": "Error(\"Unknown message type.\"",
+          "target": "Error(\"未知的消息类型。\""
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleText: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleText: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleRetriever`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleRetriever`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleRetrieverError: ${error}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleRetrieverError: ${error}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleLLMNewToken: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleLLMNewToken: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleLLMError: ${err2}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleLLMError: ${err2}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleLLMEnd: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleLLMEnd: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleChainError: ${err2}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleChainError: ${err2}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleChainEnd: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleChainEnd: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleAgentAction: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleAgentAction: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleAgentEnd: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleAgentEnd: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleToolError: ${err2}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleToolError: ${err2}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleToolEnd: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleToolEnd: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleLLMStart: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleLLMStart: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleChainStart: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleChainStart: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleToolStart: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleToolStart: ${err}`"
+        },
+        {
+          "source": "error(`Error in handler ${handler.constructor.name}, handleRetrieverStart: ${err}`",
+          "target": "error(`处理器 ${handler.constructor.name} 中的错误,handleRetrieverStart: ${err}`"
+        },
+        {
+          "source": "Error(\"Test operation failed\", \"TEST_OPERATION_FAILED\"",
+          "target": "Error(\"测试操作失败` , `TEST_OPERATION_FAILED\""
+        },
+        {
+          "source": "Error(\"Operation `op` property is not one of operations defined in RFC-6902\", \"OPERATION_OP_INVALID\"",
+          "target": "Error(\"操作 'op' 属性不是 RFC-6902 中定义的操作之一` , `OPERATION_OP_INVALID\""
+        },
+        {
+          "source": "Error(\"JSON-Patch: modifying `__proto__` or `constructor/prototype` prop is banned for security reasons, if this was on purpose, please set `banPrototypeModifications` flag false and pass it to this function. More info in fast-json-patch README\"",
+          "target": "Error(\"JSON-Patch:出于安全原因,禁止修改 ' __proto__ ' 或 ' constructor/prototype ' 属性,如果这是故意的,请将 ' banPrototypeModifications ' 标志设置为 false 并将其传递给此函数。更多信息参见 fast-json-patch README\""
+        },
+        {
+          "source": "Error(\"Expected an unsigned base-10 integer value, making the new referenced value the array element with the zero-based index\", \"OPERATION_PATH_ILLEGAL_ARRAY_INDEX\"",
+          "target": "Error(\"期望一个无符号十进制整数值,使新引用的值为具有零基索引的数组元素` , `OPERATION_PATH_ILLEGAL_ARRAY_INDEX\""
+        },
+        {
+          "source": "Error(\"The specified index MUST NOT be greater than the number of elements in the array\", \"OPERATION_VALUE_OUT_OF_BOUNDS\"",
+          "target": "Error(\"指定的索引不得大于数组中的元素数量` , `OPERATION_VALUE_OUT_OF_BOUNDS\""
+        },
+        {
+          "source": "Error(\"Cannot perform operation at the desired path\", \"OPERATION_PATH_UNRESOLVABLE\"",
+          "target": "Error(\"无法在所需路径执行操作` , `OPERATION_PATH_UNRESOLVABLE\""
+        },
+        {
+          "source": "Error(\"Patch sequence must be an array\", \"SEQUENCE_NOT_AN_ARRAY\"",
+          "target": "Error(\"补丁序列必须是一个数组` , `SEQUENCE_NOT_AN_ARRAY\""
+        },
+        {
+          "source": "Error(\"Operation is not an object\", \"OPERATION_NOT_AN_OBJECT\"",
+          "target": "Error(\"操作不是一个对象` , `OPERATION_NOT_AN_OBJECT\""
+        },
+        {
+          "source": "Error(\"Operation `path` property is not a string\", \"OPERATION_PATH_INVALID\"",
+          "target": "Error(\"操作 'path' 属性不是一个字符串` , `OPERATION_PATH_INVALID\""
+        },
+        {
+          "source": "Error('Operation `path` property must start with \"/\"'",
+          "target": "Error('操作 `path` 属性必须以 \"/\" 开头'"
+        },
+        {
+          "source": "Error(\"Operation `from` property is not present (applicable in `move` and `copy` operations)\", \"OPERATION_FROM_REQUIRED\"",
+          "target": "Error(\"操作 'from' 属性不存在(适用于 'move' 和 'copy' 操作)` , `OPERATION_FROM_REQUIRED\""
+        },
+        {
+          "source": "Error(\"Operation `value` property is not present (applicable in `add`, `replace` and `test` operations)\", \"OPERATION_VALUE_REQUIRED\"",
+          "target": "Error(\"操作 'value' 属性不存在(适用于 'add', 'replace' 和 'test' 操作)` , `OPERATION_VALUE_REQUIRED\""
+        },
+        {
+          "source": "Error(\"Operation `value` property is not present (applicable in `add`, `replace` and `test` operations)\", \"OPERATION_VALUE_CANNOT_CONTAIN_UNDEFINED\"",
+          "target": "Error(\"操作 'value' 属性不存在(适用于 'add', 'replace' 和 'test' 操作)` , `OPERATION_VALUE_CANNOT_CONTAIN_UNDEFINED\""
+        },
+        {
+          "source": "Error(\"Cannot perform an `add` operation at the desired path\", \"OPERATION_PATH_CANNOT_ADD\"",
+          "target": "Error(\"无法在所需路径执行 'add' 操作` , `OPERATION_PATH_CANNOT_ADD\""
+        },
+        {
+          "source": "Error(\"Cannot perform the operation at a path that does not exist\", \"OPERATION_PATH_UNRESOLVABLE\"",
+          "target": "Error(\"无法在不存在的路径执行操作` , `OPERATION_PATH_UNRESOLVABLE\""
+        },
+        {
+          "source": "Error(\"Cannot perform the operation from a path that does not exist\", \"OPERATION_FROM_UNRESOLVABLE\"",
+          "target": "Error(\"无法从不存在的路径执行操作` , `OPERATION_FROM_UNRESOLVABLE\""
+        },
+        {
+          "source": "null, \"Default\"",
+          "target": "null, \"默认\""
+        },
+        {
+          "source": "null, \"Model\"",
+          "target": "null, \"模型\""
+        },
+        {
+          "source": "null, \"Provider\"",
+          "target": "null, \"提供商\""
+        },
+        {
+          "source": "null, \"Enabled\"",
+          "target": "null, \"启用\""
+        },
+        {
+          "source": "null, \"Delete\"",
+          "target": "null, \"删除\""
+        },
+        {
+          "source": "null, \"Advanced Settings\"",
+          "target": "null, \"高级设置\""
+        },
+        {
+          "source": "null, \"API Settings\"",
+          "target": "null, \"API 设置\""
+        },
+        {
+          "source": "null, \"All your API keys are stored locally.\"",
+          "target": "null, \"所有 API 密钥都存储在本地。\""
+        },
+        {
+          "source": "null, \"You can find your API key at\", \" \"",
+          "target": "null, \"您可以在 \", \" 找到您的 API 密钥。\""
+        },
+        {
+          "source": "null, \"If you are a new user, try \"",
+          "target": "null, \"如果您是新用户,请尝试 \""
+        },
+        {
+          "source": "null, \" to see if you have correct API access first.\"",
+          "target": "null, \"以确认您是否有正确的 API 访问权限。\""
+        },
+        {
+          "source": "null, \"If you have Google Cloud, you can get Gemini API key\", \" \"",
+          "target": "null, \"如果您有 Google Cloud,您可以获取 Gemini API 密钥 \", \"\""
+        },
+        {
+          "source": "null, \"If you have Anthropic API access, you can get the API key\", \" \"",
+          "target": "null, \"如果您有 Anthropic API 访问权限,您可以获取 API 密钥 \", \"\""
+        },
+        {
+          "source": "null, \"You can get your OpenRouterAI key\", \" \"",
+          "target": "null, \"您可以获取您的 OpenRouterAI 密钥 \", \"。\""
+        },
+        {
+          "source": "null, \"If you have Groq API access, you can get the API key\", \" \"",
+          "target": "null, \"如果您有 Groq API 访问权限,您可以获取 API 密钥 \", \"\""
+        },
+        {
+          "source": "null, \"Get your free Cohere API key\", \" \"",
+          "target": "null, \"获取您的免费 Cohere API 密钥 \", \"\""
+        },
+        {
+          "source": "null, \"General Settings\"",
+          "target": "null, \"通用设置\""
+        },
+        {
+          "source": "null, \"Please be mindful of the number of tokens and context conversation turns you set here, as they will affect the cost of your API requests.\"",
+          "target": "null, \"请注意您需要在这里设置最大输出token数量和上下文对话轮数,因为它们会影响您的 API 的请求成本。\""
+        },
+        {
+          "source": "null, \"The maximum number of \"",
+          "target": "null, \"最大输出\""
+        },
+        {
+          "source": "null, \"output tokens\"",
+          "target": "null, \"Token数\""
+        },
+        {
+          "source": "null, \"This number plus the length of your prompt (input tokens) must be smaller than the context window of the model.\"",
+          "target": "null, \"此数字加上您聊天提示的长度(输入Token)必须小于模型的上下文窗口。\""
+        },
+        {
+          "source": "null, \"QA Settings\"",
+          "target": "null, \"QA 设置\""
+        },
+        {
+          "source": "null, \"QA mode relies a \"",
+          "target": "null, \"QA 模式依赖于一个\""
+        },
+        {
+          "source": "null, \"Long Note QA vs. Vault QA (BETA)\"",
+          "target": "null, \"长笔记 QA 与 保管库(Vault) QA(测试版)\""
+        },
+        {
+          "source": "null, \"Long Note QA mode uses the Active Note as context. Vault QA (BETA) uses your entire vault as context. Please ask questions as specific as possible, avoid vague questions to get better results.\"",
+          "target": "null, \"长笔记 QA 模式使用活动笔记作为上下文。保管库(Vault) QA(测试版)使用您的整个保管库(Vault)作为上下文。请尽可能具体地提问,避免模糊的问题以获得更好的结果。\""
+        },
+        {
+          "source": "null, \"Local Embedding Model\"",
+          "target": "null, \"本地嵌入模型\""
+        },
+        {
+          "source": "null, \"Check the\", \" \"",
+          "target": "null, \"检查 \", \"\""
+        },
+        {
+          "source": "null, \"Embedding Models\"",
+          "target": "null, \"嵌入模型\""
+        },
+        {
+          "source": "null, \"Auto-Index Strategy\"",
+          "target": "null, \"自动索引策略\""
+        },
+        {
+          "source": "null, \"When you switch to \"",
+          "target": "null, \"当您切换到\""
+        },
+        {
+          "source": "null, \"Long Note QA\"",
+          "target": "null, \"长笔记 QA\""
+        },
+        {
+          "source": "null, \"Vault QA\"",
+          "target": "null, \"保管库(Vault) QA\""
+        },
+        {
+          "source": "null, \"based on the auto-index strategy you select below\"",
+          "target": "null, \"基于您选择的自动索引策略\""
+        },
+        {
+          "source": "null, \"Index vault for QA\"",
+          "target": "null, \"为 QA模式 显式索引保管库(Vault)\""
+        },
+        {
+          "source": "null, \"Refresh Index\"",
+          "target": "null, \"刷新索引\""
+        },
+        {
+          "source": "null, \"ON STARTUP\"",
+          "target": "null, \"启动时\""
+        },
+        {
+          "source": "null, \"ON MODE SWITCH (Recommended)\"",
+          "target": "null, \"模式切换时(推荐)\""
+        },
+        {
+          "source": "null, \"Count total tokens in your vault\"",
+          "target": "null, \"计算您保管库(Vault)中的总Token数\""
+        },
+        {
+          "source": "null, \"Copilot Settings\"",
+          "target": "null, \"Copilot 设置\""
+        },
+        {
+          "source": "}, \"Model Selection\"",
+          "target": "}, \"模型选择\""
+        },
+        {
+          "source": "}, \"New Chat\"",
+          "target": "}, \"新建聊天\""
+        },
+        {
+          "source": "}, \"Save as Note\"",
+          "target": "}, \"保存为笔记\""
+        },
+        {
+          "source": "}, \"Chat\"",
+          "target": "}, \"聊天\""
+        },
+        {
+          "source": "}, \"Long Note QA\"",
+          "target": "}, \"长笔记 QA\""
+        },
+        {
+          "source": "}, \"Vault QA (BETA)\"",
+          "target": "}, \"保管库(Vault) QA(测试版)\""
+        },
+        {
+          "source": "}, \"Mode Selection\"",
+          "target": "}, \"模式选择\""
+        },
+        {
+          "source": "}, \"Send Note(s) to Prompt\"",
+          "target": "}, \"将笔记发送到聊天提示\""
+        },
+        {
+          "source": "}, \"Refresh Index\"",
+          "target": "}, \"刷新索引\""
+        },
+        {
+          "source": "}, \"Delete\"",
+          "target": "}, \"删除\""
+        },
+        {
+          "source": "}, \"Add Custom Model \"",
+          "target": "}, \"添加自定义模型\""
+        },
+        {
+          "source": "}, \"Add Model\"",
+          "target": "}, \"添加模型\""
+        },
+        {
+          "source": "}, \"Make sure you have access to the model and the correct API key.\"",
+          "target": "}, \"请确保您有访问该模型的权限并且拥有正确的 API 密钥。\""
+        },
+        {
+          "source": "}, \"Command Settings \"",
+          "target": "}, \"命令设置\""
+        },
+        {
+          "source": "}, \"Vault QA is in BETA and may not be stable. If you have issues please report in the github repo.\"",
+          "target": "}, \"保管库(Vault) QA 处于测试版,可能不稳定。如有问题,请在 GitHub 仓库中报告。\""
+        },
+        {
+          "source": "}, \"local copilot\"",
+          "target": "}, \"本地 Copilot\""
+        },
+        {
+          "source": "}, \"If you are using a paid embedding provider, beware of costs for large vaults!\"",
+          "target": "}, \"如果您使用的是付费嵌入模型提供商,请注意大型保管库(Vault)的成本！\""
+        },
+        {
+          "source": "}, \"Save and Reload\"",
+          "target": "}, \"保存并重载\""
+        },
+        {
+          "source": "}, \"Reset to Default Settings\"",
+          "target": "}, \"重置为默认设置\""
+        },
+        {
+          "source": "}, \"Please Save and Reload the plugin when you change any setting below!\"",
+          "target": "}, \"更改任何设置后,请保存并重载插件！\""
+        },
+        {
+          "source": "description: \"Default is 3 (Recommended). Increase if you want more sources from your notes. A higher number can lead to irrelevant sources and lower quality responses, it also fills up the context window faster.\"",
+          "target": "description: \"默认是 3(推荐)。如果你想从笔记中获得更多来源可以增加这个数值。较高的数值可能导致无关来源和较低质量的回答,同时也会更快地填满上下文窗口。\""
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleText: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleText: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleRetriever`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleRetriever`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleRetrieverError: ${error}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleRetrieverError: ${error}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleLLMNewToken: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleLLMNewToken: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleLLMError: ${err2}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleLLMError: ${err2}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleLLMEnd: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleLLMEnd: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleChainError: ${err2}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleChainError: ${err2}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleChainEnd: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleChainEnd: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleAgentAction: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleAgentAction: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleAgentEnd: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleAgentEnd: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleToolError: ${err2}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleToolError: ${err2}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleToolEnd: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleToolEnd: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleLLMStart: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleLLMStart: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleChainStart: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleChainStart: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleToolStart: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleToolStart: ${err}`"
+        },
+        {
+          "source": "console.error(`Error in handler ${handler.constructor.name}, handleRetrieverStart: ${err}`",
+          "target": "console.error(`处理器 ${handler.constructor.name} 中的错误,handleRetrieverStart: ${err}`"
+        },
+        {
+          "source": "console.error(`Unable to parse ${JSON.stringify(value)} as a whatwg URL.`",
+          "target": "console.error(`无法将 ${JSON.stringify(value)} 解析为 whatwg URL。`"
+        },
+        {
+          "source": "console.error(`Failed to construct URL with ${expression}`",
+          "target": "console.error(`使用 ${expression} 构建 URL 失败`"
+        },
+        {
+          "source": "console.error(`Could not parse message into JSON:`",
+          "target": "console.error(`无法将消息解析为 JSON:`"
+        },
+        {
+          "source": "console.error(`From chunk:`",
+          "target": "console.error(`来自块:`"
+        },
+        {
+          "source": "console.error(\"Error parsing YAML frontmatter:\"",
+          "target": "console.error(\"解析 YAML 前置事项时出错:\""
+        },
+        {
+          "source": "console.error(\"Error parsing function arguments\"",
+          "target": "console.error(\"解析函数参数时出错\""
+        },
+        {
+          "source": "console.error(`No embedding model found for: ${embeddingModelKey}`",
+          "target": "console.error(`找不到嵌入模型: ${embeddingModelKey}`"
+        },
+        {
+          "source": "console.error(`API key is not provided for the embedding model: ${embeddingModelKey}`",
+          "target": "console.error(`未为嵌入模型提供 API 密钥: ${embeddingModelKey}`"
+        },
+        {
+          "source": "console.error(`Error creating embedding model: ${embeddingModelKey}`",
+          "target": "console.error(`创建嵌入模型时出错: ${embeddingModelKey}`"
+        },
+        {
+          "source": "console.error(`No embedding model found for key: ${modelKey}`",
+          "target": "console.error(`找不到键对应的嵌入模型: ${modelKey}`"
+        },
+        {
+          "source": "console.error(\"EmbeddingManager could not determine model name!\"",
+          "target": "console.error(\"EmbeddingManager 无法确定模型名称！\""
+        },
+        {
+          "source": "console.error(\"Error storing vectors in VectorDB:\"",
+          "target": "console.error(\"在 VectorDB 中存储向量时出错:\""
+        },
+        {
+          "source": "console.error(\"Error getting note files from VectorDB:\"",
+          "target": "console.error(\"从 VectorDB 获取笔记文件时出错:\""
+        },
+        {
+          "source": "console.error(\"Error removing file from VectorDB:\"",
+          "target": "console.error(\"从 VectorDB 删除文件时出错:\""
+        },
+        {
+          "source": "console.error(\"Error getting newest file mtime from VectorDB:\"",
+          "target": "console.error(\"从 VectorDB 获取最新文件 mtime 时出错:\""
+        },
+        {
+          "source": "console.error(\"Error checking last embedding model from VectorDB:\"",
+          "target": "console.error(\"从 VectorDB 检查最后一个嵌入模型时出错:\""
+        },
+        {
+          "source": "console.error(`An error occurred while creating dataset ${finalDatasetName}. You should delete it manually.`",
+          "target": "console.error(`创建数据集 ${finalDatasetName} 时出错。你应该手动删除它。`"
+        },
+        {
+          "source": "console.error(\"Resetting default model. No model configuration found for: \"",
+          "target": "console.error(\"重置默认模型。未找到模型配置: \""
+        },
+        {
+          "source": "console.error(\"createChainWithNewModel failed: \"",
+          "target": "console.error(\"createChainWithNewModel 失败: \""
+        },
+        {
+          "source": "console.error(\"Error creating chain:\"",
+          "target": "console.error(\"创建LLM链时出错:\""
+        },
+        {
+          "source": "console.error(\"setChain failed: No chat model set.\"",
+          "target": "console.error(\"设置LLM链时出错:没有设置聊天模型。\""
+        },
+        {
+          "source": "console.error(\"Error getting embeddings API. Please check your settings.\"",
+          "target": "console.error(\"获取嵌入 API 时出错。请检查您的设置。\""
+        },
+        {
+          "source": "console.error(\"Error creating vector store.\"",
+          "target": "console.error(\"创建向量存储时出错。\""
+        },
+        {
+          "source": "console.error(\"Chain type not supported:\"",
+          "target": "console.error(\"不支持的LLM链类型:\""
+        },
+        {
+          "source": "console.error(\"App instance is not available.\"",
+          "target": "console.error(\"应用程序实例不可用。\""
+        },
+        {
+          "source": "console.error(\"No active note found.\"",
+          "target": "console.error(\"未找到活动笔记。\""
+        },
+        {
+          "source": "console.error(\"Model request failed:\"",
+          "target": "console.error(\"模型请求失败:\""
+        },
+        {
+          "source": "console.error(\"Error saving chat as note:\"",
+          "target": "console.error(\"保存聊天为笔记时出错:\""
+        },
+        {
+          "source": "console.error(\"No note content found.\"",
+          "target": "console.error(\"未找到笔记内容。\""
+        },
+        {
+          "source": "console.error(\"Error regenerating message:\"",
+          "target": "console.error(\"重新生成消息时出错:\""
+        },
+        {
+          "source": "console.error(\"Error reloading plugin:\"",
+          "target": "console.error(\"重新加载插件时出错:\""
+        },
+        {
+          "source": "console.error(\"Error clearing the local vector store:\"",
+          "target": "console.error(\"清除本地向量存储时出错:\""
+        },
+        {
+          "source": "console.error(\"Error indexing vault to vector store:\"",
+          "target": "console.error(\"将保管库(Vault)索引到向量存储时出错:\""
+        },
+        {
+          "source": "console.error(\"Error re-indexing vault to vector store:\"",
+          "target": "console.error(\"重新索引保管库(Vault)到向量存储时出错:\""
+        },
+        {
+          "source": "console.error(\"Error saving vault to vector store:\"",
+          "target": "console.error(\"保存保管库(Vault)到向量存储时出错:\""
+        },
+        {
+          "source": "console.error(\"Error dumping custom prompts:\"",
+          "target": "console.error(\"导出自定义聊天提示时出错:\""
+        },
+        {
+          "source": "console.error(\"Error clearing vector store for reindexing:\"",
+          "target": "console.error(\"重新索引时清除向量存储时出错:\""
+        },
+        {
+          "source": "console.error(\"Error indexing file:\"",
+          "target": "console.error(\"索引文件时出错:\""
+        },
+        {
+          "source": "console.error(\"Error counting tokens: \"",
+          "target": "console.error(\"计数Token时出错:\""
+        },
+        {
+          "source": "console.log(\"Using RetryOperation.try() is deprecated\")",
+          "target": "console.log(\"使用 RetryOperation.try() 已废弃\")"
+        },
+        {
+          "source": "console.log(\"Using RetryOperation.start() is deprecated\")",
+          "target": "console.log(\"使用 RetryOperation.start() 已废弃\")"
+        },
+        {
+          "source": "console.log(\"New LLM chain created.\")",
+          "target": "console.log(\"新的 LLM 链已创建。\")"
+        },
+        {
+          "source": "console.log(\"[WARNING]: Received non-string content from OpenAI. This is currently not supported.\")",
+          "target": "console.log(\"[警告]: 收到来自 OpenAI 的非字符串内容。目前不支持。\")"
+        },
+        {
+          "source": "console.log(\"Failed to parse error response as JSON\")",
+          "target": "console.log(\"未能将错误响应解析为 JSON\")"
+        },
+        {
+          "source": "console.log(\"Getting text from response\")",
+          "target": "console.log(\"从响应中获取文本\")"
+        },
+        {
+          "source": "console.log(\"Failed to get text from error response\")",
+          "target": "console.log(\"未能从错误响应中获取文本\")"
+        },
+        {
+          "source": "console.log(\"clearing chat memory\")",
+          "target": "console.log(\"清除聊天记录\")"
+        },
+        {
+          "source": "console.log(\"New Vault QA chain with hybrid retriever created for entire vault\")",
+          "target": "console.log(\"为整个保管库(Vault)创建了新的带混合检索器的 Vault QA 链\")"
+        },
+        {
+          "source": "console.log(\"User stopping generation...\")",
+          "target": "console.log(\"用户停止生成...\")"
+        },
+        {
+          "source": "console.log(\"Message regenerated successfully\")",
+          "target": "console.log(\"消息重新生成成功\")"
+        },
+        {
+          "source": "console.log(\"Local vector store cleared successfully, new instance created.\")",
+          "target": "console.log(\"本地向量存储清除成功，创建了新实例。\")"
+        },
+        {
+          "source": "console.log(\"Local vector store garbage collected successfully, new instance created.\")",
+          "target": "console.log(\"本地向量存储垃圾回收成功，创建了新实例。\")"
+        },
+        {
+          "source": "console.log(\"Detected change in embedding model. Rebuild vector store from scratch.\")",
+          "target": "console.log(\"检测到嵌入模型的变化。从头重建向量存储。\")"
+        },
+        {
+          "source": "console.log(\"Indexing Errors:\", errors.join(\"\\n\")",
+          "target": "console.log(\"索引错误：\", errors.join(\"\\n\")"
+        },
+        {
+          "source": "title: \"Copy\"",
+          "target": "title: \"复制\""
+        },
+        {
+          "source": "title: \"Edit\"",
+          "target": "title: \"编辑\""
+        },
+        {
+          "source": "title: \"Insert to note at cursor\"",
+          "target": "title: \"插入到笔记中的光标位置\""
+        },
+        {
+          "source": "title: \"Regenerate\"",
+          "target": "title: \"重新生成\""
+        },
+        {
+          "source": "title: \"OpenAI API Key\"",
+          "target": "title: \"OpenAI API 密钥\""
+        },
+        {
+          "source": "title: \"OpenAI Organization ID (optional)\"",
+          "target": "title: \"OpenAI 组织 ID(可选)\""
+        },
+        {
+          "source": "title: \"Google API Settings\"",
+          "target": "title: \"Google API 设置\""
+        },
+        {
+          "source": "title: \"Google API Key\"",
+          "target": "title: \"Google API 密钥\""
+        },
+        {
+          "source": "title: \"Anthropic API Settings\"",
+          "target": "title: \"Anthropic API 设置\""
+        },
+        {
+          "source": "title: \"Anthropic API Key\"",
+          "target": "title: \"Anthropic API 密钥\""
+        },
+        {
+          "source": "title: \"OpenRouter.ai API Settings\"",
+          "target": "title: \"OpenRouter.ai API 设置\""
+        },
+        {
+          "source": "title: \"OpenRouter AI API Key\"",
+          "target": "title: \"OpenRouter AI API 密钥\""
+        },
+        {
+          "source": "title: \"Azure OpenAI API Settings\"",
+          "target": "title: \"Azure OpenAI API 设置\""
+        },
+        {
+          "source": "title: \"Azure OpenAI API Key\"",
+          "target": "title: \"Azure OpenAI API 密钥\""
+        },
+        {
+          "source": "title: \"Azure OpenAI API Instance Name\"",
+          "target": "title: \"Azure OpenAI API 实例名称\""
+        },
+        {
+          "source": "title: \"Azure OpenAI API Deployment Name\"",
+          "target": "title: \"Azure OpenAI API 部署名称\""
+        },
+        {
+          "source": "title: \"Azure OpenAI API Version\"",
+          "target": "title: \"Azure OpenAI API 版本\""
+        },
+        {
+          "source": "title: \"Azure OpenAI API Embedding Deployment Name\"",
+          "target": "title: \"Azure OpenAI API 嵌入部署名称\""
+        },
+        {
+          "source": "title: \"Groq API Settings\"",
+          "target": "title: \"Groq API 设置\""
+        },
+        {
+          "source": "title: \"Groq API Key\"",
+          "target": "title: \"Groq API 密钥\""
+        },
+        {
+          "source": "title: \"Cohere API Settings\"",
+          "target": "title: \"Cohere API 设置\""
+        },
+        {
+          "source": "title: \"Cohere API Key\"",
+          "target": "title: \"Cohere API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Ask anything. [[ for notes. / for custom prompts.\"",
+          "target": "placeholder: \"询问任何问题。[[用于笔记。/ 用于自定义聊天提示。\""
+        },
+        {
+          "source": "placeholder: \"Enter /folderPath, [[note title]] separated by commas\"",
+          "target": "placeholder: \"输入 /folderPath,[[笔记标题]] 用逗号分隔\""
+        },
+        {
+          "source": "placeholder: \"Enter model name\"",
+          "target": "placeholder: \"输入模型名称\""
+        },
+        {
+          "source": "placeholder: \"Enter API key\"",
+          "target": "placeholder: \"输入 API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Enter OpenAI API Key\"",
+          "target": "placeholder: \"输入 OpenAI API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Enter OpenAI Organization ID if applicable\"",
+          "target": "placeholder: \"如果适用,请输入 OpenAI 组织 ID\""
+        },
+        {
+          "source": "placeholder: \"Enter Google API Key\"",
+          "target": "placeholder: \"输入 Google API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Enter Anthropic API Key\"",
+          "target": "placeholder: \"输入 Anthropic API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Enter OpenRouter AI API Key\"",
+          "target": "placeholder: \"输入 OpenRouter AI API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Enter Azure OpenAI API Key\"",
+          "target": "placeholder: \"输入 Azure OpenAI API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Enter Azure OpenAI API Instance Name\"",
+          "target": "placeholder: \"输入 Azure OpenAI API 实例名称\""
+        },
+        {
+          "source": "placeholder: \"Enter Azure OpenAI API Deployment Name\"",
+          "target": "placeholder: \"输入 Azure OpenAI API 部署名称\""
+        },
+        {
+          "source": "placeholder: \"Enter Azure OpenAI API Version\"",
+          "target": "placeholder: \"输入 Azure OpenAI API 版本\""
+        },
+        {
+          "source": "placeholder: \"Enter Azure OpenAI API Embedding Deployment Name\"",
+          "target": "placeholder: \"输入 Azure OpenAI API 嵌入部署名称\""
+        },
+        {
+          "source": "placeholder: \"Enter Groq API Key\"",
+          "target": "placeholder: \"输入 Groq API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Enter Cohere API Key\"",
+          "target": "placeholder: \"输入 Cohere API 密钥\""
+        },
+        {
+          "source": "placeholderText = \"Please enter your custom ad-hoc prompt here, press enter to send.\"",
+          "target": "placeholderText = \"请在这里输入您的自定义即时聊天提示,按回车发送。\""
+        },
+        {
+          "source": "Notice(`Setting model: ${modelConfig.modelName}`",
+          "target": "Notice(`设置模型: ${modelConfig.modelName}`"
+        },
+        {
+          "source": "Notice(`Error creating model: ${modelKey}`",
+          "target": "Notice(`创建模型错误: ${modelKey}`"
+        },
+        {
+          "source": "Notice(\"Error creating chain:\"",
+          "target": "Notice(\"创建LLM链错误:\""
+        },
+        {
+          "source": "Notice(\"No note content provided\"",
+          "target": "Notice(\"没有提供笔记内容\""
+        },
+        {
+          "source": "Notice(`LangChain error: ${errorCode}`",
+          "target": "Notice(`LangChain 错误: ${errorCode}`"
+        },
+        {
+          "source": "Notice(\"Please select a language.\"",
+          "target": "Notice(\"请选择一种语言。\""
+        },
+        {
+          "source": "Notice(\"Please select a tone.\"",
+          "target": "Notice(\"请选择一种语气。\""
+        },
+        {
+          "source": "Notice(`Total tokens in your vault: ${totalTokens}`",
+          "target": "Notice(`您的保管库(Vault)中的总Token数: ${totalTokens}`"
+        },
+        {
+          "source": "Notice(\"Please fill in both fields: Title and Prompt.\"",
+          "target": "Notice(\"请填写两个字段:标题和聊天提示。\""
+        },
+        {
+          "source": "Notice(\"No active note found.\"",
+          "target": "Notice(\"未找到活动笔记。\""
+        },
+        {
+          "source": "Notice(`Warning: No valid notes found for the provided path '${variableName}'.`",
+          "target": "Notice(`警告:对于提供的路径 '${variableName}' 没有找到有效的笔记。`"
+        },
+        {
+          "source": "Notice(\"Model request failed:\"",
+          "target": "Notice(\"模型请求失败:\""
+        },
+        {
+          "source": "Notice(`Chat saved as note in folder: ${defaultSaveFolder}.`",
+          "target": "Notice(`聊天已保存为文件夹中的笔记: ${defaultSaveFolder}。`"
+        },
+        {
+          "source": "Notice(\"No valid Chat context provided. Defaulting to the active note.\"",
+          "target": "Notice(\"没有提供有效的聊天上下文。默认使用活动笔记。\""
+        },
+        {
+          "source": "Notice(\"No note content found.\"",
+          "target": "Notice(\"未找到笔记内容。\""
+        },
+        {
+          "source": "Notice(\"Vault index refreshed.\"",
+          "target": "Notice(\"保管库(Vault)索引已刷新。\""
+        },
+        {
+          "source": "Notice(\"Cannot regenerate the first message or a user message.\"",
+          "target": "Notice(\"无法重新生成第一条消息或用户消息。\""
+        },
+        {
+          "source": "Notice(\"Failed to regenerate message. Please try again.\"",
+          "target": "Notice(\"重新生成消息失败。请再次尝试。\""
+        },
+        {
+          "source": "Notice(\"No active leaf found.\"",
+          "target": "Notice(\"未找到活动节点。\""
+        },
+        {
+          "source": "Notice(\"Failed to open a markdown view.\"",
+          "target": "Notice(\"打开 Markdown 视图失败。\""
+        },
+        {
+          "source": "Notice(\"Message inserted into the active note.\"",
+          "target": "Notice(\"消息插入到了活动笔记中。\""
+        },
+        {
+          "source": "Notice(\"Please fill in necessary fields!\"",
+          "target": "Notice(\"请填写必要的字段！\""
+        },
+        {
+          "source": "Notice(\"Plugin reloaded successfully.\"",
+          "target": "Notice(\"插件成功重新加载。\""
+        },
+        {
+          "source": "Notice(\"Failed to reload the plugin. Please reload manually.\"",
+          "target": "Notice(\"重新加载插件失败。请手动重新加载。\""
+        },
+        {
+          "source": "Notice(\"Custom prompt saved successfully.\"",
+          "target": "Notice(\"自定义聊天提示保存成功。\""
+        },
+        {
+          "source": "Notice(\"Error saving custom prompt. Please check if the title already exists.\"",
+          "target": "Notice(\"保存自定义聊天提示错误。请检查标题是否已存在。\""
+        },
+        {
+          "source": "Notice(\"Please select a prompt title.\"",
+          "target": "Notice(\"请选择一个聊天提示标题。\""
+        },
+        {
+          "source": "Notice(`No prompt found with the title \"${promptTitle}\".`",
+          "target": "Notice(`未找到标题为 ‘${promptTitle}’ 的聊天提示。`"
+        },
+        {
+          "source": "Notice(\"An error occurred.\"",
+          "target": "Notice(\"发生了一个错误。\""
+        },
+        {
+          "source": "Notice(`Prompt \"${promptTitle}\" has been deleted.`",
+          "target": "Notice(`聊天提示 ‘${promptTitle}’ 已被删除。`"
+        },
+        {
+          "source": "Notice(\"An error occurred while deleting the prompt.\"",
+          "target": "Notice(\"删除聊天提示时发生错误。\""
+        },
+        {
+          "source": "Notice(`Prompt \"${title}\" has been updated.`",
+          "target": "Notice(`聊天提示 ‘${title}’ 已更新。`"
+        },
+        {
+          "source": "Notice(\"Local vector store cleared successfully.\"",
+          "target": "Notice(\"本地向量存储清除成功。\""
+        },
+        {
+          "source": "Notice(\"An error occurred while clearing the local vector store.\"",
+          "target": "Notice(\"清除本地向量存储时发生错误。\""
+        },
+        {
+          "source": "Notice(\"Local vector store garbage collected successfully.\"",
+          "target": "Notice(\"本地向量存储垃圾回收成功。\""
+        },
+        {
+          "source": "Notice(`${indexedFileCount} vault files indexed to vector store.`",
+          "target": "Notice(`${indexedFileCount} 个保管库(Vault)文件已索引到向量存储。`"
+        },
+        {
+          "source": "Notice(\"An error occurred while indexing vault to vector store.\"",
+          "target": "Notice(\"将保管库(Vault)索引到向量存储时发生错误。\""
+        },
+        {
+          "source": "Notice(\"An error occurred while re-indexing vault to vector store.\"",
+          "target": "Notice(\"重新索引保管库(Vault)到向量存储时发生错误。\""
+        },
+        {
+          "source": "Notice(\"An error occurred while saving vault to vector store.\"",
+          "target": "Notice(\"保存保管库(Vault)到向量存储时发生错误。\""
+        },
+        {
+          "source": "Notice(`Custom prompts dumped to ${folder} folder`",
+          "target": "Notice(`自定义聊天提示已导出到 ${folder} 文件夹`"
+        },
+        {
+          "source": "Notice(\"Error dumping custom prompts. Check console for details.\"",
+          "target": "Notice(\"导出自定义聊天提示时发生错误。请检查控制台了解详细信息。\""
+        },
+        {
+          "source": "Notice(\"Embedding instance not found.\"",
+          "target": "Notice(\"未找到嵌入实例。\""
+        },
+        {
+          "source": "Notice(\"Detected change in embedding model. Rebuild vector store from scratch.\"",
+          "target": "Notice(\"检测到嵌入模型发生变化。从头重建向量存储。\""
+        },
+        {
+          "source": "Notice(\"Error clearing vector store for reindexing.\"",
+          "target": "Notice(\"重新索引时清除向量存储错误。\""
+        },
+        {
+          "source": "Notice(\"Copilot vault index is up-to-date.\"",
+          "target": "Notice(\"Copilot 保管库(Vault)索引是最新的。\""
+        },
+        {
+          "source": "Notice(`Indexing completed with errors. Check the console for details.`",
+          "target": "Notice(`索引完成但有错误。请检查控制台了解详细信息。`"
+        },
+        {
+          "source": "Notice(\"No chat history found.\"",
+          "target": "Notice(\"未找到聊天记录。\""
+        },
+        {
+          "source": "appendText(\"Tip: turn on debug mode to show the processed prompt in the chat window.\"",
+          "target": "appendText(\"Tip：打开调试模式以在聊天窗口中显示处理后的聊天提示。\""
+        },
+        {
+          "source": "appendText(\"Check out the \"",
+          "target": "appendText(\"查看 \""
+        },
+        {
+          "source": "appendText(\" for inspiration.\"",
+          "target": "appendText(\"以获得灵感。\""
+        },
+        {
+          "source": "appendText(\"All notes under the path will be sent to the prompt when the \"",
+          "target": "appendText(\"在聊天模式下,当点击 \""
+        },
+        {
+          "source": "appendText(\" button is clicked in Chat mode. \"",
+          "target": "appendText(\"按钮时,路径下的所有笔记都将被发送到聊天提示。\""
+        },
+        {
+          "source": "appendText(\"If none provided, \"",
+          "target": "appendText(\"如果没有提供,则\""
+        },
+        {
+          "source": "appendText(\"All notes under the paths will be excluded from indexing\"",
+          "target": "appendText(\"路径下的所有笔记都将从索引中排除。\""
+        },
+        {
+          "source": "appendText(\"Enable encryption for the API keys.\"",
+          "target": "appendText(\"启用 API 密钥的加密。\""
+        },
+        {
+          "source": "appendText(\"Debug mode will log all API requests and prompts to the console.\"",
+          "target": "appendText(\"调试模式会将所有 API 请求和聊天提示记录到控制台。\""
+        },
+        {
+          "source": "text: \"Filter by Folder Path\"",
+          "target": "text: \"按文件夹路径筛选\""
+        },
+        {
+          "source": "text: \"Send Note(s) to Prompt\"",
+          "target": "text: \"将笔记发送到聊天提示\""
+        },
+        {
+          "source": "text: \"default context is the active note\"",
+          "target": "text: \"默认上下文是活动笔记\""
+        },
+        {
+          "source": "text: \"Filter by Tags\"",
+          "target": "text: \"按标签筛选\""
+        },
+        {
+          "source": "text: \"Only tags in note property are used, tags in note content are not used.\"",
+          "target": "text: \"仅使用笔记属性中的标签,不使用笔记内容中的标签。\""
+        },
+        {
+          "source": "text: \"All notes under the path above are further filtered by the specified tags. If no path is provided, only tags are used. Multiple tags should be separated by commas. \"",
+          "target": "text: \"路径上的所有笔记将进一步通过指定的标签进行筛选。如果没有提供路径,则仅使用标签。多个标签应以逗号分隔。\""
+        },
+        {
+          "source": "text: \"Tags function as an OR filter, \"",
+          "target": "text: \"标签作为OR过滤器,\""
+        },
+        {
+          "source": "any note that matches one of the tags will be sent to the prompt when button is clicked in Chat mode",
+          "target": "在聊天模式下,当点击按钮时,任何匹配其中一个标签的笔记都将被发送到聊天提示"
+        },
+        {
+          "source": "text: \"Submit\"",
+          "target": "text: \"提交\""
+        },
+        {
+          "source": "text: \"Exclude by Folder Path or Note Title\"",
+          "target": "text: \"按文件夹路径或笔记标题排除\""
+        },
+        {
+          "source": "msg = `The value of \"${str2}\" is out of range.`",
+          "target": "msg = `值 '${str2}' 超出了范围。`"
+        },
+        {
+          "source": "msg = \"Invalid space after '<'.\"",
+          "target": "msg = \"后面的空格无效'<'.\""
+        },
+        {
+          "source": "msg = \"Tag '\"",
+          "target": "msg = \"标签 '\""
+        },
+        {
+          "source": "Msg = \"Chat model is not initialized properly, check your API key in Copilot setting and make sure you have API access.\"",
+          "target": "Msg = \"聊天模型未正确初始化,请检查 Copilot 设置中的 API 密钥并确保您有 API 访问权限。\""
+        },
+        {
+          "source": "Msg = \"You do not have access to this model or the model does not exist, please check with your API provider.\"",
+          "target": "Msg = \"您没有访问该模型的权限或者该模型不存在,请与您的 API 提供商核实。\""
+        },
+        {
+          "source": "Msg = \"Failed to load file, embedding API is not set correctly, please check your settings.\"",
+          "target": "Msg = \"文件加载失败,嵌入式 API 设置不正确,请检查您的设置。\""
+        },
+        {
+          "source": "msg = \"Filter function threw: \"",
+          "target": "msg = \"过滤函数抛出异常:\""
+        },
+        {
+          "source": "msg = \"Failed to open indexedDB, are you in private browsing mode?\"",
+          "target": "msg = \"无法打开 indexedDB,您是否处于隐私浏览模式?\""
+        },
+        {
+          "source": "return `${name2} is outside of buffer bounds`",
+          "target": "return `${name2} 超出了缓冲区范围`"
+        },
+        {
+          "source": "return \"Attempt to access memory outside buffer bounds\"",
+          "target": "return \"尝试访问缓冲区范围外的内存\""
+        },
+        {
+          "source": "return `The \"${name2}\" argument must be of type number. Received type ${typeof actual}`",
+          "target": "return `'${name2}' 参数必须是数字类型。接收到的类型为 ${typeof actual}`"
+        },
+        {
+          "source": "return `Expected ${input} to be returned from the \"${name2}\" function but got ${type}.`",
+          "target": "return `期望从 '${name2}' 函数返回 ${input} 但接收到的是 ${type}。`"
+        },
+        {
+          "source": "return `${msg} must be specified`",
+          "target": "return `${msg} 必须指定`"
+        },
+        {
+          "source": "return `The value of \"${str2}\" is out of range. It must be ${range}. Received ${received}`",
+          "target": "return `值 '${str2}' 超出了范围。它必须是 ${range}。接收到的是 ${received}`"
+        },
+        {
+          "source": "return `Basic ${token}`",
+          "target": "return `基本 ${token}`"
+        },
+        {
+          "source": "return `Bearer ${token}`",
+          "target": "return `认证 ${token}`"
+        },
+        {
+          "source": "return `Expected ${expectedType}. Received ${getTypeAsString(value)}.`",
+          "target": "return `期望 ${expectedType}。接收到的是 ${getTypeAsString(value)}。`"
+        },
+        {
+          "source": "return `Bearer ${bearer}`",
+          "target": "return `认证 ${bearer}`"
+        },
+        {
+          "source": "return \"Default\"",
+          "target": "return \"默认\""
+        },
+        {
+          "source": "return \"clipboardData\"",
+          "target": "return \"剪贴板数据\""
+        },
+        {
+          "source": "return `Please read the notes below and be ready to answer questions about them. `",
+          "target": "return `请阅读下面的笔记,并准备好回答有关这些笔记的问题。`"
+        },
+        {
+          "source": "return `Please follow the instructions closely step by step and rewrite the content to a thread. 1. Each paragraph must be under 240 characters. 2. The starting line is \\`",
+          "target": "return `请按照以下步骤仔细操作,并将内容重写成线程。1. 每段不得超过 240 个字符。2. 开始行是 \\`"
+        },
+        {
+          "source": "return `${status} status code (no body)`",
+          "target": "return `${status} 状态码(无正文)`"
+        },
+        {
+          "source": "return \"(no status code or body)\"",
+          "target": "return \"(无状态码或正文)\""
+        },
+        {
+          "source": "return `other:${arch}`",
+          "target": "return `其他:${arch}`"
+        },
+        {
+          "source": "return `Other:${platform}`",
+          "target": "return `其他:${platform}`"
+        },
+        {
+          "source": "return \"Copilot Chat\"",
+          "target": "return \"Copilot 聊天\""
+        },
+        {
+          "source": "return \"Copilot failed to decrypt API keys!\"",
+          "target": "return \"Copilot 解密 API 密钥失败！\""
+        },
+        {
+          "source": "name: `${continuous ? \"continuous \" : \"\"}replication from ${info.db_name}`",
+          "target": "name: `${continuous ? \"continuous \" : \"\"}从 ${info.db_name} 复制`"
+        },
+        {
+          "source": "name: \"Set note context for Chat mode\"",
+          "target": "name: \"为聊天模式设置笔记上下文\""
+        },
+        {
+          "source": "name: \"Set exclusion for Vault QA mode\"",
+          "target": "name: \"为保管库(Vault) QA 模式设置排除项\""
+        },
+        {
+          "source": "name: \"Dump custom prompts to markdown files\"",
+          "target": "name: \"将自定义聊天提示导出为 Markdown 文件\""
+        },
+        {
+          "source": "message: `OK Feel free to ask me questions about [[${noteName}]].",
+          "target": "message: `好的，请随时就[[${noteName}]]向我提问。"
+        },
+        {
+          "source": "Please note that this is a retrieval-based QA for notes longer than the model context window. Specific questions are encouraged. For generic questions like 'give me a summary', 'brainstorm based on the content', Chat mode with *Send Note to Prompt* button used with a *long context model* is a more suitable choice.",
+          "target": "请注意，这是针对超过模型上下文窗口长度的笔记的检索式问答。鼓励提出具体问题。对于“给我一个总结”、“基于内容进行头脑风暴”等一般性问题，使用带有*发送笔记至聊天提示*按钮和*长上下文模型*的聊天模式是更合适的选择。"
+        },
+        {
+          "source": "OK I've read these notes. Feel free to ask related questions, such as 'give me a summary of these notes in bullet points', 'what key questions does these notes answer', etc. ",
+          "target": "好的，我已经阅读了这些笔记。请随时提出相关问题，例如‘用项目符号总结这些笔记’、‘这些笔记回答了哪些关键问题’等。"
+        },
+        {
+          "source": "Please read the notes below and be ready to answer questions about them. If there's no information about a certain topic, just say the note does not mention it. The content of the note is between",
+          "target": "请阅读以下笔记，并准备好回答有关这些问题。如果没有关于某个主题的信息，就说笔记中没有提到它。笔记的内容在之间。"
+        },
+        {
+          "source": "Please fix the grammar and spelling of the following text and return it without any other changes:",
+          "target": "请修正以下文本的语法和拼写错误并原封不动地返回:"
+        },
+        {
+          "source": "Summarize the following text into bullet points and return it without any other changes. Identify the input language, and return the summary in the same language. If the input is English, return the summary in English. Otherwise, return in the same language as the input. Return ONLY the summary, DO NOT return the name of the language:",
+          "target": "将以下文本总结成要点并原封不动地返回。识别输入语言，并用相同语言返回总结。如果输入是英语，用英语返回总结。否则，用与输入相同的语言返回。只返回总结，不要返回语言名称:"
+        },
+        {
+          "source": "Please generate a table of contents for the following text and return it without any other changes. Output in the same language as the source, do not output English if it is not English:",
+          "target": "请为以下文本生成目录并原封不动地返回。用与源文本相同的语言输出，如果不是英语则不要输出英语:"
+        },
+        {
+          "source": "Please generate a glossary for the following text and return it without any other changes. Output in the same language as the source, do not output English if it is not English:",
+          "target": "请为以下文本生成词汇表并原封不动地返回。用与源文本相同的语言输出，如果不是英语则不要输出英语:"
+        },
+        {
+          "source": "Please simplify the following text so that a 6th-grader can understand. Output in the same language as the source, do not output English if it is not English:",
+          "target": "请简化以下文本以便六年级学生能理解。用与源文本相同的语言输出，如果不是英语则不要输出英语:"
+        },
+        {
+          "source": "Please insert emojis to the following content without changing the text.Insert at as many places as possible, but don't have any 2 emojis together. The original text must be returned.",
+          "target": "请在不改变文本的情况下，在以下内容中尽可能多地插入表情符号，但不要让两个表情符号连在一起。必须返回原始文本。"
+        },
+        {
+          "source": "Please remove all URLs from the following text and return it without any other changes:",
+          "target": "请移除以下文本中的所有网址并原封不动地返回:"
+        },
+        {
+          "source": "Please rewrite the following content to under 280 characters using simple sentences. Output in the same language as the source, do not output English if it is not English. Please follow the instruction strictly. Content:",
+          "target": "请用简单的句子重写以下内容，使其不超过280个字符。用与源文本相同的语言输出，如果不是英语则不要输出英语。请严格遵循指示。内容:"
+        },
+        {
+          "source": ", and the ending line is",
+          "target": ", 并且结束行是"
+        },
+        {
+          "source": "3. You must use",
+          "target": "3. 您必须使用"
+        },
+        {
+          "source": "to separate each paragraph! Then return it without any other changes. 4. Make it as engaging as possible.5. Output in the same language as the source, do not output English if it is not English.",
+          "target": "来分隔每个段落！然后原封不动地返回。4. 尽可能使它具有吸引力。5. 用与源文本相同的语言输出，如果不是英语则不要输出英语。"
+        },
+        {
+          "source": "The original content:",
+          "target": "原始内容:"
+        },
+        {
+          "source": "Please rewrite the following text to make it half as long while keeping the meaning as much as possible. Output in the same language as the source, do not output English if it is not English:",
+          "target": "请重写以下文本，使其长度减半，同时尽可能保留意义。用与源文本相同的语言输出，如果不是英语则不要输出英语:"
+        },
+        {
+          "source": "Please rewrite the following text to make it twice as long while keeping the meaning as much as possible. Output in the same language as the source, do not output English if it is not English:",
+          "target": "请重写以下文本，使其长度增加一倍，同时尽可能保留意义。用与源文本相同的语言输出，如果不是英语则不要输出英语:"
+        },
+        {
+          "source": "Please explain the following text like I'm 5 years old. Output in the same language as the source, do not output English if it is not English:",
+          "target": "请像解释给五岁孩子一样解释以下文本。用与源文本相同的语言输出，如果不是英语则不要输出英语:"
+        },
+        {
+          "source": "Please rewrite the following text to make it sound like a press release. Output in the same language as the source, do not output English if it is not English:",
+          "target": "请重写以下文本，使其听起来像新闻稿。用与源文本相同的语言输出，如果不是英语则不要输出英语:"
+        },
+        {
+          "source": "Please translate the following text to",
+          "target": "请将以下文本翻译成"
+        },
+        {
+          "source": "Please change the tone of the following text to ${tone}. Output in the same language as the source, do not output English if it is not English:",
+          "target": "请将以下文本的语气改为${tone}。用与源文本相同的语言输出，如果不是英语则不要输出英语:"
+        },
+        {
+          "source": "OK Feel free to ask me questions about your vault:",
+          "target": "好的，请随时就您的库向我提问："
+        },
+        {
+          "source": "If you have *NEVER* as your auto-index strategy, you must click the *Refresh Index* button below, or run Copilot command: *Index vault for QA* first before you proceed!",
+          "target": "如果你的自动索引策略设置为 NEVER(从不) ，则必须先点击下面的 刷新索引 按钮，或者运行 Copilot 命令：\"为 QA模式 显式索引保管库(Vault)\"，然后再继续！"
+        },
+        {
+          "source": "Default Mode",
+          "target": "默认模式"
+        },
+        {
+          "source": "setup guide to setup Ollama's local embedding model (requires Ollama v0.1.26 or above).",
+          "target": "安装ollama本地嵌入模型的安装指南（需要ollama v0.1.26或更高版本）。"
+        },
+        {
+          "source": "mode, your vault is indexed",
+          "target": "模式，您的保管库(Vault)已被索引"
+        },
+        {
+          "source": "explicitly, or hit the ",
+          "target": "或者点击"
+        },
+        {
+          "source": " button.",
+          "target": "按钮。"
+        },
+        {
+          "source": "name: \"Indexing Exclusions\",",
+          "target": "name: \"索引排除项\","
+        },
+        {
+          "source": "description: \"Comma separated list of paths, tags, note titles or file extension, e.g. folder1, folder1/folder2, #tag1, #tag2, [[note1]], [[note2]], *.jpg, *.excallidraw.md etc, to be excluded from the indexing process. NOTE: Tags must be in the note properties, not the note content. Files which were previously indexed will remain in the index unless you force re-index.\"",
+          "target": "description: \"要从索引过程中排除的路径、标签、笔记标题或文件扩展名的逗号分隔列表，例如文件夹1、文件夹1/文件夹2、#标签1、#标签2、[[笔记1]]、[[笔记2]]、*.jpg、*.excallidraw.md 等。注意: 标签必须在笔记属性中，而不是笔记内容中。先前索引的文件将保留在索引中，除非您强制重新索引。\""
+        },
+        {
+          "source": ".createElement(\"h2\", null, \"Open Plugin In\")",
+          "target": ".createElement(\"h2\", null, \"在哪打开插件\")"
+        },
+        {
+          "source": ".createElement(\"option\", { value: \"view\" /* VIEW */ }, \"Sidebar View\")",
+          "target": ".createElement(\"option\", { value: \"view\" /* VIEW */ }, \"侧边栏\")"
+        },
+        {
+          "source": ".createElement(\"option\", { value: \"editor\" /* EDITOR */ }, \"Editor\")",
+          "target": ".createElement(\"option\", { value: \"editor\" /* EDITOR */ }, \"编辑器\")"
+        },
+        {
+          "source": ".createElement(\"b\", null, \"Suggested Prompts\")",
+          "target": ".createElement(\"b\", null, \"推荐的聊天提示\")"
+        },
+        {
+          "source": "\"NEVER\" /* NEVER */",
+          "target": "\"NEVER(从不)\" /* NEVER */"
+        },
+        {
+          "source": "\"ON STARTUP\" /* ON_STARTUP */",
+          "target": "\"ON STARTUP(在启动时)\" /* ON_STARTUP */"
+        },
+        {
+          "source": "\"ON MODE SWITCH\" /* ON_MODE_SWITCH */",
+          "target": "\"ON MODE SWITCH(在模式切换时)\" /* ON_MODE_SWITCH */"
+        },
+        {
+          "source": "\"Copilot Plus brings powerful AI agent capabilities to Obsidian. Alpha access is limited to sponsors and early supporters. Learn more at\",",
+          "target": "\"Copilot Plus 为 Obsidian 带来了强大的 AI 代理功能。Alpha 访问权限仅限于赞助者和早期支持者。了解更多信息请访问。\","
+        },
+        {
+          "source": "title: \"License Key\",",
+          "target": "title: \"许可证密钥\","
+        },
+        {
+          "source": "description: \"Enter your Copilot Plus license key\",",
+          "target": "description: \"输入您的 Copilot Plus 许可证密钥\","
+        },
+        {
+          "source": "placeholder: \"Enter your license key\"",
+          "target": "placeholder: \"输入您的许可证密钥\""
+        },
+        {
+          "source": "name: \"Suggested Prompts\",",
+          "target": "name: \"建议的提示词\","
+        },
+        {
+          "source": "description: \"Show suggested prompts in the chat view\",",
+          "target": "description: \"在聊天视图中显示建议的提示词\","
+        },
+        {
+          "source": "\"QA mode relies on a \"",
+          "target": "\"QA模式依赖于一个\""
+        },
+        {
+          "source": "\"local\"), \" vector index.\"",
+          "target": "\"本地\"), \" 向量索引。\""
+        },
+        {
+          "source": "'By \"refreshed\", it means the vault index is not rebuilt from scratch but rather updated incrementally with new/modified notes since the last index. If you need a complete rebuild, run the commands \"Clear Copilot index\" and \"Force re-index for QA\" manually. This helps reduce costs when using paid embedding models.'",
+          "target": "'“刷新”意味着库索引不是从头开始重建，而是根据自上次索引以来的新/修改的笔记进行增量更新。如果需要完全重建，请手动运行“清除助手索引”和“强制重新索引以进行质量检查”命令。这有助于在使用付费嵌入模型时降低费用。'"
+        },
+        {
+          "source": "\"New Chat\"",
+          "target": "\"新聊天\""
+        },
+        {
+          "source": "\"(Unsaved history will be lost)\"",
+          "target": "\"(未保存的历史将会丢失)\""
+        },
+        {
+          "source": "\"Refresh Index\"",
+          "target": "\"刷新索引\""
+        },
+        {
+          "source": "description: \"When enabled, Copilot index won't be loaded on mobile devices to save resources. Only chat mode will be available. Any existing index from desktop sync will be preserved. Uncheck to enable QA modes on mobile.\",",
+          "target": "description: \"启用后，Copilot 索引将不会在移动设备上加载以节省资源。仅提供聊天模式。来自桌面的现有索引将被保留。取消选中以启用移动端的问答模式。\","
+        },
+        {
+          "source": "\"Refresh Index for Vault\"",
+          "target": "\"刷新保管库(Vault)索引\""
+        },
+        {
+          "source": "\": Notes are never indexed to the Copilot index unless users run the command \",",
+          "target": "\"笔记不会被索引到Copilot索引中，除非用户运行该命令。\","
+        },
+        {
+          "source": "`Detected vector length: ${sampleEmbedding.length} for model: ${EmbeddingManager.getModelName(embeddingInstance)}`",
+          "target": "`检测到的向量长度：${sampleEmbedding.length}，模型：${EmbeddingManager.getModelName(embeddingInstance)}`"
+        },
+        {
+          "source": "\"Chain is not initialized properly, re-initializing chain: \",",
+          "target": "\"链条未正确初始化，正在重新初始化链条：\","
+        },
+        {
+          "source": "\"Copilot index is not loaded. Please check your settings.\"",
+          "target": "\"Copilot 索引未加载。请检查您的设置。\""
+        }
+      ]
+    }
+  }
+}

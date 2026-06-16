@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "flashcards-obsidian",
+    "version": "2.0.0",
+    "title": "Flashcards",
+    "description": "Anki integration",
+    "language": "zh-cn",
+    "supportedVersions": "1.6.5",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Anki Connect permission granted\")",
+          "target": "Notice(\"授予Anki Connect权限\")"
+        },
+        {
+          "source": "Notice(\"AnkiConnect permission not granted\")",
+          "target": "Notice(\"未授予AnkiConnect权限\")"
+        },
+        {
+          "source": "Notice(\"Something went wrong, is Anki open?\")",
+          "target": "Notice(\"出了点问题，Anki 打开了吗？\")"
+        },
+        {
+          "source": "Notice(\"Anki works\")",
+          "target": "Notice(\"Anki有效\")"
+        },
+        {
+          "source": "Notice(\"Anki is not connected\")",
+          "target": "Notice(\"Anki未连接\")"
+        },
+        {
+          "source": "Notice(\"The deck name must be at least 1 character long\")",
+          "target": "Notice(\"牌组名称必须至少为一个字符长。\")"
+        },
+        {
+          "source": "Notice(\"No default tags will be added\")",
+          "target": "Notice(\"不会添加默认标签\")"
+        },
+        {
+          "source": "Notice(\"The tag must be at least 1 character long\")",
+          "target": "Notice(\"标记的长度必须至少为1个字符\")"
+        },
+        {
+          "source": "Notice(\"The separator must be at least 1 character long\")",
+          "target": "Notice(\"分隔符的长度必须至少为1个字符\")"
+        },
+        {
+          "source": "Notice(\"The separator must be different from the inline reverse separator\")",
+          "target": "Notice(\"分隔符必须与内联反向分隔符不同。\")"
+        },
+        {
+          "source": "Notice(\"The separator has been changed\")",
+          "target": "Notice(\"分隔符已被更改\")"
+        },
+        {
+          "source": "Notice(\"The separator must be different from the inline separator\")",
+          "target": "Notice(\"分隔符必须与行内分隔符不同。\")"
+        },
+        {
+          "source": "Notice(\"Error, could not add: '\".concat(card.initialContent, \"'\")",
+          "target": "Notice(\"错误，无法添加: '\".concat(card.initialContent, \"'\")"
+        },
+        {
+          "source": "Notice(\"Open a file before\")",
+          "target": "Notice(\"打开文件之前\")"
+        },
+        {
+          "source": "Notice(r, noticeTimeout)",
+          "target": "Notice(r, noticeTimeout)"
+        },
+        {
+          "source": ".log(\"embedKey: \\n\" + embedKey)",
+          "target": ".log(\"embedKey:\\n\" + embedKey)"
+        },
+        {
+          "source": ".log(\"embedValue: \\n\" + embedValue)",
+          "target": ".log(\"embedValue: \\n\" + embedValue)"
+        },
+        {
+          "source": ".log(\"result[0]: \" + result[0])",
+          "target": ".log(\"result[0]: \" + result[0])"
+        },
+        {
+          "source": ".log(\"embedMap.get(result[1])",
+          "target": ".log(\"embedMap.get(result[1])"
+        },
+        {
+          "source": ".log(\"Flashcards: Cards info\")",
+          "target": ".log(\"抽认卡：卡片信息\")"
+        },
+        {
+          "source": ".log(cardsInfo)",
+          "target": ".log(cardsInfo)"
+        },
+        {
+          "source": ".log(res)",
+          "target": ".log(res)"
+        },
+        {
+          "source": ".error(error)",
+          "target": ".error(error)"
+        },
+        {
+          "source": ".error('maximum nesting of 10 spans reached!!!')",
+          "target": ".error('已达到 10 个跨度的最大嵌套级别！！！')"
+        },
+        {
+          "source": ".error(err_1)",
+          "target": ".error(err_1)"
+        },
+        {
+          "source": ".error(err_2)",
+          "target": ".error(err_2)"
+        },
+        {
+          "source": ".error(err_3)",
+          "target": ".error(err_3)"
+        },
+        {
+          "source": ".error(err_5)",
+          "target": ".error(err_5)"
+        },
+        {
+          "source": ".error(err)",
+          "target": ".error(err)"
+        },
+        {
+          "source": "name: \"_highlightInit.js\"",
+          "target": "name: \"_highlightInit.js\""
+        },
+        {
+          "source": "name: \"_highlight.js\"",
+          "target": "name: \"_highlight.js\""
+        },
+        {
+          "source": "name: \"_highlight.css\"",
+          "target": "name: \"_highlight.css\""
+        },
+        {
+          "source": "name: 'Generate for the current file'",
+          "target": "name: '为当前文件生成'"
+        },
+        {
+          "source": "description: 'Tries to smartly fix indentation in es6 strings'",
+          "target": "description: '尝试巧妙地修复es6字符串中的缩进'"
+        },
+        {
+          "source": "description: 'Disables the requirement of indenting nested sublists by 4 spaces'",
+          "target": "description: '禁用嵌套子列表缩进4个空格的要求'"
+        },
+        {
+          "source": "description: 'Parses simple line breaks as <br> (GFM Style)'",
+          "target": "description: '将简单换行符解析为<br>（GFM样式）'"
+        },
+        {
+          "source": "description: 'Makes adding a space between `#` and the header text mandatory (GFM Style)'",
+          "target": "description: '强制在“#”和标题文本之间添加空格（GFM样式）”'"
+        },
+        {
+          "source": "description: 'Enables github @mentions'",
+          "target": "description: '启用github@提及'"
+        },
+        {
+          "source": "description: 'Changes the link generated by @mentions. Only applies if ghMentions option is enabled.'",
+          "target": "description: '更改@mentions生成的链接。仅在启用ghMentions选项时适用。'"
+        },
+        {
+          "source": "description: 'Encode e-mail addresses through the use of Character Entities, transforming ASCII e-mail addresses into its equivalent decimal entities'",
+          "target": "description: '通过使用字符实体对电子邮件地址进行编码，将ASCII电子邮件地址转换为等效的十进制实体'"
+        },
+        {
+          "source": "description: 'Open all links in new windows'",
+          "target": "description: '在新窗口中打开所有链接'"
+        },
+        {
+          "source": "description: 'Support for HTML Tag escaping. ex: \\<div>foo\\</div>'",
+          "target": "description: '支持HTML标签转义。例如：\\<div>foo\\</div>'"
+        },
+        {
+          "source": "description: 'Enable emoji support. Ex: `this is a :smile: emoji`'",
+          "target": "description: '启用表情符号支持。例如：`这是一个：微笑：表情符号`'"
+        },
+        {
+          "source": "description: 'Enable support for underline. Syntax is double or triple underscores: `__underline word__`. With this option enabled, underscores no longer parses into `<em>` and `<strong>`'",
+          "target": "description: '启用下划线支持。语法是双下划线或三下划线：`__underline word__`。启用此选项后，下划线不再解析为“<em>”和“<strong>”`'"
+        },
+        {
+          "source": "description: 'Outputs a complete html document, including `<html>`, `<head>` and `<body>` tags'",
+          "target": "description: '输出一个完整的html文档，包括“<html>”、“<head>”和“<body>”标签'"
+        },
+        {
+          "source": "description: 'Enable support for document metadata (defined at the top of the document between `«««` and `»»»` or between `---` and `---`).'",
+          "target": "description: '启用对文档元数据的支持（定义在文档顶部“«««”和“»»»”之间或“---”和“---”之间）。'"
+        },
+        {
+          "source": "description: 'Split adjacent blockquote blocks'",
+          "target": "description: '拆分相邻的区块'"
+        },
+        {
+          "source": "text: \"Flashcards - Settings\"",
+          "target": "text: \"闪卡-设置\""
+        },
+        {
+          "source": "text: \"General\"",
+          "target": "text: \"一般\""
+        },
+        {
+          "source": "text: \"Cards Identification\"",
+          "target": "text: \"卡片识别\""
+        },
+        {
+          "source": ".setText('Anki ⚡️')",
+          "target": ".setText('Anki⚡️')"
+        },
+        {
+          "source": ".setButtonText(\"Grant Permission\")",
+          "target": ".setButtonText(\"授予权限\")"
+        },
+        {
+          "source": ".setButtonText(\"Test\")",
+          "target": ".setButtonText(\"测试\")"
+        },
+        {
+          "source": ".setName(\"Give Permission\")",
+          "target": ".setName(\"给予权限\")"
+        },
+        {
+          "source": ".setName(\"Test Anki\")",
+          "target": ".setName(\"测试Anki\")"
+        },
+        {
+          "source": ".setName(\"Context-aware mode\")",
+          "target": ".setName(\"上下文感知模式\")"
+        },
+        {
+          "source": ".setName(\"Source support\")",
+          "target": ".setName(\"来源支持\")"
+        },
+        {
+          "source": ".setName(\"Code highlight support\")",
+          "target": ".setName(\"代码高亮显示支持\")"
+        },
+        {
+          "source": ".setName(\"Inline ID support\")",
+          "target": ".setName(\"内联ID支持\")"
+        },
+        {
+          "source": ".setName(\"Folder-based deck name\")",
+          "target": ".setName(\"基于文件夹的文件组名称\")"
+        },
+        {
+          "source": ".setName(\"Default deck name\")",
+          "target": ".setName(\"默认套牌名称\")"
+        },
+        {
+          "source": ".setName(\"Default Anki tag\")",
+          "target": ".setName(\"默认Anki标签\")"
+        },
+        {
+          "source": ".setName(\"Flashcards #tag\")",
+          "target": ".setName(\"抽认卡 #标签\")"
+        },
+        {
+          "source": ".setName(\"Inline card separator\")",
+          "target": ".setName(\"内联卡片分隔符\")"
+        },
+        {
+          "source": ".setName(\"Inline reverse card separator\")",
+          "target": ".setName(\"内联反转卡分离器\")"
+        },
+        {
+          "source": ".setDesc(\"Test that connection between Anki and Obsidian actually works.\")",
+          "target": ".setDesc(\"测试 Anki 和 Obsidian 之间的连接是否确实有效。\")"
+        },
+        {
+          "source": ".setDesc(\"Add the ancestor headings to the question of the flashcard.\")",
+          "target": ".setDesc(\"将祖先标题添加到抽认卡的问题中。\")"
+        },
+        {
+          "source": ".setDesc(\"Add to every card the source, i.e. the link to the original card. NOTE: Old cards made without source support cannot be updated.\")",
+          "target": ".setDesc(\"在每张卡片上添加来源，即原始卡片的链接。注意：没有源代码支持的旧卡无法更新。\")"
+        },
+        {
+          "source": ".setDesc(\"Add highlight of the code in Anki.\")",
+          "target": ".setDesc(\"在Anki中添加代码的高亮显示。\")"
+        },
+        {
+          "source": ".setDesc(\"Add ID to end of line for inline cards.\")",
+          "target": ".setDesc(\"将ID添加到内联卡的行尾。\")"
+        },
+        {
+          "source": ".setDesc(\"The name of the default deck where the cards will be added when not specified.\")",
+          "target": ".setDesc(\"未指定时将添加卡片的默认卡片组的名称。\")"
+        },
+        {
+          "source": ".setDesc(\"This tag will be added to each generated card on Anki\")",
+          "target": ".setDesc(\"此标签将添加到Anki上生成的每张卡上\")"
+        },
+        {
+          "source": ".setDesc(\"The tag to identify the flashcards in the notes (case-insensitive).\")",
+          "target": ".setDesc(\"用于识别笔记中抽认卡的标签（不区分大小写）。\")"
+        },
+        {
+          "source": ".setDesc(\"The separator to identifty the inline cards in the notes.\")",
+          "target": ".setDesc(\"笔记中用于识别内嵌卡片的分隔符。\")"
+        },
+        {
+          "source": ".setDesc(\"The separator to identifty the inline revese cards in the notes.\")",
+          "target": ".setDesc(\"用于识别笔记中内联反向卡片的分隔符。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Deck::sub-deck\")",
+          "target": ".setPlaceholder(\"牌组::子牌组\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Anki tag\")",
+          "target": ".setPlaceholder(\"Anki tag\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Card\")",
+          "target": ".setPlaceholder(\"卡片\")"
+        },
+        {
+          "source": ".setPlaceholder(\"::\")",
+          "target": ".setPlaceholder(\"::\")"
+        },
+        {
+          "source": ".setPlaceholder(\":::\")",
+          "target": ".setPlaceholder(\":::\")"
+        }
+      ]
+    }
+  }
+}
