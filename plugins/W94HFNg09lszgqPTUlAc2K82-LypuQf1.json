@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "saloon",
+    "version": "1.0.0",
+    "title": "Saloon",
+    "description": "Saloon Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading models...",
+          "target": "正在加载模型..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "No models installed. Run: ollama pull <model>",
+          "target": "未安装任何模型。请运行：ollama pull <model>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Select all",
+          "target": "全选"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Reading file...",
+          "target": "正在读取文件..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Extract terms",
+          "target": "提取术语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error exporting batch:",
+          "target": "导出批次时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "error parsing url",
+          "target": "解析 URL 时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to initialize Saloon plugin:",
+          "target": "初始化 Saloon 插件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to parse term details:",
+          "target": "解析术语详情失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to approve:",
+          "target": "批准失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to reject:",
+          "target": "拒绝失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "saloon-actions error:",
+          "target": "saloon-actions 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "saloon-terms error:",
+          "target": "saloon-terms 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to fetch Ollama models:",
+          "target": "获取 Ollama 模型失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "saloon-extract error:",
+          "target": "saloon-extract 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "saloon-extract initialization error:",
+          "target": "saloon-extract 初始化错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to save term:",
+          "target": "保存术语失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "saloon-edit error:",
+          "target": "saloon-edit 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to reload database:",
+          "target": "重新加载数据库失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to insert sample data:",
+          "target": "插入示例数据失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "saloon-term render error:",
+          "target": "saloon-term 渲染错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error checking database file:",
+          "target": "检查数据库文件时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to parse error response as JSON",
+          "target": "无法将错误响应解析为 JSON"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Getting text from response",
+          "target": "从响应中获取文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to get text from error response",
+          "target": "无法从错误响应中获取文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "Input: ",
+          "target": "输入："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder where term files will be created when approved. Relative to vault root.",
+          "target": "批准后创建术语文件的文件夹。相对于保险库根目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Base address for the language model server used for term extraction",
+          "target": "用于术语提取的语言模型服务器的基础地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Glossary folder",
+          "target": "术语表文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Server address",
+          "target": "服务器地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Database info",
+          "target": "数据库信息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Storage location",
+          "target": "存储位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Glossary",
+          "target": "术语表"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "You have enabled OTEL export via the `OTEL_ENABLED` or `LANGSMITH_OTEL_ENABLED` environment variable, but have not initialized the required OTEL instances. Please add:\n```\nimport { initializeOTEL } from \"langsmith/experimental/otel/setup\";\ninitializeOTEL();\n```\nat the beginning of your code.",
+          "target": "您已通过 `OTEL_ENABLED` 或 `LANGSMITH_OTEL_ENABLED` 环境变量启用了 OTEL 导出，但尚未初始化所需的 OTEL 实例。请在代码开头添加：\\n```\\nimport { initializeOTEL } from \\\"langsmith/experimental/otel/setup\\\";\\ninitializeOTEL();\\n```"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[WARNING]: When tracing in manual flush mode, you must call `await client.flush()` manually to submit trace batches.",
+          "target": "[警告]：在手动刷新模式下进行追踪时，您必须手动调用 `await client.flush()` 来提交追踪批次。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Invalid LANGSMITH_RUNS_ENDPOINTS – must be valid JSON array of objects with api_url and api_key properties, or object mapping url->apiKey",
+          "target": "无效的 LANGSMITH_RUNS_ENDPOINTS – 必须是包含 api_url 和 api_key 属性的有效 JSON 对象数组，或 url->apiKey 的映射对象"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to calculate number of tokens, falling back to approximate count",
+          "target": "计算令牌数失败，回退到近似计数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "invalid json: ",
+          "target": "无效的 JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Adding an edge to a graph that has already been compiled. This will not be reflected in the compiled graph.",
+          "target": "向已编译的图添加边。这不会反映在编译后的图中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "maxTokensBeforeSummary is deprecated. Use `trigger: { tokens: value }` instead.",
+          "target": "maxTokensBeforeSummary 已弃用。请改用 `trigger: { tokens: value }`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "messagesToKeep is deprecated. Use `keep: { messages: value }` instead.",
+          "target": "messagesToKeep 已弃用。请改用 `keep: { messages: value }`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "DEPRECATED: piiRedactionMiddleware is deprecated. Please use piiMiddleware instead, go to https://docs.langchain.com/oss/javascript/langchain/middleware/built-in#pii-detection for more information.",
+          "target": "已弃用：piiRedactionMiddleware 已弃用。请改用 piiMiddleware，更多信息请访问 https://docs.langchain.com/oss/javascript/langchain/middleware/built-in#pii-detection。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "triggerTokens is deprecated. Use `trigger: { tokens: value }` instead.",
+          "target": "triggerTokens 已弃用。请改用 `trigger: { tokens: value }`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "keepMessages is deprecated. Use `keep: { messages: value }` instead.",
+          "target": "keepMessages 已弃用。请改用 `keep: { messages: value }`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "The 'throw' exit behavior is deprecated. Please use 'error' instead.",
+          "target": "'throw' 退出行为已弃用。请改用 'error'。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "⚠️ `onFailure: 'raise'` is deprecated. Use `onFailure: 'error'` instead.",
+          "target": "⚠️ `onFailure: 'raise'` 已弃用。请改用 `onFailure: 'error'`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "⚠️ `onFailure: 'return_message'` is deprecated. Use `onFailure: 'continue'` instead.",
+          "target": "⚠️ `onFailure: 'return_message'` 已弃用。请改用 `onFailure: 'continue'`。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Saloon command center created in _saloon folder",
+          "target": "Saloon 命令中心已在 _saloon 文件夹中创建"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to initialize plugin. Check console for errors.",
+          "target": "初始化插件失败。请检查控制台错误信息。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to approve term.",
+          "target": "批准术语失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to reject term.",
+          "target": "拒绝术语失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No terms found.",
+          "target": "未找到术语。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Extraction failed. Check console.",
+          "target": "提取失败。请检查控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to save term.",
+          "target": "保存术语失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Database reloaded from disk!",
+          "target": "数据库已从磁盘重新加载！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to reload database. Check console.",
+          "target": "重新加载数据库失败。请检查控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Database not loaded",
+          "target": "数据库未加载"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Sample data inserted successfully!",
+          "target": "示例数据插入成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to insert sample data. Check console.",
+          "target": "插入示例数据失败。请检查控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Definition saved to database",
+          "target": "定义已保存到数据库"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Context saved to database",
+          "target": "上下文已保存到数据库"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Knowledge triples saved to database",
+          "target": "知识三元组已保存到数据库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "saloon-input saloon-select",
+          "target": "saloon-input saloon-select"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "saloon-progress-container saloon-hidden",
+          "target": "saloon-progress-container saloon-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "saloon-filter-input saloon-combobox",
+          "target": "saloon-filter-input saloon-combobox"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "saloon-icon-btn saloon-icon-cancel saloon-hidden",
+          "target": "saloon-icon-btn saloon-icon-cancel saloon-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "saloon-icon-btn saloon-icon-save saloon-icon-disabled",
+          "target": "saloon-icon-btn saloon-icon-save saloon-icon-disabled"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "saloon-textarea-minimal saloon-hidden",
+          "target": "saloon-textarea-minimal saloon-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "Sorry, need more steps to process this request.",
+          "target": "抱歉，处理此请求需要更多步骤。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Malformed args.",
+          "target": "参数格式错误。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "String does not match pattern.",
+          "target": "字符串与模式不匹配。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Error",
+          "target": "错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Create term",
+          "target": "创建术语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Update term",
+          "target": "更新术语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Add tag",
+          "target": "添加标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Add context",
+          "target": "添加上下文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Context search",
+          "target": "上下文搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Combine with",
+          "target": "与...合并"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Rollback",
+          "target": "回滚"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "At least one of fraction, tokens, or messages must be provided",
+          "target": "必须提供分数、令牌或消息中的至少一项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Exactly one of fraction, tokens, or messages must be provided",
+          "target": "必须且只能提供分数、令牌或消息中的一项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "HumanInTheLoopMiddleware",
+          "target": "HumanInTheLoopMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SummarizationMiddleware",
+          "target": "SummarizationMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LLMToolSelector",
+          "target": "LLMToolSelector"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PIIRedactionMiddleware",
+          "target": "PIIRedactionMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ContextEditingMiddleware",
+          "target": "ContextEditingMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ModelCallLimitMiddleware",
+          "target": "ModelCallLimitMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ToolEmulatorMiddleware",
+          "target": "ToolEmulatorMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OpenAIModerationMiddleware",
+          "target": "OpenAIModerationMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PromptCachingMiddleware",
+          "target": "PromptCachingMiddleware"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reload database from disk",
+          "target": "从磁盘重新加载数据库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Insert sample data",
+          "target": "插入示例数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search terms...",
+          "target": "搜索术语..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "All sources...",
+          "target": "所有来源..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Error: database not loaded",
+          "target": "错误：数据库未加载"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pending approvals",
+          "target": "待审批"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No pending actions.",
+          "target": "无待处理操作。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Approve",
+          "target": "批准"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reject",
+          "target": "拒绝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Saloon term extraction",
+          "target": "术语提取"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Model:",
+          "target": "模型："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter server address and click away to load models",
+          "target": "输入服务器地址并点击其他区域以加载模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No models found",
+          "target": "未找到模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No connection",
+          "target": "无连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Source directory (optional):",
+          "target": "源目录（可选）："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Chunk size (characters):",
+          "target": "分块大小（字符数）："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Smaller chunks = more API calls but better for detailed extraction. Default: 4000",
+          "target": "分块越小 = API调用越多，但更利于详细提取。默认值：4000"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Extract terms",
+          "target": "提取术语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pending approvals ",
+          "target": "待审批 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Filter:",
+          "target": "筛选："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Type:",
+          "target": "类型："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All types",
+          "target": "所有类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Source:",
+          "target": "来源："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select all",
+          "target": "全选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "0 selected",
+          "target": "已选0项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Could not access current file",
+          "target": "无法访问当前文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No term ID found in frontmatter",
+          "target": "在前置元数据中未找到术语ID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Edit term",
+          "target": "编辑术语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Definition:",
+          "target": "定义："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Context:",
+          "target": "上下文："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "💾",
+          "target": "💾"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "History",
+          "target": "历史记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No history",
+          "target": "无历史记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Approve selected",
+          "target": "批准所选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Reject selected",
+          "target": "拒绝所选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Cancel editing",
+          "target": "取消编辑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Save to database",
+          "target": "保存到数据库"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
