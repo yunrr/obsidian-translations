@@ -1,0 +1,1051 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "cloudflare-images-sync",
+    "version": "1.0.0",
+    "title": "Cloudflare R2 Sync",
+    "description": "Cloudflare R2 Sync Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Cloudflare account ID used to build the r2 S3 endpoint.",
+          "target": "用于构建 r2 S3 端点的 Cloudflare 账户 ID。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "R2 bucket that receives uploaded images.",
+          "target": "接收上传图片的 R2 存储桶。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Base URL used when replacing local image links.",
+          "target": "替换本地图片链接时使用的基础 URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "R2 object path for article body images.",
+          "target": "文章正文图片的 R2 对象路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "YAML key for the cover image public URL (upload cover image writes here; delete r2 images reads it). Blank uses cover.",
+          "target": "封面图片公共 URL 的 YAML 键（上传封面图片会写入此处；删除 r2 图片会读取它）。留空则使用 cover。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Object cache-control metadata for uploads to r2 and browsers. Cloudflare cache rules may still override at the edge.",
+          "target": "上传到 r2 和浏览器的对象缓存控制元数据。Cloudflare 缓存规则可能仍会在边缘覆盖。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the secret that contains the r2 access key ID.",
+          "target": "选择包含 r2 访问密钥 ID 的密钥。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the secret that contains the r2 secret access key.",
+          "target": "选择包含 r2 密钥访问密钥的密钥。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically upload images to r2 when dropped into the editor. Disable to use manual sync only.",
+          "target": "拖放到编辑器时自动将图片上传到 r2。禁用则仅使用手动同步。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show a preview modal before drop upload, sync images to r2, or upload cover image so you can review upload targets, object keys, and public urls.",
+          "target": "在拖放上传、同步图片到 r2 或上传封面图片之前显示预览模态框，以便您可以审查上传目标、对象键和公共 URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When r2 requests fail, show category, HTTP status, and short hints in notices (useful screenshots for support).",
+          "target": "当 r2 请求失败时，在通知中显示类别、HTTP 状态和简短提示（便于截图寻求支持）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, PNG, JPEG, JPG, and bmp are re-encoded to webp before upload for sync images to r2 and auto-upload on drop. When disabled, originals are uploaded.",
+          "target": "启用后，PNG、JPEG、JPG 和 bmp 在同步图片到 r2 和拖放自动上传前会被重新编码为 webp。禁用则上传原始文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Quality when converting to webp (0 to 1).",
+          "target": "转换为 webp 时的质量（0 到 1）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, PNG, JPEG, JPG, and bmp are re-encoded to webp on cover upload. When disabled, originals are uploaded.",
+          "target": "启用后，PNG、JPEG、JPG 和 bmp 在封面上传时会被重新编码为 webp。禁用则上传原始文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Quality when converting cover images to webp (0 to 1).",
+          "target": "转换封面图片为 webp 时的质量（0 到 1）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "R2 connection",
+          "target": "R2 连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Account ID",
+          "target": "账户 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bucket name",
+          "target": "存储桶名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Public base URL",
+          "target": "公共基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cover frontmatter property",
+          "target": "封面前置元数据属性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Upload cache control",
+          "target": "上传缓存控制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Access key ID secret",
+          "target": "访问密钥 ID 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Secret access key secret",
+          "target": "密钥访问密钥密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Automation",
+          "target": "自动化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-upload on drop",
+          "target": "拖放时自动上传"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync preview before upload",
+          "target": "上传前同步预览"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Error reporting",
+          "target": "错误报告"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Detailed error notices",
+          "target": "详细错误通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image conversion",
+          "target": "图片转换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert article images to webp",
+          "target": "将文章图片转换为 webp"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Webp quality (article images)",
+          "target": "Webp 质量（文章图片）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert cover images to webp",
+          "target": "将封面图片转换为 webp"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Webp quality (cover images)",
+          "target": "Webp 质量（封面图片）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Account ID",
+          "target": "账户 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Bucket name",
+          "target": "存储桶名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. cover/{year}/{month}/{timestamp}-{filename}",
+          "target": "例如 cover/{year}/{month}/{timestamp}-{filename}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Missing timestamp format, parsing value with Date constructor:",
+          "target": "缺少时间戳格式，正在使用 Date 构造函数解析值："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Missing timestamp format, using epoch seconds",
+          "target": "缺少时间戳格式，正在使用纪元秒数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "An error was encountered in a non-retryable streaming request.",
+          "target": "在不可重试的流式请求中遇到错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "userAgentAppId must be a string or undefined.",
+          "target": "userAgentAppId 必须是字符串或 undefined。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "The provided userAgentAppId exceeds the maximum length of 50 characters.",
+          "target": "提供的 userAgentAppId 超过了 50 个字符的最大长度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Missing timestamp format, using http date",
+          "target": "缺少时间戳格式，使用 HTTP 日期格式。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Drop upload failed; saved image locally.",
+          "target": "拖放上传失败；图片已保存到本地。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Drop upload: no images could be prepared for upload.",
+          "target": "拖放上传：没有可准备上传的图片。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Drop upload failed.",
+          "target": "拖放上传失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cover upload: WebP conversion failed.",
+          "target": "封面上传：WebP 转换失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cover upload: upload failed.",
+          "target": "封面上传：上传失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cover upload: uploaded to r2 but failed to update frontmatter.",
+          "target": "封面上传：已上传至 R2，但更新 frontmatter 失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cover upload: open a Markdown note first.",
+          "target": "封面上传：请先打开一个 Markdown 笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cover upload: missing secret value.",
+          "target": "封面上传：缺少密钥值。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cover upload: no file selected.",
+          "target": "封面上传：未选择文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cover upload: unsupported image type.",
+          "target": "封面上传：不支持的图片类型。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image delete: open a Markdown note first.",
+          "target": "图片删除：请先打开一个 Markdown 笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image delete: missing secret value.",
+          "target": "图片删除：缺少密钥值。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image delete: no r2 image links found.",
+          "target": "图片删除：未找到 R2 图片链接。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image delete: no images selected.",
+          "target": "图片删除：未选择图片。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image sync: open a Markdown note first.",
+          "target": "图片同步：请先打开一个 Markdown 笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image sync: missing secret value.",
+          "target": "图片同步：缺少密钥值。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image sync: no local images to upload.",
+          "target": "图片同步：没有可上传的本地图片。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to save settings.",
+          "target": "保存设置失败。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Africa (Cape Town)",
+          "target": "非洲（开普敦）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Hong Kong)",
+          "target": "亚太地区（中国香港特别行政区）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Taipei)",
+          "target": "亚太地区（台北）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Tokyo)",
+          "target": "亚太地区（东京）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Seoul)",
+          "target": "亚太地区（首尔）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Osaka)",
+          "target": "亚太地区（大阪）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Mumbai)",
+          "target": "亚太地区（孟买）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Hyderabad)",
+          "target": "亚太地区（海得拉巴）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Singapore)",
+          "target": "亚太地区（新加坡）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Sydney)",
+          "target": "亚太地区（悉尼）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Jakarta)",
+          "target": "亚太地区（雅加达）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Melbourne)",
+          "target": "亚太地区（墨尔本）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Malaysia)",
+          "target": "亚太地区（马来西亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (New Zealand)",
+          "target": "亚太地区（新西兰）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Thailand)",
+          "target": "亚太地区（泰国）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "aws global region",
+          "target": "AWS 全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Canada (Central)",
+          "target": "加拿大（中部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Canada West (Calgary)",
+          "target": "加拿大西部（卡尔加里）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Frankfurt)",
+          "target": "欧洲（法兰克福）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Zurich)",
+          "target": "欧洲（苏黎世）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Stockholm)",
+          "target": "欧洲（斯德哥尔摩）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Milan)",
+          "target": "欧洲（米兰）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Spain)",
+          "target": "欧洲（西班牙）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Ireland)",
+          "target": "欧洲（爱尔兰）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (London)",
+          "target": "欧洲（伦敦）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Paris)",
+          "target": "欧洲（巴黎）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Israel (Tel Aviv)",
+          "target": "以色列（特拉维夫）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Middle East (UAE)",
+          "target": "中东（阿联酋）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Middle East (Bahrain)",
+          "target": "中东（巴林）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mexico (Central)",
+          "target": "墨西哥（中部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "South America (Sao Paulo)",
+          "target": "南美洲（圣保罗）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US East (N. Virginia)",
+          "target": "美国东部（北弗吉尼亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US East (Ohio)",
+          "target": "美国东部（俄亥俄）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US West (N. California)",
+          "target": "美国西部（北加利福尼亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US West (Oregon)",
+          "target": "美国西部（俄勒冈）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "aws-cn global region",
+          "target": "AWS 中国区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "China (Beijing)",
+          "target": "中国（北京）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "China (Ningxia)",
+          "target": "中国（宁夏）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS European Sovereign Cloud (Germany)",
+          "target": "AWS 欧洲主权云（德国）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "aws-iso global region",
+          "target": "AWS ISO 区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISO East",
+          "target": "美国 ISO 东部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISO WEST",
+          "target": "美国 ISO 西部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "aws-iso-b global region",
+          "target": "AWS ISO-B 区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISOB East (Ohio)",
+          "target": "美国 ISOB 东部（俄亥俄）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISOB West",
+          "target": "美国 ISOB 西部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "aws-iso-e global region",
+          "target": "AWS ISO-E 区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "EU ISOE West",
+          "target": "欧盟 ISOE 西部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "aws-iso-f global region",
+          "target": "AWS ISO-F 区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISOF EAST",
+          "target": "美国 ISOF 东部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISOF SOUTH",
+          "target": "美国 ISOF 南部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "aws-us-gov global region",
+          "target": "AWS GovCloud 区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS GovCloud (US-East)",
+          "target": "AWS GovCloud（美国东部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS GovCloud (US-West)",
+          "target": "AWS GovCloud（美国西部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS SDK for JavaScript S3 Client for Node.js, Browser and React Native",
+          "target": "适用于 Node.js、浏览器和 React Native 的 AWS SDK for JavaScript S3 客户端"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Select the dropped images to upload to cloudflare r2. Review object keys and public urls before uploading.",
+          "target": "选择要上传到 Cloudflare R2 的拖放图片。上传前请检查对象键和公共 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Select the cover image to upload to cloudflare r2. Review object key and public url before uploading.",
+          "target": "选择要上传到 Cloudflare R2 的封面图片。上传前请检查对象键和公共 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Select the local images to upload to cloudflare r2. Review object keys and public urls before syncing.",
+          "target": "选择要上传到 Cloudflare R2 的本地图片。同步前请检查对象键和公共 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "If this is a browser context, check allowed origins. The S3 API path usually bypasses CORS.",
+          "target": "如果是浏览器环境，请检查允许的源。S3 API 路径通常会绕过 CORS。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Retry when the network is stable, or check VPN and firewall rules.",
+          "target": "请在网络稳定时重试，或检查 VPN 和防火墙规则。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Check OS trust store, proxy SSL inspection, or corporate MITM rules.",
+          "target": "请检查操作系统信任存储、代理 SSL 检查或企业 MITM 规则。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Check internet, DNS, VPN, and that the account ID endpoint is correct.",
+          "target": "请检查互联网、DNS、VPN 以及账户 ID 端点是否正确。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Wait and retry, or reduce parallel uploads.",
+          "target": "请稍后重试，或减少并行上传数量。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Verify access key ID and secret, account ID, and that the token is not expired.",
+          "target": "请验证访问密钥 ID 和密钥、账户 ID 以及令牌是否未过期。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Regenerate r2 API tokens and update both secrets in Obsidian.",
+          "target": "请重新生成 R2 API 令牌，并在 Obsidian 中更新两个密钥。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Confirm bucket name, object key, and that the bucket exists in this account.",
+          "target": "请确认存储桶名称、对象键以及该存储桶是否存在于此账户中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Often a wrong bucket name or path. Confirm settings against the Cloudflare dashboard.",
+          "target": "通常是存储桶名称或路径错误。请根据 Cloudflare 仪表板确认设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Token works but lacks read, write, or delete permission for this bucket.",
+          "target": "令牌有效，但缺少对此存储桶的读取、写入或删除权限。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Check bucket policy, token permissions, or invalid signature vs. wrong secret.",
+          "target": "请检查存储桶策略、令牌权限，或无效签名与错误密钥。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Retry later; if it persists, note the code above for support.",
+          "target": "请稍后重试；如果问题持续，请记录上述代码以寻求支持。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hint",
+          "source": "Note this wording when reporting the issue.",
+          "target": "报告问题时请注明此措辞。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "account ID",
+          "target": "账户 ID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "bucket name",
+          "target": "存储桶名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "public base URL",
+          "target": "公共基础 URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "access key ID secret",
+          "target": "访问密钥 ID 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "secret access key secret",
+          "target": "秘密访问密钥密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Date and time",
+          "target": "日期和时间"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "File",
+          "target": "文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Note",
+          "target": "笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Upload",
+          "target": "上传"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "1 year, immutable",
+          "target": "1 年，不可变"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "1 year (no immutable directive)",
+          "target": "1 年（无不可变指令）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "24 hours",
+          "target": "24 小时"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "1 hour",
+          "target": "1 小时"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Always revalidate (max-age 0)",
+          "target": "始终重新验证（max-age 0）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchUpload",
+          "target": "NoSuchUpload"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AccessDenied",
+          "target": "AccessDenied"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ObjectNotInActiveTierError",
+          "target": "ObjectNotInActiveTierError"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BucketAlreadyExists",
+          "target": "BucketAlreadyExists"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BucketAlreadyOwnedByYou",
+          "target": "BucketAlreadyOwnedByYou"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchBucket",
+          "target": "NoSuchBucket"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InvalidObjectState",
+          "target": "InvalidObjectState"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchKey",
+          "target": "NoSuchKey"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NotFound",
+          "target": "NotFound"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "EncryptionTypeMismatch",
+          "target": "EncryptionTypeMismatch"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InvalidRequest",
+          "target": "InvalidRequest"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InvalidWriteOffset",
+          "target": "InvalidWriteOffset"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TooManyParts",
+          "target": "TooManyParts"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ObjectAlreadyInActiveTierError",
+          "target": "ObjectAlreadyInActiveTierError"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bucket",
+          "target": "Bucket"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AWS SDK for JavaScript Team",
+          "target": "AWS SDK for JavaScript 团队"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Key",
+          "target": "Key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ChecksumAlgorithm",
+          "target": "ChecksumAlgorithm"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync images to r2",
+          "target": "同步图片到 r2"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Delete r2 images",
+          "target": "删除 r2 图片"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Upload cover image",
+          "target": "上传封面图片"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select all",
+          "target": "全选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Upload selected",
+          "target": "上传所选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete r2 images",
+          "target": "删除 r2 图片"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete selected",
+          "target": "删除所选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Sync preview",
+          "target": "同步预览"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
