@@ -1,0 +1,427 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "brain-atlas",
+    "version": "1.0.0",
+    "title": "Brain Atlas",
+    "description": "Brain Atlas Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.5",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "type:wiki=source\ntype:person=person\nclass:meeting=workThread",
+          "target": "type:wiki=source\\ntype:person=person\\nclass:meeting=workThread"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "brain_region, lobe, region",
+          "target": "brain_region, lobe, region"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Battery saver",
+          "target": "省电模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Balanced",
+          "target": "均衡模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Smooth (current)",
+          "target": "流畅模式（当前）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Hover preview",
+          "target": "悬停预览"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Open in new pane",
+          "target": "在新窗格中打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Open in current pane",
+          "target": "在当前窗格中打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Brain Atlas refresh failed",
+          "target": "大脑图谱刷新失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset",
+          "target": "重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Color palette used by the brain renderer.",
+          "target": "大脑渲染器使用的调色板。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Smooth keeps the current animation rate. Balanced and Battery saver reduce idle frame rate for lower CPU use.",
+          "target": "流畅模式保持当前动画速率。均衡模式和省电模式会降低空闲帧率以减少 CPU 使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum visible notes. Lowest-degree notes are dropped first.",
+          "target": "最大可见笔记数。度数最低的笔记将首先被移除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum rendered links.",
+          "target": "最大渲染链接数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Resume slow rotation after interaction pauses.",
+          "target": "交互暂停后恢复缓慢旋转。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Draw region callouts and note labels on the brain canvas.",
+          "target": "在大脑画布上绘制区域标注和笔记标签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show the anatomical region legend.",
+          "target": "显示解剖区域图例。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Dim or restore this brain region in the atlas.",
+          "target": "在图谱中调暗或恢复此大脑区域。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose where clicked notes open.",
+          "target": "选择点击笔记的打开位置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Category used when no frontmatter, tag, folder, filename, or link rule matches.",
+          "target": "当没有前置信息、标签、文件夹、文件名或链接规则匹配时使用的类别。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Let uncategorized high-link notes become index or source notes when link structure strongly suggests it.",
+          "target": "当链接结构强烈暗示时，允许未分类的高链接笔记成为索引或源笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated frontmatter fields checked for kind/type/category.",
+          "target": "以逗号分隔的前置信息字段，用于检查种类/类型/类别。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One per line: field:value=category. Example: type:wiki=source.",
+          "target": "每行一个：字段:值=类别。示例：type:wiki=source。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One per line: tag=category. Tags do not need #.",
+          "target": "每行一个：标签=类别。标签不需要 #。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One per line: folder=category. Folder names are matched against any path ancestor.",
+          "target": "每行一个：文件夹=类别。文件夹名称将与任何路径祖先匹配。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One per line: field:value=region. Example: type:wiki=occipital.",
+          "target": "每行一个：字段:值=区域。示例：type:wiki=occipital。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "One per line: folder=region. Folder names are matched against any path ancestor.",
+          "target": "每行一个：文件夹=区域。文件夹名称将与任何路径祖先匹配。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Brain Atlas",
+          "target": "大脑图谱"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Performance preset",
+          "target": "性能预设"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Node cap",
+          "target": "节点上限"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Edge cap",
+          "target": "边上限"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Idle auto-rotate",
+          "target": "空闲自动旋转"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show labels",
+          "target": "显示标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show legend chip",
+          "target": "显示图例芯片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pinned positions",
+          "target": "固定位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Visible regions",
+          "target": "可见区域"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Click action",
+          "target": "点击操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Categorization",
+          "target": "分类"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default category",
+          "target": "默认类别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Infer categories from links",
+          "target": "从链接推断类别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Frontmatter kind keys",
+          "target": "前置信息种类键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Frontmatter value mappings",
+          "target": "前置信息值映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tag mappings",
+          "target": "标签映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Folder mappings",
+          "target": "文件夹映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Region overrides",
+          "target": "区域覆盖"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Frontmatter region keys",
+          "target": "前置信息区域键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Frontmatter region value mappings",
+          "target": "前置信息区域值映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Tag region mappings",
+          "target": "标签区域映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Folder region mappings",
+          "target": "文件夹区域映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note region mappings",
+          "target": "笔记区域映射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Classification report",
+          "target": "分类报告"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "DRAG NODE - pin   -   DRAG EMPTY - rotate   -   SCROLL - zoom",
+          "target": "拖拽节点 - 固定   -   拖拽空白 - 旋转   -   滚动 - 缩放"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Brain Atlas refresh failed. See console for details.",
+          "target": "大脑图谱刷新失败。详情请查看控制台。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "brain-atlas-control-group brain-atlas-region-controls",
+          "target": "brain-atlas-control-group brain-atlas-region-controls"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "BRAIN STEM",
+          "target": "脑干"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "INK & PAPER",
+          "target": "墨水与纸张"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ACID HOUSE",
+          "target": "酸性浩室"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open atlas",
+          "target": "打开图谱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Unmapped frontmatter values",
+          "target": "未映射的前置信息值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No unmapped frontmatter values found.",
+          "target": "未找到未映射的前置信息值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "LOBE - ATLAS - v2",
+          "target": "脑叶 - 图谱 - v2"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " -",
+          "target": " -"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " 6 regions",
+          "target": " 6个区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Anatomical regions",
+          "target": "解剖区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tap again to open",
+          "target": "再次点击以打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "What am I seeing?",
+          "target": "我看到的是什么？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Regions come from frontmatter, tags, folders, daily-note names, then your default category and optional link behavior.",
+          "target": "区域来源于前置信息、标签、文件夹、每日笔记名称，然后是您的默认类别和可选链接行为。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Region buttons isolate lobes. Labels toggles note and region text.",
+          "target": "区域按钮用于隔离脑叶。标签切换笔记和区域文本。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
