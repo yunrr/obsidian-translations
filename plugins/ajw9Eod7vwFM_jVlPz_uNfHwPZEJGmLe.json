@@ -1,0 +1,1729 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "draw-steel-elements",
+    "version": "1.0.1",
+    "title": "Draw Steel Elements",
+    "description": "Draw Steel Elements Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "5.1.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Customize Condition",
+          "target": "自定义条件"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Toggle to mark turn taken",
+          "target": "切换以标记回合已进行"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Add Condition",
+          "target": "添加条件"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Check Motivations that have already been appealed to.",
+          "target": "检查已被诉诸的动机。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Resolve the Argument using the current state of motivations, pitfalls, etc. \nRequires Power Roll tier to be selected.",
+          "target": "使用当前的动机、陷阱等状态解决论点。\\n需要选择力量掷骰等级。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "If the Heroes mention a Pitfall: Argument fails and the NPC may warn Heroes.",
+          "target": "如果英雄提及陷阱：论点失败，NPC 可能警告英雄。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "If the Heroes try to appeal to a Motivation multiple times: Interest remains and Patience decreases by 1.",
+          "target": "如果英雄试图多次诉诸同一动机：兴趣保持不变，耐心减少 1 点。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "If the NPC catches a lie: Arguments that fail to increase Interest will lose an additional Interest.",
+          "target": "如果 NPC 发现谎言：未能增加兴趣的论点将额外失去 1 点兴趣。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "If the Heroes try to use the same Argument (w/o Motivation): Test automatically gets tier-1 result.",
+          "target": "如果英雄试图使用相同的论点（不涉及动机）：测试自动获得等级-1 结果。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "select",
+          "target": "选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "option",
+          "target": "选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "img",
+          "target": "图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error compiling schema, function code:",
+          "target": "编译模式时出错，函数代码："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing frontmatter:",
+          "target": "解析前置元数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "DSE Compendium asset download failed:",
+          "target": "DSE 资源下载失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error downloading DSE Compendium release:",
+          "target": "下载 DSE 发布版本时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Failed to find canvas associated with markdown context.  Change NOT saved.",
+          "target": "找不到与 Markdown 上下文关联的画布。更改未保存。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loading Draw Steel Elements Plugin.",
+          "target": "正在加载 Draw Steel Elements 插件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Draw Steel Elements Plugin unloaded and schema registry reset",
+          "target": "Draw Steel Elements 插件已卸载，模式注册表已重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specific release tag to download. Leave empty to download the latest release.",
+          "target": "要下载的特定发布标签。留空则下载最新版本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Directory within your vault to extract the Compendium contents to.  THIS DIRECTORY WILL BE WIPED CLEAN!",
+          "target": "在你的保险库中用于提取资源内容的目录。此目录将被清空！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default image to use for creatures in the initiative tracker if not specified",
+          "target": "如果未指定，用于先攻追踪器中生物的默认图像"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Release Tag (Optional)",
+          "target": "发布标签（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Destination Directory",
+          "target": "目标目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default Creature Image Path",
+          "target": "默认生物图像路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "ImportedContent",
+          "target": "导入内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Reset Negotiation",
+          "target": "重置谈判"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "meta-schema not available",
+          "target": "元模式不可用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "these parameters are deprecated, see docs for addKeyword",
+          "target": "这些参数已弃用，请参阅 addKeyword 文档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "keywords option as map is deprecated, pass array",
+          "target": "keywords 选项作为映射已弃用，请传递数组"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Unexpected line in effect block, skipping:",
+          "target": "效果块中出现意外行，正在跳过："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Unable to find the file to update.",
+          "target": "找不到要更新的文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[HMR] Root or manually mounted instance modified. Full reload required.",
+          "target": "[HMR] 根实例或手动挂载的实例已修改。需要完全重新加载。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[HMR] Something went wrong during Vue component hot-reload. Full reload required.",
+          "target": "[HMR] Vue 组件热重载过程中出现问题。需要完全重新加载。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Draw Steel Elements: Downloading compendium...",
+          "target": "Draw Steel 元素：正在下载规则集..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Draw Steel Elements: Extracting compendium...",
+          "target": "Draw Steel 元素：正在解压规则集..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Draw Steel Elements: Compendium downloaded and extracted successfully.",
+          "target": "Draw Steel 元素：规则集下载并解压成功。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Negotiation reset to initial state",
+          "target": "谈判已重置为初始状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "stamina-bar-fill stamina-bar-fill-left",
+          "target": "stamina-bar-fill stamina-bar-fill-left"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "stamina-bar-fill stamina-bar-fill-right",
+          "target": "stamina-bar-fill stamina-bar-fill-right"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "error-message ds-container",
+          "target": "error-message ds-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-header ds-nt-motivation-header",
+          "target": "ds-nt-details-header ds-nt-motivation-header"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-label ds-nt-motivation-label",
+          "target": "ds-nt-details-label ds-nt-motivation-label"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-checkbox ds-nt-motivation-checkbox",
+          "target": "ds-nt-details-checkbox ds-nt-motivation-checkbox"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-name ds-nt-motivation-name",
+          "target": "ds-nt-details-name ds-nt-motivation-name"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-reason ds-nt-motivation-reason",
+          "target": "ds-nt-details-reason ds-nt-motivation-reason"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-header ds-nt-pitfall-header",
+          "target": "ds-nt-details-header ds-nt-pitfall-header"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-label ds-nt-pitfall-label",
+          "target": "ds-nt-details-label ds-nt-pitfall-label"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-name ds-nt-pitfall-name",
+          "target": "ds-nt-details-name ds-nt-pitfall-name"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-details-reason ds-nt-pitfall-reason",
+          "target": "ds-nt-details-reason ds-nt-pitfall-reason"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "icon",
+          "target": "图标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "text",
+          "target": "文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-name-value ds-multiline",
+          "target": "ds-feature-name-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-line pr-flavor-line",
+          "target": "ds-feature-detail-line pr-flavor-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-flavor-value ds-multiline",
+          "target": "ds-feature-flavor-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-table-cell pr-keyword-cell",
+          "target": "ds-feature-detail-table-cell pr-keyword-cell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-key pr-keyword-key",
+          "target": "ds-feature-detail-key pr-keyword-key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-detail-value pr-keyword-value ds-multiline",
+          "target": "pr-detail-value pr-keyword-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-table-cell pr-type-cell",
+          "target": "ds-feature-detail-table-cell pr-type-cell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-key pr-type-key",
+          "target": "ds-feature-detail-key pr-type-key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-detail-value pr-type-value ds-multiline",
+          "target": "pr-detail-value pr-type-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-table-cell ds-feature-distance-cell",
+          "target": "ds-feature-detail-table-cell ds-feature-distance-cell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-key ds-feature-distance-key",
+          "target": "ds-feature-detail-key ds-feature-distance-key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-detail-value ds-feature-distance-value ds-multiline",
+          "target": "pr-detail-value ds-feature-distance-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-table-cell ds-feature-target-cell",
+          "target": "ds-feature-detail-table-cell ds-feature-target-cell"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-key ds-feature-target-key",
+          "target": "ds-feature-detail-key ds-feature-target-key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-detail-value ds-feature-target-value ds-multiline",
+          "target": "pr-detail-value ds-feature-target-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-line pr-trigger-line",
+          "target": "ds-feature-detail-line pr-trigger-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-key pr-trigger-key",
+          "target": "ds-feature-detail-key pr-trigger-key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-detail-value pr-trigger-value ds-multiline",
+          "target": "pr-detail-value pr-trigger-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-key ds-pr-effect-key",
+          "target": "ds-feature-detail-key ds-pr-effect-key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-pr-detail-value ds-pr-effect-value ds-multiline",
+          "target": "ds-pr-detail-value ds-pr-effect-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-line ds-pr-roll-line",
+          "target": "ds-feature-detail-line ds-pr-roll-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-roll-value ds-multiline",
+          "target": "ds-feature-roll-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-line ds-pr-tier-line ds-pr-tier-1-line",
+          "target": "ds-feature-detail-line ds-pr-tier-line ds-pr-tier-1-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-pr-tier-value ds-pr-tier-1-value ds-multiline",
+          "target": "ds-pr-tier-value ds-pr-tier-1-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-line ds-pr-tier-line ds-pr-tier-2-line",
+          "target": "ds-feature-detail-line ds-pr-tier-line ds-pr-tier-2-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-pr-tier-value ds-pr-tier-2-value ds-multiline",
+          "target": "ds-pr-tier-value ds-pr-tier-2-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-line ds-pr-tier-line ds-pr-tier-3-line",
+          "target": "ds-feature-detail-line ds-pr-tier-line ds-pr-tier-3-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-pr-tier-value ds-pr-tier-3-value ds-multiline",
+          "target": "ds-pr-tier-value ds-pr-tier-3-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-detail-line ds-pr-tier-line ds-pr-crit-line",
+          "target": "ds-feature-detail-line ds-pr-tier-line ds-pr-crit-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-pr-tier-value ds-pr-crit-value ds-multiline",
+          "target": "ds-pr-tier-value ds-pr-crit-value ds-multiline"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "tier-key-container t1-key-container",
+          "target": "tier-key-container t1-key-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "tier-key-container t2-key-container",
+          "target": "tier-key-container t2-key-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "tier-key-container t3-key-container",
+          "target": "tier-key-container t3-key-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "tier-key-container crit-key-container",
+          "target": "tier-key-container crit-key-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-argument-modifier-line ds-nt-argument-modifier-reuse-motivation-line",
+          "target": "ds-nt-argument-modifier-line ds-nt-argument-modifier-reuse-motivation-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-argument-modifier-line ds-nt-argument-modifier-lie-line",
+          "target": "ds-nt-argument-modifier-line ds-nt-argument-modifier-lie-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-argument-modifier-line ds-nt-argument-modifier-same-arg-line",
+          "target": "ds-nt-argument-modifier-line ds-nt-argument-modifier-same-arg-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ability-detail-line pr-roll-line",
+          "target": "ability-detail-line pr-roll-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ability-detail-line pr-tier-line pr-tier-1-line",
+          "target": "ability-detail-line pr-tier-line pr-tier-1-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-tier-value pr-tier-1-value",
+          "target": "pr-tier-value pr-tier-1-value"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ability-detail-line pr-tier-line pr-tier-2-line",
+          "target": "ability-detail-line pr-tier-line pr-tier-2-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-tier-value pr-tier-2-value",
+          "target": "pr-tier-value pr-tier-2-value"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ability-detail-line pr-tier-line pr-tier-3-line",
+          "target": "ability-detail-line pr-tier-line pr-tier-3-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-tier-value pr-tier-3-value",
+          "target": "pr-tier-value pr-tier-3-value"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ability-detail-line pr-tier-line pr-crit-line",
+          "target": "ability-detail-line pr-tier-line pr-crit-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pr-tier-value pr-crit-value",
+          "target": "pr-tier-value pr-crit-value"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-container ds-container",
+          "target": "ds-nt-container ds-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-action-tab ds-nt-argument-tab active",
+          "target": "ds-nt-action-tab ds-nt-argument-tab active"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-action-tab ds-nt-learn-more-tab",
+          "target": "ds-nt-action-tab ds-nt-learn-more-tab"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-action-container ds-nt-argument-container active",
+          "target": "ds-nt-action-container ds-nt-argument-container active"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-nt-action-container ds-nt-learn-more-container",
+          "target": "ds-nt-action-container ds-nt-learn-more-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-sb-stats-line ds-sb-characteristics-line",
+          "target": "ds-sb-stats-line ds-sb-characteristics-line"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-sb-container ds-container",
+          "target": "ds-sb-container ds-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-feature-ele-container ds-container",
+          "target": "ds-feature-ele-container ds-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ds-fb-container ds-container",
+          "target": "ds-fb-container ds-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Meta-schema for $data reference (JSON AnySchema extension proposal)",
+          "target": "用于 $data 引用的元模式（JSON AnySchema 扩展提案）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The title or description of the feature",
+          "target": "特性的标题或描述"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The icon of the feature (ex: \"🏹\")",
+          "target": "特性的图标（例如：“🏹”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Must always be 'feature'",
+          "target": "必须始终为 'feature'"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The type of the feature (ability or trait)",
+          "target": "特性的类型（能力或特质）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Usage (e.g., \"Action\", \"Maneuver\", \"Triggered Action\", \"Villain Action 1\")",
+          "target": "用法（例如：“动作”、“机动”、“触发动作”、“反派动作 1”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Cost to use the feature (e.g., \"5 Essence\", \"Signature\", \"2 Malice\")",
+          "target": "使用该特性的消耗（例如：“5 精华”、“招牌”、“2 恶意”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Type of the ability (Signature or Heroic)",
+          "target": "能力的类型（招牌或英雄）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Keywords associated with the feature (e.g., [\"Magic\",\"Earth\",\"Melee\"])",
+          "target": "与特性关联的关键词（例如：[\\\"魔法\\\",\\\"大地\\\",\\\"近战\\\"]）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Distance or area (e.g., \"Ranged 5\", \"2 burst\", \"Melee 1\")",
+          "target": "距离或区域（例如：“远程 5”、“2 爆发”、“近战 1”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Who or what is targeted (e.g., \"All enemies\", \"One creature\", \"Self\")",
+          "target": "目标是谁或什么（例如：“所有敌人”、“一个生物”、“自身”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Trigger condition for triggered actions",
+          "target": "触发动作的触发条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Flavor text of the feature",
+          "target": "特性的风味文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Metadata for the feature, to be converted to frontmatter in markdown. This field contains key-value pairs that will be rendered as YAML frontmatter.",
+          "target": "特性的元数据，将转换为 Markdown 中的前置元数据。此字段包含将渲染为 YAML 前置元数据的键值对。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "List of effects (flexible formats)",
+          "target": "效果列表（灵活格式）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Name of the effect",
+          "target": "效果的名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Cost to trigger this effect",
+          "target": "触发此效果的消耗"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Effect expression (e.g., \"All targets make a Might test.\")",
+          "target": "效果表达式（例如：“所有目标进行一次力量检定。”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Power Roll expression (e.g., \"2d10 + 3\")",
+          "target": "力量掷骰表达式（例如：“2d10 + 3”）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "List of features granted by the effect",
+          "target": "该效果授予的特性列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "A creature statblock for a Draw Steel.",
+          "target": "一个 Draw Steel 的生物属性块。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The name of the creature.",
+          "target": "生物的名称。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Must always be 'statblock'",
+          "target": "必须始终为 'statblock'"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The creature's level.",
+          "target": "生物的等级。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Roles assigned to the creature (e.g., Boss, Minion).",
+          "target": "分配给生物的角色（例如：首领、爪牙）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ancestries or types the creature belongs to (e.g., Human, Humanoid).",
+          "target": "生物所属的种族或类型（例如：人类、人形生物）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Encounter Value (EV) of the creature.",
+          "target": "生物的遭遇值（EV）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The creature's max stamina.",
+          "target": "该生物的最大耐力值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "List of immunities (e.g., Magic 2, Psionic 2).",
+          "target": "免疫列表（例如，魔法2，灵能2）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "List of weaknesses (e.g., acid 3, holy 1).",
+          "target": "弱点列表（例如，酸蚀3，神圣1）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Movement speed of the creature (e.g., 5).",
+          "target": "生物的移动速度（例如，5）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Movement types of the creature (e.g., 'climb, fly, swim').",
+          "target": "生物的移动类型（例如，'攀爬，飞行，游泳'）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Size category (e.g., 1M for medium).",
+          "target": "体型类别（例如，1M代表中型）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Stability value of the creature.",
+          "target": "生物的稳定值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "The free strike value.",
+          "target": "自由打击值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Might modifier.",
+          "target": "力量调整值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Agility modifier.",
+          "target": "敏捷调整值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Reason modifier.",
+          "target": "理性调整值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Intuition modifier.",
+          "target": "直觉调整值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Presence modifier.",
+          "target": "魅力调整值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Effect when a captain is present.",
+          "target": "队长在场时的效果。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "List of features (see Feature schema).",
+          "target": "特性列表（参见特性架构）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "boolean schema is false",
+          "target": "布尔模式为假"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "must be equal to constant",
+          "target": "必须等于常量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "must be equal to one of the allowed values",
+          "target": "必须等于允许值之一"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "property name must be valid",
+          "target": "属性名称必须有效"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "must NOT have additional properties",
+          "target": "不得有额外属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "must NOT be valid",
+          "target": "不得有效"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "must match a schema in anyOf",
+          "target": "必须匹配anyOf中的某个模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "must match exactly one schema in oneOf",
+          "target": "必须精确匹配oneOf中的一个模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "must NOT have unevaluated properties",
+          "target": "不得有未评估的属性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Unexpected block-seq-ind on same line with key",
+          "target": "意外的块序列指示符与键在同一行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Might",
+          "target": "力量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Agility",
+          "target": "敏捷"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reason",
+          "target": "理性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Intuition",
+          "target": "直觉"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Presence",
+          "target": "魅力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "alchemy",
+          "target": "炼金术"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "architecture",
+          "target": "建筑学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "blacksmithing",
+          "target": "锻造"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "fletching",
+          "target": "制箭术"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "forgery",
+          "target": "伪造"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "jewelry",
+          "target": "珠宝制作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "mechanics",
+          "target": "机械学"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tailoring",
+          "target": "裁缝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "climb",
+          "target": "攀爬"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "drive",
+          "target": "驾驶"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "endurance",
+          "target": "耐力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gymnastics",
+          "target": "体操"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "heal",
+          "target": "治疗"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "jump",
+          "target": "跳跃"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "lift",
+          "target": "举重"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "navigate",
+          "target": "导航"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ride",
+          "target": "骑乘"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "swim",
+          "target": "游泳"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "brag",
+          "target": "吹嘘"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "empathize",
+          "target": "共情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "flirt",
+          "target": "调情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "gamble",
+          "target": "赌博"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "handle animals",
+          "target": "驯兽"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "interrogate",
+          "target": "审讯"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "intimidate",
+          "target": "威吓"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "lead",
+          "target": "领导"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "lie",
+          "target": "说谎"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "music",
+          "target": "音乐"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "perform",
+          "target": "表演"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "persuade",
+          "target": "说服"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "read person",
+          "target": "察言观色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "alertness",
+          "target": "警觉"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "conceal object",
+          "target": "藏匿物品"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "disguise",
+          "target": "伪装"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "eavesdrop",
+          "target": "窃听"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "escape artist",
+          "target": "逃脱术"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "hide",
+          "target": "躲藏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "pick lock",
+          "target": "开锁"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "pick pocket",
+          "target": "扒窃"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sabotage",
+          "target": "破坏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "search",
+          "target": "搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sneak",
+          "target": "潜行"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "track",
+          "target": "追踪"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "culture",
+          "target": "文化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "criminal underworld",
+          "target": "犯罪地下世界"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "history",
+          "target": "历史"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "magic",
+          "target": "魔法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "monsters",
+          "target": "怪物"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "nature",
+          "target": "自然"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "psionics",
+          "target": "灵能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "religion",
+          "target": "宗教"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "rumors",
+          "target": "传闻"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "society",
+          "target": "社会"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "timescape",
+          "target": "时空"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Download Compendium",
+          "target": "下载规则书"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Draw Steel Compendium Downloader",
+          "target": "Draw Steel 规则书下载器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Important: The Compendium will download to a specific directory in your vault and delete any files in that directory",
+          "target": "重要提示：规则书将下载到您保险库中的特定目录，并删除该目录中的所有文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Download Compendium",
+          "target": "下载规则书"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Initiative Tracker",
+          "target": "先攻追踪器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Dying",
+          "target": "濒死"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Apply",
+          "target": "应用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Damage",
+          "target": "伤害"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Healing",
+          "target": "治疗"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Temporary Stamina",
+          "target": "临时耐力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Kill",
+          "target": "击杀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Full Heal",
+          "target": "完全治疗"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Spend Recovery",
+          "target": "消耗恢复"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset",
+          "target": "重置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Customize Condition",
+          "target": "自定义状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Color: ",
+          "target": "颜色："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Effect: ",
+          "target": "效果："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "asdf",
+          "target": "asdf"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add Conditions",
+          "target": "添加条件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Confirm Encounter Reset",
+          "target": "确认重置遭遇"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Are you sure you want to reset the encounter data?  All state will be lost including current stamina, conditions, turn tracker, and villain power.",
+          "target": "您确定要重置遭遇数据吗？所有状态都将丢失，包括当前耐力、条件、回合追踪器和反派力量。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Yes, Reset",
+          "target": "是，重置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "damage to",
+          "target": "伤害"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "minions",
+          "target": "小兵"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Apply Damage",
+          "target": "应用伤害"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset Round",
+          "target": "重置回合"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset Encounter State",
+          "target": "重置遭遇状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Heroes",
+          "target": "英雄"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enemy Groups",
+          "target": "敌方群体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Patience",
+          "target": "耐心"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Interest",
+          "target": "兴趣"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Motivations",
+          "target": "动机"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pitfalls",
+          "target": "陷阱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Trigger: ",
+          "target": "触发条件："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "≤11",
+          "target": "≤11"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "crit",
+          "target": "暴击"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Appeals to Motivation",
+          "target": "诉诸动机"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Mentions Pitfall",
+          "target": "提及陷阱"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reuses a Motivation that has already been appealed to",
+          "target": "重复使用已被诉诸的动机"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "NPC caught a lie and is offended",
+          "target": "NPC识破谎言并感到被冒犯"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Argument has already been made (w/o Motivation)",
+          "target": "论点已被提出（未使用动机）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Power Roll + Reason, Intuition, or Presence",
+          "target": "力量掷骰 + 理性、直觉或魅力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Size",
+          "target": "体型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Speed",
+          "target": "速度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Stamina",
+          "target": "耐力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Stability",
+          "target": "稳定性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Free Strike",
+          "target": "自由打击"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Core and Validation specifications meta-schema",
+          "target": "核心与验证规范元模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Applicator vocabulary meta-schema",
+          "target": "应用器词汇元模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Content vocabulary meta-schema",
+          "target": "内容词汇元模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Core vocabulary meta-schema",
+          "target": "核心词汇元模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Format vocabulary meta-schema",
+          "target": "格式词汇元模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Meta-data vocabulary meta-schema",
+          "target": "元数据词汇元模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Validation vocabulary meta-schema",
+          "target": "验证词汇元模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Core schema meta-schema",
+          "target": "核心模式元模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Steel Compendium Feature",
+          "target": "钢铁纲要特性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Draw Steel Statblock",
+          "target": "绘制钢铁属性块"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "number",
+          "target": "数字"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "color",
+          "target": "颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "checkbox",
+          "target": "复选框"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

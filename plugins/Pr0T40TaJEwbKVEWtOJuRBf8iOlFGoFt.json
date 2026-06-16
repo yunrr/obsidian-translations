@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ebrain-gardener",
+    "version": "1.0.1",
+    "title": "eBrain Gardener",
+    "description": "eBrain Gardener Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.3.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Paste your API key here…",
+          "target": "在此处粘贴您的 API 密钥…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "••••••••••••• (stored)",
+          "target": "••••••••••••• (已存储)"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Scoring inbox…",
+          "target": "正在评分收件箱…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "eBrain Garden — click to open",
+          "target": "eBrain 花园 — 点击打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "ollama",
+          "target": "ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Ollama (local)",
+          "target": "Ollama (本地)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "anthropic",
+          "target": "anthropic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Anthropic",
+          "target": "Anthropic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "openai",
+          "target": "openai"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "gemini",
+          "target": "gemini"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Google Gemini",
+          "target": "Google Gemini"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "table",
+          "target": "table"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "thead",
+          "target": "thead"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tr",
+          "target": "tr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "th",
+          "target": "th"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tbody",
+          "target": "tbody"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "td",
+          "target": "td"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[eBrain Gardener] processNote error:",
+          "target": "[eBrain Gardener] processNote 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[eBrain Gardener] publishNote error:",
+          "target": "[eBrain Gardener] publishNote 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which LLM provider to use for frontmatter and WikiLink suggestions.",
+          "target": "用于生成前置信息和 WikiLink 建议的 LLM 提供商。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Model to use. Options depend on provider.",
+          "target": "要使用的模型。可用选项取决于提供商。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Stored in your vault's data.json (inside .obsidian/plugins/ebrain-gardener/). Keep that folder out of cloud sync or version control to protect your keys.",
+          "target": "存储在您保险库的 data.json 文件中（位于 .obsidian/plugins/ebrain-gardener/ 内）。请将该文件夹排除在云同步或版本控制之外，以保护您的密钥。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Only used when provider is set to Ollama.",
+          "target": "仅在提供商设置为 Ollama 时使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where to write the generated triage report (relative to vault root).",
+          "target": "生成的分类报告的写入位置（相对于保险库根目录）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of inbox folder names to score.",
+          "target": "要评分的收件箱文件夹名称列表，以逗号分隔。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-relative path to a custom SKILL.md system prompt (e.g. Resources/SKILL.md). Leave empty to use the built-in prompt.",
+          "target": "自定义 SKILL.md 系统提示词的保险库相对路径（例如 Resources/SKILL.md）。留空则使用内置提示词。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-relative path to a Markdown file used as the full Stage 1 prompt. Leave empty to use the built-in prompt.",
+          "target": "用作完整第一阶段提示词的 Markdown 文件的保险库相对路径。留空则使用内置提示词。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-relative path to a Markdown file used as the full Stage 3 prompt. Leave empty to use the built-in prompt.",
+          "target": "用作完整第三阶段提示词的 Markdown 文件的保险库相对路径。留空则使用内置提示词。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API Key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama Base URL",
+          "target": "Ollama 基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Triage Report Path",
+          "target": "分类报告路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inbox Folders",
+          "target": "收件箱文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Skill Prompt Path",
+          "target": "技能提示词路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Stage 1 — Process prompt template",
+          "target": "第一阶段 — 处理提示词模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Stage 3 — Publish prompt template",
+          "target": "第三阶段 — 发布提示词模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Garden",
+          "target": "花园"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "API key saved.",
+          "target": "API 密钥已保存。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "API key cleared.",
+          "target": "API 密钥已清除。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Suggestion rejected. No changes made.",
+          "target": "建议已拒绝。未进行任何更改。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active note. Open a note first.",
+          "target": "没有活动笔记。请先打开一个笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Inbox scored — sidebar refreshed.",
+          "target": "收件箱已评分 — 侧边栏已刷新。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "sortable",
+          "target": "sortable"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ebrain-action-btn mod-cta",
+          "target": "ebrain-action-btn mod-cta"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Score",
+          "target": "评分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Maturity",
+          "target": "成熟度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Words",
+          "target": "字数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "FM",
+          "target": "FM"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Published",
+          "target": "已发布"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Total",
+          "target": "总计"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "No FM",
+          "target": "无 FM"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "eBrain: Process active note (Stage 1)",
+          "target": "eBrain: 处理活动笔记 (第一阶段)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "eBrain: Publish active note (Stage 3)",
+          "target": "eBrain: 发布活动笔记 (第三阶段)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "eBrain: Open triage queue",
+          "target": "eBrain: 打开分类队列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "eBrain: Score inbox & refresh sidebar",
+          "target": "eBrain: 评分收件箱并刷新侧边栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "eBrain: Open Garden Sidebar",
+          "target": "eBrain: 打开花园侧边栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "eBrain Gardener Settings",
+          "target": "eBrain Gardener 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "LLM Provider",
+          "target": "LLM 提供商"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pipeline Paths",
+          "target": "流水线路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Prompt Templates",
+          "target": "提示词模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Optional vault files that override the built-in Stage 1 and Stage 3 prompts. Available template variables: {{skill}}, {{content}}, {{filename}}, {{date}}, {{candidates}}.",
+          "target": "可选的保险库文件，用于覆盖内置的第一阶段和第三阶段提示词。可用的模板变量：{{skill}}、{{content}}、{{filename}}、{{date}}、{{candidates}}。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Process Suggestion",
+          "target": "处理建议"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Rationale: ",
+          "target": "理由："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Move to: ",
+          "target": "移动到："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Frontmatter to inject",
+          "target": "要注入的前置信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "WikiLinks to add",
+          "target": "要添加的 WikiLinks"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Accept & Apply",
+          "target": "接受并应用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reject",
+          "target": "拒绝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Inbox Triage Queue",
+          "target": "收件箱分类队列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scoring inbox notes…",
+          "target": "正在评分收件箱笔记…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save Triage Report",
+          "target": "保存分类报告"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File",
+          "target": "文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Process",
+          "target": "处理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Publish",
+          "target": "发布"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "eBrain Garden",
+          "target": "eBrain 花园"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Inbox Queue",
+          "target": "收件箱队列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scoring inbox…",
+          "target": "正在评分收件箱…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Inbox is empty.",
+          "target": "收件箱为空。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Refresh scores",
+          "target": "刷新评分"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
