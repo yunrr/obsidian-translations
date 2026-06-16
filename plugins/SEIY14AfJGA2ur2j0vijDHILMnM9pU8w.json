@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "atomic-insights",
+    "version": "1.0.1",
+    "title": "Atomic Insights",
+    "description": "Atomic Insights Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.4.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Bidirectional link",
+          "target": "双向链接"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Outgoing link",
+          "target": "出链"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Backlink",
+          "target": "反向链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Atomic Insights: Failed to load context",
+          "target": "Atomic Insights: 加载上下文失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Atomic Insights: Could not find parent container for mode:",
+          "target": "Atomic Insights: 无法找到模式的父容器："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loading Atomic Insights",
+          "target": "正在加载 Atomic Insights"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Unloading Atomic Insights",
+          "target": "正在卸载 Atomic Insights"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show related notes at the bottom of the current note.",
+          "target": "在当前笔记底部显示相关笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hide the native Obsidian backlinks view and reset editor padding.",
+          "target": "隐藏 Obsidian 原生反向链接视图并重置编辑器内边距。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include directly linked notes (Backlinks) in the matching results.",
+          "target": "在匹配结果中包含直接链接的笔记（反向链接）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include directly linked notes (Outgoing) in the matching results.",
+          "target": "在匹配结果中包含直接链接的笔记（出链）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Score based on shared connections. Highly weighted for \"structurally\" related notes.",
+          "target": "基于共享连接进行评分。对“结构上”相关的笔记给予高权重。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Leading \"/\" is ignored. Applied to Graph (Adamic Adar) and Edit Time scoring. Time (date proximity), Metadata, and explicit links are not affected — exclusion is per-logic by design.",
+          "target": "忽略前导“/”。应用于图谱（Adamic Adar）和编辑时间评分。时间（日期接近度）、元数据和显式链接不受影响——排除是按逻辑设计的。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Overall impact of non-graph signals (Emoji, YAML, Time) relative to Graph.",
+          "target": "非图谱信号（表情符号、YAML、时间）相对于图谱的整体影响。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Score based on shared Frontmatter (YAML) and Emojis. These are part of \"Other\" signals.",
+          "target": "基于共享的 Frontmatter（YAML）和表情符号进行评分。这些属于“其他”信号的一部分。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Score based on shared emoji in filenames. Relative weight inside \"Other\".",
+          "target": "基于文件名中的共享表情符号进行评分。“其他”内部的相对权重。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Score based on shared YAML keys/values. Relative weight inside \"Other\".",
+          "target": "基于共享的 YAML 键/值进行评分。“其他”内部的相对权重。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of YAML keys to treat as Virtual Nodes.",
+          "target": "以逗号分隔的 YAML 键列表，用作虚拟节点。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Score based on date proximity (from filename). Relative weight inside \"Other\".",
+          "target": "基于日期接近度（来自文件名）进行评分。“其他”内部的相对权重。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Days until the score decays to half. Default: 28 days (Monthly cycle).",
+          "target": "分数衰减到一半所需的天数。默认值：28天（月度周期）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When viewing a daily note, surface other notes whose mtime is close to the daily note's mtime. Daily folder is detected from Obsidian's Daily Notes core plugin.",
+          "target": "查看每日笔记时，显示修改时间接近该每日笔记的其他笔记。每日文件夹通过 Obsidian 的每日笔记核心插件检测。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hours until the score decays to half. Default: 24 hours. At 24h=0.5, 48h=0.25, 72h≈0.13.",
+          "target": "分数衰减到一半所需的小时数。默认值：24小时。在24小时=0.5时，48小时=0.25，72小时≈0.13。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Related Notes",
+          "target": "显示相关笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Replace native backlinks",
+          "target": "替换原生反向链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Backlinks",
+          "target": "显示反向链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show Outgoing Links",
+          "target": "显示出链"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Adamic Adar Score",
+          "target": "Adamic Adar 分数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excluded Folders",
+          "target": "排除的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Other (Non-Graph) Weight",
+          "target": "其他（非图谱）权重"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Metadata Score",
+          "target": "元数据分数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Emoji Score (Filename)",
+          "target": "表情符号分数（文件名）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "YAML Score (Frontmatter)",
+          "target": "YAML 分数（Frontmatter）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Target Metadata Keys",
+          "target": "目标元数据键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Time Decay Score",
+          "target": "时间衰减分数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Time Window (Half-life)",
+          "target": "时间窗口（半衰期）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Edit Time Score",
+          "target": "编辑时间分数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Edit Time Window (Half-life)",
+          "target": "编辑时间窗口（半衰期）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "project, tags",
+          "target": "项目, 标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Enable/Disable Graph Scoring",
+          "target": "启用/禁用图谱评分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Enable/Disable Metadata Scoring",
+          "target": "启用/禁用元数据评分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Enable/Disable Emoji Scoring",
+          "target": "启用/禁用表情符号评分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Enable/Disable YAML Scoring",
+          "target": "启用/禁用 YAML 评分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Enable/Disable Time Scoring",
+          "target": "启用/禁用时间评分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Enable/Disable Edit Time Scoring",
+          "target": "启用/禁用编辑时间评分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Add excluded folder",
+          "target": "添加排除的文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon atomic-insights-excluded-folder-row-action",
+          "target": "clickable-icon atomic-insights-excluded-folder-row-action"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "No active markdown file found.",
+          "target": "未找到活动的 Markdown 文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Atomic Insights View",
+          "target": "打开 Atomic Insights 视图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Search folders...",
+          "target": "搜索文件夹..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Atomic Insights",
+          "target": "Atomic Insights"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No active file selected.",
+          "target": "未选择活动文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Atomic Insights Settings",
+          "target": "Atomic Insights 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Scoring Algorithms (Weighted Hybrid)",
+          "target": "评分算法（加权混合）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Atomic Insights uses Graph and non-Graph signals. You can adjust Graph vs Other, then tune Other internally.",
+          "target": "Atomic Insights 使用图谱和非图谱信号。您可以调整图谱与其他的权重，然后在其他内部进行微调。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "1. Graph Topology (Link Structure)",
+          "target": "1. 图谱拓扑（链接结构）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No folders excluded.",
+          "target": "没有排除的文件夹。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "2. Metadata Context (Virtual Nodes)",
+          "target": "2. 元数据上下文（虚拟节点）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "3. Temporal Context (Time Decay)",
+          "target": "3. 时间上下文（时间衰减）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "4. Edit Time Co-occurrence (Daily notes only)",
+          "target": "4. 编辑时间共现（仅限每日笔记）"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
