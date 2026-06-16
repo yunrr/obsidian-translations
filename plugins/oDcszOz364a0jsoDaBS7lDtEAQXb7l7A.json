@@ -1,0 +1,901 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "vaultkeeper",
+    "version": "1.0.0",
+    "title": "Vaultkeeper",
+    "description": "Vaultkeeper Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.15",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Extract all text from this image/document...",
+          "target": "提取此图片/文档中的所有文本..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "# OCR Result for {{filename}}...",
+          "target": "# {{filename}} 的 OCR 结果..."
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": " ▾",
+          "target": " ▾"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Separate folder",
+          "target": "单独文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Same location as file",
+          "target": "与文件相同位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Use Obsidian settings",
+          "target": "使用 Obsidian 设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Custom pattern",
+          "target": "自定义模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "File type (extension)",
+          "target": "文件类型（扩展名）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Date (year/month)",
+          "target": "日期（年/月）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "No subfolders",
+          "target": "无子文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Date-based + ask to confirm",
+          "target": "基于日期 + 需要确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Ask each time",
+          "target": "每次询问"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Custom pattern (automatic)",
+          "target": "自定义模式（自动）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Date-based (automatic)",
+          "target": "基于日期（自动）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Do not rename",
+          "target": "不重命名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Select a saved secret, or create one with your key from ",
+          "target": "选择一个已保存的密钥，或使用您的密钥从 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "OCR pick error:",
+          "target": "OCR 选取错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "OCR processing error:",
+          "target": "OCR 处理错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loading Attachment Organizer plugin",
+          "target": "正在加载附件组织器插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated file extensions treated as attachments",
+          "target": "以逗号分隔的文件扩展名，视为附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated folder paths to skip when organizing or purging",
+          "target": "组织或清理时要跳过的文件夹路径（以逗号分隔）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where to move attachments when organizing",
+          "target": "组织附件时移动到的位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Pre-filled folder name shown in the organize prompt",
+          "target": "组织提示中预填充的文件夹名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sort attachments into subfolders inside the destination",
+          "target": "将附件分类到目标位置内的子文件夹中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Available tokens: {{year}}, {{month}}, {{day}}, {{type}}, {{filename}}",
+          "target": "可用标记：{{year}}、{{month}}、{{day}}、{{type}}、{{filename}}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically organize attachments each time Obsidian starts",
+          "target": "每次 Obsidian 启动时自动组织附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Re-organize on a schedule. 0 = disabled.",
+          "target": "按计划重新组织。0 = 禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How to rename attachments when pasted or dropped into a note",
+          "target": "粘贴或拖入笔记时如何重命名附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Tokens: {{year}}, {{month}}, {{day}}, {{time}}, {{type}}, {{filename}} (note name), {{original}} (pasted file name)",
+          "target": "标记：{{year}}、{{month}}、{{day}}、{{time}}、{{type}}、{{filename}}（笔记名称）、{{original}}（粘贴的文件名）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show a confirmation prompt before deleting unlinked attachments.",
+          "target": "删除未链接的附件前显示确认提示。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder to monitor for images and PDFs to OCR",
+          "target": "用于监控图片和 PDF 进行 OCR 的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Files processed per batch. 1 is recommended for the free tier.",
+          "target": "每批处理的文件数。免费套餐建议设置为 1。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Files larger than this will be skipped",
+          "target": "大于此大小的文件将被跳过"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Reprocess files even when OCR output already exists",
+          "target": "即使 OCR 输出已存在，也重新处理文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "OCR new images and PDFs added to the watch folder",
+          "target": "对添加到监控文件夹的新图片和 PDF 进行 OCR"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "OCR files again when they are modified",
+          "target": "文件修改时重新进行 OCR"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Frontmatter field used to mark files as already processed",
+          "target": "用于标记文件为已处理的 Frontmatter 字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Files larger than this will be skipped by OCR",
+          "target": "大于此大小的文件将被 OCR 跳过"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Attachment extensions",
+          "target": "附件扩展名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignore folders",
+          "target": "忽略文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Destination",
+          "target": "目标位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default folder name",
+          "target": "默认文件夹名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sort into subfolders by",
+          "target": "按以下方式分类到子文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom subfolder pattern",
+          "target": "自定义子文件夹模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Organize on startup",
+          "target": "启动时组织"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-organize interval (minutes)",
+          "target": "自动组织间隔（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rename mode",
+          "target": "重命名模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date format pattern",
+          "target": "日期格式模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom rename pattern",
+          "target": "自定义重命名模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Confirm before purging",
+          "target": "清理前确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable OCR",
+          "target": "启用 OCR"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OCR watch folder",
+          "target": "OCR 监控文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OCR output folder",
+          "target": "OCR 输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Batch size",
+          "target": "批处理大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max file size (MB)",
+          "target": "最大文件大小 (MB)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Force reprocess",
+          "target": "强制重新处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-process new files",
+          "target": "自动处理新文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-process modified files",
+          "target": "自动处理修改的文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OCR processed field",
+          "target": "OCR 处理字段"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OCR prompt",
+          "target": "OCR 提示"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No files selected.",
+          "target": "未选择任何文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No unlinked attachments found",
+          "target": "未找到未链接的附件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Scanning for unlinked attachments...",
+          "target": "正在扫描未链接的附件..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No unlinked attachments found.",
+          "target": "未找到未链接的附件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "OCR is not enabled or API key is missing. Check settings.",
+          "target": "OCR 未启用或 API 密钥缺失。请检查设置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No OCR-compatible files found in vault (images/PDFs).",
+          "target": "在保险库中未找到 OCR 兼容的文件（图片/PDF）。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "OCR is not enabled or API key is missing",
+          "target": "OCR 未启用或 API 密钥缺失"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No images or PDFs found in watch folder",
+          "target": "在监控文件夹中未找到图片或 PDF"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No files need OCR processing",
+          "target": "没有文件需要 OCR 处理"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "OCR processing will stop after current file completes...",
+          "target": "OCR 处理将在当前文件完成后停止..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ao-purge-list ao-purge-confirm-list",
+          "target": "ao-purge-list ao-purge-confirm-list"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Comma-separated file extensions treated as attachments",
+          "target": "以逗号分隔的文件扩展名，视为附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Comma-separated folder paths to skip when organizing or purging",
+          "target": "以逗号分隔的文件夹路径，组织或清理时跳过"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Where to move attachments when organizing",
+          "target": "组织附件时移动到的目标位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Pre-filled folder name shown in the organize prompt",
+          "target": "组织提示中预填充的文件夹名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Sort attachments into subfolders inside the destination",
+          "target": "将附件分类到目标位置内的子文件夹中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Available tokens: {{year}}, {{month}}, {{day}}, {{type}}, {{filename}}",
+          "target": "可用令牌：{{year}}、{{month}}、{{day}}、{{type}}、{{filename}}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Automatically organize attachments each time Obsidian starts",
+          "target": "每次 Obsidian 启动时自动组织附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Re-organize on a schedule. 0 = disabled.",
+          "target": "按计划重新组织。0 表示禁用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "How to rename attachments when pasted or dropped into a note",
+          "target": "粘贴或拖入笔记时，附件的重命名方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Tokens: {{year}}, {{month}}, {{day}}, {{time}}, {{type}}, {{filename}}, {{original}}",
+          "target": "令牌：{{year}}、{{month}}、{{day}}、{{time}}、{{type}}、{{filename}}、{{original}}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Show a confirmation prompt before deleting unlinked attachments",
+          "target": "删除未链接的附件前显示确认提示"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Select a saved secret, or create one with your key from Google AI Studio",
+          "target": "选择一个已保存的密钥，或使用来自 Google AI Studio 的密钥创建一个"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Folder to monitor for images and PDFs to OCR",
+          "target": "用于监控图像和 PDF 以进行 OCR 的文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Files processed per batch. 1 is recommended for the free tier.",
+          "target": "每批处理的文件数。免费套餐建议设为 1。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Files larger than this will be skipped by OCR",
+          "target": "大于此大小的文件将被 OCR 跳过"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Reprocess files even when OCR output already exists",
+          "target": "即使 OCR 输出已存在，也重新处理文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "OCR new images and PDFs added to the watch folder",
+          "target": "对添加到监控文件夹的新图像和 PDF 进行 OCR"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "OCR files again when they are modified",
+          "target": "文件修改时重新进行 OCR"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Frontmatter field used to mark files as already processed",
+          "target": "用于标记文件为已处理的 Frontmatter 字段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Support & Links",
+          "target": "支持与链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "General",
+          "target": "通用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Organization",
+          "target": "组织"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Paste Rename",
+          "target": "粘贴重命名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "Purge",
+          "target": "清理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "heading",
+          "source": "OCR Processing",
+          "target": "OCR 处理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Support & links",
+          "target": "支持与链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Attachment extensions",
+          "target": "附件扩展名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ignore folders",
+          "target": "忽略文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Destination",
+          "target": "目标位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Default folder name",
+          "target": "默认文件夹名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sort into subfolders by",
+          "target": "按...分类到子文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Custom subfolder pattern",
+          "target": "自定义子文件夹模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Organize on startup",
+          "target": "启动时组织"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Auto-organize interval (minutes)",
+          "target": "自动组织间隔（分钟）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rename mode",
+          "target": "重命名模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Date format pattern",
+          "target": "日期格式模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Custom rename pattern",
+          "target": "自定义重命名模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Confirm before purging",
+          "target": "清理前确认"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable OCR",
+          "target": "启用 OCR"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR watch folder",
+          "target": "OCR 监控文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR output folder",
+          "target": "OCR 输出文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Batch size",
+          "target": "批处理大小"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Max file size (MB)",
+          "target": "最大文件大小 (MB)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Force reprocess",
+          "target": "强制重新处理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Auto-process new files",
+          "target": "自动处理新文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Auto-process modified files",
+          "target": "自动处理修改的文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR processed field",
+          "target": "OCR 已处理字段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR prompt",
+          "target": "OCR 提示词"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Organize attachments",
+          "target": "组织附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Find unlinked attachments",
+          "target": "查找未链接的附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Purge unlinked attachments",
+          "target": "清理未链接的附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Move attachments between folders",
+          "target": "在文件夹间移动附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR: Process watch folder",
+          "target": "OCR：处理监控文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR: Reprocess all files (force update)",
+          "target": "OCR：重新处理所有文件（强制更新）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR: Process current file",
+          "target": "OCR：处理当前文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR: Stop processing",
+          "target": "OCR：停止处理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "OCR: Pick attachment to process",
+          "target": "OCR：选择要处理的附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Filter by filename or path...",
+          "target": "按文件名或路径筛选..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "☕ Buy Me a Coffee",
+          "target": "☕ 请我喝杯咖啡"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⭐ Star on GitHub",
+          "target": "⭐ 在 GitHub 上点星"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🐛 Report Issues",
+          "target": "🐛 报告问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "💬 Discord Support",
+          "target": "💬 Discord 支持"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Google AI Studio",
+          "target": "Google AI Studio"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "OCR: Pick attachment to process",
+          "target": "OCR：选择要处理的附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No matching files.",
+          "target": "没有匹配的文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Purge Unlinked Attachments",
+          "target": "清理未链接的附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select All",
+          "target": "全选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select None",
+          "target": "全不选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete Selected",
+          "target": "删除所选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Confirm Deletion",
+          "target": "确认删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🗑 ",
+          "target": "🗑 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "← Back",
+          "target": "← 返回"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Rename pasted file",
+          "target": "重命名粘贴的文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Keep original",
+          "target": "保留原始名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Rename",
+          "target": "重命名"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

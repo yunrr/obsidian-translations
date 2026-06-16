@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "vault-share",
+    "version": "1.0.0",
+    "title": "Vault Share",
+    "description": "Vault Share Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Use Newer",
+          "target": "使用较新版本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Use newer",
+          "target": "使用较新版本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Keep Both",
+          "target": "保留两者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Keep both",
+          "target": "保留两者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Merge",
+          "target": "合并"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Error",
+          "target": "错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Warning",
+          "target": "警告"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Info",
+          "target": "信息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Debug",
+          "target": "调试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "alert",
+          "source": "Vault Share needs an update",
+          "target": "Vault Share 需要更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Bulk sync interrupted",
+          "target": "批量同步已中断"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "CandidateStore change listener threw",
+          "target": "CandidateStore 更改监听器抛出异常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "SyncActivity change listener threw",
+          "target": "SyncActivity 更改监听器抛出异常"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Drive repair failed",
+          "target": "驱动器修复失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Bulk sync started",
+          "target": "批量同步已开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Drive repair: no duplicate files found",
+          "target": "驱动器修复：未发现重复文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "Sync conflict",
+          "target": "同步冲突"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "Reset plugin?",
+          "target": "重置插件？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "This will log you out of your Google Drive connection, clear all local share records and statistics. Your vault files will not be affected. To resume, you will need to log in again and the plugin will merge your local vault with the group vault from scratch.",
+          "target": "这将使您退出 Google Drive 连接，清除所有本地共享记录和统计数据。您的保险库文件不会受到影响。要恢复使用，您需要重新登录，插件将从头开始合并您的本地保险库与群组保险库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "Sharing is paused",
+          "target": "共享已暂停"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "Resume sharing before closing?",
+          "target": "关闭前恢复共享？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "Resume",
+          "target": "恢复"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "Keep paused",
+          "target": "保持暂停"
+        },
+        {
+          "type": "CallExpression",
+          "name": "prompt",
+          "source": "Change group vault",
+          "target": "更改群组保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset",
+          "target": "重置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset plugin",
+          "target": "重置插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Slash-separated path to the group vault folder in Google Drive. Must start with a separator. Full path is created if it does not exist. Example: /vault-share/my-local-vault",
+          "target": "Google Drive 中群组保险库文件夹的斜杠分隔路径。必须以分隔符开头。如果路径不存在，将创建完整路径。示例：/vault-share/my-local-vault"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Applies when both the local vault and the group vault have changed a file since it was last shared. Keep both: rename both versions with a timestamp suffix. Use newer: keep whichever was modified most recently.",
+          "target": "当本地保险库和群组保险库自上次共享以来都更改了文件时适用。保留两者：使用时间戳后缀重命名两个版本。使用较新版本：保留最近修改的版本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Ordered rules controlling which files are shared. One rule per line. A ! prefix re-includes a previously excluded path. Last matching rule wins.",
+          "target": "控制哪些文件被共享的有序规则。每行一条规则。! 前缀可重新包含先前排除的路径。最后匹配的规则生效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How often (in seconds) vault sharing runs in the background.",
+          "target": "保险库共享在后台运行的频率（以秒为单位）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Seconds to wait after the last keystroke before sharing an edited file.",
+          "target": "在共享编辑文件之前，等待最后一次按键后的秒数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Minimum severity of messages written to the log.",
+          "target": "写入日志的消息的最低严重级别。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display recent log messages in a right-sidebar panel.",
+          "target": "在右侧面板中显示最近的日志消息。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Number of most recent log entries to retain for the sidebar view.",
+          "target": "为侧边栏视图保留的最近日志条目数量。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Checking…",
+          "target": "检查中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Reset all counters to zero.",
+          "target": "将所有计数器重置为零。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Logs out of the cloud service and clears local share history and statistics for the plugin. Does not delete any vault files.",
+          "target": "退出云服务登录，并清除插件的本地共享历史记录和统计数据。不会删除任何保险库文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Connection",
+          "target": "连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Drive folder path",
+          "target": "驱动器文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Google Drive account",
+          "target": "Google Drive 账户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Conflict resolution",
+          "target": "冲突解决"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "For most files",
+          "target": "对于大多数文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "For text files (.md, .txt)",
+          "target": "对于文本文件（.md, .txt）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sharing",
+          "target": "共享"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude rules",
+          "target": "排除规则"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sharing interval",
+          "target": "共享间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Open file poll interval",
+          "target": "打开文件轮询间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Edit holddown",
+          "target": "编辑保持时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Logging",
+          "target": "日志记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log level",
+          "target": "日志级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show log in sidebar",
+          "target": "在侧边栏显示日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log history size",
+          "target": "日志历史大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Statistics",
+          "target": "统计"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reset statistics",
+          "target": "重置统计"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Plugin",
+          "target": "插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reset plugin",
+          "target": "重置插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "One rule per line",
+          "target": "每行一条规则"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Syncing…",
+          "target": "同步中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Running…",
+          "target": "运行中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Merge",
+          "target": "合并"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Checking…",
+          "target": "检查中…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Copy log to clipboard",
+          "target": "将日志复制到剪贴板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Clear log",
+          "target": "清除日志"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "File content not loaded yet — please wait and try again.",
+          "target": "文件内容尚未加载 — 请稍候并重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Resolve all conflict markers first.",
+          "target": "请先解决所有冲突标记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No conflicts found.",
+          "target": "未发现冲突。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No other conflicts.",
+          "target": "没有其他冲突。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "All conflicts resolved.",
+          "target": "所有冲突已解决。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Logged in to Google Drive.",
+          "target": "已登录 Google Drive。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Not logged in to Drive — cannot repair duplicates.",
+          "target": "未登录 Drive — 无法修复重复项。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Drive repair: no duplicate files found.",
+          "target": "Drive 修复：未发现重复文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Logged out from Google Drive.",
+          "target": "已从 Google Drive 注销。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "vault-share-pending-path is-clickable",
+          "target": "vault-share-pending-path is-clickable"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "vault-share-pending-detail is-hidden",
+          "target": "vault-share-pending-detail is-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Push local changes to group vault",
+          "target": "将本地更改推送到群组保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pull group vault changes to local",
+          "target": "将群组保险库更改拉取到本地"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Delete from group vault",
+          "target": "从群组保险库中删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Delete from local vault",
+          "target": "从本地保险库中删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Resolve file conflicts",
+          "target": "解决文件冲突"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open sharing status panel",
+          "target": "打开共享状态面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pause sharing",
+          "target": "暂停共享"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start or resume sharing",
+          "target": "开始或恢复共享"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Find next conflict marker",
+          "target": "查找下一个冲突标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Find previous conflict marker",
+          "target": "查找上一个冲突标记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Repair Drive duplicates",
+          "target": "修复 Drive 重复项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy share log to clipboard",
+          "target": "将共享日志复制到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clear share log",
+          "target": "清除共享日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Loading…",
+          "target": "加载中…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select all",
+          "target": "全选"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Apply",
+          "target": "应用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Merge",
+          "target": "合并"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Skip",
+          "target": "跳过"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No files waiting for review.",
+          "target": "没有文件等待审阅。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Vault affected",
+          "target": "受影响的保险库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Planned operation",
+          "target": "计划操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pending",
+          "target": "待处理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Deferred",
+          "target": "已延迟"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tap to review",
+          "target": "点击审阅"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
