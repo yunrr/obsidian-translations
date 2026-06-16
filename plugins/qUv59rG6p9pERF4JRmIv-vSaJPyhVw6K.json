@@ -1,0 +1,887 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "digitalgarden",
+    "version": "2.0.0",
+    "title": "Digital Garden",
+    "description": "Publish your notes to the web for others to enjoy. For free.",
+    "language": "zh-cn",
+    "supportedVersions": "2.57.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"devPluginPath missing, run generateGardenSettings.mjs\")",
+          "target": "Notice(\"devPluginPath缺失，请运行generateGardenSettings.mjs。\")"
+        },
+        {
+          "source": "Notice(`Snapshot written to ${fullSnapshotPath}`)",
+          "target": "Notice(`快照已写入 ${fullSnapshotPath}`)"
+        },
+        {
+          "source": "Notice(`Check snapshot to make sure nothing has accidentally changed`)",
+          "target": "Notice(`检查快照以确保没有意外更改。`)"
+        },
+        {
+          "source": "Notice(\n      \"Note does not have the dg-publish: true set. Please add this and try again.\"\n    )",
+          "target": "Notice(\n      \"笔记没有设置dg-publish: true。请添加这个设置然后再试一次。\"\n    )"
+        },
+        {
+          "source": "Notice(\n            \"Unable to render dataview query. Please update the dataview plugin to the latest version.\"\n          )",
+          "target": "Notice(\n            \"无法渲染数据视图查询。请将数据视图插件更新到最新版本。\"\n          )"
+        },
+        {
+          "source": "Notice(\n            \"Unable to render dataviewjs query. Please update the dataview plugin to the latest version.\"\n          )",
+          "target": "Notice(\n            \"无法渲染 dataviewjs 查询。请将 dataview 插件更新到最新版本。\"\n          )"
+        },
+        {
+          "source": "Notice(\n            \"Unable to render inline dataview query. Please update the dataview plugin to the latest version.\"\n          )",
+          "target": "Notice(\n            \"无法渲染内联的Dataview查询。请更新Dataview插件至最新版本。\"\n          )"
+        },
+        {
+          "source": "Notice(\n            \"Unable to render inline dataviewjs query. Please update the dataview plugin to the latest version.\"\n          )",
+          "target": "Notice(\n            \"无法渲染内联 dataviewjs 查询。请将 dataview 插件更新到最新版本。\"\n          )"
+        },
+        {
+          "source": "Notice(\n            `Your custom filters contains an invalid regex: ${filter2.pattern}. Skipping it.`\n          )",
+          "target": "Notice(\n            `您的自定义过滤器包含无效的正则表达式: ${filter2.pattern}。跳过此项。`\n          )"
+        },
+        {
+          "source": "Notice(\n        \"Config error: You need to define a GitHub repo in the plugin settings\"\n      )",
+          "target": "Notice(\n        \"配置错误：您需要在插件设置中定义一个 GitHub 仓库。\"\n      )"
+        },
+        {
+          "source": "Notice(\n        \"Config error: You need to define a GitHub Username in the plugin settings\"\n      )",
+          "target": "Notice(\n        \"配置错误：您需要在插件设置中定义GitHub用户名\"\n      )"
+        },
+        {
+          "source": "Notice(\n        \"Config error: You need to define a GitHub Token in the plugin settings\"\n      )",
+          "target": "Notice(\n        \"配置错误：您需要在插件设置中定义一个GitHub Token。\"\n      )"
+        },
+        {
+          "source": "Notice(\"Settings already up to date!\")",
+          "target": "Notice(\"设置已经是最新的！\")"
+        },
+        {
+          "source": "Notice(\"Please set the garden base url in the settings\")",
+          "target": "Notice(\"请在设置中设置花园的基本URL\")"
+        },
+        {
+          "source": "Notice(\"Applying settings to site...\")",
+          "target": "Notice(\"应用设置到站点中...\")"
+        },
+        {
+          "source": "Notice(\"Applying Style Settings...\")",
+          "target": "Notice(\"应用样式设置中...\")"
+        },
+        {
+          "source": "Notice(\"No Style Settings found\")",
+          "target": "Notice(\"未找到样式设置\")"
+        },
+        {
+          "source": "Notice(\"Style Settings applied to site\")",
+          "target": "Notice(\"应用于网站的样式设置\")"
+        },
+        {
+          "source": "Notice(\"Style Settings removed from site\")",
+          "target": "Notice(\"样式设置已从网站中移除\")"
+        },
+        {
+          "source": "Notice(\n          `The ${theme.name} theme doesn't support ${baseTheme} mode.`\n        )",
+          "target": "Notice(\n          `该${theme.name}主题不支持${baseTheme}模式。`\n        )"
+        },
+        {
+          "source": "Notice(\"Successfully applied settings\")",
+          "target": "Notice(\"设置已成功应用\")"
+        },
+        {
+          "source": "Notice(\"Updating settings...\")",
+          "target": "Notice(\"更新设置中...\")"
+        },
+        {
+          "source": "Notice(\n          \"Failed to update settings. Make sure you have an internet connection.\"\n        )",
+          "target": "Notice(\n          \"更新设置失败。请确保您已连接到互联网。\"\n        )"
+        },
+        {
+          "source": "Notice(\"Settings successfully updated!\")",
+          "target": "Notice(\"设置已成功更新！\")"
+        },
+        {
+          "source": "Notice(`${this.settings.faviconPath} is not a valid file.`)",
+          "target": "Notice(`${this.settings.faviconPath} 不是一个有效的文件。`)"
+        },
+        {
+          "source": "Notice(\"Adding publish flag to note and publishing it.\")",
+          "target": "Notice(\"将发布标志添加到笔记中并将其发布。\")"
+        },
+        {
+          "source": "Notice(\"Processing files to publish...\")",
+          "target": "Notice(\"处理文件以进行发布...\")"
+        },
+        {
+          "source": "Notice(\"Garden is already fully synced!\")",
+          "target": "Notice(\"花园已经完全同步！\")"
+        },
+        {
+          "source": "Notice(\n              `Publishing ${filesToPublish.length} notes, deleting ${filesToDelete.length} notes and ${imagesToDelete.length} images. See the status bar in lower right corner for progress.`,\n              8e3\n            )",
+          "target": "Notice(\n              `发布 ${filesToPublish.length} 条笔记，删除 ${filesToDelete.length} 条笔记和 ${imagesToDelete.length} 张图片。查看右下角状态栏以了解进度。`,\n              8e3\n            )"
+        },
+        {
+          "source": "Notice(\n              `Successfully published ${filesToPublish.length} notes to your garden.`\n            )",
+          "target": "Notice(\n              `成功发布了${filesToPublish.length}条笔记到你的笔记库。`\n            )"
+        },
+        {
+          "source": "Notice(\n                `Successfully deleted ${filesToDelete.length} notes from your garden.`\n              )",
+          "target": "Notice(\n                `成功从您的笔记库中删除了 ${filesToDelete.length} 条笔记。`\n              )"
+        },
+        {
+          "source": "Notice(\n                `Successfully deleted ${imagesToDelete.length} images from your garden.`\n              )",
+          "target": "Notice(\n                `成功从您的笔记库中删除了 ${imagesToDelete.length} 张图片。`\n              )"
+        },
+        {
+          "source": "Notice(\n              \"Unable to publish multiple notes, something went wrong.\"\n            )",
+          "target": "Notice(\n              \"无法发布多个笔记，出现了错误。\"\n            )"
+        },
+        {
+          "source": "Notice(\n        \"No file is open/active. Please open a file and try again.\"\n      )",
+          "target": "Notice(\n        \"没有打开/激活的文件。请打开一个文件然后重试。\"\n      )"
+        },
+        {
+          "source": "Notice(`Note URL copied to clipboard`)",
+          "target": "Notice(`笔记链接已复制到剪贴板`)"
+        },
+        {
+          "source": "Notice(\n          \"Unable to copy note URL to clipboard, something went wrong.\"\n        )",
+          "target": "Notice(\n          \"无法将笔记 URL 复制到剪贴板，出现了问题。\"\n        )"
+        },
+        {
+          "source": "Notice(\n            \"The current file is not a markdown file. Please open a markdown file and try again.\"\n          )",
+          "target": "Notice(\n            \"当前文件不是 Markdown 文件。请打开一个 Markdown 文件再试一次。\"\n          )"
+        },
+        {
+          "source": "Notice(\"Publishing note...\")",
+          "target": "Notice(\"发布笔记...\")"
+        },
+        {
+          "source": "Notice(`Successfully published note to your garden.`)",
+          "target": "Notice(`成功将笔记发布到您的园地。`)"
+        },
+        {
+          "source": "Notice(\"Unable to publish note, something went wrong.\")",
+          "target": "Notice(\"无法发布笔记，出现了问题。\")"
+        },
+        {
+          "source": ".log(e)",
+          "target": ".log(e)"
+        },
+        {
+          "source": ".log(\"Initializing DigitalGarden plugin v\" + this.appVersion)",
+          "target": ".log(\"初始化数字花园插件 v\" + this.appVersion)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(\n            `Invalid regex: ${filter2.pattern} ${filter2.flags}`\n          )",
+          "target": ".error(\n            `无效的正则表达式: ${filter2.pattern} ${filter2.flags}`\n          )"
+        },
+        {
+          "source": ".error(\n              `can't find transcluded file ${transclusionFilePath}`\n            )",
+          "target": ".error(\n              `找不到被引用的文件 ${transclusionFilePath}`\n            )"
+        },
+        {
+          "source": ".error(error)",
+          "target": ".error(error)"
+        },
+        {
+          "source": ".error(\n            `cannot find file ${path} on github, not removing`\n          )",
+          "target": ".error(\n            `在 GitHub 上找不到文件 ${path}，无法删除。`\n          )"
+        },
+        {
+          "source": ".error(\"Could not get latest release\")",
+          "target": ".error(\"无法获取最新版本发布信息。\")"
+        },
+        {
+          "source": ".error(\"Could not get latest release\", error)",
+          "target": ".error(\"无法获取最新版本\", error)"
+        },
+        {
+          "source": ".error(\"Could not get latest commit\")",
+          "target": ".error(\"无法获取最新提交\")"
+        },
+        {
+          "source": ".error(\"Could not get latest commit\", error)",
+          "target": ".error(\"无法获取最新提交\", error)"
+        },
+        {
+          "source": ".error(\"Error loading style settings plugin\")",
+          "target": ".error(\"加载样式设置插件时出错\")"
+        },
+        {
+          "source": ".error(\"Unable to load generateGardenSnapshot\", e)",
+          "target": ".error(\"无法加载生成花园快照\", e)"
+        },
+        {
+          "source": "name: \"file\"",
+          "target": "name: \"文件\""
+        },
+        {
+          "source": "name: \"chevron-right\"",
+          "target": "name: \"右尖括号\""
+        },
+        {
+          "source": "name: \"file-diff\"",
+          "target": "name: \"文件差异\""
+        },
+        {
+          "source": "name: \"folder\"",
+          "target": "name: \"文件夹\""
+        },
+        {
+          "source": "name: \"clock\"",
+          "target": "name: \"时钟\""
+        },
+        {
+          "source": "name: \"cross\"",
+          "target": "name: \"交叉\""
+        },
+        {
+          "source": "name: \"check\"",
+          "target": "name: \"检查\""
+        },
+        {
+          "source": "name: \"applyStyles\"",
+          "target": "name: \"应用样式\""
+        },
+        {
+          "source": "name: \"arrow\"",
+          "target": "name: \"箭头\""
+        },
+        {
+          "source": "name: \"computeStyles\"",
+          "target": "name: \"计算样式\""
+        },
+        {
+          "source": "name: \"eventListeners\"",
+          "target": "name: \"事件监听器\""
+        },
+        {
+          "source": "name: \"flip\"",
+          "target": "name: \"翻转\""
+        },
+        {
+          "source": "name: \"hide\"",
+          "target": "name: \"隐藏\""
+        },
+        {
+          "source": "name: \"offset\"",
+          "target": "name: \"偏移\""
+        },
+        {
+          "source": "name: \"popperOffsets\"",
+          "target": "name: \"弹出位置偏移\""
+        },
+        {
+          "source": "name: \"preventOverflow\"",
+          "target": "name: \"防止溢出\""
+        },
+        {
+          "source": "name: \"sameWidth\"",
+          "target": "name: \"相同宽度\""
+        },
+        {
+          "source": "name: \"Quick Publish And Share Note\"",
+          "target": "name: \"快速发布和分享笔记\""
+        },
+        {
+          "source": "name: \"Publish Single Note\"",
+          "target": "name: \"发布单个笔记\""
+        },
+        {
+          "source": "name: \"Generate Garden Snapshot\"",
+          "target": "name: \"生成知识库快照\""
+        },
+        {
+          "source": "name: \"Publish Multiple Notes\"",
+          "target": "name: \"发布多个笔记\""
+        },
+        {
+          "source": "name: \"Copy Garden URL\"",
+          "target": "name: \"复制 Garden 的 URL\""
+        },
+        {
+          "source": "name: \"Open Publication Center\"",
+          "target": "name: \"开放出版中心\""
+        },
+        {
+          "source": "name: \"Add publish flag\"",
+          "target": "name: \"添加发布标记\""
+        },
+        {
+          "source": "name: \"Remove publish flag\"",
+          "target": "name: \"移除发布标记\""
+        },
+        {
+          "source": "name: \"Toggle publication status\"",
+          "target": "name: \"切换发布状态\""
+        },
+        {
+          "source": "text: \"Digital Garden: \"",
+          "target": "text: \"数字花园\""
+        },
+        {
+          "source": "text: `${this.numberOfNotesToPublish} files marked for publishing`",
+          "target": "text: `已标记 ${this.numberOfNotesToPublish} 个文件以发布`"
+        },
+        {
+          "source": "text: `${localFile.basename}`",
+          "target": "text: `${localFile.basename}`"
+        },
+        {
+          "source": "text: \"Publication Center\"",
+          "target": "text: \"发布中心\""
+        },
+        {
+          "source": "text: \"reference\"",
+          "target": "text: \"参考\""
+        },
+        {
+          "source": "text: \"GitHub Authentication (required)\"",
+          "target": "text: \"GitHub身份验证（必需）\""
+        },
+        {
+          "source": "text: \"Digital Garden Settings\"",
+          "target": "text: \"数字花园设置\""
+        },
+        {
+          "source": "text: \"Remember to read the setup guide if you haven't already. It can be found \"",
+          "target": "text: \"如果您尚未阅读安装指南，请记得阅读。您可以在以下位置找到它。\""
+        },
+        {
+          "source": "text: \"URL\"",
+          "target": "text: \"网址\""
+        },
+        {
+          "source": "text: \"Features\"",
+          "target": "text: \"特点\""
+        },
+        {
+          "source": "text: \"Appearance\"",
+          "target": "text: \"外观\""
+        },
+        {
+          "source": "text: \"Advanced\"",
+          "target": "text: \"高级\""
+        },
+        {
+          "source": "text: \"Default Note Settings\"",
+          "target": "text: \"默认笔记设置\""
+        },
+        {
+          "source": "text: \"Note Setting Docs is available \"",
+          "target": "text: \"笔记设置文档已经可用\""
+        },
+        {
+          "source": "text: \"Appearance Settings\"",
+          "target": "text: \"外观设置\""
+        },
+        {
+          "source": "text: \"Style Settings Plugin\"",
+          "target": "text: \"样式设置插件\""
+        },
+        {
+          "source": "text: \"Theme Settings\"",
+          "target": "text: \"主题设置\""
+        },
+        {
+          "source": ".setButtonText(\"Manage Rewrite Rules\")",
+          "target": ".setButtonText(\"管理重写规则\")"
+        },
+        {
+          "source": ".setButtonText(\"Manage note settings\")",
+          "target": ".setButtonText(\"管理笔记设置\")"
+        },
+        {
+          "source": ".setButtonText(\"Apply settings to site\")",
+          "target": ".setButtonText(\"应用设置到站点\")"
+        },
+        {
+          "source": ".setButtonText(\"Manage appearance\")",
+          "target": ".setButtonText(\"管理外观\")"
+        },
+        {
+          "source": ".setButtonText(\"Apply Style Settings\")",
+          "target": ".setButtonText(\"应用样式设置\")"
+        },
+        {
+          "source": ".setButtonText(\"Clear\")",
+          "target": ".setButtonText(\"清除\")"
+        },
+        {
+          "source": ".setButtonText(\"Manage Custom Filters\")",
+          "target": ".setButtonText(\"管理自定义过滤器\")"
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setButtonText(\n            `Update to ${updater.newestTemplateVersion}`\n          )",
+          "target": ".setButtonText(\n            `更新至 ${updater.newestTemplateVersion}`\n          )"
+        },
+        {
+          "source": ".setButtonText(\"Already up to date!\")",
+          "target": ".setButtonText(\"已经是最新版本！\")"
+        },
+        {
+          "source": ".setButtonText(\"Create PR\")",
+          "target": ".setButtonText(\"创建PR\")"
+        },
+        {
+          "source": ".setName(\"GitHub repo name\")",
+          "target": ".setName(\"GitHub仓库名称\")"
+        },
+        {
+          "source": ".setName(\"GitHub Username\")",
+          "target": ".setName(\"GitHub 用户名\")"
+        },
+        {
+          "source": ".setName(\"GitHub token\")",
+          "target": ".setName(\"GitHub 令牌\")"
+        },
+        {
+          "source": ".setName(\"Path Rewrite Rules\")",
+          "target": ".setName(\"路径重写规则\")"
+        },
+        {
+          "source": ".setName(\"Global Note Settings\")",
+          "target": ".setName(\"全局笔记设置\")"
+        },
+        {
+          "source": ".setName(\"Show home link (dg-home-link)\")",
+          "target": ".setName(\"显示主页链接 (dg-home-link)\")"
+        },
+        {
+          "source": ".setName(\"Show local graph for notes (dg-show-local-graph)\")",
+          "target": ".setName(\"显示笔记的本地图 (dg-show-local-graph)\")"
+        },
+        {
+          "source": ".setName(\"Show backlinks for notes (dg-show-backlinks)\")",
+          "target": ".setName(\"显示笔记的反向链接（dg-show-backlinks）\")"
+        },
+        {
+          "source": ".setName(\"Show a table of content for notes (dg-show-toc)\")",
+          "target": ".setName(\"显示笔记的目录（dg-show-toc）\")"
+        },
+        {
+          "source": ".setName(\"Show inline title (dg-show-inline-title)\")",
+          "target": ".setName(\"显示内联标题 (dg-show-inline-title)\")"
+        },
+        {
+          "source": ".setName(\"Show filetree sidebar (dg-show-file-tree)\")",
+          "target": ".setName(\"显示文件树侧边栏 (dg-show-file-tree)\")"
+        },
+        {
+          "source": ".setName(\"Enable search (dg-enable-search)\")",
+          "target": ".setName(\"启用搜索 (dg-enable-search)\")"
+        },
+        {
+          "source": ".setName(\"Enable link preview (dg-link-preview)\")",
+          "target": ".setName(\"启用链接预览（dg-link-preview）\")"
+        },
+        {
+          "source": ".setName(\"Show Tags (dg-show-tags)\")",
+          "target": ".setName(\"显示标签 (dg-show-tags)\")"
+        },
+        {
+          "source": ".setName(\"Let all frontmatter through (dg-pass-frontmatter)\")",
+          "target": ".setName(\"允许所有前置信息通过 (dg-pass-frontmatter)\")"
+        },
+        {
+          "source": ".setName(\"Appearance\")",
+          "target": ".setName(\"外观\")"
+        },
+        {
+          "source": ".setName(\"Apply current style settings to site\")",
+          "target": ".setName(\"将当前的样式设置应用到网站。\")"
+        },
+        {
+          "source": ".setName(\"Theme\")",
+          "target": ".setName(\"主题\")"
+        },
+        {
+          "source": ".setName(\"Base theme\")",
+          "target": ".setName(\"基础主题\")"
+        },
+        {
+          "source": ".setName(\"Sitename\")",
+          "target": ".setName(\"站点名称\")"
+        },
+        {
+          "source": ".setName(\"Main language\")",
+          "target": ".setName(\"主要语言\")"
+        },
+        {
+          "source": ".setName(\"Favicon\")",
+          "target": ".setName(\"网站图标\")"
+        },
+        {
+          "source": ".setName(\"Use full resolution images\")",
+          "target": ".setName(\"使用全分辨率图像\")"
+        },
+        {
+          "source": ".setName(\"Timestamp format\")",
+          "target": ".setName(\"时间戳格式\")"
+        },
+        {
+          "source": ".setName(\"Show created timestamp\")",
+          "target": ".setName(\"显示创建时间戳\")"
+        },
+        {
+          "source": ".setName(\"Created timestamp Frontmatter Key\")",
+          "target": ".setName(\"创建时间戳元数据键值对\")"
+        },
+        {
+          "source": ".setName(\"Show updated timestamp\")",
+          "target": ".setName(\"显示更新时间戳\")"
+        },
+        {
+          "source": ".setName(\"Updated timestamp Frontmatter Key\")",
+          "target": ".setName(\"更新时间戳前置键\")"
+        },
+        {
+          "source": ".setName(\"Body Classes Key\")",
+          "target": ".setName(\"主体类键\")"
+        },
+        {
+          "source": ".setName(\"Note icon Frontmatter Key\")",
+          "target": ".setName(\"笔记图标前置关键词\")"
+        },
+        {
+          "source": ".setName(\"Default note icon Value\")",
+          "target": ".setName(\"默认笔记图标数值\")"
+        },
+        {
+          "source": ".setName(\"Show note icon on Title\")",
+          "target": ".setName(\"在标题上显示笔记图标\")"
+        },
+        {
+          "source": ".setName(\"Show note icon in FileTree\")",
+          "target": ".setName(\"在文件树中显示笔记图标\")"
+        },
+        {
+          "source": ".setName(\"Show note icon on Internal Links\")",
+          "target": ".setName(\"在内部链接上显示笔记图标\")"
+        },
+        {
+          "source": ".setName(\"Show note icon on Backlinks\")",
+          "target": ".setName(\"在反向链接上显示笔记图标\")"
+        },
+        {
+          "source": ".setName(\"Base URL\")",
+          "target": ".setName(\"基础网址\")"
+        },
+        {
+          "source": ".setName(\"Slugify Note URL\")",
+          "target": ".setName(\"生成笔记网址的简化格式\")"
+        },
+        {
+          "source": ".setName(\"Custom Filters\")",
+          "target": ".setName(\"自定义过滤器\")"
+        },
+        {
+          "source": ".setName(\"Filters\")",
+          "target": ".setName(\"筛选器\")"
+        },
+        {
+          "source": ".setName(\"Site Template\")",
+          "target": ".setName(\"网站模板\")"
+        },
+        {
+          "source": ".setName(\"Update site to latest template\")",
+          "target": ".setName(\"更新网站至最新模板\")"
+        },
+        {
+          "source": ".setDesc(\"The name of the GitHub repository\")",
+          "target": ".setDesc(\"GitHub 仓库的名称\")"
+        },
+        {
+          "source": ".setDesc(\"Your GitHub Username\")",
+          "target": ".setDesc(\"你的 GitHub 用户名\")"
+        },
+        {
+          "source": ".setDesc(\n        \"Define rules to rewrite note folder structure in the garden. See the modal for more information.\"\n      )",
+          "target": ".setDesc(\n        \"定义重写花园中笔记文件夹结构的规则。查看模态框获取更多信息。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        `Default settings for each published note. These can be overwritten per note via frontmatter.`\n      )",
+          "target": ".setDesc(\n        `每个发布的笔记的默认设置。这些设置可以通过正文前置设置来覆盖每个笔记。`\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Determines whether to show a link back to the homepage or not.\"\n      )",
+          "target": ".setDesc(\n        \"确定是否显示返回首页的链接。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"When turned on, notes will show its local graph in a sidebar on desktop and at the bottom of the page on mobile.\"\n      )",
+          "target": ".setDesc(\n        \"当插件启用时，笔记将在桌面侧边栏或移动端页面底部显示其本地图。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"When turned on, notes will show backlinks in a sidebar on desktop and at the bottom of the page on mobile.\"\n      )",
+          "target": ".setDesc(\n        \"当插件开启时，笔记将在桌面侧边栏上或移动端页面底部显示反向链接。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"When turned on, notes will show all headers as a table of content in a sidebar on desktop. It will not be shown on mobile devices.\"\n      )",
+          "target": ".setDesc(\n        \"当插件启用时，笔记中的所有标题将在桌面侧边栏中显示为目录表格。在移动设备上不会显示。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"When turned on, the title of the note will show on top of the page.\"\n      )",
+          "target": ".setDesc(\n        \"当开启时，笔记的标题将显示在页面顶部。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"When turned on, a filetree will be shown on your site.\")",
+          "target": ".setDesc(\"在打开时，将在您的站点上显示一个文件树。\")"
+        },
+        {
+          "source": ".setDesc(\n        \"When turned on, users will be able to search through the content of your site.\"\n      )",
+          "target": ".setDesc(\n        \"开启后，用户将能够搜索您网站的内容。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"When turned on, hovering over links to notes in your garden shows a scrollable preview.\"\n      )",
+          "target": ".setDesc(\n        \"开启后，将鼠标悬停在花园中的笔记链接上会显示可滚动的预览。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"When turned on, tags in your frontmatter will be displayed on each note. If search is enabled, clicking on a tag will bring up a search for all notes containing that tag.\"\n      )",
+          "target": ".setDesc(\n        \"当打开时，前置标签将显示在每个笔记上。如果启用了搜索功能，点击标签将显示包含该标签的所有笔记的搜索结果。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"Manage themes, sitename and styling on your site\")",
+          "target": ".setDesc(\"管理您的网站主题、站点名称和样式。\")"
+        },
+        {
+          "source": ".setDesc(\n            \"Click the apply button to use the current style settings from the Style Settings Plugin on your site. (The plugin looks at the currently APPLIED settings. Meaning you need to have the theme you are using in the garden selected in Obsidian before applying)\"\n          )",
+          "target": ".setDesc(\n            \"点击“应用”按钮，以在您的网站上使用样式设置插件的当前样式设置。（该插件查看当前已应用的设置。这意味着在应用之前，您需要在Obsidian中选择园中正在使用的主题）\"\n          )"
+        },
+        {
+          "source": ".setDesc(\n        \"The name of your site. This will be displayed as the site header.\"\n      )",
+          "target": ".setDesc(\n        \"您网站的名称。这将显示为网站标题。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Language code (ISO 639-1) for the main language of your site. This is used to set the correct language on your site to assist search engines and browsers.\"\n      )",
+          "target": ".setDesc(\n        \"您的网站的主要语言的语言代码（ISO 639-1）。这用于在您的网站上设置正确的语言，以帮助搜索引擎和浏览器。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Path to an svg in your vault you wish to use as a favicon. Leave blank to use default. Must be square! (eg. 16x16)\"\n      )",
+          "target": ".setDesc(\n        \"您希望在您的存储库中使用作为网站图标的SVG文件的路径。留空以使用默认值。必须是正方形！（例如，16x16）\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"By default, the images on your site are compressed to make your site load faster. If you instead want to use the full resolution images, enable this setting.\"\n      )",
+          "target": ".setDesc(\n        \"默认情况下，您网站上的图片会经过压缩以加快网站加载速度。如果您希望使用全分辨率的图片，可以启用此设置。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"The format string to render timestamp on the garden. Must be luxon compatible\"\n      )",
+          "target": ".setDesc(\n        \"在花园上渲染时间戳的格式字符串。必须与Luxon兼容。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Key to get the created timestamp from the frontmatter. Leave blank to get the value from file creation time. The value can be any value that luxon Datetime.fromISO can parse.\"\n      )",
+          "target": ".setDesc(\n        \"从frontmatter中获取创建时间戳的键。留空则使用文件创建时间作为值。该值可以是luxon Datetime.fromISO可以解析的任何值。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Key to get the updated timestamp from the frontmatter. Leave blank to get the value from file update time. The value can be any value that luxon Datetime.fromISO can parse.\"\n      )",
+          "target": ".setDesc(\n        \"获取前言中的更新时间戳的关键。如果留空，将使用文件更新时间的值。该值可以是任何luxon Datetime.fromISO能够解析的值。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        \"Key for setting css-classes to the note body from the frontmatter.\"\n      )",
+          "target": ".setDesc(\n        \"从正文设置CSS类的关键字。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\"Key to get the note icon value from the frontmatter\")",
+          "target": ".setDesc(\"从前置数据中获取笔记图标值的关键\")"
+        },
+        {
+          "source": ".setDesc(\"The default value for note icon if not specified\")",
+          "target": ".setDesc(\"如果未指定，笔记图标的默认值。\")"
+        },
+        {
+          "source": ".setDesc(\n      `This is optional, but recommended. It is used for the \"Copy Garden URL\" command, generating a sitemap.xml for better SEO and an RSS feed located at /feed.xml. `\n    )",
+          "target": ".setDesc(\n      `这是可选的，但建议使用。它用于“复制 Garden URL”命令，生成一个更好的SEO的 sitemap.xml 和位于 /feed.xml 的RSS源。`\n    )"
+        },
+        {
+          "source": ".setDesc(\n      'Transform the URL from \"/My Folder/My Note/\" to \"/my-folder/my-note\". If your note titles contains non-English characters, this should be disabled.'\n    )",
+          "target": ".setDesc(\n      '将URL从“/My Folder/My Note/”转换为“/my-folder/my-note”。如果您的笔记标题包含非英文字符，则应禁用此功能。'\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Define custom rules to replace parts of the note before publishing.\"\n    )",
+          "target": ".setDesc(\n      \"定义自定义规则以在发布之前替换笔记的部分内容。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n        \"Manage updates to the base template. You should try updating the template when you update the plugin to make sure your garden support all features.\"\n      )",
+          "target": ".setDesc(\n        \"管理基础模板的更新。当你更新插件时，应尝试更新模板，以确保你的笔记库支持所有功能。\"\n      )"
+        },
+        {
+          "source": ".setDesc(\n        `\n\t\t\t\tThis will create a pull request with the latest template changes, which you'll need to use all plugin features. \n\t\t\t\tIt will not publish any changes before you approve them.\n\t\t\t`\n      )",
+          "target": ".setDesc(\n        `\n\t\t\t\t这将创建一个包含最新模板更改的拉取请求，您需要使用所有插件功能。在您批准之前，它不会发布任何更改。\n\t\t\t`\n      )"
+        },
+        {
+          "source": ".setPlaceholder(\"regex pattern\")",
+          "target": ".setPlaceholder(\"正则表达式模式\")"
+        },
+        {
+          "source": ".setPlaceholder(\"replacement\")",
+          "target": ".setPlaceholder(\"替换\")"
+        },
+        {
+          "source": ".setPlaceholder(\"flags\")",
+          "target": ".setPlaceholder(\"标志\")"
+        },
+        {
+          "source": ".setPlaceholder(\"mydigitalgarden\")",
+          "target": ".setPlaceholder(\"我的数字花园\")"
+        },
+        {
+          "source": ".setPlaceholder(\"myusername\")",
+          "target": ".setPlaceholder(\"我的用户名\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Secret Token\")",
+          "target": ".setPlaceholder(\"秘密令牌\")"
+        },
+        {
+          "source": ".setPlaceholder(\"myfavicon.svg\")",
+          "target": ".setPlaceholder(\"我的图标.svg\")"
+        },
+        {
+          "source": ".setTooltip(\"Remove filter\")",
+          "target": ".setTooltip(\"移除过滤器\")"
+        },
+        {
+          "source": ".setTooltip(\"Add a filter\")",
+          "target": ".setTooltip(\"添加过滤器\")"
+        },
+        {
+          "source": "span.innerText = \"A GitHub token with repo permissions. You can generate it \";",
+          "target": "span.innerText = \"一个拥有仓库权限的GitHub令牌。你可以在这里生成它。 \";"
+        },
+        {
+          "source": "      new import_obsidian13.Setting(noteSettingsModal.contentEl).setName(\"允许所有前置信息通过 (dg-pass-frontmatter)\").setDesc(\n        \"THIS WILL BREAK YOUR SITE IF YOU DON'T KNOW WHAT YOU ARE DOING! (But disabling will fix it). Determines whether to let all frontmatter data through to the site template. Be aware that this could break your site if you have data in a format not recognized by the template engine, 11ty.\"\n      )",
+          "target": "      new import_obsidian13.Setting(noteSettingsModal.contentEl).setName(\"允许所有前置信息通过 (dg-pass-frontmatter)\").setDesc(\n        \"如果你不确定自己在做什么，这个选项可能会破坏你的网站！（但如果你遇到问题，关闭它可能会解决问题）。这个设置决定是否将所有在笔记顶部定义的元数据（称为前置信息）原样传递给网站的模板引擎。如果你的前置信息中包含了模板引擎不认识或无法处理的数据格式，这可能会导致你的网站出现问题。简单来说，如果你的网站使用了特殊的模板引擎来显示内容，并且你在其前置信息中添加了一些该模板引擎不支持的数据，那么启用这个选项可能会导致网站显示不正常或者出错。如果你对模板引擎的工作方式和前置信息的格式非常了解，那么你可以安全地启用这个选项。否则，为了安全起见，最好保持它关闭。\"\n      )"
+        },
+        {
+          "source": "h1.textContent = \"Path rewrite rules\";",
+          "target": "h1.textContent = \"路径重写规则\";"
+        },
+        {
+          "source": "div0.textContent = \"Define rules to rewrite note paths/folder structure, using following\\n\t\tsyntax:\";",
+          "target": "div0.textContent = \"定义规则来重写笔记路径/文件夹结构，使用以下语法：\";"
+        },
+        {
+          "source": "     div1.textContent = 'Example: If you want the vault folder \"Personal/Journal\" to be shown as\\n\t\tonly \"Journal\" in the left file sidebar in the garden, add the line\\n\t\t\"Personal/Journal:Journal\"';\n",
+          "target": "div1.textContent = '示例：如果你想在左侧文件边栏中仅显示“个人/日记”文件夹为“日记”，添加一行\\n\t\t\"个人/日记:日记\"';\n"
+        },
+        {
+          "source": "div2.textContent = \"To define a folder as the root folder for the garden, use\\n\t\t`[from_vault_path]:`\";",
+          "target": "div2.textContent = \"要将一个文件夹定义为花园的根文件夹，请使用\\n\t\t`[from_vault_path]:`\";"
+        },
+        {
+          "source": "div3.textContent = \"Saving will not update the garden directly, and changes will be visible\\n\t\tin the publication center.\";",
+          "target": "div3.textContent = \"保存不会直接更新花园，更改将在发布中心可见。\";"
+        },
+        {
+          "source": "t = text(\"No notes will be affected by the change\");",
+          "target": "t = text(\"更改不会影响任何笔记\");"
+        },
+        {
+          "source": "ol.innerHTML = `<li>One rule-per line</li> <li>The format is [from_vault_path]:[to_garden_path]</li> <li>Matching will exit on first match</li>`;",
+          "target": "ol.innerHTML = `<li>每行一条规则</li><li>格式为[from_vault_path]:[to_garden_path]<ul><li>from_vault_path 是原始的笔记路径或文件夹名称。</li><li>to_garden_path 是重写后的目标路径或文件夹名称。</li></ul></li><li>匹配会在找到第一条匹配规则时停止，不会继续查找后续规则。</li>`;"
+        },
+        {
+          "source": "attr(textarea, \"placeholder\", \"Personal/Journal:Journal\");",
+          "target": "attr(textarea, \"placeholder\", \"个人/日记:日记\");"
+        },
+        {
+          "source": "utton1.textContent = \"Cancel\";",
+          "target": "utton1.textContent = \"取消\";"
+        },
+        {
+          "source": "t19 = text(\"Save\");",
+          "target": "t19 = text(\"保存\");"
+        },
+        {
+          "source": ".innerHTML = `Define regex filters to replace note content before publishing.`;",
+          "target": ".innerHTML = `定义正则表达式筛选器，在发布前替换笔记内容。`;"
+        },
+        {
+          "source": "modal.titleEl.createEl(\"h2\", { text: \"Update site\" });",
+          "target": "modal.titleEl.createEl(\"h2\", { text: \"更新站点\" });"
+        },
+        {
+          "source": "this.settingsRootElement.createEl(\"h3\", { text: \"Support\" }).prepend(this.getIcon(\"heart\"));",
+          "target": "this.settingsRootElement.createEl(\"h3\", { text: \"支持\" }).prepend(this.getIcon(\"heart\"));"
+        },
+        {
+          "source": ".innerHTML = `Format: [<code>regex pattern</code>, <code>replacement</code>, <code>regex flags</code>]`;",
+          "target": ".innerHTML = `格式：[<code>正则表达式模式</code>, <code>替换内容</code>, <code>正则表达式标志</code>];`"
+        },
+        {
+          "source": ".innerHTML = `Example: filter [<code>:smile:</code>, <code>\\u{1F600}</code>, <code>g</code>] will replace text with real emojis`;",
+          "target": ".innerHTML = `示例：筛选器 [<code>:smile:</code>, <code>\\u{1F600}</code>, <code>g</code>] 将把文本替换为真实的表情符号`;"
+        },
+        {
+          "source": "this.settingsRootElement.createEl(\"h3\", { text: \"Update site\" }).prepend((_a2 = (0, import_obsidian13.getIcon)(\"sync\")) != null ? _a2 : \"\");",
+          "target": "this.settingsRootElement.createEl(\"h3\", { text: \"更新\" }).prepend((_a2 = (0, import_obsidian13.getIcon)(\"sync\")) != null ? _a2 : \"\");"
+        },
+        {
+          "source": "",
+          "target": ""
+        },
+        {
+          "source": "themeModal.contentEl.createEl(\"h2\", { text: \"Timestamps Settings\" }).prepend(this.getIcon(\"calendar-clock\"));",
+          "target": "themeModal.contentEl.createEl(\"h2\", { text: \"时间戳设置\" }).prepend(this.getIcon(\"calendar-clock\"));\n"
+        },
+        {
+          "source": "themeModal.contentEl.createEl(\"h2\", { text: \"CSS settings\" }).prepend(this.getIcon(\"code\"));",
+          "target": "themeModal.contentEl.createEl(\"h2\", { text: \"CSS 设置\" }).prepend(this.getIcon(\"code\"));"
+        },
+        {
+          "source": "themeModal.contentEl.createEl(\"h2\", { text: \"Note icons Settings\" }).prepend(this.getIcon(\"image\"));",
+          "target": "themeModal.contentEl.createEl(\"h2\", { text: \"笔记图标设置\" }).prepend(this.getIcon(\"image\"));"
+        },
+        {
+          "source": "text: \"Documentation on note icons\"",
+          "target": "text: \"笔记图标的说明文档\""
+        },
+        {
+          "source": "\"Digital Garden Publication Center\",",
+          "target": "\"数字花园发布中心\","
+        },
+        {
+          "source": "div0.textContent = \"Calculating publication status from GitHub\";",
+          "target": "div0.textContent = \"正在从GitHub计算发布状态\";"
+        },
+        {
+          "source": "note.getPath()), \"Changed Notes\"));",
+          "target": "note.getPath()), \"变更笔记\"));"
+        },
+        {
+          "source": "note.getPath()), \"Published Notes\"));",
+          "target": "note.getPath()), \"已发布笔记\"));"
+        },
+        {
+          "source": "note.getPath()), \"Unpublished Notes\"));",
+          "target": "note.getPath()), \"未发布笔记\"));"
+        },
+        {
+          "source": "path.path), \"Deleted Notes\"));",
+          "target": "path.path), \"已删除笔记\"));"
+        },
+        {
+          "source": "button.textContent = \"PUBLISH SELECTED\";",
+          "target": "button.textContent = \"发布选中项\";"
+        }
+      ]
+    }
+  }
+}

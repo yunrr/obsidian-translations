@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-mkdocs-publisher",
+    "version": "2.0.0",
+    "title": "Enveloppe",
+    "description": "Enveloppe helps you to publish your notes on a preconfigured GitHub repository, for free, and more!",
+    "language": "zh-cn",
+    "supportedVersions": "7.3.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "GitHub config",
+          "target": "GitHub配置"
+        },
+        {
+          "source": "API Type",
+          "target": "API类型"
+        },
+        {
+          "source": "Choose between the GitHub API or the GitHub Enterprise API (only GitHub Enterprise users \\u2014 Advanced user!).",
+          "target": "在 GitHub API 或 GitHub Enterprise API （仅限 GitHub Enterprise 用户和高级用户！）之间进行选择。"
+        },
+        {
+          "source": "GitHub username",
+          "target": "GitHub用户名"
+        },
+        {
+          "source": "The username or organization hosting the repo in GitHub",
+          "target": "在GitHub持有此仓库的用户名或组织地址。"
+        },
+        {
+          "source": "Repository name",
+          "target": "仓库名"
+        },
+        {
+          "source": "The name of the repository where you store your blog.",
+          "target": "你存放blog的仓库名。"
+        },
+        {
+          "source": "A GitHub token with repository permission. You can generate it ",
+          "target": "一个有对应仓库权限的GitHub令牌，可以在这里生成它："
+        },
+        {
+          "source": "title:\"Main branch\"",
+          "target": "title:\"主分支（branch）\""
+        },
+        {
+          "source": "If you use a different branch than \"main\"",
+          "target": "如果你使用与\"main\"不同的分支"
+        },
+        {
+          "source": "Automatically merge pull requests",
+          "target": "自动合并拉取请求"
+        },
+        {
+          "source": "title:\"Test mode\"",
+          "target": "title:\"测试模式\""
+        },
+        {
+          "source": "Folder where the repository will be simulated (test mode only)",
+          "target": "将在其中模拟存储库的文件夹（仅限测试模式）"
+        },
+        {
+          "source": "desc:\"Disable GitHub push and all other action and only perform a dry-run to see what would be pushed or deleted in the repository.\"",
+          "target": "desc:\"禁用 GitHub 推送和所有其他操作，仅执行试运行以查看存储库中将推送或删除的内容。\""
+        },
+        {
+          "source": "Use {{owner}}, {{repo}} and {{branch}} to dynamically name the folder.",
+          "target": "使用 {{owner}}, {{repo}} 和 {{branch}} 来动态命名文件夹。"
+        },
+        {
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "source": "Manage more repository",
+          "target": "管理更多仓库"
+        },
+        {
+          "source": "GitHub Workflow",
+          "target": "GitHub工作流"
+        },
+        {
+          "source": "Commit message",
+          "target": "提交信息"
+        },
+        {
+          "source": "The message send when the pull-request is merged. Will always followed by the pull-request number.",
+          "target": "在合并拉取请求时发送的消息。始终会附上拉取请求的编号。"
+        },
+        {
+          "source": "GitHub action name",
+          "target": "GitHub action 名称"
+        },
+        {
+          "source": "If you want to activate a GitHub action when the plugin push the file, set the name of the file (in your .github/worfklows folder). Only workflow with the \"workflow_dispatch\" event will be triggered.",
+          "target": "如果你想在插件推送文件时触发 GitHub 动作，请设置文件名（在你的 .github/workflows 文件夹中）。只有带有 workflow_dispatch 事件的工作流会被触发。"
+        },
+        {
+          "source": "File paths",
+          "target": "文件路径"
+        },
+        {
+          "source": "File tree in repository",
+          "target": "仓库中的文件树"
+        },
+        {
+          "source": "Choose the file tree in the repository, with using a property key, a fixed folder or your Obsidian file tree.",
+          "target": "选择仓库中的文件目录，可以使用属性键、固定文件夹或你的 Obsidian 文件树。"
+        },
+        {
+          "source": "title:\"Root folder\"",
+          "target": "title:\"根目录\""
+        },
+        {
+          "source": "Use this folder as root within the repository (each path will be prepend by it).",
+          "target": "请将此文件夹作为仓库内的根目录（它会作为所有路径的开始）。"
+        },
+        {
+          "source": "Set the key where to get the value of the filename",
+          "target": "设置文件名的来源"
+        },
+        {
+          "source": "Use a property value to generate the filename. By default, \"title\" is used.",
+          "target": "使用属性值来生成文件名。默认情况下，使用\"title\"。"
+        },
+        {
+          "source": "Apply edit on the filename (automatically)",
+          "target": "应用对文件名的编辑（自动）"
+        },
+        {
+          "source": "If the text is between \"/\" (ie: /regex/), it will be used as a regex. Otherwise, it will be used as a string.",
+          "target": "如果文本位于“/”之间（即：/regex/），它将被用作正则表达式。否则，它将被用作字符串。"
+        },
+        {
+          "source": "Auto clean up",
+          "target": "自动清理"
+        },
+        {
+          "source": "Remove depublished files (stopped sharing or deleted) from GitHub",
+          "target": "从 GitHub 中删除已取消发布的文件（停止分享或删除）"
+        },
+        {
+          "source": "title:\"Content\"",
+          "target": "title:\"内容\""
+        },
+        {
+          "source": "Theses option won't change the content of the file in your Obsidian Vault, but will change the content of the file in GitHub.",
+          "target": "这些选项不会更改 Obsidian Vault 中的文件内容，但会更改 GitHub 中的文件内容。"
+        },
+        {
+          "source": "Put `links: false` in the frontmatter of a note to prevent links to it to be converted and keep the alt text (or filename)",
+          "target": "将 `links: false` 放在笔记的 frontmatter 中，以防止转换指向它的链接并保留替代文本（或文件名）"
+        },
+        {
+          "source": "Convert internal links to their counterpart in the repository, with relative path.",
+          "target": "将仓库中的内部链接转换为其对应的相对路径。"
+        },
+        {
+          "source": "Mandatory if you want to convert links in dataview blocks!",
+          "target": "如果您想转换dataview块中的链接，则必须这样做！"
+        },
+        {
+          "source": "title:\"Links\"",
+          "target": "title:\"链接\""
+        },
+        {
+          "source": "title:\"Internals links\"",
+          "target": "title:\"内部链接转换\""
+        },
+        {
+          "source": "title:\"[[Wikilinks]] to [MDlinks](links)\"",
+          "target": "title:\"[[Wiki链接] to [MD链接](链接)\""
+        },
+        {
+          "source": "Convert Wikilinks to MDlinks, without changing the contents.",
+          "target": "不改变内容，将Wiki链接转换为MD链接"
+        },
+        {
+          "source": "sectionTitle:\"Main text\"",
+          "target": "sectionTitle:\"正文\""
+        },
+        {
+          "source": "title:\"Markdown hard line break\"",
+          "target": "title:\"Markdown 硬换行符\""
+        },
+        {
+          "source": "Add a markdown hard line break (double whitespace) after each line.",
+          "target": "在每行后面添加一个 Markdown 硬换行符（双空格）。"
+        },
+        {
+          "source": "Convert Dataview queries to markdown. \nOnly works if Dataview and internal link conversion are enabled.",
+          "target": "将 Dataview 查询转换为 Markdown。\n仅当启用数据视图和内部链接转换时才有效。"
+        },
+        {
+          "source": "Text replacer",
+          "target": "文本替换器"
+        },
+        {
+          "source": "Replace text in the file with the given value. Enclose the text between \"/\" to use regex (ie: /regex/).",
+          "target": "将文件中的文本替换为给定值。将文本括在“/”之间以使用正则表达式（即：/regex/）。"
+        },
+        {
+          "source": "title:\"Inline tags\"",
+          "target": "title:\"内联tags\""
+        },
+        {
+          "source": "Add your inline tags in your properties tags field and converting nested tags with replacing \"/\" with \"_\"",
+          "target": "在属性标签字段中添加内联tags，并通过将“/”替换为“_”来转换嵌套tags（例如， #tag/subtag将转换为tag_subtag），同时将 frontmatter 修复为 YAML 标准。"
+        },
+        {
+          "source": "Convert properties/dataview fields into tags",
+          "target": "将属性或dataview字段转换为tags"
+        },
+        {
+          "source": "This will convert any properties or dataview inline field into properties tags. Separate fields with a comma.",
+          "target": "这会将任何属性或dataview的内联字段转换为tags。用逗号分隔字段。"
+        },
+        {
+          "source": "Exclude value from conversion",
+          "target": "转换的排除名单"
+        },
+        {
+          "source": "This will exclude value from being converted. Separate fields with a comma.",
+          "target": "名单内的值不会被转换。用英文逗号分隔字段。"
+        },
+        {
+          "source": "title:\"Attachment & embeds \"",
+          "target": "title:\"附件 & 嵌入项 \""
+        },
+        {
+          "source": "title:\"Send linked files\"",
+          "target": "title:\"上传链接的文件\""
+        },
+        {
+          "source": "Apply the following settings on files linked by simples links (including attachment).",
+          "target": "对通过简单链接（包括附件）链接的文件应用以下设置。"
+        },
+        {
+          "source": "title:\"Transfer attachments\"",
+          "target": "title:\"上传附件\""
+        },
+        {
+          "source": "Use the obsidian folder structure or configure a default folder below",
+          "target": "使用obsidian文件夹结构或配置下面的默认文件夹"
+        },
+        {
+          "source": "title:\"Structure\"",
+          "target": "title:\"结构\""
+        },
+        {
+          "source": "title:\"Default attachment folder\"",
+          "target": "title:\"默认附件文件夹\""
+        },
+        {
+          "source": "To use a folder different from default",
+          "target": "默认为docs/images"
+        },
+        {
+          "source": "title:\"Override attachments path\"",
+          "target": "title:\"覆写附件路径\""
+        },
+        {
+          "source": "Allow to send an attachment into a specific path and force push attachments.",
+          "target": "允许将附件发送到特定路径并强制推送附件。"
+        },
+        {
+          "source": "Change the destination of all attachments (and/or force them to be sent).",
+          "target": "更改所有附件的目的地 (and/or force them to be sent)."
+        },
+        {
+          "source": "Use the default destination path.",
+          "target": "使用默认目的地。"
+        },
+        {
+          "source": "Use the filename.",
+          "target": "使用文件名。"
+        },
+        {
+          "source": "force:\"Force push\"",
+          "target": "force:\"强制推送\""
+        },
+        {
+          "source": "By default, attachments are only sent if they have been modified since they were last sent, or if they do not exist in the repository.",
+          "target": "默认情况下，仅当附件自上次发送后经过修改或者存储库中不存在时才会发送附件。"
+        },
+        {
+          "source": "keywords:\"Keywords\"",
+          "target": "keywords:\"关键词\""
+        },
+        {
+          "source": "title:\"Allow extensions not natively supported by Obsidian\"",
+          "target": "title:\"允许非Obsidian原生支持的文件格式\""
+        },
+        {
+          "source": "Separate extensions with a comma. \nRegexes are supported when enclosed by /, such as /regex/. \nDon't include the period!",
+          "target": "用英文逗号分隔后缀名。\n用 / 括起来时支持正则表达式，即 /regex/。\n不要后缀前面的点！"
+        },
+        {
+          "source": "title:\"Send files using a metadata field\"",
+          "target": "title:\"使用元数据字段发送文件\""
+        },
+        {
+          "source": "Set the names of the metadata field you want to use to send files. Separate fields with a comma. Dataview inline field are supported.",
+          "target": "设置要用于发送文件的元数据字段的名称。多个字段间请用英文逗号隔开。支持 Dataview 内联字段。"
+        },
+        {
+          "source": "notes:\"Embed notes\"",
+          "target": "notes:\"嵌入笔记\""
+        },
+        {
+          "source": "title:\"Transfer embedded notes\"",
+          "target": "title:\"上传嵌入笔记\""
+        },
+        {
+          "source": "Send embedded notes in a shared file to GitHub. Only shared files will be send!",
+          "target": "将分享的笔记中嵌入的笔记也上传到GitHub。"
+        },
+        {
+          "source": "share:\"Sharing config\"",
+          "target": "share:\"发布配置\""
+        },
+        {
+          "source": "title:\"Share all files\"",
+          "target": "title:\"发布所有文件\""
+        },
+        {
+          "source": "Share all files regardless of the state of the share key of the notes",
+          "target": "强制发布所有文件，不遵循发布关键词的设置"
+        },
+        {
+          "source": "title:\"Share key\"",
+          "target": "title:\"发布关键词\""
+        },
+        {
+          "source": "The YAML frontmatter key to publish your file on the website. Default is `share`.",
+          "target": "用于在网站上发布文件的 YAML frontmatter 关键词。默认为“share”。"
+        },
+        {
+          "source": "title:\"Plugin settings\"",
+          "target": "title:\"插件设置\""
+        },
+        {
+          "source": "title:\"Excluded folders\"",
+          "target": "title:\"排除文件夹\""
+        },
+        {
+          "source": "Never publish file in these folders, regardless of the share key. Read the docs for more info.",
+          "target": "忽略发布关键词设置，排除这些文件夹中的文件。阅读文档以获取更多信息。"
+        },
+        {
+          "source": "title:\"Set of options\"",
+          "target": "title:\"选项集\""
+        },
+        {
+          "source": "Choose the property key you want to use to link the property of a file to another, without rewrite them each time. Work only for file linked by a wikilink in the frontmatter.",
+          "target": "选择要用于将一个文件的属性链接到另一个文件的属性键，而无需每次都重写它们。仅适用于由 frontmatter 中的 wikilink 链接的文件。"
+        },
+        {
+          "source": "title:\"File menu\"",
+          "target": "title:\"文件菜单\""
+        },
+        {
+          "source": "Add a sharing command in the file menu",
+          "target": "在文件菜单添加一个发布命令"
+        },
+        {
+          "source": "title:\"Editor menu\"",
+          "target": "title:\"编辑菜单\""
+        },
+        {
+          "source": "Add a sharing command in the right-click menu",
+          "target": "在右键菜单添加一个发布命令"
+        },
+        {
+          "source": "copyLinks:\"Link building & copy\"",
+          "target": "copyLinks:\"链接的生成与复制\""
+        },
+        {
+          "source": "Send a link to your note in your clipboard",
+          "target": "复制发布链接到你的剪贴版"
+        },
+        {
+          "source": "title:\"Base link\"",
+          "target": "title:\"基本链接\""
+        },
+        {
+          "source": "The base link of your website. By default : https://username.github.io/repo/",
+          "target": "您网站的基本链接。默认：https://username.github.io/repo/"
+        },
+        {
+          "source": "Deleting part of the link",
+          "target": "删除部分链接"
+        },
+        {
+          "source": "Delete this part of the links created. Separate with a comma if several values are to be deleted.",
+          "target": "请删除这些链接中的一部分内容。如果有多个值需要删除，请用逗号分隔。"
+        },
+        {
+          "source": "title:\"Encode to URI\"",
+          "target": "title:\"编码为 URI\""
+        },
+        {
+          "source": "Convert the link to a URI (substitute into percent-encoding)",
+          "target": "将链接转换为 URI（转换为百分号编码）"
+        },
+        {
+          "source": "title:\"Link slugify\"",
+          "target": "title:\"Link slugify（用于将字符串转换成符合URL规范）\""
+        },
+        {
+          "source": "disable:\"Disable\",lower:\"Lowercase\",strict:\"Strict: Text without capital letters or special characters.\"",
+          "target": "disable:\"禁用\",lower:\"小写\",strict:\"严格：不含大写字母或特殊字符的文本。\""
+        },
+        {
+          "source": "title:\"Add a text transformation to the URL\"",
+          "target": "title:\"向 URL 添加文本转换\""
+        },
+        {
+          "source": "Encapsulate between \"/\" to use regexes (ie: /regex/).",
+          "target": "包裹在“/”之间以使用正则表达式（即：/regex/）。"
+        },
+        {
+          "source": "Add a command to copy the link of the note (need reloading the plugin to take effect)",
+          "target": "添加一个命令以复制笔记的链接（需要重新加载插件才能生效）"
+        },
+        {
+          "source": "Show what files are edited, added, or deleted after uploaded",
+          "target": "显示上传后哪些文件被编辑、添加或删除"
+        },
+        {
+          "source": "other:\"Others\"",
+          "target": "other:\"其他\""
+        },
+        {
+          "source": "Display a modal how the new version differs",
+          "target": "显示新版本有何不同的模式"
+        },
+        {
+          "source": "title:\"Save tab\"",
+          "target": "title:\"保留标签页\""
+        },
+        {
+          "source": "Allows you to reopen the settings on the previously used tab",
+          "target": "允许您重新打开曾用标签页的设置"
+        },
+        {
+          "source": "log:\"Logs\"",
+          "target": "log:\"日志\""
+        },
+        {
+          "source": "title:\"Notice every error\"",
+          "target": "title:\"提示所有错误\""
+        },
+        {
+          "source": "On mobile, it can be hard to debug the plugin. Enable this option to log every error in a Notice.",
+          "target": "在移动设备上，调试插件可能很困难。启用此选项可将每个错误记录在通知中。"
+        },
+        {
+          "source": "title:\"Display developper logs\"",
+          "target": "title:\"显示开发者日志\""
+        },
+        {
+          "source": "Advanced user only. Will display as notice according to the previous setting.",
+          "target": "仅限高级用户。将按照之前的设置显示通知。"
+        },
+        {
+          "source": "title:\"Manage others repositories\"",
+          "target": "title:\"管理其他存储库\""
+        },
+        {
+          "source": "These \"other repositories\" allow you to use all the commands on the repositories added below.",
+          "target": "这里的“其他存储库”允许您使用下面添加的存储库上的所有命令。"
+        },
+        {
+          "source": "Using the \"shortRepo\" properties key with the \"smartKey\" also allows you to use this repository in a file without having to write its path.",
+          "target": "Using the \"shortRepo\" properties key with the \"smartKey\" also allows you to use this repository in a file without having to write its path."
+        },
+        {
+          "source": "title:\"Export settings\"",
+          "target": "title:\"导出设置\""
+        },
+        {
+          "source": "title:\"Import settings\"",
+          "target": "title:\"导入设置\""
+        },
+        {
+          "source": "title:\"Presets\"",
+          "target": "title:\"预设\""
+        }
+      ]
+    }
+  }
+}

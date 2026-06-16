@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "auto-card-link",
+    "version": "2.0.0",
+    "title": "Auto Card Link",
+    "description": "Automatically fetches metadata from a url and makes it as a card-styled link",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(e)",
+          "target": ".log(e)"
+        },
+        {
+          "source": ".log(error)",
+          "target": ".log(error)"
+        },
+        {
+          "source": ".log(\"Code Block: cardlink unknown error\", error)",
+          "target": ".log(\"代码块：卡片链接未知错误\", error)"
+        },
+        {
+          "source": ".log(clipboardText)",
+          "target": ".log(clipboardText)"
+        },
+        {
+          "source": ".log(CheckIf.isUrl(clipboardText)",
+          "target": ".log(CheckIf.isUrl(clipboardText)"
+        },
+        {
+          "source": ".setName(\"Enhance Default Paste\")",
+          "target": ".setName(\"增强默认粘贴\")"
+        },
+        {
+          "source": ".setName(\"Add commands in menu item\")",
+          "target": ".setName(\"在菜单项中添加命令\")"
+        },
+        {
+          "source": ".setTooltip(`Copy URL\n${data.url}`)",
+          "target": ".setTooltip(`Copy URL\n${data.url}`)"
+        },
+        {
+          "source": "Notice(\"Couldn't fetch link metadata\")",
+          "target": "Notice(\"无法获取链接数据\")"
+        },
+        {
+          "source": "Notice(\"URL copied to your clipboard\")",
+          "target": "Notice(\"URL 已复制到剪贴板\")"
+        },
+        {
+          "source": ".log(`Unable to find text \"${fetchingText}\" in current editor, bailing out; link ${url}`)",
+          "target": ".log(`Unable to find text \"${fetchingText}\" in current editor, bailing out; link ${url}`)"
+        },
+        {
+          "source": ".log(`bad response. response status code was ${res == null ? void 0 : res.status}`)",
+          "target": ".log(`bad response. response status code was ${res == null ? void 0 : res.status}`)"
+        },
+        {
+          "source": ".log(\"unloading auto-card-link\")",
+          "target": ".log(\"关闭自动增强链接\")"
+        },
+        {
+          "source": "name: \"Paste URL and enhance to card link\"",
+          "target": "name: \"粘贴URL并增强到卡片链接\""
+        },
+        {
+          "source": "name: \"Enhance selected URL to card link\"",
+          "target": "name: \"增强所选 URL 到卡片链接\""
+        },
+        {
+          "source": "description: \"${linkMetadata.description}\"",
+          "target": "description: \" ${linkMetadata.description}\""
+        },
+        {
+          "source": ".setDesc(\"Fetch the link metadata when pasting a url in the editor with the default paste command\")",
+          "target": ".setDesc(\"使用默认粘贴命令在编辑器中粘贴 url 时获取链接元数据\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to add commands in right click menu items\")",
+          "target": ".setDesc(\"是否在右键菜单中添加命令\")"
+        },
+        {
+          "source": ".setTitle(\"Paste URL and enhance to card link\")",
+          "target": ".setTitle(\"粘贴 URL 为卡片链接\")"
+        },
+        {
+          "source": ".setTitle(\"Enhance selected URL to card link\")",
+          "target": ".setTitle(\"增强所选 URL 为卡片链接\")"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "file-manager",
+    "version": "2.0.0",
+    "title": "File Manager",
+    "description": "Adds missing features to the file explorer.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Display name & path/command are always neccessary.\")",
+          "target": "Notice(\"显示名称和路径/命令始终是必需的。\")"
+        },
+        {
+          "source": "Notice(`Modifying ${F.name} command.`)",
+          "target": "Notice(`修改 ${F.name} 命令。`)"
+        },
+        {
+          "source": "Notice(`Adding ${F.name} command.`)",
+          "target": "Notice(`添加 ${F.name} 命令。`)"
+        },
+        {
+          "source": "Notice(\"Regular expression and Open with app are always neccessary.\")",
+          "target": "Notice(\"正则表达式和打开方式应用程序始终是必需的。\")"
+        },
+        {
+          "source": "Notice(`Modifiying ${A.regex} pattern.`)",
+          "target": "Notice(`修改 ${A.regex} 模式。`)"
+        },
+        {
+          "source": "Notice(`Adding ${A.regex} pattern.`)",
+          "target": "Notice(`添加 ${A.regex} 模式。`)"
+        },
+        {
+          "source": "Notice(\"Files copied to clipboard\")",
+          "target": "Notice(\"文件已复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Files cut to clipboard\")",
+          "target": "Notice(\"文件已剪切到剪贴板\")"
+        },
+        {
+          "source": "Notice(`${this.fileOperation} stats:\n\n`+xe(s)",
+          "target": "Notice(`${this.fileOperation} 统计信息:\n\n`+xe(s)"
+        },
+        {
+          "source": "Notice(`Move stats:\n\n`+xe(s)",
+          "target": "Notice(`移动统计信息:\n\n`+xe(s)"
+        },
+        {
+          "source": "Notice(`Copy stats:\n\n`+xe(s)",
+          "target": "Notice(`复制统计信息:\n\n`+xe(s)"
+        },
+        {
+          "source": "name:\"Open with \"",
+          "target": "name:\"使用 ... 打开\""
+        },
+        {
+          "source": "name:\"Create a subfolder within the focused or active file/folder\"",
+          "target": "name:\"在聚焦或活动的文件/文件夹内创建子文件夹\""
+        },
+        {
+          "source": "name:\"Create a folder as sibling of the focused or active file/folder\"",
+          "target": "name:\"在聚焦或活动的文件/文件夹旁边创建文件夹\""
+        },
+        {
+          "source": "name:\"Create a note within the focused or active folder\"",
+          "target": "name:\"在聚焦或活动的文件夹内创建笔记\""
+        },
+        {
+          "source": "name:\"Duplicate focused or active file/folder\"",
+          "target": "name:\"复制聚焦或活动的文件/文件夹\""
+        },
+        {
+          "source": "name:\"Copy selected files/folders to clipboard\"",
+          "target": "name:\"将选定的文件/文件夹复制到剪贴板\""
+        },
+        {
+          "source": "name:\"Cut selected files/folders to clipboard\"",
+          "target": "name:\"将选定的文件/文件夹剪切到剪贴板\""
+        },
+        {
+          "source": "name:\"Paste files/folders from clipboard to selected folder\"",
+          "target": "name:\"将剪贴板中的文件/文件夹粘贴到选定的文件夹\""
+        },
+        {
+          "source": "name:\"Clear clipboard\"",
+          "target": "name:\"清空剪贴板\""
+        },
+        {
+          "source": "name:\"Move selected files/folders to a new folder\"",
+          "target": "name:\"将选定的文件/文件夹移动到新文件夹\""
+        },
+        {
+          "source": "name:\"Copy selected files/folders to a new folder\"",
+          "target": "name:\"将选定的文件/文件夹复制到新文件夹\""
+        },
+        {
+          "source": "name:\"Select all siblings and children of the focused or active file/folder\"",
+          "target": "name:\"选择聚焦或活动的文件/文件夹的所有同级和子文件\""
+        },
+        {
+          "source": "name:\"Toggle selection of the focused or active file/folder\"",
+          "target": "name:\"切换聚焦或活动的文件/文件夹的选择状态\""
+        },
+        {
+          "source": "name:\"Clear selection\"",
+          "target": "name:\"清除选择\""
+        },
+        {
+          "source": "name:\"Invert selection\"",
+          "target": "name:\"反选\""
+        },
+        {
+          "source": "name:\"Rename focused or active file/folder\"",
+          "target": "name:\"重命名聚焦或活动的文件/文件夹\""
+        },
+        {
+          "source": "name:\"Go to file or folder in file explorer\"",
+          "target": "name:\"在文件资源管理器中打开文件或文件夹\""
+        },
+        {
+          "source": "text:\"Cancel\"",
+          "target": "text:\"取消\""
+        },
+        {
+          "source": "text:\"Files & Folders\"",
+          "target": "text:\"文件和文件夹\""
+        },
+        {
+          "source": "text:\"Files\"",
+          "target": "text:\"文件\""
+        },
+        {
+          "source": "text:\"Folders\"",
+          "target": "text:\"文件夹\""
+        },
+        {
+          "source": "text:\"Apply to: \"",
+          "target": "text:\"应用于: \""
+        },
+        {
+          "source": "text:\"Open with: \"",
+          "target": "text:\"使用 ... 打开\""
+        },
+        {
+          "source": "text:`[PathExplorerError\\u26A0\\uFE0F] ${i.message}`",
+          "target": "text:`[路径浏览器错误\\u26A0\\uFE0F] ${i.message}`"
+        },
+        {
+          "source": ".setName(\"Conflict resolution method\")",
+          "target": ".setName(\"冲突解决方法\")"
+        },
+        {
+          "source": ".setName(\"Show copy/move stats\")",
+          "target": ".setName(\"显示复制/移动统计信息\")"
+        },
+        {
+          "source": ".setName(\"Show selection info in status bar\")",
+          "target": ".setName(\"在状态栏中显示选择信息\")"
+        },
+        {
+          "source": ".setName(\"Show clipboard info in status bar\")",
+          "target": ".setName(\"在状态栏中显示剪贴板信息\")"
+        },
+        {
+          "source": ".setName(\"Duplicate suffix\")",
+          "target": ".setName(\"复制后缀\")"
+        },
+        {
+          "source": ".setName(\"New folder name\")",
+          "target": ".setName(\"新文件夹名称\")"
+        },
+        {
+          "source": ".setName(\"New note name\")",
+          "target": ".setName(\"新笔记名称\")"
+        },
+        {
+          "source": ".setName(\"Open with...\")",
+          "target": ".setName(\"使用 ... 打开\")"
+        },
+        {
+          "source": ".setName(\"Add new application to open with\")",
+          "target": ".setName(\"添加新的应用程序以使用 ... 打开\")"
+        },
+        {
+          "source": ".setName(\"Path explorer\")",
+          "target": ".setName(\"路径浏览器\")"
+        },
+        {
+          "source": ".setName(\"Define patterns to match files and folders and open them with an Open with... command.\")",
+          "target": ".setName(\"定义匹配文件和文件夹的模式，并使用 '使用 ... 打开' 命令打开它们。\")"
+        },
+        {
+          "source": ".setDesc(\"Method to resolve conflicts in copy/move operations\")",
+          "target": ".setDesc(\"解决复制/移动操作中冲突的方法\")"
+        },
+        {
+          "source": ".setDesc(\"When a copy/move operation is done, show the stats\")",
+          "target": ".setDesc(\"当完成复制/移动操作时，显示统计信息\")"
+        },
+        {
+          "source": ".setDesc(\"Show, in the status bar, the number of selected files/folders\")",
+          "target": ".setDesc(\"在状态栏中显示已选择的文件/文件夹数量\")"
+        },
+        {
+          "source": ".setDesc(\"Show, in the status bar, the number of files/folders in the clipboard\")",
+          "target": ".setDesc(\"在状态栏中显示剪贴板中的文件/文件夹数量\")"
+        },
+        {
+          "source": ".setDesc(\"Suffix to add when file/folder is duplicated\")",
+          "target": ".setDesc(\"复制文件/文件夹时添加的后缀\")"
+        },
+        {
+          "source": ".setDesc(\"Default name of the folder to create\")",
+          "target": ".setDesc(\"要创建的文件夹的默认名称\")"
+        },
+        {
+          "source": ".setDesc(\"Default name of the note to create\")",
+          "target": ".setDesc(\"要创建的笔记的默认名称\")"
+        },
+        {
+          "source": ".setDesc(`Command: ${p.cmd}${p.args?` | Arguments: ${p.args}`:\"\"}`)",
+          "target": ".setDesc(`命令: ${p.cmd}${p.args?` | 参数: ${p.args}`:\"\"}`)"
+        },
+        {
+          "source": ".setDesc(`All matching ${d.applyTo} will\n                    be able to be open with ${d.appName}`)",
+          "target": ".setDesc(`所有匹配的 ${d.applyTo} 将能够\n                    使用 ${d.appName} 打开`)"
+        },
+        {
+          "source": ".setPlaceholder(\"Search for a Lucide icon...\")",
+          "target": ".setPlaceholder(\"搜索 Lucide 图标...\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your suffix\")",
+          "target": ".setPlaceholder(\"输入您的后缀\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter folder name\")",
+          "target": ".setPlaceholder(\"输入文件夹名称\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter note name\")",
+          "target": ".setPlaceholder(\"输入笔记名称\")"
+        },
+        {
+          "source": ".setTooltip(\"Choose icon\")",
+          "target": ".setTooltip(\"选择图标\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset fields\")",
+          "target": ".setTooltip(\"重置字段\")"
+        },
+        {
+          "source": ".setTooltip(\"Add command to open with...\")",
+          "target": ".setTooltip(\"添加命令以使用 ... 打开\")"
+        },
+        {
+          "source": ".setTooltip(\"Icon for command\")",
+          "target": ".setTooltip(\"命令图标\")"
+        },
+        {
+          "source": ".setTooltip(\"Edit command\")",
+          "target": ".setTooltip(\"编辑命令\")"
+        },
+        {
+          "source": ".setTooltip(\"Remove command\")",
+          "target": ".setTooltip(\"删除命令\")"
+        },
+        {
+          "source": ".setTooltip(\"Add pattern to open with...\")",
+          "target": ".setTooltip(\"添加模式以使用 ... 打开\")"
+        },
+        {
+          "source": ".setTooltip(\"Refresh\")",
+          "target": ".setTooltip(\"刷新\")"
+        },
+        {
+          "source": ".appendText(\"Don't ask again\")",
+          "target": ".appendText(\"不再询问\")"
+        },
+        {
+          "source": ".setTitle(\"There is a conflict with: \")",
+          "target": ".setTitle(\"存在冲突: \")"
+        },
+        {
+          "source": ".setTitle(`Open with ${s.name}`)",
+          "target": ".setTitle(`使用 ${s.name} 打开`)"
+        },
+        {
+          "source": ".setTitle(`Open with ${l.name}`)",
+          "target": ".setTitle(`使用 ${l.name} 打开`)"
+        },
+        {
+          "source": "Use full <i>path to command</i> or just <i>command</i> if it is globally available",
+          "target": "使用完整的 <i>命令路径</i> 或者如果命令全局可用则只需 <i>命令</i>"
+        },
+        {
+          "source": "for example",
+          "target": "例如"
+        },
+        {
+          "source": "Arguments are optional and can include any of these predefined variables:",
+          "target": "参数是可选的，可以包括以下预定义变量之一："
+        },
+        {
+          "source": "- File path",
+          "target": "- 文件路径"
+        },
+        {
+          "source": "- Folder path",
+          "target": "- 文件夹路径"
+        },
+        {
+          "source": "- File name",
+          "target": "- 文件名"
+        },
+        {
+          "source": "- Folder name",
+          "target": "- 文件夹名"
+        },
+        {
+          "source": "If no arguments are provided, the <i>${v}</i> variable\n            will be added automatically as argument for the command.",
+          "target": "如果未提供参数，则会自动将 <i>${v}</i> 变量作为命令的参数。"
+        },
+        {
+          "source": "Sometimes the command needs the arguments to be send independently, \n            you can separate arguments using commas in those cases.",
+          "target": "有时命令需要独立发送参数, \n            在这种情况下可以使用逗号分隔参数。"
+        },
+        {
+          "source": ">Example",
+          "target": ">示例"
+        },
+        {
+          "source": "Command:",
+          "target": "命令:"
+        },
+        {
+          "source": "Arguments:",
+          "target": "参数:"
+        },
+        {
+          "source": "<b>NOTE:</b> No need to add double quotes for paths with spaces.",
+          "target": "<b>注意：</b> 不需要为包含空格的路径添加双引号。"
+        },
+        {
+          "source": "`The <b>pathexplore</b> codeblock displays files and folders \n        from a specified path or multiple paths. You can define <b>patterns</b> to \n        match the names of files and/or folders, and bind an <b>Open with...</b> \n        command to open them. For files and folders that match the patterns, an \n        icon will appear next to their name (and they will also appear in the link \n        context menu). Clicking the icon will open the file or folder using the \n        associated command.<br><br>`",
+          "target": "`<b>路径浏览器</b> 代码块显示来自指定路径或多个路径的文件和文件夹。您可以定义 <b>模式</b> 来匹配文件和/或文件夹的名称，并绑定一个 <b>使用 ... 打开</b> 命令来打开它们。对于匹配模式的文件和文件夹，其名称旁边将出现一个图标(并且它们也会出现在链接的上下文菜单中)。点击图标将使用关联的命令打开文件或文件夹。<br><br>`"
+        },
+        {
+          "source": "placeholder:\"Display name\"",
+          "target": "placeholder:\"显示名称\""
+        },
+        {
+          "source": "placeholder:\"Command or full path command\"",
+          "target": "placeholder:\"命令或完整路径\""
+        },
+        {
+          "source": "placeholder:\"Arguments (optional)\"",
+          "target": "placeholder:\"参数（可选）\""
+        },
+        {
+          "source": "placeholder:\"Enter regular expression\"",
+          "target": "placeholder:\"输入正则表达式\""
+        },
+        {
+          "source": "\"Show in File-Menu \"",
+          "target": "\"在文件菜单中显示\""
+        },
+        {
+          "source": "[\"SKIP\"]:\"Skip\",[\"OVERWRITE\"]:\"Overwrite\",[\"KEEP\"]:\"Keep\"},Pe={...Ce,[\"PROMPT\"]:\"Prompt user\"",
+          "target": "[\"SKIP\"]:\"跳过\",[\"OVERWRITE\"]:\"覆盖\",[\"KEEP\"]:\"保留\"},Pe={...Ce,[\"PROMPT\"]:\"提示用户\""
+        }
+      ]
+    }
+  }
+}
