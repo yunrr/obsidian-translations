@@ -1,0 +1,1495 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "3d_embeds",
+    "version": "1.0.1",
+    "title": "Embed 3D",
+    "description": "Embed 3D Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Resrt to codeblock config (can only do this once)",
+          "target": "重置为代码块配置（此操作仅可执行一次）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Permanentally save all your modifications to the scene",
+          "target": "永久保存您对场景的所有修改"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Set the scene color",
+          "target": "设置场景颜色"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Toggle a grid and axis",
+          "target": "切换网格和坐标轴"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "You just updated/Installed the 3D embed plugin. If you'd like to learn how to control your scenes with more details or suggest new features check out my ",
+          "target": "您刚刚更新/安装了 3D 嵌入插件。如果您想了解如何更详细地控制您的场景或建议新功能，请查看我的 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "If you updated from a version older than 1.0.8: this update the syntax of the codeblock has significantly changed. This causes the old embeds to stop working. ",
+          "target": "如果您从 1.0.8 之前的版本更新：此次更新中代码块的语法已发生重大变化。这会导致旧的嵌入停止工作。 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "To fix this, remove your old codeblock and execute the 3D embed command again.",
+          "target": "要解决此问题，请移除您的旧代码块并再次执行 3D 嵌入命令。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Now there is a chance you already put a lot of effort into the current setup of your models, unfortunately if you want to keep this setup, you will have to do a bit of manual work. You can review the updated syntax in the ",
+          "target": "现在，您可能已经在当前模型的设置上投入了大量精力，但不幸的是，如果您想保留此设置，将需要进行一些手动工作。您可以在 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " and fill in your values for the new syntax.",
+          "target": " 中查看更新后的语法，并为新语法填入您的值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Apologies for the inconvenience. But I hope you can keep enjoying the plugin with all its new functions.",
+          "target": "对于给您带来的不便，我们深表歉意。但我希望您能继续享受插件及其所有新功能。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Thank you and Enjoy!",
+          "target": "谢谢，祝您使用愉快！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "details",
+          "target": "details"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "summary",
+          "target": "summary"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.Object3D.add: object can't be added as a child of itself.",
+          "target": "THREE.Object3D.add: 对象不能作为其自身的子级添加。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.Object3D.add: object not an instance of THREE.Object3D.",
+          "target": "THREE.Object3D.add: 对象不是 THREE.Object3D 的实例。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.BufferGeometry.computeBoundingBox(): GLBufferAttribute requires a manual bounding box.",
+          "target": "THREE.BufferGeometry.computeBoundingBox(): GLBufferAttribute 需要手动设置边界框。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.BufferGeometry.computeBoundingBox(): Computed min/max have NaN values. The \"position\" attribute is likely to have NaN values.",
+          "target": "THREE.BufferGeometry.computeBoundingBox(): 计算出的最小/最大值包含 NaN。\\\"position\\\" 属性很可能包含 NaN 值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.BufferGeometry.computeBoundingSphere(): GLBufferAttribute requires a manual bounding sphere.",
+          "target": "THREE.BufferGeometry.computeBoundingSphere(): GLBufferAttribute 需要手动设置边界球。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The \"position\" attribute is likely to have NaN values.",
+          "target": "THREE.BufferGeometry.computeBoundingSphere(): 计算出的半径为 NaN。\\\"position\\\" 属性很可能包含 NaN 值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.BufferGeometry: .computeTangents() failed. Missing required attributes (index, position, normal or uv)",
+          "target": "THREE.BufferGeometry: .computeTangents() 失败。缺少必需的属性（index、position、normal 或 uv）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "blur direction must be either latitudinal or longitudinal!",
+          "target": "模糊方向必须是纬向或经向！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLInfo: Unknown draw mode:",
+          "target": "THREE.WebGLInfo: 未知的绘制模式："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLState: Invalid blending: ",
+          "target": "THREE.WebGLState: 无效的混合："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLState:",
+          "target": "THREE.WebGLState:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLTextures: Unsupported texture color space:",
+          "target": "THREE.WebGLTextures: 不支持的纹理颜色空间："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLRenderer: Maximum number of simultaneously usable uniforms groups reached.",
+          "target": "THREE.WebGLRenderer: 已达到同时可用的 uniform 组的最大数量。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLRenderer: A WebGL context could not be created. Reason: ",
+          "target": "THREE.WebGLRenderer: 无法创建 WebGL 上下文。原因："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLRenderer.render: camera is not an instance of THREE.Camera.",
+          "target": "THREE.WebGLRenderer.render: 相机不是 THREE.Camera 的实例。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not THREE.WebGLRenderTarget.",
+          "target": "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget 不是 THREE.WebGLRenderTarget。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not in RGBA or implementation defined format.",
+          "target": "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget 不是 RGBA 或实现定义的格式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not in UnsignedByteType or implementation defined type.",
+          "target": "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget 不是 UnsignedByteType 或实现定义的类型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.KeyframeTrack: Invalid value size in track.",
+          "target": "THREE.KeyframeTrack: 轨道中的值大小无效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.KeyframeTrack: Track is empty.",
+          "target": "THREE.KeyframeTrack: 轨道为空。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.KeyframeTrack: Time is not a valid number.",
+          "target": "THREE.KeyframeTrack: 时间不是有效数字。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.KeyframeTrack: Out of order keys.",
+          "target": "THREE.KeyframeTrack: 关键帧顺序错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.KeyframeTrack: Value is not a valid number.",
+          "target": "THREE.KeyframeTrack: 值不是有效数字。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.AnimationClip: No animation in JSONLoader data.",
+          "target": "THREE.AnimationClip: JSONLoader 数据中没有动画。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.PropertyBinding: Can not bind to material as node does not have a material.",
+          "target": "THREE.PropertyBinding: 无法绑定到材质，因为节点没有材质。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.PropertyBinding: Can not bind to material.materials as node.material does not have a materials array.",
+          "target": "THREE.PropertyBinding: 无法绑定到 material.materials，因为 node.material 没有 materials 数组。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.PropertyBinding: Can not bind to bones as node does not have a skeleton.",
+          "target": "THREE.PropertyBinding: 无法绑定到骨骼，因为节点没有骨架。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.PropertyBinding: Can not bind to material.map as node.material does not have a map.",
+          "target": "THREE.PropertyBinding: 无法绑定到 material.map，因为 node.material 没有 map。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.PropertyBinding: Can not bind to objectName of node undefined.",
+          "target": "THREE.PropertyBinding: 无法绑定到未定义节点的 objectName。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.PropertyBinding: Trying to bind to objectIndex of objectName, but is undefined.",
+          "target": "THREE.PropertyBinding: 尝试绑定到 objectName 的 objectIndex，但未定义。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.PropertyBinding: Can not bind to morphTargetInfluences because node does not have a geometry.",
+          "target": "THREE.PropertyBinding: 无法绑定到 morphTargetInfluences，因为节点没有几何体。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.PropertyBinding: Can not bind to morphTargetInfluences because node does not have a geometry.morphAttributes.",
+          "target": "THREE.PropertyBinding: 无法绑定到 morphTargetInfluences，因为节点没有 geometry.morphAttributes。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.BufferGeometryUtils.toTrianglesDrawMode(): Undefined position attribute. Processing not possible.",
+          "target": "THREE.BufferGeometryUtils.toTrianglesDrawMode(): 未定义的 position 属性。无法处理。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.BufferGeometryUtils.toTrianglesDrawMode(): Unable to generate correct amount of triangles.",
+          "target": "THREE.BufferGeometryUtils.toTrianglesDrawMode(): 无法生成正确数量的三角形。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.BufferGeometryUtils.toTrianglesDrawMode(): Unknown draw mode:",
+          "target": "THREE.BufferGeometryUtils.toTrianglesDrawMode(): 未知的绘制模式："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.GLTFLoader: Invalid plugin found: missing name",
+          "target": "THREE.GLTFLoader: 发现无效插件：缺少名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.GLTFLoader: Couldn't load texture",
+          "target": "THREE.GLTFLoader: 无法加载纹理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.FBXLoader: Invalid Order %s given for geometry ID: %s",
+          "target": "THREE.FBXLoader: 为几何体 ID: %s 提供了无效的顺序 %s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.3MFLoader: fflate missing and file is compressed.",
+          "target": "THREE.3MFLoader: fflate 缺失且文件已压缩。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.3MFLoader: Error loading 3MF - no 3MF document found: ",
+          "target": "THREE.3MFLoader: 加载 3MF 时出错 - 未找到 3MF 文档："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "THREE.3MFLoader: Unsupported resource type.",
+          "target": "THREE.3MFLoader: 不支持的资源类型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error loading STL model: ",
+          "target": "加载 STL 模型时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "TransformControls: The attached 3D object must be a part of the scene graph.",
+          "target": "TransformControls: 附加的 3D 对象必须是场景图的一部分。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No models found to update. Contact Developer, because this is most likely a bug.",
+          "target": "未找到要更新的模型。请联系开发者，因为这很可能是一个错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Direct3DView: error disposing renderer",
+          "target": "Direct3DView: 处置渲染器时出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error disposing renderer:",
+          "target": "处置渲染器时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "ThreeJS plugin: error while attempting to fold 'scene' section:",
+          "target": "ThreeJS 插件：尝试折叠 'scene' 部分时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Validation errors:",
+          "target": "验证错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "THREE.WebGLRenderer: Context Lost.",
+          "target": "THREE.WebGLRenderer: 上下文丢失。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "THREE.WebGLRenderer: Context Restored.",
+          "target": "THREE.WebGLRenderer: 上下文已恢复。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "THREE.InterleavedBufferAttribute.clone(): Cloning an interleaved buffer attribute will de-interleave buffer data.",
+          "target": "THREE.InterleavedBufferAttribute.clone(): 克隆交错缓冲区属性将解除缓冲区数据的交错。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "THREE.InterleavedBufferAttribute.toJSON(): Serializing an interleaved buffer attribute will de-interleave buffer data.",
+          "target": "THREE.InterleavedBufferAttribute.toJSON(): 序列化交错缓冲区属性将解除缓冲区数据的交错。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, this setting will load the codeblocks in your markdownnotes with all the settings you can configure. If false it will load only the minimally required settings",
+          "target": "如果为 true，此设置将使用所有可配置的设置加载 Markdown 笔记中的代码块。如果为 false，则仅加载最低要求的设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default background in your 3d scenes: either a color or transparent",
+          "target": "3D 场景中的默认背景：颜色或透明"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default background color for 3d scenes",
+          "target": "3D 场景的默认背景颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default height of a 3d embed in your note (in pixels)",
+          "target": "笔记中 3D 嵌入的默认高度（以像素为单位）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default width percentage of a 3d embed in your note (in percentage of the note width)",
+          "target": "笔记中 3D 嵌入的默认宽度百分比（占笔记宽度的百分比）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, will automatically rotate your scene to get a showcase effect",
+          "target": "如果为 true，将自动旋转场景以获得展示效果"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, will toggle smooth and damped orbit controls (e.g.) the model will rotate a bit more after you let go",
+          "target": "如果为 true，将切换平滑且带阻尼的轨道控制（例如，松开后模型会继续旋转一点）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, will show a ground plane that can receive shadows from models and lights. \nNote: may impact performance, and your lightsources also need have \"castshadows\": true",
+          "target": "如果为 true，将显示一个可以接收模型和灯光阴影的地面平面。\\n注意：可能会影响性能，并且您的光源也需要设置 \\\"castshadows\\\": true"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, will show basic GUI options for a scene (color selector, grid checkbox) upon model load. Can also be set in the codeblock config",
+          "target": "如果为 true，将在模型加载时显示场景的基本 GUI 选项（颜色选择器、网格复选框）。也可以在代码块配置中设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default size of 3d models in scene (non whole numbers should be seperated by dot, not comma)",
+          "target": "场景中 3D 模型的默认大小（非整数应使用点号分隔，而不是逗号）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The default position of the model in your scene (X,y,z)",
+          "target": "场景中模型的默认位置 (X,y,z)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The default rotation of the model in your scene (X,y,z)",
+          "target": "场景中模型的默认旋转 (X,y,z)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The default position of the camera in your scene (X,y,z)",
+          "target": "场景中相机的默认位置 (X,y,z)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Defaults a camera type. You can also set this per scene, in the codeblock config.",
+          "target": "默认相机类型。您也可以在代码块配置中为每个场景单独设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "It is strongly recommended to keep the 2 preloaded lights",
+          "target": "强烈建议保留 2 个预加载的灯光"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The position of the light in the scene (X, y, z)",
+          "target": "场景中灯光的位置 (X, y, z)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The target position of the light in the scene (X, y, z)",
+          "target": "场景中灯光的目标位置 (X, y, z)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Distance from the spotlight to the target.",
+          "target": "聚光灯到目标的距离。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Angle of the spotlight (in radians).",
+          "target": "聚光灯的角度（以弧度为单位）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Able or disable shadow casting for this light",
+          "target": "启用或禁用此灯光的阴影投射"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default amount of columns when using grid view for multiple models",
+          "target": "使用网格视图显示多个模型时的默认列数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Height of all cells in grid view (in pixels)",
+          "target": "网格视图中所有单元格的高度（以像素为单位）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Width of gaps between scenes in grid view (in pixels)",
+          "target": "网格视图中场景之间的水平间距宽度（以像素为单位）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Height of gaps between scenes in grid view (in pixels)",
+          "target": "网格视图中场景之间的垂直间距宽度（以像素为单位）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Advanced option: If enabled uses scissoring to use one renderer for the grid (more resource friendly). If disabled uses one renderer for each grid cell. Requires restart to take effect",
+          "target": "高级选项：如果启用，使用裁剪模式为网格使用一个渲染器（更节省资源）。如果禁用，则为每个网格单元格使用一个渲染器。需要重启才能生效"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Default the model color for stl models",
+          "target": "STL 模型的默认模型颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, will show all .STL models with a wireframe mode.",
+          "target": "如果为 true，将以线框模式显示所有 .STL 模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder inside your vault where snapshots are saved when clicking the camera icon. Leave empty to save to the vault root.",
+          "target": "保险库中保存快照的文件夹（点击相机图标时）。留空则保存到保险库根目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When a snapshot is exported, automatically add a \"3d embed-thumbnail\" property to the note with a link to the saved image. Useful for showing preview images in bases card view.",
+          "target": "导出快照时，自动向笔记添加一个 \\\"3d embed-thumbnail\\\" 属性，其中包含指向保存图像的链接。对于在基础卡片视图中显示预览图像很有用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Important note: All the parameters below are defaults. Every value can be modified in the codeblock of your embed per 3d file. These are base values that every scene gets initialized with",
+          "target": "重要提示：以下所有参数均为默认值。每个值都可以在每个 3D 文件的嵌入代码块中修改。这些是每个场景初始化时的基础值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Codeblock behavior",
+          "target": "代码块行为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Load codeblock with all configurations",
+          "target": "加载包含所有配置的代码块"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scene defaults",
+          "target": "场景默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scene background",
+          "target": "场景背景"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard scene color",
+          "target": "标准场景颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard height",
+          "target": "标准高度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard width percentage",
+          "target": "标准宽度百分比"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Alignment of 3d scenes",
+          "target": "3D 场景对齐方式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto rotate scene",
+          "target": "自动旋转场景"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Damped orbit controls",
+          "target": "带阻尼的轨道控制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show ground shadows",
+          "target": "显示地面阴影"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Toggle automatically show GUI",
+          "target": "自动显示 GUI 开关"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model defaults",
+          "target": "模型默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard scale of 3dmodels",
+          "target": "3D 模型的标准缩放"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard position model",
+          "target": "模型标准位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard rotation model",
+          "target": "模型标准旋转"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Camera defaults",
+          "target": "相机默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard position camera",
+          "target": "相机标准位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Camera type",
+          "target": "相机类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Lights",
+          "target": "灯光"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add lights",
+          "target": "添加灯光"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Light type",
+          "target": "灯光类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Light position",
+          "target": "灯光位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Target position",
+          "target": "目标位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spotlight distance",
+          "target": "聚光灯距离"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spotlight angle",
+          "target": "聚光灯角度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cast shadows",
+          "target": "投射阴影"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sky color",
+          "target": "天空颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ground color",
+          "target": "地面颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Light color",
+          "target": "灯光颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Light intensity",
+          "target": "灯光强度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Grid defaults",
+          "target": "网格默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Columns in grid view",
+          "target": "网格视图中的列数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cellheight",
+          "target": "单元格高度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Horizontal gap width",
+          "target": "水平间距宽度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Vertical gap width",
+          "target": "垂直间距宽度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Three.js Scissor mode",
+          "target": "Three.js 裁剪模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Stl appearance",
+          "target": "STL 外观"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard model color",
+          "target": "标准模型颜色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Standard show wireframe mode",
+          "target": "标准线框模式显示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Thumbnails and snapshots (for bases)",
+          "target": "缩略图和快照（用于基础）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Snapshot folder",
+          "target": "快照文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-write snapshot property",
+          "target": "自动写入快照属性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Overwrite existing snapshot",
+          "target": "覆盖现有快照"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "E.g. Attachments/3d-snapshots",
+          "target": "例如 Attachments/3d-snapshots"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.ImageUtils.getDataURL: Image converted to jpg for performance reasons",
+          "target": "THREE.ImageUtils.getDataURL: 为提升性能，图像已转换为 jpg 格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.ImageUtils.sRGBToLinear(): Unsupported image type. No color space conversion applied.",
+          "target": "THREE.ImageUtils.sRGBToLinear(): 不支持的图像类型。未应用色彩空间转换。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.Texture: Unable to serialize Texture.",
+          "target": "THREE.Texture: 无法序列化纹理。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Material: onBuild() has been removed.",
+          "target": "Material: onBuild() 已被移除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.DataUtils.toHalfFloat(): Value out of range.",
+          "target": "THREE.DataUtils.toHalfFloat(): 值超出范围。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+          "target": "THREE.BufferGeometry.toNonIndexed(): BufferGeometry 已经是非索引的。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "UniformsUtils: Textures of render targets cannot be cloned via cloneUniforms() or mergeUniforms().",
+          "target": "UniformsUtils: 渲染目标的纹理无法通过 cloneUniforms() 或 mergeUniforms() 进行克隆。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer:",
+          "target": "THREE.WebGLRenderer:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "not supported, using",
+          "target": "不支持，正在使用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLProgram: Unsupported color space:",
+          "target": "THREE.WebGLProgram: 不支持的色彩空间："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLProgram: Unsupported toneMapping:",
+          "target": "THREE.WebGLProgram: 不支持的色调映射："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Shader chunk \"%s\" has been deprecated. Use \"%s\" instead.",
+          "target": "THREE.WebGLRenderer: 着色器代码块 \\\"%s\\\" 已弃用。请改用 \\\"%s\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLProgram: Program Info Log:",
+          "target": "THREE.WebGLProgram: 程序信息日志："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLProgram.getParameters:",
+          "target": "THREE.WebGLProgram.getParameters:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLShadowMap:",
+          "target": "THREE.WebGLShadowMap:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "has no shadow.",
+          "target": "没有阴影。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "DepthTexture: 16 bit depth attachment is not supported with stencil. Using 24-bit attachment.",
+          "target": "DepthTexture: 16位深度附件不支持模板。正在使用24位附件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+          "target": "THREE.WebGLRenderer: 纹理标记为需要更新，但未找到图像数据。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Texture marked for update but image is incomplete",
+          "target": "THREE.WebGLRenderer: 纹理标记为需要更新，但图像不完整。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Unable to use linear filtering with floating point textures. OES_texture_float_linear not supported on this device.",
+          "target": "THREE.WebGLRenderer: 无法对浮点纹理使用线性过滤。此设备不支持 OES_texture_float_linear。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Attempt to load unsupported compressed texture format in .uploadTexture()",
+          "target": "THREE.WebGLRenderer: 尝试在 .uploadTexture() 中加载不支持的压缩纹理格式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Attempt to load unsupported compressed texture format in .setTextureCube()",
+          "target": "THREE.WebGLRenderer: 尝试在 .setTextureCube() 中加载不支持的压缩纹理格式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLTextures: sRGB encoded textures have to use RGBAFormat and UnsignedByteType.",
+          "target": "THREE.WebGLTextures: sRGB 编码的纹理必须使用 RGBAFormat 和 UnsignedByteType。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebXRManager: Cannot change framebuffer scale while presenting.",
+          "target": "THREE.WebXRManager: 呈现时无法更改帧缓冲区缩放。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebXRManager: Cannot change reference space type while presenting.",
+          "target": "THREE.WebXRManager: 呈现时无法更改参考空间类型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Texture samplers can not be part of an uniforms group.",
+          "target": "THREE.WebGLRenderer: 纹理采样器不能是统一变量组的一部分。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Unsupported uniform value type.",
+          "target": "THREE.WebGLRenderer: 不支持的统一变量值类型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Can't change size while VR device is presenting.",
+          "target": "THREE.WebGLRenderer: VR 设备呈现时无法更改大小。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer: Render-to-texture extension was disabled because an external texture was provided",
+          "target": "THREE.WebGLRenderer: 由于提供了外部纹理，渲染到纹理扩展已被禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.WebGLRenderer.copyTextureToTexture3D: only supports THREE.DataTexture3D and THREE.DataTexture2DArray.",
+          "target": "THREE.WebGLRenderer.copyTextureToTexture3D: 仅支持 THREE.DataTexture3D 和 THREE.DataTexture2DArray。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.Skeleton: Number of inverse bone matrices does not match amount of bones.",
+          "target": "THREE.Skeleton: 逆骨骼矩阵的数量与骨骼数量不匹配。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.Skeleton: No bone found with UUID:",
+          "target": "THREE.Skeleton: 未找到 UUID 为的骨骼："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.Line.computeLineDistances(): Computation only possible with non-indexed BufferGeometry.",
+          "target": "THREE.Line.computeLineDistances(): 计算仅适用于非索引 BufferGeometry。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.LineSegments.computeLineDistances(): Computation only possible with non-indexed BufferGeometry.",
+          "target": "THREE.LineSegments.computeLineDistances(): 计算仅适用于非索引 BufferGeometry。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.Curve: .getPoint() not implemented.",
+          "target": "THREE.Curve: .getPoint() 未实现。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.KeyframeTrack:",
+          "target": "THREE.KeyframeTrack:"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FileLoader: HTTP Status 0 received.",
+          "target": "THREE.FileLoader: 收到 HTTP 状态 0。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.LoaderUtils: decodeText() has been deprecated with r165 and will be removed with r175. Use TextDecoder instead.",
+          "target": "THREE.LoaderUtils: decodeText() 已在 r165 中弃用，并将在 r175 中移除。请改用 TextDecoder。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.ImageBitmapLoader: createImageBitmap() not supported.",
+          "target": "THREE.ImageBitmapLoader: 不支持 createImageBitmap()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.ImageBitmapLoader: fetch() not supported.",
+          "target": "THREE.ImageBitmapLoader: 不支持 fetch()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "WARNING: Multiple instances of Three.js being imported.",
+          "target": "警告：检测到多个 Three.js 实例被导入。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.BufferGeometryUtils.toTrianglesDrawMode(): Geometry already defined as triangles.",
+          "target": "THREE.BufferGeometryUtils.toTrianglesDrawMode(): 几何体已定义为三角形。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.GLTFLoader: Invalid extras.targetNames length. Ignoring names.",
+          "target": "THREE.GLTFLoader: 无效的 extras.targetNames 长度。正在忽略名称。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.GLTFLoader: Missing camera parameters.",
+          "target": "THREE.GLTFLoader: 缺少相机参数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.GLTFLoader: Joint \"%s\" could not be found.",
+          "target": "THREE.GLTFLoader: 未找到关节 \\\"%s\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.GLTFLoader: Missing min/max properties for accessor POSITION.",
+          "target": "THREE.GLTFLoader: 访问器 POSITION 缺少 min/max 属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.OBJLoader: Rendering identifier \"usemap\" not supported. Textures must be defined in MTL files.",
+          "target": "THREE.OBJLoader: 不支持渲染标识符 \\\"usemap\\\"。纹理必须在 MTL 文件中定义。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "FBXLoader: TGA loader not found, skipping ",
+          "target": "FBXLoader: 未找到 TGA 加载器，正在跳过 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: unknown material type \"%s\". Defaulting to MeshPhongMaterial.",
+          "target": "THREE.FBXLoader: 未知材质类型 \\\"%s\\\"。默认使用 MeshPhongMaterial。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: %s map is not supported in three.js, skipping texture.",
+          "target": "THREE.FBXLoader: three.js 不支持 %s 贴图，正在跳过纹理。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: layered textures are not supported in three.js. Discarding all but first layer.",
+          "target": "THREE.FBXLoader: three.js 不支持分层纹理。正在丢弃除第一层外的所有层。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: skeleton attached to more than one geometry is not supported.",
+          "target": "THREE.FBXLoader: 不支持将骨骼附加到多个几何体。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: morph target attached to more than one geometry is not supported.",
+          "target": "THREE.FBXLoader: 不支持将变形目标附加到多个几何体。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: Orthographic cameras not supported yet.",
+          "target": "THREE.FBXLoader: 尚不支持正交相机。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: The FBX file contains invalid (negative) material indices. The asset might not render as expected.",
+          "target": "THREE.FBXLoader: FBX 文件包含无效（负）材质索引。资源可能无法按预期渲染。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: Vertex has more than 4 skinning weights assigned to vertex. Deleting additional weights.",
+          "target": "THREE.FBXLoader: 顶点分配了超过 4 个蒙皮权重。正在删除额外的权重。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: Encountered a unused curve.",
+          "target": "THREE.FBXLoader: 遇到未使用的曲线。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: Encountered an animation stack with multiple layers, this is currently not supported. Ignoring subsequent layers.",
+          "target": "THREE.FBXLoader: 遇到具有多个层的动画堆栈，目前不支持。正在忽略后续层。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "THREE.FBXLoader: unsupported Euler Order: Spherical XYZ. Animations and rotations may be incorrect.",
+          "target": "THREE.FBXLoader: 不支持的欧拉顺序：球面 XYZ。动画和旋转可能不正确。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "WARNING: OrbitControls.js encountered an unknown camera type - zoom to cursor disabled.",
+          "target": "警告：OrbitControls.js 遇到未知相机类型 - 已禁用缩放到光标。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "WARNING: OrbitControls.js encountered an unknown camera type - pan disabled.",
+          "target": "警告：OrbitControls.js 遇到未知相机类型 - 已禁用平移。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "WARNING: OrbitControls.js encountered an unknown camera type - dolly/zoom disabled.",
+          "target": "警告：OrbitControls.js 遇到未知相机类型 - 已禁用推拉/缩放。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Renderer not ready yet, skipping layout",
+          "target": "渲染器尚未就绪，正在跳过布局。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Skipping rendering due to lost context",
+          "target": "由于上下文丢失，正在跳过渲染。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "ThreeJS plugin: couldn't get CodeMirror EditorView for folding. cmView:",
+          "target": "ThreeJS 插件：无法获取用于折叠的 CodeMirror EditorView。cmView:"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "GUI cannot be shown for 3d grid cells\none of your grid cells has the scene -> showguioverlay set to true",
+          "target": "无法为 3D 网格单元显示 GUI\\n您的一个网格单元设置了场景 -> showguioverlay 为 true。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No 3d model references found (expected syntax: ![[model.obj]])",
+          "target": "未找到 3D 模型引用（预期语法：![[model.obj]]）。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No valid models found in selection.",
+          "target": "在选择中未找到有效模型。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select one or more model references [[model.stl]]",
+          "target": "请选择一个或多个模型引用 [[model.stl]]。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No valid model references found in selection.",
+          "target": "在选择中未找到有效的模型引用。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Model path not found",
+          "target": "未找到模型路径。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Copied to clipboard!",
+          "target": "已复制到剪贴板！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "ambient",
+          "source": "ambient",
+          "target": "环境光"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "attachToCam",
+          "source": "attach to camera",
+          "target": "附加到相机"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "begin",
+          "source": "Left",
+          "target": "左"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "center",
+          "source": "Center",
+          "target": "居中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "callout callout-warning",
+          "target": "callout callout-warning"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "color",
+          "source": "color",
+          "target": "颜色"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "directional",
+          "source": "directional",
+          "target": "平行光"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "end",
+          "source": "Right",
+          "target": "右"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hemisphere",
+          "source": "hemisphere",
+          "target": "半球光"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "Add a 3D embed at the cursorposition",
+          "target": "在光标位置添加 3D 嵌入。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "Add a 3D grid embed from selection",
+          "target": "从选择中添加 3D 网格嵌入。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CubemapFromEquirect",
+          "target": "CubemapFromEquirect"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BackgroundCubeMaterial",
+          "target": "BackgroundCubeMaterial"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BackgroundMaterial",
+          "target": "BackgroundMaterial"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SphericalGaussianBlur",
+          "target": "SphericalGaussianBlur"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "EquirectangularToCubeUV",
+          "target": "EquirectangularToCubeUV"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "CubemapToCubeUV",
+          "target": "CubemapToCubeUV"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Single scene: Add a 3d embed at the cursorposition",
+          "target": "单场景：在光标位置添加 3D 嵌入。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Grid: Add a 3d grid embed from selection",
+          "target": "网格：从选择中添加 3D 网格嵌入。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "\"name\": \"model.stl\"",
+          "target": "\\\"name\\\": \\\"model.stl\\\""
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Orthographic",
+          "source": "Orthographic",
+          "target": "正交"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Perspective",
+          "source": "Perspective",
+          "target": "透视"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "point",
+          "source": "point",
+          "target": "点光源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "spot",
+          "source": "spot",
+          "target": "聚光灯"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Remove",
+          "target": "移除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Welcome to 3d embed",
+          "target": "欢迎使用 3D 嵌入。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "GitHub!",
+          "target": "GitHub！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Update notice:",
+          "target": "更新通知："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Readme",
+          "target": "自述文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "transparent",
+          "source": "transparent",
+          "target": "透明"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
