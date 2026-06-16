@@ -1,0 +1,875 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "caret",
+    "version": "2.0.0",
+    "title": "Caret",
+    "description": "Accelerate your work with LLMs in canvas and your notes",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.73",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Calling ${provider_name[0].toUpperCase()",
+          "target": "通知(`正在调用 ${provider_name[0].toUpperCase()"
+        },
+        {
+          "source": "Notice(`Rate limit exceeded for ${provider_name} API`)",
+          "target": "通知(`${provider_name} API 超出速率限制`)"
+        },
+        {
+          "source": "Notice(`Unknown error during ${provider_name} streaming`)",
+          "target": "通知(`${provider_name} 流式传输时出现未知错误`)"
+        },
+        {
+          "source": "Notice(\"The folder path must be longer than one character.\")",
+          "target": "通知(\"文件夹路径长度必须大于一个字符。\")"
+        },
+        {
+          "source": "Notice(\"The folder path must not end with a trailing slash.\")",
+          "target": "通知(\"文件夹路径末尾不能有斜杠。\")"
+        },
+        {
+          "source": "Notice(\"System prompt updated\")",
+          "target": "通知(\"系统提示词已更新\")"
+        },
+        {
+          "source": "Notice(\"Model name must exist\")",
+          "target": "通知(\"模型名称必须存在\")"
+        },
+        {
+          "source": "Notice(\"Either endpoint or known provider must be set\")",
+          "target": "通知(\"必须设置端点或已知提供商\")"
+        },
+        {
+          "source": "Notice(\"Model ID must have a value\")",
+          "target": "通知(\"模型 ID 必须有值\")"
+        },
+        {
+          "source": "Notice(\"Context window must be a number\")",
+          "target": "通知(\"上下文窗口必须是数字\")"
+        },
+        {
+          "source": "Notice(\"Workflow must be named before saving\")",
+          "target": "通知(\"保存前必须命名工作流\")"
+        },
+        {
+          "source": "Notice(`Prompt ${i + 1}: Model must have a value`)",
+          "target": "通知(`提示词 ${i + 1}：模型必须有值`)"
+        },
+        {
+          "source": "Notice(`Prompt ${i + 1}: Provider must have a value`)",
+          "target": "通知(`提示词 ${i + 1}：提供商必须有值`)"
+        },
+        {
+          "source": "Notice(`Prompt ${i + 1}: Delay must be a number between 0 and 60`)",
+          "target": "通知(`提示词 ${i + 1}：延迟必须是 0 到 60 之间的数字`)"
+        },
+        {
+          "source": "Notice(`Prompt ${i + 1}: Temperature must be a float between 0 and 2`)",
+          "target": "通知(`提示词 ${i + 1}：温度必须是 0 到 2 之间的浮点数`)"
+        },
+        {
+          "source": "Notice(`Prompt ${i + 1}: Prompt must not be empty`)",
+          "target": "通知(`提示词 ${i + 1}：提示词不能为空`)"
+        },
+        {
+          "source": "Notice(\"Workflow updated!\")",
+          "target": "通知(\"工作流已更新！\")"
+        },
+        {
+          "source": "Notice(\"Workflow created!\")",
+          "target": "通知(\"工作流已创建！\")"
+        },
+        {
+          "source": "Notice(\"A workflow with that name already exists!\")",
+          "target": "通知(\"已存在同名工作流！\")"
+        },
+        {
+          "source": "Notice(`Workflow type set to ${this.workflow_type}`)",
+          "target": "通知(`工作流类型已设置为 ${this.workflow_type}`)"
+        },
+        {
+          "source": "Notice(\"File name must be set before saving\")",
+          "target": "通知(\"保存前必须设置文件名\")"
+        },
+        {
+          "source": "Notice(\"Must have formatting prompt\")",
+          "target": "通知(\"必须有格式化提示词\")"
+        },
+        {
+          "source": "Notice(\"File exists already, please choose another name\")",
+          "target": "通知(\"文件已存在，请选择其他名称\")"
+        },
+        {
+          "source": "Notice(\"Chat saved to note\")",
+          "target": "通知(\"聊天已保存到笔记\")"
+        },
+        {
+          "source": "Notice(\"No selected messages to convert to note\")",
+          "target": "通知(\"没有选中的消息可转换为笔记\")"
+        },
+        {
+          "source": "Notice(\"Failed to find file to save to\")",
+          "target": "通知(\"找不到要保存的文件\")"
+        },
+        {
+          "source": "Notice(\"Failed to save file\")",
+          "target": "通知(\"保存文件失败\")"
+        },
+        {
+          "source": "Notice(\"Context window exceeded\")",
+          "target": "通知(\"超出上下文窗口\")"
+        },
+        {
+          "source": "Notice(\"Not a workflow\")",
+          "target": "通知(\"不是工作流\")"
+        },
+        {
+          "source": "Notice(\"Diffs applied successfully.\")",
+          "target": "通知(\"差异已成功应用。\")"
+        },
+        {
+          "source": "Notice(\"No active file to continue chat from\")",
+          "target": "通知(\"没有活动文件可继续聊天\")"
+        },
+        {
+          "source": "Notice(\"No XML block found.\")",
+          "target": "通知(\"未找到 XML 块。\")"
+        },
+        {
+          "source": "Notice(\"No valid chat data found in the current document.\")",
+          "target": "通知(\"当前文档中未找到有效的聊天数据。\")"
+        },
+        {
+          "source": "Notice(\"No active markdown editor found.\")",
+          "target": "通知(\"未找到活动的 Markdown 编辑器。\")"
+        },
+        {
+          "source": "Notice(\"No prompt found in node text!\")",
+          "target": "通知(\"节点文本中未找到提示词！\")"
+        },
+        {
+          "source": "Notice(\"Generating image...\")",
+          "target": "通知(\"正在生成图像...\")"
+        },
+        {
+          "source": "Notice(`Image provider ${this.settings.image_provider} not configured!`)",
+          "target": "通知(`图像提供商 ${this.settings.image_provider} 未配置！`)"
+        },
+        {
+          "source": "Notice(`Using model: ${this.settings.image_model}`)",
+          "target": "通知(`使用模型：${this.settings.image_model}`)"
+        },
+        {
+          "source": "Notice(\"Failed to save image file!\")",
+          "target": "通知(\"保存图像文件失败！\")"
+        },
+        {
+          "source": "Notice(\"Image generated! Creating file node...\")",
+          "target": "通知(\"图像已生成！正在创建文件节点...\")"
+        },
+        {
+          "source": "Notice(\"Image generated and file node created!\")",
+          "target": "通知(\"图像已生成且文件节点已创建！\")"
+        },
+        {
+          "source": "Notice(\"Image generated but failed to create file node!\")",
+          "target": "通知(\"图像已生成但创建文件节点失败！\")"
+        },
+        {
+          "source": "Notice(`Image generation failed: ${error.message}`)",
+          "target": "通知(`图像生成失败：${error.message}`)"
+        },
+        {
+          "source": "Notice(\"Invalid or missing URL - must start with http\")",
+          "target": "通知(\"URL 无效或缺失 - 必须以 http 开头\")"
+        },
+        {
+          "source": "Notice(\"Failed to create node\")",
+          "target": "通知(\"创建节点失败\")"
+        },
+        {
+          "source": "Notice(\"Failed to split node\")",
+          "target": "通知(\"分割节点失败\")"
+        },
+        {
+          "source": "Notice(\n              \"Exceeding context window while adding ancestor context. Stopping further additions.\"\n            )",
+          "target": "通知(\n              \"添加祖先上下文时超出上下文窗口。停止进一步添加。\"\n            )"
+        },
+        {
+          "source": "Notice(`File not found: ${file_path}`)",
+          "target": "通知(`未找到文件：${file_path}`)"
+        },
+        {
+          "source": "Notice(\"Incorrectly formatted parallel workflow.\")",
+          "target": "通知(\"并行工作流格式错误。\")"
+        },
+        {
+          "source": "Notice(`Waiting for ${prompt_delay} seconds...`)",
+          "target": "通知(`等待 ${prompt_delay} 秒...`)"
+        },
+        {
+          "source": "Notice(`Done waiting for ${prompt_delay} seconds.`)",
+          "target": "通知(`等待 ${prompt_delay} 秒完成。`)"
+        },
+        {
+          "source": "Notice(\"Incorrectly formatted linear workflow.\")",
+          "target": "通知(\"线性工作流格式错误。\")"
+        },
+        {
+          "source": "Notice(\"Invalid Caret prompt\")",
+          "target": "通知(\"无效的 Caret 提示词\")"
+        },
+        {
+          "source": "Notice(\"Exceeding context window while adding user message. Trimming content\")",
+          "target": "通知(\"添加用户消息时超出上下文窗口。正在裁剪内容\")"
+        },
+        {
+          "source": ".error(\"Rate limit exceeded error\")",
+          "target": ".error(\"超出速率限制错误\")"
+        },
+        {
+          "source": ".error(\"Error retrieving model details:\", error)",
+          "target": ".error(\"获取模型详情时出错：\", error)"
+        },
+        {
+          "source": ".error(\"Validation Error: Model name must exist\")",
+          "target": ".error(\"验证错误：模型名称必须存在\")"
+        },
+        {
+          "source": ".error(\"Validation Error: Either endpoint or known provider must be set\")",
+          "target": ".error(\"验证错误：必须设置端点或已知提供商\")"
+        },
+        {
+          "source": ".error(\"Validation Error: Model ID must have a value\")",
+          "target": ".error(\"验证错误：模型 ID 必须有值\")"
+        },
+        {
+          "source": ".error(\"Validation Error: Context window must be a number\")",
+          "target": ".error(\"验证错误：上下文窗口必须是数字\")"
+        },
+        {
+          "source": ".error(\"Failed to save chat:\", error)",
+          "target": ".error(\"保存聊天失败：\", error)"
+        },
+        {
+          "source": ".error(\"Validation Error: File name must exist\")",
+          "target": ".error(\"验证错误：文件名必须存在\")"
+        },
+        {
+          "source": ".error(\"Failed to create folder:\", error)",
+          "target": ".error(\"创建文件夹失败：\", error)"
+        },
+        {
+          "source": ".error(\"Failed to save note:\", error)",
+          "target": ".error(\"保存笔记失败：\", error)"
+        },
+        {
+          "source": ".error(\n          `Single message exceeds model context window. Can't submit. Please shorten message and try again`\n        )",
+          "target": ".error(\n          `单条消息超出模型上下文窗口。无法提交。请缩短消息后重试`\n        )"
+        },
+        {
+          "source": ".error(\"Error in streamMessage:\", error)",
+          "target": ".error(\"streamMessage 中出错：\", error)"
+        },
+        {
+          "source": ".error(\"Not a file at this file path\")",
+          "target": ".error(\"此文件路径不是文件\")"
+        },
+        {
+          "source": ".error(\"Error processing front matter:\", error)",
+          "target": ".error(\"处理前置内容时出错：\", error)"
+        },
+        {
+          "source": ".error(\"No menu found on the canvas\")",
+          "target": ".error(\"画布上未找到菜单\")"
+        },
+        {
+          "source": ".error(\"Invalid direction provided\")",
+          "target": ".error(\"提供的方向无效\")"
+        },
+        {
+          "source": ".error(\"Edit button not found\")",
+          "target": ".error(\"未找到编辑按钮\")"
+        },
+        {
+          "source": ".error(\"Image generation failed:\", error)",
+          "target": ".error(\"图像生成失败：\", error)"
+        },
+        {
+          "source": ".error(\"Failed to add node to canvas:\", error)",
+          "target": ".error(\"添加节点到画布失败：\", error)"
+        },
+        {
+          "source": ".error(\"Error splitting node:\", error)",
+          "target": ".error(\"分割节点时出错：\", error)"
+        },
+        {
+          "source": ".error(\"File not found:\", file_path)",
+          "target": ".error(\"未找到文件：\", file_path)"
+        },
+        {
+          "source": ".error(\"File not found:\", data.file)",
+          "target": ".error(\"未找到文件：\", data.file)"
+        },
+        {
+          "source": ".error(\"Node not found with ID:\", node_id)",
+          "target": ".error(\"未找到 ID 为以下值的节点：\", node_id)"
+        },
+        {
+          "source": ".error(\"File not found or is not a readable file:\", file_path)",
+          "target": ".error(\"未找到文件或文件不可读：\", file_path)"
+        },
+        {
+          "source": "name: \"User\"",
+          "target": "name: \"用户\""
+        },
+        {
+          "source": "name: \"Assistant\"",
+          "target": "name: \"助手\""
+        },
+        {
+          "source": "name: \"System Prompt\"",
+          "target": "name: \"系统提示词\""
+        },
+        {
+          "source": "name: \"Log\"",
+          "target": "name: \"日志\""
+        },
+        {
+          "source": "name: \"Log Canvas\"",
+          "target": "name: \"日志画布\""
+        },
+        {
+          "source": "name: \"Generate Image\"",
+          "target": "name: \"生成图像\""
+        },
+        {
+          "source": "name: \"Clear Role\"",
+          "target": "name: \"清除角色\""
+        },
+        {
+          "source": "name: \"Refresh\"",
+          "target": "name: \"刷新\""
+        },
+        {
+          "source": "name: \"Double Sparkle\"",
+          "target": "name: \"双闪烁\""
+        },
+        {
+          "source": "name: \"Condense\"",
+          "target": "name: \"精简\""
+        },
+        {
+          "source": "name: \"Fetch website\"",
+          "target": "name: \"获取网站\""
+        },
+        {
+          "source": "name: \"Node Splitter\"",
+          "target": "name: \"节点分割器\""
+        },
+        {
+          "source": "name: \"Node Splitter with connectors\"",
+          "target": "name: \"带连接器的节点分割器\""
+        },
+        {
+          "source": "name: \"Add custom models\"",
+          "target": "name: \"添加自定义模型\""
+        },
+        {
+          "source": "name: \"Toggle Including Nested Block Refs\"",
+          "target": "name: \"切换包含嵌套块引用\""
+        },
+        {
+          "source": "name: \"Remove custom models\"",
+          "target": "name: \"移除自定义模型\""
+        },
+        {
+          "source": "name: \"Set system prompt\"",
+          "target": "name: \"设置系统提示词\""
+        },
+        {
+          "source": "name: \"Create new workflow\"",
+          "target": "name: \"创建新工作流\""
+        },
+        {
+          "source": "name: \"Create linear workflow from canvas\"",
+          "target": "name: \"从画布创建线性工作流\""
+        },
+        {
+          "source": "name: \"Canvas prompt\"",
+          "target": "name: \"画布提示词\""
+        },
+        {
+          "source": "name: \"Inline editing\"",
+          "target": "name: \"内联编辑\""
+        },
+        {
+          "source": "name: \"Edit workflow\"",
+          "target": "name: \"编辑工作流\""
+        },
+        {
+          "source": "name: \"Apply inline changes\"",
+          "target": "name: \"应用内联更改\""
+        },
+        {
+          "source": "name: \"Continue chat\"",
+          "target": "name: \"继续聊天\""
+        },
+        {
+          "source": "description: \"Move up in the canvas\"",
+          "target": "description: \"在画布中向上移动\""
+        },
+        {
+          "source": "description: \"Move down in the canvas\"",
+          "target": "description: \"在画布中向下移动\""
+        },
+        {
+          "source": "description: \"Move left in the canvas\"",
+          "target": "description: \"在画布中向左移动\""
+        },
+        {
+          "source": "description: \"Move right in the canvas\"",
+          "target": "description: \"在画布中向右移动\""
+        },
+        {
+          "source": "description: \"Google Generative AI\"",
+          "target": "description: \"Google 生成式 AI\""
+        },
+        {
+          "source": "description: \"OpenAI\"",
+          "target": "description: \"OpenAI\""
+        },
+        {
+          "source": "description: \"Anthropic\"",
+          "target": "description: \"Anthropic\""
+        },
+        {
+          "source": "description: \"Groq\"",
+          "target": "description: \"Groq\""
+        },
+        {
+          "source": "description: \"OpenRouter\"",
+          "target": "description: \"OpenRouter\""
+        },
+        {
+          "source": "description: \"xAI API key\"",
+          "target": "description: \"xAI API 密钥\""
+        },
+        {
+          "source": "text: \"You're using Ollama!\"",
+          "target": "text: \"您正在使用 Ollama！\""
+        },
+        {
+          "source": "text: \"Remember to do the following:\"",
+          "target": "text: \"请记住执行以下操作：\""
+        },
+        {
+          "source": "text: \"Make sure you have downloaded the model you want to use:\"",
+          "target": "text: \"确保您已下载要使用的模型：\""
+        },
+        {
+          "source": "text: `ollama run ${this.plugin.settings.model}`",
+          "target": "text: `ollama run ${this.plugin.settings.model}`"
+        },
+        {
+          "source": "text: \"After running the model, kill that command and close the ollama app.\"",
+          "target": "text: \"运行模型后，终止该命令并关闭 ollama 应用。\""
+        },
+        {
+          "source": "text: \"Then run this command to start the Ollama server and make it accessible from Obsidian:\"",
+          "target": "text: \"然后运行此命令启动 Ollama 服务器并使其可从 Obsidian 访问：\""
+        },
+        {
+          "source": "text: \"OLLAMA_ORIGINS=app://obsidian.md* ollama serve\"",
+          "target": "text: \"OLLAMA_ORIGINS=app://obsidian.md* ollama serve\""
+        },
+        {
+          "source": "text: \"LLM APIs \"",
+          "target": "text: \"LLM API \""
+        },
+        {
+          "source": "text: \"Chat\"",
+          "target": "text: \"聊天\""
+        },
+        {
+          "source": "text: \"Remove custom model\"",
+          "target": "text: \"移除自定义模型\""
+        },
+        {
+          "source": "text: \"Name\"",
+          "target": "text: \"名称\""
+        },
+        {
+          "source": "text: \"Context window\"",
+          "target": "text: \"上下文窗口\""
+        },
+        {
+          "source": "text: \"URL\"",
+          "target": "text: \"URL\""
+        },
+        {
+          "source": "text: \"Action\"",
+          "target": "text: \"操作\""
+        },
+        {
+          "source": "text: \"Delete\"",
+          "target": "text: \"删除\""
+        },
+        {
+          "source": "text: \"System prompt\"",
+          "target": "text: \"系统提示词\""
+        },
+        {
+          "source": "text: \"Submit\"",
+          "target": "text: \"提交\""
+        },
+        {
+          "source": "text: \"Add custom model\"",
+          "target": "text: \"添加自定义模型\""
+        },
+        {
+          "source": "text: \"Note: The model needs to support the OpenAI spec.\"",
+          "target": "text: \"注意：模型需要支持 OpenAI 规范。\""
+        },
+        {
+          "source": "text: \"Note: The endpoint needs to support CORS. This is experimental and might require additional CORS settings to be added to Caret. Let me know!\"",
+          "target": "text: \"注意：端点需要支持 CORS。这是实验性功能，可能需要向 Caret 添加额外的 CORS 设置。请告诉我！\""
+        },
+        {
+          "source": "text: `Workflow name:`",
+          "target": "text: `工作流名称：`"
+        },
+        {
+          "source": "text: \"Add prompts that will then be run in a linear fashion on any input.\"",
+          "target": "text: \"添加提示词，这些提示词将以线性方式对任何输入运行。\""
+        },
+        {
+          "source": "text: \"Add new prompt\"",
+          "target": "text: \"添加新提示词\""
+        },
+        {
+          "source": "text: \"Save workflow\"",
+          "target": "text: \"保存工作流\""
+        },
+        {
+          "source": "text: \"Workflow type: \"",
+          "target": "text: \"工作流类型：\""
+        },
+        {
+          "source": "text: \"Linear workflow\"",
+          "target": "text: \"线性工作流\""
+        },
+        {
+          "source": "text: \"Parallel workflow\"",
+          "target": "text: \"并行工作流\""
+        },
+        {
+          "source": "text: `Prompt ${step_number}`",
+          "target": "text: `提示词 ${step_number}`"
+        },
+        {
+          "source": "text: \"Provider\"",
+          "target": "text: \"提供商\""
+        },
+        {
+          "source": "text: \"Model\"",
+          "target": "text: \"模型\""
+        },
+        {
+          "source": "text: \"Temperature\"",
+          "target": "text: \"温度\""
+        },
+        {
+          "source": "text: \"Delay\"",
+          "target": "text: \"延迟\""
+        },
+        {
+          "source": "text: \"Convert text to note\"",
+          "target": "text: \"将文本转换为笔记\""
+        },
+        {
+          "source": "text: `Converting ${this.messages.length} messages`",
+          "target": "text: `正在转换 ${this.messages.length} 条消息`"
+        },
+        {
+          "source": "text: \"Insert file\"",
+          "target": "text: \"插入文件\""
+        },
+        {
+          "source": "text: \"Canvas prompt\"",
+          "target": "text: \"画布提示词\""
+        },
+        {
+          "source": ".setButtonText(\"Append output\")",
+          "target": ".setButtonText(\"追加输出\")"
+        },
+        {
+          "source": ".setButtonText(\"Replace\")",
+          "target": ".setButtonText(\"替换\")"
+        },
+        {
+          "source": ".setButtonText(\"Submit\")",
+          "target": ".setButtonText(\"提交\")"
+        },
+        {
+          "source": ".setName(\"LLM provider\")",
+          "target": ".setName(\"LLM 提供商\")"
+        },
+        {
+          "source": ".setName(\"Model\")",
+          "target": ".setName(\"模型\")"
+        },
+        {
+          "source": ".setName(\"GPT-4o\")",
+          "target": ".setName(\"GPT-4o\")"
+        },
+        {
+          "source": ".setName(\"Image provider\")",
+          "target": ".setName(\"图像提供商\")"
+        },
+        {
+          "source": ".setName(\"Image model\")",
+          "target": ".setName(\"图像模型\")"
+        },
+        {
+          "source": ".setName(\"OpenAI API key\")",
+          "target": ".setName(\"OpenAI API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Groq API key\")",
+          "target": ".setName(\"Groq API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Anthropic API key\")",
+          "target": ".setName(\"Anthropic API 密钥\")"
+        },
+        {
+          "source": ".setName(\"OpenRouter API key\")",
+          "target": ".setName(\"OpenRouter API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Google Gemini API key\")",
+          "target": ".setName(\"Google Gemini API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Perplexity API key\")",
+          "target": ".setName(\"Perplexity API 密钥\")"
+        },
+        {
+          "source": ".setName(\"xAI API key\")",
+          "target": ".setName(\"xAI API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Reload after adding API keys!\")",
+          "target": ".setName(\"添加 API 密钥后请重新加载！\")"
+        },
+        {
+          "source": ".setName(\"Chat folder path\")",
+          "target": ".setName(\"聊天文件夹路径\")"
+        },
+        {
+          "source": ".setName(\"Use date format for subfolders\")",
+          "target": ".setName(\"子文件夹使用日期格式\")"
+        },
+        {
+          "source": ".setName(\"Rename chats\")",
+          "target": ".setName(\"重命名聊天\")"
+        },
+        {
+          "source": ".setName(\"Send chat keybinds\")",
+          "target": ".setName(\"发送聊天快捷键\")"
+        },
+        {
+          "source": ".setName(\"Use nested [[]] content\")",
+          "target": ".setName(\"使用嵌套 [[]] 内容\")"
+        },
+        {
+          "source": ".setName(\"Model ID\")",
+          "target": ".setName(\"模型 ID\")"
+        },
+        {
+          "source": ".setName(\"Model name\")",
+          "target": ".setName(\"模型名称\")"
+        },
+        {
+          "source": ".setName(\"Vision\")",
+          "target": ".setName(\"视觉\")"
+        },
+        {
+          "source": ".setName(\"Function calling\")",
+          "target": ".setName(\"函数调用\")"
+        },
+        {
+          "source": ".setName(\"Context size\")",
+          "target": ".setName(\"上下文大小\")"
+        },
+        {
+          "source": ".setName(\"Custom endpoint\")",
+          "target": ".setName(\"自定义端点\")"
+        },
+        {
+          "source": ".setName(\"API key\")",
+          "target": ".setName(\"API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Known provider\")",
+          "target": ".setName(\"已知提供商\")"
+        },
+        {
+          "source": ".setName(\"File name\")",
+          "target": ".setName(\"文件名\")"
+        },
+        {
+          "source": ".setName(\"Auto format\")",
+          "target": ".setName(\"自动格式化\")"
+        },
+        {
+          "source": ".setDesc(\n        \"You are are using the new model! If you check errors it might be because your API key doesn't have access.\"\n      )",
+          "target": ".setDesc(\n        \"您正在使用新模型！如果遇到错误，可能是因为您的 API 密钥没有访问权限。\"\n      )"
+        },
+        {
+          "source": ".setDesc(`FYI your selected model has a context window of ${context_window}`)",
+          "target": ".setDesc(`提示：您选择的模型上下文窗口为 ${context_window}`)"
+        },
+        {
+          "source": ".setDesc(\"Choose the provider for image generation\")",
+          "target": ".setDesc(\"选择图像生成提供商\")"
+        },
+        {
+          "source": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"OpenAI API key\")",
+          "target": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"OpenAI API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"Groq API key\")",
+          "target": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"Groq API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"Anthropic API key\")",
+          "target": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"Anthropic API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"OpenRouter API key\")",
+          "target": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"OpenRouter API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"Google Gemini API key\")",
+          "target": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"Google Gemini API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"Perplexity API key\")",
+          "target": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"Perplexity API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"xAI API key\")",
+          "target": ".setDesc(\"\").addText((text5) => {\n      text5.setPlaceholder(\"xAI API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\n      \"After you added API keys for the first time you will need to reload the plugin for those changes to take effect. \\n This only needs to be done the first time or when you change your keys.\"\n    )",
+          "target": ".setDesc(\n      \"首次添加 API 密钥后，您需要重新加载插件才能使更改生效。\\n 这只需要在首次或更改密钥时执行。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Specify the folder path where chat logs will be stored.\")",
+          "target": ".setDesc(\"指定存储聊天日志的文件夹路径。\")"
+        },
+        {
+          "source": ".setDesc(\"Use Year-Month-Date as subfolders for the chat logs.\")",
+          "target": ".setDesc(\"使用年-月-日作为聊天日志的子文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"Chats will be given a descriptive name using your default set provider/model\")",
+          "target": ".setDesc(\"聊天将使用您默认设置的提供商/模型获得描述性名称\")"
+        },
+        {
+          "source": ".setDesc(\"Select which shortcut will be used to send messages.\")",
+          "target": ".setDesc(\"选择用于发送消息的快捷键。\")"
+        },
+        {
+          "source": ".setDesc(\"When set to true, context will include 1 layer of block refs\")",
+          "target": ".setDesc(\"设置为 true 时，上下文将包含 1 层块引用\")"
+        },
+        {
+          "source": ".setDesc(`Caret Version: ${this.plugin.settings.caret_version}`)",
+          "target": ".setDesc(`Caret 版本：${this.plugin.settings.caret_version}`)"
+        },
+        {
+          "source": ".setDesc(\"This is the model. This is the value for the model parameter that will be sent to the endpoint.\")",
+          "target": ".setDesc(\"这是模型。这是将发送到端点的模型参数值。\")"
+        },
+        {
+          "source": ".setDesc(\"This is the human-friendly name only used for displaying.\")",
+          "target": ".setDesc(\"这是仅用于显示的易读名称。\")"
+        },
+        {
+          "source": ".setDesc(\"Not used currently, will be used to know if the model can process pictures.\")",
+          "target": ".setDesc(\"目前未使用，将用于判断模型是否可以处理图片。\")"
+        },
+        {
+          "source": ".setDesc(\"Does the model support function calling?\")",
+          "target": ".setDesc(\"模型是否支持函数调用？\")"
+        },
+        {
+          "source": ".setDesc(\"You can normally pull this out of the Hugging Face repo, the config.json.\")",
+          "target": ".setDesc(\"您通常可以从 Hugging Face 仓库的 config.json 中获取此信息。\")"
+        },
+        {
+          "source": ".setDesc(\"This is where the model is located. It can be a remote URL or a server URL running locally.\")",
+          "target": ".setDesc(\"这是模型所在的位置。可以是远程 URL 或本地运行的服务器 URL。\")"
+        },
+        {
+          "source": ".setDesc(\"This is the API key required to access the model.\")",
+          "target": ".setDesc(\"这是访问模型所需的 API 密钥。\")"
+        },
+        {
+          "source": ".setDesc(\"Select this if it's a known endpoint like Ollama.\")",
+          "target": ".setDesc(\"如果是像 Ollama 这样的已知端点，请选择此项。\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the name for the note.\")",
+          "target": ".setDesc(\"输入笔记名称。\")"
+        },
+        {
+          "source": ".setDesc(\"Apply prompt formatting to the note.\")",
+          "target": ".setDesc(\"对笔记应用提示词格式化。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"OpenAI API key\")",
+          "target": ".setPlaceholder(\"OpenAI API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Groq API key\")",
+          "target": ".setPlaceholder(\"Groq API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Anthropic API key\")",
+          "target": ".setPlaceholder(\"Anthropic API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"OpenRouter API key\")",
+          "target": ".setPlaceholder(\"OpenRouter API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Google Gemini API key\")",
+          "target": ".setPlaceholder(\"Google Gemini API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Perplexity API key\")",
+          "target": ".setPlaceholder(\"Perplexity API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"xAI API key\")",
+          "target": ".setPlaceholder(\"xAI API 密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter folder path\")",
+          "target": ".setPlaceholder(\"输入文件夹路径\")"
+        }
+      ]
+    }
+  }
+}

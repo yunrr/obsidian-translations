@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-banners",
+    "version": "2.0.0",
+    "title": "Banners",
+    "description": "Add banner images to your notes!",
+    "language": "zh-cn",
+    "supportedVersions": "1.3.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setName(\"Banner height\")",
+          "target": ".setName(\"Banner 高度\")"
+        },
+        {
+          "source": ".setName(\"Banner style\")",
+          "target": ".setName(\"Banner 风格\")"
+        },
+        {
+          "source": ".setName(\"Show banner in preview embed\")",
+          "target": ".setName(\"在预览模式嵌入下展示 Banner\")"
+        },
+        {
+          "source": ".setName(\"Preview embed banner height\")",
+          "target": ".setName(\"预览模式下嵌入 Banner 的高度\")"
+        },
+        {
+          "source": ".setName(\"Frontmatter field name\")",
+          "target": ".setName(\"Frontmatter 字段名称\")"
+        },
+        {
+          "source": ".setName(\"Banner drag modifier key\")",
+          "target": ".setName(\"拖动 Banner 时使用的修饰键\")"
+        },
+        {
+          "source": ".setName(\"Horizontal alignment\")",
+          "target": ".setName(\"水平对齐方式\")"
+        },
+        {
+          "source": ".setName(\"Vertical alignment\")",
+          "target": ".setName(\"垂直对齐方式\")"
+        },
+        {
+          "source": ".setName(\"Use Twemoji\")",
+          "target": ".setName(\"使用 Twemoji\")"
+        },
+        {
+          "source": ".setName(\"Show preview images\")",
+          "target": ".setName(\"展示预览图像\")"
+        },
+        {
+          "source": ".setName(\"Suggestions limit\")",
+          "target": ".setName(\"建议图像数量限制\")"
+        },
+        {
+          "source": ".setName(\"Banners folder\")",
+          "target": ".setName(\"Banner 文件夹\")"
+        },
+        {
+          "source": ".setName(\"Allow mobile drag\")",
+          "target": ".setName(\"允许移动端拖拽\")"
+        },
+        {
+          "source": ".setDesc(\"Set how big the banner should be in pixels\")",
+          "target": ".setDesc(\"设置 Banner 的像素大小\")"
+        },
+        {
+          "source": ".setDesc(\"Set a style for all of your banners\")",
+          "target": ".setDesc(\"为您的所有 Banner 设置统一风格\")"
+        },
+        {
+          "source": ".setDesc(\"Set the banner size inside the internal embed\")",
+          "target": ".setDesc(\"设置内部嵌入中的 Banner 尺寸\")"
+        },
+        {
+          "source": ".setDesc(\"Set the banner size inside the page preview embed\")",
+          "target": ".setDesc(\"设置页面预览嵌入中的 Banner 尺寸\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Pick an emoji to use as an icon\")",
+          "target": ".setPlaceholder(\"选择一个表情符号作为图标\")"
+        },
+        {
+          "source": ".setPlaceholder(`${L.height}`)",
+          "target": ".setPlaceholder(`${L.height}`)"
+        },
+        {
+          "source": ".setPlaceholder(`${L.internalEmbedHeight}`)",
+          "target": ".setPlaceholder(`${L.internalEmbedHeight}`)"
+        },
+        {
+          "source": ".setPlaceholder(`${L.previewEmbedHeight}`)",
+          "target": ".setPlaceholder(`${L.previewEmbedHeight}`)"
+        },
+        {
+          "source": ".setPlaceholder(`${L.localSuggestionsLimit}`)",
+          "target": ".setPlaceholder(`${L.localSuggestionsLimit}`)"
+        },
+        {
+          "source": ".appendText(\"Choose whether to display the banner in the internal embed. This is the embed that appears when you write \")",
+          "target": ".appendText(\"选择是否在内部嵌入中显示 Banner。当您在一个文件中输入 ![[file]] 时出现的嵌入就是内部嵌入。\")"
+        },
+        {
+          "source": ".appendText(\" in a file\")",
+          "target": ".appendText(\" \")"
+        },
+        {
+          "source": ".appendText(\"Choose whether to display the banner in the page preview embed. This is the embed that appears from the \")",
+          "target": ".appendText(\"选择是否在页面预览模式嵌入中显示 Banner。这是核心插件中出现的嵌入。\")"
+        },
+        {
+          "source": ".appendText(\"core plugin\")",
+          "target": ".appendText(\" \")"
+        },
+        {
+          "source": ".appendText(\"Set a customizable frontmatter field to use for banner data.\")",
+          "target": ".appendText(\"设置一个可自定义的 Frontmatter 字段，用于 Banner 数据。\")"
+        },
+        {
+          "source": ".appendText(\" will use the fields \")",
+          "target": ".appendText(\" 将会使用字段 \")"
+        },
+        {
+          "source": ".appendText(\", \")",
+          "target": ".appendText(\", \")"
+        },
+        {
+          "source": ".appendText(\", and so on...\")",
+          "target": ".appendText(\", 等等……\")"
+        },
+        {
+          "source": ".appendText(\"Set a modifier key that must be used to drag a banner.\")",
+          "target": ".appendText(\"设置一个拖动 Banner 时按下的修饰键\")"
+        },
+        {
+          "source": ".appendText(\" means that you must hold down Shift as you drag the banner to move it. This can help to avoid accidental banner shifts.\")",
+          "target": ".appendText(\" 意味着当您拖动 Banner 时必须按下 Shift 键。这可以避免 Banner 意外移动。\")"
+        },
+        {
+          "source": ".appendText(\"Align the icon horizontally.\")",
+          "target": ".appendText(\"水平对齐图标\")"
+        },
+        {
+          "source": ".appendText(\"If set to \")",
+          "target": ".appendText(\"如果将其设置为 \")"
+        },
+        {
+          "source": ".appendText(\", you can set an offset, relative to the left side of the note. This can be any valid \")",
+          "target": ".appendText(\"，您可以设置一个相对于笔记左侧的偏移量。这可以是任何有效值 \")"
+        },
+        {
+          "source": ".appendText(\", such as \")",
+          "target": ".appendText(\", 例如 \")"
+        },
+        {
+          "source": ".appendText(\"Align the icon vertically, relative to a banner (if any).\")",
+          "target": ".appendText(\"垂直对齐图标，相对于 Banner（如果存在的话）.\")"
+        },
+        {
+          "source": ".appendText(\", you can set an offset, relative to the center of a banner's lower edge. This follows the same format as the setting above.\")",
+          "target": ".appendText(\"，您可以设置一个相对于 Banner 底部边缘中心的偏移量。这个设置遵循上面提到的相同格式。\")"
+        },
+        {
+          "source": ".appendText(\"Twitter's emoji have better support here. \")",
+          "target": ".appendText(\"Twitter的表情符号在这里有更好的支持 \")"
+        },
+        {
+          "source": ".appendText(\"This is only applied in the Icon modal and the banner icon in the preview view\")",
+          "target": ".appendText(\"这仅在 icon 弹出窗口和预览视图中的 Banner 图标中应用\")"
+        },
+        {
+          "source": ".appendText(\"Using a high number while \")",
+          "target": ".appendText(\"如果设置较高的数量，当“展示预览图像”( \")"
+        },
+        {
+          "source": ".appendText(\" to a valid folder in the settings.\")",
+          "target": ".appendText(\" 对应一个合法的文件夹\")"
+        },
+        {
+          "source": ".createEl(\"code\",{text:\"![[file]]\"})",
+          "target": ".createEl(\"code\",{text:\"\"})"
+        },
+        {
+          "source": ".createEl(\"b\",{text:\"Custom\"})",
+          "target": ".createEl(\"b\",{text:\"Custom\"})"
+        },
+        {
+          "source": ".createEl(\"a\",{text:\"CSS length value\",href:\"https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths\"})",
+          "target": ".createEl(\"a\",{text:\"CSS length value\",href:\"https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths\"})"
+        },
+        {
+          "source": ".createEl(\"code\",{text:\"10px\"})",
+          "target": ".createEl(\"code\",{text:\"10px\"})"
+        },
+        {
+          "source": ".createEl(\"code\",{text:\"-30%\"})",
+          "target": ".createEl(\"code\",{text:\"-30%\"})"
+        },
+        {
+          "source": ".createEl(\"code\",{text:\"calc(1em + 10px)\"})",
+          "target": ".createEl(\"code\",{text:\"calc(1em + 10px)\"})"
+        },
+        {
+          "source": ".createEl(\"b\",{text:\"NOTE: \"})",
+          "target": ".createEl(\"b\",{text:\"注意: \"})"
+        },
+        {
+          "source": ".createEl(\"b\",{text:\"Banners folder\"})",
+          "target": ".createEl(\"b\",{text:\"Banners 文件夹\"})"
+        },
+        {
+          "source": "name: \"Add/Change banner with local image\"",
+          "target": "name: \"添加/更改本地图片banner\""
+        },
+        {
+          "source": "name: \"Add/Change emoji icon\"",
+          "target": "name: \"添加/更改表情符号/图标\""
+        },
+        {
+          "source": "name: \"Lock/Unlock banner position\"",
+          "target": "name: \"锁定/解锁banner位置\""
+        },
+        {
+          "source": "name: \"Paste banner from clipboard\"",
+          "target": "name: \"从剪贴板粘贴banner\""
+        },
+        {
+          "source": "name: \"Remove banner\"",
+          "target": "name: \"移除banner\""
+        },
+        {
+          "source": "name: \"Remove icon\"",
+          "target": "name: \"删除图标\""
+        },
+        {
+          "source": "\"A nice, lil' thing to add some flair to your notes\"",
+          "target": "\"一个不错的，小巧的插件，可以为您的笔记增添一些风采。\""
+        },
+        {
+          "source": "\"Choose whether to display the banner in the internal embed. This is the embed that appears when you write \"",
+          "target": "\"选择是否在内部嵌入中显示横幅。这是当你编写时出现的嵌入。\""
+        },
+        {
+          "source": "\"Choose whether to display the banner in the page preview embed. This is the embed that appears from the \"",
+          "target": "\"选择是否在页面预览嵌入中显示横幅。这是从出现的嵌入。\""
+        },
+        {
+          "source": "\"Set a customizable frontmatter field to use for banner data.\"",
+          "target": "\"设置一个自定义的元数据字段以用于横幅数据。\""
+        },
+        {
+          "source": "\"Set a modifier key that must be used to drag a banner.\"",
+          "target": "\"设置拖动横幅时必须使用的修饰键。\""
+        },
+        {
+          "source": "\" means that you must hold down Shift as you drag the banner to move it. This can help to avoid accidental banner shifts.\"",
+          "target": "\"意味着在拖动横幅时必须按住Shift键才能移动它。这有助于避免意外的横幅移动。\""
+        },
+        {
+          "source": "\"Give people a lil' notion of what your note is about\"",
+          "target": "\"让人们对你笔记的内容有一个大致的概念\""
+        },
+        {
+          "source": "\", you can set an offset, relative to the left side of the note. This can be any valid \"",
+          "target": "\"，您可以设置相对于笔记左侧的偏移量。这可以是任何有效的\""
+        },
+        {
+          "source": "\"Align the icon vertically, relative to a banner (if any).\"",
+          "target": "\"垂直对齐图标，相对于横幅（如果有）。\""
+        },
+        {
+          "source": "\", you can set an offset, relative to the center of a banner's lower edge. This follows the same format as the setting above.\"",
+          "target": "\", 您可以设置相对于横幅下边缘中心的偏移量。这与上面的设置格式相同。\""
+        },
+        {
+          "source": "\"This is only applied in the Icon modal and the banner icon in the preview view\"",
+          "target": "\"这仅在图标模态和预览视图中的横幅图标中应用。\""
+        },
+        {
+          "source": "'For the modal that shows when you run the \"Add/Change banner with local image\" command'",
+          "target": "'在运行“使用本地图像添加/更改横幅”命令时显示的模态对话框。'"
+        },
+        {
+          "source": "\"Enabling this will display a preview of the images suggested\"",
+          "target": "\"启用此功能将显示建议的图像预览\""
+        },
+        {
+          "source": "\"Show up to this many suggestions when searching through local images.\"",
+          "target": "\"在搜索本地图片时显示最多这些建议。\""
+        },
+        {
+          "source": "\"Select a folder to exclusively search for banner files in.\"",
+          "target": "\"选择一个文件夹，仅在其中搜索横幅文件。\""
+        },
+        {
+          "source": "\"If empty, it will search the entire vault for image files\"",
+          "target": "\"如果为空，将在整个仓库中搜索图像文件。\""
+        },
+        {
+          "source": "\"Not as well-tested and probably finicky\"",
+          "target": "\"没有经过充分测试，可能会有些挑剔\""
+        }
+      ]
+    }
+  }
+}
