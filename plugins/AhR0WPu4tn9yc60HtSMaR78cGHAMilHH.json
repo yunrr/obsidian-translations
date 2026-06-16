@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-icon-folder",
+    "version": "2.0.0",
+    "title": "Iconize",
+    "description": "Add icons to anything you desire in Obsidian, including files, folders, and text.",
+    "language": "zh-cn",
+    "supportedVersions": "2.14.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Due to a change in version v1.2.2, the icon pack folder changed. Please change it in the settings to not be directly in /plugins.`, 8000)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]由于v1.2.2版本的更改，图标包文件夹发生了变化。请在设置中将其更改为不直接在 /plugins 中。`, 8000)"
+        },
+        {
+          "source": "Notice(`Directory with name ${iconPack.name} already exists.`)",
+          "target": "Notice(`名为${iconBack.name}的目录已存在。`)"
+        },
+        {
+          "source": "Notice(`Moving ${iconPack.name}...`)",
+          "target": "Notice(`正在移动${iconPack.name}……`)"
+        },
+        {
+          "source": "Notice(`...moved ${iconPack.name}`)",
+          "target": "Notice(`…移动了${iconPack.name}`)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Renamed ${normalizedFilename} to ${newFilename} to avoid duplication.`, 8000)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]将${normalizedFilename}重命名为${newFilename}以避免重复。`, 8000)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Could not create duplicated icon name (${normalizedFilename})",
+          "target": "注意(`[${config.PLUGIN_NAME}] 无法创建重复的图标名称 (${normalizedFilename})"
+        },
+        {
+          "source": "Notice(`Seems like you do not have an icon pack installed. (${iconName})",
+          "target": "Notice(`您似乎没有安装图标包。 (${iconName})"
+        },
+        {
+          "source": "Notice('Please delete your old icon packs and redownload your icon packs to use the new syncing mechanism.', 20000)",
+          "target": "Notice('请删除旧的图标包并重新下载图标包以使用新的同步机制。', 20000)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Inheritance has been removed and replaced with custom rules.`)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]继承已被删除，并替换为自定义规则。`)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Background Check: found missing icons. Adding missing icons...`, 10000)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]背景检查：发现缺少图标。正在添加缺失的图标……`, 10000)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Background Check: added missing icons`, 10000)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]背景检查：添加了缺失的图标`, 10000)"
+        },
+        {
+          "source": "Notice('Icon pack already exists.')",
+          "target": "Notice('图标包已存在。')"
+        },
+        {
+          "source": "Notice('Icon pack successfully created.')",
+          "target": "Notice('图标包已成功创建。')"
+        },
+        {
+          "source": "Notice('Try to fix icon pack...')",
+          "target": "Notice('尝试修复图标包……')"
+        },
+        {
+          "source": "Notice('...tried to fix icon pack')",
+          "target": "Notice('…尝试修复图标包')"
+        },
+        {
+          "source": "Notice('Changing icon packs...')",
+          "target": "Notice('正在更改图标包……')"
+        },
+        {
+          "source": "Notice('Done. This change requires a restart of Obsidian')",
+          "target": "Notice('已完成。此更改需要重新启动Obsidian')"
+        },
+        {
+          "source": "Notice('Icons successfully added.')",
+          "target": "Notice('图标已成功添加。')"
+        },
+        {
+          "source": "Notice('Icon pack successfully deleted.')",
+          "target": "Notice('图标包已成功删除。')"
+        },
+        {
+          "source": "Notice(`File ${file.name} is not a SVG file.`)",
+          "target": "Notice(`文件${file.name}不是SVG文件。`)"
+        },
+        {
+          "source": "Notice('Icon rule added.')",
+          "target": "Notice('已添加图标规则。')"
+        },
+        {
+          "source": "Notice('Custom rule updated.')",
+          "target": "Notice('自定义规则已更新。')"
+        },
+        {
+          "source": "Notice('Custom rule deleted.')",
+          "target": "Notice('自定义规则已删除。')"
+        },
+        {
+          "source": "Notice('Saving in progress...')",
+          "target": "Notice('正在保存……')"
+        },
+        {
+          "source": "Notice('...saved successfully')",
+          "target": "Notice('…已成功保存')"
+        },
+        {
+          "source": "Notice('You need to reload Obsidian for this to take effect.', 10000)",
+          "target": "Notice('您需要重新加载 Obsidian 才能生效。', 10000)"
+        },
+        {
+          "source": "Notice(`Adding ${item.displayName}...`)",
+          "target": "Notice(`正在添加${item.displayName}。。。`)"
+        },
+        {
+          "source": "Notice(`...${item.displayName} added`)",
+          "target": "Notice(`…已添加${item.displayName}`)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Please enable \"Use icon in frontmatter\".`)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]请启用“在 frontmatter 中使用图标”。`)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Refreshing icons from frontmatter, please wait...`)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]正在刷新 frontmatter 的图标，请稍候……`)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}]\\n${message}`)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]\\n${message}`)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Refreshed icons from frontmatter. Please restart Obsidian to see the changes.`)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]已刷新 frontmatter 的图标。请重新启动Obsidian以查看更改。`)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Obsidian has to be restarted for this change to take effect.`)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]Obsidian必须重新启动才能使此更改生效。`)"
+        },
+        {
+          "source": "Notice('Color of icon changed.')",
+          "target": "Notice('图标颜色已更改。')"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Frontmatter property type \\`icon\\` has to be of type \\`text\\`.`)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]Frontmatter 属性类型“icon”必须为“text”类型。`)"
+        },
+        {
+          "source": "Notice(`[${config.PLUGIN_NAME}] Frontmatter property type \\`iconColor\\` has to be of type \\`text\\`.`)",
+          "target": "Notice(`[${config.PLUGIN_NAME}]Frontmatter 属性类型“iconColor”必须为“text”类型。`)"
+        },
+        {
+          "source": ".log(`loading ${config.PLUGIN_NAME}`)",
+          "target": ".log(`正在加载${config.PLUGIN_NAME}`)"
+        },
+        {
+          "source": ".log('unloading obsidian-icon-folder')",
+          "target": ".log('取消加载 Obsidian 图标文件夹')"
+        },
+        {
+          "source": ".error(`Icon file with name ${iconNameWithPrefix} could not be found`)",
+          "target": ".error(`找不到名为${iconNameWithPrefix}的图标文件`)"
+        },
+        {
+          "source": ".error(`Icon SVG with name ${iconNameWithPrefix} could not be found`)",
+          "target": ".error(`找不到名为${iconNameWithPrefix}的图标SVG`)"
+        },
+        {
+          "source": "name: 'font-awesome-brands'",
+          "target": "name: 'font-awesome-brands'"
+        },
+        {
+          "source": "name: 'font-awesome-regular'",
+          "target": "name: 'font-awesome-regular'"
+        },
+        {
+          "source": "name: 'font-awesome-solid'",
+          "target": "name: 'font-awesome-solid'"
+        },
+        {
+          "source": "name: 'remix-icons'",
+          "target": "name: 'remix-icons'"
+        },
+        {
+          "source": "name: 'icon-brew'",
+          "target": "name: 'icon-brew'"
+        },
+        {
+          "source": "name: 'simple-icons'",
+          "target": "name: 'simple-icons'"
+        },
+        {
+          "source": "name: 'lucide-icons'",
+          "target": "name: 'lucide-icons'"
+        },
+        {
+          "source": "name: 'tabler-icons'",
+          "target": "name: 'tabler-icons'"
+        },
+        {
+          "source": "name: 'boxicons'",
+          "target": "name: 'boxicons'"
+        },
+        {
+          "source": "name: 'rpg-awesome'",
+          "target": "name: 'rpg-awesome'"
+        },
+        {
+          "source": "name: 'coolicons'",
+          "target": "name: 'coolicons'"
+        },
+        {
+          "source": "name: 'feather-icons'",
+          "target": "name: 'feather-icons'"
+        },
+        {
+          "source": "name: 'octicons'",
+          "target": "name: 'octicons'"
+        },
+        {
+          "source": "name: 'Set icon for file'",
+          "target": "name: '设置文件图标'"
+        },
+        {
+          "source": "text: 'Include folders and files that are part of the path.'",
+          "target": "text: '包括路径中的文件夹和文件。'"
+        },
+        {
+          "source": "text: 'Where the custom rule gets applied to.'",
+          "target": "text: '自定义规则应用于何处。'"
+        },
+        {
+          "source": "text: 'General'",
+          "target": "text: '常规设置'"
+        },
+        {
+          "source": "text: 'Visibility of icons'",
+          "target": "text: '图标的可见性'"
+        },
+        {
+          "source": "text: 'Icon customization for files/folders'",
+          "target": "text: '文件/文件夹的图标自定义'"
+        },
+        {
+          "source": "text: 'Custom icon rules'",
+          "target": "text: '自定义图标规则'"
+        },
+        {
+          "source": "text: 'Icon packs'",
+          "target": "text: '图标包'"
+        },
+        {
+          "source": "text: 'Select a color for this icon'",
+          "target": "text: '为此图标选择颜色'"
+        },
+        {
+          "source": ".setText('Edit custom rule')",
+          "target": ".setText('编辑自定义规则')"
+        },
+        {
+          "source": ".setText('Change color')",
+          "target": ".setText('更改颜色')"
+        },
+        {
+          "source": ".setButtonText('Add icon pack')",
+          "target": ".setButtonText('添加图标包')"
+        },
+        {
+          "source": ".setButtonText('Choose icon')",
+          "target": ".setButtonText('选择图标')"
+        },
+        {
+          "source": ".setButtonText('Change icon')",
+          "target": ".setButtonText('更改图标')"
+        },
+        {
+          "source": ".setButtonText('Default')",
+          "target": ".setButtonText('默认')"
+        },
+        {
+          "source": ".setButtonText('Save Changes')",
+          "target": ".setButtonText('保存更改')"
+        },
+        {
+          "source": ".setButtonText('Save')",
+          "target": ".setButtonText('保存')"
+        },
+        {
+          "source": ".setButtonText('Browse icon packs')",
+          "target": ".setButtonText('浏览图标包')"
+        },
+        {
+          "source": ".setButtonText('Refresh')",
+          "target": ".setButtonText('刷新')"
+        },
+        {
+          "source": ".setButtonText('Reset')",
+          "target": ".setButtonText('重置')"
+        },
+        {
+          "source": ".setName('Add custom icon pack')",
+          "target": ".setName('添加自定义图标包')"
+        },
+        {
+          "source": ".setName(`${iconPack.name} (${iconPack.prefix})`)",
+          "target": ".setName(`${iconPack.name} (${iconPack.prefix})`)"
+        },
+        {
+          "source": ".setName('Add icon rule')",
+          "target": ".setName('添加图标规则')"
+        },
+        {
+          "source": ".setName('Emoji style')",
+          "target": ".setName('表情风格')"
+        },
+        {
+          "source": ".setName('Extra margin (in pixels)')",
+          "target": ".setName('额外边距（以像素为单位）')"
+        },
+        {
+          "source": ".setName('Icon color')",
+          "target": ".setName('图标颜色')"
+        },
+        {
+          "source": ".setName('Icon font size (in pixels)')",
+          "target": ".setName('图标字体大小（以像素为单位）')"
+        },
+        {
+          "source": ".setName('Icon packs folder path')",
+          "target": ".setName('图标包文件夹路径')"
+        },
+        {
+          "source": ".setName('Icons background check')",
+          "target": ".setName('图标背景检查')"
+        },
+        {
+          "source": ".setName('Add predefined icon pack')",
+          "target": ".setName('添加预定义的图标包')"
+        },
+        {
+          "source": ".setName('Recently used icons limit')",
+          "target": ".setName('最近使用的图标限制')"
+        },
+        {
+          "source": ".setName('Toggle icon in tabs')",
+          "target": ".setName('在标签中切换图标')"
+        },
+        {
+          "source": ".setName('Toggle icon in title')",
+          "target": ".setName('在标题中切换图标')"
+        },
+        {
+          "source": ".setName('Use icon in frontmatter')",
+          "target": ".setName('在 frontmatter 中使用图标')"
+        },
+        {
+          "source": ".setName('Frontmatter icon field name')",
+          "target": ".setName('Frontmatter 图标字段名称')"
+        },
+        {
+          "source": ".setName('Frontmatter icon color field name')",
+          "target": ".setName('Frontmatter 图标颜色字段名称')"
+        },
+        {
+          "source": ".setName('Refresh icons from frontmatter')",
+          "target": ".setName('从 frontmatter 刷新图标')"
+        },
+        {
+          "source": ".setName('Toggle icons while editing notes')",
+          "target": ".setName('在编辑笔记时切换图标')"
+        },
+        {
+          "source": ".setName('Toggle icons in links')",
+          "target": ".setName('在链接中切换图标')"
+        },
+        {
+          "source": ".setName('Icon identifier')",
+          "target": ".setName('图标标识符')"
+        },
+        {
+          "source": ".setName('Toggle Debug Mode')",
+          "target": ".setName('切换调试模式')"
+        },
+        {
+          "source": ".setDesc('Add a custom icon pack.')",
+          "target": ".setDesc('添加一个自定义图标包。')"
+        },
+        {
+          "source": ".setDesc(`Total icons: ${iconPack.icons.length}${isLucideIconPack ? ` ${additionalLucideDescription}` : ''}`)",
+          "target": ".setDesc(`图标总数: ${iconPack.icons.length}${isLucideIconPack ? ` ${additionalLucideDescription}` : ''}`)"
+        },
+        {
+          "source": ".setDesc(`Total icons: ${iconPack.icons.length} (added: ${file.name})`)",
+          "target": ".setDesc(`图标总数：${iconPack.icons.length}(已添加：${file.name})`)"
+        },
+        {
+          "source": ".setDesc('Will add the icon based on the defined rule (as a plain string or in regex format).')",
+          "target": ".setDesc('将根据定义的规则添加图标（作为纯文本字符串或正则表达式格式）。')"
+        },
+        {
+          "source": ".setDesc(`Icon: ${rule.icon}`)",
+          "target": ".setDesc(`图标：${rule.icon}`)"
+        },
+        {
+          "source": ".setDesc('Change the style of your emojis.')",
+          "target": ".setDesc('更改你的情绪符号样式。')"
+        },
+        {
+          "source": ".setDesc('Change the margin of the icons.')",
+          "target": ".setDesc('更改图标的间距。')"
+        },
+        {
+          "source": ".setDesc('Change the color of the displayed icons.')",
+          "target": ".setDesc('更改显示图标的颜色。')"
+        },
+        {
+          "source": ".setDesc('Change the font size of the displayed icons.')",
+          "target": ".setDesc('更改显示图标的字体大小。')"
+        },
+        {
+          "source": ".setDesc('Change the default icon packs folder path.')",
+          "target": ".setDesc('更改默认图标包文件夹路径。')"
+        },
+        {
+          "source": ".setDesc('Check in the background on every load of Obsidian, if icons are missing and it will try to add them to the specific icon pack.')",
+          "target": ".setDesc('在每次加载 Obsidian 时检查缺失的图标，并尝试将它们添加到相应的图标包中。')"
+        },
+        {
+          "source": ".setDesc('Add a predefined icon pack that is officially supported.')",
+          "target": ".setDesc('添加一个官方支持的预定义图标包。')"
+        },
+        {
+          "source": ".setDesc('Change the limit for the recently used icons displayed in the icon selection modal.')",
+          "target": ".setDesc('更改在图标选择框中显示的最近使用的图标的数量限制。')"
+        },
+        {
+          "source": ".setDesc('Toggles the visibility of an icon for a file in the tab bar.')",
+          "target": ".setDesc('切换标签栏中文件图标的状态。')"
+        },
+        {
+          "source": ".setDesc('Toggles the visibility of an icon above the title of a file.')",
+          "target": ".setDesc('切换文件标题上方图标的可见性。')"
+        },
+        {
+          "source": ".setDesc('Toggles whether to set the icon based on the frontmatter property `icon`.')",
+          "target": ".setDesc('切换是否根据 frontmatter 属性 `icon` 设置图标。')"
+        },
+        {
+          "source": ".setDesc('Sets the name of the frontmatter field which contains the icon.')",
+          "target": ".setDesc('设置包含图标的 frontmatter 字段的名称。')"
+        },
+        {
+          "source": ".setDesc('Sets the name of the frontmatter field which contains the icon color.')",
+          "target": ".setDesc('设置包含图标颜色的 frontmatter 字段的名称。')"
+        },
+        {
+          "source": ".setDesc('Toggles whether you are able to add and see icons in your notes and editor (e.g., ability to have :LiSofa: as an icon in your notes).')",
+          "target": ".setDesc('切换是否能够在笔记和编辑器中添加和显示图标（例如，能够在笔记中使用 :LiSofa: 作为图标）。')"
+        },
+        {
+          "source": ".setDesc('Toggles whether you are able to see icons in the links to other notes')",
+          "target": ".setDesc('切换是否在链接到其他笔记时显示图标')"
+        },
+        {
+          "source": ".setDesc('Change the icon identifier used in notes.')",
+          "target": ".setDesc('更改笔记中使用的图标标识符。')"
+        },
+        {
+          "source": ".setDesc('Toggle debug mode to see more detailed logs in the console. Do not touch this unless you know what you are doing.')",
+          "target": ".setDesc('切换调试模式以在控制台查看更详细的日志。除非你知道自己在做什么，否则不要更改此设置。')"
+        },
+        {
+          "source": ".setPlaceholder('Your icon pack name')",
+          "target": ".setPlaceholder('你的图标包名称')"
+        },
+        {
+          "source": ".setPlaceholder('regex or simple string')",
+          "target": ".setPlaceholder('正则表达式或简单字符串')"
+        },
+        {
+          "source": ".setTooltip('Try to fix icon pack')",
+          "target": ".setTooltip('尝试修复图标包')"
+        },
+        {
+          "source": ".setTooltip('Add an icon')",
+          "target": ".setTooltip('添加一个图标')"
+        },
+        {
+          "source": ".setTooltip('Remove the icon pack')",
+          "target": ".setTooltip('移除图标包')"
+        },
+        {
+          "source": ".setTooltip('Prioritize the custom rule')",
+          "target": ".setTooltip('优先处理自定义规则')"
+        },
+        {
+          "source": ".setTooltip('Deprioritize the custom rule')",
+          "target": ".setTooltip('降低自定义规则的优先级')"
+        },
+        {
+          "source": ".setTooltip('Edit the custom rule')",
+          "target": ".setTooltip('编辑自定义规则')"
+        },
+        {
+          "source": ".setTooltip(`Icon applicable to: ${isFor}`)",
+          "target": ".setTooltip(`图标适用于：${isFor}`)"
+        },
+        {
+          "source": ".setTooltip('Set color to the default one')",
+          "target": ".setTooltip('将颜色设置为默认颜色')"
+        },
+        {
+          "source": ".setTooltip('Remove the custom rule')",
+          "target": ".setTooltip('移除自定义规则')"
+        },
+        {
+          "source": ".setTooltip('Restore default')",
+          "target": ".setTooltip('恢复默认')"
+        },
+        {
+          "source": ".setTitle('Change icon')",
+          "target": ".setTitle('更改图标')"
+        },
+        {
+          "source": ".setTitle('Remove icon')",
+          "target": ".setTitle('删除图标')"
+        },
+        {
+          "source": ".setTitle('Change color of icon')",
+          "target": ".setTitle('更改图标颜色')"
+        },
+        {
+          "source": ".innerText = 'Recently used Icons:'",
+          "target": ".innerText = '最近使用的图标：'"
+        },
+        {
+          "source": ".innerText = 'All Icons:'",
+          "target": ".innerText = '所有图标：'"
+        },
+        {
+          "source": ".createEl('h3', { text: 'Visibility of icons' })",
+          "target": ".createEl('h3', { text: '图标的可见性' })"
+        },
+        {
+          "source": ".createEl('h1', { text: 'Icon packs' })",
+          "target": ".createEl('h1', { text: '图标包' })"
+        },
+        {
+          "source": "above: 'Above title'",
+          "target": "above: '在标题上'"
+        },
+        {
+          "source": "inline: 'Next to title'",
+          "target": "inline: '在标题旁边'"
+        },
+        {
+          "source": ".setDesc('Sets the icon and color for each note in the vault based on the frontmatter properties. WARNING: This will change any manually set icons to the one defined in the frontmatter. IF A NOTE HAS NO FRONTMATTER, THE CURRENT ICON WILL BE REMOVED. Please restart Obsidian after this completes to see the changes.')\n",
+          "target": ".setDesc('根据 frontmatter 属性设置库中每个注释的图标和颜色。警告：这将把任何手动设置的图标更改为 frontmatter 中定义的图标。如果笔记没有Frontmatter，则当前图标将被删除。完成此操作后，请重新启动Obsidian以查看更改。')\n"
+        },
+        {
+          "source": "'(Native Pack has fewer icons but 100% Obsidian Sync support)'",
+          "target": "'(Native Pack 图标较少，但支持 100% Obsidian同步)'"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,3607 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "image-converter",
+    "version": "2.0.0",
+    "title": "Image Converter",
+    "description": "Convert, compress and resize images from one format to another by dragging and dropping or pasting into the note. HEIC, TIF, JPG, WEBP, PNG.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.24",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Error loading image\")",
+          "target": "Notice(\"加载图像时出错\")"
+        },
+        {
+          "source": "Notice(\"Image saved successfully\")",
+          "target": "Notice(\"图像保存成功\")"
+        },
+        {
+          "source": "Notice(\"Error saving image\")",
+          "target": "Notice(\"保存图像时出错\")"
+        },
+        {
+          "source": "Notice(\"No active markdown view\")",
+          "target": "Notice(\"没有活动的标记视图\")"
+        },
+        {
+          "source": "Notice(\"No current file found\")",
+          "target": "Notice(\"未找到当前文件\")"
+        },
+        {
+          "source": "Notice(\"No source attribute found\")",
+          "target": "Notice(\"未找到源属性\")"
+        },
+        {
+          "source": "Notice(\"Unable to locate image file\")",
+          "target": "Notice(\"无法找到图像文件\")"
+        },
+        {
+          "source": "Notice(\"Error processing image path\")",
+          "target": "Notice(\"处理图像路径时出错\")"
+        },
+        {
+          "source": "Notice(\"Failed to delete image. Check console for details.\")",
+          "target": "Notice(\"无法删除图片。请查看控制台获取详细信息。\")"
+        },
+        {
+          "source": "Notice(\"No images found in the note.\")",
+          "target": "Notice(\"在笔记中找不到图像。\")"
+        },
+        {
+          "source": "Notice(\"No processing needed: All images are either in skip list or kept in original format with no compression or resizing.\")",
+          "target": "Notice(\"无需处理：所有图像要么在跳过列表中，要么以原始格式保存，无需压缩或调整大小。\")"
+        },
+        {
+          "source": "Notice(\"No processing needed: Original format selected with no compression or resizing.\")",
+          "target": "Notice(\"无需处理：选择原始格式，无需压缩或调整大小。\")"
+        },
+        {
+          "source": "Notice(\"No images found that need processing.\")",
+          "target": "Notice(\"未找到需要处理的图像。\")"
+        },
+        {
+          "source": "Notice(`Error processing images: ${i.message}`)",
+          "target": "Notice(`处理图像时出错: ${i.message}`)"
+        },
+        {
+          "source": "Notice(\"No images found in the vault.\")",
+          "target": "Notice(\"在保险库中找不到任何图片。\")"
+        },
+        {
+          "source": "Notice(\"No processing needed: All vault images are either in skip list or kept in original format with no compression or resizing.\")",
+          "target": "Notice(\"无需处理：所有库图像要么以跳过列表的形式保存，要么以原始格式保存，无需压缩或调整大小。\")"
+        },
+        {
+          "source": "Notice(\"Error: No active file found.\")",
+          "target": "Notice(\"错误：未找到活动文件。\")"
+        },
+        {
+          "source": "Notice(\"Unable to open settings. Please check if the settings plugin is enabled.\")",
+          "target": "Notice(\"无法打开设置。请检查设置插件是否已启用。\")"
+        },
+        {
+          "source": ".log(\"Decoding image failed\",this.handle,F)",
+          "target": ".log(\"解码图像失败\",this.handle,F)"
+        },
+        {
+          "source": ".log(\"Decoding image failed\",this.handle,$)",
+          "target": ".log(\"解码图像失败\",this.handle,$)"
+        },
+        {
+          "source": ".log(\"Could not create HEIF context\")",
+          "target": ".log(\"无法创建 HEIF 上下文\")"
+        },
+        {
+          "source": ".log(\"Could not parse HEIF file\",N.message)",
+          "target": ".log(\"无法解析 HEIF 文件\",N.message)"
+        },
+        {
+          "source": ".log(\"Error loading image ids\",M)",
+          "target": ".log(\"加载图片 ID 出错\",M)"
+        },
+        {
+          "source": ".log(\"No images found\")",
+          "target": ".log(\"未找到图片\")"
+        },
+        {
+          "source": ".log(\"Could not get image data for id\",M[$],K)",
+          "target": ".log(\"无法获取 id 对应的图片数据\",M[$],K)"
+        },
+        {
+          "source": ".error(\"Error processing image path:\",i)",
+          "target": ".error(\"处理图片路径时出错:\",i)"
+        },
+        {
+          "source": "name:\"Process all vault images\"",
+          "target": "name:\"处理所有保险库图片\""
+        },
+        {
+          "source": "name:\"Process all images in current note\"",
+          "target": "name:\"处理当前笔记中的所有图片\""
+        },
+        {
+          "source": "name:\"Open Image Converter Settings\"",
+          "target": "name:\"打开图片转换器设置\""
+        },
+        {
+          "source": "text:\"Preview:\"",
+          "target": "text:\"预览: \""
+        },
+        {
+          "source": "text:\"Convert, compress and resize\"",
+          "target": "text:\"转换、压缩和调整大小\""
+        },
+        {
+          "source": "text:\"⚠️ This will modify all images in the current note. Please ensure you have backups.\"",
+          "target": "text:\"⚠️ 这将修改当前笔记中的所有图片。请确保您已创建备份。\""
+        },
+        {
+          "source": "text:\"Error generating preview\"",
+          "target": "text:\"生成预览时出错\""
+        },
+        {
+          "source": ".setText(\"Grayscale:\")",
+          "target": ".setText(\"灰度: \")"
+        },
+        {
+          "source": ".setText(\"Palette:\")",
+          "target": ".setText(\"调色板: \")"
+        },
+        {
+          "source": ".setText(\"Dominant:\")",
+          "target": ".setText(\"主导色: \")"
+        },
+        {
+          "source": ".setText(\"Layer:\")",
+          "target": ".setText(\"图层: \")"
+        },
+        {
+          "source": ".setText(\"Size:\")",
+          "target": ".setText(\"大小: \")"
+        },
+        {
+          "source": ".setText(\"Opacity:\")",
+          "target": ".setText(\"不透明度: \")"
+        },
+        {
+          "source": ".setText(\"Blend:\")",
+          "target": ".setText(\"混合: \")"
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Submit\")",
+          "target": ".setButtonText(\"提交\")"
+        },
+        {
+          "source": ".setName(\"If an output file already exists\")",
+          "target": ".setName(\"如果输出文件已存在\")"
+        },
+        {
+          "source": ".setName(\"Subfolder name\")",
+          "target": ".setName(\"子文件夹名称\")"
+        },
+        {
+          "source": ".setName(\"Quality\")",
+          "target": ".setName(\"质量\")"
+        },
+        {
+          "source": ".setName(\"Quality ⓘ\")",
+          "target": ".setName(\"质量 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Skip images in target format ⓘ\")",
+          "target": ".setName(\"跳过目标格式的图片 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Resize mode ⓘ\")",
+          "target": ".setName(\"调整大小模式 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Enlarge or Reduce ⓘ\")",
+          "target": ".setName(\"放大或缩小 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Convert to ⓘ \")",
+          "target": ".setName(\"转换为 ⓘ \")"
+        },
+        {
+          "source": ".setName(\"Resize Mode ⓘ\")",
+          "target": ".setName(\"调整大小模式 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Skip File Formats ⓘ\")",
+          "target": ".setName(\"跳过文件格式 ⓘ\")"
+        },
+        {
+          "source": ".setDesc(\"Compression level (0-100)\")",
+          "target": ".setDesc(\"压缩级别 (0-100)\")"
+        },
+        {
+          "source": ".setDesc(\"Choose output format for your images\")",
+          "target": ".setDesc(\"选择图片的输出格式\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how images should be resized. Note: Results are permanent.\")",
+          "target": ".setDesc(\"选择图片应如何调整大小。注意：结果是永久性的。\")"
+        },
+        {
+          "source": ".setDesc(\"Controls how images are adjusted relative to target size:\")",
+          "target": ".setDesc(\"控制图片相对于目标尺寸的调整方式：\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter quality (0-100)\")",
+          "target": ".setPlaceholder(\"输入质量 (0-100)\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Width\")",
+          "target": ".setPlaceholder(\"宽度\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Height\")",
+          "target": ".setPlaceholder(\"高度\")"
+        },
+        {
+          "source": ".setTooltip(\"Fit: Maintains aspect ratio within dimensions\\nFill: Exactly matches dimensions\\nLongest Edge: Limits the longest side\\nShortest Edge: Limits the shortest side\\nWidth/Height: Constrains single dimension\")",
+          "target": ".setTooltip(\"适应：在尺寸内保持纵横比\\n填充：完全匹配尺寸\\n最长边：限制最长边\\n最短边：限制最短边\\n宽度/高度：限制单个维度\")"
+        },
+        {
+          "source": ".setTitle(\"Copy as Base64 encoded image\")",
+          "target": ".setTitle(\"复制为Base64编码的图像\")"
+        },
+        {
+          "source": "Notice(\"Image processing cancelled\")",
+          "target": "Notice(\"图像处理已取消\")"
+        },
+        {
+          "source": "Notice(\"Image conversion paused\")",
+          "target": "Notice(\"图片转换已暂停\")"
+        },
+        {
+          "source": "Notice(\"Image conversion resumed\")",
+          "target": "Notice(\"图片转换已恢复\")"
+        },
+        {
+          "source": "Notice(\"Original file kept without any compression.\")",
+          "target": "Notice(\"原始文件未经任何压缩。\")"
+        },
+        {
+          "source": "Notice(\"Original file kept without any compression or conversion.\")",
+          "target": "Notice(\"原始文件未经任何压缩或转换保存。\")"
+        },
+        {
+          "source": "Notice(\"External image link deleted from the note\")",
+          "target": "Notice(\"笔记中的外部图片链接已删除\")"
+        },
+        {
+          "source": "Notice(`Image deleted: ${s.path}`)",
+          "target": "Notice(`图片已删除: ${s.path}`)"
+        },
+        {
+          "source": ".log(`Extended processing time for remaining ${I} files`)",
+          "target": ".log(`剩余 ${I} 个文件的处理时间已延长`)"
+        },
+        {
+          "source": ".log(\"No active editor found\")",
+          "target": ".log(\"未找到活跃的编辑器\")"
+        },
+        {
+          "source": ".log(\"Failed to get image dimensions\")",
+          "target": ".log(\"获取图片尺寸失败。\")"
+        },
+        {
+          "source": ".error(`Error processing ${o.file.name}:`,l)",
+          "target": ".error(`处理 ${o.file.name} 时出现错误:`,l)"
+        },
+        {
+          "source": ".error(\"An error occurred:\",n)",
+          "target": ".error(\"发生了错误:\",n)"
+        },
+        {
+          "source": ".error(\"Error during file update:\",k)",
+          "target": ".error(\"文件更新过程中发生错误:\",k)"
+        },
+        {
+          "source": ".error(`Invalid date format: ${C}`)",
+          "target": ".error(`日期格式无效: ${C}`)"
+        },
+        {
+          "source": ".error(\"Error in handleHeicImage:\",A)",
+          "target": ".error(\"处理HEIC图像时出错:\",A)"
+        },
+        {
+          "source": ".error(\"Error getting image dimensions:\",f)",
+          "target": ".error(\"获取图片尺寸时出错:\",f)"
+        },
+        {
+          "source": ".error(\"Element not found\")",
+          "target": ".error(\"元素未找到\")"
+        },
+        {
+          "source": ".error(\"Error deleting image:\",k)",
+          "target": ".error(\"删除图片时出现错误:\",k)"
+        },
+        {
+          "source": ".error(\"Preview generation error:\",n)",
+          "target": ".error(\"预览生成错误:\",n)"
+        },
+        {
+          "source": "name:\"needle\"",
+          "target": "name:\"指针\""
+        },
+        {
+          "source": "name:\"probe-image-size\"",
+          "target": "name:\"探测图像尺寸\""
+        },
+        {
+          "source": "name:\"duplicate_rename\"",
+          "target": "name:\"重复重命名\""
+        },
+        {
+          "source": "name:\"Convert\"",
+          "target": "name:\"转换\""
+        },
+        {
+          "source": "name:\"Output\"",
+          "target": "name:\"输出\""
+        },
+        {
+          "source": "name:\"Settings\"",
+          "target": "name:\"设置\""
+        },
+        {
+          "source": "name:\"Advanced\"",
+          "target": "name:\"高级\""
+        },
+        {
+          "source": "description:\"The leanest and most handsome HTTP client in the Nodelands.\"",
+          "target": "description:\"Nodelands 中最简洁、最漂亮的 HTTP 客户端。\""
+        },
+        {
+          "source": "text:\"Show available variables\"",
+          "target": "text:\"显示可用变量\""
+        },
+        {
+          "source": "text:\"Non-destructive image resizing\"",
+          "target": "text:\"非破坏性图像调整\""
+        },
+        {
+          "source": "text:\"Editor Behavior\"",
+          "target": "text:\"编辑器行为\""
+        },
+        {
+          "source": "text:\"Notifications\"",
+          "target": "text:\"通知\""
+        },
+        {
+          "source": "text:\"Enter new dimensions\"",
+          "target": "text:\"输入新维度\""
+        },
+        {
+          "source": "text:\"Aspect ratio is always preserved.\"",
+          "target": "text:\"宽高比始终保持不变。\""
+        },
+        {
+          "source": ".setText(`Processing ${i} of ${r}`)",
+          "target": ".setText(`处理 ${i} 中的 ${r}`)"
+        },
+        {
+          "source": ".setName(\"Format\")",
+          "target": ".setName(\"格式\")"
+        },
+        {
+          "source": ".setName(\"Image resize mode\")",
+          "target": ".setName(\"图片调整大小模式\")"
+        },
+        {
+          "source": ".setName(\"Output Location\")",
+          "target": ".setName(\"输出位置\")"
+        },
+        {
+          "source": ".setName(\"File Naming\")",
+          "target": ".setName(\"文件命名\")"
+        },
+        {
+          "source": ".setName(\"Use Markdown links\")",
+          "target": ".setName(\"使用 Markdown 链接\")"
+        },
+        {
+          "source": ".setName('Prepend paths with \"./\" for relative linking')",
+          "target": ".setName('为相对链接添加\"./\"前缀')"
+        },
+        {
+          "source": ".setName(\"Custom output path\")",
+          "target": ".setName(\"自定义输出路径\")"
+        },
+        {
+          "source": ".setName(\"Filename template\")",
+          "target": ".setName(\"文件名模板\")"
+        },
+        {
+          "source": ".setName(\"Non-destructive resize\")",
+          "target": ".setName(\"非破坏性调整大小\")"
+        },
+        {
+          "source": ".setName(\"Custom size\")",
+          "target": ".setName(\"自定义大小\")"
+        },
+        {
+          "source": ".setName(\"Resize by dragging edge of an image\")",
+          "target": ".setName(\"通过拖动图像边缘调整大小\")"
+        },
+        {
+          "source": ".setName(\"Enable scrollwheel resize\")",
+          "target": ".setName(\"启用滚轮调整大小\")"
+        },
+        {
+          "source": ".setName(\"Scrollwheel modifier key\")",
+          "target": ".setName(\"滚轮修改键\")"
+        },
+        {
+          "source": ".setName(\"Allow drag resize in Reading mode\")",
+          "target": ".setName(\"允许在阅读模式下拖动调整大小\")"
+        },
+        {
+          "source": ".setName(\"Cursor position\")",
+          "target": ".setName(\"光标位置\")"
+        },
+        {
+          "source": ".setName(\"Remember scroll position\")",
+          "target": ".setName(\"记住滚动位置\")"
+        },
+        {
+          "source": ".setName(\"Right-click menu\")",
+          "target": ".setName(\"右键菜单\")"
+        },
+        {
+          "source": ".setName(\"Show progress notification\")",
+          "target": ".setName(\"显示进度通知\")"
+        },
+        {
+          "source": ".setName(\"Show summary notification\")",
+          "target": ".setName(\"显示摘要通知\")"
+        },
+        {
+          "source": ".setName(\"Show rename notification\")",
+          "target": ".setName(\"显示重命名通知\")"
+        },
+        {
+          "source": ".setName(\"Width\")",
+          "target": ".setName(\"宽度\")"
+        },
+        {
+          "source": ".setName(\"Height\")",
+          "target": ".setName(\"高度\")"
+        },
+        {
+          "source": ".setName(\"Select format to convert images to\")",
+          "target": ".setName(\"选择要转换图像的格式\")"
+        },
+        {
+          "source": ".setName(\"Skip images in target format\")",
+          "target": ".setName(\"跳过目标格式中的图片\")"
+        },
+        {
+          "source": ".setDesc(\"Select format to convert images to\")",
+          "target": ".setDesc(\"选择要将图像转换成的格式\")"
+        },
+        {
+          "source": ".setDesc(\"Select the mode to use when resizing the image\")",
+          "target": ".setDesc(\"选择调整图像大小时使用的模式\")"
+        },
+        {
+          "source": ".setDesc(\"Select where to save converted images.\")",
+          "target": ".setDesc(\"选择要保存转换后的图片的位置。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how to rename processed images\")",
+          "target": ".setDesc(\"选择如何命名已处理的图像\")"
+        },
+        {
+          "source": ".setDesc(\"Name of subfolder under current note's folder\")",
+          "target": ".setDesc(\"当前笔记文件夹下的子文件夹名称\")"
+        },
+        {
+          "source": ".setDesc(\"Turn this on to allow resizing images by dragging the edge of an image\")",
+          "target": ".setDesc(\"启用此选项以允许通过拖曳图像边缘来调整图像大小。\")"
+        },
+        {
+          "source": ".setDesc(\"Allow resizing images using the scrollwheel\")",
+          "target": ".setDesc(\"允许使用滚轮调整图片大小\")"
+        },
+        {
+          "source": ".setDesc(\"Choose which modifier key to hold while using the scrollwheel to resize\")",
+          "target": ".setDesc(\"选择在使用滚轮调整大小时按住的修饰键:\")"
+        },
+        {
+          "source": ".setDesc(\"Choose cursor position after processing the image\")",
+          "target": ".setDesc(\"处理完图像后选择光标位置\")"
+        },
+        {
+          "source": ".setDesc(\"This is work in progress. Toggle ON to remember the scroll position when processing images. Toggle OFF to automatically scroll to the last image\")",
+          "target": ".setDesc(\"这是一个正在进行的工作。开启以记住处理图像时的滚动位置。关闭以自动滚动到最后一张图片。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable right-click context menu\")",
+          "target": ".setDesc(\"启用右键上下文菜单\")"
+        },
+        {
+          "source": ".setDesc(\"Show summary after processing completes\")",
+          "target": ".setDesc(\"处理完成后显示摘要\")"
+        },
+        {
+          "source": ".setDesc(\"Show notification when files are renamed\")",
+          "target": ".setDesc(\"当文件被重命名时显示通知\")"
+        },
+        {
+          "source": ".setDesc(\"Base processing timeout for all images\")",
+          "target": ".setDesc(\"为所有图片设置基本处理超时时间\")"
+        },
+        {
+          "source": ".setDesc('\"Same as original\" - will keep original file format.')",
+          "target": ".setDesc('与原始文件相同 - 将保持原始文件格式。')"
+        },
+        {
+          "source": ".setPlaceholder(\"images/{yyyy}/{mm}\")",
+          "target": ".setPlaceholder(\"图片/{年}/{月}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"custom/path/{yyyy}/{mm}\")",
+          "target": ".setPlaceholder(\"自定义/路径/{年}/{月}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"{noteName}-{date}\")",
+          "target": ".setPlaceholder(\"{笔记名称}-{日期}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter desired length in pixels\")",
+          "target": ".setPlaceholder(\"输入所需的像素长度\")"
+        },
+        {
+          "source": ".setTitle(\"Process all images in current note\")",
+          "target": ".setTitle(\"处理当前笔记中的所有图片\")"
+        },
+        {
+          "source": ".setTitle(\"Copy Image\")",
+          "target": ".setTitle(\"复制图片\")"
+        },
+        {
+          "source": ".setTitle(\"Resize Image\")",
+          "target": ".setTitle(\"调整图片大小\")"
+        },
+        {
+          "source": ".setTitle(\"Delete Image from vault\")",
+          "target": ".setTitle(\"从保险库中删除图片\")"
+        },
+        {
+          "source": ".addOptions({None:\"None\",Fit:\"Fit\",Fill:\"Fill\",LongestEdge:\"Longest Edge\",ShortestEdge:\"Shortest Edge\",Width:\"Width\",Height:\"Height\"})",
+          "target": ".addOptions({None:\"无\",Fit:\"适合\",Fill:\"填充\",LongestEdge:\"最长边\",ShortestEdge:\"最短边\",Width:\"宽度\",Height:\"高度\"})"
+        },
+        {
+          "source": ".addOption(\"default\",\"Default\")",
+          "target": ".addOption(\"default\",\"默认\")"
+        },
+        {
+          "source": ".addOption(\"root\",\"Root folder\")",
+          "target": ".addOption(\"root\",\"根目录\")"
+        },
+        {
+          "source": ".addOption(\"current\",\"Same folder as current file\")",
+          "target": ".addOption(\"current\",\"与当前文件相同的文件夹\")"
+        },
+        {
+          "source": ".addOption(\"subfolder\",\"In subfolder\")",
+          "target": ".addOption(\"subfolder\",\"在子文件夹中\")"
+        },
+        {
+          "source": ".addOption(\"customOutput\",\"Custom output path\")",
+          "target": ".addOption(\"customOutput\",\"自定义输出路径\")"
+        },
+        {
+          "source": ".addOption(\"front\",\"Front of the link\").addOption(\"back\",\"Back of the link\")",
+          "target": ".addOption(\"front\",\"链接的前面\").addOption(\"back\",\"链接的后面\")"
+        },
+        {
+          "source": ".addOptions({disabled:\"Keep original name\",custom:\"Custom template\"})",
+          "target": ".addOptions({disabled:\"保留原始名称\",custom:\"自定义模板\"})"
+        },
+        {
+          "source": ".addOptions({duplicate_replace:\"Replace\",duplicate_rename:\"Rename\"})",
+          "target": ".addOptions({duplicate_replace:\"替换\",duplicate_rename:\"重命名\"})"
+        },
+        {
+          "source": "Notice(`Failed to process ${o.file.name}: ${l.message}`)",
+          "target": "Notice(`无法处理 ${o.file.name} 文件：${l.message}`)"
+        },
+        {
+          "source": "Notice(`Renamed: ${decodeURIComponent(t)",
+          "target": "Notice(`已重命名：${decodeURIComponent(t)"
+        },
+        {
+          "source": "Notice(\"Error: Failed to compress image.\")",
+          "target": "Notice(\"错误：图像压缩失败。\")"
+        },
+        {
+          "source": "Notice(\"Error: No format selected for conversion.\")",
+          "target": "Notice(\"错误：未选择转换格式。\")"
+        },
+        {
+          "source": "Notice(\"Error: Failed to resize image.\")",
+          "target": "Notice(\"错误：调整图像大小失败。\")"
+        },
+        {
+          "source": "Notice(\"Error: No active note found.\")",
+          "target": "Notice(\"错误：未找到活动笔记。\")"
+        },
+        {
+          "source": ".log(`Processing image ${A} of ${r.length}: ${k.name} ${k.path}`)",
+          "target": ".log(`处理图像 ${A}，共 ${r.length} 张：${k.name} ${k.path}`)"
+        },
+        {
+          "source": ".log(`${A} of ${r.length} ${k.name} ${k.path}  ${o} seconds elapsed`)",
+          "target": ".log(`已翻译为：已完成 ${r.length} 个 ${k.name} ${k.path}，已耗时 ${o} 秒`)"
+        },
+        {
+          "source": ".error(\"Could not determine image dimensions, using default settings\")",
+          "target": ".error(\"无法确定图像尺寸，使用默认设置。\")"
+        },
+        {
+          "source": "name:\"Toggle Image Conversion (Pause/Resume)\"",
+          "target": "name:\"切换图片转换（暂停/恢复）\""
+        },
+        {
+          "source": "description:\"Get image size without full download (JPG, GIF, PNG, WebP, BMP, TIFF, PSD)\"",
+          "target": "description:\"获取图片尺寸而无需完全下载（JPG、GIF、PNG、WebP、BMP、TIFF、PSD）\""
+        },
+        {
+          "source": "text:\"Please backup you images, this will resize your original image.\"",
+          "target": "text:\"请备份您的图片，这将调整原始图片的大小。\""
+        },
+        {
+          "source": "text:\"To resize only width, you can leave Height input empty\"",
+          "target": "text:\"只调整宽度，请将高度输入框留空。\""
+        },
+        {
+          "source": "text:\"To resize only Height, you can leave width input empty\"",
+          "target": "text:\"只调整高度，请将宽度输入框留空。\""
+        },
+        {
+          "source": ".setText(\"Image Conversion: Paused \\u23F8\\uFE0F\")",
+          "target": ".setText(\"图像转换：暂停 ⏸️\")"
+        },
+        {
+          "source": ".setText(\"Image Conversion: Active \\u25B6\\uFE0F\")",
+          "target": ".setText(\"图片转换：激活 🔶\")"
+        },
+        {
+          "source": ".setText(`Processing image ${A} of ${r.length}, elapsed time: ${o} seconds`)",
+          "target": ".setText(`处理第 ${A} 张图片，共 ${r.length} 张，已经耗时: ${o} 秒`)"
+        },
+        {
+          "source": ".setText(`Finished processing ${A} images, total time: ${k} seconds`)",
+          "target": ".setText(`已完成处理 ${A} 张图片，总耗时: ${k} 秒`)"
+        },
+        {
+          "source": ".setText(`Processing image ${r} of ${s}, elapsed time: ${g} seconds`)",
+          "target": ".setText(`处理图像 ${r} 中的 ${s}，已经经过 ${g} 秒。`)"
+        },
+        {
+          "source": ".setText(`Finished processing ${r} images, total time: ${k} seconds`)",
+          "target": ".setText(`已处理 ${r} 张图片，总共用时: ${k} 秒`)"
+        },
+        {
+          "source": ".setText(\"\")},5e3)}}async convertCurrentNoteImages(i){let r=this.app.workspace.getActiveFile();if(!r){new H.Notice(\"Error: No active file found.\")",
+          "target": ".setText(\"\")},5e3)}}async convertCurrentNoteImages(i){let r=this.app.workspace.getActiveFile();if(!r){new H.Notice(\"错误：未找到活动文件。\")"
+        },
+        {
+          "source": ".setName(\"Base timeout (seconds)\")",
+          "target": ".setName(\"基础超时时间（秒）\")"
+        },
+        {
+          "source": ".setDesc(\"0 - low quality, 99 - high quality, 100 - no compression; 75 - recommended\")",
+          "target": ".setDesc(\"0 - 低质量，99 - 高质量，100 - 无压缩；75 - 推荐\")"
+        },
+        {
+          "source": ".setDesc(\"Define custom path with variables (e.g., {date}, {title})\")",
+          "target": ".setDesc(\"定义带有变量（例如，{日期}，{标题}）的自定义路径。\")"
+        },
+        {
+          "source": ".setDesc(\"Non-destructive resizing in Reading Mode is only visual, thus if it is too distractive you can disable it\")",
+          "target": ".setDesc(\"在阅读模式中的非破坏性调整仅为视觉效果，因此如果它过于分散注意力，您可以禁用它。\")"
+        },
+        {
+          "source": ".setDesc('Show processing status report when multiple images were detected e.g.: When enabled it will show \"Processing 1 of 20\" ')",
+          "target": ".setDesc('检测到多张图片时显示处理状态报告，例如：启用后将显示“正在处理 1/20”。')"
+        },
+        {
+          "source": ".setDesc(\"Select the mode to use when resizing the image. Resizing an image will further reduce file-size, but it will resize your actual file, which means that the original file will be modified, and the changes will be permanent.\")",
+          "target": ".setDesc(\"选择调整图像大小时要使用的模式。调整图像大小将进一步减小文件大小，但它将调整您的实际文件，这意味着原始文件将被修改，更改将是永久性的。\")"
+        },
+        {
+          "source": ".setDesc(\"Selecting this will skip images that already are in the target format. This is useful if you have a very large library, and want to process images in batches.\")",
+          "target": ".setDesc(\"选择此选项将跳过已经是目标格式的图片。如果您有一个非常庞大的图片库，并且希望批量处理图片，这将非常有用。\")"
+        },
+        {
+          "source": "text:\"Below settings allow you to specify how long Obsidian should \t\t\t\t\t\t\t\t\t\t\t\twait before timing-out the image processing. E.g.: when file is extra\t\t\t\t\t\t\t\t\t\t\t\tlarge 100MB+ it might freeze Obsidian - Image Converter will try to do\t\t\t\t\t\t\t\t\t\t\t\tthe best it can to process it - however if it takes too long it will stop\"",
+          "target": "text:\"以下设置允许您指定 Obsidian 在超时图像处理之前应等待的时间。例如：当文件超大 100MB+ 时，它可能会冻结 Obsidian - Image Converter 将尝试尽最大努力处理它 - 但是，如果时间过长，它会停止。\""
+        },
+        {
+          "source": "name:\"Rename\"",
+          "target": "name:\"重命名\""
+        },
+        {
+          "source": "Notice(\"Image plugin disabled\")",
+          "target": "Notice(\"图像插件已禁用\")"
+        },
+        {
+          "source": "Notice(\"Image plugin enabled\")",
+          "target": "Notice(\"图像插件已启用\")"
+        },
+        {
+          "source": "Notice(\"Full image processing resumed\")",
+          "target": "Notice(\"全面图像处理已恢复\")"
+        },
+        {
+          "source": "Notice(`Successfully processed ${o} images.`)",
+          "target": "Notice(`已成功处理 ${o} 张图像。`)"
+        },
+        {
+          "source": "Notice(\"No active note found.\")",
+          "target": "Notice(\"未找到活动笔记。\")"
+        },
+        {
+          "source": "Notice(\"Error: Failed to process image.\")",
+          "target": "Notice(\"错误：处理图像失败。\")"
+        },
+        {
+          "source": "Notice(`Error converting image: ${i.message}`)",
+          "target": "Notice(`转换图像时出错: ${i.message}`)"
+        },
+        {
+          "source": "Notice(`Error updating links: ${i.message}`)",
+          "target": "Notice(`更新链接时出错: ${i.message}`)"
+        },
+        {
+          "source": "Notice(`Unable to find image: ${f}`)",
+          "target": "Notice(`找不到图像: ${f}`)"
+        },
+        {
+          "source": "name:\"Enable/Disable all image processing and renaming\"",
+          "target": "name:\"启用/禁用所有图片处理和重命名\""
+        },
+        {
+          "source": "name:\"Pause/Continue image processing (Keep Renaming Active)\"",
+          "target": "name:\"暂停/继续图片处理 (保持重命名激活)\""
+        },
+        {
+          "source": "text:'Below settings allow you to adjust image dimensions using the standard ObsidianMD\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tmethod by modifying image links. For instance, to change the width of ![[Engelbart.jpg]],\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\twe add \"| 100\" at the end, resulting in ![[Engelbart.jpg | 100]]'",
+          "target": "text:'以下设置允许您通过修改图片链接来调整图片尺寸,使用标准的 ObsidianMD 方法。例如,要更改 ![[Engelbart.jpg]] 的宽度,我们在末尾添加 \"| 100\",结果为 ![[Engelbart.jpg | 100]]'"
+        },
+        {
+          "source": "text:\"Running this will modify all your internal images in the Vault. Please create backups. All internal image links will be automatically updated.\"",
+          "target": "text:\"运行此操作将修改保险库中的所有内部图片。请创建备份。所有内部图片链接将自动更新。\""
+        },
+        {
+          "source": ".setText(`Processing ${i} of ${e}`)",
+          "target": ".setText(`正在处理第 ${i} 项,共 ${e} 项`)"
+        },
+        {
+          "source": ".setName(\"Resize dimensions\")",
+          "target": ".setName(\"调整尺寸\")"
+        },
+        {
+          "source": ".setName(\"Target size\")",
+          "target": ".setName(\"目标尺寸\")"
+        },
+        {
+          "source": ".setName(\"Allow larger file sizes after conversion ⓘ\")",
+          "target": ".setName(\"允许转换后更大的文件大小 ⓘ\")"
+        },
+        {
+          "source": ".setDesc(\"Replace - to replace already existing file in the destination with a new file.\\t\\t\\t\\t\\tRename - automatically add '-1, -2 -3 etc.' suffix to the end of file\")",
+          "target": ".setDesc(\"替换 - 用新文件替换目标位置中已存在的文件。\\t\\t\\t\\t\\t重命名 - 自动在文件末尾添加 '-1, -2, -3 等' 后缀\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the default size which should be applied on all dropped/pasted images. For example, if you specify \\t\\t\\t\\t\\t\\t\\tcustom size as '250' then when you drop or paste an 'image.jpg' it would become ![[image.jpg | 250]] \")",
+          "target": ".setDesc(\"指定应应用于所有拖放或粘贴图片的默认尺寸。例如,如果您指定自定义尺寸为 '250',则当您拖放或粘贴 'image.jpg' 时,它将变为 ![[image.jpg | 250]]\")"
+        },
+        {
+          "source": ".addOption(\"front\",\"Front of the link\")",
+          "target": ".addOption(\"front\",\"链接前\")"
+        },
+        {
+          "source": ".addOption(\"back\",\"Back of the link\")",
+          "target": ".addOption(\"back\",\"链接后\")"
+        },
+        {
+          "source": "super(\"\".concat(i,\" 'options.signal' is in 'aborted' state\")",
+          "target": "super(\"\".concat(i,\" 'options.signal' 处于 '已中止' 状态\")"
+        },
+        {
+          "source": "text:\"Below settings allow you to specify how long Obsidian should \\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\twait before timing-out the image processing. E.g.: when file is extra\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tlarge 100MB+ it might freeze Obsidian - Image Converter will try to do\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tthe best it can to process it - however if it takes too long it will stop\"",
+          "target": "text:\"以下设置允许您指定 Obsidian 在超时图像处理之前应等待的时间。例如:当文件超大 100MB+ 时,它可能会冻结 Obsidian - Image Converter 将尝试尽最大努力处理它 - 但是,如果时间过长,它会停止。\""
+        },
+        {
+          "source": "Notice(`${A} images were converted.`)",
+          "target": "Notice(`已转换 ${A} 张图片。`)"
+        },
+        {
+          "source": "Notice(`${r} images were converted.`)",
+          "target": "Notice(`已转换 ${r} 张图片。`)"
+        },
+        {
+          "source": "Notice(\"Base64 encoded image deleted from the note\")",
+          "target": "Notice(\"从笔记中删除了 Base64 编码的图片\")"
+        },
+        {
+          "source": "Notice(`Image links will now be in ${A?\"Markdown\":\"Wiki\"} format`)",
+          "target": "Notice(`图片链接现在将以 ${A?\"Markdown\":\"Wiki\"} 格式显示`)"
+        },
+        {
+          "source": ".error(\"MD5 generation failed:\",A)",
+          "target": ".error(\"MD5 生成失败:\",A)"
+        },
+        {
+          "source": ".error(\"Error processing TIFF image:\",f)",
+          "target": ".error(\"处理 TIFF 图像时出错:\",f)"
+        },
+        {
+          "source": ".error(\"Error converting HEIC:\",r)",
+          "target": ".error(\"转换 HEIC 格式时出错:\",r)"
+        },
+        {
+          "source": ".setName(\"Additional timeout per MB\")",
+          "target": ".setName(\"每 MB 额外的超时时间\")"
+        },
+        {
+          "source": ".setDesc(\"Auto generate Markdown links for dropped/pasted images\")",
+          "target": ".setDesc(\"自动生成 Markdown 链接以便插入/粘贴的图片\")"
+        },
+        {
+          "source": ".setDesc(\"Use variables like {date}, {noteName}, {imageName}, {MD5} to create your own custom filenaming format\")",
+          "target": ".setDesc(\"使用变量如 {date}、{noteName}、{imageName}、{MD5} 来创建自定义的文件命名格式。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically apply '|size' to dropped/pasted images\")",
+          "target": ".setDesc(\"自动将 '|size' 应用于拖放/粘贴的图片\")"
+        },
+        {
+          "source": ".setTooltip(\"Toggle between Markdown and Wiki links\")",
+          "target": ".setTooltip(\"在 Markdown 和 Wiki 链接之间切换\")"
+        },
+        {
+          "source": ".log(\"====\",_,x)",
+          "target": ".log(\"====\",_,x)"
+        },
+        {
+          "source": ".setDesc(\"Replace - to replace already existing file in the destination with a new file.\t\t\t\tRename - automatically add '-1, -2 -3 etc.' suffix to the end of file\")",
+          "target": ".setDesc(\"替换 - 用新文件替换目的地中已存在的文件。 重命名 - 自动在文件末尾添加“-1, -2-3 等”后缀。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the default size which should be applied on all dropped/pasted images. For example, if you specify \t\t\t\t\t\t\tcustom size as '250' then when you drop or paste an 'image.jpg' it would become ![[image.jpg | 250]] \")",
+          "target": ".setDesc(\"指定应用于所有拖放/粘贴的图片的默认尺寸。例如，如果您指定自定义尺寸为“250”，那么当您拖放或粘贴一个“image.jpg”时，它将变为 ![[image.jpg | 250]]\")"
+        },
+        {
+          "source": ".setDesc(\"Additional processing time (seconds) per MB\")",
+          "target": ".setDesc(\"每 MB 额外处理时间（秒）\")"
+        },
+        {
+          "source": ".setPlaceholder(\"800\")",
+          "target": ".setPlaceholder(\"800\")"
+        },
+        {
+          "source": "text:'Below settings allow you to adjust image dimensions using the standard ObsidianMD\t\t\t\t\t\t\t\t\t\t\t\t\tmethod by modifying image links. For instance, to change the width of ![[Engelbart.jpg]],\t\t\t\t\t\t\t\t\t\t\t\t\twe add \"| 100\" at the end, resulting in ![[Engelbart.jpg | 100]]'",
+          "target": "text:'以下设置允许您通过修改图像链接的标准 ObsidianMD 方法来调整图像尺寸。例如，要更改 ![[Engelbart.jpg]] 的宽度，我们在末尾添加\"| 100\"，结果为 ![[Engelbart.jpg | 100]]。'"
+        },
+        {
+          "source": "Notice(`Could not get file stats for: ${i.name}`)",
+          "target": "Notice(`无法获取 ${i.name} 的文件统计信息`)"
+        },
+        {
+          "source": "Notice(`Error processing queue for ${i.name}: ${e.message}`)",
+          "target": "Notice(`处理 ${i.name} 的队列时出错：${e.message}`)"
+        },
+        {
+          "source": "Notice(`Failed to process mobile file ${i.name}`)",
+          "target": "Notice(`无法处理移动文件 ${i.name}`)"
+        },
+        {
+          "source": "Notice(`Unsupported image format: ${i.extension}`)",
+          "target": "Notice(`不支持的图像格式: ${i.extension}`)"
+        },
+        {
+          "source": "text:`all images in: ${t}.${f}`",
+          "target": "text:`文件夹中的所有图片: ${t}.${f}`"
+        },
+        {
+          "source": ".setText(\"Image Plugin: Disabled ⏸️\")",
+          "target": ".setText(\"图片插件：已禁用 ⏸️\")"
+        },
+        {
+          "source": ".setText(\"Image Plugin: Enabled ▶️\")",
+          "target": ".setText(\"图片插件：已启用 ▶️\")"
+        },
+        {
+          "source": ".setText(\"Image Processing: Paused ⏸️ (Renaming & Non-destructive Resize Only)\")",
+          "target": ".setText(\"图片处理：已暂停 ⏸️(仅重命名和非破坏性调整大小)\")"
+        },
+        {
+          "source": ".setText(\"Image Processing: Active ▶️\")",
+          "target": ".setText(\"图片处理：活跃中 ▶️\")"
+        },
+        {
+          "source": ".setText(`Processing image ${o} of ${A.length}, elapsed time: ${e} seconds`)",
+          "target": ".setText(`正在处理第 ${o} 张图片，共 ${A.length} 张，已用时: ${e} 秒`)"
+        },
+        {
+          "source": ".setText(`Finished processing ${o} images, total time: ${k} seconds`)",
+          "target": ".setText(`已完成处理 ${o} 张图片，总耗时: ${k} 秒`)"
+        },
+        {
+          "source": ".setText(`Processing image ${s} of ${u}, elapsed time: ${e} seconds`)",
+          "target": ".setText(`正在处理第 ${s} 张图片，共 ${u} 张，已用时: ${e} 秒`)"
+        },
+        {
+          "source": ".setText(`Finished processing ${s} images, total time: ${h} seconds`)",
+          "target": ".setText(`已完成处理 ${s} 张图片，总耗时: ${h} 秒`)"
+        },
+        {
+          "source": ".setName(\"Skip patterns ⓘ\")",
+          "target": ".setName(\"跳过模式 ⓘ\")"
+        },
+        {
+          "source": ".setDesc(\"Skip files matching these patterns (comma-separated)\")",
+          "target": ".setDesc(\"跳过匹配这些模式的文件 (逗号分隔)\")"
+        },
+        {
+          "source": "disabled:\"Same as original\"",
+          "target": "disabled:\"与原始文件相同\""
+        },
+        {
+          "source": ".setTooltip(\"Supports multiple pattern types:\\n\\n1. Glob patterns:\\n   *.png, draft-*, test-?.jpg\\n   * = any characters\\n   ? = single character\\n\\n2. Regular expressions:\\n   /pattern/ or r/pattern/ or regex:pattern\\n\\nExamples:\\n *.png (all PNG files)\\n draft-* (files starting with draft-)\\n /^IMG_\\\\d{4}\\\\./ (IMG_ followed by 4 digits)\\n r/\\\\.(jpe?g|png)$/ (files ending in .jpg/.jpeg/.png)\\n regex:^(draft|temp)- (files starting with draft- or temp-)\")",
+          "target": ".setTooltip(\"支持多种模式类型：\\n\\n1. 通配符模式：\\n   *.png, draft-*, test-?.jpg\\n   * = 任意字符\\n   ? = 单个字符\\n\\n2. 正则表达式：\\n   /pattern/ 或 r/pattern/ 或 regex:pattern\\n\\n示例：\\n *.png（所有PNG文件）\\n draft-*（以 draft- 开头的文件）\\n /^IMG_\\\\d{4}\\\\./（以 IMG_ 后跟 4 位数字开头）\\n r/\\\\.(jpe?g|png)$/（以 .jpg/.jpeg/.png 结尾的文件）\\n regex:^(draft|temp)-（以 draft- 或 temp- 开头的文件）\")"
+        },
+        {
+          "source": "text:\"Cache for Image Alignment\"",
+          "target": "text:\"用于图像对齐的缓存\""
+        },
+        {
+          "source": "text:\"Image position cache stores information about image alignments and sizes. Large caches might impact performance.\"",
+          "target": "text:\"图片位置缓存存储有关图片对齐和大小的信息。较大的缓存可能会影响性能。\""
+        },
+        {
+          "source": "text:`Current cache size: ${i.notes} notes, ${i.images} images`",
+          "target": "text:`当前缓存大小: ${i.notes} 条笔记, ${i.images} 张图片`"
+        },
+        {
+          "source": ".setName(\"Clean Cache\")",
+          "target": ".setName(\"清理缓存\")"
+        },
+        {
+          "source": ".setDesc(\"Remove unused entries from the image position cache\")",
+          "target": ".setDesc(\"从图像位置缓存中移除未使用的条目\")"
+        },
+        {
+          "source": ".setName(\"Auto-clean interval (minutes)\")",
+          "target": ".setName(\"自动清理间隔（分钟）\")"
+        },
+        {
+          "source": ".setDesc(\"How often should the cache be automatically cleaned (0 to disable)\")",
+          "target": ".setDesc(\"缓存应该多久清理一次（ 0 为禁用）\")"
+        },
+        {
+          "source": ".setButtonText(\"Clean Now\")",
+          "target": ".setButtonText(\"立即清理\")"
+        },
+        {
+          "source": "Notice(\"Custom folder template is not defined.\")",
+          "target": "Notice(\"自定义文件夹模板未定义。\")"
+        },
+        {
+          "source": "Notice(`Warning: Inconsistent folder casing detected. Using original path: ${r}`)",
+          "target": "Notice(`警告：检测到文件夹大小写不一致。使用原始路径：${r}`)"
+        },
+        {
+          "source": "Notice(\"Error: Temporary file not found after renaming.\")",
+          "target": "Notice(\"错误：重命名后未找到临时文件。\")"
+        },
+        {
+          "source": "Notice(`Error renaming file: ${i.message}`)",
+          "target": "Notice(`错误重命名文件：${i.message}`)"
+        },
+        {
+          "source": "Notice(\"Context menu enabled. Reload Obsidian to see changes.\",5e3)",
+          "target": "Notice(\"上下文菜单已启用。重新加载 Obsidian 以查看更改。\", 5e3)"
+        },
+        {
+          "source": "Notice(\"Context menu disabled. Reload Obsidian to see changes.\",5e3)",
+          "target": "Notice(\"上下文菜单已禁用。重新加载 Obsidian 以查看更改。\",5e3)"
+        },
+        {
+          "source": "Notice(\"Image alignment enabled. Reload Obsidian to see changes.\",5e3)",
+          "target": "Notice(\"图片对齐功能已禁用。重新加载 Obsidian 以查看更改。\",5e3)"
+        },
+        {
+          "source": "Notice(\"Image alignment disabled. Reload Obsidian to see changes.\",5e3)",
+          "target": "Notice(\"图片对齐已禁用。重新加载 Obsidian 以查看更改。\",5e3)"
+        },
+        {
+          "source": "Notice(\"Image resizing enabled. Reload Obsidian to see changes.\",5e3)",
+          "target": "Notice(\"图片调整大小已启用。重新加载 Obsidian 以查看更改。\",5e3)"
+        },
+        {
+          "source": "Notice(\"Image resizing disabled. Reload Obsidian to see changes.\",5e3)",
+          "target": "Notice(\"图片调整大小已禁用。重新加载 Obsidian 以查看更改。\",5e3)"
+        },
+        {
+          "source": "Notice(\"Image captions enabled. Reload Obsidian to see changes.\",5e3)",
+          "target": "Notice(\"图片标题已启用。重新加载 Obsidian 以查看更改。\",5e3)"
+        },
+        {
+          "source": "Notice(\"Image captions disabled. Reload Obsidian to see changes.\",5e3)",
+          "target": "Notice(\"图片标题已启用。重新加载 Obsidian 以查看更改。\",5e3)"
+        },
+        {
+          "source": "Notice(\"Invalid custom value format. Use |widthxheight or percentage format (e.g., 50x75%)",
+          "target": "Notice(\"Invalid custom value format. Use |widthxheight or percentage format (e.g., 50x75%)"
+        },
+        {
+          "source": "Notice(\"A preset with this name already exists.\")",
+          "target": "Notice(\"一个同名预设已存在。\")"
+        },
+        {
+          "source": "Notice(\"Preset name cannot be empty.\")",
+          "target": "Notice(\"预设名称不能为空。\")"
+        },
+        {
+          "source": "Notice(\"Please enter a preset name.\")",
+          "target": "Notice(\"请输入预设名称。\")"
+        },
+        {
+          "source": "Notice(`Failed to process image: ${e.message}`)",
+          "target": "Notice(`处理图片失败：${e.message}`)"
+        },
+        {
+          "source": "Notice(\"PNGQUANT executable path is not set. Please configure it in the plugin settings.\")",
+          "target": "Notice(\"PNGQUANT 可执行文件路径未设置。请在插件设置中进行配置。\")"
+        },
+        {
+          "source": "Notice(\"FFmpeg executable path is not set. Please configure it in the plugin settings.\")",
+          "target": "Notice(\"FFmpeg 可执行文件路径未设置。请在插件设置中进行配置。\")"
+        },
+        {
+          "source": "Notice(`Error formatting link: ${i.message}`)",
+          "target": "Notice(`格式化链接时出错：${i.message}`)"
+        },
+        {
+          "source": "Notice(\"An unexpected error occurred while formatting the link.\")",
+          "target": "Notice(\"在格式化链接时发生了意外错误。\")"
+        },
+        {
+          "source": "Notice(`Failed to load image dimensions for ${i.name}`)",
+          "target": "Notice(`无法加载 ${i.name} 的图片尺寸`)"
+        },
+        {
+          "source": "Notice(`Preset ${i+1} saved`)",
+          "target": "Notice(`预设 ${i+1} 已保存`)"
+        },
+        {
+          "source": "Notice(\"6\")",
+          "target": "Notice(\"6\")"
+        },
+        {
+          "source": "Notice(\"7\")",
+          "target": "Notice(\"7\")"
+        },
+        {
+          "source": "Notice(\"8\")",
+          "target": "Notice(\"8\")"
+        },
+        {
+          "source": "Notice(\"Error loading image for cropping\")",
+          "target": "Notice(\"裁剪时加载图片出错\")"
+        },
+        {
+          "source": "Notice(`Error saving image: ${i.message}`)",
+          "target": "Notice(`保存图片时出错：${i.message}`)"
+        },
+        {
+          "source": "Notice(`No processing needed for \"${this.imageFile.name}\".`,1e3)",
+          "target": "Notice(`\"${this.imageFile.name}\" 不需要处理。`, 1e3)"
+        },
+        {
+          "source": "Notice(`Skipped conversion of image \"${this.imageFile.name}\" due to skip pattern match in the conversion preset.`,2e3)",
+          "target": "Notice(`由于转换预设中的跳过模式匹配，跳过了图片 \"${this.imageFile.name}\" 的转换。`, 2e3)"
+        },
+        {
+          "source": "Notice(`Using original image for \"${this.imageFile.name}\" as processed image is larger.`,1e3)",
+          "target": "Notice(`使用原始图片作为 \"${this.imageFile.name}\" 的处理结果，因为处理后的图片更大。`, 1e3)"
+        },
+        {
+          "source": "Notice(`Error: Could not find renamed file at ${A}`)",
+          "target": "Notice(`错误：无法在 ${A} 找到重命名后的文件`)"
+        },
+        {
+          "source": "Notice(`Link updated in \"${null==(e=l.file)",
+          "target": "Notice(`Link updated in \"${null==(e=l.file)"
+        },
+        {
+          "source": "Notice(`Image \"${this.imageFile.name}\" processed`,1e3)",
+          "target": "Notice(`图片 \"${this.imageFile.name}\" 已处理`, 1e3)"
+        },
+        {
+          "source": "Notice(`Failed to process image: ${i.message}`,2e3)",
+          "target": "Notice(`处理图片失败：${i.message}`, 2e3)"
+        },
+        {
+          "source": "Notice(\"Please enter a valid file name\")",
+          "target": "Notice(\"请输入有效的文件名\")"
+        },
+        {
+          "source": "Notice(\"Image name updated successfully\")",
+          "target": "Notice(\"图片名称更新成功\")"
+        },
+        {
+          "source": "Notice(\"Image path updated (case-sensitive change)",
+          "target": "Notice(\"Image path updated (case-sensitive change)"
+        },
+        {
+          "source": "Notice(\"Image path update failed (case-sensitive change)",
+          "target": "Notice(\"Image path update failed (case-sensitive change)"
+        },
+        {
+          "source": "Notice(\"Image path updated successfully\")",
+          "target": "Notice(\"图片路径已成功更新\")"
+        },
+        {
+          "source": "Notice(\"Failed to update image path\")",
+          "target": "Notice(\"更新图片路径失败\")"
+        },
+        {
+          "source": "Notice(\"Please enter a new path.\")",
+          "target": "Notice(\"请输入新路径。\")"
+        },
+        {
+          "source": "Notice(\"Please enter a new file name.\")",
+          "target": "Notice(\"请输入新文件名。\")"
+        },
+        {
+          "source": "Notice(\"Failed to open in new window\")",
+          "target": "Notice(\"无法在新窗口中打开\")"
+        },
+        {
+          "source": "Notice(\"Failed to find Base64 image link\")",
+          "target": "Notice(\"未能找到Base64图片链接\")"
+        },
+        {
+          "source": "Notice(\"Failed to find image link in the current note.\")",
+          "target": "Notice(\"未能在当前笔记中找到图片链接。\")"
+        },
+        {
+          "source": "Notice(\"Image link(s)",
+          "target": "Notice(\"Image link(s)"
+        },
+        {
+          "source": "Notice(\"Failed to cut image. Check console for details.\")",
+          "target": "Notice(\"图片剪切失败。查看控制台以获取详情。\")"
+        },
+        {
+          "source": "Notice(\"No active Markdown view found\")",
+          "target": "Notice(\"未找到活动的Markdown视图\")"
+        },
+        {
+          "source": "Notice(\"Failed to get canvas context\")",
+          "target": "Notice(\"Failed to get canvas context\")"
+        },
+        {
+          "source": "Notice(\"Failed to copy image to clipboard\")",
+          "target": "Notice(\"复制图片到剪贴板失败\")"
+        },
+        {
+          "source": "Notice(\"Image copied to clipboard as Base64\")",
+          "target": "Notice(\"图片已作为 Base64 复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Failed to copy image as Base64\")",
+          "target": "Notice(\"Failed to copy image as Base64\")"
+        },
+        {
+          "source": "Notice(\"No source attribute found on the image\")",
+          "target": "Notice(\"图片中未找到源属性\")"
+        },
+        {
+          "source": "Notice(\"Unable to extract filename from the image source\")",
+          "target": "Notice(\"无法从图片源中提取文件名\")"
+        },
+        {
+          "source": "Notice(`Unable to find image: ${n}`)",
+          "target": "Notice(`无法找到图片：${n}`)"
+        },
+        {
+          "source": "Notice(\"Error: Not a valid image file.\")",
+          "target": "Notice(\"错误：这不是一个有效的图片文件。\")"
+        },
+        {
+          "source": "Notice(\"Error processing image\")",
+          "target": "Notice(\"处理图片时出错\")"
+        },
+        {
+          "source": "Notice(\"Failed to show in navigation\")",
+          "target": "Notice(\"在导航中显示失败\")"
+        },
+        {
+          "source": "Notice(\"Failed to show in system explorer\")",
+          "target": "Notice(\"在系统资源管理器中显示失败\")"
+        },
+        {
+          "source": "Notice(\"Failed to find unique image links in the current note.\")",
+          "target": "Notice(\"未能在当前笔记中找到唯一的图片链接。\")"
+        },
+        {
+          "source": "Notice(\"Image file moved to trash\")",
+          "target": "Notice(\"图片文件已移至回收站\")"
+        },
+        {
+          "source": "Notice(\"No unique image links found to delete.\")",
+          "target": "Notice(\"未找到可删除的唯一图片链接。\")"
+        },
+        {
+          "source": "Notice(`No processing needed: All images are either in skip list or already in ${c.toUpperCase()",
+          "target": "Notice(`No processing needed: All images are either in skip list or already in ${c.toUpperCase()"
+        },
+        {
+          "source": "Notice(`No processing needed: All images are already in ${k?\"their original\":c.toUpperCase()",
+          "target": "Notice(`No processing needed: All images are already in ${k?\"their original\":c.toUpperCase()"
+        },
+        {
+          "source": "Notice(\"Error: Invalid folder path.\")",
+          "target": "Notice(\"错误：无效的文件夹路径。\")"
+        },
+        {
+          "source": "Notice(\"No images found in the folder.\")",
+          "target": "Notice(\"文件夹中未找到图片。\")"
+        },
+        {
+          "source": "Notice(`No processing needed: All vault images are either in skip list or already in ${c.toUpperCase()",
+          "target": "Notice(`No processing needed: All vault images are either in skip list or already in ${c.toUpperCase()"
+        },
+        {
+          "source": "Notice(`No processing needed: All vault images are either in ${k?\"their original\":c.toUpperCase()",
+          "target": "Notice(`No processing needed: All vault images are either in ${k?\"their original\":c.toUpperCase()"
+        },
+        {
+          "source": "Notice(\"Error: Active file must be a markdown or canvas file.\")",
+          "target": "Notice(\"错误：当前活动文件必须是 Markdown 或画布文件。\")"
+        },
+        {
+          "source": "Notice(\"Unable to open settings.\")",
+          "target": "Notice(\"无法打开设置。\")"
+        },
+        {
+          "source": "Notice(\"Reloading Image Converter plugin...\")",
+          "target": "Notice(\"正在重新加载图片转换插件...\")"
+        },
+        {
+          "source": "Notice(\"Failed to reload plugin: Plugins API unavailable.\")",
+          "target": "Notice(\"重新加载插件失败：插件 API 不可用。\")"
+        },
+        {
+          "source": "Notice(\"Image Converter plugin reloaded!\")",
+          "target": "Notice(\"图片转换插件已重新加载！\")"
+        },
+        {
+          "source": "Notice(\"Failed to reload plugin. See console for details.\")",
+          "target": "Notice(\"重新加载插件失败。请查看控制台以获取详细信息。\")"
+        },
+        {
+          "source": "Notice(\"No active file detected.\")",
+          "target": "Notice(\"未检测到活动文件。\")"
+        },
+        {
+          "source": "Notice(`Failed to determine destination or filename for \"${i.name}\". Check console for details.`)",
+          "target": "Notice(`无法确定 \"${i.name}\" 的目标位置或文件名。请查看控制台以获取详细信息。`)"
+        },
+        {
+          "source": "Notice(`Failed to create folder \"${s}\". Check console for details.`)",
+          "target": "Notice(`Failed to create folder \"${s}\". Check console for details.`)"
+        },
+        {
+          "source": "Notice(`Skipped renaming/conversion of image \"${i.name}\" due to skip pattern match.`)",
+          "target": "Notice(`无法创建文件夹 \"${s}\"。请查看控制台以获取详细信息。`)"
+        },
+        {
+          "source": "Notice(`Error incrementing filename for \"${i.name}\". Check console for details.`)",
+          "target": "Notice(`为 \"${i.name}\" 的文件名递增时出错。请查看控制台以获取详细信息。`)"
+        },
+        {
+          "source": "Notice(`Skipped conversion of image \"${i.name}\" due to skip pattern match in the conversion preset.`)",
+          "target": "Notice(`由于转换预设中的跳过模式匹配，跳过了图片 \"${i.name}\" 的转换。`)"
+        },
+        {
+          "source": "Notice(`Failed to create file \"${l}\". Check console for details.`)",
+          "target": "Notice(`无法创建文件 \"${l}\"。请查看控制台以获取详细信息。`)"
+        },
+        {
+          "source": "Notice(`Using original image for \"${i.name}\" as processed image is larger.`)",
+          "target": "Notice(`使用原始图片 \"${i.name}\"，因为处理后的图片更大。`)"
+        },
+        {
+          "source": "Notice(`Failed to process image: File \"${l}\" already exists.`)",
+          "target": "Notice(`处理图片失败：文件 \"${l}\" 已存在。`)"
+        },
+        {
+          "source": "Notice(`Failed to process image: Invalid input file type for \"${i.name}\".`)",
+          "target": "Notice(`处理图片失败：\"${i.name}\" 的输入文件类型无效。`)"
+        },
+        {
+          "source": "Notice(`Failed to process image \"${i.name}\": ${e.message}. Check console for details.`)",
+          "target": "Notice(`处理图片 \"${i.name}\" 失败：${e.message}。请查看控制台以获取详细信息。`)"
+        },
+        {
+          "source": "Notice(`Failed to process image \"${i.name}\". Check console for details.`)",
+          "target": "Notice(`处理图片 \"${i.name}\" 失败。请查看控制台以获取详细信息。`)"
+        },
+        {
+          "source": "Notice(\"An unexpected error occurred. Check console for details.\")",
+          "target": "Notice(\"发生意外错误。请查看控制台以获取详细信息。\")"
+        },
+        {
+          "source": "Notice(\"No active file found!\")",
+          "target": "Notice(\"未找到活动文件！\")"
+        },
+        {
+          "source": "Notice(`Failed to create folder: ${s}`)",
+          "target": "Notice(`创建文件夹失败：${s}`)"
+        },
+        {
+          "source": "Notice(`Failed to create file: ${l}`)",
+          "target": "Notice(`创建文件失败：${l}`)"
+        },
+        {
+          "source": "Notice(r)",
+          "target": "Notice(r)"
+        },
+        {
+          "source": ".log(\"====\",v,w)",
+          "target": ".log(\"====\",v,w)"
+        },
+        {
+          "source": ".log(Date.now()",
+          "target": ".log(Date.now()"
+        },
+        {
+          "source": ".log(\"activeFile:\",n)",
+          "target": ".log(\"活动文件:\",n)"
+        },
+        {
+          "source": ".log(\"Active leaf or view not found, using default 800\")",
+          "target": ".log(\"未找到活动叶子节点或视图，使用默认值 800\")"
+        },
+        {
+          "source": ".log(\"Active view is not a MarkdownView or has no editor, using default 800\")",
+          "target": ".log(\"活动视图不是 MarkdownView 或者没有编辑器，正在使用默认值 800\") "
+        },
+        {
+          "source": ".log(\"toCanvasElement method failed, trying alternative...\",i)",
+          "target": ".log(\"toCanvasElement 方法失败，尝试替代方法...\", i)"
+        },
+        {
+          "source": ".log(\"toDataURL method failed, trying alternative...\",i)",
+          "target": ".log(\"toDataURL 方法失败，尝试替代方案...\", i)"
+        },
+        {
+          "source": ".log(\"Native canvas fallback failed\",i)",
+          "target": ".log(\"原生画布回退失败\",i)"
+        },
+        {
+          "source": ".log(\"Cache cleaned:\",this.cache)",
+          "target": ".log(\"缓存已清理：\",this.cache)"
+        },
+        {
+          "source": ".log(`Skipping image ${i.name} (format in skip list)",
+          "target": ".log(`Skipping image ${i.name} (format in skip list)"
+        },
+        {
+          "source": ".log(`Skipping ${i.name}: Format ${i.extension} is in skip list`)",
+          "target": ".log(`跳过 ${i.name}：格式 ${i.extension} 在跳过列表中`) "
+        },
+        {
+          "source": ".log(`Skipping ${i.name}: Already in ${f} format`)",
+          "target": ".log(`跳过 ${i.name}：已经是 ${f} 格式了`)"
+        },
+        {
+          "source": ".log(`Links updated in ${i.path}`)",
+          "target": ".log(`已在 ${i.path} 中更新了链接`)"
+        },
+        {
+          "source": ".log(\"updateImageCounts:\",{total:A,processed:o,skipped:a,directImages:n,linkedImages:f})",
+          "target": ".log(\"更新图片计数：\",{total:A,processed:o,skipped:a,directImages:n,linkedImages:f})"
+        },
+        {
+          "source": ".log(\"Images found in folder\",i.path,\":\",{directImages:t,linkedImages:n},\"recursive:\",e,\"selectedImageSource:\",r)",
+          "target": ".log(\"在文件夹中找到的图片\", i.path, \"：\", {直接图片: t, 链接图片: n}, \"是否递归:\", e, \"所选图片来源:\", r) "
+        },
+        {
+          "source": ".log(\"Getting images from Markdown file:\",i.path)",
+          "target": ".log(\"正在从 Markdown 文件中获取图片:\", i.path)"
+        },
+        {
+          "source": ".log(\"Found relative linked image:\",t.path)",
+          "target": ".log(\"找到相对链接的图片:\", t.path)"
+        },
+        {
+          "source": ".log(\"Images found in Markdown file:\",r.map((i=>i.path)",
+          "target": ".log(\"在 Markdown 文件中找到的图片：\",r.map((i=>i.path)"
+        },
+        {
+          "source": ".log(\"Image names extracted from Markdown:\",n)",
+          "target": ".log(\"从 Markdown 中提取的图片名称:\", n)"
+        },
+        {
+          "source": ".error(\"Error reading file:\",i)",
+          "target": ".error (\"读取文件时出错:\", i)"
+        },
+        {
+          "source": ".error(`Invalid pattern: ${e}`,i)",
+          "target": ".error(`无效的模式: ${e}`, i)"
+        },
+        {
+          "source": ".error(\"Error getting image path:\",i)",
+          "target": ".error(\"获取图像路径时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error during safe rename:\",i)",
+          "target": ".error(\"安全重命名期间出错：\",i)"
+        },
+        {
+          "source": ".error(\"Preview generation error:\",i)",
+          "target": ".error(\"预览生成错误：\",i)"
+        },
+        {
+          "source": ".error(\"Error: newPreset is null.\")",
+          "target": ".error(\"错误：newPreset 为空。\")"
+        },
+        {
+          "source": ".error(\"Error processing image:\",e)",
+          "target": ".error(\"处理图像时出错：\",e)"
+        },
+        {
+          "source": ".error(\"Error processing TIFF image:\",i)",
+          "target": ".error(\"处理 TIFF 图像时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error converting HEIC:\",i)",
+          "target": ".error(\"转换 HEIC 时出错：\",i)"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(\"Error reading temporary file:\",i)",
+          "target": ".error(\"读取临时文件时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error deleting temporary file:\",i)",
+          "target": ".error(\"删除临时文件时出错：\",i)"
+        },
+        {
+          "source": ".error(i)",
+          "target": ".error(i)"
+        },
+        {
+          "source": ".error(\"WebP conversion error:\",i)",
+          "target": ".error(\"WebP 转换错误：\",i)"
+        },
+        {
+          "source": ".error(\"WebP conversion error:\",e)",
+          "target": ".error(\"WebP 转换错误：\",e)"
+        },
+        {
+          "source": ".error(\"JPEG conversion error:\",i)",
+          "target": ".error(\"JPEG 转换错误：\",i)"
+        },
+        {
+          "source": ".error(\"JPEG conversion error:\",e)",
+          "target": ".error(\"JPEG 转换错误：\",e)"
+        },
+        {
+          "source": ".error(\"PNG conversion error:\",i)",
+          "target": ".error(\"PNG 转换错误：\",i)"
+        },
+        {
+          "source": ".error(\"PNG conversion error:\",e)",
+          "target": ".error(\"PNG 转换错误：\",i)"
+        },
+        {
+          "source": ".error(\"Original Compression error:\",i)",
+          "target": ".error(\"原始压缩错误：\",i)"
+        },
+        {
+          "source": ".error(\"Image resizing error:\",i)",
+          "target": ".error(\"图像调整大小错误：\",i)"
+        },
+        {
+          "source": ".error(\"Error getting file stats:\",i)",
+          "target": ".error(\"获取文件状态时出错：\",i)"
+        },
+        {
+          "source": ".error(`Invalid date format: ${i}`,e)",
+          "target": ".error(`Invalid date format: ${i}`,e)"
+        },
+        {
+          "source": ".error(\"Error getting file stats for size variables:\",i)",
+          "target": ".error(\"获取用于大小变量的文件状态时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error extracting image metadata for File: \",i)",
+          "target": ".error(\"提取文件图像元数据时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error extracting image metadata for TFile:\",i)",
+          "target": ".error(\"提取 TFile 图像元数据时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error extracting image metadata for File:\",i)",
+          "target": ".error(\"提取文件图像元数据时出错：\",i)"
+        },
+        {
+          "source": ".error(\"MD5 generation failed:\",i)",
+          "target": ".error(\"MD5 生成失败：\",i)"
+        },
+        {
+          "source": ".error(\"Error generating SHA-256 hash of file content:\",i)",
+          "target": ".error(\"生成文件内容的 SHA-256 哈希值时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error in LinkFormatter:\",i)",
+          "target": ".error(\"LinkFormatter 中的错误：\",i)"
+        },
+        {
+          "source": ".error(\"Error loading image:\",i)",
+          "target": ".error(\"加载图像时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error in createAndAddText:\",i)",
+          "target": ".error(\"在 createAndAddText 中出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error creating text:\",i)",
+          "target": ".error(\"创建文本时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error during undo:\",i)",
+          "target": ".error(\"撤销过程中出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error during redo:\",i)",
+          "target": ".error(\"重做过程中出错：\",i)"
+        },
+        {
+          "source": ".error(\"Save error:\",i)",
+          "target": ".error(\"保存错误：\",i)"
+        },
+        {
+          "source": ".error(\"Error creating smoothed path:\",i)",
+          "target": ".error(\"创建平滑路径时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error creating arrow head:\",i)",
+          "target": ".error(\"创建箭头头部时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Crop modal error:\",i)",
+          "target": ".error(\"裁剪模态框错误：\",i)"
+        },
+        {
+          "source": ".error(\"Preview generation failed:\",e)",
+          "target": ".error(\"预览生成失败：\",e)"
+        },
+        {
+          "source": ".error(\"Error processing image:\",i)",
+          "target": ".error(\"处理图像时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Failed to update image path:\",i)",
+          "target": ".error(\"更新图像路径失败：\",i)"
+        },
+        {
+          "source": ".error(\"Error cutting image:\",i)",
+          "target": ".error(\"裁剪图像时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Failed to copy image:\",i)",
+          "target": ".error(\"复制图像失败：\",i)"
+        },
+        {
+          "source": ".error(\"Failed to copy image as Base64:\",i)",
+          "target": ".error(\"将图像复制为 Base64 失败：\",i)"
+        },
+        {
+          "source": ".error(\"No matching files found for:\",n)",
+          "target": ".error(\"未找到匹配的文件：\",n)"
+        },
+        {
+          "source": ".error(\"Image location error:\",i)",
+          "target": ".error(\"图像位置错误：\",i)"
+        },
+        {
+          "source": ".error(\"Error deleting image:\",i)",
+          "target": ".error(\"删除图像时出错：\",i)"
+        },
+        {
+          "source": ".error(\"No position data provided for image:\",i.src)",
+          "target": ".error(\"未提供图像的位置数据：\",i.src)"
+        },
+        {
+          "source": ".error(\"Could not determine plugin directory\")",
+          "target": ".error(\"无法确定插件目录\")"
+        },
+        {
+          "source": ".error(\"Error loading image alignment cache:\",i)",
+          "target": ".error(\"加载图像对齐缓存时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Plugin directory not found\")",
+          "target": ".error(\"未找到插件目录\")"
+        },
+        {
+          "source": ".error(\"Error saving image alignment cache:\",i)",
+          "target": ".error(\"保存图像对齐缓存时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error in saveImageAlignmentToCache:\",i)",
+          "target": ".error(\"在保存图像对齐到缓存时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error in applyAlignmentsToNote:\",i)",
+          "target": ".error(\"在应用对齐到笔记时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Failed to find renamed file:\",u)",
+          "target": ".error(\"未能找到重命名的文件：\",u)"
+        },
+        {
+          "source": ".error(\"Error processing images in current note:\",i)",
+          "target": ".error(\"处理当前笔记中的图片时出错:\", i)"
+        },
+        {
+          "source": ".error(\"Failed to find renamed file:\",r)",
+          "target": ".error(\"未能找到重命名后的文件:\", r)"
+        },
+        {
+          "source": ".error(\"Error processing images in folder:\",i)",
+          "target": ".error(\"处理文件夹中的图片时出错:\", i)"
+        },
+        {
+          "source": ".error(\"Error processing images:\",i)",
+          "target": ".error(\"处理图片时出错:\", i)"
+        },
+        {
+          "source": ".error(\"Error updating canvas file links:\",i)",
+          "target": ".error(\"更新画布文件链接时出错:\", i)"
+        },
+        {
+          "source": ".error(\"Error processing mutations:\",i)",
+          "target": ".error(\"处理变更时出错:\", i)"
+        },
+        {
+          "source": ".error(\"Plugins API is not accessible.\")",
+          "target": ".error(\"插件 API 不可访问。\")"
+        },
+        {
+          "source": ".error(\"Error reloading plugin:\",i)",
+          "target": ".error(\"重新加载插件时出错:\", i)"
+        },
+        {
+          "source": ".error(\"Error determining destination and filename:\",e)",
+          "target": ".error(\"确定目标位置和文件名时出错:\", e)"
+        },
+        {
+          "source": ".error(\"Error creating folder:\",i)",
+          "target": ".error(\"创建文件夹时出错:\", i)"
+        },
+        {
+          "source": ".error(\"Error handling filename conflicts:\",e)",
+          "target": ".error(\"处理文件名冲突时出错:\", e)"
+        },
+        {
+          "source": ".error(\"Image processing failed:\",e)",
+          "target": ".error(\"图片处理失败:\", e)"
+        },
+        {
+          "source": ".error(\"An unexpected error occurred:\",i)",
+          "target": ".error(\"发生了一个意外错误:\", i)"
+        },
+        {
+          "source": "name:`${this.name}: ${this.message}`",
+          "target": "name:`${this.name}: ${this.message}`"
+        },
+        {
+          "source": "name:\"emscripten::val\"",
+          "target": "name:\"emscripten::val\""
+        },
+        {
+          "source": "name:\",i),new V0.Notice(`Error renaming file: ${i.message}`),!1}}},Je=require(\"",
+          "target": "name:\",i),new V0.Notice(`Error renaming file: ${i.message}`),!1}}},Je=require(\""
+        },
+        {
+          "source": "name:\"Default (Wikilink, Shortest)\"",
+          "target": "名称: \"默认（维基链接，最短路径）\""
+        },
+        {
+          "source": "name:\"Markdown, Relative\"",
+          "target": "名称: \"Markdown，相对路径\""
+        },
+        {
+          "source": "name:\"Default (No Resize)\"",
+          "target": "name:\"默认（不调整大小）\""
+        },
+        {
+          "source": "name:\"Width 500px\"",
+          "target": "name:\"宽度 500px\""
+        },
+        {
+          "source": "name:\"Height 800px\"",
+          "target": "name:\"高度 800px\""
+        },
+        {
+          "source": "name:\"50% Width\"",
+          "target": "name:\"50% 宽\""
+        },
+        {
+          "source": "name:\"Longest Edge 1000px\"",
+          "target": "name:\"最长边 1000px\""
+        },
+        {
+          "source": "name:\"Fit Editor\"",
+          "target": "name:\"适配编辑器\""
+        },
+        {
+          "source": "name:\"Original Width\"",
+          "target": "name:\"原始宽度\""
+        },
+        {
+          "source": "name:\"Custom (Distort)\"",
+          "target": "name:\"自定义（扭曲）\""
+        },
+        {
+          "source": "name:\"filter\"",
+          "target": "name:\"筛选\""
+        },
+        {
+          "source": "name:\"choose\"",
+          "target": "name:\"选择\""
+        },
+        {
+          "source": "name:\"start\"",
+          "target": "name:\"开始\""
+        },
+        {
+          "source": "name:\"clone\"",
+          "target": "name:\"复制\""
+        },
+        {
+          "source": "name:\"change\"",
+          "target": "name:\"更改\""
+        },
+        {
+          "source": "name:\"unchoose\"",
+          "target": "name:\"取消选择\""
+        },
+        {
+          "source": "name:\"add\"",
+          "target": "name:\"添加\""
+        },
+        {
+          "source": "name:\"remove\"",
+          "target": "name:\"移除\""
+        },
+        {
+          "source": "name:\"sort\"",
+          "target": "name:\"sort\""
+        },
+        {
+          "source": "name:\"update\"",
+          "target": "name:\"更新\""
+        },
+        {
+          "source": "name:\"end\"",
+          "target": "name:\"结束\""
+        },
+        {
+          "source": "name:\"Default (Obsidian setting)\"",
+          "target": "name:\"默认（Obsidian 设置）\""
+        },
+        {
+          "source": "name:\"Root folder\"",
+          "target": "name:\"根文件夹\""
+        },
+        {
+          "source": "name:\"Same folder as current note\"",
+          "target": "name:\"与当前笔记相同的文件夹\""
+        },
+        {
+          "source": "name:\"Keep original name\"",
+          "target": "name:\"保留原始名称\""
+        },
+        {
+          "source": "name:\"NoteName-Timestamp\"",
+          "target": "name:\"笔记名称 - 时间戳\""
+        },
+        {
+          "source": "name:\"None\"",
+          "target": "name:\"无\""
+        },
+        {
+          "source": "name:\"WEBP (75, no resizing)\"",
+          "target": "name:\"WEBP 格式（质量 75，不调整大小）\""
+        },
+        {
+          "source": "name:\"PNGQUANT (65-80, no resizing)\"",
+          "target": "name:\"PNGQUANT 格式（质量 65 - 80，不调整大小）\""
+        },
+        {
+          "source": "name:\"WebP 75\"",
+          "target": "name:\"WebP 格式（质量 75）\""
+        },
+        {
+          "source": "name:\"\",type:\"",
+          "target": "name:\"\",type:\""
+        },
+        {
+          "source": "name:\"\",customTemplate:\"",
+          "target": "name:\"\",customTemplate:\""
+        },
+        {
+          "source": "name:\"\",linkFormat:\"",
+          "target": "name:\"\",linkFormat:\""
+        },
+        {
+          "source": "name:\"\",outputFormat:\"",
+          "target": "name:\"\",outputFormat:\""
+        },
+        {
+          "source": "name:\"\",resizeDimension:\"",
+          "target": "name:\"\",resizeDimension:\""
+        },
+        {
+          "source": "name:\"image\"",
+          "target": "name:\"图片\""
+        },
+        {
+          "source": "name:\"{imagename}\"",
+          "target": "name:\"{imagename}\""
+        },
+        {
+          "source": "name:\"{filetype}\"",
+          "target": "name:\"{filetype}\""
+        },
+        {
+          "source": "name:\"{sizeb}\"",
+          "target": "name:\"{sizeb}\""
+        },
+        {
+          "source": "name:\"{sizekb}\"",
+          "target": "name:\"{sizekb}\""
+        },
+        {
+          "source": "name:\"{sizemb}\"",
+          "target": "name:\"{sizemb}\""
+        },
+        {
+          "source": "name:\"{notename}\"",
+          "target": "name:\"{notename}\""
+        },
+        {
+          "source": "name:\"{date}\"",
+          "target": "name:\"{date}\""
+        },
+        {
+          "source": "name:\"{date:FORMAT}\"",
+          "target": "name:\"{date:FORMAT}\""
+        },
+        {
+          "source": "name:\"{time}\"",
+          "target": "name:\"{time}\""
+        },
+        {
+          "source": "name:\"{YYYY}\"",
+          "target": "name:\"{YYYY}\""
+        },
+        {
+          "source": "name:\"{MM}\"",
+          "target": "name:\"{MM}\""
+        },
+        {
+          "source": "name:\"{DD}\"",
+          "target": "name:\"{DD}\""
+        },
+        {
+          "source": "name:\"{HH}\"",
+          "target": "name:\"{HH}\""
+        },
+        {
+          "source": "name:\"{mm}\"",
+          "target": "name:\"{mm}\""
+        },
+        {
+          "source": "name:\"{ss}\"",
+          "target": "name:\"{ss}\""
+        },
+        {
+          "source": "name:\"{weekday}\"",
+          "target": "name:\"{weekday}\""
+        },
+        {
+          "source": "name:\"{month}\"",
+          "target": "name:\"{month}\""
+        },
+        {
+          "source": "name:\"{calendar}\"",
+          "target": "name:\"{calendar}\""
+        },
+        {
+          "source": "name:\"{today}\"",
+          "target": "name:\"{today}\""
+        },
+        {
+          "source": "name:\"{YYYY-MM-DD}\"",
+          "target": "name:\"{YYYY-MM-DD}\""
+        },
+        {
+          "source": "name:\"{tomorrow}\"",
+          "target": "name:\"{tomorrow}\""
+        },
+        {
+          "source": "name:\"{yesterday}\"",
+          "target": "name:\"{yesterday}\""
+        },
+        {
+          "source": "name:\"{startofweek}\"",
+          "target": "name:\"{startofweek}\""
+        },
+        {
+          "source": "name:\"{endofweek}\"",
+          "target": "name:\"{endofweek}\""
+        },
+        {
+          "source": "name:\"{startofmonth}\"",
+          "target": "name:\"{startofmonth}\""
+        },
+        {
+          "source": "name:\"{endofmonth}\"",
+          "target": "name:\"{endofmonth}\""
+        },
+        {
+          "source": "name:\"{nextweek}\"",
+          "target": "name:\"{nextweek}\""
+        },
+        {
+          "source": "name:\"{lastweek}\"",
+          "target": "name:\"{lastweek}\""
+        },
+        {
+          "source": "name:\"{nextmonth}\"",
+          "target": "name:\"{nextmonth}\""
+        },
+        {
+          "source": "name:\"{lastmonth}\"",
+          "target": "name:\"{lastmonth}\""
+        },
+        {
+          "source": "name:\"{daysinmonth}\"",
+          "target": "name:\"{daysinmonth}\""
+        },
+        {
+          "source": "name:\"{weekofyear}\"",
+          "target": "name:\"{weekofyear}\""
+        },
+        {
+          "source": "name:\"{quarterofyear}\"",
+          "target": "name:\"{quarterofyear}\""
+        },
+        {
+          "source": "name:\"{week}\"",
+          "target": "name:\"{week}\""
+        },
+        {
+          "source": "name:\"{w}\"",
+          "target": "name:\"{w}\""
+        },
+        {
+          "source": "name:\"{quarter}\"",
+          "target": "name:\"{quarter}\""
+        },
+        {
+          "source": "name:\"{Q}\"",
+          "target": "name:\"{Q}\""
+        },
+        {
+          "source": "name:\"{dayofyear}\"",
+          "target": "name:\"{dayofyear}\""
+        },
+        {
+          "source": "name:\"{DDD}\"",
+          "target": "name:\"{DDD}\""
+        },
+        {
+          "source": "name:\"{monthname}\"",
+          "target": "name:\"{monthname}\""
+        },
+        {
+          "source": "name:\"{MMMM}\"",
+          "target": "name:\"{MMMM}\""
+        },
+        {
+          "source": "name:\"{dayname}\"",
+          "target": "name:\"{dayname}\""
+        },
+        {
+          "source": "name:\"{dddd}\"",
+          "target": "name:\"{dddd}\""
+        },
+        {
+          "source": "name:\"{dateordinal}\"",
+          "target": "name:\"{dateordinal}\""
+        },
+        {
+          "source": "name:\"{Do}\"",
+          "target": "name:\"{Do}\""
+        },
+        {
+          "source": "name:\"{relativetime}\"",
+          "target": "name:\"{relativetime}\""
+        },
+        {
+          "source": "name:\"{currentdate}\"",
+          "target": "name:\"{currentdate}\""
+        },
+        {
+          "source": "name:\"{yyyy}\"",
+          "target": "name:\"{yyyy}\""
+        },
+        {
+          "source": "name:\"{timestamp}\"",
+          "target": "name:\"{timestamp}\""
+        },
+        {
+          "source": "name:\"{vaultname}\"",
+          "target": "name:\"{vaultname}\""
+        },
+        {
+          "source": "name:\"{vaultpath}\"",
+          "target": "name:\"{vaultpath}\""
+        },
+        {
+          "source": "name:\"{parentfolder}\"",
+          "target": "name:\"{parentfolder}\""
+        },
+        {
+          "source": "name:\"{notefolder}\"",
+          "target": "name:\"{notefolder}\""
+        },
+        {
+          "source": "name:\"{notepath}\"",
+          "target": "name:\"{notepath}\""
+        },
+        {
+          "source": "name:\"{width}\"",
+          "target": "name:\"{width}\""
+        },
+        {
+          "source": "name:\"{height}\"",
+          "target": "name:\"{height}\""
+        },
+        {
+          "source": "name:\"{aspectratio}\"",
+          "target": "name:\"{aspectratio}\""
+        },
+        {
+          "source": "name:\"{orientation}\"",
+          "target": "name:\"{orientation}\""
+        },
+        {
+          "source": "name:\"{resolution}\"",
+          "target": "name:\"{resolution}\""
+        },
+        {
+          "source": "name:\"{ratio}\"",
+          "target": "name:\"{ratio}\""
+        },
+        {
+          "source": "name:\"{quality}\"",
+          "target": "name:\"{quality}\""
+        },
+        {
+          "source": "name:\"{megapixels}\"",
+          "target": "name:\"{megapixels}\""
+        },
+        {
+          "source": "name:\"{issquare}\"",
+          "target": "name:\"{issquare}\""
+        },
+        {
+          "source": "name:\"{pixelcount}\"",
+          "target": "name:\"{pixelcount}\""
+        },
+        {
+          "source": "name:\"{aspectratiotype}\"",
+          "target": "name:\"{aspectratiotype}\""
+        },
+        {
+          "source": "name:\"{resolutioncategory}\"",
+          "target": "name:\"{resolutioncategory}\""
+        },
+        {
+          "source": "name:\"{filesizecategory}\"",
+          "target": "name:\"{filesizecategory}\""
+        },
+        {
+          "source": "name:\"{dominantdimension}\"",
+          "target": "name:\"{dominantdimension}\""
+        },
+        {
+          "source": "name:\"{dimensiondifference}\"",
+          "target": "name:\"{dimensiondifference}\""
+        },
+        {
+          "source": "name:\"{bytesperpixel}\"",
+          "target": "name:\"{bytesperpixel}\""
+        },
+        {
+          "source": "name:\"{compressionratio}\"",
+          "target": "name:\"{compressionratio}\""
+        },
+        {
+          "source": "name:\"{maxdimension}\"",
+          "target": "name:\"{maxdimension}\""
+        },
+        {
+          "source": "name:\"{mindimension}\"",
+          "target": "name:\"{mindimension}\""
+        },
+        {
+          "source": "name:\"{diagonalpixels}\"",
+          "target": "name:\"{diagonalpixels}\""
+        },
+        {
+          "source": "name:\"{aspectratiosimplified}\"",
+          "target": "name:\"{aspectratiosimplified}\""
+        },
+        {
+          "source": "name:\"{screenfitcategory}\"",
+          "target": "name:\"{screenfitcategory}\""
+        },
+        {
+          "source": "name:\"{random}\"",
+          "target": "name:\"{random}\""
+        },
+        {
+          "source": "name:\"{randomHex:X}\"",
+          "target": "name:\"{randomHex:X}\""
+        },
+        {
+          "source": "name:\"{counter:00X}\"",
+          "target": "name:\"{counter:00X}\""
+        },
+        {
+          "source": "name:\"{MD5:type}\"",
+          "target": "name:\"{MD5:type}\""
+        },
+        {
+          "source": "name:\"{MD5:type:X}\"",
+          "target": "name:\"{MD5:type:X}\""
+        },
+        {
+          "source": "name:\"{MD5:custom text}\"",
+          "target": "name:\"{MD5:custom text}\""
+        },
+        {
+          "source": "name:\"{size:UNIT:DECIMALS}\"",
+          "target": "name:\"{size:UNIT:DECIMALS}\""
+        },
+        {
+          "source": "name:\"{sha256:image}\"",
+          "target": "name:\"{sha256:image}\""
+        },
+        {
+          "source": "name:\"{sha256:type}\"",
+          "target": "name:\"{sha256:type}\""
+        },
+        {
+          "source": "name:\"{sha256:type:X}\"",
+          "target": "name:\"{sha256:type:X}\""
+        },
+        {
+          "source": "name:\"{uuid}\"",
+          "target": "name:\"{uuid}\""
+        },
+        {
+          "source": "name:\"free\"",
+          "target": "name:\"free\""
+        },
+        {
+          "source": "name:\"square\"",
+          "target": "name:\"square\""
+        },
+        {
+          "source": "name:\"16:9\"",
+          "target": "name:\"16:9\""
+        },
+        {
+          "source": "name:\"4:3\"",
+          "target": "name:\"4:3\""
+        },
+        {
+          "source": "name:\"temp\"",
+          "target": "name:\"temp\""
+        },
+        {
+          "source": "name: \",cls:\"",
+          "target": "name: \",cls:\""
+        },
+        {
+          "source": "name:\"none\"",
+          "target": "name:\"无\""
+        },
+        {
+          "source": "name:\"Reload plugin\"",
+          "target": "name:\"重新加载插件\""
+        },
+        {
+          "source": "name:\",e),void new k0.Notice(`Failed to determine destination or filename for \"",
+          "target": "name:\",e),void new k0.Notice(`Failed to determine destination or filename for \""
+        },
+        {
+          "source": "description:\"The original name of the image file (without extension).\"",
+          "target": "description:\"图像文件的原始名称（不带扩展名）。\""
+        },
+        {
+          "source": "description:\"The file extension of the image.\"",
+          "target": "description:\"图像文件的扩展名\""
+        },
+        {
+          "source": "description:\"The size of the image in bytes.\"",
+          "target": "description:\"图像的大小（以字节为单位）\""
+        },
+        {
+          "source": "description:\"The size of the image in kilobytes (2 decimal places).\"",
+          "target": "description:\"图像的大小（以千字节为单位，保留两位小数）\""
+        },
+        {
+          "source": "description:\"The size of the image in megabytes (2 decimal places).\"",
+          "target": "description:\"图像的大小（以兆字节为单位，保留两位小数）\""
+        },
+        {
+          "source": "description:\"The name of the current note.\"",
+          "target": "description:\"当前笔记的名称\""
+        },
+        {
+          "source": "description:\"The current date (YYYY-MM-DD).\"",
+          "target": "description:\"当前日期（格式： (YYYY-MM-DD)\""
+        },
+        {
+          "source": "description:\"The current date in a custom format using Moment.js syntax.\"",
+          "target": "description:\"使用 Moment.js 语法以自定义格式显示的当前日期\""
+        },
+        {
+          "source": "description:\"The current time (HH-mm-ss).\"",
+          "target": "description:\"当前时间 (格式 H-mm-ss).\""
+        },
+        {
+          "source": "description:\"The current year.\"",
+          "target": "description:\"当前年份\""
+        },
+        {
+          "source": "description:\"The current month (01-12).\"",
+          "target": "description:\"当前月份（格式 01 - 12）\""
+        },
+        {
+          "source": "description:\"The current day of the month (01-31).\"",
+          "target": "description:\"当前日期（即当前月份中的第几天，范围是 01 - 31）\""
+        },
+        {
+          "source": "description:\"The current hour (00-23).\"",
+          "target": "description:\"当前小时数（采用 24 小时制，范围 00 - 23）\""
+        },
+        {
+          "source": "description:\"The current minute (00-59).\"",
+          "target": "description:\"当前分钟数（范围为 00 - 59）\""
+        },
+        {
+          "source": "description:\"The current second (00-59).\"",
+          "target": "description:\"当前秒数（范围为 00 - 59）\""
+        },
+        {
+          "source": "description:\"The current day of the week.\"",
+          "target": "description:\"当前是星期几\""
+        },
+        {
+          "source": "description:\"The current month name.\"",
+          "target": "description:\"当前月份的名称\""
+        },
+        {
+          "source": "description:\"A calendar view of the current date/time.\"",
+          "target": "description:\"当前日期 / 时间的日历视图\""
+        },
+        {
+          "source": "description:\"Tomorrow's date (YYYY-MM-DD).\"",
+          "target": "description:\"明天的日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"Yesterday's date (YYYY-MM-DD).\"",
+          "target": "description:\"昨天的日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The start of the current week (YYYY-MM-DD).\"",
+          "target": "description:\"当前一周的开始日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The end of the current week (YYYY-MM-DD).\"",
+          "target": "description:\"当前一周的结束日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The start of the current month (YYYY-MM-DD).\"",
+          "target": "description:\"当前月份的起始日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The end of the current month (YYYY-MM-DD).\"",
+          "target": "description:\"当前月份的结束日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The date of next week (YYYY-MM-DD).\"",
+          "target": "description:\"下周对应今天的日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The date of last week (YYYY-MM-DD).\"",
+          "target": "description:\"上周对应今天的日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The date of next month (YYYY-MM-DD).\"",
+          "target": "description:\"下个月对应今天的日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The date of last month (YYYY-MM-DD).\"",
+          "target": "description:\"上个月对应今天的日期 (YYYY-MM-DD).\""
+        },
+        {
+          "source": "description:\"The number of days in the current month.\"",
+          "target": "description:\"当前月份的天数\""
+        },
+        {
+          "source": "description:\"The week number of the current year.\"",
+          "target": "description:\"当前年份中的周数编号\""
+        },
+        {
+          "source": "description:\"The quarter of the current year.\"",
+          "target": "description:\"当前年份所在的季度\""
+        },
+        {
+          "source": "description:\"The current week number (alias for {weekofyear}).\"",
+          "target": "description: \"当前的周数（{weekofyear} 的别名）\""
+        },
+        {
+          "source": "description:\"The current quarter (alias for {quarterofyear}).\"",
+          "target": "description:\"当前季度（{年中的季度} 的别名）\""
+        },
+        {
+          "source": "description:\"The day of the year (1-366).\"",
+          "target": "description:\"当前是当年的第几天（1 - 366）\""
+        },
+        {
+          "source": "description:\"The name of the current month.\"",
+          "target": "description:\"当前月份的名称\""
+        },
+        {
+          "source": "description:\"The name of the current day of the week.\"",
+          "target": "description:\"当前星期几的名称\""
+        },
+        {
+          "source": "description:\"The current date with ordinal suffix (e.g., 28th).\"",
+          "target": "description:\"带有序数后缀的当前日期（例如，28 日写成 28th）\""
+        },
+        {
+          "source": "description:\"The relative time from now.\"",
+          "target": "description:\"从现在起的相对时间\""
+        },
+        {
+          "source": "description:\"The current timestamp in milliseconds.\"",
+          "target": "description:\"当前的时间戳（以毫秒为单位）\""
+        },
+        {
+          "source": "description:\"The name of the vault.\"",
+          "target": "description:\"仓库的名称\""
+        },
+        {
+          "source": "description:\"The root path of the vault.\"",
+          "target": "description:\"仓库的根路径\""
+        },
+        {
+          "source": "description:\"The name of the immediate parent folder of the note.\"",
+          "target": "description:\"笔记所在的直接父文件夹的名称\""
+        },
+        {
+          "source": "description:\"The full path of the current note.\"",
+          "target": "description:\"当前笔记的完整路径\""
+        },
+        {
+          "source": "description:\"The width of the image in pixels.\"",
+          "target": "description:\"图像的宽度（以像素为单位）\""
+        },
+        {
+          "source": "description:\"The height of the image in pixels.\"",
+          "target": "description:\"图像的高度（以像素为单位）\""
+        },
+        {
+          "source": "description:\"The aspect ratio of the image (width/height, 2 decimal places).\"",
+          "target": "description:\"图像的宽高比（宽度/高度，保留两位小数）\""
+        },
+        {
+          "source": "description:\"The orientation of the image (landscape, portrait, or square).\"",
+          "target": "description:\"图像的方向（横向、纵向或方形）\""
+        },
+        {
+          "source": "description:\"The resolution of the image (width x height).\"",
+          "target": "description:\"图像的分辨率（宽度 × 高度）\""
+        },
+        {
+          "source": "description:\"The aspect ratio of the image, same as {aspectratio}.\"",
+          "target": "description:\"图像的宽高比，与 {aspectratio} 相同\""
+        },
+        {
+          "source": "description:\"The quality setting for image conversion/compression.\"",
+          "target": "description:\"图像转换/压缩的质量设置\""
+        },
+        {
+          "source": "description:\"The size of the image in megapixels (2 decimal places).\"",
+          "target": "description:\"图像的大小（以百万像素为单位，保留两位小数）\""
+        },
+        {
+          "source": "description:\"Whether the image is a perfect square (true/false).\"",
+          "target": "description:\"图像是否为标准正方形（是/否，对应英文 true/false）\""
+        },
+        {
+          "source": "description:\"The total number of pixels in the image.\"",
+          "target": "description:\"图像中的像素总数\""
+        },
+        {
+          "source": "description:\"A common aspect ratio category (e.g., 4:3, 16:9, custom).\"",
+          "target": "description:\"常见的宽高比类别（例如，4:3、16:9、自定义）\""
+        },
+        {
+          "source": "description:\"A category based on pixel count (tiny, small, medium, large, very-large).\"",
+          "target": "description:\"基于像素数量划分的类别（极小、小、中等、大、非常大）\""
+        },
+        {
+          "source": "description:\"A category based on file size (e.g., 0-50KB, 51-200KB, etc.).\"",
+          "target": "description:\"基于文件大小划分的类别（例如，0 - 50KB、51 - 200KB 等）\""
+        },
+        {
+          "source": "description:\"Whether the width or height is larger, or if they are equal.\"",
+          "target": "description:\"宽度和高度哪个更大，或者二者是否相等\""
+        },
+        {
+          "source": "description:\"The absolute difference between width and height.\"",
+          "target": "description:\"宽度和高度的绝对差值\""
+        },
+        {
+          "source": "description:\"The average number of bytes per pixel (2 decimal places).\"",
+          "target": "description:\"每个像素的平均字节数（保留两位小数）\""
+        },
+        {
+          "source": "description:\"An estimate of the image compression ratio (2 decimal places).\"",
+          "target": "description:\"图像压缩比的估算值（保留两位小数）\""
+        },
+        {
+          "source": "description:\"The larger dimension (width or height) of the image.\"",
+          "target": "description:\"图像的较大尺寸（宽度或高度）\""
+        },
+        {
+          "source": "description:\"The smaller dimension (width or height) of the image.\"",
+          "target": "description: \"图像的较小尺寸（宽度或高度）\""
+        },
+        {
+          "source": "description:\"The diagonal pixel length of the image.\"",
+          "target": "description:\"图像的对角线像素长度\""
+        },
+        {
+          "source": "description:\"The aspect ratio in its simplest whole number form.\"",
+          "target": "description: \"以最简整数形式表示的图像宽高比\""
+        },
+        {
+          "source": "description:\"A category based on whether the image fits within common screen sizes (e.g., fits-1080p, fits-1440p, fits-4k, above-4k).\"",
+          "target": "description: \"基于图像是否能适配常见屏幕尺寸划分的类别（例如，适配 1080p、适配 1440p、适配 4K、大于 4K）\""
+        },
+        {
+          "source": "description:\"A random alphanumeric string (6 characters).\"",
+          "target": "description: \"一个随机的字母数字字符串（6 个字符）\""
+        },
+        {
+          "source": "description:\"A random hexadecimal string of X characters.\"",
+          "target": "description: \"一个长度为 X 个字符的随机十六进制字符串\""
+        },
+        {
+          "source": "description:\"An auto-incrementing counter (padded with zeros) for the folder. X determines the padding.\"",
+          "target": "description: \"文件夹的自增计数器（用零填充）。X 决定填充位数。\""
+        },
+        {
+          "source": "description:\"The first 8 characters of the MD5 hash of the specified type. Supports: filename, fullpath, parentfolder, rootfolder, extension, notename, notefolder, notepath.\"",
+          "target": "description: \"指定类型的 MD5 哈希值的前 8 个字符。支持的类型有：文件名、完整路径、父文件夹、根文件夹、文件扩展名、笔记名称、笔记文件夹、笔记路径。\""
+        },
+        {
+          "source": "description:\"The first X characters of the MD5 hash of the specified type. Supports the same types as {MD5:type}.\"",
+          "target": "description: \"指定类型的 MD5 哈希值的前 X 个字符。支持的类型与 {MD5:type} 相同。\""
+        },
+        {
+          "source": "description:\"The full MD5 hash of a custom text.\"",
+          "target": "description: \"自定义文本的完整 MD5 哈希值\""
+        },
+        {
+          "source": "description:\"Image size in a specific unit (B, KB, MB) with custom decimal places.\"",
+          "target": "description: \"以特定单位（字节、千字节、兆字节）表示的图像大小，可自定义保留的小数位数。\""
+        },
+        {
+          "source": "description:\"The SHA-256 hash of the image content.\"",
+          "target": "description: \"图像内容的 SHA - 256 哈希值。\""
+        },
+        {
+          "source": "description:\"The SHA-256 hash of the specified type. Supports: filename, fullpath, parentfolder, rootfolder, extension, notename, notefolder, notepath.\"",
+          "target": "description: \"指定类型的 SHA - 256 哈希值。支持的类型有：文件名、完整路径、父文件夹、根文件夹、文件扩展名、笔记名称、笔记文件夹、笔记路径。\""
+        },
+        {
+          "source": "description:\"The first X characters of the SHA-256 hash of the specified type. Supports the same types as {sha256:type}.\"",
+          "target": "description: \"指定类型的 SHA - 256 哈希值的前 X 个字符。支持的类型与 {sha256:type} 相同。\""
+        },
+        {
+          "source": "description:\"A universally unique identifier (UUID).\"",
+          "target": "description: \"通用唯一识别码（UUID）。\""
+        },
+        {
+          "source": "link:\"Wikilink\"",
+          "target": "link:\"维基链接（Wikilink）\""
+        },
+        {
+          "source": "text:\"Drop/paste presets\"",
+          "target": "text:\"拖放/粘贴预设\""
+        },
+        {
+          "source": "text:\"Image alignment\"",
+          "target": "text:\"图像对齐\""
+        },
+        {
+          "source": "text:\"Drag & Scroll resize\"",
+          "target": "text:\"拖动&滚动调整大小\""
+        },
+        {
+          "source": "text:\"Captions\"",
+          "target": "text:\"标题\""
+        },
+        {
+          "source": "text:\"Examples\"",
+          "target": "text:\"示例\""
+        },
+        {
+          "source": "text:\"+ Add New\"",
+          "target": "text:\"+ 添加新\""
+        },
+        {
+          "source": "text:\"Save global preset\"",
+          "target": "text:\"保存全局预设\""
+        },
+        {
+          "source": "text:\"Summary\"",
+          "target": "text:\"Summary\""
+        },
+        {
+          "source": "text:`${i}: `",
+          "target": "text:`${i}: `"
+        },
+        {
+          "source": "text:\"Available variables\"",
+          "target": "text:\"可用变量\""
+        },
+        {
+          "source": "text:\",i),this.isTextEditingBlocked=!1}})),setInterval((()=>{var i;let e=null==(i=this.canvas)?void 0:i.getActiveObject();e instanceof h0&&!e.isEditing&&this.isTextEditingBlocked&&(console.debug(\"",
+          "target": "text:\",i),this.isTextEditingBlocked=!1}})),setInterval((()=>{var i;let e=null==(i=this.canvas)?void 0:i.getActiveObject();e instanceof h0&&!e.isEditing&&this.isTextEditingBlocked&&(console.debug(\""
+        },
+        {
+          "source": "text:\"Crop image\"",
+          "target": "text:\"裁剪图像\""
+        },
+        {
+          "source": "text:\"Save\"",
+          "target": "text:\"保存\""
+        },
+        {
+          "source": "text:\"Cancel\"",
+          "target": "text:\"取消\""
+        },
+        {
+          "source": "text:\"Reset\"",
+          "target": "text:\"重置\""
+        },
+        {
+          "source": "text:\" \"",
+          "target": "text:\" \""
+        },
+        {
+          "source": "text:\":\"",
+          "target": "text:\":\""
+        },
+        {
+          "source": "text:\"↺\"",
+          "target": "text:\"↺\""
+        },
+        {
+          "source": "text:\"↻\"",
+          "target": "text:\"↻\""
+        },
+        {
+          "source": "text:\"↔\"",
+          "target": "text:\"↔\""
+        },
+        {
+          "source": "text:\"↕\"",
+          "target": "text:\"↕\""
+        },
+        {
+          "source": "text:\"Rotation: \"",
+          "target": "text:\"旋转: \""
+        },
+        {
+          "source": "text:\"0°\"",
+          "target": "text:\"0°\""
+        },
+        {
+          "source": "text:\"Zoom: \"",
+          "target": "text:\"缩放：\""
+        },
+        {
+          "source": "text:\"100%\"",
+          "target": "text:\"100%\""
+        },
+        {
+          "source": "text:\"Preview not available for this format.\"",
+          "target": "text:\"此格式不可预览。\""
+        },
+        {
+          "source": "text:\"Generating preview...\"",
+          "target": "text:\"正在生成预览...\""
+        },
+        {
+          "source": "text:\"Name:\"",
+          "target": "text:\"名称：\""
+        },
+        {
+          "source": "text:\"Folder:\"",
+          "target": "text:\"文件夹：\""
+        },
+        {
+          "source": "text:`all images in: /${e}`",
+          "target": "text:`all images in: /${e}`"
+        },
+        {
+          "source": "text:\"⚠️ This will modify all images in the selected folder and subfolders (if recursive is enabled). Please ensure you have backups.\"",
+          "target": "text:(\"⚠️ 这将修改选定文件夹及其子文件夹中的所有图像（如果启用了递归）。请确保您有备份。\")"
+        },
+        {
+          "source": "text:\"Total images found: \"",
+          "target": "text:(\"找到的总图像数：\")"
+        },
+        {
+          "source": "text:\"To be skipped: \"",
+          "target": "text:\"将被跳过：\""
+        },
+        {
+          "source": "text:\"To be processed: \"",
+          "target": "text:\"T将被处理：\""
+        },
+        {
+          "source": "text:\"Image source\"",
+          "target": "text:\"图像来源\""
+        },
+        {
+          "source": "text:\"General\"",
+          "target": "text:\"常规\""
+        },
+        {
+          "source": "text:\"Skip\"",
+          "target": "text:\"跳过\""
+        },
+        {
+          "source": "text:\"Resize\"",
+          "target": "text:\"调整大小\""
+        },
+        {
+          "source": "text:`all images in: ${this.activeFile.basename}.${this.activeFile.extension}`",
+          "target": "text:`位于：${this.activeFile.basename}.${this.activeFile.extension}中的所有图像`"
+        },
+        {
+          "source": "text:\"Total Images Found: \"",
+          "target": "text:\"找到的总图片数：\""
+        },
+        {
+          "source": "text:\"To be Processed: \"",
+          "target": "text:\"待处理：\""
+        },
+        {
+          "source": "text:\"Skipped: \"",
+          "target": "text:\"跳过：\""
+        },
+        {
+          "source": "text:\"Convert, compress and resize all images\"",
+          "target": "text:\"转换、压缩并调整所有图片的大小\""
+        },
+        {
+          "source": "text:\"in the Vault\"",
+          "target": "text:\"在保险库中\""
+        },
+        {
+          "source": "text:\"⚠️ This will modify all images in the Vault. Please ensure you have backups.\"",
+          "target": "text:\"⚠️ 这将修改保险库中的所有图片。请确保您有备份。\""
+        },
+        {
+          "source": "text:\"Full path: \"",
+          "target": "text:\"完整路径：\""
+        },
+        {
+          "source": "text:\"Folder: \"",
+          "target": "text:\"文件夹：\""
+        },
+        {
+          "source": "text:\"Filename: \"",
+          "target": "text:\"文件名：\""
+        },
+        {
+          "source": "text:\"Enter a template to see preview\"",
+          "target": "text:\"输入模板以查看预览\""
+        },
+        {
+          "source": "text:\"Image Processing\"",
+          "target": "text:\"图像处理\""
+        },
+        {
+          "source": "text:\"\"}),this.createGlobalPresetDropdown(r);let t=e.createDiv(\"",
+          "target": "text:\"\"}),this.createGlobalPresetDropdown(r);let t=e.createDiv(\""
+        },
+        {
+          "source": "text:\"File organization\"",
+          "target": "text:\"文件组织\""
+        },
+        {
+          "source": "text:\"Some default presets are already pre-defined. You can create more presets in the main plugin settings window. After selecting custom made preset a new input field will show pre-filled with template from the preset which you can always manually overwrite.\"",
+          "target": "text:\"一些默认预设已经被预先定义。您可以在主插件设置窗口中创建更多预设。在选择自定义预设后，一个新的输入字段将显示预设中的模板，您可以随时手动覆盖它。\""
+        },
+        {
+          "source": "text:\"\"}),s.createEl(\"",
+          "target": "text:\"\"}),s.createEl(\""
+        },
+        {
+          "source": "text:\"Path preview\"",
+          "target": "text:\"路径预览\""
+        },
+        {
+          "source": "text:\"Image conversion\"",
+          "target": "text:\"图像转换\""
+        },
+        {
+          "source": "text:\"Additional settings\"",
+          "target": "text:\"附加设置；额外设置 \""
+        },
+        {
+          "source": ".setText(\"No file available for preview.\")",
+          "target": ".setText(\"没有可供预览的文件。\")"
+        },
+        {
+          "source": ".setText(\"Error generating preview\")",
+          "target": ".setText(\"生成预览时出错\")"
+        },
+        {
+          "source": ".setText(\"📄 Note location:\")",
+          "target": ".setText(\"📄 笔记位置:\")"
+        },
+        {
+          "source": ".setText(\"/Folder/Subfolder1/note.md\")",
+          "target": ".setText(\"/Folder/Subfolder1/note.md\")"
+        },
+        {
+          "source": ".setText(\"🖼️ Image location:\")",
+          "target": ".setText(\"🖼️ 图片位置:\")"
+        },
+        {
+          "source": ".setText(\"/Folder/Subfolder2/image.jpg\")",
+          "target": ".setText(\"/Folder/Subfolder2/image.jpg\")"
+        },
+        {
+          "source": ".setText(\"→ Path becomes:\")",
+          "target": ".setText(\"→ 路径变为：\")"
+        },
+        {
+          "source": ".setText(\"180:\")",
+          "target": ".setText(\"180:\")"
+        },
+        {
+          "source": ".setText(\"Text Background:\")",
+          "target": ".setText(\"文本背景：\")"
+        },
+        {
+          "source": ".setText(`${i+1}`)",
+          "target": ".setText(`${i+1}`)"
+        },
+        {
+          "source": ".setText(`Process Image: ${r.name}`)",
+          "target": ".setText(`处理图片: ${r.name}`)"
+        },
+        {
+          "source": ".setText(`Preview failed: ${e.message}`)",
+          "target": ".setText(`预览失败: ${e.message}`)"
+        },
+        {
+          "source": ".setText(`Processing image ${v} of ${y}, elapsed time: ${p} seconds`)",
+          "target": ".setText(`正在处理第 ${v} 张图片，共 ${y} 张，已用时间：${p} 秒`) "
+        },
+        {
+          "source": ".setText(`Finished processing ${v} images, total time: ${C} seconds`)",
+          "target": ".setText(`已完成处理 ${v} 张图片，总用时：${C} 秒`)"
+        },
+        {
+          "source": ".setText(`Processing image ${d} of ${m}, elapsed time: ${w} seconds`)",
+          "target": ".setText(`正在处理第 ${d} 张图片，总共 ${m} 张，已过去的时间为：${w} 秒`) "
+        },
+        {
+          "source": ".setText(`Finished processing ${d} images, total time: ${v} seconds`)",
+          "target": ".setText(`已完成处理 ${d} 张图片，总耗时：${v} 秒`)"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Process\")",
+          "target": ".setButtonText(\"处理\")"
+        },
+        {
+          "source": ".setButtonText(\"Process All Images\")",
+          "target": ".setButtonText(\"处理所有图片\")"
+        },
+        {
+          "source": ".setButtonText(\"Edit presets\")",
+          "target": ".setButtonText(\"编辑预设\")"
+        },
+        {
+          "source": ".setButtonText(\"Apply\")",
+          "target": ".setButtonText(\"应用\")"
+        },
+        {
+          "source": ".setName(\"Right-click menu 🛈\")",
+          "target": ".setName(\"右键菜单 🛈\")"
+        },
+        {
+          "source": ".setName(\"Cursor position after drop/paste 🛈\")",
+          "target": ".setName(\"拖放/粘贴后的光标位置 🛈\")"
+        },
+        {
+          "source": ".setName(\"Never process these filenames 🛈\")",
+          "target": ".setName(\"从不处理这些文件名 🛈\")"
+        },
+        {
+          "source": ".setName(\"Show notification for image size changes 🛈\")",
+          "target": ".setName(\"针对图片尺寸变化显示通知 🛈\")"
+        },
+        {
+          "source": ".setName(\"Show window\")",
+          "target": ".setName(\"显示窗口\")"
+        },
+        {
+          "source": ".setName(\"Image alignment cache location 🛈\")",
+          "target": ".setName(\"图像对齐缓存位置 🛈\")"
+        },
+        {
+          "source": ".setName(\"Image alignment cache cleanup interval\")",
+          "target": ".setName(\"图像对齐缓存清理间隔\")"
+        },
+        {
+          "source": ".setName(\"Enable drag resize 🛈\")",
+          "target": ".setName(\"启用拖动调整大小功能 🛈\")"
+        },
+        {
+          "source": ".setName(\"Enable scroll-wheel resize\")",
+          "target": ".setName(\"启用鼠标滚轮调整大小功能\")"
+        },
+        {
+          "source": ".setName(\"Scroll-wheel modifier key\")",
+          "target": ".setName (\"鼠标滚轮修改键\")"
+        },
+        {
+          "source": ".setName(\"Scroll-wheel resize sensitivity\")",
+          "target": ".setName(\"鼠标滚轮调整大小的灵敏度\") "
+        },
+        {
+          "source": ".setName(\"Cursor position during resize 🛈\")",
+          "target": ".setName(\"调整大小时的光标位置 🛈\")"
+        },
+        {
+          "source": ".setName(\"Allow resizing in Reading mode\")",
+          "target": ".setName(\"允许在阅读模式下进行调整大小操作\") "
+        },
+        {
+          "source": ".setName(\"Text alignment within caption\")",
+          "target": ".setName(\"标题内文本的对齐方式\") "
+        },
+        {
+          "source": ".setName(\"Text transform\")",
+          "target": ".setName(\"文本转换\")"
+        },
+        {
+          "source": ".setName(\"Font size\")",
+          "target": ".setName(\"字体大小\")"
+        },
+        {
+          "source": ".setName(\"Weight\")",
+          "target": ".setName(\"粗细\")"
+        },
+        {
+          "source": ".setName(\"Color\")",
+          "target": ".setName(\"颜色\")"
+        },
+        {
+          "source": ".setName(\"Font style\")",
+          "target": ".setName (\"字体样式\")"
+        },
+        {
+          "source": ".setName(\"Background color\")",
+          "target": ".setName (\"背景颜色\")"
+        },
+        {
+          "source": ".setName(\"Border\")",
+          "target": ".setName(\"边框\")"
+        },
+        {
+          "source": ".setName(\"Border corner radius\")",
+          "target": ".setName(\"边框圆角半径\")"
+        },
+        {
+          "source": ".setName(\"Space at the top\")",
+          "target": ".setName(\"顶部间距\")"
+        },
+        {
+          "source": ".setName(\"Padding\")",
+          "target": ".setName(\"内边距\")"
+        },
+        {
+          "source": ".setName(\"Skip caption extensions\")",
+          "target": ".setName(\"跳过标题扩展部分\") "
+        },
+        {
+          "source": ".setName(\"Preset name\")",
+          "target": ".setName(\"预设名称\")"
+        },
+        {
+          "source": ".setName(\"Custom imagename\")",
+          "target": ".setName(\"自定义图像名称\")"
+        },
+        {
+          "source": ".setName(\"Location\")",
+          "target": ".setName(\"位置\")"
+        },
+        {
+          "source": ".setName(\"Custom path\")",
+          "target": ".setName(\"自定义路径\")"
+        },
+        {
+          "source": ".setName(\"Output format\")",
+          "target": ".setName(\"输出格式\")"
+        },
+        {
+          "source": ".setName(\"Color depth\")",
+          "target": ".setName(\"颜色深度\")"
+        },
+        {
+          "source": ".setName(\"pngquant executable path 🛈\")",
+          "target": ".setName(\"图像优化工具可执行文件路径 🛈\") "
+        },
+        {
+          "source": ".setName(\"pngquant quality range\")",
+          "target": ".setName(\"图像优化工具质量范围\")"
+        },
+        {
+          "source": ".setName(\"FFmpeg executable path 🛈\")",
+          "target": ".setName(\"FFmpeg 可执行文件路径 🛈\")"
+        },
+        {
+          "source": ".setName(\"FFmpeg CRF\")",
+          "target": ".setName(\"FFmpeg CRF\")"
+        },
+        {
+          "source": ".setName(\"FFmpeg Preset\")",
+          "target": ".setName(\"FFmpeg 预设值\")"
+        },
+        {
+          "source": ".setName(\"Resize mode\")",
+          "target": ".setName(\"缩放模式\")"
+        },
+        {
+          "source": ".setName(\"Desired width\")",
+          "target": ".setName(\"预设宽度\")"
+        },
+        {
+          "source": ".setName(\"Desired height\")",
+          "target": ".setName(\"预设高度\")"
+        },
+        {
+          "source": ".setName(\"LongestEdge\"===e.resizeMode?\"Desired longest edge\":\"Desired shortest edge\")",
+          "target": ".setName(\"LongestEdge\"===e.resizeMode?\"Desired longest edge\":\"Desired shortest edge\")"
+        },
+        {
+          "source": ".setName(\"Scale mode\")",
+          "target": ".setName(\"缩放模式\")"
+        },
+        {
+          "source": ".setName(\"Revert to original if larger\")",
+          "target": ".setName(\"若变大则恢复为原始状态\")"
+        },
+        {
+          "source": ".setName(\"Link format\")",
+          "target": ".setName(\"链接格式\")"
+        },
+        {
+          "source": ".setName(\"Path format\")",
+          "target": ".setName(\"路径格式\")"
+        },
+        {
+          "source": ".setName(\"Resize dimension\")",
+          "target": ".setName(\"调整尺寸\")"
+        },
+        {
+          "source": ".setName(\"Custom value\")",
+          "target": ".setName(\"自定义值\")"
+        },
+        {
+          "source": ".setName(\"Max width value\")",
+          "target": ".setName(\"最大宽度值\")"
+        },
+        {
+          "source": ".setName(\"Maintain aspect ratio\")",
+          "target": ".setName(\"保持宽高比\")"
+        },
+        {
+          "source": ".setName(\"Respect editor max width\")",
+          "target": ".setName(\"遵循编辑器最大宽度限制\")"
+        },
+        {
+          "source": ".setName(\"Preset Name\")",
+          "target": ".setName(\"预设名称\")"
+        },
+        {
+          "source": ".setName(\"Output Format\")",
+          "target": ".setName(\"输出格式\")"
+        },
+        {
+          "source": ".setName(\"Quality min-max range 🛈\")",
+          "target": ".setName (\"质量最小 - 最大范围 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Resize Mode\")",
+          "target": ".setName (\"调整大小模式\")"
+        },
+        {
+          "source": ".setName(\"Desired Width\")",
+          "target": ".setName(\"期望宽度\")"
+        },
+        {
+          "source": ".setName(\"Desired Height\")",
+          "target": ".setName(\"期望高度\")"
+        },
+        {
+          "source": ".setName(\"LongestEdge\"===this.modalSettings.resizeMode?\"Desired Longest Edge\":\"Desired Shortest Edge\")",
+          "target": ".setName(\"LongestEdge\"===this.modalSettings.resizeMode?\"Desired Longest Edge\":\"Desired Shortest Edge\")"
+        },
+        {
+          "source": ".setName(\"Enlarge/Reduce\")",
+          "target": ".setName(\"放大/缩小\")"
+        },
+        {
+          "source": ".setName(\"Recursive\")",
+          "target": ".setName(\"Recursive\")"
+        },
+        {
+          "source": ".setName(\"Direct images\")",
+          "target": ".setName(\"Direct images\")"
+        },
+        {
+          "source": ".setName(\"Linked images\")",
+          "target": ".setName(\"链接图片\")"
+        },
+        {
+          "source": ".setName(\"Convert to ⓘ\")",
+          "target": ".setName (\"转换为 ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Skip formats ⓘ\")",
+          "target": ".setName(\"Skip formats ⓘ\")"
+        },
+        {
+          "source": ".setName(\"Global preset\")",
+          "target": ".setName (\"全局预设\")"
+        },
+        {
+          "source": ".setDesc(\"Choose whether to show processing options on each image drop/paste\")",
+          "target": ".setName(\"遵循编辑器最大宽度限制\")"
+        },
+        {
+          "source": ".setDesc(\"Quickly apply a combination of presets\")",
+          "target": ".setDesc(\"快速应用预设组合\")"
+        },
+        {
+          "source": ".setDesc(\"Choose where to store the cache file for image alignments. Note: App reload required.\")",
+          "target": ".setDesc(\"选择用于存储图像对齐缓存文件的位置。注意：需要重新加载应用程序。\")"
+        },
+        {
+          "source": ".setDesc(\"Interval (in minutes) to clean up redundant entries from image alignment cache. Default: 1 hour (0 to disable)\")",
+          "target": ".setDesc(\"清理图像对齐缓存中冗余条目的时间间隔（以分钟为单位）。默认值：1 小时（设置为 0 则禁用此功能）\")"
+        },
+        {
+          "source": ".setDesc(\"Allow resizing images by dragging edges of the image.\")",
+          "target": ".setDesc(\"允许通过拖动图像边缘来调整图像大小。\")"
+        },
+        {
+          "source": ".setDesc(\"Allow resizing images using the scroll wheel\")",
+          "target": ".setDesc(\"允许使用鼠标滚轮调整图像大小。\")"
+        },
+        {
+          "source": ".setDesc(\"Key that must be held while using scroll-wheel to resize\")",
+          "target": ".setDesc(\"使用鼠标滚轮调整大小时必须按住的按键。\")"
+        },
+        {
+          "source": ".setDesc(\"Adjust how sensitive the scroll-wheel resize is (0.01-1.0)\")",
+          "target": ".setDesc(\"调整鼠标滚轮调整大小的灵敏度（范围：0.01 - 1.0）\")"
+        },
+        {
+          "source": ".setDesc(\"Non-destructive resizing in Reading Mode is only visual, thus if it is too distractive you can disable it.\")",
+          "target": ".setDesc(\"阅读模式下的无损调整大小仅为视觉效果，因此如果它过于干扰视线，您可以将其禁用。\")"
+        },
+        {
+          "source": ".setDesc(\"Set text transformation\")",
+          "target": ".setDesc (\"设置文本转换\")"
+        },
+        {
+          "source": ".setDesc(\"Set the font size for image captions (e.g., 12px, 1.2em).\")",
+          "target": ".setDesc(\"设置图像标题的字体大小（例如，12px、1.2em）。\")"
+        },
+        {
+          "source": ".setDesc(\"Set font weight (e.g., normal, bold, 600)\")",
+          "target": ".setDesc (\"设置字体粗细（例如，正常、粗体、600）\")"
+        },
+        {
+          "source": ".setDesc(\"Choose a color for image captions e.g.: red, grey, white, black, hsl(50, 50%, 50%), rgb(50%, 75%, 100%) \")",
+          "target": ".setDesc(\"为图像标题选择一种颜色，例如：红色、灰色、白色、黑色、hsl(50, 50%, 50%)、rgb(50%, 75%, 100%)\")"
+        },
+        {
+          "source": ".setDesc(\"Set the font style (e.g., italic, normal).\")",
+          "target": ".setDesc(\"设置字体样式（例如，斜体、正常）。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose a background color for image captions (e.g.: transparent, #f5f5f5, rgba(255,255,255,0.8))\")",
+          "target": ".setDesc(\"为图像标题选择一种背景颜色（例如：透明、#f5f5f5、rgba(255,255,255,0.8)）\")"
+        },
+        {
+          "source": ".setDesc(\"Set border style (e.g., 1px solid gray)\")",
+          "target": ".setDesc (\"设置边框样式（例如，1 像素宽的灰色实线边框）\")"
+        },
+        {
+          "source": ".setDesc(\"Set border radius for caption (e.g., make it slightly rounded: 4px)\")",
+          "target": ".setDesc(\"设置标题的边框圆角半径（例如，使其略带圆角：4px）\")"
+        },
+        {
+          "source": ".setDesc(\"Set space between image and caption (e.g., 4px, 8px)\")",
+          "target": ".setDesc(\"设置图像与标题之间的间距（例如，4 px、8 px）\")"
+        },
+        {
+          "source": ".setDesc(\"Set padding around caption (e.g., 4px 8px)\")",
+          "target": ".setDesc (\"设置标题周围的内边距（例如，上下 4px、左右 8px）\")"
+        },
+        {
+          "source": ".setDesc(\"Comma-separated list of image extensions to exclude from captions (e.g., png,jpg).\")",
+          "target": ".setDesc(\"以逗号分隔的图像扩展名列表，用于排除显示标题的图像类型（例如，png,jpg）。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how to handle filename conflicts\")",
+          "target": ".setDesc (\"选择如何处理文件名冲突\")"
+        },
+        {
+          "source": ".setDesc(\"Enter a custom subfolder name or path.\")",
+          "target": ".setDesc(\"输入自定义的子文件夹名称或路径。\")"
+        },
+        {
+          "source": ".setDesc(\"Enter a custom path.\")",
+          "target": ".setDesc(\"输入自定义路径。\")"
+        },
+        {
+          "source": ".setDesc(\"Quality setting for pngquant (e.g., 65-80). Both min-max values must be provided.\")",
+          "target": ".setDesc (\"pngquant 的质量设置（例如，65 - 80）。必须同时提供最小和最大质量值。\")"
+        },
+        {
+          "source": ".setDesc(\"Constant Rate Factor for AVIF (0-63, lower is better quality).\")",
+          "target": ".setDesc (\"AVIF 的恒定码率因子（范围为 0 - 63，数值越低，图像质量越好）。\")"
+        },
+        {
+          "source": ".setDesc(\"Encoding preset (speed vs. compression)\")",
+          "target": ".setDesc (\"编码预设（编码速度与压缩率的权衡）\")"
+        },
+        {
+          "source": ".setDesc(\"If the processed image filesize is larger than the original, use the original image instead.\")",
+          "target": ".setDesc (\"如果处理后的图像文件大小比原始图像大，则使用原始图像取而代之。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose between Wikilink and Markdown format\")",
+          "target": ".setDesc (\"在维基链接（Wikilink）和 Markdown 格式之间进行选择。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how paths should be formatted\")",
+          "target": ".setDesc (\"选择路径应采用的格式\")"
+        },
+        {
+          "source": ".setDesc(\"Comma-separated list of patterns to skip (glob or regex). Regex patterns must be enclosed in `/` or `r/` or `regex:` E.g. do not proecss images which include word CAT in them /CAT/\")",
+          "target": ".setDesc (\" 以逗号分隔的要跳过的匹配模式列表（可使用通配符模式或正则表达式）。正则表达式模式必须用 /、r/ 或 regex: 包裹。例如，不处理文件名中包含 'CAT' 这个单词的图像，可写成 /CAT/。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how to resize the image\")",
+          "target": ".setDesc (\"选择如何调整图像大小\")"
+        },
+        {
+          "source": ".setDesc(\"Set new custom width\")",
+          "target": ".setDesc (\"设置新的自定义宽度\")"
+        },
+        {
+          "source": ".setDesc(\"Set new custom height\")",
+          "target": ".setDesc (\"设置新的自定义高度\")"
+        },
+        {
+          "source": ".setDesc(\"Plugin automatically reads the original image dimensions and applies the provided value to the longer of the width or height. The other dimension is then calculated automatically if 'Maintain aspect ratio' is enabled.\")",
+          "target": ".setDesc (\"插件会自动读取原始图像的尺寸，并将所提供的值应用于图像的宽度或高度中的较长边。如果启用了 “保持宽高比” 选项，那么另一边的尺寸将自动计算得出。\")"
+        },
+        {
+          "source": ".setDesc(\"Plugin automatically reads the original image dimensions and applies the provided value to the shorter of the width or height. The other dimension is then calculated automatically if 'Maintain aspect ratio' is enabled.\")",
+          "target": ".setDesc (\"插件会自动读取原始图像的尺寸，并将所提供的值应用于宽度或高度中较短的一边。若启用了 “保持宽高比” 选项，另一边的尺寸将自动计算得出。\")"
+        },
+        {
+          "source": ".setDesc(\"Set both width and height using the format |widthxheight (e.g., 300x200) or percentage format (e.g., 50x75). This does not preserve Aspect Ratio.\")",
+          "target": ".setDesc (\" 使用 宽度x高度 的格式（例如，300x200）或百分比格式（例如，50x75）来同时设置宽度和高度。这种方式不会保留图像的宽高比。\")"
+        },
+        {
+          "source": ".setDesc(\"Set the maximum width of the image to fit within the editor's width. You can specify a percentage or a fixed pixel value.\")",
+          "target": ".setDesc (\"设置图像的最大宽度，使其能适配编辑器的宽度。你可以指定一个百分比或一个固定的像素值。\")"
+        },
+        {
+          "source": ".setDesc(\"Preserve the image's original proportions when resizing.\")",
+          "target": ".setDesc (\"在调整图像大小时，保留图像的原始宽高比。\")"
+        },
+        {
+          "source": ".setDesc(\"Controls how images are adjusted relative to target size:\\n- Auto: Adjusts image to fit specified dimensions\\n- Reduce Only: Only shrinks images larger than target\\n- Enlarge Only: Only enlarges images smaller than target\")",
+          "target": ".setDesc (\" 控制图像相对于目标尺寸的调整方式：\\n- 自动：将图像调整为适应指定的尺寸。\\n- 仅缩小：仅缩小比目标尺寸大的图像。\\n- 仅放大：仅放大比目标尺寸小的图像。\")"
+        },
+        {
+          "source": ".setDesc(\"When calculating dimensions, prevent the image from exceeding the editor's width.\")",
+          "target": ".setDesc (\"在计算图像尺寸时，防止图像宽度超出编辑器的宽度。\")"
+        },
+        {
+          "source": ".setDesc(\"Lower values mean better quality (larger file size). 0 is lossless.\")",
+          "target": ".setDesc (\"数值越低意味着质量越好（文件大小越大）。数值为 0 时表示无损处理。\")"
+        },
+        {
+          "source": ".setDesc(\"Process images in all subfolders as well\")",
+          "target": ".setDesc (\"同时处理所有子文件夹中的图像。\")"
+        },
+        {
+          "source": ".setDesc(\"Images directly in the folder\")",
+          "target": ".setDesc (\"直接位于文件夹中的图像\")"
+        },
+        {
+          "source": ".setDesc(\"Images linked in notes or Canvas\")",
+          "target": ".setDesc (\"笔记或画布中链接的图像\")"
+        },
+        {
+          "source": ".setDesc(\"Choose output format. 'Same as original' applies compression/resizing to current format.\")",
+          "target": ".setDesc (\"选择输出格式。“与原始格式相同” 选项会对当前格式的图像进行压缩 / 调整大小操作。\")"
+        },
+        {
+          "source": ".setDesc(\"Comma-separated list (no dots or spaces, e.g., png,gif).\")",
+          "target": ".setDesc (\"以逗号分隔的列表（不要包含点号或空格，例如：png,gif）。\")"
+        },
+        {
+          "source": ".setDesc(\"Skip compression/resizing if image is already in target format.\")",
+          "target": ".setDesc (\"如果图像已经是目标格式，则跳过压缩 / 调整大小的操作。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how images should be resized. Note: Results are permanent\")",
+          "target": ".setDesc (\"选择图像应如何调整大小。注意：调整结果是永久性的。\")"
+        },
+        {
+          "source": ".setDesc(\"Reduce and Enlarge: Adjusts all images. Reduce only: Shrinks larger images. Enlarge only: Enlarges smaller images.\")",
+          "target": ".setDesc (\"缩小和放大：对所有图像进行调整。仅缩小：缩小尺寸大于目标的图像。仅放大：放大尺寸小于目标的图像。\")"
+        },
+        {
+          "source": ".setDesc(`Current: ${this.selectedConversionPreset.quality}%`)",
+          "target": ".setDesc(`Current: ${this.selectedConversionPreset.quality}%`)"
+        },
+        {
+          "source": ".setDesc(`Current: ${i}%`)",
+          "target": ".setDesc(`Current: ${i}%`)"
+        },
+        {
+          "source": ".setDesc(`Current: ${100*this.selectedConversionPreset.colorDepth}%`)",
+          "target": ".setDesc(`Current: ${100*this.selectedConversionPreset.colorDepth}%`)"
+        },
+        {
+          "source": ".setDesc(`Current: ${100*i}%`)",
+          "target": ".setDesc(`Current: ${100*i}%`)"
+        },
+        {
+          "source": ".setDesc(\"Select a global preset to apply multiple settings at once\")",
+          "target": ".setDesc (\"选择一个全局预设以一次性应用多个设置。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g., {notename}-{timestamp}\")",
+          "target": ".setPlaceholder(\"e.g., {notename}-{timestamp}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g., {YYYY}/{MM}/{imagename}\")",
+          "target": ".setPlaceholder(\"e.g., {YYYY}/{MM}/{imagename}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g., *.png, draft-*, /^IMG_\\\\d{4}\\\\./)\")",
+          "target": ".setPlaceholder(\"e.g., *.png, draft-*, /^IMG_\\\\d{4}\\\\./)\")"
+        },
+        {
+          "source": ".setPlaceholder(\"percentage\"===e.resizeUnits?\"e.g. 50x75\":\"widthxheight\")",
+          "target": ".setPlaceholder(\"percentage\"===e.resizeUnits?\"e.g. 50x75\":\"widthxheight\")"
+        },
+        {
+          "source": ".setPlaceholder(\"percentage\"===e.resizeUnits?\"e.g. 50%\":\"e.g. 200px\")",
+          "target": ".setPlaceholder(\"percentage\"===e.resizeUnits?\"e.g. 50%\":\"e.g. 200px\")"
+        },
+        {
+          "source": ".setPlaceholder(\"percentage\"===i?\"e.g. 50%\":\"e.g. 200px\")",
+          "target": ".setPlaceholder(\"percentage\"===i?\"e.g. 50%\":\"e.g. 200px\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter preset name\")",
+          "target": ".setPlaceholder(\"输入预设名称\")"
+        },
+        {
+          "source": ".setPlaceholder(\"png,gif\")",
+          "target": ".setPlaceholder(\"png,gif\")"
+        },
+        {
+          "source": ".setPlaceholder(\"tif,tiff,heic\")",
+          "target": ".setPlaceholder(\"tif,tiff,heic\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g., {YYYY}/{MM}/{notename}\")",
+          "target": ".setPlaceholder(\"e.g., {YYYY}/{MM}/{notename}\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g., {imagename}-{timestamp}\")",
+          "target": ".setPlaceholder(\"e.g., {imagename}-{timestamp}\")"
+        },
+        {
+          "source": ".setTooltip(\"Enable to show a right-click context menu.\")",
+          "target": ".setTooltip(\"启用以显示右键上下文菜单。\")"
+        },
+        {
+          "source": ".setTooltip(\"Where to place the cursor after dropping or pasting the image\")",
+          "target": ".setTooltip(\"在放置或粘贴图像后将光标放置在何处\")"
+        },
+        {
+          "source": ".setTooltip(\"A comma-separated list of file names or patterns that the plugin should never process. Supports glob (*) and regex (enclosed in `/` or `r/` or `regex:`). E.g., `old.png, /^_/, r/temp-.*\\\\.jpg$/` . Or simply skip all cat images e.g.: /cat/ or all gif images *.gif\")",
+          "target": ".setTooltip(\"一个由逗号分隔的文件名或模式列表，插件永远不应处理这些内容。支持通配符（*）和正则表达式（用/或r/或regex:括起来）。例如，old.png, /^_/, r/temp-.*\\\\.jpg$/ 。或者简单地跳过所有猫相关的图像，例如：/cat/ ，或者跳过所有的 gif 图像 *.gif\")"
+        },
+        {
+          "source": ".setTooltip(\"Display a notification showing how much space was saved after processing an image.\")",
+          "target": ".setTooltip(\"显示一条通知，该通知展示在处理完一张图像后节省了多少空间。\")"
+        },
+        {
+          "source": ".setTooltip(\"Save current selection as a new Global Preset\")",
+          "target": ".setTooltip(\"将当前所选内容保存为一个新的全局预设\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete selected Global Preset\")",
+          "target": ".setTooltip(\"删除所选的全局预设\")"
+        },
+        {
+          "source": ".setTooltip(\"If you use Obsidian Sync, it is strongly recommended to use the SAME location on all your devices to ensure consistent behavior. Default: .obsidian (syncable).\")",
+          "target": ".setTooltip(\"If you use Obsidian Sync, it is strongly recommended to use the SAME location on all your devices to ensure consistent behavior. Default: .obsidian (syncable).\")"
+        },
+        {
+          "source": ".setTooltip(\"This creates a new <DIV> under the image to show resizing HANDLES. But this might cause some incompatibility with certain themes and cause images to jump around.\")",
+          "target": ".setTooltip(\"如果你使用Obsidian同步功能，强烈建议在你所有设备上使用相同的位置，以确保行为的一致性。默认值：.obsidian（可同步）。\") "
+        },
+        {
+          "source": ".setTooltip(\"Where to place the cursor when resizing an image. Note: 'Don't move cursor' - will try to keep your exisiting cursor in place but if you DRAG-RESIZE and cursor is still over the image when you finish resizing, it will get the text selected.\")",
+          "target": ".setTooltip(\"调整图像大小时将光标放置在何处。注意：“不移动光标” - 将尝试使您现有的光标保持在原位，但如果您进行拖动调整大小操作，并且在完成调整大小时光标仍在图像上方，那么文本将会被选中。\") "
+        },
+        {
+          "source": ".setTooltip(\"Edit\")",
+          "target": ".setTooltip(\"编辑\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete\")",
+          "target": ".setTooltip(\"删除\")"
+        },
+        {
+          "source": ".setTooltip(\"Show available variables\")",
+          "target": ".setTooltip(\"显示可用变量\")"
+        },
+        {
+          "source": ".setTooltip(\"Provide full-path to the binary file. It can be inside vault or anywhere in your file system.\")",
+          "target": ".setTooltip(\"提供二进制文件的完整路径。它可以位于保险库（vault）内，也可以在您文件系统的任何位置。\") "
+        },
+        {
+          "source": ".setTooltip(\"Transparent\")",
+          "target": ".setTooltip(\"透明的\")"
+        },
+        {
+          "source": ".setTooltip(\"Semi-transparent white\")",
+          "target": ".setTooltip(\"半透明白色\")"
+        },
+        {
+          "source": ".setTooltip(\"Semi-transparent black\")",
+          "target": ".setTooltip(\"半透明黑色\")"
+        },
+        {
+          "source": ".setTooltip(\"Draw (B)\")",
+          "target": ".setTooltip(\"绘制（B）\")"
+        },
+        {
+          "source": ".setTooltip(\"Arrow (A)\")",
+          "target": ".setTooltip(\"箭头（A）\")"
+        },
+        {
+          "source": ".setTooltip(\"Add Text (T)\")",
+          "target": ".setTooltip(\"添加文本（T）\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset Zoom (1:1)\")",
+          "target": ".setTooltip(\"重置缩放比例（1:1）\")"
+        },
+        {
+          "source": ".setTooltip(\"Bring to Front\")",
+          "target": ".setTooltip(\"置于顶层\")"
+        },
+        {
+          "source": ".setTooltip(\"Bring Forward\")",
+          "target": ".setTooltip(\"前移一层\")"
+        },
+        {
+          "source": ".setTooltip(\"Send Backward\")",
+          "target": ".setTooltip(\"后移一层\")"
+        },
+        {
+          "source": ".setTooltip(\"Send to Back\")",
+          "target": ".setTooltip(\"置于底层\")"
+        },
+        {
+          "source": ".setTooltip(\"Clear All\")",
+          "target": ".setTooltip(\"全部清除\")"
+        },
+        {
+          "source": ".setTooltip(\"Save (Ctrl/Cmd + S)\")",
+          "target": ".setTooltip(\"保存（Ctrl/Command + S）\") "
+        },
+        {
+          "source": ".setTooltip(\"Background\")",
+          "target": ".setTooltip(\"背景\")"
+        },
+        {
+          "source": ".setTooltip(\"Instructs pngquant to use the least amount of colors required to meet or exceed the max quality. min and max are numbers in range 0 (worst) to 100 (perfect).\")",
+          "target": ".setTooltip(\"指示pngquant使用达到或超过最大质量所需的最少颜色数量。“最小值”和“最大值”是范围在0（最差）到100（完美）之间的数字。\") "
+        },
+        {
+          "source": ".setTooltip(\"direct\"===this.selectedImageSource?\"Selected\":\"Select\")",
+          "target": ".setTooltip(\"direct\"===this.selectedImageSource?\"Selected\":\"Select\")"
+        },
+        {
+          "source": ".setTooltip(\"linked\"===this.selectedImageSource?\"Selected\":\"Select\")",
+          "target": ".setTooltip(\"linked\"===this.selectedImageSource?\"Selected\":\"Select\")"
+        },
+        {
+          "source": ".setTooltip(\"Same as original: preserves current format while applying compression/resizing\")",
+          "target": ".setTooltip(\"与原始格式相同：在应用压缩/调整大小操作时保留当前格式\") "
+        },
+        {
+          "source": ".setTooltip(\"100: No compression (original quality)\\n75: Recommended (good balance)\\n0-50: High compression (lower quality)\")",
+          "target": ".setTooltip(\"100：不压缩（原始质量）\\n75：推荐值（良好的平衡状态）\\n0到50：高压缩率（质量较低）\") "
+        },
+        {
+          "source": ".setTooltip(\"Comma-separated list of file formats to skip (e.g., tif,tiff,heic). Leave empty to process all formats.\")",
+          "target": ".setTooltip(\"要跳过的文件格式的逗号分隔列表（例如，tif、tiff、heic）。留空则处理所有格式。\") "
+        },
+        {
+          "source": ".setTooltip(\"If image is already in target format, this allows you to skip its compression, conversion and resizing. Processing of all other formats will be still performed.\")",
+          "target": ".setTooltip(\"如果图像已经是目标格式，这使您能够跳过对它的压缩、转换和调整大小操作。但对所有其他格式的处理仍将进行。\") "
+        },
+        {
+          "source": ".setTooltip(\"• Reduce and Enlarge: Adjusts all images to fit specified dimensions\\n• Reduce only: Only shrinks images larger than target\\n• Enlarge only: Only enlarges images smaller than target\")",
+          "target": ".setTooltip(\"• 缩小和放大：调整所有图像以适应指定的尺寸\\n• 仅缩小：仅缩小大于目标尺寸的图像\\n• 仅放大：仅放大小于目标尺寸的图像\") "
+        },
+        {
+          "source": ".setTitle(\"Open in new window\")",
+          "target": ".setTitle(\"在新窗口中打开\")"
+        },
+        {
+          "source": ".setTitle(\"Cut\")",
+          "target": ".setTitle(\"剪切\")"
+        },
+        {
+          "source": ".setTitle(\"Copy image\")",
+          "target": ".setTitle(\"复制图像\")"
+        },
+        {
+          "source": ".setTitle(\"Convert/compress...\")",
+          "target": ".setTitle(\"转换/压缩...\")"
+        },
+        {
+          "source": ".setTitle(\"Crop/Rotate/Flip\")",
+          "target": ".setTitle(\"裁剪/旋转/翻转\")"
+        },
+        {
+          "source": ".setTitle(\"Annotate image\")",
+          "target": ".setTitle(\"注释图像\")"
+        },
+        {
+          "source": ".setTitle(\"Show in navigation\")",
+          "target": ".setTitle(\"在导航中显示\")"
+        },
+        {
+          "source": ".setTitle(\"Show in system explorer\")",
+          "target": ".setTitle(\"在系统资源管理器中显示\")"
+        },
+        {
+          "source": ".setTitle(\"Delete Image and Link\")",
+          "target": ".setTitle(\"删除图像和链接\")"
+        },
+        {
+          "source": ".setTitle(\"Align image\")",
+          "target": ".setTitle(\"对齐图像\")"
+        },
+        {
+          "source": ".setTitle(\"Left\")",
+          "target": ".setTitle(\"左对齐\")"
+        },
+        {
+          "source": ".setTitle(\"Center\")",
+          "target": ".setTitle(\"居中\")"
+        },
+        {
+          "source": ".setTitle(\"Right\")",
+          "target": ".setTitle(\"右对齐\")"
+        },
+        {
+          "source": ".setTitle(\"Wrap Text\")",
+          "target": ".setTitle(\"文本换行\")"
+        },
+        {
+          "source": ".setTitle(\"Process image\")",
+          "target": ".setTitle(\"处理图像\")"
+        },
+        {
+          "source": ".setTitle(\"Process all images in Folder\")",
+          "target": ".setTitle(\"处理文件夹中的所有图像\")"
+        },
+        {
+          "source": ".setTitle(\"Process all images in \"+(\"md\"===e.extension?\"Note\":\"Canvas\")",
+          "target": ".setTitle(\"处理所有\"+(\"md\"===e.extension?\"笔记\":\"画布中的图像\")"
+        }
+      ]
+    }
+  }
+}

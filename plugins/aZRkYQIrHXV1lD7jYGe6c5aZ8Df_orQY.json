@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "chatgpt-md",
+    "version": "2.0.0",
+    "title": "ChatGPT MD",
+    "description": "A (nearly) seamless integration of ChatGPT into Obsidian.",
+    "language": "zh-cn",
+    "supportedVersions": "1.5.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"[ChatGPT MD] Error writing inferred title to editor\")",
+          "target": "Notice(\"[ChatGPT MD] 写入推断标题到编辑器时出错\")"
+        },
+        {
+          "source": "Notice(\"[ChatGPT MD] Mobile not supported.\")",
+          "target": "Notice(\"[ChatGPT MD] 不支持移动设备。\")"
+        },
+        {
+          "source": "Notice(\n                  \"[ChatGPT MD] Text pasted at cursor may leave artifacts. Please remove them manually. ChatGPT MD cannot safely remove text when pasting at cursor.\"\n                )",
+          "target": "Notice(\n                  \"[ChatGPT MD] 在光标位置粘贴文本可能会留下痕迹，请手动删除。ChatGPT MD 无法在光标位置安全地移除文本。\"\n                )"
+        },
+        {
+          "source": "Notice(\n              `[ChatGPT MD] Stream = False Error :: ${json.error.message}`\n            )",
+          "target": "Notice(\n              `[ChatGPT MD] 流式传输 = 错误 :: ${json.error.message}`\n            )"
+        },
+        {
+          "source": "Notice(`[ChatGPT MD] Error :: ${err.error.message}`)",
+          "target": "Notice(`[ChatGPT MD] 错误：${err.error.message}`)"
+        },
+        {
+          "source": "Notice(\n              \"[ChatGPT MD] Issue calling specified url: \" + url\n            )",
+          "target": "Notice(\n              \"[ChatGPT MD] 调用指定 URL 时出现问题：\" + url\n            )"
+        },
+        {
+          "source": "Notice(\n              `[ChatGPT MD] Error :: ${JSON.stringify(err)",
+          "target": "Notice(\n              `[ChatGPT MD] Error :: ${JSON.stringify(err)"
+        },
+        {
+          "source": "Notice(\n        \"issue calling OpenAI API, see console for more details\"\n      )",
+          "target": "Notice(\n        \"调用 OpenAI API 时出现问题，请查看控制台以获取更多详细信息。\"\n      )"
+        },
+        {
+          "source": "Notice(\"[ChatGPT] Inferring title from messages...\")",
+          "target": "Notice(\"[ChatGPT] 从消息中推断标题...\")"
+        },
+        {
+          "source": "Notice(\n          \"Not enough messages to infer title. Minimum 2 messages.\"\n        )",
+          "target": "Notice(\n          \"请提供需要翻译的英文文本，我会为您翻译成简体中文。\"\n        )"
+        },
+        {
+          "source": "Notice(\"[ChatGPT MD] Error inferring title from messages\")",
+          "target": "Notice(\"[ChatGPT MD] 从消息中推断标题出错\")"
+        },
+        {
+          "source": "Notice(\"[ChatGPT MD] Calling API\")",
+          "target": "Notice(\"[ChatGPT MD] 调用 API\")"
+        },
+        {
+          "source": "Notice(\n                    \"[ChatGPT MD] Could not infer title\",\n                    5e3\n                  )",
+          "target": "Notice(\n                    \"[ChatGPT MD] 无法推断标题\",\n                    5e3\n                  )"
+        },
+        {
+          "source": "Notice(\n                    \"[ChatGPT MD] Error inferring title. \" + err,\n                    5e3\n                  )",
+          "target": "Notice(\n                    \"[ChatGPT MD] 无法推断标题。\" + err,\n                    5e3\n                  )"
+        },
+        {
+          "source": "Notice(\n              \"[ChatGPT MD Mobile] Full Error calling API. \" + err,\n              9e3\n            )",
+          "target": "Notice(\n              \"[ChatGPT MD Mobile] 调用API时发生完整错误。\" + err,\n              9e3\n            )"
+        },
+        {
+          "source": "Notice(\n              `[ChatGPT MD] No chat folder value found. Please set one in settings.`\n            )",
+          "target": "Notice(\n              `[ChatGPT MD] 未找到聊天文件夹值。请在设置中进行设置。`\n            )"
+        },
+        {
+          "source": "Notice(\n                `[ChatGPT MD] No chat folder found. One must be created to use plugin. Set one in settings and make sure it exists.`\n              )",
+          "target": "Notice(\n                `[ChatGPT MD] 未找到聊天文件夹。要使用插件，必须创建一个。请在设置中指定一个并确保其存在。`\n              )"
+        },
+        {
+          "source": "Notice(\"No active markdown editor found.\")",
+          "target": "Notice(\"未找到活动的 Markdown 编辑器。\")"
+        },
+        {
+          "source": "Notice(\n            `[ChatGPT MD] Error in Create new chat with highlighted text, check console`\n          )",
+          "target": "Notice(\n            `[ChatGPT MD] 创建新聊天时出错，请检查控制台`\n          )"
+        },
+        {
+          "source": "Notice(\n            `[ChatGPT MD] No chat folder value found. Please set one in settings.`\n          )",
+          "target": "Notice(\n            `[ChatGPT MD] 未找到聊天文件夹值。请在设置中进行设置。`\n          )"
+        },
+        {
+          "source": "Notice(\n              `[ChatGPT MD] No chat folder found. One must be created to use plugin. Set one in settings and make sure it exists.`\n            )",
+          "target": "Notice(\n              `[ChatGPT MD] 未找到聊天文件夹。必须创建一个才能使用插件。在设置中进行设置并确保其存在。`\n            )"
+        },
+        {
+          "source": "Notice(\n            `[ChatGPT MD] No chat template folder value found. Please set one in settings.`\n          )",
+          "target": "Notice(\n            `[ChatGPT MD] 未找到聊天模板文件夹值。请在设置中进行设置。`\n          )"
+        },
+        {
+          "source": "Notice(\n              `[ChatGPT MD] No chat template folder found. One must be created to use plugin. Set one in settings and make sure it exists.`\n            )",
+          "target": "Notice(\n              `[ChatGPT MD] 未找到聊天模板文件夹。要使用该插件，必须创建一个。在设置中进行设置，并确保其存在。`\n            )"
+        },
+        {
+          "source": "Notice(\n        `Error getting folder: ${this.settings.chatTemplateFolder}`\n      )",
+          "target": "Notice(\n        `获取文件夹出错：${this.settings.chatTemplateFolder}`\n      )"
+        },
+        {
+          "source": "Notice(`Selected ${template.title}`)",
+          "target": "Notice(`已选择${template.title}`)"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] unclosed code block detected\")",
+          "target": ".log(\"[ChatGPT MD] 检测到未关闭的代码块\")"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] Error writing inferred title to editor\", err)",
+          "target": ".log(\"[ChatGPT MD] 写入推断标题到编辑器时出错\", err)"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] Creating folder\")",
+          "target": ".log(\"[ChatGPT MD] 创建文件夹\")"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] Not creating folder\")",
+          "target": ".log(\"[ChatGPT MD] 未创建文件夹\")"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] SSE manually closed\")",
+          "target": ".log(\"[ChatGPT MD] SSE 手动关闭\")"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] streamSSE\", options)",
+          "target": ".log(\"[ChatGPT MD] 流式SSE\", options)"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] SSE Opened\")",
+          "target": ".log(\"[ChatGPT MD] SSE 已开启\")"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] SSE Closed\")",
+          "target": ".log(\"[ChatGPT MD] SSE 已关闭\")"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] SSE Closed Event\")",
+          "target": ".log(\"[ChatGPT MD] SSE 连接关闭事件\")"
+        },
+        {
+          "source": ".log(\n                \"[ChatGPT MD] SSE Error: \",\n                JSON.parse(e.data)",
+          "target": ".log(\n                \"[ChatGPT MD] SSE 错误：\",\n                JSON.parse(e.data)"
+        },
+        {
+          "source": ".log(\"[ChatGPT MD] Unknown Error: \", e)",
+          "target": ".log(\"[ChatGPT MD] 未知错误：\", e)"
+        },
+        {
+          "source": ".log(\"SSE Error\", err)",
+          "target": ".log(\"SSE错误\", err)"
+        },
+        {
+          "source": ".log(\"calling openai api\")",
+          "target": ".log(\"调用 OpenAI API\")"
+        },
+        {
+          "source": ".log(\"response from stream\", response)",
+          "target": ".log(\"流响应\", response)"
+        },
+        {
+          "source": ".log(\"[ChtGPT MD] Inferring Title\")",
+          "target": ".log(\"[ChatGPT MD] 自动生成标题\")"
+        },
+        {
+          "source": ".log(\n                \"[ChatGPT MD] auto inferring title from messages\"\n              )",
+          "target": ".log(\n                \"[ChatGPT MD] 从信息中自动推断标题\"\n              )"
+        },
+        {
+          "source": ".log(\n                    `[ChatGPT MD] automatically inferred title: ${title2}. Changing file name...`\n                  )",
+          "target": ".log(\n                    `[ChatGPT MD] 自动推断标题：${title2}。正在更改文件名...`\n                  )"
+        },
+        {
+          "source": ".log(err)",
+          "target": ".log(err)"
+        },
+        {
+          "source": ".error(\n            `[ChatGPT MD] Error in Create new chat with highlighted text`,\n            err\n          )",
+          "target": ".error(\n            `[ChatGPT MD] 创建新聊天时突出显示文本出错`,\n            err\n          )"
+        },
+        {
+          "source": "name: \"Chat\"",
+          "target": "name: \"聊天\""
+        },
+        {
+          "source": "name: \"Add divider\"",
+          "target": "name: \"添加分隔线\""
+        },
+        {
+          "source": "name: \"Add comment block\"",
+          "target": "name: \"添加注释块\""
+        },
+        {
+          "source": "name: \"Stop streaming\"",
+          "target": "name: \"停止流媒体\""
+        },
+        {
+          "source": "name: \"Infer title\"",
+          "target": "name: \"推断标题\""
+        },
+        {
+          "source": "name: \"Create new chat with highlighted text\"",
+          "target": "name: \"使用突出显示的文本创建新聊天\""
+        },
+        {
+          "source": "name: \"Create new chat from template\"",
+          "target": "name: \"从模板创建新聊天\""
+        },
+        {
+          "source": "name: \"Clear chat (except frontmatter)\"",
+          "target": "name: \"清除聊天记录（保留前言）\""
+        },
+        {
+          "source": "text: `[ChatGPT MD] No ${this.folderName} folder found.`",
+          "target": "text: `[ChatGPT MD] 未找到 ${this.folderName} 文件夹。`"
+        },
+        {
+          "source": "text: `If you choose \"Yes, Create\", the plugin will automatically create a folder at: ${this.folderPath}. You can change this path in the plugin settings.`",
+          "target": "text: `如果选择“是，创建”，插件将会在以下位置自动创建一个文件夹：${this.folderPath}。您可以在插件设置中更改此路径。`"
+        },
+        {
+          "source": "text: \"Settings for ChatGPT MD: Keep tokens in mind! You can see if your text is longer than the token limit (4096) here:\"",
+          "target": "text: \"ChatGPT MD 设置：注意令牌限制！你可以在此查看你的文本是否超过令牌限制（4096）：\""
+        },
+        {
+          "source": "text: \"https://platform.openai.com/tokenizer\"",
+          "target": "text: \"抱歉，我无法访问该链接。不过，请随时提供您需要翻译的英文文本，我会帮您翻译成简体中文。\""
+        },
+        {
+          "source": ".setText(\"[ChatGPT MD] Calling API...\")",
+          "target": ".setText(\"[ChatGPT MD] 调用 API...\")"
+        },
+        {
+          "source": ".setText(\n                \"[ChatGPT MD] Calling API...\"\n              )",
+          "target": ".setText(\n                \"[ChatGPT MD] 调用 API...\"\n              )"
+        },
+        {
+          "source": ".setText(\"\");\n        }).catch((err) => {\n          if (import_obsidian3.Platform.isMobile) {\n            new import_obsidian3.Notice(\n              \"[ChatGPT MD Mobile] Full Error calling API. \" + err,\n              9e3\n            );\n          }\n          statusBarItemEl.setText(\"\")",
+          "target": "好的，请提交您需要翻译的英文文本。.setText(\"\");\n        }).catch((err) => {\n          if (import_obsidian3.Platform.isMobile) {\n            new import_obsidian3.Notice(\n              \"[ChatGPT MD Mobile] Full Error calling API. \" + err,\n              9e3\n            );\n          }\n          statusBarItemEl.setText(\"\")"
+        },
+        {
+          "source": ".setButtonText(\"Yes, Create Folder\")",
+          "target": ".setButtonText(\"是的，创建文件夹\")"
+        },
+        {
+          "source": ".setButtonText(\"No, I'll create it myself\")",
+          "target": ".setButtonText(\"不，我会自己创建。\")"
+        },
+        {
+          "source": ".setName(\"OpenAI API Key\")",
+          "target": ".setName(\"OpenAI API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Default Chat Frontmatter\")",
+          "target": ".setName(\"默认聊天前言\")"
+        },
+        {
+          "source": ".setName(\"Stream\")",
+          "target": ".setName(\"流媒体\")"
+        },
+        {
+          "source": ".setName(\"Chat Folder\")",
+          "target": ".setName(\"聊天文件夹\")"
+        },
+        {
+          "source": ".setName(\"Chat Template Folder\")",
+          "target": ".setName(\"聊天模板文件夹\")"
+        },
+        {
+          "source": ".setName(\"Generate at Cursor\")",
+          "target": ".setName(\"在光标处生成\")"
+        },
+        {
+          "source": ".setName(\"Automatically Infer Title\")",
+          "target": ".setName(\"自动推断标题\")"
+        },
+        {
+          "source": ".setName(\"Date Format\")",
+          "target": ".setName(\"日期格式\")"
+        },
+        {
+          "source": ".setName(\"Heading Level\")",
+          "target": ".setName(\"标题级别\")"
+        },
+        {
+          "source": ".setName(\"Infer title language\")",
+          "target": ".setName(\"推断标题语言\")"
+        },
+        {
+          "source": ".setDesc(\"API Key for OpenAI\")",
+          "target": ".setDesc(\"OpenAI 的 API 密钥\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Default frontmatter for new chat files. You can change/use all of the settings exposed by the OpenAI API here: https://platform.openai.com/docs/api-reference/chat/create\"\n    )",
+          "target": ".setDesc(\n      \"新聊天文件的默认前置数据。您可以在此更改/使用OpenAI API提供的所有设置：https://platform.openai.com/docs/api-reference/chat/create\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Stream responses from OpenAI\")",
+          "target": ".setDesc(\"从 OpenAI 流式传输响应\")"
+        },
+        {
+          "source": ".setDesc(\"Path to folder for chat files\")",
+          "target": ".setDesc(\"聊天文件的文件夹路径\")"
+        },
+        {
+          "source": ".setDesc(\"Path to folder for chat file templates\")",
+          "target": ".setDesc(\"聊天文件模板的文件夹路径\")"
+        },
+        {
+          "source": ".setDesc(\"Generate text at cursor instead of end of file\")",
+          "target": ".setDesc(\"在光标处生成文本，而不是在文件末尾生成文本。\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Automatically infer title after 4 messages have been exchanged\"\n    )",
+          "target": ".setDesc(\n      \"交换4条消息后自动推断标题\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Date format for chat files. Valid date blocks are: YYYY, MM, DD, hh, mm, ss\"\n    )",
+          "target": ".setDesc(\n      \"聊天文件的日期格式。有效的日期块包括：YYYY、MM、DD、hh、mm、ss。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Heading level for messages (example for heading level 2: '## role::user'). Valid heading levels are 0, 1, 2, 3, 4, 5, 6\"\n    )",
+          "target": ".setDesc(\n      \"消息的标题级别（例如，标题级别 2：'## role::user'）。有效的标题级别为 0、1、2、3、4、5、6。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Language to use for title inference.\")",
+          "target": ".setDesc(\"用于标题推断的语言。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"some-api-key\")",
+          "target": ".setPlaceholder(\"某个API密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"chat-templates\")",
+          "target": ".setPlaceholder(\"聊天模板\")"
+        },
+        {
+          "source": ".setPlaceholder(\"YYYYMMDDhhmmss\")",
+          "target": ".setPlaceholder(\"年月日时分秒\")"
+        },
+        {
+          "source": ".setTooltip(\"Create folder\")",
+          "target": ".setTooltip(\"创建文件夹\")"
+        },
+        {
+          "source": ".setTooltip(\"Cancel\")",
+          "target": ".setTooltip(\"取消\")"
+        }
+      ]
+    }
+  }
+}
