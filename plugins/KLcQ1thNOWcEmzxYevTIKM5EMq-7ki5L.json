@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "canvas-mindmap",
+    "version": "2.0.0",
+    "title": "Canvas Mindmap",
+    "description": "让你的画布像思维导图一样工作的插件.",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "name:\"Create floating node\"",
+          "target": "name:\"创建浮动节点\""
+        },
+        {
+          "source": "name:\"Create child node\"",
+          "target": "name:\"创建子节点\""
+        },
+        {
+          "source": "name:\"Enter edit mode\"",
+          "target": "name:\"进入编辑模式\""
+        },
+        {
+          "source": "name:\"Exit edit mode\"",
+          "target": "name:\"退出编辑模式\""
+        },
+        {
+          "source": ".setText(\"Arrow: Move selected node\")",
+          "target": ".setText(\"方向键：移动选中节点\")"
+        },
+        {
+          "source": ".setName(\"Donate\")",
+          "target": ".setName(\"捐赠\")"
+        },
+        {
+          "source": ".setName(\"Width of new node\")",
+          "target": ".setName(\"新节点宽度\")"
+        },
+        {
+          "source": ".setName(\"Height of new node\")",
+          "target": ".setName(\"新节点高度\")"
+        },
+        {
+          "source": ".setName(\"Auto Layout\")",
+          "target": ".setName(\"自动布局\")"
+        },
+        {
+          "source": ".setName(\"Direction\")",
+          "target": ".setName(\"方向\")"
+        },
+        {
+          "source": ".setName(\"Ignore Files\")",
+          "target": ".setName(\"忽略文件\")"
+        },
+        {
+          "source": ".setName(\"Float\")",
+          "target": ".setName(\"浮动\")"
+        },
+        {
+          "source": ".setName(\"Create floating node\")",
+          "target": ".setName(\"创建浮动节点\")"
+        },
+        {
+          "source": ".setName(\"Create custom child node\")",
+          "target": ".setName(\"创建自定义子节点\")"
+        },
+        {
+          "source": ".setName(\"Floating node width\")",
+          "target": ".setName(\"浮动节点宽度\")"
+        },
+        {
+          "source": ".setName(\"Floating node height\")",
+          "target": ".setName(\"浮动节点高度\")"
+        },
+        {
+          "source": ".setName(\"Resize\")",
+          "target": ".setName(\"调整大小\")"
+        },
+        {
+          "source": ".setName(\"Auto resize\")",
+          "target": ".setName(\"自动调整大小\")"
+        },
+        {
+          "source": ".setName(\"Max width\")",
+          "target": ".setName(\"最大宽度\")"
+        },
+        {
+          "source": ".setDesc(\"The width of the new node\")",
+          "target": ".setDesc(\"新节点的宽度\")"
+        },
+        {
+          "source": ".setDesc(\"The height of the new node\")",
+          "target": ".setDesc(\"新节点的高度\")"
+        },
+        {
+          "source": ".setDesc(\"Auto layout the mind map\")",
+          "target": ".setDesc(\"自动布局思维导图\")"
+        },
+        {
+          "source": ".setDesc(\"Create a floating node\")",
+          "target": ".setDesc(\"创建浮动节点\")"
+        },
+        {
+          "source": ".setDesc(\"The width of the floating node\")",
+          "target": ".setDesc(\"浮动节点的宽度\")"
+        },
+        {
+          "source": ".setDesc(\"The height of the floating node\")",
+          "target": ".setDesc(\"浮动节点的高度\")"
+        },
+        {
+          "source": ".setTitle(\"Create child node\")",
+          "target": ".setTitle(\"创建子节点\")"
+        },
+        {
+          "source": "Notice(\"You can only create sibling node for non-root node\")",
+          "target": "Notice(\"只能为非根节点创建同级节点\")"
+        },
+        {
+          "source": ".log(\"debounce\")",
+          "target": ".log(\"防抖\")"
+        },
+        {
+          "source": ".log(\"No valid nodes found in the specified direction\")",
+          "target": ".log(\"在指定方向未找到有效节点\")"
+        },
+        {
+          "source": ".log(\"Obsidian-Canvas-MindMap: canvas view patched\")",
+          "target": ".log(\"Obsidian-Canvas-MindMap：画布视图已修补\")"
+        },
+        {
+          "source": ".log(\"Obsidian-Canvas-MindMap: markdown file info patched\")",
+          "target": ".log(\"Obsidian-Canvas-MindMap：Markdown 文件信息已修补\")"
+        },
+        {
+          "source": "name:\"Split Heading into mindmap based on H1\"",
+          "target": "name:\"根据 H1 将标题拆分为思维导图\""
+        },
+        {
+          "source": "name:\"Create next sibling node\"",
+          "target": "name:\"创建下一个同级节点\""
+        },
+        {
+          "source": "name:\"Create previous sibling node\"",
+          "target": "name:\"创建上一个同级节点\""
+        },
+        {
+          "source": "name:\"Change direction\"",
+          "target": "name:\"更改方向\""
+        },
+        {
+          "source": "name:\"Open changelog\"",
+          "target": "name:\"打开更新日志\""
+        },
+        {
+          "source": "text:\"You can use the hotkey to navigate the mind map.\"",
+          "target": "text:\"你可以使用快捷键来浏览思维导图\""
+        },
+        {
+          "source": "text:\"You can change the hotkey mode to control how you edit the node.\"",
+          "target": "text:\"你可以更改快捷键模式来控制如何编辑节点\""
+        },
+        {
+          "source": "text:\"You can resize the node when you edit the node.\"",
+          "target": "text:\"你可以在编辑节点时调整其大小\""
+        },
+        {
+          "source": "text:'Notice: if you already have \"Node Auto Resize\" plugin enabled, you can ignore this setting.'",
+          "target": "text:'注意：如果你已经启用了“节点自动调整大小”插件，可以忽略此设置'"
+        },
+        {
+          "source": ".setText(\"Alt+Arrow: Select nearest node in the direction\")",
+          "target": ".setText(\"Alt+方向键：选择该方向上最近的节点\")"
+        },
+        {
+          "source": ".setText(\"When you choose 'Space': \")",
+          "target": ".setText(\"当你选择 '空格键'：\")"
+        },
+        {
+          "source": ".setText(\"Space: Edit node\")",
+          "target": ".setText(\"空格键：编辑节点\")"
+        },
+        {
+          "source": ".setText(\"Enter: Create new sibling node\")",
+          "target": ".setText(\"回车键：创建同级节点\")"
+        },
+        {
+          "source": ".setText(\"Mod+Enter: Create new previous sibling node\")",
+          "target": ".setText(\"Mod+回车键：创建上一个同级节点\")"
+        },
+        {
+          "source": ".setText(\"When you choose 'Enter': \")",
+          "target": ".setText(\"当你选择 '回车键'：\")"
+        },
+        {
+          "source": ".setText(\"Enter: Edit node\")",
+          "target": ".setText(\"回车键：编辑节点\")"
+        },
+        {
+          "source": ".setText(\"Mod+Enter: Create new sibling node\")",
+          "target": ".setText(\"Mod+回车键：创建同级节点\")"
+        },
+        {
+          "source": ".setText(\"Mod+Shift+Enter: Create new previous sibling node\")",
+          "target": ".setText(\"Mod+Shift+回车键：创建上一个同级节点\")"
+        },
+        {
+          "source": ".setText(\"Canvas mindmap: \")",
+          "target": ".setText(\"画布思维导图：\")"
+        },
+        {
+          "source": ".setText(\"Loading changelog...\")",
+          "target": ".setText(\"正在加载更新日志…\")"
+        },
+        {
+          "source": ".setButtonText(\"Buy me a coffee\")",
+          "target": ".setButtonText(\"请我喝杯咖啡\")"
+        },
+        {
+          "source": ".setName(\"Changelog\")",
+          "target": ".setName(\"更新日志\")"
+        },
+        {
+          "source": ".setName(\"Use navigate hotkey\")",
+          "target": ".setName(\"使用导航快捷键\")"
+        },
+        {
+          "source": ".setName(\"Hotkey\")",
+          "target": ".setName(\"快捷键\")"
+        },
+        {
+          "source": ".setName(\"Hotkey mode\")",
+          "target": ".setName(\"快捷键模式\")"
+        },
+        {
+          "source": ".setName(\"Layout\")",
+          "target": ".setName(\"布局\")"
+        },
+        {
+          "source": ".setName(\"Sibling Tolerance\")",
+          "target": ".setName(\"同级容差\")"
+        },
+        {
+          "source": ".setName(\"Parent Child Gap (Vertical)\")",
+          "target": ".setName(\"父子节点垂直间距\")"
+        },
+        {
+          "source": ".setName(\"Sibling Gap (Vertical)\")",
+          "target": ".setName(\"同级节点垂直间距\")"
+        },
+        {
+          "source": ".setName(\"Parent Child Gap (Horizontal)\")",
+          "target": ".setName(\"父子节点水平间距\")"
+        },
+        {
+          "source": ".setName(\"Sibling Gap (Horizontal)\")",
+          "target": ".setName(\"同级节点水平间距\")"
+        },
+        {
+          "source": ".setName(\"Floating node gap\")",
+          "target": ".setName(\"浮动节点间距\")"
+        },
+        {
+          "source": ".setName(\"Width auto resize\")",
+          "target": ".setName(\"宽度自动调整\")"
+        },
+        {
+          "source": ".setDesc(\"If you like this plugin, consider donating to support continued development:\")",
+          "target": ".setDesc(\"如果你喜欢这个插件，可以考虑捐赠支持持续开发：\")"
+        },
+        {
+          "source": ".setDesc(\"Auto show the changelog of the plugin when the plugin is updated.\")",
+          "target": ".setDesc(\"插件更新时自动显示更新日志\")"
+        },
+        {
+          "source": ".setDesc(\"Set the layout of the mind map. Notice: any changes will take effect after creating a new node/deleting a node.\")",
+          "target": ".setDesc(\"设置思维导图的布局。注意：更改将在创建或删除节点后生效\")"
+        },
+        {
+          "source": ".setDesc(\"Set the direction of the mind map.\")",
+          "target": ".setDesc(\"设置思维导图的方向\")"
+        },
+        {
+          "source": ".setDesc(\"The tolerance of the sibling node. Used to determine if a node is a valid child.\")",
+          "target": ".setDesc(\"同级节点的容差。用于判断一个节点是否为有效子节点\")"
+        },
+        {
+          "source": ".setDesc(\"The files that will be ignored when auto layout. Use regex to filter the files.\")",
+          "target": ".setDesc(\"自动布局时要忽略的文件。可使用正则表达式进行筛选\")"
+        },
+        {
+          "source": ".setDesc(\"The gap between parent and child node\")",
+          "target": ".setDesc(\"父节点与子节点之间的间距\")"
+        },
+        {
+          "source": ".setDesc(\"The gap between sibling node\")",
+          "target": ".setDesc(\"同级节点之间的间距\")"
+        },
+        {
+          "source": ".setDesc(\"Create a custom child node with link to it. But cannot be used with auto layout.\")",
+          "target": ".setDesc(\"创建带链接的自定义子节点。但无法与自动布局同时使用\")"
+        },
+        {
+          "source": ".setDesc(\"The gap between floating node\")",
+          "target": ".setDesc(\"浮动节点之间的间距\")"
+        },
+        {
+          "source": ".setDesc(\"If true, the node will be automatically resized when you edit the node.\")",
+          "target": ".setDesc(\"如果启用，在编辑节点时自动调整大小\")"
+        },
+        {
+          "source": ".setDesc(\"If true, the width of the node will be automatically resized when you edit the node.\")",
+          "target": ".setDesc(\"如果启用，在编辑节点时自动调整节点宽度\")"
+        },
+        {
+          "source": ".setDesc(\"The max width of the node. If the width of the node is greater than this value, the width of the node will be automatically resized to this value.\")",
+          "target": ".setDesc(\"节点的最大宽度。若节点宽度超过此值，将自动调整为此值\")"
+        },
+        {
+          "source": ".setTitle(\"Create next sibling node\")",
+          "target": ".setTitle(\"创建下一个同级节点\")"
+        },
+        {
+          "source": ".setTitle(\"Create previous sibling node\")",
+          "target": ".setTitle(\"创建上一个同级节点\")"
+        },
+        {
+          "source": ".setTitle(\"Select tree\")",
+          "target": ".setTitle(\"选择树形结构\")"
+        },
+        {
+          "source": ".log(m.x,c.x,m.x-c.x,x,g,Math.abs(m.x-c.x-x))",
+          "target": ".log(m.x,c.x,m.x-c.x,x,g,Math.abs(m.x-c.x-x))"
+        },
+        {
+          "source": ".log(m)",
+          "target": ".log(m)"
+        },
+        {
+          "source": "elog(e)",
+          "target": "elog(e)"
+        },
+        {
+          "source": "elog(s)",
+          "target": "elog(s)"
+        },
+        {
+          "source": ".error(`Invalid direction: ${i}`)",
+          "target": ".error(`无效方向: ${i}`)"
+        },
+        {
+          "source": ".error(\"Error fetching changelog:\",s)",
+          "target": ".error(\"获取更新日志失败：\",s)"
+        },
+        {
+          "source": "text:\"\",focus:!0,save:!0});if(e.addNode(o),e.requestSave(),!o)return;setTimeout(()=>{o.startEditing(),e.zoomToSelection()},0)}return!0}}}),this.addCommand({id:\"",
+          "target": "text:\"\",focus:!0,save:!0});if(e.addNode(o),e.requestSave(),!o)return;setTimeout(()=>{o.startEditing(),e.zoomToSelection()},0)}return!0}}}),this.addCommand({id:\""
+        },
+        {
+          "source": ".setPlaceholder(\"e.g. He(.*)ld\")",
+          "target": ".setPlaceholder(\"例如：He(.*)ld\")"
+        }
+      ]
+    }
+  }
+}

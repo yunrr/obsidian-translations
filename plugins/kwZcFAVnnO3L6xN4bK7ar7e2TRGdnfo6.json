@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "hoarder-sync",
+    "version": "2.0.0",
+    "title": "Karakeep Sync",
+    "description": "Sync your Hoarder bookmarks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(result.message)",
+          "target": "Notice(result.message)"
+        },
+        {
+          "source": "Notice(\"Notes synced to Hoarder\")",
+          "target": "Notice(\"笔记同步至Hoarder\")"
+        },
+        {
+          "source": "Notice(\"Failed to sync notes to Hoarder\")",
+          "target": "Notice(\"同步笔记到Hoarder失败\")"
+        },
+        {
+          "source": ".error(\"Error reading file:\", error)",
+          "target": ".error(\"读取文件时出错:\", error)"
+        },
+        {
+          "source": ".error(\"Error updating bookmark in Hoarder:\", error)",
+          "target": ".error(\"在Hoarder中更新书签时出错:\", error)"
+        },
+        {
+          "source": ".error(\"Error syncing bookmarks:\", error)",
+          "target": ".error(\"同步书签时出现错误:\", error)"
+        },
+        {
+          "source": ".error(\"Error downloading image:\", error)",
+          "target": ".error(\"下载图片时出现错误:\", error)"
+        },
+        {
+          "source": ".error(\"Error updating frontmatter:\", error)",
+          "target": ".error(\"更新正文格式时出错:\", error)"
+        },
+        {
+          "source": ".error(\"Error handling file modification:\", error)",
+          "target": ".error(\"文件修改错误处理:\", error)"
+        },
+        {
+          "source": "name: \"Sync Bookmarks\"",
+          "target": "name: \"同步书签\""
+        },
+        {
+          "source": "text: `Last synced: ${new Date(this.plugin.settings.lastSyncTimestamp).toLocaleString()}`",
+          "target": "text: `上次同步时间: ${new Date(this.plugin.settings.lastSyncTimestamp).toLocaleString()}`"
+        },
+        {
+          "source": ".setName(\"Api key\")",
+          "target": ".setName(\"API密钥\")"
+        },
+        {
+          "source": ".setName(\"Api endpoint\")",
+          "target": ".setName(\"Api endpoint\")"
+        },
+        {
+          "source": ".setName(\"Sync folder\")",
+          "target": ".setName(\"同步文件夹\")"
+        },
+        {
+          "source": ".setName(\"Attachments folder\")",
+          "target": ".setName(\"附件文件夹\")"
+        },
+        {
+          "source": ".setName(\"Sync interval\")",
+          "target": ".setName(\"同步间隔\")"
+        },
+        {
+          "source": ".setName(\"Update existing files\")",
+          "target": ".setName(\"更新现有文件\")"
+        },
+        {
+          "source": ".setName(\"Exclude archived\")",
+          "target": ".setName(\"排除已归档\")"
+        },
+        {
+          "source": ".setName(\"Only favorites\")",
+          "target": ".setName(\"只有收藏\")"
+        },
+        {
+          "source": ".setName(\"Sync notes to Hoarder\")",
+          "target": ".setName(\"同步笔记至Hoarder\")"
+        },
+        {
+          "source": ".setName(\"Excluded tags\")",
+          "target": ".setName(\"排除的标签\")"
+        },
+        {
+          "source": ".setName(\"Download assets\")",
+          "target": ".setName(\"下载资源\")"
+        },
+        {
+          "source": ".setName(\"Manual sync\")",
+          "target": ".setName(\"手动同步\")"
+        },
+        {
+          "source": ".setDesc(\"Your Hoarder API key\")",
+          "target": ".setDesc(\"您的密钥信息\")"
+        },
+        {
+          "source": ".setDesc(\"Hoarder API endpoint URL (default: https://api.hoarder.app/api/v1)\")",
+          "target": ".setDesc(\"Hoarder API端点URL (默认: https://api.hoarder.app/api/v1)\")"
+        },
+        {
+          "source": ".setDesc(\"Folder where bookmarks will be saved\")",
+          "target": ".setDesc(\"书签保存的文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Folder where bookmark images will be saved\")",
+          "target": ".setDesc(\"书签图片将被保存的文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"How often to sync (in minutes)\")",
+          "target": ".setDesc(\"同步频率（分钟）\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to update or skip existing bookmark files\")",
+          "target": ".setDesc(\"是否更新或跳过现有的书签文件\")"
+        },
+        {
+          "source": ".setDesc(\"Exclude archived bookmarks from sync\")",
+          "target": ".setDesc(\"排除已存档的书签同步\")"
+        },
+        {
+          "source": ".setDesc(\"Only sync favorited bookmarks\")",
+          "target": ".setDesc(\"只同步收藏的书签\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to sync notes to Hoarder\")",
+          "target": ".setDesc(\"是否同步笔记到Hoarder?\")"
+        },
+        {
+          "source": ".setDesc(\"Bookmarks with these tags will not be synced (comma-separated), unless favorited\")",
+          "target": ".setDesc(\"只有收藏的书签才会同步这些标签的内容（逗号分隔）\")"
+        },
+        {
+          "source": ".setDesc(\n      \"Download images and other assets locally (if disabled, assets will be embedded using their source URLs)\"\n    )",
+          "target": ".setDesc(\n      \"下载图像和其他资源到本地（如果禁用，资源将使用其源URL嵌入）\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Sync bookmarks now\")",
+          "target": ".setDesc(\"立即同步书签\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your API key\")",
+          "target": ".setPlaceholder(\"请输入您的API密钥\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter API endpoint\")",
+          "target": ".setPlaceholder(\"输入 API 终点\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: folder1/folder2\")",
+          "target": ".setPlaceholder(\"示例: 文件夹1/文件夹2\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: folder1/attachments\")",
+          "target": ".setPlaceholder(\"示例: 文件夹1/附件\")"
+        },
+        {
+          "source": ".setPlaceholder(\"60\")",
+          "target": ".setPlaceholder(\"抱歉，我不清楚你想表达的含义，请提供更多上下文信息或者详细说明，以便我能够更好地帮助你进行翻译工作。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"private, secret, draft\")",
+          "target": ".setPlaceholder(\"私密，秘密，草稿\")"
+        }
+      ]
+    }
+  }
+}

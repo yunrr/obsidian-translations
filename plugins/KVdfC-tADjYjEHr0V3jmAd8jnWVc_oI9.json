@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "frontmatter-modified-date",
+    "version": "2.0.0",
+    "title": "Update modified date",
+    "description": "Automatically update a frontmatter modified date field when you modify your note. This will not use the filesystem time, but only when you modify the file through Obsidian. Optionally store a history of edit times.",
+    "language": "zh-cn",
+    "supportedVersions": "1.4.7",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setName(\"Modified date property\")",
+          "target": ".setName(\"修改日期属性\")"
+        },
+        {
+          "source": ".setName(\"Created date property (optional)\")",
+          "target": ".setName(\"创建日期属性\")"
+        },
+        {
+          "source": ".setName(\"Date format\")",
+          "target": ".setName(\"日期格式\")"
+        },
+        {
+          "source": ".setName(\"Store history of all updates\")",
+          "target": ".setName(\"是否存储所有更新历史\")"
+        },
+        {
+          "source": ".setName(\"Frequency of updates\")",
+          "target": ".setName(\"更新频率\")"
+        },
+        {
+          "source": ".setName(\"Order to store the history items\")",
+          "target": ".setName(\"记录时间的顺序\")"
+        },
+        {
+          "source": ".setName(\"Maximum number of history items\")",
+          "target": ".setName(\"保留时间更新的最大数量\")"
+        },
+        {
+          "source": ".setName(\"Vault options\")",
+          "target": ".setName(\"库选项\")"
+        },
+        {
+          "source": ".setName(\"Exclude folders\")",
+          "target": ".setName(\"排除文件夹\")"
+        },
+        {
+          "source": ".setName(\"Only update existing fields\")",
+          "target": ".setName(\"仅更新现有字段\")"
+        },
+        {
+          "source": ".setName(\"Use typing events instead of Obsidian events\")",
+          "target": ".setName(\"使用键入事件而不是obsidian事件\")"
+        },
+        {
+          "source": ".setName(\"Timeout (seconds)\")",
+          "target": ".setName(\"延时多少秒开始更新 (seconds)\")"
+        },
+        {
+          "source": ".setName(\"Update count property\")",
+          "target": ".setName(\"更新计数属性\")"
+        },
+        {
+          "source": ".setDesc(\"The name of the YAML/frontmatter property to update when your note is modified\")",
+          "target": ".setDesc(\"修改笔记时要更新的YAML/frontmatter属性的名称\")"
+        },
+        {
+          "source": ".setDesc(\"Optional. Add a created property name, and the plugin will also update the note creation date.\")",
+          "target": ".setDesc(\"可选。添加已创建的属性名称，插件还将更新注释创建日期。\")"
+        },
+        {
+          "source": ".setDesc(\"This is in MomentJS format. Leave blank for the default ATOM format.\")",
+          "target": ".setDesc(\"这是MomentJS格式的。将默认ATOM格式留空。\")"
+        },
+        {
+          "source": ".setDesc(`Instead of storing only the last modified time, this will turn your \"${this.plugin.settings.frontmatterProperty}\" frontmatter property into a list of all of the dates/times you've edited this note.`)",
+          "target": ".setDesc(`这将使您的\"${this.plugin.settings.frontmatterProperty}\" frontmatter属性转换为您编辑此笔记的所有日期/时间的列表。`)"
+        },
+        {
+          "source": ".setDesc(\"The plugin will store a maximum of 1 history entry per the selected time unit. If there are multiple edits in the specified period, the last edit entry will be updated instead.\")",
+          "target": ".setDesc(\"该插件将在所选时间单位内最多存储1个历史条目。如果在指定时间段内有多个编辑，则将更新最后一个编辑条目。\")"
+        },
+        {
+          "source": ".setDesc(\"Leave blank or zero for unlimited history items.\")",
+          "target": ".setDesc(\"对于无限制的历史项目，请留空或为零。\")"
+        },
+        {
+          "source": ".setDesc(\"Add a list of folders to exclude, one folder per line. All subfolders will be also excluded.\")",
+          "target": ".setDesc(\"添加要排除的文件夹列表，每行一个文件夹。所有子文件夹也将被排除在外.\")"
+        },
+        {
+          "source": ".setDesc(\"If you turn this on, it will only update a frontmatter field *if that field already exists*.\")",
+          "target": ".setDesc(\"若开启, 它只会更新前言字段 *假如该字段已经存在*.\")"
+        },
+        {
+          "source": ".setDesc('How many seconds to wait after the last edit before updating the modified field. You can increase this value if you are experiencing too many \"Merging changes\" popups.')",
+          "target": ".setDesc('在上次编辑后等待多少秒才能更新修改后的字段。如果您遇到太多的 \"Merging changes\" 弹出窗口，可以增加此值。')"
+        },
+        {
+          "source": ".setDesc(\"The name of the YAML/frontmatter property to store the update count.\")",
+          "target": ".setDesc(\"用于存储更新计数的YAML/frontmatter属性的名称。\")"
+        },
+        {
+          "source": ".setDesc(`If you make changes to a file using an external editor and Obsidian is currently open, Obsidian",
+          "target": ".setDesc(`如果您使用外部编辑器对文件进行更改，并且Obsidian当前处于打开状态，则Obsidian"
+        },
+        {
+          "source": "will register this as a modification and update the frontmatter. If you don't want this to happen, and only",
+          "target": "将此注册为修改并更新frontmatter。\n如果你不希望这种情况发生，只有"
+        },
+        {
+          "source": "want the frontmatter when you are making changes inside Obsidian, you can try this mode. It watches for typing ",
+          "target": "当你在 Obsidian 内部进行更改时，你可以尝试这种模式。\n它监视打字"
+        },
+        {
+          "source": "events, and then updates the frontmatter only when you type. This means that some events like updating your note ",
+          "target": "事件，然后仅在键入时更新frontmatter。这意味着某些事件，如更新您的笔记"
+        },
+        {
+          "source": "or properties using your mouse will not cause the modified field to update. You will need to restart Obsidian ",
+          "target": "或者使用鼠标的属性不会导致修改后的字段更新。您需要在这一变化之后重新启动 Obsidian"
+        },
+        {
+          "source": "after this change.`)",
+          "target": "`)"
+        }
+      ]
+    }
+  }
+}

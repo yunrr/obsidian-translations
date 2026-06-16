@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "advanced-canvas",
+    "version": "2.0.0",
+    "title": "Advanced Canvas",
+    "description": "Supercharge your canvas experience! Create presentations, flowcharts and more!",
+    "language": "zh-cn",
+    "supportedVersions": "3.2.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Reload obsidian to apply the changes.\")",
+          "target": "Notice(\"重新加载 Obsidian 以应用更改。\")"
+        },
+        {
+          "source": "Notice(\"No start node found. Please mark a node as a start node through the popup menu.\")",
+          "target": "Notice(\"未找到起始节点。请通过弹出菜单将某个节点标记为起始节点\")"
+        },
+        {
+          "source": ".log(\"Patching canvas view:\", canvasView)",
+          "target": ".log(\"修补画布视图:\", canvasView)"
+        },
+        {
+          "source": "name: \"Create new slide\"",
+          "target": "name: \"创建新幻灯片\""
+        },
+        {
+          "source": "name: \"Set start node\"",
+          "target": "name: \"设置起始节点\""
+        },
+        {
+          "source": "name: \"Start presentation\"",
+          "target": "name: \"开始演示\""
+        },
+        {
+          "source": "name: \"Continue presentation\"",
+          "target": "name: \"继续演示\""
+        },
+        {
+          "source": "name: \"End presentation\"",
+          "target": "name: \"结束演示\""
+        },
+        {
+          "source": "name: \"Previous node\"",
+          "target": "name: \"上一个节点\""
+        },
+        {
+          "source": "name: \"Next node\"",
+          "target": "name: \"下一个节点\""
+        },
+        {
+          "source": "name: \"Encapsulate selection\"",
+          "target": "name: \"封装选择\""
+        },
+        {
+          "source": "name: \"Create text node\"",
+          "target": "name: \"创建文本节点\""
+        },
+        {
+          "source": "name: \"Create file node\"",
+          "target": "name: \"创建文件节点\""
+        },
+        {
+          "source": "name: \"Select all edges\"",
+          "target": "name: \"选择所有边\""
+        },
+        {
+          "source": "name: \"Zoom to selection\"",
+          "target": "name: \"缩放到选择区域\""
+        },
+        {
+          "source": "name: `Clone node ${direction}`",
+          "target": "name: `克隆节点 ${direction}`"
+        },
+        {
+          "source": "name: `Expand node ${direction}`",
+          "target": "name: `扩展节点 ${direction}`"
+        },
+        {
+          "source": "name: \"Toggle Focus Mode\"",
+          "target": "name: \"切换聚焦模式\""
+        },
+        {
+          "source": ".setButtonText(\"Open Tutorial\")",
+          "target": ".setButtonText(\"打开教程\")"
+        },
+        {
+          "source": ".setName(\"General\")",
+          "target": ".setName(\"常规\")"
+        },
+        {
+          "source": ".setName(\"Node type on double click\")",
+          "target": ".setName(\"双击节点类型\")"
+        },
+        {
+          "source": ".setName(\"Always align new nodes to grid\")",
+          "target": ".setName(\"始终将新节点对齐到网格\")"
+        },
+        {
+          "source": ".setName(\"Default text node width\")",
+          "target": ".setName(\"默认文本节点宽度\")"
+        },
+        {
+          "source": ".setName(\"Default text node height\")",
+          "target": ".setName(\"默认文本节点高度\")"
+        },
+        {
+          "source": ".setName(\"Default file node width\")",
+          "target": ".setName(\"默认文件节点宽度\")"
+        },
+        {
+          "source": ".setName(\"Default file node height\")",
+          "target": ".setName(\"默认文件节点高度\")"
+        },
+        {
+          "source": ".setName(\"Minimum node size\")",
+          "target": ".setName(\"最小节点大小\")"
+        },
+        {
+          "source": ".setName(\"Disable font size relative to zoom\")",
+          "target": ".setName(\"禁用字体大小与缩放的关联\")"
+        },
+        {
+          "source": ".setName(\"Custom node style settings\")",
+          "target": ".setName(\"自定义节点样式设置\")"
+        },
+        {
+          "source": ".setName(\"Custom edge style settings\")",
+          "target": ".setName(\"自定义边缘样式设置\")"
+        },
+        {
+          "source": ".setName(\"Default edge line direction\")",
+          "target": ".setName(\"默认边缘线方向\")"
+        },
+        {
+          "source": ".setName('Rotate arrow if pathfinding method is \"Direct\"')",
+          "target": ".setName('如果路径寻找方法是\"Direct\"，旋转箭头')"
+        },
+        {
+          "source": ".setName(\"A* grid resolution\")",
+          "target": ".setName(\"A* 网格分辨率\")"
+        },
+        {
+          "source": ".setName(\"Live update A* path\")",
+          "target": ".setName(\"实时更新 A* 路径\")"
+        },
+        {
+          "source": ".setName(\"A* rounded path\")",
+          "target": ".setName(\"A* 圆角路径\")"
+        },
+        {
+          "source": ".setName(\"Zoom to cloned node\")",
+          "target": ".setName(\"缩放到克隆节点\")"
+        },
+        {
+          "source": ".setName(\"Clone node margin\")",
+          "target": ".setName(\"克隆节点边距\")"
+        },
+        {
+          "source": ".setName(\"Expand node step size\")",
+          "target": ".setName(\"扩展节点步长\")"
+        },
+        {
+          "source": ".setName(\"Snap to grid\")",
+          "target": ".setName(\"对齐到网格\")"
+        },
+        {
+          "source": ".setName(\"Collapsed group preview on drag\")",
+          "target": ".setName(\"拖动时显示折叠组的预览\")"
+        },
+        {
+          "source": ".setName('Show \"Set Start Node\" in node popup')",
+          "target": ".setName('在节点弹出菜单中显示\"设置起始节点\"')"
+        },
+        {
+          "source": ".setName(\"Default slide ratio\")",
+          "target": ".setName(\"默认幻灯片比例\")"
+        },
+        {
+          "source": ".setName(\"Wrap in slide padding\")",
+          "target": ".setName(\"包裹在幻灯片内的填充\")"
+        },
+        {
+          "source": ".setName(\"Reset viewport on presentation end\")",
+          "target": ".setName(\"演示结束时重置视口\")"
+        },
+        {
+          "source": ".setName(\"Use arrow keys to change slides\")",
+          "target": ".setName(\"使用箭头键切换幻灯片\")"
+        },
+        {
+          "source": ".setName(\"Use PgUp/PgDown keys to change slides\")",
+          "target": ".setName(\"使用PgUp/PgDown键切换幻灯片\")"
+        },
+        {
+          "source": ".setName(\"Zoom to slide without padding\")",
+          "target": ".setName(\"缩放到没有填充的幻灯片\")"
+        },
+        {
+          "source": ".setName(\"Slide transition animation duration\")",
+          "target": ".setName(\"幻灯片过渡动画时长\")"
+        },
+        {
+          "source": ".setName(\"Slide transition animation intensity\")",
+          "target": ".setName(\"幻灯片过渡动画强度\")"
+        },
+        {
+          "source": ".setName(\"Maintain closed portal size\")",
+          "target": ".setName(\"保持关闭的门户大小\")"
+        },
+        {
+          "source": ".setName(\"Show edges into disabled portals\")",
+          "target": ".setName(\"显示指向禁用门户的边缘\")"
+        },
+        {
+          "source": ".setName(\"Properties\")",
+          "target": ".setName(\"属性\")"
+        },
+        {
+          "source": ".setName(\"cssclasses\")",
+          "target": ".setName(\"css类\")"
+        },
+        {
+          "source": ".setDesc(\"The type of node that will be created when double clicking on the canvas.\")",
+          "target": ".setDesc(\"双击画布时将创建的节点类型。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, new nodes will be aligned to the grid.\")",
+          "target": ".setDesc(\"启用时，新节点将对齐到网格。\")"
+        },
+        {
+          "source": ".setDesc(\"The default width of a text node.\")",
+          "target": ".setDesc(\"文本节点的默认宽度。\")"
+        },
+        {
+          "source": ".setDesc(\"The default height of a text node.\")",
+          "target": ".setDesc(\"文本节点的默认高度。\")"
+        },
+        {
+          "source": ".setDesc(\"The default width of a file node.\")",
+          "target": ".setDesc(\"文件节点的默认宽度。\")"
+        },
+        {
+          "source": ".setDesc(\"The default height of a file node.\")",
+          "target": ".setDesc(\"文件节点的默认高度。\")"
+        },
+        {
+          "source": ".setDesc(\"The minimum size of a node.\")",
+          "target": ".setDesc(\"节点的最小大小。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the font size of e.g. group node titles and edge labels will not increase when zooming out.\")",
+          "target": ".setDesc(\"启用时，例如组节点标题和边缘标签的字体大小在缩小时不会增加。\")"
+        },
+        {
+          "source": ".setDesc(\"Add custom style settings for nodes. (Go to GitHub for more information)\")",
+          "target": ".setDesc(\"添加自定义节点样式设置。（有关更多信息，请访问 GitHub）\")"
+        },
+        {
+          "source": ".setDesc(\"Add custom style settings for edges. (Go to GitHub for more information)\")",
+          "target": ".setDesc(\"添加自定义边缘样式设置。（有关更多信息，请访问 GitHub）\")"
+        },
+        {
+          "source": ".setDesc(\"The default line direction of an edge.\")",
+          "target": ".setDesc(\"边缘的默认线条方向。\")"
+        },
+        {
+          "source": ".setDesc('When enabled, the arrow will be rotated to the direction of the edge if the pathfinding method is set to \"Direct\".')",
+          "target": ".setDesc('启用时，如果路径寻找方法设置为\"Direct\"，箭头将旋转到边缘的方向。')"
+        },
+        {
+          "source": ".setDesc(\"The resolution of the grid when using the A* path style. The lower the value, the more precise the path will be. But it will also take longer to calculate.\")",
+          "target": ".setDesc(\"使用 A* 路径样式时，网格的分辨率。值越低，路径越精确，但计算时间越长。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the A* path style will be updated live while dragging the edge.\")",
+          "target": ".setDesc(\"启用时，A* 路径样式将在拖动边缘时实时更新。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the A* path style will be rounded.\")",
+          "target": ".setDesc(\"启用时，A* 路径样式将变为圆角。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the canvas will zoom to the cloned node.\")",
+          "target": ".setDesc(\"启用时，画布将缩放到克隆节点。\")"
+        },
+        {
+          "source": ".setDesc(\"The margin between the cloned node and the source node.\")",
+          "target": ".setDesc(\"克隆节点与源节点之间的边距。\")"
+        },
+        {
+          "source": ".setDesc(\"The step size for expanding the node.\")",
+          "target": ".setDesc(\"扩展节点的步长。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the height of the node will snap to the grid.\")",
+          "target": ".setDesc(\"启用时，节点的高度将对齐到网格。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, a group that is collapsed show its border while dragging a node.\")",
+          "target": ".setDesc(\"启用时，折叠的组在拖动节点时会显示其边框。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, \"Set Start Node\" will show in node popup.\")",
+          "target": ".setDesc(\"启用时，\"设置起始节点\"将显示在节点弹出菜单中。\")"
+        },
+        {
+          "source": ".setDesc(\"The default ratio of slides.\")",
+          "target": ".setDesc(\"幻灯片的默认比例。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the slide will have padding inside.\")",
+          "target": ".setDesc(\"启用时，幻灯片内部将有填充。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the viewport will reset after the presentation ends.\")",
+          "target": ".setDesc(\"启用时，演示结束后视口将重置。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the arrow keys will navigate through slides.\")",
+          "target": ".setDesc(\"启用时，箭头键将用于切换幻灯片。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the PgUp/PgDown keys will navigate through slides.\")",
+          "target": ".setDesc(\"启用时，PgUp/PgDown键将用于切换幻灯片。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, the slides will zoom without padding.\")",
+          "target": ".setDesc(\"启用时，幻灯片将没有填充地缩放。\")"
+        },
+        {
+          "source": ".setDesc(\"The duration of slide transition animation.\")",
+          "target": ".setDesc(\"幻灯片过渡动画的持续时间。\")"
+        },
+        {
+          "source": ".setDesc(\"The intensity of slide transition animation.\")",
+          "target": ".setDesc(\"幻灯片过渡动画的强度。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, closed portals will retain their size.\")",
+          "target": ".setDesc(\"启用时，关闭的门户将保持其大小。\")"
+        },
+        {
+          "source": ".setDesc(\"When enabled, edges into disabled portals will be shown.\")",
+          "target": ".setDesc(\"启用时，指向禁用门户的边缘将显示。\")"
+        },
+        {
+          "source": ".setDesc(\"The properties of the canvas.\")",
+          "target": ".setDesc(\"画布的属性。\")"
+        },
+        {
+          "source": ".setDesc(\"The CSS classes used in the canvas.\")",
+          "target": ".setDesc(\"画布中使用的 CSS 类。\")"
+        },
+        {
+          "source": ".setTitle(\"Encapsulate\")",
+          "target": ".setTitle(\"封装\")"
+        },
+        {
+          "source": "label: \"Left (default)\"",
+          "target": "label: \"左\""
+        },
+        {
+          "source": "label: \"Center\"",
+          "target": "label: \"中\""
+        },
+        {
+          "source": "label: \"Right\"",
+          "target": "label: \"右\""
+        },
+        {
+          "source": "label: \"Shape\"",
+          "target": "label: \"形状\""
+        },
+        {
+          "source": "label: \"Round Rectangle (default)\"",
+          "target": "label: \"圆矩\""
+        },
+        {
+          "source": "label: \"Pill\"",
+          "target": "label: \"药丸\""
+        },
+        {
+          "source": "label: \"Diamond\"",
+          "target": "label: \"菱形\""
+        },
+        {
+          "source": "label: \"Parallelogram\"",
+          "target": "label: \"斜四\""
+        },
+        {
+          "source": "label: \"Circle\"",
+          "target": "label: \"圆形\""
+        },
+        {
+          "source": "label: \"Document\"",
+          "target": "label: \"文档\""
+        },
+        {
+          "source": "label: \"Border\"",
+          "target": "label: \"边框\""
+        },
+        {
+          "source": "label: \"Solid (default)\"",
+          "target": "label: \"实线\""
+        },
+        {
+          "source": "label: \"Dashed\"",
+          "target": "label: \"虚线\""
+        },
+        {
+          "source": "label: \"Dotted\"",
+          "target": "label: \"点线\""
+        },
+        {
+          "source": "label: \"Invisible\"",
+          "target": "label: \"隐形\""
+        },
+        {
+          "source": "label: \"Path Style\"",
+          "target": "label: \"路径\""
+        },
+        {
+          "source": "label: \"Short Dashed\"",
+          "target": "label: \"短虚\""
+        },
+        {
+          "source": "label: \"Long Dashed\"",
+          "target": "label: \"长虚\""
+        },
+        {
+          "source": "label: \"Arrow Style\"",
+          "target": "label: \"箭头\""
+        },
+        {
+          "source": "label: \"Triangle (default)\"",
+          "target": "label: \"三角\""
+        },
+        {
+          "source": "label: \"Triangle Outline\"",
+          "target": "label: \"空三\""
+        },
+        {
+          "source": "label: \"Thin Triangle\"",
+          "target": "label: \"大于\""
+        },
+        {
+          "source": "label: \"Halved Triangle\"",
+          "target": "label: \"半三\""
+        },
+        {
+          "source": "label: \"Diamond Outline\"",
+          "target": "label: \"空菱\""
+        },
+        {
+          "source": "label: \"Circle Outline\"",
+          "target": "label: \"空圆\""
+        },
+        {
+          "source": "label: \"Bezier (default)\"",
+          "target": "label: \"贝塞\""
+        },
+        {
+          "source": "label: \"Direct\"",
+          "target": "label: \"线段\""
+        },
+        {
+          "source": "label: \"Square\"",
+          "target": "label: \"直角\""
+        },
+        {
+          "source": "label: \"A*\"",
+          "target": "label: \"A*\""
+        },
+        {
+          "source": "label: \"Drag to add slide\"",
+          "target": "label: \"拖动添加幻灯片\""
+        },
+        {
+          "source": "label: \"Set as start slide\"",
+          "target": "label: \"设置为起始幻灯片\""
+        },
+        {
+          "source": "label: \"Disable node popup\"",
+          "target": "label: \"禁用节点弹出菜单\""
+        },
+        {
+          "source": "label: \"Disable zoom\"",
+          "target": "label: \"禁用缩放\""
+        },
+        {
+          "source": "label: \"Disable pan\"",
+          "target": "label: \"禁用平移\""
+        },
+        {
+          "source": "label: \"Toggle locked height\"",
+          "target": "label: \"切换锁定高度\""
+        },
+        {
+          "source": "label: \"Properties\"",
+          "target": "label: \"属性\""
+        },
+        {
+          "source": "label: \"Focus Mode\"",
+          "target": "label: \"聚焦模式\""
+        },
+        {
+          "source": "label: \"Predefined Process\"",
+          "target": "label: \"预定\""
+        },
+        {
+          "source": "label: \"Database\"",
+          "target": "label: \"圆筒\""
+        },
+        {
+          "source": "label: \"Pathfinding Method\"",
+          "target": "label: \"线形\""
+        },
+        {
+          "source": "label: \"Drag to add group\"",
+          "target": "label: \"添加组（点击或拖动）\""
+        },
+        {
+          "source": "label: \"Text Alignment\"",
+          "target": "label: \"文字对齐\""
+        },
+        {
+          "source": "Node type on double click",
+          "target": "双击时创建的节点类型"
+        },
+        {
+          "source": "The type of node that will be created when double clicking on the canvas.",
+          "target": "在画布上双击时将创建的节点类型。"
+        },
+        {
+          "source": "Always align new nodes to grid",
+          "target": "始终将新节点对齐到网格"
+        },
+        {
+          "source": "\"text\": \"Text\"",
+          "target": "\"text\": \"文本\""
+        },
+        {
+          "source": "\"file\": \"File\"",
+          "target": "\"file\": \"文件\""
+        },
+        {
+          "source": "When enabled, new nodes will be aligned to the grid.",
+          "target": "启用后，新节点将与网格对齐。"
+        },
+        {
+          "source": "Default text node width",
+          "target": "默认文本节点宽度"
+        },
+        {
+          "source": "The default width of a text node.",
+          "target": "文本节点的默认宽度。"
+        },
+        {
+          "source": "Default text node height",
+          "target": "默认文本节点高度"
+        },
+        {
+          "source": "The default height of a text node.",
+          "target": "文本节点的默认高度。"
+        },
+        {
+          "source": "Default file node width",
+          "target": "默认文件节点宽度"
+        },
+        {
+          "source": "The default width of a file node.",
+          "target": "文件节点的默认宽度。"
+        }
+      ]
+    }
+  }
+}
