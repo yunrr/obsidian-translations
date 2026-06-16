@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "auto-classifier",
+    "version": "1.0.0",
+    "title": "Auto Classifier",
+    "description": "Auto Classifier Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.3.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "overwriteName",
+          "source": "Overwrite if selected.",
+          "target": "如果选中则覆盖。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "overwriteName",
+          "source": "Overwrite whole title. If false, add to end of title.",
+          "target": "覆盖整个标题。如果为假，则添加到标题末尾。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "overwriteName",
+          "source": "Overwrite value of the key.",
+          "target": "覆盖键的值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Jina AI Classifier",
+          "target": "Jina AI分类器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI-compatible API",
+          "target": "兼容OpenAI的API"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Manual tags",
+          "target": "手动标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Filtered tags",
+          "target": "筛选后的标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "All tags",
+          "target": "所有标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Title alternative",
+          "target": "标题替代"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "FrontMatter",
+          "target": "FrontMatter"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Top of Content",
+          "target": "内容顶部"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Current Cursor",
+          "target": "当前光标位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not parse message into JSON:",
+          "target": "无法将消息解析为JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "From chunk:",
+          "target": "来自数据块："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error calling Jina AI API:",
+          "target": "调用Jina AI API时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "ChatGPT API Test Error:",
+          "target": "ChatGPT API 测试错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Jina AI API Test Error:",
+          "target": "Jina AI API 测试错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "ChatGPT JSON parsing error:",
+          "target": "ChatGPT JSON 解析错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Raw response:",
+          "target": "原始响应："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Jina AI Request:",
+          "target": "Jina AI 请求："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Jina AI Response Status:",
+          "target": "Jina AI 响应状态："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Jina AI Response Body:",
+          "target": "Jina AI 响应正文："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Jina AI Parsed Response Data:",
+          "target": "Jina AI 解析后的响应数据："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Specify shortcuts",
+          "target": "指定快捷键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test API call",
+          "target": "测试 API 调用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test Jina API",
+          "target": "测试 Jina API"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "View Reference Tags",
+          "target": "查看参考标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the classification engine to use.",
+          "target": "选择要使用的分类引擎。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Base URL for OpenAI-compatible API calls",
+          "target": "用于 OpenAI 兼容 API 调用的基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Model ID to use for classification. (Recommended: gpt-4.1-mini, gpt-4.1, gpt-4o)",
+          "target": "用于分类的模型 ID。（推荐：gpt-4.1-mini, gpt-4.1, gpt-4o）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional: Set a different base URL for Jina AI API calls.",
+          "target": "可选：为 Jina AI API 调用设置不同的基础 URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If not, it will recommend new tags",
+          "target": "否则，它将推荐新标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the type of reference tag",
+          "target": "选择参考标签的类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify a regular expression to filter tags",
+          "target": "指定用于过滤标签的正则表达式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Manually specify tags to reference.",
+          "target": "手动指定要参考的标签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify output type",
+          "target": "指定输出类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify where to put the output tag",
+          "target": "指定输出标签的放置位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify where to put the output wikilink",
+          "target": "指定输出 Wiki 链接的放置位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify FrontMatter key to put the output tag",
+          "target": "指定用于放置输出标签的 FrontMatter 键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Output: {prefix} + {output} + {suffix}",
+          "target": "输出：{prefix} + {output} + {suffix}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of tags to suggest (1-10)",
+          "target": "建议的最大标签数量（1-10）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable advanced prompt customization for better results",
+          "target": "启用高级提示词自定义以获得更好结果"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The maximum number of tokens that can be generated in the completion.",
+          "target": "在补全中可生成的最大 token 数量。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Classifier Engine",
+          "target": "分类引擎"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API Base URL",
+          "target": "API 基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API Key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Jina AI API Base URL",
+          "target": "Jina AI API 基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Jina AI Model",
+          "target": "Jina AI 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Jina AI API Key",
+          "target": "Jina AI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Reference",
+          "target": "使用参考"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Reference type",
+          "target": "参考类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Filter regex",
+          "target": "过滤正则表达式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Manual tags",
+          "target": "手动标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output Type",
+          "target": "输出类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output Location",
+          "target": "输出位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "FrontMatter key",
+          "target": "FrontMatter 键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add Prefix & Suffix",
+          "target": "添加前缀与后缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Prefix",
+          "target": "前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Suffix",
+          "target": "后缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Maximum Tag Suggestions",
+          "target": "最大标签建议数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Chat Role (ChatGPT)",
+          "target": "自定义聊天角色 (ChatGPT)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Max Tokens (ChatGPT)",
+          "target": "自定义最大 Token 数 (ChatGPT)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Chat Role",
+          "target": "自定义聊天角色"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom Max Tokens",
+          "target": "自定义最大 Token 数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Jina API key",
+          "target": "Jina API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Regular expression",
+          "target": "正则表达式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Tags",
+          "target": "标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Key",
+          "target": "键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Testing API call...",
+          "target": "正在测试 API 调用..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Success! API working.",
+          "target": "成功！API 正常工作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Error: API is not working. Check console for details.",
+          "target": "错误：API 无法工作。请检查控制台获取详情。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Testing Jina API call...",
+          "target": "正在测试 Jina API 调用..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Bring All Tags",
+          "target": "获取所有标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Restore to default",
+          "target": "恢复默认设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Classify tag from Selected Area",
+          "target": "从选定区域分类标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Classify tag from Note Title",
+          "target": "从笔记标题分类标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Classify tag from FrontMatter",
+          "target": "从 FrontMatter 分类标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Classify tag from Note Content",
+          "target": "从笔记内容分类标签"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This plugin does not have default shortcuts to prevent shortcut conflicts.",
+          "target": "此插件没有默认快捷键，以避免快捷键冲突。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Assign your own shortcuts to run commands for different input types.",
+          "target": "为您自己的快捷键分配命令，以运行不同输入类型的命令。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "API Setting",
+          "target": "API 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Common configurations:",
+          "target": "常见配置："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "• OpenAI: https://api.openai.com/v1",
+          "target": "• OpenAI: https://api.openai.com/v1"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "• Local OpenAI-compatible API (Ollama, LocalAI):",
+          "target": "• 本地 OpenAI 兼容 API (Ollama, LocalAI)："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "   - Ollama: http://localhost:11434/v1",
+          "target": "   - Ollama: http://localhost:11434/v1"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "   - LocalAI: http://localhost:8080/v1",
+          "target": "   - LocalAI: http://localhost:8080/v1"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "   ⚠️ Ollama/LocalAI are not fully compatible currently.",
+          "target": "   ⚠️ Ollama/LocalAI 目前尚未完全兼容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Recommended for OpenAI: gpt-4.1-mini, gpt-4.1, gpt-4o",
+          "target": "推荐用于 OpenAI：gpt-4.1-mini, gpt-4.1, gpt-4o"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "• OpenAI: gpt-4.1-mini, gpt-4.1, gpt-4o",
+          "target": "• OpenAI: gpt-4.1-mini, gpt-4.1, gpt-4o"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "• Local OpenAI-compatible API (Ollama, LocalAI): llama3, mistral, phi3, qwen2 등",
+          "target": "• 本地 OpenAI 兼容 API (Ollama, LocalAI): llama3, mistral, phi3, qwen2 等"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Get OpenAI API key",
+          "target": "获取 OpenAI API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter your Jina AI API key. Get a free API key (10M tokens) at ",
+          "target": "输入您的 Jina AI API 密钥。在以下地址获取免费 API 密钥（1000 万 token）："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tag Reference Setting",
+          "target": "标签参考设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Output Setting",
+          "target": "输出设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced Setting",
+          "target": "高级设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This plugin is based on the ChatGPT answer.",
+          "target": "此插件基于 ChatGPT 的回答。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Variables:",
+          "target": "变量："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "- {{input}}: The text to classify will be inserted here.",
+          "target": "- {{input}}：要分类的文本将插入此处。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "- {{reference}}: The reference tags will be inserted here.",
+          "target": "- {{reference}}：参考标签将插入此处。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This plugin is based on the LLM response.",
+          "target": "此插件基于 LLM 的响应。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

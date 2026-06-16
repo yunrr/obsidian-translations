@@ -1,0 +1,961 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "audio-transcription",
+    "version": "1.0.0",
+    "title": "Audio Transcription",
+    "description": "Audio Transcription Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Cloud (OpenRouter) - use custom models",
+          "target": "云端 (OpenRouter) - 使用自定义模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Cloud (Groq) - fastest, very low cost, requires api key",
+          "target": "云端 (Groq) - 最快，成本极低，需要 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Cloud (OpenAI Whisper) - faster, requires api key",
+          "target": "云端 (OpenAI Whisper) - 更快，需要 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Local (whisper.cpp) – private, no internet needed",
+          "target": "本地 (whisper.cpp) – 私密，无需网络"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Large (2.9 GB) - best accuracy, slower",
+          "target": "大型 (2.9 GB) - 最佳精度，较慢"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Medium (1.5 GB) - recommended, excellent accuracy",
+          "target": "中型 (1.5 GB) - 推荐，精度极佳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Small (466 MB) - moderate speed, very good accuracy",
+          "target": "小型 (466 MB) - 中等速度，精度很好"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Base (142 MB) - fast, good accuracy",
+          "target": "基础 (142 MB) - 快速，精度良好"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Tiny (75 MB) - very fast, basic accuracy",
+          "target": "微型 (75 MB) - 非常快，基础精度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Podcast",
+          "target": "播客"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Radio",
+          "target": "广播"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Volume",
+          "target": "音量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Audio lines",
+          "target": "音频行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Mic",
+          "target": "麦克风"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Headphones",
+          "target": "耳机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Audio file",
+          "target": "音频文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Microphone",
+          "target": "麦克风"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to download model:",
+          "target": "下载模型失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to download binary:",
+          "target": "下载二进制文件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error parsing whisper output:",
+          "target": "解析 Whisper 输出时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "OpenAI Whisper API error:",
+          "target": "OpenAI Whisper API 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Groq API error:",
+          "target": "Groq API 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "OpenRouter API error:",
+          "target": "OpenRouter API 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to get audio duration:",
+          "target": "获取音频时长失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Transcription failed:",
+          "target": "转录失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Analysis failed after retry:",
+          "target": "重试后分析失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to delete audio file:",
+          "target": "删除音频文件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to create markdown file:",
+          "target": "创建 Markdown 文件失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Connection test failed:",
+          "target": "连接测试失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Connection test timeout:",
+          "target": "连接测试超时："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "File stream error during download:",
+          "target": "下载期间文件流错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Response stream error during download:",
+          "target": "下载期间响应流错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Request error during download:",
+          "target": "下载期间请求错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Connection timeout triggered - no response from server",
+          "target": "连接超时触发 - 服务器无响应"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel download",
+          "target": "取消下载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Overwrite",
+          "target": "覆盖"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Start transcription",
+          "target": "开始转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Download model",
+          "target": "下载模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Download binary",
+          "target": "下载二进制文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Download complete!",
+          "target": "下载完成！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear all",
+          "target": "全部清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose where to process your audio files",
+          "target": "选择处理音频文件的位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Larger models are more accurate but slower. Medium is recommended for less common languages.",
+          "target": "更大的模型更精确但更慢。对于不太常见的语言，推荐使用中型模型。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the languages you commonly transcribe. You will be asked to choose from these before each transcription",
+          "target": "选择您常用的转录语言。每次转录前，系统会要求您从这些语言中选择。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Identify and label different speakers in the audio",
+          "target": "识别并标记音频中的不同说话者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add extra instructions for the AI to follow when analyzing transcripts",
+          "target": "为 AI 分析转录文本时添加额外指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Required for Whisper API transcription",
+          "target": "Whisper API 转录所需"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Required for Groq transcription. Free key (no card) at console.groq.com/keys",
+          "target": "Groq 转录所需。免费密钥（无需信用卡）请访问 console.groq.com/keys"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Transcription model used on Groq (turbo is fastest and cheapest)",
+          "target": "Groq 上使用的转录模型（turbo 最快且最便宜）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Required for AI-powered transcript analysis",
+          "target": "AI 驱动的转录分析所需"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The model to use for analysis (e.g., meta-llama/llama-3.2-3b-instruct)",
+          "target": "用于分析的模型（例如 meta-llama/llama-3.2-3b-instruct）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Download the selected model for local transcription",
+          "target": "下载所选模型以进行本地转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Download the whisper.cpp executable for Windows (required for local processing)",
+          "target": "下载用于 Windows 的 whisper.cpp 可执行文件（本地处理所需）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add timestamps to each segment in the transcription",
+          "target": "在转录的每个片段中添加时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically generate tags from the analysis",
+          "target": "根据分析自动生成标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Skips transcription if a Markdown file with analysis already exists.",
+          "target": "如果已存在包含分析的 Markdown 文件，则跳过转录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically delete the audio file after successful transcription",
+          "target": "转录成功后自动删除音频文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Format for dates in generated Markdown files",
+          "target": "生成的 Markdown 文件中的日期格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the icon displayed in the sidebar ribbon",
+          "target": "选择在侧边栏功能区中显示的图标"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Status of the local transcription binary",
+          "target": "本地转录二进制文件的状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Binary installed and ready",
+          "target": "二进制文件已安装并就绪"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Current Whisper model status",
+          "target": "当前 Whisper 模型状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Transcription",
+          "target": "转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Processing mode",
+          "target": "处理模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model size (local)",
+          "target": "模型大小（本地）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Favorite languages",
+          "target": "常用语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable speaker diarization",
+          "target": "启用说话人分离"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Expected speaker count",
+          "target": "预期说话人数量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Analysis",
+          "target": "分析"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom analysis instructions",
+          "target": "自定义分析指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API keys (for cloud processing)",
+          "target": "API 密钥（用于云端处理）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API key",
+          "target": "OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Groq API key",
+          "target": "Groq API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Groq model",
+          "target": "Groq 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenRouter API key",
+          "target": "OpenRouter API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenRouter model name",
+          "target": "OpenRouter 模型名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download model",
+          "target": "下载模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download whisper.cpp binary",
+          "target": "下载 whisper.cpp 二进制文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output",
+          "target": "输出"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output folder",
+          "target": "输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include timestamps",
+          "target": "包含时间戳"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-create tags",
+          "target": "自动创建标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Skip if already analyzed",
+          "target": "如果已分析则跳过"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Delete audio after transcription",
+          "target": "转录后删除音频"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Date format",
+          "target": "日期格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Appearance",
+          "target": "外观"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ribbon icon",
+          "target": "功能区图标"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Recent transcriptions",
+          "target": "最近转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clear history",
+          "target": "清除历史记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Whisper.cpp binary",
+          "target": "Whisper.cpp 二进制文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Selected model",
+          "target": "已选模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: focus on technical decisions and deadlines. Tag people using @name format.",
+          "target": "示例：专注于技术决策和截止日期。使用 @name 格式标记人员。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Transcriptions",
+          "target": "转录记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Initializing download...",
+          "target": "正在初始化下载..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "0 MB of 0 MB (0%)",
+          "target": "0 MB / 0 MB (0%)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Download complete!",
+          "target": "下载完成！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Advanced: override analysis instructions",
+          "target": "高级：覆盖分析指令"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Cancelling transcription...",
+          "target": "正在取消转录..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Transcribe audio file",
+          "target": "转录音频文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "URL copied to clipboard!",
+          "target": "URL 已复制到剪贴板！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Filename copied to clipboard!",
+          "target": "文件名已复制到剪贴板！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Path copied to clipboard!",
+          "target": "路径已复制到剪贴板！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Unable to open folder automatically. Please open it manually.",
+          "target": "无法自动打开文件夹。请手动打开。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error: not enough disk space. Please free up space and try again.",
+          "target": "错误：磁盘空间不足。请释放空间后重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error: permission denied. Check folder permissions.",
+          "target": "错误：权限被拒绝。请检查文件夹权限。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcription cancelled",
+          "target": "转录已取消"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Analysis succeeded after retry",
+          "target": "重试后分析成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcription complete, but analysis failed. Check the file for details.",
+          "target": "转录完成，但分析失败。请检查文件了解详情。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcription complete!",
+          "target": "转录完成！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audio file deleted after successful transcription",
+          "target": "转录成功后音频文件已删除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcription complete but audio file could not be deleted",
+          "target": "转录完成但音频文件无法删除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Download failed. Open settings to view manual download instructions.",
+          "target": "下载失败。请打开设置查看手动下载说明。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please right-click on an audio file to transcribe it.",
+          "target": "请右键单击音频文件以进行转录。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Model required. Please download it from settings.",
+          "target": "需要模型。请从设置中下载。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audio transcription: no model found. Please download a model in settings.",
+          "target": "音频转录：未找到模型。请在设置中下载模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Automatic download failed",
+          "target": "自动下载失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "What went wrong",
+          "target": "问题原因"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Antivirus or firewall blocking the connection to Hugging Face.",
+          "target": "防病毒软件或防火墙阻止了与 Hugging Face 的连接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Network proxy or corporate firewall restrictions.",
+          "target": "网络代理或企业防火墙限制。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Slow or unstable internet connection.",
+          "target": "网络连接缓慢或不稳定。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Windows Defender blocking downloads.",
+          "target": "Windows Defender 阻止下载。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Manual download instructions",
+          "target": "手动下载说明"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Download the file:",
+          "target": "下载文件："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy URL",
+          "target": "复制 URL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save the file as:",
+          "target": "将文件保存为："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy the file to this folder:",
+          "target": "将文件复制到此文件夹："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy path",
+          "target": "复制路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open folder",
+          "target": "打开文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Restart Obsidian",
+          "target": "重启 Obsidian"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "The model will be detected automatically after restart.",
+          "target": "重启后模型将自动检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "If download still fails in browser",
+          "target": "如果浏览器下载仍然失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Try downloading from a different network (mobile hotspot).",
+          "target": "尝试从不同网络下载（例如手机热点）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use a VPN if Hugging Face is blocked in your region.",
+          "target": "如果 Hugging Face 在您所在地区被屏蔽，请使用 VPN。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This is a one-time download. The model will be saved to your plugin folder.",
+          "target": "这是一次性下载。模型将保存到您的插件文件夹中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Transcription already exists",
+          "target": "转录已存在"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "A transcription already exists for this audio file:",
+          "target": "此音频文件已有转录记录："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Would you like to overwrite it with a new transcription?",
+          "target": "是否要用新转录覆盖它？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Note: overwriting will replace all existing content in the file.",
+          "target": "注意：覆盖将替换文件中的所有现有内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select transcription language",
+          "target": "选择转录语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose the language for this transcription:",
+          "target": "选择此转录的语言："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Tip: you can configure your favorite languages in the plugin settings.",
+          "target": "提示：您可以在插件设置中配置常用语言。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "For mixed language content (for example, English and Greek), select \"auto-detect\".",
+          "target": "对于混合语言内容（例如英语和希腊语），请选择“自动检测”。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Optionally override the default analysis instructions for this transcription only:",
+          "target": "可选：仅为此转录覆盖默认分析指令："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Current default instructions:",
+          "target": "当前默认指令："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Speaker diarization status",
+          "target": "说话人分离状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Future options:",
+          "target": "未来选项："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "• Local diarization (pyannote-audio) - Requires Python setup",
+          "target": "• 本地分离（pyannote-audio）- 需要 Python 设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "For now, you can manually edit speaker labels in the generated markdown files.",
+          "target": "目前，您可以在生成的 Markdown 文件中手动编辑说话人标签。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Local models path: ./models/",
+          "target": "本地模型路径：./models/"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No recent transcriptions yet. Your transcriptions will appear here.",
+          "target": "暂无最近转录记录。您的转录将显示在此处。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Installed models:",
+          "target": "已安装模型："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Transcribing audio",
+          "target": "正在转录音频"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
