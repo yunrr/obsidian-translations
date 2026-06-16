@@ -1,0 +1,985 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "codex-panel",
+    "version": "1.0.1",
+    "title": "Codex Panel",
+    "description": "Codex Panel Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "3.1.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "ariaLabel",
+          "source": "Send shortcut",
+          "target": "发送快捷键"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "ariaLabel",
+          "source": "Automatic thread naming model",
+          "target": "自动线程命名模型"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "ariaLabel",
+          "source": "Automatic thread naming effort",
+          "target": "自动线程命名努力程度"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "ariaLabel",
+          "source": "Selection rewrite model",
+          "target": "选区重写模型"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "ariaLabel",
+          "source": "Selection rewrite effort",
+          "target": "选区重写努力程度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "enter",
+          "target": "enter"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Codex default",
+          "target": "Codex 默认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Trust",
+          "target": "信任"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Review discovered hooks, trust changes, and turn hooks on or off.",
+          "target": "审查发现的钩子、信任更改并开启或关闭钩子。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the default archive behavior and configure saved thread notes. Thread lists offer both archive choices; slash commands use the default.",
+          "target": "选择默认的归档行为并配置保存的线程笔记。线程列表提供两种归档选项；斜杠命令使用默认设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When on, the default archive action saves a markdown note before archiving. When off, the default archives without saving. If saving fails, the thread stays active. Frontmatter includes title, thread_id, created, and optional tags.",
+          "target": "开启时，默认归档操作会在归档前保存一个 Markdown 笔记。关闭时，默认直接归档而不保存。如果保存失败，线程将保持活动状态。Frontmatter 包含标题、线程 ID、创建时间以及可选标签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-relative folder for saved thread notes. The folder is created when needed.",
+          "target": "用于保存线程笔记的保险库相对文件夹。该文件夹将在需要时创建。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Filename template. Variables: {{date}}, {{time}}, {{title}}, {{id}}, {{shortId}}. Existing files get a numeric suffix.",
+          "target": "文件名模板。变量：{{date}}、{{time}}、{{title}}、{{id}}、{{shortId}}。现有文件将添加数字后缀。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated fixed tags for saved notes. Leave empty to omit tags.",
+          "target": "用于保存笔记的逗号分隔固定标签。留空则省略标签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Path used to start `codex app-server`. Use an absolute path if Obsidian cannot find `codex`.",
+          "target": "用于启动 `codex app-server` 的路径。如果 Obsidian 无法找到 `codex`，请使用绝对路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show the chat panel toolbar. Slash commands, composer status controls, and the threads view remain available when hidden.",
+          "target": "显示聊天面板工具栏。斜杠命令、编辑器状态控件和线程视图在隐藏时仍可用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose how the composer sends messages. Shift+Enter inserts a newline when Enter sends. Obsidian hotkeys may intercept Cmd/Ctrl+Enter.",
+          "target": "选择编辑器发送消息的方式。当 Enter 键发送时，Shift+Enter 插入新行。Obsidian 快捷键可能会拦截 Cmd/Ctrl+Enter。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, Up/Ctrl+P on the first composer line and Down/Ctrl+N on the last line scroll the thread.",
+          "target": "启用后，在编辑器第一行按上/Ctrl+P 和在最后一行按下/Ctrl+N 将滚动线程。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the model and reasoning effort used to suggest thread names.",
+          "target": "选择用于建议线程名称的模型和推理努力程度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the model and reasoning effort used by rewrite selection.",
+          "target": "选择用于重写选区的模型和推理努力程度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Hook status",
+          "target": "钩子状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Thread archiving",
+          "target": "线程归档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save note by default",
+          "target": "默认保存笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Saved note folder",
+          "target": "保存笔记文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Saved note filename",
+          "target": "保存笔记文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Saved note tags",
+          "target": "保存笔记标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Codex executable",
+          "target": "Codex 可执行文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show chat toolbar",
+          "target": "显示聊天工具栏"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Send shortcut",
+          "target": "发送快捷键"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Scroll thread from composer edges",
+          "target": "从编辑器边缘滚动线程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Automatic thread naming",
+          "target": "自动线程命名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Selection rewrite",
+          "target": "选区重写"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Open Codex thread...",
+          "target": "打开 Codex 线程..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Codex archives",
+          "target": "Codex 存档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Codex, archive",
+          "target": "Codex，存档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Codex Panel could not hydrate a restored panel leaf.",
+          "target": "Codex 面板无法为恢复的面板叶节点注入数据。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Enter a rewrite instruction first.",
+          "target": "请先输入重写指令。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Selection changed. Generate the rewrite again before applying.",
+          "target": "选择已更改。请在应用前重新生成重写内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Select text in an active markdown note first.",
+          "target": "请先在活动的 Markdown 笔记中选择文本。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Select text to rewrite first.",
+          "target": "请先选择要重写的文本。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cannot open files outside the vault.",
+          "target": "无法打开保险库外的文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Codex app-server connection failed.",
+          "target": "Codex 应用服务器连接失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No Codex threads found.",
+          "target": "未找到 Codex 线程。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not refresh all Codex data.",
+          "target": "无法刷新所有 Codex 数据。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not load Codex hooks.",
+          "target": "无法加载 Codex 钩子。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not trust Codex hook.",
+          "target": "无法信任 Codex 钩子。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not update Codex hook.",
+          "target": "无法更新 Codex 钩子。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Could not restore archived Codex thread.",
+          "target": "无法恢复已存档的 Codex 线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Thread name",
+          "target": "线程名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "codex-panel__slot codex-panel__slot--messages",
+          "target": "codex-panel__slot codex-panel__slot--messages"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "codex-panel__slot codex-panel__slot--composer",
+          "target": "codex-panel__slot codex-panel__slot--composer"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "codex-panel-settings__dynamic-section codex-panel-settings__hook-section",
+          "target": "codex-panel-settings__dynamic-section codex-panel-settings__hook-section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-item-description codex-panel-settings__dynamic-section-status",
+          "target": "setting-item-description codex-panel-settings__dynamic-section-status"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "codex-panel-settings__dynamic-section codex-panel-settings__archived-section",
+          "target": "codex-panel-settings__dynamic-section codex-panel-settings__archived-section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-item-description codex-panel-settings__dynamic-list-summary",
+          "target": "setting-item-description codex-panel-settings__dynamic-list-summary"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-items codex-panel-settings__dynamic-list codex-panel-settings__archived-list",
+          "target": "setting-items codex-panel-settings__dynamic-list codex-panel-settings__archived-list"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-items codex-panel-settings__dynamic-list codex-panel-settings__hook-list",
+          "target": "setting-items codex-panel-settings__dynamic-list codex-panel-settings__hook-list"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-item-description codex-panel-settings__hook-warning",
+          "target": "setting-item-description codex-panel-settings__hook-warning"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-item-description codex-panel-settings__hook-error",
+          "target": "setting-item-description codex-panel-settings__hook-error"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "codex-panel-settings__section codex-panel-settings__general-section",
+          "target": "codex-panel-settings__section codex-panel-settings__general-section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "codex-panel-settings__section codex-panel-settings__composer-section",
+          "target": "codex-panel-settings__section codex-panel-settings__composer-section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "codex-panel-settings__section codex-panel-settings__helper-section",
+          "target": "codex-panel-settings__section codex-panel-settings__helper-section"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-item-description codex-panel-settings__section-status",
+          "target": "setting-item-description codex-panel-settings__section-status"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "setting-item-description codex-panel-settings__section-intro",
+          "target": "setting-item-description codex-panel-settings__section-intro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable-icon codex-panel-settings__refresh-button",
+          "target": "clickable-icon codex-panel-settings__refresh-button"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Codex in your sidebar.",
+          "target": "侧边栏中的 Codex。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Clear the current panel and start a fresh Codex thread.",
+          "target": "清除当前面板并开始一个新的 Codex 线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Resume a recent Codex thread.",
+          "target": "恢复最近的 Codex 线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Reconnect to Codex app-server and resume the active thread.",
+          "target": "重新连接到 Codex 应用服务器并恢复活动线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Send a message with recent turns from another non-archived thread.",
+          "target": "使用来自另一个非存档线程的最近对话发送消息。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Fork the active Codex thread.",
+          "target": "分叉活动的 Codex 线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Roll back the latest turn and restore its prompt.",
+          "target": "回滚上一轮并恢复其提示。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Compact the current thread context.",
+          "target": "压缩当前线程上下文。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Archive the selected Codex thread.",
+          "target": "存档选定的 Codex 线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Rename the selected Codex thread.",
+          "target": "重命名选定的 Codex 线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Toggle approval auto-review.",
+          "target": "切换审批自动审查。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Toggle fast service tier for subsequent turns.",
+          "target": "为后续轮次切换快速服务层级。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Toggle Plan mode, optionally with a message.",
+          "target": "切换计划模式，可选附带消息。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Show current thread, context, and usage limits.",
+          "target": "显示当前线程、上下文和使用限制。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Show Codex CLI and Codex App Server diagnostics.",
+          "target": "显示 Codex CLI 和 Codex 应用服务器诊断信息。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Show MCP servers reported by Codex App Server.",
+          "target": "显示 Codex 应用服务器报告的 MCP 服务器。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Show or set the model for subsequent turns.",
+          "target": "显示或设置后续轮次的模型。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Show or set reasoning level for subsequent turns.",
+          "target": "显示或设置后续轮次的推理级别。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Show available Codex slash commands.",
+          "target": "显示可用的 Codex 斜杠命令。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Reset model override",
+          "target": "重置模型覆盖"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "detail",
+          "source": "Reset effort override",
+          "target": "重置努力程度覆盖"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Apply",
+          "target": "应用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Allow",
+          "target": "允许"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Allow session",
+          "target": "允许会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Deny",
+          "target": "拒绝"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Start new chat",
+          "target": "开始新聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Refresh status",
+          "target": "刷新状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "No threads",
+          "target": "无线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Rename thread",
+          "target": "重命名线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Archive thread",
+          "target": "存档线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Auto-name thread",
+          "target": "自动命名线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Context unknown",
+          "target": "上下文未知"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Context 0%",
+          "target": "上下文 0%"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "monthly",
+          "target": "每月"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "connection",
+          "target": "连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "configured command",
+          "target": "已配置命令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Codex App Server",
+          "target": "Codex 应用服务器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "panel client",
+          "target": "面板客户端"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "platform",
+          "target": "平台"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Codex home",
+          "target": "Codex 主页"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "thread created by CLI",
+          "target": "由 CLI 创建的线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "issues",
+          "target": "问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "No model list available.",
+          "target": "无可用模型列表。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "agents",
+          "target": "代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "tasks",
+          "target": "任务"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "agent",
+          "target": "代理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Copy message",
+          "target": "复制消息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Fork and archive",
+          "target": "分叉并存档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Implement plan",
+          "target": "实施计划"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Rollback last turn",
+          "target": "回滚上一轮"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "View diff",
+          "target": "查看差异"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Submit",
+          "target": "提交"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Copy diff",
+          "target": "复制差异"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Open new panel",
+          "target": "打开新面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Refresh threads",
+          "target": "刷新线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "No recent threads to resume.",
+          "target": "没有可恢复的最近线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Codex app-server stopped.",
+          "target": "Codex 应用服务器已停止。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Loading threads...",
+          "target": "正在加载线程..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "No threads",
+          "target": "无线程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Codex Panel",
+          "target": "Codex 面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rewrite selection",
+          "target": "重写选区"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "tool",
+          "target": "工具"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "status",
+          "target": "状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "sender",
+          "target": "发送者"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "target",
+          "target": "目标"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "model",
+          "target": "模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "effort",
+          "target": "努力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open panel",
+          "target": "打开面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open new panel",
+          "target": "打开新面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open threads view",
+          "target": "打开线程视图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open thread...",
+          "target": "打开线程..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start new chat",
+          "target": "开始新聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "How should Codex rewrite this selection?",
+          "target": "Codex 应如何重写此选区？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Other answer",
+          "target": "其他答案"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "details",
+          "target": "详情"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Context compaction",
+          "target": "上下文压缩"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Thread goal cleared. Codex Panel does not support goals.",
+          "target": "线程目标已清除。Codex 面板不支持目标。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Context compacted.",
+          "target": "上下文已压缩。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No archived threads.",
+          "target": "没有已归档的线程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Restore archived threads to the active thread list.",
+          "target": "将已归档的线程恢复到活动线程列表。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No hooks found for this vault root.",
+          "target": "未为此保险库根目录找到钩子。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Codex Panel",
+          "target": "Codex 面板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Approval",
+          "target": "审批"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Scope",
+          "target": "范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Runtime",
+          "target": "运行时"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Policy",
+          "target": "策略"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Features",
+          "target": "功能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Process",
+          "target": "流程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Capabilities",
+          "target": "能力"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "MCP issues",
+          "target": "MCP 问题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Review",
+          "target": "审阅"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Hook output",
+          "target": "钩子输出"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
