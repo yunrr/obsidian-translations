@@ -1,0 +1,697 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "spaced-everything",
+    "version": "1.0.1",
+    "title": "Spaced everything",
+    "description": "Spaced everything Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.3.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "small",
+          "target": "small"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "onboarded",
+          "target": "已入门"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "removed",
+          "target": "已移除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "review",
+          "target": "审阅"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Add spacing method",
+          "target": "添加间隔方法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Onboard all notes",
+          "target": "入门所有笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Confirm",
+          "target": "确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the file path where Spaced Everything logs are stored. Leave blank to not capture logs. Note: output data format is JSONL (i.e., `.jsonl` filename extension recommended).",
+          "target": "选择存储间隔日志的文件路径。留空则不捕获日志。注意：输出数据格式为JSONL（建议使用 `.jsonl` 文件扩展名）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Whether to log the action of onboarding a new note to Spaced Everything",
+          "target": "是否记录将新笔记入门到间隔日志的操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Whether to log the action of removing a note from Spaced Everything",
+          "target": "是否记录从间隔日志中移除笔记的操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Whether to include the note title in the log",
+          "target": "是否在日志中包含笔记标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Provide a list (one per line) of frontmatter properties you would like to include in the Spaced Everything logs. Input just an asterisk (*) to include all frontmatter properties.",
+          "target": "提供您希望包含在间隔日志中的前置属性列表（每行一个）。输入单个星号 (*) 可包含所有前置属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Template for generating the title of the new note",
+          "target": "生成新笔记标题的模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Directory where the new note should be created (leave empty for default directory)",
+          "target": "创建新笔记的目录（留空则使用默认目录）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Template for the initial content of the new note",
+          "target": "新笔记初始内容的模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include the thought as an alias in the frontmatter if it's shorter than the threshold",
+          "target": "如果想法短于阈值，则将其作为别名包含在前置属性中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum length of the thought (in characters) for it to be included as an alias",
+          "target": "想法的最大长度（字符数），以便将其作为别名包含"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Open the newly created note in a new tab. If turned off, captured thought note opens in currently active tab.",
+          "target": "在新标签页中打开新创建的笔记。如果关闭，捕获的想法笔记将在当前活动标签页中打开。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter the paths of any folders you want to exclude from the onboarding process (one per line). Consider adding folders that contain things like templates or scripts that may not work if frontmatter properties are added to them.",
+          "target": "输入您希望从入门过程中排除的任何文件夹路径（每行一个）。考虑添加包含模板或脚本等文件的文件夹，因为向它们添加前置属性可能无法正常工作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Click the button to add the required frontmatter properties to all notes in your vault, excluding the folders specified above.",
+          "target": "单击按钮，将所需的前置属性添加到您保险库中的所有笔记，排除上述指定的文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Configure the settings for this spacing method.",
+          "target": "配置此间隔方法的设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter a name for this spacing method",
+          "target": "为此间隔方法输入一个名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The default interval length, in days",
+          "target": "默认间隔长度（以天为单位）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select which spacing algorithm approach to apply",
+          "target": "选择要应用的间隔算法方法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": ">>>NOT YET IMPLEMENTED<<< —— Input the location of your custom script file that implements a spacing algorithm",
+          "target": ">>>尚未实现<<< —— 输入实现间隔算法的自定义脚本文件位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The default ease factor",
+          "target": "默认简易因子"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Customize the review options and scores to use in this spacing method. For the SuperMemo-2.0 spacing algorithm, review scores must be a number from 0 to 5.",
+          "target": "自定义此间隔方法中使用的复习选项和分数。对于 SuperMemo-2.0 间隔算法，复习分数必须是 0 到 5 之间的数字。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spacing methods",
+          "target": "间隔方法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Contexts",
+          "target": "上下文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Vault-wide settings",
+          "target": "全局设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Timestamp time zone",
+          "target": "时间戳时区"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Logging",
+          "target": "日志记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log spaced everything practice activity",
+          "target": "记录所有间隔练习活动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log action: note onboarded to Spaced Everything",
+          "target": "记录操作：笔记已加入间隔记忆系统"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log action: note removed from Spaced Everything",
+          "target": "记录操作：笔记已从间隔记忆系统中移除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log note title",
+          "target": "记录笔记标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log frontmatter properties",
+          "target": "记录前置属性"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Capture thought",
+          "target": "捕捉想法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note title template",
+          "target": "笔记标题模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Note directory",
+          "target": "笔记目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "New note template",
+          "target": "新笔记模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include short thought in alias",
+          "target": "在别名中包含简短想法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Short thought threshold",
+          "target": "简短想法阈值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Open in new tab",
+          "target": "在新标签页中打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Onboard all notes (beta)",
+          "target": "导入所有笔记（测试版）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excluded folders",
+          "target": "排除的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Onboard all notes",
+          "target": "导入所有笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Name",
+          "target": "名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default interval",
+          "target": "默认间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spacing algorithm",
+          "target": "间隔算法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom script",
+          "target": "自定义脚本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default ease factor",
+          "target": "默认简易因子"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Review options",
+          "target": "复习选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter frontmatter properties, one per line",
+          "target": "输入前置属性，每行一个"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your template here",
+          "target": "在此输入您的模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your directory path here",
+          "target": "在此输入您的目录路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your threshold here",
+          "target": "在此输入您的阈值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Name",
+          "target": "名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Default interval",
+          "target": "默认间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Custom script file name",
+          "target": "自定义脚本文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Default ease factor",
+          "target": "默认简易因子"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Review score",
+          "target": "复习分数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Add a new spacing method",
+          "target": "添加新的间隔方法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Add new context",
+          "target": "添加新上下文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Add a new review option",
+          "target": "添加新的复习选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Delete spacing method",
+          "target": "删除间隔方法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Default interval must be a number.",
+          "target": "默认间隔必须是数字。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Default ease factor must be a number.",
+          "target": "默认简易因子必须是数字。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cannot delete the last spacing method",
+          "target": "无法删除最后一个间隔方法"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Review score must be a number from 0 to 5",
+          "target": "复习分数必须是 0 到 5 之间的数字"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "All notes onboarded",
+          "target": "所有笔记已导入"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cancelled by the user",
+          "target": "用户已取消"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active editor, opened note in new tab",
+          "target": "没有活动编辑器，已在新标签页中打开笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file to toggle contexts.",
+          "target": "没有活动文件来切换上下文。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spaced Everything: No contexts defined",
+          "target": "间隔记忆系统：未定义上下文"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file to review.",
+          "target": "没有活动文件可供复习。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error: No active spacing method found for this note.",
+          "target": "错误：未找到此笔记的活动间隔方法。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spaced Everything review cancelled by user",
+          "target": "间隔记忆系统复习已被用户取消"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error: Review option not found in settings. Please check your settings.",
+          "target": "错误：在设置中未找到复习选项。请检查您的设置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spaced everything: No active contexts",
+          "target": "间隔记忆系统：没有活动上下文"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No notes to review, enjoy some fresh air!",
+          "target": "没有需要复习的笔记，享受一下新鲜空气吧！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Onboarding cancelled by user.",
+          "target": "导入已被用户取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file to update spacing method.",
+          "target": "没有活动文件来更新间隔方法。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spacing method update cancelled by user.",
+          "target": "间隔方法更新已被用户取消。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Custom",
+          "source": "Custom script",
+          "target": "自定义脚本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Local",
+          "source": "Local (System timezone)",
+          "target": "本地（系统时区）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SuperMemo 2.0 (Simplified)",
+          "target": "SuperMemo 2.0（简化版）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fruitful",
+          "target": "有效"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ignore",
+          "target": "忽略"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Unfruitful",
+          "target": "无效"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Log review outcome",
+          "target": "记录复习结果"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open next review item",
+          "target": "打开下一个复习项目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Toggle note contexts",
+          "target": "切换笔记上下文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Capture thought",
+          "target": "捕捉想法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Update spacing method",
+          "target": "更新间隔方法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "SuperMemo2.0",
+          "source": "SuperMemo 2.0",
+          "target": "SuperMemo 2.0"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "documentation",
+          "target": "文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Confirm Action",
+          "target": "确认操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Are you sure you want to onboard to all notes in your vault? This action cannot be undone. It is highly recommended you create a full backup of your vault prior to running this vault-wide action, in case any unexpected changes result.",
+          "target": "您确定要将您保险库中的所有笔记都导入吗？此操作无法撤销。强烈建议您在运行此全局操作前创建保险库的完整备份，以防出现任何意外更改。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Capture thought",
+          "target": "捕捉想法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": ", ",
+          "target": "，"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": ", and ",
+          "target": "，以及"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Write out your thought here. You have access to the following variables: ",
+          "target": "在此写下您的想法。您可以使用以下变量："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Shift + Enter for new lines.",
+          "target": "Shift + Enter 换行。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter to submit.",
+          "target": "Enter 提交。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "UTC",
+          "source": "UTC (Coordinated Universal Time)",
+          "target": "UTC（协调世界时）"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
