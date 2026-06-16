@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "smart-relations",
+    "version": "1.0.1",
+    "title": "Smart Relations",
+    "description": "Smart Relations Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "details",
+          "target": "details"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "summary",
+          "target": "summary"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Smart Relations: CLAUDE.md deploy failed:",
+          "target": "智能关联：CLAUDE.md 部署失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Smart Relations: CLAUDE.md remove failed:",
+          "target": "智能关联：CLAUDE.md 移除失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Smart Relations: Reindex failed:",
+          "target": "智能关联：重新索引失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Smart Relations: Incremental update failed:",
+          "target": "智能关联：增量更新失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Smart Relations: Error finding related notes:",
+          "target": "智能关联：查找相关笔记时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Smart Relations: Failed to add UUID:",
+          "target": "智能关联：添加UUID失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault folder to place the instructions file in. Leave empty to skip deployment.",
+          "target": "用于放置指令文件的保险库文件夹。留空则跳过部署。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of folders to exclude from indexing",
+          "target": "要从索引中排除的文件夹的逗号分隔列表"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, Smart Relations will automatically add a `uuid` field to the frontmatter of any note that lacks one. Without a UUID, notes are excluded from indexing. This writes to your files — disabled by default.",
+          "target": "启用后，智能关联会自动为任何缺少UUID字段的笔记的frontmatter添加一个`uuid`字段。没有UUID的笔记将被排除在索引之外。这会写入您的文件——默认禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use object format {uuid, rel, auto} instead of simple UUID strings when writing to the related field",
+          "target": "在写入相关字段时使用对象格式 {uuid, rel, auto} 而不是简单的UUID字符串"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum characters to process per note. Very long notes are truncated during indexing.",
+          "target": "每篇笔记要处理的最大字符数。非常长的笔记在索引期间会被截断。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Results below this combined score will be filtered out",
+          "target": "低于此综合分数的结果将被过滤掉"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of related notes to display",
+          "target": "要显示的最大相关笔记数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Character n-gram size for fuzzy matching (2-5)",
+          "target": "用于模糊匹配的字符n-gram大小（2-5）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Character n-gram index for fuzzy matching. Not used in scoring; disable to save 15-25 MB of memory.",
+          "target": "用于模糊匹配的字符n-gram索引。不用于评分；禁用可节省15-25 MB内存。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Store character positions for each term occurrence. Not needed for scoring — disable to save 50-60% of term index memory.",
+          "target": "存储每个词项出现的字符位置。评分不需要——禁用可节省50-60%的词项索引内存。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Files processed per batch during reindex. Lower values reduce UI freezing on mobile (10-100).",
+          "target": "重新索引期间每批处理的文件数。较低的值可减少移动设备上的UI冻结（10-100）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Target folder",
+          "target": "目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excluded folders",
+          "target": "排除的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-add IDs to notes",
+          "target": "自动为笔记添加ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rich related format",
+          "target": "富相关格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max tokenization length",
+          "target": "最大分词长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Minimum similarity threshold",
+          "target": "最小相似度阈值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max related notes",
+          "target": "最大关联笔记数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "N-gram size",
+          "target": "N-gram 大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable n-gram index",
+          "target": "启用 N-gram 索引"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Store term positions",
+          "target": "存储词项位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Index batch size",
+          "target": "索引批处理大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g., Library/Knowledge",
+          "target": "例如：Library/Knowledge"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Templates, archive",
+          "target": "模板，归档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Select a note to add as related...",
+          "target": "选择要添加为关联的笔记..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Not deployed",
+          "target": "未部署"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Finding related notes...",
+          "target": "正在查找关联笔记..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Smart Relations: Already indexing, skipping rebuild",
+          "target": "智能关联：已在索引中，跳过重建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Smart Relations: Failed to load indexes from disk:",
+          "target": "智能关联：从磁盘加载索引失败："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Reindexing vault...",
+          "target": "正在重新索引知识库..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Reindex complete",
+          "target": "重新索引完成"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Set a folder path first",
+          "target": "请先设置文件夹路径"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to deploy; check the folder path",
+          "target": "部署失败；请检查文件夹路径"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Instructions file moved to trash",
+          "target": "说明文件已移至回收站"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Instructions file not found at that location",
+          "target": "在该位置未找到说明文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to remove the instructions file",
+          "target": "删除说明文件失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Building index for the first time...",
+          "target": "首次构建索引..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Graph view coming in a future update",
+          "target": "关系图视图将在未来更新中提供"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active note",
+          "target": "没有活动笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to add UUID — see console",
+          "target": "添加 UUID 失败 — 请查看控制台"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "UUID added to current note",
+          "target": "UUID 已添加到当前笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file",
+          "target": "没有活动文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Index not ready; please reindex the vault first",
+          "target": "索引未就绪；请先重新索引知识库"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Current note has no UUID in frontmatter",
+          "target": "当前笔记的 frontmatter 中没有 UUID"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No related notes found",
+          "target": "未找到关联笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "sr-stat-value sr-status-indexing",
+          "target": "sr-stat-value sr-status-indexing"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "sr-stat-value sr-status-ok",
+          "target": "sr-stat-value sr-status-ok"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "sr-stat-value sr-status-warn",
+          "target": "sr-stat-value sr-status-warn"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Text relevance based on term frequency and document length",
+          "target": "基于词频和文档长度的文本相关性"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Similarity based on shared tags between notes",
+          "target": "基于笔记间共享标签的相似度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Shared vocabulary between documents (ignores frequency)",
+          "target": "文档间的共享词汇（忽略频率）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Closeness in the relation graph (related: field connections)",
+          "target": "关系图中的接近度（关联：字段连接）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Tag similarity",
+          "target": "标签相似度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Term overlap",
+          "target": "词项重叠度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Graph proximity",
+          "target": "图接近度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BM25 weight",
+          "target": "BM25 权重"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jaccard (tag) weight",
+          "target": "Jaccard（标签）权重"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Term overlap weight",
+          "target": "词项重叠权重"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Graph proximity weight",
+          "target": "图接近度权重"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reindex vault",
+          "target": "重新索引知识库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Find related notes",
+          "target": "查找关联笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show relation graph",
+          "target": "显示关系图"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suggest relations for current note",
+          "target": "为当前笔记建议关联"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add UUID to current note",
+          "target": "为当前笔记添加 UUID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "GitHub",
+          "target": "GitHub"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " · ",
+          "target": " · "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Documentation",
+          "target": "文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sample connections",
+          "target": "示例连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Index status",
+          "target": "索引状态"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Indexed",
+          "target": "已索引"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Not indexed",
+          "target": "未索引"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reindex vault",
+          "target": "重新索引知识库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No connections available — index the vault first",
+          "target": "没有可用连接 — 请先索引知识库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No indexed notes found",
+          "target": "未找到已索引的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No connections found for recent notes",
+          "target": "未找到近期笔记的连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Could not load sample connections",
+          "target": "无法加载示例连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Deploy / update",
+          "target": "部署 / 更新"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Remove",
+          "target": "移除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Adjust how each scoring signal contributes to the final similarity score. ",
+          "target": "调整每个评分信号对最终相似度得分的贡献。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "These settings control memory usage and UI responsiveness. Disabling optional indexes saves memory on mobile devices.",
+          "target": "这些设置控制内存使用和 UI 响应性。禁用可选索引可在移动设备上节省内存。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Related notes",
+          "target": "关联笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No related notes found",
+          "target": "未找到关联笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Score breakdown",
+          "target": "得分明细"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
