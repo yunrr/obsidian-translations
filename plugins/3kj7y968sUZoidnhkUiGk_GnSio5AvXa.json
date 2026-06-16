@@ -1,0 +1,939 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "zettelflow",
+    "version": "2.0.0",
+    "title": "ZettelFlow",
+    "description": "Helps you to create and manage your notes in a Zettelkasten way via Canvas.",
+    "language": "zh-cn",
+    "supportedVersions": "2.7.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Canvas file could not be opened: ${i}`)",
+          "target": "Notice(`无法打开画布文件：${i}`)"
+        },
+        {
+          "source": "Notice(`Canvas file opened: ${i}`)",
+          "target": "Notice(`画布文件已打开：${i}`)"
+        },
+        {
+          "source": "Notice(`Warning error: ${u.message}`)",
+          "target": "Notice(`警告错误：$｛u.message｝`)"
+        },
+        {
+          "source": "Notice(`Fatal error: ${u.message}`)",
+          "target": "Notice(`严重错误：$｛u.message｝`)"
+        },
+        {
+          "source": "Notice(`Not controlled error: ${u.message}`)",
+          "target": "Notice(`非受控错误：${u.message}`)"
+        },
+        {
+          "source": "Notice(`Not controlled error: ${u}`)",
+          "target": "Notice(`不受控错误：${u}`)"
+        },
+        {
+          "source": "Notice(a)",
+          "target": "Notice(a)"
+        },
+        {
+          "source": "Notice(n)",
+          "target": "Notice(n)"
+        },
+        {
+          "source": "Notice(\"Step copied to clipboard\")",
+          "target": "Notice(\"步骤已复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(\"Error saving step, check console for more info\")",
+          "target": "Notice(\"保存步骤时出错，请查看控制台以获取更多信息\")"
+        },
+        {
+          "source": "Notice(`Error saving file ${n}, check console for more info`)",
+          "target": "Notice(`保存文件$｛n｝时出错，有关详细信息，请查看控制台`)"
+        },
+        {
+          "source": "Notice(`Error saving embed on ${n}, check console for more info`)",
+          "target": "Notice(`在${n}上保存嵌入时出错，请查看控制台以获取更多信息`)"
+        },
+        {
+          "source": "Notice(\"Action copied to clipboard\")",
+          "target": "Notice(\"操作已复制到剪贴板\")"
+        },
+        {
+          "source": "Notice(y(\"notice_canvas_not_set\")",
+          "target": "Notice(y(\"notice_canvas_not_set\")"
+        },
+        {
+          "source": "Notice(y(\"notification_duplicated_option\")",
+          "target": "Notice(y(\"通知_重复选项\")"
+        },
+        {
+          "source": "Notice(`The result ${u} is not a string or an array of strings`)",
+          "target": "Notice(`结果${u}不是字符串或字符串数组`)"
+        },
+        {
+          "source": "Notice(`Rollover ${r.length} unfinished task/s from ${e.basename}`)",
+          "target": "Notice(`从${e.basename}滚动${r.length}未完成的任务`)"
+        },
+        {
+          "source": "Notice(\"Step configuration removed!\")",
+          "target": "Notice(\"步骤配置已删除！\")"
+        },
+        {
+          "source": "Notice(\"Step configuration copied!\")",
+          "target": "Notice(\"步骤配置已复制！\")"
+        },
+        {
+          "source": "Notice(\"Step configuration pasted!\")",
+          "target": "Notice(\"步骤配置已粘贴！\")"
+        },
+        {
+          "source": "Notice(y(\"notification_editor_menu_no_active_view\")",
+          "target": "Notice(y(\"通知_编辑器_用户_活动_视图\")"
+        },
+        {
+          "source": "Notice(\"Embed copied!\")",
+          "target": "Notice(\"嵌入复制！\")"
+        },
+        {
+          "source": "Notice(\"Embed pasted!\")",
+          "target": "Notice(\"嵌入粘贴！\")"
+        },
+        {
+          "source": "Notice(\"Error registering CodeView extension for ZettelFlow. Check the console for more information.\")",
+          "target": "Notice(\"为ZettelFlow注册CodeView扩展时出错。有关更多信息，请查看控制台。\")"
+        },
+        {
+          "source": ".log(\"refreshing\")",
+          "target": ".log(\"清爽\")"
+        },
+        {
+          "source": ".error(e)",
+          "target": ".error(e)"
+        },
+        {
+          "source": ".error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\")",
+          "target": ".error(\"forceFrameRate取0到125之间的正整数，不支持强制帧速率高于125 fps\")"
+        },
+        {
+          "source": ".error(\"Error: database locale not found\",Z_)",
+          "target": ".error(\"错误：找不到数据库区域设置\",Z_)"
+        },
+        {
+          "source": ".error(`Canvas file not found: ${i}`)",
+          "target": ".error(`找不到画布文件：${i}`)"
+        },
+        {
+          "source": ".error(a)",
+          "target": ".error(a)"
+        },
+        {
+          "source": ".error(`Action ${n} already registered. Overriding`)",
+          "target": ".error(`操作${n}已注册。覆盖`)"
+        },
+        {
+          "source": ".error(`Action ${t} not found`)",
+          "target": ".error(`未找到操作${t}`)"
+        },
+        {
+          "source": ".error(d)",
+          "target": ".error(d)"
+        },
+        {
+          "source": ".error(\"No previous position found\")",
+          "target": ".error(\"未找到以前的职位\")"
+        },
+        {
+          "source": ".error(u)",
+          "target": ".error(u)"
+        },
+        {
+          "source": ".error(`Flow ${t} not found`)",
+          "target": ".error(`未找到流${t}`)"
+        },
+        {
+          "source": ".error(n)",
+          "target": ".error(n)"
+        },
+        {
+          "source": ".error(i)",
+          "target": ".error(i)"
+        },
+        {
+          "source": ".error(\"Node id not found on embed mode\")",
+          "target": ".error(\"在嵌入模式下找不到节点id\")"
+        },
+        {
+          "source": ".error(\"Error fetching community templates:\",H)",
+          "target": ".error(\"获取社区模板时出错:\",H)"
+        },
+        {
+          "source": ".error(\"Error fetching community templates:\",A)",
+          "target": ".error(\"获取社区模板时出错:\",A)"
+        },
+        {
+          "source": ".error(`Target file is undefined for ${r.basename}`)",
+          "target": ".error(`${r.basename}的目标文件未定义`)"
+        },
+        {
+          "source": ".error(`Target heading is undefined for ${r.basename}`)",
+          "target": ".error(`${r.basename}的目标标题未定义`)"
+        },
+        {
+          "source": ".error(`Error executing script: ${i}`)",
+          "target": ".error(`执行脚本时出错：${i}`)"
+        },
+        {
+          "source": ".error(\"Error obtaining dynamic options\",S)",
+          "target": ".error(\"获取动态选项时出错\",S)"
+        },
+        {
+          "source": ".error(\"Error al obtener las opciones din\\xE1micas:\",v)",
+          "target": ".error(\"获取DINxe1micas选项时出错:\",v)"
+        },
+        {
+          "source": ".error(\"Error al inicializar la funci\\xF3n din\\xE1mica:\",$)",
+          "target": ".error(\"在xE1mica 中初始化xF3n 函数时出错:\",$)"
+        },
+        {
+          "source": ".error(\"There was an error registering CodeView for Javascript files. Maybe another plugin is using the same extensions?\",n)",
+          "target": ".error(\"为Javascript文件注册CodeView时出错。也许另一个插件正在使用相同的扩展？\",n)"
+        },
+        {
+          "source": "name:\"Anno Domini\"",
+          "target": "name:\"域名年份\""
+        },
+        {
+          "source": "name:\"Before Christ\"",
+          "target": "name:\"在基督之前\""
+        },
+        {
+          "source": "name:\"\")?as(n):\"",
+          "target": "name:\"\")?as(n):\""
+        },
+        {
+          "source": "name:\"applyStyles\"",
+          "target": "name:\"applyStyles 的\""
+        },
+        {
+          "source": "name:\"arrow\"",
+          "target": "name:\"箭头\""
+        },
+        {
+          "source": "name:\"computeStyles\"",
+          "target": "name:\"计算机样式\""
+        },
+        {
+          "source": "name:\"eventListeners\"",
+          "target": "name:\"预约前1小时\""
+        },
+        {
+          "source": "name:\"flip\"",
+          "target": "name:\"轻弹\""
+        },
+        {
+          "source": "name:\"hide\"",
+          "target": "name:\"隐藏\""
+        },
+        {
+          "source": "name:\"offset\"",
+          "target": "name:\"抵消\""
+        },
+        {
+          "source": "name:\"popperOffsets\"",
+          "target": "name:\"popper偏移\""
+        },
+        {
+          "source": "name:\"preventOverflow\"",
+          "target": "name:\"preventOverflow\""
+        },
+        {
+          "source": "name:\"sameWidth\"",
+          "target": "name:\"相同宽度\""
+        },
+        {
+          "source": "name:\"cross\"",
+          "target": "name:\"交叉\""
+        },
+        {
+          "source": "name:\"calendar\"",
+          "target": "name:\"日历\""
+        },
+        {
+          "source": "name:`${te.getIconOf(t)}`",
+          "target": "name:`${te.getIconOf(t)}`"
+        },
+        {
+          "source": "name:`${te.getIconOf(n)}`",
+          "target": "name:`${te.getIconOf(n)}`"
+        },
+        {
+          "source": "name:\"cross-in-box\"",
+          "target": "name:\"交叉框\""
+        },
+        {
+          "source": "name:\"create-new\"",
+          "target": "name:\"创建新\""
+        },
+        {
+          "source": "name:\"javascript\"",
+          "target": "name:\"javascript\""
+        },
+        {
+          "source": "name:\"lucide-grip-horizontal\"",
+          "target": "name:\"透明-抓地力-水平\""
+        },
+        {
+          "source": "name:\"plus\"",
+          "target": "name:\"加\""
+        },
+        {
+          "source": "name:\"info\"",
+          "target": "name:\"信息\""
+        },
+        {
+          "source": "name:\"lucide-trash-2\"",
+          "target": "name:\"光滑垃圾-2\""
+        },
+        {
+          "source": "name:\"lucide-plus\"",
+          "target": "name:\"Lucide-更多\""
+        },
+        {
+          "source": "name:\"spinner\"",
+          "target": "name:\"旋转器\""
+        },
+        {
+          "source": "name:\"error\"",
+          "target": "name:\"错误\""
+        },
+        {
+          "source": "description:\"Set the folder where the markdown templates are stored when you install them from the community browser\"",
+          "target": "description:\"设置从社区浏览器安装markdown模板时存储这些模板的文件夹\""
+        },
+        {
+          "source": "description:\"Set the URL of the community server\"",
+          "target": "description:\"设置社区服务器的URL\""
+        },
+        {
+          "source": "description:\"Enable or disable logger\"",
+          "target": "description:\"启用或禁用记录器\""
+        },
+        {
+          "source": "description:\"Set logger level\"",
+          "target": "description:\"设置记录器级别\""
+        },
+        {
+          "source": "description:\"Manage the installed templates in your vault\"",
+          "target": "description:\"管理vault中已安装的模板\""
+        },
+        {
+          "source": "description:\"Browse and install community templates to be used in your canvas Flows\"",
+          "target": "description:\"浏览并安装要在画布Flows中使用的社区模板\""
+        },
+        {
+          "source": "description:\"Select the canvas file where you will use to build your new notes\"",
+          "target": "description:\"选择用于构建新笔记的画布文件\""
+        },
+        {
+          "source": "description:\"Select the canvas file where you will use inside the already created notes\"",
+          "target": "description:\"选择要在已创建的笔记中使用的画布文件\""
+        },
+        {
+          "source": "description:\"Enable or disable unique prefix for your notes\"",
+          "target": "description:\"为笔记启用或禁用唯一前缀\""
+        },
+        {
+          "source": "description:\"Set the pattern for the unique prefix\"",
+          "target": "description:\"设置唯一前缀的模式\""
+        },
+        {
+          "source": "description:\"Enable or disable table of content on top of the note when the read mode is activated\"",
+          "target": "description:\"激活读取模式时，启用或禁用注释顶部的目录\""
+        },
+        {
+          "source": "description:\"Select the folder where you will save your scripts (scripts action resources)\"",
+          "target": "description:\"选择要保存脚本的文件夹（脚本操作资源）\""
+        },
+        {
+          "source": "description:\"Select the folder where you will save your flows asigned to any other folder configuration. The files created in those folders will automatically apply the flow configuration\"",
+          "target": "description:\"选择用于保存分配给任何其他文件夹配置的流的文件夹。在这些文件夹中创建的文件将自动应用流配置\""
+        },
+        {
+          "source": "description:\"This toggle will set the current element as the root element.\"",
+          "target": "description:\"此切换将当前元素设置为根元素。\""
+        },
+        {
+          "source": "description:\"This is the title of the step note.\"",
+          "target": "description:\"这是步骤说明的标题。\""
+        },
+        {
+          "source": "description:\"If the step has children, this header will be displayed in the note as explanation of the options.\"",
+          "target": "description:\"如果步骤有子步骤，则此标题将显示在注释中，作为选项的解释。\""
+        },
+        {
+          "source": "description:\"This toggle will set the current element as optional.\"",
+          "target": "description:\"此切换将当前元素设置为可选。\""
+        },
+        {
+          "source": "description:\"This is the label of the section that will be displayed as option in the menu.\"",
+          "target": "description:\"这是将在菜单中显示为选项的部分的标签。\""
+        },
+        {
+          "source": "description:\"Choose the target folder for the step note.\"",
+          "target": "description:\"选择步骤注释的目标文件夹。\""
+        },
+        {
+          "source": "description:\"Choose the action you want to perform.\"",
+          "target": "description:\"选择要执行的操作。\""
+        },
+        {
+          "source": "description:\"The metatada key asigned to the element\"",
+          "target": "description:\"为元素分配的元数据键\""
+        },
+        {
+          "source": "description:\"When enabled, the element will be saved as you defined below without any UI.\"",
+          "target": "description:\"启用后，该元素将按照您在下面定义的方式保存，而无需任何UI。\""
+        },
+        {
+          "source": "description:\"The value that will be saved in the element\"",
+          "target": "description:\"将保存在元素中的值\""
+        },
+        {
+          "source": "description:\"Choose the options for the prompt element.\"",
+          "target": "description:\"选择提示元素的选项。\""
+        },
+        {
+          "source": "description:\"The label will be the title of your prompt\"",
+          "target": "description:\"标签将是提示的标题\""
+        },
+        {
+          "source": "description:\"Helper text to display in the prompt\"",
+          "target": "description:\"提示中显示的帮助文本\""
+        },
+        {
+          "source": "description:\"Choose the options for the calendar element.\"",
+          "target": "description:\"选择日历元素的选项。\""
+        },
+        {
+          "source": "description:\"The metatada key of the frontmatter asigned to the calendar\"",
+          "target": "description:\"为日历设计的前体元叠键\""
+        },
+        {
+          "source": "description:\"The label will be the title of your calendar\"",
+          "target": "description:\"标签将是日历的标题\""
+        },
+        {
+          "source": "description:\"Enable or disable time in the calendar\"",
+          "target": "description:\"启用或禁用日历中的时间\""
+        },
+        {
+          "source": "description:\"Choose the format of the calendar\"",
+          "target": "description:\"选择日历的格式\""
+        },
+        {
+          "source": "description:\"Add options to your step that will be displayed in the menu of the action.\"",
+          "target": "description:\"为步骤添加选项，这些选项将显示在操作菜单中。\""
+        },
+        {
+          "source": "description:\"The label will be the title of your selector\"",
+          "target": "description:\"标签将是您的选择器的标题\""
+        },
+        {
+          "source": "description:\"Enable or disable multiple selection in the selector\"",
+          "target": "description:\"在选择器中启用或禁用多选\""
+        },
+        {
+          "source": "description:\"Action to insert backlink of the new note in the target note\"",
+          "target": "description:\"将新钞票的反向链接插入目标钞票的操作\""
+        },
+        {
+          "source": "description:\"Enable or disable default file. If enabled. the UI will be disabled and the default file will be used.\"",
+          "target": "description:\"启用或禁用默认文件。如果启用。UI将被禁用，并将使用默认文件。\""
+        },
+        {
+          "source": "description:\"Preview: \"",
+          "target": "description:\"预览：\""
+        },
+        {
+          "source": "description:\"Search for the default file where you want to insert the backlink\"",
+          "target": "description:\"搜索要插入反向链接的默认文件\""
+        },
+        {
+          "source": "description:\"Search for the heading where you want to insert the backlink\"",
+          "target": "description:\"搜索要插入反向链接的标题\""
+        },
+        {
+          "source": "description:\"Choose where you want to place the element.\"",
+          "target": "description:\"选择要放置元素的位置。\""
+        },
+        {
+          "source": "description:\"Choose the options for the task management element.\"",
+          "target": "description:\"选择任务管理元素的选项。\""
+        },
+        {
+          "source": "description:\"This action will display a tags selector to add tags to the built-in note.\"",
+          "target": "description:\"此操作将显示一个标签选择器，用于将标签添加到内置注释中。\""
+        },
+        {
+          "source": "description:\"This action will display a css classes selector to add css classes to the built-in note.\"",
+          "target": "description:\"此操作将显示一个css类选择器，用于将css类添加到内置注释中。\""
+        },
+        {
+          "source": "description:\"Choose the options for the script element.\"",
+          "target": "description:\"选择脚本元素的选项。\""
+        },
+        {
+          "source": "description:\"Choose the options for the checkbox element.\"",
+          "target": "description:\"选择复选框元素的选项。\""
+        },
+        {
+          "source": "description:\"Choose the options for the number element.\"",
+          "target": "description:\"选择数字元素的选项。\""
+        },
+        {
+          "source": "description:\"The label will be the title of your number\"",
+          "target": "description:\"标签将是您号码的标题\""
+        },
+        {
+          "source": "description:\"Helper text to display in the number\"",
+          "target": "description:\"数字中显示的辅助文本\""
+        },
+        {
+          "source": "description:\"Choose the initial folder where the search will start to rollover the tasks\"",
+          "target": "description:\"选择搜索将开始滚动任务的初始文件夹\""
+        },
+        {
+          "source": "description:\"Regex to search notes with the desired tasks to rollover\"",
+          "target": "description:\"Regex用于搜索包含所需任务的笔记\""
+        },
+        {
+          "source": "description:\"It will search for the heading into all the filtered notes and rollover the unfinished tasks\"",
+          "target": "description:\"它将在所有筛选的笔记中搜索标题，并滚动未完成的任务\""
+        },
+        {
+          "source": "description:\"Enable recursive search in the initial folder\"",
+          "target": "description:\"在初始文件夹中启用递归搜索\""
+        },
+        {
+          "source": "description:\"Prefix to add to the task after the rollover\"",
+          "target": "description:\"滚动后添加到任务的前缀\""
+        },
+        {
+          "source": "description:\"Suffix to add to the task after the rollover\"",
+          "target": "description:\"滚动后添加到任务中的后缀\""
+        },
+        {
+          "source": "description:'When enabled, the unfinished tasks will be added where the \"{{key}}\" is placed in the note previously'",
+          "target": "description:'启用后，未完成的任务将被添加到之前注释中放置“{{key}}”的位置'"
+        },
+        {
+          "source": "description:\"Establece la carpeta donde guardar\\xE1s tus plantillas de markdown\"",
+          "target": "description:\"设置保存标记模板的文件夹\""
+        },
+        {
+          "source": "description:\"Establece la URL de la comunidad de ZettelFlow\"",
+          "target": "description:\"设置Zettelflow社区的URL\""
+        },
+        {
+          "source": "description:\"Activar o desactivar logger\"",
+          "target": "description:\"启用或禁用日志记录\""
+        },
+        {
+          "source": "description:\"Establecer nivel de logger\"",
+          "target": "description:\"设置记录器级别\""
+        },
+        {
+          "source": "description:\"Selecciona el archivo canvas que contiene el flujo de zettelkasten\"",
+          "target": "description:\"选择包含Zettelkasten流的画布文件\""
+        },
+        {
+          "source": "description:\"Gestiona las plantillas instaladas en tu vault\"",
+          "target": "description:\"管理安装在您的Vault中的模板\""
+        },
+        {
+          "source": "description:\"Explora las plantillas de la comunidad\"",
+          "target": "description:\"探索社区模板\""
+        },
+        {
+          "source": "description:\"Activa o desactiva el prefijo \\xFAnico para tus notas\"",
+          "target": "description:\"Activa o desactiva el prefijo \\xFAnico para tus notas\""
+        },
+        {
+          "source": "description:\"Establece el patr\\xF3n para el prefijo \\xFAnico\"",
+          "target": "description:\"Establece el patr\\xF3n para el prefijo \\xFAnico\""
+        },
+        {
+          "source": "description:\"Selecciona la carpeta donde guardar\\xE1s tus scripts (recursos de las acciones de scripts)\"",
+          "target": "description:\"选择保存脚本的文件夹（脚本操作资源）\""
+        },
+        {
+          "source": "description:\"Selecciona la carpeta donde guardar\\xE1s tus flujos de ZettelFlow asignados a la configuraci\\xF3n de carpetas. Los ficheros que se creen en esas carpetas autom\\xE1ticamente aplicar\\xE1n el flujo configurado\"",
+          "target": "description:\"选择保存分配给文件夹配置的Zettelflow流的文件夹。在这些文件夹中创建的文件自动应用配置的流\""
+        },
+        {
+          "source": "description:\"A\\xF1ade la gesti\\xF3n de tareas a tu paso\"",
+          "target": "description:\"在您经过的任务管理中\""
+        },
+        {
+          "source": "description:\"Establece el elemento actual como el elemento ra\\xEDz.\"",
+          "target": "description:\"将当前元素设置为raxedz元素。\""
+        },
+        {
+          "source": "description:\"Este es el nombre del fichero de la nota del paso.\"",
+          "target": "description:\"这是步骤说明的文件名。\""
+        },
+        {
+          "source": "description:\"Si el paso tiene opciones, este encabezado se mostrar\\xE1 en la nota como explicaci\\xF3n de estas\"",
+          "target": "description:\"如果步骤有选项，则该标题将在说明中显示为这些选项的解释xe1\""
+        },
+        {
+          "source": "description:\"Establece el elemento actual como opcional.\"",
+          "target": "description:\"将当前元素设置为可选。\""
+        },
+        {
+          "source": "description:\"Esta es la etiqueta de la secci\\xF3n que se mostrar\\xE1 como opci\\xF3n en el men\\xFA.\"",
+          "target": "description:\"这是xf3n部分的标签，该部分将xe1作为选项xf3n显示在menxfa中。\""
+        },
+        {
+          "source": "description:\"Elige la carpeta destino para la nota del paso.\"",
+          "target": "description:\"为步骤说明选择目标文件夹。\""
+        },
+        {
+          "source": "description:\"Elige la acci\\xF3n que quieres realizar.\"",
+          "target": "description:\"选择要执行的操作。\""
+        },
+        {
+          "source": "description:\"Elige las opciones para el selector din\\xE1mico...\"",
+          "target": "description:\"选择DINxe1mico选择器的选项。。。\""
+        },
+        {
+          "source": "description:\"La clave para los metadatos asignada al elemento\"",
+          "target": "description:\"分配给元素的元数据的密钥\""
+        },
+        {
+          "source": "description:\"Cuando est\\xE1 activado, al crear la nota se guardar\\xE1 el valor del elemento tal como se defina en la configuraci\\xF3n sin necesidad de ninguna interfaz\"",
+          "target": "description:\"当启用xe1时，创建注释时，将按照配置xf3n中的定义保存xe1元素的值，而无需任何接口\""
+        },
+        {
+          "source": "description:\"El valor que se guardar\\xE1 en la nota\"",
+          "target": "description:\"要保存在注释中的值xe1\""
+        },
+        {
+          "source": "description:\"Elige las opciones para el elemento prompt.\"",
+          "target": "description:\"选择提示元素的选项。\""
+        },
+        {
+          "source": "description:\"La clave para los metadatos del frontmatter asignada al prompt\"",
+          "target": "description:\"分配给提示符的FrontMatter元数据的密钥\""
+        },
+        {
+          "source": "description:\"La etiqueta ser\\xE1 el t\\xEDtulo de tu prompt\"",
+          "target": "description:\"标签将是提示的标题\""
+        },
+        {
+          "source": "description:\"Texto de ayuda para mostrar en el prompt\"",
+          "target": "description:\"在提示下显示的帮助文本\""
+        },
+        {
+          "source": "description:\"Elige las opciones para el elemento calendario...\"",
+          "target": "description:\"选择日历项的选项。。。\""
+        },
+        {
+          "source": "description:\"La clave para los metadatos del frontmatter asignada al calendario\"",
+          "target": "description:\"分配给日历的FrontMatter元数据的密钥\""
+        },
+        {
+          "source": "description:\"La etiqueta ser\\xE1 el t\\xEDtulo de tu calendario\"",
+          "target": "description:\"标签将是您日历的标题\""
+        },
+        {
+          "source": "description:\"Activa o desactiva la hora para tu calendario\"",
+          "target": "description:\"打开或关闭日历的时间\""
+        },
+        {
+          "source": "description:\"Elige el formato para el calendario\"",
+          "target": "description:\"选择日历的格式\""
+        },
+        {
+          "source": "description:\"A\\xF1ade opciones a tu paso que se mostrar\\xE1n en el men\\xFA de la acci\\xF3n.\"",
+          "target": "description:\"在您的步骤中的xf1ade选项将在Accixf3n的菜单xfa中显示。\""
+        },
+        {
+          "source": "description:\"La etiqueta ser\\xE1 el t\\xEDtulo de tu selector\"",
+          "target": "description:\"标签 bexE1 txED标题为您的选择器\""
+        },
+        {
+          "source": "description:\"A\\xF1ade un backlink a tu paso.\"",
+          "target": "description:\"AxF1在您的步骤中添加一个反向链接。\""
+        },
+        {
+          "source": "description:\"Activa o desactiva el fichero por defecto para tu backlink. Si est\\xE1 activado, la UI se desactivar\\xE1 para usar el fichero por defecto.\"",
+          "target": "description:\"启用或禁用Backlink的默认文件。如果启用xe1，则用户界面将禁用xe1以使用默认文件。\""
+        },
+        {
+          "source": "description:\"Previsualizaci\\xF3n: \"",
+          "target": "description:\"预览\\xF3n：\""
+        },
+        {
+          "source": "description:\"Busca el fichero en el que quieres insertar el backlink\"",
+          "target": "description:\"搜索要在其中插入反向链接的文件\""
+        },
+        {
+          "source": "description:\"Busca el encabezado en el que quieres insertar el backlink\"",
+          "target": "description:\"搜索要在其中插入反向链接的标题\""
+        },
+        {
+          "source": "description:\"Elige d\\xF3nde quieres colocar el elemento.\"",
+          "target": "description:\"选择要将元素放置在哪里。\""
+        },
+        {
+          "source": "description:\"Esta acci\\xF3n a\\xF1adir\\xE1 las etiquetas que elijas a la nota en construcci\\xF3n.\"",
+          "target": "description:\"此操作将xf3n添加到xf1adirxe1您在Construccixf3n中选择的注释标签。\""
+        },
+        {
+          "source": "description:\"Esta acci\\xF3n a\\xF1adir\\xE1 las clases CSS que elijas a la nota en construcci\\xF3n.\"",
+          "target": "description:\"此操作xf3n到xf1adirxe1您在Construccixf3n中选择的CSS类。\""
+        },
+        {
+          "source": "description:\"Elige las opciones para el elemento script.\"",
+          "target": "description:\"选择脚本元素的选项。\""
+        },
+        {
+          "source": "description:\"Elige las opciones para el elemento checkbox.\"",
+          "target": "description:\"选择复选框元素的选项。\""
+        },
+        {
+          "source": "description:\"Elige las opciones para el elemento n\\xFAmero.\"",
+          "target": "description:\"选择nxfamero元素的选项。\""
+        },
+        {
+          "source": "description:\"La etiqueta ser\\xE1 el t\\xEDtulo de tu n\\xFAmero\"",
+          "target": "description:\"标签 bexE1 txED标题 nxFAmer\""
+        },
+        {
+          "source": "description:\"Texto de ayuda para mostrar en el n\\xFAmero\"",
+          "target": "description:\"在NxFamero中显示的帮助文本\""
+        },
+        {
+          "source": "description:\"Carpeta inicial para buscar las notas con las tareas a rollover\"",
+          "target": "description:\"用于搜索带有要滚动的任务的笔记的初始文件夹\""
+        },
+        {
+          "source": "description:\"Permitir la b\\xFAsqueda recursiva en las subcarpetas de la carpeta inicial\"",
+          "target": "description:\"允许在初始文件夹的子文件夹中递归bxfas\""
+        },
+        {
+          "source": "description:\"Regex para buscar las tareas en las notas\"",
+          "target": "description:\"Regex在笔记中搜索任务\""
+        },
+        {
+          "source": "description:\"Buscar\\xE1 el encabezado en todas las notas filtradas y agrupar\\xE1 las tareas no finalizadas\"",
+          "target": "description:\"在所有筛选的笔记中搜索xe1标题并将xe1未完成的任务分组\""
+        },
+        {
+          "source": "description:\"Prefijo a a\\xF1adir a la tarea tras del rollover\"",
+          "target": "description:\"滚动后添加到任务的前缀\""
+        },
+        {
+          "source": "description:\"Sufijo a a\\xF1adir a la tarea tras del rollover\"",
+          "target": "description:\"后缀Axf1在翻滚后添加到任务\""
+        },
+        {
+          "source": "description:'Cuando est\\xE1 activado, el rollover se  a\\xF1adir\\xE1 donde se coloque la clave \"{{key}}\" en la nota previamente'",
+          "target": "description:'当xe1被激活时，滚动到xf1adirxe1，其中键“{{key}}”位于之前的注释中'"
+        },
+        {
+          "source": "description:\"Script file\"",
+          "target": "description:\"脚本文件\""
+        },
+        {
+          "source": "description:\"New template description\"",
+          "target": "description:\"新模板说明\""
+        },
+        {
+          "source": "description:\"Add tags to the note\"",
+          "target": "description:\"在注释中添加标签\""
+        },
+        {
+          "source": "description:\"Css Classes\"",
+          "target": "description:\"Css类\""
+        },
+        {
+          "source": "description:\"Task Management\"",
+          "target": "description:\"任务管理\""
+        },
+        {
+          "source": "text:\"Manage\"",
+          "target": "text:\"管理\""
+        },
+        {
+          "source": "text:\"Browse\"",
+          "target": "text:\"浏览\""
+        },
+        {
+          "source": "text:\"Context\"",
+          "target": "text:\"背景\""
+        },
+        {
+          "source": "text:\"Gestionar\"",
+          "target": "text:\"管理\""
+        },
+        {
+          "source": "text:\"Explorar\"",
+          "target": "text:\"探索\""
+        },
+        {
+          "source": "text:\"Contexto\"",
+          "target": "text:\"上下文\""
+        },
+        {
+          "source": "text:\"Developer\"",
+          "target": "text:\"开发商\""
+        },
+        {
+          "source": "text:\"reference\"",
+          "target": "text:\"参考\""
+        },
+        {
+          "source": "text:`Type: ${n.getLabel()}`",
+          "target": "text:`Type: ${n.getLabel()}`"
+        },
+        {
+          "source": "text:\"Installed Step Editor\"",
+          "target": "text:\"已安装步骤编辑器\""
+        },
+        {
+          "source": "text:\"Installed Action Editor\"",
+          "target": "text:\"已安装的操作编辑器\""
+        },
+        {
+          "source": "text:`Author: ${c}`",
+          "target": "text:`作者：${c}`"
+        },
+        {
+          "source": "text:`Downloads: ${u}`",
+          "target": "text:`下载：${u}`"
+        },
+        {
+          "source": "text:\"Actions\"",
+          "target": "text:\"行动\""
+        },
+        {
+          "source": "text:`Type: ${O.getLabel()}`",
+          "target": "text:`Type: ${O.getLabel()}`"
+        },
+        {
+          "source": "text:`Description: ${m.description}`",
+          "target": "text:`Description: ${m.description}`"
+        },
+        {
+          "source": "text:`Error: ${S.error}`",
+          "target": "text:`Error: ${S.error}`"
+        },
+        {
+          "source": "text:`Output:\n${JSON.stringify(S.output,null,2)}`",
+          "target": "text:`Output:\n${JSON.stringify(S.output,null,2)}`"
+        },
+        {
+          "source": "text:`Error: ${T.error}`",
+          "target": "text:`Error: ${T.error}`"
+        },
+        {
+          "source": "text:`Output:\n${v}`",
+          "target": "text:`Output:\n${v}`"
+        },
+        {
+          "source": "settings:\"Open settings of ZettelFlow\"",
+          "target": "settings:\"ZettelFlow的打开设置\""
+        },
+        {
+          "source": "settings:\"Abrir configuraci\\xF3n de ZettelFlow\"",
+          "target": "settings:\"打开 ZettelFlow 配置xF3n\""
+        },
+        {
+          "source": ".setButtonText(\"Run\")",
+          "target": ".setButtonText(\"快跑\")"
+        },
+        {
+          "source": ".setButtonText(\"Clear Output\")",
+          "target": ".setButtonText(\"清除输出\")"
+        },
+        {
+          "source": ".setName(\"Title\")",
+          "target": ".setName(\"标题\")"
+        },
+        {
+          "source": ".setName(\"Description\")",
+          "target": ".setName(\"说明\")"
+        },
+        {
+          "source": ".setName(`${this.name} (Beta)`)",
+          "target": ".setName(`${this.name} (Beta)`)"
+        },
+        {
+          "source": ".setName(`${y(\"manage_installed_templates_title\")} (Beta)`)",
+          "target": ".setName(`${y(\"manage_installed_templates_title\")} (Beta)`)"
+        },
+        {
+          "source": ".setName(\"Debug script\")",
+          "target": ".setName(\"调试脚本\")"
+        },
+        {
+          "source": ".setDesc(\"Title of the installed step\")",
+          "target": ".setDesc(\"已安装步骤的标题\")"
+        },
+        {
+          "source": ".setDesc(\"Information about the installed step and its purpose\")",
+          "target": ".setDesc(\"有关已安装步骤及其用途的信息\")"
+        },
+        {
+          "source": ".setDesc(\"Title of the installed action\")",
+          "target": ".setDesc(\"已安装操作的标题\")"
+        },
+        {
+          "source": ".setDesc(\"Information about the installed action and its purpose\")",
+          "target": ".setDesc(\"有关已安装操作及其目的的信息\")"
+        },
+        {
+          "source": ".setDesc(\"Run the script with mock data and view the result.\")",
+          "target": ".setDesc(\"使用模拟数据运行脚本并查看结果。\")"
+        },
+        {
+          "source": ".setDesc(\"Run the script with a test input and verify if it works as expected.\")",
+          "target": ".setDesc(\"使用测试输入运行脚本，并验证其是否按预期工作。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"https://...\")",
+          "target": ".setPlaceholder(\"https://...\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: path/to/folder\")",
+          "target": ".setPlaceholder(\"示例：路径/to/folder\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Title\")",
+          "target": ".setPlaceholder(\"标题\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Description\")",
+          "target": ".setPlaceholder(\"说明\")"
+        },
+        {
+          "source": ".setPlaceholder(\"{{wikilink}}\")",
+          "target": ".setPlaceholder(\"{{维基链接}}\")"
+        },
+        {
+          "source": ".setTitle(\"Edit folder workflow\")",
+          "target": ".setTitle(\"编辑文件夹工作流\")"
+        }
+      ]
+    }
+  }
+}

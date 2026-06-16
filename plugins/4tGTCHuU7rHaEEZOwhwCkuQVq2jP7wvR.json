@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "note_uid_generator",
+    "version": "2.0.0",
+    "title": "Note UID Generator",
+    "description": "Automatically or manually generates Unique IDs (UIDs) for notes and registers them in metadata (frontmatter).",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setText(\"Remove\")",
+          "target": ".setText(\"移除\")"
+        },
+        {
+          "source": ".setText(\"Add\")",
+          "target": ".setText(\"添加\")"
+        },
+        {
+          "source": ".setButtonText(\"Confirm Deletion\")",
+          "target": ".setButtonText(\"确认删除\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Manage Exclusions\")",
+          "target": ".setButtonText(\"管理排除\")"
+        },
+        {
+          "source": ".setButtonText(\"Generate Missing UIDs\")",
+          "target": ".setButtonText(\"生成缺失的UID\")"
+        },
+        {
+          "source": ".setButtonText(\"Processing...\")",
+          "target": ".setButtonText(\"处理。..\")"
+        },
+        {
+          "source": ".setButtonText(\"Clear UIDs Now\")",
+          "target": ".setButtonText(\"立即清除UID\")"
+        },
+        {
+          "source": ".setName(\"UID Metadata Key\")",
+          "target": ".setName(\"UID元数据密钥\")"
+        },
+        {
+          "source": ".setName(\"Enable Automatic UID Generation\")",
+          "target": ".setName(\"启用自动UID生成\")"
+        },
+        {
+          "source": ".setName(\"Generation Scope\")",
+          "target": ".setName(\"发电范围\")"
+        },
+        {
+          "source": ".setName(\"Target Folder for Auto-Generation\")",
+          "target": ".setName(\"自动生成的目标文件夹\")"
+        },
+        {
+          "source": ".setName(\"Excluded Folders\")",
+          "target": ".setName(\"排除的文件夹\")"
+        },
+        {
+          "source": ".setName(`Generate missing ${this.plugin.settings.uidKey}s now`)",
+          "target": ".setName(`生成缺失${this.plugin.settings.uidKey}s现在`)"
+        },
+        {
+          "source": ".setName(\"Format (UID exists)\")",
+          "target": ".setName(\"格式（UID存在）\")"
+        },
+        {
+          "source": ".setName(\"Format (UID missing)\")",
+          "target": ".setName(\"格式（缺少UID）\")"
+        },
+        {
+          "source": ".setName(\"Folder to clear UIDs from\")",
+          "target": ".setName(\"用于清除UID的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Clear UIDs in Folder\")",
+          "target": ".setName(\"Clear UIDs in Folder\")"
+        },
+        {
+          "source": ".setDesc('The name of the key for the UID in frontmatter (e.g., \"uid\", \"id\"). No spaces.')",
+          "target": ".setDesc('frontmatter中UID的密钥名称（例如，“UID”、“id”）。没有空格。')"
+        },
+        {
+          "source": ".setDesc(\"Generate UIDs only for notes in this folder (and subfolders).\")",
+          "target": ".setDesc(\"仅为此文件夹（及其子文件夹）中的笔记生成UID。\")"
+        },
+        {
+          "source": ".setDesc(\"Folders excluded from automatic UID generation. Click button to manage.\")",
+          "target": ".setDesc(\"从自动UID生成中排除的文件夹。单击按钮进行管理。\")"
+        },
+        {
+          "source": ".setDesc(`Manually scan notes based on the current 'Generation Scope' and 'Excluded Folders' settings above. Add a ${this.plugin.settings.uidKey} to any applicable notes that don't already have one. This may take time for large vaults.`)",
+          "target": ".setDesc(`根据上述当前的“生成范围”和“排除文件夹”设置手动扫描笔记。将${this.plugin.settings.uidKey}添加到任何尚未添加的适用笔记中。对于大型保险库来说，这可能需要时间。`)"
+        },
+        {
+          "source": ".setDesc(\"Format string used when copying title and UID, and the UID exists.\")",
+          "target": ".setDesc(\"复制标题和UID时使用的格式字符串，UID存在。\")"
+        },
+        {
+          "source": ".setDesc(\"Format string used when copying, but the note has no UID.\")",
+          "target": ".setDesc(\"复制时使用的格式字符串，但注释没有UID。\")"
+        },
+        {
+          "source": ".setDesc(\"Specify the vault path to remove UIDs from notes within.\")",
+          "target": ".setDesc(\"指定vault路径以从中的注释中删除UID。\")"
+        },
+        {
+          "source": ".setDesc(`WARNING: This permanently removes the \"${this.plugin.settings.uidKey}\" metadata from notes in the specified folder/subfolders and temporarily disables auto-generation.`)",
+          "target": ".setDesc(`警告：这将从指定文件夹/子文件夹中的笔记中永久删除“${This.plugin.settings.uidKey}”元数据，并暂时禁用自动生成。`)"
+        },
+        {
+          "source": ".setPlaceholder(\"Default: uid\")",
+          "target": ".setPlaceholder(\"默认值：uid\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: Notes/Inbox\")",
+          "target": ".setPlaceholder(\"示例：笔记/收件箱\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: Folder/Subfolder\")",
+          "target": ".setPlaceholder(\"示例：文件夹/子文件夹\")"
+        },
+        {
+          "source": ".setTooltip(\"Scan and add missing UIDs respecting scope/exclusions\")",
+          "target": ".setTooltip(\"扫描并添加关于范围/排除的缺失UID\")"
+        },
+        {
+          "source": ".createEl(\"h2\",{text:\"Confirm UID Deletion\"})",
+          "target": ".createEl(\"h2”，{文本：“确认UID删除\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:`Are you sure you want to remove the '${this.uidKey}' metadata property from all notes within the folder \"${this.folderPath}\" and its subfolders?`})",
+          "target": ".createEl(\"p“，{text:`您确定要从文件夹”${this.folderPath}中的所有笔记中删除“${this.uidKey}”元数据属性吗\" and its subfolders?`})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"This action cannot be undone.\"})",
+          "target": ".createEl(\"p”，{text:“此操作无法撤消。\"})"
+        },
+        {
+          "source": ".createEl(\"h2\",{text:\"Manage Excluded Folders\"})",
+          "target": ".createEl(\"h2”，{text:“管理排除的文件夹\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"Add or remove folders from the automatic UID generation exclusion list.\"})",
+          "target": ".createEl(\"p”，{text:“在自动UID生成排除列表中添加或删除文件夹。\"})"
+        },
+        {
+          "source": ".createEl(\"h2\",{text:\"UID Generator Settings\"})",
+          "target": ".createEl(\"h2”，{text:“UID生成器设置\"})"
+        },
+        {
+          "source": ".createEl(\"h3\",{text:\"General\"})",
+          "target": ".createEl(\"h3”，{文本：“概述\"})"
+        },
+        {
+          "source": ".createEl(\"h3\",{text:\"Automatic UID Generation\"})",
+          "target": ".createEl(\"h3”，{text:“自动UID生成\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:`Automatically add a ${this.plugin.settings.uidKey} to notes when they are created or opened, if they don't already have one.`})",
+          "target": ".createEl(\"p\",{text:`Automatically add a ${this.plugin.settings.uidKey} to notes when they are created or opened, if they don't already have one.`})"
+        },
+        {
+          "source": ".createEl(\"li\",{text:\"No folders excluded.\"})",
+          "target": ".createEl(\"li”，{text:“不排除任何文件夹。\"})"
+        },
+        {
+          "source": ".createEl(\"h3\",{text:\"Copy Format\"})",
+          "target": ".createEl(\"h3”，{文本：“复制格式\"})"
+        },
+        {
+          "source": ".createEl(\"p\",{text:\"Define the format for copied text using placeholders: {title}, {uid}, {uidKey}.\"})",
+          "target": ".createEl(\"p”，{text:“使用占位符定义复制文本的格式：{title}，{uid}，{uidKey}。\"})"
+        },
+        {
+          "source": ".createEl(\"h3\",{text:\"Manual UID Clearing\"})",
+          "target": ".createEl(\"h3”，{text:“手动UID清除\"})"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "simple-note-review",
+    "version": "2.0.0",
+    "title": "Simple Note Review",
+    "description": "Simple, customizable plugin for easy note review, resurfacing  & repetition.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".error(`Simple Note Review - dataview API error: ${error.message}`)",
+          "target": ".error(`简易笔记复习 - dataview API错误: ${error.message}`)"
+        },
+        {
+          "source": "name: \"Start reviewing notes in current note set\"",
+          "target": "name: \"开始复习当前笔记集中的笔记\""
+        },
+        {
+          "source": "name: \"Open Sidebar View\"",
+          "target": "name: \"打开侧边栏视图\""
+        },
+        {
+          "source": "name: \"Open random note from the current note set\"",
+          "target": "name: \"从当前笔记集中打开随机笔记\""
+        },
+        {
+          "source": "name: \"reset queue for the current note set\"",
+          "target": "name: \"重置当前笔记集的队列\""
+        },
+        {
+          "source": "name: \"Select note set for reviewing\"",
+          "target": "name: \"选择要复习的笔记集\""
+        },
+        {
+          "source": "name: \"Mark current note as reviewed\"",
+          "target": "name: \"将当前笔记标记为已复习\""
+        },
+        {
+          "source": "name: \"Set review frequency to high\"",
+          "target": "name: \"将复习频率设为高\""
+        },
+        {
+          "source": "name: \"Set review frequency to normal\"",
+          "target": "name: \"将复习频率设为正常\""
+        },
+        {
+          "source": "name: \"Set review frequency to low\"",
+          "target": "name: \"将复习频率设为低\""
+        },
+        {
+          "source": "name: \"Set review frequency to none (ignore this note in all reviews)\"",
+          "target": "name: \"将复习频率设为无（在所有复习中忽略此笔记）\""
+        },
+        {
+          "source": "name: \"Skip note from current review\"",
+          "target": "name: \"在当前复习中跳过笔记\""
+        },
+        {
+          "source": "text: \"Ok\"",
+          "target": "text: \"确定\""
+        },
+        {
+          "source": "text: \"Cancel\"",
+          "target": "text: \"取消\""
+        },
+        {
+          "source": "text: `Note set \"${this.noteSet.displayName}\"`",
+          "target": "text: `笔记集\"${this.noteSet.displayName}\"`"
+        },
+        {
+          "source": "text: `This query ${this.noteSet.description}.`",
+          "target": "text: `此查询${this.noteSet.description}。`"
+        },
+        {
+          "source": "text: `Note set \"${this._noteSet.displayName}\"`",
+          "target": "text: `笔记集\"${this._noteSet.displayName}\"`"
+        },
+        {
+          "source": "text: \"Simple Note Review Settings\"",
+          "target": "text: \"简易笔记复习设置\""
+        },
+        {
+          "source": "text: \"Note Sets\"",
+          "target": "text: \"笔记集\""
+        },
+        {
+          "source": ".setText(`Delete note set \"${this.noteSet.displayName}\" ?`)",
+          "target": ".setText(`删除笔记集\"${this.noteSet.displayName}\"？`)"
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Add Note Set\")",
+          "target": ".setButtonText(\"添加笔记集\")"
+        },
+        {
+          "source": ".setName(\"Name\")",
+          "target": ".setName(\"名称\")"
+        },
+        {
+          "source": ".setName(\"Tags\")",
+          "target": ".setName(\"标签\")"
+        },
+        {
+          "source": ".setName(\"Folders\")",
+          "target": ".setName(\"文件夹\")"
+        },
+        {
+          "source": ".setName(\"Created in last N days\")",
+          "target": ".setName(\"最近N天内创建\")"
+        },
+        {
+          "source": ".setName(\"Modified in last N days\")",
+          "target": ".setName(\"最近N天内修改\")"
+        },
+        {
+          "source": ".setName(\"Advanced Settings\")",
+          "target": ".setName(\"高级设置\")"
+        },
+        {
+          "source": ".setName(\"If tags are specified, match notes with:\")",
+          "target": ".setName(\"如果指定了标签，匹配笔记：\")"
+        },
+        {
+          "source": ".setName(\"If folders *and* tags are specified, match notes with: \")",
+          "target": ".setName(\"如果指定了文件夹*和*标签，匹配笔记：\")"
+        },
+        {
+          "source": ".setName(\"DataviewJS query\")",
+          "target": ".setName(\"DataviewJS查询\")"
+        },
+        {
+          "source": ".setName(\"Open next note in the note set after reviewing a note\")",
+          "target": ".setName(\"复习完笔记后打开笔记集中的下一个笔记\")"
+        },
+        {
+          "source": ".setName(\"Use review frequency\")",
+          "target": ".setName(\"使用复习频率\")"
+        },
+        {
+          "source": ".setName(\"Start with unreviewed notes\")",
+          "target": ".setName(\"从未复习的笔记开始\")"
+        },
+        {
+          "source": ".setName(`Note Set \"${noteSet.displayName}\"`)",
+          "target": ".setName(`笔记集\"${noteSet.displayName}\"`)"
+        },
+        {
+          "source": ".setName(`Note Set \"${text}\"`)",
+          "target": ".setName(`笔记集\"${text}\"`)"
+        },
+        {
+          "source": ".setDesc(\"If omitted, the name will be created from tags, folders, or dataviewJS query (if these are set).\")",
+          "target": ".setDesc(\"如果省略，将从标签、文件夹或dataviewJS查询（如果设置了这些）中创建名称。\")"
+        },
+        {
+          "source": ".setDesc(`One or more tags, separated by comma. Note set will contain notes tagged with ${this._noteSet.tagsJoinType === \"and\" /* AND */ ? \"all\" : \"any\"} of these. Example: #review, #knowledge`)",
+          "target": ".setDesc(`一个或多个标签，用逗号分隔。笔记集将包含标记为${this._noteSet.tagsJoinType === \"and\" /* AND */ ? \"所有\" : \"任意\"}的笔记。例如：#review, #knowledge`)"
+        },
+        {
+          "source": ".setDesc(`One or more folder paths relative to vault root, surrounded by quotes and separated by comma. Note set will contain notes located in any of these. Top-level folders must not contain slash in their path.  Example: \"notes\", \"notes/programming\"`)",
+          "target": ".setDesc(`一个或多个相对于库根目录的文件夹路径，用引号括起来并用逗号分隔。笔记集将包含位于其中任何一个文件夹中的笔记。顶级文件夹路径中不得包含斜杠。例如：\"notes\", \"notes/programming\"`)"
+        },
+        {
+          "source": ".setDesc(`Number of days`)",
+          "target": ".setDesc(`天数`)"
+        },
+        {
+          "source": ".setDesc(`DataviewJS-style query for more flexible control over the note set. If used, *overrides* Tags & Folders. Example: \"(#knowledge and #review) or ('./notes')\"`)",
+          "target": ".setDesc(`DataviewJS风格的查询，用于更灵活地控制笔记集。如果使用，将*覆盖*标签和文件夹。例如：\"(#knowledge and #review) or ('./notes')\"`)"
+        },
+        {
+          "source": ".setDesc(\"After marking note as reviewed, automatically open next note in the note set.\")",
+          "target": ".setDesc(\"将笔记标记为已复习后，自动打开笔记集中的下一个笔记。\")"
+        },
+        {
+          "source": ".setDesc(\"Set review frequency level (high, normal, low, ignore) for each note. Notes with higher review frequency will be presented for review more often. Default is 'normal'.\")",
+          "target": ".setDesc(\"为每个笔记设置复习频率级别（高、正常、低、忽略）。复习频率较高的笔记将更频繁地呈现进行复习。默认是'正常'。\")"
+        },
+        {
+          "source": ".setDesc(\"Start review with notes that have no review date. If turned off, notes without the review date will have lower priority than notes with early review dates.\")",
+          "target": ".setDesc(\"从没有复习日期的笔记开始复习。如果关闭，没有复习日期的笔记将比有早期复习日期的笔记优先级低。\")"
+        },
+        {
+          "source": ".setDesc(\"general actions:\")",
+          "target": ".setDesc(\"常规操作：\")"
+        },
+        {
+          "source": ".setDesc(\"current file actions:\")",
+          "target": ".setDesc(\"当前文件操作：\")"
+        },
+        {
+          "source": ".setDesc(\"current note set\")",
+          "target": ".setDesc(\"当前笔记集\")"
+        },
+        {
+          "source": ".setDesc(\"\");\n    }\n    if (((_a = noteSet == null ? void 0 : noteSet.validationErrors) == null ? void 0 : _a.length) > 0) {\n      section.addExtraButton((cb) => {\n        cb.setIcon(\"alert-triangle\")",
+          "target": ".setDesc(\"\");\n    }\n    if (((_a = noteSet == null ? void 0 : noteSet.validationErrors) == null ? void 0 : _a.length) > 0) {\n      section.addExtraButton((cb) => {\n        cb.setIcon(\"alert-triangle\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Select a note set to start reviewing notes\")",
+          "target": ".setPlaceholder(\"选择一个笔记集开始复习笔记\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Tags\")",
+          "target": ".setPlaceholder(\"标签\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Folders\")",
+          "target": ".setPlaceholder(\"文件夹\")"
+        },
+        {
+          "source": ".setPlaceholder(\"DataviewJS query\")",
+          "target": ".setPlaceholder(\"DataviewJS查询\")"
+        },
+        {
+          "source": ".setTooltip(\"Note set info & stats\")",
+          "target": ".setTooltip(\"笔记集信息和统计\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset review queue and update stats for this note set\")",
+          "target": ".setTooltip(\"重置复习队列并更新此笔记集的统计信息\")"
+        },
+        {
+          "source": ".setTooltip(\"Move element up\")",
+          "target": ".setTooltip(\"上移元素\")"
+        },
+        {
+          "source": ".setTooltip(\"Move element down\")",
+          "target": ".setTooltip(\"下移元素\")"
+        },
+        {
+          "source": ".setTooltip(\"Edit Note set\")",
+          "target": ".setTooltip(\"编辑笔记集\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete note set\")",
+          "target": ".setTooltip(\"删除笔记集\")"
+        },
+        {
+          "source": ".setTooltip(\"refresh sidebar\")",
+          "target": ".setTooltip(\"刷新侧边栏\")"
+        },
+        {
+          "source": ".setTooltip(\"open plugin settings\")",
+          "target": ".setTooltip(\"打开插件设置\")"
+        },
+        {
+          "source": ".setTooltip(\"ignore this note in all reviews\")",
+          "target": ".setTooltip(\"在所有复习中忽略此笔记\")"
+        },
+        {
+          "source": ".setTooltip(\"set review frequency to low\")",
+          "target": ".setTooltip(\"将复习频率设为低\")"
+        },
+        {
+          "source": ".setTooltip(\"set review frequency to normal\")",
+          "target": ".setTooltip(\"将复习频率设为正常\")"
+        },
+        {
+          "source": ".setTooltip(\"set review frequency to high\")",
+          "target": ".setTooltip(\"将复习频率设为高\")"
+        },
+        {
+          "source": ".setTooltip(\"skip note for current review\")",
+          "target": ".setTooltip(\"跳过当前复习的笔记\")"
+        },
+        {
+          "source": ".setTooltip(\"mark current note as reviewed & go to the next file\")",
+          "target": ".setTooltip(\"将当前笔记标记为已复习并转到下一个文件\")"
+        },
+        {
+          "source": ".setTooltip(\"view note set info & stats\")",
+          "target": ".setTooltip(\"查看笔记集信息和统计\")"
+        },
+        {
+          "source": ".setTooltip(\"open random note from this note set\")",
+          "target": ".setTooltip(\"从此笔记集中打开随机笔记\")"
+        },
+        {
+          "source": ".setTooltip(\"reset review queue for this note set\")",
+          "target": ".setTooltip(\"重置此笔记集的复习队列\")"
+        },
+        {
+          "source": ".setTooltip(\"review this note set\")",
+          "target": ".setTooltip(\"复习此笔记集\")"
+        }
+      ]
+    }
+  }
+}

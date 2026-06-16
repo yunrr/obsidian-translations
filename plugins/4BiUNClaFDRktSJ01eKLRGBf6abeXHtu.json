@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-local-images",
+    "version": "2.0.0",
+    "title": "Local images",
+    "description": "Searches your notes for hotlinked images, downloads, saves them locally than fix tags in md-files.",
+    "language": "zh-cn",
+    "supportedVersions": "0.14.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Local Images \\nStart processing. Total ${pagesCount} pages. `, TIMEOUT_LIKE_INFINITY)",
+          "target": "Notice(`Local Images \\nStart processing. Total ${pagesCount} pages. `, TIMEOUT_LIKE_INFINITY)"
+        },
+        {
+          "source": "Notice(`Images for \"${file.path}\" were processed.`)",
+          "target": "Notice(`Images for \"${file.path}\" were processed.`)"
+        },
+        {
+          "source": "Notice(`Page \"${file.path}\" has been processed, but nothing was changed.`)",
+          "target": "Notice(`Page \"${file.path}\" has been processed, but nothing was changed.`)"
+        },
+        {
+          "source": "Notice(`LocalImages: Error while handling file ${file.name}, ${error.toString()",
+          "target": "Notice(`LocalImages: Error while handling file ${file.name}, ${error.toString()"
+        },
+        {
+          "source": "Notice(error.toString()",
+          "target": "Notice(error.toString()"
+        },
+        {
+          "source": ".log(value)",
+          "target": ".log(value)"
+        },
+        {
+          "source": ".log(options)",
+          "target": ".log(options)"
+        },
+        {
+          "source": ".log(tagName)",
+          "target": ".log(tagName)"
+        },
+        {
+          "source": ".log(\"start:\"+attrStr+\":end\")",
+          "target": ".log(\"start:\"+attrStr+\":end\")"
+        },
+        {
+          "source": ".error(value)",
+          "target": ".error(value)"
+        },
+        {
+          "source": "_error(error)",
+          "target": "_error(error)"
+        },
+        {
+          "source": "_error(new RequestError(error_.message, error_, this)",
+          "target": "_error(new RequestError(error_.message, error_, this)"
+        },
+        {
+          "source": "_error(new RequestError(error_.message, error, this)",
+          "target": "_error(new RequestError(error_.message, error, this)"
+        },
+        {
+          "source": "_error(typedError)",
+          "target": "_error(typedError)"
+        },
+        {
+          "source": ".error(\"Triyng to enqueue item with attempts < 1\")",
+          "target": ".error(\"Triyng to enqueue item with attempts < 1\")"
+        },
+        {
+          "source": ".error(`LocalImages: error: ${error}`)",
+          "target": ".error(`LocalImages: error: ${error}`)"
+        },
+        {
+          "source": "name: ' + name + '",
+          "target": "name: ' + name + '"
+        },
+        {
+          "source": "name: 'Error'",
+          "target": "name: 'Error'"
+        },
+        {
+          "source": "name: \"Download images locally\"",
+          "target": "name: \"Download images locally\""
+        },
+        {
+          "source": "name: \"Download images locally for all your notes\"",
+          "target": "name: \"Download images locally for all your notes\""
+        },
+        {
+          "source": "text: \"Local images\"",
+          "target": "text: \"本地图片\""
+        },
+        {
+          "source": ".setName(\"On paste processing\")",
+          "target": ".setName(\"关于粘贴处理\")"
+        },
+        {
+          "source": ".setName(\"On paste processing interval\")",
+          "target": ".setName(\" 粘贴处理的时间间隔\")"
+        },
+        {
+          "source": ".setName(\"Attempts to process\")",
+          "target": ".setName(\"尝试处理\")"
+        },
+        {
+          "source": ".setName(\"Clean content\")",
+          "target": ".setName(\"干净的内容\")"
+        },
+        {
+          "source": ".setName(\"Show notifications\")",
+          "target": ".setName(\"显示通知\")"
+        },
+        {
+          "source": ".setName(\"Include\")",
+          "target": ".setName(\"包括\")"
+        },
+        {
+          "source": ".setName(\"Media folder\")",
+          "target": ".setName(\"媒体文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Process active page if external link was pasted.\")",
+          "target": ".setDesc(\"如果粘贴了外部链接，则处理活动页面。\")"
+        },
+        {
+          "source": ".setDesc(\"Interval in milliseconds for processing update.\")",
+          "target": ".setDesc(\"处理更新的间隔（毫秒）。\")"
+        },
+        {
+          "source": ".setDesc(\"Number of attempts to process content on paste. For me 3 attempts is enouth with 1 second update interval.\")",
+          "target": ".setDesc(\"处理粘贴内容的尝试次数。对我来说，3次尝试就足够了，更新间隔为1秒。\")"
+        },
+        {
+          "source": ".setDesc(\"Clean malformed image tags before processing.\")",
+          "target": ".setDesc(\"处理前清除格式错误的图像标签。\")"
+        },
+        {
+          "source": ".setDesc(\"Show notifications when pages were processed.\")",
+          "target": ".setDesc(\"处理页面时显示通知。\")"
+        },
+        {
+          "source": ".setDesc(\"Include only files matching this regex pattern when running on all notes.\")",
+          "target": ".setDesc(\"在所有笔记上运行时，仅包含与此正则表达式模式匹配的文件。\")"
+        },
+        {
+          "source": ".setDesc(\"Folder to keep all downloaded media files.\")",
+          "target": ".setDesc(\"用于保存所有下载媒体文件的文件夹。\")"
+        },
+        {
+          "source": ".setTooltip(\"I could not process content on the fly when it is pasted. So real processing implements periodically with the given here timeout.\")",
+          "target": ".setTooltip(\"粘贴内容时，我无法即时处理。因此，真正的处理是在给定的超时时间内定期实现的。\")"
+        },
+        {
+          "source": ".setTooltip(\"I could not find the way to access newly pasted content immediatily, after pasting, Plugin's API returns old text for a while. The workaround is to process page several times until content is changed.\")",
+          "target": ".setTooltip(\"我找不到立即访问新粘贴内容的方法，粘贴后，插件的API会返回旧文本一段时间。解决方法是多次处理页面，直到内容发生更改。\")"
+        }
+      ]
+    }
+  }
+}

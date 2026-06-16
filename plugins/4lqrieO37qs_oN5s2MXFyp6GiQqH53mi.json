@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "sheets",
+    "version": "2.0.0",
+    "title": "Sheets Extended",
+    "description": "Vertical headers, merged cells, and custom css tables with advanced table compatibility",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.10",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".error(`Invalid cell style \\`${inlineStyle}\\``)",
+          "target": ".error(`无效的单元格样式 `${inlineStyle}``)"
+        },
+        {
+          "source": "text: `\nError: \\`",
+          "target": "text: `\nError: \\`"
+        },
+        {
+          "source": ".setName(\"Native table post processing\")",
+          "target": ".setName(\"原生表格后处理\")"
+        },
+        {
+          "source": ".setName(\"Use paragraphs in cells\")",
+          "target": ".setName(\"在单元格中使用段落\")"
+        },
+        {
+          "source": ".setDesc(\"Enable this setting to use Obsidian Sheets' renderer \")",
+          "target": ".setDesc(\"启用此设置以使用 Obsidian Sheets 的渲染器。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable this setting to use paragraphs for table cells \")",
+          "target": ".setDesc(\"启用此设置以在表格单元格中使用段落。\")"
+        },
+        {
+          "source": ".innerText = `[[${link.getAttr(\"href\")}|${link.innerText}]]`",
+          "target": ".innerText = `[[${link.getAttr(\"href\")}|${link.innerText}]]`"
+        }
+      ]
+    }
+  }
+}
