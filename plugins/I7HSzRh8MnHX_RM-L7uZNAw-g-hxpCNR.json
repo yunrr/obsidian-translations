@@ -1,0 +1,751 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "taskrobin",
+    "version": "1.0.1",
+    "title": "Sync Emails",
+    "description": "Sync Emails Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "You forward selected emails to a special TaskRobin email address",
+          "target": "您将选定的电子邮件转发到一个特殊的TaskRobin电子邮件地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "TaskRobin securely processes these emails and their attachments",
+          "target": "TaskRobin安全地处理这些电子邮件及其附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "The emails are converted to markdown and saved in your vault when you sync your emails",
+          "target": "当您同步电子邮件时，这些邮件将被转换为Markdown格式并保存在您的保险库中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Click the TaskRobin icon in the left sidebar to set up your email sync",
+          "target": " 点击左侧边栏中的TaskRobin图标以设置您的电子邮件同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Configure advanced options in the plugin settings",
+          "target": " 在插件设置中配置高级选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Use the command palette to access TaskRobin features",
+          "target": " 使用命令面板访问TaskRobin功能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Visit ",
+          "target": "访问 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " for pricing details and more information.",
+          "target": " 了解定价详情和更多信息。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Send emails from: ",
+          "target": " 发送邮件自："
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " To forwarding address: ",
+          "target": " 转发至地址："
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Saved to vault location: ",
+          "target": " 保存至保险库位置："
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ol",
+          "target": "ol"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "select",
+          "target": "select"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "option",
+          "target": "option"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Sync error:",
+          "target": "同步错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to copy to clipboard:",
+          "target": "复制到剪贴板失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error checking directory:",
+          "target": "检查目录时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Delete error:",
+          "target": "删除错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Integration creation failed:",
+          "target": "集成创建失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to create integration:",
+          "target": "创建集成失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error during setup:",
+          "target": "设置过程中出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error creating directory:",
+          "target": "创建目录时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Command sync failed:",
+          "target": "命令同步失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error creating welcome note:",
+          "target": "创建欢迎笔记时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Welcome note already exists",
+          "target": "欢迎笔记已存在"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Welcome note created successfully",
+          "target": "欢迎笔记创建成功"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Show me",
+          "target": "显示给我"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Setup TaskRobin",
+          "target": "设置TaskRobin"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create directory",
+          "target": "创建目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show me basic information about this plugin and how to make the best out of Sync Email by TaskRobin.",
+          "target": "显示有关此插件的基本信息，以及如何充分利用TaskRobin的同步电子邮件功能。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Complete the setup process to start syncing emails to your Obsidian vault. TaskRobin helps you sync your emails to Obsidian through email forwarding. Complete the setup to get started.",
+          "target": "完成设置过程以开始将电子邮件同步到您的Obsidian保险库。TaskRobin通过电子邮件转发帮助您将邮件同步到Obsidian。完成设置即可开始使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "This email address will be pre-filled when creating new integrations. You can change it for each integration.",
+          "target": "创建新集成时，此电子邮件地址将被预填充。您可以为每个集成更改它。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The default folder where email content will be saved for new integrations. You can change the email destination folder when you create new integrations.",
+          "target": "新集成的默认电子邮件内容保存文件夹。您可以在创建新集成时更改电子邮件的目标文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, email attachments will be downloaded and saved in the vault",
+          "target": "启用后，电子邮件附件将被下载并保存在保险库中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, emails will be automatically synced when Obsidian starts",
+          "target": "启用后，Obsidian启动时将自动同步电子邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Welcome information",
+          "target": "欢迎信息"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "TaskRobin setup",
+          "target": "TaskRobin设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default email address for new integrations",
+          "target": "新集成的默认电子邮件地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default Vault email folder",
+          "target": "默认保险库电子邮件文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download attachments",
+          "target": "下载附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync emails on Obsidian launch",
+          "target": "Obsidian启动时同步电子邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Emails",
+          "target": "电子邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Creating integration...",
+          "target": "正在创建集成..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Create integration",
+          "target": "创建集成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Please enter a valid email address.",
+          "target": "请输入有效的电子邮件地址。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Email address is required",
+          "target": "电子邮件地址为必填项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Only letters, numbers, hyphens, and underscores are allowed",
+          "target": "仅允许使用字母、数字、连字符和下划线"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Forwarding address is required",
+          "target": "转发地址为必填项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Confirm settings",
+          "target": "确认设置"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Email sync completed!",
+          "target": "电子邮件同步完成！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to sync. Check console for details.",
+          "target": "同步失败。请检查控制台了解详情。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Forwarding email address copied to clipboard!",
+          "target": "转发电子邮件地址已复制到剪贴板！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to copy email address",
+          "target": "复制电子邮件地址失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Folder does not exist yet. It will be created when syncing.",
+          "target": "文件夹尚不存在。同步时将自动创建。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Integration successfully deleted!",
+          "target": "集成已成功删除！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to delete integration. Check console for details.",
+          "target": "删除集成失败。请检查控制台了解详情。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Integration created successfully!",
+          "target": "集成创建成功！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to create integration. Please check your network connection and try again.",
+          "target": "创建集成失败。请检查您的网络连接并重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please fill in all required fields correctly.",
+          "target": "请正确填写所有必填字段。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to save settings. Please try again.",
+          "target": "保存设置失败。请重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter a valid email address",
+          "target": "请输入有效的电子邮件地址"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Forwarding alias can only contain letters, numbers, hyphens, and underscores",
+          "target": "转发别名只能包含字母、数字、连字符和下划线"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error creating directory. Check console for details.",
+          "target": "创建目录时出错。请检查控制台获取详细信息。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "directory-warning taskrobin-card-info-row",
+          "target": "directory-warning taskrobin-card-info-row"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open TaskRobin window",
+          "target": "打开 TaskRobin 窗口"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create a readme note about this plugin",
+          "target": "为此插件创建一个自述说明"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync emails now",
+          "target": "立即同步邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "obsidian",
+          "target": "obsidian"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Emails",
+          "target": "邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Welcome to Sync Email by TaskRobin",
+          "target": "欢迎使用 TaskRobin 的邮件同步功能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Thank you for installing Sync Email by TaskRobin for Obsidian! This plugin helps you maintain a searchable archive of important emails directly within your Obsidian workspace.",
+          "target": "感谢您安装 TaskRobin 为 Obsidian 开发的邮件同步插件！此插件可帮助您在 Obsidian 工作区内直接维护一个可搜索的重要邮件存档。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "How TaskRobin Works",
+          "target": "TaskRobin 工作原理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Email Forwarding: ",
+          "target": "邮件转发："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Automatic Processing: ",
+          "target": "自动处理："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Obsidian Integration: ",
+          "target": "Obsidian 集成："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Getting Started",
+          "target": "开始使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Subscription Information",
+          "target": "订阅信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "TaskRobin offers a 7-day free trial for all new users",
+          "target": "TaskRobin 为所有新用户提供 7 天免费试用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No payment information required during the trial",
+          "target": "试用期间无需提供支付信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Subscription plans start at $2.49/month after the trial period",
+          "target": "试用期结束后，订阅计划起价为每月 2.49 美元"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Set Up TaskRobin",
+          "target": "设置 TaskRobin"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Warning: Directory does not exist. It will be created when syncing.",
+          "target": "警告：目录不存在。同步时将自动创建。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sync emails with TaskRobin",
+          "target": "使用 TaskRobin 同步邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Send emails from your email inbox to the TaskRobin forwarding addresses below, then sync these emails to the respective Obsidian vault folders.",
+          "target": "将您收件箱中的邮件发送到下方的 TaskRobin 转发地址，然后将这些邮件同步到 Obsidian 库的相应文件夹中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "TaskRobin syncs and integrates emails from any email provider to Obsidian, Notion, Airtable and Google Drive.",
+          "target": "TaskRobin 可将任何邮件提供商的邮件同步并集成到 Obsidian、Notion、Airtable 和 Google Drive。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Visit TaskRobin.io for more information",
+          "target": "访问 TaskRobin.io 了解更多信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add integration",
+          "target": "添加集成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open settings",
+          "target": "打开设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Add new integration",
+          "target": "添加新集成"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "TaskRobin helps you sync your emails to Obsidian through email forwarding. Here's how it works:",
+          "target": "TaskRobin 通过邮件转发帮助您将邮件同步到 Obsidian。其工作原理如下："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "1. Enter your email address that you'll forward emails from",
+          "target": "1. 输入您将用于转发邮件的电子邮件地址"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "2. Create a TaskRobin forwarding address that will receive your emails",
+          "target": "2. 创建一个用于接收邮件的 TaskRobin 转发地址"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "3. Choose where to save your emails in Obsidian",
+          "target": "3. 选择在 Obsidian 中保存邮件的位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Email address to sync emails from:",
+          "target": "要同步邮件的电子邮件地址："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You can use different email addresses for different integrations",
+          "target": "您可以为不同的集成使用不同的电子邮件地址"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose your forwarding address:",
+          "target": "选择您的转发地址："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Where should emails be saved in the vault?",
+          "target": "邮件应保存在库中的哪个位置？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Folder will be created if it doesn't exist",
+          "target": "如果文件夹不存在，将自动创建"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Email folder structure:",
+          "target": "邮件文件夹结构："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create a sub-folder per email (default)",
+          "target": "为每封邮件创建子文件夹（默认）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Email markdown files in the base email folder, attachments in sub-folders per email",
+          "target": "邮件 Markdown 文件存放在基础邮件文件夹中，附件按邮件分存于子文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Choose how emails and attachments are organized in your vault",
+          "target": "选择邮件和附件在您库中的组织方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "After setting up forwarding, emails sent to your TaskRobin address can be synced to your Obsidian vault.",
+          "target": "设置转发后，发送到您 TaskRobin 地址的邮件即可同步到您的 Obsidian 库。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Please note that TaskRobin is a paid service. 7-day free trial is available to all new users. Paid plan starts at $2.49/month.",
+          "target": "请注意，TaskRobin 是一项付费服务。所有新用户均可享受 7 天免费试用。付费计划起价为每月 2.49 美元。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Confirm settings",
+          "target": "确认设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced settings",
+          "target": "高级设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Email Authentication Info",
+          "target": "邮件认证信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "The following email addresses have added with authentication tokens:",
+          "target": "以下电子邮件地址已添加认证令牌："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "email",
+          "target": "email"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "text"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
