@@ -1,0 +1,973 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "image-uploader-for-note",
+    "version": "1.0.1",
+    "title": "Image Uploader For Note",
+    "description": "Image Uploader For Note Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Confirm",
+          "target": "确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "File extensions to upload",
+          "target": "要上传的文件扩展名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use system trash or Obsidian \".trash\" folder",
+          "target": "使用系统回收站或 Obsidian 的“.trash”文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Class(defined in CustomJS) to use for custom uploader, leave empty to use default S3",
+          "target": "用于自定义上传器的类（在 CustomJS 中定义），留空则使用默认的 S3"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Whether to use path-style addressing",
+          "target": "是否使用路径样式寻址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Upload extensions",
+          "target": "上传扩展名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use system trash",
+          "target": "使用系统回收站"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom uploader class",
+          "target": "自定义上传器类"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Force path style",
+          "target": "强制路径样式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "userAgentAppId must be a string or undefined.",
+          "target": "userAgentAppId 必须是字符串或 undefined。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "The provided userAgentAppId exceeds the maximum length of 50 characters.",
+          "target": "提供的 userAgentAppId 超过了 50 个字符的最大长度。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "An error was encountered in a non-retryable streaming request.",
+          "target": "在不可重试的流式请求中遇到错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "File not found",
+          "target": "文件未找到"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No active file",
+          "target": "没有活动文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No assets in cache",
+          "target": "缓存中没有资源"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Nothing to upload",
+          "target": "没有需要上传的内容"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Deletion aborted",
+          "target": "删除已中止"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to load Custom JS",
+          "target": "加载自定义JS失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Processing file. DO NOT MODIFY THE FILE UNTIL DONE",
+          "target": "正在处理文件。完成前请勿修改文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "File has been updated during processing. User modified content will be concatenated to the end of the file",
+          "target": "文件在处理期间已被更新。用户修改的内容将被追加到文件末尾"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Africa (Cape Town)",
+          "target": "非洲（开普敦）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Hong Kong)",
+          "target": "亚太地区（中国香港特别行政区）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Tokyo)",
+          "target": "亚太地区（东京）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Seoul)",
+          "target": "亚太地区（首尔）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Osaka)",
+          "target": "亚太地区（大阪）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Mumbai)",
+          "target": "亚太地区（孟买）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Hyderabad)",
+          "target": "亚太地区（海得拉巴）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Singapore)",
+          "target": "亚太地区（新加坡）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Sydney)",
+          "target": "亚太地区（悉尼）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Jakarta)",
+          "target": "亚太地区（雅加达）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Melbourne)",
+          "target": "亚太地区（墨尔本）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Asia Pacific (Malaysia)",
+          "target": "亚太地区（马来西亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS Standard global region",
+          "target": "AWS标准全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Canada (Central)",
+          "target": "加拿大（中部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Canada West (Calgary)",
+          "target": "加拿大西部（卡尔加里）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Frankfurt)",
+          "target": "欧洲（法兰克福）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Zurich)",
+          "target": "欧洲（苏黎世）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Stockholm)",
+          "target": "欧洲（斯德哥尔摩）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Milan)",
+          "target": "欧洲（米兰）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Spain)",
+          "target": "欧洲（西班牙）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Ireland)",
+          "target": "欧洲（爱尔兰）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (London)",
+          "target": "欧洲（伦敦）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Europe (Paris)",
+          "target": "欧洲（巴黎）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Israel (Tel Aviv)",
+          "target": "以色列（特拉维夫）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Middle East (UAE)",
+          "target": "中东（阿联酋）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Middle East (Bahrain)",
+          "target": "中东（巴林）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "South America (Sao Paulo)",
+          "target": "南美洲（圣保罗）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US East (N. Virginia)",
+          "target": "美国东部（北弗吉尼亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US East (Ohio)",
+          "target": "美国东部（俄亥俄）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US West (N. California)",
+          "target": "美国西部（北加利福尼亚）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US West (Oregon)",
+          "target": "美国西部（俄勒冈）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS China global region",
+          "target": "AWS中国全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "China (Beijing)",
+          "target": "中国（北京）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "China (Ningxia)",
+          "target": "中国（宁夏）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS GovCloud (US) global region",
+          "target": "AWS GovCloud（美国）全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS GovCloud (US-East)",
+          "target": "AWS GovCloud（美国东部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS GovCloud (US-West)",
+          "target": "AWS GovCloud（美国西部）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS ISO (US) global region",
+          "target": "AWS ISO（美国）全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISO East",
+          "target": "美国ISO东部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISO WEST",
+          "target": "美国ISO西部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS ISOB (US) global region",
+          "target": "AWS ISOB（美国）全球区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "US ISOB East (Ohio)",
+          "target": "美国ISOB东部（俄亥俄）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "EU ISOE West",
+          "target": "欧盟ISOE西部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "AWS SDK for JavaScript S3 Client for Node.js, Browser and React Native",
+          "target": "适用于Node.js、浏览器和React Native的AWS SDK for JavaScript S3客户端"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Accelerate cannot be used with FIPS",
+          "target": "加速功能不能与FIPS一起使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Cannot set dual-stack in combination with a custom endpoint.",
+          "target": "不能将双栈与自定义端点结合使用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "A custom endpoint cannot be combined with FIPS",
+          "target": "自定义端点不能与FIPS结合使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "A custom endpoint cannot be combined with S3 Accelerate",
+          "target": "自定义端点不能与S3加速结合使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Partition does not support FIPS",
+          "target": "分区不支持FIPS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3Express does not support Dual-stack.",
+          "target": "S3Express不支持双栈。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3Express does not support S3 Accelerate.",
+          "target": "S3Express不支持S3加速。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Unrecognized hardware type: \"Expected hardware type o or e but got {hardwareType}\"",
+          "target": "无法识别的硬件类型：“期望硬件类型为o或e，但得到{hardwareType}”"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`.",
+          "target": "无效的ARN：Outpost ID只能包含a-z、A-Z、0-9和`-`。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Custom endpoint `{Endpoint}` was not a valid URI",
+          "target": "自定义端点`{Endpoint}`不是有效的URI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 Accelerate cannot be used in this region",
+          "target": "S3加速不能在此区域使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: Missing account id",
+          "target": "无效的ARN：缺少账户ID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: bucket ARN is missing a region",
+          "target": "无效的ARN：存储桶ARN缺少区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: Object Lambda ARNs only support `accesspoint` arn types, but found: `{arnType}`",
+          "target": "无效的ARN：对象Lambda ARN仅支持`accesspoint` ARN类型，但发现：`{arnType}`"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Access Points do not support S3 Accelerate",
+          "target": "访问点不支持S3加速"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: The ARN was not for the S3 service, found: {bucketArn#service}",
+          "target": "无效的ARN：该ARN不是S3服务的，发现：{bucketArn#service}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 MRAP does not support dual-stack",
+          "target": "S3 MRAP不支持双栈"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 MRAP does not support FIPS",
+          "target": "S3 MRAP不支持FIPS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 MRAP does not support S3 Accelerate",
+          "target": "S3 MRAP不支持S3加速"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid configuration: Multi-Region Access Point ARNs are disabled.",
+          "target": "无效配置：多区域访问点ARN已禁用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Client was configured for partition `{mrapPartition#name}` but bucket referred to partition `{bucketArn#partition}`",
+          "target": "客户端配置为分区`{mrapPartition#name}`，但存储桶指向分区`{bucketArn#partition}`"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid Access Point Name",
+          "target": "无效的访问点名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 Outposts does not support Dual-stack",
+          "target": "S3 Outposts不支持双栈"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 Outposts does not support FIPS",
+          "target": "S3 Outposts不支持FIPS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "S3 Outposts does not support S3 Accelerate",
+          "target": "S3 Outposts不支持S3加速"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid Arn: Outpost Access Point ARN contains sub resources",
+          "target": "无效的ARN：Outpost访问点ARN包含子资源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Expected an outpost type `accesspoint`, found {outpostType}",
+          "target": "期望Outpost类型为`accesspoint`，发现{outpostType}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: expected an access point name",
+          "target": "无效的ARN：期望一个访问点名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: Expected a 4-component resource",
+          "target": "无效的ARN：期望一个包含4个组件的资源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: The outpost Id may only contain a-z, A-Z, 0-9 and `-`. Found: `{outpostId}`",
+          "target": "无效的ARN：Outpost ID只能包含a-z、A-Z、0-9和`-`。发现：`{outpostId}`"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: The Outpost Id was not set",
+          "target": "无效的ARN：未设置Outpost ID"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: Unrecognized format: {Bucket} (type: {arnType})",
+          "target": "无效的ARN：无法识别的格式：{Bucket}（类型：{arnType}）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: No ARN type specified",
+          "target": "无效的ARN：未指定ARN类型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid ARN: `{Bucket}` was not a valid ARN",
+          "target": "无效的ARN：`{Bucket}`不是有效的ARN"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Path-style addressing cannot be used with ARN buckets",
+          "target": "路径样式寻址不能与ARN存储桶一起使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Path-style addressing cannot be used with S3 Accelerate",
+          "target": "路径样式寻址不能与S3加速一起使用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "A region must be set when sending requests to S3.",
+          "target": "向S3发送请求时必须设置区域。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Googlebot",
+          "target": "Googlebot"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Opera",
+          "target": "Opera"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Samsung Internet for Android",
+          "target": "三星互联网浏览器（安卓版）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NAVER Whale Browser",
+          "target": "NAVER Whale浏览器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "MZ Browser",
+          "target": "MZ浏览器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Focus",
+          "target": "Focus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Swing",
+          "target": "Swing"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Opera Coast",
+          "target": "Opera Coast"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Opera Touch",
+          "target": "Opera Touch"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Yandex Browser",
+          "target": "Yandex浏览器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "UC Browser",
+          "target": "UC浏览器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Maxthon",
+          "target": "傲游浏览器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Epiphany",
+          "target": "Epiphany"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Puffin",
+          "target": "Puffin"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sleipnir",
+          "target": "Sleipnir"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "WeChat",
+          "target": "微信"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Internet Explorer",
+          "target": "Internet Explorer"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Microsoft Edge",
+          "target": "Microsoft Edge"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vivaldi",
+          "target": "Vivaldi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SeaMonkey",
+          "target": "SeaMonkey"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sailfish",
+          "target": "Sailfish"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Amazon Silk",
+          "target": "Amazon Silk"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PhantomJS",
+          "target": "PhantomJS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "SlimerJS",
+          "target": "SlimerJS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BlackBerry",
+          "target": "BlackBerry"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "WebOS Browser",
+          "target": "WebOS 浏览器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bada",
+          "target": "Bada"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tizen",
+          "target": "Tizen"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "QupZilla",
+          "target": "QupZilla"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Firefox",
+          "target": "Firefox"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Electron",
+          "target": "Electron"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Miui",
+          "target": "Miui"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chromium",
+          "target": "Chromium"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chrome",
+          "target": "Chrome"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Google Search",
+          "target": "Google 搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Android Browser",
+          "target": "Android 浏览器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PlayStation 4",
+          "target": "PlayStation 4"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Safari",
+          "target": "Safari"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "aws",
+          "target": "aws"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "endpoint",
+          "target": "endpoint"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "region",
+          "target": "region"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchUpload",
+          "target": "NoSuchUpload"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ObjectNotInActiveTierError",
+          "target": "ObjectNotInActiveTierError"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BucketAlreadyExists",
+          "target": "BucketAlreadyExists"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BucketAlreadyOwnedByYou",
+          "target": "BucketAlreadyOwnedByYou"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchBucket",
+          "target": "NoSuchBucket"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "InvalidObjectState",
+          "target": "InvalidObjectState"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NoSuchKey",
+          "target": "NoSuchKey"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "NotFound",
+          "target": "NotFound"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ObjectAlreadyInActiveTierError",
+          "target": "ObjectAlreadyInActiveTierError"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bucket",
+          "target": "Bucket"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "AWS SDK for JavaScript Team",
+          "target": "AWS SDK for JavaScript 团队"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Key",
+          "target": "Key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Upload images for active file",
+          "target": "上传当前文件的图片"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "For example, if the public URL is 'https://example.com' and the key template is '{{path}}', the uploaded file (has path 'path/to/file.jpg') will be accessible at 'https://example.com/path/to/file.jpg'",
+          "target": "例如，如果公共 URL 是 'https://example.com'，且键模板为 '{{path}}'，则上传的文件（路径为 'path/to/file.jpg'）将可通过 'https://example.com/path/to/file.jpg' 访问。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Are you sure you want to delete these files?",
+          "target": "您确定要删除这些文件吗？"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
