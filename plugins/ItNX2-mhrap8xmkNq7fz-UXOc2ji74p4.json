@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "open-with",
+    "version": "2.0.0",
+    "title": "Open with",
+    "description": "This Plugin allows you to add multiple other programs to open notes with.",
+    "language": "zh-cn",
+    "supportedVersions": "0.3.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "containerEl.createEl('h2', { text: 'Open with Plugin' });",
+          "target": "containerEl.createEl('h2', { text: 'Open With 设置' });"
+        },
+        {
+          "source": ".setName(\"Add new application\")",
+          "target": ".setName(\"添加新的应用程序\")"
+        },
+        {
+          "source": ".setDesc(\"Add a new application to open files with. You need to use the application path or command (for example \\\"code\\\" for VSCode) and arguments need to be comma seperated.\")",
+          "target": ".setDesc(\"添加一个新的应用程序来打开文件。您需要使用应用程序路径或命令(例如VSCode的\\\"code\\\")，参数需要用逗号分隔。\")"
+        },
+        {
+          "source": "cb.setPlaceholder(\"Display Name\");",
+          "target": "cb.setPlaceholder(\"显示名称\");"
+        },
+        {
+          "source": "cb.setPlaceholder(\"Path/Command\");",
+          "target": "cb.setPlaceholder(\"路径/命令\");"
+        },
+        {
+          "source": "cb.setPlaceholder(\"Arguments (optional)\");",
+          "target": "cb.setPlaceholder(\"参数(可选)\");"
+        },
+        {
+          "source": "name: \"Open File with \" + name,",
+          "target": "name: \"用\" + name + \"打开\","
+        },
+        {
+          "source": "new obsidian.Notice(\"Display Name & Path/Command are always neccessary.\");",
+          "target": "new obsidian.Notice(\"显示名称和路径/命令总是必要的。\");"
+        },
+        {
+          "source": "new obsidian.Notice(\"You need to restart Obsidian for these changes to take effect.\");",
+          "target": "new obsidian.Notice(\"需要重新启动 Obsidian 才能使这些更改生效。\");"
+        },
+        {
+          "source": ".setName('Show \"Show in system explorer\" in File-Menu')",
+          "target": ".setName('在 文件 菜单中显示\"在系统资源管理器中显示\"')"
+        },
+        {
+          "source": ".setDesc('Show the enhanced \"Show in system explorer\" command in File-Menus')",
+          "target": ".setDesc('显示增强 \"在系统资源管理器中显示\"  文件 菜单中的命令')"
+        }
+      ]
+    }
+  }
+}

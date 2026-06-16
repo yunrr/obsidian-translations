@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "share-note",
+    "version": "2.0.0",
+    "title": "Share Note",
+    "description": "Instantly share a note, with the full theme and content exactly like you see in Reading View. Data is shared encrypted by default, and only you and the person you send it to have the key.",
+    "language": "zh-cn",
+    "supportedVersions": "1.2.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "alog(\n        \"Delete shared note?\",\n        \"Are you sure you want to delete this shared note and the shared link? This will not delete your local note.\",\n        async ()",
+          "target": "alog(\n        \"删除已共享的笔记？\",\n        \"你确定要删除这个共享笔记和共享链接吗？这不会删除你的本地笔记。\",\n        async ()"
+        },
+        {
+          "source": ".error(\"Zero number is not allowed\", this.tokenStart - value.length)",
+          "target": ".error(\"不允许为零\", this.tokenStart - value.length)"
+        },
+        {
+          "source": "name: \"Share current note\"",
+          "target": "name: \"分享当前笔记\""
+        },
+        {
+          "source": "name: \"Force re-upload of all data for this note\"",
+          "target": "name: \"强制重新上传此笔记的所有数据\""
+        },
+        {
+          "source": "name: \"Delete this shared note\"",
+          "target": "name: \"删除此共享笔记\""
+        },
+        {
+          "source": "name: \"Copy shared note link\"",
+          "target": "name: \"复制共享笔记链接\""
+        },
+        {
+          "source": "text: \"View the documentation\"",
+          "target": "text: \"查看文档\""
+        },
+        {
+          "source": "text: \"selectorList\"",
+          "target": "text: \"选择器列表\""
+        },
+        {
+          "source": ".setButtonText(\"Connect plugin\")",
+          "target": ".setButtonText(\"连接插件\")"
+        },
+        {
+          "source": ".setName(\"Frontmatter property prefix\")",
+          "target": ".setName(\"Frontmatter 属性前缀\")"
+        },
+        {
+          "source": ".setName(\"Upload options\")",
+          "target": ".setName(\"上传选项\")"
+        },
+        {
+          "source": ".setName(\"Note options\")",
+          "target": ".setName(\"笔记选项\")"
+        },
+        {
+          "source": ".setName(\"Note title source\")",
+          "target": ".setName(\"笔记标题来源\")"
+        },
+        {
+          "source": ".setName(\"Note reading width\")",
+          "target": ".setName(\"笔记阅读宽度\")"
+        },
+        {
+          "source": ".setDesc(\"If you turn this off, you can enable encryption for individual notes by adding a `share_encrypted` checkbox into a note and ticking it.\")",
+          "target": ".setDesc(\"如果关闭此选项，您可以通过在笔记中添加“share_encrypted”复选框并勾选它来为单个笔记启用加密。\")"
+        },
+        {
+          "source": "description: \"Instantly share a note, with the full theme and content exactly like you see in Reading View. Data is shared encrypted by default, and only you and the person you send it to have the key.\"",
+          "target": "description: \"立即分享一条笔记，其主题和内容与您在阅读视图中看到的完全相同。默认情况下，数据是加密共享的，只有您和您发送数据的人才能拥有密钥。\""
+        },
+        {
+          "source": ".setButtonText(\"\\u{1F5D1}\\uFE0F Yes, delete\")",
+          "target": ".setButtonText(\"\\u{1F5D1}\\uFE0F 是，删除\")"
+        },
+        {
+          "source": ".setName(\"API key\")",
+          "target": ".setName(\"API密钥\")"
+        },
+        {
+          "source": ".setName(`\\u2B50 Your shared note theme is \"${this.plugin.settings.theme || \"Obsidian default theme\"}\"`)",
+          "target": ".setName(`\\u2B50您的共享笔记主题是\"${this.plugin.settings.theme||\"Obsidian默认主题\"}\"`)"
+        },
+        {
+          "source": ".setName(\"Light/Dark mode\")",
+          "target": ".setName(\"亮/暗模式\")"
+        },
+        {
+          "source": ".setName(\"Copy the link to clipboard after sharing\")",
+          "target": ".setName(\"共享后将链接复制到剪贴板\")"
+        },
+        {
+          "source": ".setName(\"Remove published frontmatter/YAML\")",
+          "target": ".setName(\"删除已发布的 frontmatter/YAML\")"
+        },
+        {
+          "source": ".setName(\"Remove backlinks footer\")",
+          "target": ".setName(\"删除页脚反向链接\")"
+        },
+        {
+          "source": ".setName(\"Share as encrypted by default\")",
+          "target": ".setName(\"默认情况下以加密方式共享\")"
+        },
+        {
+          "source": ".setName(\"Default note expiry\")",
+          "target": ".setName(\"默认笔记到期\")"
+        },
+        {
+          "source": ".setDesc(\"Click the button to request a new API key\")",
+          "target": ".setDesc(\"单击按钮请求新的API密钥\")"
+        },
+        {
+          "source": ".setDesc(\"The frontmatter property for storing the shared link and updated time. A value of `share` will create frontmatter fields of `share_link` and `share_updated`.\")",
+          "target": ".setDesc(\"用于存储共享链接和更新时间的frontmatter属性。“share”的值将创建“share_link”和“share_updated”的前体字段。\")"
+        },
+        {
+          "source": ".setDesc(\"To set a new theme, change the theme in Obsidian to your desired theme and then use the `Force re-upload all data` command. You can change your Obsidian theme after that without affecting the theme for your shared notes.\")",
+          "target": ".setDesc(\"要设置新主题，请将Obsidian中的主题更改为所需的主题，然后使用“强制重新上传所有数据”命令。之后，您可以更改黑曜石主题，而不会影响共享笔记的主题。\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the mode with which your files will be shared\")",
+          "target": ".setDesc(\"选择共享文件的模式\")"
+        },
+        {
+          "source": ".setDesc(\"Set the title you want to use in a frontmatter property called `\" + this.plugin.field(4 /* title */) + \"`\")",
+          "target": ".setDesc(\"在名为 `\" + this.plugin.field(4 /* title */) + \"`的 frontmatter 属性中设置您要使用的标题。\")"
+        },
+        {
+          "source": ".setDesc(\"The max width for the content of your shared note, accepts any CSS unit. Leave this value empty if you want to use the theme's width.\")",
+          "target": ".setDesc(\"共享笔记内容的最大宽度接受任何CSS单位。如果要使用主题的宽度，请将此值留空。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove frontmatter/YAML/properties from the shared note\")",
+          "target": ".setDesc(\"从共享笔记中删除frontmatter/YAML/属性\")"
+        },
+        {
+          "source": ".setDesc(\"Remove backlinks footer from the shared note\")",
+          "target": ".setDesc(\"从共享笔记中删除页脚的反向链接\")"
+        },
+        {
+          "source": ".setDesc(\"If you want, your notes can auto-delete themselves after a period of time. You can set this as a default for all notes here, or you can set it on a per-note basis.\")",
+          "target": ".setDesc(\"如果你愿意，你的笔记可以在一段时间后自动删除。您可以在此处将其设置为所有笔记的默认值，也可以按每个笔记设置。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"API key\")",
+          "target": ".setPlaceholder(\"API密钥\")"
+        },
+        {
+          "source": ".setTitle(\"Copy shared link\")",
+          "target": ".setTitle(\"复制共享链接\")"
+        },
+        {
+          "source": "\"The note has been shared\"",
+          "target": "\"该笔记已被分享\""
+        },
+        {
+          "source": "\"Processing note...\"",
+          "target": "\"正在处理笔记……\""
+        },
+        {
+          "source": "\"Encrypting note...\"",
+          "target": "\"正在加密笔记……\""
+        },
+        {
+          "source": "\"Processing CSS...\"",
+          "target": "\"正在处理CSS……\""
+        },
+        {
+          "source": "\"Uploading CSS attachments...\"",
+          "target": "\"正在上传CSS附件……\""
+        },
+        {
+          "source": "\"Uploading CSS...\"",
+          "target": "\"正在上传CSS……\""
+        },
+        {
+          "source": "\"If this message is showing, please do not change to another note as the current note data is still being parsed.\"",
+          "target": "\"如果显示此消息，请不要切换为其他笔记，因为当前笔记数据仍在解析中。\""
+        },
+        {
+          "source": "\"Failed to parse current note, check console for details\"",
+          "target": "\"解析当前笔记失败，请查看控制台了解详细信息\""
+        },
+        {
+          "source": "\"There is no active file to share\"",
+          "target": "\"没有要共享的活动文件\""
+        },
+        {
+          "source": "\"Plugin successfully connected. You can now start sharing notes!\"",
+          "target": "\"插件已成功连接。您现在可以开始共享笔记了！\""
+        },
+        {
+          "source": "\"There was an error uploading the note, please try again.\"",
+          "target": "\"上传笔记时出错，请重试。\""
+        },
+        {
+          "source": "\"Deleting note...\"",
+          "target": "\"正在删除笔记……\""
+        },
+        {
+          "source": ".log(\"debt left\")",
+          "target": ".log(\"debt left\")"
+        },
+        {
+          "source": ".log(\"Retrying \" + retries)",
+          "target": ".log(\"重试\" + retries)"
+        },
+        {
+          "source": ".error(`Identifier \"${name41}\" is expected`)",
+          "target": ".error(`需要标识符\"${name41}\"`)"
+        },
+        {
+          "source": ".error(\"Expect `\" + String.fromCharCode(code2)",
+          "target": ".error(\"需要`\" + String.fromCharCode(code2)"
+        },
+        {
+          "source": ".error(\"Expect a keyword\")",
+          "target": ".error(\"需要一个关键字\")"
+        },
+        {
+          "source": ".error(\"Expect a number\")",
+          "target": ".error(\"需要一个数字\")"
+        },
+        {
+          "source": ".error(\"Expect an apostrophe\")",
+          "target": ".error(\"需要一个撇号\")"
+        },
+        {
+          "source": ".error(\"Unexpected combinator\")",
+          "target": ".error(\"意外组合\")"
+        },
+        {
+          "source": ".error(\"Unexpected input\")",
+          "target": ".error(\"意外输入\")"
+        },
+        {
+          "source": ".error(\"Number sign is not allowed\")",
+          "target": ".error(\"不允许使用数字符号\")"
+        },
+        {
+          "source": ".error(\"Integer is expected\", pos)",
+          "target": ".error(\"需要整数\", pos)"
+        },
+        {
+          "source": ".error(\"Number sign is expected\")",
+          "target": ".error(\"需要数字符号\")"
+        },
+        {
+          "source": ".error(\"Integer is expected\", this.tokenStart + sign)",
+          "target": ".error(\"需要整数\", this.tokenStart + sign)"
+        },
+        {
+          "source": ".error(\"Semicolon or block is expected\")",
+          "target": ".error(\"应使用分号或分块\")"
+        },
+        {
+          "source": ".error(\"Unexpected end of input\")",
+          "target": ".error(\"输入意外结束\")"
+        },
+        {
+          "source": ".error(\"Identifier is expected\", this.tokenEnd)",
+          "target": ".error(\"需要标识符\", this.tokenEnd)"
+        },
+        {
+          "source": ".error(\"Vertical line is expected\")",
+          "target": ".error(\"需要垂直线\")"
+        },
+        {
+          "source": ".error(\"Equal sign is expected\")",
+          "target": ".error(\"需要等号\")"
+        },
+        {
+          "source": ".error(\"Combinator is expected\")",
+          "target": ".error(\"需要Combinator\")"
+        },
+        {
+          "source": ".error(\"Number, dimension, ratio or identifier is expected\")",
+          "target": ".error(\"需要数字、尺寸、比率或标识符\")"
+        },
+        {
+          "source": ".error(\"Identifier or parenthesis is expected\")",
+          "target": ".error(\"需要标识符或括号\")"
+        },
+        {
+          "source": ".error(\"Unsigned number is expected\", this.tokenStart - value.length + i2)",
+          "target": ".error(\"需要未签名的数字\", this.tokenStart - value.length + i2)"
+        },
+        {
+          "source": ".error(\"Selector is expected\")",
+          "target": ".error(\"需要选择器\")"
+        },
+        {
+          "source": ".error(\"Identifier or asterisk is expected\")",
+          "target": ".error(\"需要标识符或星号\")"
+        },
+        {
+          "source": ".error(\"Too many hex digits\", pos)",
+          "target": ".error(\"十六进制数字太多\", pos)"
+        },
+        {
+          "source": ".error(\"Too many question marks\")",
+          "target": ".error(\"问号太多\")"
+        },
+        {
+          "source": ".error(\"Hex digit or question mark is expected\")",
+          "target": ".error(\"需要十六进制数字或问号\")"
+        },
+        {
+          "source": ".error(\"Function name must be `url`\")",
+          "target": ".error(\"函数名必须为`url`\")"
+        },
+        {
+          "source": ".error(\"Url or Function is expected\")",
+          "target": ".error(\"需要Url或函数\")"
+        },
+        {
+          "source": ".error(\"Hex or identifier is expected\", this.tokenStart + 1)",
+          "target": ".error(\"需要十六进制或标识符\", this.tokenStart + 1)"
+        },
+        {
+          "source": ".error(\"Identifier is expected\", this.tokenStart + 1)",
+          "target": ".error(\"需要标识符\", this.tokenStart + 1)"
+        },
+        {
+          "source": ".error(\"Condition is expected\")",
+          "target": ".error(\"预期情况\")"
+        },
+        {
+          "source": ".setButtonText(\"No, cancel\")",
+          "target": ".setButtonText(\"不，取消\")"
+        },
+        {
+          "source": ".setTitle(\"Share note on the web\")",
+          "target": ".setTitle(\"在网络上分享笔记\")"
+        },
+        {
+          "source": "\"Select the location to source the published note title. It will default to the note title if nothing is found for the selected option.\"",
+          "target": "\"选择发布笔记标题的来源位置。如果所选选项未找到任何内容，则默认为笔记标题。\""
+        },
+        {
+          "source": ".addOption(\"Same as theme\", \"Same as theme\").addOption(\"Dark\", \"Dark\").addOption(\"Light\", \"Light\")",
+          "target": ".addOption(\"Same as theme\", \"和主题一致\").addOption(\"Dark\", \"暗\").addOption(\"Light\", \"亮\")"
+        },
+        {
+          "source": "  TitleSource2[TitleSource2[\"Note title\"] = 0] = \"Note title\";",
+          "target": "  TitleSource2[TitleSource2[\"笔记标题\"] = 0] = \"Note title\";"
+        },
+        {
+          "source": "  TitleSource2[TitleSource2[\"First H1\"] = 1] = \"First H1\";",
+          "target": "  TitleSource2[TitleSource2[\"第一个H1\"] = 1] = \"First H1\";"
+        },
+        {
+          "source": "  TitleSource2[TitleSource2[\"Frontmatter property\"] = 2] = \"Frontmatter property\";",
+          "target": "  TitleSource2[TitleSource2[\"Frontmatter属性\"] = 2] = \"Frontmatter property\";"
+        },
+        {
+          "source": "`${shareMessage} and the link is copied to your clipboard \\u{1F4CB}`",
+          "target": "`${shareMessage}和链接将复制到剪贴板\\u{1F4CB}`"
+        },
+        {
+          "source": "`Uploading ${type} ${count++} of ${this.uploadQueue.length}...`",
+          "target": "`正在上传 ${type} ${count++} of ${this.uploadQueue.length}...`"
+        },
+        {
+          "source": "\"Uploading note...\"",
+          "target": "\"正在上传笔记……\""
+        },
+        {
+          "source": "\"Processing attachments...\"",
+          "target": "\"正在处理附件……\""
+        },
+        {
+          "source": "\"The note has been deleted \\u{1F5D1}\\uFE0F\"",
+          "target": "\"笔记已被删除\\u{1F5D1}\\uFE0F\""
+        },
+        {
+          "source": "\"\\u{1F4CB} Shared link copied to clipboard\"",
+          "target": "\"\\u{1F4CB}共享链接已复制到剪贴板\""
+        },
+        {
+          "source": "\"Copy link to clipboard\"",
+          "target": "\"将链接复制到剪贴板\""
+        },
+        {
+          "source": "\"Delete shared note\"",
+          "target": "\"删除已共享笔记\""
+        }
+      ]
+    }
+  }
+}

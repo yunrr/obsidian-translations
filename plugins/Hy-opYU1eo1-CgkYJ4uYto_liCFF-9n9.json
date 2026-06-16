@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-annotator",
+    "version": "2.0.0",
+    "title": "Annotator",
+    "description": "This is a sample plugin for Obsidian. It allows you to open and annotate PDF and EPUB files.",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.11",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setName(\"Custom Default Path\")",
+          "target": ".setName(\"自定义默认路径\")"
+        },
+        {
+          "source": ".setName(\"Epub reader mode\")",
+          "target": ".setName(\"EPUB阅读模式\")"
+        },
+        {
+          "source": ".setName(\"Font Size\")",
+          "target": ".setName(\"字体大小\")"
+        },
+        {
+          "source": ".setName(\"Include Prefix\")",
+          "target": ".setName(\"包含前缀\")"
+        },
+        {
+          "source": ".setName(\"Include Postfix\")",
+          "target": ".setName(\"包含后缀\")"
+        },
+        {
+          "source": ".setName(\"Highlight highlighted text\")",
+          "target": ".setName(\"高亮显示高亮的文本\")"
+        },
+        {
+          "source": ".setName(\"Use Dark Mode By Default\")",
+          "target": ".setName(\"默认使用深色模式\")"
+        },
+        {
+          "source": ".setName(\"Sepia\")",
+          "target": ".setName(\"棕褐色\")"
+        },
+        {
+          "source": ".setName(\"Contrast\")",
+          "target": ".setName(\"对比度\")"
+        },
+        {
+          "source": ".setName(\"Brightness\")",
+          "target": ".setName(\"亮度\")"
+        },
+        {
+          "source": ".setName(\"Annotate.tv resource URL\")",
+          "target": ".setName(\"Annotate.tv 资源 URL\")"
+        },
+        {
+          "source": ".setName(\"Enable Debug Logging\")",
+          "target": ".setName(\"启用调试日志记录\")"
+        },
+        {
+          "source": ".setDesc(`Base font size in percents. Current: ${this.plugin.settings.epubSettings.fontSize}%`)",
+          "target": ".setDesc(`基础字体大小（百分比）。当前： ${this.plugin.settings.epubSettings.fontSize}%`)"
+        },
+        {
+          "source": ".setDesc(\"Whether to use annotation mode by default when opening a note with annotation-target\")",
+          "target": ".setDesc(\"在打开带有注释目标的笔记时，默认是否使用注释模式\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to include the %%PREFIX%% region of the annotation markdown. Allows you to see some text before the highlighted region.\")",
+          "target": ".setDesc(\"是否包含注释markdown中的 %%PREFIX%%  允许你在高亮区域前看到一些文本。\")"
+        },
+        {
+          "source": ".setDesc(\"The amount of sepia in dark mode\")",
+          "target": ".setDesc(\"暗色模式中的棕褐色程度\")"
+        },
+        {
+          "source": ".setDesc(\"The amount of contrast in dark mode\")",
+          "target": ".setDesc(\"暗色模式下的对比度\")"
+        },
+        {
+          "source": ".setDesc(\"The amount of brightness in dark mode\")",
+          "target": ".setDesc(\"在深色模式下的亮度程度\")"
+        },
+        {
+          "source": ".setDesc(\"Not bundled with the plugin due to potential copyright issues.\")",
+          "target": ".setDesc(\"由于潜在的版权问题，未捆绑在插件中。\")"
+        },
+        {
+          "source": ".setDesc(\"If this is enabled, more things are printed to the console.\")",
+          "target": ".setDesc(\"如果启用此选项，将有更多内容打印到控制台。\")"
+        },
+        {
+          "source": ".setName(\"Use Annotation Mode By Default\")",
+          "target": ".setName(\"默认使用Annotation模式\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to include the %%POSTFIX%% region of the annotation markdown. Allows you to see some text after the highlighted region.\")",
+          "target": ".setDesc(\"是否包含注释markdown中的 %%POSTFIX%%区域。允许你查看高亮区域后的部分文本。\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to wrap the %%HIGHLIGHT%% region text in == ==, so that the text becomes highlighted. Useful for distinguishing the highlight from the pre- and postfix.\")",
+          "target": ".setDesc(\"是否将 %%HIGHLIGHT%% 区域用 == == 包裹, 以高亮文本。这对于区分高亮部分与前后缀很有用。\")"
+        },
+        {
+          "source": ".setDesc(\"Whether to use dark mode by default when opening pdfs/epubs.\")",
+          "target": ".setDesc(\"是否在打开PDF/EPUB时默认使用深色模式。\")"
+        },
+        {
+          "source": "Notice(\"Annotator: Could not fetch Annotate.TV resource zip\")",
+          "target": "Notice(\"Annotator：无法获取Annotate.TV资源压缩包\")"
+        },
+        {
+          "source": ".log(\"Request Body nor string or null: \",r.body)",
+          "target": ".log(\"请求体既不是字符串也不是null: \",r.body)"
+        },
+        {
+          "source": ".log(\"Top Window got message\",\"string\"==typeof e.data?e:Object.assign({event:e},e.data)",
+          "target": ".log(\"顶层窗口收到消息\",\"string\"==typeof e.data?e:Object.assign({event:e},e.data)"
+        },
+        {
+          "source": ".log(\"forwarding...\")",
+          "target": ".log(\"正在转发...\")"
+        },
+        {
+          "source": ".log(\"No startContainer found for\",this.toString()",
+          "target": ".log(\"未找到startContainer\",this.toString()"
+        },
+        {
+          "source": ".log(\"Invalid annotation target!\")",
+          "target": ".log(\"无效的注释目标!\")"
+        },
+        {
+          "source": ".log(\"remove\")",
+          "target": ".log(\"移除\")"
+        },
+        {
+          "source": ".log(\"linkText: \"+s.path+\" tarIndex: \"+this.tmpTargetIndex.toString()",
+          "target": ".log(\"链接文本: \"+s.path+\" 目标索引: \"+this.tmpTargetIndex.toString()"
+        },
+        {
+          "source": ".log(\"file opened\")",
+          "target": ".log(\"文件已打开\")"
+        },
+        {
+          "source": ".log(\"Failed to handle hypothesis drag-and-drop annotation event: \",e)",
+          "target": ".log(\"处理假设拖放注释事件失败: \",e)"
+        },
+        {
+          "source": ".error(\"failed to load annotations\",{error:e})",
+          "target": ".error(\"加载注释失败\",{error:e})"
+        },
+        {
+          "source": ".error(\"No video annotation website found. Make sure that you have provided a valid zip file in the annotator config.\")",
+          "target": ".error(\"未找到视频注释网站。请确保在注释器配置中提供了有效的zip文件。\")"
+        },
+        {
+          "source": ".error(\"file not found\",{url:t})",
+          "target": ".error(\"文件未找到\",{url:t})"
+        },
+        {
+          "source": ".error(\"unknown Class:\"+e)",
+          "target": ".error(\"未知类:\"+e)"
+        },
+        {
+          "source": ".error(\"unexpected end of input\")",
+          "target": ".error(\"意外的输入结束\")"
+        },
+        {
+          "source": ".error(\"Unclosed comment\")",
+          "target": ".error(\"未闭合的注释\")"
+        },
+        {
+          "source": ".error(\"entity not found:\"+e)",
+          "target": ".error(\"未找到实体:\"+e)"
+        },
+        {
+          "source": ".error(\"end tag name: \"+E+\" is not complete:\"+b.tagName)",
+          "target": ".error(\"结束标签名: \"+E+\" 不完整:\"+b.tagName)"
+        },
+        {
+          "source": ".error(\"end tag name: \"+E+\" maybe not complete\")",
+          "target": ".error(\"结束标签名: \"+E+\" 可能不完整\")"
+        },
+        {
+          "source": ".error(\"element parse error: \"+e)",
+          "target": ".error(\"元素解析错误: \"+e)"
+        },
+        {
+          "source": ".error(\"invalid doc source\")",
+          "target": ".error(\"无效的文档源\")"
+        },
+        {
+          "source": ".error(\"[xmldom error]\\t\"+e,ZJ(this.locator)",
+          "target": ".error(\"[xmldom错误]\\t\"+e,ZJ(this.locator)"
+        },
+        {
+          "source": ".error(\"setting end offset to start container length failed\",e)",
+          "target": ".error(\"设置结束偏移量为开始容器长度失败\",e)"
+        },
+        {
+          "source": ".error(\"Couldn't convert value into a JSON string: \",e)",
+          "target": ".error(\"无法将值转换为JSON字符串: \",e)"
+        },
+        {
+          "source": ".error(\"This browser doesn't support requestAnimationFrame. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills\")",
+          "target": ".error(\"此浏览器不支持requestAnimationFrame。请确保在旧版浏览器中加载polyfill。https://reactjs.org/link/react-polyfills\")"
+        },
+        {
+          "source": ".error(\"This browser doesn't support cancelAnimationFrame. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills\")",
+          "target": ".error(\"此浏览器不支持cancelAnimationFrame。请确保在旧版浏览器中加载polyfill。https://reactjs.org/link/react-polyfills\")"
+        },
+        {
+          "source": ".error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\")",
+          "target": ".error(\"forceFrameRate需要0到125之间的正整数，不支持强制设置高于125 fps的帧率\")"
+        },
+        {
+          "source": "name:\"Obsidian User\"",
+          "target": "name:\"Obsidian 用户\""
+        },
+        {
+          "source": "name:\"Toggle Annotation/Markdown Mode\"",
+          "target": "name:\"切换 Annotation/Markdown 模式\""
+        },
+        {
+          "source": "text:\"Annotator Settings\"",
+          "target": "text:\"Annotation 设置\""
+        },
+        {
+          "source": "text:\"Annotation Target Settings\"",
+          "target": "text:\"Annotation 目标设置\""
+        },
+        {
+          "source": "text:\"Epub Reader Settings\"",
+          "target": "text:\"Epub阅读器设置\""
+        },
+        {
+          "source": "text:\"Annotation Markdown Settings\"",
+          "target": "text:\"Annotation Markdown 设置\""
+        },
+        {
+          "source": "text:\"Dark Mode Settings\"",
+          "target": "text:\"深色模式设置\""
+        },
+        {
+          "source": "text:\"Annotate.TV settings\"",
+          "target": "text:\"Annotate.TV设置\""
+        },
+        {
+          "source": "text:\"Developer Settings\"",
+          "target": "text:\"开发者设置\""
+        },
+        {
+          "source": ".setTitle(\"Open as Markdown\")",
+          "target": ".setTitle(\"以Markdown格式打开\")"
+        },
+        {
+          "source": ".setTitle(\"Annotator Toggle Dark Mode\")",
+          "target": ".setTitle(\"Annotation切换暗色模式\")"
+        },
+        {
+          "source": ".setTitle(\"Annotate\")",
+          "target": ".setTitle(\"Annotate\")"
+        },
+        {
+          "source": "title:\"browser\"",
+          "target": "title:\"浏览器\""
+        },
+        {
+          "source": ".setDesc([\"If the provided annotation target is not found, \",\"Annotator will try prepending this string to the path. \",\"This can be useful if, for example, all your notes are \",\"located at a specific remote location.\"",
+          "target": ".setDesc([\"如果未找到所提供的注释目标，\",\"Annotator 将尝试在路径前加上该字符串。\",\"例如，如果您的所有笔记都是\",\"位于特定远程位置。\""
+        }
+      ]
+    }
+  }
+}

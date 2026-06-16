@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-imgur-plugin",
+    "version": "2.0.0",
+    "title": "Imgur",
+    "description": "This plugin uploads images from your clipboard to imgur.com and embeds uploaded image to your note",
+    "language": "zh-cn",
+    "supportedVersions": "2.6.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Authentication failed with error: ${params.error}`)",
+          "target": "Notice(`身份验证失败: ${params.error}`)"
+        },
+        {
+          "source": "Notice(\"Failed to create new album. Open console to see log\")",
+          "target": "Notice(\"无法创建新专辑。打开控制台查看日志\")"
+        },
+        {
+          "source": "Notice(`Updated ${stats.linksCount} links in ${stats.filesCount} files`)",
+          "target": "Notice(`更新了 ${stats.filesCount} 文件中的 ${stats.linksCount} 链接`)"
+        },
+        {
+          "source": "Notice() {\n    const fiveSecondsMillis = 5e3;\n    new import_obsidian12.Notice(\"\\u26A0\\uFE0F Please configure Client ID for Imgur plugin or disable it\", fiveSecondsMillis)",
+          "target": "Notice() {\n    const fiveSecondsMillis = 5e3;\n    new import_obsidian12.Notice(\"\\u26A0\\uFE0F 请为 Imgur 插件配置客户端 ID 或禁用它\", fiveSecondsMillis)"
+        },
+        {
+          "source": ".error(\"Failed to create a new album\", e)",
+          "target": ".error(\"创建新专辑失败\", e)"
+        },
+        {
+          "source": ".error(\"Failed to get info about currently authenticated user!\", e)",
+          "target": ".error(\"无法获取有关当前经过身份验证的用户的信息！\", e)"
+        },
+        {
+          "source": ".error(\"Something bad happened during links update\", e)",
+          "target": ".error(\"链接更新期间发生未知错误\", e)"
+        },
+        {
+          "source": ".error(\"Failed imgur request: \", e)",
+          "target": ".error(\"imgur 请求失败：\", e)"
+        },
+        {
+          "source": "name: `Resize to ${size.description}${size.sizeHint ? `",
+          "target": "name: `调整大小至 ${size.description}${size.sizeHint ? `"
+        },
+        {
+          "source": "text: \"here\"",
+          "target": "text: \"手动认证\""
+        },
+        {
+          "source": "text: \"Imgur Plugin settings\"",
+          "target": "text: \"Imgur 插件设置\""
+        },
+        {
+          "source": "text: `Do you want to replace internal links that link to original local file (${localFileName}) with remote link?`",
+          "target": "text: `您想用远程链接替换链接到原始本地文件 (${localFileName}) 的内部链接吗？`"
+        },
+        {
+          "source": "text: `This will affect ${stats.linksCount} links in ${stats.filesCount} files.`",
+          "target": "text: `这将影响 ${stats.filesCount} 文件中的 ${stats.linksCount} 个链接.`"
+        },
+        {
+          "source": ".setText(\n      `Please complete authentication at imgur.com; Opening browser in ${this.secondsLeft} seconds...`\n    )",
+          "target": ".setText(\n      `请在imgur.com完成身份验证； ${this.secondsLeft} 秒后打开浏览器...`\n    )"
+        },
+        {
+          "source": ".setText(\"Not authenticated\")",
+          "target": ".setText(\"未经过验证\")"
+        },
+        {
+          "source": ".setText(\"Checking Imgur authentication...\")",
+          "target": ".setText(\"检查 Imgur 身份验证...\")"
+        },
+        {
+          "source": ".setText(`Authenticated as: ${currentUser} \\u2705`)",
+          "target": ".setText(`当前用户认证为： ${currentUser} \\u2705`)"
+        },
+        {
+          "source": ".setText(\"Internet connection problem\")",
+          "target": ".setText(\"互联网连接问题\")"
+        },
+        {
+          "source": ".setText(`Imgur session error: ${sessionError}`)",
+          "target": ".setText(`Imgur 会话错误： ${sessionError}`)"
+        },
+        {
+          "source": ".setText(\"\\u26A0\\uFE0F Not authenticated. See console for error\")",
+          "target": ".setText(\"\\u26A0\\uFE0F 未经过验证。查看控制台是否有错误\")"
+        },
+        {
+          "source": ".setText(\"Create new album\")",
+          "target": ".setText(\"创建新分类\")"
+        },
+        {
+          "source": ".setText(\"Imgur plugin\")",
+          "target": ".setText(\"Imgur插件\")"
+        },
+        {
+          "source": ".setText(\"Would you like to upload to Imgur or paste your content locally?\")",
+          "target": ".setText(\"请问是将内容上传到 Imgur 还是以保存在本地？\")"
+        },
+        {
+          "source": ".setText(\"Uploading image...\")",
+          "target": ".setText(\"图片上传中...\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Logout\")",
+          "target": ".setButtonText(\"注销\")"
+        },
+        {
+          "source": ".setButtonText(\"Authenticate\")",
+          "target": ".setButtonText(\"认证\")"
+        },
+        {
+          "source": ".setButtonText(\"Create\")",
+          "target": ".setButtonText(\"创建\")"
+        },
+        {
+          "source": ".setButtonText(\"Always upload\")",
+          "target": ".setButtonText(\"始终上传\")"
+        },
+        {
+          "source": ".setButtonText(\"Upload\")",
+          "target": ".setButtonText(\"上传\")"
+        },
+        {
+          "source": ".setButtonText(\"Paste locally\")",
+          "target": ".setButtonText(\"本地粘贴\")"
+        },
+        {
+          "source": ".setButtonText(\"Yes\")",
+          "target": ".setButtonText(\"可以\")"
+        },
+        {
+          "source": ".setButtonText(\"Do not update\")",
+          "target": ".setButtonText(\"不更新了\")"
+        },
+        {
+          "source": ".setButtonText(\"Ok\")",
+          "target": ".setButtonText(\"Ok\")"
+        },
+        {
+          "source": ".setName(\"Images upload approach\")",
+          "target": ".setName(\"图片上传方式\")"
+        },
+        {
+          "source": ".setName(\"Confirm before upload\")",
+          "target": ".setName(\"上传前确认\")"
+        },
+        {
+          "source": ".setName(\"Client ID\")",
+          "target": ".setName(\"Client ID\")"
+        },
+        {
+          "source": ".setName(\"Album to upload\")",
+          "target": ".setName(\"相册\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Album name (required)\")",
+          "target": ".setPlaceholder(\"专辑名称(必填)\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Album description (optional)\")",
+          "target": ".setPlaceholder(\"专辑描述(选填)\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter your client_id\")",
+          "target": ".setPlaceholder(\"输入您的 client_id\")"
+        },
+        {
+          "source": ".appendText(\"If you do not want to wait, click \")",
+          "target": ".appendText(\"如果你不想等了可以试着点一下这里直接开始认证 \")"
+        },
+        {
+          "source": ".appendText(\"Manage your albums at \")",
+          "target": ".appendText(\"相册查看： \")"
+        },
+        {
+          "source": ".setTitle(\"Replace links in vault\")",
+          "target": ".setTitle(\"替换库中的链接\")"
+        },
+        {
+          "source": ".setTitle(\"Upload to Imgur\")",
+          "target": ".setTitle(\"上传至mgur\")"
+        },
+        {
+          "source": ".setTooltip(`Personal Client ID is required for plugin to work`",
+          "target": ".setTooltip(`该插件需要个人的用户 ID 才能运行`"
+        },
+        {
+          "source": ".textContent = \"the instructions\"",
+          "target": ".textContent = \"相关说明\""
+        },
+        {
+          "source": ".append(\"Find your existing Client ID \"",
+          "target": ".append(\"查找你现有的 Client ID\""
+        },
+        {
+          "source": ".append(\" or follow \", newClientIdInstructionsLink, \" to generate new Client ID.\"",
+          "target": ".append(\"或者前往\", newClientIdInstructionsLink, \" 尝试创建新的用户 ID.\""
+        },
+        {
+          "source": "d.addOption(\"\", \"Loading...\");",
+          "target": "d.addOption(\"\", \"加载中...\");"
+        },
+        {
+          "source": ".ANONYMOUS_IMGUR = new _UploadStrategy(\"ANONYMOUS_IMGUR\", \"Anonymous Imgur upload\");",
+          "target": ".ANONYMOUS_IMGUR = new _UploadStrategy(\"ANONYMOUS_IMGUR\", \"匿名 Imgur 上传\");"
+        },
+        {
+          "source": "existingClientIdsLink.text = \"here\"",
+          "target": "existingClientIdsLink.text = \"此处查看\""
+        },
+        {
+          "source": "\"Authenticated Imgur upload\"",
+          "target": "\"经过身份验证的 Imgur 上传\""
+        },
+        {
+          "source": "\"\\uFF0B Create new album\"",
+          "target": "\"\\uFF0B 创建新专辑\""
+        },
+        {
+          "source": "d.addOption(null, \"Not specified\");",
+          "target": "d.addOption(null, \"未指定\");"
+        }
+      ]
+    }
+  }
+}
