@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "bulk-exporter",
+    "version": "1.0.0",
+    "title": "Bulk Exporter",
+    "description": "Bulk Exporter Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.15",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Modified Since Last Export",
+          "target": "自上次导出后已修改"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Up to date",
+          "target": "已是最新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "body raw files",
+          "target": "正文原始文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createSpan",
+          "source": "[Folder] ",
+          "target": "[文件夹]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Hash worker failure",
+          "target": "哈希工作线程失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Web Workers are not supported in this browser",
+          "target": "此浏览器不支持 Web Workers"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "too early",
+          "target": "太早了"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "File Export Error: ",
+          "target": "文件导出错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error decoding obsidian link: ",
+          "target": "解码 Obsidian 链接时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error decoding wiki link: ",
+          "target": "解码 Wiki 链接时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "DataView is not loaded yet!",
+          "target": "DataView 尚未加载！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Bulk Exporter] Dataview plugin to be installed.",
+          "target": "[批量导出器] 需要安装 Dataview 插件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Logging started.",
+          "target": "日志记录已开始。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "starting: ",
+          "target": "开始："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "args: ",
+          "target": "参数："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Preserving wiki link for: ",
+          "target": "保留 Wiki 链接："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Not deleting file/folder as it is matching ignore rule: ",
+          "target": "未删除文件/文件夹，因为它匹配忽略规则："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Starting shell script ",
+          "target": "启动 Shell 脚本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Finished shell script! ",
+          "target": "Shell 脚本已完成！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Hey! Single click on the file name to reveal it in the sidebar, double click to open it!",
+          "target": "嘿！单击文件名可在侧边栏中显示它，双击可打开它！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which folder do you want to export converted markdown files with their assets?",
+          "target": "您希望将转换后的 Markdown 文件及其资源导出到哪个文件夹？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If provided, files that DO NOT have this field in their front matter will be shown on the file tree and the export preview, but will not get actually exported.",
+          "target": "如果提供，其前置信息中没有此字段的文件将显示在文件树和导出预览中，但不会实际导出。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Same as clicking on the eye icon",
+          "target": "与点击眼睛图标相同"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "if true, spaces in local links will be url escaped (e.g. %20 for spaces)",
+          "target": "如果为 true，本地链接中的空格将被 URL 转义（例如，空格用 %20 表示）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "if true, all links will be the standard unified format.",
+          "target": "如果为 true，所有链接都将是标准统一格式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "if true, all attachments will go to the file root's asset folder.",
+          "target": "如果为 true，所有附件都将放入文件根目录的资源文件夹中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Relative to the file's export path, or absolute, to the file's Attachment and link root above.",
+          "target": "相对于文件的导出路径，或绝对路径，指向文件的附件和链接根目录（如上所述）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Place here anything you want to run after the export is done. Uses child_process.spawn.",
+          "target": "在此处放置您希望在导出完成后运行的任何内容。使用 child_process.spawn。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Bulk Exporter",
+          "target": "批量导出器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Name of the export set",
+          "target": "导出集的名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Export Target Folder",
+          "target": "导出目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Filter Query",
+          "target": "过滤查询"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output Filename and Path",
+          "target": "输出文件名和路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Empty target folder on each export",
+          "target": "每次导出时清空目标文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignore Delete Glob Pattern",
+          "target": "忽略删除 Glob 模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Published Field / Drafts",
+          "target": "发布字段 / 草稿"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Visible Columns",
+          "target": "可见列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Normalize Spaces in Links",
+          "target": "规范化链接中的空格"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Keep Links Not Found",
+          "target": "保留未找到的链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Keep Links Not Exported",
+          "target": "保留未导出的链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert Wiki links to '[]()' styled standard links",
+          "target": "将 Wiki 链接转换为 '[]()' 风格的标准链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preserve Wiki links as is",
+          "target": "保留原始 Wiki 链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Flatten attachments to File Root",
+          "target": "将附件扁平化到文件根目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Keep original attachment file names",
+          "target": "保留原始附件文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Attachment / Asset folder name",
+          "target": "附件/资源文件夹名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Run Script After Export",
+          "target": "导出后运行脚本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "key of the meta value, like draft",
+          "target": "元数据值的键，例如 draft"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "shell script path",
+          "target": "Shell 脚本路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[Exporter] [File List Indicator] Could not find",
+          "target": "[导出器] [文件列表指示器] 未找到"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Internal link not found! Keeping due to settings keep not found. ",
+          "target": "内部链接未找到！根据设置保留未找到的链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Internal link not found in output, kept due to settings keep private!",
+          "target": "输出中未找到内部链接，根据设置保留私有链接！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Meta-Dataview needs Dataview plugin to be installed.",
+          "target": "Meta-Dataview 需要安装 Dataview 插件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "pull-in clickable",
+          "target": "pull-in clickable"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "closed pull-in",
+          "target": "closed pull-in"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "file-diff__line file-diff__top-line__bg",
+          "target": "file-diff__line file-diff__top-line__bg"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "file-diff__line file-diff__bottom-line__bg",
+          "target": "file-diff__line file-diff__bottom-line__bg"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "nav-files-container meta-data-view-table-container",
+          "target": "nav-files-container meta-data-view-table-container"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "dataview table-view-table",
+          "target": "dataview table-view-table"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "table-view-th debug-column",
+          "target": "table-view-th debug-column"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "clickable table-header-link",
+          "target": "clickable table-header-link"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "nav-folder-collapse-indicator collapse-icon",
+          "target": "nav-folder-collapse-indicator collapse-icon"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "meta-value date",
+          "target": "meta-value date"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "export set",
+          "target": "导出集"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bulk Export",
+          "target": "批量导出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export Structure",
+          "target": "导出结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "copy globs",
+          "target": "复制 glob 模式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Errors",
+          "target": "错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "All Output",
+          "target": "所有输出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select metadata header display order",
+          "target": "选择元数据标题显示顺序"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Diff",
+          "target": "差异"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " => ",
+          "target": " => "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "no files found",
+          "target": "未找到文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No attachments or links in file.",
+          "target": "文件中没有附件或链接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": ", ",
+          "target": ", "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "JS Object",
+          "target": "JS 对象"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Save",
+          "target": "保存"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export ",
+          "target": "导出 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "-- All --",
+          "target": "-- 全部 --"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Github Issue Tracker",
+          "target": "Github 问题追踪器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Export a certain subset of your notes, based on whether they match a DataView query. Bug reports and Feature Requests are welcome at ",
+          "target": "根据笔记是否匹配 DataView 查询来导出特定子集。欢迎在以下地址提交错误报告和功能请求："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "DataView Language Specs",
+          "target": "DataView 语言规范"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Docs",
+          "target": "文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use a DataView style query for matching your metadata. Example: 'blog=\"personal\"'. For more, see ",
+          "target": "使用 DataView 风格的查询来匹配您的元数据。示例：'blog=\\\"personal\\\"'。更多信息，请参阅"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You can define the output path with the following JS expression. Example: \"${blog}/${created.date}-${slug}\" - see ",
+          "target": "您可以使用以下 JS 表达式定义输出路径。示例：\\\"${blog}/${created.date}-${slug}\\\" - 请参阅"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Glob pattern matcher",
+          "target": "Glob 模式匹配器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Files in the root folder matching this pattern will NOT be deleted. E.g. ignore 'engine' and 'rest' folders, just type in {engine,rest} - ",
+          "target": "根文件夹中匹配此模式的文件将不会被删除。例如，要忽略 'engine' 和 'rest' 文件夹，只需输入 {engine,rest} - "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Preview",
+          "target": "预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Links",
+          "target": "链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Attachments",
+          "target": "附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Other",
+          "target": "其他"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete this Export Settings",
+          "target": "删除此导出设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Edit Visible Header Fields",
+          "target": "编辑可见标题字段"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Edit Export Settings",
+          "target": "编辑导出设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Open Output Folder",
+          "target": "打开输出文件夹"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Show Log",
+          "target": "显示日志"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Open Plugin Settings",
+          "target": "打开插件设置"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
