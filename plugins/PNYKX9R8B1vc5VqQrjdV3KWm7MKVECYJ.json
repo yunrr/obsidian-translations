@@ -1,0 +1,4483 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "jw-library-linker",
+    "version": "1.0.0",
+    "title": "JW Library Linker",
+    "description": "JW Library Linker Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.16.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No bible books found",
+          "target": "未找到圣经书卷"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid reference",
+          "target": "无效的引用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "generateBibleQuoteText: error:",
+          "target": "generateBibleQuoteText: 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error inserting Bible quotes:",
+          "target": "插入圣经引文时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error inserting Bible quote at cursor:",
+          "target": "在光标处插入圣经引文时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error inserting Bible quote from context menu:",
+          "target": "从上下文菜单插入圣经引文时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Could not detect Obsidian language, using default locale",
+          "target": "无法检测 Obsidian 语言，使用默认区域设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "multiple books found",
+          "target": "找到多本书卷"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "chapter cache hit",
+          "target": "章节缓存命中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "fetching chapter",
+          "target": "正在获取章节"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "fetchHtml: curl completed",
+          "target": "fetchHtml: curl 完成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Detected language",
+          "target": "检测到语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Parser error",
+          "target": "解析器错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "generateBibleQuoteText: fetching text for",
+          "target": "generateBibleQuoteText: 正在获取文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "generateBibleQuoteText: fetched text length:",
+          "target": "generateBibleQuoteText: 获取的文本长度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "insertAllBibleQuotes: found links:",
+          "target": "insertAllBibleQuotes: 找到的链接："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Plugin loaded",
+          "target": "插件已加载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "{bibleRefLinked}\\n> {quote}",
+          "target": "{bibleRefLinked}\\\\n> {quote}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "fetchHtml: requestUrl failed —",
+          "target": "fetchHtml: requestUrl 失败 —"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "fetchHtml: curl not available, skipping for future requests",
+          "target": "fetchHtml: curl 不可用，跳过后续请求"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "fetchHtml: curl failed —",
+          "target": "fetchHtml: curl 失败 —"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "fetchHtml: webviewer failed —",
+          "target": "fetchHtml: webviewer 失败 —"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "generateBibleQuoteText: fetch failed —",
+          "target": "generateBibleQuoteText: 获取失败 —"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "success:",
+          "target": "成功："
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "generateBibleQuoteText: convertBibleTextToMarkdownLink returned falsy",
+          "target": "generateBibleQuoteText: convertBibleTextToMarkdownLink 返回了假值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ipusha icipope ca \"Ifumya kabili wisule\" pa muulu wa fyonse",
+          "target": "将 \\\"Ifumya kabili wisule\\\" 置于所有内容之上"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Nga cabikwa, ululimi tabwakubikwa muli linki. Linki yakeisula mu lulimi ulwaba mu JW Library",
+          "target": "如果启用，语言参数将不会添加到链接中。链接将在 JW Library 应用程序的语言中打开。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Salapo icalipekanishiwa ica linki",
+          "target": "链接文本的自定义分隔符"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pekanya ifyo amashiwi ya Baibolo yakaba ilyo yabikwa",
+          "target": "控制圣经文本保存时的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Bomfya ifishibilo ifi pa kupanga ifyo mashiwi yakaba: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用这些变量来格式化文本：{bibleRef}, {bibleRefLinked}, {quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Letapo Baibolo wa EPUB umuku umo lwekela kabili bomfya amasambililo ya pa makompyuta nga taupo intaneti.",
+          "target": "导入圣经 EPUB 一次，并使用本地章节数据进行离线引文查找。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tala umona Baibolo wakuli kompyuta pa ntaanshi ya ukufwaya pa intaneti.",
+          "target": "优先检查本地存储的圣经，然后再尝试在线获取。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Nga Baibolo wakuli kompyuta tabaliko, plugin ikafwaye pa intaneti.",
+          "target": "如果本地圣经数据不存在，插件将尝试在线获取。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Baibolo umo wene fye e wingaba pa ululimi. Ululimi lulipusukila mu lyashi lya EPUB.",
+          "target": "每种语言只能安装一本离线圣经。语言从 EPUB 文件的元数据中检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Letapo EPUB pa kulundako ululimi ulupya. Pa kupyangulula uwalipo, tala umufumyepo.",
+          "target": "导入 EPUB 以添加新语言。要替换现有的，请先删除它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vyberte jazyk pro biblické reference",
+          "target": "选择圣经引用的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Přesune příkaz \"Vytvořit odkaz a otevřít\" na vrchol seznamu",
+          "target": "将命令 \\\"创建链接并打开\\\" 移动到列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pokud je zapnuto, aktuální text odkazu bude zachován při převodu biblického textu",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pokud je zapnuto, jazykový parametr nebude přidán do odkazu. Odkaz se otevře v jazyce aplikace JW Library",
+          "target": "启用后，语言参数将不会添加到链接中。链接将在 JW Library 应用程序的语言中打开。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pokud je zapnuto, již převedené jwlibrary:// odkazy budou znovu převedeny podle aktuálního nastavení formátování. Umožňuje aktualizovat všechny odkazy podle nejnovějších preferencí.",
+          "target": "启用后，已转换的 jwlibrary:// 链接将根据当前格式设置重新转换。允许根据最新偏好更新所有链接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vyberte délku textu odkazu",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text přidaný před odkaz",
+          "target": "添加在链接之前的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text přidaný na začátek textu odkazu",
+          "target": "添加在链接文本开头的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text přidaný na konec textu odkazu",
+          "target": "添加在链接文本末尾的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text přidaný za odkaz",
+          "target": "添加在链接之后的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vyberte přednastavený styl odkazu",
+          "target": "选择预设的链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vyberte styl písma pro text odkazu",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Nakonfigurujte formátování biblických citací při vkládání",
+          "target": "配置插入时圣经引文的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Přizpůsobte formát citace pomocí proměnných: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}, {bibleRefLinked}, {quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Naimportujte jednou biblické EPUB a používejte místní data kapitol pro offline vyhledávání citací.",
+          "target": "一次性导入圣经 EPUB，并使用本地章节数据进行离线引文查找。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Umožní citačnímu procesu používat importovaná místní biblická data.",
+          "target": "允许引文过程使用导入的本地圣经数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Nejprve zkontroluje importovanou offline Bibli, než se pokusí o online načtení.",
+          "target": "在尝试在线获取之前，首先检查导入的离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pokud offline data chybí, plugin se může pokusit použít online poskytovatele citací.",
+          "target": "如果离线数据缺失，插件可以尝试使用在线引文提供者。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pro každý jazyk lze nainstalovat jednu offline Bibli. Jazyk se zjistí z metadat souboru EPUB.",
+          "target": "每种语言可以安装一本离线圣经。语言从 EPUB 文件的元数据中检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Importujte EPUB pro přidání nového jazyka. Pro nahrazení existující ji nejprve odstraňte.",
+          "target": "导入 EPUB 以添加新语言。要替换现有的，请先删除它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vælg sproget til bibelhenvisninger",
+          "target": "选择圣经引用的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Flytter kommandoen \"Opret link og åbn\" til toppen af listen",
+          "target": "将命令 \\\"创建链接并打开\\\" 移动到列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Når den er aktiveret, beholdes den nuværende linktekst ved konvertering af bibeltekst",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Når den er aktiveret, tilføjes der ingen sprogparameter til linket. Links åbnes i JW Librarys sprog",
+          "target": "启用后，链接中不会添加语言参数。链接将以JW Library的语言打开。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Når den er aktiveret, konverteres allerede oprettede jwlibrary://-links igen efter de aktuelle formateringsindstillinger. Det gør det muligt at opdatere alle links, så de matcher dine nyeste præferencer.",
+          "target": "启用后，已创建的jwlibrary://链接将根据当前格式设置重新转换。这允许您更新所有链接以匹配您最新的偏好设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vælg længden på linkteksten",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst der tilføjes før linket",
+          "target": "在链接前添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst der tilføjes i begyndelsen af linkteksten",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst der tilføjes i slutningen af linkteksten",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst der tilføjes efter linket",
+          "target": "在链接后添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vælg et stilforvalg til linket",
+          "target": "为链接选择一个预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Vælg skriftstil for linkteksten",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Angiv hvordan bibelcitater skal formateres, når de indsættes",
+          "target": "配置插入时圣经引文的格式化方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tilpas citatformatet med variablerne: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Importér en bibel-EPUB én gang og brug lokale kapiteldata til offline-citater.",
+          "target": "导入一次圣经EPUB，并使用本地章节数据进行离线引文查找。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tillad at citeringsforløbet bruger importerede lokale bibeldata.",
+          "target": "允许引文流程使用导入的本地圣经数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tjek den importerede offline-bibel før der forsøges online hentning.",
+          "target": "在尝试在线获取之前，先检查导入的离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Hvis offline-data mangler, må pluginet forsøge den online citeringskilde.",
+          "target": "如果离线数据缺失，允许插件尝试在线引文源。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Der kan installeres én offline-bibel pr. sprog. Sproget registreres ud fra EPUB-metadata.",
+          "target": "每种语言可安装一本离线圣经。语言根据EPUB元数据检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Importér en EPUB for at tilføje et nyt sprog. For at erstatte en eksisterende skal du fjerne den først.",
+          "target": "导入一个EPUB以添加新语言。要替换现有语言，请先移除它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Wähle die Sprache für die Bibelverweise",
+          "target": "选择圣经参考文献的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Verschiebt den Befehl \"Link und öffnen\" an den Anfang der Liste",
+          "target": "将“链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Wenn aktiviert, wird der aktuelle Linktext beim Umwandeln von Bibeltexten beibehalten",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Wenn aktiviert, werden am Ende eines Links keine Sprachparameter hinzugefügt. Links werden in der jeweiligen Sprache der JW Library geöffnet",
+          "target": "启用后，链接中不会添加语言参数。链接将以JW Library各自的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Wähle die Länge des Linktextes",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Wähle Zeichen oder Emojis, die nach oder innerhalb des Links eingefügt werden; wähle Schriftstil",
+          "target": "选择在链接后或链接内插入的字符或表情符号；选择字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text, der am Anfang des Linktextes hinzugefügt wird",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text, der am Ende des Linktextes hinzugefügt wird",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Wähle eine Stilvorlage für den Link",
+          "target": "为链接选择一个样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Wähle den Schriftstil für den Linktext",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Konfiguriere die Formatierung von eingefügten Bibelzitaten",
+          "target": "配置插入的圣经引文的格式化方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Passe das Zitatformat mit Variablen an: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Eine Bibel-EPUB einmal importieren und lokale Kapiteldaten für die Offline-Zitatsuche verwenden.",
+          "target": "导入一次圣经EPUB，并使用本地章节数据进行离线引文查找。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ermöglicht der Zitatfunktion, importierte lokale Bibeldaten zu verwenden.",
+          "target": "允许引文功能使用导入的本地圣经数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Zuerst die importierte Offline-Bibel prüfen, bevor eine Online-Abfrage versucht wird.",
+          "target": "在尝试在线查询之前，先检查导入的离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Falls Offline-Daten fehlen, kann das Plugin den Online-Zitatanbieter verwenden.",
+          "target": "如果离线数据缺失，允许插件使用在线引文提供者。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pro Sprache kann eine Offline-Bibel installiert werden. Die Sprache wird aus den EPUB-Metadaten erkannt.",
+          "target": "每种语言可安装一本离线圣经。语言根据EPUB元数据检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Eine EPUB-Datei importieren, um eine neue Sprache hinzuzufügen. Um eine vorhandene zu ersetzen, zuerst entfernen.",
+          "target": "导入一个EPUB文件以添加新语言。要替换现有的，请先移除。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Select the language for Bible references",
+          "target": "选择圣经参考文献的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Moves the \"Link and open\" command to the top of the list",
+          "target": "将“链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "When enabled, the current link text will be kept when converting Bible text",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "When enabled, no language parameter is added to the link. Links will open in the language of the JW Library",
+          "target": "启用后，链接中不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "When enabled, already-converted jwlibrary:// links will be reconverted according to current formatting settings. This allows you to update all links to match your latest preferences.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您更新所有链接以匹配您最新的偏好设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choose the length of the link text",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text to add before the link",
+          "target": "在链接前添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text to add at the beginning of the link text",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text to add at the end of the link text",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Text to add after the link",
+          "target": "在链接后添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choose a preset style for the link",
+          "target": "为链接选择一个预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choose the font style for the link text",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Configure how Bible quotes are formatted when inserted",
+          "target": "配置插入时圣经引文的格式化方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Customize the quote format using variables: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Import a Bible EPUB once and use local chapter data for offline citation lookup.",
+          "target": "导入一次圣经EPUB，并使用本地章节数据进行离线引文查找。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Allow the citation pipeline to use imported local Bible data.",
+          "target": "允许引文流程使用导入的本地圣经数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "If offline data is missing, allow the plugin to try the online citation provider.",
+          "target": "如果离线数据缺失，允许插件尝试在线引文提供者。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "One offline Bible can be installed per language. The language is detected from the EPUB metadata.",
+          "target": "每种语言可安装一本离线圣经。语言根据EPUB元数据检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Selecciona el idioma para las referencias bíblicas",
+          "target": "选择圣经参考文献的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mueve el comando \"Enlazar y abrir\" al principio de la lista",
+          "target": "将“链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Si está activado, se conservará el texto actual del enlace al convertir textos bíblicos",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Si está activado, no se añadirá ningún parámetro de idioma al enlace. Los enlaces se abrirán en el idioma correspondiente de JW Library",
+          "target": "启用后，链接中不会添加任何语言参数。链接将以JW Library相应的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Si está activado, los enlaces jwlibrary:// ya convertidos se reconvertirán según la configuración de formato actual. Esto permite actualizar todos los enlaces para que coincidan con tus preferencias más recientes.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您更新所有链接以匹配您最新的偏好设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Elige la longitud del texto del enlace",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texto que se añade antes del enlace",
+          "target": "在链接前添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texto que se añade al inicio del texto del enlace",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texto que se añade al final del texto del enlace",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texto que se añade después del enlace",
+          "target": "在链接后添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Elige un estilo predefinido para el enlace",
+          "target": "为链接选择一个预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Elige el estilo de fuente para el texto del enlace",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Configurar cómo se formatean las citas bíblicas cuando se insertan",
+          "target": "配置插入时圣经引文的格式化方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Personaliza el formato de cita usando variables: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Se puede instalar una Biblia sin conexión por idioma. El idioma se detecta a partir de los metadatos del EPUB.",
+          "target": "每种语言可安装一本离线圣经。语言根据EPUB元数据检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Valitse kieli raamatunviitteille",
+          "target": "选择圣经参考文献的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Siirtää \"Linkitä ja avaa\" -komennon listan kärkeen",
+          "target": "将“链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kun tämä on käytössä, nykyinen linkkiteksti säilytetään, kun Raamatun tekstiä muunnetaan",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kun tämä on käytössä, linkkiin ei lisätä kieliparametria. Linkit avautuvat JW-kirjaston kielellä",
+          "target": "启用后，链接中不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kun tämä on käytössä, jo muunnetut jwlibrary:// linkit muunnetaan uudelleen nykyisten muotoiluasetusten mukaan. Tämä mahdollistaa kaikkien linkkien päivittämisen vastaamaan uusimpia asetuksia.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您更新所有链接以匹配您最新的偏好设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Valitse linkin tekstin pituus",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Teksti, joka lisätään ennen linkkiä",
+          "target": "在链接前添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Teksti, joka lisätään linkkitekstin alkuun",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Teksti, joka lisätään linkkitekstin loppuun",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Teksti, joka lisätään linkin jälkeen",
+          "target": "在链接后添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Valitse linkin tyyli",
+          "target": "为链接选择一个样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Valitse fonttityyli linkkitekstille",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Määritä miten raamatunlainaukset muotoillaan kun ne lisätään",
+          "target": "配置插入时圣经引文的格式化方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mukauta lainausmuotoa muuttujilla: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Yksi offline-Raamattu voidaan asentaa kieltä kohden. Kieli tunnistetaan EPUB-metatiedoista.",
+          "target": "每种语言可安装一本离线圣经。语言根据EPUB元数据检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sélectionnez la langue pour les références bibliques",
+          "target": "选择圣经参考文献的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Déplace la commande \"Lier et ouvrir\" en haut de la liste",
+          "target": "将“链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Lorsque activé, le texte actuel du lien sera conservé lors de la conversion du texte biblique",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Lorsque activé, aucun paramètre de langue n'est ajouté au lien. Les liens s'ouvriront dans la langue de JW Library",
+          "target": "启用后，链接中不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Lorsque activé, les liens jwlibrary:// déjà convertis seront reconvertis selon les paramètres de formatage actuels. Cela vous permet de mettre à jour tous les liens pour correspondre à vos dernières préférences.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您更新所有链接以匹配您最新的偏好设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choisissez la longueur du texte du lien",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texte à ajouter avant le lien",
+          "target": "在链接前添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texte à ajouter au début du texte du lien",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texte à ajouter à la fin du texte du lien",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texte à ajouter après le lien",
+          "target": "在链接后添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choisissez un style prédéfini pour le lien",
+          "target": "为链接选择一个预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Choisissez le style de police pour le texte du lien",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Configurez la façon dont les citations bibliques sont formatées lors de l'insertion",
+          "target": "配置插入时圣经引文的格式化方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Personnalisez le format de citation avec les variables : {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Une Bible hors ligne peut être installée par langue. La langue est détectée à partir des métadonnées EPUB.",
+          "target": "每种语言可安装一本离线圣经。语言根据EPUB元数据检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Odaberite jezik za biblijske reference",
+          "target": "选择圣经参考文献的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pomiče naredbu \"Poveži i otvori\" na vrh popisa",
+          "target": "将“链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kada je omogućeno, trenutni tekst linka bit će zadržan prilikom pretvaranja biblijskog teksta",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kada je omogućeno, jezični parametar se ne dodaje na link. Linkovi se otvaraju na jeziku JW Library aplikacije",
+          "target": "启用后，链接不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Odaberite duljinu teksta linka",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst koji se dodaje prije linka",
+          "target": "添加在链接之前的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst koji se dodaje na početak teksta linka",
+          "target": "添加在链接文本开头的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst koji se dodaje na kraj teksta linka",
+          "target": "添加在链接文本末尾的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst koji se dodaje nakon linka",
+          "target": "添加在链接之后的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Odaberite stilsku predložak za link",
+          "target": "选择链接的样式模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Odaberite stil fonta za tekst linka",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Konfigurirajte oblikovanje biblijskih citata prilikom umetanja",
+          "target": "配置插入圣经引文时的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Prilagodite format citata pomoću varijabli: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Po jeziku se može instalirati jedna izvanmrežna Biblija. Jezik se otkriva iz EPUB metapodataka.",
+          "target": "每种语言可安装一本离线圣经。语言从EPUB元数据中检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Uvezite EPUB kako biste dodali novi jezik. Za zamjenu postojećeg, prvo ga uklonite.",
+          "target": "导入EPUB以添加新语言。要替换现有语言，请先将其移除。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Seleziona la lingua per i riferimenti biblici",
+          "target": "选择圣经引文的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Sposta il comando \"Crea link e apri\" in cima all'elenco",
+          "target": "将“创建链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Se abilitato, il testo del link corrente verrà mantenuto durante la conversione del testo biblico",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Se abilitato, nessun parametro di lingua viene aggiunto al link. I link si apriranno nella lingua di JW Library",
+          "target": "启用后，链接不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Se abilitato, i link jwlibrary:// già convertiti verranno riconvertiti in base alle impostazioni di formattazione attuali. Ciò consente di aggiornare tutti i link secondo le preferenze più recenti.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您将所有链接更新为最新的首选项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Scegli la lunghezza del testo del link",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Testo da aggiungere prima del link",
+          "target": "添加在链接之前的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Testo da aggiungere all'inizio del testo del link",
+          "target": "添加在链接文本开头的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Testo da aggiungere alla fine del testo del link",
+          "target": "添加在链接文本末尾的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Testo da aggiungere dopo il link",
+          "target": "添加在链接之后的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Scegli uno stile predefinito per il link",
+          "target": "选择链接的预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Scegli lo stile del carattere per il testo del link",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Configura come vengono formattate le citazioni bibliche quando vengono inserite",
+          "target": "配置插入圣经引文时的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Personalizza il formato della citazione usando le variabili: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Importa un EPUB della Bibbia una volta e usa i dati del capitolo locale per la ricerca di citazioni offline.",
+          "target": "导入圣经EPUB一次，并使用本地章节数据进行离线引文搜索。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Consenti alla pipeline di citazioni di utilizzare i dati locali della Bibbia importata.",
+          "target": "允许引文管道使用导入的本地圣经数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Controlla la Bibbia offline importata prima di tentare il recupero online.",
+          "target": "在尝试在线获取之前，检查导入的离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Se i dati offline non sono disponibili, consenti al plugin di provare il provider di citazioni online.",
+          "target": "如果离线数据不可用，允许插件尝试在线引文提供商。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "È possibile installare una Bibbia offline per lingua. La lingua viene rilevata dai metadati dell'EPUB.",
+          "target": "每种语言可安装一本离线圣经。语言从EPUB元数据中检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Importa un EPUB per aggiungere una nuova lingua. Per sostituirne una esistente, rimuovila prima.",
+          "target": "导入EPUB以添加新语言。要替换现有语言，请先将其移除。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "聖書の引照に使用する言語を選択してください",
+          "target": "选择圣经引文的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "「リンクして開く」コマンドをリストの一番上に移動します",
+          "target": "将“创建链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "有効にすると、聖書の本文を変換する際に現在のリンクテキストが保持されます",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "有効にすると、リンクに言語パラメータが追加されません。リンクはJW Libraryの言語で開きます",
+          "target": "启用后，链接不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "有効にすると、すでに変換済みの jwlibrary:// リンクが現在のフォーマット設定に従って再変換されます。これにより、すべてのリンクを最新の設定に合わせて更新できます。",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您将所有链接更新为最新的首选项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "リンクテキストの長さを選択してください",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "リンクの前後または内側に追加する文字または絵文字を選択し、フォントスタイルを選択してください",
+          "target": "选择要添加在链接前、后或内部的字符或表情符号，并选择字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "リンクの前に追加するテキスト",
+          "target": "添加在链接之前的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "リンクテキストの先頭に追加するテキスト",
+          "target": "添加在链接文本开头的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "リンクテキストの末尾に追加するテキスト",
+          "target": "添加在链接文本末尾的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "リンクの後に追加するテキスト",
+          "target": "添加在链接之后的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "リンクのプリセットスタイルを選択してください",
+          "target": "选择链接的预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "リンクテキストのフォントスタイルを選択してください",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "聖書の引用を挿入する際のフォーマットを設定します",
+          "target": "配置插入圣经引文时的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "変数を使って引用フォーマットをカスタマイズします： {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "聖書のEPUBを一度インポートし、ローカルの章データをオフラインの引用検索に使用します。",
+          "target": "导入圣经EPUB一次，并使用本地章节数据进行离线引文搜索。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "引用パイプラインがインポートされたローカル聖書データを使用できるようにします。",
+          "target": "允许引文管道使用导入的本地圣经数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "オンライン取得を試みる前に、インポートされたオフライン聖書を確認します。",
+          "target": "在尝试在线获取之前，检查导入的离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "オフラインデータが不足している場合、プラグインがオンラインの引用プロバイダーを試すことを許可します。",
+          "target": "如果离线数据不可用，允许插件尝试在线引文提供商。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "言語ごとに1つのオフライン聖書をインストールできます。言語はEPUBのメタデータから検出されます。",
+          "target": "每种语言可安装一本离线圣经。语言从EPUB元数据中检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "新しい言語を追加するにはEPUBをインポートしてください。既存のものを置き換えるには、まず削除してください。",
+          "target": "导入EPUB以添加新语言。要替换现有语言，请先将其移除。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "성경 참조를 위한 언어를 선택합니다",
+          "target": "选择圣经引文的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "\"링크하고 열기\" 명령을 목록의 맨 위로 이동합니다",
+          "target": "将“创建链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "활성화하면 성경 텍스트를 변환할 때 현재 링크 텍스트가 유지됩니다",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "활성화하면 링크에 언어 매개변수가 추가되지 않습니다. 링크는 JW Library의 언어로 열립니다",
+          "target": "启用后，链接不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "활성화하면 이미 변환된 jwlibrary:// 링크가 현재 형식 설정에 따라 재변환됩니다. 이를 통해 모든 링크를 최신 설정에 맞게 업데이트할 수 있습니다.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您将所有链接更新为最新的首选项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "링크 텍스트의 길이를 선택합니다",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "링크 앞, 뒤 또는 내부에 추가할 문자 또는 이모지, 글꼴 스타일을 선택합니다",
+          "target": "选择要添加在链接前、后或内部的字符或表情符号，并选择字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "링크 앞에 추가할 텍스트",
+          "target": "添加在链接之前的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "링크 텍스트 시작 부분에 추가할 텍스트",
+          "target": "添加在链接文本开头的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "링크 텍스트 끝 부분에 추가할 텍스트",
+          "target": "添加在链接文本末尾的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "링크 뒤에 추가할 텍스트",
+          "target": "添加在链接之后的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "링크에 대한 사전 설정 스타일을 선택합니다",
+          "target": "选择链接的预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "링크 텍스트의 글꼴 스타일을 선택합니다",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "성경 인용문이 삽입될 때의 형식을 구성합니다",
+          "target": "配置插入圣经引文时的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "변수를 사용하여 인용문 형식을 사용자 정의하세요: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "언어당 하나의 오프라인 성경을 설치할 수 있습니다. 언어는 EPUB 메타데이터에서 감지됩니다.",
+          "target": "每种语言可安装一本离线圣经。语言从EPUB元数据中检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "새 언어를 추가하려면 EPUB를 가져오세요. 기존 언어를 교체하려면 먼저 제거하세요.",
+          "target": "导入EPUB以添加新语言。要替换现有语言，请先将其移除。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kies de taal voor de bijbelverwijzingen",
+          "target": "选择圣经引文的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Verplaatst het commando \"Link en openen\" naar de bovenkant van de lijst",
+          "target": "将“创建链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Indien ingeschakeld, wordt de huidige linktekst behouden bij het converteren van bijbelteksten",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Indien ingeschakeld, worden geen taalparameters toegevoegd aan het einde van een link. Links worden geopend in de taal van de JW Library",
+          "target": "启用后，链接不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Indien ingeschakeld, worden reeds geconverteerde jwlibrary:// links opnieuw geconverteerd volgens de huidige opmaak-instellingen. Dit maakt het mogelijk om alle links bij te werken naar je nieuwste voorkeuren.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您将所有链接更新为最新的首选项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kies de lengte van de linktekst",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst die voor de link wordt toegevoegd",
+          "target": "添加在链接之前的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst die aan het begin van de linktekst wordt toegevoegd",
+          "target": "添加在链接文本开头的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst die aan het einde van de linktekst wordt toegevoegd",
+          "target": "添加在链接文本末尾的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tekst die na de link wordt toegevoegd",
+          "target": "添加在链接之后的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kies een stijlsjabloon voor de link",
+          "target": "选择链接的样式模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kies de tekststijl voor de linktekst",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Configureer hoe bijbelcitaten worden geformatteerd wanneer ze worden ingevoegd",
+          "target": "配置插入圣经引文时的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pas het citaatformaat aan met variabelen: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Per taal kan één offline Bijbel worden geïnstalleerd. De taal wordt gedetecteerd uit de EPUB-metadata.",
+          "target": "每种语言可安装一本离线圣经。语言从EPUB元数据中检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Importeer een EPUB om een nieuwe taal toe te voegen. Verwijder een bestaande eerst om deze te vervangen.",
+          "target": "导入EPUB以添加新语言。要替换现有语言，请先将其移除。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Selecione o idioma para as referências da Bíblia",
+          "target": "选择圣经引文的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Move o comando \"Criar hiperligação e abrir\" para o topo da lista",
+          "target": "将“创建链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Quando ativo, o texto atual será mantido ao converter textos bíblicos",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Quando ativado, as hiperligações jwlibrary:// já convertidas serão reconvertidas de acordo com as configurações de formatação atuais. Isso permite atualizar todas as hiperligações para corresponder às suas preferências mais recentes.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您将所有链接更新为最新的首选项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Escolha o comprimento do texto do livro bíblico na hiperligação",
+          "target": "选择链接文本中圣经书卷的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texto a adicionar antes da hiperligação",
+          "target": "添加在链接之前的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": " Texto a adicionar no início do texto da hiperligação",
+          "target": "添加在链接文本开头的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texto a adicionar no final do texto da hiperligação",
+          "target": "添加在链接文本末尾的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Texto a adicionar após a hiperligação",
+          "target": "添加在链接之后的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Escolha um estilo predefinido para as hiperligações",
+          "target": "选择链接的预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Escolha o estilo da fonte para o texto da hiperligação",
+          "target": "选择链接文本的字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Configure o formato das citações bíblicas inseridas",
+          "target": "配置插入圣经引文时的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Personalize o formato da citação usando variáveis: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}、{bibleRefLinked}、{quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pode ser instalada uma Bíblia offline por idioma. O idioma é detectado a partir dos metadados do EPUB.",
+          "target": "可以为每种语言安装一本离线圣经。语言从EPUB元数据中检测。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Выберите язык для библейских ссылок",
+          "target": "选择圣经经文引用的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Перемещает команду «Создать ссылку и открыть» в начало списка",
+          "target": "将“创建链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Если включено, текущий текст ссылки сохраняется при конвертации библейского текста",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Если включено, параметр языка не добавляется к ссылке. Ссылки будут открываться на языке JW Library",
+          "target": "启用后，链接中不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Если включено, уже сконвертированные ссылки jwlibrary:// будут переконвертированы согласно текущим настройкам форматирования. Это позволяет обновить все ссылки в соответствии с последними предпочтениями.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您更新所有链接以匹配最新的偏好设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Выберите длину текста ссылки",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Выберите символы или эмодзи для добавления до, после или внутри ссылки, выберите стиль шрифта",
+          "target": "选择在链接前、后或内部添加的字符或表情符号，并选择字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Текст, добавляемый перед ссылкой",
+          "target": "在链接前添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Текст, добавляемый в начало текста ссылки",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Текст, добавляемый в конец текста ссылки",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Текст, добавляемый после ссылки",
+          "target": "在链接后添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Выберите готовый стиль для ссылки",
+          "target": "为链接选择一个预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Выберите стиль шрифта для текста ссылки",
+          "target": "为链接文本选择字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Настройте формат библейских цитат при вставке",
+          "target": "配置插入时圣经引文的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Настройте формат цитаты с помощью переменных: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}, {bibleRefLinked}, {quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Импортируйте EPUB Библии один раз и используйте локальные данные глав для офлайн-поиска цитат.",
+          "target": "导入一次圣经EPUB，并使用本地章节数据进行离线引文查找。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Разрешить конвейеру цитат использовать импортированные локальные данные Библии.",
+          "target": "允许引文管道使用导入的本地圣经数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Сначала проверять импортированную офлайн-Библию перед попыткой онлайн-поиска.",
+          "target": "在尝试在线查找之前，先检查已导入的离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Если офлайн-данные отсутствуют, разрешить плагину попытаться использовать онлайн-провайдер цитат.",
+          "target": "如果没有离线数据，允许插件尝试使用在线引文提供程序。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Для каждого языка можно установить одну офлайн-Библию. Язык определяется по метаданным EPUB.",
+          "target": "每种语言只能安装一本离线圣经。语言从EPUB元数据中确定。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Импортируйте EPUB, чтобы добавить новый язык. Чтобы заменить существующую, сначала удалите её.",
+          "target": "导入EPUB以添加新语言。要替换现有版本，请先删除它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Piliin ang wika para sa mga reperensiya sa Bibliya",
+          "target": "选择圣经经文引用的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Inililipat ang utos na \"I-link at buksan\" sa tuktok ng listahan",
+          "target": "将“创建链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kapag pinagana, ang kasalukuyang teksto ng link ay pananatilihin kapag kino-convert ang teksto sa Bibliya",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kapag pinagana, walang parameter ng wika ang idaragdag sa link. Bubuksan ang mga link sa wika ng JW Library",
+          "target": "启用后，链接中不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kapag pinagana, ang mga na-convert na jwlibrary:// link ay muling iko-convert ayon sa kasalukuyang mga setting ng formatting. Ito ay nagbibigay-daan sa iyong i-update ang lahat ng link upang tumugma sa iyong pinakabagong mga kagustuhan.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您更新所有链接以匹配最新的偏好设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Piliin ang haba ng teksto ng link",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Teksto na idaragdag bago ang link",
+          "target": "在链接前添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Teksto na idaragdag sa simula ng teksto ng link",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Teksto na idaragdag sa dulo ng teksto ng link",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Teksto na idaragdag pagkatapos ng link",
+          "target": "在链接后添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Pumili ng preset na estilo para sa link",
+          "target": "为链接选择一个预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Piliin ang estilo ng font para sa teksto ng link",
+          "target": "为链接文本选择字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "I-configure kung paano nakaformat ang mga sipi sa Bibliya kapag inilagay",
+          "target": "配置插入时圣经引文的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "I-customize ang format ng sipi gamit ang mga variable: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}, {bibleRefLinked}, {quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mag-import ng Bible EPUB nang isang beses at gamitin ang lokal na data ng kabanata para sa offline na paghahanap ng sipi.",
+          "target": "导入一次圣经EPUB，并使用本地章节数据进行离线引文查找。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Payagan ang pipeline ng sipi na gamitin ang na-import na lokal na data ng Bibliya.",
+          "target": "允许引文管道使用导入的本地圣经数据。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Suriin ang na-import na offline na Bibliya bago subukang kunin online.",
+          "target": "在尝试在线查找之前，先检查已导入的离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Kung walang offline na data, payagan ang plugin na subukan ang online na tagapagbigay ng sipi.",
+          "target": "如果没有离线数据，允许插件尝试使用在线引文提供程序。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Isang offline na Bibliya lamang ang maaaring i-install kada wika. Ang wika ay natutukoy mula sa metadata ng EPUB.",
+          "target": "每种语言只能安装一本离线圣经。语言从EPUB元数据中确定。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mag-import ng EPUB upang magdagdag ng bagong wika. Para palitan ang umiiral, alisin muna ito.",
+          "target": "导入EPUB以添加新语言。要替换现有版本，请先删除它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Chọn ngôn ngữ cho các tham chiếu Kinh Thánh",
+          "target": "选择圣经经文引用的语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Di chuyển lệnh \"Tạo liên kết và mở\" lên đầu danh sách",
+          "target": "将“创建链接并打开”命令移至列表顶部"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Khi bật, văn bản liên kết hiện tại sẽ được giữ nguyên khi chuyển đổi văn bản Kinh Thánh",
+          "target": "启用后，在转换圣经文本时将保留当前链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Khi bật, tham số ngôn ngữ sẽ không được thêm vào liên kết. Liên kết sẽ mở theo ngôn ngữ của JW Library",
+          "target": "启用后，链接中不会添加语言参数。链接将以JW Library的语言打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Khi bật, các liên kết jwlibrary:// đã được chuyển đổi trước đó sẽ được chuyển đổi lại theo cài đặt định dạng hiện tại. Điều này cho phép bạn cập nhật tất cả liên kết để phù hợp với tùy chọn mới nhất của mình.",
+          "target": "启用后，已转换的jwlibrary://链接将根据当前格式设置重新转换。这允许您更新所有链接以匹配最新的偏好设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Chọn độ dài của văn bản liên kết",
+          "target": "选择链接文本的长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Văn bản thêm trước liên kết",
+          "target": "在链接前添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Văn bản thêm ở đầu văn bản liên kết",
+          "target": "在链接文本开头添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Văn bản thêm ở cuối văn bản liên kết",
+          "target": "在链接文本末尾添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Văn bản thêm sau liên kết",
+          "target": "在链接后添加的文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Chọn một kiểu định dạng sẵn cho liên kết",
+          "target": "为链接选择一个预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Chọn kiểu chữ cho văn bản liên kết",
+          "target": "为链接文本选择字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Cấu hình cách trích dẫn Kinh Thánh được định dạng khi chèn vào",
+          "target": "配置插入时圣经引文的格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Tùy chỉnh định dạng trích dẫn bằng các biến: {bibleRef}, {bibleRefLinked}, {quote}",
+          "target": "使用变量自定义引文格式：{bibleRef}, {bibleRefLinked}, {quote}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Mỗi ngôn ngữ có thể cài đặt một bản Kinh Thánh ngoại tuyến. Ngôn ngữ được phát hiện từ siêu dữ liệu EPUB.",
+          "target": "每种语言只能安装一本离线圣经。语言从EPUB元数据中确定。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Nhập một tệp EPUB để thêm một ngôn ngữ mới. Để thay thế bản hiện có, hãy xóa bản đó trước.",
+          "target": "导入EPUB以添加新语言。要替换现有版本，请先删除它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Tapali Baibolo wa kunse kwa intaneti uwaletwa.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Zatím nejsou nainstalovány žádné offline Bible.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Der er endnu ikke installeret nogen offline-bibler.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Es ist noch keine Offline-Bibel installiert.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "No offline Bibles installed yet.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Aún no hay Biblias sin conexión instaladas.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Offline-Raamattuja ei ole vielä asennettu.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Aucune Bible hors ligne n'est encore installée.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Još nije instalirana nijedna izvanmrežna Biblija.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Nessuna Bibbia offline ancora installata.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "オフライン聖書はまだインストールされていません。",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "아직 설치된 오프라인 성경이 없습니다.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Er zijn nog geen offline Bijbels geïnstalleerd.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Ainda não há Bíblias offline instaladas.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Офлайн-Библии ещё не установлены.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Wala pang naka-install na offline na Bibliya.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "empty",
+          "source": "Chưa có bản Kinh Thánh ngoại tuyến nào được cài đặt.",
+          "target": "尚未安装任何离线圣经。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Invalid verse ranges",
+          "target": "无效的经文范围"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "No EPUB file was selected.",
+          "target": "未选择EPUB文件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Could not detect a supported language from the EPUB metadata.",
+          "target": "无法从EPUB元数据中检测到支持的语言。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ululimi",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Isulapo amalinki mu kupanga",
+          "target": "链接排序"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Panga linki ishishipanda pa lulimi",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pyangulula amalinki ayalipo",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ifyo linki yamoneka",
+          "target": "链接外观"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ica kutampa kunse kwa linki",
+          "target": "链接前文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ica kutampa mu kati ka linki",
+          "target": "链接内前缀文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ica kupwisha mu kati ka linki",
+          "target": "链接内后缀文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ica kupwisha kunse kwa linki",
+          "target": "链接后文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ifyalipekanishiwa",
+          "target": "预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Imfwala ya makalata",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ukumona linki",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ukupwililika amashiwi ya Baibolo",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ifya kubomfya ifyalipekanishiwa",
+          "target": "使用预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Icilangililo ca mashiwi",
+          "target": "引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ukumona amashiwi ya Baibolo",
+          "target": "圣经引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Baibolo wa kunse kwa intaneti",
+          "target": "离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suminisha Baibolo wa kunse kwa intaneti",
+          "target": "导入离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cabilisha Baibolo wa kunse kwa intaneti",
+          "target": "管理离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suminisha ukufwaya pa intaneti",
+          "target": "允许在线查找"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BaiBolo ba kunse kwa intaneti abaletwa",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ifyakucita pali Baibolo wa kunse kwa intaneti",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jazyk",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Automaticky otevřít odkaz",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Zachovat text odkazu",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vytvářet odkazy bez jazykového parametru",
+          "target": "创建无语言参数的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Znovu převést existující odkazy",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Délka textu odkazu",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Styl odkazu",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Předpona mimo odkaz",
+          "target": "链接外前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Předpona uvnitř odkazu",
+          "target": "链接内前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Přípona uvnitř odkazu",
+          "target": "链接内后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Přípona mimo odkaz",
+          "target": "链接外后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Přednastavené styly",
+          "target": "预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Styl písma",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Náhled odkazu",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Formátování biblické citace",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Přednastavené šablony",
+          "target": "预设模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Šablona citace",
+          "target": "引文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Náhled biblické citace",
+          "target": "圣经引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Offline Bible",
+          "target": "离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Povolit offline Bibli",
+          "target": "启用离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Upřednostnit offline citace",
+          "target": "优先使用离线引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Povolit online zálohu",
+          "target": "允许在线备用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nainstalované offline Bible",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Akce offline Bible",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sprog",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Åbn links automatisk",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Behold linktekst",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Opret links uden sprogangivelse",
+          "target": "创建无语言标识的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Konvertér eksisterende links igen",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Længde på linktekst",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linkstil",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Præfiks uden for link",
+          "target": "链接外前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Præfiks inde i link",
+          "target": "链接内前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffiks inde i link",
+          "target": "链接内后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffiks uden for link",
+          "target": "链接外后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stilforvalg",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Skrifttype",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Forhåndsvisning af link",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Formatering af bibelcitat",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Skabelonforvalg",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Citatskabelon",
+          "target": "引文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Forhåndsvisning af bibelcitat",
+          "target": "圣经引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Aktivér offline-bibel",
+          "target": "启用离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Foretræk offline-citater",
+          "target": "优先使用离线引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tillad online reserve",
+          "target": "允许在线备用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Installerede offline-bibler",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Handlinger for offline-bibel",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sprache",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Links automatisch öffnen",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linktext beibehalten",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Links sprachunabhängig erstellen",
+          "target": "创建独立于语言的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bestehende Links erneut konvertieren",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linktext-Länge",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Präfix außerhalb des Links",
+          "target": "链接外前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Präfix innerhalb des Links",
+          "target": "链接内前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffix innerhalb des Links",
+          "target": "链接内后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffix außerhalb des Links",
+          "target": "链接外后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stilvorlagen",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Schriftstil",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Link Vorschau",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vorlagenvoreinstellungen",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Zitatvorlage",
+          "target": "引文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Offline-Bibel aktivieren",
+          "target": "启用离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Offline-Zitate bevorzugen",
+          "target": "优先使用离线引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Online-Rückfall erlauben",
+          "target": "允许在线备用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Installierte Offline-Bibeln",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Language",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open links automatically",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Keep link text",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create links language independent",
+          "target": "创建独立于语言的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reconvert existing links",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Link text length",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Link styling",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefix outside link",
+          "target": "链接外前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefix inside link",
+          "target": "链接内前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffix inside link",
+          "target": "链接内后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffix outside link",
+          "target": "链接外后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Style presets",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Font style",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Link preview",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bible quote formatting",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bible quote preview",
+          "target": "圣经引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Enable offline Bible",
+          "target": "启用离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefer offline quotes",
+          "target": "优先使用离线引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Allow online fallback",
+          "target": "允许在线备用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Installed offline Bibles",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Offline Bible actions",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Idioma",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir enlaces automáticamente",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Conservar texto del enlace",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Crear enlaces sin idioma específico",
+          "target": "创建无特定语言的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reconvertir enlaces existentes",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Longitud del texto del enlace",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Estilo del enlace",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefijo fuera del enlace",
+          "target": "链接外前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefijo dentro del enlace",
+          "target": "链接内前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sufijo dentro del enlace",
+          "target": "链接内后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sufijo fuera del enlace",
+          "target": "链接外后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Estilos predefinidos",
+          "target": "预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Estilo de fuente",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vista previa del enlace",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Formato de Citas Bíblicas",
+          "target": "圣经引用格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Plantillas predefinidas",
+          "target": "预设模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Plantilla de cita",
+          "target": "引用模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vista Previa de Cita Bíblica",
+          "target": "圣经引用预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Biblias sin conexión instaladas",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Acciones de la Biblia sin conexión",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kieli",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Avaa linkit automaattisesti",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Säilytä linkkiteksti",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Luo linkit kielestä riippumattomiksi",
+          "target": "创建与语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linkin tekstin pituus",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linkin tyyli",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Etuliite linkin ulkopuolella",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Etuliite linkin sisällä",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jälkiliite linkin sisällä",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jälkiliite linkin ulkopuolella",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fonttityyli",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linkin esikatselu",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Raamatunlainauksen Muotoilu",
+          "target": "圣经引用格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Malliesiasutukset",
+          "target": "预设模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lainausmalli",
+          "target": "引用模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Raamatunlainauksen Esikatselu",
+          "target": "圣经引用预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Asennetut offline-Raamatut",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Offline-Raamatun toiminnot",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Langue",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Conserver le texte du lien",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Créer des liens indépendants de la langue",
+          "target": "创建与语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reconvertir les liens existants",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Longueur du texte du lien",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Style du lien",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Préfixe en dehors du lien",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Préfixe à l'intérieur du lien",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffixe à l'intérieur du lien",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffixe en dehors du lien",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Préréglages de style",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Style de police",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Aperçu du lien",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Formatage des citations bibliques",
+          "target": "圣经引用格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Préréglages de modèle",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Modèle de citation",
+          "target": "引用模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Aperçu de la citation biblique",
+          "target": "圣经引用预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bibles hors ligne installées",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Actions de la Bible hors ligne",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jezik",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Automatski otvori linkove",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Zadrži tekst linka",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Izradi linkove neovisno o jeziku",
+          "target": "创建与语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ponovno pretvori postojeće linkove",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Duljina teksta linka",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stil linka",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefiks izvan linka",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefiks unutar linka",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sufiks unutar linka",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sufiks izvan linka",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stilske predloške",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stil fonta",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pregled linka",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Oblikovanje biblijskog citata",
+          "target": "圣经引用格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Predlošci predložaka",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Predložak citata",
+          "target": "引用模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pregled biblijskog citata",
+          "target": "圣经引用预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Instalirane izvanmrežne Biblije",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Radnje izvanmrežne Biblije",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lingua",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Apri i link automaticamente",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mantieni il testo del link",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Crea link indipendenti dalla lingua",
+          "target": "创建与语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Riconverti i link esistenti",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lunghezza del testo del link",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stile del link",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefisso esterno al link",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefisso interno al link",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffisso interno al link",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffisso esterno al link",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Preset di stile",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stile del carattere",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Anteprima del link",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Formattazione della citazione biblica",
+          "target": "圣经引用格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Preset di modello",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Modello di citazione",
+          "target": "引用模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Anteprima della citazione biblica",
+          "target": "圣经引用预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bibbia offline",
+          "target": "离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abilita la Bibbia offline",
+          "target": "启用离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Preferisci citazioni offline",
+          "target": "优先使用离线引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Consenti fallback online",
+          "target": "允许在线回退"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bibbie offline installate",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Azioni Bibbia offline",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "言語",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクを自動的に開く",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクテキストを保持する",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "言語に依存しないリンクを作成する",
+          "target": "创建与语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "既存のリンクを再変換する",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクテキストの長さ",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクのスタイル",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクの外側の接頭辞",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクの内側の接頭辞",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクの内側の接尾辞",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクの外側の接尾辞",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "スタイルプリセット",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "フォントスタイル",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "リンクのプレビュー",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "聖書引用のフォーマット",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "テンプレートプリセット",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "引用テンプレート",
+          "target": "引文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "聖書引用のプレビュー",
+          "target": "圣经引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "オフライン聖書",
+          "target": "离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "オフライン聖書を有効にする",
+          "target": "启用离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "オフライン引用を優先する",
+          "target": "优先使用离线引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "オンラインフォールバックを許可する",
+          "target": "允许在线回退"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "インストール済みのオフライン聖書",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "オフライン聖書の操作",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "언어",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 자동 열기",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 텍스트 유지",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크를 언어 독립적으로 생성",
+          "target": "创建语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "기존 링크 재변환",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 텍스트 길이",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 스타일",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 외부 접두사",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 내부 접두사",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 내부 접미사",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 외부 접미사",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "스타일 프리셋",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "글꼴 스타일",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "링크 미리보기",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "성경 인용문 형식",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "템플릿 프리셋",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "인용문 템플릿",
+          "target": "引文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "성경 인용문 미리보기",
+          "target": "圣经引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "설치된 오프라인 성경",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "오프라인 성경 작업",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Taal",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Links automatisch openen",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linktekst behouden",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Links taalonafhankelijk maken",
+          "target": "创建语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bestaande links opnieuw converteren",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Voorvoegsel buiten de link",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Voorvoegsel binnen de link",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Achtervoegsel binnen de link",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Achtervoegsel buiten de link",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stijlsjablonen",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tekst stijl",
+          "target": "文本样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Linkvoorbeeld",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bijbelcitaat Formattering",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sjabloonvoorinstellingen",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Citaatsjabloon",
+          "target": "引文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bijbelcitaat Voorbeeld",
+          "target": "圣经引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Geïnstalleerde offline Bijbels",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Acties offline Bijbel",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abrir automaticamente hiperligações da JW Library",
+          "target": "自动打开JW Library链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Manter o texto da hiperligação",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Criar hiperligações independente de idioma",
+          "target": "创建语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reconverter hiperligações existentes",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Comprimento do texto da hiperligação do livro bíblico",
+          "target": "圣经书卷链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Estilos de hiperligação",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefixo fora da hiperligação",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefixo dentro da hiperligação",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sufixo dentro da hiperligação",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sufixo fora da hiperligação",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pré-visualização do estilo da hiperligação",
+          "target": "链接样式预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Foramato da citação bíblica",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Predefinições de modelo",
+          "target": "模板预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Modelo de citação",
+          "target": "引文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pré-visualização da citação bíblica",
+          "target": "圣经引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bíblias offline instaladas",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ações da Bíblia offline",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Язык",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Открывать ссылки автоматически",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Сохранять текст ссылки",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Создавать ссылки независимо от языка",
+          "target": "创建语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Переконвертировать существующие ссылки",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Длина текста ссылки",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Стиль ссылки",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Префикс снаружи ссылки",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Префикс внутри ссылки",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Суффикс внутри ссылки",
+          "target": "链接内部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Суффикс снаружи ссылки",
+          "target": "链接外部后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Предустановки стиля",
+          "target": "样式预设"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Стиль шрифта",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Предварительный просмотр ссылки",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Форматирование библейской цитаты",
+          "target": "圣经引文格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Шаблоны",
+          "target": "模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Шаблон цитаты",
+          "target": "引文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Предварительный просмотр цитаты",
+          "target": "引文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Офлайн-Библия",
+          "target": "离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Включить офлайн-Библию",
+          "target": "启用离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Предпочитать офлайн-цитаты",
+          "target": "优先使用离线引文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Разрешить онлайн-резерв",
+          "target": "允许在线回退"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Установленные офлайн-Библии",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Действия с офлайн-Библией",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Wika",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Buksan ang mga link nang awtomatiko",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Panatilihin ang teksto ng link",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gumawa ng mga link na hindi nakadepende sa wika",
+          "target": "创建语言无关的链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "I-reconvert ang mga umiiral na link",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Haba ng teksto ng link",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Estilo ng link",
+          "target": "链接样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefix sa labas ng link",
+          "target": "链接外部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Prefix sa loob ng link",
+          "target": "链接内部前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffix sa loob ng link",
+          "target": "链接内后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suffix sa labas ng link",
+          "target": "链接外后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mga preset na estilo",
+          "target": "预设样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Estilo ng font",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Preview ng link",
+          "target": "链接预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pag-format ng sipi sa Bibliya",
+          "target": "圣经经文格式化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Preview ng sipi sa Bibliya",
+          "target": "圣经经文预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Offline na Bibliya",
+          "target": "离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Paganahin ang offline na Bibliya",
+          "target": "启用离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mas gusto ang mga offline na sipi",
+          "target": "优先使用离线经文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Payagan ang online na fallback",
+          "target": "允许在线回退"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mga naka-install na offline na Bibliya",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mga aksyon para sa offline na Bibliya",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ngôn ngữ",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tự động mở liên kết",
+          "target": "自动打开链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Giữ nguyên văn bản liên kết",
+          "target": "保留链接文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tạo liên kết không phụ thuộc ngôn ngữ",
+          "target": "创建语言无关链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chuyển đổi lại các liên kết hiện có",
+          "target": "重新转换现有链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Độ dài văn bản liên kết",
+          "target": "链接文本长度"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kiểu định dạng liên kết",
+          "target": "链接格式样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tiền tố bên ngoài liên kết",
+          "target": "链接外前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tiền tố bên trong liên kết",
+          "target": "链接内前缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hậu tố bên trong liên kết",
+          "target": "链接内后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hậu tố bên ngoài liên kết",
+          "target": "链接外后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mẫu kiểu định dạng",
+          "target": "格式样式模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kiểu chữ",
+          "target": "字体样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Định dạng trích dẫn Kinh Thánh",
+          "target": "圣经经文格式化"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mẫu định dạng",
+          "target": "格式模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mẫu trích dẫn",
+          "target": "经文模板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kinh Thánh ngoại tuyến đã cài đặt",
+          "target": "已安装的离线圣经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hành động Kinh Thánh ngoại tuyến",
+          "target": "离线圣经操作"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "English",
+          "target": "英语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Croatian",
+          "target": "克罗地亚语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Danish",
+          "target": "丹麦语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Spanish",
+          "target": "西班牙语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "French",
+          "target": "法语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Finnish",
+          "target": "芬兰语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Korean",
+          "target": "韩语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dutch",
+          "target": "荷兰语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Portuguese (Portugal)",
+          "target": "葡萄牙语（葡萄牙）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vietnamese",
+          "target": "越南语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Czech",
+          "target": "捷克语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "German",
+          "target": "德语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "American Sign Language",
+          "target": "美国手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Argentinean Sign Language",
+          "target": "阿根廷手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Australian Sign Language",
+          "target": "澳大利亚手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Austrian Sign Language",
+          "target": "奥地利手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Belgian French Sign Language",
+          "target": "比利时法语手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bolivian Sign Language",
+          "target": "玻利维亚手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "British Sign Language",
+          "target": "英国手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Burkina Faso Sign Language",
+          "target": "布基纳法索手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Central African Republic Sign Language",
+          "target": "中非共和国手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chilean Sign Language",
+          "target": "智利手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Colombian Sign Language",
+          "target": "哥伦比亚手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Costa Rican Sign Language",
+          "target": "哥斯达黎加手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Croatian Sign Language",
+          "target": "克罗地亚手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cuban Sign Language",
+          "target": "古巴手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Dutch Sign Language",
+          "target": "荷兰手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ecuadorian Sign Language",
+          "target": "厄瓜多尔手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Finnish Sign Language",
+          "target": "芬兰手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "French Sign Language",
+          "target": "法国手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "German Sign Language",
+          "target": "德国手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Honduras Sign Language",
+          "target": "洪都拉斯手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Irish Sign Language",
+          "target": "爱尔兰手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ivorian Sign Language",
+          "target": "科特迪瓦手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jamaican Sign Language",
+          "target": "牙买加手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Korean Sign Language",
+          "target": "韩国手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Langue des signes camerounaise",
+          "target": "喀麦隆手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mexican Sign Language",
+          "target": "墨西哥手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "New Zealand Sign Language",
+          "target": "新西兰手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nicaraguan Sign Language",
+          "target": "尼加拉瓜手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Panamanian Sign Language",
+          "target": "巴拿马手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Paraguayan Sign Language",
+          "target": "巴拉圭手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Peruvian Sign Language",
+          "target": "秘鲁手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Portuguese Sign Language",
+          "target": "葡萄牙手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Quebec Sign Language",
+          "target": "魁北克手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Salvadoran Sign Language",
+          "target": "萨尔瓦多手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Spanish Sign Language",
+          "target": "西班牙手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Uruguayan Sign Language",
+          "target": "乌拉圭手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Venezuelan Sign Language",
+          "target": "委内瑞拉手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Vietnamese Sign Language",
+          "target": "越南手语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Italian",
+          "target": "意大利语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Russian",
+          "target": "俄语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Japanese",
+          "target": "日语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Tagalog",
+          "target": "他加禄语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Unable to extract Bible text - no verse ranges",
+          "target": "无法提取圣经文本 - 无经文范围"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
