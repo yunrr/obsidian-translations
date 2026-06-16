@@ -1,0 +1,1543 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "custom-selected-word-count",
+    "version": "1.0.1",
+    "title": "Custom Selected Word Count",
+    "description": "Custom Selected Word Count Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.7.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Word count: 0",
+          "target": "字数：0"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Matches: (enter sample text above)",
+          "target": "匹配项：（在上方输入示例文本）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Word count: Error",
+          "target": "字数：错误"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Matches: Invalid regex",
+          "target": "匹配项：无效的正则表达式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Letters only",
+          "target": "仅字母"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "All characters (excluding spaces)",
+          "target": "所有字符（不包括空格）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "all",
+          "target": "全部"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "All characters (including spaces)",
+          "target": "所有字符（包括空格）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Recent Counts",
+          "target": "最近计数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Copy",
+          "target": "复制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "details",
+          "target": "details"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "summary",
+          "target": "summary"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "hr",
+          "target": "hr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Log export error:",
+          "target": "日志导出错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Live count disabled, skipping selection change update",
+          "target": "实时计数已禁用，跳过选择更改更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All flag check:",
+          "target": "全选标志检查："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Skipping selection change - Select All was recently processed",
+          "target": "跳过选择更改 - 全选最近已处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection change - Detected CTRL-A selection (includes title), showing content count",
+          "target": "选择更改 - 检测到 CTRL-A 选择（包含标题），显示内容计数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection change - Stored CTRL-A content text, length:",
+          "target": "选择更改 - 已存储 CTRL-A 内容文本，长度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection change - Setting CTRL-A status bar text:",
+          "target": "选择更改 - 设置 CTRL-A 状态栏文本："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "=== Selection Change Debug ===",
+          "target": "=== 选择更改调试 ==="
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "View type:",
+          "target": "视图类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selected text length:",
+          "target": "选定文本长度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selected text preview:",
+          "target": "选定文本预览："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar enabled:",
+          "target": "状态栏已启用："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar item exists:",
+          "target": "状态栏项存在："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Live count enabled:",
+          "target": "实时计数已启用："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection change - Active element:",
+          "target": "选择更改 - 活动元素："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection change - Is iframe?",
+          "target": "选择更改 - 是 iframe 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection change - Iframe selection:",
+          "target": "选择更改 - iframe 选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "chars",
+          "target": "字符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection change - Iframe text preview:",
+          "target": "选择更改 - iframe 文本预览："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection change - Iframe error:",
+          "target": "选择更改 - iframe 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Debounced selection change - updating status bar",
+          "target": "防抖选择更改 - 更新状态栏"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All detected (Ctrl+A or Cmd+A)!",
+          "target": "检测到全选（Ctrl+A 或 Cmd+A）！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All in Reading view - handling select all directly",
+          "target": "在阅读视图中全选 - 直接处理全选"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All flag set immediately:",
+          "target": "全选标志立即设置："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All timeout - extracting full document content",
+          "target": "全选超时 - 提取完整文档内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All - Processing document content:",
+          "target": "全选 - 处理文档内容："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All - Setting status bar text:",
+          "target": "全选 - 设置状态栏文本："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All - Stored content text, length:",
+          "target": "全选 - 已存储内容文本，长度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All - No content found in preview container or status bar not available",
+          "target": "全选 - 在预览容器中未找到内容或状态栏不可用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Select All in",
+          "target": "在"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "mode - will be handled by selection change",
+          "target": "模式中全选 - 将由选择更改处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Setting up status bar - showStatusBar:",
+          "target": "设置状态栏 - showStatusBar："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "enableLiveCount:",
+          "target": "enableLiveCount："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar disabled in settings",
+          "target": "状态栏在设置中已禁用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar item created and added",
+          "target": "状态栏项已创建并添加"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar clicked - cached Canvas selection:",
+          "target": "状态栏点击 - 缓存的画布选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Performing initial status bar update",
+          "target": "执行初始状态栏更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas polling detected selection change:",
+          "target": "画布轮询检测到选择变化："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas cached selection updated to:",
+          "target": "画布缓存选择已更新为："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas iframe not focused - clearing cached selection",
+          "target": "画布 iframe 未聚焦 - 清除缓存选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Not in Canvas view - clearing cached selection",
+          "target": "不在画布视图中 - 清除缓存选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas polling started",
+          "target": "画布轮询已启动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas polling stopped",
+          "target": "画布轮询已停止"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "HandleWordCount - MarkdownView mode:",
+          "target": "HandleWordCount - MarkdownView 模式："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Source mode selection (before frontmatter stripping):",
+          "target": "源代码模式选择（前置元数据剥离前）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Source mode selection (after frontmatter stripping):",
+          "target": "源代码模式选择（前置元数据剥离后）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Reading view selection object:",
+          "target": "阅读视图选择对象："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Preview container:",
+          "target": "预览容器："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Initial range text:",
+          "target": "初始范围文本："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Start container:",
+          "target": "起始容器："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "End container:",
+          "target": "结束容器："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Start in preview:",
+          "target": "起始于预览中："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "End in preview:",
+          "target": "结束于预览中："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Using selection from Reading view:",
+          "target": "使用来自阅读视图的选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Selection containers not within preview",
+          "target": "选择容器不在预览范围内"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Empty selection",
+          "target": "空选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No valid selection range found or preview container not found",
+          "target": "未找到有效的选择范围或预览容器未找到"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Live Preview mode selection (before frontmatter stripping):",
+          "target": "实时预览模式选择（前置元数据剥离前）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Live Preview mode selection (after frontmatter stripping):",
+          "target": "实时预览模式选择（前置元数据剥离后）："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "HandleWordCount - non-MarkdownView type:",
+          "target": "HandleWordCount - 非 MarkdownView 类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "HandleWordCount - using cached Canvas selection:",
+          "target": "HandleWordCount - 使用缓存的画布选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "HandleWordCount - trying fresh Canvas iframe selection...",
+          "target": "HandleWordCount - 尝试获取新的画布 iframe 选择..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "HandleWordCount - fresh Canvas iframe selection found:",
+          "target": "HandleWordCount - 找到新的画布 iframe 选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "HandleWordCount - Canvas iframe selection error:",
+          "target": "HandleWordCount - 画布 iframe 选择错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "HandleWordCount - Final selected text for",
+          "target": "HandleWordCount - 最终选定文本用于"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No active view found",
+          "target": "未找到活动视图"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No current selection, using stored selection",
+          "target": "无当前选择，使用存储的选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No text selected",
+          "target": "未选择文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Processing selection:",
+          "target": "处理选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Opening modal with counts:",
+          "target": "打开模态框，计数为："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Error in word count command:",
+          "target": "字数统计命令出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar update skipped - statusBarItem:",
+          "target": "状态栏更新已跳过 - statusBarItem："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "showStatusBar:",
+          "target": "showStatusBar："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Updating status bar for MarkdownView mode:",
+          "target": "为 MarkdownView 模式更新状态栏："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Reading view selection object:",
+          "target": "状态栏 - 阅读视图选择对象："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Preview container:",
+          "target": "状态栏 - 预览容器："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Range text:",
+          "target": "状态栏 - 范围文本："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Selection isCollapsed:",
+          "target": "状态栏 - 选择 isCollapsed："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Range collapsed:",
+          "target": "状态栏 - 范围已折叠："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Start container type:",
+          "target": "状态栏 - 起始容器类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - End container type:",
+          "target": "状态栏 - 结束容器类型："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Start offset:",
+          "target": "状态栏 - 起始偏移量："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - End offset:",
+          "target": "状态栏 - 结束偏移量："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Start in preview:",
+          "target": "状态栏 - 起始于预览中："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - End in preview:",
+          "target": "状态栏 - 结束于预览中："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Using selection from Reading view:",
+          "target": "状态栏 - 使用来自阅读视图的选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Selection containers not within preview",
+          "target": "状态栏 - 选择容器不在预览范围内"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Extracted text manually:",
+          "target": "状态栏 - 手动提取的文本："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Manual extraction failed:",
+          "target": "状态栏 - 手动提取失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - Empty or collapsed selection",
+          "target": "状态栏 - 空或折叠的选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Status bar - No valid selection range found or preview container not found",
+          "target": "状态栏 - 未找到有效的选择范围或预览容器未找到"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Updating status bar for non-MarkdownView type:",
+          "target": "为非 MarkdownView 类型更新状态栏："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas view properties:",
+          "target": "画布视图属性："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas view container:",
+          "target": "画布视图容器："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Active iframe:",
+          "target": "活动 iframe："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Iframe content accessible:",
+          "target": "Iframe 内容可访问："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Iframe contentWindow accessible:",
+          "target": "Iframe contentWindow 可访问："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Iframe selection text:",
+          "target": "Iframe 选择文本："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Iframe selection error:",
+          "target": "Iframe 选择错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Trying Canvas iframe selection...",
+          "target": "尝试画布 iframe 选择..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Active element:",
+          "target": "活动元素："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Is iframe?",
+          "target": "是 iframe 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Has contentWindow?",
+          "target": "有 contentWindow 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Iframe selection object:",
+          "target": "Iframe 选择对象："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Iframe selection rangeCount:",
+          "target": "Iframe 选择 rangeCount："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas iframe selection found:",
+          "target": "找到画布 iframe 选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas iframe selection text preview:",
+          "target": "画布 iframe 选择文本预览："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No iframe selection object found",
+          "target": "未找到 iframe 选择对象"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Canvas iframe selection error:",
+          "target": "画布 iframe 选择错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Iframe detection failed - activeElement is not a suitable iframe",
+          "target": "Iframe 检测失败 - activeElement 不是合适的 iframe"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Final selected text for",
+          "target": "最终选定文本用于"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Text preview:",
+          "target": "文本预览："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "No text selected, clearing status bar",
+          "target": "未选择文本，清除状态栏"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Storing selected text, length:",
+          "target": "存储选定文本，长度："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Setting status bar text:",
+          "target": "设置状态栏文本："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Error adding excluded heading:",
+          "target": "添加排除标题时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Error adding excluded phrase:",
+          "target": "添加排除短语时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Export logs",
+          "target": "导出日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Show the selected word count in the status bar next to Obsidian's built-in word count.",
+          "target": "在状态栏中 Obsidian 内置字数统计旁显示选定字数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Update the status bar count automatically when text is selected. (Requires status bar to be enabled)",
+          "target": "选择文本时自动更新状态栏计数。（需要启用状态栏）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hide Obsidian's built-in word count when the selected word count is enabled. (Requires status bar to be enabled)",
+          "target": "启用选定字数统计时隐藏 Obsidian 内置字数统计。（需要启用状态栏）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Customize the label shown before the count in the status bar. (Requires status bar to be enabled)",
+          "target": "自定义状态栏中计数前显示的标签。（需要启用状态栏）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display character count alongside word count in the modal.",
+          "target": "在模态框中同时显示字符数和字数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose how characters are counted. (Requires character count to be enabled)",
+          "target": "选择字符计数方式。（需要启用字符计数）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display sentence count alongside word count in the modal.",
+          "target": "在模态框中同时显示句子数和字数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Include timestamps when displaying word count history in the modal.",
+          "target": "在模态框中显示字数历史记录时包含时间戳。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For [[note name|alias]] links, only count \"alias\". For [link text](URL) links, only count \"link text\". • property: exclude-urls",
+          "target": "对于 [[笔记名|别名]] 链接，仅计数“别名”。对于 [链接文本](URL) 链接，仅计数“链接文本”。• 属性：exclude-urls"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, code will be excluded from word, character, and sentence counts.",
+          "target": "启用后，代码将被排除在字数、字符数和句子数统计之外。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude text within triple backtick (```) or tilde (~~~) code blocks. (Requires code exclusion to be enabled) • Property: exclude-code-blocks",
+          "target": "排除三重反引号（```）或波浪号（~~~）代码块内的文本。（需要启用代码排除）• 属性：exclude-code-blocks"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude text within single backticks (`). (Requires code exclusion to be enabled) • Property: exclude-inline-code",
+          "target": "排除单反引号（`）内的文本。（需要启用代码排除）• 属性：exclude-inline-code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, file paths will not be counted as words.",
+          "target": "启用后，文件路径将不被计为单词。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude paths starting with drive letters (e.g., C:\\). (Requires path exclusion to be enabled) • property: exclude-windows-paths",
+          "target": "排除以驱动器字母开头的路径（例如，C:\\\\）。（需要启用路径排除）• 属性：exclude-windows-paths"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude Unix-style paths starting with forward slash (e.g., /usr/local). (Requires path exclusion to be enabled) • property: exclude-unix-paths",
+          "target": "排除以正斜杠开头的 Unix 风格路径（例如，/usr/local）。（需要启用路径排除）• 属性：exclude-unix-paths"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude network paths starting with double backslash (e.g., \\\\server\\share). (Requires path exclusion to be enabled) • property: exclude-unc-paths",
+          "target": "排除以双反斜杠开头的网络路径（例如，\\\\\\\\server\\\\share）。（需要启用路径排除）• 属性：exclude-unc-paths"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude environment variable paths (e.g., %USERPROFILE%, $HOME). (Requires path exclusion to be enabled) • property: exclude-environment-paths",
+          "target": "排除环境变量路径（例如，%USERPROFILE%，$HOME）。（需要启用路径排除）• 属性：exclude-environment-paths"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, comments will be excluded from word, character, and sentence counts. • property: exclude-comments",
+          "target": "启用后，评论将从单词、字符和句子计数中排除。 • 属性：exclude-comments"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude Obsidian-style comments from text analysis. (Requires comment exclusion to be enabled)",
+          "target": "从文本分析中排除 Obsidian 风格的评论。（需要启用评论排除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When unchecked, only the comment markers (%% %%) are excluded, but the content inside is still counted. (Requires Obsidian comment exclusion to be enabled)",
+          "target": "未勾选时，仅排除评论标记（%% %%），但内部内容仍会被计数。（需要启用 Obsidian 评论排除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude HTML-style comments from text analysis. (Requires comment exclusion to be enabled)",
+          "target": "从文本分析中排除 HTML 风格的评论。（需要启用评论排除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When unchecked, only the comment markers (<!-- -->) are excluded, but the content inside is still counted. (Requires HTML comment exclusion to be enabled)",
+          "target": "未勾选时，仅排除评论标记（<!-- -->），但内部内容仍会被计数。（需要启用 HTML 评论排除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, Markdown headings will be excluded from word, character, and sentence counts. • property: exclude-headings",
+          "target": "启用后，Markdown 标题将从单词、字符和句子计数中排除。 • 属性：exclude-headings"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude only the # symbols but count the heading text. (Requires heading exclusion to be enabled)",
+          "target": "仅排除 # 符号，但计入标题文本。（需要启用标题排除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Exclude complete heading lines including the text. (Requires heading exclusion to be enabled)",
+          "target": "排除完整的标题行，包括文本。（需要启用标题排除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, specific words and phrases will be excluded from word, character, and sentence counts. • property: exclude-words-phrases",
+          "target": "启用后，特定单词和短语将从单词、字符和句子计数中排除。 • 属性：exclude-words-phrases"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of words to exclude (case-insensitive, exact matches only). (Requires words/phrases exclusion to be enabled)",
+          "target": "以逗号分隔的要排除的单词列表（不区分大小写，仅精确匹配）。（需要启用单词/短语排除）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable detailed logging for troubleshooting. May impact performance.",
+          "target": "启用详细日志记录以进行故障排除。可能会影响性能。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Allow custom regex for word detection. For advanced users only.",
+          "target": "允许使用自定义正则表达式进行单词检测。仅限高级用户。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show count in status bar",
+          "target": "在状态栏显示计数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable live updates",
+          "target": "启用实时更新"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Hide core word count",
+          "target": "隐藏核心字数统计"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Status bar label",
+          "target": "状态栏标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show character count",
+          "target": "显示字符计数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Character counting mode",
+          "target": "字符计数模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show sentence count",
+          "target": "显示句子计数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show date/time in history",
+          "target": "在历史记录中显示日期/时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inline comment overrides",
+          "target": "内联评论覆盖"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude non-visible portions of links",
+          "target": "排除链接的不可见部分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude code",
+          "target": "排除代码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude code blocks",
+          "target": "排除代码块"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude inline code",
+          "target": "排除内联代码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude paths from word count",
+          "target": "从字数统计中排除路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude Windows paths",
+          "target": "排除 Windows 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude Unix paths",
+          "target": "排除 Unix 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude UNC paths",
+          "target": "排除 UNC 路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude environment paths",
+          "target": "排除环境路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude comments from text analysis",
+          "target": "从文本分析中排除评论"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude Obsidian comments (%% %%)",
+          "target": "排除 Obsidian 评论（%% %%）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude Obsidian comment content",
+          "target": "排除 Obsidian 评论内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude HTML comments (<!-- -->)",
+          "target": "排除 HTML 评论（<!-- -->）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude HTML comment content",
+          "target": "排除 HTML 评论内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude headings from text analysis",
+          "target": "从文本分析中排除标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude heading markers only",
+          "target": "仅排除标题标记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude entire heading lines",
+          "target": "排除整个标题行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude words and phrases from text analysis",
+          "target": "从文本分析中排除单词和短语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excluded words",
+          "target": "排除的单词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable debug logging",
+          "target": "启用调试日志记录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Export log files",
+          "target": "导出日志文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable advanced regex (expert only)",
+          "target": "启用高级正则表达式（仅限专家）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom word detection regex",
+          "target": "自定义单词检测正则表达式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Selected: ",
+          "target": "已选择："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "The, and, or, but",
+          "target": "The, and, or, but"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Exclude heading section from word count",
+          "target": "从字数统计中排除标题部分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Exclude phrase from word count",
+          "target": "从字数统计中排除短语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Export current log files",
+          "target": "导出当前日志文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Count copied to clipboard",
+          "target": "计数已复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please open a file first",
+          "target": "请先打开一个文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No text selected",
+          "target": "未选择文本"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error counting words. Please try again or check console for details.",
+          "target": "计数单词时出错。请重试或检查控制台获取详细信息。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cannot exclude empty heading",
+          "target": "无法排除空标题"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to add heading to exclusion list",
+          "target": "将标题添加到排除列表失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cannot exclude empty phrase",
+          "target": "无法排除空短语"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to add phrase to exclusion list",
+          "target": "将短语添加到排除列表失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "aria-label",
+          "source": "Clear all history entries",
+          "target": "清除所有历史记录条目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-container-indented word-count-settings-group word-count-status-bar-settings",
+          "target": "word-count-container-indented word-count-settings-group word-count-status-bar-settings"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-container-indented word-count-settings-group word-count-char-settings",
+          "target": "word-count-container-indented word-count-settings-group word-count-char-settings"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-container-indented word-count-settings-group word-count-code-settings",
+          "target": "word-count-container-indented word-count-settings-group word-count-code-settings"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-container-indented word-count-settings-group word-count-path-settings",
+          "target": "word-count-container-indented word-count-settings-group word-count-path-settings"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-container-indented word-count-settings-group word-count-comment-settings",
+          "target": "word-count-container-indented word-count-settings-group word-count-comment-settings"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-container-indented word-count-settings-group word-count-heading-settings",
+          "target": "word-count-container-indented word-count-settings-group word-count-heading-settings"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-heading-btn word-count-heading-edit",
+          "target": "word-count-heading-btn word-count-heading-edit"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-heading-btn word-count-heading-delete",
+          "target": "word-count-heading-btn word-count-heading-delete"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-container-indented word-count-settings-group word-count-words-phrases-settings",
+          "target": "word-count-container-indented word-count-settings-group word-count-words-phrases-settings"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-phrase-btn word-count-phrase-edit",
+          "target": "word-count-phrase-btn word-count-phrase-edit"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "word-count-phrase-btn word-count-phrase-delete",
+          "target": "word-count-phrase-btn word-count-phrase-delete"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Custom Selected Word Count Plugin",
+          "target": "自定义选中单词计数插件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Count selected words",
+          "target": "计数选中的单词"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Enter sample text to test your regex...",
+          "target": "输入示例文本以测试您的正则表达式..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Selection analysis",
+          "target": "选区分析"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "ℹ️ using per-note exclusion overrides",
+          "target": "ℹ️ 使用笔记级排除覆盖"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You can override any exclusion setting for individual notes by adding a cswc-disable property to the note's frontmatter:",
+          "target": "您可以通过在笔记的前置信息中添加 cswc-disable 属性来覆盖任何单个笔记的排除设置："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "---\ncswc-disable: [exclude-urls, exclude-comments]\n---",
+          "target": "---\\ncswc-disable: [exclude-urls, exclude-comments]\\n---"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use \"all\" to disable all exclusions:",
+          "target": "使用 \\\"all\\\" 来禁用所有排除："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "---\ncswc-disable: all\n---",
+          "target": "---\\ncswc-disable: all\\n---"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Property values are shown next to each setting below (• property: ...)",
+          "target": "属性值显示在下方每个设置旁边（• 属性：...）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You can also disable exclusions for specific sections within a note using comments:",
+          "target": "您还可以使用注释来禁用笔记内特定部分的排除："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "This text is excluded.\n<!-- cswc-disable -->\nThis text is NOT excluded from counts.\n<!-- cswc-enable -->\nThis text is excluded again.",
+          "target": "此文本被排除。\\n<!-- cswc-disable -->\\n此文本未被排除在计数之外。\\n<!-- cswc-enable -->\\n此文本再次被排除。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Supported comment formats: <!-- cswc-disable --> or %% cswc-disable %%",
+          "target": "支持的注释格式：<!-- cswc-disable --> 或 %% cswc-disable %%"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Excluded heading sections",
+          "target": "已排除的标题部分"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Right-click on heading lines to exclude entire sections. (Requires heading exclusion to be enabled)",
+          "target": "右键单击标题行以排除整个部分。（需要启用标题排除）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No excluded heading sections. Right-click on headings to add sections.",
+          "target": "没有已排除的标题部分。右键单击标题以添加部分。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Edit",
+          "target": "编辑"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Delete",
+          "target": "删除"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Excluded phrases",
+          "target": "已排除的短语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select text in any note and right-click to add phrases. (Requires words/phrases exclusion to be enabled)",
+          "target": "在任何笔记中选择文本并右键单击以添加短语。（需要启用单词/短语排除）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No excluded phrases. Right-click selected text to add phrases.",
+          "target": "没有已排除的短语。右键单击选中的文本以添加短语。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⚠️ custom word detection regex (expert only)",
+          "target": "⚠️ 自定义单词检测正则表达式（仅限专家）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enable and define a custom regex for word detection. Incorrect regex may cause inaccurate counts or performance issues. Use with caution.",
+          "target": "启用并定义用于单词检测的自定义正则表达式。不正确的正则表达式可能导致计数不准确或性能问题。请谨慎使用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset to default",
+          "target": "重置为默认值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use the box below to see exactly which text fragments your custom regex will match.",
+          "target": "使用下方的框来确切查看您的自定义正则表达式将匹配哪些文本片段。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset test",
+          "target": "重置测试"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Clear all history entries",
+          "target": "清除所有历史记录条目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Copy this count",
+          "target": "复制此计数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "text"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
