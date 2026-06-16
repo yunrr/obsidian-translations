@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "docdrop",
+    "version": "1.0.0",
+    "title": "DocDrop",
+    "description": "DocDrop Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Custom folder",
+          "target": "自定义文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Same folder as PDF",
+          "target": "与 PDF 相同的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[DocDrop] conversion error",
+          "target": "[DocDrop] 转换错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Full path to the markitdown binary, or just \"markitdown\" if it is on your PATH.",
+          "target": "markitdown 二进制文件的完整路径，或者如果它在您的 PATH 中，则只需 \\\"markitdown\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where to save converted Markdown files.",
+          "target": "转换后的 Markdown 文件保存位置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-relative path, e.g. \"Converted\". The folder must already exist.",
+          "target": "相对于 Vault 的路径，例如 \\\"Converted\\\"。该文件夹必须已存在。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Tells markitdown what kind of file it is receiving, e.g. \"application/pdf\". Normally not needed — markitdown detects the type automatically. Only set this if conversion produces wrong results and you suspect a detection failure.",
+          "target": "告知 markitdown 它正在接收的文件类型，例如 \\\"application/pdf\\\"。通常不需要——markitdown 会自动检测类型。仅在转换结果错误且您怀疑检测失败时才设置此项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Tells markitdown what text encoding the file uses, e.g. \"UTF-8\" or \"ISO-8859-1\". Leave blank unless converted text contains garbled characters — markitdown detects encoding automatically.",
+          "target": "告知 markitdown 文件使用的文本编码，例如 \\\"UTF-8\\\" 或 \\\"ISO-8859-1\\\"。除非转换后的文本包含乱码，否则请留空——markitdown 会自动检测编码。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Activate any installed markitdown plugins, including markitdown-ocr. Has no effect if markitdown-ocr is not installed. Install it with: pip install markitdown-ocr",
+          "target": "激活任何已安装的 markitdown 插件，包括 markitdown-ocr。如果未安装 markitdown-ocr，则无效。使用以下命令安装：pip install markitdown-ocr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Your secret API key from OpenAI (or a compatible service). Required for markitdown-ocr to call the AI vision model. Get one at platform.openai.com → API keys. Looks like: sk-proj-...",
+          "target": "您来自 OpenAI（或兼容服务）的密钥 API 密钥。markitdown-ocr 调用 AI 视觉模型需要此密钥。在 platform.openai.com → API keys 获取。格式类似：sk-proj-..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The vision-capable AI model markitdown-ocr will use to read images. Must support image/vision input. \"gpt-4o\" is the default and works well. Other options: gpt-4o-mini (cheaper, slightly less accurate).",
+          "target": "markitdown-ocr 将用于读取图像的具有视觉能力的 AI 模型。必须支持图像/视觉输入。\\\"gpt-4o\\\" 是默认值且效果良好。其他选项：gpt-4o-mini（更便宜，精度略低）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Override the API server markitdown-ocr connects to. Leave blank to use the default OpenAI servers. Set this if you are using Azure OpenAI or a self-hosted compatible service (e.g. https://your-resource.openai.azure.com/).",
+          "target": "覆盖 markitdown-ocr 连接的 API 服务器。留空以使用默认的 OpenAI 服务器。如果您使用的是 Azure OpenAI 或自托管的兼容服务（例如 https://your-resource.openai.azure.com/），请设置此项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Send the PDF to Microsoft Azure for conversion instead of processing it locally. Produces better results for scanned or image-based PDFs, but requires internet access and a paid Azure subscription.",
+          "target": "将 PDF 发送到 Microsoft Azure 进行转换，而不是在本地处理。对于扫描或基于图像的 PDF，效果更好，但需要互联网访问和付费的 Azure 订阅。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The URL of your Azure Document Intelligence resource. Find it in the Azure Portal: open your Document Intelligence resource → Keys and Endpoint. Looks like: https://your-resource-name.cognitiveservices.azure.com/",
+          "target": "您的 Azure 文档智能资源的 URL。在 Azure 门户中找到它：打开您的文档智能资源 → 密钥和终结点。格式类似：https://your-resource-name.cognitiveservices.azure.com/"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The secret key that authenticates you with Azure Document Intelligence. Find it in the Azure Portal: open your Document Intelligence resource → Keys and Endpoint → KEY 1 or KEY 2. Either key works.",
+          "target": "用于向 Azure 文档智能进行身份验证的密钥。在 Azure 门户中找到它：打开您的文档智能资源 → 密钥和终结点 → 密钥 1 或密钥 2。任一密钥均可使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File already exists",
+          "target": "文件已存在"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Executable path",
+          "target": "可执行文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output location",
+          "target": "输出位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom output folder",
+          "target": "自定义输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Conversion",
+          "target": "转换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Keep images",
+          "target": "保留图像"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "MIME type hint",
+          "target": "MIME 类型提示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Character encoding hint",
+          "target": "字符编码提示"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "markitdown-ocr plugin (optional)",
+          "target": "markitdown-ocr 插件（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable markitdown-ocr",
+          "target": "启用 markitdown-ocr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API key",
+          "target": "OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI model",
+          "target": "AI 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API base URL (optional)",
+          "target": "OpenAI API 基础 URL（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Azure Document Intelligence (optional)",
+          "target": "Azure 文档智能（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use Document Intelligence",
+          "target": "使用文档智能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Endpoint URL",
+          "target": "终结点 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Converted",
+          "target": "已转换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Your Azure API key",
+          "target": "您的 Azure API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Convert to Markdown with DocDrop",
+          "target": "使用 DocDrop 转换为 Markdown"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[DocDrop] stderr:",
+          "target": "[DocDrop] 标准错误："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No file is currently open.",
+          "target": "当前没有打开的文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Conversion cancelled.",
+          "target": "转换已取消。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert active file to Markdown",
+          "target": "将活动文件转换为 Markdown"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Overwrite",
+          "target": "覆盖"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Document Intelligence is a paid Microsoft Azure cloud service that uses AI to read PDFs with much higher accuracy than offline conversion — especially for scanned documents, handwriting, tables, and complex layouts. Requires an Azure account. Leave these blank to use free offline conversion instead.",
+          "target": "文档智能是一项付费的 Microsoft Azure 云服务，它使用 AI 读取 PDF，其准确性远高于离线转换——尤其适用于扫描文档、手写内容、表格和复杂布局。需要 Azure 帐户。将这些留空可改用免费的离线转换。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
