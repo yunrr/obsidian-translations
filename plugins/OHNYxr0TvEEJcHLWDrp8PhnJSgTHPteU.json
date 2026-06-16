@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "spotify-link",
+    "version": "1.0.0",
+    "title": "Spotify Link",
+    "description": "Spotify Link Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.15.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Spotify Link Plugin:",
+          "target": "Spotify 链接插件："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Spotify Link Plugin: getName re-fetch failed",
+          "target": "Spotify 链接插件：getName 重新获取失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear session",
+          "target": "清除会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cleared!",
+          "target": "已清除！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Insert",
+          "target": "插入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Client ID (Keep this secured)",
+          "target": "客户端 ID（请妥善保管）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Client Secret (Keep this secured)",
+          "target": "客户端密钥（请妥善保管）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "State",
+          "target": "状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Redirect URI (Read Only)",
+          "target": "重定向 URI（只读）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Destination to store track or episode when using the command palette, default at the root of your vault",
+          "target": "使用命令面板时存储曲目或剧集的目标位置，默认位于您的保险库根目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Overwrite the file if it already exists in the vault.",
+          "target": "如果保险库中已存在同名文件，则覆盖该文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically open the newly created file in the active leaf.",
+          "target": "自动在活动窗格中打开新创建的文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Append artist name(s) to create unique filename.",
+          "target": "附加艺术家名称以创建唯一文件名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, adding a song (via any track command) will automatically regenerate the individual playlist note files that contain that track. Requires individual playlist files to exist (use 'Create individual files for all playlists' first).",
+          "target": "启用后，添加歌曲（通过任何曲目命令）将自动重新生成包含该曲目的单个播放列表笔记文件。需要先存在单个播放列表文件（请先使用“为所有播放列表创建单个文件”）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Number of playlists to check in parallel when resolving {{ playlists }}. Higher = faster but more API calls at once. Default: 10.",
+          "target": "解析 {{ playlists }} 时并行检查的播放列表数量。数值越高 = 速度越快，但同时进行的 API 调用也越多。默认值：10。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Scopes (space-separated list). The {{ playlists }} token requires 'playlist-read-private' and 'user-library-read'. Update only if you know what you are doing.",
+          "target": "作用域（空格分隔列表）。{{ playlists }} 令牌需要 'playlist-read-private' 和 'user-library-read' 权限。仅在您了解操作时才进行更新。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Paste a Spotify track URL or bare track ID",
+          "target": "粘贴 Spotify 曲目 URL 或纯曲目 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spotify Client ID",
+          "target": "Spotify 客户端 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spotify Client Secret",
+          "target": "Spotify 客户端密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spotify State",
+          "target": "Spotify 状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spotify Redirect URI",
+          "target": "Spotify 重定向 URI"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default destination",
+          "target": "默认目标位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allow overwrite",
+          "target": "允许覆盖"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto Open",
+          "target": "自动打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Append Artist Name(s)",
+          "target": "附加艺术家名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default image size",
+          "target": "默认图片尺寸"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default release date format",
+          "target": "默认发行日期格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable playlist features",
+          "target": "启用播放列表功能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Playlist destination",
+          "target": "播放列表目标位置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-regenerate playlist notes",
+          "target": "自动重新生成播放列表备注"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Playlist concurrency",
+          "target": "播放列表并发数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Spotify Scopes",
+          "target": "Spotify 作用域"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clear Spotify session",
+          "target": "清除 Spotify 会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Track",
+          "target": "曲目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your client id",
+          "target": "输入您的客户端 ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your client Secret",
+          "target": "输入您的客户端密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your State",
+          "target": "输入您的状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: '{{ song_name }}' by {{ artists }} from {{ album }} released in {{ album_release }}\n{{ timestamp }}",
+          "target": "示例：'{{ song_name }}' by {{ artists }}，来自专辑 {{ album }}，发行于 {{ album_release }}\\n{{ timestamp }}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: '{{ podcast_name }}': {{ description }} released {{ release_date }}\n{{ timestamp }}",
+          "target": "示例：'{{ podcast_name }}'：{{ description }}，发布于 {{ release_date }}\\n{{ timestamp }}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: '{{ song_name }}' by {{ artists }} from {{ album }} released in {{ album_release }}\n",
+          "target": "示例：'{{ song_name }}' by {{ artists }}，来自专辑 {{ album }}，发行于 {{ album_release }}\\n"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. 200x200",
+          "target": "例如 200x200"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. YYYY",
+          "target": "例如 YYYY"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. Music/Playlists",
+          "target": "例如 Music/Playlists"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: **{{ playlist_name }}**\n{{ playlist_link }}\nTracks: {{ playlist_track_count }}",
+          "target": "示例：**{{ playlist_name }}**\\n{{ playlist_link }}\\n曲目数：{{ playlist_track_count }}"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your Scopes",
+          "target": "输入您的作用域"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Toggle visibility",
+          "target": "切换可见性"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spotify Link: Fetching playlists...",
+          "target": "Spotify 链接：正在获取播放列表..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spotify Link: Unable to check Liked Songs. Add 'user-library-read' to your Spotify Scopes and re-authenticate.",
+          "target": "Spotify 链接：无法检查“喜欢的歌曲”。请将 'user-library-read' 添加到您的 Spotify 作用域并重新认证。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spotify Link: Fetching all playlists...",
+          "target": "Spotify 链接：正在获取所有播放列表..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spotify Link Plugin: track or episode overwritten.",
+          "target": "Spotify 链接插件：曲目或剧集已被覆盖。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spotify Link: No playlists found.",
+          "target": "Spotify 链接：未找到播放列表。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spotify Link Plugin: Connected to Spotify !",
+          "target": "Spotify 链接插件：已连接到 Spotify！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spotify Link: Playlist features are disabled in settings.",
+          "target": "Spotify 链接：播放列表功能已在设置中禁用。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Spotify Link Plugin: Access Refreshed",
+          "target": "Spotify 链接插件：访问权限已刷新"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Your spotify link configuration might be outdated.",
+          "target": "您的 Spotify 链接配置可能已过时。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "No song is playing.",
+          "target": "当前没有歌曲正在播放。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create file for currently playing episode",
+          "target": "为当前播放的剧集创建文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create file for currently playing track",
+          "target": "为当前播放的曲目创建文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Append Spotify currently playing episode with timestamp",
+          "target": "附加 Spotify 当前播放的剧集及时间戳"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Append Spotify currently playing track with timestamp",
+          "target": "附加 Spotify 当前播放的曲目及时间戳"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Refresh session",
+          "target": "刷新会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Follow the link below to get your Client Id and Client Secret, you need a spotify account to get access.",
+          "target": "请通过以下链接获取您的客户端 ID 和客户端密钥，您需要一个 Spotify 账户才能访问。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Spotify Developer",
+          "target": "Spotify 开发者"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create an App",
+          "target": "创建一个应用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Click Settings",
+          "target": "点击设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy the Client Id and Secret",
+          "target": "复制客户端 ID 和密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Set the Redirect URI to : obsidian://spotify-auth/",
+          "target": "将重定向 URI 设置为：obsidian://spotify-auth/"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select the Spotify icon located in Obsidian's left sidebar to connect.",
+          "target": "选择 Obsidian 左侧边栏中的 Spotify 图标进行连接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reconnecting / Rotated credentials",
+          "target": "重新连接 / 凭据已轮换"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "After updating your Client ID or Secret (e.g. after rotating keys), you must re-authenticate by clicking the Spotify icon in Obsidian's left sidebar. Saving new credentials here does not automatically reconnect. The status bar at the bottom shows your current connection state.",
+          "target": "更新客户端 ID 或密钥后（例如轮换密钥后），您必须通过单击 Obsidian 左侧边栏中的 Spotify 图标重新认证。在此处保存新凭据不会自动重新连接。底部的状态栏显示您当前的连接状态。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "NOTICE: The id and secret will be stored unencrypted on your local device. If you sync your data to a public source, the id and secret will be shown as-is. Use the eye icon next to each field to verify your values.",
+          "target": "注意：ID 和密钥将以未加密形式存储在您的本地设备上。如果您将数据同步到公共源，ID 和密钥将按原样显示。请使用每个字段旁边的眼睛图标来验证您的值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "External resources",
+          "target": "外部资源"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Available variables (song):",
+          "target": "可用变量（歌曲）："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlists }}",
+          "target": "{{ playlists }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ main_artist_url }}",
+          "target": "{{ main_artist_url }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_url }}",
+          "target": "{{ album_url }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ song_url }}",
+          "target": "{{ song_url }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_url_small }}",
+          "target": "{{ album_cover_url_small }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_url_medium }}",
+          "target": "{{ album_cover_url_medium }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_url_large }}",
+          "target": "{{ album_cover_url_large }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ artist_name }}",
+          "target": "{{ artist_name }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_popularity }} — album popularity (0–100, fetches extra API call)",
+          "target": "{{ album_popularity }} — 专辑热度（0–100，需要额外 API 调用）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ track_popularity }} — track popularity (0–100)",
+          "target": "{{ track_popularity }} — 曲目热度（0–100）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ popularity }} — artist popularity (0–100)",
+          "target": "{{ popularity }} — 艺术家热度（0–100）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ artist_image }}",
+          "target": "{{ artist_image }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ followers }}",
+          "target": "{{ followers }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_genres_hashtag }} — album genres as hashtags",
+          "target": "{{ album_genres_hashtag }} — 专辑流派，以标签形式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_genres_array }} — album genres as YAML/Dataview array",
+          "target": "{{ album_genres_array }} — 专辑流派，以 YAML/Dataview 数组形式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_genres }} — album genres, comma-separated (fetches extra API call)",
+          "target": "{{ album_genres }} — 专辑流派，逗号分隔（需要额外 API 调用）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ genres_by_artist:; }} — same with custom separator (e.g. ; instead of |)",
+          "target": "{{ genres_by_artist:; }} — 同上，但使用自定义分隔符（例如用 ; 代替 |）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ genres_by_artist }} — per-artist genres: 'Artist1: g1, g2 | Artist2: g3'",
+          "target": "{{ genres_by_artist }} — 按艺术家划分的流派：'Artist1: g1, g2 | Artist2: g3'"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ genres_hashtag }} — artist genres as hashtags",
+          "target": "{{ genres_hashtag }} — 艺术家流派，以标签形式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ genres_array }} — artist genres as YAML/Dataview array",
+          "target": "{{ genres_array }} — 艺术家流派，以 YAML/Dataview 数组形式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ genres }} — artist genres, comma-separated, deduplicated",
+          "target": "{{ genres }} — 艺术家流派，逗号分隔，去重"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ timestampz(YYYY-MM-DD HH:mm) }}",
+          "target": "{{ timestampz(YYYY-MM-DD HH:mm) }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ timestamp(YYYY-MM-DD HH:mm) }}",
+          "target": "{{ timestamp(YYYY-MM-DD HH:mm) }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ timestampz(YYYY-MM-DD) }}",
+          "target": "{{ timestampz(YYYY-MM-DD) }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ timestamp(YYYY-MM-DD) }}",
+          "target": "{{ timestamp(YYYY-MM-DD) }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ timestampz(HH:mm) }}",
+          "target": "{{ timestampz(HH:mm) }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ timestamp(HH:mm) }}",
+          "target": "{{ timestamp(HH:mm) }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ timestampz }}",
+          "target": "{{ timestampz }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ song_link }}",
+          "target": "{{ song_link }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ song_name }}",
+          "target": "{{ song_name }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ artists_formatted:PREFIX:SUFFIX }}",
+          "target": "{{ artists_formatted:PREFIX:SUFFIX }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ artists }}",
+          "target": "{{ artists }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_link }}",
+          "target": "{{ album_link }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_link_small }}",
+          "target": "{{ album_cover_link_small }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_link_medium }}",
+          "target": "{{ album_cover_link_medium }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_link_large }}",
+          "target": "{{ album_cover_link_large }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_small }}",
+          "target": "{{ album_cover_small }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_medium }}",
+          "target": "{{ album_cover_medium }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_cover_large }}",
+          "target": "{{ album_cover_large }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album_release }}",
+          "target": "{{ album_release }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ album }}",
+          "target": "{{ album }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Available variables (podcast):",
+          "target": "可用变量（播客）："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ timestamp }}",
+          "target": "{{ timestamp }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ progress_min_sec }}",
+          "target": "{{ progress_min_sec }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ progress_sec }}",
+          "target": "{{ progress_sec }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ progress_ms }}",
+          "target": "{{ progress_ms }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ total_episodes }}",
+          "target": "{{ total_episodes }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ show_link }}",
+          "target": "{{ show_link }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ show_description }}",
+          "target": "{{ show_description }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ publisher }}",
+          "target": "{{ publisher }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ show_name }}",
+          "target": "{{ show_name }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ release_date }}",
+          "target": "{{ release_date }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ episode_cover_link_small }}",
+          "target": "{{ episode_cover_link_small }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ episode_cover_link_medium }}",
+          "target": "{{ episode_cover_link_medium }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ episode_cover_link_large }}",
+          "target": "{{ episode_cover_link_large }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ episode_cover_small }}",
+          "target": "{{ episode_cover_small }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ episode_cover_medium }}",
+          "target": "{{ episode_cover_medium }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ episode_cover_large }}",
+          "target": "{{ episode_cover_large }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ audio_preview_url }}",
+          "target": "{{ audio_preview_url }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ duration_ms }}",
+          "target": "{{ duration_ms }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ description }}",
+          "target": "{{ description }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ episode_link }}",
+          "target": "{{ episode_link }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ episode_name }}",
+          "target": "{{ episode_name }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Playlists",
+          "target": "播放列表"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_collaborative }}",
+          "target": "{{ playlist_collaborative }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_public }}",
+          "target": "{{ playlist_public }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_owner }}",
+          "target": "{{ playlist_owner }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_cover_url }}",
+          "target": "{{ playlist_cover_url }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_cover_small }}",
+          "target": "{{ playlist_cover_small }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_cover_large }}",
+          "target": "{{ playlist_cover_large }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_track_count }}",
+          "target": "{{ playlist_track_count }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_description }}",
+          "target": "{{ playlist_description }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_url }}",
+          "target": "{{ playlist_url }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_link }}",
+          "target": "{{ playlist_link }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{{ playlist_name }}",
+          "target": "{{ playlist_name }}"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Context Menu",
+          "target": "上下文菜单"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Spotify Integration (Advanced)",
+          "target": "Spotify 集成（高级）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reset",
+          "target": "重置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Official Plugin Documentation",
+          "target": "官方插件文档"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Spotify Track ID or URL",
+          "target": "Spotify 曲目 ID 或 URL"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
