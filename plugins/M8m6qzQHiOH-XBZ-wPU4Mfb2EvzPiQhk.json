@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-bible-linker",
+    "version": "1.0.1",
+    "title": "Bible Linker",
+    "description": "Bible Linker Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.5.17",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Show First & Last",
+          "target": "显示首尾"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "any",
+          "target": "任意"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "all",
+          "target": "全部"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Link to all translations",
+          "target": "链接到所有翻译"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "used",
+          "target": "已使用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Link only to used translation",
+          "target": "仅链接到已使用的翻译"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Link to used and main translation",
+          "target": "链接到已使用和主要翻译"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "main",
+          "target": "主要"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Link only to main translation",
+          "target": "仅链接到主要翻译"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "textarea",
+          "target": "textarea"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Link",
+          "target": "链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Change this if wrong verses are being linked, e.g. you want \"Gen 1,1-3\" but output is text from verses 2-4 → set this to -1",
+          "target": "如果链接了错误的经文，请更改此项，例如您想要“创 1,1-3”但输出的是第2-4节的文本 → 将此项设置为-1"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If set, only headings of specified level are considered verses (if first heading of this level is always a verse, also set \"Verse offset\" to -1)",
+          "target": "如果设置，则仅考虑指定级别的标题为经文（如果此级别的第一个标题始终是经文，也将“经文偏移量”设置为-1）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "String inserted in front of every line, for example '>' for quote. Note: If you set 'Put each verse on a new line?' to true, the prefix will be inserted in front of every line.",
+          "target": "插入在每一行前面的字符串，例如用于引用的“>”。注意：如果您将“每节经文放在新行？”设置为true，前缀将插入在每一行前面。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "String inserted after biblical link, you can use \\n to insert newline. If you are using multiple translations \"{t}\" will insert the name of the one used.",
+          "target": "插入在圣经链接之后的字符串，您可以使用\\\\n插入换行符。如果您使用多个翻译，“{t}”将插入所使用的翻译名称。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Should last verse be linked in the visible link before text of verses?",
+          "target": "在经文文本之前的可见链接中是否应链接最后一节经文？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Invisible links are added to each verse used (so you can find the connections later), they are only visible in source mode.",
+          "target": "会为每节使用的经文添加不可见链接（以便您稍后查找连接），它们仅在源代码模式下可见。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "What the link only option should be set to by default",
+          "target": "“仅链接”选项的默认设置应是什么"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Each verse is inserted on a new line (with Link prefix).",
+          "target": "每节经文插入在新行上（带有链接前缀）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Special prefix that will be inserted in front of the first line only, right after the \"Line prefix\". Handy for callouts. (Only applied when Put each verse on a new line? is set to true)",
+          "target": "仅插入在第一行前面的特殊前缀，紧跟在“行前缀”之后。对于标注很方便。（仅当“每节经文放在新行？”设置为true时应用）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Should space be inserted between verses? (Only applied when Put each verse on a new line? is set to false. Useful for languages such as Chinese.) See also each verse postfix setting for more options.",
+          "target": "是否应在经文之间插入空格？（仅当“每节经文放在新行？”设置为false时应用。对于中文等语言很有用。）另请参阅每节经文后缀设置以获取更多选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "This is the symbol that will be used between chapter number and verse number when copying one verse. For example \".\" → Gen 1.1.",
+          "target": "这是在复制一节经文时用于章节号和经文号之间的符号。例如“.” → 创 1.1。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "This is the symbol that will be used between chapter number and verse number when copying multiple verses. For example \",\" → Gen 1,1-3.",
+          "target": "这是在复制多节经文时用于章节号和经文号之间的符号。例如“,” → 创 1,1-3。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose what translations should be linked when copying a verse.",
+          "target": "选择复制经文时应链接哪些翻译。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "String that is used to mark the beginning of a comment, won't be used if it is set to an empty string.",
+          "target": "用于标记注释开始的字符串，如果设置为空字符串则不会使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "String that is used to mark the end of a comment, won't be used if it is set to an empty string.",
+          "target": "用于标记注释结束的字符串，如果设置为空字符串则不会使用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "This is the separator that will be used when linking, e.g. if you enter '#' here, output will be [[Gen 1#1]]. If you are using headings to mark verses, use '#'. If you are using block references, use '^'.",
+          "target": "这是在链接时使用的分隔符，例如如果您在此处输入“#”，输出将是[[创 1#1]]。如果您使用标题标记经文，请使用“#”。如果您使用块引用，请使用“^”。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Fill this if you are using verse prefixes in your bible files, e.g. you have \"v1\" in your file → set to \"v\".",
+          "target": "如果您的圣经文件中使用了经文前缀（例如文件中有 \\\"v1\\\"），请在此处填写，例如设置为 \\\"v\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Value that will be selected by default in link modal.",
+          "target": "链接模态框中默认选中的值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Should book names be automatically capitalized? For example \"1cOr\" will be turned into \"1Cor\".",
+          "target": "书卷名称是否应自动大写？例如 \\\"1cOr\\\" 将被转换为 \\\"1Cor\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Verify existence of files you are trying to link, so that you are not inserting wrong references by mistake.",
+          "target": "验证您尝试链接的文件是否存在，以避免错误插入引用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Insert reference",
+          "target": "插入引用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pick translation",
+          "target": "选择译本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link only",
+          "target": "仅链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link type",
+          "target": "链接类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Each link on new line?",
+          "target": "每个链接是否换行？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verse offset",
+          "target": "经文偏移量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verse heading level",
+          "target": "经文标题级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Line prefix",
+          "target": "行前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link postfix",
+          "target": "链接后缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Each verse prefix",
+          "target": "每节经文前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Each verse postfix",
+          "target": "每节经文后缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link to last verse?",
+          "target": "链接到最后一节经文？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Add invisible links?",
+          "target": "添加不可见链接？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link only default",
+          "target": "仅链接默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Put each verse on a new line?",
+          "target": "每节经文是否换行？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "First line prefix",
+          "target": "首行前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Insert space between verses?",
+          "target": "经文之间是否插入空格？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "One verse notation",
+          "target": "单节经文表示法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Multiple verses notation",
+          "target": "多节经文表示法"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable multiple translations",
+          "target": "启用多译本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Paths to translations with their names",
+          "target": "译本路径及其名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "What to link",
+          "target": "链接内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Comment beginning",
+          "target": "注释开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Comment ending",
+          "target": "注释结束"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output book name convertor",
+          "target": "输出书卷名转换器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Input book name convertor",
+          "target": "输入书卷名转换器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link separator",
+          "target": "链接分隔符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verse prefix",
+          "target": "经文前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Link type default value",
+          "target": "链接类型默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use new lines default value",
+          "target": "使用换行默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Capitalize book names?",
+          "target": "书卷名称大写？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verify files?",
+          "target": "验证文件？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Insert prefix here",
+          "target": "在此插入前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Insert postfix here",
+          "target": "在此插入后缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "First line prefix",
+          "target": "首行前缀"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Insert notation symbol here",
+          "target": "在此插入符号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Bible/NIV/\nBible/ESV/",
+          "target": "Bible/NIV/\\nBible/ESV/"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Gn:Genesis\nEx:Exodus\n...",
+          "target": "Gn:Genesis\\nEx:Exodus\\n..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "G:Gen\nGn:Gen\nL:Lk\n...",
+          "target": "G:Gen\\nGn:Gen\\nL:Lk\\n..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Insert separator here",
+          "target": "在此插入分隔符"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Verse out of range for given file",
+          "target": "给定文件中的经文超出范围"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Unexpected end of file. Is there an empty verse at the end?",
+          "target": "文件意外结束。末尾是否有空经文？"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Begin verse is bigger than end verse or chapter maximum",
+          "target": "起始经文大于结束经文或章节最大值"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Begin verse is bigger than end verse",
+          "target": "起始经文大于结束经文"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Begin chapter is bigger than end chapter",
+          "target": "起始章节大于结束章节"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Invalid input, please insert valid integer",
+          "target": "输入无效，请输入有效的整数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "icon",
+          "source": "copy",
+          "target": "copy"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "icon",
+          "source": "link",
+          "target": "link"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy and Link Bible verses",
+          "target": "复制并链接圣经经文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Link Bible verses",
+          "target": "链接圣经经文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy verse by bible reference",
+          "target": "按圣经引用复制经文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Preview",
+          "target": "预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create Obsidian links from Bible reference",
+          "target": "从圣经引用创建 Obsidian 链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Copy and Link Bible verses command",
+          "target": "复制并链接圣经经文命令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Functional",
+          "target": "功能"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Inserted prefixes/postfixes",
+          "target": "已插入的前缀/后缀"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Links",
+          "target": "链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Output format",
+          "target": "输出格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Notation",
+          "target": "表示法"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Also used in the link command when the \"Show First & Last\" link type is used.",
+          "target": "当链接类型使用 \\\"显示首尾\\\" 时，此设置也用于链接命令。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Multiple translations",
+          "target": "多译本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Comments",
+          "target": "注释"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Use this if you have comments right in the Biblical text that you want to ignore when copying verses.",
+          "target": "如果您的圣经文本中有注释，并且希望在复制经文时忽略它们，请使用此选项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Convertors",
+          "target": "转换器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Link Bible verses command",
+          "target": "链接圣经经文命令"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File format",
+          "target": "文件格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Defaults",
+          "target": "默认值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Format",
+          "target": "格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Misc",
+          "target": "杂项"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
