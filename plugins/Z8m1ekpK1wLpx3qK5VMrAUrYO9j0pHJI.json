@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "better-recall",
+    "version": "2.0.0",
+    "title": "Better Recall",
+    "description": "Add anki-like spaced repetition and recall to your vault.",
+    "language": "zh-cn",
+    "supportedVersions": "0.0.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(\"loading better recall\")",
+          "target": ".log(\"loading better recall\")"
+        },
+        {
+          "source": ".log(\"unloading better recall\")",
+          "target": ".log(\"unloading better recall\")"
+        },
+        {
+          "source": "name: \"Recall\"",
+          "target": "name: \"回忆\""
+        },
+        {
+          "source": "name: \"Add card\"",
+          "target": "name: \"添加卡片\""
+        },
+        {
+          "source": "name:\"\n    }).setPlaceholder(\"",
+          "target": "name:\"\n    }).setPlaceholder(\""
+        },
+        {
+          "source": "name:\"\n    }).setValue(this.deck.getName()).onChange((value) => {\n      this.buttonsBarComp.setSubmitButtonDisabled(value.length === 0);\n    });\n    this.deckNameInputComp.descriptionEl.addClass(\"",
+          "target": "name:\"\n    }).setValue(this.deck.getName()).onChange((value) => {\n      this.buttonsBarComp.setSubmitButtonDisabled(value.length === 0);\n    });\n    this.deckNameInputComp.descriptionEl.addClass(\""
+        },
+        {
+          "source": "description: \"Front\"",
+          "target": "description: \"正面\""
+        },
+        {
+          "source": "description: \"Back\"",
+          "target": "description: \"背面\""
+        },
+        {
+          "source": "description: \"New deck name:\"",
+          "target": "description: \"新牌组名称:\""
+        },
+        {
+          "source": "description: \"Description (optional):\"",
+          "target": "description: \"描述(可选):\""
+        },
+        {
+          "source": "description: \"Deck name:\"",
+          "target": "description: \"牌组名:\""
+        },
+        {
+          "source": "description: \"Deck description:\"",
+          "target": "description: \"牌组描述:\""
+        },
+        {
+          "source": "description: \"The multiplier applied to the current interval when a card lapses.\"",
+          "target": "description: \"当一张卡片失效时，应用到当前间隔的倍率。\""
+        },
+        {
+          "source": "description: \"The interval (in days) assigned to a card when rated as `easy` during learning/relearning.\"",
+          "target": "description: \"在学习或重新学习过程中，当卡片被评为“简单”时分配的间隔（以天为单位）。\""
+        },
+        {
+          "source": "description: \"The multiplier applied to the interval when a review card is rated as `easy`.\"",
+          "target": "description: \"当复习的卡片被评为“简单”时，应用于间隔的倍率。\""
+        },
+        {
+          "source": "description: \"The interval (in days) assigned to a card when it graduates from learning to review.\"",
+          "target": "description: \"卡片从学习阶段转为复习阶段时分配的时间间隔（以天为单位）\""
+        },
+        {
+          "source": "description: \"The minimum allowed ease factor for a card.\"",
+          "target": "description: \"卡片允许的最低记忆系数。\""
+        },
+        {
+          "source": "description: \"The amount by which the ease factor is decreased when a card is rated as `again`.\"",
+          "target": "description: \"当一张卡片被评为“重来”时，记忆系数减少的数量。\""
+        },
+        {
+          "source": "description: \"The amount by which the ease factor is increased when a card is rated as `easy`.\"",
+          "target": "description: \"当一张卡片被评为“简单”时，记忆系数增加的数量。\""
+        },
+        {
+          "source": "description: \"The multiplier applied to the current interval when a review card is rated as `hard`.\"",
+          "target": "description: \"当复习的卡片被评为“困难”时，应用到当前间隔的倍率。\""
+        },
+        {
+          "source": "description: \"Comma-separated step intervals (in minutes) for new cards in the learning phase.\"",
+          "target": "description: \"处于学习阶段的新卡片，按逗号分隔的步骤间隔（以分钟为单位）。\""
+        },
+        {
+          "source": "description: \"Comma-separated step intervals (in minutes) for cards in the relearning phase.\"",
+          "target": "description: \"处于重新学习阶段的卡片，按逗号分隔的步骤间隔（以分钟为单位）。\""
+        },
+        {
+          "source": "text: \"Deck:\"",
+          "target": "text: \"牌组\""
+        },
+        {
+          "source": "text: \"Type:\"",
+          "target": "text: \"类型\""
+        },
+        {
+          "source": "text: `${card.content.front} :: ${card.content.back}`",
+          "target": "text: `${card.content.front} :: ${card.content.back}`"
+        },
+        {
+          "source": "text: \"Deck\"",
+          "target": "text: \"牌组\""
+        },
+        {
+          "source": "text: \"New\"",
+          "target": "text: \"新的\""
+        },
+        {
+          "source": "text: \"Learn\"",
+          "target": "text: \"学习\""
+        },
+        {
+          "source": "text: \"Due\"",
+          "target": "text: \"到期的\""
+        },
+        {
+          "source": "text: `${newCardsLength}`",
+          "target": "text: `${newCardsLength}`"
+        },
+        {
+          "source": "text: `${learnCardsLength}`",
+          "target": "text: `${learnCardsLength}`"
+        },
+        {
+          "source": "text: `${dueCardsLength}`",
+          "target": "text: `${dueCardsLength}`"
+        },
+        {
+          "source": ".setText(\"No available decks\")",
+          "target": ".setText(\"没有可用牌组\")"
+        },
+        {
+          "source": ".setText(\"Create new deck\")",
+          "target": ".setText(\"创建新牌组\")"
+        },
+        {
+          "source": ".setText(\"\\u{1F6AA}\")",
+          "target": ".setText(\"\\u{1F6AA}\")"
+        },
+        {
+          "source": ".setText(\"Exit\")",
+          "target": ".setText(\"退出\")"
+        },
+        {
+          "source": ".setText(\"\\u{1F440}\")",
+          "target": ".setText(\"\\u{1F440}\")"
+        },
+        {
+          "source": ".setText(\"Show answer\")",
+          "target": ".setText(\"显示答案\")"
+        },
+        {
+          "source": ".setText(\"Review session complete!\")",
+          "target": ".setText(\"复习环节完成!\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Delete\")",
+          "target": ".setButtonText(\"删除\")"
+        },
+        {
+          "source": ".setButtonText(\"Create Deck\")",
+          "target": ".setButtonText(\"创建牌组\")"
+        },
+        {
+          "source": ".setButtonText(\"Add card\")",
+          "target": ".setButtonText(\"新增卡片\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Algorithms & datastructures\")",
+          "target": ".setPlaceholder(\"例如：算法 & 数据结构\")"
+        },
+        {
+          "source": ".setPlaceholder(\"A lovely CS learning experience.\")",
+          "target": ".setPlaceholder(\"例如：一次很棒的计算机科学学习经历.\")"
+        },
+        {
+          "source": ".setTooltip(\"Restore default\")",
+          "target": ".setTooltip(\"恢复默认\")"
+        },
+        {
+          "source": ".setTitle(\"Add card\")",
+          "target": ".setTitle(\"添加卡片\")"
+        },
+        {
+          "source": ".setTitle(\"Create new deck\")",
+          "target": ".setTitle(\"创建新牌组\")"
+        },
+        {
+          "source": ".setTitle(`Edit deck \"${deck.getName()}\"`)",
+          "target": ".setTitle(`编辑 \"${deck.getName()}\"牌组`)"
+        },
+        {
+          "source": ".setTitle(\"Edit card\")",
+          "target": ".setTitle(\"编辑卡片\")"
+        },
+        {
+          "source": ".setTitle(`Cards from \"${deck.getName()}\"`)",
+          "target": ".setTitle(`\"${deck.getName()}\"牌组卡片`)"
+        },
+        {
+          "source": "\"Easy interval\": ",
+          "target": "\"简单间隔\": "
+        },
+        {
+          "source": "\"Lapse interval\":",
+          "target": "\"失效间隔\":"
+        },
+        {
+          "source": "\"Easy bonus\":",
+          "target": "\"简单奖励\":"
+        },
+        {
+          "source": "\"Graduating interval\":",
+          "target": "\"毕业间隔\":"
+        },
+        {
+          "source": "\"Min ease factor\": ",
+          "target": "\"简单最小系数\": "
+        },
+        {
+          "source": "\"Ease factor decrement\":",
+          "target": "\"重来减量系数\":"
+        },
+        {
+          "source": "\"Ease factor increment\":",
+          "target": "\"简单增量系数\":"
+        },
+        {
+          "source": "\"Hard interval multiplier\":",
+          "target": "\"困难增量系数\":"
+        },
+        {
+          "source": "\"Learning steps\":",
+          "target": "\"学习步骤\":"
+        },
+        {
+          "source": "\"Relearning steps\":",
+          "target": "\"重新学习步骤\":"
+        },
+        {
+          "source": ".addRibbonIcon(\"wallet-cards\", \"Open decks\"",
+          "target": ".addRibbonIcon(\"wallet-cards\", \"打开牌组\""
+        },
+        {
+          "source": ".setSubmitText(\"Create\")",
+          "target": ".setSubmitText(\"创建\")"
+        },
+        {
+          "source": ".setSubmitText(\"Save\")",
+          "target": ".setSubmitText(\"保存\")"
+        },
+        {
+          "source": ".renderButtonsBar(\"Add\")",
+          "target": ".renderButtonsBar(\"添加\")"
+        }
+      ]
+    }
+  }
+}

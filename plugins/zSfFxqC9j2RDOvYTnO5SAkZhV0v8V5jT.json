@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "ai-tagger-universe",
+    "version": "2.0.0",
+    "title": "AI Tagger Universe",
+    "description": "Automatically analyze note content and add relevant tags using AI",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.13",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Error clearing tags: ${message}`, 3e3)",
+          "target": "Notice(`清除标签时出错：${message}`, 3e3)"
+        },
+        {
+          "source": "Notice(\"No valid tags to add\", 3e3)",
+          "target": "Notice(\"没有有效标签可添加\", 3e3)"
+        },
+        {
+          "source": "Notice(successMessage2, 3e3)",
+          "target": "Notice(successMessage2, 3e3)"
+        },
+        {
+          "source": "Notice(successMessage, 3e3)",
+          "target": "Notice(successMessage, 3e3)"
+        },
+        {
+          "source": "Notice(`Error updating tags: ${message}`, 3e3)",
+          "target": "Notice(`更新标签时出错：${message}`, 3e3)"
+        },
+        {
+          "source": "Notice(`Tags saved to ${filePath}`, 3e3)",
+          "target": "Notice(`标签已保存至 ${filePath}`, 3e3)"
+        },
+        {
+          "source": "Notice(`Error saving tags: ${message}`, 3e3)",
+          "target": "Notice(`保存标签时出错：${message}`, 3e3)"
+        },
+        {
+          "source": "Notice(\"Open a note\")",
+          "target": "Notice(\"打开笔记\")"
+        },
+        {
+          "source": "Notice(\"No content to analyze\")",
+          "target": "Notice(\"无内容可供分析\")"
+        },
+        {
+          "source": "Notice(\"Analyzing...\")",
+          "target": "Notice(\"正在分析...\")"
+        },
+        {
+          "source": "Notice(\"Failed to generate tags\")",
+          "target": "Notice(\"生成标签失败\")"
+        },
+        {
+          "source": "Notice(\"No parent folder\")",
+          "target": "Notice(\"无父文件夹\")"
+        },
+        {
+          "source": "Notice(\"No md files\")",
+          "target": "Notice(\"没有 Markdown 文件\")"
+        },
+        {
+          "source": "Notice(\"Operation cancelled\")",
+          "target": "Notice(\"操作已取消\")"
+        },
+        {
+          "source": "Notice(\"Please open a note first\")",
+          "target": "Notice(\"请先打开一个笔记\")"
+        },
+        {
+          "source": "Notice(\"No markdown files found in current folder\")",
+          "target": "Notice(\"当前文件夹中未找到 Markdown 文件\")"
+        },
+        {
+          "source": "Notice(`Tags cleared from ${result.successCount} notes`)",
+          "target": "Notice(`已清除 ${result.successCount} 个笔记的标签`)"
+        },
+        {
+          "source": "Notice(\"Failed to clear tags\")",
+          "target": "Notice(\"标签清理失败\")"
+        },
+        {
+          "source": "Notice(\"No active file\")",
+          "target": "Notice(\"无活动文件\")"
+        },
+        {
+          "source": "Notice(\"Set tags file\")",
+          "target": "Notice(\"设置标签文件\")"
+        },
+        {
+          "source": "Notice(\"No tags in file\")",
+          "target": "Notice(\"文件中无标签\")"
+        },
+        {
+          "source": "Notice(\"No matching tags\")",
+          "target": "Notice(\"没有匹配的标签\")"
+        },
+        {
+          "source": "Notice(\"Assign failed\")",
+          "target": "Notice(\"分配失败\")"
+        },
+        {
+          "source": "Notice(\"No predefined tags found in the file\")",
+          "target": "Notice(\"文件中未找到预定义的标签\")"
+        },
+        {
+          "source": "Notice(`Assigning predefined tags to ${filesInFolder.length} notes in the current folder...`)",
+          "target": "Notice(`正在为当前文件夹中的 ${filesInFolder.length} 个笔记分配预定义标签...`)"
+        },
+        {
+          "source": "Notice(`Progress: ${processedCount}/${filesInFolder.length}`)",
+          "target": "Notice(`进度: ${processedCount}/${filesInFolder.length}`)"
+        },
+        {
+          "source": "Notice(`Completed: ${successCount}/${filesInFolder.length}`)",
+          "target": "Notice(`已完成：${successCount}/${filesInFolder.length}`)"
+        },
+        {
+          "source": "Notice(\"Failed to assign predefined tags to notes in current folder\")",
+          "target": "Notice(\"无法将预定义标签分配到当前文件夹中的笔记\")"
+        },
+        {
+          "source": "Notice(`Assigning predefined tags to ${files.length} notes in your vault...`)",
+          "target": "Notice(`正在为知识库中的 ${files.length} 个笔记分配预定义标签...`)"
+        },
+        {
+          "source": "Notice(`Progress: ${processedCount}/${files.length}`)",
+          "target": "Notice(`处理进度：${processedCount}/${files.length}`)"
+        },
+        {
+          "source": "Notice(`Completed: ${successCount}/${files.length}`)",
+          "target": "Notice(`已完成：${successCount}/${files.length}`)"
+        },
+        {
+          "source": "Notice(\"Failed to assign predefined tags to notes\")",
+          "target": "Notice(\"未能为笔记分配预定义标签\")"
+        },
+        {
+          "source": "Notice(\"Failed to load cloud endpoints\")",
+          "target": "Notice(\"云端端点加载失败\")"
+        },
+        {
+          "source": "Notice(`Local LLM service does not appear to be running. Please check your endpoint URL.`, 1e4)",
+          "target": "Notice(`本地LLM服务似乎未运行。请检查您的终端URL。`, 1e4)"
+        },
+        {
+          "source": "Notice(`Local LLM service is not available. Please make sure it is installed and running on the correct port.`, 1e4)",
+          "target": "Notice(`本地大语言模型服务不可用。请确保已正确安装并在指定端口上运行。`, 1e4)"
+        },
+        {
+          "source": "Notice(`${Math.round(processedCount / totalFiles * 100)",
+          "target": "Notice(`${Math.round(processedCount / totalFiles * 100)"
+        },
+        {
+          "source": "Notice(`Cleared ${successCount} notes`)",
+          "target": "Notice(`已清理 ${successCount} 条笔记`)"
+        },
+        {
+          "source": "Notice(\"Building tag network...\", 0)",
+          "target": "Notice(\"正在构建标签网络...\", 0)"
+        },
+        {
+          "source": "Notice(\"No tags were found in your vault\", 3e3)",
+          "target": "Notice(\"您的库中未找到任何标签\", 3e3)"
+        },
+        {
+          "source": "Notice(\"Tags were found, but there are no connections between them\", 4e3)",
+          "target": "Notice(\"发现标签，但标签之间没有关联\", 4e3)"
+        },
+        {
+          "source": "Notice(\"Failed to build tag network. Please check console for details.\", 4e3)",
+          "target": "Notice(\"构建标签网络失败。请检查控制台获取详细信息。\", 4e3)"
+        },
+        {
+          "source": "Notice(\"Successfully cleared all tags from vault\", 3e3)",
+          "target": "Notice(\"已成功清除知识库中的所有标签。\", 3e3)"
+        },
+        {
+          "source": "Notice(\"Failed to clear tags from vault\", 4e3)",
+          "target": "Notice(\"未能从仓库中清除标签\", 4e3)"
+        },
+        {
+          "source": "Notice(\"Please open a note before clearing tags\", 3e3)",
+          "target": "Notice(\"请在清除标签前先打开一个笔记。\", 3e3)"
+        },
+        {
+          "source": "Notice(\"Failed to update tags: No result returned\", 3e3)",
+          "target": "Notice(\"标签更新失败：未返回结果\", 3e3)"
+        },
+        {
+          "source": "Notice(result.message, 3e3)",
+          "target": "Notice(result.message, 3e3)"
+        },
+        {
+          "source": "Notice(`Failed to update tags: ${result.message || \"Unknown error\"}`, 4e3)",
+          "target": "Notice(`更新标签失败：${result.message || \"未知错误\"}`, 4e3)"
+        },
+        {
+          "source": "Notice(`Analyzing ${files.length} files...`, 0)",
+          "target": "Notice(`正在分析 ${files.length} 个文件...`, 0)"
+        },
+        {
+          "source": "Notice(`Progress: ${processed}/${files.length} files processed`, 3e3)",
+          "target": "Notice(`进度：已处理 ${processed}/${files.length} 个文件`, 3e3)"
+        },
+        {
+          "source": "Notice(`Error processing ${file.path}`, 4e3)",
+          "target": "Notice(`处理文件 ${file.path} 时出错`, 4e3)"
+        },
+        {
+          "source": "Notice(`Successfully tagged ${successful} out of ${files.length} files`, 4e3)",
+          "target": "Notice(`已成功为 ${files.length} 个文件中的 ${successful} 个添加标签`, 4e3)"
+        },
+        {
+          "source": "Notice(\"Failed to complete batch processing\", 4e3)",
+          "target": "Notice(\"批量处理失败\", 4e3)"
+        },
+        {
+          "source": "Notice(\"Please open a note before analyzing\", 3e3)",
+          "target": "Notice(\"请先打开一个笔记再进行分析。\", 3e3)"
+        },
+        {
+          "source": "Notice(\"Cannot analyze empty note\", 3e3)",
+          "target": "Notice(\"无法分析空笔记\", 3e3)"
+        },
+        {
+          "source": "Notice(\"Failed to analyze note. Please check console for details.\", 4e3)",
+          "target": "Notice(\"分析笔记失败。请检查控制台获取详细信息。\", 4e3)"
+        },
+        {
+          "source": "alog(\n        `This will generate tags for ${filesInFolder.length} notes in the current folder. This may take some time.`\n      )",
+          "target": "alog(\n        `这将为当前文件夹中的 ${filesInFolder.length} 个笔记生成标签。此操作可能需要一些时间。`\n      )"
+        },
+        {
+          "source": "alog(\n        `This will generate tags for ${files.length} notes in your vault. This may take a long time.`\n      )",
+          "target": "alog(\n        `这将为您的仓库中 ${files.length} 个笔记生成标签。此操作可能需要较长时间。`\n      )"
+        },
+        {
+          "source": "alog(\n                `This will generate tags for ${markdownFiles.length} selected notes. This may take some time.`\n              )",
+          "target": "alog(\n                `这将为 ${markdownFiles.length} 个选中的笔记生成标签。此操作可能需要一些时间。`\n              )"
+        },
+        {
+          "source": "alog(\n        `Remove all tags from ${filesInFolder.length} notes in this folder? This cannot be undone.`\n      )",
+          "target": "alog(\n        `要从此文件夹中的 ${filesInFolder.length} 个笔记中移除所有标签吗？此操作无法撤销。`\n      )"
+        },
+        {
+          "source": "alog(\n          `This will assign predefined tags to ${filesInFolder.length} notes in the current folder. This may take some time.`\n        )",
+          "target": "alog(\n          `这将对当前文件夹中的 ${filesInFolder.length} 个笔记应用预设标签。此操作可能需要一些时间。`\n        )"
+        },
+        {
+          "source": "alog(\n          `This will assign predefined tags to ${files.length} notes in your vault. This may take a long time.`\n        )",
+          "target": "alog(\n          `这将对您仓库中的 ${files.length} 个笔记应用预设标签。此操作可能需要较长时间。`\n        )"
+        },
+        {
+          "source": "alog(message)",
+          "target": "alog(message)"
+        },
+        {
+          "source": "alog(\n      `Remove all tags from ${files.length} notes? This action cannot be undone.`\n    )",
+          "target": "alog(\n      `从 ${files.length} 个笔记中移除所有标签？此操作无法撤销。`\n    )"
+        },
+        {
+          "source": "name: \"openai\"",
+          "target": "name: \"openai\""
+        },
+        {
+          "source": "name: \"gemini\"",
+          "target": "name: \"gemini\""
+        },
+        {
+          "source": "name: \"openai-compatible\"",
+          "target": "name: \"openai-compatible\""
+        },
+        {
+          "source": "name: \"deepseek\"",
+          "target": "name: \"deepseek\""
+        },
+        {
+          "source": "name: \"aliyun\"",
+          "target": "name: \"aliyun\""
+        },
+        {
+          "source": "name: \"claude\"",
+          "target": "name: \"claude\""
+        },
+        {
+          "source": "name: \"groq\"",
+          "target": "name: \"groq\""
+        },
+        {
+          "source": "name: \"vertex\"",
+          "target": "name: \"vertex\""
+        },
+        {
+          "source": "name: \"openrouter\"",
+          "target": "name: \"openrouter\""
+        },
+        {
+          "source": "name: \"bedrock\"",
+          "target": "name: \"bedrock\""
+        },
+        {
+          "source": "name: \"requesty\"",
+          "target": "name: \"requesty\""
+        },
+        {
+          "source": "name: \"cohere\"",
+          "target": "name: \"cohere\""
+        },
+        {
+          "source": "name: \"grok\"",
+          "target": "name: \"grok\""
+        },
+        {
+          "source": "name: \"mistral\"",
+          "target": "name: \"mistral\""
+        },
+        {
+          "source": "name: \"Generate tags for current note\"",
+          "target": "name: \"为当前笔记生成标签\""
+        },
+        {
+          "source": "name: \"Generate tags for current folder\"",
+          "target": "name: \"为当前文件夹生成标签\""
+        },
+        {
+          "source": "name: \"Generate tags for vault\"",
+          "target": "name: \"为知识库生成标签\""
+        },
+        {
+          "source": "name: \"Clear tags for current note\"",
+          "target": "name: \"清除当前笔记标签\""
+        },
+        {
+          "source": "name: \"Clear tags for current folder\"",
+          "target": "name: \"清除当前文件夹的标签\""
+        },
+        {
+          "source": "name: \"Clear tags for vault\"",
+          "target": "name: \"清除库中的标签\""
+        },
+        {
+          "source": "name: \"Assign predefined tags for current note\"",
+          "target": "name: \"为当前笔记分配预设标签\""
+        },
+        {
+          "source": "name: \"Assign predefined tags for current folder\"",
+          "target": "name: \"为当前文件夹分配预设标签\""
+        },
+        {
+          "source": "name: \"Assign predefined tags for vault\"",
+          "target": "name: \"为库分配预定义标签\""
+        },
+        {
+          "source": "name: \"Collect all tags from vault\"",
+          "target": "name: \"从库中收集所有标签\""
+        },
+        {
+          "source": "name: \"Show tag network visualization\"",
+          "target": "name: \"显示标签网络可视化\""
+        },
+        {
+          "source": "name: \"Tags\"",
+          "target": "name: \"标签\""
+        },
+        {
+          "source": "name: \"images\"",
+          "target": "name: \"图片\""
+        },
+        {
+          "source": "name: \"audio\"",
+          "target": "name: \"音频\""
+        },
+        {
+          "source": "name: \"Excalidraw\"",
+          "target": "name: \"Excalidraw\""
+        },
+        {
+          "source": "name: \"textgenerator\"",
+          "target": "name: \"文本生成器\""
+        },
+        {
+          "source": "name: \"attachments\"",
+          "target": "name: \"附件\""
+        },
+        {
+          "source": "name: \"templates\"",
+          "target": "name: \"模板\""
+        },
+        {
+          "source": "name: \".obsidian\"",
+          "target": "name: \".obsidian\""
+        },
+        {
+          "source": "text: `${title}`",
+          "target": "text: `${title}`"
+        },
+        {
+          "source": "text: \"LLM settings\"",
+          "target": "text: \"LLM 设置\""
+        },
+        {
+          "source": "text: \"Tips: Popular Local LLM Tools\"",
+          "target": "text: \"提示：热门本地LLM工具\""
+        },
+        {
+          "source": "text: \"Ollama: http://localhost:11434/v1/chat/completions\"",
+          "target": "text: \"Ollama: http://localhost:11434/v1/chat/completions\""
+        },
+        {
+          "source": "text: \"LocalAI: http://localhost:8080/v1/chat/completions\"",
+          "target": "text: \"LocalAI: http://localhost:8080/v1/chat/completions\""
+        },
+        {
+          "source": "text: \"LM Studio: http://localhost:1234/v1/chat/completions\"",
+          "target": "text: \"LM Studio: http://localhost:1234/v1/chat/completions\""
+        },
+        {
+          "source": "text: \"Jan: http://localhost:1337/v1/chat/completions\"",
+          "target": "text: \"Jan: http://localhost:1337/v1/chat/completions\""
+        },
+        {
+          "source": "text: \"KoboldCPP: http://localhost:5001/v1/chat/completions\"",
+          "target": "text: \"KoboldCPP: http://localhost:5001/v1/chat/completions\""
+        },
+        {
+          "source": "text: \"Excluded files\"",
+          "target": "text: \"排除的文件\""
+        },
+        {
+          "source": "text: \"Files matching the following filters are currently excluded:\"",
+          "target": "text: \"当前已排除符合以下筛选条件的文件：\""
+        },
+        {
+          "source": "text: \"Filter\"",
+          "target": "text: \"过滤器\""
+        },
+        {
+          "source": "text: \"No exclusions defined yet.\"",
+          "target": "text: \"尚未定义任何排除项。\""
+        },
+        {
+          "source": "text: \"\\xD7\"",
+          "target": "text: \"\\xD7\""
+        },
+        {
+          "source": "text: \"Tagging settings\"",
+          "target": "text: \"标签设置\""
+        },
+        {
+          "source": "text: \"No matching files\"",
+          "target": "text: \"没有匹配的文件\""
+        },
+        {
+          "source": "text: \"Error loading files\"",
+          "target": "text: \"加载文件出错\""
+        },
+        {
+          "source": "text: \"File exclusion\"",
+          "target": "text: \"文件排除\""
+        },
+        {
+          "source": "text: \"No exclusions configured\"",
+          "target": "text: \"未配置排除项\""
+        },
+        {
+          "source": "text: `${this.plugin.settings.excludedFolders.length} pattern${this.plugin.settings.excludedFolders.length === 1 ? \"\" : \"s\"} configured`",
+          "target": "text: `已配置 ${this.plugin.settings.excludedFolders.length} 个排除模式`"
+        },
+        {
+          "source": "text: \"Tag range settings\"",
+          "target": "text: \"标签范围设置\""
+        },
+        {
+          "source": "text: \"Support developer\"",
+          "target": "text: \"支持开发者\""
+        },
+        {
+          "source": "text: \"If you find this plugin helpful, consider buying me a coffee \\u2615\\uFE0F\"",
+          "target": "text: \"如果您觉得这个插件对您有帮助，可以考虑请我喝杯咖啡 ☕️\""
+        },
+        {
+          "source": "text: \"Tag Network Visualization\"",
+          "target": "text: \"标签网络可视化\""
+        },
+        {
+          "source": "text: \"Node size represents tag frequency. Connections represent tags that appear together in notes.\"",
+          "target": "text: \"节点大小代表标签使用频率。连接线表示在笔记中共同出现的标签关联。\""
+        },
+        {
+          "source": "text: \"Search tags: \"",
+          "target": "text: \"搜索标签：\""
+        },
+        {
+          "source": "text: \"Frequency: \"",
+          "target": "text: \"使用频率：\""
+        },
+        {
+          "source": "text: \"Low\"",
+          "target": "text: \"低\""
+        },
+        {
+          "source": "text: \"Medium\"",
+          "target": "text: \"中等\""
+        },
+        {
+          "source": "text: \"High\"",
+          "target": "text: \"高\""
+        },
+        {
+          "source": ".setText(\"Loading visualization...\")",
+          "target": ".setText(\"正在加载可视化...\")"
+        },
+        {
+          "source": ".setText(\"No tags found in your vault. Add some tags first!\")",
+          "target": ".setText(\"您的库中未找到标签。请先添加一些标签！\")"
+        },
+        {
+          "source": ".setText(\"Error loading visualization. Please try again.\")",
+          "target": ".setText(\"加载可视化时出错，请重试。\")"
+        },
+        {
+          "source": ".setText(\"Error rendering network. Please try again.\")",
+          "target": ".setText(\"网络渲染出错。请重试。\")"
+        },
+        {
+          "source": ".setText(\"Failed to load visualization library. Please check your internet connection.\")",
+          "target": ".setText(\"无法加载可视化库。请检查您的网络连接。\")"
+        },
+        {
+          "source": ".setText(\"Error: D3.js library not loaded\")",
+          "target": ".setText(\"错误：D3.js 库未加载\")"
+        },
+        {
+          "source": ".setText(\"Rendering network...\")",
+          "target": ".setText(\"正在渲染网络...\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Confirm\")",
+          "target": ".setButtonText(\"确认\")"
+        },
+        {
+          "source": ".setButtonText(\"Test connection\")",
+          "target": ".setButtonText(\"测试连接\")"
+        },
+        {
+          "source": ".setButtonText(\"Testing...\")",
+          "target": ".setButtonText(\"测试中...\")"
+        },
+        {
+          "source": ".setButtonText(\"Add\")",
+          "target": ".setButtonText(\"添加\")"
+        },
+        {
+          "source": ".setButtonText(\"Clear All\")",
+          "target": ".setButtonText(\"清除全部\")"
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Manage\")",
+          "target": ".setButtonText(\"管理\")"
+        },
+        {
+          "source": ".setButtonText(\"Buy me a coffee\")",
+          "target": ".setButtonText(\"请我喝杯咖啡\")"
+        },
+        {
+          "source": ".setName(\"Service type\")",
+          "target": ".setName(\"服务类型\")"
+        },
+        {
+          "source": ".setName(\"Cloud provider\")",
+          "target": ".setName(\"云服务提供商\")"
+        },
+        {
+          "source": ".setName(\"Local llm endpoint\")",
+          "target": ".setName(\"本地大语言模型端点\")"
+        },
+        {
+          "source": ".setName(\"Model name\")",
+          "target": ".setName(\"模型名称\")"
+        },
+        {
+          "source": ".setName(\"Connection test\")",
+          "target": ".setName(\"连接测试\")"
+        },
+        {
+          "source": ".setName(\"API endpoint\")",
+          "target": ".setName(\"API端点\")"
+        },
+        {
+          "source": ".setName(\"API key\")",
+          "target": ".setName(\"API 密钥\")"
+        },
+        {
+          "source": ".setName(\"Tagging mode\")",
+          "target": ".setName(\"标签模式\")"
+        },
+        {
+          "source": ".setName(\"Tag source\")",
+          "target": ".setName(\"标签来源\")"
+        },
+        {
+          "source": ".setName(\"Predefined tags file\")",
+          "target": ".setName(\"预定义标签文件\")"
+        },
+        {
+          "source": ".setName(\"Excluded files and folders\")",
+          "target": ".setName(\"排除的文件和文件夹\")"
+        },
+        {
+          "source": ".setName(\"Maximum predefined tags\")",
+          "target": ".setName(\"最大预设标签数量\")"
+        },
+        {
+          "source": ".setName(\"Maximum generated tags\")",
+          "target": ".setName(\"最大生成标签数\")"
+        },
+        {
+          "source": ".setName(\"Output language\")",
+          "target": ".setName(\"输出语言\")"
+        },
+        {
+          "source": ".setDesc(\"Choose the AI service provider to use\")",
+          "target": ".setDesc(\"选择要使用的AI服务提供商\")"
+        },
+        {
+          "source": ".setDesc(\"Select the cloud service provider\")",
+          "target": ".setDesc(\"选择云服务提供商\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the base URL for your local service\")",
+          "target": ".setDesc(\"请输入您本地服务的基础URL\")"
+        },
+        {
+          "source": ".setDesc(\"Name of the model to use with your local service\")",
+          "target": ".setDesc(\"与您的本地服务搭配使用的模型名称\")"
+        },
+        {
+          "source": ".setDesc(\"Test connection to AI service\")",
+          "target": ".setDesc(\"测试AI服务连接\")"
+        },
+        {
+          "source": ".setDesc(\"Enter the complete chat completions API endpoint URL\")",
+          "target": ".setDesc(\"Enter the complete chat completions API endpoint URL\")"
+        },
+        {
+          "source": ".setDesc(\"Cloud service API key\")",
+          "target": ".setDesc(\"云服务API密钥\")"
+        },
+        {
+          "source": ".setDesc(\"Name of model to use\")",
+          "target": ".setDesc(\"使用的模型名称\")"
+        },
+        {
+          "source": ".setDesc(\"Choose how tags should be generated\")",
+          "target": ".setDesc(\"选择标签生成方式\")"
+        },
+        {
+          "source": ".setDesc(\"Choose where to get the predefined tags from\")",
+          "target": ".setDesc(\"选择预定义标签的来源\")"
+        },
+        {
+          "source": ".setDesc(\"Path to a file containing predefined tags (one tag per line)\")",
+          "target": ".setDesc(\"包含预定义标签的文件路径（每行一个标签）\")"
+        },
+        {
+          "source": ".setDesc(\"Files matching these patterns will be hidden in Search, Graph View, and Unlinked Mentions, less noticeable in Quick Switcher and link suggestions.\")",
+          "target": ".setDesc(\"符合这些模式的文件将在搜索、图谱视图和未链接提及中被隐藏，在快速切换器和链接建议中的显示也会减弱。\")"
+        },
+        {
+          "source": ".setDesc(\"Maximum number of predefined tags to use (0-10). Used in Predefined and Hybrid modes.\")",
+          "target": ".setDesc(\"预定义标签的最大使用数量（0-10）。适用于预定义模式和混合模式。\")"
+        },
+        {
+          "source": ".setDesc(\"Maximum number of new tags to generate (0-10). Used in Generate and Hybrid modes.\")",
+          "target": ".setDesc(\"生成新标签的最大数量（0-10）。适用于生成模式和混合模式。\")"
+        },
+        {
+          "source": ".setDesc(\"Language for generating tags\")",
+          "target": ".setDesc(\"生成标签的语言\")"
+        },
+        {
+          "source": ".setPlaceholder(\"http://localhost:11434/v1/chat/completions\")",
+          "target": ".setPlaceholder(\"http://localhost:11434/v1/chat/completions\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Model name (e.g., mistral, llama2, gpt-3.5-turbo)\")",
+          "target": ".setPlaceholder(\"模型名称（例如：mistral、llama2、gpt-3.5-turbo）\")"
+        },
+        {
+          "source": ".setTitle(`AI tag ${markdownFiles.length} selected notes`)",
+          "target": ".setTitle(`已选择${markdownFiles.length}个笔记进行AI标记`)"
+        },
+        {
+          "source": ".setTitle(\"AI tag this note\")",
+          "target": ".setTitle(\"AI标记此笔记\")"
+        }
+      ]
+    }
+  }
+}

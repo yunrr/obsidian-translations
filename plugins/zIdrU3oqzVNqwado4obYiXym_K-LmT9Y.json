@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-html-plugin",
+    "version": "2.0.0",
+    "title": "HTML Reader",
+    "description": "This is a HTML file reader plugin for Obsidian. Can open document with \".html\" and \".htm\" file extensions.",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.12",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"\", 8e3)",
+          "target": "Notice(\"\", 8e3)"
+        },
+        {
+          "source": " log(msg)",
+          "target": " log(msg)"
+        },
+        {
+          "source": ".log(\"markRanges()",
+          "target": ".log(\"标记范围（）"
+        },
+        {
+          "source": ".log(\"Ignoring invalid or overlapping range: \" + (\"\" + JSON.stringify(range)",
+          "target": ".log(\"忽略无效或重叠的范围：\" + (\"\" + JSON.stringify(range)"
+        },
+        {
+          "source": ".log(\"Ignoring invalid range: \" + JSON.stringify(range)",
+          "target": ".log(\"忽略无效的范围：\" + JSON.stringify(range)"
+        },
+        {
+          "source": ".log(\"End range automatically set to the max value of \" + max)",
+          "target": ".log(\"结束范围已自动设置为最大值：\" + max)"
+        },
+        {
+          "source": ".log(\"Invalid range: \" + JSON.stringify(range)",
+          "target": ".log(\"无效的范围：\" + JSON.stringify(range)"
+        },
+        {
+          "source": ".log(\"Skipping whitespace only range: \" + JSON.stringify(range)",
+          "target": ".log(\"跳过仅包含空白字符的范围：\" + JSON.stringify(range)"
+        },
+        {
+          "source": ".log('Searching with expression \"' + regexp + '\"')",
+          "target": ".log('使用表达式进行搜索：\"' + regexp + '\"')"
+        },
+        {
+          "source": ".log('Searching with expression \"' + regex + '\"')",
+          "target": ".log('使用表达式进行搜索：\"' + regex + '\"')"
+        },
+        {
+          "source": ".log(\"Starting to mark with the following ranges: \" + JSON.stringify(ranges)",
+          "target": ".log(\"开始标记以下范围：\" + JSON.stringify(ranges)"
+        },
+        {
+          "source": ".log('Removal selector \"' + sel + '\"')",
+          "target": ".log('移除选择器：\"' + sel + '\"')"
+        },
+        {
+          "source": "name: \"PBKDF2\"",
+          "target": "name: \"PBKDF2\""
+        },
+        {
+          "source": "name: \"HMAC\"",
+          "target": "name: \"HMAC\""
+        },
+        {
+          "source": "name:\"PBKDF2\"",
+          "target": "name:\"PBKDF2\""
+        },
+        {
+          "source": "name:\"HMAC\"",
+          "target": "name:\"HMAC\""
+        },
+        {
+          "source": "name:\"SHA-1\"",
+          "target": "name:\"SHA-1\""
+        },
+        {
+          "source": "text: \"HTML Reader Settings\"",
+          "target": "text: \"HTML 阅读器设置\""
+        },
+        {
+          "source": "text: \"\\u203B Remember to reload the file after changing any setting.\"",
+          "target": "text: \"\\u203B 修改设置后请记得重新加载文件。\""
+        },
+        {
+          "source": "text: \"General Settings\"",
+          "target": "text: \"常规设置\""
+        },
+        {
+          "source": "text: \"HotKeys and Touch Gestures Settings\"",
+          "target": "text: \"快捷键与手势设置\""
+        },
+        {
+          "source": "text: `Almost all keyboard hotkeys are taken from Obsidian's global hotkey settings, so you shall modify them via \\u2699\"Settings\" \\u21E8 \"Hotkeys\" options page.`",
+          "target": "text: `几乎所有的键盘快捷键都来源于 Obsidian 的全局快捷键设置，因此你应通过 \\u2699 “设置” \\u21E8 “快捷键” 页面进行修改。`"
+        },
+        {
+          "source": "text: \"HTML Reader error\"",
+          "target": "text: \"HTML 阅读器错误\""
+        },
+        {
+          "source": "text: `${e2.message}`",
+          "target": "text: `${e2.message}`"
+        },
+        {
+          "source": ".setButtonText(`${this.toNativeModifierString(hk.modifiers, hk.key)}`)",
+          "target": ".setButtonText(`${this.toNativeModifierString(hk.modifiers, hk.key)}`)"
+        },
+        {
+          "source": ".setButtonText(`${hk.key}`)",
+          "target": ".setButtonText(`${hk.key}`)"
+        },
+        {
+          "source": ".setName(\"Operating Mode\")",
+          "target": ".setName(\"运行模式\")"
+        },
+        {
+          "source": ".setName(\"Background Color\")",
+          "target": ".setName(\"背景颜色\")"
+        },
+        {
+          "source": ".setName(\"Extra File Extensions\")",
+          "target": ".setName(\"额外文件扩展名\")"
+        },
+        {
+          "source": ".setName(\"Quick document zoom in and out\")",
+          "target": ".setName(\"快速缩放页面\")"
+        },
+        {
+          "source": ".setName(\"Search document text\")",
+          "target": ".setName(\"搜索页面文本\")"
+        },
+        {
+          "source": ".setName(\"Zoom in document\")",
+          "target": ".setName(\"放大页面\")"
+        },
+        {
+          "source": ".setName(\"Zoom out document\")",
+          "target": ".setName(\"缩小页面\")"
+        },
+        {
+          "source": ".setName(\"Reset document zoom\")",
+          "target": ".setName(\"重置页面缩放\")"
+        },
+        {
+          "source": ".setDesc(\"Set operating mode for this plugin to protect user and app.\")",
+          "target": ".setDesc(\"设置此插件的运行模式以保护用户和应用。\")"
+        },
+        {
+          "source": ".setDesc(\"Set HTML <body> element background color forcely.\")",
+          "target": ".setDesc(\"强制设置 HTML 元素的背景颜色。\")"
+        },
+        {
+          "source": ".setDesc(\"Open HTML format files with user defined file extensions (list of comma separated strings). Change this setting may cause other plugins un-workable, so you shall know very clearly what you are doing. Remember to relaunch the Obsidian app after change this setting!\")",
+          "target": ".setDesc(\"使用用户自定义的文件扩展名打开 HTML 格式文件（逗号分隔的字符串列表）。修改此设置可能导致其他插件无法正常工作，因此请确保你明确知道自己在做什么。修改后请重启 Obsidian 应用！\")"
+        },
+        {
+          "source": ".setDesc(\"Zoom the document using Ctrl + Wheel (zoom in: \\u2191, zoom out: \\u2193), or using the trackpad/touch screen/touch panel two-finger pinch-zoom gesture (zoom in: \\u2190 \\u2192, zoom out: \\u2192 \\u2190).\")",
+          "target": ".setDesc(\"使用 Ctrl + 鼠标滚轮 缩放文档（放大:  \\u2191，缩小: \\u2193），或使用触控板/触屏/触控面板的双指捏合手势（放大: \\u2190 \\u2192，缩小: \\u2192 \\u2190）。\")"
+        },
+        {
+          "source": ".setDesc(`Search current file.`)",
+          "target": ".setDesc(`搜索当前文件。`)"
+        },
+        {
+          "source": ".setDesc(`Zoom in current file.`)",
+          "target": ".setDesc(`放大当前文件。`)"
+        },
+        {
+          "source": ".setDesc(`Zoom out current file.`)",
+          "target": ".setDesc(`缩小当前文件。`)"
+        },
+        {
+          "source": ".setDesc(`Reset current file zoom.`)",
+          "target": ".setDesc(`重置当前文件缩放。`)"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g. xhtml, htm123\")",
+          "target": ".setPlaceholder(\"例如：xhtml, htm123\")"
+        },
+        {
+          "source": "The external image sources would be blocked by CSP.",
+          "target": "外部图片源将被内容安全策略 (CSP) 屏蔽。"
+        },
+        {
+          "source": ": The external script files may not executable due to Obsidian's limitation.<",
+          "target": ": 由于 Obsidian 的限制，外部脚本文件可能无法执行。<"
+        },
+        {
+          "source": ": The script codes inside ",
+          "target": ": "
+        },
+        {
+          "source": "> and external script files are still not executable.<",
+          "target": "> 标签内的脚本代码和外部脚本文件仍然不可执行。<"
+        },
+        {
+          "source": "Detail Explanation",
+          "target": "详细说明"
+        },
+        {
+          "source": "Text Mode",
+          "target": "文本模式"
+        },
+        {
+          "source": "Highly recommended for the files came from untrusted source! This mode almost sanitized all visual effects, script codes, and styles out. Meanwhile, it keeps text parts for reading the content of HTML files with HTML layout elements.",
+          "target": "强烈建议用于来自不受信任来源的文件！此模式几乎会清理掉所有的视觉效果、脚本代码和样式。同时，它会保留文本部分以及 HTML 布局元素，以便阅读 HTML 文件的内容。"
+        },
+        {
+          "source": "High Restricted Mode",
+          "target": "高限制模式"
+        },
+        {
+          "source": "This mode recommended for the user who wants more security. It would keep custom elements but sanitize unsafe HTML elements out, as well as unsafe attributes and their contents. The external image sources would be blocked by CSP, and the images are only available from the HTML files themselves.",
+          "target": "此模式推荐给需要更高安全性的用户。它会保留自定义元素，但会清理掉不安全的 HTML 元素、不安全的属性及其内容。外部图片源将被内容安全策略 (CSP) 屏蔽，图片仅能来自 HTML 文件本身。"
+        },
+        {
+          "source": "Balance Mode",
+          "target": "平衡模式"
+        },
+        {
+          "source": "This mode is the default mode for this plugin. It would keep all custom elements and HTML elements, but sanitize unsafe attributes and their contents out.",
+          "target": "此模式是该插件的默认模式。它会保留所有自定义元素和 HTML 元素，但会清理掉不安全的属性及其内容。"
+        },
+        {
+          "source": "Low Restricted Mode",
+          "target": "低限制模式"
+        },
+        {
+          "source": "This mode would not sanitize anything, all elements and their content would be keeped. The script codes inside",
+          "target": "此模式不会清理任何内容，所有元素及其内容都将被保留。"
+        },
+        {
+          "source": "still not executable, nor the external script files.",
+          "target": "标签内的脚本代码仍然不可执行，外部脚本文件也不可执行。"
+        },
+        {
+          "source": "Unrestricted Mode",
+          "target": "无限制模式"
+        },
+        {
+          "source": "This mode is <",
+          "target": "此模式 <"
+        },
+        {
+          "source": "very dangerous",
+          "target": "非常危险"
+        },
+        {
+          "source": "and may cause the Obsidian app crash,",
+          "target": "，可能导致 Obsidian 应用程序崩溃，"
+        },
+        {
+          "source": "the Obsidian and this plugin cannot assume responsibility or liability for switching to this mode",
+          "target": "Obsidian 和本插件对于切换到该模式不会承担任何责任或义务"
+        },
+        {
+          "source": "It would not sanitize anything, and all elements and their content would be keeped. The Obsidian app itself might adjust something. The external script files may not executable due to Obsidian's limitation. Strongly recommended not switching to this mode for normal usage.",
+          "target": "它不会清理任何内容，所有元素及其内容都将被保留。Obsidian 应用程序本身可能会进行一些调整。外部脚本文件可能由于 Obsidian 的限制而无法执行。强烈建议正常使用时不要切换到此模式。"
+        },
+        {
+          "source": "b>.",
+          "target": "b>。"
+        },
+        {
+          "source": "If you encounter troubles after switch to this mode, it is recommended to take these recovery steps:",
+          "target": "如果在切换到此模式后遇到问题，建议采取以下恢复步骤："
+        },
+        {
+          "source": "Turn back to previous file which can open normally.",
+          "target": "返回到之前能正常打开的文件。"
+        },
+        {
+          "source": "Delete or move the bad opened file to trash can. Otherwise, Obsidian would still open it after re-launched.",
+          "target": "删除已打开的出现问题的文件或将其移至回收站。否则，Obsidian 在重新启动后仍会尝试打开它。"
+        },
+        {
+          "source": "Return to this settings page to switch another Operating Mode.",
+          "target": "返回此设置页面并切换到另一种操作模式。"
+        },
+        {
+          "source": "Sometimes you still cannot see what you want, then you should check the content of HTML file. This mode is just leave the content alone (only ",
+          "target": "有时您可能仍然看不到想要的内容，这时您应该检查 HTML 文件。此模式只是保留内容原样（仅"
+        },
+        {
+          "source": "adjust the external link anchor tags to let them open in default browser windows",
+          "target": "调整外部链接锚点标签，使其在默认浏览器窗口中打开"
+        },
+        {
+          "source": "but the file might has some self-contained security protection facilities (such as CSP) and they would block something to avoid XSS attacks. If you find something like",
+          "target": "但文件可能包含自带的安全保护机制（例如 CSP），它们会阻止某些内容以避免 XSS 攻击。如果您在 HTML 文件中发现类似"
+        },
+        {
+          "source": "inside the HTML file, it means the file is protected by CSP mechanism. You might ",
+          "target": "的标签，意味着该文件受 CSP 机制保护。您可以："
+        },
+        {
+          "source": "Modify or remove the CSP",
+          "target": "手动修改或删除该 CSP"
+        },
+        {
+          "source": "tag by hands.",
+          "target": "标签。"
+        },
+        {
+          "source": "Change the capture settings of the original web page saving app to disable CSP or something else, and re-save the web page.",
+          "target": "更改原始网页保存应用程序的捕获设置，禁用 CSP 或其他相关设置，然后重新保存网页。"
+        },
+        {
+          "source": "Comparison",
+          "target": "模式对比"
+        },
+        {
+          "source": ">Images<",
+          "target": ">图片<"
+        },
+        {
+          "source": ">Styles<",
+          "target": ">风格样式<"
+        },
+        {
+          "source": ">Scripting<",
+          "target": ">脚本执行<"
+        },
+        {
+          "source": "HTML Sanitization",
+          "target": "HTML清理"
+        },
+        {
+          "source": "Isolated",
+          "target": "沙盒隔离"
+        },
+        {
+          "source": "> No <",
+          "target": "> 否 <"
+        },
+        {
+          "source": "> Yes <",
+          "target": "> 是 <"
+        },
+        {
+          "source": "> Yes<",
+          "target": "> 是<"
+        },
+        {
+          "source": "> Partial<",
+          "target": "> 部分支持<"
+        },
+        {
+          "source": "Declarative Shadow DOM",
+          "target": "声明式 Shadow DOM (DSD)"
+        },
+        {
+          "source": "Content Security Policy",
+          "target": "内容安全策略 (CSP)"
+        },
+        {
+          "source": "btn.setButtonText(`Blank`)",
+          "target": "btn.setButtonText(`空`)"
+        }
+      ]
+    }
+  }
+}
