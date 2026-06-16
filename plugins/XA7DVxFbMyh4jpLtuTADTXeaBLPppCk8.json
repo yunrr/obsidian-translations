@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "download-image",
+    "version": "1.0.1",
+    "title": "Download Image",
+    "description": "Download Image Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[download-image] Unexpected cleanup error:",
+          "target": "[下载图片] 意外清理错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[download-image] Unexpected error:",
+          "target": "[下载图片] 意外错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Confirm",
+          "target": "确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "How downloaded images are named. URL hash derives a deterministic name from the image URL; Timestamp adds a date prefix; Content hash uses file content for deduplication.",
+          "target": "下载图片的命名方式。URL哈希根据图片URL生成确定性名称；时间戳添加日期前缀；内容哈希使用文件内容进行去重。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of simultaneous image downloads (1-10).",
+          "target": "同时下载图片的最大数量（1-10）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Unused attachments are removed with Obsidian’s standard file trash behavior.",
+          "target": "未使用的附件将按照Obsidian的标准文件回收行为移除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder paths to exclude from orphan scan (one per line). Uses exact prefix matching.",
+          "target": "从孤立扫描中排除的文件夹路径（每行一个）。使用精确前缀匹配。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose which orphaned attachments to remove.",
+          "target": "选择要移除哪些孤立的附件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Download",
+          "target": "下载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image naming strategy",
+          "target": "图片命名策略"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Concurrent downloads",
+          "target": "并发下载数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cleanup",
+          "target": "清理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Attachment removal",
+          "target": "附件移除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excluded folders",
+          "target": "排除的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clean orphaned attachments",
+          "target": "清理孤立附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Selection",
+          "target": "选择"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter one folder path per line.",
+          "target": "每行输入一个文件夹路径。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No orphaned attachments found",
+          "target": "未找到孤立的附件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cleaning up...",
+          "target": "正在清理..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Cleanup failed unexpectedly. Check the debug log for details.",
+          "target": "清理意外失败。请检查调试日志了解详情。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No remote images found in current note",
+          "target": "当前笔记中未找到远程图片"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Downloading images...",
+          "target": "正在下载图片..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Image download failed unexpectedly. Check the debug log for details.",
+          "target": "图片下载意外失败。请检查调试日志了解详情。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Download not attempted",
+          "target": "未尝试下载"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "hash",
+          "source": "Content hash",
+          "target": "内容哈希"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Save remote files in current note",
+          "target": "在当前笔记中保存远程文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clean unused attachments",
+          "target": "清理未使用的附件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "original",
+          "source": "URL hash",
+          "target": "URL哈希"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "timestamp",
+          "source": "Timestamp prefix",
+          "target": "时间戳前缀"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
