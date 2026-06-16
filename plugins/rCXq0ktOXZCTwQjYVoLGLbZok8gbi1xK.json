@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "paste-reformatter",
+    "version": "1.0.1",
+    "title": "Paste Reformatter",
+    "description": "Paste Reformatter Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.4.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Regular expression pattern",
+          "target": "正则表达式模式"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Replacement value (can use $1, $2, etc.)",
+          "target": "替换值（可以使用 $1、$2 等）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "table",
+          "target": "table"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tr",
+          "target": "tr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "thead",
+          "target": "thead"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "th",
+          "target": "th"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "tbody",
+          "target": "tbody"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "td",
+          "target": "td"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error accessing clipboard:",
+          "target": "访问剪贴板时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error processing paste content:",
+          "target": "处理粘贴内容时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Paste Reformatter plugin skipping paste: cursor is inside a code block",
+          "target": "粘贴格式化器插件跳过粘贴：光标位于代码块内"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Default paste behavior overridden by Paste Reformatter plugin",
+          "target": "默认粘贴行为被粘贴格式化器插件覆盖"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Paste Reformatter plugin did not handle paste, allowing default behavior",
+          "target": "粘贴格式化器插件未处理粘贴，允许默认行为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Alter the behavior of the default paste action to reformat pasted content.",
+          "target": "更改默认粘贴操作的行为，以重新格式化粘贴的内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display a notice when pasted content is reformatted.",
+          "target": "当粘贴的内容被重新格式化时显示通知。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Control how the HTML content is processed before being converted to Markdown.",
+          "target": "控制HTML内容在转换为Markdown之前如何处理。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Remove empty elements when reformatting pasted content",
+          "target": "重新格式化粘贴内容时移除空元素"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Remove line breaks (br tags) when reformatting pasted content",
+          "target": "重新格式化粘贴内容时移除换行符（br标签）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Apply regular expression replacements to the HTML content before converting to Markdown. You can use $1, $2, etc. to reference capture groups.",
+          "target": "在将HTML内容转换为Markdown之前，对其应用正则表达式替换。您可以使用 $1、$2 等来引用捕获组。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Control how the Markdown content is adjusted after HTML conversion or when pasted as plain text.",
+          "target": "控制HTML转换后或作为纯文本粘贴时，Markdown内容如何调整。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The maximum heading level to allow when reformatting pasted content (H1 is treated as disabled)",
+          "target": "重新格式化粘贴内容时允许的最大标题级别（H1被视为禁用）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Preserve the heading hierarchy by cascading levels (e.g., H1→H2→H3 becomes H2→H3→H4 when max level is H2)",
+          "target": "通过级联级别保留标题层次结构（例如，当最大级别为H2时，H1→H2→H3 变为 H2→H3→H4）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Cascade headings based on the current context (e.g., if cursor is in an H2 section, headings will start from H3)",
+          "target": "根据当前上下文级联标题（例如，如果光标在H2部分，标题将从H3开始）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Collapse multiple consecutive blank lines into a single blank line",
+          "target": "将多个连续的空行折叠为单个空行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Remove blank lines in the Markdown output",
+          "target": "移除Markdown输出中的空行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Apply regular expression replacements to the Markdown content after HTML conversion. You can use $1, $2, etc. to reference capture groups.",
+          "target": "在HTML转换后，对Markdown内容应用正则表达式替换。您可以使用 $1、$2 等来引用捕获组。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Override default paste behavior",
+          "target": "覆盖默认粘贴行为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show paste notifications",
+          "target": "显示粘贴通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "HTML transformations",
+          "target": "HTML转换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remove empty elements",
+          "target": "移除空元素"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Strip hard line breaks",
+          "target": "去除硬换行符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "HTML regex replacements",
+          "target": "HTML 正则替换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Markdown transformations",
+          "target": "Markdown 转换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max heading level",
+          "target": "最大标题级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cascade heading levels",
+          "target": "级联标题级别"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Contextual cascade",
+          "target": "上下文级联"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert to single-spaced",
+          "target": "转换为单倍行距"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remove empty lines",
+          "target": "移除空行"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Markdown regex replacements",
+          "target": "Markdown 正则替换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Pattern",
+          "target": "模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Replacement",
+          "target": "替换为"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "No replacements defined. Click the + icon below to add one.",
+          "target": "未定义替换规则。点击下方的 + 图标添加一条。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Clipboard does not contain HTML or plain text content.",
+          "target": "剪贴板中不包含 HTML 或纯文本内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error accessing clipboard. Try using regular paste instead.",
+          "target": "访问剪贴板出错。请尝试使用常规粘贴。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Reformatted pasted content",
+          "target": "已重新格式化粘贴内容"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error processing paste content",
+          "target": "处理粘贴内容时出错"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Reformat and Paste",
+          "target": "重新格式化并粘贴"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Paste with Escaped Markdown",
+          "target": "粘贴并转义 Markdown"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "prop",
+          "source": "Disabled (H1)",
+          "target": "禁用 (H1)"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
