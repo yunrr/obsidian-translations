@@ -1,0 +1,2243 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-tasks-plugin",
+    "version": "2.0.0",
+    "title": "Tasks",
+    "description": "Track tasks across your vault. Supports due dates, recurring tasks, done dates, sub-set of checklist items, and filtering.",
+    "language": "zh-cn",
+    "supportedVersions": "7.14.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Cannot postpone a null date\")",
+          "target": "Notice(\"不能推迟无效日期\")"
+        },
+        {
+          "source": "Notice(r+`\n\nThis message has been written to the console.\n`,1e4)",
+          "target": "Notice(r+`\n\n此信息已写入控制台.\n`,1e4)"
+        },
+        {
+          "source": "name:\"Create or edit task\"",
+          "target": "name:\"创建或编辑任务\""
+        },
+        {
+          "source": "name:\"Toggle task done\"",
+          "target": "name:\"切换任务完成状态\""
+        },
+        {
+          "source": "description:\"Description\"",
+          "target": "description:\"说明\""
+        },
+        {
+          "source": "text:\"Core Statuses\"",
+          "target": "text:\"核心状态\""
+        },
+        {
+          "source": "text:\"Custom Statuses\"",
+          "target": "text:\"自定义状态\""
+        },
+        {
+          "source": "text:\"Changing any settings requires a restart of obsidian.\"",
+          "target": "text:\"更改任何设置都需要重新启动Obsidian.\""
+        },
+        {
+          "source": ".setText(\"Create or edit Task\")",
+          "target": ".setText(\"创建或编辑任务\")"
+        },
+        {
+          "source": ".setText(\"Loading Tasks ...\")",
+          "target": ".setText(\"加载任务...\")"
+        },
+        {
+          "source": ".setButtonText(\"Add New Task Status\")",
+          "target": ".setButtonText(\"添加新任务状态\")"
+        },
+        {
+          "source": ".setButtonText(\"Add All Unknown Status Types\")",
+          "target": ".setButtonText(\"添加所有未知状态类型\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset Custom Status Types to Defaults\")",
+          "target": ".setButtonText(\"重置自定义状态类型为默认值\")"
+        },
+        {
+          "source": ".setName(\"Task Status Symbol\")",
+          "target": ".setName(\"任务状态符号\")"
+        },
+        {
+          "source": ".setName(\"Task Status Name\")",
+          "target": ".setName(\"任务状态名称\")"
+        },
+        {
+          "source": ".setName(\"Task Next Status Symbol\")",
+          "target": ".setName(\"任务下一个状态符号\")"
+        },
+        {
+          "source": ".setName(\"Task Status Type\")",
+          "target": ".setName(\"任务状态类型\")"
+        },
+        {
+          "source": ".setName(\"Available as command\")",
+          "target": ".setName(\"可用作命令\")"
+        },
+        {
+          "source": ".setName(\"Task Format\")",
+          "target": ".setName(\"任务格式\")"
+        },
+        {
+          "source": ".setName(\"Global task filter\")",
+          "target": ".setName(\"全局任务筛选器\")"
+        },
+        {
+          "source": ".setName(\"Global filter\")",
+          "target": ".setName(\"全局筛选器\")"
+        },
+        {
+          "source": ".setName(\"Remove global filter from description\")",
+          "target": ".setName(\"从描述中删除全局筛选器\")"
+        },
+        {
+          "source": ".setName(\"Global Query\")",
+          "target": ".setName(\"全局查询\")"
+        },
+        {
+          "source": ".setName(\"Task Statuses\")",
+          "target": ".setName(\"任务状态\")"
+        },
+        {
+          "source": ".setName(\"Dates\")",
+          "target": ".setName(\"日期\")"
+        },
+        {
+          "source": ".setName(\"Set created date on every added task\")",
+          "target": ".setName(\"设置每个添加任务的创建日期\")"
+        },
+        {
+          "source": ".setName(\"Set done date on every completed task\")",
+          "target": ".setName(\"设置每个已完成任务的完成日期\")"
+        },
+        {
+          "source": ".setName(\"Set cancelled date on every cancelled task\")",
+          "target": ".setName(\"为每个已取消的任务设置已取消的日期\")"
+        },
+        {
+          "source": ".setName(\"Dates from file names\")",
+          "target": ".setName(\"从文件名中提取日期\")"
+        },
+        {
+          "source": ".setName(\"Use filename as Scheduled date for undated tasks\")",
+          "target": ".setName(\"将文件名用作未注明日期的任务的计划日期\")"
+        },
+        {
+          "source": ".setName(\"Additional filename date format as Scheduled date for undated tasks\")",
+          "target": ".setName(\"为无日期任务添加文件名日期格式作为计划日期\")"
+        },
+        {
+          "source": ".setName(\"Folders with default Scheduled dates\")",
+          "target": ".setName(\"具有默认计划日期的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Recurring tasks\")",
+          "target": ".setName(\"重复性任务\")"
+        },
+        {
+          "source": ".setName(\"Next recurrence appears on the line below\")",
+          "target": ".setName(\"下一个重复出现在下一行\")"
+        },
+        {
+          "source": ".setName(\"Auto-suggest\")",
+          "target": ".setName(\"自动建议\")"
+        },
+        {
+          "source": ".setName(\"Auto-suggest task content\")",
+          "target": ".setName(\"自动建议任务内容\")"
+        },
+        {
+          "source": ".setName(\"Minimum match length for auto-suggest\")",
+          "target": ".setName(\"自动建议的最小匹配长度\")"
+        },
+        {
+          "source": ".setName(\"Maximum number of auto-suggestions to show\")",
+          "target": ".setName(\"要显示的最大自动建议数\")"
+        },
+        {
+          "source": ".setName(\"Dialogs\")",
+          "target": ".setName(\"对话框\")"
+        },
+        {
+          "source": ".setName(\"Provide access keys in dialogs\")",
+          "target": ".setName(\"在对话框中提供访问密钥\")"
+        },
+        {
+          "source": ".setDesc(\"This is the character between the square braces. (It can only be edited for Custom statuses, and not Core statuses.)\")",
+          "target": ".setDesc(\"这是方括号中的字符.(仅可编辑自定义状态,不可编辑核心状态.)\")"
+        },
+        {
+          "source": ".setDesc(\"This is the friendly name of the task status.\")",
+          "target": ".setDesc(\"这是任务状态的友好名称.\")"
+        },
+        {
+          "source": ".setDesc(\"When clicked on this is the symbol that should be used next.\")",
+          "target": ".setDesc(\"单击时,这是下一步应该使用的符号.\")"
+        },
+        {
+          "source": ".setDesc(\"Control how the status behaves for searching and toggling.\")",
+          "target": ".setDesc(\"控制搜索和切换状态的行为.\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled this status will be available as a command so you can assign a hotkey and toggle the status using it.\")",
+          "target": ".setDesc(\"如果启用,此状态将作为命令可用,因此您可以指定热键并使用它切换状态.\")"
+        },
+        {
+          "source": ".setDesc(\"Enabling this removes the string that you set as global filter from the task description when displaying a task.\")",
+          "target": ".setDesc(\"启用此选项将在显示任务时从任务描述中删除设置为全局筛选器的字符串.\")"
+        },
+        {
+          "source": ".setDesc(\"Leave empty if you want to use default Scheduled dates everywhere, or enter a comma-separated list of folders.\")",
+          "target": ".setDesc(\"如果要处处使用默认的“计划日期”,请保留为空,或者输入以逗号分隔的文件夹列表\")"
+        },
+        {
+          "source": ".setDesc(\"If higher than 0, auto-suggest will be triggered only when the beginning of any supported keywords is recognized.\")",
+          "target": ".setDesc(\"如果高于0,则只有在识别出任何支持的关键字的开头时才会触发自动建议.\")"
+        },
+        {
+          "source": ".setDesc('How many suggestions should be shown when an auto-suggest menu pops up (including the \"\\u23CE\" option).')",
+          "target": ".setDesc('当自动建议菜单弹出时,应显示多少条建议 (包含 \"\\u23CE\" 选项).')"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g. #task or TODO\")",
+          "target": ".setPlaceholder(\"例如:#task 或 TODO\")"
+        },
+        {
+          "source": ".setPlaceholder(`# For example...\npath does not include _templates/\nlimit 300\nshow urgency`)",
+          "target": ".setPlaceholder(`# 例如...\npath does not include _templates/\nlimit 300\nshow urgency`)"
+        },
+        {
+          "source": ".setPlaceholder(\"example: MMM DD YYYY\")",
+          "target": ".setPlaceholder(\"示例:MMM DD YYYY\")"
+        },
+        {
+          "source": ".setTooltip(\"Save\")",
+          "target": ".setTooltip(\"保存\")"
+        },
+        {
+          "source": ".setTooltip(\"Cancel\")",
+          "target": ".setTooltip(\"取消\")"
+        },
+        {
+          "source": ".setTooltip(\"Create a new file in the root of the vault, containing a Mermaid diagram of the current status settings.\")",
+          "target": ".setTooltip(\"在库的根目录下创建一个新文件,包含当前状态设置的 Mermaid 图表.\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete\")",
+          "target": ".setTooltip(\"删除\")"
+        },
+        {
+          "source": ".setTooltip(\"Edit\")",
+          "target": ".setTooltip(\"编辑\")"
+        },
+        {
+          "source": ".createEl(\"h3\",{text:\"Tasks Settings\"})",
+          "target": ".createEl(\"h3\",{text:\"任务设置(曲淡歌 & Fendi 汉化)\"})"
+        },
+        {
+          "source": ".createEl(\"h4\",{text:\"Task Format Settings\"})",
+          "target": ".createEl(\"h4\",{text:\"任务格式设置\"})"
+        },
+        {
+          "source": ".createEl(\"h4\",{text:\"Global filter Settings\"})",
+          "target": ".createEl(\"h4\",{text:\"全局过滤器设置\"})"
+        },
+        {
+          "source": ".createEl(\"h4\",{text:\"Global Query\"})",
+          "target": ".createEl(\"h4\",{text:\"全局查询\"})"
+        },
+        {
+          "source": ".createEl(\"h4\",{text:\"Task Statuses\"})",
+          "target": ".createEl(\"h4\",{text:\"任务状态\"})"
+        },
+        {
+          "source": ".createEl(\"h4\",{text:\"Date Settings\"})",
+          "target": ".createEl(\"h4\",{text:\"日期设置\"})"
+        },
+        {
+          "source": ".createEl(\"h4\",{text:\"Recurring task Settings\"})",
+          "target": ".createEl(\"h4\",{text:\"常规任务设置\"})"
+        },
+        {
+          "source": ".createEl(\"h4\",{text:\"Auto-suggest Settings\"})",
+          "target": ".createEl(\"h4\",{text:\"自动建议设置\"})"
+        },
+        {
+          "source": ".createEl(\"h4\",{text:\"Dialog Settings\"})",
+          "target": ".createEl(\"h4\",{text:\"对话设置\"})"
+        },
+        {
+          "source": "setText(\"Create or edit Task\"",
+          "target": "setText(\"创建或编辑任务\""
+        },
+        {
+          "source": "setText(\"Loading Tasks ...\"",
+          "target": "setText(\"加载任务 ...\""
+        },
+        {
+          "source": "Name:\"Dataview\"",
+          "target": "Name:\"Dataview 格式\""
+        },
+        {
+          "source": ".setDesc(\"Enabling this will open an intelligent suggest menu while typing inside a recognized task line.\")",
+          "target": ".setDesc(\"启用此选项将打开一个智能建议菜单,同时在已识别的任务行中键入.\")"
+        },
+        {
+          "source": "text:\"Global filter Settings\"",
+          "target": "text:\"全局筛选器设置\""
+        },
+        {
+          "source": "Recommended: Leave empty if you want all checklist items in your vault to be tasks managed by this plugin.",
+          "target": "建议:如果您希望仓库中的所有检查表项目都是由此插件管理的任务,请保留为空"
+        },
+        {
+          "source": "Use a global filter if you want Tasks to only act on a subset of your \"<code>- [ ]</code>\" checklist items, so that a checklist item must include the specified string in its description in order to be considered a task.",
+          "target": "如果您希望“任务”仅作用于 \"<code>- [ ]</code>\" 检查表项的子集,请使用全局筛选器,以便检查表项必须在其描述中包含指定的字符串才能被视为任务."
+        },
+        {
+          "source": "For example, if you set the global filter to <code>#task</code>, the Tasks plugin will only handle checklist items tagged with <code>#task</code>.",
+          "target": "例如,如果将全局筛选器设置为 <code>#task</code>,则Tasks插件将仅处理标记为 <code>#task</code> 的检查表项."
+        },
+        {
+          "source": "Other checklist items will remain normal checklist items and not appear in queries or get a done date set.",
+          "target": "其他检查表项目将保持正常的检查表项目,不会出现在查询中或设置完成日期."
+        },
+        {
+          "source": "See the <a href=\"https://obsidian-tasks-group.github.io/obsidian-tasks/getting-started/global-filter/\">documentation</a>.",
+          "target": "请参阅 <a href=\"https://obsidian-tasks-group.github.io/obsidian-tasks/getting-started/global-filter/\">文档</a>."
+        },
+        {
+          "source": "text:\"Task Statuses\"",
+          "target": "text:\"任务状态\""
+        },
+        {
+          "source": "These are the core statuses that Tasks supports natively, with no need for custom CSS styling or theming.",
+          "target": "这些是Tasks本机支持的核心状态,不需要自定义CSS样式或主题."
+        },
+        {
+          "source": "You can add edit and add your own custom statuses in the section below.",
+          "target": "您可以在下面的部分中添加编辑和添加自己的自定义状态."
+        },
+        {
+          "source": "You should first <b>select and install a CSS Snippet or Theme</b> to style custom checkboxes",
+          "target": "您应该首先<b>选择并安装CSS代码段或主题<b>以设置自定义复选框的样式"
+        },
+        {
+          "source": "Then, use the buttons below to set up your custom statuses, to match your chosen CSS checkboxes.",
+          "target": "然后,使用下面的按钮设置您的自定义状态,以匹配您选择的CSS复选框."
+        },
+        {
+          "source": "<b>Note</b> Any statuses with the same symbol as any earlier statuses will be ignored. You can confirm the actually loaded statuses by running the 'Create or edit task' command and looking at the Status drop-down.",
+          "target": "<b>注意</b>任何与任何早期状态具有相同符号的状态都将被忽略.您可以通过运行“创建或编辑任务”命令并查看“状态”下拉列表来确认实际加载的状态."
+        },
+        {
+          "source": "See the <a href=\"https://obsidian-tasks-group.github.io/obsidian-tasks/getting-started/statuses/\">documentation</a> to get started!",
+          "target": "请参阅 <a href=\"https://obsidian-tasks-group.github.io/obsidian-tasks/getting-started/statuses/\">documentation</a> 开始!"
+        },
+        {
+          "source": "text:\"Date Settings\"",
+          "target": "text:\"日期设置\""
+        },
+        {
+          "source": "Save time entering Scheduled (\\u23F3) dates",
+          "target": "输入计划 (\\u23F3) 日期节省时间"
+        },
+        {
+          "source": "If this option is enabled, any undated tasks will be given a default Scheduled date extracted from their file name.",
+          "target": "如果启用此选项,则任何未注明日期的任务都将获得从其文件名中提取的默认“计划日期”."
+        },
+        {
+          "source": "The date in the file name must be in one of <code>YYYY-MM-DD</code> or <code>YYYYMMDD</code> formats.",
+          "target": "文件名中的日期必须是 <code>YYYY-MM-DD</code> or <code>YYYYMMDD</code> 格式之一."
+        },
+        {
+          "source": "See the <a href=\"https://obsidian-tasks-group.github.io/obsidian-tasks/getting-started/use-filename-as-default-date/\">documentation",
+          "target": "请参阅 <a href=\"https://obsidian-tasks-group.github.io/obsidian-tasks/getting-started/use-filename-as-default-date/\">文档"
+        },
+        {
+          "source": "text:\"Auto-suggest Settings\"",
+          "target": "text:\"自动建议设置\""
+        },
+        {
+          "source": "How many suggestions should be shown when an auto-suggest menu pops up (including the \"\\u23CE\" option).",
+          "target": "弹出自动建议菜单(包括 \"\\u23CE\" 选项)时应显示多少建议."
+        },
+        {
+          "source": "If the access keys (keyboard shortcuts) for various controls in dialog boxes conflict with system keyboard shortcuts or assistive technology functionality that is important for you, you may want to deactivate them here.",
+          "target": "如果对话框中各种控件的访问键(键盘快捷键)与系统键盘快捷键或对您很重要的辅助技术功能相冲突,您可能需要在此处停用它们."
+        },
+        {
+          "source": "Add New Task Status",
+          "target": "添加新任务状态"
+        },
+        {
+          "source": "Add All Unknown Status Types",
+          "target": "添加所有未知状态类型"
+        },
+        {
+          "source": "Reset Custom Status Types to Defaults",
+          "target": "将自定义状态类型重置为默认值"
+        },
+        {
+          "source": "AnuPpuccin Theme",
+          "target": "AnuPpuccin 主题"
+        },
+        {
+          "source": "Ebullientworks Theme",
+          "target": "Ebullientworks 主题"
+        },
+        {
+          "source": "ITS Theme & SlRvb Checkboxes",
+          "target": "ITS主题 和 SlRvb复选框"
+        },
+        {
+          "source": "Minimal Theme",
+          "target": "Minimal 主题"
+        },
+        {
+          "source": "Things Theme",
+          "target": "Things 主题"
+        },
+        {
+          "source": "Aura Theme (Dark mode only)",
+          "target": "Aura 主题 (仅限黑暗模式)"
+        },
+        {
+          "source": "text:\"Dialog Settings\"",
+          "target": "text:\"对话框设置\""
+        },
+        {
+          "source": "text:\"Task Format Settings\"",
+          "target": "text:\"任务格式设置\""
+        },
+        {
+          "source": "The format that Tasks uses to read and write tasks.",
+          "target": "任务用于读取和写入任务的格式."
+        },
+        {
+          "source": "Important:</b> Tasks currently only supports one format at a time. Selecting Dataview will currently <b>stop Tasks reading its own emoji signifiers",
+          "target": "重点:</b> 任务当前一次只支持一种格式.选择数据视图当前将 <b>停止Tasks读取自己的表情符号"
+        },
+        {
+          "source": "See the <a href=\"https://publish.obsidian.md/tasks/Reference/Task+Formats/About+Task+Formats\">documentation",
+          "target": "请参阅 <a href=\"https://publish.obsidian.md/tasks/Reference/Task+Formats/About+Task+Formats\">文档"
+        },
+        {
+          "source": "text:\"Global Query\"",
+          "target": "text:\"全局查询\""
+        },
+        {
+          "source": "A query that is automatically included at the start of every Tasks block in the vault. Useful for adding default filters, or layout options.",
+          "target": "自动包含在库中每个“任务”块开头的查询.用于添加默认过滤器或布局选项."
+        },
+        {
+          "source": "Enabling this will make the next recurrence of a task appear on the line below the completed task. Otherwise the next recurrence will appear before the completed one.",
+          "target": "启用此选项将使任务的下一个重复出现在已完成任务下方的行中.否则,下一次重复将出现在已完成的重复之前."
+        },
+        {
+          "source": "Enabling this will add a timestamp \\u2795 YYYY-MM-DD before other date values, when a task is created with 'Create or edit task', or by completing a recurring task.",
+          "target": "启用此功能将添加时间戳 \\u2795 YYYY-MM-DD 在其他日期值之前,当使用“创建或编辑任务”创建任务时,或通过完成定期任务创建任务时."
+        },
+        {
+          "source": "Enabling this will add a timestamp \\u2705 YYYY-MM-DD at the end when a task is toggled to done.",
+          "target": "启用此功能将添加时间戳 \\u2705 YYYY-MM-DD 在任务切换为已完成时结束."
+        },
+        {
+          "source": "text:\"Recurring task Settings\"",
+          "target": "text:\"定期任务设置\""
+        },
+        {
+          "source": "Not Recurring",
+          "target": "不重复"
+        },
+        {
+          "source": "Apply",
+          "target": "应用"
+        },
+        {
+          "source": "textContent=\"Cancel\"",
+          "target": "textContent=\"取消\""
+        },
+        {
+          "source": "textContent=\"Recurs\"",
+          "target": "textContent=\"重复\""
+        },
+        {
+          "source": "textContent=\"Due\"",
+          "target": "textContent=\"截止\""
+        },
+        {
+          "source": "textContent=\"Scheduled\"",
+          "target": "textContent=\"预约\""
+        },
+        {
+          "source": "textContent=\"Completed:\"",
+          "target": "textContent=\"完成:\""
+        },
+        {
+          "source": "textContent=\"Created on:\"",
+          "target": "textContent=\"创建时间:\""
+        },
+        {
+          "source": "textContent=\"Done on:\"",
+          "target": "textContent=\"完成时间:\""
+        },
+        {
+          "source": "(\"At least one of\"",
+          "target": "(\"满足其中一个条件即可\""
+        },
+        {
+          "source": "(\"All of\"",
+          "target": "(\"满足所有条件\""
+        },
+        {
+          "source": "t,\"using regex: \"",
+          "target": "t,\"匹配正则: \""
+        },
+        {
+          "source": "At most ${n} task`",
+          "target": "最多展示 ${n} 个任务`"
+        },
+        {
+          "source": "Edit task",
+          "target": "编辑任务"
+        },
+        {
+          "source": "Try 'Monday' or 'tomorrow', or [td|tm|yd|tw|nw|we] then space.",
+          "target": "尝试输入 'Monday' or 'tomorrow', 或 [td|tm|yd|tw|nw|we] 然后空格."
+        },
+        {
+          "source": "Try 'every 2 weeks on Thursday'.",
+          "target": "尝试输入 'every 2 weeks on Thursday'."
+        },
+        {
+          "source": "Search for tasks that depend on this task being done...",
+          "target": "搜索依赖于正在执行的此任务的任务..."
+        },
+        {
+          "source": "Search for tasks that the task being edited depends on...",
+          "target": "搜索正在编辑的任务所依赖的任务..."
+        },
+        {
+          "source": "text:\"Tasks Settings\"",
+          "target": "text:\"Tasks 设置\""
+        },
+        {
+          "source": "do not understand query",
+          "target": "无法理解查询"
+        },
+        {
+          "source": "Problem line: \"${t}\"`}get",
+          "target": "问题行: \"${t}\"`}get"
+        },
+        {
+          "source": " with `;switch(this.regex.flags.length){case 0:t+=\"no flags\"",
+          "target": " with `;switch(this.regex.flags.length){case 0:t+=\"no flags\""
+        },
+        {
+          "source": "Explanation of this Tasks code block query:",
+          "target": "此任务代码块查询的说明如下:"
+        },
+        {
+          "source": ".setPlaceholder(`# For example...",
+          "target": ".setPlaceholder(`# 例如..."
+        },
+        {
+          "source": "setName(\"Set cancelled date on every cancelled task\"",
+          "target": "setName(\"设置每个已取消任务的取消日期\""
+        },
+        {
+          "source": "setDesc($t.createFragmentWithHTML('Enabling this will add a timestamp \\u274C YYYY-MM-DD at the end when a task is toggled to cancelled.",
+          "target": "setDesc($t.createFragmentWithHTML('启用此功能将添加时间戳 \\u274C YYYY-MM-DD 在结尾,当任务切换为取消时."
+        },
+        {
+          "source": "createFragmentWithHTML('Enabling this will open an intelligent suggest menu while typing inside a recognized task line.",
+          "target": "createFragmentWithHTML('启用此选项将打开智能建议菜单,同时在已识别的任务行中键入."
+        },
+        {
+          "source": "displayText:`${n.startDateSymbol} start date`",
+          "target": "displayText:`${n.startDateSymbol} 开始日期`"
+        },
+        {
+          "source": "N(a,\"placeholder\",\"Take out the trash\"",
+          "target": "N(a,\"placeholder\",\"尽情倾述吧\""
+        },
+        {
+          "source": "malformed boolean query",
+          "target": "格式错误的布尔查询"
+        },
+        {
+          "source": "(check the documentation for guidelines)",
+          "target": "(查看文档中的指导原则)"
+        },
+        {
+          "source": "TypeError(\"Invalid token\"",
+          "target": "TypeError(\"无效令牌\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"open settings\"",
+          "target": "navActionButton.ariaLabel = \"打开设置\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"home\"",
+          "target": "navActionButton.ariaLabel = \"主页\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"extract\"",
+          "target": "navActionButton.ariaLabel = \"提取\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"unextract\"",
+          "target": "navActionButton.ariaLabel = \"取消提取\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"expand\"",
+          "target": "navActionButton.ariaLabel = \"扩展\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"collapse all\"",
+          "target": "navActionButton.ariaLabel = \"折叠所有\""
+        },
+        {
+          "source": "setButtonText(\"Extract\"",
+          "target": "setButtonText(\"提取\""
+        },
+        {
+          "source": "setButtonText(\"Cancel\"",
+          "target": "setButtonText(\"取消\""
+        },
+        {
+          "source": "setButtonText(\"Jump\"",
+          "target": "setButtonText(\"跳转\""
+        },
+        {
+          "source": ".setTitle(\"Open in new tab\"",
+          "target": ".setTitle(\"在新标签页打开\""
+        },
+        {
+          "source": ".setTitle(\"Open to the right\"",
+          "target": ".setTitle(\"在右侧打开\""
+        },
+        {
+          "source": ".setTitle(\"Open in new window\"",
+          "target": ".setTitle(\"在新窗口中打开\""
+        },
+        {
+          "source": ".error(\"Daily Note Outline: Could not create \"",
+          "target": ".error(\"每日笔记大纲:无法创建 \""
+        },
+        {
+          "source": ".error(\"Daily Note Outline: Could not create\"",
+          "target": ".error(\"每日笔记大纲:无法创建\""
+        },
+        {
+          "source": ".setMessage(`Daily Note Outline: created ${createdDN} daily notes for unresolved links`)",
+          "target": ".setMessage(`每日笔记大纲: 创建 ${createdDN} 未解析链接的每日笔记`)"
+        },
+        {
+          "source": ".Notice(\"Daily Note Outline: created all daily notes for unresolved links\"",
+          "target": ".Notice(\"每日笔记大纲: 为未解析的链接创建了所有每日笔记\""
+        },
+        {
+          "source": "return \"Daily Note Outline\"",
+          "target": "return \"每日笔记大纲\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"previous notes\"",
+          "target": "navActionButton.ariaLabel = \"上一个笔记\""
+        },
+        {
+          "source": "navActionButton.ariaLabel = \"next notes\"",
+          "target": "navActionButton.ariaLabel = \"下一个笔记\""
+        },
+        {
+          "source": "let labelForToday = \"create/open \"",
+          "target": "let labelForToday = \"创建/打开 \""
+        },
+        {
+          "source": "let labelForNext = \"create/open \"",
+          "target": "let labelForNext = \"创建/打开 \""
+        },
+        {
+          "source": "labelForToday = labelForToday + \"today's \";",
+          "target": "labelForToday = labelForToday + \"今天的 \";"
+        },
+        {
+          "source": "labelForNext = labelForNext + \"tomorrow's \"",
+          "target": "labelForNext = labelForNext + \"明天的 \""
+        },
+        {
+          "source": "labelForToday = labelForToday + \"present \"",
+          "target": "labelForToday = labelForToday + \"上一个 \""
+        },
+        {
+          "source": "labelForNext = labelForNext + \"next \"",
+          "target": "labelForNext = labelForNext + \"下一个 \""
+        },
+        {
+          "source": "labelForToday = labelForToday + GRANULARITY_TO_PERIODICITY[granularity] + \" note\"",
+          "target": "labelForToday = labelForToday + GRANULARITY_TO_PERIODICITY[granularity] + \" 笔记\""
+        },
+        {
+          "source": "labelForNext = labelForNext + GRANULARITY_TO_PERIODICITY[granularity] + \" note\"",
+          "target": "labelForNext = labelForNext + GRANULARITY_TO_PERIODICITY[granularity] + \" 笔记\""
+        },
+        {
+          "source": "console.info(\"No custom daily note settings found!\"",
+          "target": "console.info(\"找不到自定义的每日笔记设置!\""
+        },
+        {
+          "source": "day: \"daily\",",
+          "target": "day: \"每日\","
+        },
+        {
+          "source": "week: \"weekly\"",
+          "target": "week: \"每周\""
+        },
+        {
+          "source": "month: \"monthly\"",
+          "target": "month: \"每月\""
+        },
+        {
+          "source": "quarter: \"quarterly\"",
+          "target": "quarter: \"每季\""
+        },
+        {
+          "source": "year: \"yearly\"",
+          "target": "year: \"每年\""
+        },
+        {
+          "source": "none: \"none\"",
+          "target": "none: \"无\""
+        },
+        {
+          "source": "lines: \"num of lines\"",
+          "target": "lines: \"总行数\""
+        },
+        {
+          "source": "days: \"distance\"",
+          "target": "days: \"距今天数\""
+        },
+        {
+          "source": "tag: \"first tag\"",
+          "target": "tag: \"首标签\""
+        },
+        {
+          "source": "dow: \"day of week\"",
+          "target": "dow: \"星期几\""
+        },
+        {
+          "source": "dowshort: \"day of week(short)\"",
+          "target": "dowshort: \"周几\""
+        },
+        {
+          "source": "weeknumber: \"week number\"",
+          "target": "weeknumber: \"第几周\""
+        },
+        {
+          "source": "item.setTitle(\"refresh view\"",
+          "target": "item.setTitle(\"刷新视图\""
+        },
+        {
+          "source": ".setTitle(`show backlink files`",
+          "target": ".setTitle(`显示反向链接文件`"
+        },
+        {
+          "source": ".setTitle(\"show tooltip preview\"",
+          "target": ".setTitle(\"显示工具提示预览\""
+        },
+        {
+          "source": "item.setTitle(\"extract tasks\")",
+          "target": "item.setTitle(\"提取任务\")"
+        },
+        {
+          "source": "item.setTitle(\"extract list callouts\")",
+          "target": "item.setTitle(\"提取列表标注\")"
+        },
+        {
+          "source": "item.setTitle(\"extract time lists\")",
+          "target": "item.setTitle(\"提取时间列表\")"
+        },
+        {
+          "source": "item.setTitle(\"Extract\"",
+          "target": "item.setTitle(\"提取\""
+        },
+        {
+          "source": "<p>See the <a",
+          "target": "<p>请参阅 <a"
+        },
+        {
+          "source": ">documentation</a>.</p>",
+          "target": ">文档</a>.</p>"
+        },
+        {
+          "source": ">documentation</a> to get started!</p>",
+          "target": ">文档</a> 开始吧!</p>"
+        },
+        {
+          "source": "('Save time entering Scheduled (\\u23F3) dates.",
+          "target": "('节省输入 计划(Scheduled) (\\u23F3) 日期."
+        },
+        {
+          "source": "By default, Tasks plugin will match both",
+          "target": "默认情况下,Tasks插件将兼容"
+        },
+        {
+          "source": "<code>YYYY-MM-DD</code> and <code>YYYYMMDD</code> date formats.",
+          "target": "<code>YYYY-MM-DD</code> 和 <code>YYYYMMDD</code> 日期格式."
+        },
+        {
+          "source": "</br>Undated tasks have none of",
+          "target": "</br>未注明日期的任务没有"
+        },
+        {
+          "source": "Due (\\u{1F4C5} ), Scheduled (\\u23F3) and Start (\\u{1F6EB}) dates.",
+          "target": "到期(Due) (\\u{1F4C5} ), 计划(Scheduled) (\\u23F3) 和 开始(Start) (\\u{1F6EB}) 日期."
+        },
+        {
+          "source": "('An additional date format that Tasks plugin will recogize when using the file name as the Scheduled date for undated tasks.</br><p><a href=\"https://momentjs.com/docs/#/displaying/format/\">Syntax Reference</a></p>')",
+          "target": "('当使用文件名作为未注明日期的任务的计划日期时,任务插件将识别的另一种日期格式.</br><p><a href=\"https://momentjs.com/docs/#/displaying/format/\">语法参考</a></p>')"
+        },
+        {
+          "source": "Enabling this will add a timestamp \\u274C YYYY-MM-DD at the end when a task is toggled to cancelled",
+          "target": "启用此功能将添加时间戳 \\u274C YYYY-MM-DD 当任务切换为取消时"
+        },
+        {
+          "source": "{return`Change status to: [${this.newStatus.symbol}",
+          "target": "{return`将状态更改为: [${this.newStatus.symbol}"
+        },
+        {
+          "source": "\"Review and check your Statuses\"",
+          "target": "\"查看并检查您的状态\""
+        },
+        {
+          "source": "\"Recurs\"",
+          "target": "\"重复\""
+        },
+        {
+          "source": "\"Status\"",
+          "target": "\"状态\""
+        },
+        {
+          "source": "labelText:\"Before this\"",
+          "target": "labelText:\"父依赖\""
+        },
+        {
+          "source": "labelText:\"After this\"",
+          "target": "labelText:\"子任务\""
+        },
+        {
+          "source": "\"Only future dates:\"",
+          "target": "\"仅限未来日期:\""
+        },
+        {
+          "source": "{parsedRecurrence:\"<i>not recurring</>\",isRecurrenceValid:!0}",
+          "target": "{parsedRecurrence:\"<i>不重复</>\",isRecurrenceValid:!0}"
+        },
+        {
+          "source": "{parsedRecurrence:\"<i>due, scheduled or start date required</i>\",isRecurrenceValid:!1}",
+          "target": "{parsedRecurrence:\"<i>需要截止日期、计划日期或开始日期</i>\",isRecurrenceValid:!1}"
+        },
+        {
+          "source": "{parsedRecurrence:\"<i>invalid recurrence rule</i>\",isRecurrenceValid:!1}",
+          "target": "{parsedRecurrence:\"<i>重复规则无效</i>\",isRecurrenceValid:!1}"
+        },
+        {
+          "source": "Problem line: \"${e.rawInstruction}\"",
+          "target": "问题行: \"${e.rawInstruction}\""
+        },
+        {
+          "source": "<pre>Tasks query: $",
+          "target": "<pre>任务查询: $"
+        },
+        {
+          "source": ".indent(`No filters supplied. All tasks will match the query.",
+          "target": ".indent(`未提供筛选条件.所有任务都将与查询匹配."
+        },
+        {
+          "source": ".indent(`No grouping instructions supplied.",
+          "target": ".indent(`未提供分组说明."
+        },
+        {
+          "source": ".indent(`No sorting instructions supplied.",
+          "target": ".indent(`未提供排序说明."
+        },
+        {
+          "source": "t=`sort by ${this.fieldNameSingular()}`",
+          "target": "t=`排序方式: ${this.fieldNameSingular()}`"
+        },
+        {
+          "source": "t=`group by ${this.fieldNameSingular()}`",
+          "target": "t=`分组方式: ${this.fieldNameSingular()}`"
+        },
+        {
+          "source": "(t+=\" reverse\")",
+          "target": "(t+=\" 倒序\")"
+        },
+        {
+          "source": "c=`${t} date is between:`",
+          "target": "c=`${t} 日期在此之间:`"
+        },
+        {
+          "source": "$i(\"Search failed\"",
+          "target": "$i(\"搜索失败\""
+        },
+        {
+          "source": "$i(\"Parsing regular expression\"",
+          "target": "$i(\"解析正则表达式\""
+        },
+        {
+          "source": "The error message was:",
+          "target": "错误消息为:"
+        },
+        {
+          "source": "`Error: Failed calculating expression \"${e}\". The error message was: `",
+          "target": "`错误: 计算表达式失败 \"${e}\". 错误消息为: `"
+        },
+        {
+          "source": "`Error: Cannot evaluate an expression which is not valid: \"${this.line}\" gave error: \"${this.parseError}\"`",
+          "target": "`错误: 无法计算无效的表达式: \"${this.line}\" 给出错误: \"${this.parseError}\"`"
+        },
+        {
+          "source": "Error(\"Unknown unit \"",
+          "target": "Error(\"未知单位\""
+        },
+        {
+          "source": "Error(\"Class extends value \"",
+          "target": "Error(\"类扩展值\""
+        },
+        {
+          "source": "Error(\"Generator is already executing.\"",
+          "target": "Error(\"生成器已在执行.\""
+        },
+        {
+          "source": "Error(\"Symbol.asyncIterator is not defined.\"",
+          "target": "Error(\"Symbol.asyncIterator 未定义.\""
+        },
+        {
+          "source": "Error(\"Private accessor was defined without a getter\"",
+          "target": "Error(\"定义了没有 getter 的私有访问器\""
+        },
+        {
+          "source": "Error(\"Cannot read private member from an object whose class did not declare it\"",
+          "target": "Error(\"无法从类未声明私有成员的对象中读取私有成员\""
+        },
+        {
+          "source": "Error(\"Private method is not writable\"",
+          "target": "Error(\"私有方法不可写\""
+        },
+        {
+          "source": "Error(\"Private accessor was defined without a setter\"",
+          "target": "Error(\"定义私有访问器时没有设置器\""
+        },
+        {
+          "source": "Error(\"Cannot write private member to an object whose class did not declare it\"",
+          "target": "Error(\"无法将私有成员写入类未声明它的对象\""
+        },
+        {
+          "source": "Error(\"Cannot use 'in' operator on non-object\"",
+          "target": "Error(\"不能在非对象上使用 'in' 运算符\""
+        },
+        {
+          "source": "Error(\"target does not implement any known event API\"",
+          "target": "Error(\"目标未实现任何已知事件 API\""
+        },
+        {
+          "source": "Error(\"on method must be a function\"",
+          "target": "Error(\"on 方法必须是函数\""
+        },
+        {
+          "source": "Error(\"off method must be a function\"",
+          "target": "Error(\"off 方法必须是函数\""
+        },
+        {
+          "source": "Error(\"Event '\"",
+          "target": "Error(\"事件'\""
+        },
+        {
+          "source": "Error(\"event must be a string\"",
+          "target": "Error(\"事件必须是字符串\""
+        },
+        {
+          "source": "Error(\"options must be an object\"",
+          "target": "Error(\"选项必须是一个对象\""
+        },
+        {
+          "source": "Error('Invalid \"'",
+          "target": "Error('无效\"'"
+        },
+        {
+          "source": "Error('Unknown \"'",
+          "target": "Error('未知\"'"
+        },
+        {
+          "source": "Error(\"Unable to subscribe on cancel event asynchronously\"",
+          "target": "Error(\"无法异步订阅取消事件\""
+        },
+        {
+          "source": "Error(\"onCancel callback must be a function\"",
+          "target": "Error(\"onCancel 回调必须是函数\""
+        },
+        {
+          "source": "Error(\"options should be an object or true\"",
+          "target": "Error(\"选项应该是 object 或 true\""
+        },
+        {
+          "source": "Error(\"process.nextTick is not supported\"",
+          "target": "Error(\"process.nextTick 不受支持\""
+        },
+        {
+          "source": "Error(\"target musts be an object\"",
+          "target": "Error(\"目标必须是一个对象\""
+        },
+        {
+          "source": "Error(\"events must be an object\"",
+          "target": "Error(\"事件必须是一个对象\""
+        },
+        {
+          "source": "Error(\"target should be an object\"",
+          "target": "Error(\"目标应该是一个对象\""
+        },
+        {
+          "source": "Error(\"many only accepts instances of Function\"",
+          "target": "Error(\"许多只接受 Function 的实例\""
+        },
+        {
+          "source": "Error(\"Uncaught, unspecified 'error' event.\"",
+          "target": "Error(\"未捕获, 未指定的 '错误' 事件.\""
+        },
+        {
+          "source": "Error(\"onAny only accepts instances of Function\"",
+          "target": "Error(\"onAny 只接受 Function 的实例\""
+        },
+        {
+          "source": "Error(\"on only accepts instances of Function\"",
+          "target": "Error(\"on 只接受 Function 的实例\""
+        },
+        {
+          "source": "Error(\"removeListener only takes instances of Function\"",
+          "target": "Error(\"removeListener 只接受 Function 的实例\""
+        },
+        {
+          "source": "Error(\"event name required for wildcard emitter\"",
+          "target": "Error(\"通配符发射器需要事件名称\""
+        },
+        {
+          "source": "Error(\"n must be a non-negative number\"",
+          "target": "Error(\"n 必须是非负数\""
+        },
+        {
+          "source": "Error(\"Unexpected character: \"",
+          "target": "Error(\"意外字符:\""
+        },
+        {
+          "source": "Error(\"Unexpected end of expression: expected \"",
+          "target": "Error(\"表达式意外结束:预期\""
+        },
+        {
+          "source": "Error(\"Unexpected end of expression\"",
+          "target": "Error(\"表达式意外结束\""
+        },
+        {
+          "source": "Error(\"Invalid token\"",
+          "target": "Error(\"无效令牌\""
+        },
+        {
+          "source": "Error(\"Expected string but received \"",
+          "target": "Error(\"预期的字符串已收到\""
+        },
+        {
+          "source": "Error(\"Invalid postfix expression: \"",
+          "target": "Error(\"后缀表达式无效:\""
+        },
+        {
+          "source": "Error(\"Invalid token: \"",
+          "target": "Error(\"无效令牌:\""
+        },
+        {
+          "source": "Error(\"timeout while waiting for mutex to become available\"",
+          "target": "Error(\"等待互斥体可用时超时\""
+        },
+        {
+          "source": "Error(\"mutex already locked\"",
+          "target": "Error(\"互斥体已锁定\""
+        },
+        {
+          "source": "Error(\"request for lock canceled\"",
+          "target": "Error(\"锁定请求已取消\""
+        },
+        {
+          "source": "Error(`invalid weight ${e}: must be positive`",
+          "target": "Error(`无效权重 ${e}: 必须为正`"
+        },
+        {
+          "source": "Error(\"Can't create weekday with n == 0\"",
+          "target": "Error(\"无法创建 n == 0 的工作日\""
+        },
+        {
+          "source": "Error(\"Invalid UNTIL value: \"",
+          "target": "Error(\"UNTIL 值无效:\""
+        },
+        {
+          "source": "Error(\"expected \"",
+          "target": "Error(\"预期\""
+        },
+        {
+          "source": "Error(\"Unexpected end\"",
+          "target": "Error(\"意外结局\""
+        },
+        {
+          "source": "Error(\"Unexpected symbol \"",
+          "target": "Error(\"意外符号\""
+        },
+        {
+          "source": "Error(\"Unknown symbol\"",
+          "target": "Error(\"未知符号\""
+        },
+        {
+          "source": "Error(\"Nth out of range: \"",
+          "target": "Error(\"第 N 个超出范围:\""
+        },
+        {
+          "source": "Error(\"Cannot parse until date:\"",
+          "target": "Error(\"无法解析,直到日期:\""
+        },
+        {
+          "source": "Error(\"Invalid options: \"",
+          "target": "Error(\"无效选项:\""
+        },
+        {
+          "source": "Error(\"Invalid frequency: \"",
+          "target": "Error(\"无效频率:\""
+        },
+        {
+          "source": "Error(\"bysetpos must be between 1 and 366, or between -366 and -1\"",
+          "target": "Error(\"bysetpos 必须介于 1 和 366 之间,或介于 -366 和 -1 之间\""
+        },
+        {
+          "source": "Error(\"Unsupported RFC prop \"",
+          "target": "Error(\"不支持的 RFC 道具\""
+        },
+        {
+          "source": "Error(\"Unknown RRULE property '\"",
+          "target": "Error(\"未知 RRULE 属性'\""
+        },
+        {
+          "source": "Error(\"Invalid weekday string: \"",
+          "target": "Error(\"工作日字符串无效:\""
+        },
+        {
+          "source": "Error(\"Invalid date passed to DateWithZone\"",
+          "target": "Error(\"传递给 DateWithZone 的日期无效\""
+        },
+        {
+          "source": "Error(\"Invalid date passed in to RRule.between\"",
+          "target": "Error(\"传递给 RRule.between 的日期无效\""
+        },
+        {
+          "source": "Error(\"Invalid date passed in to RRule.before\"",
+          "target": "Error(\"传递给 RRule.before 的日期无效\""
+        },
+        {
+          "source": "Error(\"Invalid date passed in to RRule.after\"",
+          "target": "Error(\"传递给 RRule.after 的日期无效\""
+        },
+        {
+          "source": "Error(\"unsupported RRULE parm: \"",
+          "target": "Error(\"不支持的 RRULE 参数:\""
+        },
+        {
+          "source": "Error(\"unsupported EXRULE parm: \"",
+          "target": "Error(\"不支持的 EXRULE 参数:\""
+        },
+        {
+          "source": "Error(\"unsupported property: \"",
+          "target": "Error(\"不支持的属性:\""
+        },
+        {
+          "source": "Error(\"empty property name\"",
+          "target": "Error(\"空属性名称\""
+        },
+        {
+          "source": "Error(\"Invalid empty string\"",
+          "target": "Error(\"无效的空字符串\""
+        },
+        {
+          "source": "Error(\"unsupported RDATE/EXDATE parm: \"",
+          "target": "Error(\"不支持的 RDATE/EXDATE 参数:\""
+        },
+        {
+          "source": "Error(`Don't know how to render task component of type '${n}'`",
+          "target": "Error(`不知道如何呈现类型为 '${n}' 的任务组件`"
+        },
+        {
+          "source": "Error(`Illegal argument passed to fromString(): ${e} does not correspond to any available Feature ${this.prototype.constructor.name}`",
+          "target": "Error(`传递给 fromString()的非法参数: ${e}与任何可用的 Feature ${this.prototype.constructor.name} 都不对应`"
+        },
+        {
+          "source": "Error(\"Function called outside component initialization\"",
+          "target": "Error(\"调用外部组件初始化的函数\""
+        },
+        {
+          "source": "error(\"Tasks: Cannot create task on line:\"",
+          "target": "error(\"任务:无法在线创建任务:\""
+        },
+        {
+          "source": "Error(`sorterRegExp() unimplemented for ${this.fieldNameSingular()}`",
+          "target": "Error(`${this.fieldNameSingular()} 的 sorterRegExp() 未实现`"
+        },
+        {
+          "source": "Error(`comparator() unimplemented for ${this.fieldNameSingular()}`",
+          "target": "Error(`${this.fieldNameSingular()} 的 comparator()未实现`"
+        },
+        {
+          "source": "Error(`grouper() unimplemented for ${this.fieldNameSingular()}`",
+          "target": "Error(`${this.fieldNameSingular()} 的 grouper() 未实现`"
+        },
+        {
+          "source": "Error(`filterRegExp() unimplemented for ${this.fieldName()}`",
+          "target": "Error(`${this.fieldName()} 的 filterRegExp() 未实现`"
+        },
+        {
+          "source": "Error(\"null token value\"",
+          "target": "Error(\"空令牌值\""
+        },
+        {
+          "source": "Error(\"Unsupported operator: \"",
+          "target": "Error(\"不支持的操作员:\""
+        },
+        {
+          "source": "Error(\"Unsupported token type: \"",
+          "target": "Error(\"不支持的令牌类型:\""
+        },
+        {
+          "source": "Error(`filtering function must return true or false. This returned \"${n}\".`",
+          "target": "Error(`过滤函数必须返回 true 或 false.这返回 \"${n}\".`"
+        },
+        {
+          "source": "`Error:",
+          "target": "`错误:"
+        },
+        {
+          "source": "Error(\"removeListener 只接受 Function 的实例\"",
+          "target": "Error(\"移除监听器 只接受 Function 的实例\""
+        },
+        {
+          "source": "Error(`Missing Mustache data property: ${s.join(\" > \")}`",
+          "target": "Error(`缺少 Mustache 数据属性: ${s.join(\" > \")}`"
+        },
+        {
+          "source": "Error(`Tasks: Does not support files with the ${t.extension} file extension.`",
+          "target": "Error(`任务:不支持文件扩展名为${t.extension}的文件.`"
+        },
+        {
+          "source": "Error(\"Invalid tags: \"",
+          "target": "Error(\"标签无效: \""
+        },
+        {
+          "source": "Error(\"Unclosed tag at \"",
+          "target": "Error(\"未闭合标签位于 \""
+        },
+        {
+          "source": "Error('Unopened section \"'",
+          "target": "Error('未打开的部分 \"'"
+        },
+        {
+          "source": "Error('Unclosed section \"'",
+          "target": "Error('未封闭部分 \"'"
+        },
+        {
+          "source": "Error(\"Cannot use higher-order sections without the original template\"",
+          "target": "Error(\"没有原始模板,无法使用高阶部分\""
+        },
+        {
+          "source": "Error('Invalid template! Template should be a \"string\" but \"'",
+          "target": "Error('模板无效!模板应该是\"string\" 但是 \"'"
+        },
+        {
+          "source": "Error(`grouperRegExp() unimplemented for ${this.fieldNameSingular()}`",
+          "target": "Error(`grouperRegExp() 未实施 ${this.fieldNameSingular()}`"
+        },
+        {
+          "source": "Error(`\"${n}\" is not a valid sort key`",
+          "target": "Error(`\"${n}\" 不是有效的排序键`"
+        },
+        {
+          "source": "Error(`Unable to compare two different sort key types '${n}' and '${i}' order`",
+          "target": "Error(`无法比较两种不同排序键类型\"${n}\"和\"${i}\"的顺序`"
+        },
+        {
+          "source": "Error(`Unable to determine sort order for sort key types '${n}' and '${i}'`",
+          "target": "Error(`无法确定排序键类型的排序顺序 '${n}' 和 '${i}'`"
+        },
+        {
+          "source": "Error(\"grouper() function not valid for FunctionField. Use createGrouperFromLine() instead.\"",
+          "target": "Error(\"grouper()函数对 FunctionField 无效.请改用 createGrouperFromLine().\""
+        },
+        {
+          "source": "Error(\"do not understand hide/show option\"",
+          "target": "Error(\"不能理解隐藏/显示选项\""
+        },
+        {
+          "source": "Error(\"MenuDividerInstruction.apply(): Method not implemented.\"",
+          "target": "Error(\"MenuDividerInstruction.apply(): 方法未实现.\""
+        },
+        {
+          "source": "Error(\"Developer note: CSS class cannot be an empty string, please specify one.\"",
+          "target": "Error(\"开发者注意:CSS 类不能为空字符串,请指定一个.\""
+        },
+        {
+          "source": "$i(`Failed calculating expression \"${t}\"`",
+          "target": "$i(`计算表达式失败 \"${t}\"`"
+        },
+        {
+          "source": "$i(`Failed parsing expression \"${e}\"`",
+          "target": "$i(`解析表达式失败 \"${e}\"`"
+        },
+        {
+          "source": "The error message is:",
+          "target": "错误消息为:"
+        },
+        {
+          "source": "return`Could not interpret the following instruction as a Boolean combination:",
+          "target": "return`无法将以下指令解释为布尔组合:"
+        },
+        {
+          "source": "## About this file",
+          "target": "## 关于此文件"
+        },
+        {
+          "source": "This file was created by the Obsidian Tasks plugin (version ${n}) to help visualise the task statuses in this vault.",
+          "target": "此文件由黑曜石任务插件(版本 ${n})创建,以帮助可视化此保管库中的任务状态."
+        },
+        {
+          "source": "If you change the Tasks status settings, you can get an updated report by:",
+          "target": "如果更改“任务”状态设置,则可以通过以下方式获取更新的报告:"
+        },
+        {
+          "source": "Going to \\`Settings\\` -> \\`Tasks\\`.",
+          "target": "去 \\`设置\\` -> \\`Tasks\\`."
+        },
+        {
+          "source": "Clicking on \\`Review and check your Statuses\\`.",
+          "target": "点击 \\`查看并检查您的状态\\`."
+        },
+        {
+          "source": "You can delete this file any time.",
+          "target": "您可以随时删除此文件."
+        },
+        {
+          "source": "## Status Settings",
+          "target": "## 状态设置"
+        },
+        {
+          "source": "Switch to Live Preview or Reading Mode to see the table.",
+          "target": "切换到实时预览或阅读模式以查看表格."
+        },
+        {
+          "source": "If there are any Markdown formatting characters in status names, such as '*' or '_',",
+          "target": "如果状态名称中有任何Markdown格式字符,如 '*' 或 '_',"
+        },
+        {
+          "source": "Obsidian may only render the table correctly in Reading Mode.",
+          "target": "黑曜石只能在阅读模式下正确渲染表格."
+        },
+        {
+          "source": "These are the status values in the Core and Custom statuses sections.",
+          "target": "这些是核心和自定义状态部分中的状态值."
+        },
+        {
+          "source": "## Loaded Settings",
+          "target": "## 已加载设置"
+        },
+        {
+          "source": "<!-- Switch to Live Preview or Reading Mode to see the diagram. -->",
+          "target": "<!-- 切换到实时预览或阅读模式以查看图表. -->"
+        },
+        {
+          "source": "These are the settings actually used by Tasks.",
+          "target": "这些是任务实际使用的设置."
+        },
+        {
+          "source": "return`Instruction contains unexpanded template text: \"${e}\" - and cannot be interpreted.",
+          "target": "return`指令包含未展开的模板文本: \"${e}\" - 并且不能被解释."
+        },
+        {
+          "source": "Possible causes:",
+          "target": "可能原因:"
+        },
+        {
+          "source": "The query is an a template file, and is not intended to be searched.",
+          "target": "该查询是一个模板文件,不用于搜索."
+        },
+        {
+          "source": "A command such as \"Replace templates in the active file\" needs to be run.",
+          "target": "需要运行 \"替换活动文件中的模板\" 等命令."
+        },
+        {
+          "source": "The core \"Daily notes\" plugin is in use, and the template contained",
+          "target": "核心插件\"Daily notes\"正在使用中,模板包含"
+        },
+        {
+          "source": "date calculations that it does not support.",
+          "target": "它不支持的日期计算."
+        },
+        {
+          "source": "Some sample template text was accidentally pasted in to a tasks query,",
+          "target": "一些示例模板文本意外粘贴到任务查询中,"
+        },
+        {
+          "source": "instead of in to a template file.",
+          "target": "而不是放入模板文件中."
+        },
+        {
+          "source": "See: https:",
+          "target": "请查阅: https:"
+        },
+        {
+          "source": "s=\"All filters in a Boolean instruction must be inside one of these pairs of delimiter characters: \"",
+          "target": "s=\"布尔指令中的所有筛选器都必须位于这些分隔符对之一内: \""
+        },
+        {
+          "source": "\". Combinations of those delimiters are no longer supported.\"",
+          "target": "\".不再支持这些分隔符的组合.\""
+        },
+        {
+          "source": "\"+Uh.map(([a,o])=>a+\"...\"+o).join(\" or \")+\"",
+          "target": "\"+Uh.map(([a,o])=>a+\"...\"+o).join(\" 或 \")+\""
+        },
+        {
+          "source": "Problem statement:",
+          "target": "问题陈述:"
+        },
+        {
+          "source": ".log(`${this.constructor.name} merged ${u} and ${l} into ${c}`)",
+          "target": ".log(`${this.constructor.name} 并入到 ${u} 和 ${l} into ${c}`)"
+        },
+        {
+          "source": ".log(`Extracting timezone: '${c}' into: ${d} for: ${s.start}`)",
+          "target": ".log(`提取时区: '${c}' into: ${d} for: ${s.start}`)"
+        },
+        {
+          "source": ".log(`Extracting timezone: '${s[0]}' into : ${n}`)",
+          "target": ".log(`提取时区: '${s[0]}' into : ${n}`)"
+        },
+        {
+          "source": ".log(`Forward yearly adjusted for ${n} (${n.start})",
+          "target": ".log(`未来年度调整到 ${n} (${n.start})"
+        },
+        {
+          "source": ".log(`Forward yearly adjusted for ${n} (${n.end})",
+          "target": ".log(`未来年度调整到 ${n} (${n.end})"
+        },
+        {
+          "source": ".log(`Forward weekly adjusted for ${n} (${n.start})",
+          "target": ".log(`未来周调整到 ${n} (${n.start})"
+        },
+        {
+          "source": ".log(`Forward weekly adjusted for ${n} (${n.end})",
+          "target": ".log(`未来周调整到 ${n} (${n.end})"
+        },
+        {
+          "source": ".log(`Removing unlikely result '${t.text}'`)",
+          "target": ".log(`删除不太可能的结果 '${t.text}'`)"
+        },
+        {
+          "source": ".log(`Removing invalid result: ${t} (${t.end})",
+          "target": ".log(`删除无效结果: ${t} (${t.end})"
+        },
+        {
+          "source": ".log(`Removing invalid result: ${t} (${t.start})",
+          "target": ".log(`删除无效结果: ${t} (${t.start})"
+        },
+        {
+          "source": ".log(`${t.constructor.name} extracted result ${c}`)",
+          "target": ".log(`${t.constructor.name} 提取结果 ${c}`)"
+        },
+        {
+          "source": ".log(`OnCompletion action ${s} not yet implemented.`)",
+          "target": ".log(`OnCompletion action ${s} 尚未实施.`)"
+        },
+        {
+          "source": ".log(`Error in EditTask: cannot find status with symbol ${o}`)",
+          "target": ".log(`编辑任务中出错:找不到带  ${o} 符号的状态`)"
+        },
+        {
+          "source": ".log(`Measurement for ${this.label} not found`)",
+          "target": ".log(`未找到 ${this.label} `)"
+        },
+        {
+          "source": ".error(\"Tasks: Cannot create task on line:\",r)",
+          "target": ".error(\"任务:无法在行创建任务:\",r)"
+        },
+        {
+          "source": "Name:\"Tasks Emoji Format\"",
+          "target": "Name:\"Tasks 表情格式\""
+        },
+        {
+          "source": ",\"Try 'every day when done'\"",
+          "target": ",\"尝试 'every day when done'\""
+        },
+        {
+          "source": "dI=\"Try 'Mon' or 'tm' then space\"",
+          "target": "dI=\"尝试 'Mon' 或 'tm' 然后按空格\""
+        },
+        {
+          "source": "return`Task's ${e} removed`",
+          "target": "return`任务 ${e} 被移除`"
+        },
+        {
+          "source": "return`${this.label} - start`",
+          "target": "return`${this.label} - 开始`"
+        },
+        {
+          "source": "return`${this.label} - end`",
+          "target": "return`${this.label} - 结束`"
+        },
+        {
+          "source": "return`<i>no ${r} date</i>`",
+          "target": "return`<i>无 ${r} 日期</i>`"
+        },
+        {
+          "source": ".replace(\" 1 day ago\",\" yesterday\")",
+          "target": ".replace(\" 1 day ago\",\" 昨天\")"
+        },
+        {
+          "source": ".replace(\" in 0 days\",\" today\")",
+          "target": ".replace(\" in 0 days\",\" 在今天\")"
+        },
+        {
+          "source": ".replace(\"in a day\",\"tomorrow\")",
+          "target": ".replace(\"in a day\",\"在明天\")"
+        },
+        {
+          "source": "var fI=\"Try 'Mon' or 'tm' then space\"",
+          "target": "var fI=\"尝试 'Mon' 或 'tm' 然后按空格\""
+        },
+        {
+          "source": "\"priority:: highest\"",
+          "target": "\"优先级:: 最高\""
+        },
+        {
+          "source": "\"priority:: high\"",
+          "target": "\"优先级:: 高\""
+        },
+        {
+          "source": "\"priority:: medium\"",
+          "target": "\"优先级:: 中\""
+        },
+        {
+          "source": "\"priority:: low\"",
+          "target": "\"优先级:: 低\""
+        },
+        {
+          "source": "\"priority:: lowest\"",
+          "target": "\"优先级:: 最低\""
+        },
+        {
+          "source": "\"start::\"",
+          "target": "\"开始::\""
+        },
+        {
+          "source": "\"created::\"",
+          "target": "\"创建::\""
+        },
+        {
+          "source": "\"scheduled::\"",
+          "target": "\"计划::\""
+        },
+        {
+          "source": "\"due::\"",
+          "target": "\"截止::\""
+        },
+        {
+          "source": "\"completion::\"",
+          "target": "\"完成::\""
+        },
+        {
+          "source": "\"cancelled::\"",
+          "target": "\"已取消::\""
+        },
+        {
+          "source": "\"repeat::\"",
+          "target": "\"重复::\""
+        },
+        {
+          "source": "\"onCompletion::\"",
+          "target": "\"完成时::\""
+        },
+        {
+          "source": "\"dependsOn::\"",
+          "target": "\"依赖于::\""
+        },
+        {
+          "source": "start:: ",
+          "target": "开始:: "
+        },
+        {
+          "source": "created:: ",
+          "target": "创建:: "
+        },
+        {
+          "source": "scheduled:: ",
+          "target": "计划:: "
+        },
+        {
+          "source": "due:: ",
+          "target": "截止:: "
+        },
+        {
+          "source": "completion:: ",
+          "target": "完成:: "
+        },
+        {
+          "source": "cancelled:: ",
+          "target": "已取消:: "
+        },
+        {
+          "source": "repeat:: ",
+          "target": "重复:: "
+        },
+        {
+          "source": "onCompletion:: ",
+          "target": "完成时:: "
+        },
+        {
+          "source": "id:\"due\"",
+          "target": "id:\"截止\""
+        },
+        {
+          "source": "id:\"scheduled\"",
+          "target": "id:\"计划\""
+        },
+        {
+          "source": "id:\"start\"",
+          "target": "id:\"开始\""
+        },
+        {
+          "source": "id:\"done\"",
+          "target": "id:\"完成\""
+        },
+        {
+          "source": "id:\"cancelled\"",
+          "target": "id:\"取消\""
+        },
+        {
+          "source": "Symbol,\"due date\"",
+          "target": "Symbol,\"截止日期\""
+        },
+        {
+          "source": "Symbol,\"start date\"",
+          "target": "Symbol,\"开始日期\""
+        },
+        {
+          "source": "Symbol,\"scheduled date\"",
+          "target": "Symbol,\"计划日期\""
+        },
+        {
+          "source": "Symbol,\"recurring (repeat)\"",
+          "target": "Symbol,\"重复\""
+        },
+        {
+          "source": "`<i>invalid ${r} date</i>`",
+          "target": "`无效的 ${r} 日期`"
+        },
+        {
+          "source": "Pr(new RegExp(\"dependsOn:: ",
+          "target": "Pr(new RegExp(\"依赖于:: "
+        },
+        {
+          "source": "displayText:\"generate unique id\"",
+          "target": "displayText:\"生成唯一id\""
+        },
+        {
+          "source": "Pi(n,i,r.dependsOnSymbol,\"depends on id\")",
+          "target": "Pi(n,i,r.dependsOnSymbol,\"取决于ID\")"
+        },
+        {
+          "source": "Pi(n,i,r.onCompletionSymbol,\"on completion\"",
+          "target": "Pi(n,i,r.onCompletionSymbol,\"结束\""
+        },
+        {
+          "source": "displayText:`${e.createdDateSymbol} created today (${i})`",
+          "target": "displayText:`${e.createdDateSymbol} 今日创建 (${i})`"
+        },
+        {
+          "source": "Symbol,\"Priority\"",
+          "target": "Symbol,\"优先级\""
+        },
+        {
+          "source": "Symbol,\"Description\"",
+          "target": "Symbol,\"描述\""
+        },
+        {
+          "source": ":`Remove ${cc(r)}`",
+          "target": ":`移除 ${cc(r).replace(\"due date\",\"截止日期\").replace(\"scheduled date\",\"计划日期\").replace(\"start date\",\"开始日期\").replace(\"done date\",\"完成日期\").replace(\"created date\",\"创建日期\")}`"
+        },
+        {
+          "source": ".format(\"DD MMM YYYY\")",
+          "target": ".format(\"YYYY  MMM  DD\")"
+        },
+        {
+          "source": "\"Lowest\"",
+          "target": "\"最低\""
+        },
+        {
+          "source": "\"Low\"",
+          "target": "\"低\""
+        },
+        {
+          "source": "\"Normal\"",
+          "target": "\"一般\""
+        },
+        {
+          "source": "\"Medium\"",
+          "target": "\"中\""
+        },
+        {
+          "source": "\"High\"",
+          "target": "\"高\""
+        },
+        {
+          "source": "\"Highest\"",
+          "target": "\"最高\""
+        },
+        {
+          "source": "Highest:",
+          "target": "最高:"
+        },
+        {
+          "source": "High:",
+          "target": "高:"
+        },
+        {
+          "source": "Medium:",
+          "target": "中:"
+        },
+        {
+          "source": "Low:",
+          "target": "低:"
+        },
+        {
+          "source": "Lowest:",
+          "target": "最低:"
+        },
+        {
+          "source": ".Lowest",
+          "target": ".最低"
+        },
+        {
+          "source": ".Low",
+          "target": ".低"
+        },
+        {
+          "source": "id:\"created\"",
+          "target": "id:\"创建\""
+        },
+        {
+          "source": "`${o} priority`",
+          "target": "`${o} 优先级`"
+        },
+        {
+          "source": "`${e.createdDateSymbol} created`",
+          "target": "`${e.createdDateSymbol} 创建`"
+        },
+        {
+          "source": "`${o} ${a.toLowerCase()} priority`",
+          "target": "`${o} ${a.toLowerCase()} 优先级`"
+        },
+        {
+          "source": "[\"today\",\"tomorrow\",\"Sunday\",\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\",\"next week\",\"next month\",\"next year\"]",
+          "target": "[\"今天\",\"明天\",\"星期日\",\"星期一\",\"星期二\",\"星期三\",\"星期四\",\"星期五\",\"星期六\",\"下周\",\"下个月\",\"明年\"]"
+        },
+        {
+          "source": "sunday:0,sun:0,\"sun.\":0,monday:1,mon:1,\"mon.\":1,tuesday:2,tue:2,\"tue.\":2,wednesday:3,wed:3,\"wed.\":3,thursday:4,thurs:4,\"thurs.\":4,thur:4,\"thur.\":4,thu:4,\"thu.\":4,friday:5,fri:5,\"fri.\":5,saturday:6,sat:6,\"sat.\":6",
+          "target": "星期日:0,星期一:1,星期二:2,星期三:3,星期四:4,星期五:5,星期六:6,sunday:0,sun:0,\"sun.\":0,monday:1,mon:1,\"mon.\":1,tuesday:2,tue:2,\"tue.\":2,wednesday:3,wed:3,\"wed.\":3,thursday:4,thurs:4,\"thurs.\":4,thur:4,\"thur.\":4,thu:4,\"thu.\":4,friday:5,fri:5,\"fri.\":5,saturday:6,sat:6,\"sat.\":6"
+        },
+        {
+          "source": "UNIT_DICTIONARY={",
+          "target": "UNIT_DICTIONARY={秒:\"second\",分:\"minute\",时:\"hour\",天:\"d\",周:\"week\",月:\"month\",年:\"year\","
+        },
+        {
+          "source": "MONTH_DICTIONARY={",
+          "target": "MONTH_DICTIONARY={十一月:11,十二月:12,一月:1,二月:2,三月:3,四月:4,五月:5,六月:6,七月:7,八月:8,九月:9,十月:10,"
+        },
+        {
+          "source": ".format(\"ddd Do MMM\")",
+          "target": ".format(\"MMMDo  ddd\")"
+        },
+        {
+          "source": "t:\"a\"",
+          "target": "t:\"1\""
+        },
+        {
+          "source": ".setAttribute(\"title\",`Right-click to edit ${cc(c)}`",
+          "target": ".setAttribute(\"title\",`右键编辑 ${cc(c).replace(\"created\",\"创建\").replace(\"due\",\"截止\").replace(\"scheduled\",\"计划\").replace(\"start\",\"开始\").replace(\"done\",\"完成\").replace(\" date\",\"日期\").replace(\"day\",\"天\")}`"
+        },
+        {
+          "source": "return t>=0?`Postpone ${o} by ${a} ${n}, to ${s}`:`Backdate ${o} by ${-a} ${n}, to ${s}`",
+          "target": "return (t>=0?`推迟 ${o}于 ${a} ${n}后, 即: ${s}`:`回溯 ${o}于 ${-a} ${n}前, 即: ${s}`).replace(\"days\",\"天\").replace(\"weeks\",\"周\").replace(\"week\",\"周\").replace(\"month\",\"月\").replace(\"created\",\"创建\").replace(\"due\",\"截止\").replace(\"scheduled\",\"计划\").replace(\"start\",\"开始\").replace(\"done\",\"完成\").replace(\" date\",\"日期\").replace(\"day\",\"天\")"
+        },
+        {
+          "source": "return`Task's ${e} changed to ${t}`",
+          "target": "return`任务 ${e.replace(\"created\",\"创建\").replace(\"due\",\"截止\").replace(\"scheduled\",\"计划\").replace(\"start\",\"开始\").replace(\"done\",\"完成\").replace(\"Date\",\"日期\")} 变更为 ${t}`"
+        },
+        {
+          "source": ".Highest",
+          "target": ".最高"
+        },
+        {
+          "source": ".High",
+          "target": ".高"
+        },
+        {
+          "source": ".Medium",
+          "target": ".中"
+        },
+        {
+          "source": "(right-click for more options)",
+          "target": "(右键显示更多选项)"
+        },
+        {
+          "source": "return(t>=0?`${u} in ${a} ${n}, on ${s}`:`${u} ${-a} ${n} ago, on ${s}`)",
+          "target": "return(t>=0?`${u} ${a} ${n} 后, 即: ${s}`:`${u}于 ${-a} ${n}前, 即: ${s}`).replace(\"days\",\"天\").replace(\"day\",\"天\").replace(\"weeks\",\"周\").replace(\"week\",\"周\").replace(\"month\",\"月\").replace(\"created\",\"创建\").replace(\"Created\",\"创建\").replace(\"Due\",\"截止\").replace(\"Scheduled\",\"计划\").replace(\"Start\",\"开始\").replace(\"Done\",\"完成\").replace(\" 0 天 后\",\"于今天\").replace(\" 1 天 后\",\"于明天\").replace(\" 0 天前\",\"于今天\").replace(\" 1 天前\",\"昨天\")"
+        },
+        {
+          "source": "Right-click for options",
+          "target": "右键显示选项"
+        },
+        {
+          "source": "(highest|high|medium|low|lowest)",
+          "target": "(highest|high|medium|low|lowest最高|高|中|低|最低)"
+        },
+        {
+          "source": "[15](\"b\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"e\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"t\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"f\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"r\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"d\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"s\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"a\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"u\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"c\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"x\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "[15](\"-\")",
+          "target": "[15](\"\")"
+        },
+        {
+          "source": "case\"lowest\":",
+          "target": "case\"最低\":case\"lowest\":"
+        },
+        {
+          "source": "case\"low\":",
+          "target": "case\"低\":case\"low\":"
+        },
+        {
+          "source": "case\"medium\":",
+          "target": "case\"中\":case\"medium\":"
+        },
+        {
+          "source": "case\"high\":",
+          "target": "case\"高\":case\"high\":"
+        },
+        {
+          "source": "case\"highest\":",
+          "target": "case\"最高\":case\"highest\":"
+        },
+        {
+          "source": "case\"above\":",
+          "target": "case\"高于\":case\"above\":"
+        },
+        {
+          "source": "case\"below\":",
+          "target": "case\"低于\":case\"below\":"
+        },
+        {
+          "source": "case\"not\":o=u=>u.priority!==s;break;",
+          "target": "case\"不是\":case\"not\":o=u=>u.priority!==s;break;case\"是\":case\"is\":o=u=>u.priority==s;break;"
+        },
+        {
+          "source": "Yi.priorityRegexp=/^priority(\\s+is)?(\\s+(above|below|not))?(\\s+(lowest|low|none|medium|high|highest))$/i;",
+          "target": "Yi.priorityRegexp=/(^priority|^优先级)(\\s+(above|below|not|is|高于|低于|不是|是))?(\\s+(lowest|low|none|medium|high|highest|最低|低|中|高|最高))$/i;"
+        },
+        {
+          "source": "this.filterInstructions.add(`has ${this.fieldName()} date`,n=>this.date(n)!==null)",
+          "target": "this.filterInstructions.add(`有 ${this.fieldName()} 日期`,n=>this.date(n)!==null),this.filterInstructions.add(`has ${this.fieldName()} date`,n=>this.date(n)!==null)"
+        },
+        {
+          "source": "this.filterInstructions.add(`no ${this.fieldName()} date`,n=>this.date(n)===null)",
+          "target": "this.filterInstructions.add(`无 ${this.fieldName()} 日期`,n=>this.date(n)===null),this.filterInstructions.add(`no ${this.fieldName()} date`,n=>this.date(n)===null)"
+        },
+        {
+          "source": "this.filterInstructions.add(`${this.fieldName()} date is invalid`,n=>{let i=this.date(n);return i!==null&&!i.isValid()})",
+          "target": "this.filterInstructions.add(`${this.fieldName()} 日期无效`,n=>{let i=this.date(n);return i!==null&&!i.isValid()}),this.filterInstructions.add(`${this.fieldName()} date is invalid`,n=>{let i=this.date(n);return i!==null&&!i.isValid()})"
+        },
+        {
+          "source": "e.add(\"has happens date\",t=>this.dates(t).some(n=>n!==null))",
+          "target": "e.add(\"有日期\",t=>this.dates(t).some(n=>n!==null)),e.add(\"has happens date\",t=>this.dates(t).some(n=>n!==null))"
+        },
+        {
+          "source": "e.add(\"no happens date\",t=>!this.dates(t).some(n=>n!==null))",
+          "target": "e.add(\"无日期\",t=>!this.dates(t).some(n=>n!==null)),e.add(\"no happens date\",t=>!this.dates(t).some(n=>n!==null))"
+        },
+        {
+          "source": "this._filters.add(\"is recurring\",e=>e.recurrence!==null)",
+          "target": "this._filters.add(\"重复\",e=>e.recurrence!==null),this._filters.add(\"is recurring\",e=>e.recurrence!==null)"
+        },
+        {
+          "source": "this._filters.add(\"is not recurring\",e=>e.recurrence===null)",
+          "target": "this._filters.add(\"不重复\",e=>e.recurrence===null),this._filters.add(\"is not recurring\",e=>e.recurrence===null)"
+        },
+        {
+          "source": "this._filters.add(\"done\",e=>e.isDone)",
+          "target": "this._filters.add(\"完成\",e=>e.isDone),this._filters.add(\"done\",e=>e.isDone)"
+        },
+        {
+          "source": "this._filters.add(\"not done\",e=>!e.isDone)",
+          "target": "this._filters.add(\"未完成\",e=>!e.isDone),this._filters.add(\"not done\",e=>!e.isDone)"
+        },
+        {
+          "source": "this.filterInstructions.add(`has ${this.fieldNameSingular()}`,t=>this.values(t).length>0)",
+          "target": "this.filterInstructions.add(`有 ${this.fieldNameSingular()}`,t=>this.values(t).length>0),this.filterInstructions.add(`has ${this.fieldNameSingular()}`,t=>this.values(t).length>0)"
+        },
+        {
+          "source": "this.filterInstructions.add(`has ${this.fieldNamePlural()}`,t=>this.values(t).length>0)",
+          "target": "this.filterInstructions.add(`有 ${this.fieldNamePlural()}`,t=>this.values(t).length>0),this.filterInstructions.add(`has ${this.fieldNamePlural()}`,t=>this.values(t).length>0)"
+        },
+        {
+          "source": "this.filterInstructions.add(`no ${this.fieldNameSingular()}`,t=>this.values(t).length===0)",
+          "target": "this.filterInstructions.add(`无 ${this.fieldNameSingular()}`,t=>this.values(t).length===0),this.filterInstructions.add(`no ${this.fieldNameSingular()}`,t=>this.values(t).length===0)"
+        },
+        {
+          "source": "this.filterInstructions.add(`no ${this.fieldNamePlural()}`,t=>this.values(t).length===0)",
+          "target": "this.filterInstructions.add(`无 ${this.fieldNamePlural()}`,t=>this.values(t).length===0),this.filterInstructions.add(`no ${this.fieldNamePlural()}`,t=>this.values(t).length===0)"
+        },
+        {
+          "source": "this.filterInstructions.add(\"has id\",t=>t.id.length>0)",
+          "target": "this.filterInstructions.add(\"有 id\",t=>t.id.length>0),this.filterInstructions.add(\"has id\",t=>t.id.length>0)"
+        },
+        {
+          "source": "this.filterInstructions.add(\"no id\",t=>t.id.length===0)",
+          "target": "this.filterInstructions.add(\"无 id\",t=>t.id.length===0),this.filterInstructions.add(\"no id\",t=>t.id.length===0)"
+        },
+        {
+          "source": "`couldn't parse sub-expression '${f}'`",
+          "target": "`无法解析子表达式 '${f}'`"
+        },
+        {
+          "source": "`couldn't parse sub-expression '${f}': ${m.error}`",
+          "target": "`无法解析子表达式 '${f}': ${m.error}`"
+        },
+        {
+          "source": "\"empty operator in boolean query\"",
+          "target": "\"布尔查询中的操作符为空\""
+        },
+        {
+          "source": "`unknown boolean operator '${c.value}'`",
+          "target": "`未知的布尔操作符 '${c.value}'`"
+        },
+        {
+          "source": "\"Filtering by urgency is not yet supported\"",
+          "target": "\"按紧急程度过滤尚不支持\""
+        },
+        {
+          "source": "\"backlink field does not support filtering\"",
+          "target": "\"反向链接字段不支持过滤\""
+        },
+        {
+          "source": "`For information, the conventional type for status symbol ${$n(r.symbol)} is ${$n(t)}: you may wish to review this type.`",
+          "target": "`供参考,状态符号 ${$n(r.symbol)} 的常规类型是 ${$n(t)}:您可能希望查看此类型.`"
+        },
+        {
+          "source": "`Next symbol ${$n(e.nextStatusSymbol)} is unknown: create a status with symbol ${$n(e.nextStatusSymbol)}.`",
+          "target": "`下一个符号 ${$n(e.nextStatusSymbol)} 未知:请创建符号为 ${$n(e.nextStatusSymbol)} 的状态.`"
+        },
+        {
+          "source": "`This \\`DONE\\` status is followed by ${$n(i.type)}, not \\`TODO\\` or \\`IN_PROGRESS\\`.`,\"If used to complete a recurring task, it will instead be followed by `TODO` or `IN_PROGRESS`, to ensure the next task matches the `not done` filter.\",`See [Recurring Tasks and Custom Statuses](${s}).`",
+          "target": "`此 \\`DONE\\` 状态后跟 ${$n(i.type)},而不是 \\`TODO\\` 或 \\`IN_PROGRESS\\`.`,\"如果用于完成一个重复任务,它将被 \\`TODO\\` 或 \\`IN_PROGRESS\\` 后续,以确保下一个任务匹配 `not done` 过滤器.\",`查看 [重复任务和自定义状态](${s}).`"
+        },
+        {
+          "source": "\"Unexpected failure to find the next status.\"",
+          "target": "\"未能意外找到下一个状态.\""
+        },
+        {
+          "source": "\"Empty symbol: this status will be ignored.\"",
+          "target": "\"空符号:此状态将被忽略.\""
+        },
+        {
+          "source": "`Duplicate symbol '${$n(e.symbol)}': this status will be ignored.`",
+          "target": "`重复的符号 '${$n(e.symbol)}':此状态将被忽略.`"
+        },
+        {
+          "source": "`Status symbol '${t}' toggles to itself`",
+          "target": "`状态符号 '${t}' 切换到自身`"
+        },
+        {
+          "source": "\"Task Status Name cannot be empty.\"",
+          "target": "\"任务状态名称不能为空.\""
+        },
+        {
+          "source": "`Status Type \"${e}\" is not a valid type`",
+          "target": "`状态类型 \"${e}\" 不是有效类型`"
+        },
+        {
+          "source": "'Status Type \"EMPTY\" is not permitted in user data'",
+          "target": "'状态类型 \"EMPTY\" 不允许在用户数据中出现'"
+        },
+        {
+          "source": "`Next Status Symbol for symbol '${n}': '${e.nextStatusSymbol}' is inconsistent with convention '${a.nextStatusSymbol}'`",
+          "target": "`符号 '${n}' 的下一个状态符号 '${e.nextStatusSymbol}' 与约定 '${a.nextStatusSymbol}' 不一致`"
+        },
+        {
+          "source": "`Status Type for symbol '${n}': '${e.type}' is inconsistent with convention '${a.type}'`",
+          "target": "`符号 '${n}' 的状态类型 '${e.type}' 与约定 '${a.type}' 不一致`"
+        },
+        {
+          "source": "`${t} cannot be empty.`",
+          "target": "`${t} 不能为空.`"
+        },
+        {
+          "source": "`${t} (\"${e}\") must be a single character.`",
+          "target": "`${t} (\"${e}\") 必须是一个单一字符.`"
+        },
+        {
+          "source": "`See https://publish.obsidian.md/tasks/Queries/Regular+Expressions\n\nRegular expressions must look like this:\n    /pattern/\nor this:\n    /pattern/flags\n\nWhere:\n- pattern: The 'regular expression' pattern to search for.\n- flags:   Optional characters that modify the search.\n           i => make the search case-insensitive\n           u => add Unicode support\n\nExamples:  /^Log/\n           /^Log/i\n           /File Name\\.md/\n           /waiting|waits|waited/i\n           /\\d\\d:\\d\\d/\n\nThe following characters have special meaning in the pattern:\nto find them literally, you must add a \\ before them:\n    [\\^$.|?*+()\n\nCAUTION! Regular expression (or 'regex') searching is a powerful\nbut advanced feature that requires thorough knowledge in order to\nuse successfully, and not miss intended search results.\n`",
+          "target": "`请参阅 https://publish.obsidian.md/tasks/Queries/Regular+Expressions\n\n正则表达式必须如下所示:\n    /pattern/\n或者:\n    /pattern/flags\n\n其中:\n- pattern: 要搜索的 '正则表达式' 模式.\n- flags:   修改搜索的可选字符.\n           i => 使搜索不区分大小写\n           u => 添加对 Unicode 的支持\n\n示例:  /^Log/\n           /^Log/i\n           /File Name\\.md/\n           /waiting|waits|waited/i\n           /\\d\\d:\\d\\d/\n\n以下字符在模式中具有特殊意义:\n要按字面意思查找它们,必须在它们前面加上 \\:\n    [\\^$.|?*+()\n\n警告!正则表达式(或 'regex')搜索是一个强大的\n但高级的功能,需要充分的知识来成功使用,\n否则可能会错过预期的搜索结果.\n`"
+        },
+        {
+          "source": "`There was an error reading one of the tasks in this vault.\nThe following task has been ignored, to prevent Tasks queries getting stuck with 'Loading Tasks ...'\nError: ${e}\nFile: ${t}\nLine number: ${n.position.start.line}\nTask line: ${i}\n\nPlease create a bug report for this message at\nhttps://github.com/obsidian-tasks-group/obsidian-tasks/issues/new/choose\nto help us find and fix the underlying issue.\n\nInclude:\n- either a screenshot of the error popup, or copy the text from the console, if on a desktop machine.\n- the output from running the Obsidian command 'Show debug info'\n\nThe error popup will only be shown when Tasks is starting up, but if the error persists,\nit will be shown in the console every time this file is edited during the Obsidian\nsession.\n`",
+          "target": "`读取此库中一个任务时出错.\n以下任务已被忽略,以防止任务查询卡住显示 '加载任务...'\n错误: ${e}\n文件: ${t}\n行号: ${n.position.start.line}\n任务行: ${i}\n\n请在以下网址为此消息创建一个错误报告\nhttps://github.com/obsidian-tasks-group/obsidian-tasks/issues/new/choose\n以帮助我们找到并修复根本问题.\n\n包括:\n- 错误弹窗的截图,或如果是在桌面机器上,复制控制台中的文本.\n- 执行 Obsidian 命令 '显示调试信息' 的输出.\n\n错误弹窗只会在任务启动时显示,但如果错误持续存在,\n每次编辑此文件时,错误会在 Obsidian 会话中显示在控制台中.\n`"
+        },
+        {
+          "source": "`${this.helpMessageFromSimpleError(t,n)}\n\nThe instruction was converted to the following simplified line:\n    ${i.simplifiedLine}\n\nWhere the sub-expressions in the simplified line are:\n${a}\n\nFor help, see:\n    https://publish.obsidian.md/tasks/Queries/Combining+Filters\n`",
+          "target": "`${this.helpMessageFromSimpleError(t,n)}\n\n该指令已被转换为以下简化行:\n    ${i.simplifiedLine}\n\n简化行中的子表达式如下:\n${a}\n\n欲了解更多帮助,请参阅:\n    https://publish.obsidian.md/tasks/Queries/Combining+Filters\n`"
+        },
+        {
+          "source": "`ERROR:\n           do not understand query`",
+          "target": "`ERROR:\n           无法理解查询`"
+        },
+        {
+          "source": "`Could not interpret the following instruction as a Boolean combination:\n    ${t}\n\nThe error message is:\n    ${n}`",
+          "target": "`无法将以下指令解析为布尔组合:\n    ${t}\n\n错误信息如下:\n    ${n}`"
+        },
+        {
+          "source": "`Invalid ${this.fieldNameSingular()} instruction: '${e}'.\n    Allowed options: 'is' and 'is not' (without quotes).\n    Allowed values:  ${t}\n                     Note: values are case-insensitive,\n                           so 'in_progress' works too, for example.\n    Example:         ${this.fieldNameSingular()} is not NON_TASK`",
+          "target": "`无效的 ${this.fieldNameSingular()} 指令:'${e}'.\n    允许的选项:'is' 和 'is not'(不加引号).\n    允许的值:  ${t}\n                     注意:值不区分大小写,\n                           例如 'in_progress' 也适用.\n    示例:         ${this.fieldNameSingular()} is not NON_TASK`"
+        },
+        {
+          "source": "`# ${t}\n\n## About this file\n\nThis file was created by the Obsidian Tasks plugin (version ${n}) to help visualise the task statuses in this vault.\n\nIf you change the Tasks status settings, you can get an updated report by:\n\n- Going to \\`Settings\\` -> \\`Tasks\\`.\n- Clicking on \\`Review and check your Statuses\\`.\n\nYou can delete this file any time.\n\n## Status Settings\n\n<!--\nSwitch to Live Preview or Reading Mode to see the table.\nIf there are any Markdown formatting characters in status names, such as '*' or '_',\nObsidian may only render the table correctly in Reading Mode.\n-->\n\nThese are the status values in the Core and Custom statuses sections.\n\n${s}\n## Loaded Settings\n\n<!-- Switch to Live Preview or Reading Mode to see the diagram. -->\n\nThese are the settings actually used by Tasks.\n${a}`",
+          "target": "`# ${t}\n\n## 关于此文件\n\n该文件由 Obsidian Tasks 插件(版本 ${n})创建,用于帮助可视化此库中的任务状态.\n\n如果您更改了任务状态设置,可以通过以下方式获得更新的报告:\n\n- 进入 \\`设置\\` -> \\`任务\\`.\n- 点击 \\`检查并审查您的状态\\`.\n\n您可以随时删除此文件.\n\n## 状态设置\n\n<!--\n切换到实时预览或阅读模式以查看表格.\n如果状态名称中包含任何 Markdown 格式字符(如 '*' 或 '_'),\nObsidian 可能只有在阅读模式下才能正确渲染表格.\n-->\n\n这些是核心和自定义状态部分中的状态值.\n\n${s}\n## 加载的设置\n\n<!-- 切换到实时预览或阅读模式以查看图表. -->\n\n这些是 Tasks 实际使用的设置.\n${a}`"
+        },
+        {
+          "source": "`The query looks like it contains a placeholder, with \"{{\" and \"}}\"\nbut no file path has been supplied, so cannot expand placeholder values.\nThe query is:\n${n}`",
+          "target": "`查询看起来包含占位符，带有 \"{{\" 和 \"}}\"\n但没有提供文件路径，因此无法展开占位符值。\n查询为：\n${n}`"
+        },
+        {
+          "source": "case\"tree\":",
+          "target": "case\"树状结构\":case\"树\":case\"tree\":"
+        },
+        {
+          "source": "case\"task count\":",
+          "target": "case\"任务计数\":case\"任务数\":case\"task count\":"
+        },
+        {
+          "source": "case\"backlink\":",
+          "target": "case\"反向链接\":case\"反链\":case\"backlink\":"
+        },
+        {
+          "source": "case\"postpone button\":",
+          "target": "case\"推迟按钮\":case\"推迟\":case\"postpone button\":"
+        },
+        {
+          "source": "case\"priority\":",
+          "target": "case\"优先级\":case\"priority\":"
+        },
+        {
+          "source": "case\"cancelled date\":",
+          "target": "case\"取消日期\":case\"取消\":case\"cancelled date\":"
+        },
+        {
+          "source": "case\"created date\":",
+          "target": "case\"创建日期\":case\"创建\":case\"created date\":"
+        },
+        {
+          "source": "case\"start date\":",
+          "target": "case\"开始日期\":case\"start date\":case\"开始\":"
+        },
+        {
+          "source": "case\"scheduled date\":",
+          "target": "case\"计划日期\":case\"计划\":case\"scheduled date\":"
+        },
+        {
+          "source": "case\"due date\":",
+          "target": "case\"截止日期\":case\"截止\":case\"due date\":"
+        },
+        {
+          "source": "case\"done date\":",
+          "target": "case\"完成日期\":case\"完成\":case\"done date\":"
+        },
+        {
+          "source": "case\"recurrence rule\":",
+          "target": "case\"重复规则\":case\"重复\":case\"recurrence rule\":"
+        },
+        {
+          "source": "case\"edit button\":",
+          "target": "case\"编辑按钮\":case\"编辑\":case\"edit button\":"
+        },
+        {
+          "source": "case\"urgency\":",
+          "target": "case\"紧急程度\":case\"紧急\":case\"urgency\":"
+        },
+        {
+          "source": "case\"tags\":",
+          "target": "case\"标签\":case\"tags\":"
+        },
+        {
+          "source": "case\"depends on\":",
+          "target": "case\"依赖于\":case\"depends on\":case\"depends on\":"
+        },
+        {
+          "source": "case\"on completion\":",
+          "target": "case\"完成时\":case\"完成\":case\"on completion\":"
+        },
+        {
+          "source": "(hide|show) (task count",
+          "target": "(hide|show|隐藏|显示) (任务计数|任务数|反链|反向链接|优先级|取消(日期)?|创建(日期)?|开始(日期)?|计划(日期)?|完成(日期)?|到期(日期)?|重复(规则)?|编辑(按钮)?|推迟(按钮)?|紧急(程度)|标签|依赖(于)?|ID|完成(时)?|树(状结构)?|task count"
+        },
+        {
+          "source": "(now|today|tonight|tomorrow|tmr|tmrw|yesterday|last\\s*night)",
+          "target": "(now|today|tonight|tomorrow|tmr|tmrw|yesterday|last\\s*night|现在|今天|今晚|明天|昨天|昨晚|下午|晚上|夜晚|午夜|早晨|中午)"
+        },
+        {
+          "source": "toLowerCase()===\"hide\"",
+          "target": "toLowerCase()===\"hide\"|| t[1].toLowerCase()===\"隐藏\""
+        },
+        {
+          "source": "Me(\"Priority\")",
+          "target": "Me(\"优先级\")"
+        },
+        {
+          "source": "gt(\"Description\"",
+          "target": "gt(\"描述\""
+        },
+        {
+          "source": "case\"description\":",
+          "target": "case\"描述\":case\"description\":"
+        },
+        {
+          "source": "case\"now\":",
+          "target": "case\"现在\":case\"now\":case\"now\":"
+        },
+        {
+          "source": "case\"today\":",
+          "target": "case\"今天\":case\"today\":case\"today\":"
+        },
+        {
+          "source": "case\"yesterday\":",
+          "target": "case\"昨天\":case\"yesterday\":case\"yesterday\":"
+        },
+        {
+          "source": "case\"tomorrow\":",
+          "target": "case\"明天\":case\"tomorrow\":case\"tomorrow\":"
+        },
+        {
+          "source": "case\"tonight\":",
+          "target": "case\"今晚\":case\"tonight\":case\"tonight\":"
+        },
+        {
+          "source": "case\"afternoon\":",
+          "target": "case\"下午\":case\"afternoon\":case\"afternoon\":"
+        },
+        {
+          "source": "case\"evening\":",
+          "target": "case\"晚上\":case\"evening\":case\"evening\":"
+        },
+        {
+          "source": "case\"night\":",
+          "target": "case\"夜晚\":case\"night\":case\"night\":"
+        },
+        {
+          "source": "case\"midnight\":",
+          "target": "case\"午夜\":case\"midnight\":case\"midnight\":"
+        },
+        {
+          "source": "case\"morning\":",
+          "target": "case\"早晨\":case\"morning\":case\"morning\":"
+        },
+        {
+          "source": "case\"noon\":",
+          "target": "case\"中午\":case\"noon\":case\"noon\":"
+        },
+        {
+          "source": "case\"this\":",
+          "target": "case\"这\":case\"this\":case\"this\":"
+        },
+        {
+          "source": "case\"next\":",
+          "target": "case\"下\":case\"next\":case\"next\":"
+        },
+        {
+          "source": "case\"last\":",
+          "target": "case\"上\":case\"last\":case\"last\":"
+        },
+        {
+          "source": "case\"past\":",
+          "target": "case\"past\":case\"past\":case\"past\":"
+        },
+        {
+          "source": "${this.totalTasksCount()} tasks",
+          "target": "${this.totalTasksCount()} 个任务"
+        },
+        {
+          "source": "\"Add all Query File Defaults properties\"",
+          "target": "\"添加所有查询文件默认值属性\""
+        }
+      ]
+    }
+  }
+}

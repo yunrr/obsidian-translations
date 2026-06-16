@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "find-orphaned-images",
+    "version": "2.0.0",
+    "title": "Find Orphaned Images",
+    "description": "Finds images in the vault that are not linked to any notes. Either lists, or deletes them.",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Found ${a.length} orphaned images. Note created or updated with details.`)",
+          "target": "Notice(`发现 ${a.length} 个孤立图像，已创建注释或更新了详细信息。`)"
+        },
+        {
+          "source": "Notice(\"All images are linked!\")",
+          "target": "Notice(\"所有图像均已链接！\")"
+        },
+        {
+          "source": "Notice(`Deleted orphaned image: ${s}`)",
+          "target": "Notice(`已删除的孤立图像：${s}`)"
+        },
+        {
+          "source": "Notice(\"Failed to delete the orphaned image.\")",
+          "target": "Notice(\"无法删除孤立图像。\")"
+        },
+        {
+          "source": "Notice(\"No orphaned images found to delete.\")",
+          "target": "Notice(\"未找到要删除的孤立图像。\")"
+        },
+        {
+          "source": "Notice(`Note \"${g}\" created or updated with orphaned images.`)",
+          "target": "Notice(`请注意，\"${g}\" 是使用孤立图像创建或更新的。`)"
+        },
+        {
+          "source": "Notice(\"Failed to create or update note with orphaned images.\")",
+          "target": "Notice(\"无法创建或更新带有孤立图像的注释。\")"
+        },
+        {
+          "source": ".log(\"Loading Find Orphaned Images Plugin\")",
+          "target": ".log(\"正在加载“查找孤立图像”插件\")"
+        },
+        {
+          "source": ".log(\"Unloading Find Orphaned Images Plugin\")",
+          "target": ".log(\"卸载“查找孤立图像”插件\")"
+        },
+        {
+          "source": ".error(\"Failed to delete the image:\",d)",
+          "target": ".error(\"删除图像失败：\",d)"
+        },
+        {
+          "source": ".error(\"Failed to create or update note:\",a)",
+          "target": ".error(\"无法创建或更新注释：\",a)"
+        },
+        {
+          "source": "name:\"Find Orphaned Images\"",
+          "target": "name:\"查找孤立图像\""
+        },
+        {
+          "source": "text:\"Create a Report or Delete the Images?\"",
+          "target": "text:\"创建报告还是删除图像？\""
+        },
+        {
+          "source": "text:\"Find Orphaned Images Settings\"",
+          "target": "text:\"查找孤立图像设置\""
+        },
+        {
+          "source": ".setButtonText(\"Create\")",
+          "target": ".setButtonText(\"创建\")"
+        },
+        {
+          "source": ".setButtonText(\"Delete\")",
+          "target": ".setButtonText(\"删除\")"
+        },
+        {
+          "source": ".setName(\"Embed Images\")",
+          "target": ".setName(\"嵌入图像\")"
+        },
+        {
+          "source": ".setName(\"Text Links\")",
+          "target": ".setName(\"文本链接\")"
+        },
+        {
+          "source": ".setName(\"Delete Orphaned Images\")",
+          "target": ".setName(\"删除孤立图像\")"
+        },
+        {
+          "source": ".setName(\"Show Sidebar Button\")",
+          "target": ".setName(\"显示侧边栏按钮\")"
+        },
+        {
+          "source": ".setDesc(\"Create a report with embedded images. This will display the images in the note.\")",
+          "target": ".setDesc(\"创建带有嵌入图像的报告，这将在注释中显示图像。\")"
+        },
+        {
+          "source": ".setDesc(\"Create a report with text links to the images. This will not display the images in the note.\")",
+          "target": ".setDesc(\"创建包含图片文本链接的报告，这不会在笔记中显示图片。\")"
+        },
+        {
+          "source": ".setDesc(\"Delete the X images found in the vault. X is the max delete count, defined in the settings.\")",
+          "target": ".setDesc(\"删除保管库中找到的 X 个图像，X 是设置中定义的最大删除数量。\")"
+        },
+        {
+          "source": ".setDesc(\"Comma-separated list of image extensions to look for.\")",
+          "target": ".setDesc(\"要查找的图像扩展名的逗号分隔列表。\")"
+        },
+        {
+          "source": ".setDesc(\"Maximum number of orphaned images to delete (-1 for no limit).\")",
+          "target": ".setDesc(\"要删除的孤立图像的最大数量（-1 表示无限制）。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable or disable the sidebar button to find orphaned images.\")",
+          "target": ".setDesc(\"启用或禁用侧边栏按钮来查找孤立图像。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Enter image extensions\")",
+          "target": ".setPlaceholder(\"输入图片扩展名\")"
+        },
+        {
+          "source": ".setPlaceholder(\"-1\")",
+          "target": ".setPlaceholder(\"-1\")"
+        },
+        {
+          "source": ".setName(\"Image extensions\")",
+          "target": ".setName(\"图像扩展名\")"
+        },
+        {
+          "source": ".setName(\"Max delete count\")",
+          "target": ".setName(\"最大删除数\")"
+        },
+        {
+          "source": ".setName(\"Move to Trash\")",
+          "target": ".setName(\"移至垃圾箱\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, orphaned images will be moved to the system trash instead of deleted.\")",
+          "target": ".setDesc(\"如果启用，孤立的图像将被移至系统垃圾箱而不是被删除。\")"
+        },
+        {
+          "source": ".setName(\"Image Extensions\")",
+          "target": ".setName(\"图像扩展名\")"
+        },
+        {
+          "source": ".setName(\"Max Delete Count\")",
+          "target": ".setName(\"最大删除数\")"
+        }
+      ]
+    }
+  }
+}

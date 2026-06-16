@@ -1,0 +1,1199 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "edge-tts",
+    "version": "2.0.0",
+    "title": "Edge TTS",
+    "description": "Read notes aloud using Microsoft Edge Read Aloud API (free, high quality text-to-speech).",
+    "language": "zh-cn",
+    "supportedVersions": "3.3.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Menu items will be removed after the next reload.\")",
+          "target": "Notice(\"下次重新加载后，菜单项将被删除。\")"
+        },
+        {
+          "source": "Notice(`Floating playback controls ${T?\"disabled\":\"enabled\"}.`)",
+          "target": "Notice(`浮动播放控制${T?\"disabled\":\"enabled\"}.`)"
+        },
+        {
+          "source": "Notice(`Replay option ${T?\"enabled\":\"disabled\"}.`)",
+          "target": "Notice(`重播选项${T?\"enabled\":\"disabled\"}.`)"
+        },
+        {
+          "source": "Notice(`Queue feature ${T?\"enabled\":\"disabled\"}. Restart Obsidian to fully apply changes.`)",
+          "target": "Notice(`队列功能${T?\"enabled\":\"disabled\"}. 重新启动Obsidian以完全应用更改。`)"
+        },
+        {
+          "source": "Notice(`Auto-pause on focus loss ${T?\"enabled\":\"disabled\"}.`)",
+          "target": "Notice(`失焦时自动暂停${T?\"enabled\":\"disabled\"}.`)"
+        },
+        {
+          "source": "Notice(`Experimental features ${T?\"enabled\":\"disabled\"}.`)",
+          "target": "Notice(`实验功能${T?\"enabled\":\"disabled\"}.`)"
+        },
+        {
+          "source": "Notice(`Mobile notices ${T?\"reduced\":\"verbose\"}.`)",
+          "target": "Notice(`移动通知${T?\"reduced\":\"verbose\"}.`)"
+        },
+        {
+          "source": "Notice(\"Finished reading aloud.\")",
+          "target": "Notice(\"朗读完毕。\")"
+        },
+        {
+          "source": "Notice(\"Audio buffer limit reached. Playback stopped.\")",
+          "target": "Notice(\"已达到音频缓冲区限制。播放停止。\")"
+        },
+        {
+          "source": "Notice(\"No text selected or available.\")",
+          "target": "Notice(\"没有选择或可用的文本。\")"
+        },
+        {
+          "source": "Notice(\"No readable text after filtering.\")",
+          "target": "Notice(\"过滤后没有可读文本。\")"
+        },
+        {
+          "source": "Notice(\"Error starting audio playback.\")",
+          "target": "Notice(\"启动音频播放时出错。\")"
+        },
+        {
+          "source": "Notice(\"Audio playback error (SourceBuffer)",
+          "target": "Notice(\"音频播放错误(SourceBuffer)"
+        },
+        {
+          "source": "Notice(\"Failed to initialize audio stream.\")",
+          "target": "Notice(\"初始化音频流失败。\")"
+        },
+        {
+          "source": "Notice(i?\"Starting audio stream...\":\"Generating audio...\")",
+          "target": "Notice(i?\"开始音频流...\":\"生成音频...\")"
+        },
+        {
+          "source": "Notice(\"Failed to read note aloud.\")",
+          "target": "Notice(\"无法大声朗读笔记。\")"
+        },
+        {
+          "source": "Notice(\"TTS stream was empty.\")",
+          "target": "Notice(\"TTS流为空。\")"
+        },
+        {
+          "source": "Notice(\"Failed to save temporary audio for playback.\")",
+          "target": "Notice(\"未能保存临时音频以供播放。\")"
+        },
+        {
+          "source": "Notice(\"Processing audio for playback...\")",
+          "target": "Notice(\"正在处理音频以供播放…\")"
+        },
+        {
+          "source": "Notice(\"Failed to load temp audio file.\")",
+          "target": "Notice(\"未能加载临时音频文件。\")"
+        },
+        {
+          "source": "Notice(\"Failed to process audio for mobile playback.\")",
+          "target": "Notice(\"无法处理移动播放的音频。\")"
+        },
+        {
+          "source": "Notice(\"Audio playback failed on mobile device.\")",
+          "target": "Notice(\"移动设备上的音频播放失败。\")"
+        },
+        {
+          "source": "Notice(\"Final audio playback attempt failed.\")",
+          "target": "Notice(\"最终音频播放尝试失败。\")"
+        },
+        {
+          "source": "Notice(\"Critical audio playback error.\")",
+          "target": "Notice(\"严重音频播放错误。\")"
+        },
+        {
+          "source": "Notice(\"Error replaying audio.\")",
+          "target": "Notice(\"重放音频时出错。\")"
+        },
+        {
+          "source": "Notice(\"No audio to replay or audio not fully loaded.\")",
+          "target": "Notice(\"没有可回放的音频或音频未完全加载。\")"
+        },
+        {
+          "source": "Notice(`Added \"${n||\"text\"}\" to playback queue (${this.playbackQueue.length} items)",
+          "target": "Notice(`Added \"${n||\"text\"}\" to playback queue (${this.playbackQueue.length} items)"
+        },
+        {
+          "source": "Notice(\"Playback queue is empty.\")",
+          "target": "Notice(\"播放队列为空。\")"
+        },
+        {
+          "source": "Notice(\"Queue looping - restarting from beginning.\")",
+          "target": "Notice(\"队列循环-从头开始重新启动。\")"
+        },
+        {
+          "source": "Notice(\"Finished playing queue.\")",
+          "target": "Notice(\"已完成播放队列。\")"
+        },
+        {
+          "source": "Notice(`Playing ${this.currentQueueIndex+1}/${this.playbackQueue.length}: ${t.title||\"Untitled\"}`)",
+          "target": "Notice(`Playing ${this.currentQueueIndex+1}/${this.playbackQueue.length}: ${t.title||\"Untitled\"}`)"
+        },
+        {
+          "source": "Notice(\"Playback queue cleared.\")",
+          "target": "Notice(\"播放队列已清除。\")"
+        },
+        {
+          "source": "Notice(\"Invalid queue item index.\")",
+          "target": "Notice(\"队列项索引无效。\")"
+        },
+        {
+          "source": "Notice(`Removed \"${n.title||\"Untitled\"}\" from queue.`)",
+          "target": "Notice(`Removed \"${n.title||\"Untitled\"}\" from queue.`)"
+        },
+        {
+          "source": "Notice(`Moved \"${a.title||\"Untitled\"}\" in queue.`)",
+          "target": "Notice(`Moved \"${a.title||\"Untitled\"}\" in queue.`)"
+        },
+        {
+          "source": "Notice(\"Sleep timer expired. Stopping playback.\")",
+          "target": "Notice(\"睡眠定时器已过期。正在停止播放。\")"
+        },
+        {
+          "source": "Notice(`Sleep timer set for ${t} minute${t!==1?\"s\":\"\"}`)",
+          "target": "Notice(`睡眠定时器设置为 ${t} 分钟${t!==1?\"s\":\"\"}`)"
+        },
+        {
+          "source": "Notice(\"Sleep timer cancelled\")",
+          "target": "Notice(\"睡眠定时器已取消\")"
+        },
+        {
+          "source": "Notice(\"MP3 embedded after the selected text.\")",
+          "target": "Notice(\"所选文本后嵌入MP3。\")"
+        },
+        {
+          "source": "Notice(\"Failed to embed MP3 in note.\")",
+          "target": "Notice(\"无法在笔记中嵌入MP3。\")"
+        },
+        {
+          "source": "Notice(`File not found or is not a valid markdown file: ${n}`)",
+          "target": "Notice(`文件未找到或不是有效的 markdown 文件：${n}`)"
+        },
+        {
+          "source": "Notice(\"MP3 embedded in note.\")",
+          "target": "Notice(\"MP3嵌入笔记中。\")"
+        },
+        {
+          "source": "Notice(`MP3 saved to: ${M}`)",
+          "target": "Notice(`MP3保存到：${M}`)"
+        },
+        {
+          "source": "Notice(`MP3 saved to: ${m}`)",
+          "target": "Notice(`MP3保存到：${m}`)"
+        },
+        {
+          "source": "Notice(\"Failed to save MP3 file.\")",
+          "target": "Notice(\"保存MP3文件失败。\")"
+        },
+        {
+          "source": "Notice(\"Failed to save temporary audio: path not set.\")",
+          "target": "Notice(\"保存临时音频失败：未设置路径。\")"
+        },
+        {
+          "source": "Notice(\"Unable to save temporary audio file.\")",
+          "target": "Notice(\"无法保存临时音频文件。\")"
+        },
+        {
+          "source": "Notice(\"Failed to save temporary audio file.\")",
+          "target": "Notice(\"未能保存临时音频文件。\")"
+        },
+        {
+          "source": "Notice(`Content exceeds MP3 generation limit (${u})",
+          "target": "Notice(`内容超出 MP3 生成上限(${u})"
+        },
+        {
+          "source": "Notice(`Content exceeds playback limit (${c})",
+          "target": "Notice(`内容超出播放限制(${c})"
+        },
+        {
+          "source": "Notice(\"No text selected.\")",
+          "target": "Notice(\"未选择文本。\")"
+        },
+        {
+          "source": "Notice(\"Floating player position reset.\")",
+          "target": "Notice(\"浮动播放器位置重置。\")"
+        },
+        {
+          "source": "Notice(\"Queue manager position reset.\")",
+          "target": "Notice(\"队列管理器位置重置。\")"
+        },
+        {
+          "source": "Notice(`Content exceeds MP3 generation limit (${c})",
+          "target": "Notice(`内容超出 MP3 生成上限(${c})"
+        },
+        {
+          "source": "Notice(\"No text available for chunked generation.\")",
+          "target": "Notice(\"没有可用于分块生成的文本。\")"
+        },
+        {
+          "source": "Notice(\"MP3 generation complete\")",
+          "target": "Notice(\"MP3生成完成\")"
+        },
+        {
+          "source": "Notice(`MP3 generation failed: ${i.error||\"Unknown error\"}`)",
+          "target": "Notice(`MP3 generation failed: ${i.error||\"Unknown error\"}`)"
+        },
+        {
+          "source": "Notice(`Content exceeds playback limit (${o})",
+          "target": "Notice(`内容超出播放限制(${o})"
+        },
+        {
+          "source": "Notice(\"MP3 generation is not supported on mobile devices due to file system limitations. Use audio playback instead.\")",
+          "target": "Notice(\"由于文件系统的限制，移动设备不支持MP3生成。请改用音频播放。\")"
+        },
+        {
+          "source": "Notice(\"Failed to generate MP3: could not read file.\")",
+          "target": "Notice(\"生成MP3失败：无法读取文件。\")"
+        },
+        {
+          "source": "Notice(\"Starting MP3 generation in background...\")",
+          "target": "Notice(\"在后台启动MP3生成…\")"
+        },
+        {
+          "source": "Notice(\"Failed to start MP3 generation.\")",
+          "target": "Notice(\"无法启动MP3生成。\")"
+        },
+        {
+          "source": "Notice(\"Chunked MP3 generation completed successfully!\")",
+          "target": "Notice(\"分块MP3生成成功完成！\")"
+        },
+        {
+          "source": "Notice(\"Failed to generate chunked MP3.\")",
+          "target": "Notice(\"未能生成分块MP3。\")"
+        },
+        {
+          "source": ".log(\"Loaded edge-tts-universal/browser (Node.js-free)",
+          "target": ".log(\"Loaded edge-tts-universal/browser (Node.js-free)"
+        },
+        {
+          "source": ".log(\"Loaded edge-tts-universal/isomorphic as fallback\")",
+          "target": ".log(\"已加载 edge-tts-universal/isomorphic 作为后备选项\")"
+        },
+        {
+          "source": ".log(\"Loaded edge-tts-universal main entry point as final fallback\")",
+          "target": ".log(\"加载 edge-tts-universal 主入口点，作为最后的备用\")"
+        },
+        {
+          "source": ".log(\"MSE stream ended.\")",
+          "target": ".log(\"MSE流已结束。\")"
+        },
+        {
+          "source": ".log(\"Media Session: Experimental features disabled\")",
+          "target": ".log(\"媒体会话：实验功能已禁用\")"
+        },
+        {
+          "source": ".log(\"Media Session: API supported, setting up handlers\")",
+          "target": ".log(\"媒体会话：支持API，正在设置处理程序\")"
+        },
+        {
+          "source": ".log(\"Media Session: Android detected, using delayed initialization\")",
+          "target": ".log(\"媒体会话：检测到Android，使用延迟初始化\")"
+        },
+        {
+          "source": ".log(\"Media Session: API not supported in this browser\")",
+          "target": ".log(\"媒体会话：此浏览器不支持API\")"
+        },
+        {
+          "source": ".log(\"Media Session: Setting metadata:\",a)",
+          "target": ".log(\"媒体会话：设置元数据：\",a)"
+        },
+        {
+          "source": ".log(\"Media Session: Setting playback state:\",i)",
+          "target": ".log(\"媒体会话：设置播放状态：\",i)"
+        },
+        {
+          "source": ".log(\"Media Session: Setting position state:\",{duration:n,position:this.audioElement.currentTime})",
+          "target": ".log(\"媒体会话：设置位置状态：\",{duration:n,position:this.audioElement.currentTime})"
+        },
+        {
+          "source": ".log(\"Temporary file saving is not supported on mobile platforms.\")",
+          "target": ".log(\"移动平台不支持临时文件保存。\")"
+        },
+        {
+          "source": ".log(\"Queue manager is out of bounds, repositioning...\")",
+          "target": ".log(\"队列管理器已超出界限，正在重新定位…\")"
+        },
+        {
+          "source": ".log(\"Media Session Debug Info:\",u)",
+          "target": ".log(\"媒体会话调试信息：\",u)"
+        },
+        {
+          "source": ".log(\"Unloading Obsidian Edge TTS Plugin\")",
+          "target": ".log(\"卸载黑曜石边缘TTS插件\")"
+        },
+        {
+          "source": ".error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\")",
+          "target": ".error(\"forceFrameRate取0到125之间的正整数，不支持强制帧速率高于125 fps\")"
+        },
+        {
+          "source": ".error(\"Failed to import edge-tts-universal package:\",e)",
+          "target": ".error(\"导入 edge-tts-universal 软件包失败：\",e)"
+        },
+        {
+          "source": ".error(\"TTS stream: error consuming generator:\",o)",
+          "target": ".error(\"TTS流：消耗生成器时出错：\",o)"
+        },
+        {
+          "source": ".error(\"Error creating TTS stream:\",i)",
+          "target": ".error(\"创建TTS流时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error playing after source switch:\",t)",
+          "target": ".error(\"源切换后播放时出错：\",t)"
+        },
+        {
+          "source": ".error(\"Error appending buffer:\",n)",
+          "target": ".error(\"附加缓冲区时出错：\",n)"
+        },
+        {
+          "source": ".error(\"Error starting MSE playback:\",i)",
+          "target": ".error(\"启动MSE播放时出错：\",i)"
+        },
+        {
+          "source": ".error(\"SourceBuffer error\",a)",
+          "target": ".error(\"SourceBuffer错误\",a)"
+        },
+        {
+          "source": ".error(\"Error setting up MediaSource SourceBuffer:\",a)",
+          "target": ".error(\"设置MediaSource SourceBuffer时出错：\",a)"
+        },
+        {
+          "source": ".error(\"Error processing TTS stream:\",s)",
+          "target": ".error(\"处理TTS流时出错：\",s)"
+        },
+        {
+          "source": ".error(\"Error starting temp file playback:\",l)",
+          "target": ".error(\"启动临时文件播放时出错：\",l)"
+        },
+        {
+          "source": ".error(\"Error in finishFallbackPlayback:\",n)",
+          "target": ".error(\"结束时发生错误FallbackPlayback:\",n)"
+        },
+        {
+          "source": ".error(\"Error starting blob playback:\",u)",
+          "target": ".error(\"启动blob播放时出错：\",u)"
+        },
+        {
+          "source": ".error(\"Error in fallbackToBlobPlayback:\",a)",
+          "target": ".error(\"fallbackToBlobPlayback发生错误 ：\",a)"
+        },
+        {
+          "source": ".error(\"Error resuming playback:\",t)",
+          "target": ".error(\"恢复播放时出错：\",t)"
+        },
+        {
+          "source": ".error(\"Error during replay:\",t)",
+          "target": ".error(\"重播时出错：\",t)"
+        },
+        {
+          "source": ".error(\"Error reading file content:\",a)",
+          "target": ".error(\"读取文件内容时出错：\",a)"
+        },
+        {
+          "source": ".error(\"Error embedding MP3 in note due to filePath and editor not being passed to embedMP3InNote\")",
+          "target": ".error(\"由于未将filePath和编辑器传递给embedMP3InNote，在笔记中嵌入MP3时出错\")"
+        },
+        {
+          "source": ".error(\"Error embedding MP3 in note:\",i)",
+          "target": ".error(\"在笔记中嵌入MP3时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error saving MP3:\",a)",
+          "target": ".error(\"保存MP3时出错：\",a)"
+        },
+        {
+          "source": ".error(\"Temporary audio path is not set in FileOperationsManager.\")",
+          "target": ".error(\"FileOperationsManager中未设置临时音频路径。\")"
+        },
+        {
+          "source": ".error(\"File system adapter not available for temp audio.\")",
+          "target": ".error(\"文件系统适配器不适用于临时音频。\")"
+        },
+        {
+          "source": ".error(\"Buffer not available for temp file creation\")",
+          "target": ".error(\"缓冲区不可用于创建临时文件\")"
+        },
+        {
+          "source": ".error(\"Error saving temporary audio file:\",i)",
+          "target": ".error(\"保存临时音频文件时出错：\",i)"
+        },
+        {
+          "source": ".error(\"Error cleaning up temporary audio file:\",n)",
+          "target": ".error(\"清理临时音频文件时出错：\",n)"
+        },
+        {
+          "source": ".error(\"Error checking file existence:\",o)",
+          "target": ".error(\"检查文件是否存在时出错：\",o)"
+        },
+        {
+          "source": ".error(\"TTS generation error:\",a)",
+          "target": ".error(\"TTS生成错误：\",a)"
+        },
+        {
+          "source": ".error(\"Error generating audio buffer:\",n)",
+          "target": ".error(\"生成音频缓冲区时出错：\",n)"
+        },
+        {
+          "source": ".error(\"Failed to save player position on hide:\",t)",
+          "target": ".error(\"隐藏时保存播放器位置失败：\",t)"
+        },
+        {
+          "source": ".error(\"Failed to save player position on reset:\",a)",
+          "target": ".error(\"重置时保存播放器位置失败：\",a)"
+        },
+        {
+          "source": ".error(\"Failed to save player position on drag end:\",u)",
+          "target": ".error(\"拖动端保存播放器位置失败：\",u)"
+        },
+        {
+          "source": ".error(\"Failed to save queue position on hide:\",t)",
+          "target": ".error(\"隐藏时保存队列位置失败：\",t)"
+        },
+        {
+          "source": ".error(\"Failed to save queue position on reposition:\",c)",
+          "target": ".error(\"重新定位时保存队列位置失败：\",c)"
+        },
+        {
+          "source": ".error(\"Failed to save queue position on drag end:\",l)",
+          "target": ".error(\"未能保存拖动端的队列位置：\",l)"
+        },
+        {
+          "source": ".error(`Stream error for chunk ${M+1}:`,b)",
+          "target": ".error(`数据块${M+1}的数据流错误:`,b)"
+        },
+        {
+          "source": ".error(`Error generating chunk ${M+1}:`,h)",
+          "target": ".error(`错误生成块${M+1}:`,h)"
+        },
+        {
+          "source": ".error(\"Chunked MP3 generation error:\",l)",
+          "target": ".error(\"MP3生成错误：\",l)"
+        },
+        {
+          "source": ".error(\"Error starting MP3 generation:\",o)",
+          "target": ".error(\"启动MP3生成时出错：\",o)"
+        },
+        {
+          "source": ".error(\"Error in chunked MP3 generation:\",l)",
+          "target": ".error(\"分块MP3生成时出错：\",l)"
+        },
+        {
+          "source": ".error(\"Failed to save UI positions on unload:\",c)",
+          "target": ".error(\"卸载时保存UI位置失败：\",c)"
+        },
+        {
+          "source": "name:\"unknown\"",
+          "target": "name:\"未知的\""
+        },
+        {
+          "source": "name:\"Read note aloud\"",
+          "target": "name:\"大声朗读笔记\""
+        },
+        {
+          "source": "name:\"Generate MP3\"",
+          "target": "name:\"生成MP3\""
+        },
+        {
+          "source": "name:\"Stop TTS playback\"",
+          "target": "name:\"停止TTS播放\""
+        },
+        {
+          "source": "name:\"Pause/Resume playback\"",
+          "target": "name:\"暂停/恢复播放\""
+        },
+        {
+          "source": "name:\"Jump forward 10 seconds\"",
+          "target": "name:\"向前10秒\""
+        },
+        {
+          "source": "name:\"Jump backward 10 seconds\"",
+          "target": "name:\"向后10秒\""
+        },
+        {
+          "source": "name:\"Read selected text aloud\"",
+          "target": "name:\"大声朗读所选文本\""
+        },
+        {
+          "source": "name:\"Show floating playback controls\"",
+          "target": "name:\"显示浮动播放控件\""
+        },
+        {
+          "source": "name:\"Reset floating player position\"",
+          "target": "name:\"重置浮动播放器位置\""
+        },
+        {
+          "source": "name:\"Add current note to playback queue\"",
+          "target": "name:\"将当前笔记添加到播放队列\""
+        },
+        {
+          "source": "name:\"Add selected text to playback queue\"",
+          "target": "name:\"将所选文本添加到播放队列\""
+        },
+        {
+          "source": "name:\"Play entire queue\"",
+          "target": "name:\"播放整个队列\""
+        },
+        {
+          "source": "name:\"Clear playback queue\"",
+          "target": "name:\"清除播放队列\""
+        },
+        {
+          "source": "name:\"Show queue status\"",
+          "target": "name:\"显示队列状态\""
+        },
+        {
+          "source": "name:\"Set sleep timer (15 minutes)\"",
+          "target": "name:\"设置睡眠定时器（15分钟）\""
+        },
+        {
+          "source": "name:\"Set sleep timer (30 minutes)\"",
+          "target": "name:\"设置睡眠定时器（30分钟）\""
+        },
+        {
+          "source": "name:\"Set sleep timer (60 minutes)\"",
+          "target": "name:\"设置睡眠定时器（60分钟）\""
+        },
+        {
+          "source": "name:\"Cancel sleep timer\"",
+          "target": "name:\"取消睡眠定时器\""
+        },
+        {
+          "source": "name:\"Show queue manager\"",
+          "target": "name:\"显示队列管理器\""
+        },
+        {
+          "source": "name:\"Toggle queue manager\"",
+          "target": "name:\"切换队列管理器\""
+        },
+        {
+          "source": "name:\"Reset queue manager position\"",
+          "target": "name:\"重置队列管理器位置\""
+        },
+        {
+          "source": "name:\"Force chunked MP3 generation\"",
+          "target": "name:\"强制生成分块 MP3\""
+        },
+        {
+          "source": "name:\"Debug Media Session API support\"",
+          "target": "name:\"调试媒体会话API支持\""
+        },
+        {
+          "source": "text:\"Saving .mp3 of narration\"",
+          "target": "text:\"保存.mp3的旁白\""
+        },
+        {
+          "source": "text:\"\\u{1F4F1} Mobile support\"",
+          "target": "text:\"\\u{1F4F1}移动设备支持\""
+        },
+        {
+          "source": "text:\"Create audio narration for your Obsidian notes using our free mobile app.\"",
+          "target": "text:\"使用我们的免费移动应用程序为您的Obsidian笔记创建音频旁白。\""
+        },
+        {
+          "source": "text:\"Google Play\"",
+          "target": "text:\"Google Play\""
+        },
+        {
+          "source": "text:\"App Store\"",
+          "target": "text:\"App Store\""
+        },
+        {
+          "source": "text:\"Please star this project on GitHub if you find it useful \\u2B50\\uFE0F\"",
+          "target": "text:\"如果你觉得这个项目有用，请在GitHub上 Star\\u2B50\\uFE0F\""
+        },
+        {
+          "source": "text:\"GitHub: Edge TTS Plugin\"",
+          "target": "text:\"GitHub:Edge TTS Plugin\""
+        },
+        {
+          "source": "text:\"Advanced settings\"",
+          "target": "text:\"高级设置\""
+        },
+        {
+          "source": "text:\"\\u25B6 \"",
+          "target": "text:\"\\u25B6\""
+        },
+        {
+          "source": "text:\"Text filtering\"",
+          "target": "text:\"文本过滤\""
+        },
+        {
+          "source": "text:\"Configure what content is filtered from notes before speech generation. Click to expand options.\"",
+          "target": "text:\"配置在语音生成之前从笔记中过滤哪些内容。单击以展开选项。\""
+        },
+        {
+          "source": "text:\"Symbol replacement\"",
+          "target": "text:\"符号替换\""
+        },
+        {
+          "source": "text:\"Configure how comparison symbols are replaced with words in different languages. Click to expand options.\"",
+          "target": "text:\"配置如何用不同语言的单词替换比较符号。单击以展开选项。\""
+        },
+        {
+          "source": "text:\"Extra settings\"",
+          "target": "text:\"额外设置\""
+        },
+        {
+          "source": "text:\"Waiting...\"",
+          "target": "text:\"等待…\""
+        },
+        {
+          "source": ".setName(\"Select voice\")",
+          "target": ".setName(\"选择语音\")"
+        },
+        {
+          "source": ".setName(\"Custom voice\")",
+          "target": ".setName(\"自定义语音\")"
+        },
+        {
+          "source": ".setName(\"Playback speed\")",
+          "target": ".setName(\"播放的速度\")"
+        },
+        {
+          "source": ".setName(\"Show notices\")",
+          "target": ".setName(\"显示通知\")"
+        },
+        {
+          "source": ".setName(\"Show status bar button\")",
+          "target": ".setName(\"显示状态栏按钮\")"
+        },
+        {
+          "source": ".setName(\"Show file and editor menu items\")",
+          "target": ".setName(\"显示文件和编辑器菜单项\")"
+        },
+        {
+          "source": ".setName(\"Disable floating playback controls\")",
+          "target": ".setName(\"禁用浮动播放控件\")"
+        },
+        {
+          "source": ".setName(\"Enable replay option\")",
+          "target": ".setName(\"启用重播选项\")"
+        },
+        {
+          "source": ".setName(\"Enable queue feature\")",
+          "target": ".setName(\"启用队列功能\")"
+        },
+        {
+          "source": ".setName(\"Auto-pause on window focus loss\")",
+          "target": ".setName(\"窗口焦点丢失时自动暂停\")"
+        },
+        {
+          "source": ".setName(\"Generate MP3 file\")",
+          "target": ".setName(\"生成MP3文件\")"
+        },
+        {
+          "source": ".setName(\"Output folder\")",
+          "target": ".setName(\"输出文件夹\")"
+        },
+        {
+          "source": ".setName(\"Embed MP3 in note\")",
+          "target": ".setName(\"在笔记中嵌入MP3\")"
+        },
+        {
+          "source": ".setName(\"Replace spaces in filenames\")",
+          "target": ".setName(\"替换文件名中的空格\")"
+        },
+        {
+          "source": ".setName(\"Enable experimental features\")",
+          "target": ".setName(\"启用实验功能\")"
+        },
+        {
+          "source": ".setName(\"Reduced notices on mobile\")",
+          "target": ".setName(\"减少手机上的通知\")"
+        },
+        {
+          "source": ".setName(\"Filter frontmatter\")",
+          "target": ".setName(\"过滤前置信息\")"
+        },
+        {
+          "source": ".setName(\"Filter markdown links\")",
+          "target": ".setName(\"过滤 markdown 链接\")"
+        },
+        {
+          "source": ".setName(\"Filter wiki links\")",
+          "target": ".setName(\"过滤 wiki 链接\")"
+        },
+        {
+          "source": ".setName(\"Filter code blocks\")",
+          "target": ".setName(\"过滤代码块\")"
+        },
+        {
+          "source": ".setName(\"Filter inline code\")",
+          "target": ".setName(\"过滤内联代码\")"
+        },
+        {
+          "source": ".setName(\"Filter tables\")",
+          "target": ".setName(\"过滤表格\")"
+        },
+        {
+          "source": ".setName(\"Filter images\")",
+          "target": ".setName(\"过滤图像\")"
+        },
+        {
+          "source": ".setName(\"Filter callouts\")",
+          "target": ".setName(\"过滤 callouts\")"
+        },
+        {
+          "source": ".setName(\"Filter highlights\")",
+          "target": ".setName(\"过滤 highlights\")"
+        },
+        {
+          "source": ".setName(\"Filter footnotes\")",
+          "target": ".setName(\"过滤脚注\")"
+        },
+        {
+          "source": ".setName(\"Filter comments\")",
+          "target": ".setName(\"过滤注释\")"
+        },
+        {
+          "source": ".setName(\"Filter math expressions\")",
+          "target": ".setName(\"过滤数学表达式\")"
+        },
+        {
+          "source": ".setName(\"Filter HTML tags\")",
+          "target": ".setName(\"过滤HTML标签\")"
+        },
+        {
+          "source": ".setName(\"Replace comparison symbols\")",
+          "target": ".setName(\"替换比较符号\")"
+        },
+        {
+          "source": ".setName(\"Language\")",
+          "target": ".setName(\"语言\")"
+        },
+        {
+          "source": ".setName(\"Use custom replacements\")",
+          "target": ".setName(\"使用自定义替换\")"
+        },
+        {
+          "source": ".setName(\"Greater than (>)\")",
+          "target": ".setName(\"大于（>）\")"
+        },
+        {
+          "source": ".setName(\"Less than (<)\")",
+          "target": ".setName(\"小于（<）\")"
+        },
+        {
+          "source": ".setName(\"Greater than or equal (>=)\")",
+          "target": ".setName(\"大于或等于（>=）\")"
+        },
+        {
+          "source": ".setName(\"Less than or equal (<=)\")",
+          "target": ".setName(\"小于或等于（<=）\")"
+        },
+        {
+          "source": ".setName(\"Current translations\")",
+          "target": ".setName(\"当前翻译\")"
+        },
+        {
+          "source": ".setName(\"Chunk size for long notes\")",
+          "target": ".setName(\"长笔记的块大小\")"
+        },
+        {
+          "source": ".setDesc(\"Choose from the top voices.\")",
+          "target": ".setDesc(\"从顶级声音中选择。\")"
+        },
+        {
+          "source": ".setDesc(\"Change playback speed multiplier (ex. 0.5 = 0.5x playback speed (50% speed)). Default = 1.0\")",
+          "target": ".setDesc(\"更改播放速度倍数（例如0.5=0.5x播放速度（50%速度））。默认值=1.0\")"
+        },
+        {
+          "source": ".setDesc(\"Toggle notices for processing status and errors.\")",
+          "target": ".setDesc(\"切换处理状态和错误的通知。\")"
+        },
+        {
+          "source": ".setDesc(\"Toggle playback button in the status bar.\")",
+          "target": ".setDesc(\"切换状态栏中的播放按钮。\")"
+        },
+        {
+          "source": ".setDesc(\"Toggle menu items in the file and editor menus.\")",
+          "target": ".setDesc(\"切换文件和编辑器菜单中的菜单项。\")"
+        },
+        {
+          "source": ".setDesc(\"Hide the floating playback control popover during audio playback.\")",
+          "target": ".setDesc(\"在音频播放期间隐藏浮动播放控件弹出窗口。\")"
+        },
+        {
+          "source": ".setDesc(\"Keep playback controls open after audio finishes to allow replaying.\")",
+          "target": ".setDesc(\"音频播放结束后，保持播放控制打开，以允许播放。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable the playback queue functionality including queue manager and queue-related commands.\")",
+          "target": ".setDesc(\"启用播放队列功能，包括队列管理器和队列相关命令。\")"
+        },
+        {
+          "source": ".setDesc(\"Automatically pause playback when Obsidian loses focus and resume when it regains focus.\")",
+          "target": ".setDesc(\"当Obsidian失去焦点时自动暂停播放，当它重新获得焦点时恢复播放。\")"
+        },
+        {
+          "source": ".setDesc('Enable option to select \"Generate MP3\" in the file and editor menus.')",
+          "target": ".setDesc('启用选项，在文件和编辑器菜单中选择\"生成MP3。\"')"
+        },
+        {
+          "source": ".setDesc(\"Specify the folder to save generated MP3 files.\")",
+          "target": ".setDesc(\"指定用于保存生成的MP3文件的文件夹。\")"
+        },
+        {
+          "source": ".setDesc(\"Embed a link to the generated MP3 file in the note.\")",
+          "target": ".setDesc(\"在笔记中嵌入指向生成的MP3文件的链接。\")"
+        },
+        {
+          "source": ".setDesc(\"Replaces spaces in mp3 file name with underscores (used for system compatibility).\")",
+          "target": ".setDesc(\"将mp3文件名中的空格替换为下划线（用于系统兼容性）。\")"
+        },
+        {
+          "source": ".setDesc(\"Enable access to experimental features that may not be fully stable. These features are gated behind this toggle for safety.\")",
+          "target": ".setDesc(\"允许访问可能不完全稳定的实验功能。为了安全起见，这些功能都在这个开关后面。\")"
+        },
+        {
+          "source": ".setDesc(\"Show fewer notification popups on mobile devices to reduce screen clutter. Disable this for more verbose feedback.\")",
+          "target": ".setDesc(\"在移动设备上显示更少的通知弹出窗口，以减少屏幕混乱。禁用此选项以获得更详细的反馈。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove YAML frontmatter (metadata between --- delimiters) from the beginning of notes.\")",
+          "target": ".setDesc(\"从注释的开头删除YAML frontmatter（---分隔符之间的元数据）。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove markdown links [text](url) completely. When enabled, both the link text and URL are removed.\")",
+          "target": ".setDesc(\"完全删除markdown链接[text](url)。启用后，链接文本和URL都将被删除。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove Obsidian wiki-style links [[link]] and keep only the display text.\")",
+          "target": ".setDesc(\"删除Obsidian 维基风格的链接[[link]]，只保留显示文本。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove fenced code blocks (```code```) completely.\")",
+          "target": ".setDesc(\"完全移除代码块(```code```) 。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove backtick markers from inline code (`code`) while keeping the code text.\")",
+          "target": ".setDesc(\"移除行内代码的反引号标记(`code`)，但保留代码文本本身。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove markdown tables completely.\")",
+          "target": ".setDesc(\"完全删除 markdown 表格。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove image embeds ![alt](url) and attachments ![[image.png]].\")",
+          "target": ".setDesc(\"移除图像嵌入 ![alt](url) 和附件 ![[image.png]].\")"
+        },
+        {
+          "source": ".setDesc(\"Remove Obsidian callout blocks (> [!note], > [!warning], etc.) while keeping the content.\")",
+          "target": ".setDesc(\"删除Obsidian callout 块 (>[!note], >[!warning] 等，同时）保留内容。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove highlight markers ==text== while keeping the highlighted text.\")",
+          "target": ".setDesc(\"删除突出显示标记==text==，同时保留突出显示的文本。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove footnote references [^1] and footnote definitions.\")",
+          "target": ".setDesc(\"删除脚注引用[^1]和脚注定义。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove HTML comments <!-- comment --> and Obsidian comments %%comment%%.\")",
+          "target": ".setDesc(\"移除 HTML 注释和 Obsidian 注释 %%comment%%。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove LaTeX math expressions ($inline$ and $$block$$).\")",
+          "target": ".setDesc(\"删除LaTeX数学表达式（$inline$和$block$）。\")"
+        },
+        {
+          "source": ".setDesc(\"Remove HTML tags while preserving the text content.\")",
+          "target": ".setDesc(\"删除HTML标记，同时保留文本内容。\")"
+        },
+        {
+          "source": ".setDesc(\"Replace < and > symbols with words to prevent XML parsing issues with multiple symbols on the same line. Language and text can be customized in Symbol Replacement section below.\")",
+          "target": ".setDesc(\"用单词替换<和>符号，以防止同一行上有多个符号的XML解析问题。语言和文本可以在下面的符号替换部分进行自定义。\")"
+        },
+        {
+          "source": ".setDesc('Choose the language for symbol replacement words. \"Auto\" detects from your Obsidian interface language, with browser locale as fallback.')",
+          "target": ".setDesc('选择符号替换词的语言。\"自动\"从您的Obsidian界面语言中检测，浏览器区域设置作为回退。')"
+        },
+        {
+          "source": ".setDesc(\"Enable to define your own replacement text instead of using built-in language translations.\")",
+          "target": ".setDesc(\"启用以定义自己的替换文本，而不是使用内置语言翻译。\")"
+        },
+        {
+          "source": ".setDesc('Text to replace \">\" symbols with (e.g., \" greater than \", \" maior que \")')",
+          "target": ".setDesc('用文本替换\">\"符号 (例如, \" greater than \", \" maior que \")')"
+        },
+        {
+          "source": ".setDesc('Text to replace \"<\" symbols with (e.g., \" less than \", \" menor que \")')",
+          "target": ".setDesc('用文本替换\"<\"符号 (例如, \" less than \", \" menor que \")')"
+        },
+        {
+          "source": ".setDesc('Text to replace \">=\" symbols with (e.g., \" greater than or equal to \")')",
+          "target": ".setDesc('用文本替换\">=\"符号 (例如,\" greater than or equal to \")')"
+        },
+        {
+          "source": ".setDesc('Text to replace \"<=\" symbols with (e.g., \" less than or equal to \")')",
+          "target": ".setDesc('用文本替换\"<=\"符号 (例如, \" less than or equal to \")')"
+        },
+        {
+          "source": ".setDesc(`Preview of how symbols will be replaced in ${v===\"auto\"?\"auto-detected\":v} language:`)",
+          "target": ".setDesc(`预览在 ${v===\"auto\"?\"auto-detected\":v} 语言中如何替换符号：`)"
+        },
+        {
+          "source": ".setDesc(\"Maximum characters per chunk when generating MP3 for long notes. Smaller chunks may be more reliable but take longer. Default: 9000\")",
+          "target": ".setDesc(\"为长笔记生成 MP3 时每块的最大字符数。较小的块可能更可靠，但耗时更长。默认值：9000\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g., fr-FR-HenriNeural\")",
+          "target": ".setPlaceholder(\"例如，fr -FR-HenriNeural\")"
+        },
+        {
+          "source": ".setPlaceholder(\"e.g., Note Narration Audio\")",
+          "target": ".setPlaceholder(\"例如，笔记叙述音频\")"
+        },
+        {
+          "source": ".setPlaceholder(\" greater than \")",
+          "target": ".setPlaceholder(\"大于\")"
+        },
+        {
+          "source": ".setPlaceholder(\" less than \")",
+          "target": ".setPlaceholder(\"小于\")"
+        },
+        {
+          "source": ".setPlaceholder(\" greater than or equal to \")",
+          "target": ".setPlaceholder(\"大于或等于\")"
+        },
+        {
+          "source": ".setPlaceholder(\" less than or equal to \")",
+          "target": ".setPlaceholder(\"小于或等于\")"
+        },
+        {
+          "source": ".setTitle(\"Read note aloud\")",
+          "target": ".setTitle(\"大声朗读笔记\")"
+        },
+        {
+          "source": ".setTitle(\"Add to playback queue\")",
+          "target": ".setTitle(\"添加到播放队列\")"
+        },
+        {
+          "source": ".setTitle(\"Generate MP3\")",
+          "target": ".setTitle(\"生成MP3\")"
+        },
+        {
+          "source": ".setTitle(\"Add selection to queue\")",
+          "target": ".setTitle(\"将选择添加到队列\")"
+        },
+        {
+          "source": ".append(\"You can sample available voices at \")",
+          "target": ".append(\"您可以在以下网址试听可用的声音\")"
+        },
+        {
+          "source": ".append(\"(OPTIONAL) Enter custom voice. Visit \")",
+          "target": ".append(\"（可选）输入自定义语音。查看\")"
+        },
+        {
+          "source": ".append(\" for list of options. \")",
+          "target": ".append(\"查看选项列表。\")"
+        },
+        {
+          "source": ".append(\"Leave empty to use the selected voice above.\")",
+          "target": ".append(\"留空以使用上面选择的语音。\")"
+        },
+        {
+          "source": "Error(\"WebSocket is not connected.\")",
+          "target": "Error(\"WebSocket未连接。\")"
+        },
+        {
+          "source": "Error(\"WebSocket not initialized\")",
+          "target": "Error(\"WebSocket未初始化\")"
+        },
+        {
+          "source": "Error(\"Unsupported input type for BrowserBuffer.from\")",
+          "target": "Error(\"BrowserBuffer.from不支持的输入类型\")"
+        },
+        {
+          "source": "Error(\"Message too short to contain header length\")",
+          "target": "Error(\"消息太短，无法包含标头长度\")"
+        },
+        {
+          "source": "Error(\"byteLength must be greater than 0\")",
+          "target": "Error(\"字节长度必须大于0\")"
+        },
+        {
+          "source": "Error(\"text must be a string\")",
+          "target": "Error(\"文本必须是字符串\")"
+        },
+        {
+          "source": "Error(\"stream can only be called once.\")",
+          "target": "Error(\"流只能被调用一次。\")"
+        },
+        {
+          "source": "Error(\"BrowserVoicesManager.find() called before BrowserVoicesManager.create()\")",
+          "target": "Error(\"BrowserVoicesManager.find() called before BrowserVoicesManager.create()\")"
+        },
+        {
+          "source": "Error(\"Invalid UUID\")",
+          "target": "Error(\"无效的 UUID\")"
+        },
+        {
+          "source": "Error(\"Stringified UUID is invalid\")",
+          "target": "Error(\"字符串化UUID无效\")"
+        },
+        {
+          "source": "Error(\"crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported\")",
+          "target": "Error(\"crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported\")"
+        },
+        {
+          "source": "Error(\"Random bytes length must be >= 16\")",
+          "target": "Error(\"随机字节长度必须大于等于16\")"
+        },
+        {
+          "source": "Error(\"Namespace must be array-like (16 iterable integer values, 0-255)\")",
+          "target": "Error(\"命名空间必须是类似数组的（16个可迭代整数值，0-255)\")"
+        },
+        {
+          "source": "Error(\"Already read\")",
+          "target": "Error(\"已阅读\")"
+        },
+        {
+          "source": "Error(\"could not read FormData body as blob\")",
+          "target": "Error(\"无法将FormData主体读取为blob\")"
+        },
+        {
+          "source": "Error(\"could not read as ArrayBuffer\")",
+          "target": "Error(\"无法读取为ArrayBuffer\")"
+        },
+        {
+          "source": "Error(\"could not read FormData body as text\")",
+          "target": "Error(\"无法将FormData正文读取为文本\")"
+        },
+        {
+          "source": "Error(\"Body not allowed for GET or HEAD requests\")",
+          "target": "Error(\"GET或HEAD请求不允许使用正文\")"
+        },
+        {
+          "source": "Error(\"Failed to construct 'Response': The status provided (0) is outside the range [200, 599].\")",
+          "target": "Error(\"构造'响应'失败：提供的状态（0）超出范围[200,599]。\")"
+        },
+        {
+          "source": "Error(\"Invalid status code\")",
+          "target": "Error(\"状态代码无效\")"
+        },
+        {
+          "source": "Error(\"Network request failed\")",
+          "target": "Error(\"网络请求失败\")"
+        },
+        {
+          "source": "Error(\"Network request timed out\")",
+          "target": "Error(\"网络请求超时\")"
+        },
+        {
+          "source": "Error(\"No socket was returned in the `connect()` function\")",
+          "target": "Error(\"在`connect()`函数中没有返回套接字\")"
+        },
+        {
+          "source": "Error(\"Proxy connection ended before receiving CONNECT response\")",
+          "target": "Error(\"在收到CONNECT响应之前，代理连接已结束\")"
+        },
+        {
+          "source": "Error(\"No header received from proxy CONNECT response\")",
+          "target": "Error(\"未收到来自代理CONNECT响应的标头\")"
+        },
+        {
+          "source": "Error(\"No crypto implementation available. Please install isomorphic-webcrypto.\")",
+          "target": "Error(\"没有可用的加密实现。请安装isomorphic-webcrypto。\")"
+        },
+        {
+          "source": "Error(\"Unsupported runtime environment\")",
+          "target": "Error(\"不支持的运行时环境\")"
+        },
+        {
+          "source": "Error(\"Crypto API not available\")",
+          "target": "Error(\"加密API不可用\")"
+        },
+        {
+          "source": "Error(\"Unsupported input type for IsomorphicBuffer.from\")",
+          "target": "Error(\"IsomorphicBuffer.from的输入类型不受支持\")"
+        },
+        {
+          "source": "Error(\"target must be an object\")",
+          "target": "Error(\"目标必须是对象\")"
+        },
+        {
+          "source": "Error(\"visitor must be a function\")",
+          "target": "Error(\"访问者必须是一个函数\")"
+        },
+        {
+          "source": "Error(\"data must be an object\")",
+          "target": "Error(\"数据必须是对象\")"
+        },
+        {
+          "source": "Error(\"header name must be a non-empty string\")",
+          "target": "Error(\"标头名称必须是非空字符串\")"
+        },
+        {
+          "source": "Error(\"Object iterator must return a key-value pair\")",
+          "target": "Error(\"对象迭代器必须返回键值对\")"
+        },
+        {
+          "source": "Error(\"parser must be boolean|regexp|function\")",
+          "target": "Error(\"解析器必须是布尔|regexp|函数\")"
+        },
+        {
+          "source": "Error(\"executor must be a function.\")",
+          "target": "Error(\"executor必须是一个函数。\")"
+        },
+        {
+          "source": "Error(\"takes an object of state variables to update or a function which returns an object of state variables.\")",
+          "target": "Error(\"接受一个状态变量对象进行更新，或接受一个返回状态变量对象的函数。\")"
+        },
+        {
+          "source": "Error(\"useEffect CRUD overload is not enabled in this build of React.\")",
+          "target": "Error(\"此React版本中未启用useEffect CRUD重载。\")"
+        },
+        {
+          "source": "Error(\"edge-tts-universal package not available\")",
+          "target": "Error(\"edge-tts-universal 软件包不可用\")"
+        },
+        {
+          "source": "Error(\"No suitable Communicate class found in the loaded edge-tts-universal package. Expected Communicate or IsomorphicCommunicate.\")",
+          "target": "Error(\"在加载的 edge-tts-universal 包中未找到合适的 Communicate 类。预期为 Communicate 或 IsomorphicCommunicate。\")"
+        },
+        {
+          "source": "Error(\"TTS client not initialized\")",
+          "target": "Error(\"TTS客户端未初始化\")"
+        },
+        {
+          "source": "Error(\"Buffer not available and cannot convert Uint8Array\")",
+          "target": "Error(\"缓冲区不可用，无法转换Uint8Array\")"
+        },
+        {
+          "source": "Error(\"MP3 generation is not supported on mobile devices due to file system limitations. Use audio playback instead.\")",
+          "target": "Error(\"由于文件系统的限制，移动设备不支持MP3生成。请改用音频播放。\")"
+        },
+        {
+          "source": "Error(\"No readable text after filtering\")",
+          "target": "Error(\"过滤后没有可读文本\")"
+        },
+        {
+          "source": "Error(\"TTS processing timeout\")",
+          "target": "Error(\"TTS处理超时\")"
+        },
+        {
+          "source": "Error(\"No valid chunks created from text\")",
+          "target": "Error(\"没有从文本创建有效块\")"
+        },
+        {
+          "source": "Error(\"Failed to generate any audio chunks\")",
+          "target": "Error(\"未能生成任何音频块\")"
+        },
+        {
+          "source": "For long notes (over ~1500 words or 9000 characters), MP3 generation will automatically use a chunked approach. This splits the text into smaller parts, generates audio for each part, then combines them. A progress indicator will show the status of each chunk during generation.",
+          "target": "对于长篇笔记（超过 1500 个单词或 9000 个字符），MP3 会自动使用分块方式生成。这会将文本分割成较小的部分，为每个部分生成音频，然后将它们合并。在生成过程中，进度指示器会显示每个分块的状态。"
+        }
+      ]
+    }
+  }
+}

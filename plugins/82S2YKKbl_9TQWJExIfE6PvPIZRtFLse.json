@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-map-view",
+    "version": "2.0.0",
+    "title": "Map View",
+    "description": "An interactive map view.",
+    "language": "zh-cn",
+    "supportedVersions": "5.0.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "'Auto zoom & pan the map to fit search results, including Follow Active Note.'",
+          "target": "'自动缩放和平移地图以适应搜索结果，包括关注活动注释。'"
+        },
+        {
+          "source": "'The service used for searching for geolocations. To use Google, see details in the plugin documentation.'",
+          "target": "'用于搜索地理位置的服务。要使用 Google，请参阅插件文档中的详细信息。'"
+        },
+        {
+          "source": "'If using Google as the geocoding search provider, paste the API key here. See the plugin documentation for more details. Changes are applied after restart.'",
+          "target": "'如果使用 Google 作为地理编码搜索提供程序，请将 API 键粘贴到此处。有关更多详细信息，请参阅插件文档。重新启动后应用更改。'"
+        },
+        {
+          "source": "'Use Google Places API instead of Google Geocoding to get higher-quality results. Your API key must have a specific Google Places permission turned on! See the plugin documentation for more details.'",
+          "target": "'使用 Google Places API 而不是 Google Geocoding 来获得更高质量的结果。您的 API 密钥必须打开特定的 Google Places 权限！有关更多详细信息，请参阅插件文档。'"
+        },
+        {
+          "source": "'Date/times in the format can be wrapped in {{date:...}}, e.g. \"note-{{date:YYYY-MM-DD}}\". Search queries can be added with {{query}}.'",
+          "target": "'格式中的日期/时间可以用 {{date:...}} 包装，例如 \"笔记-{{date:YYYY-MM-DD}}\"。可以使用 {{query}} 添加搜索查询。'"
+        },
+        {
+          "source": "'Disk path for notes created from the map.'",
+          "target": "'从地图创建的笔记的磁盘路径。'"
+        },
+        {
+          "source": "'Choose the file to use as a template, e.g. \"templates/map-log.md\".'",
+          "target": "'选择要用作模板的文件，例如\"templates/map-log.md\"。'"
+        },
+        {
+          "source": "'Maximal radius in pixels to cover in a marker cluster. Lower values will produce smaller map clusters. (Requires restart.)'",
+          "target": "'标记簇中要覆盖的最大半径(像素)。较低的值将产生较小的地图簇。(需要重新启动。)'"
+        },
+        {
+          "source": "'When jumping to the map from a note, what should be the display zoom? This is also used as a max zoom for \"Map follows search results\" above.'",
+          "target": "'从笔记跳转到地图时，显示缩放应该是多少?这也被用作上述\"地图跟随搜索结果\"的最大缩放。'"
+        },
+        {
+          "source": "'Allow zooming further than the maximum defined for the map source, interpolating the image of the highest available zoom.'",
+          "target": "'允许缩放超过为地图源定义的最大值，插值最高可用缩放的图像。'"
+        },
+        {
+          "source": "'While making changes to the map, save the history to be browsable through Obsidian back/forward buttons.'",
+          "target": "'在更改地图时，请保存历史记录，以便通过黑曜石后退/前进按钮浏览。'"
+        },
+        {
+          "source": "'What query to use for following active notes (in the main or mini view), $PATH$ being the file path.'",
+          "target": "'使用什么查询来跟踪活动笔记(在主视图或迷你视图中)，$PATH$是文件路径。'"
+        },
+        {
+          "source": "'Monitor the clipboard and add a \"locations:\" front-matter if a supported geolocation is pasted from the keyboard.'",
+          "target": "'监控剪贴板，如果从键盘粘贴了支持的地理位置，则添加 \"locations:\" 前置属性。'"
+        },
+        {
+          "source": "'The key Map View uses to denote a front matter geolocation. Restart required. Beware: changing this will make your old front matter key not recognized as geolocations by Map View.'",
+          "target": "'关键的地图视图用于表示前线地理位置。需要重新启动。注意:更改此设置将使您的旧前台密钥无法被地图视图识别为地理位置。'"
+        },
+        {
+          "source": "'Instead or in addition to the \"locations:\" YAML tag, you can use a regular tag that will mark for Map View that a note has inline geolocations, e.g. \"#hasLocations\". (Note: this has a performance penalty for the time being.)'",
+          "target": "'除了 \"locations:\" YAML 标签之外，您还可以使用一个常规标签，在地图视图中标记注释具有内联地理位置，例如 \"#hasLocations\" 。(注:这暂时会受到性能处罚。)'"
+        },
+        {
+          "source": "'URL to use for calculating and showing routes and directions, used for \"route to point\". {x0},{y0} are the source lat,lng and {x1},{y1} are the destination lat,lng.'",
+          "target": "'用于计算和显示路线和方向的 URL，用于\"路线到点\"。{x0},{y0} 是源 lat, lng，{x1},{y1} 是目的地 lat, lng。'"
+        },
+        {
+          "source": "'How and if Map View handles geolinks in notes (both front matter and inline)'",
+          "target": "'地图视图如何以及是否处理笔记中的地理链接(包括前台和内联)'"
+        },
+        {
+          "source": "'When turned on, Map View will handle geolinks internally, and turn front matter locations into links. (Requires restarting Obsidian to update correctly.)'",
+          "target": "'启用后，地图视图将在内部处理地理链接，并将前台位置转换为链接。(需要重新启动 Obsidian 才能正确更新。)'"
+        },
+        {
+          "source": "'Show a popup with a map preview when hovering on geolinks in notes. Requires \"Geolinks in Notes\" above.'",
+          "target": "'当鼠标悬停在笔记中的地理链接上时，显示一个带有地图预览的弹出窗口。需要上述注释中的\"地理链接\"。'"
+        },
+        {
+          "source": "'Zoom level to use for the geolink map preview popup.'",
+          "target": "'用于地理链接地图预览弹出窗口的缩放级别。'"
+        },
+        {
+          "source": "'What is shown when hovering (desktop) or clicking (mobile) map markers.'",
+          "target": "'悬停(桌面)或单击(移动)地图标记时显示的内容。'"
+        },
+        {
+          "source": "'Show a popup with the note name when hovering on a map marker.'",
+          "target": "'当鼠标悬停在地图标记上时，显示一个带有注释名称的弹出窗口。'"
+        },
+        {
+          "source": "'In the popup above, show also the link name, in the case of an inline link.'",
+          "target": "'在上面的弹出窗口中，如果是内联链接，还显示链接名称。'"
+        },
+        {
+          "source": "'In addition to the note name, show a preview if the note contents. Either way, it will be displayed only if the map is large enough to contain it.'",
+          "target": "'除了注释名称外，如果注释内容，还显示预览。无论哪种方式，只有当地图足够大时才会显示它。'"
+        },
+        {
+          "source": "'Show a hover popup summarizing the icons inside a marker cluster.'",
+          "target": "'显示一个悬停弹出窗口，总结标记集群内的图标。'"
+        },
+        {
+          "source": "'Control when and if Map View should use panes vs tabs, new panes vs existing ones etc.'",
+          "target": "'控制地图视图何时以及是否应使用窗格与选项卡, 新窗格与现有窗格等。'"
+        },
+        {
+          "source": "'How should the corresponding note be opened following a click on a marker?'",
+          "target": "'点击标记后，应如何打开相应的注释?'"
+        },
+        {
+          "source": "'How should the corresponding note be opened following a Ctrl+click on a marker?'",
+          "target": "'在按住 Ctrl 键并单击标记后，应如何打开相应的注释?'"
+        },
+        {
+          "source": "'How should the corresponding note be opened following a middle-click on a marker?'",
+          "target": "'在标记上单击鼠标中键后，应如何打开相应的注释?'"
+        },
+        {
+          "source": "'How should Map View open by default (e.g. when clicking the ribbon icon, or from within a note).'",
+          "target": "'默认情况下，地图视图应如何打开(例如，单击功能区图标时，或从注释中打开)。'"
+        },
+        {
+          "source": "'How should Map View open when Ctrl is pressed.'",
+          "target": "'按下 Ctrl 键时，地图视图应如何打开。'"
+        },
+        {
+          "source": "'How should Map View open when using middle-click.'",
+          "target": "'使用鼠标中键单击时，地图视图应如何打开。'"
+        },
+        {
+          "source": "'Which way should the pane be split when opening in a new pane.'",
+          "target": "'在新窗格中打开时，窗格应该以何种方式拆分。'"
+        },
+        {
+          "source": "'Change and switch between sources for map tiles. An optional dark mode URL can be defined for each source. If no such URL is defined and dark mode is used, the map colors are reverted. See the documentation for more details.'",
+          "target": "'在地图图块的源之间进行更改和切换。可以为每个源定义可选的暗模式 URL。如果没有定义此类 URL 并且使用了暗模式，则地图颜色将恢复。有关更多详细信息，请参阅文档。'"
+        },
+        {
+          "source": "\"'Open in' actions showing in geolocation-relevant popup menus. URL should have {x} and {y} as parameters to transfer.\"",
+          "target": "\"在地理位置相关弹出菜单中显示的 '打开' 操作。URL 应具有 {x} 和 {y} 作为要传输的参数。\""
+        },
+        {
+          "source": "'Customizable rules for converting URLs of various mapping services to coordinates, for the purpose of the \"Convert URL\" action.'",
+          "target": "'用于将各种映射服务的 URL 转换为坐标的可定制规则，用于\"转换 URL\"操作。'"
+        },
+        {
+          "source": "'Use this for advanced settings not controllable by the GUI above. Beware - uncareful edits can get Map View to faulty behaviors!'",
+          "target": "'将此用于上述 GUI 无法控制的高级设置。小心-不小心的编辑可能会使地图视图出现错误行为！'"
+        },
+        {
+          "source": ".setTitle('Show on map'",
+          "target": ".setTitle('在地图上显示'"
+        },
+        {
+          "source": ".setTitle('Open with default app'",
+          "target": ".setTitle('使用默认应用打开'"
+        },
+        {
+          "source": ".setTitle(`Open in ${setting.name}`",
+          "target": ".setTitle(`在${setting.name}中打开`"
+        },
+        {
+          "source": ".setTitle('Add geolocation (front matter)'",
+          "target": ".setTitle('添加地理定位(前置信息)'"
+        },
+        {
+          "source": ".setTitle(`Focus '${fileName}' in Map View`",
+          "target": ".setTitle(`在地图视图中聚焦 '${fileName}'`"
+        },
+        {
+          "source": ".setTitle('Convert to geolocation (geosearch)'",
+          "target": ".setTitle('转换为地理定位(地理搜索)'"
+        },
+        {
+          "source": ".setTitle('Convert to geolocation'",
+          "target": ".setTitle('转换为地理定位'"
+        },
+        {
+          "source": ".setTitle('Paste as geolocation'",
+          "target": ".setTitle('作为地理定位粘贴'"
+        },
+        {
+          "source": ".setTitle('Embed a Map View'",
+          "target": ".setTitle('嵌入地图视图'"
+        },
+        {
+          "source": ".setTitle('New note here (inline)'",
+          "target": ".setTitle('在此处新建笔记(内联)'"
+        },
+        {
+          "source": ".setTitle('New note here (front matter)'",
+          "target": ".setTitle('在此处新建笔记(前置信息)'"
+        },
+        {
+          "source": ".setTitle(`Copy geolocation`",
+          "target": ".setTitle(`复制地理定位`"
+        },
+        {
+          "source": ".setTitle(`Copy geolocation as front matter`",
+          "target": ".setTitle(`以前置信息形式复制地理定位`"
+        },
+        {
+          "source": ".setTitle(`Focus ${numLocations} ${numLocations > 1 ? 'geolocations' : 'geolocation'} in Map View`",
+          "target": ".setTitle(`在地图视图中聚焦 ${numLocations} ${numLocations > 1 ? 'geolocations' : 'geolocation'}}`"
+        },
+        {
+          "source": ".setTitle('Import geolocations from file...'",
+          "target": ".setTitle('从文件导入地理定位...'"
+        },
+        {
+          "source": ".setTitle('Open note'",
+          "target": ".setTitle('打开笔记'"
+        },
+        {
+          "source": ".setTitle('Mark as routing source'",
+          "target": ".setTitle('标记为路线起点'"
+        },
+        {
+          "source": ".setTitle('Route to point'",
+          "target": ".setTitle('导航至点'"
+        },
+        {
+          "source": ".setTitle('Remove routing source'",
+          "target": ".setTitle('移除路线起点'"
+        },
+        {
+          "source": ".setTitle('Copy Map View URL'",
+          "target": ".setTitle('复制地图视图链接'"
+        },
+        {
+          "source": ".setTitle('Copy Map View code block'",
+          "target": ".setTitle('复制地图视图代码块'"
+        },
+        {
+          "source": ".setButtonText('Import'",
+          "target": ".setButtonText('导入'"
+        },
+        {
+          "source": ".setButtonText('Save'",
+          "target": ".setButtonText('保存'"
+        },
+        {
+          "source": ".setButtonText('Cancel'",
+          "target": ".setButtonText('取消'"
+        },
+        {
+          "source": ".setButtonText('Open'",
+          "target": ".setButtonText('打开'"
+        },
+        {
+          "source": ".setButtonText('Reset'",
+          "target": ".setButtonText('重置'"
+        },
+        {
+          "source": ".setButtonText('Update from open Map View'",
+          "target": ".setButtonText('从已打开的地图视图更新'"
+        },
+        {
+          "source": ".setButtonText('Fit'",
+          "target": ".setButtonText('适应(调整至合适大小)'"
+        },
+        {
+          "source": ".setButtonText('Save as...'",
+          "target": ".setButtonText('另存为...'"
+        },
+        {
+          "source": ".setButtonText('Delete'",
+          "target": ".setButtonText('删除'"
+        },
+        {
+          "source": ".setButtonText('Save as Default'",
+          "target": ".setButtonText('保存为默认'"
+        },
+        {
+          "source": ".setButtonText('Copy URL'",
+          "target": ".setButtonText('复制链接'"
+        },
+        {
+          "source": ".setButtonText('Copy block'",
+          "target": ".setButtonText('复制区块'"
+        },
+        {
+          "source": ".setButtonText('New map source'",
+          "target": ".setButtonText('新增地图来源'"
+        },
+        {
+          "source": ".setButtonText('New Custom Action'",
+          "target": ".setButtonText('新增自定义操作'"
+        },
+        {
+          "source": ".setButtonText('New Parsing Rule'",
+          "target": ".setButtonText('新增解析规则'"
+        },
+        {
+          "source": ".setButtonText('New Icon Rule'",
+          "target": ".setButtonText('新增图标规则'"
+        },
+        {
+          "source": "`Show available keyboard shortcuts at the bottom of the workspace quick switcher`",
+          "target": "`在工作区快速切换器的底部显示可用的键盘快捷键`"
+        },
+        {
+          "source": "`Show a confirmation prompt on workspace deletion`",
+          "target": "`在删除工作区时显示确认提示`"
+        },
+        {
+          "source": "`Let the OS determine the light/dark mode setting when switching modes. This setting can only be used if Workspace Modes is enabled.`",
+          "target": "`切换模式时，让操作系统决定浅色/深色模式的设置。此设置仅在启用\"工作区模式\"时可用。`"
+        },
+        {
+          "source": ".setName('Map follows search results'",
+          "target": ".setName('地图跟随搜索结果'"
+        },
+        {
+          "source": ".setName('Geocoding search provider'",
+          "target": ".setName('地理编码搜索提供商'"
+        },
+        {
+          "source": ".setName('Gecoding API key'",
+          "target": ".setName('地理编码 API 密钥'"
+        },
+        {
+          "source": ".setName('Use Google Places for searches'",
+          "target": ".setName('使用 Google Places 进行搜索'"
+        },
+        {
+          "source": ".setName('New note name format'",
+          "target": ".setName('新笔记命名格式'"
+        },
+        {
+          "source": ".setName('New note path'",
+          "target": ".setName('新笔记路径'"
+        },
+        {
+          "source": ".setName('Template file path'",
+          "target": ".setName('模板文件路径'"
+        },
+        {
+          "source": ".setName('Max cluster size in pixels'",
+          "target": ".setName('最大聚类大小(像素)'"
+        },
+        {
+          "source": ".setName('Default zoom for \"show on map\" action'",
+          "target": ".setName('\"在地图上显示\"操作的默认缩放级别'"
+        },
+        {
+          "source": ".setName('Allow zooming beyond the defined maximum'",
+          "target": ".setName('允许超出定义的最大缩放范围进行缩放'"
+        },
+        {
+          "source": ".setName('Save back/forward history'",
+          "target": ".setName('保存前进/后退历史记录'"
+        },
+        {
+          "source": ".setName('Query format for \"follow active note\"'",
+          "target": ".setName('\"跟随当前笔记\"查询格式'"
+        },
+        {
+          "source": ".setName('Fix front-matter on inline geolocation paste'",
+          "target": ".setName('修复内联地理位置粘贴时的前置信息'"
+        },
+        {
+          "source": ".setName('Key for front matter location'",
+          "target": ".setName('前置信息中位置的键名'"
+        },
+        {
+          "source": ".setName('Tag name to denote inline geolocations'",
+          "target": ".setName('用于表示内联地理位置的标签名'"
+        },
+        {
+          "source": ".setName('Routing service URL'",
+          "target": ".setName('路线服务 URL'"
+        },
+        {
+          "source": ".setName('Geolinks in Notes'",
+          "target": ".setName('笔记中的地理链接'"
+        },
+        {
+          "source": ".setName('Handle geolinks in notes'",
+          "target": ".setName('处理笔记中的地理链接'"
+        },
+        {
+          "source": ".setName('Show geolink previews in notes'",
+          "target": ".setName('在笔记中显示地理链接预览'"
+        },
+        {
+          "source": ".setName('Zoom of the geolink map preview'",
+          "target": ".setName('地理链接地图预览的缩放级别'"
+        },
+        {
+          "source": ".setName('Marker Hover & Previews'",
+          "target": ".setName('标记悬停与预览'"
+        },
+        {
+          "source": ".setName('Show note name on marker hover'",
+          "target": ".setName('鼠标悬停在标记上时显示笔记名称'"
+        },
+        {
+          "source": ".setName('Show inline link name on marker hover'",
+          "target": ".setName('鼠标悬停在标记上时显示内联链接名称'"
+        },
+        {
+          "source": ".setName('Show note preview on map marker hover'",
+          "target": ".setName('在地图标记悬停时显示笔记预览'"
+        },
+        {
+          "source": ".setName('Show preview for marker clusters'",
+          "target": ".setName('为标记聚类显示预览'"
+        },
+        {
+          "source": ".setName('Pane & Tab Usage'",
+          "target": ".setName('面板与标签使用'"
+        },
+        {
+          "source": ".setName('Default action for map marker click'",
+          "target": ".setName('地图标记点击的默认操作'"
+        },
+        {
+          "source": ".setName('Default action for map marker Ctrl+click'",
+          "target": ".setName('地图标记 Ctrl+点击的默认操作'"
+        },
+        {
+          "source": ".setName('Default action for map marker middle-click'",
+          "target": ".setName('地图标记中键点击的默认操作'"
+        },
+        {
+          "source": ".setName('Default mode for opening Map View'",
+          "target": ".setName('打开地图视图的默认模式'"
+        },
+        {
+          "source": ".setName('Opening Map View with Ctrl+Click'",
+          "target": ".setName('使用 Ctrl+点击打开地图视图'"
+        },
+        {
+          "source": ".setName('Opening Map View with middle-Click'",
+          "target": ".setName('使用中键点击打开地图视图'"
+        },
+        {
+          "source": ".setName('New pane split direction'",
+          "target": ".setName('新建面板分割方向'"
+        },
+        {
+          "source": ".setName('Map Sources'",
+          "target": ".setName('地图来源'"
+        },
+        {
+          "source": ".setName('Custom \"Open In\" Actions'",
+          "target": ".setName('自定义\"在...中打开\"操作'"
+        },
+        {
+          "source": ".setName('URL Parsing Rules'",
+          "target": ".setName('URL 解析规则'"
+        },
+        {
+          "source": ".setName('Marker Icon Rules'",
+          "target": ".setName('标记图标规则'"
+        },
+        {
+          "source": ".setName('Enable experimental GPS support'",
+          "target": ".setName('启用实验性 GPS 支持'"
+        },
+        {
+          "source": ".setName('Geo helper type'",
+          "target": ".setName('地理辅助工具类型'"
+        },
+        {
+          "source": ".setName('Geo Helper Command'",
+          "target": ".setName('地理辅助工具命令'"
+        },
+        {
+          "source": ".setName('Geo Helper URL'",
+          "target": ".setName('地理辅助工具 URL'"
+        },
+        {
+          "source": ".setName('Advanced'",
+          "target": ".setName('高级设置'"
+        },
+        {
+          "source": ".setName('Debug logs (advanced)'",
+          "target": ".setName('调试日志(高级)'"
+        },
+        {
+          "source": ".setName('Marker preview tester'",
+          "target": ".setName('标记预览测试器'"
+        },
+        {
+          "source": ".setName('Edit marker icons as JSON (advanced)'",
+          "target": ".setName('作为 JSON 编辑标记图标(高级)'"
+        },
+        {
+          "source": "`Customize map markers by note tags.",
+          "target": "`通过注释标记自定义地图标记."
+        },
+        {
+          "source": "Refer to <a href=\"https://fontawesome.com/\">Font Awesome</a> for icon names or use <a href=\"https://emojipedia.org\">emojis</a>, and see <a href=\"https://github.com/coryasilva/Leaflet.ExtraMarkers#properties\">here</a> for the other properties.",
+          "target": "查阅 <a href=\"https://fontawesome.com/\">象形异体字</a> 用于图标名称或用途 <a href=\"https://emojipedia.org\">emojis</a>, 看看 <a href=\"https://github.com/coryasilva/Leaflet.ExtraMarkers#properties\">这里</a> 对于其他属性."
+        },
+        {
+          "source": "<br>The rules override each other, starting from the default. Refer to the plugin documentation for more details.",
+          "target": "<br>这些规则从默认值开始相互覆盖。有关更多详细信息，请参阅插件文档."
+        },
+        {
+          "source": "<strong>Warning!</strong> This is an experimental feature -- your milage may vary.<br>Make sure to read <a href=\"https://github.com/esm7/obsidian-map-view#gps-location-support\">the documentation</a> before using.'",
+          "target": "<strong>警告!</strong> 这是一个实验功能 -- 情况因人而异.<br>请务必阅读 <a href=\"https://github.com/esm7/obsidian-map-view#gps-location-support\">文档</a> 在使用前.'"
+        },
+        {
+          "source": "text: 'Settings for the map view plugin.'",
+          "target": "text: '设置 地图视图 '"
+        },
+        {
+          "source": "followLabel.innerHTML = 'Follow active note'",
+          "target": "followLabel.innerHTML = '跟随当前笔记'"
+        },
+        {
+          "source": ".addOption('replaceCurrent', 'Open in same pane (replace Map View)')",
+          "target": ".addOption('replaceCurrent', '在同一窗格中打开（替换地图视图）')"
+        },
+        {
+          "source": ".addOption('dedicatedPane', 'Open in a 2nd pane and keep reusing it')",
+          "target": ".addOption('dedicatedPane', '在第二个窗格中打开并继续重复使用')"
+        },
+        {
+          "source": ".addOption('alwaysNew', 'Always open a new pane')",
+          "target": ".addOption('alwaysNew', '始终打开新窗格')"
+        },
+        {
+          "source": ".addOption('dedicatedTab', 'Open in a new tab and keep reusing it')",
+          "target": ".addOption('dedicatedTab', '在新选项卡中打开并继续重复使用')"
+        },
+        {
+          "source": ".addOption('alwaysNewTab', 'Always open a new tab')",
+          "target": ".addOption('alwaysNewTab', '始终打开新选项卡')"
+        },
+        {
+          "source": "off: 'No labels',",
+          "target": "off: '无标签',"
+        },
+        {
+          "source": "left: 'Left labels',",
+          "target": "left: '左侧标签',"
+        },
+        {
+          "source": "right: 'Right labels',",
+          "target": "right: '右侧标签',"
+        },
+        {
+          "source": ".addOptions({ auto: 'Auto', light: 'Light', dark: 'Dark' })",
+          "target": ".addOptions({ auto: '自动', light: '亮色', dark: '暗色' })"
+        },
+        {
+          "source": "false: 'Off',",
+          "target": "false: '关闭',"
+        },
+        {
+          "source": "true: 'Show links',",
+          "target": "true: '显示链接',"
+        },
+        {
+          "source": "<label for=\"viewCollapsible${lastGlobalId}\" class=\"lbl-toggle\">View</label>",
+          "target": "<label for=\"viewCollapsible${lastGlobalId}\" class=\"lbl-toggle\">显示</label>"
+        },
+        {
+          "source": "<label for=\"filtersCollapsible${lastGlobalId}\" class=\"lbl-toggle\">Filters</label>",
+          "target": "<label for=\"filtersCollapsible${lastGlobalId}\" class=\"lbl-toggle\">筛选器</label>"
+        },
+        {
+          "source": "<label for=\"linksCollapsible${lastGlobalId}\" class=\"lbl-toggle\">Links</label>",
+          "target": "<label for=\"linksCollapsible${lastGlobalId}\" class=\"lbl-toggle\">链接</label>"
+        },
+        {
+          "source": "<label for=\"presetsCollapsible${lastGlobalId}\" class=\"lbl-toggle\">Presets</label>",
+          "target": "<label for=\"presetsCollapsible${lastGlobalId}\" class=\"lbl-toggle\">预设值</label>"
+        },
+        {
+          "source": ".setTooltip('Save the current view as a preset.')",
+          "target": ".setTooltip('将当前视图另存为预设。')"
+        },
+        {
+          "source": ".setTooltip('Delete the currently-selected preset.')",
+          "target": ".setTooltip('删除当前选定的预设。')"
+        },
+        {
+          "source": ".setTooltip('Save the current view as the default one.')",
+          "target": ".setTooltip('将当前视图另存为默认视图。')"
+        },
+        {
+          "source": ".setTooltip('Copy the current view as a URL.')",
+          "target": ".setTooltip('将当前视图复制为URL。')"
+        },
+        {
+          "source": ".setTooltip('Copy the current view as a block code you can paste in notes for an inline map.')",
+          "target": ".setTooltip('将当前视图复制为块代码，以便粘贴到内联地图的注释中。')"
+        },
+        {
+          "source": ".setTooltip('Open a full Map View with the current state.')",
+          "target": ".setTooltip('打开具有当前状态的完整地图视图。')"
+        },
+        {
+          "source": ".setTooltip('Update the source code block with the updated view state')",
+          "target": ".setTooltip('使用更新的视图状态更新源代码块')"
+        },
+        {
+          "source": ".setTooltip('Reset the view to the defined default.')",
+          "target": ".setTooltip('将视图重置为定义的默认值。')"
+        },
+        {
+          "source": ".setTooltip('Update the view and its source code block from an open Map View')",
+          "target": ".setTooltip('从打开的地图视图更新视图及其源代码块')"
+        },
+        {
+          "source": ".setTooltip('Set the map view to fit all currently-displayed markers.')",
+          "target": ".setTooltip('将地图视图设置为适合当前显示的所有标记。')"
+        },
+        {
+          "source": ".addOption('lastUsed', 'Open in last-used pane')",
+          "target": ".addOption('lastUsed', '在上次使用的窗格中打开')"
+        },
+        {
+          "source": ".addOption('always', 'Always')",
+          "target": ".addOption('always', '总是')"
+        },
+        {
+          "source": ".addOption('mobileOnly', 'Only on mobile')",
+          "target": ".addOption('mobileOnly', '仅在移动设备上')"
+        },
+        {
+          "source": ".addOption('never', 'Never')",
+          "target": ".addOption('never', '从不')"
+        },
+        {
+          "source": ".addOption('horizontal', 'Horizontal')",
+          "target": ".addOption('horizontal', '水平方向')"
+        },
+        {
+          "source": ".addOption('vertical', 'Vertical')",
+          "target": ".addOption('vertical', '垂直方向')"
+        },
+        {
+          "source": ".addOption('url', 'External URL')",
+          "target": ".addOption('url', '外部URL')"
+        },
+        {
+          "source": ".addOption('app', 'Installed app')",
+          "target": ".addOption('app', '已安装的应用程序')"
+        },
+        {
+          "source": ".addOption('commandline', 'Command line')",
+          "target": ".addOption('commandline', '命令行')"
+        },
+        {
+          "source": ".setTitle('New note here (inline)');",
+          "target": ".setTitle('在此处新建笔记（内联）');"
+        },
+        {
+          "source": ".setTitle('New note here (front matter)');",
+          "target": ".setTitle('在此处插入笔记（前置属性）');"
+        },
+        {
+          "source": ".setTitle(`Copy geolocation`);",
+          "target": ".setTitle(`复制地理位置`);"
+        },
+        {
+          "source": ".setTitle(`Copy geolocation as front matter`);",
+          "target": ".setTitle(`将地理位置复制为前置属性`);"
+        },
+        {
+          "source": ".setTitle('Mark as routing source');",
+          "target": ".setTitle('标记为路径源');"
+        },
+        {
+          "source": ".setTitle('Open with default app');",
+          "target": ".setTitle('使用默认应用程序打开');"
+        },
+        {
+          "source": ".setTitle(`Open in ${setting.name}`);",
+          "target": ".setTitle(`在 ${setting.name} 打开`);"
+        },
+        {
+          "source": ".setTitle('Route to point');",
+          "target": ".setTitle('路线到点');"
+        },
+        {
+          "source": ".setTitle('Remove routing source');",
+          "target": ".setTitle('删除路径源');"
+        },
+        {
+          "source": ".setTitle('Copy Map View code block')",
+          "target": ".setTitle('复制地图视图代码块')"
+        },
+        {
+          "source": ".setTitle('Show on map');",
+          "target": ".setTitle('在地图上显示');"
+        },
+        {
+          "source": ".setTitle('Add geolocation (front matter)');",
+          "target": ".setTitle('添加地理位置（前置属性）');"
+        },
+        {
+          "source": ".setTitle('Convert to geolocation (geosearch)');",
+          "target": ".setTitle('转换为地理位置（geosearch）');"
+        },
+        {
+          "source": ".setTitle('Convert to geolocation');",
+          "target": ".setTitle('转换为地理位置');"
+        },
+        {
+          "source": ".setTitle('Paste as geolocation');",
+          "target": ".setTitle('粘贴为地理位置');"
+        },
+        {
+          "source": ".setTitle('Embed a Map View');",
+          "target": ".setTitle('嵌入地图视图');"
+        },
+        {
+          "source": "addRibbonIcon('map-pin', 'Open map view'",
+          "target": "addRibbonIcon('map-pin', '打开地图视图'"
+        }
+      ]
+    }
+  }
+}
