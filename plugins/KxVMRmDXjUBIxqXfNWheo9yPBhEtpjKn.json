@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "lockbox",
+    "version": "1.0.1",
+    "title": "Lockbox",
+    "description": "Lockbox Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.5.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "There is no password recovery. If you forget a password, the encrypted note cannot be decrypted. Keep backups of important notes.",
+          "target": "密码无法找回。如果忘记密码，加密的笔记将无法解密。请备份重要笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: operation failed",
+          "target": "Lockbox：操作失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: encryption self-check failed",
+          "target": "Lockbox：加密自检失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: failed to lock note",
+          "target": "Lockbox：锁定笔记失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: failed to unlock note",
+          "target": "Lockbox：解锁笔记失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: failed to auto-lock note",
+          "target": "Lockbox：自动锁定笔记失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: could not read note for bulk lock",
+          "target": "Lockbox：无法读取笔记以进行批量锁定"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: failed to lock note in bulk",
+          "target": "Lockbox：批量锁定笔记失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: could not read note for bulk unlock",
+          "target": "Lockbox：无法读取笔记以进行批量解锁"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: failed to unlock note in bulk",
+          "target": "Lockbox：批量解锁笔记失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Lockbox: failed to secure exposed note",
+          "target": "Lockbox：无法保护已暴露的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Re-encrypt a note as soon as you navigate away from it. Strongly recommended — while a note is unlocked its plaintext is written to disk.",
+          "target": "离开笔记后立即重新加密。强烈建议——笔记解锁时，其明文内容会写入磁盘。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Minutes a note may stay unlocked before it is re-encrypted. 0 disables the timer.",
+          "target": "笔记保持解锁状态的分钟数，之后将被重新加密。设为0可禁用计时器。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Minutes the vault password stays cached in memory. After this you'll be asked again on the next unlock. 0 keeps it until Obsidian quits.",
+          "target": "保险库密码在内存中缓存的分钟数。超时后，下次解锁时将再次要求输入。设为0可保持缓存直至Obsidian退出。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "PBKDF2 iterations used when locking new notes. Higher is slower but more resistant to brute force. Existing locked notes keep the value they were locked with.",
+          "target": "锁定新笔记时使用的PBKDF2迭代次数。数值越高，速度越慢，但抗暴力破解能力越强。已锁定的笔记将保留其锁定时的迭代次数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "After encrypting, decrypt the result and confirm it matches the original before replacing the note. Strongly recommended — prevents a faulty lock from destroying content. Roughly doubles lock time.",
+          "target": "加密后，解密结果并与原文确认匹配，然后再替换笔记。强烈建议——防止因锁定错误导致内容损坏。锁定时间大约会增加一倍。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Password",
+          "target": "密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Confirm password",
+          "target": "确认密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-lock on close",
+          "target": "关闭时自动锁定"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-lock after inactivity",
+          "target": "无操作后自动锁定"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Forget vault password after",
+          "target": "忘记保险库密码的时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Key derivation iterations",
+          "target": "密钥派生迭代次数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Verify before overwriting",
+          "target": "覆盖前验证"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter password",
+          "target": "输入密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Re-enter password",
+          "target": "再次输入密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Lockbox: lock note",
+          "target": "Lockbox：锁定笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Lockbox: unlock note",
+          "target": "Lockbox：解锁笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Lockbox: lock all notes in folder",
+          "target": "Lockbox：锁定文件夹中的所有笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Lockbox: unlock all notes in folder",
+          "target": "Lockbox：解锁文件夹中的所有笔记"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: open a note first.",
+          "target": "Lockbox：请先打开一个笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: operation failed. See console for details.",
+          "target": "Lockbox：操作失败。详情请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: that note is already locked.",
+          "target": "Lockbox：该笔记已被锁定。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: encryption self-check failed — note left unlocked to avoid data loss.",
+          "target": "Lockbox：加密自检失败——为避免数据丢失，笔记保持解锁状态。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: failed to lock note. See console for details.",
+          "target": "Lockbox：锁定笔记失败。详情请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: that note is busy — try again in a moment.",
+          "target": "Lockbox：该笔记正在处理中——请稍后再试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: that note isn't locked.",
+          "target": "Lockbox：该笔记未锁定。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: incorrect password.",
+          "target": "Lockbox：密码错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: failed to unlock note. See console for details.",
+          "target": "Lockbox：解锁笔记失败。详情请查看控制台。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: a bulk operation is in progress.",
+          "target": "Lockbox：批量操作正在进行中。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: no unlocked notes to lock here.",
+          "target": "Lockbox：此处没有可锁定的已解锁笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: cancelled — no notes were changed.",
+          "target": "Lockbox：已取消——未更改任何笔记。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Lockbox: forgot the cached vault password.",
+          "target": "Lockbox：已忘记缓存的保险库密码。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "This note used its own password, which can't be recovered after a crash. Set a NEW password to re-encrypt it (or cancel to leave it for now).",
+          "target": "此笔记使用了其自身的密码，崩溃后无法恢复。请设置一个新密码以重新加密它（或取消以暂时保留）。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lock note (vault password)",
+          "target": "锁定笔记（保险库密码）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lock note with a separate password",
+          "target": "使用单独密码锁定笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Unlock note",
+          "target": "解锁笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lock all currently-unlocked notes",
+          "target": "锁定所有当前已解锁的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Lock every note in the vault (vault password)",
+          "target": "锁定保险库中的所有笔记（保险库密码）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Unlock every vault-password note in the vault",
+          "target": "解锁保险库中所有使用保险库密码的笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Forget vault password (lock session)",
+          "target": "忘记保险库密码（锁定会话）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Secure notes left exposed (after a crash)",
+          "target": "保护已暴露的笔记（崩溃后）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Heads up: ",
+          "target": "请注意："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🔒 Locked note — unlock with Lockbox to view its contents.",
+          "target": "🔒 已锁定笔记——请使用Lockbox解锁以查看其内容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Lock note with a separate password",
+          "target": "使用单独密码锁定笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Unlock note",
+          "target": "解锁笔记"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

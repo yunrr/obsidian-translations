@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "local-backup",
+    "version": "1.0.1",
+    "title": "Local Backup",
+    "description": "Local Backup Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "bandizip",
+          "target": "bandizip"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Bandizip",
+          "target": "Bandizip"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "WinRAR",
+          "target": "WinRAR"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "rar",
+          "target": "rar"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "zip",
+          "target": "zip"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Run deleteBackupsByLifeCycle",
+          "target": "运行 deleteBackupsByLifeCycle"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "log",
+          "target": "log"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "error",
+          "target": "error"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Run deletePerDayBackups",
+          "target": "运行 deletePerDayBackups"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "File created by 7-Zip successfully.",
+          "target": "文件由 7-Zip 成功创建。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "File created by WinRAR successfully.",
+          "target": "文件由 WinRAR 成功创建。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "File created by Bandizip successfully.",
+          "target": "文件由 Bandizip 成功创建。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Local Backup unloaded",
+          "target": "本地备份已卸载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Apply & Reload",
+          "target": "应用并重新加载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Restore defaults",
+          "target": "恢复默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Submit",
+          "target": "提交"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Run local backup once on Obsidian starts.",
+          "target": "在 Obsidian 启动时运行一次本地备份。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Run local backup once on Obsidian quits. Works on `External file archiver backup` toggled.",
+          "target": "在 Obsidian 退出时运行一次本地备份。需开启“外部文件归档器备份”。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify the number of days backups should be retained. (0 -- Infinity)",
+          "target": "指定备份应保留的天数。（0 -- 无限）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify the number of backups per day to keep. (0 -- Infinity)",
+          "target": "指定每天要保留的备份数量。（0 -- 无限）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify directories to exclude from backup. Use comma-separated list with wildcards (e.g., .git, .trash, node_modules, *.mp4) If `External file archiver backup` turns on, it's recommend to clear this setting and customize your arguments in `Customized arguments`",
+          "target": "指定要从备份中排除的目录。使用逗号分隔的列表和通配符（例如 .git, .trash, node_modules, *.mp4）。如果开启了“外部文件归档器备份”，建议清空此设置并在“自定义参数”中自定义参数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Specify directories or files to include in backup. Use comma-separated list with wildcards (e.g., .obsidian, Templates, *.canvas). Leave empty to back up the whole vault before exclusions are applied.",
+          "target": "指定要包含在备份中的目录或文件。使用逗号分隔的列表和通配符（例如 .obsidian, Templates, *.canvas）。留空则在应用排除项之前备份整个保险库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable to create backups at regular intervals",
+          "target": "启用以定期创建备份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the frequency of backups in minutes.",
+          "target": "设置备份频率（分钟）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the retry times after backup failed.",
+          "target": "设置备份失败后的重试次数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the retry interval (millisecond).",
+          "target": "设置重试间隔（毫秒）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable/Disable console log statements",
+          "target": "启用/禁用控制台日志语句"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable/Disable normal notifications, keep exceptions only",
+          "target": "启用/禁用普通通知，仅保留异常通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If toggled, backups will be created by calling external file archiver. Using 7-Zip is recommended.",
+          "target": "如果开启，将通过调用外部文件归档器来创建备份。推荐使用 7-Zip。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The selected archiver must be installed. eg. 7-Zip for Windows, 7-Zip/p7zip for Unix",
+          "target": "所选归档器必须已安装。例如，Windows 使用 7-Zip，Unix 使用 7-Zip/p7zip。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Full path of Archiver. eg. D:\\software\\7-Zip\\7z.exe. And bz.exe for Bandizip, WinRAR.exe for WinRAR.",
+          "target": "归档器的完整路径。例如 D:\\\\software\\\\7-Zip\\\\7z.exe。Bandizip 使用 bz.exe，WinRAR 使用 WinRAR.exe。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Full path of Archiver. eg. /usr/bin/7z or 7z for Unix.",
+          "target": "归档器的完整路径。例如 Unix 系统的 /usr/bin/7z 或 7z。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add your customized arguments when creating archive files. eg. `-pMySecretPassword` for 7-Zip. For more, read document of your activated archiver.",
+          "target": "创建归档文件时添加自定义参数。例如 7-Zip 的 `-pMySecretPassword`。更多信息，请阅读所激活归档器的文档。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show ribbon icon",
+          "target": "显示功能区图标"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backup once on startup",
+          "target": "启动时备份一次"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backup once on quit",
+          "target": "退出时备份一次"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backup history length (days)",
+          "target": "备份历史保留时长（天）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backups per day",
+          "target": "每天备份数量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Windows output path (optional)",
+          "target": "Windows 输出路径（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Linux / macOS output path (optional)",
+          "target": "Linux / macOS 输出路径（可选）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File name",
+          "target": "文件名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Excluded directories",
+          "target": "排除的目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Included directories",
+          "target": "包含的目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Interval backups",
+          "target": "定时备份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Backup frequency (minutes)",
+          "target": "备份频率（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Retry times",
+          "target": "重试次数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Retry interval (ms)",
+          "target": "重试间隔（毫秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show console logs",
+          "target": "显示控制台日志"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show notifications",
+          "target": "显示通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "External file archiver backup",
+          "target": "外部文件归档器备份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Select file archiver",
+          "target": "选择文件归档器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Select archive file type",
+          "target": "选择归档文件类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File archiver path (Win)",
+          "target": "文件归档器路径（Windows）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File archiver path (Unix)",
+          "target": "文件归档器路径（Unix）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Customized arguments",
+          "target": "自定义参数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Type text here",
+          "target": "在此输入文本"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Reload Local-Backup to apply changes.",
+          "target": "重新加载 Local-Backup 以应用更改。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Restore defaults",
+          "target": "恢复默认值"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Backup lifecycle must be a non-negative number.",
+          "target": "备份生命周期必须是非负数。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Backups per day must be a non-negative number.",
+          "target": "每天备份数量必须是非负数。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Backup intervals must be a positive number.",
+          "target": "备份间隔必须是正数。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Retry times must be a positive number.",
+          "target": "重试次数必须是正数。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Local-Backup Reloading.",
+          "target": "Local-Backup 正在重新加载。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Local-Backup Reloaded.",
+          "target": "Local-Backup 已重新加载。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Settings restored to default.",
+          "target": "设置已恢复为默认值。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Auto backup interval stopped.",
+          "target": "自动备份间隔已停止。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run local backup",
+          "target": "运行本地备份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run specific backup",
+          "target": "运行特定备份"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "General Settings",
+          "target": "通用设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "File Archiver Settings (Optional)",
+          "target": "文件归档器设置（可选）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Close",
+          "target": "关闭"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

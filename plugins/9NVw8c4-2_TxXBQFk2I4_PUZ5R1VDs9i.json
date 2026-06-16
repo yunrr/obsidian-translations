@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "local-quotes",
+    "version": "1.0.1",
+    "title": "Local Quotes",
+    "description": "Local Quotes Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.9.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "year",
+          "target": "年"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "month",
+          "target": "月"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "week",
+          "target": "周"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "day",
+          "target": "日"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "hour",
+          "target": "时"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "minute",
+          "target": "分"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "second",
+          "target": "秒"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "You can freely use '*' and || after reading ",
+          "target": "阅读后您可以自由使用 '*' 和 || "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "If you want to learn more about quote listings and understand how it works you can visit ",
+          "target": "如果您想了解更多关于引文列表的信息并了解其工作原理，可以访问 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "loading Local Quotes...",
+          "target": "正在加载本地引文..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Check",
+          "target": "检查"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Insert Quote",
+          "target": "插入引文"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "OK",
+          "target": "确定"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you turn it on, your quotes will be refreshed automatically without reopening the note. You need to restart Obsidian to make this option work.",
+          "target": "如果开启此选项，您的引文将在不重新打开笔记的情况下自动刷新。您需要重启 Obsidian 才能使此选项生效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Tag name that will be used for searching notes with quotes",
+          "target": "用于搜索包含引文的笔记的标签名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "You can set default refresh interval (in seconds) and miss corresponding field in code block (default 86400 seconds equals 1 day)",
+          "target": "您可以设置默认刷新间隔（以秒为单位），并在代码块中省略相应字段（默认 86400 秒等于 1 天）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder that will be ignored by one-time quotes",
+          "target": "一次性引文将忽略的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "You can use style in your listings like `:::**Author**:::`, if this setting turns on, your quote blocks will inherit this styling",
+          "target": "您可以在列表中使用样式，例如 `:::**作者**:::`，如果开启此设置，您的引文块将继承此样式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set your own format for quote blocks. Use {{content}} and {{author}} placeholders to place data",
+          "target": "设置您自己的引文块格式。使用 {{content}} 和 {{author}} 占位符来放置数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you turn it on, your quotes will be placed in a simple div block without \"quote\" appearance, it'll be placed as plain text",
+          "target": "如果开启此选项，您的引文将放置在一个简单的 div 块中，没有“引文”外观，将以纯文本形式呈现"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you turn it on, refresh button will disappear constantly.",
+          "target": "如果开启此选项，刷新按钮将始终隐藏。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you turn it on, you can refresh quote block just with twice tap on it. Refresh button will disappear (only on mobile).",
+          "target": "如果开启此选项，您只需双击引文块即可刷新。刷新按钮将消失（仅限移动端）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you turn it on, plugin will use weighted random strategy so then more quotes author has then more probability of choosing exactly this author.",
+          "target": "如果开启此选项，插件将使用加权随机策略，因此作者拥有的引文越多，选择该作者的概率就越大。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you turn it on plugin will scan your file for new quotes when you modify it. Requires app relaunch to apply setting change",
+          "target": "如果开启此选项，当您修改文件时，插件将扫描您的文件以查找新引文。需要重启应用才能使设置更改生效"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Quotes shorter than this length will not be included",
+          "target": "短于此长度的引文将不会被包含"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "This setting affects on length of id that automatically generates in 'Quote Maker'",
+          "target": "此设置影响“引文生成器”中自动生成的 ID 长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "You can set default automatic refresh interval (in miliseconds). You need to restart Obsidian to make this option work.",
+          "target": "您可以设置默认的自动刷新间隔（以毫秒为单位）。您需要重启 Obsidian 才能使此选项生效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If you turn it on plugin will display any warning those need your attention in the developer console. If it's annoying and you don't agree with warnings or will not fix them, you can disable this option.",
+          "target": "如果开启此选项，插件将在开发者控制台中显示任何需要注意的警告。如果这很烦人且您不同意警告或不会修复它们，您可以禁用此选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set blockMetadata property to empty array (use if you have problems with old quote occurrence)",
+          "target": "将 blockMetadata 属性设置为空数组（如果旧引文出现有问题时使用）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set oneTimeBlocks property to empty array (use if you have problems with mismatched template folder)",
+          "target": "将 oneTimeBlocks 属性设置为空数组（如果模板文件夹不匹配时使用）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "A way to identify your quote block, you can leave it or change to your own one",
+          "target": "标识引文块的一种方式，您可以保留它或更改为您自己的标识"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set custom css class (from snippets, for example)",
+          "target": "设置自定义 CSS 类（例如来自代码片段）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose author for your quote block (if you want choose only one)",
+          "target": "为您的引文块选择作者（如果您只想选择一个）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Summons notice with validated (existent) authors",
+          "target": "显示包含已验证（存在）作者的通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the value of your interval (only number!)",
+          "target": "设置您的间隔值（仅限数字！）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the modifier for value clarification",
+          "target": "选择用于值澄清的修饰符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use automatic refresh interval",
+          "target": "使用自动刷新间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Quote tag",
+          "target": "引文标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Refresh interval",
+          "target": "刷新间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Template folder",
+          "target": "模板文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Inherit listing's authors' style",
+          "target": "继承列表的作者样式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Quote block format",
+          "target": "引文块格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use plain format",
+          "target": "使用纯文本格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Hide refresh button",
+          "target": "隐藏刷新按钮"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Handle double click on mobile",
+          "target": "处理移动端双击"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use weighted random",
+          "target": "使用加权随机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Automatically update quote listing",
+          "target": "自动更新引文列表"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Minimum quote length",
+          "target": "最小引文长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto generated id length",
+          "target": "自动生成 ID 长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Automatic refresh interval",
+          "target": "自动刷新间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Display warnings",
+          "target": "显示警告"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clear block metadata",
+          "target": "清除块元数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Clear one-time blocks",
+          "target": "清除一次性块"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Id",
+          "target": "ID"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom class",
+          "target": "自定义类"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Author",
+          "target": "作者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Advanced search",
+          "target": "高级搜索"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Search validator",
+          "target": "搜索验证器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Refresh interval value",
+          "target": "刷新间隔值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Refresh interval modifier",
+          "target": "刷新间隔修饰符"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Your block metadata successfully cleared!",
+          "target": "您的区块元数据已成功清除！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Your one-time blocks successfully cleared!",
+          "target": "您的一次性区块已成功清除！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "One-time quote inserted!",
+          "target": "一次性引用已插入！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Your quote listings successfully updated!",
+          "target": "您的引用列表已成功更新！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rescan vault for local quotes",
+          "target": "重新扫描保险库以获取本地引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Quote Maker",
+          "target": "打开引用制作器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open One-Time Quote Maker",
+          "target": "打开一次性引用制作器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Refresh local quotes for active file",
+          "target": "刷新活动文件的本地引用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open Statistics",
+          "target": "打开统计信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "You caught an error! Check if quote's author exists. If you can't understand what is wrong you can write an issue on GitHub",
+          "target": "您捕获了一个错误！请检查引用的作者是否存在。如果您无法理解问题所在，可以在GitHub上提交问题。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Your template folder isn't set! Change it in the settings.",
+          "target": "您的模板文件夹尚未设置！请在设置中更改。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Your one time quote will be placed there, when time comes!",
+          "target": "当时间到来时，您的一次性引用将被放置在那里！"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "General",
+          "target": "通用"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Style",
+          "target": "样式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Advanced",
+          "target": "高级"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Danger Zone",
+          "target": "危险区域"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🛠️ Quote Maker",
+          "target": "🛠️ 引用制作器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search",
+          "target": "搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "(in the quote block will be used a last edited field ('Author' or 'Advanced search'))",
+          "target": "（在引用区块中将使用最后编辑的字段（'作者'或'高级搜索'））"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Refresh settings",
+          "target": "刷新设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "❌ Local Quote Error",
+          "target": "❌ 本地引用错误"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "After scan there is no any quote listings in your vault.",
+          "target": "扫描后，您的保险库中没有任何引用列表。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🗓 One-Time Quote Maker",
+          "target": "🗓 一次性引用制作器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "📉 Local Quote Statictics",
+          "target": "📉 本地引用统计"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Just research and refrect. All data fresh and clear, baked just a moment ago.",
+          "target": "只需研究和反思。所有数据都是新鲜且清晰的，刚刚烘焙完成。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Block data",
+          "target": "区块数据"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Quote listings",
+          "target": "引用列表"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
