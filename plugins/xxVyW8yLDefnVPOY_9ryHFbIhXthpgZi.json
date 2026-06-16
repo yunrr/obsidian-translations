@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "voice-md",
+    "version": "1.0.1",
+    "title": "Voice MD",
+    "description": "Voice MD Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.4.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Enable Meeting Mode (Speaker Identification)",
+          "target": " 启用会议模式（说话人识别）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " Enable Post-Processing (Smart Formatting)",
+          "target": " 启用后处理（智能格式化）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "按钮"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "MediaRecorder error:",
+          "target": "MediaRecorder 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to start recording:",
+          "target": "开始录制失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to stop recording:",
+          "target": "停止录制失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not parse message into JSON:",
+          "target": "无法将消息解析为 JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "From chunk:",
+          "target": "来自数据块："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Voice MD Error:",
+          "target": "语音 MD 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Voice MD URL shortcut failed",
+          "target": "语音 MD URL 快捷方式失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear",
+          "target": "清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum recording duration in seconds (default: 300 seconds / 5 minutes)",
+          "target": "最大录制时长（秒）（默认：300 秒 / 5 分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Days to keep local audio for failed or pending transcription retries. Audio is deleted after successful transcription. Default: 7 days.",
+          "target": "为失败或待重试的转录保留本地音频的天数。转录成功后音频将被删除。默认：7 天。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Retry recordings saved locally after a network or transcription failure.",
+          "target": "在网络或转录失败后，重试本地保存的录音。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Automatically start recording when opening the voice recording modal",
+          "target": "打开语音录制模态框时自动开始录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder for iOS shortcut daily-note URLs. Match your daily notes settings, or leave blank for the vault root.",
+          "target": "iOS 快捷指令每日笔记 URL 的文件夹。请匹配您的每日笔记设置，或留空使用保险库根目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Date format for iOS shortcut daily-note URLs. Match your daily notes settings.",
+          "target": "iOS 快捷指令每日笔记 URL 的日期格式。请匹配您的每日笔记设置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use 24-hour timestamps for recordings appended by iOS shortcut URLs. Turn off for am/pm.",
+          "target": "为 iOS 快捷指令 URL 追加的录音使用 24 小时制时间戳。关闭则使用上午/下午格式。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional: force a specific language (e.g., \"en\", \"es\", \"fr\"). Leave empty for auto-detection.",
+          "target": "可选：强制指定语言（例如 \\\"en\\\"、\\\"es\\\"、\\\"fr\\\"）。留空则自动检测。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Structure transcriptions into formatted Markdown using GPT. Raw transcript is saved first, then structured output is created if this is enabled.",
+          "target": "使用 GPT 将转录内容结构化为格式化的 Markdown。原始转录会先保存，如果启用此选项，则会创建结构化输出。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "OpenAI model for post-processing (e.g., gpt-4o-mini, gpt-4o), note: adds cost per transcription",
+          "target": "用于后处理的 OpenAI 模型（例如 gpt-4o-mini、gpt-4o），注意：每次转录都会产生额外费用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Override the default prompt for structuring. Leave blank to use default.",
+          "target": "覆盖用于结构化的默认提示词。留空则使用默认值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API key",
+          "target": "OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max recording duration",
+          "target": "最大录制时长"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Retain failed audio",
+          "target": "保留失败音频"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Pending transcriptions",
+          "target": "待处理转录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-start recording",
+          "target": "自动开始录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Daily note folder",
+          "target": "每日笔记文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Daily note date format",
+          "target": "每日笔记日期格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use 24-hour time",
+          "target": "使用 24 小时制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Language",
+          "target": "语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable post-processing",
+          "target": "启用后处理"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Chat model",
+          "target": "聊天模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom formatting prompt",
+          "target": "自定义格式化提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Daily",
+          "target": "每日"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Leave blank for default prompt",
+          "target": "留空使用默认提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Ready to record",
+          "target": "准备录制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "❌ Microphone access denied",
+          "target": "❌ 麦克风访问被拒绝"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "❌ No microphone found",
+          "target": "❌ 未找到麦克风"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "❌ Failed to start recording",
+          "target": "❌ 开始录制失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "❌ Failed to stop recording",
+          "target": "❌ 停止录制失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Clear the saved API key",
+          "target": "清除已保存的 API 密钥"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "OpenAI API key not configured, please set it in Voice MD settings",
+          "target": "OpenAI API 密钥未配置，请在 Voice MD 设置中设置它"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No pending Voice MD transcriptions to retry",
+          "target": "没有待重试的 Voice MD 转录任务"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Saving recording safely...",
+          "target": "正在安全保存录音..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcribing audio...",
+          "target": "正在转录音频..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Saved audio is missing for a pending Voice MD job.",
+          "target": "待处理的 Voice MD 任务缺少已保存的音频。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Transcription was empty",
+          "target": "转录内容为空"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Structuring text...",
+          "target": "正在结构化文本..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Recording was saved. Retry later with the Voice MD retry command.",
+          "target": "录音已保存。请稍后使用 Voice MD 重试命令重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Voice MD shortcut ignored because record=true was not provided.",
+          "target": "Voice MD 快捷方式被忽略，因为未提供 record=true。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Voice MD could not find an active markdown editor for this shortcut.",
+          "target": "Voice MD 无法为此快捷方式找到活动的 Markdown 编辑器。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-warning voice-md-hidden",
+          "target": "mod-warning voice-md-hidden"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "icon",
+          "source": "voicemail",
+          "target": "voicemail"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Invalid or missing API key",
+          "target": "无效或缺失的 API 密钥"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Rate limit exceeded. Please wait a moment and try again.",
+          "target": "超出速率限制。请稍等片刻后重试。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Invalid chat model. Please check your settings.",
+          "target": "无效的聊天模型。请检查您的设置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "OpenAI service is temporarily unavailable. Please try again later.",
+          "target": "OpenAI 服务暂时不可用。请稍后重试。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Unable to reach OpenAI servers. Please check your internet connection.",
+          "target": "无法连接到 OpenAI 服务器。请检查您的网络连接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Start voice recording",
+          "target": "开始语音录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Retry pending voice transcriptions",
+          "target": "重试待处理的语音转录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show pending voice transcriptions count",
+          "target": "显示待处理语音转录数量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Voice recording",
+          "target": "语音录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Start recording",
+          "target": "开始录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Stop recording",
+          "target": "停止录制"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "checkbox",
+          "target": "checkbox"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
