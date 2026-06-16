@@ -1,0 +1,2809 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "yandex-wiki-integration",
+    "version": "1.0.0",
+    "title": "Yandex Wiki Integration",
+    "description": "Yandex Wiki Integration Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.2.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Can't call %s on a component that is not yet mounted. This is a no-op, but it might indicate a bug in your application. Instead, assign to `this.state` directly or define a `state = {};` class property with the desired state in the %s component.",
+          "target": "无法在尚未挂载的组件上调用 %s。这是一个空操作，但可能表明您的应用程序中存在错误。请直接赋值给 `this.state` 或在 %s 组件中定义一个包含所需状态的 `state = {};` 类属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue.",
+          "target": "在 getComponentNameFromType() 中收到了意外的对象。这可能是 React 中的一个错误。请提交 issue。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
+          "target": "%s: `key` 不是一个 prop。尝试访问它将返回 `undefined`。如果您需要在子组件中访问相同的值，应将其作为不同的 prop 传递。(https://react.dev/link/special-props)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))\n\nDid you accidentally put curly braces around the import?",
+          "target": "lazy: 期望动态 import() 调用的结果。但收到的是：%s\\n\\n您的代码应如下所示：\\n  const MyComponent = lazy(() => import('./MyComponent'))\\n\\n您是否意外地在 import 周围添加了花括号？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "lazy: Expected the result of a dynamic import() call. Instead received: %s\n\nYour code should look like: \n  const MyComponent = lazy(() => import('./MyComponent'))",
+          "target": "lazy: 期望动态 import() 调用的结果。但收到的是：%s\\n\\n您的代码应如下所示：\\n  const MyComponent = lazy(() => import('./MyComponent'))"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You called act(async () => ...) without await. This could lead to unexpected testing behaviour, interleaving multiple act calls and mixing their scopes. You should - await act(async () => ...);",
+          "target": "您在没有 await 的情况下调用了 act(async () => ...)。这可能导致意外的测试行为，交错多个 act 调用并混合它们的作用域。您应该 - await act(async () => ...);"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A component suspended inside an `act` scope, but the `act` call was not awaited. When testing React components that depend on asynchronous data, you must await the result:\n\nawait act(() => ...)",
+          "target": "一个组件在 `act` 作用域内挂起，但 `act` 调用未被 await。当测试依赖于异步数据的 React 组件时，您必须 await 结果：\\n\\nawait act(() => ...)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "forwardRef requires a render function but was given %s.",
+          "target": "forwardRef 需要一个渲染函数，但收到的是 %s。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "forwardRef render functions accept exactly two parameters: props and ref. %s",
+          "target": "forwardRef 渲染函数恰好接受两个参数：props 和 ref。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "forwardRef render functions do not support defaultProps. Did you accidentally pass a React component?",
+          "target": "forwardRef 渲染函数不支持 defaultProps。您是否意外传递了一个 React 组件？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Calling useContext(Context.Consumer) is not supported and will cause bugs. Did you mean to call useContext(Context) instead?",
+          "target": "不支持调用 useContext(Context.Consumer)，这会导致错误。您是否想调用 useContext(Context)？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported",
+          "target": "forceFrameRate 接受 0 到 125 之间的正整数，不支持强制帧率高于 125 fps"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
+          "target": "提供的 key 是不支持的类型 %s。在此处使用前，必须将此值强制转换为字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills",
+          "target": "React 依赖于 Map 和 Set 内置类型。请确保在较旧的浏览器中加载 polyfill。https://reactjs.org/link/react-polyfills"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "flushSync was called from inside a lifecycle method. React cannot flush when React is already rendering. Consider moving this call to a scheduler task or micro task.",
+          "target": "在生命周期方法内部调用了 flushSync。当 React 正在渲染时，React 无法刷新。请考虑将此调用移动到调度器任务或微任务中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "ReactDOM.preconnect(): Expected the `options` argument (second) to be an object but encountered %s instead. The only supported option at this time is `crossOrigin` which accepts a string.",
+          "target": "ReactDOM.preconnect()：期望 `options` 参数（第二个）是一个对象，但遇到的是 %s。目前唯一支持的选项是 `crossOrigin`，它接受一个字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "ReactDOM.prefetchDNS(): Expected only one argument, `href`, but encountered %s as a second argument instead. This argument is reserved for future options and is currently disallowed. Try calling ReactDOM.prefetchDNS() with just a single string argument, `href`.",
+          "target": "ReactDOM.prefetchDNS()：期望只有一个参数 `href`，但第二个参数遇到的是 %s。此参数保留用于未来的选项，目前不允许使用。请尝试仅使用单个字符串参数 `href` 调用 ReactDOM.prefetchDNS()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "ReactDOM.preinit(): Expected the `options` argument (second) to be an object with an `as` property describing the type of resource to be preinitialized but encountered %s instead.",
+          "target": "ReactDOM.preinit()：期望 `options` 参数（第二个）是一个包含 `as` 属性的对象，用于描述要预初始化的资源类型，但遇到的是 %s。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "ReactDOM.preinit(): Expected the `as` property in the `options` argument (second) to contain a valid value describing the type of resource to be preinitialized but encountered %s instead. Valid values for `as` are \"style\" and \"script\".",
+          "target": "ReactDOM.preinit()：期望 `options` 参数（第二个）中的 `as` 属性包含一个有效值，用于描述要预初始化的资源类型，但遇到的是 %s。`as` 的有效值为 \\\"style\\\" 和 \\\"script\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unexpected pop.",
+          "target": "意外的弹出。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unexpected Fiber popped.",
+          "target": "意外的 Fiber 弹出。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected host context to exist. This error is likely caused by a bug in React. Please file an issue.",
+          "target": "预期的宿主上下文不存在。此错误可能是由 React 中的 bug 引起的。请提交一个 issue。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The provided `%s` attribute is an unsupported type %s. This value must be coerced to a string before using it here.",
+          "target": "提供的 `%s` 属性是不支持的类型 %s。在使用前必须将此值强制转换为字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The provided `%s` CSS property is an unsupported type %s. This value must be coerced to a string before using it here.",
+          "target": "提供的 `%s` CSS 属性是不支持的类型 %s。在使用前必须将此值强制转换为字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Form field values (value, checked, defaultValue, or defaultChecked props) must be strings, not %s. This value must be coerced to a string before using it here.",
+          "target": "表单字段值（value、checked、defaultValue 或 defaultChecked props）必须是字符串，而不是 %s。在使用前必须将此值强制转换为字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The installed version of React DevTools is too old and will not work with the current version of React. Please update React DevTools. https://react.dev/link/react-devtools",
+          "target": "已安装的 React DevTools 版本过旧，无法与当前版本的 React 配合工作。请更新 React DevTools。https://react.dev/link/react-devtools"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "React instrumentation encountered an error: %s.",
+          "target": "React 检测遇到错误：%s。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "React instrumentation encountered an error: %s",
+          "target": "React 检测遇到错误：%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Should have found matching lanes. This is a bug in React.",
+          "target": "应该找到匹配的 lanes。这是 React 中的一个 bug。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set `onChange`.",
+          "target": "您向表单字段提供了一个 `value` prop，但没有提供 `onChange` 处理程序。这将渲染一个只读字段。如果该字段应该是可变的，请使用 `defaultValue`。否则，请设置 `onChange`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.",
+          "target": "您向表单字段提供了一个 `value` prop，但没有提供 `onChange` 处理程序。这将渲染一个只读字段。如果该字段应该是可变的，请使用 `defaultValue`。否则，请设置 `onChange` 或 `readOnly`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`.",
+          "target": "您向表单字段提供了一个 `checked` prop，但没有提供 `onChange` 处理程序。这将渲染一个只读字段。如果该字段应该是可变的，请使用 `defaultChecked`。否则，请设置 `onChange` 或 `readOnly`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid attribute name: `%s`",
+          "target": "无效的属性名称：`%s`"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "disabledDepth fell below zero. This is a bug in React. Please file an issue.",
+          "target": "disabledDepth 降至零以下。这是 React 中的一个 bug。请提交一个 issue。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>.",
+          "target": "无法推断复杂子元素的选项值。请传递一个 `value` prop 或使用纯字符串作为 <option> 的子元素。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Pass a `value` prop if you set dangerouslyInnerHTML so React knows which value should be selected.",
+          "target": "如果您设置了 dangerouslyInnerHTML，请传递一个 `value` prop，以便 React 知道应该选择哪个值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>.",
+          "target": "请使用 <select> 上的 `defaultValue` 或 `value` props，而不是在 <option> 上设置 `selected`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The `%s` prop supplied to <select> must be an array if `multiple` is true.%s",
+          "target": "提供给 <select> 的 `%s` prop 在 `multiple` 为 true 时必须是一个数组。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The `%s` prop supplied to <select> must be a scalar value if `multiple` is false.%s",
+          "target": "提供给 <select> 的 `%s` prop 在 `multiple` 为 false 时必须是一个标量值。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Use the `defaultValue` or `value` props instead of setting children on <textarea>.",
+          "target": "请使用 `defaultValue` 或 `value` props，而不是在 <textarea> 上设置子元素。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Should not have matched a non HostText fiber to a Text node. This is a bug in React.",
+          "target": "不应该将非 HostText fiber 匹配到 Text 节点。这是 React 中的一个 bug。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "In HTML, %s cannot be a child of <%s>.%s\nThis will cause a hydration error.%s",
+          "target": "在 HTML 中，%s 不能是 <%s> 的子元素。%s\\n这将导致水合错误。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "In HTML, %s cannot be a descendant of <%s>.\nThis will cause a hydration error.%s",
+          "target": "在 HTML 中，%s 不能是 <%s> 的后代。\\n这将导致水合错误。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "<%s> cannot contain a nested %s.\nSee this log for the ancestor stack trace.",
+          "target": "<%s> 不能包含嵌套的 %s。\\n请查看此日志以获取祖先堆栈跟踪。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "In HTML, text nodes cannot be a child of <%s>.\nThis will cause a hydration error.%s",
+          "target": "在 HTML 中，文本节点不能是 <%s> 的子元素。\\n这将导致水合错误。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "In HTML, whitespace text nodes cannot be a child of <%s>. Make sure you don't have any extra whitespace between tags on each line of your source code.\nThis will cause a hydration error.%s",
+          "target": "在 HTML 中，空白文本节点不能是 <%s> 的子元素。请确保源代码中每行标签之间没有多余的空白。\\n这将导致水合错误。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unsupported style property %s. Did you mean %s?",
+          "target": "不支持的样式属性 %s。您是指 %s 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unsupported vendor-prefixed style property %s. Did you mean %s?",
+          "target": "不支持的带供应商前缀的样式属性 %s。您是指 %s 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "`NaN` is an invalid value for the `%s` css style property.",
+          "target": "`NaN` 是 CSS 样式属性 `%s` 的无效值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "`Infinity` is an invalid value for the `%s` css style property.",
+          "target": "`Infinity` 是 CSS 样式属性 `%s` 的无效值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid ARIA attribute `%s`. ARIA attributes follow the pattern aria-* and must be lowercase.",
+          "target": "无效的 ARIA 属性 `%s`。ARIA 属性遵循 aria-* 模式且必须为小写。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid ARIA attribute `%s`. Did you mean `%s`?",
+          "target": "无效的 ARIA 属性 `%s`。您是指 `%s` 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unknown ARIA attribute `%s`. Did you mean `%s`?",
+          "target": "未知的 ARIA 属性 `%s`。您是指 `%s` 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid aria prop %s on <%s> tag. For details, see https://react.dev/link/invalid-aria-props",
+          "target": "<%s> 标签上的无效 aria prop %s。详情请参阅 https://react.dev/link/invalid-aria-props"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid aria props %s on <%s> tag. For details, see https://react.dev/link/invalid-aria-props",
+          "target": "<%s> 标签上的无效 aria props %s。详情请参阅 https://react.dev/link/invalid-aria-props"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "React uses onFocus and onBlur instead of onFocusIn and onFocusOut. All React events are normalized to bubble, so onFocusIn and onFocusOut are not needed/supported by React.",
+          "target": "React 使用 onFocus 和 onBlur 而不是 onFocusIn 和 onFocusOut。所有 React 事件都被规范化为冒泡，因此 React 不需要/不支持 onFocusIn 和 onFocusOut。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid event handler property `%s`. Did you mean `%s`?",
+          "target": "无效的事件处理程序属性 `%s`。您是指 `%s` 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unknown event handler property `%s`. It will be ignored.",
+          "target": "未知的事件处理程序属性 `%s`。它将被忽略。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid event handler property `%s`. React events use the camelCase naming convention, for example `onClick`.",
+          "target": "无效的事件处理程序属性 `%s`。React 事件使用驼峰式命名约定，例如 `onClick`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Directly setting property `innerHTML` is not permitted. For more information, lookup documentation on `dangerouslySetInnerHTML`.",
+          "target": "不允许直接设置属性 `innerHTML`。更多信息，请查阅 `dangerouslySetInnerHTML` 的文档。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The `aria` attribute is reserved for future use in React. Pass individual `aria-` attributes instead.",
+          "target": "`aria` 属性在 React 中保留供将来使用。请改为传递单独的 `aria-` 属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Received a `%s` for a string attribute `is`. If this is expected, cast the value to a string.",
+          "target": "为字符串属性 `is` 收到了一个 `%s`。如果这是预期的，请将值转换为字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Received NaN for the `%s` attribute. If this is expected, cast the value to a string.",
+          "target": "为属性 `%s` 收到了 NaN。如果这是预期的，请将值转换为字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid DOM property `%s`. Did you mean `%s`?",
+          "target": "无效的 DOM 属性 `%s`。您是指 `%s` 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s=\"%s\" or %s={value.toString()}.",
+          "target": "为非布尔属性 `%s` 收到了 `%s`。\\n\\n如果您想将其写入 DOM，请改为传递一个字符串：%s=\\\"%s\\\" 或 %s={value.toString()}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s=\"%s\" or %s={value.toString()}.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.",
+          "target": "为非布尔属性 `%s` 收到了 `%s`。\\n\\n如果您想将其写入 DOM，请改为传递一个字符串：%s=\\\"%s\\\" 或 %s={value.toString()}。\\n\\n如果您过去使用 %s={condition && value} 来有条件地省略它，请改为传递 %s={condition ? value : undefined}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Received the string `%s` for the boolean attribute `%s`. %s Did you mean %s={%s}?",
+          "target": "为布尔属性 `%s` 收到了字符串 `%s`。 %s 您是指 %s={%s} 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.",
+          "target": "超出最大更新深度。当组件在 useEffect 内部调用 setState，但 useEffect 要么没有依赖数组，要么其中一个依赖在每次渲染时都会改变时，可能会发生这种情况。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Profiler must specify an \"id\" of type `string` as a prop. Received the type `%s` instead.",
+          "target": "Profiler 必须指定一个类型为 `string` 的 \\\"id\\\" 作为 prop。收到的类型是 `%s`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected to be hydrating. This is a bug in React. Please file an issue.",
+          "target": "预期正在水合。这是 React 中的一个错误。请提交一个 issue。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.",
+          "target": "检测到多个渲染器正在并发渲染同一个上下文提供者。目前不支持此操作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected to find the propagation root when scheduling context work. This error is likely caused by a bug in React. Please file an issue.",
+          "target": "在调度上下文工作时，预期找到传播根。此错误可能由 React 中的错误引起。请提交一个 issue。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.",
+          "target": "一个组件被一个未缓存的 Promise 挂起。目前不支持在客户端组件或 Hook 内部创建 Promise，除非通过兼容 Suspense 的库或框架。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "An update (setState, replaceState, or forceUpdate) was scheduled from inside an update function. Update functions should be pure, with zero side-effects. Consider using componentDidUpdate or a callback.\n\nPlease update the following component: %s",
+          "target": "一个更新（setState、replaceState 或 forceUpdate）被从更新函数内部调度。更新函数应该是纯函数，没有副作用。请考虑使用 componentDidUpdate 或回调。\\n\\n请更新以下组件：%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s received a final argument that is not an array (instead, received `%s`). When specified, the final argument must be an array.",
+          "target": "%s 收到了一个不是数组的最终参数（而是收到了 `%s`）。当指定时，最终参数必须是一个数组。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "ReactDOM.useFormState has been renamed to React.useActionState. Please update %s to use React.useActionState.",
+          "target": "ReactDOM.useFormState 已重命名为 React.useActionState。请更新 %s 以使用 React.useActionState。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders.",
+          "target": "%s 在本次渲染期间收到了一个最终参数，但在上一次渲染期间没有。即使最终参数是可选的，其类型也不能在渲染之间改变。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server.",
+          "target": "%s 是一个异步客户端组件。目前只有服务器组件可以是异步的。此错误通常是由意外地将 `'use client'` 添加到最初为服务器编写的模块中引起的。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Internal React error: Expected static flag was missing. Please notify the React team.",
+          "target": "React 内部错误：预期的静态标志缺失。请通知 React 团队。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "`use` was called from inside a try/catch block. This is not allowed and can lead to unexpected behavior. To handle errors triggered by `use`, wrap your component in a error boundary.",
+          "target": "`use` 是在 try/catch 块内部调用的。这是不允许的，并且可能导致意外行为。要处理由 `use` 触发的错误，请将您的组件包装在错误边界中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Internal error: Expected work-in-progress queue to be a clone. This is a bug in React.",
+          "target": "内部错误：预期的工作队列是一个克隆。这是 React 中的一个错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The result of getServerSnapshot should be cached to avoid an infinite loop",
+          "target": "getServerSnapshot 的结果应该被缓存以避免无限循环。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The result of getSnapshot should be cached to avoid an infinite loop",
+          "target": "getSnapshot 的结果应该被缓存以避免无限循环。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "An async function with useActionState was called outside of a transition. This is likely not what you intended (for example, isPending will not update correctly). Either call the returned function inside startTransition, or pass it to an `action` or `formAction` prop.",
+          "target": "一个使用 useActionState 的异步函数在 transition 外部被调用。这很可能不是您想要的（例如，isPending 不会正确更新）。要么在 startTransition 内部调用返回的函数，要么将其传递给 `action` 或 `formAction` 属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected useImperativeHandle() first argument to either be a ref callback or React.createRef() object. Instead received: %s.",
+          "target": "预期 useImperativeHandle() 的第一个参数是 ref 回调或 React.createRef() 对象。但收到的是：%s。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected useImperativeHandle() second argument to be a function that creates a handle. Instead received: %s.",
+          "target": "预期 useImperativeHandle() 的第二个参数是一个创建句柄的函数。但收到的是：%s。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "requestFormReset was called outside a transition or action. To fix, move to an action, or wrap with startTransition.",
+          "target": "requestFormReset 在 transition 或 action 外部被调用。要修复，请移至 action，或使用 startTransition 包装。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The seed argument is not enabled outside experimental channels.",
+          "target": "seed 参数在实验性通道之外未启用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect().",
+          "target": "来自 useState() 和 useReducer() Hook 的状态更新不支持第二个回调参数。要在渲染后执行副作用，请在组件主体中使用 useEffect() 声明它。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "An optimistic state update occurred outside a transition or action. To fix, move the update to an action, or wrap with startTransition.",
+          "target": "一个乐观状态更新发生在 transition 或 action 外部。要修复，请将更新移至 action，或使用 startTransition 包装。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot call startTransition while rendering.",
+          "target": "不能在渲染期间调用 startTransition。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.",
+          "target": "向 `React.Fragment` 提供了无效的属性 `%s`。React.Fragment 只能拥有 `key` 和 `children` 属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Functions are not valid as a React child. This may happen if you return %s instead of <%s /> from render. Or maybe you meant to call this function rather than return it.\n  root.render(%s)",
+          "target": "函数不能作为 React 子元素。如果您从 render 返回了 %s 而不是 <%s />，可能会发生这种情况。或者您可能打算调用此函数而不是返回它。\\n  root.render(%s)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Functions are not valid as a React child. This may happen if you return %s instead of <%s /> from render. Or maybe you meant to call this function rather than return it.\n  <%s>{%s}</%s>",
+          "target": "函数不能作为 React 子元素。如果您从 render 返回了 %s 而不是 <%s />，可能会发生这种情况。或者您可能打算调用此函数而不是返回它。\\n  <%s>{%s}</%s>"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Symbols are not valid as a React child.\n  root.render(%s)",
+          "target": "符号不能作为 React 子元素。\\n  root.render(%s)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Symbols are not valid as a React child.\n  <%s>%s</%s>",
+          "target": "符号不能作为 React 子元素。\\n  <%s>%s</%s>"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.",
+          "target": "遇到两个具有相同键 `%s` 的子元素。键应该是唯一的，以便组件在更新之间保持其身份。非唯一键可能导致子元素被复制和/或省略——此行为不受支持，并且可能在未来的版本中更改。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected the last optional `callback` argument to be a function. Instead received: %s.",
+          "target": "预期最后一个可选的 `callback` 参数是一个函数。但收到的是：%s。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. You have returned undefined.",
+          "target": "%s.getDerivedStateFromProps()：必须返回一个有效的状态对象（或 null）。您返回了 undefined。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s.shouldComponentUpdate(): Returned undefined instead of a boolean value. Make sure to return true or false.",
+          "target": "%s.shouldComponentUpdate()：返回了 undefined 而不是布尔值。请确保返回 true 或 false。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s.componentWillReceiveProps(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.",
+          "target": "%s.componentWillReceiveProps()：直接赋值给 this.state 已被弃用（在组件构造函数内部除外）。请改用 setState。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%o\n\n%s\n\n%s\n",
+          "target": "%o\\n\\n%s\\n\\n%s\\n"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The <%s /> component appears to have a render method, but doesn't extend React.Component. This is likely to cause errors. Change %s to extend React.Component instead.",
+          "target": "<%s /> 组件似乎有一个 render 方法，但没有扩展 React.Component。这很可能导致错误。请将 %s 更改为扩展 React.Component。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s",
+          "target": "%s 定义了无效的 contextType。contextType 应该指向由 React.createContext() 返回的 Context 对象。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.",
+          "target": "`%s` 使用了 `getDerivedStateFromProps`，但其初始状态是 %s。不建议这样做。相反，请通过在 `%s` 的构造函数中将对象赋值给 `this.state` 来定义初始状态。这确保了 `getDerivedStateFromProps` 参数具有一致的形状。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No `render` method found on the %s instance: did you accidentally return an object from the constructor?",
+          "target": "在 %s 实例上未找到 `render` 方法：您是否意外地从构造函数返回了一个对象？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No `render` method found on the %s instance: you may have forgotten to define `render`.",
+          "target": "在 %s 实例上未找到 `render` 方法：您可能忘记定义 `render`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "getInitialState was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Did you mean to define a state property instead?",
+          "target": "getInitialState 被定义在 %s 上，这是一个普通的 JavaScript 类。这仅支持使用 React.createClass 创建的类。您是否打算定义一个 state 属性？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "getDefaultProps was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Use a static property to define defaultProps instead.",
+          "target": "getDefaultProps 被定义在 %s 上，这是一个普通的 JavaScript 类。这仅支持使用 React.createClass 创建的类。请改用静态属性来定义 defaultProps。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "contextType was defined as an instance property on %s. Use a static property to define contextType instead.",
+          "target": "contextType 被定义为 %s 上的实例属性。请改用静态属性来定义 contextType。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.",
+          "target": "%s 有一个名为 componentShouldUpdate() 的方法。您是指 shouldComponentUpdate() 吗？该名称被表述为一个问题，因为该函数预期会返回一个值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.",
+          "target": "%s 有一个名为 shouldComponentUpdate() 的方法。当扩展 React.PureComponent 时，不应使用 shouldComponentUpdate。如果使用了 shouldComponentUpdate，请扩展 React.Component。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?",
+          "target": "%s 有一个名为 componentDidUnmount() 的方法。但没有这样的生命周期方法。您是指 componentWillUnmount() 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?",
+          "target": "%s 有一个名为 componentWillRecieveProps() 的方法。您是指 componentWillReceiveProps() 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s has a method called UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?",
+          "target": "%s 有一个名为 UNSAFE_componentWillRecieveProps() 的方法。您是指 UNSAFE_componentWillReceiveProps() 吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "When calling super() in `%s`, make sure to pass up the same props that your component's constructor was passed.",
+          "target": "在 `%s` 中调用 super() 时，请确保传递与组件构造函数接收到的相同的 props。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Setting defaultProps as an instance property on %s is not supported and will be ignored. Instead, define defaultProps as a static property on %s.",
+          "target": "在 %s 上将 defaultProps 设置为实例属性不受支持，并将被忽略。相反，请在 %s 上将 defaultProps 定义为静态属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.",
+          "target": "%s：getSnapshotBeforeUpdate() 应与 componentDidUpdate() 一起使用。此组件仅定义了 getSnapshotBeforeUpdate()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.",
+          "target": "%s：getDerivedStateFromProps() 被定义为实例方法，将被忽略。相反，请将其声明为静态方法。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s: getDerivedStateFromError() is defined as an instance method and will be ignored. Instead, declare it as a static method.",
+          "target": "%s: getDerivedStateFromError() 被定义为实例方法，将被忽略。请将其声明为静态方法。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.",
+          "target": "%s: getSnapshotBeforeUpdate() 被定义为静态方法，将被忽略。请将其声明为实例方法。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s.state: must be set to an object or null",
+          "target": "%s.state: 必须设置为对象或 null。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().",
+          "target": "%s.getChildContext(): 要使用 getChildContext()，必须定义 childContextTypes。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.",
+          "target": "%s: 不建议直接将 props 赋值给 state，因为 props 的更新不会反映在 state 中。在大多数情况下，直接使用 props 更好。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.",
+          "target": "%s.componentWillMount(): 直接赋值给 this.state 已被弃用（在组件构造函数内部除外）。请改用 setState。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "It looks like %s is reassigning its own `this.props` while rendering. This is not supported and can lead to confusing bugs.",
+          "target": "看起来 %s 在渲染过程中重新赋值了自己的 `this.props`。这不受支持，并可能导致令人困惑的错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "childContextTypes cannot be defined on a function component.\n  %s.childContextTypes = ...",
+          "target": "不能在函数组件上定义 childContextTypes。\\n  %s.childContextTypes = ..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s: Function components do not support getDerivedStateFromProps.",
+          "target": "%s: 函数组件不支持 getDerivedStateFromProps。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s: Function components do not support contextType.",
+          "target": "%s: 函数组件不支持 contextType。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "We should not be hydrating here. This is a bug in React. Please file a bug.",
+          "target": "我们不应该在这里进行水合。这是 React 中的一个错误。请提交一个错误报告。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A nested %s was passed to row #%s in <SuspenseList />. Wrap it in an additional SuspenseList to configure its revealOrder: <SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>",
+          "target": "一个嵌套的 %s 被传递给了 <SuspenseList /> 中的第 %s 行。请将其包裹在额外的 SuspenseList 中以配置其 revealOrder：<SuspenseList revealOrder=...> ... <SuspenseList revealOrder=...>{%s}</SuspenseList> ... </SuspenseList>"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "\"%s\" is not a valid value for revealOrder on <SuspenseList />. Use lowercase \"%s\" instead.",
+          "target": "\\\"%s\\\" 不是 <SuspenseList /> 上 revealOrder 的有效值。请改用小写的 \\\"%s\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "\"%s\" is not a valid value for revealOrder on <SuspenseList />. React uses the -s suffix in the spelling. Use \"%ss\" instead.",
+          "target": "\\\"%s\\\" 不是 <SuspenseList /> 上 revealOrder 的有效值。React 在拼写中使用 -s 后缀。请改用 \\\"%ss\\\"。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "\"%s\" is not a supported revealOrder on <SuspenseList />. Did you mean \"together\", \"forwards\" or \"backwards\"?",
+          "target": "\\\"%s\\\" 不是 <SuspenseList /> 支持的 revealOrder。您是否指的是 \\\"together\\\"、\\\"forwards\\\" 或 \\\"backwards\\\"？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s is not a supported value for revealOrder on <SuspenseList />. Did you mean \"together\", \"forwards\" or \"backwards\"?",
+          "target": "%s 不是 <SuspenseList /> 上 revealOrder 支持的值。您是否指的是 \\\"together\\\"、\\\"forwards\\\" 或 \\\"backwards\\\"？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "\"%s\" is not a supported value for tail on <SuspenseList />. Did you mean \"collapsed\" or \"hidden\"?",
+          "target": "\\\"%s\\\" 不是 <SuspenseList /> 上 tail 支持的值。您是否指的是 \\\"collapsed\\\" 或 \\\"hidden\\\"？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "<SuspenseList tail=\"%s\" /> is only valid if revealOrder is \"forwards\" or \"backwards\". Did you mean to specify revealOrder=\"forwards\"?",
+          "target": "<SuspenseList tail=\\\"%s\\\" /> 仅在 revealOrder 为 \\\"forwards\\\" 或 \\\"backwards\\\" 时有效。您是否想指定 revealOrder=\\\"forwards\\\"？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A single row was passed to a <SuspenseList revealOrder=\"%s\" />. This is not useful since it needs multiple rows. Did you mean to pass multiple children or an array?",
+          "target": "一个单独的行被传递给了 <SuspenseList revealOrder=\\\"%s\\\" />。这没有用，因为它需要多行。您是否想传递多个子元素或一个数组？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The `value` prop is required for the `<Context.Provider>`. Did you misspell it or forget to pass it?",
+          "target": "`<Context.Provider>` 需要 `value` 属性。您是否拼写错误或忘记传递了？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A context consumer was rendered with multiple children, or a child that isn't a function. A context consumer expects a single child that is a function. If you did pass a function, make sure there is no trailing or leading whitespace around it.",
+          "target": "一个上下文消费者被渲染为具有多个子元素，或者一个不是函数的子元素。上下文消费者期望一个单一的子元素，且该子元素是一个函数。如果您确实传递了一个函数，请确保其周围没有尾随或前导空格。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.",
+          "target": "在此浏览器中无法识别标签 <%s>。如果您想渲染一个 React 组件，请将其名称以大写字母开头。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s must not return anything besides a function, which is used for clean-up.%s",
+          "target": "%s 除了用于清理的函数外，不得返回任何内容。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "%s.getSnapshotBeforeUpdate(): A snapshot value (or null) must be returned. You have returned undefined.",
+          "target": "%s.getSnapshotBeforeUpdate(): 必须返回一个快照值（或 null）。您返回了 undefined。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "String refs are no longer supported.",
+          "target": "字符串 refs 不再受支持。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unexpected ref object provided for %s. Use either a ref-setter function or React.createRef().",
+          "target": "为 %s 提供了意外的 ref 对象。请使用 ref-setter 函数或 React.createRef()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unexpected host component type. Expected a form. This is a bug in React.",
+          "target": "意外的宿主组件类型。期望一个表单。这是 React 中的一个错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The current testing environment is not configured to support act(...)",
+          "target": "当前测试环境未配置为支持 act(...)。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "useInsertionEffect must not schedule updates.",
+          "target": "useInsertionEffect 不得安排更新。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://react.dev/link/setstate-in-render",
+          "target": "无法在渲染不同组件（`%s`）时更新组件（`%s`）。要定位 `%s` 内部的错误 setState() 调用，请按照 https://react.dev/link/setstate-in-render 中描述的堆栈跟踪进行操作。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot update during an existing state transition (such as within `render`). Render methods should be a pure function of props and state.",
+          "target": "无法在现有的状态转换期间（例如在 `render` 内部）进行更新。渲染方法应该是 props 和 state 的纯函数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Unexpected type of fiber triggered a suspensey commit. This is a bug in React.",
+          "target": "意外的 fiber 类型触发了 suspensey 提交。这是 React 中的一个错误。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You are accessing \"digest\" from the errorInfo object passed to onRecoverableError. This property is no longer provided as part of errorInfo but can be accessed as a property of the Error instance itself.",
+          "target": "您正在从传递给 onRecoverableError 的 errorInfo 对象中访问 \\\"digest\\\"。此属性不再作为 errorInfo 的一部分提供，但可以作为 Error 实例本身的属性进行访问。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously later calls tries to update the component. Move this work to useEffect instead.",
+          "target": "无法在尚未挂载的组件上执行 React 状态更新。这表明您的渲染函数中存在一个副作用，该副作用稍后异步尝试更新组件。请将此工作移至 useEffect。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Did not expect a listenToNonDelegatedEvent() call for \"%s\". This is a bug in React. Please file an issue.",
+          "target": "未预期到对 \\\"%s\\\" 的 listenToNonDelegatedEvent() 调用。这是 React 中的一个错误。请提交一个问题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Did not expect a listenToNativeEvent() call for \"%s\" in the bubble phase. This is a bug in React. Please file an issue.",
+          "target": "未预期到在冒泡阶段对 \\\"%s\\\" 的 listenToNativeEvent() 调用。这是 React 中的一个错误。请提交一个问题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A component is `contentEditable` and contains `children` managed by React. It is now your responsibility to guarantee that none of those nodes are unexpectedly modified or duplicated. This is probably not intentional.",
+          "target": "一个组件是 `contentEditable` 并且包含由 React 管理的 `children`。现在您有责任确保这些节点都不会被意外修改或复制。这可能不是有意的。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected `%s` listener to be a function, instead got `false`.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.",
+          "target": "期望 `%s` 监听器是一个函数，但得到了 `false`。\\n\\n如果您过去使用 %s={condition && value} 来有条件地省略它，请改用 %s={condition ? value : undefined}。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected `%s` listener to be a function, instead got a value of `%s` type.",
+          "target": "期望 `%s` 监听器是一个函数，但得到了一个类型为 `%s` 的值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "The provided HTML markup uses a value of unsupported type %s. This value must be coerced to a string before using it here.",
+          "target": "提供的 HTML 标记使用了不支持的类型 %s 的值。在此处使用之前，必须将此值强制转换为字符串。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You can only pass the formAction prop to <input> or <button>. Use the action prop on <form>.",
+          "target": "您只能将 formAction 属性传递给 <input> 或 <button>。请在 <form> 上使用 action 属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot specify a encType or method for a form that specifies a function as the action. React provides those automatically. They will get overridden.",
+          "target": "无法为指定函数作为 action 的表单指定 encType 或 method。React 会自动提供这些。它们将被覆盖。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot specify a target for a form that specifies a function as the action. The function will always be executed in the same window.",
+          "target": "无法为指定函数作为 action 的表单指定 target。该函数将始终在同一窗口中执行。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You can only pass the action prop to <form>. Use the formAction prop on <input> or <button>.",
+          "target": "您只能将 action 属性传递给 <form>。请在 <input> 或 <button> 上使用 formAction 属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot specify a \"name\" prop for a button that specifies a function as a formAction. React needs it to encode which action should be invoked. It will get overridden.",
+          "target": "无法为指定函数作为 formAction 的按钮指定 \\\"name\\\" 属性。React 需要它来编码应调用哪个操作。它将被覆盖。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot specify a formEncType or formMethod for a button that specifies a function as a formAction. React provides those automatically. They will get overridden.",
+          "target": "无法为指定函数作为 formAction 的按钮指定 formEncType 或 formMethod。React 会自动提供这些。它们将被覆盖。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot specify a formTarget for a button that specifies a function as a formAction. The function will always be executed in the same window.",
+          "target": "无法为指定函数作为 formAction 的按钮指定 formTarget。该函数将始终在同一窗口中执行。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A button can only specify a formAction along with type=\"submit\" or no type.",
+          "target": "按钮只能在 type=\\\"submit\\\" 或未指定 type 时指定 formAction。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "An input can only specify a formAction along with type=\"submit\" or type=\"image\".",
+          "target": "输入框只能在 type=\\\"submit\\\" 或 type=\\\"image\\\" 时指定 formAction。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You can only pass the action prop to <form>.",
+          "target": "您只能将 action 属性传递给 <form>。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You can only pass the formAction prop to <input> or <button>.",
+          "target": "只能将 formAction 属性传递给 <input> 或 <button>。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot update the \"is\" prop after it has been initialized.",
+          "target": "初始化后无法更新 \\\"is\\\" 属性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Assignment to read-only property will result in a no-op: `%s`",
+          "target": "对只读属性的赋值将无效：`%s`"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot render a <link> outside the main document without a `rel` and `href` prop. Try adding a `rel` and/or `href` prop to this <link> or moving the link into the <head> tag",
+          "target": "无法在主文档外部渲染没有 `rel` 和 `href` 属性的 <link>。请尝试为该 <link> 添加 `rel` 和/或 `href` 属性，或将链接移入 <head> 标签内。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot render a <link rel=\"stylesheet\" /> outside the main document without knowing its precedence. Consider adding precedence=\"default\" or moving it into the root <head> tag.",
+          "target": "无法在主文档外部渲染 <link rel=\\\"stylesheet\\\" />，因为不知道其优先级。请考虑添加 precedence=\\\"default\\\" 或将其移入根 <head> 标签内。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot render a sync or defer <script> outside the main document without knowing its order. Try adding async=\"\" or moving it into the root <head> tag.",
+          "target": "无法在主文档外部渲染同步或延迟的 <script>，因为不知道其顺序。请尝试添加 async=\\\"\\\" 或将其移入根 <head> 标签内。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Cannot render <%s> outside the main document. Try moving it into the root <head> tag.",
+          "target": "无法在主文档外部渲染 <%s>。请尝试将其移入根 <head> 标签内。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.\n\nCheck the render method of %s.",
+          "target": "渲染方法应该是 props 和 state 的纯函数；不允许从渲染中触发嵌套组件更新。如有必要，请在 componentDidUpdate 中触发嵌套更新。\\n\\n请检查 %s 的渲染方法。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected currently replaying event to be null. This error is likely caused by a bug in React. Please file an issue.",
+          "target": "期望当前重放的事件为 null。此错误可能是由 React 中的 bug 引起的。请提交问题报告。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected currently replaying event to not be null. This error is likely caused by a bug in React. Please file an issue.",
+          "target": "期望当前重放的事件不为 null。此错误可能是由 React 中的 bug 引起的。请提交问题报告。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You are calling ReactDOMClient.createRoot() on a container that was previously passed to ReactDOM.render(). This is not supported.",
+          "target": "您正在对一个之前已传递给 ReactDOM.render() 的容器调用 ReactDOMClient.createRoot()。此操作不受支持。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() on the existing root instead if you want to update it.",
+          "target": "您正在对一个之前已传递给 createRoot() 的容器再次调用 ReactDOMClient.createRoot()。如果您想更新它，请改为在现有的根上调用 root.render()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Using UNSAFE_componentWillUpdate in strict mode is not recommended and may indicate bugs in your code. See https://react.dev/link/unsafe-component-lifecycles for details.\n\n* Move data fetching code or side effects to componentDidUpdate.\n\nPlease update the following components: %s",
+          "target": "不建议在严格模式下使用 UNSAFE_componentWillUpdate，这可能表明您的代码中存在 bug。详情请参阅 https://react.dev/link/unsafe-component-lifecycles。\\n\\n* 请将数据获取代码或副作用移至 componentDidUpdate。\\n\\n请更新以下组件：%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected to find a StrictMode component in a strict mode tree. This error is likely caused by a bug in React. Please file an issue.",
+          "target": "期望在严格模式树中找到 StrictMode 组件。此错误可能是由 React 中的 bug 引起的。请提交问题报告。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Legacy context API has been detected within a strict-mode tree.\n\nThe old API will be supported in all 16.x releases, but applications using it should migrate to the new version.\n\nPlease update the following components: %s\n\nLearn more about this warning here: https://react.dev/link/legacy-context",
+          "target": "在严格模式树中检测到旧版上下文 API。\\n\\n旧版 API 将在所有 16.x 版本中得到支持，但使用它的应用程序应迁移到新版本。\\n\\n请更新以下组件：%s\\n\\n在此处了解更多关于此警告的信息：https://react.dev/link/legacy-context"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Internal React error: A listener was unexpectedly attached to a \"noop\" thenable. This is a bug in React. Please file an issue.",
+          "target": "React 内部错误：意外地将监听器附加到了 \\\"noop\\\" thenable 上。这是 React 中的一个 bug。请提交问题报告。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Expected only SimpleEffects when enableUseEffectCRUDOverload is disabled, got %s",
+          "target": "当 enableUseEffectCRUDOverload 被禁用时期望只有 SimpleEffects，但得到了 %s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Each child in a list should have a unique \"key\" prop.%s%s See https://react.dev/link/warning-keys for more information.",
+          "target": "列表中的每个子元素都应有一个唯一的 \\\"key\\\" 属性。%s%s 更多信息请参阅 https://react.dev/link/warning-keys。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "does not support the second callback argument. To execute a side effect after rendering, declare it in a component body with useEffect().",
+          "target": "不支持第二个回调参数。要在渲染后执行副作用，请在组件主体中使用 useEffect() 声明它。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You passed a container to the second argument of root.render(...). You don't need to pass it again since you already passed it to create the root.",
+          "target": "您将容器传递给了 root.render(...) 的第二个参数。您不需要再次传递它，因为您已经将其传递给了创建根。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "You passed a second argument to root.render(...) but it only accepts one argument.",
+          "target": "您向 root.render(...) 传递了第二个参数，但它只接受一个参数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "does not support a callback argument. To execute a side effect after rendering, declare it in a component body with useEffect().",
+          "target": "不支持回调参数。要在渲染后执行副作用，请在组件主体中使用 useEffect() 声明它。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://react.dev/link/react-polyfills",
+          "target": "React 依赖于 Map 和 Set 内置类型。请确保在旧版浏览器中加载 polyfill。https://react.dev/link/react-polyfills"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Must provide initial children as second argument to hydrateRoot. Example usage: hydrateRoot(domContainer, <App />)",
+          "target": "必须将初始子元素作为第二个参数提供给 hydrateRoot。示例用法：hydrateateRoot(domContainer, <App />)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.",
+          "target": "React.jsx：静态子元素应始终是一个数组。您可能显式调用了 React.jsxs 或 React.jsxDEV。请改用 Babel 转换。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "A props object containing a \"key\" prop is being spread into JSX:\n  let props = %s;\n  <%s {...props} />\nReact keys must be passed directly to JSX without using spread:\n  let props = %s;\n  <%s key={someKey} {...props} />",
+          "target": "一个包含 \\\"key\\\" 属性的 props 对象正在被展开到 JSX 中：\\n  let props = %s;\\n  <%s {...props} />\\nReact 的 key 必须直接传递给 JSX，不能使用展开：\\n  let props = %s;\\n  <%s key={someKey} {...props} />"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[C to host error: returning null]",
+          "target": "[C 到宿主错误：返回 null]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[C to host interrupt: returning error]",
+          "target": "[C 到宿主中断：返回错误]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[C to host module loader error: returning null]",
+          "target": "[C 到宿主模块加载器错误：返回 null]"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "QuickJS: cannot handle error in suspended function",
+          "target": "QuickJS：无法处理挂起函数中的错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Params:",
+          "target": "参数："
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Plugins were requested but not running in environment that supports 'require'. Nothing will be loaded",
+          "target": "请求了插件，但运行环境不支持 'require'。不会加载任何内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Plugin validation succeeded",
+          "target": "插件验证成功。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "No types map provided; using the default",
+          "target": "未提供类型映射；使用默认值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Open files: ",
+          "target": "打开的文件："
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Format host information updated",
+          "target": "格式宿主信息已更新。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Host file extension mappings updated",
+          "target": "宿主文件扩展名映射已更新。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "reload projects.",
+          "target": "重新加载项目。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "After reloading projects..",
+          "target": "重新加载项目后.."
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Before ensureProjectForOpenFiles:",
+          "target": "在 ensureProjectForOpenFiles 之前："
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "After ensureProjectForOpenFiles:",
+          "target": "在 ensureProjectForOpenFiles 之后："
+        },
+        {
+          "type": "CallExpression",
+          "name": "insertText",
+          "source": " =>",
+          "target": " =>"
+        },
+        {
+          "type": "CallExpression",
+          "name": "insertText",
+          "source": " = ",
+          "target": " = "
+        },
+        {
+          "type": "CallExpression",
+          "name": "insertText",
+          "source": "/** @type {Promise<void>} */(",
+          "target": "/** @type {Promise<void>} */("
+        },
+        {
+          "type": "CallExpression",
+          "name": "insertText",
+          "source": "export ",
+          "target": "export "
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Deprecated call using send(command, flag) with boolean flag to ignore errors. Use sendIgnoringError(command).",
+          "target": "已弃用使用 send(command, flag) 并传递布尔标志来忽略错误的调用方式。请改用 sendIgnoringError(command)。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Trying to find optimal transfer strategy...",
+          "target": "正在尝试寻找最佳传输策略..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Optimal transfer strategy found.",
+          "target": "已找到最佳传输策略。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Warning: upload() has been deprecated, use uploadFrom().",
+          "target": "警告：upload() 已弃用，请使用 uploadFrom()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Warning: append() has been deprecated, use appendFrom().",
+          "target": "警告：append() 已弃用，请使用 appendFrom()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Warning: download() has been deprecated, use downloadTo().",
+          "target": "警告：download() 已弃用，请使用 downloadTo()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Warning: uploadDir() has been deprecated, use uploadFromDir().",
+          "target": "警告：uploadDir() 已弃用，请使用 uploadFromDir()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Warning: downloadDir() has been deprecated, use downloadToDir().",
+          "target": "警告：downloadDir() 已弃用，请使用 downloadToDir()。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Inferred 'react' typings due to presence of '.jsx' extension",
+          "target": "由于存在 '.jsx' 扩展名，已推断 'react' 类型定义。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "TypeRoots version has changed; provide new program",
+          "target": "TypeRoots 版本已更改；请提供新的程序。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Подтвердить",
+          "target": "确认"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Необходимо указать путь до браузера.",
+          "target": "需要指定浏览器的路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Директория, куда будут выгружаться файлы из Obsidian в Yandex Wiki (Нужно указывать Slug)",
+          "target": "用于将 Obsidian 中的文件导出到 Yandex Wiki 的目录（需要指定 Slug）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Форматы, которые будут экспортироваться в Yandex Wiki. Форматы указываются без точек, через пробел. Пример: \"md json txt\"",
+          "target": "将导出到 Yandex Wiki 的格式。格式不带点号，用空格分隔。示例：\\\"md json txt\\\""
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Файлы из Yandex Wiki можно представлять в виде Markdown, а можно в виде HTML",
+          "target": "Yandex Wiki 中的文件可以表示为 Markdown，也可以表示为 HTML。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "При открытии страницы в Yandex Wiki будет отображаться её название сверху",
+          "target": "在 Yandex Wiki 中打开页面时，其标题将显示在顶部。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Сессия в Yandex Wiki будет сохраняться в локальнных файлах",
+          "target": "Yandex Wiki 中的会话将保存在本地文件中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Форматы экспорта",
+          "target": "导出格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Режим отображения",
+          "target": "显示模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Slug директории экспорта",
+          "target": "导出目录的 Slug"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Путь до браузера",
+          "target": "浏览器路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Домашняя директория",
+          "target": "主目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Отображать название страницы",
+          "target": "显示页面标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Сохранять сесию",
+          "target": "保存会话"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Введите форматы",
+          "target": "输入格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Выберете режим отображения",
+          "target": "选择显示模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Введите директорию экспорта",
+          "target": "输入导出目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Установить как рабочую директорию",
+          "target": "设置为工作目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Экспортировать хранилище сюда",
+          "target": "将存储库导出到此处"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "YWI: \\u042D\\u043A\\u0441\\u043F\\u043E\\u0440\\u0442 \\u0432 Yandex Wiki",
+          "target": "YWI：导出到 Yandex Wiki"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "%s(...) is deprecated in plain JavaScript React classes. %s",
+          "target": "%s(...) 在纯 JavaScript React 类中已弃用。%s"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Your app (or one of its dependencies) is using an outdated JSX transform. Update to the modern JSX transform for faster performance: https://react.dev/link/new-jsx-transform",
+          "target": "您的应用（或其某个依赖项）正在使用过时的 JSX 转换。请更新到现代 JSX 转换以获得更快的性能：https://react.dev/link/new-jsx-transform"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Detected a large number of updates inside startTransition. If this is due to a subscription please re-write it to use React provided hooks. Otherwise concurrent mode guarantees are off the table.",
+          "target": "检测到 startTransition 内部有大量更新。如果这是由于订阅引起的，请重写以使用 React 提供的 hooks。否则，并发模式的保证将失效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "React Hook useEffect requires an effect callback. Did you forget to pass a callback to the hook?",
+          "target": "React Hook useEffect 需要一个效果回调函数。您是否忘记向该 hook 传递回调函数了？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "React Hook useInsertionEffect requires an effect callback. Did you forget to pass a callback to the hook?",
+          "target": "React Hook useInsertionEffect 需要一个效果回调函数。您是否忘记向该 hook 传递回调函数了？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "React Hook useLayoutEffect requires an effect callback. Did you forget to pass a callback to the hook?",
+          "target": "React Hook useLayoutEffect 需要一个效果回调函数。您是否忘记向该 hook 传递回调函数了？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "copyWithRename() expects paths of the same length",
+          "target": "copyWithRename() 期望路径长度相同。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "copyWithRename() expects paths to be the same except for the deepest key",
+          "target": "copyWithRename() 期望路径除了最深的键之外都相同。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "A cache instance was retained after it was already freed. This likely indicates a bug in React.",
+          "target": "缓存实例在释放后仍被保留。这很可能表明 React 中存在 bug。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "A cache instance was released after it was already freed. This likely indicates a bug in React.",
+          "target": "缓存实例在释放后再次被释放。这很可能表明 React 中存在 bug。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "%s\n\n%s\n",
+          "target": "%s\\n\\n%s\\n"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Consider adding an error boundary to your tree to customize error handling behavior.\nVisit https://react.dev/link/error-boundaries to learn more about error boundaries.",
+          "target": "考虑向您的组件树添加错误边界以自定义错误处理行为。\\n访问 https://react.dev/link/error-boundaries 了解更多关于错误边界的信息。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "hydrate through createRoot is deprecated. Use ReactDOMClient.hydrateRoot(container, <App />) instead.",
+          "target": "通过 createRoot 进行 hydrate 已弃用。请改用 ReactDOMClient.hydrateRoot(container, <App />)。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "YWI: \\u0412\\u044B \\u0432\\u044B\\u0448\\u043B\\u0438 \\u0438\\u0437 YWI",
+          "target": "YWI：您已退出 YWI。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Установите путь до браузера в настройках. Поле 'pathToBrowser'",
+          "target": "请在设置中设置浏览器路径。字段 'pathToBrowser'。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "YWI: Экспорт законичлся",
+          "target": "YWI：导出已完成。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Platform that the binary needs to be compatible with.",
+          "target": "二进制文件需要兼容的平台。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Path to the root folder for the browser downloads and installation. If a relative path is provided, it will be resolved relative to the current working directory. The installation folder structure is compatible with the cache structure used by Puppeteer.",
+          "target": "浏览器下载和安装的根文件夹路径。如果提供相对路径，它将相对于当前工作目录进行解析。安装文件夹结构与 Puppeteer 使用的缓存结构兼容。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Base URL to download from",
+          "target": "下载的基础 URL。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Detach the child process.",
+          "target": "分离子进程。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Forwards the browser's process stdout and stderr",
+          "target": "转发浏览器进程的 stdout 和 stderr。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "ECMAScript code generator",
+          "target": "ECMAScript 代码生成器。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Which browser to install <browser>[@<buildId|latest>]. `latest` will try to find the latest available build. `buildId` is a browser-specific identifier such as a version or a revision.",
+          "target": "要安装的浏览器 <browser>[@<buildId|latest>]。`latest` 将尝试查找最新的可用构建版本。`buildId` 是特定于浏览器的标识符，例如版本号或修订号。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Количество попыток превышено",
+          "target": "尝试次数已超过限制。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Запрос выполнен успешно.",
+          "target": "请求已成功执行。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "В результате выполнения запроса с методом POST успешно создан новый объект.",
+          "target": "使用 POST 方法的请求已成功创建新对象。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Запрос с методом DELETE успешно выполнен, объект удален.",
+          "target": "使用 DELETE 方法的请求已成功执行，对象已删除。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Один или несколько параметров запроса имеют недопустимое значение.",
+          "target": "一个或多个请求参数具有无效值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Пользователь не авторизован. Проверьте, были ли выполнены действия, описанные в разделе Доступ к API.",
+          "target": "用户未授权。请检查是否已执行“API 访问”部分中描述的操作。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "У вас не хватает прав на выполнение этого действия. Наличие прав можно перепроверить в интерфейсе Трекера — для выполнения действия при помощи API и через интерфейс требуются одинаковые права.",
+          "target": "您没有执行此操作的权限。可以在 Tracker 界面中重新检查权限 — 通过 API 执行操作与通过界面执行操作所需的权限相同。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Запрошенный объект не был найден. Возможно, вы указали неверное значение идентификатора или ключа объекта.",
+          "target": "未找到请求的对象。可能您指定了错误的标识符或对象键值。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "При редактировании объекта возник конфликт. Возможно, ошибка возникла из-за неправильно указанной версии изменений.",
+          "target": "编辑对象时发生冲突。可能错误是由于指定了错误的更改版本。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Ошибка валидации JSON, запрос отклонен.",
+          "target": "JSON 验证错误，请求被拒绝。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Редактирование объекта заблокировано. Возможно, превышено допустимое значение параметра version — количество обновлений объекта. Максимальное значение версии составляет 10100 для роботов и 11100 для пользователей.",
+          "target": "对象编辑被锁定。可能超过了允许的 version 参数值 — 对象更新次数。机器人的最大版本值为 10100，用户为 11100。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Доступ к ресурсу отклонен. Проверьте, указаны ли все обязательные условия выполнения запроса.",
+          "target": "资源访问被拒绝。请检查是否指定了执行请求的所有必要条件。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Превышено допустимое количество запросов к хосту в единицу времени. Попробуйте повторить запрос позже.",
+          "target": "在单位时间内对主机的请求数量已超过允许值。请稍后重试请求。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "failed to parse address with port",
+          "target": "解析带端口的地址失败。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "failed to parse address from URL",
+          "target": "从 URL 解析地址失败。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "Selection is not an import declaration.",
+          "target": "选区不是导入声明。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Frame was not swapped",
+          "target": "框架未交换。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "already connected",
+          "target": "已连接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Could not determine a project root path.",
+          "target": "无法确定项目根路径。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Blackberry PlayBook",
+          "target": "Blackberry PlayBook"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Blackberry PlayBook landscape",
+          "target": "Blackberry PlayBook 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BlackBerry Z30",
+          "target": "BlackBerry Z30"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BlackBerry Z30 landscape",
+          "target": "BlackBerry Z30 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy Note 3",
+          "target": "Galaxy Note 3"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy Note 3 landscape",
+          "target": "Galaxy Note 3 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy Note II",
+          "target": "Galaxy Note II"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy Note II landscape",
+          "target": "Galaxy Note II 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy S III",
+          "target": "Galaxy S III"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy S III landscape",
+          "target": "Galaxy S III 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy S5",
+          "target": "Galaxy S5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy S5 landscape",
+          "target": "Galaxy S5 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy S8",
+          "target": "Galaxy S8"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy S8 landscape",
+          "target": "Galaxy S8 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy S9+",
+          "target": "Galaxy S9+"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy S9+ landscape",
+          "target": "Galaxy S9+ 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy Tab S4",
+          "target": "Galaxy Tab S4"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Galaxy Tab S4 landscape",
+          "target": "Galaxy Tab S4 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad landscape",
+          "target": "iPad 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad (gen 6)",
+          "target": "iPad（第 6 代）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad (gen 6) landscape",
+          "target": "iPad（第 6 代）横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad (gen 7)",
+          "target": "iPad（第 7 代）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad (gen 7) landscape",
+          "target": "iPad（第 7 代）横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad Mini",
+          "target": "iPad Mini"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad Mini landscape",
+          "target": "iPad Mini 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad Pro",
+          "target": "iPad Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad Pro landscape",
+          "target": "iPad Pro 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad Pro 11",
+          "target": "iPad Pro 11"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPad Pro 11 landscape",
+          "target": "iPad Pro 11 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 4",
+          "target": "iPhone 4"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 4 landscape",
+          "target": "iPhone 4 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 5",
+          "target": "iPhone 5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 5 landscape",
+          "target": "iPhone 5 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 6",
+          "target": "iPhone 6"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 6 landscape",
+          "target": "iPhone 6 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 6 Plus",
+          "target": "iPhone 6 Plus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 6 Plus landscape",
+          "target": "iPhone 6 Plus 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 7",
+          "target": "iPhone 7"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 7 landscape",
+          "target": "iPhone 7 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 7 Plus",
+          "target": "iPhone 7 Plus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 7 Plus landscape",
+          "target": "iPhone 7 Plus 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 8",
+          "target": "iPhone 8"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 8 landscape",
+          "target": "iPhone 8 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 8 Plus",
+          "target": "iPhone 8 Plus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 8 Plus landscape",
+          "target": "iPhone 8 Plus 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone SE",
+          "target": "iPhone SE"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone SE landscape",
+          "target": "iPhone SE 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone X",
+          "target": "iPhone X"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone X landscape",
+          "target": "iPhone X 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone XR",
+          "target": "iPhone XR"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone XR landscape",
+          "target": "iPhone XR 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 11",
+          "target": "iPhone 11"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 11 landscape",
+          "target": "iPhone 11 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 11 Pro",
+          "target": "iPhone 11 Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 11 Pro landscape",
+          "target": "iPhone 11 Pro 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 11 Pro Max",
+          "target": "iPhone 11 Pro Max"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 11 Pro Max landscape",
+          "target": "iPhone 11 Pro Max 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 12",
+          "target": "iPhone 12"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 12 landscape",
+          "target": "iPhone 12 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 12 Pro",
+          "target": "iPhone 12 Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 12 Pro landscape",
+          "target": "iPhone 12 Pro 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 12 Pro Max",
+          "target": "iPhone 12 Pro Max"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 12 Pro Max landscape",
+          "target": "iPhone 12 Pro Max 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 12 Mini",
+          "target": "iPhone 12 Mini"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 12 Mini landscape",
+          "target": "iPhone 12 Mini 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 13",
+          "target": "iPhone 13"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 13 landscape",
+          "target": "iPhone 13 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 13 Pro",
+          "target": "iPhone 13 Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 13 Pro landscape",
+          "target": "iPhone 13 Pro 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 13 Pro Max",
+          "target": "iPhone 13 Pro Max"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 13 Pro Max landscape",
+          "target": "iPhone 13 Pro Max 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 13 Mini",
+          "target": "iPhone 13 Mini"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 13 Mini landscape",
+          "target": "iPhone 13 Mini 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 14",
+          "target": "iPhone 14"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 14 landscape",
+          "target": "iPhone 14 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 14 Plus",
+          "target": "iPhone 14 Plus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 14 Plus landscape",
+          "target": "iPhone 14 Plus 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 14 Pro",
+          "target": "iPhone 14 Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 14 Pro landscape",
+          "target": "iPhone 14 Pro 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 14 Pro Max",
+          "target": "iPhone 14 Pro Max"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 14 Pro Max landscape",
+          "target": "iPhone 14 Pro Max 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 15",
+          "target": "iPhone 15"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 15 landscape",
+          "target": "iPhone 15 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 15 Plus",
+          "target": "iPhone 15 Plus"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 15 Plus landscape",
+          "target": "iPhone 15 Plus 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 15 Pro",
+          "target": "iPhone 15 Pro"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 15 Pro landscape",
+          "target": "iPhone 15 Pro 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 15 Pro Max",
+          "target": "iPhone 15 Pro Max"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "iPhone 15 Pro Max landscape",
+          "target": "iPhone 15 Pro Max 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "JioPhone 2",
+          "target": "JioPhone 2"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "JioPhone 2 landscape",
+          "target": "JioPhone 2 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kindle Fire HDX",
+          "target": "Kindle Fire HDX"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kindle Fire HDX landscape",
+          "target": "Kindle Fire HDX 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LG Optimus L70",
+          "target": "LG Optimus L70"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "LG Optimus L70 landscape",
+          "target": "LG Optimus L70 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Microsoft Lumia 550",
+          "target": "Microsoft Lumia 550"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Microsoft Lumia 950",
+          "target": "Microsoft Lumia 950"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Microsoft Lumia 950 landscape",
+          "target": "Microsoft Lumia 950 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 10",
+          "target": "Nexus 10"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 10 landscape",
+          "target": "Nexus 10 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 4",
+          "target": "Nexus 4"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 4 landscape",
+          "target": "Nexus 4 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 5",
+          "target": "Nexus 5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 5 landscape",
+          "target": "Nexus 5 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 5X",
+          "target": "Nexus 5X"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 5X landscape",
+          "target": "Nexus 5X 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 6",
+          "target": "Nexus 6"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 6 landscape",
+          "target": "Nexus 6 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 6P",
+          "target": "Nexus 6P"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 6P landscape",
+          "target": "Nexus 6P 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 7",
+          "target": "Nexus 7"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nexus 7 landscape",
+          "target": "Nexus 7 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nokia Lumia 520",
+          "target": "Nokia Lumia 520"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nokia Lumia 520 landscape",
+          "target": "Nokia Lumia 520 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nokia N9",
+          "target": "Nokia N9"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nokia N9 landscape",
+          "target": "Nokia N9 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 2",
+          "target": "Pixel 2"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 2 landscape",
+          "target": "Pixel 2 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 2 XL",
+          "target": "Pixel 2 XL"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 2 XL landscape",
+          "target": "Pixel 2 XL 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 3",
+          "target": "Pixel 3"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 3 landscape",
+          "target": "Pixel 3 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 4",
+          "target": "Pixel 4"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 4 landscape",
+          "target": "Pixel 4 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 4a (5G)",
+          "target": "Pixel 4a (5G)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 4a (5G) landscape",
+          "target": "Pixel 4a (5G) 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 5",
+          "target": "Pixel 5"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pixel 5 landscape",
+          "target": "Pixel 5 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Moto G4",
+          "target": "Moto G4"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Moto G4 landscape",
+          "target": "Moto G4 横屏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cookie",
+          "target": "Cookie"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Yusuke Suzuki",
+          "target": "Yusuke Suzuki"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "PaxHeader",
+          "target": "PaxHeader"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Main",
+          "target": "主要"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "TracingStartedInBrowser",
+          "target": "TracingStartedInBrowser"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Projects in scope",
+          "target": "范围内的项目"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert default export to named export",
+          "target": "将默认导出转换为命名导出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert named export to default export",
+          "target": "将命名导出转换为默认导出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert namespace import to named imports",
+          "target": "将命名空间导入转换为命名导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert named imports to namespace import",
+          "target": "将命名导入转换为命名空间导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert named imports to default import",
+          "target": "将命名导入转换为默认导入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract to type alias",
+          "target": "提取为类型别名"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract to interface",
+          "target": "提取为接口"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract to typedef",
+          "target": "提取为类型定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Move to file",
+          "target": "移动到文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Add braces to arrow function",
+          "target": "为箭头函数添加大括号"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert to anonymous function",
+          "target": "转换为匿名函数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert to named function",
+          "target": "转换为命名函数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Convert to arrow function",
+          "target": "转换为箭头函数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract Constant",
+          "target": "提取常量"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Extract Function",
+          "target": "提取函数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "\n            var __metadata = (this && this.__metadata) || function (k, v) {\n                if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n            };",
+          "target": "\\n            var __metadata = (this && this.__metadata) || function (k, v) {\\n                if (typeof Reflect === \\\"object\\\" && typeof Reflect.metadata === \\\"function\\\") return Reflect.metadata(k, v);\\n            };"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "\n            var __param = (this && this.__param) || function (paramIndex, decorator) {\n                return function (target, key) { decorator(target, key, paramIndex); }\n            };",
+          "target": "\\n            var __param = (this && this.__param) || function (paramIndex, decorator) {\\n                return function (target, key) { decorator(target, key, paramIndex); }\\n            };"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "\n            var __await = (this && this.__await) || function (v) { return this instanceof __await ? (this.v = v, this) : new __await(v); }",
+          "target": "\\n            var __await = (this && this.__await) || function (v) { return this instanceof __await ? (this.v = v, this) : new __await(v); }"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "\n        var __propKey = (this && this.__propKey) || function (x) {\n            return typeof x === \"symbol\" ? x : \"\".concat(x);\n        };",
+          "target": "\\n        var __propKey = (this && this.__propKey) || function (x) {\\n            return typeof x === \\\"symbol\\\" ? x : \\\"\\\".concat(x);\\n        };"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "\n            var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n                Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n            }) : function(o, v) {\n                o[\"default\"] = v;\n            });",
+          "target": "\\n            var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\\n                Object.defineProperty(o, \\\"default\\\", { enumerable: true, value: v });\\n            }) : function(o, v) {\\n                o[\\\"default\\\"] = v;\\n            });"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "\n            var __importDefault = (this && this.__importDefault) || function (mod) {\n                return (mod && mod.__esModule) ? mod : { \"default\": mod };\n            };",
+          "target": "\\n            var __importDefault = (this && this.__importDefault) || function (mod) {\\n                return (mod && mod.__esModule) ? mod : { \\\"default\\\": mod };\\n            };"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "\n            var __exportStar = (this && this.__exportStar) || function(m, exports) {\n                for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\n            };",
+          "target": "\\n            var __exportStar = (this && this.__exportStar) || function(m, exports) {\\n                for (var p in m) if (p !== \\\"default\\\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\\n            };"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "\n            var __syncRequire = typeof module === \"object\" && typeof module.exports === \"object\";",
+          "target": "\\n            var __syncRequire = typeof module === \\\"object\\\" && typeof module.exports === \\\"object\\\";"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": ": ",
+          "target": ": "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "asserts ",
+          "target": "断言 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " is ",
+          "target": " 是 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " extends ",
+          "target": " 扩展 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " = ",
+          "target": " = "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "new ",
+          "target": "new "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " => ",
+          "target": " => "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "typeof ",
+          "target": "typeof "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " ? ",
+          "target": " ? "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " : ",
+          "target": " : "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "infer ",
+          "target": "推断 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "{ ",
+          "target": "{ "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "readonly ",
+          "target": "只读 "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " as ",
+          "target": " as "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "; }",
+          "target": "; }"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": ", { assert: ",
+          "target": ", { assert: "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " }",
+          "target": " }"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Войти",
+          "target": "登录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Выйти",
+          "target": "退出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "tooltip",
+          "source": "Экспортировать хранилище",
+          "target": "导出存储"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
