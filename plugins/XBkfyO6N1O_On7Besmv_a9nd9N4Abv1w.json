@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "github-review",
+    "version": "1.0.0",
+    "title": "GitHub Review",
+    "description": "GitHub Review Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Leave a comment",
+          "target": "留下评论"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "placeholder",
+          "source": "Leave a description",
+          "target": "留下描述"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Blank issue",
+          "target": "空白议题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy config",
+          "target": "复制配置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open",
+          "target": "打开"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Create issue",
+          "target": "创建议题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Fine-grained personal access token. Stored in plaintext in this vault's data.json — don't sync the vault anywhere untrusted.",
+          "target": "细粒度个人访问令牌。以明文形式存储在此保险库的 data.json 中——请勿将保险库同步到任何不受信任的位置。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Used when the toggle above is off, or when no repo is detected for this vault. One owner/repo per line.",
+          "target": "当上方的开关关闭时，或未为此保险库检测到仓库时使用。每行一个 所有者/仓库。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Poll open views for updates using cheap conditional requests (304s are free). 0 disables polling. Takes effect when a view is next opened.",
+          "target": "使用廉价的条件请求（304 响应免费）轮询打开的视图以获取更新。0 表示禁用轮询。在下次打开视图时生效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Let an external AI client read the pull request or issue you're viewing. No port, no token, read-only. The config is written to your vault's .claude/mcp.json automatically, so a client like Claudian picks it up on reload — you don't add anything by hand.",
+          "target": "允许外部 AI 客户端读取您正在查看的拉取请求或议题。无需端口、令牌，只读。配置会自动写入您保险库的 .claude/mcp.json，因此像 Claudian 这样的客户端在重新加载时会自动获取——您无需手动添加任何内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The recommended client needs no setup (see above). For another client, copy the config and add it there.",
+          "target": "推荐的客户端无需设置（见上文）。对于其他客户端，请复制配置并添加到那里。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "GitHub token",
+          "target": "GitHub 令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Follow this vault's GitHub repository",
+          "target": "关注此保险库的 GitHub 仓库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Repositories",
+          "target": "仓库列表"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include closed issues & pull requests",
+          "target": "包含已关闭的议题和拉取请求"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-refresh interval (seconds)",
+          "target": "自动刷新间隔（秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI client integration",
+          "target": "AI 客户端集成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Expose the open issue or pull request to AI clients",
+          "target": "向 AI 客户端公开打开的议题或拉取请求"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Other AI clients",
+          "target": "其他 AI 客户端"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Title",
+          "target": "标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Fine-grained personal access token",
+          "target": "细粒度个人访问令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "One owner/repo per line",
+          "target": "每行一个 所有者/仓库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Title",
+          "target": "标题"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Comment posted",
+          "target": "评论已发布"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Context server is off. Enable it in the plugin settings.",
+          "target": "上下文服务器已关闭。请在插件设置中启用它。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "MCP config copied. Add it in your Claude client (or <vault>/.claude/mcp.json).",
+          "target": "MCP 配置已复制。请将其添加到您的 Claude 客户端（或 <vault>/.claude/mcp.json）。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Set your GitHub token in settings first.",
+          "target": "请先在设置中设置您的 GitHub 令牌。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No GitHub repo found. Open an issue or pull request, or set a repository in settings.",
+          "target": "未找到 GitHub 仓库。请打开一个议题或拉取请求，或在设置中设置一个仓库。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Issue created",
+          "target": "议题已创建"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-cta ghr-comment-submit",
+          "target": "mod-cta ghr-comment-submit"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "mod-cta ghr-review-submit",
+          "target": "mod-cta ghr-review-submit"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-body markdown-rendered",
+          "target": "ghr-body markdown-rendered"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-comment-body markdown-rendered",
+          "target": "ghr-comment-body markdown-rendered"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-avatar ghr-avatar-fallback",
+          "target": "ghr-avatar ghr-avatar-fallback"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-doc-body markdown-rendered",
+          "target": "ghr-doc-body markdown-rendered"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-diff markdown-rendered",
+          "target": "ghr-diff markdown-rendered"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-tabs ghr-issue-tabs",
+          "target": "ghr-tabs ghr-issue-tabs"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-tab ghr-tab-active",
+          "target": "ghr-tab ghr-tab-active"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-issue-preview markdown-rendered",
+          "target": "ghr-issue-preview markdown-rendered"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-comment-input ghr-issue-input",
+          "target": "ghr-comment-input ghr-issue-input"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-form-md markdown-rendered",
+          "target": "ghr-form-md markdown-rendered"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ghr-comment-input ghr-form-textarea",
+          "target": "ghr-comment-input ghr-form-textarea"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "dropdown ghr-form-select",
+          "target": "dropdown ghr-form-select"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Get a pull request or issue: title, state, author, labels, body, comments, and — for pull requests — the list of changed files with their stats. Use get_changed_file for a file's content or diff.",
+          "target": "获取拉取请求或议题：标题、状态、作者、标签、正文、评论，以及——对于拉取请求——已更改文件的列表及其统计信息。使用 get_changed_file 获取文件内容或差异。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Comment",
+          "target": "评论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Approve",
+          "target": "批准"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Request changes",
+          "target": "请求更改"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Unexpected block-seq-ind on same line with key",
+          "target": "Unexpected block-seq-ind on same line with key"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open review queue",
+          "target": "打开审查队列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open issue or pull request by URL",
+          "target": "通过 URL 打开议题或拉取请求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create new issue",
+          "target": "创建新议题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy AI client config",
+          "target": "复制 AI 客户端配置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "Leave a comment",
+          "target": "留下评论"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New issue",
+          "target": "新议题"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Refresh",
+          "target": "刷新"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Review changes",
+          "target": "审查更改"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Finish your review",
+          "target": "完成您的审查"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Submit review",
+          "target": "提交审查"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Loading…",
+          "target": "加载中…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open on GitHub",
+          "target": "在 GitHub 上打开"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Viewed",
+          "target": "已查看"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Open a GitHub issue or pull request",
+          "target": "打开 GitHub 议题或拉取请求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Write",
+          "target": "编写"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Preview",
+          "target": "预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": " *",
+          "target": " *"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Select…",
+          "target": "选择…"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
