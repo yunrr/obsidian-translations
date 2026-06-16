@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "paste-image-rename-convert",
+    "version": "1.0.0",
+    "title": "Paste Image Rename and Convert",
+    "description": "Paste Image Rename and Convert Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Image conversion failed:",
+          "target": "图片转换失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "DEBUG is enabled",
+          "target": "调试已启用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Rename all",
+          "target": "全部重命名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Yes",
+          "target": "是"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "No",
+          "target": "否"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Rename",
+          "target": "重命名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Please input the name pattern to match files (regex)",
+          "target": "请输入用于匹配文件的名称模式（正则表达式）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Please input the extension pattern to match files (regex)",
+          "target": "请输入用于匹配文件的扩展名模式（正则表达式）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Please input the string to replace the matched name (use $1, $2 for regex groups)",
+          "target": "请输入用于替换匹配名称的字符串（使用 $1, $2 表示正则表达式组）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Please input the new name for the image (without extension)",
+          "target": "请输入图片的新名称（不含扩展名）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, duplicate number will be added at the start as prefix for the image name, otherwise it will be added at the end as suffix for the image name.",
+          "target": "启用后，重复编号将作为前缀添加到图片名称的开头，否则将作为后缀添加到图片名称的末尾。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The delimiter to generate the number prefix/suffix for duplicated names. For example, if the value is \"-\", the suffix will be like \"-1\", \"-2\", \"-3\", and the prefix will be like \"1-\", \"2-\", \"3-\". Only characters that are valid in file names are allowed.",
+          "target": "用于生成重复名称的数字前缀/后缀的分隔符。例如，如果值为 \\\"-\\\"，后缀将类似 \\\"-1\\\", \\\"-2\\\", \\\"-3\\\"，前缀将类似 \\\"1-\\\", \\\"2-\\\", \\\"3-\\\"。仅允许使用文件名中有效的字符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If enabled, duplicate number will always be added to the image name. Otherwise, it will only be added when the name is duplicated.",
+          "target": "启用后，重复编号将始终添加到图片名称中。否则，仅在名称重复时添加。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "By default, the rename modal will always be shown to confirm before renaming, if this option is set, the image will be auto renamed after pasting.",
+          "target": "默认情况下，重命名前会始终显示确认对话框。如果设置此选项，粘贴后图片将自动重命名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "By default, the plugin only handles images that starts with \"Pasted image \" in name,\n\t\t\twhich is the prefix Obsidian uses to create images from pasted content.\n\t\t\tIf this option is set, the plugin will handle all attachments that are created in the vault.",
+          "target": "默认情况下，插件仅处理名称以 \\\"Pasted image \\\" 开头的图片，\\n\\t\\t\\t这是 Obsidian 用于从粘贴内容创建图片的前缀。\\n\\t\\t\\t如果设置此选项，插件将处理在库中创建的所有附件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "This option is only useful when \"Handle all attachments\" is enabled.\n\t\t\tWrite a Regex pattern to exclude certain extensions from being handled. Only the first line will be used.",
+          "target": "此选项仅在启用“处理所有附件”时有效。\\n\\t\\t\\t编写一个正则表达式模式以排除某些扩展名不被处理。仅使用第一行。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable to automatically convert PNG images to JPEG format",
+          "target": "启用以自动将 PNG 图片转换为 JPEG 格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enable to automatically convert PNG images to WebP format (more efficient compression)",
+          "target": "启用以自动将 PNG 图片转换为 WebP 格式（压缩效率更高）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Quality of image conversion (0.1-1.0)",
+          "target": "图片转换质量 (0.1-1.0)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Turn off this option if you don't want to see the notice when renaming images.\n\t\t\tNote that Obsidian may display a notice when a link has changed, this option cannot disable that.",
+          "target": "如果您不想在重命名图片时看到通知，请关闭此选项。\\n\\t\\t\\t请注意，当链接发生变化时，Obsidian 可能会显示通知，此选项无法禁用该通知。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Name pattern",
+          "target": "名称模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Extension pattern",
+          "target": "扩展名模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Name replace",
+          "target": "名称替换"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "New name",
+          "target": "新名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Rename Settings",
+          "target": "重命名设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image name pattern",
+          "target": "图片名称模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Duplicate number at start (or end)",
+          "target": "重复编号位于开头（或结尾）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Duplicate number delimiter",
+          "target": "重复编号分隔符"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Always add duplicate number",
+          "target": "始终添加重复编号"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto rename",
+          "target": "自动重命名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Handle all attachments",
+          "target": "处理所有附件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude extension pattern",
+          "target": "排除扩展名模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert Settings",
+          "target": "转换设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert PNG to JPEG",
+          "target": "将 PNG 转换为 JPEG"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert PNG to WebP",
+          "target": "将 PNG 转换为 WebP"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image Quality",
+          "target": "图片质量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Disable rename notice",
+          "target": "禁用重命名通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Rename image",
+          "target": "重命名图片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "file not found",
+          "target": "文件未找到"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error: No active file found for renaming",
+          "target": "错误：未找到用于重命名的活动文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error: No active file found",
+          "target": "错误：未找到活动文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Batch renaming images...",
+          "target": "正在批量重命名图片..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No images found to rename",
+          "target": "未找到需要重命名的图片"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Batch rename all images instantly (in the current file)",
+          "target": "立即批量重命名所有图片（在当前文件中）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Original path",
+          "target": "原始路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Renamed Name",
+          "target": "重命名后名称"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Origin path",
+          "target": "原始路径"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "New path",
+          "target": "新路径"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
