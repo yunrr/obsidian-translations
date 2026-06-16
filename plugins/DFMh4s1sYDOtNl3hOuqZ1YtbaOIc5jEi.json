@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "nextcloud-sync",
+    "version": "1.0.0",
+    "title": "Nextcloud Sync",
+    "description": "Nextcloud Sync Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.6",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Local wins (keep local frontmatter)",
+          "target": "本地优先（保留本地 frontmatter）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Conflict markers (safe default)",
+          "target": "冲突标记（安全默认值）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Conflict markers — keep both versions (text only)",
+          "target": "冲突标记 — 保留两个版本（仅文本）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Error — leave untouched, retry (safe default)",
+          "target": "错误 — 保持原样，重试（安全默认值）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[SyncEngine] Sync failed:",
+          "target": "[SyncEngine] 同步失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "login: \"Log in via browser\" clicked",
+          "target": "登录：点击了“通过浏览器登录”"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "login: start() POST →",
+          "target": "登录：start() POST →"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "login: start() ok (loginUrl received)",
+          "target": "登录：start() 成功（已收到 loginUrl）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "login: polling started",
+          "target": "登录：轮询已开始"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "sync: skipped — already running",
+          "target": "同步：已跳过 — 正在运行中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "sync: skipped — Wi-Fi-only and on cellular",
+          "target": "同步：已跳过 — 仅限 Wi-Fi 且当前使用蜂窝网络"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "sync: connecting (ensureClient)",
+          "target": "同步：正在连接（ensureClient）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "sync: \"Sync now\" clicked",
+          "target": "同步：点击了“立即同步”"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "sync: aborted — server settings incomplete",
+          "target": "同步：已中止 — 服务器设置不完整"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Log in via browser",
+          "target": "通过浏览器登录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "View",
+          "target": "查看"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Restore",
+          "target": "恢复"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sync this vault with Nextcloud. Available once the server URL, username and app password are set.",
+          "target": "将此库与 Nextcloud 同步。设置服务器 URL、用户名和应用密码后可用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Nextcloud username (vault-specific)",
+          "target": "Nextcloud 用户名（库专用）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Nextcloud app password. Click \"Link\\u2026\" to store it in Obsidian's encrypted Secret Storage (never saved in data.json). Generate at Settings \\u2192 Security \\u2192 Devices & Sessions.",
+          "target": "Nextcloud 应用密码。点击“链接…”将其存储在 Obsidian 的加密密钥存储中（绝不会保存在 data.json 中）。在 设置 → 安全 → 设备与会话 中生成。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use Nextcloud login flow v2 to obtain an app password automatically. Requires the server URL above. Falls back to manual entry on non-nextcloud servers.",
+          "target": "使用 Nextcloud 登录流程 v2 自动获取应用密码。需要上面的服务器 URL。在非 Nextcloud 服务器上会回退到手动输入。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Run one sync shortly after Obsidian starts. On mobile this is off by default.",
+          "target": "在 Obsidian 启动后不久运行一次同步。在移动端默认关闭。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "⚠️ when enabled, files are locked on the server during updates to prevent concurrent-edit conflicts. Requires the Nextcloud files locking app. Default off.",
+          "target": "⚠️ 启用后，更新期间文件将在服务器上被锁定，以防止并发编辑冲突。需要 Nextcloud 文件锁定应用。默认关闭。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "⚠️ when enabled, conflicts are auto-merged using reconcile-text. Results may be unexpected. Ensure Nextcloud version history is enabled before activating.",
+          "target": "⚠️ 启用后，冲突将使用 reconcile-text 自动合并。结果可能出乎意料。激活前请确保 Nextcloud 版本历史已启用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If more regions conflict than this threshold, fall back to inline markers",
+          "target": "如果冲突区域超过此阈值，则回退到内联标记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Comma-separated list of extensions eligible for text merge (e.g. \"md, txt\"). Files with other extensions are never merged; on conflict the failure policy below is applied directly. Leave the dot off.",
+          "target": "逗号分隔的可进行文本合并的扩展名列表（例如“md, txt”）。其他扩展名的文件永远不会被合并；发生冲突时直接应用下面的失败策略。请勿包含点号。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "What to do when a merge does not cleanly resolve (file not mergeable, auto-merge off, or merge failed). \"error\" leaves both sides untouched and retries next sync (safe default). \"conflict markers\" applies to text files only; other files fall back to error.",
+          "target": "当合并无法干净地解决时（文件不可合并、自动合并关闭或合并失败）的操作。“错误”将保留双方内容并在下次同步时重试（安全默认值）。“冲突标记”仅适用于文本文件；其他文件将回退到错误策略。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Server URL",
+          "target": "服务器 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Username",
+          "target": "用户名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "App password",
+          "target": "应用密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Log in via browser (Nextcloud)",
+          "target": "通过浏览器登录 (Nextcloud)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync folder",
+          "target": "同步文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync target (WebDAV)",
+          "target": "同步目标 (WebDAV)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync on startup",
+          "target": "启动时同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync on Wi-Fi only",
+          "target": "仅在 Wi-Fi 下同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync on file change",
+          "target": "文件更改时同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync bookmarks",
+          "target": "同步书签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Chunked upload",
+          "target": "分块上传"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Experimental features",
+          "target": "实验性功能"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "File locking (experimental)",
+          "target": "文件锁定（实验性）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto merge (experimental)",
+          "target": "自动合并（实验性）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Frontmatter conflict strategy (auto merge)",
+          "target": "Frontmatter 冲突策略（自动合并）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max conflict regions (auto merge)",
+          "target": "最大冲突区域数（自动合并）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Mergeable file extensions",
+          "target": "可合并的文件扩展名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "On merge failure",
+          "target": "合并失败时"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Actions",
+          "target": "操作"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Last session summary",
+          "target": "上次会话摘要"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Extensions separated by commas",
+          "target": "用逗号分隔的扩展名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Sync status",
+          "target": "同步状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "using deprecated parameters for `initSync()`; pass a single object instead",
+          "target": "正在使用 `initSync()` 的已弃用参数；请改为传递单个对象"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "using deprecated parameters for the initialization function; pass a single object instead",
+          "target": "正在使用初始化函数的已弃用参数；请改为传递单个对象"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No sync session yet.",
+          "target": "尚无同步会话。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter the server URL first.",
+          "target": "请先输入服务器 URL。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Waiting for browser approval… (up to 3 minutes)",
+          "target": "正在等待浏览器批准…（最多 3 分钟）"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⏱️ login timed out. Please try again.",
+          "target": "⏱️ 登录超时。请重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "This server does not support login flow. Please enter an app password manually.",
+          "target": "此服务器不支持登录流程。请手动输入应用密码。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⏳ A sync is already in progress.",
+          "target": "⏳ 同步已在进行中。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Sync skipped — you are on cellular and Wi-Fi only sync is on.",
+          "target": "同步已跳过 — 您正在使用蜂窝网络，且仅限 Wi-Fi 同步已开启。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Sync cancelled.",
+          "target": "同步已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Configure the server settings first.",
+          "target": "请先配置服务器设置。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No server version history is available for this file.",
+          "target": "此文件没有可用的服务器版本历史。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "body",
+          "source": "<?xml version=\"1.0\"?><d:propfind xmlns:d=\"DAV:\"><d:prop><d:getlastmodified/><d:getcontentlength/></d:prop></d:propfind>",
+          "target": "<?xml version=\\\"1.0\\\"?><d:propfind xmlns:d=\\\"DAV:\\\"><d:prop><d:getlastmodified/><d:getcontentlength/></d:prop></d:propfind>"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "body",
+          "source": "<?xml version=\"1.0\"?><d:propfind xmlns:d=\"DAV:\" xmlns:oc=\"http://owncloud.org/ns\"><d:prop><oc:checksums/></d:prop></d:propfind>",
+          "target": "<?xml version=\\\"1.0\\\"?><d:propfind xmlns:d=\\\"DAV:\\\" xmlns:oc=\\\"http://owncloud.org/ns\\\"><d:prop><oc:checksums/></d:prop></d:propfind>"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "body",
+          "source": "<?xml version=\"1.0\"?><d:propfind xmlns:d=\"DAV:\"><d:prop><d:getetag/><d:getcontentlength/><d:getlastmodified/><d:resourcetype/></d:prop></d:propfind>",
+          "target": "<?xml version=\\\"1.0\\\"?><d:propfind xmlns:d=\\\"DAV:\\\"><d:prop><d:getetag/><d:getcontentlength/><d:getlastmodified/><d:resourcetype/></d:prop></d:propfind>"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "ncs-diff-cell ncs-diff-cell-left",
+          "target": "ncs-diff-cell ncs-diff-cell-left"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Wait this many seconds after startup before the startup sync.",
+          "target": "启动后等待此秒数再进行启动同步。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "desc",
+          "source": "Files larger than this are uploaded in chunks (Nextcloud only). Smaller files use a single request.",
+          "target": "大于此大小的文件将分块上传（仅限 Nextcloud）。较小的文件使用单次请求。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "🔴",
+          "target": "🔴"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Startup sync delay (seconds)",
+          "target": "启动同步延迟（秒）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync interval (minutes)",
+          "target": "同步间隔（分钟）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Network timeout (seconds)",
+          "target": "网络超时（秒）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Network concurrency",
+          "target": "网络并发数"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chunk threshold (MB)",
+          "target": "分块阈值（MB）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Maximum file size (MB)",
+          "target": "最大文件大小（MB）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Show version history",
+          "target": "显示版本历史"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Settings are stored per-vault. Each vault can have a different Nextcloud server and user.",
+          "target": "设置按保险库存储。每个保险库可以有不同的 Nextcloud 服务器和用户。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "⚠️ ",
+          "target": "⚠️ "
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Not signed in yet",
+          "target": "尚未登录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter the server URL below, then log in (or fill in a username and app password). Syncing stays disabled until you do.",
+          "target": "请在下方输入服务器 URL，然后登录（或填写用户名和应用密码）。在此之前，同步功能将保持禁用。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sync preview (dry run)",
+          "target": "同步预览（试运行）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Conflicts",
+          "target": "冲突"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Proceed",
+          "target": "继续"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Merge preview",
+          "target": "合并预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Version history",
+          "target": "版本历史"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No server version history for this file.",
+          "target": "此文件没有服务器版本历史。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No sync has run yet in this session.",
+          "target": "本次会话尚未运行过同步。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🟢 No conflicts or pending retries.",
+          "target": "🟢 无冲突或待重试项。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "What failed during the last sync and why. These reset on the next sync.",
+          "target": "上次同步失败的原因及详情。这些信息将在下次同步时重置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Restore version",
+          "target": "恢复版本"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
