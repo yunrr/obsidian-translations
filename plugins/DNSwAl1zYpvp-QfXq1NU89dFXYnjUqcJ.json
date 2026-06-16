@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "link-iframe",
+    "version": "1.0.1",
+    "title": "I link therefore iframe",
+    "description": "I link therefore iframe Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "This provider uses native markup instead of an iframe, so there are no iframe sizing controls for this preview.",
+          "target": "此提供程序使用原生标记而非 iframe，因此此预览没有 iframe 大小调整控件。"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerText",
+          "source": "Aspect Ratio: ",
+          "target": "宽高比："
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "innerText",
+          "source": "Match the note width (reset the size)",
+          "target": "匹配笔记宽度（重置大小）"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Open original link",
+          "target": "打开原始链接"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Configure embed",
+          "target": "配置嵌入"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Preview embed",
+          "target": "预览嵌入"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Loading embed...",
+          "target": "正在加载嵌入..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "When enabled, create one folder per set and one Markdown note per card for ",
+          "target": "启用后，为每个集合创建一个文件夹，为每张卡片创建一个 Markdown 笔记，以实现 "
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " compatibility. When disabled, save one Markdown file per Quizlet set using the older export format.",
+          "target": " 兼容性。禁用后，使用旧的导出格式为每个 Quizlet 集合保存一个 Markdown 文件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Best-effort export of public Quizlet flashcards to local Markdown when card data is accessible. ",
+          "target": "当卡片数据可访问时，尽力将公共 Quizlet 闪卡导出到本地 Markdown。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " this setting has general plugin performance implications, and will especially cause stutter when embedding larger Quizlet sets.",
+          "target": " 此设置会影响插件的整体性能，并且在嵌入较大的 Quizlet 集合时尤其会导致卡顿。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Found bugs or want a feature?",
+          "target": "发现错误或想要新功能？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "small",
+          "target": "small"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "iframe",
+          "target": "iframe"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "details",
+          "target": "details"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "summary",
+          "target": "summary"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "hr",
+          "target": "hr"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[I link therefore iframe] Failed saving image to vault:",
+          "target": "[I link therefore iframe] 保存图片到保险库失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[I link therefore iframe] Failed to resolve Mastodon image:",
+          "target": "[I link therefore iframe] 解析 Mastodon 图片失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[I link therefore iframe] Failed to resolve Reddit image:",
+          "target": "[I link therefore iframe] 解析 Reddit 图片失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[I link therefore iframe] Failed to resolve Steam image:",
+          "target": "[I link therefore iframe] 解析 Steam 图片失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[I link therefore iframe] Failed to save Google Doc to vault:",
+          "target": "[I link therefore iframe] 保存 Google 文档到保险库失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[I link therefore iframe] Failed to save Quizlet card export:",
+          "target": "[I link therefore iframe] 保存 Quizlet 卡片导出失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "iframe.dataset.src is not set",
+          "target": "iframe.dataset.src 未设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "auto-embed/error: no internet connection",
+          "target": "自动嵌入/错误：无网络连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[I link therefore iframe] Failed to generate embed markup",
+          "target": "[I link therefore iframe] 生成嵌入标记失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[I link therefore iframe] Failed migrating legacy embed",
+          "target": "[I link therefore iframe] 迁移旧版嵌入失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[I link therefore iframe] Saved image to vault:",
+          "target": "[I link therefore iframe] 图片已保存到保险库："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[I link therefore iframe] Google Doc is not publicly accessible, skipping download:",
+          "target": "[I link therefore iframe] Google 文档未公开访问，跳过下载："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[I link therefore iframe] Saved Google Doc to vault:",
+          "target": "[I link therefore iframe] Google 文档已保存到保险库："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[I link therefore iframe] Could not find exportable Quizlet cards with any method for set:",
+          "target": "[I link therefore iframe] 无法为集合找到任何可导出的 Quizlet 卡片："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[I link therefore iframe] Quizlet single-file export completed:",
+          "target": "[I link therefore iframe] Quizlet 单文件导出完成："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[I link therefore iframe] Quizlet card export completed:",
+          "target": "[I link therefore iframe] Quizlet 卡片导出完成："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "[I link therefore iframe] Saved social media images and kept embed URL:",
+          "target": "[I link therefore iframe] 已保存社交媒体图片并保留嵌入 URL："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open modal",
+          "target": "打开模态框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Preview",
+          "target": "预览"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Update all Quizlet cards",
+          "target": "更新所有 Quizlet 卡片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Open the iframe sizing modal using current values",
+          "target": "使用当前值打开 iframe 尺寸调整模态框"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use dark theme for embeds when supported",
+          "target": "在支持的情况下为嵌入内容使用深色主题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose how the embed behaves before loading",
+          "target": "选择嵌入内容加载前的行为方式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display an \"Open original link\" footer below generated embeds",
+          "target": "在生成的嵌入内容下方显示“打开原始链接”页脚"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Download direct image URLs and replace embed links with local vault files",
+          "target": "下载直接图片 URL 并将嵌入链接替换为本地保险库文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For supported platforms (Instagram, Facebook, Pinterest, Telegram, Mastodon, Reddit, TikTok, Imgur, SoundCloud, Spotify, CodePen, Steam), fetch available media images and save them locally",
+          "target": "对于支持的平台（Instagram、Facebook、Pinterest、Telegram、Mastodon、Reddit、TikTok、Imgur、SoundCloud、Spotify、CodePen、Steam），获取可用的媒体图片并本地保存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Download a local Markdown copy of the document when embedding a Google Doc (requires the document to be shared with anyone with the link)",
+          "target": "嵌入 Google 文档时下载文档的本地 Markdown 副本（要求文档已设置为任何拥有链接的人可访问）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder inside your vault used for downloaded image content",
+          "target": "保险库内用于存放下载图片内容的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder inside your vault used for downloaded Google Docs Markdown files",
+          "target": "保险库内用于存放下载的 Google 文档 Markdown 文件的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, download card images found in Quizlet sets and embed them locally in exported notes",
+          "target": "启用后，下载在 Quizlet 集合中找到的卡片图片，并在导出的笔记中本地嵌入它们"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder inside your vault used for downloaded Quizlet card exports",
+          "target": "保险库内用于存放下载的 Quizlet 卡片导出的文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Primary action: refresh every Quizlet set that has a stored quizlet:source marker in your vault.",
+          "target": "主要操作：刷新保险库中所有存储了 quizlet:source 标记的 Quizlet 集合。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preview URL",
+          "target": "预览 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preview options",
+          "target": "预览选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Convert URL to embed",
+          "target": "将 URL 转换为嵌入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preview embed",
+          "target": "预览嵌入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Dark mode",
+          "target": "深色模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preload options",
+          "target": "预加载选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show original link under embed",
+          "target": "在嵌入下方显示原始链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save image embeds to vault",
+          "target": "将图片嵌入保存到保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save social media images to vault",
+          "target": "将社交媒体图片保存到保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save Google Docs to vault",
+          "target": "将 Google 文档保存到保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Image folder path",
+          "target": "图片文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Google Docs folder path",
+          "target": "Google 文档文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save Quizlet cards to vault",
+          "target": "将 Quizlet 卡片保存到保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Quizlet: save card images to vault",
+          "target": "Quizlet：将卡片图片保存到保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Quizlet: save as separate notes",
+          "target": "Quizlet：保存为单独笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Quizlet folder path",
+          "target": "Quizlet 文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Update all saved Quizlet cards",
+          "target": "更新所有已保存的 Quizlet 卡片"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Custom ratio, e.g. 5/4",
+          "target": "自定义比例，例如 5/4"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Use format width/height with positive numbers, e.g. 5/4",
+          "target": "使用宽度/高度格式，正数，例如 5/4"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "OK",
+          "target": "确定"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Convert URL to embed",
+          "target": "将 URL 转换为嵌入"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "[I link therefore iframe] Provider validation failed, falling back to generic iframe:",
+          "target": "[I link therefore iframe] 提供商验证失败，回退到通用 iframe："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "I link therefore iframe: updating all saved Quizlet cards...",
+          "target": "I link therefore iframe：正在更新所有已保存的 Quizlet 卡片..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "I link therefore iframe: failed to update all saved Quizlet cards.",
+          "target": "I link therefore iframe：更新所有已保存的 Quizlet 卡片失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "[I link therefore iframe] Quizlet export failed: no card data found on page",
+          "target": "[I link therefore iframe] Quizlet 导出失败：页面上未找到卡片数据"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "[I link therefore iframe] Quizlet export skipped: URL did not return HTML",
+          "target": "[I link therefore iframe] Quizlet 导出跳过：URL 未返回 HTML"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "[I link therefore iframe] Quizlet export failed due to request or parsing error",
+          "target": "[I link therefore iframe] Quizlet 导出因请求或解析错误而失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Unable to convert this URL into an embed.",
+          "target": "无法将此 URL 转换为嵌入。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "auto",
+          "source": "Auto (site default)",
+          "target": "自动（站点默认）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "auto-embed-loader auto-embed-hide-visibility",
+          "target": "auto-embed-loader auto-embed-hide-visibility"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Create embed",
+          "target": "创建嵌入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Migrate legacy embeds in current note",
+          "target": "迁移当前笔记中的旧版嵌入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "none",
+          "source": "none",
+          "target": "none"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Embed",
+          "target": "嵌入"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Yanki",
+          "target": "Yanki"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Performance warning:",
+          "target": "性能警告："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Create a GitHub issue",
+          "target": "创建 GitHub issue"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No internet connection",
+          "target": "无网络连接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Loading title...",
+          "target": "加载标题中..."
+        }
+      ],
+      "regex": []
+    }
+  }
+}
