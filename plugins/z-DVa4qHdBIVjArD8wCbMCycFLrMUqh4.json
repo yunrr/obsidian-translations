@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "email-to-vault",
+    "version": "1.0.1",
+    "title": "Email to Vault",
+    "description": "Email to Vault Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "2.0.5",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "imap",
+          "target": "imap"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "The interval at which emails will be checked in minutes.",
+          "target": "检查邮件的间隔时间（以分钟为单位）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Set to 0 to disable automatic email checking.",
+          "target": "设置为 0 可禁用自动邮件检查。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Path template for saved email notes.",
+          "target": "保存邮件笔记的路径模板。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "The template to use for email note content.",
+          "target": "用于邮件笔记内容的模板。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Whether to extract the original sender, recipients, and subject from forwarded emails.",
+          "target": "是否从转发的邮件中提取原始发件人、收件人和主题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "When enabled, treats forwarded emails as direct messages.",
+          "target": "启用后，将转发的邮件视为直接消息。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Connect to any IMAP-compatible email server (Gmail, Outlook, etc.).",
+          "target": "连接到任何兼容 IMAP 的邮件服务器（Gmail、Outlook 等）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "⚠️ IMAP emails cannot be checked on mobile devices.",
+          "target": "⚠️ IMAP 邮件无法在移动设备上检查。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Password for the mail server.",
+          "target": "邮件服务器的密码。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "For Gmail with 2FA, use an ",
+          "target": "对于启用了双重验证的 Gmail，请使用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "The plugin is powered by ",
+          "target": "该插件由"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " — a temporary email service. Emails are stored for up to 7 days. See ",
+          "target": " — 一个临时邮件服务提供支持。邮件最多存储 7 天。详情请参阅"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": " for details.",
+          "target": "。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Whether to delete emails from the mailbox after being saved as notes.",
+          "target": "是否在邮件保存为笔记后从邮箱中删除邮件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "⚠️ WARNING: deleted emails cannot be recovered.",
+          "target": "⚠️ 警告：已删除的邮件无法恢复。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "⚠️ WARNING: even if the setting is disabled, the emails will be deleted after 7 days. See ",
+          "target": "⚠️ 警告：即使禁用此设置，邮件也会在 7 天后被删除。详情请参阅"
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Variables:",
+          "target": "变量："
+        },
+        {
+          "type": "CallExpression",
+          "name": "appendText",
+          "source": "Date format uses ",
+          "target": "日期格式使用"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "style",
+          "target": "style"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "strong",
+          "target": "strong"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "code",
+          "target": "code"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "pre",
+          "target": "pre"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "ul",
+          "target": "ul"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "li",
+          "target": "li"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Iconv-lite warning: decode()-ing strings is deprecated. Refer to https://github.com/ashtuchkin/iconv-lite/wiki/Use-Buffers-when-decoding",
+          "target": "Iconv-lite 警告：对字符串使用 decode() 已弃用。请参考 https://github.com/ashtuchkin/iconv-lite/wiki/Use-Buffers-when-decoding"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "No Intl support, please use an Intl polyfill!",
+          "target": "不支持 Intl，请使用 Intl polyfill！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "initialized",
+          "target": "已初始化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Redownload",
+          "target": "重新下载"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Unregister email address",
+          "target": "注销邮箱地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Register new random email address",
+          "target": "注册新的随机邮箱地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter 0 to redownload all emails.",
+          "target": "输入 0 可重新下载所有邮件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Whether to remove hidden HTML elements (display:none, visibility:hidden, opacity:0, aria-hidden) before converting to markdown.",
+          "target": "是否在转换为 Markdown 前移除隐藏的 HTML 元素（display:none, visibility:hidden, opacity:0, aria-hidden）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Hostname of the mail server.",
+          "target": "邮件服务器的主机名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Port number for the mail server.",
+          "target": "邮件服务器的端口号。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use TLS/SSL for the connection.",
+          "target": "使用 TLS/SSL 进行连接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Mailbox folder to check for emails.",
+          "target": "用于检查邮件的邮箱文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Email address used as the login username.",
+          "target": "用作登录用户名的邮箱地址。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Whether to delete emails from the mailbox after being saved as notes.",
+          "target": "是否在邮件保存为笔记后从邮箱中删除邮件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Email address for the mail.tm mailbox.",
+          "target": "mail.tm 邮箱的邮箱地址。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Password for the mail.tm mailbox.",
+          "target": "mail.tm 邮箱的密码。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select which email provider to use.",
+          "target": "选择要使用的邮件提供商。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Number of recent emails",
+          "target": "最近邮件数量"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email check interval",
+          "target": "邮件检查间隔"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email note path template",
+          "target": "邮件笔记路径模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email note template",
+          "target": "邮件笔记模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Extract forwarded email",
+          "target": "提取转发邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Strip hidden elements",
+          "target": "移除隐藏元素"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Server host",
+          "target": "服务器主机"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Server port",
+          "target": "服务器端口"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Use TLS",
+          "target": "使用 TLS"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Mailbox",
+          "target": "邮箱"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email address",
+          "target": "邮箱地址"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email password",
+          "target": "邮箱密码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Delete seen emails",
+          "target": "删除已读邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Email provider",
+          "target": "邮件提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Redownload recent emails",
+          "target": "重新下载最近邮件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTooltip",
+          "source": "Copy to clipboard",
+          "target": "复制到剪贴板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.",
+          "target": "实例方法 `debug.destroy()` 已弃用且不再执行任何操作。它将在 `debug` 的下一个主要版本中移除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "accessing an object - but returnObjects options is not enabled!",
+          "target": "正在访问一个对象 - 但未启用 returnObjects 选项！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.",
+          "target": "似乎加载的翻译是扁平 JSON 格式而非嵌套格式。请在初始化时设置 keySeparator: false，或确保您的翻译以嵌套格式发布。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!",
+          "target": "这意味着您的设置中存在错误。您在 i18next.init / i18next.loadNamespace / i18next.changeLanguage 完成之前访问了 t 函数。请等待回调或 Promise 解析后再访问它！！！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "nesting options string contains interpolated variables with escapeValue: false — if any of those values are attacker-controlled they can inject additional nesting options (e.g. redirect lng/ns). Sanitise untrusted input before passing it to t(), or keep escapeValue: true.",
+          "target": "嵌套选项字符串包含插值变量且 escapeValue: false — 如果这些值中的任何一个由攻击者控制，他们可以注入额外的嵌套选项（例如重定向 lng/ns）。在传递给 t() 之前清理不受信任的输入，或保持 escapeValue: true。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "No backend was added via i18next.use. Will not load resources.",
+          "target": "未通过 i18next.use 添加后端。将不会加载资源。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "init: no languageDetector is used and no lng is defined",
+          "target": "初始化：未使用 languageDetector 且未定义 lng"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "init: i18next is already initialized. You should call init just once!",
+          "target": "初始化：i18next 已经初始化。您应该只调用一次 init！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "hasLoadedNamespace: i18next was not initialized",
+          "target": "hasLoadedNamespace：i18next 未初始化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "hasLoadedNamespace: i18n.languages were undefined or empty",
+          "target": "hasLoadedNamespace：i18n.languages 未定义或为空"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "I18N was not initialized, initializing default obsidian-dev-utils translations",
+          "target": "I18N 未初始化，正在初始化默认的 obsidian-dev-utils 翻译"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "IMAP is not available on mobile devices",
+          "target": "IMAP 在移动设备上不可用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Checking emails...",
+          "target": "正在检查邮件..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No new emails",
+          "target": "没有新邮件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Email address copied to clipboard",
+          "target": "邮箱地址已复制到剪贴板"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No email password found",
+          "target": "未找到邮箱密码"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Email password copied to clipboard",
+          "target": "邮箱密码已复制到剪贴板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "cls",
+          "source": "markdown-rendered code",
+          "target": "markdown-rendered code"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "A streaming way to send data to a Node.js Worker Thread",
+          "target": "一种向 Node.js 工作线程发送数据的流式方式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "Convert and detect character encoding in JavaScript",
+          "target": "在 JavaScript 中转换和检测字符编码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "description",
+          "source": "IMAP Client for Node",
+          "target": "适用于 Node 的 IMAP 客户端"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "failed to parse address with port",
+          "target": "解析带端口的地址失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "error",
+          "source": "failed to parse address from URL",
+          "target": "从 URL 解析地址失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Failed to destroy PassThrough socket",
+          "target": "销毁 PassThrough 套接字失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Failed to destroy inflate stream",
+          "target": "销毁 inflate 流失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Failed to destroy deflate stream",
+          "target": "销毁 deflate 流失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Failed to cleanup streamer",
+          "target": "清理流处理器失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Are you sure you want to unregister your email address? You will not have access to it anymore.",
+          "target": "您确定要注销您的邮箱地址吗？您将无法再访问它。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Established a socket via HTTP proxy",
+          "target": "已通过 HTTP 代理建立套接字"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Failed to establish a socket via HTTP proxy",
+          "target": "通过 HTTP 代理建立套接字失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Established a socket via SOCKS proxy",
+          "target": "已通过 SOCKS 代理建立套接字"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Failed to establish a socket via SOCKS proxy",
+          "target": "通过 SOCKS 代理建立套接字失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Failed to list folders",
+          "target": "列出文件夹失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Retrying throttled request with exponential backoff",
+          "target": "正在使用指数退避重试被限流的请求"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Write socket destroyed",
+          "target": "写入套接字已销毁"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Partial FETCH response",
+          "target": "部分 FETCH 响应"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Throttling detected",
+          "target": "检测到限流"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "IDLE recovery failed after timeout",
+          "target": "IDLE 恢复超时失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Established TLS session",
+          "target": "已建立 TLS 会话"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "User authenticated",
+          "target": "用户已认证"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Failed to notify expunge event",
+          "target": "通知 expunge 事件失败"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Download error after stream closed",
+          "target": "流关闭后下载出错"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "msg",
+          "source": "Mailbox lock held for a long time",
+          "target": "邮箱锁持有时间过长"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "imapflow",
+          "target": "imapflow"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ws",
+          "target": "ws"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "hash",
+          "target": "hash"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ident",
+          "target": "ident"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "unicode",
+          "target": "unicode"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "escape",
+          "target": "escape"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "any",
+          "target": "any"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "class",
+          "target": "class"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "id",
+          "target": "id"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open settings",
+          "target": "打开设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Check emails",
+          "target": "检查邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Redownload all emails",
+          "target": "重新下载所有邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Redownload recent emails",
+          "target": "重新下载近期邮件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "src",
+          "source": "tls",
+          "target": "tls"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "src",
+          "source": "auth",
+          "target": "auth"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "App password",
+          "target": "应用密码"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Privacy & data handling",
+          "target": "隐私与数据处理"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Moment.js format",
+          "target": "Moment.js 格式"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Unregister email address?",
+          "target": "注销邮箱地址？"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "checkbox",
+          "target": "checkbox"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
