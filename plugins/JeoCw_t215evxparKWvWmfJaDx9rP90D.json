@@ -1,0 +1,1033 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-quran-lookup",
+    "version": "1.0.1",
+    "title": "Quran Lookup",
+    "description": "Quran Lookup Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.3.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Arabic Keyboard",
+          "target": "阿拉伯语键盘"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Shift",
+          "target": "Shift"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Space",
+          "target": "空格"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Search Arabic Quran",
+          "target": "搜索阿拉伯语古兰经"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "ar ⌨",
+          "target": "ar ⌨"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "button",
+          "target": "button"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "input",
+          "target": "input"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "label",
+          "target": "label"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Results container not found",
+          "target": "未找到结果容器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error downloading Arabic offline data:",
+          "target": "下载阿拉伯语离线数据时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error in offline Arabic search:",
+          "target": "离线阿拉伯语搜索时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error in offline translation search, falling back to online:",
+          "target": "离线翻译搜索时出错，正在回退到在线搜索："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Search error:",
+          "target": "搜索错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error fetching Arabic verses:",
+          "target": "获取阿拉伯语经文时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error fetching translation verses:",
+          "target": "获取翻译经文时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Initializing Surah data...",
+          "target": "正在初始化章节数据..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to initialize Surah data:",
+          "target": "初始化章节数据失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to ensure offline data:",
+          "target": "确保离线数据失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to enable offline mode:",
+          "target": "启用离线模式失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to download translation:",
+          "target": "下载翻译失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Error fetching preview verse:",
+          "target": "获取预览经文时出错："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Performing offline Arabic search...",
+          "target": "正在执行离线阿拉伯语搜索..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Performing offline translation search...",
+          "target": "正在执行离线翻译搜索..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Fallback: API Performing online translation search...",
+          "target": "回退：API 正在执行在线翻译搜索..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "API Performing online translation search...",
+          "target": "API 正在执行在线翻译搜索..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Offline mode enabled. Fetching Arabic verses for current page from local data...",
+          "target": "已启用离线模式。正在从本地数据获取当前页面的阿拉伯语经文..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Online mode enabled. Fetching Arabic verses for current page by API...",
+          "target": "已启用在线模式。正在通过 API 获取当前页面的阿拉伯语经文..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Offline mode enabled. Fetching translation verses for current page from local data...",
+          "target": "已启用离线模式。正在从本地数据获取当前页面的翻译经文..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Online mode enabled. Fetching translation verses for current page by API...",
+          "target": "已启用在线模式。正在通过 API 获取当前页面的翻译经文..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Layout is ready. Initializing Surah data...",
+          "target": "布局已就绪。正在初始化章节数据..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Surah data initialized successfully.",
+          "target": "章节数据初始化成功。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Request timed out",
+          "target": "请求超时"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, provides translation under the Arabic verse",
+          "target": "如果为真，则在阿拉伯语经文下方提供翻译"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the language for translation",
+          "target": "选择翻译语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which translation to use",
+          "target": "使用哪种翻译"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, removes the added translator content that would normally appear in parenthesis",
+          "target": "如果为真，则移除通常出现在括号中的附加译者内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Wraps the Arabic verse in HTML Span CSS, backticks, or None",
+          "target": "将阿拉伯语经文包裹在 HTML Span CSS、反引号或无样式中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the font family for the Quran text.",
+          "target": "为古兰经文本选择字体系列。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Set the font size for the Quran text.",
+          "target": "设置古兰经文本的字体大小。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Which container to use for displaying the verses",
+          "target": "用于显示经文的容器类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select the callout type to use",
+          "target": "选择要使用的标注类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "If true, uses offline data for Quran verses",
+          "target": "如果为真，则使用古兰经经文的离线数据"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include Translation",
+          "target": "包含翻译"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Translator Language",
+          "target": "译者语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Translation Type",
+          "target": "翻译类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remove Parenthesis Content",
+          "target": "移除括号内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Arabic Styling Options",
+          "target": "阿拉伯语样式选项"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Font Family",
+          "target": "字体系列"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Font Size",
+          "target": "字体大小"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Display Container Type",
+          "target": "显示容器类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Callout Type",
+          "target": "标注类型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Offline Mode",
+          "target": "离线模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter text to search for in the Quran or Translation...",
+          "target": "输入文本以在古兰经或翻译中搜索..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Could not access stylesheet:",
+          "target": "无法访问样式表："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please enter at least 3 characters to search",
+          "target": "请输入至少 3 个字符进行搜索"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Offline Arabic data not available... attempting to download",
+          "target": "离线阿拉伯语数据不可用...正在尝试下载"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to download Arabic offline data",
+          "target": "下载阿拉伯语离线数据失败"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error downloading Arabic offline data",
+          "target": "下载阿拉伯语离线数据时出错"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error performing offline Arabic search",
+          "target": "执行离线阿拉伯语搜索时出错"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No matches found",
+          "target": "未找到匹配项"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error fetching some Arabic verses",
+          "target": "获取部分阿拉伯语经文时出错"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Error fetching some translation verses",
+          "target": "获取部分翻译经文时出错"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Downloading Quran data for offline use...",
+          "target": "正在下载古兰经数据以供离线使用..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Offline mode enabled successfully",
+          "target": "离线模式已成功启用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to enable offline mode. Please check your internet connection and try again.",
+          "target": "启用离线模式失败。请检查您的互联网连接并重试。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Offline mode disabled",
+          "target": "离线模式已禁用"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Downloading new translation for offline use...",
+          "target": "正在下载新翻译以供离线使用..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "New translation downloaded successfully",
+          "target": "新翻译下载成功"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to download translation. Please check your internet connection.",
+          "target": "下载翻译失败。请检查您的互联网连接。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Amiri",
+          "source": "Amiri",
+          "target": "Amiri"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "info",
+          "source": "Info",
+          "target": "信息"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ahmed Ali",
+          "target": "Ahmed Ali"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ahmed Raza Khan",
+          "target": "Ahmed Raza Khan"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Arberry",
+          "target": "Arberry"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Asad",
+          "target": "Asad"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Daryabadi",
+          "target": "Daryabadi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hilali & Khan",
+          "target": "Hilali & Khan"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pickthall",
+          "target": "Pickthall"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Qaribullah & Darwish",
+          "target": "Qaribullah & Darwish"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Saheeh International",
+          "target": "Saheeh International"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sarwar",
+          "target": "Sarwar"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Yusuf Ali",
+          "target": "Yusuf Ali"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Maududi",
+          "target": "Maududi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Shakir",
+          "target": "Shakir"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Transliteration",
+          "target": "音译"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ibrahim Walk",
+          "target": "Ibrahim Walk"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clear Qur'an - Talal Itani",
+          "target": "Clear Qur'an - Talal Itani"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Mubarakpuri",
+          "target": "Mubarakpuri"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Qarai",
+          "target": "Qarai"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Wahiduddin Khan",
+          "target": "瓦希杜丁·汗"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hamidullah",
+          "target": "哈米杜拉"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abu Rida",
+          "target": "阿布·里达"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bubenheim & Elyas",
+          "target": "布本海姆与埃利亚斯"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Məmmədəliyev & Bünyadov",
+          "target": "马梅达利耶夫与布尼亚多夫"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Musayev",
+          "target": "穆萨耶夫"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Muhiuddin Khan",
+          "target": "穆希乌丁·汗"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Hrbek",
+          "target": "赫尔贝克"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Nykl",
+          "target": "尼克尔"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Office of the President of Maldives",
+          "target": "马尔代夫总统办公室"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ayati",
+          "target": "阿亚提"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fooladvand",
+          "target": "富拉德万德"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Elahi Ghomshei",
+          "target": "伊拉希·戈姆谢伊"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Gumi",
+          "target": "古米"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suhel Farooq Khan and Saifur Rahman Nadwi",
+          "target": "苏赫尔·法鲁克·汗与赛富尔·拉赫曼·纳德维"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bahasa Indonesia",
+          "target": "印度尼西亚语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Piccardo",
+          "target": "皮卡多"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Japanese",
+          "target": "日语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Korean",
+          "target": "韩语"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Burhan Muhammad-Amin",
+          "target": "布尔汉·穆罕默德-阿明"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Cheriyamundam Abdul Hameed and Kunhi Mohammed Parappoor",
+          "target": "切里亚蒙丹·阿卜杜勒·哈米德与昆希·穆罕默德·帕拉普尔"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Keyzer",
+          "target": "凯泽"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Einar Berg",
+          "target": "埃纳尔·伯格"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bielawskiego",
+          "target": "比拉夫斯基"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Grigore",
+          "target": "格里戈雷"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Kuliev",
+          "target": "库利耶夫"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Osmanov",
+          "target": "奥斯曼诺夫"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Porokhova",
+          "target": "波罗霍娃"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Amroti",
+          "target": "阿姆罗提"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Abduh",
+          "target": "阿布杜"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sherif Ahmeti",
+          "target": "谢里夫·阿赫梅提"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Feti Mehdiu",
+          "target": "费提·梅迪乌"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Efendi Nahi",
+          "target": "埃芬迪·纳希"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bernström",
+          "target": "伯恩斯特伦"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jan Turst Foundation",
+          "target": "扬·图斯特基金会"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "King Fahad Quran Complex",
+          "target": "法赫德国王古兰经综合中心"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Suleyman Ates",
+          "target": "苏莱曼·阿特斯"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Ali Bulaç",
+          "target": "阿里·布拉奇"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Diyanet İşleri",
+          "target": "宗教事务局"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Yakub Ibn Nugman",
+          "target": "雅库布·伊本·努格曼"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Muhammad Saleh",
+          "target": "穆罕默德·萨利赫"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Fateh Muhammad Jalandhry",
+          "target": "法特赫·穆罕默德·贾兰德里"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Syed Zeeshan Haider Jawadi",
+          "target": "赛义德·泽山·海德尔·贾瓦迪"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Muhammad Sodik Muhammad Yusuf",
+          "target": "穆罕默德·索迪克·穆罕默德·尤素福"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Retrieve Ayaat",
+          "target": "检索经文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Search Quran",
+          "target": "搜索古兰经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Simple Arabic",
+          "target": "简体阿拉伯文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "NooreHidayah",
+          "source": "NooreHidayah",
+          "target": "努尔·希达亚"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Quran",
+          "source": "Quran",
+          "target": "古兰经"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "scheherazade",
+          "source": "scheherazade",
+          "target": "舍赫拉查德"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "success",
+          "source": "Success",
+          "target": "成功"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Previous",
+          "target": "上一页"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Next",
+          "target": "下一页"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Search",
+          "target": "搜索"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Quran Lookup Settings",
+          "target": "古兰经查阅设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Downloaded editions:",
+          "target": "已下载版本："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "No editions downloaded yet. They will be downloaded automatically when verses are looked up.",
+          "target": "尚未下载任何版本。查阅经文时将自动下载。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Preview",
+          "target": "预览"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Yunus",
+          "target": "优努斯章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Hud",
+          "target": "呼德章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Yusuf",
+          "target": "优素福章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ibrahim",
+          "target": "易卜拉欣章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Maryam",
+          "target": "麦尔彦章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Luqman",
+          "target": "鲁格曼章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Saba",
+          "target": "赛伯邑章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Fatir",
+          "target": "创造者章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Yasin",
+          "target": "雅辛章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Sad",
+          "target": "萨德章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Ghafir",
+          "target": "赦宥者章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Fussilat",
+          "target": "奉绥来特章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Muhammad",
+          "target": "穆罕默德章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Qaf",
+          "target": "戛弗章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Nuh",
+          "target": "努哈章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Abasa",
+          "target": "皱眉章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "title",
+          "source": "Quraish",
+          "target": "古来氏章"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "checkbox",
+          "target": "复选框"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "type",
+          "source": "text",
+          "target": "文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "Uthmani",
+          "source": "Uthmani",
+          "target": "奥斯曼体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "warning",
+          "source": "Warning",
+          "target": "警告"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
