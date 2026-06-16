@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "automatic-linker",
+    "version": "1.0.1",
+    "title": "Automatic Linker",
+    "description": "Automatic Linker Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "4.5.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "progress",
+          "target": "progress"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "AI Link Enhancer API Error:",
+          "target": "AI 链接增强器 API 错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "AI Link Enhancer error:",
+          "target": "AI 链接增强器错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "AI Link Enhancer Request:",
+          "target": "AI 链接增强器请求："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "AI Link Enhancer Response:",
+          "target": "AI 链接增强器响应："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "this.trie: ",
+          "target": "this.trie: "
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "this.candidateMap: ",
+          "target": "this.candidateMap: "
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "modifyLinks started",
+          "target": "modifyLinks 已启动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "modifyLinks finished",
+          "target": "modifyLinks 已完成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Automatic Linker: allFiles for Trie building: ",
+          "target": "自动链接器：用于构建 Trie 的所有文件："
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, the file will be automatically formatted (links replaced) when saving.",
+          "target": "启用后，保存文件时将自动格式化（替换链接）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, the plugin will use Obsidian's 'Folder to create new notes in' setting as the base directory for omitting folder prefixes in links.",
+          "target": "启用后，插件将使用 Obsidian 的“创建新笔记的文件夹”设置作为省略链接中文件夹前缀的基础目录。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, aliases will be included when processing links. Note: A restart is required for changes to take effect.",
+          "target": "启用后，处理链接时将包含别名。注意：更改需要重启才能生效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, the plugin will automatically resolve namespaces for shorthand links. If multiple candidates share the same shorthand, the candidate with the most common path segments relative to the current file will be selected.",
+          "target": "启用后，插件将自动解析简写链接的命名空间。如果多个候选项共享相同的简写，将选择相对于当前文件具有最多公共路径段的候选项。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, links that match date formats (e.g. 2025-02-10) will be ignored. This helps maintain compatibility with Obsidian Tasks.",
+          "target": "启用后，匹配日期格式（例如 2025-02-10）的链接将被忽略。这有助于保持与 Obsidian Tasks 的兼容性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, headings (lines starting with #) will not have links added to them.",
+          "target": "启用后，标题（以 # 开头的行）将不会添加链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, Markdown table rows will not have links added to them.",
+          "target": "启用后，Markdown 表格行将不会添加链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, link matching will be case-insensitive. The original case of the text will be preserved in the link.",
+          "target": "启用后，链接匹配将不区分大小写。链接中将保留文本的原始大小写。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When 'Ignore case' is OFF, match text that is capitalized at the start of a sentence. For example, 'My name' at a sentence start will match the file 'my name'. This setting is ignored when 'Ignore case' is ON.",
+          "target": "当“忽略大小写”关闭时，匹配句子开头大写的文本。例如，句子开头的“My name”将匹配文件“my name”。当“忽略大小写”开启时，此设置将被忽略。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, text will not be linked to its own file. For example, the word 'VPN' inside VPN.md will not be converted to a link.",
+          "target": "启用后，文本将不会链接到其自身的文件。例如，VPN.md 中的单词“VPN”将不会转换为链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Directories to be excluded from automatic linking, one per line (e.g. 'Templates')",
+          "target": "要从自动链接中排除的目录，每行一个（例如“Templates”）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Directories where link aliases should be removed, one per line (e.g. 'dir' will convert [[dir/xxx|yyy]] to [[dir/xxx]]). This affects both auto-generated aliases and frontmatter aliases.",
+          "target": "应移除链接别名的目录，每行一个（例如“dir”将把 [[dir/xxx|yyy]] 转换为 [[dir/xxx]]）。这会影响自动生成的别名和 frontmatter 别名。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, Obsidian Linter will be executed after Automatic Linker formatting. This requires the Obsidian Linter plugin to be installed.",
+          "target": "启用后，自动链接器格式化后将执行 Obsidian Linter。这需要安装 Obsidian Linter 插件。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, Prettier will be executed after Automatic Linker formatting. This requires prettier-format plugin to be installed. https://github.com/dylanarmstrong/obsidian-prettier-plugin",
+          "target": "启用后，自动链接器格式化后将执行 Prettier。这需要安装 prettier-format 插件。https://github.com/dylanarmstrong/obsidian-prettier-plugin"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Delay in milliseconds before formatting. Increase this value if the linter/prettier runs before the file is fully saved.",
+          "target": "格式化前的延迟（毫秒）。如果 linter/prettier 在文件完全保存前运行，请增加此值。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, raw URLs will be replaced with [Page Title](URL). Requires fetching the URL content.",
+          "target": "启用后，原始 URL 将被替换为 [页面标题](URL)。需要获取 URL 内容。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Ignore domains for replacing URLs with titles, one per line (e.g. x.com)",
+          "target": "忽略用于将 URL 替换为标题的域名，每行一个（例如 x.com）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, GitHub URLs will be formatted when saving the file.",
+          "target": "启用后，保存文件时将格式化 GitHub URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add your GitHub Enterprise URLs, one per line (e.g. github.enterprise.com)",
+          "target": "添加您的 GitHub Enterprise URL，每行一个（例如 github.enterprise.com）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, JIRA URLs will be formatted when saving the file.",
+          "target": "启用后，保存文件时将格式化 JIRA URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Add your JIRA URLs, one per line (e.g. jira.enterprise.com)",
+          "target": "添加您的 JIRA URL，每行一个（例如 jira.enterprise.com）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, Linear URLs will be formatted when saving the file.",
+          "target": "启用后，保存文件时将格式化 Linear URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Display a notice when markdown files are loaded.",
+          "target": "加载 Markdown 文件时显示通知。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, debug information will be logged to the console.",
+          "target": "启用后，调试信息将记录到控制台。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When enabled, an AI-powered link enhancer command will be available. It uses a local LLM to resolve ambiguous links and correct existing ones.",
+          "target": "启用后，将提供一个 AI 驱动的链接增强器命令。它使用本地 LLM 来解析模糊链接并更正现有链接。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The URL of your OpenAI-compatible AI server (e.g. LM Studio, Ollama).",
+          "target": "您的 OpenAI 兼容 AI 服务器的 URL（例如 LM Studio、Ollama）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "The name of the model to use (e.g. gemma-4-7b).",
+          "target": "要使用的模型名称（例如 gemma-4-7b）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Number of characters around the link to provide as context to the AI.",
+          "target": "链接周围提供给 AI 作为上下文的字符数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Formatting",
+          "target": "格式化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Format on save",
+          "target": "保存时格式化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Respect 'Folder to create new notes in' setting",
+          "target": "遵循“创建新笔记的文件夹”设置"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Include aliases",
+          "target": "包含别名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Proximity-based linking",
+          "target": "基于邻近度的链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignore date formats",
+          "target": "忽略日期格式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignore headings",
+          "target": "忽略标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignore Markdown tables",
+          "target": "忽略 Markdown 表格"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignore case",
+          "target": "忽略大小写"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Match sentence case",
+          "target": "匹配句子大小写"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Prevent self-linking",
+          "target": "防止自链接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Exclude directories from automatic linking",
+          "target": "从自动链接中排除目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Remove aliases in directories",
+          "target": "在目录中移除别名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Integrations",
+          "target": "集成"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Run Obsidian Linter after formatting",
+          "target": "格式化后运行 Obsidian Linter"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Run Prettier after formatting",
+          "target": "格式化后运行 Prettier"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Format delay (ms)",
+          "target": "格式化延迟（毫秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "URL Replacement with Title",
+          "target": "URL 替换为标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Replace URL with title",
+          "target": "用标题替换 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ignore domains",
+          "target": "忽略域名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "URL Formatting for GitHub",
+          "target": "GitHub 的 URL 格式化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Format GitHub URLs on save",
+          "target": "保存时格式化 GitHub URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "GitHub Enterprise URLs",
+          "target": "GitHub 企业版 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "URL Formatting for Jira",
+          "target": "Jira 的 URL 格式化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Format JIRA URLs on save",
+          "target": "保存时格式化 JIRA URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "JIRA URLs",
+          "target": "JIRA URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "URL Formatting for Linear",
+          "target": "Linear 的 URL 格式化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Format Linear URLs on save",
+          "target": "保存时格式化 Linear URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug",
+          "target": "调试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show load notice",
+          "target": "显示加载通知"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Debug mode",
+          "target": "调试模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI Link Enhancement (Beta)",
+          "target": "AI 链接增强（测试版）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Enable AI Link Enhancement",
+          "target": "启用 AI 链接增强"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI API Endpoint",
+          "target": "AI API 端点"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI Model",
+          "target": "AI 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Max Context Length",
+          "target": "最大上下文长度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Templates\nArchive",
+          "target": "模板\\n归档"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "dir1\ndir2/subdir",
+          "target": "目录1\\n目录2/子目录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "e.g. 100",
+          "target": "例如 100"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "github.enterprise.com\ngithub.company.com",
+          "target": "github.enterprise.com\\ngithub.company.com"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "jira.enterprise.com\njira.company.com",
+          "target": "jira.enterprise.com\\njira.company.com"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Failed to generate link using Obsidian API:",
+          "target": "使用 Obsidian API 生成链接失败："
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "AI Link Enhancement is not enabled in settings.",
+          "target": "设置中未启用 AI 链接增强。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to build index.",
+          "target": "构建索引失败。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "AI Link Enhancement completed.",
+          "target": "AI 链接增强已完成。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No links to enhance.",
+          "target": "没有需要增强的链接。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "AI Link Enhancement failed. Check console for details.",
+          "target": "AI 链接增强失败。请检查控制台获取详情。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "content",
+          "source": "You are an assistant that helps resolve ambiguous links in Obsidian notes. You must respond ONLY with a valid JSON object. Do not include any explanation or markdown code blocks.",
+          "target": "你是一个助手，帮助解决 Obsidian 笔记中模糊的链接。你必须仅以有效的 JSON 对象形式回复。不要包含任何解释或 Markdown 代码块。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "icon",
+          "source": "drill",
+          "target": "drill"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "icon",
+          "source": "sparkles",
+          "target": "sparkles"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Format file",
+          "target": "格式化文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Format vault",
+          "target": "格式化整个仓库"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Rebuild index",
+          "target": "重建索引"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Format selection",
+          "target": "格式化选区"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy file without links",
+          "target": "复制文件（不含链接）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Copy selection without links",
+          "target": "复制选区（不含链接）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Run AI Link Enhancer",
+          "target": "运行 AI 链接增强器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "AI Link Enhancer: Analyzing context...",
+          "target": "AI 链接增强器：正在分析上下文..."
+        }
+      ],
+      "regex": []
+    }
+  }
+}
