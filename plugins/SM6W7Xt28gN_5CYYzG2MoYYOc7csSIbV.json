@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "paper-summary",
+    "version": "1.0.0",
+    "title": "Paper Summary",
+    "description": "Paper Summary Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Hi",
+          "target": "你好"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Other",
+          "target": "其他"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Ollama",
+          "target": "Ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Claude",
+          "target": "Claude"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Openrouter",
+          "target": "Openrouter"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Openai",
+          "target": "Openai"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "JSON object",
+          "target": "JSON 对象"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Custom",
+          "target": "自定义"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Auto",
+          "target": "自动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Korean",
+          "target": "韩语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "English",
+          "target": "英语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Could not parse message into JSON:",
+          "target": "无法将消息解析为 JSON："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "From chunk:",
+          "target": "来自数据块："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Paper Summary error details",
+          "target": "论文摘要错误详情"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Paper Summary failed",
+          "target": "论文摘要失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Paper Summary failed to refresh related paper links",
+          "target": "论文摘要刷新相关论文链接失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "TODO: Support non-isolated groups.",
+          "target": "待办：支持非隔离组。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "Optional content group not defined.",
+          "target": "未定义可选内容组。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "info",
+          "source": "The worker has been disabled.",
+          "target": "工作线程已被禁用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose the provider used for paper analysis. Most providers use the shared compatible request path.",
+          "target": "选择用于论文分析的提供商。大多数提供商使用共享的兼容请求路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Controls generated summary prose. Automatic mode uses the paper's dominant language instead of the app language. Headings always stay in english.",
+          "target": "控制生成的摘要文本。自动模式使用论文的主要语言，而非应用语言。标题始终使用英语。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Use this only when output language is set to custom. Automatic mode uses the paper's dominant language and falls back to english when unclear.",
+          "target": "仅当输出语言设置为自定义时使用此选项。自动模式使用论文的主要语言，当不明确时回退到英语。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Prefer providers that honor structured-output parameters. Some models may still answer with plain JSON text, which the plugin normalizes before validation.",
+          "target": "优先选择支持结构化输出参数的提供商。某些模型可能仍会以纯 JSON 文本回答，插件会在验证前对其进行标准化处理。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional HTTP referer header used for attribution.",
+          "target": "用于归属的可选 HTTP referer 头。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional X-Title header used for attribution.",
+          "target": "用于归属的可选 X-Title 头。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Optional comma-separated provider order, for example: openai, anthropic.",
+          "target": "可选的逗号分隔提供商顺序，例如：openai, anthropic。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Allow a fallback to another provider when the preferred one is unavailable.",
+          "target": "当首选提供商不可用时，允许回退到另一个提供商。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Folder where generated paper summary notes will be created.",
+          "target": "生成的论文摘要笔记将创建到的文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault-relative folder scanned for existing paper summary notes when generating or refreshing related paper links. Defaults to the output folder.",
+          "target": "生成或刷新相关论文链接时，扫描现有论文摘要笔记的相对于保险库的文件夹。默认为输出文件夹。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Upper bound for extracted pages before summarization.",
+          "target": "摘要前提取页面的上限。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Upper bound for normalized extracted text sent to the API.",
+          "target": "发送到 API 的标准化提取文本的上限。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Open the created summary note after generation finishes.",
+          "target": "生成完成后打开创建的摘要笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Tag always applied to generated paper notes.",
+          "target": "始终应用于生成的论文笔记的标签。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Status written into frontmatter for newly generated notes.",
+          "target": "写入新生成笔记的 frontmatter 中的状态。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Maximum number of lightweight local related-note suggestions.",
+          "target": "轻量级本地相关笔记建议的最大数量。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider",
+          "target": "提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API key",
+          "target": "API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Base URL",
+          "target": "基础 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Structured output mode",
+          "target": "结构化输出模式"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output language",
+          "target": "输出语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Custom output language",
+          "target": "自定义输出语言"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Routing",
+          "target": "路由"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Require parameters",
+          "target": "要求参数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "App referer",
+          "target": "应用 referer"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "App title",
+          "target": "应用标题"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Provider order",
+          "target": "提供商顺序"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Allow fallbacks",
+          "target": "允许回退"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Output folder",
+          "target": "输出文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Paper notes scope",
+          "target": "论文笔记范围"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Maximum PDF pages",
+          "target": "最大 PDF 页数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Maximum characters",
+          "target": "最大字符数"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Open generated note",
+          "target": "打开生成的笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Paper tag",
+          "target": "论文标签"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Default status",
+          "target": "默认状态"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Related notes limit",
+          "target": "相关笔记限制"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Paste API key",
+          "target": "粘贴 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Japanese",
+          "target": "日语"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Paper summary",
+          "target": "论文摘要"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: openai, anthropic",
+          "target": "示例：openai, anthropic"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: papers/summaries",
+          "target": "示例：papers/summaries"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: paper",
+          "target": "示例：paper"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Example: summarized",
+          "target": "示例：summarized"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Summarize PDF",
+          "target": "摘要 PDF"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "getPdfFilenameFromUrl: ignore \"data:\"-URL for performance reasons.",
+          "target": "getPdfFilenameFromUrl：出于性能原因忽略 \\\"data:\\\"-URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Load test font never loaded.",
+          "target": "加载测试字体从未加载。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "LoopbackPort - cannot use an `aborted` signal.",
+          "target": "LoopbackPort - 无法使用 `aborted` 信号。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "#createUrl: ignore \"data:\"-URL for performance reasons.",
+          "target": "#createUrl：出于性能原因忽略 \\\"data:\\\"-URL。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Cannot polyfill `DOMMatrix`, rendering may be broken.",
+          "target": "无法 polyfill `DOMMatrix`，渲染可能损坏。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Cannot polyfill `ImageData`, rendering may be broken.",
+          "target": "无法 polyfill `ImageData`，渲染可能损坏。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Cannot polyfill `Path2D`, rendering may be broken.",
+          "target": "无法 polyfill `Path2D`，渲染可能损坏。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Knockout groups not supported.",
+          "target": "不支持 knockout 组。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Dependent image isn't ready yet",
+          "target": "依赖图像尚未就绪"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Missing or invalid \"Content-Range\" header.",
+          "target": "缺少或无效的 \\\"Content-Range\\\" 头。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Ignoring additional textDivs for performance reasons.",
+          "target": "出于性能原因忽略额外的 textDivs。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Enable the `dom.textMetrics.fontBoundingBox.enabled` preference in `about:config` to improve TextLayer rendering.",
+          "target": "在 `about:config` 中启用 `dom.textMetrics.fontBoundingBox.enabled` 首选项以改善 TextLayer 渲染。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "Setting up fake worker.",
+          "target": "正在设置假工作线程。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "_bindResetFormAction - \"resetForm\" action not supported, ensure that the \\`fieldObjects\\` parameter is provided.",
+          "target": "_bindResetFormAction - 不支持 \\\"resetForm\\\" 操作，请确保提供了 \\\\`fieldObjects\\\\` 参数。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "using deprecated parameters for `initSync()`; pass a single object instead",
+          "target": "`initSync()` 使用了已弃用的参数；请改为传递单个对象"
+        },
+        {
+          "type": "CallExpression",
+          "name": "warn",
+          "source": "using deprecated parameters for the initialization function; pass a single object instead",
+          "target": "初始化函数使用了已弃用的参数；请改为传递单个对象"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a PDF or choose one from the file menu first.",
+          "target": "请先打开一个 PDF 或从文件菜单中选择一个。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Open a built-in paper summary note first.",
+          "target": "请先打开一个内置的论文摘要笔记。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "OpenAI",
+          "target": "OpenAI"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "OpenRouter",
+          "target": "OpenRouter"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Claude",
+          "target": "Claude"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Ollama",
+          "target": "Ollama"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Others",
+          "target": "其他"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "ResetForm",
+          "target": "重置表单"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Keystroke",
+          "target": "按键"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Regular",
+          "target": "常规"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Bold",
+          "target": "粗体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Italic",
+          "target": "斜体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "BoldItalic",
+          "target": "粗斜体"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Summarize active PDF",
+          "target": "摘要当前 PDF"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Refresh related paper links",
+          "target": "刷新相关论文链接"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "summary",
+          "source": "One-Sentence Summary",
+          "target": "一句话摘要"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
