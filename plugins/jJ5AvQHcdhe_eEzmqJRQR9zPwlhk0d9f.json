@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "oz-clear-unused-images",
+    "version": "2.0.0",
+    "title": "Clear Unused Images",
+    "description": "Clear the images that you are not using anymore in your markdown notes to save space.",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`All ${\"image\"===i?\"images\":\"attachments\"} are used. Nothing was deleted.`)",
+          "target": "Notice(`${\"image\"===i?\"images\":\"attachments\"} 已被引用，没有删除任何内容。`)"
+        },
+        {
+          "source": ".log(\"File not referenced but excluded: \"+n.path)",
+          "target": ".log(\"未引用但已排除的文件：\"+n.path)"
+        },
+        {
+          "source": ".log(\"Clear Unused Images plugin loaded...\")",
+          "target": ".log(\"已加载清除未使用的图像插件。。。\")"
+        },
+        {
+          "source": ".log(\"Clear Unused Images plugin unloaded...\")",
+          "target": ".log(\"清除未使用的图像插件已卸载。。。\")"
+        },
+        {
+          "source": "name:\"Clear Unused Images\"",
+          "target": "name:\"清除未使用的图像\""
+        },
+        {
+          "source": "name:\"Clear Unused Attachments\"",
+          "target": "name:\"清除未使用的附件\""
+        },
+        {
+          "source": "text:\"Clear Images Settings\"",
+          "target": "text:\"清除图像设置\""
+        },
+        {
+          "source": "text:\"Clear Unused Images - Logs\"",
+          "target": "text:\"清除未使用的图像-日志\""
+        },
+        {
+          "source": "text:\"Close\"",
+          "target": "text:\"关闭\""
+        },
+        {
+          "source": ".setName(\"Ribbon Icon\")",
+          "target": ".setName(\"功能区图标\")"
+        },
+        {
+          "source": ".setName(\"Delete Logs\")",
+          "target": ".setName(\"删除日志\")"
+        },
+        {
+          "source": ".setName(\"Deleted Image Destination\")",
+          "target": ".setName(\"已删除图像目标\")"
+        },
+        {
+          "source": ".setName(\"Excluded Folder Full Paths\")",
+          "target": ".setName(\"排除的文件夹完整路径\")"
+        },
+        {
+          "source": ".setName(\"Exclude Subfolders\")",
+          "target": ".setName(\"排除子文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Turn on if you want Ribbon Icon for clearing the images.\")",
+          "target": ".setDesc(\"如果要使用功能区图标清除图像，请启用此选项。\")"
+        },
+        {
+          "source": ".setDesc(\"Select where you want images to be moved once they are deleted\")",
+          "target": ".setDesc(\"选择图像删除后要移动到的位置\")"
+        },
+        {
+          "source": ".setDesc(\"Provide the FULL path of the folder names (Case Sensitive) divided by comma (,) to be excluded from clearing. \\n\\t\\t\\t\\t\\ti.e. For images under Personal/Files/Zodiac -> Personal/Files/Zodiac should be used for exclusion\")",
+          "target": ".setDesc(\"提供文件夹名称的完整路径（区分大小写），用逗号（，）分隔，以排除清除。\\n\\t\\t\\t\\t \\t.e对于个人/文件/十二生肖->个人/文件/Sodiac下的图像，应使用排除\")"
+        },
+        {
+          "source": ".addOption(\"permanent\",\"Delete Permanently\")",
+          "target": ".addOption(\"permanent\",\"永久删除\")"
+        },
+        {
+          "source": ".addOption(\"system-trash\",\"Move to System Trash\")",
+          "target": ".addOption(\"system-trash\",\"移至系统回收站\")"
+        },
+        {
+          "source": ".createEl(\"h1\",{text:\"Clear Unused Images - Logs\"})",
+          "target": ".createEl(\"h1\",{text:\"Clear Unused Images - 日志\"})"
+        },
+        {
+          "source": ".createEl(\"button\",{text:\"Close\"})",
+          "target": ".createEl(\"button\",{text:\"关闭\"})"
+        },
+        {
+          "source": ".addRibbonIcon(\"image-file\",\"Clear Unused Images\"",
+          "target": ".addRibbonIcon(\"image-file\",\"清除未使用的图像\""
+        },
+        {
+          "source": "e.addOption(\".trash\",\"Move to Obsidian Trash\")",
+          "target": "e.addOption(\".trash\",\"移至 Obsidian回收站\")"
+        },
+        {
+          "source": "e.addOption(\"system-trash\",\"Move to System Trash\")",
+          "target": "e.addOption(\"system-trash\",\"移至 系统回收站\")"
+        },
+        {
+          "source": ".addCommand({id:\"clear-images-obsidian\",name:\"Clear Unused Images\",",
+          "target": ".addCommand({id:\"clear-images-obsidian\",name:\"清除未使用的图片\","
+        },
+        {
+          "source": ".addCommand({id:\"clear-unused-attachments\",name:\"Clear Unused Attachments\",",
+          "target": ".addCommand({id:\"clear-unused-attachments\",name:\"清除未使用的附件\","
+        },
+        {
+          "source": ".createEl(\"h2\",{text:\"Clear Images Settings\"})",
+          "target": ".createEl(\"h2\",{text:\"清除图像 - 插件设置\"})"
+        },
+        {
+          "source": ".addOption(\".trash\",\"Move to Obsidian Trash\")",
+          "target": ".addOption(\".trash\",\"移至 Obsidian回收站\")"
+        },
+        {
+          "source": ".Setting(t).setName(\"Deleted Image Destination\")",
+          "target": ".Setting(t).setName(\"已删除图像的目标位置\")"
+        },
+        {
+          "source": ".setName(\"Excluded Folder Full Paths\").",
+          "target": ".setName(\"排除的文件夹的完整路径\")."
+        },
+        {
+          "source": ".setDesc(\"Provide the FULL path of the folder names (Case Sensitive) divided by comma (,) to be excluded from clearing. \\n\\t\\t\\t\\t\\ti.e. For images under Personal/Files/Zodiac -> Personal/Files/Zodiac should be used for exclusion\").",
+          "target": ".setDesc(\"提供要排除清理的文件夹名称的完整路径（区分大小写），路径间用逗号（,）分隔。\\n\\t\\t\\t\\t即对于位于 Personal/Files/Zodiac 下的图像，应使用 Personal/Files/Zodiac 进行排除。\")."
+        },
+        {
+          "source": ".setDesc(\"Turn off if you dont want to view the delete logs Modal to pop up after deletion is completed. It wont appear if no image is deleted\")",
+          "target": ".setDesc(\"如果不想查看删除日志，请关闭删除完成后弹出的模式。如果没有删除图像，则不会出现”\")"
+        },
+        {
+          "source": ".setDesc(\"Turn on this option if you want to also exclude all subfolders of the folder paths provided above.\")",
+          "target": ".setDesc(\"如果您还想排除上面提供的文件夹路径的所有子文件夹，请打开此选项。\")"
+        }
+      ]
+    }
+  }
+}

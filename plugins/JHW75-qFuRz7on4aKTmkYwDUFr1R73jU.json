@@ -1,0 +1,2919 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "smart-connections",
+    "version": "2.0.0",
+    "title": "Smart Connections",
+    "description": "Find links to similar notes using artificial intelligence from OpenAI.",
+    "language": "zh-cn",
+    "supportedVersions": "2.5.4",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".log(`getting options callback: ${elm.dataset.optionsCallback}`)",
+          "target": ".log(`获取选项回调：${elm.data.optionsCallback}`)"
+        },
+        {
+          "source": ".log(\"folder changed\", folder)",
+          "target": ".log(\"文件夹已更改\", folder)"
+        },
+        {
+          "source": ".log(\"process_embed_queue is already running, skipping concurrent call.\")",
+          "target": ".log(\"process_embed_queue 已经在运行，跳过并发调用。\")"
+        },
+        {
+          "source": ".log(`Smart Connections: No active embedding model for ${this.collection.collection_key}, skipping embedding`)",
+          "target": ".log(`智能连接：${this.collection.collection_key}没有活动的嵌入模型，跳过嵌入`)"
+        },
+        {
+          "source": ".log(`Smart Connections: No items in ${this.collection.collection_key} embed queue`)",
+          "target": ".log(`智能连接：${this.collection.collection_key}嵌入队列中没有项目`)"
+        },
+        {
+          "source": ".log(`Processing ${this.collection.collection_key} embed queue: ${embed_queue.length} items`)",
+          "target": ".log(`正在处理$｛this.collection.collection_key｝嵌入队列：$｛embed_queue.length｝个项目`)"
+        },
+        {
+          "source": ".log(`Saving ${this.collection.block_collection.collection_key} block collection`)",
+          "target": ".log(`保存 ${this.collection.block_collection.collection_key} 区块集合`)"
+        },
+        {
+          "source": ".log(\"Embed queue processing halted\")",
+          "target": ".log(\"嵌入队列处理已停止\")"
+        },
+        {
+          "source": ".log(`SmartEmbed not loaded for **${this.collection_key}**. Continuing without embedding capabilities.`)",
+          "target": ".log(`**${this.collection_key}**未加载SmartEmbed。继续而不嵌入功能。`)"
+        },
+        {
+          "source": ".log(`SmartEmbedModel already loading for ${this.embed_model_key}`)",
+          "target": ".log(`${this.embed_model_key}已经加载了SmartEmbedModel`)"
+        },
+        {
+          "source": ".log(`SmartEmbedModel already loaded for ${this.embed_model_key}`)",
+          "target": ".log(`${this.embedde_model_key}的SmartEmbedModel已加载`)"
+        },
+        {
+          "source": ".log(`Loading SmartEmbedModel in ${this.collection_key}, current state: ${this.embed_model.state}`)",
+          "target": ".log(`正在加载SmartEmbedModel在${this.collection_key}中，当前状态：${this.embed_model.state}。`)"
+        },
+        {
+          "source": ".log(\"model_key not set\")",
+          "target": ".log(\"未设置model_key\")"
+        },
+        {
+          "source": ".log(\"window.document not available\")",
+          "target": ".log(\"window.document 不可用\")"
+        },
+        {
+          "source": ".log(\"reload_embed_model\")",
+          "target": ".log(\"重新加载嵌入模型\")"
+        },
+        {
+          "source": ".log(`Found and returned ${top_k.length} ${this.collection_key}.`)",
+          "target": ".log(`找到并返回了 ${top_k.length} 个 ${this.collection_key}。`)"
+        },
+        {
+          "source": ".log(`Smart Connections: Deleting ${this.path} data because it no longer exists on disk`)",
+          "target": ".log(`智能连接：删除 ${this.path} 数据，因为它在磁盘上不再存在。`)"
+        },
+        {
+          "source": ".log(\"No source adapter found for\", this.file_type, this)",
+          "target": ".log(\"未找到任何来源适配器\", this.file_type, this)"
+        },
+        {
+          "source": ".log(`Time spent building links: ${end_time - start_time}ms`)",
+          "target": ".log(`构建链接所花费的时间：${end_Time-start_Time}ms`)"
+        },
+        {
+          "source": ".log(\"import_queue \" + import_queue.length)",
+          "target": ".log(\"导入队列\" + import_queue.length)"
+        },
+        {
+          "source": ".log(\"skipping process_embed_queue\")",
+          "target": ".log(\"跳过处理嵌入队列\")"
+        },
+        {
+          "source": ".log(`Smart Collections: Re-loading item ${this.item.key} because it has been updated on disk`)",
+          "target": ".log(`智能集合：重新加载项目 ${this.item.key}，因为它在磁盘上已更新`)"
+        },
+        {
+          "source": ".log(`Loaded ${this.collection.collection_key} in ${this.collection.load_time_ms}ms`)",
+          "target": ".log(`在${this.collection.load_time_ms}ms中加载了${this.collection.collection_key}`)"
+        },
+        {
+          "source": ".log(\"pausing\")",
+          "target": ".log(\"暂停\")"
+        },
+        {
+          "source": ".log(\"get_platforms_as_options\", this.adapters)",
+          "target": ".log(\"获取平台作为选项\", this.adapters)"
+        },
+        {
+          "source": ".log(\"re_render_settings\", this.opts)",
+          "target": ".log(\"重新渲染设置\", this.opts)"
+        },
+        {
+          "source": ".log(\"reload_model\", this.opts)",
+          "target": ".log(\"重新加载模型\", this.opts)"
+        },
+        {
+          "source": ".log(\"Warning: prepare_embed_input received an empty string\")",
+          "target": ".log(\"警告：prepare_membed_input收到空字符串\")"
+        },
+        {
+          "source": ".log(\n        \"Warning: prepare_embed_input resulted in an empty string after trimming\"\n      )",
+          "target": ".log(\n        \"警告：在修剪后，prepare_embed_input 导致空字符串。\"\n      )"
+        },
+        {
+          "source": ".log(\"model loaded\")",
+          "target": ".log(\"模型已加载\")"
+        },
+        {
+          "source": ".log(`Processing ${filtered_inputs.length} inputs in batches of ${this.batch_size}`)",
+          "target": ".log(`处理 ${filtered_inputs.length} 个输入，每批 ${this.batch_size} 个。`)"
+        },
+        {
+          "source": ".log(\"init\")",
+          "target": ".log(\"初始化\")"
+        },
+        {
+          "source": ".log(\"load\", params)",
+          "target": ".log(\"加载\", params)"
+        },
+        {
+          "source": ".log(\"render_lookup\", query)",
+          "target": ".log(\"渲染查找\", query)"
+        },
+        {
+          "source": ".log(\"open_note\", link, this)",
+          "target": ".log(\"打开笔记\", link, this)"
+        },
+        {
+          "source": ".log(\"open_note\", link)",
+          "target": ".log(\"打开笔记\", link)"
+        },
+        {
+          "source": ".log(`Thread renamed to \"${new_name}\"`)",
+          "target": ".log(`线程已重命名为 \"${new_name}\"`)"
+        },
+        {
+          "source": ".log(\"no chunk\")",
+          "target": ".log(\"无分块\")"
+        },
+        {
+          "source": ".log(\"refresh_models\")",
+          "target": ".log(\"刷新模型\")"
+        },
+        {
+          "source": ".log(\"models_request_params\", this.models_request_params)",
+          "target": ".log(\"模型_请求_图表\", this.models_request_params)"
+        },
+        {
+          "source": ".log(\"response\", response)",
+          "target": ".log(\"响应\", response)"
+        },
+        {
+          "source": ".log(\"model_data\", model_data)",
+          "target": ".log(\"模型数据\", model_data)"
+        },
+        {
+          "source": ".log(\"request_params\", request_params)",
+          "target": ".log(\"请求参数\", request_params)"
+        },
+        {
+          "source": ".log(\"http_resp\", http_resp)",
+          "target": ".log(\"HTTP响应\", http_resp)"
+        },
+        {
+          "source": ".log(\"end of stream\")",
+          "target": ".log(\"流的末端\")"
+        },
+        {
+          "source": ".log(\"final_resp\", final_resp)",
+          "target": ".log(\"最终回应\", final_resp)"
+        },
+        {
+          "source": ".log(\"handle_chunk\", chunk)",
+          "target": ".log(\"处理块\", chunk)"
+        },
+        {
+          "source": ".log(\"get_models\", refresh)",
+          "target": ".log(\"获取模型\", refresh)"
+        },
+        {
+          "source": ".log(\"list_response\", list_resp)",
+          "target": ".log(\"列表响应\", list_resp)"
+        },
+        {
+          "source": ".log(\"model_details_response\", model_details_resp)",
+          "target": ".log(\"模型详情响应\", model_details_resp)"
+        },
+        {
+          "source": ".log(\"model_details_data\", model_details_data)",
+          "target": ".log(\"模型_尾部_数据\", model_details_data)"
+        },
+        {
+          "source": ".log(\"reload_chat_model\")",
+          "target": ".log(\"重新加载聊天模型\")"
+        },
+        {
+          "source": ".log(\"skipping embed queue processing for SmartThreads\")",
+          "target": ".log(\"跳过SmartThreads的嵌入队列处理\")"
+        },
+        {
+          "source": ".log(\"skipping load queue processing for SmartThreads\")",
+          "target": ".log(\"跳过对SmartThreads的加载队列处理\")"
+        },
+        {
+          "source": ".log(\"chat_input\", chat_input)",
+          "target": ".log(\"聊天输入\", chat_input)"
+        },
+        {
+          "source": ".log(\"Moved last user message to the end of the request for better context handling.\")",
+          "target": ".log(\"将最后一条用户消息移动到请求末尾，以便更好地处理上下文。\")"
+        },
+        {
+          "source": ".log(\"filter\", filter)",
+          "target": ".log(\"过滤器\", filter)"
+        },
+        {
+          "source": ".log(\"skipping embed queue processing for SmartMessages\")",
+          "target": ".log(\"跳过SmartMessages的嵌入队列处理\")"
+        },
+        {
+          "source": ".log(\"Message copied to clipboard\")",
+          "target": ".log(\"消息已复制到剪贴板\")"
+        },
+        {
+          "source": ".log(\"View inactive, skipping render nearest\")",
+          "target": ".log(\"查看非活动视图，跳过最近的渲染\")"
+        },
+        {
+          "source": ".log(\"Creating entity for current file\", current_file.path)",
+          "target": ".log(\"为当前文件创建实体\", current_file.path)"
+        },
+        {
+          "source": ".log(\"re_render\")",
+          "target": ".log(\"请求者\")"
+        },
+        {
+          "source": ".log(\"loading view\")",
+          "target": ".log(\"加载视图\")"
+        },
+        {
+          "source": ".log(\"displaying settings tab\")",
+          "target": ".log(\"显示设置选项卡\")"
+        },
+        {
+          "source": ".log(\"Writing files to:\", adapter, baseFolder, files)",
+          "target": ".log(\"写入文件至:\", adapter, baseFolder, files)"
+        },
+        {
+          "source": ".log(\"Writing file binary:\", fullPath)",
+          "target": ".log(\"正在写入二进制文件：\", fullPath)"
+        },
+        {
+          "source": ".log(\"Writing file non-binary:\", fullPath)",
+          "target": ".log(\"写入非二进制文件：\", fullPath)"
+        },
+        {
+          "source": ".log(\"unloading plugin\")",
+          "target": ".log(\"卸载插件\")"
+        },
+        {
+          "source": ".log(\"Smart Connections v2 loaded\")",
+          "target": ".log(\"已加载智能连接v2\")"
+        },
+        {
+          "source": ".log(\"loading env\")",
+          "target": ".log(\"加载环境\")"
+        },
+        {
+          "source": ".log(\"env loaded\")",
+          "target": ".log(\"环境已加载\")"
+        },
+        {
+          "source": ".log(\"Added to .gitignore: \" + ignore)",
+          "target": ".log(\"添加到.gitignore：\" + ignore)"
+        },
+        {
+          "source": ".log(\"Smart Connections: Waiting for Obsidian Sync to finish\")",
+          "target": ".log(\"智能连接：等待 Obsidian 同步完成\")"
+        },
+        {
+          "source": ".log(\"render_file_counts\")",
+          "target": ".log(\"渲染文件_计数\")"
+        },
+        {
+          "source": ".log(\"Manifest written\")",
+          "target": ".log(\"清单已编写\")"
+        },
+        {
+          "source": ".error(\"Error getting component\", e)",
+          "target": ".error(\"获取组件时出错\", e)"
+        },
+        {
+          "source": ".error(`Error checking if path is excluded: ${e.message}`)",
+          "target": ".error(`检查路径是否被排除时出错: ${e.message}`)"
+        },
+        {
+          "source": ".error(`Path: `, _path)",
+          "target": ".error(`路径：`, _path)"
+        },
+        {
+          "source": ".error(\"Error during write:\", error)",
+          "target": ".error(\"写入过程中发生错误:\", error)"
+        },
+        {
+          "source": ".error(\"No callback or href found for button.\")",
+          "target": ".error(\"未找到按钮的回调或链接。\")"
+        },
+        {
+          "source": ".error(\"get_many called with non-array keys:\", keys)",
+          "target": ".error(\"get_many被非数组键调用:\", keys)"
+        },
+        {
+          "source": ".error(`Error processing ${this.collection.collection_key} embed queue: ` + JSON.stringify(e || {}, null, 2)",
+          "target": ".error(`处理$｛this.collection.collection_key｝嵌入队列时出错：` + JSON.stringify(e || {}, null, 2)"
+        },
+        {
+          "source": ".error(`Error loading SmartEmbedModel for ${this.embed_model.model_key}`)",
+          "target": ".error(`加载${this.embed_model.model_key}的SmartEmbedModel时出错`)"
+        },
+        {
+          "source": ".error(\"Error during update:\", error)",
+          "target": ".error(\"更新过程中出错：\", error)"
+        },
+        {
+          "source": ".error(\"Error during read:\", error)",
+          "target": ".error(\"读取过程中出现错误:\", error)"
+        },
+        {
+          "source": ".error(\"Error during remove:\", error)",
+          "target": ".error(\"删除过程中出错：\", error)"
+        },
+        {
+          "source": ".error(\"error_during_move:\", error)",
+          "target": ".error(\"移动过程中出错：\", error)"
+        },
+        {
+          "source": ".error(\"Error during merge:\", error)",
+          "target": ".error(\"合并过程中出错：\", error)"
+        },
+        {
+          "source": ".error(`Error searching item ${item.id || \"unknown\"}:`, error)",
+          "target": ".error(`搜索项目 ${item.id || \"未知\"} 时出错：`, error)"
+        },
+        {
+          "source": ".error(`Error getting embed queue:`, e)",
+          "target": ".error(`获取嵌入队列时出错：`, e)"
+        },
+        {
+          "source": ".error(`Error getting should_embed for ${this.key}: ` + JSON.stringify(e || {}, null, 2)",
+          "target": ".error(`获取 ${this.key} 的 should_embed 时发生错误: ` + JSON.stringify(e || {}, null, 2)"
+        },
+        {
+          "source": ".error(\"No response received for embedding request.\")",
+          "target": ".error(\"未收到嵌入请求的响应。\")"
+        },
+        {
+          "source": ".error(\"Failed to parse embeddings.\")",
+          "target": ".error(\"解析嵌入失败。\")"
+        },
+        {
+          "source": ".error(\"Invalid response format\", resp)",
+          "target": ".error(\"响应格式无效\", resp)"
+        },
+        {
+          "source": ".error(\"error_processing_batch\", err)",
+          "target": ".error(\"处理批量错误\", err)"
+        },
+        {
+          "source": ".error(\"error_processing_single_item\", single_err)",
+          "target": ".error(\"错误处理_单个项目\", single_err)"
+        },
+        {
+          "source": ".error(\"Error processing message:\", error)",
+          "target": ".error(\"处理消息时出现错误:\", error)"
+        },
+        {
+          "source": ".error(\"Error renaming thread:\", error)",
+          "target": ".error(\"重命名线程时出错：\", error)"
+        },
+        {
+          "source": ".error(\"Failed to fetch model data:\", error)",
+          "target": ".error(\"获取模型数据失败:\", error)"
+        },
+        {
+          "source": ".error(\"Error processing stream chunk:\", error)",
+          "target": ".error(\"处理流块时出错：\", error)"
+        },
+        {
+          "source": ".error(\"Stream error:\", e)",
+          "target": ".error(\"流错误:\", e)"
+        },
+        {
+          "source": ".error(\"*API Error. See console logs for details.*\")",
+          "target": ".error(\"*API错误。有关详细信息，请参阅控制台日志*\")"
+        },
+        {
+          "source": ".error(\"Failed to start stream:\", err)",
+          "target": ".error(\"无法启动流：\", err)"
+        },
+        {
+          "source": ".error(\"Failed to fetch Groq model data:\", error)",
+          "target": ".error(\"无法获取Groq模型数据：\", error)"
+        },
+        {
+          "source": ".error(\"Error in handle_message_from_user:\", error)",
+          "target": ".error(\"处理用户消息时出错：\", error)"
+        },
+        {
+          "source": ".error(\"error_handler\", response)",
+          "target": ".error(\"错误处理程序\", response)"
+        },
+        {
+          "source": "_error({ message: `No handler for tool: ${tool_call.function.name}` })",
+          "target": "_error({ message: `工具 ${tool_call.function.name} 没有对应的处理程序` })"
+        },
+        {
+          "source": ".error(`Error handling tool call ${tool_call.function.name}:`, error)",
+          "target": ".error(`错误处理工具调用${tool_call.function.name}：`, error)"
+        },
+        {
+          "source": "_error({ message: `Failed to execute tool: ${tool_call.function.name}`, error })",
+          "target": "_error({ message: `执行工具失败：${tool_call.function.name}`, error })"
+        },
+        {
+          "source": ".error(\"Failed to copy message: \", err)",
+          "target": ".error(\"复制邮件失败：\", err)"
+        },
+        {
+          "source": ".error(\"Failed to copy system message:\", err)",
+          "target": ".error(\"复制系统消息失败:\", err)"
+        },
+        {
+          "source": ".error(`Error fetching internal links content:`, error)",
+          "target": ".error(`获取内部链接内容时出错：`, error)"
+        },
+        {
+          "source": ".error(\"OAuth callback error\", err)",
+          "target": ".error(\"OAuth回调错误\", err)"
+        },
+        {
+          "source": "name: \"File Exclusions\"",
+          "target": "name: \"文件排除\""
+        },
+        {
+          "source": "name: \"Folder Exclusions\"",
+          "target": "name: \"文件夹排除\""
+        },
+        {
+          "source": "name: \"Excluded Headings\"",
+          "target": "name: \"排除的标题\""
+        },
+        {
+          "source": "name: \"Minimum length\"",
+          "target": "name: \"最小长度\""
+        },
+        {
+          "source": "name: \"Model Platform\"",
+          "target": "name: \"模型平台\""
+        },
+        {
+          "source": "name: \"No models currently available\"",
+          "target": "name: \"当前\""
+        },
+        {
+          "source": "name: \"Chat Model Platform\"",
+          "target": "name: \"聊天模型平台\""
+        },
+        {
+          "source": "name: \"Chat Model\"",
+          "target": "name: \"聊天模块\""
+        },
+        {
+          "source": "name: \"Refresh Models\"",
+          "target": "name: \"刷新模型\""
+        },
+        {
+          "source": "name: \"API Key\"",
+          "target": "name: \"API密钥\""
+        },
+        {
+          "source": "name: \"Image Resolution\"",
+          "target": "name: \"图像分辨率\""
+        },
+        {
+          "source": "name: \"Azure Resource Name\"",
+          "target": "name: \"Azure 资源名称\""
+        },
+        {
+          "source": "name: \"Azure Deployment Name\"",
+          "target": "name: \"Azure部署名称\""
+        },
+        {
+          "source": "name: \"Azure API Version\"",
+          "target": "name: \"Azure API版本\""
+        },
+        {
+          "source": "name: \"API Adapter\"",
+          "target": "name: \"API适配器\""
+        },
+        {
+          "source": "name: \"Model Name\"",
+          "target": "name: \"型号名称\""
+        },
+        {
+          "source": "name: \"Protocol\"",
+          "target": "name: \"协议\""
+        },
+        {
+          "source": "name: \"Hostname\"",
+          "target": "name: \"主机名\""
+        },
+        {
+          "source": "name: \"Port\"",
+          "target": "name: \"端口\""
+        },
+        {
+          "source": "name: \"Path\"",
+          "target": "name: \"路径\""
+        },
+        {
+          "source": "name: \"Streaming\"",
+          "target": "name: \"实时传输\""
+        },
+        {
+          "source": "name: \"Max Input Tokens\"",
+          "target": "name: \"最大输入令牌数\""
+        },
+        {
+          "source": "name: \"English\"",
+          "target": "name: \"英文\""
+        },
+        {
+          "source": "name: \"Espa\\xF1ol\"",
+          "target": "name: \"西班牙语\""
+        },
+        {
+          "source": "name: \"Fran\\xE7ais\"",
+          "target": "name: \"法语\""
+        },
+        {
+          "source": "name: \"Deutsch\"",
+          "target": "name: \"德国\""
+        },
+        {
+          "source": "name: \"Italiano\"",
+          "target": "name: \"意大利语\""
+        },
+        {
+          "source": "name: \"Portugu\\xEAs\"",
+          "target": "name: \"葡萄牙语\""
+        },
+        {
+          "source": "name: \"Portugu\\xEAs (Brasil)\"",
+          "target": "name: \"葡萄牙语（巴西）\""
+        },
+        {
+          "source": "name: \"\\u65E5\\u672C\\u8A9E\"",
+          "target": "name: \"日语\""
+        },
+        {
+          "source": "name: \"\\uD55C\\uAD6D\\uC5B4\"",
+          "target": "name: \"韩语\""
+        },
+        {
+          "source": "name: \"\\u4E2D\\u6587\\uFF08\\u7B80\\u4F53\\uFF09\"",
+          "target": "name: \"简体中文\""
+        },
+        {
+          "source": "name: \"\\u4E2D\\u6587\\uFF08\\u7E41\\u4F53\\uFF09\"",
+          "target": "name: \"中文（繁体）\""
+        },
+        {
+          "source": "name: \"\\u0939\\u093F\\u0928\\u094D\\u0926\\u0940\"",
+          "target": "name: \"印地语\""
+        },
+        {
+          "source": "name: \"\\u0627\\u0644\\u0639\\u0631\\u0628\\u064A\\u0629\"",
+          "target": "name: \"阿拉伯语\""
+        },
+        {
+          "source": "name: \"\\u09AC\\u09BE\\u0982\\u09B2\\u09BE\"",
+          "target": "name: \"班加拉\""
+        },
+        {
+          "source": "name: \"\\u0627\\u0631\\u062F\\u0648\"",
+          "target": "name: \"乌尔都\""
+        },
+        {
+          "source": "name: \"Kiswahili\"",
+          "target": "name: \"斯瓦希里语\""
+        },
+        {
+          "source": "name: \"Polski\"",
+          "target": "name: \"波兰语\""
+        },
+        {
+          "source": "name: \"\\u0423\\u043A\\u0440\\u0430\\u0457\\u043D\\u0441\\u044C\\u043A\\u0430\"",
+          "target": "name: \"乌克兰语\""
+        },
+        {
+          "source": "name: \"Nederlands\"",
+          "target": "name: \"荷兰的\""
+        },
+        {
+          "source": "name: \"Svenska\"",
+          "target": "name: \"瑞典语\""
+        },
+        {
+          "source": "name: \"T\\xFCrk\\xE7e\"",
+          "target": "name: \"土耳其\""
+        },
+        {
+          "source": "name: \"\\u0420\\u0443\\u0441\\u0441\\u043A\\u0438\\u0439\"",
+          "target": "name: \"俄罗斯的\""
+        },
+        {
+          "source": "name: \"Language\"",
+          "target": "name: \"语言\""
+        },
+        {
+          "source": "name: \"Review Context\"",
+          "target": "name: \"审查上下文\""
+        },
+        {
+          "source": "name: \"Lookup Limit\"",
+          "target": "name: \"查找限制\""
+        },
+        {
+          "source": "name: \"Send Tool Output in User Message\"",
+          "target": "name: \"发送工具输出至用户消息\""
+        },
+        {
+          "source": "name: \"lookup\"",
+          "target": "name: \"查找\""
+        },
+        {
+          "source": "description: \"Minimum length of entity to embed (in characters).\"",
+          "target": "description: \"要嵌入的实体的最小长度（以字符为单位）。\""
+        },
+        {
+          "source": "description: \"Select a model platform to use with Smart Model.\"",
+          "target": "description: \"选择要与Smart model一起使用的模型平台。\""
+        },
+        {
+          "source": "description: \"Select an embedding model.\"",
+          "target": "description: \"选择一个嵌入模型。\""
+        },
+        {
+          "source": "description: \"OpenAI (API)\"",
+          "target": "description: \"OpenAI（API）\""
+        },
+        {
+          "source": "description: \"Transformers (Local, built-in)\"",
+          "target": "description: \"变压器（本地，内置）\""
+        },
+        {
+          "source": "description: \"Select a chat model platform to use with Smart Chat.\"",
+          "target": "description: \"选择要与Smart chat一起使用的聊天模式平台。\""
+        },
+        {
+          "source": "description: \"Select a chat model to use with Smart Chat.\"",
+          "target": "description: \"选择一个与智能聊天一起使用的聊天模型。\""
+        },
+        {
+          "source": "description: \"Refresh the list of available models.\"",
+          "target": "description: \"刷新可用型号列表。\""
+        },
+        {
+          "source": "description: \"Enter your API key for the chat model platform.\"",
+          "target": "description: \"输入您在聊天模型平台的API密钥。\""
+        },
+        {
+          "source": "description: \"OpenAI\"",
+          "target": "description: \"OpenAI 是一个人工智能研究实验室。\""
+        },
+        {
+          "source": "description: \"Select the image resolution for the chat model.\"",
+          "target": "description: \"选择聊天模型的图像分辨率。\""
+        },
+        {
+          "source": "description: \"Azure OpenAI\"",
+          "target": "description: \"Azure OpenAI -> Azure 开放人工智能\""
+        },
+        {
+          "source": "description: \"The name of your Azure OpenAI resource (e.g. 'my-azure-openai').\"",
+          "target": "description: \"Azure OpenAI 资源的名称（例如 'my-azure-openai'）。\""
+        },
+        {
+          "source": "description: \"The name of your specific model deployment (e.g. 'gpt35-deployment').\"",
+          "target": "description: \"您的特定模型部署的名称（例如“gpt35部署”）。\""
+        },
+        {
+          "source": "description: \"The API version for Azure OpenAI (e.g. '2024-10-01-preview').\"",
+          "target": "description: \"Azure OpenAI的API版本（例如'2024-10-01-preview'）。\""
+        },
+        {
+          "source": "description: \"LM Studio (OpenAI-compatible)\"",
+          "target": "description: \"LM工作室（兼容OpenAI）\""
+        },
+        {
+          "source": "description: `LM Studio model: ${m.id}`",
+          "target": "description: `LM Studio型号：${m.id}`"
+        },
+        {
+          "source": "description: \"Ollama (Local)\"",
+          "target": "description: \"Ollama（本地）\""
+        },
+        {
+          "source": "description: \"Custom API (Local or Remote, OpenAI format)\"",
+          "target": "description: \"自定义API（本地或远程，OpenAI格式）\""
+        },
+        {
+          "source": "description: \"Pick a built-in or external adapter to parse request/response data.\"",
+          "target": "description: \"选择一个内置或外部适配器来解析请求/响应数据。\""
+        },
+        {
+          "source": "description: \"Enter the model name for your endpoint if needed.\"",
+          "target": "description: \"如果需要，请输入端点的模型名称。\""
+        },
+        {
+          "source": "description: \"e.g. http or https\"",
+          "target": "description: \"例如 http 或 https\""
+        },
+        {
+          "source": "description: \"e.g. localhost or some.remote.host\"",
+          "target": "description: \"例如 localhost 或 some.remote.host\""
+        },
+        {
+          "source": "description: \"Port number or leave blank\"",
+          "target": "description: \"端口号或留空\""
+        },
+        {
+          "source": "description: \"Path portion of the URL (leading slash optional)\"",
+          "target": "description: \"URL的路径部分（前导斜线可选）\""
+        },
+        {
+          "source": "description: \"Enable streaming if your API supports it.\"",
+          "target": "description: \"如果您的API支持，启用流式传输。\""
+        },
+        {
+          "source": "description: \"Max number of tokens your model can handle in the prompt.\"",
+          "target": "description: \"模型在提示中可以处理的最大令牌数。\""
+        },
+        {
+          "source": "description: \"If your service requires an API key, add it here.\"",
+          "target": "description: \"如果您的服务需要 API 密钥，请在此处添加。\""
+        },
+        {
+          "source": "description: `Owned by: ${model.owned_by}, context: ${model.context_window}`",
+          "target": "description: `所有者：$｛model.Owned_by｝，上下文：$｛model.context_window｝`"
+        },
+        {
+          "source": "description: `Owned by: ${m.owned_by}, context: ${m.context_window}`",
+          "target": "description: `所有者: ${m.owned_by}，上下文: ${m.context_window}`"
+        },
+        {
+          "source": "description: \"The language to use for the chat.\"",
+          "target": "description: \"聊天使用的语言。\""
+        },
+        {
+          "source": "description: \"Whether to review the retrieved context before the AI completes the message.\"",
+          "target": "description: \"在AI完成消息之前，是否查看检索到的上下文。\""
+        },
+        {
+          "source": "description: \"The maximum number of context items to retrieve via lookup.\"",
+          "target": "description: \"通过查找检索的最大上下文项数。\""
+        },
+        {
+          "source": "description: \"Performs a semantic search of the user's data to surface relevant content.\"",
+          "target": "description: \"对用户数据执行语义搜索以显示相关内容。\""
+        },
+        {
+          "source": "description: \"Predicted relevant notes in markdown format. Provide at least three.\"",
+          "target": "description: \"预测相关笔记以Markdown格式呈现。至少提供三个。\""
+        },
+        {
+          "source": "text: `Use the \"${this.tool_choice.function.name}\" tool.`",
+          "target": "text: `使用“${this.tool_choice.function.name}”工具。`"
+        },
+        {
+          "source": "text: `Image not found: ${part.input.image_path}`",
+          "target": "text: `找不到图像：${part.input.Image_path}`"
+        },
+        {
+          "source": "text: \"Refreshing...\"",
+          "target": "text: \"刷新中...\""
+        },
+        {
+          "source": "text: \"Loading lookup...\"",
+          "target": "text: \"正在加载查找。。。\""
+        },
+        {
+          "source": "text: \"Refresh\"",
+          "target": "text: \"刷新\""
+        },
+        {
+          "source": "text: \"Copy URL\"",
+          "target": "text: \"复制URL\""
+        },
+        {
+          "source": "text: \"Loading...\"",
+          "target": "text: \"加载中...\""
+        },
+        {
+          "source": ".setPlaceholder(\"Select input type...\")",
+          "target": ".setPlaceholder(\"选择输入类型...\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Find and select a context...\")",
+          "target": ".setPlaceholder(\"查找并选择上下文。。。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Type the name of an image...\")",
+          "target": ".setPlaceholder(\"键入图像的名称。。。\")"
+        },
+        {
+          "source": ".innerText = \"Loading...\"",
+          "target": ".innerText = \"加载。。。\""
+        },
+        {
+          "source": "name: \"Embed Blocks\"",
+          "target": "name: \"嵌入块\""
+        },
+        {
+          "source": "name: \"Embedding Model\"",
+          "target": "name: \"嵌入模型\""
+        },
+        {
+          "source": ".log(\"lookup block_collection\")",
+          "target": ".log(\"查找区块集合\")"
+        },
+        {
+          "source": ".log(`Time spent importing: ${end_time - start_time}ms`)",
+          "target": ".log(`导入所花费的时间：${end_Time-start_Time}ms`)"
+        },
+        {
+          "source": ".log(`ScAppConnector initialized on port ${this.port}`)",
+          "target": ".log(`ScAppConnector 在 ${this.port} 端口初始化完成。`)"
+        },
+        {
+          "source": ".log(`Port ${this.port} is already in use. Attempting to retry once.`)",
+          "target": ".log(`端口$｛this.Port｝已在使用中。尝试重试一次。`)"
+        },
+        {
+          "source": ".log(`Server running at http://localhost:${this.port}/`)",
+          "target": ".log(`服务器正在运行，地址为 http://localhost:${this.port}/`)"
+        },
+        {
+          "source": ".log(\"Dataview API not found. No dataview connection for Smart Connect.\")",
+          "target": ".log(\"找不到数据视图API。Smart Connect没有数据视图连接。\")"
+        },
+        {
+          "source": ".log(\"waiting for changes\")",
+          "target": ".log(\"等待更改\")"
+        },
+        {
+          "source": ".log(\"Server closed\")",
+          "target": ".log(\"服务器已关闭\")"
+        },
+        {
+          "source": ".log(\"Window server reference closed\")",
+          "target": ".log(\"窗口服务器参考已关闭\")"
+        },
+        {
+          "source": ".log(\"Environment no longer available. Closing server.\")",
+          "target": ".log(\"环境不再可用。正在关闭服务器。\")"
+        },
+        {
+          "source": "name: \"Embedding Model Platform\"",
+          "target": "name: \"嵌入式模型平台\""
+        },
+        {
+          "source": "description: \"Select an embedding model platform.\"",
+          "target": "description: \"选择一个嵌入模型平台。\""
+        },
+        {
+          "source": "placeholder: \"Enter number ex. 300\"",
+          "target": "placeholder: \"输入数字,例如:300\""
+        },
+        {
+          "source": "placeholder: \"Enter OpenAI API Key\"",
+          "target": "placeholder: \"输入 OpenAI API 密钥\""
+        },
+        {
+          "source": "placeholder: \"Enter number ex. 10\"",
+          "target": "placeholder: \"输入数字,例如:10\""
+        },
+        {
+          "source": "data-description='Chat with your notes in ChatGPT without uploading your notes to the cloud!'",
+          "target": "data-description='在 ChatGPT 中与您的笔记进行聊天,而无需将笔记上传到云端！'"
+        },
+        {
+          "source": "data-description='Join the supporter community chat.'",
+          "target": "data-description='加入支持者社区聊天。'"
+        },
+        {
+          "source": "data-description='Revert to the stable release of Smart Connections. Requires \"Check for Updates\" and then \"Update Plugin\" to complete the process.'",
+          "target": "data-description='回退到 Smart Connections 的稳定版本。需要先“检查更新”,然后“更新插件”以完成该过程。'"
+        },
+        {
+          "source": "data-description=\"Toggle the re-ranker\"",
+          "target": "data-description=\"切换重新排序器\""
+        },
+        {
+          "source": "data-description=\"Show full path in view.\"",
+          "target": "data-description=\"在视图中显示完整路径\""
+        },
+        {
+          "source": "data-description=\"Limit the number of results.\"",
+          "target": "data-description=\"限制结果数量\""
+        },
+        {
+          "source": "data-description=\"Exclude inlinks\"",
+          "target": "data-description=\"排除内链\""
+        },
+        {
+          "source": "data-description=\"Exclude outlinks\"",
+          "target": "data-description=\"排除外链\""
+        },
+        {
+          "source": "data-description=\"Require that results match this value.\"",
+          "target": "data-description=\"要求结果匹配此值\""
+        },
+        {
+          "source": "data-description=\"Exclude results that match this value.\"",
+          "target": "data-description=\"排除匹配此值的结果\""
+        },
+        {
+          "source": "data-description=\"Default language to use for Smart Chat. Changes which self-referential pronouns will trigger lookup of your notes. <b id='self-referential-pronouns'>Current: my, I, me, mine, our, ours, us, we</b>\"",
+          "target": "data-description=\"智能聊天使用的默认语言。更改哪些自指代词将触发查找您的笔记。<b id='self-referential-pronouns'>当前:my, I, me, mine, our, ours, us, we</b>\""
+        },
+        {
+          "source": "data-description=\"Select a model platform to use with Smart Chat.\"",
+          "target": "data-description=\"选择与智能聊天一起使用的模型平台\""
+        },
+        {
+          "source": "data-description=\"<a href='<%= chat_platform.signup_url %>'>Get API Key</a> for <%= chat_platform.description %>.\"",
+          "target": "data-description=\"获取用于 <%= chat_platform.description %> 的 <a href='<%= chat_platform.signup_url %>'>API 密钥</a>\""
+        },
+        {
+          "source": "data-description=\"API Key for <%= chat_platform.description %>.\"",
+          "target": "data-description=\"用于 <%= chat_platform.description %> 的 API 密钥\""
+        },
+        {
+          "source": "data-description=\"Name of the custom model.\"",
+          "target": "data-description=\"自定义模型的名称\""
+        },
+        {
+          "source": "data-description=\"Protocol for chat server (http or https).\"",
+          "target": "data-description=\"聊天服务器的协议(http 或 https)\""
+        },
+        {
+          "source": "data-description=\"Host for local chat server.\"",
+          "target": "data-description=\"本地聊天服务器的主机\""
+        },
+        {
+          "source": "data-description=\"Port for local chat server.\"",
+          "target": "data-description=\"本地聊天服务器的端口\""
+        },
+        {
+          "source": "data-description=\"Path for local chat server.\"",
+          "target": "data-description=\"本地聊天服务器的路径\""
+        },
+        {
+          "source": "data-description=\"Enable streaming for local chat server. Disable if you are getting CORS errors.\"",
+          "target": "data-description=\"启用本地聊天服务器的流媒体。如果您遇到 CORS 错误,请禁用\""
+        },
+        {
+          "source": "data-description=\"Maximum number of tokens for input to the model.\"",
+          "target": "data-description=\"输入模型的最大令牌数\""
+        },
+        {
+          "source": "data-description=\"Host for chat server.\"",
+          "target": "data-description=\"聊天服务器的主机\""
+        },
+        {
+          "source": "data-description=\"Path for chat server.\"",
+          "target": "data-description=\"聊天服务器的路径\""
+        },
+        {
+          "source": "data-description=\"Enable streaming for chat server. Disable if you are getting CORS errors.\"",
+          "target": "data-description=\"启用聊天服务器的流媒体。如果您遇到 CORS 错误,请禁用\""
+        },
+        {
+          "source": "data-description=\"API Key for the custom server sent as a header (bearer token).\"",
+          "target": "data-description=\"作为头部发送给自定义服务器的 API 密钥(承载令牌)\""
+        },
+        {
+          "source": "data-description=\"Upgrade to v2.2 (Early Access) to access new features and improvements.\"",
+          "target": "data-description=\"升级到 v2.2(抢先体验版),以访问新功能和改进\""
+        },
+        {
+          "source": "data-description=\"Become a Supporter\"",
+          "target": "data-description=\"成为支持者\""
+        },
+        {
+          "source": "data-description=\"Note: this is not required to use Smart Connections.\"",
+          "target": "data-description=\"注意:这不是使用智能连接所必需的\""
+        },
+        {
+          "source": "data-description=\"Enable mobile support for Smart Connections.\"",
+          "target": "data-description=\"启用智能连接的移动设备支持\""
+        },
+        {
+          "source": "data-btn-text=\"Upgrade to v2.2\"",
+          "target": "data-btn-text=\"升级到 v2.2\""
+        },
+        {
+          "source": "data-btn-text=\"Open GPT\"",
+          "target": "data-btn-text=\"打开 GPT\""
+        },
+        {
+          "source": "data-btn-text=\"Join us\"",
+          "target": "data-btn-text=\"加入我们\""
+        },
+        {
+          "source": "data-btn-text=\"Unmute\"",
+          "target": "data-btn-text=\"取消静音\""
+        },
+        {
+          "source": "data-btn-text=\"Revert\"",
+          "target": "data-btn-text=\"回退\""
+        },
+        {
+          "source": "aria-label=\"Open help documentation\"",
+          "target": "aria-label=\"打开帮助文档\""
+        },
+        {
+          "source": "data-button=\"Save\"",
+          "target": "data-button=\"保存\""
+        },
+        {
+          "source": "data-placeholder=\"Enter a folder name\"",
+          "target": "data-placeholder=\"输入文件夹名称\""
+        },
+        {
+          "source": "data-placeholder=\"Enter an API Key\"",
+          "target": "data-placeholder=\"输入 API 密钥\""
+        },
+        {
+          "source": "data-placeholder=\"Enter a model name\"",
+          "target": "data-placeholder=\"输入模型名称\""
+        },
+        {
+          "source": "data-placeholder=\"Enter a protocol\"",
+          "target": "data-placeholder=\"输入协议\""
+        },
+        {
+          "source": "data-placeholder=\"Enter a host\"",
+          "target": "data-placeholder=\"输入主机\""
+        },
+        {
+          "source": "data-placeholder=\"Enter a port number\"",
+          "target": "data-placeholder=\"输入端口号\""
+        },
+        {
+          "source": "data-placeholder=\"Enter a path\"",
+          "target": "data-placeholder=\"输入路径\""
+        },
+        {
+          "source": "data-placeholder=\"Enter a number\"",
+          "target": "data-placeholder=\"输入数字\""
+        },
+        {
+          "source": "data-placeholder=\"Enter your license_key\"",
+          "target": "data-placeholder=\"输入您的许可证密钥\""
+        },
+        {
+          "source": "data-name=\"Smart Chat History Folder\"",
+          "target": "data-name=\"智能聊天历史文件夹\""
+        },
+        {
+          "source": "data-name=\"System Prompts Folder\"",
+          "target": "data-name=\"系统提示文件夹\""
+        },
+        {
+          "source": "data-name=\"Cohere API Key\"",
+          "target": "data-name=\"Cohere API 密钥\""
+        },
+        {
+          "source": "data-name=\"Toggle Re-Ranker\"",
+          "target": "data-name=\"切换重新排序器\""
+        },
+        {
+          "source": "data-name=\"Show Full Path\"",
+          "target": "data-name=\"显示完整路径\""
+        },
+        {
+          "source": "data-name=\"Results Limit\"",
+          "target": "data-name=\"结果限制\""
+        },
+        {
+          "source": "data-name=\"Exclude Inlinks\"",
+          "target": "data-name=\"排除内链\""
+        },
+        {
+          "source": "data-name=\"Exclude Outlinks\"",
+          "target": "data-name=\"排除外链\""
+        },
+        {
+          "source": "data-name=\"Include Filter\"",
+          "target": "data-name=\"包含过滤\""
+        },
+        {
+          "source": "data-name=\"Exclude Filter\"",
+          "target": "data-name=\"排除过滤\""
+        },
+        {
+          "source": "data-name=\"Default Language\"",
+          "target": "data-name=\"默认语言\""
+        },
+        {
+          "source": "data-name=\"Model Platform\"",
+          "target": "data-name=\"模型平台\""
+        },
+        {
+          "source": "data-name=\"Model Name\"",
+          "target": "data-name=\"模型名称\""
+        },
+        {
+          "source": "data-name=\"Refresh Models List\"",
+          "target": "data-name=\"刷新模型列表\""
+        },
+        {
+          "source": "data-name=\"<%= chat_platform.description %> API Key\"",
+          "target": "data-name=\"<%= chat_platform.description %> API 密钥\""
+        },
+        {
+          "source": "data-name=\"protocol\"",
+          "target": "data-name=\"协议\""
+        },
+        {
+          "source": "data-name=\"hostname\"",
+          "target": "data-name=\"主机\""
+        },
+        {
+          "source": "data-name=\"port\"",
+          "target": "data-name=\"端口\""
+        },
+        {
+          "source": "data-name=\"path\"",
+          "target": "data-name=\"路径\""
+        },
+        {
+          "source": "data-name=\"streaming\"",
+          "target": "data-name=\"流媒体\""
+        },
+        {
+          "source": "data-name=\"Max input tokens\"",
+          "target": "data-name=\"最大输入令牌\""
+        },
+        {
+          "source": "data-name=\"API Key\"",
+          "target": "data-name=\"API 密钥\""
+        },
+        {
+          "source": "data-name=\"Upgrade to Early Access Version (v2.2)\"",
+          "target": "data-name=\"升级到抢先体验版 (v2.2)\""
+        },
+        {
+          "source": "data-name=\"Become a Supporter\"",
+          "target": "data-name=\"成为支持者\""
+        },
+        {
+          "source": "data-name=\"Supporter License Key\"",
+          "target": "data-name=\"支持者许可证密钥\""
+        },
+        {
+          "source": "data-name=\"Smart Connect - Obsidian GPT\"",
+          "target": "data-name=\"智能连接 - Obsidian GPT\""
+        },
+        {
+          "source": "data-name=\"Supporter Community Chat\"",
+          "target": "data-name=\"支持者社区聊天\""
+        },
+        {
+          "source": "data-name=\"Enable Mobile (EXPERIMENTAL)\"",
+          "target": "data-name=\"启用移动设备支持(实验性)\""
+        },
+        {
+          "source": "data-name=\"Revert to Stable Release\"",
+          "target": "data-name=\"回退到稳定版本\""
+        },
+        {
+          "source": "description: \"Custom Local (OpenAI format)\"",
+          "target": "description: \"自定义本地(OpenAI 格式)\""
+        },
+        {
+          "source": "description: \"Custom API (OpenAI format)\"",
+          "target": "description: \"自定义 API(OpenAI 格式)\""
+        },
+        {
+          "source": "description: `Max input tokens: ${model.context_length}, Finetuned: ${model.finetuned}`",
+          "target": "description: `最大输入标记数: ${model.context_length}, 微调: ${model.finetuned}`"
+        },
+        {
+          "source": "description: \"Local, 512 tokens, 384 dim\"",
+          "target": "description: \"本地,512 标记,384 维\""
+        },
+        {
+          "source": "description: \"Local, 4,096 tokens, 384 dim\"",
+          "target": "description: \"本地,4,096 标记,384 维\""
+        },
+        {
+          "source": "description: \"Local, 8,192 tokens, 512 dim, Chinese/English bilingual\"",
+          "target": "description: \"本地,8,192 标记,512 维,中英文双语\""
+        },
+        {
+          "source": "description: \"API, 8,191 tokens, 1,536 dim\"",
+          "target": "description: \"API,8,191 标记,1,536 维\""
+        },
+        {
+          "source": "description: \"API, 8,191 tokens, 3,072 dim\"",
+          "target": "description: \"API,8,191 标记,3,072 维\""
+        },
+        {
+          "source": "description: \"API, 8,191 tokens, 512 dim\"",
+          "target": "description: \"API,8,191 标记,512 维\""
+        },
+        {
+          "source": "description: \"API, 8,191 tokens, 256 dim\"",
+          "target": "description: \"API,8,191 标记,256 维\""
+        },
+        {
+          "source": "description: \"Local, 8,192 tokens, 512 dim\"",
+          "target": "description: \"本地,8,192 标记,512 维\""
+        },
+        {
+          "source": "description: \"Local, 8,192 tokens, 256 dim\"",
+          "target": "description: \"本地,8,192 标记,256 维\""
+        },
+        {
+          "source": "description: \"Local, 2,048 tokens, 768 dim\"",
+          "target": "description: \"本地,2,048 标记,768 维\""
+        },
+        {
+          "source": "description: \"Minimum length of note to embed.\"",
+          "target": "description: \"要嵌入的笔记的最短长度。\""
+        },
+        {
+          "source": "description: \"Performs a semantic search of the user's data. Required: hypothetical_1 and hypothetical_2. Optional: hypothetical_3.\"",
+          "target": "description: \"对用户数据执行语义搜索。必需:hypothetical_1 和 hypothetical_2。可选:hypothetical_3。\""
+        },
+        {
+          "source": "description: \"Short hypothetical notes predicted to be semantically similar to the notes necessary to fulfill the user's request. At least three hypotheticals per request. The hypothetical notes may contain paragraphs, lists, or checklists in markdown format. Hypothetical notes always begin with breadcrumbs containing the anticipated folder(s), file name, and relevant headings separated by ' > ' (no slashes). Format: PARENT FOLDER NAME > CHILD FOLDER NAME > FILE NAME > HEADING 1 > HEADING 2 > HEADING 3: HYPOTHETICAL NOTE CONTENTS.\"",
+          "target": "description: \"预测为与满足用户请求所需的笔记语义相似的简短假设笔记。每个请求至少需要三个假设笔记。假设笔记可以包含段落、列表或检查列表,格式为 Markdown。假设笔记始终以面包屑开始,其中包含预期的文件夹、文件名和相关标题,用 ' > ' 分隔(不使用斜杠)。格式:父文件夹名称 > 子文件夹名称 > 文件名 > 标题1 > 标题2 > 标题3:假设笔记内容。\""
+        },
+        {
+          "source": "description: \"Must be distinct from and not share any breadcrumbs with hypothetical_1.\"",
+          "target": "description: \"必须与 hypothetical_1 不同,并且不能共享任何面包屑。\""
+        },
+        {
+          "source": "description: \"Must be distinct from hypothetical_1 and hypothetical_2.\"",
+          "target": "description: \"必须与 hypothetical_1 和 hypothetical_2 不同。\""
+        },
+        {
+          "source": "\"description\": \"Enable Smart Changes (prevents accidental deletions/overwrites).\"",
+          "target": "\"description\": \"启用智能更改(防止意外删除/覆盖)。\""
+        },
+        {
+          "source": "text: `IMPORTANT: You must use the \"${body.tools[0].function_declarations[0].name}\" function tool!`",
+          "target": "text: `重要提示:您必须使用 \"${body.tools[0].function_declarations[0].name}\" 函数工具！`"
+        },
+        {
+          "source": "text: `Image caption: ${caption}`",
+          "target": "text: `图片说明: ${caption}`"
+        },
+        {
+          "source": "text: \"Pause\"",
+          "target": "text: \"暂停\""
+        },
+        {
+          "source": "text: \"Resume\"",
+          "target": "text: \"恢复\""
+        },
+        {
+          "source": "text: \"Open Smart View\"",
+          "target": "text: \"打开智能视图\""
+        },
+        {
+          "source": ".setPlaceholder(\"Type the name of a file...\")",
+          "target": ".setPlaceholder(\"输入文件名...\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Type the name of a system prompt...\")",
+          "target": ".setPlaceholder(\"输入系统提示名...\")"
+        },
+        {
+          "source": "console.error(\"Invalid input for count_tokens\", input);",
+          "target": "console.error(\"无效的 count_tokens 输入\", input);"
+        },
+        {
+          "source": "console.error(\"Failed to fetch model data:\", error);",
+          "target": "console.error(\"获取模型数据失败:\", error);"
+        },
+        {
+          "source": "console.error(\"No API key provided\");",
+          "target": "console.error(\"未提供 API 密钥\");"
+        },
+        {
+          "source": "console.error(`No models found for ${this.platform_key}`, models);",
+          "target": "console.error(`未找到 ${this.platform_key} 的模型`, models);"
+        },
+        {
+          "source": "console.error(\"get_many called with non-array keys: \", keys);",
+          "target": "console.error(\"get_many 调用时使用了非数组类型的键: \", keys);"
+        },
+        {
+          "source": "console.error(`Error loading SmartEmbedModel for ${this.embed_model_key}`);",
+          "target": "console.error(`加载 SmartEmbedModel 时出错: ${this.embed_model_key}`);"
+        },
+        {
+          "source": "console.error(`Error processing ${this.collection_key} embed queue: ` + JSON.stringify(e || {}, null, 2));",
+          "target": "console.error(`处理 ${this.collection_key} 嵌入队列时出错: ` + JSON.stringify(e || {}, null, 2));"
+        },
+        {
+          "source": "console.error(\"Error during update:\", error);",
+          "target": "console.error(\"更新过程中出错:\", error);"
+        },
+        {
+          "source": "console.error(\"Error during read:\", error);",
+          "target": "console.error(\"读取过程中出错:\", error);"
+        },
+        {
+          "source": "console.error(\"Error during remove:\", error);",
+          "target": "console.error(\"删除过程中出错:\", error);"
+        },
+        {
+          "source": "console.error(\"error_during_move:\", error);",
+          "target": "console.error(\"移动过程中出错:\", error);"
+        },
+        {
+          "source": "console.error(\"Error during merge:\", error);",
+          "target": "console.error(\"合并过程中出错:\", error);"
+        },
+        {
+          "source": "console.error(`Error searching item ${item.id || \"unknown\"}:`, error);",
+          "target": "console.error(`搜索项目 ${item.id || \"未知\"} 时出错:`, error);"
+        },
+        {
+          "source": "console.error(`Error getting embed queue: ` + JSON.stringify(e || {}, null, 2));",
+          "target": "console.error(`获取嵌入队列时出错: ` + JSON.stringify(e || {}, null, 2));"
+        },
+        {
+          "source": "console.error(\"error_during_block_move:\", error);",
+          "target": "console.error(\"块移动过程中出错:\", error);"
+        },
+        {
+          "source": "console.error(`Error getting should_embed for ${this.key}: ` + JSON.stringify(e || {}, null, 2));",
+          "target": "console.error(`获取 ${this.key} 的 should_embed 时出错: ` + JSON.stringify(e || {}, null, 2));"
+        },
+        {
+          "source": "console.error(\"error_embedding_batch\", err);",
+          "target": "console.error(\"批量嵌入出错\", err);"
+        },
+        {
+          "source": "console.error(\"Error processing message:\", error);",
+          "target": "console.error(\"处理消息时出错:\", error);"
+        },
+        {
+          "source": "console.error(`Error checking if path is excluded: ${e.message}`);",
+          "target": "console.error(`检查路径是否被排除时出错: ${e.message}`);"
+        },
+        {
+          "source": "console.error(`Path: `, _path);",
+          "target": "console.error(`路径: `, _path);"
+        },
+        {
+          "source": "console.error(\"Error during write:\", error);",
+          "target": "console.error(\"写入过程中出错:\", error);"
+        },
+        {
+          "source": "console.error(\"No callback or href found for button.\");",
+          "target": "console.error(\"未找到按钮的回调或 href.\");"
+        },
+        {
+          "source": "console.error(`Options callback ${elm.dataset.optionsCallback} is not a function.`);",
+          "target": "console.error(`选项回调 ${elm.dataset.optionsCallback} 不是一个函数.`);"
+        },
+        {
+          "source": "console.error(`Failed to create server after retry. Port ${this.port} is still in use.`);",
+          "target": "console.error(`重试后未能创建服务器。端口 ${this.port} 仍然被占用.`);"
+        },
+        {
+          "source": "console.error(\"Error downloading early access update\", v2);",
+          "target": "console.error(\"下载早期访问更新时出错\", v2);"
+        },
+        {
+          "source": "Error(`Method \"${method_name}\" is not implemented for file type \"${this.item.file_type}\" in \"${this.constructor.name}\".`);",
+          "target": "Error(`方法 \"${method_name}\" 未为文件类型 \"${this.item.file_type}\" 在 \"${this.constructor.name}\" 中实现。`);"
+        },
+        {
+          "source": "Error(`BLOCK NOT FOUND: No block found with key \"${block_key}\".`);",
+          "target": "Error(`块未找到: 没有找到键为 \"${block_key}\" 的块。`);"
+        },
+        {
+          "source": "Error(`Input size (${filtered_inputs.length}) exceeds maximum batch size (${this.batch_size})`);",
+          "target": "Error(`输入大小 (${filtered_inputs.length}) 超过最大批量大小 (${this.batch_size})`);"
+        },
+        {
+          "source": "Error(`Unknown method: ${method}`);",
+          "target": "Error(`未知方法: ${method}`);"
+        },
+        {
+          "source": "Error(`Path is excluded: ${paths.find((p) => this.is_excluded(p))}`);",
+          "target": "Error(`路径已排除: ${paths.find((p) => this.is_excluded(p))}`);"
+        },
+        {
+          "source": "Error(`Method ${method} not found in adapter`);",
+          "target": "Error(`在适配器中未找到方法 ${method}`);"
+        },
+        {
+          "source": "Error(`Template '${template_name}' not found.`);",
+          "target": "Error(`模板 '${template_name}' 未找到。`);"
+        },
+        {
+          "source": "Error(`Settings template not found.`);",
+          "target": "Error(`未找到设置模板。`);"
+        },
+        {
+          "source": "Error(`Reference not found: ${path}`);",
+          "target": "Error(`未找到引用: ${path}`);"
+        },
+        {
+          "source": "Error(`Unable to start server on port ${this.port} after retry.`));\n          }\n        } else {\n          reject(error);\n        }\n      });\n      this.server.listen(this.port, () => {\n        console.log(`Server running at http://localhost:${this.port}/`);",
+          "target": "Error(`在重试后仍无法在端口 ${this.port} 启动服务器。`));\n          }\n        } else {\n          reject(error);\n        }\n      });\n      this.server.listen(this.port, () => {\n        console.log(`服务器正在运行于 http://localhost:${this.port}/`);"
+        },
+        {
+          "source": "Error('Could not find the include file \"' + options.escapeFunction(path2) + '\"');",
+          "target": "Error('无法找到包含文件 \"' + options.escapeFunction(path2) + '\"');"
+        },
+        {
+          "source": "Error('Could not find matching close tag for \"' + line + '\".');",
+          "target": "Error('找不到与 \"' + line + '\" 相匹配的闭合标签。');"
+        },
+        {
+          "source": "Error(\"Invalid string. Length must be a multiple of 4\");",
+          "target": "Error(\"无效的字符串。长度必须是4的倍数\");"
+        },
+        {
+          "source": "Error(\"Cannot find module '\" + i2 + \"'\");",
+          "target": "Error(\"无法找到模块 '\" + i2 + \"'\");"
+        },
+        {
+          "source": "Error(\"cache option requires a filename\");",
+          "target": "Error(\"cache 选项需要一个文件名\");"
+        },
+        {
+          "source": "Error(\"Internal EJS error: no file name or template provided\");",
+          "target": "Error(\"内部 EJS 错误: 未提供文件名或模板\");"
+        },
+        {
+          "source": "Error(\"Please provide a callback function\");",
+          "target": "Error(\"请提供一个回调函数\");"
+        },
+        {
+          "source": "Error(\"outputFunctionName is not a valid JS identifier.\");",
+          "target": "Error(\"outputFunctionName 不是有效的 JS 标识符。\");"
+        },
+        {
+          "source": "Error(\"localsName is not a valid JS identifier.\");",
+          "target": "Error(\"localsName 不是有效的 JS 标识符。\");"
+        },
+        {
+          "source": "Error(\"destructuredLocals[\" + i + \"] is not a valid JS identifier.\");",
+          "target": "Error(\"destructuredLocals[\" + i + \"] 不是有效的 JS 标识符。\");"
+        },
+        {
+          "source": "Error(\"This environment does not support async/await\");",
+          "target": "Error(\"此环境不支持 async/await\");"
+        },
+        {
+          "source": "Error(\"Arguments to path.resolve must be strings\");",
+          "target": "Error(\"path.resolve 的参数必须是字符串\");"
+        },
+        {
+          "source": "Error(\"Arguments to path.join must be strings\");",
+          "target": "Error(\"path.join 的参数必须是字符串\");"
+        },
+        {
+          "source": "Error(\"setTimeout has not been defined\");",
+          "target": "Error(\"setTimeout 未定义\");"
+        },
+        {
+          "source": "Error(\"clearTimeout has not been defined\");",
+          "target": "Error(\"clearTimeout 未定义\");"
+        },
+        {
+          "source": "Error(\"process.binding is not supported\");",
+          "target": "Error(\"process.binding 不受支持\");"
+        },
+        {
+          "source": "Error(\"process.chdir is not supported\");",
+          "target": "Error(\"process.chdir 不受支持\");"
+        },
+        {
+          "source": "Error(\"Network response was not ok\");",
+          "target": "Error(\"网络响应不正常\");"
+        },
+        {
+          "source": "Error(\"SmartEnv: Invalid main object provided\");",
+          "target": "Error(\"SmartEnv: 提供的主对象无效\");"
+        },
+        {
+          "source": "Error(\"Container is required\");",
+          "target": "Error(\"需要容器\");"
+        },
+        {
+          "source": "Error(\"Item must have key property\");",
+          "target": "Error(\"项必须具有 key 属性\");"
+        },
+        {
+          "source": "Error(\"No data adapter class found for \" + this.collection_key + \" or smart_collections\");",
+          "target": "Error(\"未找到数据适配器类 \" + this.collection_key + \" 或 smart_collections\");"
+        },
+        {
+          "source": "Error(\"Vectors must have the same length\");",
+          "target": "Error(\"向量必须具有相同的长度\");"
+        },
+        {
+          "source": "Error(\"Invalid entity reference for move_to operation\");",
+          "target": "Error(\"无效的实体引用用于 move_to 操作\");"
+        },
+        {
+          "source": "Error(\"merge error: markdown_to_blocks did not return an object as expected.\");",
+          "target": "Error(\"合并错误: markdown_to_blocks 未按预期返回对象。\");"
+        },
+        {
+          "source": "Error(\"SmartCollectionDataAdapter: load() not implemented\");",
+          "target": "Error(\"SmartCollectionDataAdapter: load() 未实现\");"
+        },
+        {
+          "source": "Error(\"SmartCollectionDataAdapter: save() not implemented\");",
+          "target": "Error(\"SmartCollectionDataAdapter: save() 未实现\");"
+        },
+        {
+          "source": "Error(\"Not implemented\");",
+          "target": "Error(\"未实现\");"
+        },
+        {
+          "source": "Error(\"embed_input must be a string\");",
+          "target": "Error(\"embed_input 必须是一个字符串\");"
+        },
+        {
+          "source": "Error(\"Model not loaded\");",
+          "target": "Error(\"模型未加载\");"
+        },
+        {
+          "source": "Error(\"SmartFs requires an adapter\");",
+          "target": "Error(\"SmartFs 需要一个适配器\");"
+        },
+        {
+          "source": "Error(\"setting_class() not implemented\");",
+          "target": "Error(\"setting_class() 未实现\");"
+        },
+        {
+          "source": "Error(\"get_icon_html() not implemented\");",
+          "target": "Error(\"get_icon_html() 未实现\");"
+        },
+        {
+          "source": "Error(\"render_markdown() not implemented\");",
+          "target": "Error(\"render_markdown() 未实现\");"
+        },
+        {
+          "source": "Error(\"open_url() not implemented\");",
+          "target": "Error(\"open_url() 未实现\");"
+        },
+        {
+          "source": "Error(\"handle_folder_select not implemented\");",
+          "target": "Error(\"handle_folder_select 未实现\");"
+        },
+        {
+          "source": "Error(\"handle_file_select not implemented\");",
+          "target": "Error(\"handle_file_select 未实现\");"
+        },
+        {
+          "source": "Error(\"view_type must be implemented in subclass\");",
+          "target": "Error(\"view_type 必须在子类中实现\");"
+        },
+        {
+          "source": "Error(\"display_text must be implemented in subclass\");",
+          "target": "Error(\"display_text 必须在子类中实现\");"
+        },
+        {
+          "source": "Error(\"render_view must be implemented in subclass\");",
+          "target": "Error(\"render_view 必须在子类中实现\");"
+        },
+        {
+          "source": "Error(\"You have used up your free chat limit! Please add your own API key in the Smart Chat settings to enable unlimited personal usage and prevent exhausting the shared community account limit.\");",
+          "target": "Error(\"您已用完免费聊天额度！请在 智能聊天 设置中添加您自己的 API 密钥,以启用无限制的个人使用并防止耗尽共享社区账户的额度。\");"
+        },
+        {
+          "source": "Error(\"Smart Connections: plugin disabled while waiting for obsidian sync\");",
+          "target": "Error(\"智能连接: 插件在等待 obsidian 同步时被禁用\");"
+        },
+        {
+          "source": "console.warn(\"`scope` option is deprecated and will be removed in EJS 3\")",
+          "target": "console.warn(\"`scope` 选项已弃用,将在 EJS 3 中移除\")"
+        },
+        {
+          "source": "console.warn(\"Unable to set escapeXML.toString (is the Function prototype frozen?)\")",
+          "target": "console.warn(\"无法设置 escapeXML.toString (Function 原型是否被冻结?)\")"
+        },
+        {
+          "source": "console.warn(`Invalid tool call: object is empty`)",
+          "target": "console.warn(`无效的工具调用: 对象为空`) "
+        },
+        {
+          "source": "console.warn(`Invalid tool call: missing key ${key} in tool spec`, props)",
+          "target": "console.warn(`无效的工具调用: 工具规范中缺少键 ${key}`, props)"
+        },
+        {
+          "source": "console.warn(`Invalid tool call: array items are not of the same type`)",
+          "target": "console.warn(`无效的工具调用: 数组项类型不一致`) "
+        },
+        {
+          "source": "console.warn(`Invalid tool call: array items are not of the same type as the spec`)",
+          "target": "console.warn(`无效的工具调用: 数组项类型与规范不符`) "
+        },
+        {
+          "source": "console.warn(`Invalid tool call: value ${value} is not a valid number`)",
+          "target": "console.warn(`无效的工具调用: 值 ${value} 不是有效的数字`) "
+        },
+        {
+          "source": "console.warn(`Invalid tool call: value ${value} is not of type ${props[key].type}`)",
+          "target": "console.warn(`无效的工具调用: 值 ${value} 不是类型 ${props[key].type}`)"
+        },
+        {
+          "source": "console.warn(`Invalid tool call: value ${value} is not in enum ${props[key].enum}`)",
+          "target": "console.warn(`无效的工具调用: 值 ${value} 不在枚举 ${props[key].enum} 中`) "
+        },
+        {
+          "source": "console.warn(`Invalid tool call: missing required key ${key}`)",
+          "target": "console.warn(`无效的工具调用: 缺少必需的键 ${key}`) "
+        },
+        {
+          "source": "console.warn(`Empty value for required key ${key}`)",
+          "target": "console.warn(`必需键 ${key} 的值为空`) "
+        },
+        {
+          "source": "console.warn(`Tool ${tool_name} not found or invalid, returning tool_call_content`)",
+          "target": "console.warn(`工具 ${tool_name} 未找到或无效,返回 tool_call_content`) "
+        },
+        {
+          "source": "console.warn(`No API key found for ${this.platform_key}. Cannot retrieve models.`)",
+          "target": "console.warn(`未找到 ${this.platform_key} 的 API 密钥。无法获取模型。`) "
+        },
+        {
+          "source": "console.warn(`SmartEnv: module ${module_key} not found`)",
+          "target": "console.warn(`SmartEnv: 模块 ${module_key} 未找到`) "
+        },
+        {
+          "source": "console.warn(`deep_merge_no_overwrite error (${key}): ${e.message}`)",
+          "target": "console.warn(`deep_merge_no_overwrite 错误 (${key}): ${e.message}`)"
+        },
+        {
+          "source": "console.warn(\"Invalid item, skipping adding to collection: \", item)",
+          "target": "console.warn(\"无效项,跳过添加到集合: \", item) "
+        },
+        {
+          "source": "console.warn(\"Entity.search: keywords not set or is not an array\")",
+          "target": "console.warn(\"Entity.search: 关键词未设置或不是数组\")"
+        },
+        {
+          "source": "console.warn(\"error getting meta changed for \", this.path, \": \", e)",
+          "target": "console.warn(\"获取元数据变化错误 \", this.path, \": \", e)"
+        },
+        {
+          "source": "console.warn(\"search_filter.keywords not set\")",
+          "target": "console.warn(\"search_filter.keywords 未设置\")"
+        },
+        {
+          "source": "console.warn(\"smart_change disabled by settings\")",
+          "target": "console.warn(\"smart_change 被设置禁用\")"
+        },
+        {
+          "source": "console.warn(\"No content to import for \" + this.file_path)",
+          "target": "console.warn(\"没有内容可导入: \" + this.file_path)"
+        },
+        {
+          "source": "console.warn(\"merge error: Expected an object from markdown_to_blocks, but received:\", blocks_obj)",
+          "target": "console.warn(\"合并错误: 期望从 markdown_to_blocks 返回对象,但收到:\", blocks_obj)"
+        },
+        {
+          "source": "console.warn(\"Error reading block:\", error.message)",
+          "target": "console.warn(\"读取块时出错:\", error.message)"
+        },
+        {
+          "source": "console.warn(\"Error updating block:\", error.message)",
+          "target": "console.warn(\"更新块时出错:\", error.message)"
+        },
+        {
+          "source": "console.warn(\"Error removing block:\", error.message)",
+          "target": "console.warn(\"移除块时出错:\", error.message)"
+        },
+        {
+          "source": "console.warn(\"error removing block: \", e)",
+          "target": "console.warn(\"移除块时出错: \", e)"
+        },
+        {
+          "source": "console.warn(\"error moving block: \", e)",
+          "target": "console.warn(\"移动块时出错: \", e)"
+        },
+        {
+          "source": "console.warn(\"Error parsing line: \", line)",
+          "target": "console.warn(\"解析行时出错: \", line)"
+        },
+        {
+          "source": "console.warn(`Collection class not found: ${class_name}`)",
+          "target": "console.warn(`未找到集合类: ${class_name}`)"
+        },
+        {
+          "source": "console.warn(\"Error saving collection item: \", item.key)",
+          "target": "console.warn(\"保存集合项时出错: \", item.key)"
+        },
+        {
+          "source": "console.warn(\"SmartEmbedModel adapter not set\")",
+          "target": "console.warn(\"SmartEmbedModel 适配器未设置\")"
+        },
+        {
+          "source": "console.warn(`SmartEmbedModel adapter ${this.opts.adapter} not found`)",
+          "target": "console.warn(`未找到 SmartEmbedModel 适配器 ${this.opts.adapter}`)"
+        },
+        {
+          "source": "console.warn(\"Error during read: \" + error.message)",
+          "target": "console.warn(\"读取期间错误: \" + error.message)"
+        },
+        {
+          "source": "console.warn(\"get_link_target_path: file_paths not found\")",
+          "target": "console.warn(\"get_link_target_path: 未找到 file_paths\")"
+        },
+        {
+          "source": "console.warn(`Error removing file: ${rel_path2}`, error)",
+          "target": "console.warn(`移除文件时出错: ${rel_path2}`, error)"
+        },
+        {
+          "source": "console.warn(\"pre_change() not implemented\")",
+          "target": "console.warn(\"pre_change() 尚未实现\")"
+        },
+        {
+          "source": "console.warn(\"post_change() not implemented\")",
+          "target": "console.warn(\"post_change() 尚未实现\")"
+        },
+        {
+          "source": "console.warn(\"revert_setting() not implemented\")",
+          "target": "console.warn(\"revert_setting() 尚未实现\")"
+        },
+        {
+          "source": "console.warn(`Unsupported setting type: ${elm.dataset.type}`)",
+          "target": "console.warn(`不支持的设置类型: ${elm.dataset.type}`)"
+        },
+        {
+          "source": "console.warn(\"Scope required for rendering markdown in Obsidian adapter\")",
+          "target": "console.warn(\"Obsidian 适配器渲染 markdown 需要 scope\")"
+        },
+        {
+          "source": "console.warn(\"Error rendering markdown in Obsidian adapter\", e)",
+          "target": "console.warn(\"Obsidian 适配器渲染 markdown 出错\", e)"
+        },
+        {
+          "source": "console.warn(\"missing Obsidian Setting component\")",
+          "target": "console.warn(\"缺少 Obsidian 设置组件\")"
+        },
+        {
+          "source": "console.warn(`Error registering code block: ${name}`, error)",
+          "target": "console.warn(`注册代码块时出错: ${name}`, error)"
+        },
+        {
+          "source": "console.warn(\"No active file\", curr_file)",
+          "target": "console.warn(\"没有激活文件\", curr_file)"
+        },
+        {
+          "source": "console.warn(\"Error getting folders\", error)",
+          "target": "console.warn(\"获取文件夹时出错\", error)"
+        },
+        {
+          "source": "console.log(\"Using fetch\")",
+          "target": "console.log(\"使用 fetch\")"
+        },
+        {
+          "source": "console.log(\"Using request adapter\")",
+          "target": "console.log(\"使用请求适配器\")"
+        },
+        {
+          "source": "console.log(\"has chat model adapter\")",
+          "target": "console.log(\"有聊天模型适配器\")"
+        },
+        {
+          "source": "console.log(\"Streaming Request: \")",
+          "target": "console.log(\"流请求:\")"
+        },
+        {
+          "source": "console.log(\"ReadyState: \" + e.readyState)",
+          "target": "console.log(\"就绪状态: \" + e.readyState)"
+        },
+        {
+          "source": "console.log(\"init SmartChatRenderer\")",
+          "target": "console.log(\"初始化 SmartChatRenderer\")"
+        },
+        {
+          "source": "console.log(\"tool call\")",
+          "target": "console.log(\"工具调用\")"
+        },
+        {
+          "source": "console.log(\"Creating new conversation\")",
+          "target": "console.log(\"创建新会话\")"
+        },
+        {
+          "source": "console.log(\"get_conversation_ids_and_file_types\")",
+          "target": "console.log(\"获取会话ID和文件类型\")"
+        },
+        {
+          "source": "console.log(\"Already saving\")",
+          "target": "console.log(\"正在保存\")"
+        },
+        {
+          "source": "console.log(\"Saving \" + this.collection_key + \": \", save_queue.length + \" items\")",
+          "target": "console.log(\"保存 \" + this.collection_key + \": \", save_queue.length + \" 项\")"
+        },
+        {
+          "source": "console.log(\"Saved \" + this.collection_key + \" in \" + (Date.now()",
+          "target": "console.log(\"已保存 \" + this.collection_key + \" 于 \" + (Date.now()"
+        },
+        {
+          "source": "console.log(\"Already loading\")",
+          "target": "console.log(\"正在加载\")"
+        },
+        {
+          "source": "console.log(\"Loading \" + this.collection_key + \": \", load_queue.length + \" items\")",
+          "target": "console.log(\"加载 \" + this.collection_key + \": \", load_queue.length + \" 项\")"
+        },
+        {
+          "source": "console.log(\"Loaded \" + this.collection_key + \" in \" + this.load_time_ms + \"ms\")",
+          "target": "console.log(\"已加载 \" + this.collection_key + \" 用时 \" + this.load_time_ms + \" 毫秒\")"
+        },
+        {
+          "source": "console.log(`SmartEmbed not loaded for ${this.collection_key}. Continuing without embedding capabilities.`)",
+          "target": "console.log(`SmartEmbed 未加载 ${this.collection_key}。继续没有嵌入功能。`)"
+        },
+        {
+          "source": "console.log(`SmartEmbedModel already loading for ${this.embed_model_key}`)",
+          "target": "console.log(`SmartEmbedModel 已经在加载 ${this.embed_model_key}`)"
+        },
+        {
+          "source": "console.log(`SmartEmbedModel already loaded for ${this.embed_model_key}`)",
+          "target": "console.log(`SmartEmbedModel 已经加载 ${this.embed_model_key}`)"
+        },
+        {
+          "source": "console.log(\"Switching to legacy transformers\")",
+          "target": "console.log(\"切换到旧版转换器\")"
+        },
+        {
+          "source": "console.log(\"model_key not set\")",
+          "target": "console.log(\"model_key未设置\")"
+        },
+        {
+          "source": "console.log(\"window.document not available\")",
+          "target": "console.log(\"window.document不可用\")"
+        },
+        {
+          "source": "console.log(\"no vec\")",
+          "target": "console.log(\"没有向量\")"
+        },
+        {
+          "source": "console.log(`Found and returned ${top_k.length} ${this.collection_key}.`)",
+          "target": "console.log(`找到并返回了 ${top_k.length} ${this.collection_key}.`)"
+        },
+        {
+          "source": "console.log(`Smart Connections: No active embedding model for ${this.collection_key}, skipping embedding`)",
+          "target": "console.log(`智能连接:没有活动的嵌入模型,跳过嵌入 ${this.collection_key}`)"
+        },
+        {
+          "source": "console.log(`Smart Connections: Embed queue processing already in progress for ${this.collection_key}`)",
+          "target": "console.log(`智能连接:正在处理 ${this.collection_key} 的嵌入队列`)"
+        },
+        {
+          "source": "console.log(`Time spent getting embed queue: ${datetime_end.getTime() - datetime_start.getTime()}ms`)",
+          "target": "console.log(`获取嵌入队列所花时间:${datetime_end.getTime() - datetime_start.getTime()}毫秒`)"
+        },
+        {
+          "source": "console.log(`Smart Connections: No items in ${this.collection_key} embed queue`)",
+          "target": "console.log(`智能连接:${this.collection_key} 的嵌入队列没有任何项目`)"
+        },
+        {
+          "source": "console.log(`Processing ${this.collection_key} embed queue: ${this.queue_total} items`)",
+          "target": "console.log(`正在处理 ${this.collection_key} 的嵌入队列:${this.queue_total} 项`)"
+        },
+        {
+          "source": "console.log(\"Embed queue processing halted\")",
+          "target": "console.log(\"嵌入队列处理已停止\")"
+        },
+        {
+          "source": "console.log(\"resume_embed_queue_processing\")",
+          "target": "console.log(\"恢复嵌入队列处理\")"
+        },
+        {
+          "source": "console.log(`Smart Connections: Skipping large file: ${this.path}`)",
+          "target": "console.log(`智能连接:跳过大文件:${this.path}`)"
+        },
+        {
+          "source": "console.log(`Smart Connections: Re-loading data source for ${this.path} because it has been updated on disk`)",
+          "target": "console.log(`智能连接:由于磁盘上更新,重新加载数据源:${this.path}`)"
+        },
+        {
+          "source": "console.log(`Pruned ${remove_smart_blocks.length} blocks:\n${remove_smart_blocks.map((item) => `${item.reason} - ${item.key}`).join(\"\\n\")}`)",
+          "target": "console.log(`修剪了 ${remove_smart_blocks.length} 块:\n${remove_smart_blocks.map((item) => `${item.reason} - ${item.key}`).join(\"\\n\")}`)"
+        },
+        {
+          "source": "console.log(\"import_queue \" + import_queue.length)",
+          "target": "console.log(\"导入队列 \" + import_queue.length)"
+        },
+        {
+          "source": "console.log(`Time spent building links: ${end_time - start_time}ms`)",
+          "target": "console.log(`构建链接耗时:${end_time - start_time}毫秒`)"
+        },
+        {
+          "source": "console.log(`Time spent importing: ${end_time - start_time}ms`)",
+          "target": "console.log(`导入耗时:${end_time - start_time}毫秒`)"
+        },
+        {
+          "source": "console.log(\"File stats changed, but content is the same. Skipping import.\")",
+          "target": "console.log(\"文件统计信息已更改,但内容相同。跳过导入。\")"
+        },
+        {
+          "source": "console.log(`Data file not found: ${item.data_path}`)",
+          "target": "console.log(`未找到数据文件:${item.data_path}`)"
+        },
+        {
+          "source": "console.log(\"Error loading collection item: \" + item.key)",
+          "target": "console.log(\"加载集合项出错:\" + item.key)"
+        },
+        {
+          "source": "console.log(`Smart Embed Model: No active embedding model for ${this.collection_key}, skipping embedding`)",
+          "target": "console.log(`智能嵌入模型:${this.collection_key} 无活动嵌入模型,跳过嵌入`)"
+        },
+        {
+          "source": "console.log(`Original inputs length: ${inputs.length}`)",
+          "target": "console.log(`原始输入长度:${inputs.length}`)"
+        },
+        {
+          "source": "console.log(`Filtered inputs length: ${inputs.length}`)",
+          "target": "console.log(`过滤后输入长度:${inputs.length}`)"
+        },
+        {
+          "source": "console.log(\"empty batch (or all items have empty embed_input)\")",
+          "target": "console.log(\"空批次(或所有项的 embed_input 为空)\")"
+        },
+        {
+          "source": "console.log(`Prepared embed_inputs length: ${embed_inputs.length}`)",
+          "target": "console.log(`准备好的 embed_inputs 长度:${embed_inputs.length}`)"
+        },
+        {
+          "source": "console.log(\"Warning: prepare_embed_input received an empty string\")",
+          "target": "console.log(\"警告:prepare_embed_input 收到了一个空字符串\")"
+        },
+        {
+          "source": "console.log(\"Warning: prepare_embed_input resulted in an empty string after trimming\")",
+          "target": "console.log(\"警告:prepare_embed_input 在修剪后结果为空字符串\")"
+        },
+        {
+          "source": "console.log(\"embed_input is empty after filtering null and empty strings\")",
+          "target": "console.log(\"过滤空值和空字符串后,embed_input 为空\")"
+        },
+        {
+          "source": "console.log(`Retrying request (429) in ${backoff} seconds...`)",
+          "target": "console.log(`正在重试请求 (429)，将在 ${backoff} 秒后重试...`)"
+        },
+        {
+          "source": "console.log('message ignored (listener)'",
+          "target": "console.log('消息被忽略(监听器)'"
+        },
+        {
+          "source": "console.log(\"model loaded\")",
+          "target": "console.log(\"模型已加载\")"
+        },
+        {
+          "source": "console.log(\"[Transformers] Using GPU\")",
+          "target": "console.log(\"[Transformers] 正在使用 GPU\")"
+        },
+        {
+          "source": "console.log(\"[Transformers] Using CPU\")",
+          "target": "console.log(\"[Transformers] 正在使用 CPU\")"
+        },
+        {
+          "source": "console.log(\"init\")",
+          "target": "console.log(\"初始化\")"
+        },
+        {
+          "source": "console.log(\"load\", params)",
+          "target": "console.log(\"加载\", params)"
+        },
+        {
+          "source": "console.log(\"View inactive, skipping render nearest\")",
+          "target": "console.log(\"视图未激活,跳过最近的渲染\")"
+        },
+        {
+          "source": "console.log(\"refresh_smart_view\")",
+          "target": "console.log(\"刷新智能视图\")"
+        },
+        {
+          "source": "console.log(\"displaying settings tab\")",
+          "target": "console.log(\"显示设置标签页\")"
+        },
+        {
+          "source": "console.log(\"Accepted\")",
+          "target": "console.log(\"已接受\")"
+        },
+        {
+          "source": "console.log(\"File does not exist, creating it\")",
+          "target": "console.log(\"文件不存在,正在创建\")"
+        },
+        {
+          "source": "console.log(\"loading view\")",
+          "target": "console.log(\"加载视图\")"
+        },
+        {
+          "source": "console.log(\"copy message to clipboard\")",
+          "target": "console.log(\"复制消息到剪贴板\")"
+        },
+        {
+          "source": "console.log(`Error resolving ref: ${refPath}`, e)",
+          "target": "console.log(`解析引用错误:${refPath}`, e)"
+        },
+        {
+          "source": "console.log(\"should trigger retrieval\")",
+          "target": "console.log(\"应触发检索\")"
+        },
+        {
+          "source": "console.log(\"get_context_hyde\")",
+          "target": "console.log(\"获取上下文 Hyde\")"
+        },
+        {
+          "source": "console.log(`ScAppConnector initialized on port ${this.port}`)",
+          "target": "console.log(`ScAppConnector 已初始化于端口 ${this.port}`)"
+        },
+        {
+          "source": "console.log(`Port ${this.port} is already in use. Attempting to retry once.`)",
+          "target": "console.log(`端口 ${this.port} 已被占用。尝试重新连接一次。`)"
+        },
+        {
+          "source": "console.log(`Server running at http://localhost:${this.port}/`)",
+          "target": "console.log(`服务器正在运行于 http://localhost:${this.port}/`)"
+        },
+        {
+          "source": "console.log(\"Dataview API not found. No dataview connection for Smart Connect.\")",
+          "target": "console.log(\"未找到 Dataview API。智能连接无法建立 Dataview 连接。\")"
+        },
+        {
+          "source": "console.log(\"waiting for changes\")",
+          "target": "console.log(\"等待更改\")"
+        },
+        {
+          "source": "console.log(\"Server closed\")",
+          "target": "console.log(\"服务器已关闭\")"
+        },
+        {
+          "source": "console.log(\"Window server reference closed\")",
+          "target": "console.log(\"窗口服务器引用已关闭\")"
+        },
+        {
+          "source": "console.log(\"Environment no longer available. Closing server.\")",
+          "target": "console.log(\"环境不再可用。正在关闭服务器.\")"
+        },
+        {
+          "source": "console.log(\"unloading plugin\")",
+          "target": "console.log(\"卸载插件\")"
+        },
+        {
+          "source": "console.log(\"loading env\")",
+          "target": "console.log(\"加载环境\")"
+        },
+        {
+          "source": "console.log(\"Smart Connections v2 loaded\")",
+          "target": "console.log(\"智能连接 v2 已加载\")"
+        },
+        {
+          "source": "console.log(\"env loaded\")",
+          "target": "console.log(\"环境已加载\")"
+        },
+        {
+          "source": "console.log(\"Added to .gitignore: \" + ignore)",
+          "target": "console.log(\"已添加到 .gitignore: \" + ignore)"
+        },
+        {
+          "source": "console.log(\"old showing notice\")",
+          "target": "console.log(\"旧的显示通知\")"
+        },
+        {
+          "source": "console.log(\"Smart Connections: Waiting for Obsidian Sync to finish\")",
+          "target": "console.log(\"智能连接: 等待 Obsidian Sync 完成\")"
+        },
+        {
+          "source": "console.log(\"render_file_counts\")",
+          "target": "console.log(\"渲染文件计数\")"
+        },
+        {
+          "source": "console.log(\"Manifest written\")",
+          "target": "console.log(\"Manifest 已写入\")"
+        },
+        {
+          "source": "console.log(\"open_note\", link)",
+          "target": "console.log(\"打开笔记\", link)"
+        },
+        {
+          "source": "\"Saving \"",
+          "target": "\"正在保存 \""
+        },
+        {
+          "source": "\"Loading \"",
+          "target": "\"正在加载 \""
+        },
+        {
+          "source": "`Loading ${this.collection_key}...`",
+          "target": "`正在加载 ${this.collection_key}...`"
+        },
+        {
+          "source": "`${this.collection_key} loaded`",
+          "target": "`${this.collection_key} 加载完成`"
+        },
+        {
+          "source": "`Making Smart Connections...`",
+          "target": "`正在建立智能连接...`"
+        },
+        {
+          "source": "`Embedding progress: ${this.embedded_total} / ${this.queue_total}`",
+          "target": "`嵌入进度: ${this.embedded_total} / ${this.queue_total}`"
+        },
+        {
+          "source": "`${this._calculate_embed_tokens_per_second()} tokens/sec using ${this.smart_embed.opts.model_key}`",
+          "target": "`${this._calculate_embed_tokens_per_second()} tokens/秒,使用模型 ${this.smart_embed.opts.model_key}`"
+        },
+        {
+          "source": "`Embedding complete.`",
+          "target": "`嵌入完成.`"
+        },
+        {
+          "source": "`${this.embedded_total} entities embedded.`",
+          "target": "`${this.embedded_total} 实体已嵌入.`"
+        },
+        {
+          "source": "`Embedding paused.`",
+          "target": "`嵌入已暂停.`"
+        },
+        {
+          "source": "`Progress: ${this.embedded_total} / ${this.queue_total}`",
+          "target": "`进度: ${this.embedded_total} / ${this.queue_total}`"
+        },
+        {
+          "source": "\"Starting initial scan...\"",
+          "target": "\"开始初始扫描...\""
+        },
+        {
+          "source": "\"Initial scan complete\"",
+          "target": "\"初始扫描完成\""
+        },
+        {
+          "source": "\"Pruning sources...\"",
+          "target": "\"修剪数据源...\""
+        },
+        {
+          "source": "`Pruned ${remove_sources.length} sources`",
+          "target": "`修剪了 ${remove_sources.length} 个数据源`"
+        },
+        {
+          "source": "\"Pruning blocks...\"",
+          "target": "\"修剪块...\""
+        },
+        {
+          "source": "`Pruned ${remove_smart_blocks.length} blocks`",
+          "target": "`修剪了 ${remove_smart_blocks.length} 个块`"
+        },
+        {
+          "source": "`Importing...`, `Progress: ${i} / ${import_queue.length} files`",
+          "target": "`正在导入...`, `进度: ${i} / ${import_queue.length} 个文件`"
+        },
+        {
+          "source": "`Processed import queue in ${Date.now() - time_start}ms`",
+          "target": "`处理导入队列花费了 ${Date.now() - time_start} 毫秒`"
+        },
+        {
+          "source": "\"No items in import queue\"",
+          "target": "\"导入队列中没有项目\""
+        },
+        {
+          "source": "\"Clearing all data...\"",
+          "target": "\"正在清除所有数据...\""
+        },
+        {
+          "source": "\"All data cleared and reimported\"",
+          "target": "\"所有数据已清除并重新导入\""
+        },
+        {
+          "source": ", \"Notice muted\"",
+          "target": ", \"通知已静音\""
+        },
+        {
+          "source": "'Smart View must be open to utilize all Smart Chat features. For example, asking things like \"Based on my notes...\" requires Smart View to be open.'",
+          "target": "'智能视图 必须开启才能使用所有 智能聊天 功能。例如,提问类似 \"根据我的笔记...\" 的问题需要 智能视图 开启.'"
+        },
+        {
+          "source": "\"No entity found for key: \"",
+          "target": "\"没有找到与键相关的实体: \""
+        },
+        {
+          "source": "\"Embed model not loaded. Please wait for the model to load and try again.\"",
+          "target": "\"嵌入模型未加载,请等待模型加载完成后重试。\""
+        },
+        {
+          "source": "\"Failed to embed search text.\"",
+          "target": "\"搜索文本嵌入失败。\""
+        },
+        {
+          "source": "\"Error in embedding search. See console for details.\"",
+          "target": "\"嵌入搜索时出错。请查看控制台获取详细信息。\""
+        },
+        {
+          "source": "\"Success! API key is valid\"",
+          "target": "\"成功!API 密钥有效\""
+        },
+        {
+          "source": "\"Error: API key is invalid!\"",
+          "target": "\"错误:API 密钥无效！\""
+        },
+        {
+          "source": "\"Chat input is empty.\"",
+          "target": "\"聊天输入为空。\""
+        },
+        {
+          "source": "\"Your chats are currently using a community account with very limited usage. Please add your own API key in the Smart Chat settings to enable unlimited personal usage and prevent exhausting the shared account limit.\"",
+          "target": "\"您的聊天当前使用的是社区账户,使用量非常有限。请在 智能聊天 设置中添加您的 API 密钥,以启用无限制个人使用,避免消耗共享账户配额。\""
+        },
+        {
+          "source": "\"Waiting for Obsidian Sync to finish...\"",
+          "target": "\"等待 Obsidian 同步完成...\""
+        },
+        {
+          "source": "\"Loading Smart Connections...\"",
+          "target": "\"正在加载智能连接...\""
+        },
+        {
+          "source": "*API Error. See console logs for details.*",
+          "target": "*API 错误。请查看控制台日志以获取详细信息。*"
+        },
+        {
+          "source": "*An error occurred. See console logs for details.*",
+          "target": "*发生错误。请查看控制台日志以获取详细信息。*"
+        },
+        {
+          "source": "**********",
+          "target": "***********"
+        },
+        {
+          "source": "name: \"OpenAI Text-3 Small\"",
+          "target": "name: \"OpenAI Text-3 小型\""
+        },
+        {
+          "source": "name: \"OpenAI Text-3 Large\"",
+          "target": "name: \"OpenAI Text-3 大型\""
+        },
+        {
+          "source": "name: \"OpenAI Text-3 Small - 512\"",
+          "target": "name: \"OpenAI Text-3 小型 - 512\""
+        },
+        {
+          "source": "name: \"OpenAI Text-3 Large - 256\"",
+          "target": "name: \"OpenAI Text-3 大型 - 256\""
+        },
+        {
+          "source": "name: \"Minimum Embedding Length\"",
+          "target": "name: \"最小嵌入长度\""
+        },
+        {
+          "source": "name: \"smart_settings\"",
+          "target": "name: \"智能设置\""
+        },
+        {
+          "source": "name: \"Open: View Smart Connections\"",
+          "target": "name: \"打开: 查看智能连接\""
+        },
+        {
+          "source": "name: \"Open: Smart Chat Conversation\"",
+          "target": "name: \"打开: 智能聊天会话\""
+        },
+        {
+          "source": "name: \"Open: Smart ChatGPT\"",
+          "target": "name: \"打开: 智能 ChatGPT\""
+        },
+        {
+          "source": "name: \"Open: Smart Connections Supporter Private Chat\"",
+          "target": "name: \"打开: 智能连接支持者私人聊天\""
+        },
+        {
+          "source": "name: \"Not found: \"",
+          "target": "name: \"未找到: \""
+        },
+        {
+          "source": "\"name\": \"Smart Change (change safety)\"",
+          "target": "\"name\": \"智能更改(更改安全)\""
+        },
+        {
+          "source": "return \"Smart Search\"",
+          "target": "return \"智能搜索\""
+        },
+        {
+          "source": "return \"Smart ChatGPT\"",
+          "target": "return \"智能ChatGPT\""
+        },
+        {
+          "source": "return \"Smart Connections Supporter Private Chat\"",
+          "target": "return \"智能连接支持者专属聊天\""
+        },
+        {
+          "source": "return `<span>${item_count} sources (embeddings not currently loaded)</span>`",
+          "target": "return `<span>${item_count} 源(嵌入尚未加载)</span>`"
+        },
+        {
+          "source": "return `<span>${scope.loaded}/${included_count} sources (partially loaded, should refresh/reload)</span>`",
+          "target": "return `<span>${scope.loaded}/${included_count} 源(部分加载,应刷新/重新加载)</span>`"
+        },
+        {
+          "source": "return `<span>${item_count} blocks (embeddings not currently loaded)</span>`",
+          "target": "return `<span>${item_count} 块(嵌入尚未加载)</span>`"
+        },
+        {
+          "source": "return `<span>${scope.loaded}/${item_count} blocks (partially loaded, should refresh/reload)</span>`",
+          "target": "return `<span>${scope.loaded}/${item_count} 块(部分加载,应刷新/重新加载)</span>`"
+        },
+        {
+          "source": "return `Anticipate the type of answer desired by the user. Imagine the following${params.ct ? \" \" + params.ct : \"\"} notes were written by the user and contain all the necessary information to answer the user's question. Begin responses with \"${ScTranslations_default[this.env.smart_connections_plugin.settings.language].prompt}...\"`",
+          "target": "return `预判用户希望得到的答案类型。假设以下${params.ct ? \" \" + params.ct : \"\"} 笔记是用户写的,并包含回答用户问题所需的所有信息。以 \"${ScTranslations_default[this.env.smart_connections_plugin.settings.language].prompt}...\" 开始回答`"
+        },
+        {
+          "source": "e.message += \" in \" + opts.filename",
+          "target": "e.message += \" 在 \" + opts.filename"
+        },
+        {
+          "source": "e.message += \" while compiling ejs\\n\\n\"",
+          "target": "e.message += \" 在编译ejs时\\n\\n\""
+        },
+        {
+          "source": "e.message += \"If the above error is not helpful, you may want to try EJS-Lint:\\n\"",
+          "target": "e.message += \"如果上述错误信息没有帮助,您可以尝试使用EJS-Lint:\\n\""
+        },
+        {
+          "source": "e.message += \"Or, if you meant to create an async function, pass `async: true` as an option.\"",
+          "target": "e.message += \"或者,如果您打算创建异步函数,请传递 `async: true` 作为选项。\""
+        },
+        {
+          "source": "`<span>Load time: ${scope.load_time_ms}ms</span>`",
+          "target": "`<span>加载时间: ${scope.load_time_ms}ms</span>`"
+        },
+        {
+          "source": "<span>${embedded_percentage}% embedded</span>",
+          "target": "<span>${embedded_percentage}% 已嵌入</span>"
+        },
+        {
+          "source": "<span>${included_count} sources included (${total_count} total)</span>",
+          "target": "<span>${included_count} 源已包含(共 ${total_count} 源)</span>"
+        },
+        {
+          "source": "<span>${embedded_percentage}% embedded (${items_w_vec})</span>",
+          "target": "<span>${embedded_percentage}% 已嵌入(${items_w_vec} 个项)</span>"
+        },
+        {
+          "source": "<span>Loaded: ${item_count} blocks (expected ${scope.expected_blocks_ct})</span>",
+          "target": "<span>已加载: ${item_count} 块(预期 ${scope.expected_blocks_ct} 块)</span>"
+        },
+        {
+          "source": "User Agreement:</strong> By using Smart Connections you agree to share how it helps you with at least one other person \\u{1F60A}\\u{1F334}",
+          "target": "用户协议:</strong> 使用智能连接即表示您同意与至少一个其他人分享它是如何帮助您的 \\u{1F60A}\\u{1F334}"
+        },
+        {
+          "source": "The success of Smart Connections is a direct result of our community of supporters who generously fund and evaluate new features. Their unwavering commitment to our privacy-focused, open-source software benefits all. Together, we can continue to innovate and make a positive impact on the world.",
+          "target": "智能连接的成功直接得益于我们支持者社区,他们慷慨资助并评估新功能。他们对我们注重隐私的开源软件的坚定承诺造福了所有人。我们可以携手创新,积极影响世界。"
+        },
+        {
+          "source": "Smart Connections Supporter Community",
+          "target": "智能连接支持者社区"
+        },
+        {
+          "source": "Join the next <a href=\"https://lu.ma/calendar/cal-ZJtdnzAdURyouM7\">Lean Coffee session</a> to discuss future features & improvements.",
+          "target": "加入下一个<a href=\"https://lu.ma/calendar/cal-ZJtdnzAdURyouM7\">Lean Coffee 会议</a>,讨论未来的功能和改进。"
+        },
+        {
+          "source": "Supporter benefits include:",
+          "target": "支持者福利包括:"
+        },
+        {
+          "source": "Early access to new &amp; experimental features:",
+          "target": "提前体验新功能和实验性功能:"
+        },
+        {
+          "source": "Early access to new versions enables supporters to help ensure new features are ready for the broader community.",
+          "target": "提前体验新版本使支持者能够帮助确保新功能为更广泛的社区准备好。"
+        },
+        {
+          "source": "Current Early Access Features:",
+          "target": "当前早期访问功能:"
+        },
+        {
+          "source": "\\u{1F5BC}\\uFE0F Add images to Smart Chat (multimodal chat)",
+          "target": "\\u{1F5BC}\\uFE0F 将图像添加到智能聊天(多模态聊天)"
+        },
+        {
+          "source": "Re-ranking model in the Smart Connections View",
+          "target": "在智能连接视图中重新排名模型"
+        },
+        {
+          "source": "Smart Chat History in canvas format",
+          "target": "智能聊天历史记录(画布格式)"
+        },
+        {
+          "source": "Coming soon to Early Access:",
+          "target": "即将上线至早期访问:"
+        },
+        {
+          "source": "PDF Support in Smart Connections view",
+          "target": "智能连接视图中的 PDF 支持"
+        },
+        {
+          "source": "Edit notes in Smart Chat",
+          "target": "在智能聊天中编辑笔记"
+        },
+        {
+          "source": "New retrieval methods in Smart Chat",
+          "target": "智能聊天中的新检索方法"
+        },
+        {
+          "source": "Review retrieved context before sending in Smart Chat",
+          "target": "在智能聊天中发送前审查检索到的上下文"
+        },
+        {
+          "source": "Audio files in Smart Connections view",
+          "target": "智能连接视图中的音频文件"
+        },
+        {
+          "source": "Past Early Access Features:",
+          "target": "过去的早期访问功能:"
+        },
+        {
+          "source": "ChatGPT integration with your Obsidian Vault",
+          "target": "ChatGPT 与你的 Obsidian 库集成"
+        },
+        {
+          "source": "Mobile support for Smart Connections",
+          "target": "智能连接的移动支持"
+        },
+        {
+          "source": "Access to the supporter-only <a href=\"https://chat.smartconnections.app\">private chat",
+          "target": "访问仅限支持者的 <a href=\"https://chat.smartconnections.app\">私人聊天</a>"
+        },
+        {
+          "source": "Community:",
+          "target": "社区:"
+        },
+        {
+          "source": "Ask questions and share insights with other supporters.",
+          "target": "向其他支持者提问并分享见解。"
+        },
+        {
+          "source": "Help &amp; Support (priority):",
+          "target": "帮助与支持(优先):"
+        },
+        {
+          "source": "Swift, top-priority support in the <a href=\"https://chat.smartconnections.app\">Supporter Chat",
+          "target": "在 <a href=\"https://chat.smartconnections.app\">支持者聊天</a> 中获得快速的优先支持"
+        },
+        {
+          "source": "Feature Requests (priority):",
+          "target": "功能请求(优先):"
+        },
+        {
+          "source": "Influence the future of Smart Connections with priority feature requests in the <a href=\"https://chat.smartconnections.app\">Supporter Chat",
+          "target": "在 <a href=\"https://chat.smartconnections.app\">支持者聊天</a> 中通过优先功能请求影响智能连接的未来"
+        },
+        {
+          "source": "Insider Updates:",
+          "target": "内部更新:"
+        },
+        {
+          "source": "Learn about the latest features &amp; improvements before they are announced.",
+          "target": "在功能发布前,了解最新的功能与改进。"
+        },
+        {
+          "source": "For a very limited time:</b> Early access to Smart Connect: Use ChatGPT with your notes <i>without</i> uploading your notes to the cloud using <a href=\"https://chat.openai.com/g/g-9Xb1mRJYl-smart-connect-obsidian\">Smart Connect - Obsidian",
+          "target": "仅限极短时间:</b>智能连接早期访问:使用 ChatGPT 处理你的笔记 <i>无需</i> 将笔记上传到云端,使用 <a href=\"https://chat.openai.com/g/g-9Xb1mRJYl-smart-connect-obsidian\">智能连接 - Obsidian</a>"
+        },
+        {
+          "source": "<h3>Smart Chat</h3>",
+          "target": "<h3>智能聊天</h3>"
+        },
+        {
+          "source": "<h3>System Prompts</h3>",
+          "target": "<h3>系统提示</h3>"
+        },
+        {
+          "source": "<h3>Custom Local Model</h3>",
+          "target": "<h3>自定义本地模型</h3>"
+        },
+        {
+          "source": "<h3>Custom Server</h3>",
+          "target": "<h3>自定义服务器</h3>"
+        },
+        {
+          "source": "Additional settings available in the Smart Chat settings tab (ex. chat model and api key).",
+          "target": "在智能聊天设置选项卡中可以找到更多设置(例如聊天模型和 API 密钥)。"
+        },
+        {
+          "source": "<h2>Blocks</h2>",
+          "target": "<h2>区块</h2>"
+        },
+        {
+          "source": "<h2>Smart Environment</h2>",
+          "target": "<h2>智能环境</h2>"
+        },
+        {
+          "source": "Notes about embedding models:",
+          "target": "关于嵌入模型的说明:"
+        },
+        {
+          "source": "IMPORTANT: make sure local <code>BGE-micro-v2</code> embedding model works before trying other local models.",
+          "target": "重要提示:在尝试其他本地模型之前,请确保本地 <code>BGE-micro-v2</code> 嵌入模型正常工作。"
+        },
+        {
+          "source": "Local model compatibility depends on available CPU and RAM. Try reducing the max tokens (context) if a local model if failing.",
+          "target": "本地模型的兼容性取决于可用的 CPU 和内存。如果本地模型失败,尝试减少最大 token(上下文)数量。"
+        },
+        {
+          "source": "API models are not dependent on local compute, but they require an API key and send your notes to third-party servers for processing.",
+          "target": "API 模型不依赖于本地计算,但需要 API 密钥,并将你的笔记发送到第三方服务器进行处理。"
+        },
+        {
+          "source": "<h1>Muted Notices</h1>",
+          "target": "<h1>静音通知</h1>"
+        },
+        {
+          "source": "No muted notices.",
+          "target": "没有静音通知。"
+        },
+        {
+          "source": "\"Re-load\"",
+          "target": "\"重新加载\""
+        },
+        {
+          "source": "\"Load\"",
+          "target": "\"加载\""
+        },
+        {
+          "source": " Sources",
+          "target": " 源"
+        },
+        {
+          "source": ">Import<",
+          "target": ">导入<"
+        },
+        {
+          "source": ">Prune<",
+          "target": ">修剪<"
+        },
+        {
+          "source": ">Clear All &amp; Re-import<",
+          "target": ">清除所有并重新导入<"
+        },
+        {
+          "source": ">Smart Connections<",
+          "target": ">智能连接<"
+        },
+        {
+          "source": "Smart Chat Links",
+          "target": "智能聊天链接"
+        },
+        {
+          "source": "show_notice(\"Wait until current response is finished.\")",
+          "target": "show_notice(\"等待当前响应完成。\")"
+        },
+        {
+          "source": "show_notice(\"Message copied to clipboard\")",
+          "target": "show_notice(\"消息已复制到剪贴板\")"
+        },
+        {
+          "source": "show_notice(\"Supporter license key required for early access update\")",
+          "target": "show_notice(\"需要支持者许可证密钥才能进行早期访问更新\")"
+        },
+        {
+          "source": "Are you sure you want to clear all data and re-import? This action cannot be undone.",
+          "target": "你确定要清除所有数据并重新导入吗？此操作无法撤销。"
+        },
+        {
+          "source": "--------------------------------",
+          "target": "--------------------------------------"
+        },
+        {
+          "source": "Open: View Smart Connections",
+          "target": "打开:查看智能连接"
+        },
+        {
+          "source": "\"Smart Connections\"",
+          "target": "\"智能连接\""
+        },
+        {
+          "source": "Open: Smart Chat Conversation",
+          "target": "打开:智能聊天对话"
+        },
+        {
+          "source": "\"Smart Chat Conversation View\"",
+          "target": "\"智能聊天对话视图\""
+        },
+        {
+          "source": "Waiting for Obsidian Sync to finish...",
+          "target": "等待 Obsidian 同步完成..."
+        },
+        {
+          "source": "Loading Smart Connections...",
+          "target": "加载智能连接..."
+        },
+        {
+          "source": "\"UNTITLED CHAT\"",
+          "target": "\"未命名聊天\""
+        },
+        {
+          "source": "\"UNTITLED CHAT \"",
+          "target": "\"未命名聊天 \""
+        },
+        {
+          "source": "\" view\"",
+          "target": "\"视图\""
+        },
+        {
+          "source": "`Use the \"${tool_choice.function.name}\" tool!`",
+          "target": "`使用 \"${tool_choice.function.name}\" 工具！`"
+        },
+        {
+          "source": "`Required: use the \"${tool_choice.function.name}\" tool!`",
+          "target": "`必需：使用 \"${tool_choice.function.name}\" 工具！`"
+        },
+        {
+          "source": "`IMPORTANT: You must use the \"${body.tools[0].function_declarations[0].name}\" function tool!`",
+          "target": "`重要：您必须使用 \"${body.tools[0].function_declarations[0].name}\" 函数工具！`"
+        },
+        {
+          "source": "`context: ${m[1].context}, output: ${m[1].max_out}`",
+          "target": "`上下文: ${m[1].context}, 输出: ${m[1].max_out}`"
+        },
+        {
+          "source": "'<div class=\"sc-loading\">Loading ' + this.collection_key + \" settings...</div>\"",
+          "target": "'<div class=\"sc-loading\">加载 ' + this.collection_key + \" 设置中...</div>\""
+        },
+        {
+          "source": "<p>Entity not found.</p>",
+          "target": "<p>实体未找到。</p>"
+        },
+        {
+          "source": "Loading search...",
+          "target": "加载搜索中..."
+        },
+        {
+          "source": "'<div class=\"sc-loading\">Loading main settings...</div>'",
+          "target": "'<div class=\"sc-loading\">加载主要设置中...</div>'"
+        },
+        {
+          "source": "Entity not found: ",
+          "target": "实体未找到："
+        },
+        {
+          "source": "hypotheticals is required",
+          "target": "hypotheticals 是必需的"
+        },
+        {
+          "source": "Embedding search is not enabled.",
+          "target": "嵌入搜索未启用。"
+        },
+        {
+          "source": "`The text contains a special token that is not allowed: ${specialMatch[0]}`",
+          "target": "`文本中包含不允许的特殊标记：${specialMatch[0]}`"
+        },
+        {
+          "source": "Based on your notes",
+          "target": "基于您的笔记"
+        },
+        {
+          "source": "Hi, I'm ChatGPT with access to your notes via Smart Connections. Ask me a question about your notes and I'll try to answer it.",
+          "target": "您好，我是通过智能连接访问您笔记的 ChatGPT。关于您的笔记,您可以问我任何问题,我会尽力回答。"
+        },
+        {
+          "source": "`Anticipate what the user is seeking. Respond in the form of a hypothetical note written by the user. The note may contain statements as paragraphs, lists, or checklists in markdown format with no headings. Please respond with one hypothetical note and abstain from any other commentary. Use the format: PARENT FOLDER NAME > CHILD FOLDER NAME > FILE NAME > HEADING 1 > HEADING 2 > HEADING 3: HYPOTHETICAL NOTE CONTENTS.`",
+          "target": "`尝试预测用户的需求。以用户编写的一份假设笔记的形式回复。笔记可以包含段落、列表或复选框，但不包含标题。请仅回复一份假设笔记，避免其他评论。使用格式：父文件夹名称 > 子文件夹名称 > 文件名称 > 标题1 > 标题2 > 标题3: 假设笔记内容。`"
+        },
+        {
+          "source": "Obsidian HTTP server is running",
+          "target": "Obsidian HTTP 服务器正在运行"
+        },
+        {
+          "source": "\\n\\n# Ignore Smart Environment folder\\n.smart-env",
+          "target": "\\n\\n# 忽略智能环境文件夹\\n.smart-env"
+        },
+        {
+          "source": "`[Smart Connections] A new version is available! (v${latest_release})`",
+          "target": "`[智能连接] 新版本可用！(v${latest_release})`"
+        },
+        {
+          "source": "Open help documentation",
+          "target": "打开帮助文档"
+        },
+        {
+          "source": "Open Conversation Note",
+          "target": "打开对话笔记"
+        },
+        {
+          "source": "Chat History",
+          "target": "聊天历史"
+        },
+        {
+          "source": "Chat Options",
+          "target": "聊天选项"
+        },
+        {
+          "source": "Chat Settings",
+          "target": "聊天设置"
+        },
+        {
+          "source": "New Chat",
+          "target": "新建聊天"
+        },
+        {
+          "source": "Copy message to clipboard",
+          "target": "复制消息到剪贴板"
+        },
+        {
+          "source": "Hi there, welcome to the Smart Chat.&nbsp;Ask me a question about your notes and I'll try to answer it.",
+          "target": "你好,欢迎使用智能聊天。请问你有什么关于笔记的问题,我会尽力为你解答。"
+        },
+        {
+          "source": "Try &quot;Based on my notes&quot; or &quot;Summarize [[this note]]&quot; or &quot;Important tasks in /folder/&quot;",
+          "target": "试试&quot;基于我的笔记&quot;,或者&quot;总结[[此笔记]]&quot;,或者&quot;/folder/中的重要任务&quot;"
+        },
+        {
+          "source": "Search Smart Connections",
+          "target": "搜索智能连接"
+        },
+        {
+          "source": "\"Describe what you're looking for (e.g., 'PKM strategies', 'story elements', 'personal AI alignment')\"",
+          "target": "\"描述你要查找的内容(例如:'PKM 策略','故事元素','个人 AI 对齐')\""
+        },
+        {
+          "source": "Use semantic (embeddings) search to surface relevant notes. Results are sorted by similarity to your query. Note: returns different results than lexical (keyword) search.",
+          "target": "使用语义(嵌入)搜索来展示相关笔记。结果按与查询的相似度排序。注意:与词汇(关键词)搜索返回的结果不同。"
+        },
+        {
+          "source": "data-description=\"Folder to store Smart Chat history. Use a preceeding <code>.</code> to hide it (ex. <code>.smart-chats</code>).\"",
+          "target": "data-description=\"用于存储智能聊天历史的文件夹。使用前置 <code>.</code> 隐藏文件夹(例如:<code>.smart-chats</code>).\""
+        },
+        {
+          "source": "data-description=\"Folder to store system prompts. Available in chat by typing '@'\"",
+          "target": "data-description=\"用于存储系统提示的文件夹。在聊天中输入 '@' 即可使用。\""
+        },
+        {
+          "source": "data-description=\"API Key required to use Cohere re-ranker.\"",
+          "target": "data-description=\"使用 Cohere 重新排序器所需的 API 密钥。\""
+        },
+        {
+          "source": ".log(`Loading ${this.collection.collection_key}: ${load_queue.length} items`)",
+          "target": ".log(`正在加载 ${this.collection.collection_key}: ${load_queue.length}个项目`)"
+        },
+        {
+          "source": ".log(`Saving ${this.collection.collection_key}: ${save_queue.length} items`)",
+          "target": ".log(`正在保存${this.collection.collection_key}: ${save_queue.length} 个项目`)"
+        },
+        {
+          "source": ".log(`Skipping loading ${this.collection.collection_key}...`)",
+          "target": ".log(`跳过加载${this.collection.collection_key}。。。`)"
+        },
+        {
+          "source": "description: `Model: ${d.model}, Status: ${d.status}`",
+          "target": "description: `型号：${d.model}，状态：${d.status}｝`"
+        },
+        {
+          "source": "name:  \"\",\n    azure_deployment_name: \"",
+          "target": "name: \"\",\n    azure_deployment_name: \""
+        },
+        {
+          "source": "<h2>Community Supporters</h2>",
+          "target": "<h2>社区支持者</h2>"
+        },
+        {
+          "source": "<h2>Excluded folders</h2>",
+          "target": "<h2>排除的文件夹</h2>"
+        },
+        {
+          "source": "<h2>Excluded files</h2>",
+          "target": "<h2>排除的文件</h2>"
+        },
+        {
+          "source": "<h2>Collections</h2>",
+          "target": "<h2>收藏</h2>"
+        },
+        {
+          "source": "<h2>Smart Lookup</h2>",
+          "target": "<h2>智能查找</h2>"
+        },
+        {
+          "source": "<h2>Connections view</h2>",
+          "target": "<h2>连接视图</h2>"
+        },
+        {
+          "source": "data-name=\"Smart Community\"",
+          "target": "data-name=\"智慧社区\""
+        },
+        {
+          "source": "data-description=\"Your support accelerates new features and improvements for everyone. Thank you!\"",
+          "target": "data-description=\"您的支持加速了每个人的新功能和改进。非常感谢。\""
+        },
+        {
+          "source": "\"name\": \"Show full path\"",
+          "target": "\"name\": \"显示完整路径\""
+        },
+        {
+          "source": "\"description\": \"Show full path in view.\"",
+          "target": "\"description\": \"在视图中显示完整路径。\""
+        },
+        {
+          "source": "\"name\": \"Render markdown\"",
+          "target": "\"name\": \"渲染markdown\""
+        },
+        {
+          "source": "\"description\": \"Render markdown in results.\"",
+          "target": "\"description\": \"在结果中渲染标记。\""
+        },
+        {
+          "source": "\"name\": \"Results limit\"",
+          "target": "\"name\": \"结果限制\""
+        },
+        {
+          "source": "\"description\": \"Limit the number of results.\"",
+          "target": "\"description\": \"限制结果的数量。\""
+        },
+        {
+          "source": "\"name\": \"Exclude inlinks (backlinks)\"",
+          "target": "\"name\": \"排除内联（反向链接）\""
+        },
+        {
+          "source": "\"description\": \"Exclude notes that link to the current note.\"",
+          "target": "\"description\": \"排除链接到当前笔记的笔记。\""
+        },
+        {
+          "source": "\"name\": \"Exclude outlinks\"",
+          "target": "\"name\": \"排除外部链接\""
+        },
+        {
+          "source": "\"description\": \"Exclude links already in the current document.\"",
+          "target": "\"description\": \"排除当前文档中已有的链接。\""
+        },
+        {
+          "source": "\"name\": \"Include filter\"",
+          "target": "\"name\": \"包含筛选器\""
+        },
+        {
+          "source": "\"description\": \"Require that result file path matches this value.\"",
+          "target": "\"description\": \"要求结果文件路径与此值匹配。\""
+        },
+        {
+          "source": "\"name\": \"Exclude filter\"",
+          "target": "\"name\": \"排除筛选器\""
+        },
+        {
+          "source": "\"description\": \"Exclude results with file path that matches this value.\"",
+          "target": "\"description\": \"排除文件路径与此值匹配的结果。\""
+        },
+        {
+          "source": "<h1>Muted notices</h1>",
+          "target": "<h1>静态通知</h1>"
+        },
+        {
+          "source": "button.setButtonText(elm.dataset.btnText || elm.dataset.name || \"Remove\")",
+          "target": "button.setButtonText(elm.dataset.btnText || elm.dataset.name || \"清除\")"
+        },
+        {
+          "source": "Show environment settings",
+          "target": "显示环境设置"
+        },
+        {
+          "source": "Hide environment settings",
+          "target": "隐藏环境设置"
+        },
+        {
+          "source": "<button class=\"sc-context-remove-btn\" title=\"Remove\">",
+          "target": "<button class=\"sc-context-remove-btn\" title=\"清除\">"
+        }
+      ]
+    }
+  }
+}

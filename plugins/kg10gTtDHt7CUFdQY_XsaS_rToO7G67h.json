@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "attachment-management",
+    "version": "2.0.0",
+    "title": "Attachment Management",
+    "description": "Customize your attachment path of notes independently with variables and auto rename it on change.",
+    "language": "zh-cn",
+    "supportedVersions": "0.9.16",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Extension override cannot be empty.\")",
+          "target": "Notice(\"扩展覆盖不能为空。\")"
+        },
+        {
+          "source": "Notice(\"Duplicate extension override.\")",
+          "target": "Notice(\"重复的扩展覆盖。\")"
+        },
+        {
+          "source": "Notice(\"Saved extension override\")",
+          "target": "Notice(\"已保存扩展覆盖\")"
+        },
+        {
+          "source": "Notice(\"Arrange completed\")",
+          "target": "Notice(\"整理完成\")"
+        },
+        {
+          "source": "Notice(`${file.path} was excluded`)",
+          "target": "Notice(`${file.path} 已被排除`)"
+        },
+        {
+          "source": ".log(`Invalid link: ${link}, err: ${err}`)",
+          "target": ".log(`无效链接：${link}，错误：${err}`)"
+        },
+        {
+          "source": "name: \"Overriding setting\"",
+          "target": "name: \"覆盖设置\""
+        },
+        {
+          "source": "name: \"Reset override setting\"",
+          "target": "name: \"重置覆盖设置\""
+        },
+        {
+          "source": "text: `Extension settings for ${this.settings.extension}`",
+          "target": "text: `${this.settings.extension} 的扩展设置`"
+        },
+        {
+          "source": "text: \"Moment format options\"",
+          "target": "text: \"Moment 格式选项\""
+        },
+        {
+          "source": "text: \"Overriding Settings\"",
+          "target": "text: \"覆盖设置\""
+        },
+        {
+          "source": "text: \"Tips\"",
+          "target": "text: \"提示\""
+        },
+        {
+          "source": ".setButtonText(\"Save\")",
+          "target": ".setButtonText(\"保存\")"
+        },
+        {
+          "source": ".setButtonText(\"Add extension overrides\")",
+          "target": ".setButtonText(\"添加扩展覆盖\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset\")",
+          "target": ".setButtonText(\"重置\")"
+        },
+        {
+          "source": ".setButtonText(\"Submit\")",
+          "target": ".setButtonText(\"提交\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(\"Continue\")",
+          "target": ".setButtonText(\"继续\")"
+        },
+        {
+          "source": ".setName(\"Root folder\")",
+          "target": ".setName(\"根文件夹\")"
+        },
+        {
+          "source": ".setName(\"Attachment path\")",
+          "target": ".setName(\"附件路径\")"
+        },
+        {
+          "source": ".setName(\"Attachment format\")",
+          "target": ".setName(\"附件格式\")"
+        },
+        {
+          "source": ".setName(\"Date format\")",
+          "target": ".setName(\"日期格式\")"
+        },
+        {
+          "source": ".setName(\"Automatically rename attachment\")",
+          "target": ".setName(\"自动重命名附件\")"
+        },
+        {
+          "source": ".setName(\"Extension override\")",
+          "target": ".setName(\"扩展覆盖\")"
+        },
+        {
+          "source": ".setDesc(\"Select root path of attachment\")",
+          "target": ".setDesc(\"选择附件的根路径\")"
+        },
+        {
+          "source": ".setDesc(\n      `Path of attachment in root folder, available variables ${SETTINGS_VARIABLES_NOTEPATH}, ${SETTINGS_VARIABLES_NOTENAME} and ${SETTINGS_VARIABLES_NOTEPARENT}`\n    )",
+          "target": ".setDesc(\n      `根文件夹中的附件路径，可用变量 ${SETTINGS_VARIABLES_NOTEPATH}、${SETTINGS_VARIABLES_NOTENAME} 和 ${SETTINGS_VARIABLES_NOTEPARENT}`\n    )"
+        },
+        {
+          "source": ".setDesc(\"Root folder of new attachment\")",
+          "target": ".setDesc(\"新附件的根文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"Extension to override\")",
+          "target": ".setDesc(\"要覆盖的扩展名\")"
+        },
+        {
+          "source": ".setTooltip(\"Edit extension override\")",
+          "target": ".setTooltip(\"编辑扩展覆盖\")"
+        },
+        {
+          "source": ".setTooltip(\"Save extension override\")",
+          "target": ".setTooltip(\"保存扩展覆盖\")"
+        },
+        {
+          "source": ".setTitle(\"Overriding attachment setting\")",
+          "target": ".setTitle(\"覆盖附件设置\")"
+        },
+        {
+          "source": "Notice(\"Canvas is not supported as an extension override.\")",
+          "target": "Notice(\"画布不支持作为扩展覆盖.\")"
+        },
+        {
+          "source": "Notice(\"Markdown is not supported as an extension override.\")",
+          "target": "Notice(\"不支持 Markdown 作为扩展覆盖。\")"
+        },
+        {
+          "source": "Notice(\"Extension override cannot be an excluded extension.\")",
+          "target": "Notice(\"扩展覆盖不能是一个排除的扩展。\")"
+        },
+        {
+          "source": "Notice(`Reset attachment setting of ${this.file.path}`)",
+          "target": "Notice(`重置 ${this.file.path}` 的附件设置)"
+        },
+        {
+          "source": "Notice(`Overridden attachment setting of ${this.file.path}`)",
+          "target": "Notice(`已覆盖附件设置 ${this.file.path} `)"
+        },
+        {
+          "source": "Notice(`${file2.path} was excluded, skipped`)",
+          "target": "Notice(`${file2.path} 已被排除，跳过`)"
+        },
+        {
+          "source": "Notice(`${file.path} was excluded, skipped`)",
+          "target": "Notice(`${file.path} 已被排除，跳过`)"
+        },
+        {
+          "source": "Notice(`${source.path} was excluded, skipped`)",
+          "target": "Notice(`${source.path} 已被排除，跳过`)"
+        },
+        {
+          "source": "Notice(`Renamed ${name} to ${attachName}.`)",
+          "target": "Notice(`已将 ${name} 重命名为 ${attachName}.`)"
+        },
+        {
+          "source": "Notice(\"Removed override setting of \" + file.path)",
+          "target": "Notice(\"删除了\" + file.path 的覆盖设置)"
+        },
+        {
+          "source": "Notice(`Reset attachment setting of ${file.path}`)",
+          "target": "Notice(`重置 ${file.path} 的附件设置`)"
+        },
+        {
+          "source": ".log(\"DEBUG is enabled\")",
+          "target": ".log(\"调试已启用\")"
+        },
+        {
+          "source": ".log(`Plugin loading: ${this.manifest.name} v.${this.manifest.version}`)",
+          "target": ".log(`插件加载：${this.manifest.name} v.${this.manifest.version}`)"
+        },
+        {
+          "source": ".log(\"unloading attachment management.\")",
+          "target": ".log(\"卸载附件管理。\")"
+        },
+        {
+          "source": "name:\", originalName);\n        let attachName = \"",
+          "target": "name:\", 原名）;\n        附件重命名为 = \""
+        },
+        {
+          "source": "name: \"Rearrange all linked attachments\"",
+          "target": "name: \"重新整理所有链接的附件\""
+        },
+        {
+          "source": "name: \"Rearrange linked attachments\"",
+          "target": "name: \"重新整理链接的附件\""
+        },
+        {
+          "source": "name: \"Clear unused original name storage\"",
+          "target": "name: \"清除未使用的原始名称存储\""
+        },
+        {
+          "source": ".setName(\"Root path to save attachment\")",
+          "target": ".setName(\"保存附件的根路径\")"
+        },
+        {
+          "source": ".setName(\"Extension\")",
+          "target": ".setName(\"扩展\")"
+        },
+        {
+          "source": ".setName(\"Exclude extension pattern\")",
+          "target": ".setName(\"排除扩展模式\")"
+        },
+        {
+          "source": ".setName(\"Excluded paths\")",
+          "target": ".setName(\"排除的路径\")"
+        },
+        {
+          "source": ".setName(\"Exclude subpaths\")",
+          "target": ".setName(\"排除的子路径\")"
+        },
+        {
+          "source": ".setDesc(\n      `Define how to name the attachment file, available variables ${SETTINGS_VARIABLES_DATES}, ${SETTINGS_VARIABLES_NOTENAME}, ${SETTINGS_VARIABLES_MD5} and ${SETTINGS_VARIABLES_ORIGINALNAME}.`\n    )",
+          "target": ".setDesc(\n      `定义如何命名附件文件，可用变量为 ${SETTINGS_VARIABLES_DATES}、${SETTINGS_VARIABLES_NOTENAME}、${SETTINGS_VARIABLES_MD5} 和 ${SETTINGS_VARIABLES_ORIGINALNAME}。`\n    )"
+        },
+        {
+          "source": ".setDesc(\n      `Path of attachment in root folder, available variables ${SETTINGS_VARIABLES_NOTEPATH}, ${SETTINGS_VARIABLES_NOTENAME}, ${SETTINGS_VARIABLES_NOTEPARENT}`\n    )",
+          "target": ".setDesc(\n      `根文件夹中的附件路径，可用变量 ${SETTINGS_VARIABLES_NOTEPATH}, ${SETTINGS_VARIABLES_NOTENAME}, ${SETTINGS_VARIABLES_NOTEPARENT}`\n    )"
+        },
+        {
+          "source": ".setDesc(\n      \"Automatically rename the attachment folder/filename when you rename the folder/filename where the corresponding md/canvas file be placed.\"\n    )",
+          "target": ".setDesc(\n      \"当你重命名对应的 md/canvas文件的文件夹/文件名时，自动重命名附件文件夹/文件名。\"\n    )"
+        },
+        {
+          "source": ".setDesc(\"Using the extension override if you want to autorename the attachment with a specific extension (e.g. pdf or zip).\")",
+          "target": ".setDesc(\"如果你想要自动重命名特定扩展名的附件（如 pdf 或 zip），请使用扩展覆盖功能。\")"
+        },
+        {
+          "source": ".setDesc(`Regex pattern to exclude certain extensions from being handled.`)",
+          "target": ".setDesc(`用于排除特定扩展名的正则表达式模式.`)"
+        },
+        {
+          "source": ".setDesc(\n      `Provide the full path of the folder names (case sensitive and without leading slash '/') divided by semicolon (;) to be excluded from renaming.`\n    )",
+          "target": ".setDesc(\n      `请提供要排除重命名的文件夹完整路径（区分大小写，且不以斜杠 '/' 开头），并用分号（;）分隔。`\n    )"
+        },
+        {
+          "source": ".setDesc(\"Turn on this option if you want to also exclude all subfolders of the folder paths provided above.\")",
+          "target": ".setDesc(\"如果还想排除上述文件夹路径的所有子文件夹，请打开此选项.\")"
+        },
+        {
+          "source": ".setTooltip(\"Remove extension override\")",
+          "target": ".setTooltip(\"删除扩展覆盖\")"
+        },
+        {
+          "source": ".appendText(\"Moment date format to use \")",
+          "target": ".appendText(\"使用的时刻日期格式 \")"
+        },
+        {
+          "source": ".innerText = \"This operation is irreversible and experimental. Please backup your vault first!\"",
+          "target": ".innerText = \"这个操作是不可逆的和实验性的。请先备份您的库！\""
+        },
+        {
+          "source": ".log(new Date()",
+          "target": ".log(新日期()"
+        },
+        {
+          "source": "settings:\", setting);\n          if (setting.type === \"",
+          "target": "settings:\", 设置）；\n\n如果（设置类型 === \""
+        },
+        {
+          "source": "settings:\", setting);\n          if (!this.settings.autoRenameAttachment) {\n            debugLog(\"",
+          "target": "settings:\", 设置);\n          if (!.设置自动重命名附件) {\n            调试日志(\""
+        },
+        {
+          "source": ".setPlaceholder(\"pdf|docx?\")",
+          "target": ".setPlaceholder(\"pdf|docx?\")"
+        },
+        {
+          "source": ".setPlaceholder(\"pdf|docx?|xlsx?|pptx?|zip|rar\")",
+          "target": ".setPlaceholder(\"pdf|docx?|xlsx?|pptx?|zip|rar\")"
+        },
+        {
+          "source": ".setPlaceholder(\"pdf\")",
+          "target": ".setPlaceholder(\"pdf\")"
+        }
+      ]
+    }
+  }
+}

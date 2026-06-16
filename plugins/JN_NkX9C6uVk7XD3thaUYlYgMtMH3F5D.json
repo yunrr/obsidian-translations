@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "quick-plugin-switcher",
+    "version": "2.0.0",
+    "title": "Quick Plugin Switcher",
+    "description": "Quickly manage installed and community plugins. The only way to evolve in the jungle of plugins",
+    "language": "zh-cn",
+    "supportedVersions": "8.1.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"All plugins enabled.\", 2500)",
+          "target": "Notice(\"所有插件已启用。\", 2500)"
+        },
+        {
+          "source": "Notice(\"All plugins disabled.\", 2500)",
+          "target": "Notice(\"所有插件已禁用。\", 2500)"
+        },
+        {
+          "source": "Notice(`${commPlugins[id].name} uninstalled`, 2500)",
+          "target": "Notice(`${commPlugins[id].name} 已卸载`, 2500)"
+        },
+        {
+          "source": "Notice(`${commPlugins[id].name} already installed`, 2500)",
+          "target": "Notice(`${commPlugins[id].name}已安装`, 2500)"
+        },
+        {
+          "source": "Notice(`${commPlugins[id].name} enabled`, 2500)",
+          "target": "Notice(`${commPlugins[id].name}已启用`, 2500)"
+        },
+        {
+          "source": "Notice(`All plugins removed from ${groupValue}`, 2500)",
+          "target": "Notice(`所有插件已从 ${groupValue} 中移除。`, 2500)"
+        },
+        {
+          "source": "Notice(`No plugins found in ${groupValue} group`, 2500)",
+          "target": "Notice(`在 ${groupValue} 组中找不到插件`, 2500)"
+        },
+        {
+          "source": "Notice(\"Done\", 2500)",
+          "target": "Notice(\"好的，请提供需要翻译的英文文本。\", 2500)"
+        },
+        {
+          "source": "Notice(\"Operation cancelled\", 2500)",
+          "target": "Notice(\"操作已取消\", 2500)"
+        },
+        {
+          "source": "Notice(\"Plugin disabled, no Settings to show\", 3500)",
+          "target": "Notice(\"插件已禁用，无设置可显示\", 3500)"
+        },
+        {
+          "source": "Notice(\"No Settings on this plugin\", 2500)",
+          "target": "Notice(\"此插件无需设置\", 2500)"
+        },
+        {
+          "source": "Notice(\"Plugin disabled, no HotKeys to show\", 3500)",
+          "target": "Notice(\"插件已禁用，无快捷键可显示\", 3500)"
+        },
+        {
+          "source": "Notice(\"No HotKeys on this plugin\", 2500)",
+          "target": "Notice(\"该插件没有热键。\", 2500)"
+        },
+        {
+          "source": "Notice(\n      \"install obsidian-translate and select a translator\"\n    )",
+          "target": "Notice(\n      \"安装 obsidian-translate 并选择一个翻译器。\"\n    )"
+        },
+        {
+          "source": "Notice(\"translator not valid. check your settings\", 4e3)",
+          "target": "Notice(\"翻译器无效，请检查您的设置。\", 4e3)"
+        },
+        {
+          "source": "Notice(\"no content selected\", 2e3)",
+          "target": "Notice(\"没有选择任何内容\", 2e3)"
+        },
+        {
+          "source": "Notice(`${filePath} created`, 2500)",
+          "target": "Notice(`${filePath}已创建`, 2500)"
+        },
+        {
+          "source": "Notice(\"Select a vault folder!\", 2500)",
+          "target": "Notice(\"选择一个保险库文件夹！\", 2500)"
+        },
+        {
+          "source": "Notice(\"You have selected the current vault!\", 2500)",
+          "target": "Notice(\"您已选择当前保险库！\", 2500)"
+        },
+        {
+          "source": "Notice(\n        \"This vault doesn't contain any installed plugin!\",\n        2500\n      )",
+          "target": "Notice(\n        \"此保险库中没有安装任何插件！\",\n        2500\n      )"
+        },
+        {
+          "source": "Notice(\"Found no plugin to install\", 2500)",
+          "target": "Notice(\"未找到可安装的插件\", 2500)"
+        },
+        {
+          "source": "Notice(`Manifest ${id} not found`, 2500)",
+          "target": "Notice(`未找到清单文件 ${id}`, 2500)"
+        },
+        {
+          "source": "Notice(`${pluginItem.name} installed`, 2500)",
+          "target": "Notice(`${pluginItem.name}已安装`, 2500)"
+        },
+        {
+          "source": "Notice(`${pluginItem.name} enabled`, 2500)",
+          "target": "Notice(`${pluginItem.name}已启用`, 2500)"
+        },
+        {
+          "source": "Notice(`${pluginItem.name} disabled`, 2500)",
+          "target": "Notice(`${pluginItem.name} 已禁用`, 2500)"
+        },
+        {
+          "source": "Notice(`${pluginItem.name} uninstalled`, 2500)",
+          "target": "Notice(`${pluginItem.name} 已卸载`, 2500)"
+        },
+        {
+          "source": "Notice(\"no selection\", 4e3)",
+          "target": "Notice(\"未选择\", 4e3)"
+        },
+        {
+          "source": "Notice(\"H1 are not allowed, content was paste in clipboard\", 4e3)",
+          "target": "Notice(\"H1 不允许使用，内容已粘贴到剪贴板中\", 4e3)"
+        },
+        {
+          "source": "Notice(`${count} plugins to update`, 3e3)",
+          "target": "Notice(`有 ${count} 个插件需要更新`, 3e3)"
+        },
+        {
+          "source": "Notice(\"All plugins are up to date\")",
+          "target": "Notice(\"所有插件已经是最新版。\")"
+        },
+        {
+          "source": "Notice(\"All plugins disabled\", 2500)",
+          "target": "Notice(\"所有插件已禁用\", 2500)"
+        },
+        {
+          "source": "Notice(\"All plugins re-enabled\", 2500)",
+          "target": "Notice(\"所有插件已重新启用。\", 2500)"
+        },
+        {
+          "source": "Notice(\n                    \"All plugins disabled\",\n                    2500\n                  )",
+          "target": "Notice(\n                    \"所有插件已禁用\",\n                    2500\n                  )"
+        },
+        {
+          "source": "Notice(\n                  \"All plugins re-enabled\",\n                  2500\n                )",
+          "target": "Notice(\n                  \"所有插件已重新启用。\",\n                  2500\n                )"
+        },
+        {
+          "source": "Notice(\n                    \"Operation cancelled\",\n                    2500\n                  )",
+          "target": "Notice(\n                    \"操作已取消\",\n                    2500\n                  )"
+        },
+        {
+          "source": "Notice(\"empty group\", 3e3)",
+          "target": "Notice(\"空分组\", 3e3)"
+        },
+        {
+          "source": "Notice(`${matchingItem.name} ${msg}`, 2500)",
+          "target": "Notice(`${matchingItem.name} ${msg}`, 2500)"
+        },
+        {
+          "source": "Notice(`${matchingItem.name} uninstalled`, 2500)",
+          "target": "Notice(`${matchingItem.name} 已卸载`, 2500)"
+        },
+        {
+          "source": "Notice(\"Plugin is only for desktop\", 2500)",
+          "target": "Notice(\"插件仅适用于桌面版本\", 2500)"
+        },
+        {
+          "source": "Notice(`Not a published plugin`, 2500)",
+          "target": "Notice(`未发布的插件`, 2500)"
+        },
+        {
+          "source": "Notice(`No manifest in ${commPlugins[id].repo}`, 3500)",
+          "target": "Notice(`在 ${commPlugins[id].repo} 中找不到清单文件`, 3500)"
+        },
+        {
+          "source": "Notice(`can't update, version ${manifest.version} in repo has not been released!`)",
+          "target": "Notice(`无法更新，存储库中的版本 ${manifest.version} 尚未发布！`)"
+        },
+        {
+          "source": "Notice(`Already last version ${lastVersion}`, 2500)",
+          "target": "Notice(`已经是最新版本 ${lastVersion} 了`, 2500)"
+        },
+        {
+          "source": "Notice(`version ${version} updated to ${lastVersion}`, 2500)",
+          "target": "Notice(`版本 ${version} 已更新至 ${lastVersion}。`, 2500)"
+        },
+        {
+          "source": "Notice(`All groups empty`, 2500)",
+          "target": "Notice(`所有分组为空`, 2500)"
+        },
+        {
+          "source": "Notice(`${pluginItem.name} not available on this platform`, 2500)",
+          "target": "Notice(`${pluginItem.name} 在该平台上不可用`, 2500)"
+        },
+        {
+          "source": "_log(message)",
+          "target": "_log(message)"
+        },
+        {
+          "source": ".log(`[dotenv@${version}][INFO] ${message}`)",
+          "target": ".log(`[dotenv@${version}][信息] ${message}`)"
+        },
+        {
+          "source": ".log(`[dotenv@${version}][WARN] ${message}`)",
+          "target": ".log(`[dotenv@${version}][警告] ${message}`)"
+        },
+        {
+          "source": ".log(`[dotenv@${version}][DEBUG] ${message}`)",
+          "target": ".log(`[dotenv@${version}][调试] ${message}`)"
+        },
+        {
+          "source": "_log(\"Loading env from encrypted .env.vault\")",
+          "target": "_log(\"从加密的 .env.vault 文件中加载环境变量\")"
+        },
+        {
+          "source": ".log(...args)",
+          "target": ".log(...args)"
+        },
+        {
+          "source": ".log(\"id, commPlugins[id]\", id, commPlugins[id])",
+          "target": ".log(\"id，commPlugins[id]\", id, commPlugins[id])"
+        },
+        {
+          "source": ".log(\"exists\")",
+          "target": ".log(\"存在\")"
+        },
+        {
+          "source": ".log(\"append\")",
+          "target": ".log(\"追加\")"
+        },
+        {
+          "source": ".log(\"added\", added)",
+          "target": ".log(\"已添加\", added)"
+        },
+        {
+          "source": ".log(\"sectionContent\", sectionContent)",
+          "target": ".log(\"内容部分\", sectionContent)"
+        },
+        {
+          "source": ".log(\"result\", result)",
+          "target": ".log(\"结果\", result)"
+        },
+        {
+          "source": ".log(\"invalid content\")",
+          "target": ".log(\"无效内容\")"
+        },
+        {
+          "source": ".log(\" resut has no content\")",
+          "target": ".log(\"结果无内容\")"
+        },
+        {
+          "source": ".log(\"updatedContent\", updatedContent)",
+          "target": ".log(\"更新内容\", updatedContent)"
+        },
+        {
+          "source": ".log(\"result has content\")",
+          "target": ".log(\"result has content\")"
+        },
+        {
+          "source": ".log(\"same content\")",
+          "target": ".log(\"same content\")"
+        },
+        {
+          "source": ".log(\"not same content\")",
+          "target": ".log(\"not same content\")"
+        },
+        {
+          "source": ".log(\"replace\")",
+          "target": ".log(\"替换\")"
+        },
+        {
+          "source": ".log(\"community plugins udpate failed, check your connexion\")",
+          "target": ".log(\"社区插件更新失败，请检查您的连接。\")"
+        },
+        {
+          "source": ".log(\n          \"fetched less than 2 min, community plugins not updated\"\n        )",
+          "target": ".log(\n          \"拉取时间少于2分钟，社区插件未更新。\"\n        )"
+        },
+        {
+          "source": ".log(\"fetching'''''''''''''''''''''''''\")",
+          "target": ".log(\"获取\")"
+        },
+        {
+          "source": ".log(\"fetched\")",
+          "target": ".log(\"获取\")"
+        },
+        {
+          "source": ".error(\"this file is not a JSON list.\")",
+          "target": ".error(\"该文件不是一个 JSON 列表。\")"
+        },
+        {
+          "source": ".error(\"Error reading JSON file: \", erreur)",
+          "target": ".error(\"读取JSON文件时出错:\", erreur)"
+        },
+        {
+          "source": ".error(\"Error saving JSON file:\", error)",
+          "target": ".error(\"保存 JSON 文件时出错:\", error)"
+        },
+        {
+          "source": ".error(\"install failed\")",
+          "target": ".error(\"安装失败\")"
+        },
+        {
+          "source": "name: \"dotenv\"",
+          "target": "name: \"环境变量\""
+        },
+        {
+          "source": "name: \"README.md\"",
+          "target": "name: \"README.md\""
+        },
+        {
+          "source": "name : `Group${i}`",
+          "target": "name : `第${i}组`"
+        },
+        {
+          "source": "name: \"JSON Files\"",
+          "target": "name: \"JSON文件\""
+        },
+        {
+          "source": "name: \"\\u21D4 switch \"",
+          "target": "name: \"\\u21D4 切换\""
+        },
+        {
+          "source": "name: \"open modal\"",
+          "target": "name: \"打开模态框\""
+        },
+        {
+          "source": "description: \"Loads environment variables from .env file\"",
+          "target": "description: \"从 .env 文件加载环境变量\""
+        },
+        {
+          "source": "text: `${groupKey}`",
+          "target": "text: `${群组键}`"
+        },
+        {
+          "source": "text: `> (h)\\u{1F441}\\uFE0F (\\u{1F5B1}\\uFE0Fx2)name`",
+          "target": "text: `> (h)👁️ (🖱️x2)名称`"
+        },
+        {
+          "source": "text: `(\\u{1F5B1}\\uFE0Fx2)name,icon:delay (\\u{1F5B1}\\uFE0F...)context-menu`",
+          "target": "text: `(⛱️x2)名称，图标：延迟 (⛱️...) 右键菜单`"
+        },
+        {
+          "source": "text: `(1-${numberOfGroups})\\u2795 (0)\\u274C `",
+          "target": "text: `(1-${numberOfGroups})✅ (0)❌`"
+        },
+        {
+          "source": "text: \"(g)\"",
+          "target": "text: \"抱歉，您提供的内容太少，无法进行有效翻译。请提供更多的文本内容供我翻译。谢谢！\""
+        },
+        {
+          "source": "text: ` (\\u{1F5B1}\\uFE0Fx2/ctrl)Readme `",
+          "target": "text: `(\\u{1F5B1}\\uFE0Fx2/ctrl)说明文档`"
+        },
+        {
+          "source": "text: \"(n)\\u{1F4DD} \"",
+          "target": "text: \"(n) 笔记\""
+        },
+        {
+          "source": "text: \"(s)\\u{1F4CA} \"",
+          "target": "text: \"(s)\\u{1F4CA} 主要用于记录和跟踪各种类型的支出。\""
+        },
+        {
+          "source": "text: \"(t)translate\"",
+          "target": "text: \"抱歉，我无法完成这项任务。如果你有任何其他问题或需要帮助，请随时告诉我。我会尽力提供帮助。\""
+        },
+        {
+          "source": "text: \"installed\"",
+          "target": "text: \"已安装\""
+        },
+        {
+          "source": "text: \"author: \"",
+          "target": "text: \"作者:\""
+        },
+        {
+          "source": "text: \"By: \"",
+          "target": "text: \"作者:\""
+        },
+        {
+          "source": "text: \" (t) translate  (n) add note\"",
+          "target": "text: \"翻译 添加笔记\""
+        },
+        {
+          "source": "text: \"DON'T INCLUDE H1 titles. To delete a note delete all content.\"",
+          "target": "text: \"不包括H1标题。要删除一个笔记，请删除所有内容。\""
+        },
+        {
+          "source": "text: `(1-${numberOfGroups})\\u2795 (0)\\u274C (f)\\u{1F4C1} `",
+          "target": "text: `(1-${numberOfGroups})✅ (0)❌ (f)📁`"
+        },
+        {
+          "source": "text: ` (ctrl)\\u2139\\uFE0F (s)\\u2699\\uFE0F (h)\\u2328\\uFE0F `",
+          "target": "text: `（Ctrl）ℹ️ （S）⚙️ （H）⌨️`"
+        },
+        {
+          "source": "text: `(\\u{1F5B1}\\uFE0Fx2)delay`",
+          "target": "text: `(\\u{1F5B1}\\uFE0F x2)延迟`"
+        },
+        {
+          "source": "search: \"\",\n  numberOfGroups: 4,\n  groups: {},\n  showHotKeys: true,\n  // commnunity plugins\n  pluginStats: {},\n  plugins: [],\n  commPlugins: {},\n  filtersComm: \"",
+          "target": "好的，请告诉我插件的名称，我会开始翻译工作。search: \"\",\n  numberOfGroups: 4,\n  groups: {},\n  showHotKeys: true,\n  // commnunity plugins\n  pluginStats: {},\n  plugins: [],\n  commPlugins: {},\n  filtersComm: \""
+        },
+        {
+          "source": ".setButtonText(\"GitHub Repo\")",
+          "target": ".setButtonText(\"GitHub 仓库\")"
+        },
+        {
+          "source": ".setButtonText(\"Install\")",
+          "target": ".setButtonText(\"安装\")"
+        },
+        {
+          "source": ".setButtonText(\"Enable\")",
+          "target": ".setButtonText(\"启用\")"
+        },
+        {
+          "source": ".setButtonText(\"Options\")",
+          "target": ".setButtonText(\"选项\")"
+        },
+        {
+          "source": ".setButtonText(\"Hotkeys\")",
+          "target": ".setButtonText(\"快捷键\")"
+        },
+        {
+          "source": ".setButtonText(\"Disable\")",
+          "target": ".setButtonText(\"禁用\")"
+        },
+        {
+          "source": ".setButtonText(\"Uninstall\")",
+          "target": ".setButtonText(\"卸载\")"
+        },
+        {
+          "source": ".setButtonText(\"\\u{1F4DD}\")",
+          "target": ".setButtonText(\"插件\")"
+        },
+        {
+          "source": ".setButtonText(\"\\u2807\")",
+          "target": ".setButtonText(\"\\u2807\")"
+        },
+        {
+          "source": ".setName(\"Number of plugins groups\")",
+          "target": ".setName(\"插件组数量\")"
+        },
+        {
+          "source": ".setName(\"Number of community plugins groups\")",
+          "target": ".setName(\"社区插件组数量\")"
+        },
+        {
+          "source": ".setName(\"Show hotkeys line reminder\")",
+          "target": ".setName(\"显示快捷键行提醒\")"
+        },
+        {
+          "source": ".setName(\"Keep dropdowns last value\")",
+          "target": ".setName(\"保留下拉菜单的上次数值\")"
+        },
+        {
+          "source": ".setName(\"Community plugins notes folder\")",
+          "target": ".setName(\"社区插件笔记文件夹\")"
+        },
+        {
+          "source": ".setDesc(\"To treat plugins by groups\")",
+          "target": ".setDesc(\"按组处理插件\")"
+        },
+        {
+          "source": ".setDesc(\"If enabled, dropdowns will be kept in last value when opening the modal\")",
+          "target": ".setDesc(\"如果启用，下拉菜单将在打开模态时保留上次的值。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"search or type new folder\")",
+          "target": ".setPlaceholder(\"搜索或输入新文件夹\")"
+        },
+        {
+          "source": ".setTooltip(\"Reset mostSwitched values\")",
+          "target": ".setTooltip(\"重置大多数切换值\")"
+        },
+        {
+          "source": ".setTooltip(\n    \"change type of sorting\"\n  )",
+          "target": ".setTooltip(\n    \"更改排序类型\"\n  )"
+        },
+        {
+          "source": ".setTooltip(\n    \"Search for updates\"\n  )",
+          "target": ".setTooltip(\n    \"搜索更新\"\n  )"
+        },
+        {
+          "source": ".setTooltip(\n    \"open context-menu\"\n  )",
+          "target": ".setTooltip(\n    \"打开上下文菜单\"\n  )"
+        },
+        {
+          "source": ".setTooltip(\"open plugin notes\")",
+          "target": ".setTooltip(\"打开插件笔记\")"
+        },
+        {
+          "source": ".setTooltip(\n    \"community plugins: you can tag plugins with groups, install by group...\"\n  )",
+          "target": ".setTooltip(\n    \"社区插件：您可以使用分组对插件进行标记，按组安装...\"\n  )"
+        },
+        {
+          "source": ".setTooltip(\n    \"Install & enable plugins based on another Vault content or from a JSON list\"\n  )",
+          "target": ".setTooltip(\n    \"根据另一个Vault内容或JSON列表安装并启用插件\"\n  )"
+        },
+        {
+          "source": ".setTooltip(\n    \"toggle plugins: you can disable some plugins and enable them later\"\n  )",
+          "target": ".setTooltip(\n    \"切换插件：您可以禁用某些插件，以后再启用它们\"\n  )"
+        },
+        {
+          "source": ".setTitle(\"Delay group (or dblclick icon)\")",
+          "target": ".setTitle(\"延迟组 (或双击图标)\")"
+        },
+        {
+          "source": ".setTitle(\"Show/hide group content\")",
+          "target": ".setTitle(\"显示/隐藏组内容\")"
+        },
+        {
+          "source": ".setTitle(\"Enable all plugins in group\")",
+          "target": ".setTitle(\"启用组中的所有插件\")"
+        },
+        {
+          "source": ".setTitle(\"Disable all plugins in group\")",
+          "target": ".setTitle(\"禁用该组中的所有插件\")"
+        },
+        {
+          "source": ".setTitle(\"Install & enable in group\")",
+          "target": ".setTitle(\"安装并在组中启用\")"
+        },
+        {
+          "source": ".setTitle(\"Install plugins in group\")",
+          "target": ".setTitle(\"安装插件组\")"
+        },
+        {
+          "source": ".setTitle(\"Uninstall plugins in group\")",
+          "target": ".setTitle(\"在组中卸载插件\")"
+        },
+        {
+          "source": ".setTitle(`${groupValue}`)",
+          "target": ".setTitle(`${groupValue} 的翻译结果为：${groupValue}`)"
+        },
+        {
+          "source": ".setTitle(\"Remove item group(s)\")",
+          "target": ".setTitle(\"移除项目组(们)\")"
+        },
+        {
+          "source": ".setTitle(\"All\")",
+          "target": ".setTitle(\"全部\")"
+        },
+        {
+          "source": ".setTitle(`${emoji} group ${groupIndex}`)",
+          "target": ".setTitle(`${emoji} 分组 ${groupIndex}`)"
+        },
+        {
+          "source": ".setTitle(\"Copy (Ctrl+C)\")",
+          "target": ".setTitle(\"复制 (Ctrl+C)\")"
+        },
+        {
+          "source": ".setTitle(\"translate (t)\")",
+          "target": ".setTitle(\"翻译\")"
+        },
+        {
+          "source": ".setTitle(\"Update plugin(s)\")",
+          "target": ".setTitle(\"更新插件\")"
+        },
+        {
+          "source": ".setTitle(\"Search for updates again\")",
+          "target": ".setTitle(\"再次搜索更新\")"
+        },
+        {
+          "source": ".setTitle(\"Install plugins based on another Vault\")",
+          "target": ".setTitle(\"基于另一个Vault安装插件\")"
+        },
+        {
+          "source": ".setTitle(\"Install & enable plugins based on another Vault\")",
+          "target": ".setTitle(\"安装并启用基于另一个Vault的插件\")"
+        },
+        {
+          "source": ".setTitle(\"Save installed plugins list\")",
+          "target": ".setTitle(\"保存已安装插件列表\")"
+        },
+        {
+          "source": ".setTitle(\"Install & enable plugins from json list\")",
+          "target": ".setTitle(\"从 JSON 列表安装并启用插件\")"
+        },
+        {
+          "source": ".setTitle(\"Install plugins from json list\")",
+          "target": ".setTitle(\"从 JSON 列表安装插件\")"
+        },
+        {
+          "source": ".setTitle(\"No enabled plugins\")",
+          "target": ".setTitle(\"无已启用的插件\")"
+        },
+        {
+          "source": ".setTitle(\"Skip re-enable\")",
+          "target": ".setTitle(\"跳过重新启用\")"
+        },
+        {
+          "source": ".setTitle(\"Toggle enabled-plugins by group\")",
+          "target": ".setTitle(\"按组切换启用的插件\")"
+        },
+        {
+          "source": ".setTitle(\"Short info (i)\")",
+          "target": ".setTitle(\"简短信息 (i)\")"
+        },
+        {
+          "source": ".setTitle(\"Plugin github (g)\")",
+          "target": ".setTitle(\"插件 GitHub (g)\")"
+        },
+        {
+          "source": ".setTitle(\"Plugin settings (s)\")",
+          "target": ".setTitle(\"插件设置\")"
+        },
+        {
+          "source": ".setTitle(\"Modify hotkeys (h)\")",
+          "target": ".setTitle(\"修改快捷键 (h)\")"
+        },
+        {
+          "source": ".setTitle(\"Copy\")",
+          "target": ".setTitle(\"复制\")"
+        },
+        {
+          "source": ".setTitle(\"Translate (t)\")",
+          "target": ".setTitle(\"翻译\")"
+        },
+        {
+          "source": ".setTitle(\"View stats\")",
+          "target": ".setTitle(\"查看统计\")"
+        },
+        {
+          "source": ".setTitle(\"Install plugin\")",
+          "target": ".setTitle(\"安装插件\")"
+        },
+        {
+          "source": ".setTitle(\"Uninstall plugin\")",
+          "target": ".setTitle(\"[object Object]\")"
+        },
+        {
+          "source": ".setTitle(\"Plugin github\")",
+          "target": ".setTitle(\"插件 GitHub\")"
+        },
+        {
+          "source": ".setTitle(\"open Readme (dbl touch)\")",
+          "target": ".setTitle(\"打开自述文件 (双击)\")"
+        },
+        {
+          "source": ".setTitle(\"Remove All groups\")",
+          "target": ".setTitle(\"移除所有分组\")"
+        },
+        {
+          "source": ".setTitle(\"Plugin folder (f)\")",
+          "target": ".setTitle(\"插件文件夹\")"
+        },
+        {
+          "source": ".setTitle(\"Plugin features\")",
+          "target": ".setTitle(\"插件功能\")"
+        },
+        {
+          "source": ".setTitle(\"Update plugin!\")",
+          "target": ".setTitle(\"更新插件！\")"
+        },
+        {
+          "source": ".setTitle(\"Add to group\")",
+          "target": ".setTitle(\"添加至群组\")"
+        },
+        {
+          "source": ".setTitle(\"Remove from group\")",
+          "target": ".setTitle(\"从群组中移除\")"
+        },
+        {
+          "source": ".setTitle(\"All groups\")",
+          "target": ".setTitle(\"所有群组\")"
+        },
+        {
+          "source": ".setTitle(\"Clear group(s)\")",
+          "target": ".setTitle(\"清除分组(们)\")"
+        }
+      ]
+    }
+  }
+}

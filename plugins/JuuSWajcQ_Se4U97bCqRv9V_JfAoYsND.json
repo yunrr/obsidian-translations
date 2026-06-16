@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-statusbar-pomo",
+    "version": "2.0.0",
+    "title": "Status Bar Pomodoro Timer",
+    "description": "Adds a pomodoro timer to your status bar.",
+    "language": "zh-cn",
+    "supportedVersions": "0.1.15",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Failed to read the daily note template\")",
+          "target": "Notice(\"读取日报模板失败\")"
+        },
+        {
+          "source": "Notice(\"Unable to create new file.\")",
+          "target": "Notice(\"无法创建新文件\")"
+        },
+        {
+          "source": "Notice(\"Please enable daily notes plugin\")",
+          "target": "Notice(\"请启用每日笔记插件\")"
+        },
+        {
+          "source": "Notice(\"Please specify a valid number.\")",
+          "target": "Notice(\"请指定一个有效号码\")"
+        },
+        {
+          "source": "Notice(\"Timer paused.\")",
+          "target": "Notice(\"计时器暂停。\")"
+        },
+        {
+          "source": "Notice(`Starting ${time} ${unit} pomodoro.`)",
+          "target": "Notice(`从${时间}${单位}番茄开始。`)"
+        },
+        {
+          "source": "Notice(`Starting ${time} ${unit} break.`)",
+          "target": "Notice(`开始${时间}${单位}休息。`)"
+        },
+        {
+          "source": "Notice('Quitting pomodoro timer.')",
+          "target": "Notice('停止番茄定时器。')"
+        },
+        {
+          "source": "Notice(`Restarting pomodoro.`)",
+          "target": "Notice(`重新启动番茄。`)"
+        },
+        {
+          "source": "Notice(`Restarting break.`)",
+          "target": "Notice(`重新开始休息。`)"
+        },
+        {
+          "source": ".log(\"Creating pomodoro log file\")",
+          "target": ".log(\"创建番茄钟日志\")"
+        },
+        {
+          "source": ".log('Loading status bar pomodoro timer')",
+          "target": ".log('加载状态栏番茄定时器')"
+        },
+        {
+          "source": ".log(error)",
+          "target": ".log(error)"
+        },
+        {
+          "source": ".log('Unloading status bar pomodoro timer')",
+          "target": ".log('卸货状态栏番茄定时器')"
+        },
+        {
+          "source": ".log(\"Created daily note: \" + file.path)",
+          "target": ".log(\"创建每日笔记：\" + file.path)"
+        },
+        {
+          "source": ".log(\"Creating daily note folder: \" + dailyNoteFolder)",
+          "target": ".log(\"创建每日笔记文件夹：\" + dailyNoteFolder)"
+        },
+        {
+          "source": ".error(`Failed to read the daily note template '${templatePath}'`, err)",
+          "target": ".error(`无法读取日记模板“${templatePath}”`, err)"
+        },
+        {
+          "source": ".error(`Failed to create file: '${normalizedPath}'`, err)",
+          "target": ".error(`创建文件失败：“$｛normalizedPath｝”`, err)"
+        },
+        {
+          "source": "name: 'Start pomodoro'",
+          "target": "name: '启动番茄'"
+        },
+        {
+          "source": "name: 'Toggle timer pause'",
+          "target": "name: '切换定时器暂停'"
+        },
+        {
+          "source": "name: 'Quit timer'",
+          "target": "name: '退出计时器'"
+        },
+        {
+          "source": "text: 'Timer'",
+          "target": "text: '定时器'"
+        },
+        {
+          "source": "text: \"Appearance\"",
+          "target": "text: \"外观\""
+        },
+        {
+          "source": "text: \"Sound\"",
+          "target": "text: \"声音\""
+        },
+        {
+          "source": "text: \"Logging\"",
+          "target": "text: \"登录中\""
+        },
+        {
+          "source": ".setName(\"Pomodoro time (minutes)\")",
+          "target": ".setName(\"番茄时间（分钟）\")"
+        },
+        {
+          "source": ".setName(\"Short break time (minutes)\")",
+          "target": ".setName(\"短暂休息时间（分钟）\")"
+        },
+        {
+          "source": ".setName(\"Long break time (minutes)\")",
+          "target": ".setName(\"长休息时间（分钟）\")"
+        },
+        {
+          "source": ".setName(\"Long break interval\")",
+          "target": ".setName(\"长休息间隔\")"
+        },
+        {
+          "source": ".setName(\"Autostart timer\")",
+          "target": ".setName(\"自动启动时间\")"
+        },
+        {
+          "source": ".setName(\"Cycles before pause\")",
+          "target": ".setName(\"暂停前的循环\")"
+        },
+        {
+          "source": ".setName(\"Sidebar icon\")",
+          "target": ".setName(\"侧边栏图标\")"
+        },
+        {
+          "source": ".setName(\"Timer emoji\")",
+          "target": ".setName(\"表情符号定时器\")"
+        },
+        {
+          "source": ".setName(\"System notification\")",
+          "target": ".setName(\"系统通知\")"
+        },
+        {
+          "source": ".setName(\"Notification sound\")",
+          "target": ".setName(\"通知声音\")"
+        },
+        {
+          "source": ".setName(\"White noise\")",
+          "target": ".setName(\"白噪声\")"
+        },
+        {
+          "source": ".setName(\"Logging\")",
+          "target": ".setName(\"登录中\")"
+        },
+        {
+          "source": ".setName(\"Log file\")",
+          "target": ".setName(\"日志文件\")"
+        },
+        {
+          "source": ".setName(\"Log to daily note\")",
+          "target": ".setName(\"记录到每日笔记\")"
+        },
+        {
+          "source": ".setName(\"Timestamp Format\")",
+          "target": ".setName(\"时间戳格式\")"
+        },
+        {
+          "source": ".setName(\"Log active note\")",
+          "target": ".setName(\"记录活动笔记\")"
+        },
+        {
+          "source": ".setDesc(\"Leave blank for default\")",
+          "target": ".setDesc(\"默认情况下留空\")"
+        },
+        {
+          "source": ".setDesc(\"Number of pomos before a long break; leave blank for default\")",
+          "target": ".setDesc(\"在进行长时间休息之前需要完成的番茄工作法次数；留空则使用默认设置\")"
+        },
+        {
+          "source": ".setDesc(\"Start each pomodoro and break automatically. When off, click the sidebar icon on the left or use the toggle pause command to start the next timer\")",
+          "target": ".setDesc(\"启动每个番茄并自动破碎。禁用时，单击左侧的侧边栏图标或使用切换暂停命令启动下一个计时器\")"
+        },
+        {
+          "source": ".setDesc(\"Number of pomodoro + break cycles to run automatically before stopping. Default is 0 (stops after every pomodoro and every break)\")",
+          "target": ".setDesc(\"自动运行的番茄工作法+休息周期数，达到该次数后停止。默认值为0（即每个番茄工作法和每次休息后都会停止）)\")"
+        },
+        {
+          "source": ".setDesc(\"Toggle left sidebar icon. Restart Obsidian for the change to take effect\")",
+          "target": ".setDesc(\"切换左侧边栏图标。重新启动Obsidian以使更改生效\")"
+        },
+        {
+          "source": ".setDesc(\"Toggle 🏖️/🍅 emoji that indicate whether a timer is a pomodoro or a break.\")",
+          "target": ".setDesc(\"切换🏖️/🍅表情符号，用于指示计时器当前是处于休息时间还是番茄工作法时间\")"
+        },
+        {
+          "source": ".setDesc(\"Use system notifications at the end of each pomodoro and break\")",
+          "target": ".setDesc(\"在每个番茄和休息结束时使用系统通知\")"
+        },
+        {
+          "source": ".setDesc(\"Play notification sound at the end of each pomodoro and break\")",
+          "target": ".setDesc(\"在每个番茄结束和休息时播放通知声音\")"
+        },
+        {
+          "source": ".setDesc(\"Play white noise while timer is active\")",
+          "target": ".setDesc(\"定时器处于活动状态时播放白噪声\")"
+        },
+        {
+          "source": ".setDesc(\"Enable a log of completed pomodoros\")",
+          "target": ".setDesc(\"启用已完成番茄的日志\")"
+        },
+        {
+          "source": ".setDesc(\"If file doesn't already exist, it will be created\")",
+          "target": ".setDesc(\"如果文件不存在，将创建它\")"
+        },
+        {
+          "source": ".setDesc(\"Logs to the end of today's daily note\")",
+          "target": ".setDesc(\"日志记录到今天的每日笔记末尾\")"
+        },
+        {
+          "source": ".setDesc(\"Specify format for the logtext using moment syntax\")",
+          "target": ".setDesc(\"使用矩语法指定日志文本的格式\")"
+        },
+        {
+          "source": ".setDesc(\"In log, append link pointing to the note that was active when you started the pomodoro\")",
+          "target": ".setDesc(\"在日志中，附加指向启动番茄钟时活动的注释的链接\")"
+        }
+      ]
+    }
+  }
+}
