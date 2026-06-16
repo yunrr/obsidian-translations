@@ -1,0 +1,787 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "myworld-task-manager",
+    "version": "1.0.0",
+    "title": "MyWorld Task Manager",
+    "description": "MyWorld Task Manager Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.0.3",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "정말 PARA 지식 관리 폴더 구조를 보관소 최상단에 일괄 생성하시겠습니까?\n(이미 존재하는 폴더는 안전하게 건너뜁니다.)",
+          "target": "确定要在保管库顶层批量创建 PARA 知识管理文件夹结构吗？\\n（已存在的文件夹将安全跳过。）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "정말 제텔카스텐 지식 관리 폴더 구조를 보관소 최상단에 일괄 생성하시겠습니까?\n(이미 존재하는 폴더는 안전하게 건너뜁니다.)",
+          "target": "确定要在保管库顶层批量创建卡片盒知识管理文件夹结构吗？\\n（已存在的文件夹将安全跳过。）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "정말로 모든 설정값을 초기 상태로 되돌리시겠습니까?",
+          "target": "确定要将所有设置值恢复为初始状态吗？"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Task Manage Error:",
+          "target": "任务管理错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Push Project Schedule Error:",
+          "target": "推送项目计划错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Daily Reset Execution Error:",
+          "target": "每日重置执行错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Rollback failed for",
+          "target": "回滚失败，对象："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Daily Task Reset Initialization Error:",
+          "target": "每日任务重置初始化错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Manual Archive Error:",
+          "target": "手动归档错误："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Loading MyWorld Task Manager...",
+          "target": "正在加载 MyWorld 任务管理器..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Unloading MyWorld Task Manager...",
+          "target": "正在卸载 MyWorld 任务管理器..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "PARA 구조 생성",
+          "target": "创建 PARA 结构"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "제텔카스텐 구조 생성",
+          "target": "创建卡片盒结构"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "템플릿 생성 실행",
+          "target": "执行模板创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "스케줄 생성 실행",
+          "target": "执行计划创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "샘플 생성 실행",
+          "target": "执行样本创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "초기화 실행",
+          "target": "执行初始化"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "생성하기",
+          "target": "创建"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "취소",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "프로젝트 생성",
+          "target": "创建项目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "프로젝트 계획서 노트들이 보관될 폴더 경로를 지정하세요.",
+          "target": "请指定项目计划笔记的存放文件夹路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "루틴과 통합 대시보드가 들어간 일일 스케줄 파일 경로를 지정하세요.",
+          "target": "请指定包含例程和集成仪表板的每日计划文件路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "주간/월간 통계 및 일지 노트가 자동 생성되고 누적될 아카이브 폴더 경로를 지정하세요.",
+          "target": "请指定将自动生成并累积每周/每月统计及日志笔记的归档文件夹路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "메인 스케줄의 📋 버튼 클릭 시 생성되고 열릴 임시 메모 마크다운 파일 경로를 지정하세요.",
+          "target": "请指定点击主计划中的 📋 按钮时将创建并打开的临时备忘录 Markdown 文件路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "플러그인용 기본 템플릿 노트(데일리 스케줄, 프로젝트 계획서)가 보존될 폴더 경로를 지정하세요.",
+          "target": "请指定插件默认模板笔记（每日计划、项目计划）的存放文件夹路径。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "새벽 몇 시 이전까지의 마감 실행을 전날 날짜의 기록으로 취급할지 지정합니다. (0~12시)",
+          "target": "指定凌晨几点之前的截止执行将被视为前一天的记录。（0~12点）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "보관소 루트에 PARA 지식 관리 시스템(0. Inbox, 1. Project, 2. Area, 3. Resource, 4. Archive, 10.File) 구조와 폴더별 설명서를 자동 생성합니다.",
+          "target": "在保管库根目录自动创建 PARA 知识管理系统（0. Inbox, 1. Project, 2. Area, 3. Resource, 4. Archive, 10.File）结构及各文件夹说明文档。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "보관소 루트에 제텔카스텐 지식 관리 시스템(5. Zettelkasten 및 하위 Fleeting, Literature, Permanent 폴더) 구조와 폴더별 설명서를 자동 생성합니다.",
+          "target": "在保管库根目录自动创建卡片盒知识管理系统（5. Zettelkasten 及其子文件夹 Fleeting, Literature, Permanent）结构及各文件夹说明文档。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "원하는 보관소 내 폴더 경로를 입력받아 플러그인용 기본 노트 양식 2종(데일리 스케줄/프로젝트 계획서)을 자동으로 생성합니다.",
+          "target": "接收保管库内指定文件夹路径，自动生成两种插件默认笔记模板（每日计划/项目计划）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "설정된 '메인 스케줄 노트 경로'에 오늘 날짜 기반의 루틴 스케줄 노트를 즉시 자동 생성합니다.",
+          "target": "立即在已设置的“主计划笔记路径”下自动生成基于今日日期的例程计划笔记。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "설정된 '프로젝트 폴더 경로' 하위에 기본 '샘플 프로젝트.md' 관리 문서를 즉시 자동 생성합니다.",
+          "target": "立即在已设置的“项目文件夹路径”下自动生成默认的“示例项目.md”管理文档。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "데일리 스케줄 노트 생성 시 활용될 커스텀 본문 양식을 입력하세요 (비워두면 기본 내장 양식 사용).",
+          "target": "请输入创建每日计划笔记时将使用的自定义正文模板（留空则使用内置默认模板）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "신규 프로젝트 노트 생성 시 활용될 커스텀 본문 양식을 입력하세요 (비워두면 기본 내장 양식 사용).",
+          "target": "请输入创建新项目笔记时将使用的自定义正文模板（留空则使用内置默认模板）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "플러그인의 모든 설정을 기본값으로 되돌립니다. (주의: 기존 설정 정보가 소실되며, 되돌릴 수 없습니다.)",
+          "target": "将插件所有设置恢复为默认值。（注意：现有设置信息将丢失且无法恢复。）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "생성할 프로젝트 노트의 제목을 입력하세요.",
+          "target": "请输入要创建的项目笔记标题。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "프로젝트 폴더 경로",
+          "target": "项目文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "메인 스케줄 노트 경로",
+          "target": "主计划笔记路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "아카이브 루트 폴더 경로",
+          "target": "归档根文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "임시 메모 파일 경로",
+          "target": "临时备忘录文件路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "템플릿 폴더 경로",
+          "target": "模板文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "자정 보정 기준 시간",
+          "target": "午夜校准基准时间"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "PARA 구조 생성",
+          "target": "创建 PARA 结构"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "제텔카스텐 구조 생성",
+          "target": "创建卡片盒结构"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "기본 템플릿 노트 생성",
+          "target": "创建默认模板笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "스케줄 관리 노트 생성",
+          "target": "创建计划管理笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "샘플 프로젝트 노트 생성",
+          "target": "创建示例项目笔记"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "커스텀 데일리 스케줄 템플릿",
+          "target": "自定义每日计划模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "커스텀 프로젝트 노트 템플릿",
+          "target": "自定义项目笔记模板"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "설정값 초기화",
+          "target": "重置设置值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "생성 폴더 경로",
+          "target": "创建文件夹路径"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "프로젝트명",
+          "target": "项目名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "1. Project",
+          "target": "1. 项目"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "4. Archive/98.Schedule",
+          "target": "4. 归档/98.日程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "{{date}}, {{time}}, {{currentDay}} 등의 플레이스홀더를 사용할 수 있습니다.",
+          "target": "可以使用 {{date}}、{{time}}、{{currentDay}} 等占位符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "{{projectName}} 등의 플레이스홀더를 사용할 수 있습니다.",
+          "target": "可以使用 {{projectName}} 等占位符。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "예: 파이썬 웹 크롤러 개발",
+          "target": "例如：Python 网络爬虫开发"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 이미 모든 PARA 구조가 존재하여 파일 생성을 건너뛰었습니다.",
+          "target": "✅ 所有 PARA 结构均已存在，已跳过文件创建。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 PARA 시스템 구조 생성 중 오류가 발생했습니다.",
+          "target": "🚨 创建 PARA 系统结构时发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 이미 모든 제텔카스텐 구조가 존재하여 파일 생성을 건너뛰었습니다.",
+          "target": "✅ 所有卡片盒结构均已存在，已跳过文件创建。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 제텔카스텐 구조 생성 중 오류가 발생했습니다.",
+          "target": "🚨 创建卡片盒结构时发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 템플릿 파일 생성 중 오류가 발생했습니다.",
+          "target": "🚨 创建模板文件时发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 스케줄 관리 노트가 생성되었습니다!",
+          "target": "✅ 计划管理笔记已创建！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 샘플 프로젝트 노트가 생성되었습니다!",
+          "target": "✅ 示例项目笔记已创建！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 모든 설정값이 초기화되었습니다!",
+          "target": "✅ 所有设置值已重置！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 생성할 폴더 경로를 입력해 주세요.",
+          "target": "🚨 请输入要创建的文件夹路径。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⏳ 프로젝트 동기화 시작...",
+          "target": "⏳ 开始项目同步..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 프로젝트 동기화 완료!",
+          "target": "✅ 项目同步完成！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 동기화 실패: 에러가 발생했습니다.",
+          "target": "🚨 同步失败：发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⏳ 스케줄 반영 및 대시보드 갱신 중...",
+          "target": "⏳ 正在更新计划并刷新仪表板..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 메인 스케줄 파일을 찾을 수 없습니다.",
+          "target": "🚨 找不到主计划文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 반영 실패: 원본 데이터를 복구했습니다.",
+          "target": "🚨 更新失败：已恢复原始数据。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⏳ 일간 마감 준비 중...",
+          "target": "⏳ 正在准备每日截止..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⏳ 일간 마감 및 리셋 시작...",
+          "target": "⏳ 开始每日截止与重置..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "\\u{1F4C2} \\uC8FC\\uAC04 \\uC544\\uCE74\\uC774\\uBE0C \\uAC31\\uC2E0 \\uC911...",
+          "target": "\\\\u{1F4C2} 正在刷新每周归档..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 새로운 하루 준비 완료!",
+          "target": "✅ 新的一天准备就绪！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 리셋 실패: 모든 연관 파일을 복구했습니다.",
+          "target": "🚨 重置失败：已恢复所有关联文件。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 리셋 초기화 실패: 에러가 발생했습니다.",
+          "target": "🚨 重置初始化失败：发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⏳ 월간 통계 수동 아카이빙 시작...",
+          "target": "⏳ 开始手动归档月度统计..."
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⚠️ 아카이빙할 체크리스트 표를 찾을 수 없습니다.",
+          "target": "⚠️ 找不到要归档的检查清单表格。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⚠️ 체크리스트 표에 데이터가 부족합니다.",
+          "target": "⚠️ 检查清单表格数据不足。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 월간 통계 수동 아카이빙 및 대시보드 갱신 완료!",
+          "target": "✅ 月度统计手动归档及仪表板刷新完成！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⚠️ 생성된 통계 대시보드가 없습니다.",
+          "target": "⚠️ 没有生成的统计仪表板。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 아카이빙 중 에러가 발생했습니다.",
+          "target": "🚨 归档过程中发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "내용을 입력해주세요.",
+          "target": "请输入内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "프로젝트명을 입력해주세요.",
+          "target": "请输入项目名称。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⚠️ 현재 열려 있는 노트가 프로젝트 폴더에 속해 있지 않습니다.",
+          "target": "⚠️ 当前打开的笔记不属于项目文件夹。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 할 일 추가 도중 에러가 발생했습니다.",
+          "target": "🚨 添加待办事项时发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ PARA 시스템 폴더 구조 및 가이드 문서가 생성되었습니다.",
+          "target": "✅ PARA 系统文件夹结构及指南文档已生成。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 PARA 시스템 구조 생성 중 에러가 발생했습니다.",
+          "target": "🚨 创建 PARA 系统结构时发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 제텔카스텐 폴더 구조 및 가이드 문서가 생성되었습니다.",
+          "target": "✅ 卡片盒笔记法文件夹结构及指南文档已生成。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 제텔카스텐 구조 생성 중 에러가 발생했습니다.",
+          "target": "🚨 创建卡片盒笔记法结构时发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "⚠️ 동일한 이름의 프로젝트가 이미 존재합니다.",
+          "target": "⚠️ 已存在同名项目。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 프로젝트 생성 중 에러가 발생했습니다.",
+          "target": "🚨 创建项目时发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "ℹ️ 스케줄 관리 노트가 이미 존재합니다.",
+          "target": "ℹ️ 日程管理笔记已存在。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "✅ 오늘의 스케줄 관리 노트가 성공적으로 생성되었습니다!",
+          "target": "✅ 今日日程管理笔记已成功创建！"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 스케줄 관리 노트 생성 중 에러가 발생했습니다.",
+          "target": "🚨 创建日程管理笔记时发生错误。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "📝 새 임시 메모 파일이 생성되었습니다.",
+          "target": "📝 新的临时备忘录文件已创建。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "🚨 임시 메모를 생성하거나 여는 도중 에러가 발생했습니다.",
+          "target": "🚨 创建或打开临时备忘录时发生错误。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "양방향 프로젝트 및 스케줄 동기화",
+          "target": "双向项目与日程同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "일간 루틴 리셋 및 회고 기록",
+          "target": "每日例行重置与回顾记录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "현재 프로젝트 정보를 스케줄에 반영",
+          "target": "将当前项目信息同步至日程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "월간 통계 수동 아카이빙 및 대시보드 갱신",
+          "target": "手动归档月度统计并更新仪表板"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "빠른 할 일 등록",
+          "target": "快速添加待办事项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "임시 메모 파일 열기 및 생성",
+          "target": "打开或创建临时备忘录文件"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "새 프로젝트 노트 생성",
+          "target": "新建项目笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "오늘의 스케줄 관리 노트 생성",
+          "target": "创建今日日程管理笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "원클릭 PARA 시스템 폴더 구조 생성",
+          "target": "一键生成 PARA 系统文件夹结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "원클릭 제텔카스텐 폴더 구조 생성",
+          "target": "一键生成卡片盒笔记法文件夹结构"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "여기에 오늘의 회고를 작성하세요...",
+          "target": "在此处撰写今日回顾..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "예: 계획 따라 움직이기 등...",
+          "target": "例如：按计划执行等..."
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "placeholder",
+          "source": "예: 물 2L 마시기",
+          "target": "例如：喝 2L 水"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "MyWorld Task Manager 설정",
+          "target": "MyWorld 任务管理器设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "1. 경로 설정",
+          "target": "1. 路径设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "2. 지식 관리 시스템 구축 헬퍼 (PARA & 제텔카스텐)",
+          "target": "2. 知识管理系统构建助手 (PARA & 卡片盒笔记法)"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "3. 기본 환경 및 파일 생성 헬퍼",
+          "target": "3. 基础环境与文件生成助手"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "4. 커스텀 노트 템플릿 본문 정의",
+          "target": "4. 自定义笔记模板正文定义"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "5. 설정 초기화",
+          "target": "5. 重置设置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "템플릿 노트 생성 위치 지정",
+          "target": "指定模板笔记创建位置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🌤️ 일간 마감 및 데일리 리셋",
+          "target": "🌤️ 每日收尾与例行重置"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "오늘의 회고",
+          "target": "今日回顾"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "오늘 하루의 생각이나 소회를 기입하세요.",
+          "target": "请记录您今天的思考或感想。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "내일의 Step",
+          "target": "明日步骤"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "내일 실행할 핵심 디데이 목표를 기입하세요.",
+          "target": "请记录您明天要执行的核心 D-Day 目标。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "제출 및 마감",
+          "target": "提交与截止"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "✏️ 할 일 등록",
+          "target": "✏️ 添加待办事项"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "메인 스케줄에 즉시 추가됩니다.",
+          "target": "将立即添加到主日程中。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "추가",
+          "target": "添加"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "🚀 새 프로젝트 생성",
+          "target": "🚀 新建项目"
+        }
+      ],
+      "regex": []
+    }
+  }
+}

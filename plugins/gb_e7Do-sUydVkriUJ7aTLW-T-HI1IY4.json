@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "narrate",
+    "version": "1.0.0",
+    "title": "Narrate",
+    "description": "Narrate Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "0.2.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Jump to chunk…",
+          "target": "跳转到区块…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Click: cycle speed · Right-click: reset to 1.0x",
+          "target": "点击：循环速度 · 右键点击：重置为1.0倍速"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Preparing…",
+          "target": "准备中…"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Pause",
+          "target": "暂停"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "title",
+          "source": "Play",
+          "target": "播放"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Column (categorical)",
+          "target": "列（分类）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Row (subject-based)",
+          "target": "行（基于主题）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Audiobook TTS] speak error",
+          "target": "[有声书TTS] 朗读出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[Audiobook TTS] save error",
+          "target": "[有声书TTS] 保存出错"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Test connection",
+          "target": "测试连接"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Fetch",
+          "target": "获取"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear all",
+          "target": "全部清除"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Clear cache",
+          "target": "清除缓存"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Base URL of your local TTS server. Must follow the OpenAI/OpenVox /v1 contract.",
+          "target": "本地TTS服务器的基础URL。必须遵循OpenAI/OpenVox /v1协议。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Smaller = faster first audio, more server requests. Default 200. Going below ~200 increases the chance of mid-sentence cuts for long Korean prose.",
+          "target": "值越小 = 首次音频加载越快，但服务器请求更多。默认值200。低于约200会增加长篇韩文散文在句子中间被截断的可能性。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Audio playback rate multiplier. 1.0 = normal speed. Takes effect on the next chunk.",
+          "target": "音频播放速率倍数。1.0 = 正常速度。对下一个区块生效。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Skip fenced code blocks and inline `code`.",
+          "target": "跳过带围栏的代码块和行内`代码`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Convert markdown tables into readable sentences. Off = skip tables.",
+          "target": "将Markdown表格转换为可读的句子。关闭 = 跳过表格。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Row reads each row as a subject + its other cells. Column reads each column with its header as the label. See the example above.",
+          "target": "行模式将每一行读作一个主题及其其他单元格。列模式将每一列连同其标题作为标签来读取。请参见上面的示例。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Off = strip \"(...)\" and \"（...）\" before reading (useful for skipping inline definitions).",
+          "target": "关闭 = 在朗读前去除\\\"(...)\\\"和\\\"（...）\\\"（适用于跳过行内定义）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Combines all chunks into a single WAV next to the source note (or in the folder below).",
+          "target": "将所有区块合并为一个WAV文件，保存在源笔记旁边（或下方的文件夹中）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When text is selected in a markdown editor, a small play button appears next to the selection. Click it to read just the selection aloud.",
+          "target": "当在Markdown编辑器中选中文本时，选区旁边会出现一个小的播放按钮。点击它即可只朗读选中的部分。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Resume each note from where you stopped last time. Clears automatically when you finish reading the note to the end.",
+          "target": "从上次停止的位置继续每个笔记的朗读。当你读完一个笔记时，此状态会自动清除。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Silent gap inserted between chunks for a natural breathing pace. 0 = continuous playback.",
+          "target": "在区块之间插入静默间隙，以实现自然的呼吸节奏。0 = 连续播放。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Sends a warm-up request to the TTS server when Obsidian opens so the first playback starts instantly. Off by default — only enable if you use TTS frequently in this vault.",
+          "target": "当Obsidian打开时，向TTS服务器发送一个预热请求，以便首次播放能立即开始。默认关闭——仅当您在此仓库中频繁使用TTS时才启用。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Stores each synthesized chunk under the cache folder so re-reading the same note skips the server entirely. Cache key includes model + language + voice + text.",
+          "target": "将每个合成的区块存储在缓存文件夹下，这样重新朗读同一个笔记时可以完全跳过服务器。缓存键包括模型 + 语言 + 语音 + 文本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Where cached WAV files live. Default is hidden by the leading dot.",
+          "target": "缓存的WAV文件存放位置。默认路径以点开头，因此是隐藏的。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "API URL",
+          "target": "API URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Prefetch depth",
+          "target": "预取深度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Chunk size (characters)",
+          "target": "区块大小（字符数）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Playback speed",
+          "target": "播放速度"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Skip code blocks",
+          "target": "跳过代码块"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Read tables",
+          "target": "朗读表格"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Table read order",
+          "target": "表格朗读顺序"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Read parentheses",
+          "target": "朗读括号内容"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Save audio file after playback",
+          "target": "播放后保存音频文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Audio folder (vault-relative)",
+          "target": "音频文件夹（相对于仓库）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show playback toolbar",
+          "target": "显示播放工具栏"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Show floating play button on selection",
+          "target": "在选中文本上显示浮动播放按钮"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Paragraph pause (ms)",
+          "target": "段落停顿（毫秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preload model on Obsidian startup",
+          "target": "Obsidian启动时预加载模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cache synthesized audio to disk",
+          "target": "将合成的音频缓存到磁盘"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Cache folder (vault-relative)",
+          "target": "缓存文件夹（相对于仓库）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Jump to chunk…",
+          "target": "跳转到区块…"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Read selection aloud",
+          "target": "朗读选中文本"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: no selection",
+          "target": "有声书TTS：未选中文本"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: sleep timer cancelled.",
+          "target": "有声书TTS：睡眠定时器已取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: already preparing — press Stop to cancel.",
+          "target": "有声书TTS：正在准备中——按停止键取消。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: no active markdown file",
+          "target": "有声书TTS：没有活动的Markdown文件"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: nothing to read after cleanup",
+          "target": "有声书TTS：清理后没有可读内容"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: sleep timer fired — playback stopped.",
+          "target": "有声书TTS：睡眠定时器触发——播放已停止。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: active note has no folder",
+          "target": "有声书TTS：活动笔记没有文件夹"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: no backlinks for this note.",
+          "target": "有声书TTS：此笔记没有反向链接。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: nothing to generate after cleanup",
+          "target": "有声书TTS：清理后没有可生成内容"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: local server unavailable. Continuing in text mode.",
+          "target": "有声书TTS：本地服务器不可用。继续使用文本模式。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: nothing is playing.",
+          "target": "有声书TTS：当前没有播放内容。"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Audiobook TTS: cleared all saved positions.",
+          "target": "有声书TTS：已清除所有保存的位置。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Read current note aloud",
+          "target": "朗读当前笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Read selection aloud",
+          "target": "朗读选中文本"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Stop playback",
+          "target": "停止播放"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Pause / resume",
+          "target": "暂停/继续"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Toggle playback toolbar",
+          "target": "切换播放工具栏"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Generate audio file for current note (no playback)",
+          "target": "为当前笔记生成音频文件（不播放）"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Skip to next paragraph",
+          "target": "跳到下一段落"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Skip to previous paragraph",
+          "target": "跳到上一段落"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Read from cursor position",
+          "target": "从光标位置开始朗读"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Restart current note from the beginning",
+          "target": "从头开始重读当前笔记"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Jump to chunk…",
+          "target": "跳转到区块…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Read this folder as a queue",
+          "target": "将此文件夹作为队列朗读"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Read backlinks as a queue",
+          "target": "将反向链接作为队列朗读"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Clear reading queue",
+          "target": "清空朗读队列"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sleep timer: cancel",
+          "target": "睡眠定时器：取消"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Model",
+          "target": "模型"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Language",
+          "target": "语言"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Voice",
+          "target": "语音"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Audiobook TTS",
+          "target": "有声书 TTS"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Reads markdown notes aloud via a local OpenAI-compatible TTS server (e.g. the OpenVox app, or local-tts-server). Make sure the server is running before playback.",
+          "target": "通过本地兼容 OpenAI 的 TTS 服务器（例如 OpenVox 应用或 local-tts-server）朗读 Markdown 笔记。请确保在播放前服务器已运行。"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Content filters",
+          "target": "内容过滤器"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Table read order — example",
+          "target": "表格朗读顺序 — 示例"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Row: ",
+          "target": "行："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "“CPU: compute, high. RAM: storage, mid.”",
+          "target": "“CPU：计算，高。RAM：存储，中。”"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Column: ",
+          "target": "列："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "“Part: CPU, RAM. Role: compute, storage. Price: high, mid.”",
+          "target": "“部件：CPU，RAM。功能：计算，存储。价格：高，中。”"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Audio file output",
+          "target": "音频文件输出"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Playback behavior",
+          "target": "播放行为"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Audio cache",
+          "target": "音频缓存"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
