@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "chat-cbt",
+    "version": "1.0.1",
+    "title": "ChatCBT",
+    "description": "ChatCBT Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "3.0.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "AssignmentExpression",
+          "name": "innerHTML",
+          "source": "Install <a href=\"https://ollama.com/\" target=\"_blank\">Ollama</a> for free and local AI on your device. Suggested model: <a href=\"https://ollama.com/library/llama3.2\" target=\"_blank\">Llama 3.2 3B</a>",
+          "target": "安装 <a href=\\\"https://ollama.com/\\\" target=\\\"_blank\\\">Ollama</a> 以在您的设备上免费使用本地 AI。推荐模型：<a href=\\\"https://ollama.com/library/llama3.2\\\" target=\\\"_blank\\\">Llama 3.2 3B</a>"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Get OpenAI API Key",
+          "target": "获取 OpenAI API 密钥"
+        },
+        {
+          "type": "AssignmentExpression",
+          "name": "textContent",
+          "source": "Get Deepseek API Key",
+          "target": "获取 Deepseek API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "ollama",
+          "target": "ollama"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Ollama (Local)",
+          "target": "Ollama (本地)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "deepseek",
+          "target": "deepseek"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Deepseek (Cloud)",
+          "target": "Deepseek (云端)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "openai",
+          "target": "openai"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "OpenAI (Cloud)",
+          "target": "OpenAI (云端)"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "loading",
+          "target": "加载中"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Loading available models...",
+          "target": "正在加载可用模型..."
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "No models found",
+          "target": "未找到模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "-- Select a model --",
+          "target": "-- 选择模型 --"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Failed to load models",
+          "target": "加载模型失败"
+        },
+        {
+          "type": "CallExpression",
+          "name": "confirm",
+          "source": "Are you sure you want to reset the prompt to default? You'll lose your custom prompt.",
+          "target": "您确定要将提示词重置为默认值吗？您将丢失自定义的提示词。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "br",
+          "target": "br"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "span",
+          "target": "span"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "Failed to fetch Ollama models:",
+          "target": "获取 Ollama 模型失败："
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "loading plugin",
+          "target": "正在加载插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "unloading plugin",
+          "target": "正在卸载插件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Reset to Default",
+          "target": "重置为默认值"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Choose which AI provider to use",
+          "target": "选择要使用的 AI 提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Custom OpenAI model (leave empty for default)",
+          "target": "自定义 OpenAI 模型（留空则使用默认值）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Make sure you have added credits to your account!",
+          "target": "请确保您的账户已添加额度！"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Custom Deepseek model (leave empty for default)",
+          "target": "自定义 Deepseek 模型（留空则使用默认值）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Enter your Deepseek API key",
+          "target": "输入您的 Deepseek API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Select an available Ollama model. Ensure Ollama is running (run: ollama serve)",
+          "target": "选择一个可用的 Ollama 模型。请确保 Ollama 正在运行（运行：ollama serve）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Edit this if you changed the default port for using Ollama. Requires Ollama v0.1.24 or higher.",
+          "target": "如果您更改了使用 Ollama 的默认端口，请编辑此项。需要 Ollama v0.1.24 或更高版本。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "For responses from ChatCBT",
+          "target": "用于 ChatCBT 的回复"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Customize the prompt that controls how ChatCBT responds to you",
+          "target": "自定义控制 ChatCBT 如何回复您的提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "AI Provider",
+          "target": "AI 提供商"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI Model",
+          "target": "OpenAI 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "OpenAI API Key",
+          "target": "OpenAI API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Deepseek Model",
+          "target": "Deepseek 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Deepseek API Key",
+          "target": "Deepseek API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama Model",
+          "target": "Ollama 模型"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Ollama server URL",
+          "target": "Ollama 服务器 URL"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Preferred Language (Beta)",
+          "target": "首选语言（测试版）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Edit System Prompt",
+          "target": "编辑系统提示词"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Enter your API Key",
+          "target": "输入您的 API 密钥"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "ex: http://0.0.0.0:11434",
+          "target": "例如：http://0.0.0.0:11434"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Chat",
+          "target": "聊天"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setTitle",
+          "source": "Summarize",
+          "target": "总结"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Please select a model from the settings",
+          "target": "请从设置中选择一个模型"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Missing OpenAI API Key - update in ChatCBT plugin settings",
+          "target": "缺少 OpenAI API 密钥 - 请在 ChatCBT 插件设置中更新"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Missing Deepseek API Key - update in ChatCBT plugin settings",
+          "target": "缺少 Deepseek API 密钥 - 请在 ChatCBT 插件设置中更新"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Missing Ollama URL - update in ChatCBT plugin settings",
+          "target": "缺少 Ollama URL - 请在 ChatCBT 插件设置中更新"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "First, share how you are feeling in a note",
+          "target": "首先，在笔记中分享您的感受"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "No Ollama models found. Install models via terminal: ollama pull <model>",
+          "target": "未找到 Ollama 模型。请通过终端安装模型：ollama pull <model>"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Failed to load Ollama models. Ensure Ollama serer is running",
+          "target": "加载 Ollama 模型失败。请确保 Ollama 服务器正在运行"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "ChatCBT prompt reset to default",
+          "target": "ChatCBT 提示词已重置为默认值"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "chat",
+          "target": "chat"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "summarize",
+          "target": "summarize"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "English",
+          "target": "English"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Français",
+          "target": "Français"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Español",
+          "target": "Español"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Deutsch",
+          "target": "Deutsch"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Italiano",
+          "target": "Italiano"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Português",
+          "target": "Português"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Nederlands",
+          "target": "Nederlands"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Hrvatski",
+          "target": "Hrvatski"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Bosanski",
+          "target": "Bosanski"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Shqip",
+          "target": "Shqip"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Tiếng Việt",
+          "target": "Tiếng Việt"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Türkçe",
+          "target": "Türkçe"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "فارسی",
+          "target": "فارسی"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "اردو",
+          "target": "اردو"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Ελληνικά",
+          "target": "Ελληνικά"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Polski",
+          "target": "Polski"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Čeština",
+          "target": "Čeština"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Svenska",
+          "target": "Svenska"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Dansk",
+          "target": "Dansk"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Norsk",
+          "target": "Norsk"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Suomi",
+          "target": "Suomi"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Magyar",
+          "target": "Magyar"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Română",
+          "target": "Română"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "עברית",
+          "target": "עברית"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Kiswahili",
+          "target": "Kiswahili"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Bahasa Melayu",
+          "target": "Bahasa Melayu"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Bahasa Indonesia",
+          "target": "Bahasa Indonesia"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Filipino",
+          "target": "Filipino"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ภาษาไทย",
+          "target": "ภาษาไทย"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "മലയാളം",
+          "target": "മലയാളം"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "සිංහල",
+          "target": "සිංහල"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ខ្មែរ",
+          "target": "ខ្មែរ"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ລາວ",
+          "target": "ລາວ"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ქართული",
+          "target": "ქართული"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Íslenska",
+          "target": "Íslenska"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Slovenčina",
+          "target": "Slovenčina"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Català",
+          "target": "Català"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Euskara",
+          "target": "Euskara"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Oʻzbek",
+          "target": "Oʻzbek"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Русский",
+          "target": "Русский"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Українська",
+          "target": "Українська"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Български",
+          "target": "Български"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Српски",
+          "target": "Српски"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Македонски",
+          "target": "Македонски"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Қазақша",
+          "target": "Қазақша"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "简体中文",
+          "target": "简体中文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "繁體中文",
+          "target": "繁體中文"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "日本語",
+          "target": "日本語"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "한국어",
+          "target": "한국어"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ไทย",
+          "target": "ไทย"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "العربية",
+          "target": "العربية"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "हिन्दी",
+          "target": "हिन्दी"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "বাংলা",
+          "target": "বাংলা"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ਪੰਜਾਬੀ",
+          "target": "ਪੰਜਾਬੀ"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "ಕನ್ನಡ",
+          "target": "ಕನ್ನಡ"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "தமிழ்",
+          "target": "தமிழ்"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "తెలుగు",
+          "target": "తెలుగు"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "मराठी",
+          "target": "मराठी"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "label",
+          "source": "Հայերեն",
+          "target": "Հայերեն"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Chat",
+          "target": "聊天"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Summarize",
+          "target": "总结"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Read the setup guide ↗️ ",
+          "target": "阅读设置指南 ↗️ "
+        }
+      ],
+      "regex": []
+    }
+  }
+}
