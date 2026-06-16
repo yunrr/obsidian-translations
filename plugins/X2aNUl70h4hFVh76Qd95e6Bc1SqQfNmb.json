@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "at-symbol-linking",
+    "version": "2.0.0",
+    "title": "@ Symbol Linking",
+    "description": "Adds ability to link with @ (the At Symbol) in Obsidian. Can limit @ linking to specific folders e.g. People/",
+    "language": "zh-cn",
+    "supportedVersions": "1.6.2",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(`Trigger symbol must be a single character.`)",
+          "target": "Notice(`触发符号必须为单个字符。`)"
+        },
+        {
+          "source": "Notice(\n          `Unable to find folder at path: ${folder}. Please add it if you want to limit links to this folder.`\n        )",
+          "target": "Notice(\n          `在路径中找不到文件夹：${folder}。如需将链接限制在此文件夹内，请先添加该文件夹。`\n        )"
+        },
+        {
+          "source": "Notice(\n          `Unable to find template file at path: ${settings.addNewNoteTemplateFile}.md`\n        )",
+          "target": "Notice(\n          `在路径处找不到模板文件：${settings.addNewNoteTemplateFile}.md`\n        )"
+        },
+        {
+          "source": "Notice(\n          `Unable to find folder for new notes at path: ${settings.addNewNoteDirectory}. Please add it if you want to create new notes in this folder.`\n        )",
+          "target": "Notice(\n          `无法在路径 ${settings.addNewNoteDirectory} 下找到新笔记的存放文件夹。如需在此文件夹中创建新笔记，请先创建该文件夹。`\n        )"
+        },
+        {
+          "source": "Notice(`Invalid regex or flags`)",
+          "target": "Notice(`无效的正则表达式或标志`)"
+        },
+        {
+          "source": "Notice(\n        `Unable to create new note at path: ${(_e = value.obj)",
+          "target": "Notice(\n        `无法在路径上创建新注释: ${(_e = value.obj)"
+        },
+        {
+          "source": ".log(\n            \"@ Symbol Linking: Error creating first link\",\n            error\n          )",
+          "target": ".log(\n            \"@Symbol Linking：创建首个链接时出错\",\n            error\n          )"
+        },
+        {
+          "source": ".error(\n      `@ Symbol Linking: Unable to read core plugin templates config at path: ${coreTemplatesConfigPath}`\n    )",
+          "target": ".error(\n      `@Symbol Linking：无法读取核心插件模板配置文件，路径：${coreTemplatesConfigPath}`\n    )"
+        },
+        {
+          "source": "name: \"applyStyles\"",
+          "target": "name: \"应用样式\""
+        },
+        {
+          "source": "name: \"arrow\"",
+          "target": "name: \"箭头\""
+        },
+        {
+          "source": "name: \"computeStyles\"",
+          "target": "name: \"计算样式\""
+        },
+        {
+          "source": "name: \"eventListeners\"",
+          "target": "name: \"事件监听器\""
+        },
+        {
+          "source": "name: \"flip\"",
+          "target": "name: \"翻转\""
+        },
+        {
+          "source": "name: \"hide\"",
+          "target": "name: \"隐藏\""
+        },
+        {
+          "source": "name: \"offset\"",
+          "target": "name: \"偏移量\""
+        },
+        {
+          "source": "name: \"popperOffsets\"",
+          "target": "name: \"弹出器偏移量\""
+        },
+        {
+          "source": "name: \"preventOverflow\"",
+          "target": "name: \"防止溢出\""
+        },
+        {
+          "source": "name: \"sameWidth\"",
+          "target": "name: \"相同宽度\""
+        },
+        {
+          "source": "name: \"Select next suggestion\"",
+          "target": "name: \"选择下一个建议\""
+        },
+        {
+          "source": "name: \"Select previous suggestion\"",
+          "target": "name: \"选择上一个建议\""
+        },
+        {
+          "source": "name: \"Insert selected suggestion\"",
+          "target": "name: \"插入所选建议\""
+        },
+        {
+          "source": "name: \"Exit suggestions\"",
+          "target": "name: \"退出建议\""
+        },
+        {
+          "source": "text: \"reference\"",
+          "target": "text: \"参考\""
+        },
+        {
+          "source": "text: `E.g. [${this.plugin.settings.includeSymbol ? this.plugin.settings.triggerSymbol : \"\"}evan](./evan)`",
+          "target": "text: `[${this.plugin.settings.includeSymbol ? this.plugin.settings.triggerSymbol : \"\"}evan](./evan)`"
+        },
+        {
+          "source": "text: \"If no folders are added, links will be sourced from all folders.\"",
+          "target": "text: \"如果未添加任何文件夹，链接将从所有文件夹中获取。\""
+        },
+        {
+          "source": "text: \"core templates plugin\"",
+          "target": "text: \"核心模板插件\""
+        },
+        {
+          "source": "text: \"May be slower than the native popup.\"",
+          "target": "text: \"可能比原生弹出窗口慢。\""
+        },
+        {
+          "source": "text: \"When set above 0, you'll need to press escape, return/enter, or type over X spaces to close the popup.\"",
+          "target": "text: \"当设置大于0时，需按下ESC键、回车键或输入超过X个空格才能关闭弹窗。\""
+        },
+        {
+          "source": ".setName(\"Trigger Symbol\")",
+          "target": ".setName(\"触发符号\")"
+        },
+        {
+          "source": ".setName(`Include ${this.plugin.settings.triggerSymbol} symbol`)",
+          "target": ".setName(`包含 ${this.plugin.settings.triggerSymbol} 符号`)"
+        },
+        {
+          "source": ".setName(\"Limit links to folders\")",
+          "target": ".setName(\"限制链接至文件夹\")"
+        },
+        {
+          "source": ".setName(\"Add new note\")",
+          "target": ".setName(\"添加新笔记\")"
+        },
+        {
+          "source": ".setName(\"Add new note if it doesn't exist\")",
+          "target": ".setName(\"如果不存在则添加新笔记\")"
+        },
+        {
+          "source": ".setName(\"Add new note template\")",
+          "target": ".setName(\"添加新笔记模板\")"
+        },
+        {
+          "source": ".setName(\"Add new note folder\")",
+          "target": ".setName(\"添加新笔记文件夹\")"
+        },
+        {
+          "source": ".setName(\"Suggestion popup behavior\")",
+          "target": ".setName(\"建议弹窗行为\")"
+        },
+        {
+          "source": ".setName(\"Use compatibility mode\")",
+          "target": ".setName(\"使用兼容模式\")"
+        },
+        {
+          "source": ".setName(\"Leave popup open for X spaces\")",
+          "target": ".setName(\"弹出窗口保持开启 X 个空格\")"
+        },
+        {
+          "source": ".setName(\"Advanced settings\")",
+          "target": ".setName(\"高级设置\")"
+        },
+        {
+          "source": ".setName(\"Invalid character Regex\")",
+          "target": ".setName(\"无效字符正则表达式\")"
+        },
+        {
+          "source": ".setName(\"Invalid character Regex flags\")",
+          "target": ".setName(\"无效字符正则表达式标志\")"
+        },
+        {
+          "source": ".setName(\"Remove accents from search query\")",
+          "target": ".setName(\"去除搜索查询中的重音符号\")"
+        },
+        {
+          "source": ".setDesc(\n      `If the note doesn't exist when ${this.plugin.settings.triggerSymbol} linking, add an option to create the note.`\n    )",
+          "target": ".setDesc(\n      `如果笔记在${this.plugin.settings.triggerSymbol}链接时不存在，添加创建笔记的选项。`\n    )"
+        },
+        {
+          "source": ".setDesc(\n        `Folder to create new notes in when using ${this.plugin.settings.triggerSymbol} linking.`\n      )",
+          "target": ".setDesc(\n        `使用 ${this.plugin.settings.triggerSymbol} 链接时创建新笔记的目标文件夹`\n      )"
+        },
+        {
+          "source": ".setDesc(\n      \"e.g. \\xE9 -> e when searching or creating links via the popup.\"\n    )",
+          "target": ".setDesc(\n      \"在通过弹出窗口搜索或创建链接时，将 \\xE9 转换为 e。\"\n    )"
+        },
+        {
+          "source": ".setPlaceholder(\"Folder\")",
+          "target": ".setPlaceholder(\"文件夹\")"
+        },
+        {
+          "source": ".setPlaceholder(\"No template (blank note)\")",
+          "target": ".setPlaceholder(\"无模板（空白笔记）\")"
+        },
+        {
+          "source": ".setPlaceholder(\"No folder (root)\")",
+          "target": ".setPlaceholder(\"无文件夹（根目录）\")"
+        },
+        {
+          "source": ".setTooltip(\"Add limit folder\")",
+          "target": ".setTooltip(\"添加限制文件夹\")"
+        },
+        {
+          "source": ".setTooltip(\"Move up\")",
+          "target": ".setTooltip(\"上移\")"
+        },
+        {
+          "source": ".setTooltip(\"Move down\")",
+          "target": ".setTooltip(\"向下移动\")"
+        },
+        {
+          "source": ".setTooltip(\"Delete\")",
+          "target": ".setTooltip(\"删除\")"
+        }
+      ]
+    }
+  }
+}

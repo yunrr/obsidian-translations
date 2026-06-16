@@ -1,0 +1,987 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "omnisearch",
+    "version": "2.0.0",
+    "title": "Omnisearch",
+    "description": "A search engine that just works",
+    "language": "zh-cn",
+    "supportedVersions": "1.25.1",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": "Notice(\"Omnisearch - Disabled. Please restart Obsidian.\")",
+          "target": "Notice(\"Omnisearch - 已禁用。请重启 Obsidian。\")"
+        },
+        {
+          "source": "Notice(\"Omnisearch - Enabled. Please restart Obsidian.\")",
+          "target": "Notice(\"Omnisearch - 已启用。请重启 Obsidian。\")"
+        },
+        {
+          "source": "Notice(\"Omnisearch - Error while creating excerpt, see developer console\")",
+          "target": "Notice(\"Omnisearch - 创建摘要时出错,详见开发者控制台\")"
+        },
+        {
+          "source": "Notice(\"Omnisearch - Error - No active editor\",3e3)",
+          "target": "Notice(\"Omnisearch - 错误 - 没有活动编辑器\",3e3)"
+        },
+        {
+          "source": "Notice(`Omnisearch - Started non-localhost HTTP server at ${t.settings.DANGER_httpHost}:${r}`,12e4)",
+          "target": "Notice(`Omnisearch - 在 ${t.settings.DANGER_httpHost}:${r} 启动了非本地主机 HTTP 服务器`,12e4)"
+        },
+        {
+          "source": "Notice(`Omnisearch - Started HTTP server on port ${r}`)",
+          "target": "Notice(`Omnisearch - 在端口 ${r} 启动了 HTTP 服务器`)"
+        },
+        {
+          "source": "Notice(`Omnisearch - Cannot start HTTP server on ${r}. See console for more details.`)",
+          "target": "Notice(`Omnisearch - 无法在 ${r} 启动 HTTP 服务器。详见控制台。`)"
+        },
+        {
+          "source": "Notice(\"Omnisearch - Terminated HTTP server\")",
+          "target": "Notice(\"Omnisearch - 终止了 HTTP 服务器\")"
+        },
+        {
+          "source": "Notice(\"Omnisearch - Cache missing or invalid. Some freezes may occur while Omnisearch indexes your vault.\")",
+          "target": "Notice(\"Omnisearch - 缓存丢失或无效。索引过程中可能会出现卡顿。\")"
+        },
+        {
+          "source": "Notice(\"Omnisearch - Cache cleared. Please restart Obsidian.\")",
+          "target": "Notice(\"Omnisearch - 缓存已清除。请重启 Obsidian。\")"
+        },
+        {
+          "source": "Notice(\"Omnisearch - Your index cache may be incorrect or corrupted. If this message keeps appearing, go to Settings to clear the cache.\",5e3)",
+          "target": "Notice(\"Omnisearch - 您的索引缓存可能不正确或已损坏。如果此消息继续出现,请转到设置中清除缓存。\")"
+        },
+        {
+          "source": "Notice(\"Omnisearch \\u26A0\\uFE0F There might be an issue with your cache. You should clean it in Omnisearch settings and restart Obsidian.\")",
+          "target": "Notice(\"Omnisearch \\u26A0\\uFE0F 您的缓存可能有问题。您应该在 Omnisearch 设置中清理缓存并重启 Obsidian。\")"
+        },
+        {
+          "source": "Notice(\"Omnisearch - There was an error while loading the cache. Please restart Obsidian.\")",
+          "target": "Notice(\"Omnisearch - 加载缓存时出错。请重启 Obsidian。\")"
+        },
+        {
+          "source": "Notice(`${r.toAdd.length} files need to be indexed. Obsidian may experience stutters and freezes during the process`,1e4)",
+          "target": "Notice(`${r.toAdd.length} 文件需要索引。索引过程中 Obsidian 可能会出现卡顿和冻结现象`,1e4)"
+        },
+        {
+          "source": "Notice(\"Your files have been indexed.\")",
+          "target": "Notice(\"您的文件已索引。\")"
+        },
+        {
+          "source": ".log(`Omnisearch - Started HTTP server on port ${r}`)",
+          "target": ".log(`Omnisearch - 在端口 ${r} 启动了 HTTP 服务器`)"
+        },
+        {
+          "source": ".log(\"Omnisearch - Terminated HTTP server\")",
+          "target": ".log(\"Omnisearch - 终止了 HTTP 服务器\")"
+        },
+        {
+          "source": ".log(\"Omnisearch - No cache found\")",
+          "target": ".log(\"Omnisearch - 未找到缓存\")"
+        },
+        {
+          "source": ".error(\"Omnisearch - Error in highlightText()",
+          "target": ".error(\"Omnisearch - highlightText() 出错"
+        },
+        {
+          "source": ".error(\"Omnisearch - Error while creating excerpt\")",
+          "target": ".error(\"Omnisearch - 创建摘要时出错\")"
+        },
+        {
+          "source": ".error(\"Omnisearch - Error while loading Minisearch cache\")",
+          "target": ".error(\"Omnisearch - 加载 Minisearch 缓存时出错\")"
+        },
+        {
+          "source": ".error(\"Error tokenizing text, skipping document\",n)",
+          "target": ".error(\"文本分词错误,跳过文档\",n)"
+        },
+        {
+          "source": ".error(`Missing .path field in IndexedDocument \"${n.basename}\", skipping`)",
+          "target": ".error(`IndexedDocument 中缺少 .path 字段 \"${n.basename}\",跳过`)"
+        },
+        {
+          "source": ".error(\"Omnisearch: Error while parsing Dataloom file\",e)",
+          "target": ".error(\"Omnisearch: 解析 Dataloom 文件时出错\",e)"
+        },
+        {
+          "source": ".error(\"Omnisearch - Error while loading embeds cache\")",
+          "target": ".error(\"Omnisearch - 加载嵌入缓存时出错\")"
+        },
+        {
+          "source": "name:\"Vault search\"",
+          "target": "name:\"仓库搜索\""
+        },
+        {
+          "source": "name:\"In-file search\"",
+          "target": "name:\"文件内搜索\""
+        },
+        {
+          "source": "text:\"Omnisearch\"",
+          "target": "text:\"Omnisearch\""
+        },
+        {
+          "source": ".setButtonText(\"Remove\")",
+          "target": ".setButtonText(\"移除\")"
+        },
+        {
+          "source": ".setButtonText(\"Add a new property\")",
+          "target": ".setButtonText(\"添加新属性\")"
+        },
+        {
+          "source": ".setButtonText(\"Clear cache\")",
+          "target": ".setButtonText(\"清除缓存\")"
+        },
+        {
+          "source": ".setName(\"Indexing\")",
+          "target": ".setName(\"索引\")"
+        },
+        {
+          "source": ".setName(`PDFs content indexing ${r?\"\":\"\\u26A0\\uFE0F Disabled\"}`)",
+          "target": ".setName(`PDF 内容索引 ${r?\"\":\"\\u26A0\\uFE0F 已禁用\"}`)"
+        },
+        {
+          "source": ".setName(`Images OCR indexing ${r?\"\":\"\\u26A0\\uFE0F Disabled\"}`)",
+          "target": ".setName(`图像 OCR 索引 ${r?\"\":\"\\u26A0\\uFE0F 已禁用\"}`)"
+        },
+        {
+          "source": ".setName(`Documents content indexing ${r?\"\":\"\\u26A0\\uFE0F Disabled\"}`)",
+          "target": ".setName(`文档内容索引 ${r?\"\":\"\\u26A0\\uFE0F 已禁用\"}`)"
+        },
+        {
+          "source": ".setName(`Images AI indexing ${i?\"\":\"\\u26A0\\uFE0F Disabled\"}`)",
+          "target": ".setName(`图像 AI 索引 ${i?\"\":\"\\u26A0\\uFE0F 已禁用\"}`)"
+        },
+        {
+          "source": ".setName(\"Index paths of unsupported files\")",
+          "target": ".setName(\"索引不受支持的文件路径\")"
+        },
+        {
+          "source": ".setName(\"Set frontmatter property key as title\")",
+          "target": ".setName(\"将前置元数据属性键设为标题\")"
+        },
+        {
+          "source": ".setName(\"Additional TEXT files to index\")",
+          "target": ".setName(\"额外要索引的 TEXT 文件\")"
+        },
+        {
+          "source": ".setName(\"Behavior\")",
+          "target": ".setName(\"行为\")"
+        },
+        {
+          "source": ".setName(\"Save index to cache\")",
+          "target": ".setName(\"将索引保存到缓存\")"
+        },
+        {
+          "source": ".setName(\"Show previous query results\")",
+          "target": ".setName(\"显示之前的查询结果\")"
+        },
+        {
+          "source": ".setName(`Respect Obsidian's \"Excluded Files\"`)",
+          "target": ".setName(`尊重 Obsidian 的 \"排除的文件\"`)"
+        },
+        {
+          "source": ".setName(\"Folders to downrank in search results\")",
+          "target": ".setName(\"在搜索结果中降级的文件夹\")"
+        },
+        {
+          "source": ".setName(\"Split CamelCaseWords\")",
+          "target": ".setName(\"拆分驼峰式单词\")"
+        },
+        {
+          "source": ".setName(\"Simpler search\")",
+          "target": ".setName(\"简化搜索\")"
+        },
+        {
+          "source": ".setName(\"Tokenize URLs\")",
+          "target": ".setName(\"解析 URL\")"
+        },
+        {
+          "source": ".setName(\"Open in new pane\")",
+          "target": ".setName(\"在新窗格中打开\")"
+        },
+        {
+          "source": ".setName(\"Set Vim like navigation keys\")",
+          "target": ".setName(\"设置类似 Vim 的导航键\")"
+        },
+        {
+          "source": ".setName(\"Fuzziness\")",
+          "target": ".setName(\"模糊度\")"
+        },
+        {
+          "source": ".setName(\"User Interface\")",
+          "target": ".setName(\"用户界面\")"
+        },
+        {
+          "source": ".setName(\"Show ribbon button\")",
+          "target": ".setName(\"显示侧边栏按钮\")"
+        },
+        {
+          "source": ".setName(\"Show excerpts\")",
+          "target": ".setName(\"显示摘录\")"
+        },
+        {
+          "source": ".setName(\"Show embed references\")",
+          "target": ".setName(\"显示嵌入引用\")"
+        },
+        {
+          "source": ".setName(\"Render line return in excerpts\")",
+          "target": ".setName(\"在摘录中渲染换行符\")"
+        },
+        {
+          "source": ".setName('Show \"Create note\" button')",
+          "target": ".setName('显示 \"创建笔记\" 按钮')"
+        },
+        {
+          "source": ".setName(\"Highlight matching words in results\")",
+          "target": ".setName(\"在结果中高亮匹配的单词\")"
+        },
+        {
+          "source": ".setName(\"Results weighting\")",
+          "target": ".setName(\"结果权重\")"
+        },
+        {
+          "source": ".setName(`File name & declared aliases (default: ${l.weightBasename})`)",
+          "target": ".setName(`文件名及声明的别名 (默认值: ${l.weightBasename})`)"
+        },
+        {
+          "source": ".setName(`File directory (default: ${l.weightDirectory})`)",
+          "target": ".setName(`文件目录 (默认值: ${l.weightDirectory})`)"
+        },
+        {
+          "source": ".setName(`Headings level 1 (default: ${l.weightH1})`)",
+          "target": ".setName(`标题级别 1 (默认值: ${l.weightH1})`)"
+        },
+        {
+          "source": ".setName(`Headings level 2 (default: ${l.weightH2})`)",
+          "target": ".setName(`标题级别 2 (默认值: ${l.weightH2})`)"
+        },
+        {
+          "source": ".setName(`Headings level 3 (default: ${l.weightH3})`)",
+          "target": ".setName(`标题级别 3 (默认值: ${l.weightH3})`)"
+        },
+        {
+          "source": ".setName(`Tags (default: ${l.weightUnmarkedTags})`)",
+          "target": ".setName(`标签 (默认值: ${l.weightUnmarkedTags})`)"
+        },
+        {
+          "source": ".setName(\"Header properties fields\")",
+          "target": ".setName(\"头部属性字段\")"
+        },
+        {
+          "source": ".setName(\"API Access Through HTTP\")",
+          "target": ".setName(\"通过 HTTP 访问 API\")"
+        },
+        {
+          "source": ".setName(\"Enable the HTTP server\")",
+          "target": ".setName(\"启用 HTTP 服务器\")"
+        },
+        {
+          "source": ".setName(\"HTTP Port\")",
+          "target": ".setName(\"HTTP 端口\")"
+        },
+        {
+          "source": ".setName(\"Show a notification when the server starts\")",
+          "target": ".setName(\"服务器启动时显示通知\")"
+        },
+        {
+          "source": ".setName(\"Debugging\")",
+          "target": ".setName(\"调试\")"
+        },
+        {
+          "source": ".setName(\"Enable verbose logging\")",
+          "target": ".setName(\"启用详细日志记录\")"
+        },
+        {
+          "source": ".setName(\"Danger Zone\")",
+          "target": ".setName(\"危险区域\")"
+        },
+        {
+          "source": ".setName(\"Ignore diacritics\")",
+          "target": ".setName(\"忽略变音符号\")"
+        },
+        {
+          "source": ".setName(\"Ignore Arabic diacritics (beta)\")",
+          "target": ".setName(\"忽略阿拉伯语变音符号 (测试版)\")"
+        },
+        {
+          "source": ".setName(\"Disable on this device\")",
+          "target": ".setName(\"在此设备上禁用\")"
+        },
+        {
+          "source": ".setName(\"Force save the cache\")",
+          "target": ".setName(\"强制保存缓存\")"
+        },
+        {
+          "source": ".setName(\"Clear cache data\")",
+          "target": ".setName(\"清除缓存数据\")"
+        },
+        {
+          "source": ".setDesc(\"Enable caching to speed up indexing time. In rare cases, the cache write may cause a crash in Obsidian. This option will disable itself if it happens.\")",
+          "target": ".setDesc(\"启用缓存以加快索引时间。在极少数情况下,写入缓存可能导致 Obsidian 崩溃。如果发生这种情况,此选项将自动禁用。\")"
+        },
+        {
+          "source": ".setDesc(\"Re-executes the previous query when opening Omnisearch.\")",
+          "target": ".setDesc(\"打开 Omnisearch 时重新执行上次查询。\")"
+        },
+        {
+          "source": ".setDesc(`By default, files that are in Obsidian's \"Options > Files & Links > Excluded Files\" list are downranked in results.\n        Enable this option to completely hide them.`)",
+          "target": ".setDesc(`默认情况下,Obsidian 的 \"选项 > 文件与链接 > 排除的文件\" 列表中的文件会在结果中降级。\n        启用此选项可完全隐藏它们。`)"
+        },
+        {
+          "source": ".setDesc(\"Folders to downrank in search results. Files in these folders will be downranked in results.  They will still be indexed for tags, unlike excluded files.  Folders should be comma delimited.\")",
+          "target": ".setDesc(\"在搜索结果中降级的文件夹。这些文件夹中的文件将在结果中降级。与排除的文件不同,它们仍然会被索引用于标签。文件夹应以逗号分隔。\")"
+        },
+        {
+          "source": ".setDesc(`Enable this if Obsidian often freezes while making searches.\n        Words shorter than 3 characters won't be used as prefixes; this can reduce search delay but will return fewer results.`)",
+          "target": ".setDesc(`如果 Obsidian 在进行搜索时常卡顿,请启用此选项。\n        小于3个字符的单词将不会用作前缀;这可以减少搜索延迟,但会返回较少的结果。`)"
+        },
+        {
+          "source": ".setDesc(`Enable this if you want to be able to search for URLs as separate words.\n        This setting has a strong impact on indexing performance, and can crash Obsidian under certain conditions.`)",
+          "target": ".setDesc(`如果您想将 URL 作为单独的单词进行搜索,请启用此选项。\n        此设置对索引性能有较大影响,并且在某些条件下可能导致 Obsidian 崩溃。`)"
+        },
+        {
+          "source": ".setDesc(\"Open and create files in a new pane instead of the current pane.\")",
+          "target": ".setDesc(\"在新窗格中打开和创建文件,而不是当前窗格。\")"
+        },
+        {
+          "source": ".setDesc(\"Navigate down the results with Ctrl/\\u2318 + J/N, or navigate up with Ctrl/\\u2318 + K/P\")",
+          "target": ".setDesc(\"使用 Ctrl/\\u2318 + J/N 下移结果,或使用 Ctrl/\\u2318 + K/P 上移结果。\")"
+        },
+        {
+          "source": ".setDesc(\"Define the level of fuzziness for the search. The higher the fuzziness, the more results you'll get.\")",
+          "target": ".setDesc(\"定义搜索的模糊度。模糊度越高,返回的结果越多。\")"
+        },
+        {
+          "source": ".setDesc(\"Add a button on the sidebar to open the Vault search modal.\")",
+          "target": ".setDesc(\"在侧边栏上添加一个按钮以打开仓库搜索模态框。\")"
+        },
+        {
+          "source": ".setDesc(\"Shows the contextual part of the note that matches the search. Disable this to only show filenames in results.\")",
+          "target": ".setDesc(\"显示与搜索匹配的笔记上下文部分。关闭此选项仅显示文件名。\")"
+        },
+        {
+          "source": ".setDesc(\"Activate this option to render line returns in result excerpts.\")",
+          "target": ".setDesc(\"启用此选项可在结果摘录中渲染换行符。\")"
+        },
+        {
+          "source": ".setDesc(\"Will highlight matching results when enabled. See README for more customization options.\")",
+          "target": ".setDesc(\"启用后将高亮匹配的结果。更多自定义选项请参阅 README。\")"
+        },
+        {
+          "source": ".setDesc('You can set custom weights for values of header properties (e.g. \"keywords\"). Weights under 1.0 will downrank the results.')",
+          "target": ".setDesc('您可以为头部属性值(如 \"关键词\")设置自定义权重。权重小于1.0将使结果降级。')"
+        },
+        {
+          "source": ".setDesc(\"Will display a notification if the server is enabled, at Obsidian startup.\")",
+          "target": ".setDesc(\"如果服务器已启用,启动 Obsidian 时将显示通知。\")"
+        },
+        {
+          "source": ".setDesc(\"Adds a LOT of logs for debugging purposes. Don't forget to disable it.\")",
+          "target": ".setDesc(\"为调试目的添加大量日志。不要忘记禁用它。\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: txt org csv\")",
+          "target": ".setPlaceholder(\"示例:txt org csv\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Example: src,p2/dir\")",
+          "target": ".setPlaceholder(\"示例:src,p2/dir\")"
+        },
+        {
+          "source": ".setPlaceholder(\"Property name\")",
+          "target": ".setPlaceholder(\"属性名称\")"
+        },
+        {
+          "source": "ln(\"Stopped getMatches at\",l,\"results\")",
+          "target": "ln(\"在\",l,\"个结果处停止 getMatches\")"
+        },
+        {
+          "source": "ln(\"Failed to read data.json:\",s)",
+          "target": "ln(\"读取 data.json 失败:\",s)"
+        },
+        {
+          "source": "ln(\"Failed to list icon packs:\",o)",
+          "target": "ln(\"列出图标包失败:\",o)"
+        },
+        {
+          "source": "ln(`No icon pack found for prefix: ${i}`)",
+          "target": "ln(`未找到前缀为 ${i} 的图标包`)"
+        },
+        {
+          "source": "ln(`Lucide icon not found: ${c}`)",
+          "target": "ln(`未找到 Lucide 图标: ${c}`)"
+        },
+        {
+          "source": "ln(\"Icons path is not set. Cannot load icon SVG.\")",
+          "target": "ln(\"图标路径未设置。无法加载图标 SVG。\")"
+        },
+        {
+          "source": "ln(`Failed to load icon SVG for ${t} at ${c}:`,l)",
+          "target": "ln(`加载图标 SVG 失败，图标为 ${t}，路径为 ${c}:`,l)"
+        },
+        {
+          "source": "placeholder:\"Omnisearch - Vault\"",
+          "target": "placeholder:\"Omnisearch - 库\""
+        },
+        {
+          "source": "placeholder:\"Omnisearch - File\"",
+          "target": "placeholder:\"Omnisearch - 文件\""
+        },
+        {
+          "source": ".setDesc(yt(`\\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">Changing indexing settings will clear the cache, and requires a restart of Obsidian.</span><br/><br/>\n        ${r?`\\u{1F44D} You have installed <a href=\"https://github.com/scambier/obsidian-text-extractor\">Text Extractor</a>, Omnisearch can use it to index PDFs and images contents.\n            <br />Text extraction only works on desktop, but the cache can be synchronized with your mobile device.`:'\\u26A0\\uFE0F Omnisearch requires <a href=\"https://github.com/scambier/obsidian-text-extractor\">Text Extractor</a> to index PDFs and images.'}\n        ${i?'<br/>\\u{1F44D} You have installed <a href=\"https://github.com/Swaggeroo/obsidian-ai-image-analyzer\">AI Image Analyzer</a>, Omnisearch can use it to index images contents with ai.':'<br/>\\u26A0\\uFE0F Omnisearch requires <a href=\"https://github.com/Swaggeroo/obsidian-ai-image-analyzer\">AI Image Analyzer</a> to index images with ai.'}`))",
+          "target": ".setDesc(yt(`\\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">更改索引设置将清除缓存，并需要重新启动 Obsidian。</span><br/><br/>\n        ${r?`\\u{1F44D} 您已安装 <a href=\"https://github.com/scambier/obsidian-text-extractor\">文本提取器(Text Extractor)</a>，Omnisearch 可以使用它来索引 PDF 和图像内容。\n            <br />文本提取仅在桌面环境中有效，但缓存可以与您的移动设备同步。`:'\\u26A0\\uFE0F Omnisearch 需要 <a href=\"https://github.com/scambier/obsidian-text-extractor\">文本提取器(Text Extractor)</a> 来索引 PDF 和图像。'}\n        ${i?'<br/>\\u{1F44D} 您已安装 <a href=\"https://github.com/Swaggeroo/obsidian-ai-image-analyzer\">AI 图像分析器(AI Image Analyzer)</a>，Omnisearch 可以使用它来通过 AI 索引图像内容。':'<br/>\\u26A0\\uFE0F Omnisearch 需要 <a href=\"https://github.com/Swaggeroo/obsidian-ai-image-analyzer\">AI 图像分析器(AI Image Analyzer)</a> 来通过 AI 索引图像。'}`))"
+        },
+        {
+          "source": ".setDesc(yt(\"Omnisearch will use Text Extractor to index the content of your PDFs.\"))",
+          "target": ".setDesc(yt(`Omnisearch 将使用文本提取器来索引您的 PDF 内容。`))"
+        },
+        {
+          "source": ".setDesc(yt(`\n      Omnisearch can index file<strong>names</strong> of \"unsupported\" files, such as e.g. <pre style=\"display:inline\">.mp4</pre>\n      or non-extracted PDFs & images.<br/>\n      \"Obsidian setting\" will respect the value of \"Files & Links > Detect all file extensions\".`))",
+          "target": ".setDesc(yt(`\n      Omnisearch 可以索引“不受支持”文件的<strong>文件名</strong>，例如 <pre style=\"display:inline\">.mp4</pre>\n      或未提取的 PDF 和图像。<br/>\n      “Obsidian 设置”将尊重“文件和链接 > 检测所有文件扩展名”的值。`))"
+        },
+        {
+          "source": ".setDesc(yt(`If you have a custom property in your notes that you want to use as the title in search results.<br>\n          Leave empty to disable.`))",
+          "target": ".setDesc(yt(`如果您在笔记中有一个自定义属性，希望在搜索结果中用作标题。<br>\n          留空则禁用。`))"
+        },
+        {
+          "source": ".setDesc(yt(\"Omnisearch will use Text Extractor to OCR your images and index their content.\"))",
+          "target": ".setDesc(yt(`Omnisearch 将使用文本提取器来识别您的图像并索引其内容。`))"
+        },
+        {
+          "source": ".setDesc(yt(`In addition to standard <code>md</code> files, Omnisearch can also index other <strong style=\"color: var(--text-accent)\">PLAINTEXT</strong> files.<br/>\n      Add extensions separated by a space, without the dot. Example: \"<code>txt org csv</code>\".<br />\n      \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">Using extensions of non-plaintext files (like .pptx) WILL cause crashes,\n      because Omnisearch will try to index their content.</span>`))",
+          "target": ".setDesc(yt(`除了标准的 <code>md</code> 文件外，Omnisearch 还可以索引其他 <strong style=\"color: var(--text-accent)\">纯文本</strong> 文件。<br/>\n      添加扩展名时请用空格分隔，不要加点。示例：\"<code>txt org csv</code>\"。<br />\n      \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">使用非纯文本文件的扩展名（如 .pptx）将导致崩溃，\n      因为 Omnisearch 将尝试索引它们的内容。</span>`))"
+        },
+        {
+          "source": ".setDesc(yt(`Enable this if you want to be able to search for CamelCaseWords as separate words.<br/>        \n        \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">Changing this setting will clear the cache.</span><br>\n        ${mo}`))",
+          "target": ".setDesc(yt(`如果希望将 CamelCaseWords 作为单独的单词进行搜索，请启用此选项。<br/>        \n        \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">更改此设置将清除缓存。</span><br>\n        ${mo}`))"
+        },
+        {
+          "source": ".setDesc(yt(`Some results are <a href=\"https://help.obsidian.md/Linking+notes+and+files/Embed+files\">embedded</a> in other notes.<br>\n          This setting controls the maximum number of embeds to show in the search results. Set to 0 to disable.<br>\n          Also works with Text Extractor for embedded images and documents.`))",
+          "target": ".setDesc(yt(`某些结果被 <a href=\"https://help.obsidian.md/Linking+notes+and+files/Embed+files\">嵌入</a> 到其他笔记中。<br>\n          此设置控制在搜索结果中显示的最大嵌入数量。设置为 0 以禁用。<br>\n          也适用于嵌入的图像和文档的文本提取。`))"
+        },
+        {
+          "source": ".setDesc(yt(`Shows a button next to the search input, to create a note.\n        Acts the same as the <code>shift \\u21B5</code> shortcut, can be useful for mobile device users.`))",
+          "target": ".setDesc(yt(`在搜索输入框旁边显示一个按钮，用于创建笔记。\n        功能与 <code>shift \\u21B5</code> 快捷键相同，对移动设备用户可能有帮助。`))"
+        },
+        {
+          "source": ".setDesc(yt('Omnisearch can be used through a simple HTTP server (<a href=\"https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme#HTTP+Server\">more information</a>).'))",
+          "target": ".setDesc(yt('Omnisearch 可以通过简单的 HTTP 服务器使用 (<a href=\"https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme#HTTP+Server\">更多信息</a>)。'))"
+        },
+        {
+          "source": ".setDesc(yt(`Normalize diacritics in search terms. Words like \"br\\xFBl\\xE9e\" or \"\\u017Elu\\u0165ou\\u010Dk\\xFD\" will be indexed as \"brulee\" and \"zlutoucky\".<br/>\n        \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">You probably should <strong>NOT</strong> disable this.</span><br>\n        \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">Changing this setting will clear the cache.</span><br>\n        ${mo}`))",
+          "target": ".setDesc(yt(`在搜索词中规范化变音符号。像 \"br\\xFBl\\xE9e\" 或 \"\\u017Elu\\u0165ou\\u010Dk\\xFD\" 这样的词将被索引为 \"brulee\" 和 \"zlutoucky\"。<br/>\n        \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">您最好不要 <strong>禁用</strong> 此选项。</span><br>\n        \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">更改此设置将清除缓存。</span><br>\n        ${mo}`))"
+        },
+        {
+          "source": ".setDesc(yt(`Omnisearch has a security feature that automatically disables cache writing if it cannot fully perform the operation.<br>\n        Use this option to force the cache to be saved, even if it causes a crash.<br>\n        \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">Enabling this setting could lead to crash loops</span>`))",
+          "target": ".setDesc(yt(`Omnisearch 具有安全功能，如果无法完全执行操作，会自动禁用缓存写入。<br>\n        使用此选项可强制保存缓存，即使会导致崩溃。<br>\n        \\u26A0\\uFE0F <span style=\"color: var(--text-accent)\">启用此设置可能导致循环崩溃</span>`))"
+        },
+        {
+          "source": ".setDesc(yt(`Erase all Omnisearch cache data.\n          Use this if Omnisearch results are inconsistent, missing, or appear outdated.<br>\n          ${mo}`))",
+          "target": ".setDesc(yt(`清除所有 Omnisearch 缓存数据。\n          如果 Omnisearch 结果不一致、缺失或过时，请使用此选项。<br>\n          ${mo}`))"
+        },
+        {
+          "source": "Error(\"Function called outside component initialization\")",
+          "target": "Error(\"函数在组件初始化外部调用\")"
+        },
+        {
+          "source": "Error(\"Invalid context/event name - Cannot contain @\")",
+          "target": "Error(\"无效的上下文/事件名称 - 不得包含 @\")"
+        },
+        {
+          "source": "Error(\"Super expression must either be null or a function\")",
+          "target": "Error(\"super 表达式必须是 null 或函数\")"
+        },
+        {
+          "source": "Error(\"Derived constructors may only return object or undefined\")",
+          "target": "Error(\"派生构造函数只能返回对象或 undefined\")"
+        },
+        {
+          "source": "Error(\"this hasn't been initialised - super() hasn't been called\")",
+          "target": "Error(\"this 尚未初始化 - 未调用 super()\")"
+        },
+        {
+          "source": "Error(`Invalid attempt to iterate non-iterable instance. In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)",
+          "target": "Error(`尝试迭代不可迭代实例无效。为了可迭代，非数组对象必须具有 [Symbol.iterator]() 方法。`)"
+        },
+        {
+          "source": "Error(\"Cannot call a class as a function\")",
+          "target": "Error(\"不能将类作为函数调用\")"
+        },
+        {
+          "source": "Error(\"Cannot initialize the same private elements twice on an object\")",
+          "target": "Error(\"不能在同一对象上初始化相同的私有元素两次\")"
+        },
+        {
+          "source": "Error(\"attempted to \"+H+\" private field on non-instance\")",
+          "target": "Error(\"尝试在非实例上操作私有字段 \"+H)"
+        },
+        {
+          "source": "Error(\"attempted to set read only private field\")",
+          "target": "Error(\"尝试设置只读私有字段\")"
+        },
+        {
+          "source": "Error(\"extension name required\")",
+          "target": "Error(\"需要扩展名称\")"
+        },
+        {
+          "source": "Error(\"extension level must be 'block' or 'inline'\")",
+          "target": "Error(\"扩展级别必须是 'block' 或 'inline'\")"
+        },
+        {
+          "source": "Error(`renderer '${a}' does not exist`)",
+          "target": "Error(`渲染器 '${a}' 不存在`)"
+        },
+        {
+          "source": "Error(`tokenizer '${a}' does not exist`)",
+          "target": "Error(`词法分析器 '${a}' 不存在`)"
+        },
+        {
+          "source": "Error(`hook '${a}' does not exist`)",
+          "target": "Error(`钩子 '${a}' 不存在`)"
+        },
+        {
+          "source": "Error(\"marked(): input parameter is undefined or null\")",
+          "target": "Error(\"marked(): 输入参数未定义或为空\")"
+        },
+        {
+          "source": "Error(\"marked(): input parameter is of type \"+Object.prototype.toString.call(r)+\", string expected\")",
+          "target": "Error(\"marked(): 输入参数类型为 \"+Object.prototype.toString.call(r)+\", 预期为字符串\")"
+        },
+        {
+          "source": "Error(`Not implemented yet: ${t.type}`)",
+          "target": "Error(`尚未实现: ${t.type}`)"
+        },
+        {
+          "source": "Error(\"Bad combination of arguments.\")",
+          "target": "Error(\"参数组合错误。\")"
+        },
+        {
+          "source": "Error(`Unmatched selector: ${t.slice(n)}`)",
+          "target": "Error(`未匹配的选择器: ${t.slice(n)}`)"
+        },
+        {
+          "source": "Error(`Expected name, found ${e.slice(n)}`)",
+          "target": "Error(`预期名称，找到 ${e.slice(n)}`)"
+        },
+        {
+          "source": "Error(\"Parenthesis not matched\")",
+          "target": "Error(\"括号不匹配\")"
+        },
+        {
+          "source": "Error(\"Did not expect successive traversals.\")",
+          "target": "Error(\"未预期连续遍历。\")"
+        },
+        {
+          "source": "Error(\"Empty sub-selector\")",
+          "target": "Error(\"空子选择器\")"
+        },
+        {
+          "source": "Error(\"Expected `=`\")",
+          "target": "Error(\"预期 `=`\")"
+        },
+        {
+          "source": "Error(\"Attribute value didn't end\")",
+          "target": "Error(\"属性值未结束\")"
+        },
+        {
+          "source": "Error(\"Attribute selector didn't terminate\")",
+          "target": "Error(\"属性选择器未终止\")"
+        },
+        {
+          "source": "Error(`Pseudo-selector ${p} cannot be quoted`)",
+          "target": "Error(`伪选择器 ${p} 不能加引号`)"
+        },
+        {
+          "source": "Error(`Missing closing parenthesis in :${p} (${e})`)",
+          "target": "Error(`在 :${p} 中缺少右括号 (${e})`)"
+        },
+        {
+          "source": "Error(\"Comment was not terminated\")",
+          "target": "Error(\"注释未终止\")"
+        },
+        {
+          "source": "Error(`n-th rule couldn't be parsed ('${t}')`)",
+          "target": "Error(`第 n 条规则无法解析 ('${t}')`)"
+        },
+        {
+          "source": "Error(`Pseudo-class :${e} requires an argument`)",
+          "target": "Error(`伪类 :${e} 需要一个参数`)"
+        },
+        {
+          "source": "Error(`Pseudo-class :${e} doesn't have any arguments`)",
+          "target": "Error(`伪类 :${e} 没有任何参数`)"
+        },
+        {
+          "source": "Error(`Unknown pseudo-class :${a}(${o})`)",
+          "target": "Error(`未知伪类 :${a}(${o})`)"
+        },
+        {
+          "source": "Error(`Pseudo ${a} doesn't have any arguments`)",
+          "target": "Error(`伪 ${a} 没有任何参数`)"
+        },
+        {
+          "source": "Error(`Unknown pseudo-class :${a}`)",
+          "target": "Error(`未知伪类 :${a}`)"
+        },
+        {
+          "source": "Error(\"Pseudo-elements are not supported by css-select\")",
+          "target": "Error(\"css-select 不支持伪元素\")"
+        },
+        {
+          "source": "Error(\"Column combinators are not yet supported by css-select\")",
+          "target": "Error(\"css-select 尚不支持列组合器\")"
+        },
+        {
+          "source": "Error(\"Namespaced attributes are not yet supported by css-select\")",
+          "target": "Error(\"css-select 尚不支持命名空间属性\")"
+        },
+        {
+          "source": "Error(\"Namespaced tag names are not yet supported by css-select\")",
+          "target": "Error(\"css-select 尚不支持命名空间标签名称\")"
+        },
+        {
+          "source": "Error(\"Namespaced universal selectors are not yet supported by css-select\")",
+          "target": "Error(\"css-select 尚不支持命名空间通用选择器\")"
+        },
+        {
+          "source": "Error(\"Relative selectors are not allowed when the `relativeSelector` option is disabled\")",
+          "target": "Error(\"当 `relativeSelector` 选项被禁用时，不允许使用相对选择器\")"
+        },
+        {
+          "source": "Error(\"cheerio.load() expects a string\")",
+          "target": "Error(\"cheerio.load() 期望一个字符串\")"
+        },
+        {
+          "source": "Error(\"Unexpected type of selector\")",
+          "target": "Error(\"意外的选择器类型\")"
+        },
+        {
+          "source": "Error(\"Parser was already resumed\")",
+          "target": "Error(\"解析器已经恢复\")"
+        },
+        {
+          "source": "Error(\"Unknown state\")",
+          "target": "Error(\"未知状态\")"
+        },
+        {
+          "source": "Error(\".write() after done!\")",
+          "target": "Error(\".write() 在完成之后调用!\")"
+        },
+        {
+          "source": "Error(\".end() after done!\")",
+          "target": "Error(\".end() 在完成之后调用!\")"
+        },
+        {
+          "source": "Error(\"Assertion Failed\")",
+          "target": "Error(\"断言失败\")"
+        },
+        {
+          "source": "Error(\"Promises must be constructed via new\")",
+          "target": "Error(\"Promise 必须通过 new 构造\")"
+        },
+        {
+          "source": "Error(\"Not a function\")",
+          "target": "Error(\"不是一个函数\")"
+        },
+        {
+          "source": "Error(\"A promise cannot be resolved with itself.\")",
+          "target": "Error(\"一个 Promise 不能用自身来解决。\")"
+        },
+        {
+          "source": "Error(\"Cannot convert never type to IDBKeyRange\")",
+          "target": "Error(\"不能将 never 类型转换为 IDBKeyRange\")"
+        },
+        {
+          "source": "Error(\"Invalid operation type: \"+w)",
+          "target": "Error(\"无效的操作类型: \"+w)"
+        },
+        {
+          "source": "Error(\"Given keys array must have same length as given values array.\")",
+          "target": "Error(\"给定的键数组必须与给定的值数组长度相同。\")"
+        },
+        {
+          "source": "Error(\"Cursor not started\")",
+          "target": "Error(\"游标未启动\")"
+        },
+        {
+          "source": "Error(\"Cursor not stopped\")",
+          "target": "Error(\"游标未停止\")"
+        },
+        {
+          "source": "Error(\"Cursor behind last entry\")",
+          "target": "Error(\"游标位于最后一个条目之后\")"
+        },
+        {
+          "source": "Error(`Table '${h}' not found`)",
+          "target": "Error(`表 '${h}' 未找到`)"
+        },
+        {
+          "source": "Error(\"Keys missing\")",
+          "target": "Error(\"缺少键\")"
+        },
+        {
+          "source": "Error(\"Invalid table argument to Dexie.transaction(). Only Table or String are allowed\")",
+          "target": "Error(\"传递给 Dexie.transaction() 的表参数无效。仅允许 Table 或 String 类型\")"
+        },
+        {
+          "source": "Error(\"Mismatched prefix\")",
+          "target": "Error(\"前缀不匹配\")"
+        },
+        {
+          "source": "Error(\"key must be a string\")",
+          "target": "Error(\"key 必须是一个字符串\")"
+        },
+        {
+          "source": "Error('MiniSearch: option \"fields\" must be provided')",
+          "target": "Error('MiniSearch: 必须提供选项 \"fields\"')"
+        },
+        {
+          "source": "Error(`MiniSearch: document does not have ID field \"${a}\"`)",
+          "target": "Error(`MiniSearch: 文档没有 ID 字段 \"${a}\"`)"
+        },
+        {
+          "source": "Error(`MiniSearch: duplicate ID ${o}`)",
+          "target": "Error(`MiniSearch: 重复的 ID ${o}`)"
+        },
+        {
+          "source": "Error(`MiniSearch: cannot remove document with ID ${o}: it is not in the index`)",
+          "target": "Error(`MiniSearch: 无法删除 ID 为 ${o} 的文档：它不在索引中`)"
+        },
+        {
+          "source": "Error(\"Expected documents to be present. Omit the argument to remove all documents.\")",
+          "target": "Error(\"预期文档存在。省略参数以删除所有文档。\")"
+        },
+        {
+          "source": "Error(`MiniSearch: cannot discard document with ID ${e}: it is not in the index`)",
+          "target": "Error(`MiniSearch: 无法丢弃 ID 为 ${e} 的文档：它不在索引中`)"
+        },
+        {
+          "source": "Error(\"MiniSearch: loadJSON should be given the same options used when serializing the index\")",
+          "target": "Error(\"MiniSearch: 使用 loadJSON 时应提供与序列化索引时相同的选项\")"
+        },
+        {
+          "source": "Error(`MiniSearch: unknown option \"${e}\"`)",
+          "target": "Error(`MiniSearch: 未知选项 \"${e}\"`)"
+        },
+        {
+          "source": "Error(\"MiniSearch: cannot deserialize an index created with an incompatible version\")",
+          "target": "Error(\"MiniSearch: 无法反序列化由不兼容版本创建的索引\")"
+        },
+        {
+          "source": "Error(`Invalid combination operator: ${n}`)",
+          "target": "Error(`无效的组合运算符: ${n}`)"
+        },
+        {
+          "source": "Error(`Invalid file path: \"${e}\"`)",
+          "target": "Error(`无效的文件路径: \"${e}\"`)"
+        },
+        {
+          "source": "Error(`Not a TFile: \"${e}\"`)",
+          "target": "Error(`不是 TFile: \"${e}\"`)"
+        },
+        {
+          "source": ".warn(\"marked(): The async option was set to true by an extension. The async: false option sent to parse will be ignored.\")",
+          "target": ".warn(\"marked(): 异步选项已被扩展设置为 true。发送给解析的 async: false 选项将被忽略。\")"
+        },
+        {
+          "source": ".warn(`Unhandled rejection: ${t.stack||t}`)",
+          "target": ".warn(`未处理的拒绝: ${t.stack||t}`)"
+        },
+        {
+          "source": ".warn(\"Dexie: Need to reopen db\")",
+          "target": ".warn(\"Dexie: 需要重新打开数据库\")"
+        },
+        {
+          "source": ".warn(`The query ${JSON.stringify(e)} on ${this.name} would benefit of a compound index [${n.join(\"+\")}]`)",
+          "target": ".warn(`查询 ${JSON.stringify(e)} 在 ${this.name} 上可以通过复合索引 [${n.join(\"+\")}] 获得优化`)"
+        },
+        {
+          "source": ".warn(\"Dexie SchemaDiff: Schema was extended without increasing the number passed to db.version(). Some queries may fail.\")",
+          "target": ".warn(\"Dexie SchemaDiff: 架构在未增加传递给 db.version() 的数字的情况下进行了扩展。某些查询可能会失败。\")"
+        },
+        {
+          "source": ".warn(\"Dexie: Workaround for Chrome UnknownError on open()\")",
+          "target": ".warn(\"Dexie: 解决 Chrome 打开时的未知错误\")"
+        },
+        {
+          "source": ".warn(`Another connection wants to upgrade database '${this.name}'. Closing db now to resume the upgrade.`)",
+          "target": ".warn(`另一个连接希望升级数据库 '${this.name}'。现在关闭数据库以继续升级。`)"
+        },
+        {
+          "source": ".warn(`Another connection wants to delete database '${this.name}'. Closing db now to resume the delete request.`)",
+          "target": ".warn(`另一个连接希望删除数据库 '${this.name}'。现在关闭数据库以继续删除请求。`)"
+        },
+        {
+          "source": ".warn(`Dexie.delete('${this.name}') was blocked`)",
+          "target": ".warn(`Dexie.delete('${this.name}') 被阻止`)"
+        },
+        {
+          "source": ".warn(`Upgrade '${this.name}' blocked by other connection holding version ${a.oldVersion/10}`)})",
+          "target": ".warn(`升级 '${this.name}' 被持有版本 ${a.oldVersion/10} 的其他连接阻止`)})"
+        },
+        {
+          "source": ".warn(`Omnisearch - Note \"${o.id}\" not in the live cache`)",
+          "target": ".warn(`Omnisearch - 笔记 \"${o.id}\" 不在实时缓存中`)"
+        },
+        {
+          "source": ".warn(`Omnisearch: Error while adding \"${e}\" to live cache`,n)",
+          "target": ".warn(`Omnisearch: 添加 \"${e}\" 到实时缓存时出错`,n)"
+        },
+        {
+          "source": ".warn(`Omnisearch: ${s} content for file`,r.path)",
+          "target": ".warn(`Omnisearch: 文件 ${r.path} 的 ${s} 内容`)"
+        },
+        {
+          "source": "---------------------------------------------------------",
+          "target": "----------------------------------------------------------"
+        },
+        {
+          "source": ".textContent=\"Create note\"",
+          "target": ".textContent=\"创建笔记\""
+        },
+        {
+          "source": ".textContent=\"In-File search\"",
+          "target": ".textContent=\"文件内搜索\""
+        },
+        {
+          "source": ".textContent=`You have enabled \"Simpler Search\" in the settings, try to type more\n          characters.`",
+          "target": ".textContent=`您已在设置中启用了“简单搜索”，请尝试输入更多字符。`"
+        },
+        {
+          "source": ".textContent=\"to open\"",
+          "target": ".textContent=\"打开\""
+        },
+        {
+          "source": ".textContent=\"to open in a new pane\"",
+          "target": ".textContent=\"在新面板中打开\""
+        },
+        {
+          "source": ".textContent=\"to open in a new split\"",
+          "target": ".textContent=\"在新分割窗口中打开\""
+        },
+        {
+          "source": ".textContent=\"to create\"",
+          "target": ".textContent=\"创建\""
+        },
+        {
+          "source": ".textContent=\"to create in a new pane\"",
+          "target": ".textContent=\"在新面板中创建\""
+        },
+        {
+          "source": ".textContent=\"Vault search\"",
+          "target": ".textContent=\"库搜索\""
+        },
+        {
+          "source": ".textContent=\"We found 0 result for your search here.\"",
+          "target": ".textContent=\"在这里没有找到与您的搜索相关的结果。\""
+        },
+        {
+          "source": ".textContent=\"to close\"",
+          "target": ".textContent=\"关闭\""
+        },
+        {
+          "source": ".textContent=\"to go back to Vault Search\"",
+          "target": ".textContent=\"返回库搜索\""
+        },
+        {
+          "source": ".innerHTML=`\n        <iframe sandbox=\"allow-top-navigation-by-user-activation\" src=\"https://github.com/sponsors/scambier/button\" title=\"Sponsor scambier\" height=\"35\" width=\"116\" style=\"border: 0;\"></iframe>\n        <a href='https://ko-fi.com/B0B6LQ2C' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> \n    `",
+          "target": ".innerHTML=`\n        <iframe sandbox=\"allow-top-navigation-by-user-activation\" src=\"https://github.com/sponsors/scambier/button\" title=\"赞助 scambier\" height=\"35\" width=\"116\" style=\"border: 0;\"></iframe>\n        <a href='https://ko-fi.com/B0B6LQ2C' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='在 ko-fi.com 上请我喝咖啡' /></a> \n    `"
+        },
+        {
+          "source": ".innerHTML='Omnisearch will use Text Extractor to index the content of your office documents (currently <pre style=\"display:inline\">.docx</pre> and <pre style=\"display:inline\">.xlsx</pre>).'",
+          "target": ".innerHTML='Omnisearch 将使用文本提取器来索引您的办公文档内容（目前支持 <pre style=\"display:inline\">.docx</pre> 和 <pre style=\"display:inline\">.xlsx</pre>）。'"
+        },
+        {
+          "source": ".innerHTML=\"Omnisearch will use AI Image Analyzer to index the content of your images with ai.\"",
+          "target": ".innerHTML=\"Omnisearch 将使用 AI 图像分析器来通过 AI 索引您的图像内容。\""
+        },
+        {
+          "source": ".innerHTML=`Disable Omnisearch on this device only.<br>\n        ${mo}`",
+          "target": ".innerHTML=`仅在此设备上禁用 Omnisearch。<br>\n        ${mo}`"
+        },
+        {
+          "source": ".innerHTML='<span class=\"prompt-instruction-command\">\\u2191\\u2193</span><span>to navigate</span>'",
+          "target": ".innerHTML='<span class=\"prompt-instruction-command\">\\u2191\\u2193</span><span>导航</span>'"
+        },
+        {
+          "source": ".innerHTML=`<span class=\"prompt-instruction-command\">alt \\u2191\\u2193</span> \n    <span>to cycle history</span>`",
+          "target": ".innerHTML=`<span class=\"prompt-instruction-command\">alt \\u2191\\u2193</span> \n    <span>循环历史记录</span>`"
+        },
+        {
+          "source": ".innerHTML=`<span class=\"prompt-instruction-command\">tab</span> \n    <span>to switch to In-File Search</span>`",
+          "target": ".innerHTML=`<span class=\"prompt-instruction-command\">tab</span> \n    <span>切换到文件内搜索</span>`"
+        },
+        {
+          "source": ".innerHTML=`<span class=\"prompt-instruction-command\">alt o</span> \n    <span>to open in the background</span>`",
+          "target": ".innerHTML=`<span class=\"prompt-instruction-command\">alt o</span> \n    <span>在后台打开</span>`"
+        },
+        {
+          "source": ".innerHTML=`<span class=\"prompt-instruction-command\">alt \\u21B5</span> \n    <span>to insert a link</span>`",
+          "target": ".innerHTML=`<span class=\"prompt-instruction-command\">alt \\u21B5</span> \n    <span>插入链接</span>`"
+        },
+        {
+          "source": ".innerHTML=`<span class=\"prompt-instruction-command\">ctrl g</span> \n    <span>to toggle excerpts</span>`",
+          "target": ".innerHTML=`<span class=\"prompt-instruction-command\">ctrl g</span> \n    <span>切换摘录</span>`"
+        },
+        {
+          "source": ".innerHTML='<span class=\"prompt-instruction-command\">esc</span><span>to close</span>'",
+          "target": ".innerHTML='<span class=\"prompt-instruction-command\">esc</span><span>关闭</span>'"
+        },
+        {
+          "source": ".innerHTML='<span class=\"prompt-instruction-command\">\\u21B5</span><span>to open</span>'",
+          "target": ".innerHTML='<span class=\"prompt-instruction-command\">\\u21B5</span><span>打开</span>'"
+        },
+        {
+          "source": ".innerHTML=`<span class=\"prompt-instruction-command\">tab</span> \n    <span>to switch to Vault Search</span>`",
+          "target": ".innerHTML=`<span class=\"prompt-instruction-command\">tab</span> \n    <span>切换到库搜索</span>`"
+        },
+        {
+          "source": "---------------------------------",
+          "target": "-----------------------------------------"
+        },
+        {
+          "source": "We(\"\\u23F3 Work in progress: \")",
+          "target": "We(\"\\u23F3 进行中: \")"
+        },
+        {
+          "source": "We(\"Searching...\")",
+          "target": "We(\"正在搜索...\")"
+        },
+        {
+          "source": "We(`We found 0 result for your search here.\n      `)",
+          "target": "We(`在这里没有找到与您的搜索相关的结果。\n      `)"
+        },
+        {
+          "source": "Needs a restart to fully take effect.",
+          "target": "需要重新启动才能完全生效。"
+        },
+        {
+          "source": ".message=\"OmniSearch - Could not create note: \"",
+          "target": ".message=\"OmniSearch - 无法创建笔记：\""
+        },
+        {
+          "source": "aria-label,\"Not created yet, select to create\"",
+          "target": "aria-label,\"尚未创建，选择以创建\""
+        },
+        {
+          "source": "yes:\"Yes\",no:\"No\",default:\"Obsidian setting\"",
+          "target": "yes:\"是\",no:\"否\",default:\"Obsidian 设置\""
+        },
+        {
+          "source": "{0:\"Exact match\",1:\"Not too fuzzy\",2:\"Fuzzy enough\"}",
+          "target": "{0:\"精确匹配\",1:\"不太模糊\",2:\"足够模糊\"}"
+        },
+        {
+          "source": "Indexing files...",
+          "target": "正在索引文件..."
+        }
+      ]
+    }
+  }
+}

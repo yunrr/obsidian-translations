@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "obsidian-livesync",
+    "version": "2.0.0",
+    "title": "Self-hosted LiveSync",
+    "description": "Community implementation of self-hosted livesync. Reflect your vault changes to some other devices immediately. Please make sure to disable other synchronize solutions to avoid content corruption or duplication.",
+    "language": "zh-cn",
+    "supportedVersions": "0.23.23",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [],
+      "regex": [
+        {
+          "source": ".setText(\"Customization Sync (Beta3)\")",
+          "target": ".setText(\"个性化同步（Beta3）\")"
+        },
+        {
+          "source": ".setText(`${this.file} / ${this.revs_info.length} revisions`)",
+          "target": ".setText(`${this.file} / ${this.revs_info.length} 修订版本`)"
+        },
+        {
+          "source": ".setText(\"History of this file was not recorded.\")",
+          "target": ".setText(\"该文件的历史记录未被记录。\")"
+        },
+        {
+          "source": ".setText(\"Error occurred.\")",
+          "target": ".setText(\"发生错误。\")"
+        },
+        {
+          "source": ".setText(\"Document History\")",
+          "target": ".setText(\"文档历史\")"
+        },
+        {
+          "source": ".setButtonText(\"Ok\")",
+          "target": ".setButtonText(\"请提供插件名称，然后我会开始翻译工作。\")"
+        },
+        {
+          "source": ".setButtonText(\"Cancel\")",
+          "target": ".setButtonText(\"取消\")"
+        },
+        {
+          "source": ".setButtonText(`( ${this.timeout} ) ${defaultAction}`)",
+          "target": ".setButtonText(`( ${this.timeout} ) ${defaultAction}`)"
+        },
+        {
+          "source": ".setButtonText(\"Use\")",
+          "target": ".setButtonText(\"使用\")"
+        },
+        {
+          "source": ".setButtonText(\"Start\")",
+          "target": ".setButtonText(\"开始\")"
+        },
+        {
+          "source": ".setButtonText(\"Enable\")",
+          "target": ".setButtonText(\"启用\")"
+        },
+        {
+          "source": ".setButtonText(\"Copy\")",
+          "target": ".setButtonText(\"复制\")"
+        },
+        {
+          "source": ".setButtonText(\"Discard\")",
+          "target": ".setButtonText(\"丢弃\")"
+        },
+        {
+          "source": ".setButtonText(\"Test\")",
+          "target": ".setButtonText(\"测试\")"
+        },
+        {
+          "source": ".setButtonText(\"Check\")",
+          "target": ".setButtonText(\"检查\")"
+        },
+        {
+          "source": ".setButtonText(\"Next\")",
+          "target": ".setButtonText(\"下一个\")"
+        },
+        {
+          "source": ".setButtonText(\"Apply\")",
+          "target": ".setButtonText(\"应用\")"
+        },
+        {
+          "source": ".setButtonText(\"Disable\")",
+          "target": ".setButtonText(\"禁用\")"
+        },
+        {
+          "source": ".setButtonText(\"Merge\")",
+          "target": ".setButtonText(\"合并\")"
+        },
+        {
+          "source": ".setButtonText(\"Fetch\")",
+          "target": ".setButtonText(\"获取\")"
+        },
+        {
+          "source": ".setButtonText(\"Overwrite\")",
+          "target": ".setButtonText(\"覆盖\")"
+        },
+        {
+          "source": ".setButtonText(\"Default\")",
+          "target": ".setButtonText(\"默认\")"
+        },
+        {
+          "source": ".setButtonText(\"Cross-platform\")",
+          "target": ".setButtonText(\"跨平台\")"
+        },
+        {
+          "source": ".setButtonText(\"Open\")",
+          "target": ".setButtonText(\"打开\")"
+        },
+        {
+          "source": ".setButtonText(\"Make report\")",
+          "target": ".setButtonText(\"生成报告\")"
+        },
+        {
+          "source": ".setButtonText(\"Recreate all\")",
+          "target": ".setButtonText(\"重新创建\")"
+        },
+        {
+          "source": ".setButtonText(\"Verify all\")",
+          "target": ".setButtonText(\"验证所有\")"
+        },
+        {
+          "source": ".setButtonText(\"Perform\")",
+          "target": ".setButtonText(\"执行\")"
+        },
+        {
+          "source": ".setButtonText(\"Back\")",
+          "target": ".setButtonText(\"返回\")"
+        },
+        {
+          "source": ".setButtonText(\"Delete\")",
+          "target": ".setButtonText(\"删除\")"
+        },
+        {
+          "source": ".setButtonText(\"Lock\")",
+          "target": ".setButtonText(\"锁\")"
+        },
+        {
+          "source": ".setButtonText(\"Flag and restart\")",
+          "target": ".setButtonText(\"标记并重新启动\")"
+        },
+        {
+          "source": ".setButtonText(\"Send chunks\")",
+          "target": ".setButtonText(\"发送块\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset received\")",
+          "target": ".setButtonText(\"接收到重置\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset sent history\")",
+          "target": ".setButtonText(\"重置发送历史\")"
+        },
+        {
+          "source": ".setButtonText(\"Fetch w/o restarting\")",
+          "target": ".setButtonText(\"无需重新启动获取\")"
+        },
+        {
+          "source": ".setButtonText(\"Save and Fetch\")",
+          "target": ".setButtonText(\"保存和提取\")"
+        },
+        {
+          "source": ".setButtonText(\"Rebuild\")",
+          "target": ".setButtonText(\"重建\")"
+        },
+        {
+          "source": ".setButtonText(\"Rebuild w/o restarting\")",
+          "target": ".setButtonText(\"无需重启重新构建\")"
+        },
+        {
+          "source": ".setButtonText(\"Send\")",
+          "target": ".setButtonText(\"发送\")"
+        },
+        {
+          "source": ".setButtonText(\"Reset all\")",
+          "target": ".setButtonText(\"重置全部\")"
+        },
+        {
+          "source": ".setButtonText(\"DryRun\")",
+          "target": ".setButtonText(\"干扰测试\")"
+        },
+        {
+          "source": ".setButtonText(\"Perform cleaning\")",
+          "target": ".setButtonText(\"执行清理\")"
+        },
+        {
+          "source": ".setName(\"Use the copied setup URI\")",
+          "target": ".setName(\"使用复制的设置URI。\")"
+        },
+        {
+          "source": ".setName(\"Minimal setup\")",
+          "target": ".setName(\"最小设置\")"
+        },
+        {
+          "source": ".setName(\"Enable LiveSync on this device as the setup was completed manually\")",
+          "target": ".setName(\"在此设备上启用实时同步，因为设置是手动完成的。\")"
+        },
+        {
+          "source": ".setName(\"Copy current settings as a new setup URI\")",
+          "target": ".setName(\"复制当前设置作为新的设置URI\")"
+        },
+        {
+          "source": ".setName(\"Discard existing settings and databases\")",
+          "target": ".setName(\"丢弃现有设置和数据库\")"
+        },
+        {
+          "source": ".setName(\"Test Connection\")",
+          "target": ".setName(\"测试连接\")"
+        },
+        {
+          "source": ".setName(\"Apply Settings\")",
+          "target": ".setName(\"应用设置\")"
+        },
+        {
+          "source": ".setName(\"Test Database Connection\")",
+          "target": ".setName(\"测试数据库连接\")"
+        },
+        {
+          "source": ".setName(\"Check and fix database configuration\")",
+          "target": ".setName(\"检查并修复数据库配置\")"
+        },
+        {
+          "source": ".setName(\"Hidden file synchronization\")",
+          "target": ".setName(\"隐藏文件同步\")"
+        },
+        {
+          "source": ".setName(\"Disable Hidden files sync\")",
+          "target": ".setName(\"禁用隐藏文件同步\")"
+        },
+        {
+          "source": ".setName(\"Enable Hidden files sync\")",
+          "target": ".setName(\"启用隐藏文件同步\")"
+        },
+        {
+          "source": ".setName(\"Synchronising files\")",
+          "target": ".setName(\"同步文件\")"
+        },
+        {
+          "source": ".setName(\"Non-Synchronising files\")",
+          "target": ".setName(\"非同步文件\")"
+        },
+        {
+          "source": ".setName(\"Ignore patterns\")",
+          "target": ".setName(\"忽略模式\")"
+        },
+        {
+          "source": ".setName(\"Add default patterns\")",
+          "target": ".setName(\"添加默认模式\")"
+        },
+        {
+          "source": ".setName(\"Open\")",
+          "target": ".setName(\"打开\")"
+        },
+        {
+          "source": ".setName(\"Make report to inform the issue\")",
+          "target": ".setName(\"制作报告以通知问题。\")"
+        },
+        {
+          "source": ".setName(\"Recreate missing chunks for all files\")",
+          "target": ".setName(\"为所有文件重新创建丢失的块\")"
+        },
+        {
+          "source": ".setName(\"Verify and repair all files\")",
+          "target": ".setName(\"验证和修复所有文件\")"
+        },
+        {
+          "source": ".setName(\"Check and convert non-path-obfuscated files\")",
+          "target": ".setName(\"检查和转换非路径混淆文件\")"
+        },
+        {
+          "source": ".setName(\"Back to non-configured\")",
+          "target": ".setName(\"返回到未配置状态\")"
+        },
+        {
+          "source": ".setName(\"Delete all customization sync data\")",
+          "target": ".setName(\"删除所有自定义同步数据\")"
+        },
+        {
+          "source": ".setName(\"Encrypting sensitive configuration items\")",
+          "target": ".setName(\"加密敏感配置项\")"
+        },
+        {
+          "source": ".setName(\"Lock remote\")",
+          "target": ".setName(\"远程锁定\")"
+        },
+        {
+          "source": ".setName(\"Emergency restart\")",
+          "target": ".setName(\"紧急重启\")"
+        },
+        {
+          "source": ".setName(\"Resend\")",
+          "target": ".setName(\"抱歉，我无法重新发送提问，但您可以再次向我提供需要翻译的英文文本，我会尽快为您翻译成简体中文。谢谢！\")"
+        },
+        {
+          "source": ".setName(\"Reset journal received history\")",
+          "target": ".setName(\"重置日志接收历史\")"
+        },
+        {
+          "source": ".setName(\"Reset journal sent history\")",
+          "target": ".setName(\"重置已发送的日志历史\")"
+        },
+        {
+          "source": ".setName(\"Fetch from remote\")",
+          "target": ".setName(\"从远程获取\")"
+        },
+        {
+          "source": ".setName(\"Fetch rebuilt DB (Save local documents before)\")",
+          "target": ".setName(\"获取重建的数据库（请先保存本地文档）\")"
+        },
+        {
+          "source": ".setName(\"Rebuild everything\")",
+          "target": ".setName(\"重建所有内容\")"
+        },
+        {
+          "source": ".setName(\"Perform compaction\")",
+          "target": ".setName(\"执行压缩\")"
+        },
+        {
+          "source": ".setName(\"Overwrite remote\")",
+          "target": ".setName(\"覆盖远程\")"
+        },
+        {
+          "source": ".setName(\"Reset all journal counter\")",
+          "target": ".setName(\"重置所有日志计数器\")"
+        },
+        {
+          "source": ".setName(\"Purge all journal counter\")",
+          "target": ".setName(\"清除所有日记计数器\")"
+        },
+        {
+          "source": ".setName(\"Make empty the bucket\")",
+          "target": ".setName(\"清空桶\")"
+        },
+        {
+          "source": ".setName(\"(Obsolete) Clean up databases\")",
+          "target": ".setName(\"清理数据库 (已过时)\")"
+        },
+        {
+          "source": ".setName(\"Discard local database to reset or uninstall Self-hosted LiveSync\")",
+          "target": ".setName(\"丢弃本地数据库以重置或卸载自托管LiveSync\")"
+        },
+        {
+          "source": ".setDesc(\"To setup Self-hosted LiveSync, this method is the most preferred one.\")",
+          "target": ".setDesc(\"设置自托管LiveSync，这种方法是最受欢迎的。\")"
+        },
+        {
+          "source": ".setDesc(\"Open database connection. If the remote database is not found and you have the privilege to create a database, the database will be created.\")",
+          "target": ".setDesc(\"打开数据库连接。如果找不到远程数据库并且您有创建数据库的权限，则将创建数据库。\")"
+        },
+        {
+          "source": ".setDesc(\"Check the database configuration, and fix if there are any problems.\")",
+          "target": ".setDesc(\"检查数据库配置，如有问题请进行修复。\")"
+        },
+        {
+          "source": ".setDesc(\"(RegExp) Empty to sync all files. Set filter as a regular expression to limit synchronising files.\")",
+          "target": ".setDesc(\"（正则表达式）空白以同步所有文件。设置过滤器为正则表达式以限制同步文件。\")"
+        },
+        {
+          "source": ".setDesc(\"(RegExp) If this is set, any changes to local and remote files that match this will be skipped.\")",
+          "target": ".setDesc(\"如果设置了该选项，任何匹配此正则表达式的本地和远程文件的更改将被跳过。\")"
+        },
+        {
+          "source": ".setDesc(\"Open the dialog\")",
+          "target": ".setDesc(\"打开对话框\")"
+        },
+        {
+          "source": ".setDesc(\"This will recreate chunks for all files. If there were missing chunks, this may fix the errors.\")",
+          "target": ".setDesc(\"这将重新创建所有文件的块。如果有丢失的块，这可能会修复错误。\")"
+        },
+        {
+          "source": ".setDesc(\"Compare the content of files between on local database and storage. If not matched, you will be asked which one you want to keep.\")",
+          "target": ".setDesc(\"比对本地数据库和存储中文件的内容。如果不匹配，将会询问您想保留哪一个文件。\")"
+        },
+        {
+          "source": ".setDesc(\"\").addButton((button => button.setButtonText(\"Perform\")",
+          "target": ".setDesc(\"\").addButton((button => button.setButtonText(\"执行\"\")"
+        },
+        {
+          "source": ".setDesc(\"Lock remote to prevent synchronization with other devices.\")",
+          "target": ".setDesc(\"锁定远程设备，防止与其他设备同步。\")"
+        },
+        {
+          "source": ".setDesc(\"place the flag file to prevent all operation and restart.\")",
+          "target": ".setDesc(\"将标志文件放置以阻止所有操作并重新启动。\")"
+        },
+        {
+          "source": ".setDesc(\"Resend all chunks to the remote.\")",
+          "target": ".setDesc(\"重新发送所有块到远程。\")"
+        },
+        {
+          "source": ".setDesc(\"Initialise journal received history. On the next sync, every item except this device sent will be downloaded again.\")",
+          "target": ".setDesc(\"初始化日志接收历史。在下一次同步中，除了此设备发送的项目之外，所有项目都将被重新下载。\")"
+        },
+        {
+          "source": ".setDesc(\"Initialise journal sent history. On the next sync, every item except this device received will be sent again.\")",
+          "target": ".setDesc(\"初始化日志发送历史。在下一次同步中，除了这台设备外，每个项目将再次发送。\")"
+        },
+        {
+          "source": ".setDesc(\"Restore or reconstruct local database from remote.\")",
+          "target": ".setDesc(\"从远程恢复或重建本地数据库。\")"
+        },
+        {
+          "source": ".setDesc(\"Restore or reconstruct local database from remote database but use local chunks.\")",
+          "target": ".setDesc(\"从远程数据库还原或重建本地数据库，但使用本地块。\")"
+        },
+        {
+          "source": ".setDesc(\"Rebuild local and remote database with local files.\")",
+          "target": ".setDesc(\"使用本地文件重新构建本地和远程数据库。\")"
+        },
+        {
+          "source": ".setDesc(\"Compaction discards all of Eden in the non-latest revisions, reducing the storage usage. However, this operation requires the same free space on the remote as the current database.\")",
+          "target": ".setDesc(\"压缩会丢弃非最新修订版中的全部Eden，减少存储使用量。然而，此操作需要与当前数据库相同的远程空闲空间。\")"
+        },
+        {
+          "source": ".setDesc(\"Overwrite remote with local DB and passphrase.\")",
+          "target": ".setDesc(\"使用本地数据库和口令覆盖远程数据库。\")"
+        },
+        {
+          "source": ".setDesc(\"Initialise all journal history, On the next sync, every item will be received and sent.\")",
+          "target": ".setDesc(\"初始化所有日志历史，下次同步时，每个项目都将被接收并发送。\")"
+        },
+        {
+          "source": ".setDesc(\"Purge all sending and downloading cache.\")",
+          "target": ".setDesc(\"清除所有发送和下载缓存。\")"
+        },
+        {
+          "source": ".setDesc(\"Delete all data on the remote.\")",
+          "target": ".setDesc(\"删除远程上的所有数据。\")"
+        },
+        {
+          "source": ".setDesc(\"Delete unused chunks to shrink the database. However, this feature could be not effective in some cases. Please use rebuild everything instead.\")",
+          "target": ".setDesc(\"删除未使用的块以缩小数据库。但在某些情况下，此功能可能不起作用。请改用重新构建所有内容。\")"
+        },
+        {
+          "source": ".appendText(\"Some configuration has been arrived, Press \")",
+          "target": ".appendText(\"某些配置已就绪，请点击\")"
+        },
+        {
+          "source": ".appendText(\" to open the config sync dialog , or press elsewhere to dismiss this message.\")",
+          "target": ".appendText(\"打开配置同步对话框，或者按其他地方以关闭此消息。\")"
+        },
+        {
+          "source": ".appendText(\"Highlight diff\")",
+          "target": ".appendText(\"高亮差异\")"
+        },
+        {
+          "source": ".createEl(\"label\", {\n        text: \"Changes need to be applied!\"\n      })",
+          "target": ".createEl(\"标签\", {\n        text: \"Changes need to be applied!\"\n      })"
+        }
+      ]
+    }
+  }
+}
