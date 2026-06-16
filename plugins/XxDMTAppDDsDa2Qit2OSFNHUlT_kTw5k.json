@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "plugin": "github-wiki-sync",
+    "version": "1.0.1",
+    "title": "GitHub Wiki",
+    "description": "GitHub Wiki Localization & Tweaks",
+    "language": "zh-cn",
+    "supportedVersions": "1.1.0",
+    "author": ""
+  },
+  "dict": {
+    "main.js": {
+      "ast": [
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "manual",
+          "target": "手动"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Manual (open & edit)",
+          "target": "手动（打开并编辑）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "ours",
+          "target": "本地"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Keep local (ours)",
+          "target": "保留本地（ours）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "theirs",
+          "target": "远程"
+        },
+        {
+          "type": "CallExpression",
+          "name": "addOption",
+          "source": "Keep remote (theirs)",
+          "target": "保留远程（theirs）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "createEl",
+          "source": "div",
+          "target": "div"
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[isomorphic-git checkout] task rejected:",
+          "target": "[isomorphic-git checkout] 任务被拒绝："
+        },
+        {
+          "type": "CallExpression",
+          "name": "error",
+          "source": "[obsidian-github-wiki] sync error",
+          "target": "[obsidian-github-wiki] 同步错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "log",
+          "source": "Unhandled error in \"FileSystem.exists()\" function",
+          "target": "\\\"FileSystem.exists()\\\" 函数中出现未处理的错误"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open GitHub to authorize",
+          "target": "打开 GitHub 进行授权"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Copy code",
+          "target": "复制代码"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Try again",
+          "target": "重试"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Cancel",
+          "target": "取消"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sign out",
+          "target": "退出登录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Sign in with GitHub",
+          "target": "使用 GitHub 登录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Open file",
+          "target": "打开文件"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setButtonText",
+          "source": "Apply selections & sync",
+          "target": "应用选择并同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Signed in with GitHub. Signing out only removes the token from this device; revoke the grant under your GitHub authorized apps settings.",
+          "target": "已使用 GitHub 登录。退出登录仅会从此设备移除令牌；请在您的 GitHub 授权应用设置中撤销授权。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Authorize the plugin in your browser with a short code. No personal access token needed.",
+          "target": "在浏览器中使用短代码授权插件。无需个人访问令牌。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Alternative to signing in: a classic PAT with `repo` scope. Stored locally in plugin data.",
+          "target": "登录的替代方案：一个具有 `repo` 范围的经典 PAT。存储在插件数据中。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "GitHub username or organization that owns the wiki repository.",
+          "target": "拥有 wiki 仓库的 GitHub 用户名或组织。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Repository whose wiki you want to sync. The wiki must already have at least one page.",
+          "target": "您想要同步的仓库。该 wiki 必须至少已有一个页面。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "GitHub wiki repos historically use `master`.",
+          "target": "GitHub wiki 仓库历史上使用 `master`。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Vault folder used as the working tree. Top-level files inside it map to wiki pages.",
+          "target": "用作工作树的保险库文件夹。其顶层文件映射到 wiki 页面。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "When Obsidian loads, pull from and push to your wiki repository over HTTPS once.",
+          "target": "当 Obsidian 加载时，通过 HTTPS 从您的 wiki 仓库拉取并推送一次。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "After files in the wiki folder change, fetch from and push to your GitHub wiki repository (debounced).",
+          "target": "当 wiki 文件夹中的文件更改后，从您的 GitHub wiki 仓库获取并推送（防抖）。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setDesc",
+          "source": "Periodically fetch from and push to your GitHub wiki repository. Defaults to 0 (disabled); set a positive number to opt in. No data is sent anywhere other than the wiki repository configured above.",
+          "target": "定期从您的 GitHub wiki 仓库获取并推送。默认为 0（禁用）；设置一个正数以启用。除了上面配置的 wiki 仓库外，不会向任何地方发送数据。"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "GitHub",
+          "target": "GitHub"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "GitHub account",
+          "target": "GitHub 账户"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sign in with GitHub",
+          "target": "使用 GitHub 登录"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Personal access token",
+          "target": "个人访问令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Repository owner",
+          "target": "仓库所有者"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Repository name",
+          "target": "仓库名称"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Branch",
+          "target": "分支"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Vault",
+          "target": "保险库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Wiki folder",
+          "target": "Wiki 文件夹"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Commit identity",
+          "target": "提交身份"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Author name",
+          "target": "作者姓名"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Author email",
+          "target": "作者邮箱"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync triggers",
+          "target": "同步触发器"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Sync on startup",
+          "target": "启动时同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-sync on file change",
+          "target": "文件更改时自动同步"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Auto-sync debounce (ms)",
+          "target": "自动同步防抖（毫秒）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setName",
+          "source": "Periodic sync interval (minutes)",
+          "target": "定期同步间隔（分钟）"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Personal access token",
+          "target": "个人访问令牌"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Username or organization",
+          "target": "用户名或组织"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setPlaceholder",
+          "source": "Repository",
+          "target": "仓库"
+        },
+        {
+          "type": "CallExpression",
+          "name": "setText",
+          "source": "Waiting for authorization…",
+          "target": "等待授权…"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Code copied",
+          "target": "代码已复制"
+        },
+        {
+          "type": "NewExpression",
+          "name": "Notice",
+          "source": "Signed in to GitHub",
+          "target": "已登录 GitHub"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "id",
+          "source": "sync",
+          "target": "sync"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Note added by 'isomorphic-git addNote'\n",
+          "target": "由 'isomorphic-git addNote' 添加的注释\\n"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Note removed by 'isomorphic-git removeNote'\n",
+          "target": "由 'isomorphic-git removeNote' 移除的注释\\n"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Preparing",
+          "target": "准备中"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Staging local changes",
+          "target": "暂存本地更改"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "obsidian-github-wiki sync",
+          "target": "obsidian-github-wiki 同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Fetching remote",
+          "target": "正在获取远程"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Merging",
+          "target": "正在合并"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "obsidian-github-wiki merge",
+          "target": "obsidian-github-wiki 合并"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Pushing",
+          "target": "正在推送"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Synced",
+          "target": "已同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "obsidian-github-wiki: resolve conflicts",
+          "target": "obsidian-github-wiki：解决冲突"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "message",
+          "source": "Conflicts resolved",
+          "target": "冲突已解决"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Sync now",
+          "target": "立即同步"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "name",
+          "source": "Open merge conflicts",
+          "target": "打开合并冲突"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Sign in with GitHub",
+          "target": "使用 GitHub 登录"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Requesting a code from GitHub…",
+          "target": "正在从 GitHub 请求授权码…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Enter this code on GitHub to authorize the plugin:",
+          "target": "请在 GitHub 上输入此代码以授权插件："
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Waiting for authorization…",
+          "target": "正在等待授权…"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Wiki sync — merge conflicts",
+          "target": "Wiki 同步 — 合并冲突"
+        },
+        {
+          "type": "ObjectProperty",
+          "name": "text",
+          "source": "Pick a side per file, or open the file to resolve manually. Files marked \"manual\" are skipped — re-run sync after editing them.",
+          "target": "为每个文件选择一个版本，或打开文件手动解决。标记为“手动”的文件将被跳过 — 编辑后请重新运行同步。"
+        }
+      ],
+      "regex": []
+    }
+  }
+}
